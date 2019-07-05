@@ -1,0 +1,18 @@
+
+import org.junit.runners.model.Statement;
+
+import org.junit.runners.Statement;
+
+
+public class Fail extends Statement {
+	private final Throwable fError;
+
+	public Fail(Throwable e) {
+		fError= e;
+	}
+
+	@Override
+	public void evaluate() throws Throwable {
+		throw fError;
+	}
+}

@@ -1,0 +1,12 @@
+
+package backtype.storm.transactional;
+
+import backtype.storm.task.TopologyContext;
+public interface ICoordinatorState {
+
+public interface ITransactionState {
+    void open(Map conf, TopologyContext context);
+    void close();
+    void setTransactionId(int txid);
+    int getTransactionId();
+}

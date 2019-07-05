@@ -1,0 +1,20 @@
+
+package org.jboss.as.mail.extension;
+
+import org.jboss.as.controller.ReloadRequiredRemoveStepHandler;
+import org.jboss.as.controller.SimpleResourceDefinition;
+
+/**
+ * @author Tomaz Cerar
+class MailSubsystemResource extends SimpleResourceDefinition {
+ */
+public class MailSubsystemResource extends SimpleResourceDefinition {
+    public static final MailSubsystemResource INSTANCE = new MailSubsystemResource();
+
+    private MailSubsystemResource() {
+        super(MailExtension.SUBSYSTEM_PATH,
+                MailExtension.getResourceDescriptionResolver(),
+                MailSubsystemAdd.INSTANCE,
+                ReloadRequiredRemoveStepHandler.INSTANCE);
+    }
+}
