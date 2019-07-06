@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -116,9 +115,9 @@ public class TransportClusterStatsAction extends TransportNodesOperationAction<C
     }
 
     @Override
-NodeStats nodeStats = nodeService.stats(CommonStatsFlags.NONE, false, true, true, false, false, true, false, false, false);
+    protected ClusterStatsNodeResponse nodeOperation(ClusterStatsNodeRequest nodeRequest) throws ElasticSearchException {
         NodeInfo nodeInfo = nodeService.info(false, true, false, true, false, false, true, false, true);
-        NodeStats nodeStats = nodeService.stats(CommonStatsFlags.NONE, false, true, true, false, false, true, false, false);
+NodeStats nodeStats = nodeService.stats(CommonStatsFlags.NONE, false, true, true, false, false, true, false, false, false);
         List<ShardStats> shardsStats = new ArrayList<ShardStats>();
         for (String index : indicesService.indices()) {
             IndexService indexService = indicesService.indexService(index);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -145,9 +144,9 @@ public class RandomTests extends ElasticsearchIntegrationTest {
         // These high numbers of docs and terms are important to trigger page recycling
         final int numDocs = scaledRandomIntBetween(10000, 20000);
         final int maxNumTerms = randomIntBetween(10, 100000);
-cluster().wipeIndices("idx");
+
         final IntOpenHashSet valuesSet = new IntOpenHashSet();
-        wipeIndices("idx");
+cluster().wipeIndices("idx");
         prepareCreate("idx").addMapping("type", jsonBuilder().startObject()
               .startObject("type")
                 .startObject("properties")

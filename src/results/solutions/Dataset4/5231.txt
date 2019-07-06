@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -151,9 +150,9 @@ public class FetchPhase implements SearchPhase {
         }
         return doc;
     }
-if (context.fieldNames() == null) {
+
     private FieldSelector buildFieldSelectors(SearchContext context) {
-        if (context.fieldNames() == null || context.fieldNames().length == 0) {
+if (context.fieldNames() == null) {
             return new UidAndSourceFieldSelector();
         }
 

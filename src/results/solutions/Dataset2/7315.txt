@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -121,9 +120,9 @@ public class DetachedWindow extends Window {
         final IWorkbenchContextSupport contextSupport = getWorkbenchPage()
                 .getWorkbenchWindow().getWorkbench().getContextSupport();
         contextSupport.registerShell(shell,
-WorkbenchHelp.setHelp(shell, IWorkbenchHelpContextIds.DETACHED_WINDOW);
+                IWorkbenchContextSupport.TYPE_WINDOW);
 
-        WorkbenchHelp.setHelp(shell, IHelpContextIds.DETACHED_WINDOW);
+WorkbenchHelp.setHelp(shell, IWorkbenchHelpContextIds.DETACHED_WINDOW);
     }
 
     /**

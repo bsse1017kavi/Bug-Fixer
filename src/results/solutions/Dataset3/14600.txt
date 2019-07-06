@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -158,9 +157,9 @@ public class ComplexPortletApplicationContext extends StaticPortletApplicationCo
 		pvs = new MutablePropertyValues();
 		pvs.add("order", "1");
 		pvs.add("exceptionMappings",
-"NoHandlerFoundException=failed-unavailable");
+		    "java.lang.IllegalAccessException=failed-illegalaccess\n" +
 		    "PortletRequestBindingException=failed-binding\n" +
-		    "UnavailableException=failed-unavailable");
+"NoHandlerFoundException=failed-unavailable");
 		pvs.add("defaultErrorView", "failed-default-1");
 		registerSingleton("exceptionResolver", SimpleMappingExceptionResolver.class, pvs);
 

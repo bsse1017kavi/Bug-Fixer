@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -487,9 +486,9 @@ public final class ImportRewrite {
 	 * to use the default context only using the available imports.
 	 * @return returns a type to which the type binding can be assigned to. The returned type contains is unqualified
 	 * when an import could be added or was already known. It is fully qualified, if an import conflict prevented the import.
-if (binding.isPrimitive() || binding.isTypeVariable() || binding.isRecovered()) {
+	 */
 	public String addImport(ITypeBinding binding, ImportRewriteContext context) {
-		if (binding.isPrimitive() || binding.isTypeVariable()) {
+if (binding.isPrimitive() || binding.isTypeVariable() || binding.isRecovered()) {
 			return binding.getName();
 		}
 		

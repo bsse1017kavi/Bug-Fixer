@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -674,9 +673,9 @@ public final class IndexSchema {
       SolrConfig.severeErrors.add( e );
       throw e;
     } catch(Exception e) {
-throw new SolrException( SolrException.ErrorCode.SERVER_ERROR,"Schema Parsing Failed: " + e.getMessage(), e,false);
+      // unexpected exception...
       SolrConfig.severeErrors.add( e );
-      throw new SolrException( SolrException.ErrorCode.SERVER_ERROR,"Schema Parsing Failed",e,false);
+throw new SolrException( SolrException.ErrorCode.SERVER_ERROR,"Schema Parsing Failed: " + e.getMessage(), e,false);
     }
 
     // create the field analyzers

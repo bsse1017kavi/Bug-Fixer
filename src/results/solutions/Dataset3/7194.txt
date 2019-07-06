@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class AfterResourceCreationDeploymentTestCase extends ArquillianResourceM
     private URL url;
 
     static class AfterResourceCreationDeploymentTestCaseSetup extends AbstractMgmtServerSetupTask {
-public void tearDown(final ManagementClient managementClient, final String containerId) throws Exception{
+
         @Override
-        public void tearDown(final ManagementClient managementClient) throws Exception{
+public void tearDown(final ManagementClient managementClient, final String containerId) throws Exception{
             final ModelNode address = new ModelNode();
             address.add("subsystem", "resource-adapters");
             address.add("resource-adapter", deploymentName);

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -1149,9 +1148,9 @@ public class HTTPSampler extends AbstractSampler
             {
                 if (imageSampler == null)
                 {
-res = imageSampler.downloadEmbeddedResources(res, this);
+                    imageSampler = new HTTPSamplerFull();
                 }
-                res = imageSampler.parseForImages(res, this);
+res = imageSampler.downloadEmbeddedResources(res, this);
             }
             return res;
         }

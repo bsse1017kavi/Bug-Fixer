@@ -1,4 +1,3 @@
-
 package org.wildfly.extension.undertow.security.jaspi;
 
 import io.undertow.security.api.AuthenticationMechanism;
@@ -65,9 +64,9 @@ public class JASPIAuthenticationMechanism implements AuthenticationMechanism {
             // if the there is no account at this time, we check if the JASPI authentication have populated the callbackhandler
             // with user information.
             if (account == null) {
-securityContext.authenticationComplete(account, MECHANISM_NAME, false);
+                ROOT_LOGGER.debug("Creating account with credentials from JASPI callbackhandler.");
                 account = createAccount(cbh);
-                securityContext.authenticationComplete(account, MECHANISM_NAME);
+securityContext.authenticationComplete(account, MECHANISM_NAME, false);
             } else {
                 ROOT_LOGGER.debug("Account already setup from JASPI modules.");
             }

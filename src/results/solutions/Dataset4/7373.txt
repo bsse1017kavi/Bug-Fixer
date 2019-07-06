@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -120,9 +119,9 @@ public class InternalDateHistogram extends InternalHistogram<InternalDateHistogr
             return super.getBucketByKey(time);
         } catch (NumberFormatException nfe) {
             // it's not a number, so lets try to parse it as a date using the formatter.
-bucketsMap = new ObjectObjectOpenHashMap<>();
+        }
         if (bucketsMap == null) {
-            bucketsMap = new ObjectObjectOpenHashMap<String, InternalDateHistogram.Bucket>();
+bucketsMap = new ObjectObjectOpenHashMap<>();
             for (InternalDateHistogram.Bucket bucket : buckets) {
                 bucketsMap.put(bucket.getKey(), bucket);
             }

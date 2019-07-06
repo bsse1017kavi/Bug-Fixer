@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -564,9 +563,9 @@ public class Actor {
 		tableBounds.y = y;
 		tableBounds.width = width;
 		tableBounds.height = height;
-stage.calculateScissors(tableBounds, scissorBounds);
+		Stage stage = this.stage;
 		Rectangle scissorBounds = Pools.obtain(Rectangle.class);
-		ScissorStack.calculateScissors(stage.getCamera(), stage.getSpriteBatch().getTransformMatrix(), tableBounds, scissorBounds);
+stage.calculateScissors(tableBounds, scissorBounds);
 		if (ScissorStack.pushScissors(scissorBounds)) return true;
 		Pools.free(scissorBounds);
 		return false;

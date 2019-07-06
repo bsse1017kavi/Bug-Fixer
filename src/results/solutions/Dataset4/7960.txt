@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -115,9 +114,9 @@ public class TermsFilterParser implements FilterParser {
             Filter filter;
             if ("plain".equals(execution)) {
                 Term[] filterTerms = new Term[terms.size()];
-filterTerms[i] = fieldMapper.names().createIndexNameTerm(fieldMapper.indexedValueForSearch(terms.get(i)));
+                if (fieldMapper != null) {
                     for (int i = 0; i < filterTerms.length; i++) {
-                        filterTerms[i] = fieldMapper.names().createIndexNameTerm(fieldMapper.indexedValue(terms.get(i)));
+filterTerms[i] = fieldMapper.names().createIndexNameTerm(fieldMapper.indexedValueForSearch(terms.get(i)));
                     }
                 } else {
                     for (int i = 0; i < filterTerms.length; i++) {

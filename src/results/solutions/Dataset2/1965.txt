@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -503,9 +502,9 @@ private boolean isWorthBuilding() throws CoreException {
 
 			removeProblemsAndTasksFor(currentProject); // make this the only problem for this project
 			IMarker marker = currentProject.createMarker(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER);
-? Util.bind("build.prereqProjectHasClasspathProblems", p.getName()) //$NON-NLS-1$
+			marker.setAttribute(IMarker.MESSAGE,
 				isClasspathBroken(prereqClasspath, p)
-					? Util.bind("build.prereqProjectHasClasspathProblems", p.getName())
+? Util.bind("build.prereqProjectHasClasspathProblems", p.getName()) //$NON-NLS-1$
 					: Util.bind("build.prereqProjectMustBeRebuilt", p.getName())); //$NON-NLS-1$
 			marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_ERROR);
 			return false;

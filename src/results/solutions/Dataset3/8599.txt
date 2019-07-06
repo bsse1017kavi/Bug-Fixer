@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class TransactionResourceDefinition extends SimpleResourceDefinition {
             new SimpleAttributeDefinitionBuilder(ModelKeys.LOCKING, ModelType.STRING, true)
                     .setXmlName(Attribute.LOCKING.getLocalName())
                     .setAllowExpression(true)
-.setDefaultValue(new ModelNode().set(LockingMode.PESSIMISTIC.name()))
+                    .setValidator(new EnumValidator<LockingMode>(LockingMode.class, true, false))
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
-                    .setDefaultValue(new ModelNode().set(LockingMode.OPTIMISTIC.name()))
+.setDefaultValue(new ModelNode().set(LockingMode.PESSIMISTIC.name()))
                     .build();
     static final SimpleAttributeDefinition MODE =
             new SimpleAttributeDefinitionBuilder(ModelKeys.MODE, ModelType.STRING, true)

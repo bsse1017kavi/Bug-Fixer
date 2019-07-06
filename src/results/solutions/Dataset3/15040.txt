@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class CmpEntityBeanHomeFinderInterceptorFactory extends EntityBeanHomeFin
             cmpComponent.synchronizeEntitiesWithinTransaction(entityContext.getTransaction());
         }
 
-return localHome ? cmpComponent.getEJBLocalObject(primaryKey) : cmpComponent.getEJBObject(primaryKey);
+        final JDBCQueryCommand.EntityProxyFactory factory = new JDBCQueryCommand.EntityProxyFactory() {
             public Object getEntityObject(final Object primaryKey) {
-                return localHome ? cmpComponent.getEjbLocalObject(primaryKey) : cmpComponent.getEJBObject(primaryKey);
+return localHome ? cmpComponent.getEJBLocalObject(primaryKey) : cmpComponent.getEJBObject(primaryKey);
             }
         };
 

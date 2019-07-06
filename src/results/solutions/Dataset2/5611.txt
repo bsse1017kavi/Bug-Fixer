@@ -1,4 +1,3 @@
-
 /*
  * Created on 25.03.2003
  *
@@ -54,9 +53,9 @@ public class SendLaterAction extends FrameAction {
 	 */
 	public void actionPerformed(ActionEvent evt) {
 		final ComposerController composerController =
-if (composerController.checkState())
+			(ComposerController) getFrameController();
 
-		if (!composerController.checkState())
+if (composerController.checkState())
 			return;
 
 		AccountItem item =

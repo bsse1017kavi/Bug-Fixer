@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -22,9 +21,9 @@ import org.springframework.core.convert.support.GenericConverter;
 
 final class MappingConversionService extends DefaultConversionService {
 
-return new MappingConverter(new SpelMapper());
+	@Override
 	protected GenericConverter getDefaultConverter(TypeDescriptor sourceType, TypeDescriptor targetType) {
-		return new MapperConverter(new SpelMapper());
+return new MappingConverter(new SpelMapper());
 	}
 
 }

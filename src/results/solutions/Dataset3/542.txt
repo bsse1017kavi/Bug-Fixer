@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -166,9 +165,9 @@ public class ServletInvocableHandlerMethod extends InvocableHandlerMethod {
 	/**
 	 * Return a ServletInvocableHandlerMethod that will process the value returned
 	 * from an async operation essentially either applying return value handling or
-ServletInvocableHandlerMethod wrapConcurrentResult(final Object result) {
+	 * raising an exception if the end result is an Exception.
 	 */
-	ServletInvocableHandlerMethod wrapConcurrentProcessingResult(final Object result) {
+ServletInvocableHandlerMethod wrapConcurrentResult(final Object result) {
 
 		return new CallableHandlerMethod(new Callable<Object>() {
 

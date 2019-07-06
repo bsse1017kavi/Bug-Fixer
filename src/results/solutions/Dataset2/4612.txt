@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -292,9 +291,9 @@ public class WorkbenchLayoutSettingsTransfer extends WorkbenchSettingsTransfer {
 		AbstractPresentationFactory factory = WorkbenchPlugin.getDefault()
 				.getPresentationFactory(currentPresentationFactoryId);
 
-IWorkbenchConstants.DEFAULT_PRESENTATION_ID);
+		if (factory == null)
 			factory = WorkbenchPlugin.getDefault().getPresentationFactory(
-					"org.eclipse.ui.presentations.default"); //$NON-NLS-1$
+IWorkbenchConstants.DEFAULT_PRESENTATION_ID);
 		return factory.getClass().getName();
 
 	}

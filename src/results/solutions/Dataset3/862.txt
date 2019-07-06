@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -147,9 +146,9 @@ public class SimpleApplicationClientTestCase {
     public void testAppClientJBossDescriptor() throws Exception {
         final StatelessEJBLocator<AppClientSingletonRemote> locator = new StatelessEJBLocator(AppClientSingletonRemote.class, APP_NAME, MODULE_NAME, AppClientStateSingleton.class.getSimpleName(), "");
         final AppClientSingletonRemote remote = EJBClient.createProxy(locator);
-final AppClientWrapper wrapper = new AppClientWrapper(archive, " -Dnode0=" + managementClient.getMgmtAddress() + " --ejb-client-properties=" + props, "client-override.jar", "");
+        remote.reset();
         URL props = getClass().getClassLoader().getResource("jboss-ejb-client.properties");
-        final AppClientWrapper wrapper = new AppClientWrapper(archive, "--ejb-client-properties=" + props, "client-override.jar", "");
+final AppClientWrapper wrapper = new AppClientWrapper(archive, " -Dnode0=" + managementClient.getMgmtAddress() + " --ejb-client-properties=" + props, "client-override.jar", "");
         try {
             final String result = remote.awaitAppClientCall();
             assertTrue("App client call failed. App client output: " + wrapper.readAllUnformated(1000), result != null);

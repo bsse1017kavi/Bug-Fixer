@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -38,9 +37,9 @@ import java.util.concurrent.CopyOnWriteArraySet;
 /**
  *
  */
-private Set<CustomSerialMergeScheduler> schedulers = new CopyOnWriteArraySet<>();
+public class SerialMergeSchedulerProvider extends MergeSchedulerProvider {
 
-    private Set<CustomSerialMergeScheduler> schedulers = new CopyOnWriteArraySet<CustomSerialMergeScheduler>();
+private Set<CustomSerialMergeScheduler> schedulers = new CopyOnWriteArraySet<>();
     private final int maxMergeAtOnce;
 
     @Inject

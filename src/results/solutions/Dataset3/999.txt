@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ class JmxSubsystemElement extends AbstractSubsystemElement<JmxSubsystemElement> 
      * @param context the service activation context
      */
     public void activate(final ServiceActivatorContext context) {
-batchBuilder.addService(MBeanServerService.SERVICE_NAME, new MBeanServerService())
+        log.info("Activating the JMX Subsystem");
         final BatchBuilder batchBuilder = context.getBatchBuilder();
-        batchBuilder.addService(MBeanServerService.MBEAN_SERVER_SERVICE_NAME, new MBeanServerService())
+batchBuilder.addService(MBeanServerService.SERVICE_NAME, new MBeanServerService())
             .setInitialMode(ServiceController.Mode.IMMEDIATE);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -54,9 +53,9 @@ public abstract class AbstractBeanFactoryTests extends TestCase {
 		assertTrue("roderick.age was inherited", roderick.getAge() == rod.getAge());
 	}
 
-getBeanFactory().getBean((String) null);
+	public void testGetBeanWithNullArg() {
 		try {
-			getBeanFactory().getBean(null);
+getBeanFactory().getBean((String) null);
 			fail("Can't get null bean");
 		}
 		catch (IllegalArgumentException ex) {

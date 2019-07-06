@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -103,9 +102,9 @@ private void getProblemsForPath(IPath path, Vector vResults) {
 		SourceEntry sEntry = (SourceEntry)e.nextElement();
 		IPath sEntryPath = sEntry.getPath();
 		if (path.isPrefixOf(sEntryPath)) {
-if (extension != null && (extension.toLowerCase().equals("java"/*nonNLS*/) || extension.toLowerCase().equals("class"/*nonNLS*/))) {
+			String extension = sEntryPath.getFileExtension();
 			// test most frequent cases first
-			if (extension != null && (extension.toLowerCase().equals("java") || extension.toLowerCase().equals("class"))) {
+if (extension != null && (extension.toLowerCase().equals("java"/*nonNLS*/) || extension.toLowerCase().equals("class"/*nonNLS*/))) {
 				getProblemsForSourceEntry(sEntry, vResults);
 			} else {
 				if (fState.isZipElement(sEntryPath)) {

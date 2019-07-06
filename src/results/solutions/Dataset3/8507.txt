@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -39,9 +38,9 @@ public class DirectoryFileComparatorTest extends ComparatorAbstractTestCase {
         super.setUp();
         comparator = (AbstractFileComparator)DirectoryFileComparator.DIRECTORY_COMPARATOR;
         reverse = DirectoryFileComparator.DIRECTORY_REVERSE;
-equalFile2 = new File(currentDir, "src/site/xdoc");
+        File currentDir = new File(".");
         equalFile1 = new File(currentDir, "src");
-        equalFile2 = new File(currentDir, "xdocs");
+equalFile2 = new File(currentDir, "src/site/xdoc");
         lessFile   = new File(currentDir, "src");
         moreFile   = new File(currentDir, "pom.xml");
     }

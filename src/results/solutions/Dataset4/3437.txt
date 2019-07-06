@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -109,9 +108,9 @@ public class ZenDiscovery extends AbstractLifecycleComponent<Discovery> implemen
         this.threadPool = threadPool;
         this.clusterService = clusterService;
         this.transportService = transportService;
-this.initialPingTimeout = componentSettings.getAsTime("ping_timeout", componentSettings.getAsTime("initial_ping_timeout", timeValueSeconds(3)));
+        this.pingService = pingService;
 
-        this.initialPingTimeout = componentSettings.getAsTime("initial_ping_timeout", timeValueSeconds(3));
+this.initialPingTimeout = componentSettings.getAsTime("ping_timeout", componentSettings.getAsTime("initial_ping_timeout", timeValueSeconds(3)));
         this.sendLeaveRequest = componentSettings.getAsBoolean("send_leave_request", true);
 
         logger.debug("using initial_ping_timeout [{}]", initialPingTimeout);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -138,9 +137,9 @@ public class RangeScriptFacetBuilder extends AbstractFacetBuilder {
             throw new SearchSourceBuilderException("at least one range must be defined for range facet [" + name + "]");
         }
 
-builder.startObject(RangeFacet.TYPE);
+        builder.startObject(name);
 
-        builder.startObject(RangeFacetCollectorParser.NAME);
+builder.startObject(RangeFacet.TYPE);
         builder.field("key_script", keyScript);
         builder.field("value_script", valueScript);
         if (lang != null) {

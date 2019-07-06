@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -82,9 +81,9 @@ final class HandlerRemove extends AbstractRemoveStepHandler {
                     final UnifiedHandlerMetaData handler = getHandler(handlerChain, handlerName);
                     if (handler == null) {
                         throw MESSAGES.missingHandler(configName, handlerChainType, handlerChainId, handlerName);
-context.reloadRequired();
+                    }
                     handlerChain.getHandlers().remove(handler);
-                    context.restartRequired();
+context.reloadRequired();
                     return;
                 }
             }

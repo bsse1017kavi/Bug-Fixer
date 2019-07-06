@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -299,9 +298,9 @@ addMessage(Message in) {
 	Name queryName = in.getQuestion().getName();
 	short queryType = in.getQuestion().getType();
 	short queryClass = in.getQuestion().getDClass();
-int ancount = in.getHeader().getCount(Section.ANSWER);
+	byte cred;
 	short rcode = in.getHeader().getRcode();
-	short ancount = in.getHeader().getCount(Section.ANSWER);
+int ancount = in.getHeader().getCount(Section.ANSWER);
 
 	if (rcode != Rcode.NOERROR && rcode != Rcode.NXDOMAIN)
 		return;

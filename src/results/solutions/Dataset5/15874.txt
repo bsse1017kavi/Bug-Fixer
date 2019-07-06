@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -228,9 +227,9 @@ public class WLJspc extends MatchingTask
 
             System.out.println( "arg = " + arg );
 
-helperTask.addClasspath( compileClasspath );
+            //helperTask.clearArgs();
             helperTask.createArg().setValue( arg );
-            helperTask.setClasspath( compileClasspath );
+helperTask.addClasspath( compileClasspath );
             if( helperTask.executeJava() != 0 )
             {
                 getLogger().warn( files[ i ] + " failed to compile" );

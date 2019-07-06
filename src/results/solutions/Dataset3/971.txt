@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class GenericTransportDefinition extends AbstractTransportDefinition {
     public static final SimpleAttributeDefinition SOCKET_BINDING = create(CommonAttributes.SOCKET_BINDING, STRING)
             .setAllowNull(true)
             .setRestartAllServices()
-static AttributeDefinition[] ATTRIBUTES = { CommonAttributes.FACTORY_CLASS, SOCKET_BINDING };
+            .build();
 
-    static AttributeDefinition[] ATTRIBUTES = new AttributeDefinition[] { CommonAttributes.FACTORY_CLASS, SOCKET_BINDING };
+static AttributeDefinition[] ATTRIBUTES = { CommonAttributes.FACTORY_CLASS, SOCKET_BINDING };
 
     public static SimpleResourceDefinition createAcceptorDefinition(final boolean registerRuntimeOnly) {
         return new GenericTransportDefinition(registerRuntimeOnly, true, CommonAttributes.ACCEPTOR);

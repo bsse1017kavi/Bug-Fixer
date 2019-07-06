@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class JcaArchiveValidationDefinition extends SimpleResourceDefinition {
     @Override
     public void registerAttributes(ManagementResourceRegistration resourceRegistration) {
         super.registerAttributes(resourceRegistration);
-resourceRegistration.registerReadWriteAttribute(parameter.getAttribute(), null, JcaArchiveValidationWriteHandler.INSTANCE);
+
         for (final ArchiveValidationParameters parameter : ArchiveValidationParameters.values()) {
-            resourceRegistration.registerReadWriteAttribute(parameter.getAttribute(), null, JcaAttributeWriteHandler.INSTANCE);
+resourceRegistration.registerReadWriteAttribute(parameter.getAttribute(), null, JcaArchiveValidationWriteHandler.INSTANCE);
         }
     }
 

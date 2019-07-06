@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -64,9 +63,9 @@ public class ExecuteJava
             {
                 target = Class.forName( classname );
             }
-loader = new AntClassLoader( Project.class.getClassLoader(), project, classpath, false );
+            else
             {
-                loader = new AntClassLoader( project.getCoreLoader(), project, classpath, false );
+loader = new AntClassLoader( Project.class.getClassLoader(), project, classpath, false );
                 loader.setIsolated( true );
                 loader.setThreadContextLoader();
                 target = loader.forceLoadClass( classname );

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -94,9 +93,9 @@ public class TestSpec10_1_27 extends SQLListenerTestCase {
         if (inMemory) 
             setCandidate(q, Compny1.class);
         rs = q.getResultList();
-assertEquals(d, me.getKey());
+        Map.Entry me = (Map.Entry) rs.get(0);
 
-        assertTrue(d.equals(me.getKey()));
+assertEquals(d, me.getKey());
 
         query = "select KEY(e) from Compny2 c, " +
             " in (c.orgs) e order by c.id";

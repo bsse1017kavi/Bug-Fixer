@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -88,9 +87,9 @@ public class TestSpans extends LuceneTestCase {
   public SpanTermQuery makeSpanTermQuery(String text) {
     return new SpanTermQuery(new Term(field, text));
   }
-CheckHits.checkHits(random, query, field, searcher, results);
+  
   private void checkHits(Query query, int[] results) throws IOException {
-    CheckHits.checkHits(query, field, searcher, results);
+CheckHits.checkHits(random, query, field, searcher, results);
   }
   
   private void orderedSlopTest3SQ(

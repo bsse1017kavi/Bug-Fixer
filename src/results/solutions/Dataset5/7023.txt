@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -445,9 +444,9 @@ public abstract class Session implements IClusterable, IEventSink
 			RequestCycle.get().getListeners().add(new AbstractRequestCycleListener()
 			{
 				@Override
-detach();
+				public void onDetach(final RequestCycle cycle)
 				{
-					destroy();
+detach();
 				}
 			});
 		}

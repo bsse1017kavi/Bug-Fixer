@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -884,9 +883,9 @@ public class JBossContextConfig extends ContextConfig {
             metaData.resolveRunAs();
         }
 
-if (! authenValves.isEmpty()) {
+        // Configure configure global authenticators.
         if (ok) {
-            if (authenValves != null) {
+if (! authenValves.isEmpty()) {
                 Map<String, Valve> authenvalves = new HashMap<String, Valve>();
                 for (String name : authenValves.keySet()) {
                     // Instantiate valve and add properties.

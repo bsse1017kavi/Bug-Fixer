@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public final class ThreadFactoryThreadNamePatternUpdate extends AbstractThreadsS
         }
         return new ThreadFactoryThreadNamePatternUpdate(name, threadFactory.getGroupName());
     }
-final ServiceController<?> service = updateContext.getServiceRegistry().getService(ThreadsServices.threadFactoryName(name));
+
     protected <P> void applyUpdate(final UpdateContext updateContext, final UpdateResultHandler<? super Void, P> handler, final P param) {
-        final ServiceController<?> service = updateContext.getServiceContainer().getService(ThreadsServices.threadFactoryName(name));
+final ServiceController<?> service = updateContext.getServiceRegistry().getService(ThreadsServices.threadFactoryName(name));
         if (service == null) {
             handler.handleFailure(notConfigured(), param);
         } else {

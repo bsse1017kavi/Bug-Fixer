@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -947,9 +946,9 @@ public abstract class ClassUtils {
 		}
 		List<Class> interfaces = new ArrayList<Class>();
 		while (clazz != null) {
-if (!interfaces.contains(ifc) &&
+			Class[] ifcs = clazz.getInterfaces();
 			for (Class ifc : ifcs) {
-				if (!interfaces.contains(ifc) && Modifier.isPublic(ifc.getModifiers()) &&
+if (!interfaces.contains(ifc) &&
 						(classLoader == null || isVisible(ifc, classLoader))) {
 					interfaces.add(ifc);
 				}

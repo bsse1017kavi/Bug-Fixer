@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -61,9 +60,9 @@ Vector workerthreads;
 static String defaultResolver = "localhost";
 
 public
-hostname = FindServer.find1();
+Resolver(String hostname) throws UnknownHostException {
 	if (hostname == null) {
-		hostname = FindResolver.find1();
+hostname = FindServer.find1();
 		if (hostname == null)
 			hostname = defaultResolver;
 	}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -328,9 +327,9 @@ public class SelectImpl
         Connection conn = null;
         PreparedStatement stmnt = null;
         ResultSet rs = null;
-conn = store.getNewConnection();
+        try {
             SQLBuffer sql = toSelectCount();
-            conn = store.getConnection();
+conn = store.getNewConnection();
             stmnt = prepareStatement(conn, sql, null, 
                 ResultSet.TYPE_FORWARD_ONLY, 
                 ResultSet.CONCUR_READ_ONLY, false);

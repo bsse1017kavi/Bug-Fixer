@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -95,9 +94,9 @@ public class AnimationController extends BaseAnimationController {
 						loopCount--;
 					if (loopCount != 0 && listener != null)
 						listener.onLoop(this);
-time = (diff < 0f) ? duration : 0f;
+					if (loopCount == 0) {
 						final float result = ((loops - 1) - i) * duration + (diff < 0f ? duration - time : time); 
-						time = (diff < 0f) ? 0f : duration;
+time = (diff < 0f) ? duration : 0f;
 						if (listener != null)
 							listener.onEnd(this);
 						return result;

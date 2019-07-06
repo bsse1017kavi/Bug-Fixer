@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class ConstantScoreQueryParser extends AbstractIndexComponent implements 
                     filter = parseContext.parseInnerFilter();
                 }
             } else if (token.isValue()) {
-} else if ("_cache".equals(currentFieldName)) {
+                if ("boost".equals(currentFieldName)) {
                     boost = parser.floatValue();
-                } else if ("cache".equals(currentFieldName)) {
+} else if ("_cache".equals(currentFieldName)) {
                     cache = parser.booleanValue();
                 }
             }

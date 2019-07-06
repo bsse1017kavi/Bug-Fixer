@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -588,9 +587,9 @@ withName(Name name) {
  */
 Record
 withDClass(int dclass, int ttl) {
-rec.ttl = ttl;
+	Record rec = cloneRecord();
 	rec.dclass = dclass;
-	rec.ttl = 0;
+rec.ttl = ttl;
 	return rec;
 }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -134,9 +133,9 @@ public class EsExecutorsTests extends ElasticsearchTestCase {
                 @Override
                 public void run() {
                     executed3.set(true);
-fail("should be rejected...");
+                }
             });
-            assert false : "should be rejected...";
+fail("should be rejected...");
         } catch (EsRejectedExecutionException e) {
             // all is well
         }

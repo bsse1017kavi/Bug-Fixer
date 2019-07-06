@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -359,9 +358,9 @@ public class Ejb3SubsystemUnitTestCase extends AbstractSubsystemBaseTest {
             // them at runtime, the bogus server code will add them anyway
             modelNode.get("cluster-passivation-store", "infinispan").remove("name");
             modelNode.get("strict-max-bean-instance-pool", "slsb-strict-max-pool").remove("name");
-modelNode.get("cache", "distributable").remove("name");
+            modelNode.get("strict-max-bean-instance-pool", "mdb-strict-max-pool").remove("name");
             modelNode.get("cache", "simple").remove("name");
-            modelNode.get("cache", "clustered").remove("name");
+modelNode.get("cache", "distributable").remove("name");
             return modelNode;
         }
     };

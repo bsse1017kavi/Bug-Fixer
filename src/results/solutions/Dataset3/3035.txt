@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ class ModulePathFactory {
 
     static File[] resolveModulePath(final File[] modulePath) {
         final String jbossHome = System.getProperty("jboss.home", System.getenv("JBOSS_HOME"));
-return load(root.getAbsoluteFile(), modulePath);
+        final File root = jbossHome == null ? new File(".") : new File(jbossHome); // TODO
         try {
-            return load(root, modulePath);
+return load(root.getAbsoluteFile(), modulePath);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

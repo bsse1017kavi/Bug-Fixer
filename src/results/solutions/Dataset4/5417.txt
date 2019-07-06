@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -135,9 +134,9 @@ public class RestTestSuiteParseContext {
         }
         if (token == XContentParser.Token.START_OBJECT) {
             token = parser.nextToken();
-throw new RestTestParseException("malformed test section: field name expected but found " + token);
+        }
         if (token != XContentParser.Token.FIELD_NAME) {
-            throw new RestTestParseException("malformed test section: field suiteName expected but found " + token);
+throw new RestTestParseException("malformed test section: field name expected but found " + token);
         }
     }
 

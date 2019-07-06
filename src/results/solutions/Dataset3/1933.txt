@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -343,9 +342,9 @@ public class ParseAndMarshalModelsTestCase {
 
         final ModelNode model = new ModelNode();
         final ModelController controller = createController(model, new Setup() {
-ServerControllerModelUtil.initOperations(rootRegistration, null, persister, null, null, null, null, false);
+            public void setup(Resource resource, ManagementResourceRegistration rootRegistration) {
                 ServerControllerModelUtil.updateCoreModel(model);
-                ServerControllerModelUtil.initOperations(rootRegistration, null, persister, null, null, null, false);
+ServerControllerModelUtil.initOperations(rootRegistration, null, persister, null, null, null, null, false);
             }
         });
 

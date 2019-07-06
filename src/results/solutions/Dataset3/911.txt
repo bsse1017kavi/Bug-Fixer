@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -145,9 +144,9 @@ public class AbstractSockJsServiceTests extends AbstractHttpRequestTests {
 		assertEquals("true", this.servletResponse.getHeader("Access-Control-Allow-Credentials"));
 		assertEquals("no-store, no-cache, must-revalidate, max-age=0", this.servletResponse.getHeader("Cache-Control"));
 
-assertEquals(",\"origins\":[\"*:*\"],\"cookie_needed\":false,\"websocket\":true}",
+		String body = this.servletResponse.getContentAsString();
 		assertEquals("{\"entropy\"", body.substring(0, body.indexOf(':')));
-		assertEquals(",\"origins\":[\"*:*\"],\"cookie_needed\":true,\"websocket\":true}",
+assertEquals(",\"origins\":[\"*:*\"],\"cookie_needed\":false,\"websocket\":true}",
 				body.substring(body.indexOf(',')));
 
 		this.service.setDummySessionCookieEnabled(false);

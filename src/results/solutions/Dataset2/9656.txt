@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -71,9 +70,9 @@ public FlowInfo analyseAssignment(BlockScope currentScope, FlowContext flowConte
 						currentScope.problemReporter().duplicateInitializationOfBlankFinalField(fieldBinding, this);
 					}
 					flowInfo.markAsDefinitelyAssigned(fieldBinding);
-currentScope.problemReporter().cannotAssignToFinalField(fieldBinding, this, false);
+					flowContext.recordSettingFinal(fieldBinding, this);						
 				} else {
-					currentScope.problemReporter().cannotAssignToFinalField(fieldBinding, this);
+currentScope.problemReporter().cannotAssignToFinalField(fieldBinding, this, false);
 				}
 			}
 			break;

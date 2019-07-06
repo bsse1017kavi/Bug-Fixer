@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -439,9 +438,9 @@ char _findMnemonic (String string) {
  * or null if none. 
  */
 Label getAssociatedLabel () {
-if (siblings [i] == this) {
+	Control[] siblings = getParent ().getChildren ();
 	for (int i = 0; i < siblings.length; i++) {
-		if (siblings [i] == CCombo.this) {
+if (siblings [i] == this) {
 			if (i > 0 && siblings [i-1] instanceof Label) {
 				return (Label) siblings [i-1];
 			}

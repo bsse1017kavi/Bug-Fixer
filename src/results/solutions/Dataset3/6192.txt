@@ -1,4 +1,3 @@
-
 package org.jboss.as.cli.handlers.jca;
 
 import java.util.Collections;
@@ -73,9 +72,9 @@ public class NoArgDataSourceOperationHandler extends BatchModeCommandHandler {
         };
         this.addRequiredPath("/subsystem=datasources");
     }
-public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws CommandFormatException {
+
     @Override
-    public ModelNode buildRequest(CommandContext ctx) throws CommandFormatException {
+public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws CommandFormatException {
 
         DefaultOperationRequestBuilder builder = new DefaultOperationRequestBuilder();
         if(ctx.isDomainMode()) {

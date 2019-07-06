@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1279,9 +1278,9 @@ int XExposure (int w, int client_data, int call_data, int continue_to_dispatch) 
 		gc.setFont (getFont ());
 		if ((style & SWT.NO_BACKGROUND) != 0) {
 			/* This code is intentionaly commented because it is too slow to copy bits from the screen */
-drawBackground (gc, 0, 0, width, height);
+//			paintGC.copyArea(image, 0, 0);
 		} else {
-			gc.fillRectangle(0, 0, width, height);
+drawBackground (gc, 0, 0, width, height);
 		}
 	}
 	Event event = new Event ();

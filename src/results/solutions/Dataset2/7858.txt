@@ -1,4 +1,3 @@
-
 package org.apache.log4j.jdbc;
 
 import org.apache.log4j.*;
@@ -163,9 +162,9 @@ public class JDBCAppender extends org.apache.log4j.AppenderSkeleton
        throw e;
     }
     stmt.close();
-//System.out.println("Execute: " + sql);
+    closeConnection(con);
 
-    System.out.println("Execute: " + sql);
+//System.out.println("Execute: " + sql);
   }
 
 

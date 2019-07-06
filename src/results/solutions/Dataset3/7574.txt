@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -44,9 +43,9 @@ public class ComplexResourceAdaptersSubsystemTestCase extends AbstractComplexSub
         ModelNode model = getModel("ra.xml", "some.rar");
         if (model == null)
             return;
-ModelNode raCommonModel = model.get("subsystem", "resource-adapters", "resource-adapter", "myRA");
+        // Check model..
         Properties params = ParseUtils.raCommonProperties();
-        ModelNode raCommonModel = model.get("subsystem", "resource-adapters", "resource-adapter", "some.rar");
+ModelNode raCommonModel = model.get("subsystem", "resource-adapters", "resource-adapter", "myRA");
         ParseUtils.checkModelParams(raCommonModel, params);
         Assert.assertEquals(raCommonModel.asString(), "A", raCommonModel.get("config-properties", "Property", "value")
                 .asString());

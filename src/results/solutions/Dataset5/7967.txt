@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -113,9 +112,9 @@ public class StaticImageResource extends ImageResource
 	public IResourceStream getResourceStream()
 	{
 		if (resource == null)
-this.resource = RequestCycle.get().getApplication().getResourceStreamLocator().locate(
+		{
 			// Locate resource
-			this.resource = RequestCycle.get().getApplication().getResourceLocator().locate(
+this.resource = RequestCycle.get().getApplication().getResourceStreamLocator().locate(
 					absolutePath, style, locale, null);
 			
 			// Check that resource was found

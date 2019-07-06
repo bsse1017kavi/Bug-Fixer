@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -46,9 +45,9 @@ public class ArrayInitializer extends Expression {
 
 		// Flatten the values and compute the dimensions, by iterating in depth into nested array initializers
 		int pc = codeStream.position;
-codeStream.newArray(binding);
+		int expressionLength = (expressions == null) ? 0: expressions.length;
 		codeStream.generateInlinedValue(expressionLength);
-		codeStream.newArray(currentScope, binding);
+codeStream.newArray(binding);
 		if (expressions != null) {
 			// binding is an ArrayType, so I can just deal with the dimension
 			int elementsTypeID = binding.dimensions > 1 ? -1 : binding.leafComponentType.id;

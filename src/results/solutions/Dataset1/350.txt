@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs;
 
 /*
@@ -145,8 +144,8 @@ public abstract class PostingsConsumer {
         }
         this.finishDoc();
         df++;
-return new TermStats(df, indexOptions == IndexOptions.DOCS_ONLY ? -1 : totTF);
+      }
     }
-    return new TermStats(df, totTF);
+return new TermStats(df, indexOptions == IndexOptions.DOCS_ONLY ? -1 : totTF);
   }
 }

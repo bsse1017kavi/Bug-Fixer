@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -84,9 +83,9 @@ public abstract class IntArrayAtomicFieldData implements AtomicNumericFieldData 
             return new HashedBytesValues.StringBased(getStringValues());
         }
 
-return new StringValues.IntBased(getIntValues());
+        @Override
         public StringValues getStringValues() {
-            return new StringValues.LongBased(getLongValues());
+return new StringValues.IntBased(getIntValues());
         }
 
         @Override

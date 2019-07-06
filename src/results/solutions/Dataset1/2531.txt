@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /* ====================================================================
@@ -87,9 +86,9 @@ final class SegmentTermEnum extends TermEnum implements Cloneable {
       clone = (SegmentTermEnum)super.clone();
     } catch (CloneNotSupportedException e) {}
 
-if (term != null) clone.growBuffer(term.text.length());
+    clone.input = (InputStream)input.clone();
     clone.termInfo = new TermInfo(termInfo);
-    clone.growBuffer(term.text.length());
+if (term != null) clone.growBuffer(term.text.length());
 
     return clone;
   }

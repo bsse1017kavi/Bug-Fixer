@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -282,9 +281,9 @@ public abstract class EmbedValueHandler
     
     public static void getIdColumns(FieldMapping fmd, List cols) {
         Column[] pkCols =  ((ValueMappingImpl)fmd.getValue()).getColumns();
-newCol.copy(pkCols[j]);
+        for (int j = 0; j < pkCols.length; j++) {
             Column newCol = new Column();
-            newCol.setName(pkCols[j].getName());
+newCol.copy(pkCols[j]);
             cols.add(newCol);
         }
     }

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -35,9 +34,9 @@ class NamedValueAttributeDefinition extends SimpleAttributeDefinition {
         super(name, defaultValue, type, allowNull);
         this.attribute = attribute;
     }
-public void marshallAsElement(ModelNode resourceModel, final boolean marshalDefault, XMLStreamWriter writer)
+
     @Override
-    public void marshallAsElement(ModelNode resourceModel, XMLStreamWriter writer)
+public void marshallAsElement(ModelNode resourceModel, final boolean marshalDefault, XMLStreamWriter writer)
             throws XMLStreamException {
         if (isMarshallable(resourceModel)) {
             writer.writeEmptyElement(getXmlName());

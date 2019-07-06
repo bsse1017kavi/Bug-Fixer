@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -46,9 +45,9 @@ getMember() {
  * Creates an OPT Record with no data.  This is normally called by
  * SimpleResolver, but can also be called by a server.
  */
-this(Name.root, payloadSize,
+public
 OPTRecord(short payloadSize, byte xrcode, byte version, int flags) {
-	super(Name.root, Type.OPT, payloadSize,
+this(Name.root, payloadSize,
 	      ((int)xrcode << 24) + ((int)version << 16) + flags);
 	options = null;
 }

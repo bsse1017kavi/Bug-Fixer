@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -515,9 +514,9 @@ public ReferenceBinding findSuperTypeWithSameErasure(TypeBinding otherType) {
     }
 	ReferenceBinding[][] interfacesToVisit = new ReferenceBinding[5][];
 	int lastPosition = -1;
-if (itsInterfaces != NoSuperInterfaces && itsInterfaces != null) { // can be null while connecting hierarchies
+	do {
 		ReferenceBinding[] itsInterfaces = currentType.superInterfaces();
-		if (itsInterfaces != NoSuperInterfaces) {
+if (itsInterfaces != NoSuperInterfaces && itsInterfaces != null) { // can be null while connecting hierarchies
 			if (++lastPosition == interfacesToVisit.length)
 				System.arraycopy(interfacesToVisit, 0, interfacesToVisit = new ReferenceBinding[lastPosition * 2][], 0, lastPosition);
 			interfacesToVisit[lastPosition] = itsInterfaces;

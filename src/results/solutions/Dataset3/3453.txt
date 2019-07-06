@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class PooledConnectionFactoryDefinition extends SimpleResourceDefinition 
         arraycopy(common, 0, result, 0, common.length);
         arraycopy(specific, 0, result, common.length, specific.length);
         // replace the reconnect-attempts attribute to use a different default value for pooled CF
-if (attribute.getDefinition() == Common.RECONNECT_ATTEMPTS) {
+        for (int i = 0; i < result.length; i++) {
             ConnectionFactoryAttribute attribute = result[i];
-            if (attribute.getDefinition() == CommonAttributes.RECONNECT_ATTEMPTS) {
+if (attribute.getDefinition() == Common.RECONNECT_ATTEMPTS) {
                 result[i] = ConnectionFactoryAttribute.create(Pooled.RECONNECT_ATTEMPTS, Pooled.RECONNECT_ATTEMPTS_PROP_NAME, true);
             }
         }

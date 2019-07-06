@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -142,9 +141,9 @@ public abstract class PropPanelStateVertex extends PropPanelModelElement {
         if(target instanceof MStateVertex) {
             MStateVertex sv = (MStateVertex) target;
 
-UmlFactory.getFactory().delete(sv);
+            Object newTarget = sv.getContainer();
 
-            sv.remove();
+UmlFactory.getFactory().delete(sv);
 
             if(newTarget != null) {
                 navigateTo(newTarget);

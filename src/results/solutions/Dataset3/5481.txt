@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -31,9 +30,9 @@ import org.jboss.vfs.VirtualFile;
  * Utility to help attach and retrieve a VirtualFile from a deployment context.
  *  
  * @author John E. Bailey
-public static final AttachmentKey<VirtualFile> KEY = new AttachmentKey<VirtualFile>(VirtualFile.class);
+ */
 public class VirtualFileAttachment {
-    public static final AttachmentKey<VirtualFile> KEY = AttachmentKey.create(VirtualFile.class);
+public static final AttachmentKey<VirtualFile> KEY = new AttachmentKey<VirtualFile>(VirtualFile.class);
 
     public static void attachVirtualFile(final DeploymentUnitContext context, final VirtualFile virtualFile) {
         context.putAttachment(KEY, virtualFile);

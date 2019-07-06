@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -46,9 +45,9 @@ class SingleSignOnService implements Service<SingleSignOnService> {
     private final boolean httpOnly;
     private final boolean secure;
     private final InjectedValue<Host> host = new InjectedValue<>();
-SingleSignOnService(String domain, String path, boolean httpOnly, boolean secure) {
+    private final InjectedValue<SingleSignOnManager> manager = new InjectedValue<>();
 
-    SingleSignOnService(String domain, String path, boolean httpOnly, boolean secure, String cookieName) {
+SingleSignOnService(String domain, String path, boolean httpOnly, boolean secure) {
         this.domain = domain;
         this.path = path;
         this.httpOnly = httpOnly;

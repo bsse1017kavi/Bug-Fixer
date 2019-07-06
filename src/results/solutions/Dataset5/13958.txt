@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
@@ -139,9 +138,9 @@ public class ProfilerTest extends TestCase implements VetoStrategy {
 		Item item = ModelFactory.eINSTANCE.createItem();
 		EPackage modelPackage = item.eClass().getEPackage();//ModelFactory.eINSTANCE.getModelPackage();
 		assertNotNull(modelPackage);
-result.getResourceManager().setFileEncoding(FORCED_ENCODING);
+		MetaModel mm = new EmfMetaModel(modelPackage);
 		result.registerMetaModel(mm);
-		result.setFileEncoding(FORCED_ENCODING);
+result.getResourceManager().setFileEncoding(FORCED_ENCODING);
 		return result;
 	}
 

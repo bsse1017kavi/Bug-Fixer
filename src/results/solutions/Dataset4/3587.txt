@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -185,9 +184,9 @@ public class IndexRoutingTable implements Iterable<IndexShardRoutingTable> {
         }
 
         public Builder removeReplica() {
-if (indexShard.replicaShards().isEmpty()) {
+            for (int shardId : shards.keySet()) {
                 IndexShardRoutingTable indexShard = shards.get(shardId);
-                if (indexShard.backupsShards().isEmpty()) {
+if (indexShard.replicaShards().isEmpty()) {
                     // nothing to do here!
                     return this;
                 }

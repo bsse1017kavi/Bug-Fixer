@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -47,9 +46,9 @@ public class TestBoolean2 extends LuceneTestCase {
       Document doc = new Document();
       doc.add(new Field(field, docFields[i], Field.Store.NO, Field.Index.ANALYZED));
       writer.addDocument(doc);
-searcher = new IndexSearcher(directory, true);
+    }
     writer.close();
-    searcher = new IndexSearcher(directory);
+searcher = new IndexSearcher(directory, true);
   }
 
   private String[] docFields = {

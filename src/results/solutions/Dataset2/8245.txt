@@ -1,4 +1,3 @@
-
 // Copyright (c) 2002-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -344,9 +343,9 @@ setSearchPath(String [] domains) throws TextParseException {
  * @param cache The cache to use.
  */
 public void
-this.cache = new Cache(dclass);
+setCache(Cache cache) {
 	if (cache == null) {
-		this.cache = new Cache(dclass, 0);
+this.cache = new Cache(dclass);
 		this.temporary_cache = true;
 	} else {
 		this.cache = cache;

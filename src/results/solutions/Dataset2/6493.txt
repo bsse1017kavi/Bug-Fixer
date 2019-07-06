@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -256,9 +255,9 @@ public class CompilationUnitDeclaration
 		isPropagatingInnerClassEmulation = true;
 		for (int i = 0, max = this.localTypeCount; i < max; i++) {
 				
-if ((localType.scope.referenceType().bits & IsReachable) != 0) {
+			LocalTypeBinding localType = localTypes[i];
 			// only propagate for reachable local types
-			if ((localType.scope.referenceType().bits & IsReachableMASK) != 0) {
+if ((localType.scope.referenceType().bits & IsReachable) != 0) {
 				localType.updateInnerEmulationDependents();
 			}
 		}

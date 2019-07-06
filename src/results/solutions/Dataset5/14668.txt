@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -60,8 +59,8 @@ public class ActionPermissionsTest extends TestCase
 		permissions.authorize(mambo, "eelco");
 		assertEquals(4, permissions.rolesFor(mambo).size());
 		permissions.unauthorize(mambo, "maurice");
-assertEquals(null, permissions.rolesFor(mambo));
+		assertEquals(3, permissions.rolesFor(mambo).size());
 		permissions.authorizeAll(mambo);
-		assertEquals(0, permissions.rolesFor(mambo));
+assertEquals(null, permissions.rolesFor(mambo));
 	}
 }

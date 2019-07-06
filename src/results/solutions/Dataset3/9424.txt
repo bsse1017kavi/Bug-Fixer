@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ class SessionOpenRequestHandler extends EJBIdentifierBasedMessageHandler {
             this.writeNoSuchEJBFailureMessage(channelAssociation, invocationId, appName, moduleName, distinctName, beanName, null);
             return;
         }
-final String failureMessage = EjbMessages.MESSAGES.notStatefulSessionBean(beanName, appName, moduleName, distinctName).getLocalizedMessage();
+        final Component component = ejbDeploymentInformation.getEjbComponent();
         if (!(component instanceof StatefulSessionComponent)) {
-            final String failureMessage = EjbLogger.ROOT_LOGGER.notStatefulSessionBean(beanName, appName, moduleName, distinctName).getLocalizedMessage();
+final String failureMessage = EjbMessages.MESSAGES.notStatefulSessionBean(beanName, appName, moduleName, distinctName).getLocalizedMessage();
             this.writeInvocationFailure(channelAssociation, HEADER_EJB_NOT_STATEFUL, invocationId, failureMessage);
             return;
         }

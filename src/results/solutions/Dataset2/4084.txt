@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -581,9 +580,9 @@ toString() {
 			sb.append(";; " + Section.longString(i) + ":\n");
 		else
 			sb.append(";; " + Section.updString(i) + ":\n");
-sb.append(";; Message size: " + numBytes() + " bytes");
+		sb.append(sectionToString(i) + "\n");
 	}
-	sb.append(";; done (" + numBytes() + " bytes)");
+sb.append(";; Message size: " + numBytes() + " bytes");
 	return sb.toString();
 }
 

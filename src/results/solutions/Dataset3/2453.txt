@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -209,9 +208,9 @@ public class TimedSemaphore {
 
         if (service != null) {
             executorService = service;
-final ScheduledThreadPoolExecutor s = new ScheduledThreadPoolExecutor(
+            ownExecutor = false;
         } else {
-            ScheduledThreadPoolExecutor s = new ScheduledThreadPoolExecutor(
+final ScheduledThreadPoolExecutor s = new ScheduledThreadPoolExecutor(
                     THREAD_POOL_SIZE);
             s.setContinueExistingPeriodicTasksAfterShutdownPolicy(false);
             s.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -311,9 +310,9 @@ public class ServerControllerUnitTestCase {
         }
 
         @Override
-persister, environment, processState, null, null, extensionRegistry, false, MOCK_PATH_MANAGER, null, authorizer));
+        public void start(StartContext context) throws StartException {
             rootResourceDefinition.setDelegate(new ServerRootResourceDefinition(MockRepository.INSTANCE,
-                    persister, environment, processState, null, null, extensionRegistry, false, MOCK_PATH_MANAGER, null));
+persister, environment, processState, null, null, extensionRegistry, false, MOCK_PATH_MANAGER, null, authorizer));
             super.start(context);
         }
     }

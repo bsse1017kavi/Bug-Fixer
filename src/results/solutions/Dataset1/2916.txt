@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -115,9 +114,9 @@ public class HintedHandOffManager
         for (ColumnFamilyStore cfs : table.getColumnFamilyStores())
         {
             byte[] startColumn = ArrayUtils.EMPTY_BYTE_ARRAY;
-QueryFilter filter = new SliceQueryFilter(key, new QueryPath(cfs.getColumnFamilyName()), startColumn, ArrayUtils.EMPTY_BYTE_ARRAY, false, PAGE_SIZE);
+            while (true)
             {
-                QueryFilter filter = new SliceQueryFilter(tableName, new QueryPath(cfs.getColumnFamilyName()), startColumn, ArrayUtils.EMPTY_BYTE_ARRAY, false, PAGE_SIZE);
+QueryFilter filter = new SliceQueryFilter(key, new QueryPath(cfs.getColumnFamilyName()), startColumn, ArrayUtils.EMPTY_BYTE_ARRAY, false, PAGE_SIZE);
                 ColumnFamily cf = cfs.getColumnFamily(filter);
                 if (pagingFinished(cf, startColumn))
                     break;

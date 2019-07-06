@@ -1,4 +1,3 @@
-
 // File: UMLDeploymentDiagram.java
 // Classes: UmlDeploymentDiagram
 // Author: Clemens Eichler (5eichler@informatik.uni-hamburg.de)
@@ -81,9 +80,9 @@ public class UMLDeploymentDiagram extends UMLDiagram {
   public void setNamespace(MNamespace m) {
     super.setNamespace(m);
     DeploymentDiagramGraphModel gm = new DeploymentDiagramGraphModel(); 
-LayerPerspective lay = new LayerPerspectiveMutable(m.getName(), gm);
+    gm.setNamespace(m);
     setGraphModel(gm);
-    LayerPerspective lay = new LayerPerspective(m.getName(), gm);   
+LayerPerspective lay = new LayerPerspectiveMutable(m.getName(), gm);
     setLayer(lay);
     DeploymentDiagramRenderer rend = new DeploymentDiagramRenderer(); // singleton
     lay.setGraphNodeRenderer(rend);

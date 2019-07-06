@@ -1,4 +1,3 @@
-
 /*
  *
  * Derby - Class SURQueryMixTest
@@ -206,9 +205,9 @@ public class SURQueryMixTest extends SURBaseTest
                 double d = r.nextDouble();
                 // p = probability of going into the sample
                 double p = (double) k / (double) n; 
-int keyToReplace = r.nextInt(k);
+                if (d<p) {
                     // Replace a random value from the sample with the new value
-                    int keyToReplace = Math.abs(r.nextInt())%k;                    
+int keyToReplace = r.nextInt(k);
                     sampledKeys.set(keyToReplace, key);
                 }
             }

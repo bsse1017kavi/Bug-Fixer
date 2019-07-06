@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -82,9 +81,9 @@ public class P4Counter extends P4Base
             P4Handler handler =
                 new P4HandlerAdapter()
                 {
-getLogger().debug( "P4Counter retrieved line \"" + line + "\"" );
+                    public void process( String line )
                     {
-                        log( "P4Counter retrieved line \"" + line + "\"", Project.MSG_VERBOSE );
+getLogger().debug( "P4Counter retrieved line \"" + line + "\"" );
                         try
                         {
                             value = Integer.parseInt( line );

@@ -1,4 +1,3 @@
-
 /*
  * $Id: org.eclipse.jdt.ui.prefs 5004 2006-03-17 20:47:08 -0800 (Fri, 17 Mar
  * 2006) eelco12 $ $Revision: 5004 $ $Date: 2006-03-17 20:47:08 -0800 (Fri, 17
@@ -180,9 +179,9 @@ public class WrappedWicketBodyTest extends WicketTestCase
 		 */
 		public TestBorder(MarkupContainer parent, String id)
 		{
-setBorderBodyContainer(bodyParent);
+			super(parent, id);
 			MarkupContainer bodyParent = new WebMarkupContainer(this, "body-parent");
-			newBorderBodyContainer(bodyParent);
+setBorderBodyContainer(bodyParent);
 
 			new Label(this, "borderLabel", "[[TEST]]");
 			new Label(bodyParent, "borderLabel2", "[[TEST-2]]");

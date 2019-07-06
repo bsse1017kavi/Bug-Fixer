@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -129,9 +128,9 @@ public class TransportDeleteMappingAction extends TransportMasterNodeOperationAc
                 ImmutableOpenMap<String, ImmutableOpenMap<String, MappingMetaData>> result = clusterService.state().metaData().findMappings(
                         request.indices(), request.types()
                 );
-Set<String> types = new HashSet<>();
+                // create OrFilter with type filters within to account for different types
                 BoolFilterBuilder filterBuilder = new BoolFilterBuilder();
-                Set<String> types = new HashSet<String>();
+Set<String> types = new HashSet<>();
                 for (ObjectObjectCursor<String, ImmutableOpenMap<String, MappingMetaData>> typesMeta : result) {
                     for (ObjectObjectCursor<String, MappingMetaData> type : typesMeta.value) {
                         filterBuilder.should(new TypeFilterBuilder(type.key));

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -291,9 +290,9 @@ public class DsXmlDeploymentInstallProcessor implements DeploymentUnitProcessor 
                         dataSourceService.getDriverRegistryInjector()).addDependency(NamingService.SERVICE_NAME);
 
         //Register an empty override model regardless of we're enabled or not - the statistics listener will add the relevant childresources
-if (overrideRegistration == null) {
+        if (registration.isAllowsOverride()) {
             ManagementResourceRegistration overrideRegistration = registration.getOverrideModel(managementName);
-            if (overrideRegistration == null || overrideRegistration.isAllowsOverride()) {
+if (overrideRegistration == null) {
                 overrideRegistration = registration.registerOverrideModel(managementName, DataSourcesSubsystemProviders.OVERRIDE_DS_DESC);
             }
             dataSourceServiceBuilder.addListener(new DataSourceStatisticsListener(overrideRegistration, resource, managementName));

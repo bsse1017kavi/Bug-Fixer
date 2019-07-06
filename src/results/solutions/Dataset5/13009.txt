@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -148,9 +147,9 @@ void createHandle (int index) {
 	event.data [0] = OS.GDK_CURRENT_TIME;
 	event.data [1] = OS.SYSTEM_TRAY_REQUEST_DOCK;
 	event.data [2] = id;
-OS.XSendEvent (xDisplay, trayWindow, false, OS.NoEventMask, clientEvent);
+	int /*long*/ clientEvent = OS.g_malloc (XClientMessageEvent.sizeof);
 	OS.memmove (clientEvent, event, XClientMessageEvent.sizeof);
-	OS.XSendEvent (OS.GDK_DISPLAY (), trayWindow, false, OS.NoEventMask, clientEvent);
+OS.XSendEvent (xDisplay, trayWindow, false, OS.NoEventMask, clientEvent);
 	OS.g_free (clientEvent);
 }
 

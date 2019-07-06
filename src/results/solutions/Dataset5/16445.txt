@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -511,9 +510,9 @@ public class Member implements Comparable {
 			acc.add(curr);
 			return true;
 		} else {
-b |= walkUpStatic(acc, (ResolvedTypeX)i.next());
+			boolean b = false;
 			for (Iterator i = curr.getDirectSupertypes(); i.hasNext(); ) {
-				b |= walkUp(acc, (ResolvedTypeX)i.next());
+b |= walkUpStatic(acc, (ResolvedTypeX)i.next());
 			}
 			if (b) acc.add(curr);
 			return b;

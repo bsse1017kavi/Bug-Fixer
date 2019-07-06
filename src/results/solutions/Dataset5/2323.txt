@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -477,9 +476,9 @@ public class HTTPSampler extends AbstractSampler
         }
         if (!pathAndQuery.startsWith("/"))
         {
-if (getPort() == UNSPECIFIED_PORT || getPort() == 80 )
+            pathAndQuery = "/" + pathAndQuery;
         }
-        if (getPort() == UNSPECIFIED_PORT)
+if (getPort() == UNSPECIFIED_PORT || getPort() == 80 )
         {
             return new URL(getProtocol(), getDomain(), pathAndQuery);
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -220,9 +219,9 @@ public class Vector2D implements Vector<Euclidean2D> {
         Vector2D v2 = (Vector2D) v;
         return new Vector2D(x - factor * v2.getX(), y - factor * v2.getY());
     }
-public Vector2D normalize() throws MathArithmeticException {
+
     /** {@inheritDoc} */
-    public Vector2D normalize() {
+public Vector2D normalize() throws MathArithmeticException {
         double s = getNorm();
         if (s == 0) {
             throw new MathArithmeticException(LocalizedFormats.CANNOT_NORMALIZE_A_ZERO_NORM_VECTOR);

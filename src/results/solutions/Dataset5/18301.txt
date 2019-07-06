@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class StandardJMeterEngine implements JMeterEngine, JMeterThreadMonitor, 
 
 	private static final long serialVersionUID = 231L; // Remember to change this when the class changes ...
 	
-private static final long WAIT_TO_DIE = 5 * 1000; // 5 seconds
+	private transient Thread runningThread;
 
-	private static long WAIT_TO_DIE = 5 * 1000; // 5 seconds
+private static final long WAIT_TO_DIE = 5 * 1000; // 5 seconds
 
 	private transient Map allThreads;
 

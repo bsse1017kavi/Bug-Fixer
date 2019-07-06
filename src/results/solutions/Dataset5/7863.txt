@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -650,9 +649,9 @@ public class FilePageStore implements IPageStore
 	{
 		long t1 = System.currentTimeMillis();
 		byte[] bytes = Objects.objectToByteArray(page);
-if (log.isDebugEnabled() && bytes != null)
+		totalSerializationTime += (System.currentTimeMillis() - t1);
 		serialized++;
-		if (log.isDebugEnabled())
+if (log.isDebugEnabled() && bytes != null)
 		{
 			log.debug("serializing page " + key.pageClass + "[" + key.id + "," + key.versionNumber
 					+ "] size: " + bytes.length + " for session " + key.sessionId + " took "

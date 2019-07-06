@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class PredicatedBag<E>
      * @param predicate  the predicate to use for validation, must not be null
      * @return a new predicated Bag
      * @throws IllegalArgumentException if bag or predicate is null
-public static <T> Bag<T> predicatedBag(Bag<T> bag, Predicate<? super T> predicate) {
+     * @throws IllegalArgumentException if the bag contains invalid elements
      */
-    public static <T> Bag<T> decorate(Bag<T> bag, Predicate<? super T> predicate) {
+public static <T> Bag<T> predicatedBag(Bag<T> bag, Predicate<? super T> predicate) {
         return new PredicatedBag<T>(bag, predicate);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public abstract class AbstractConcurrentMapFilterCache extends AbstractIndexComp
     private final Future scheduleFuture;
 
     protected AbstractConcurrentMapFilterCache(Index index, @IndexSettings Settings indexSettings, ThreadPool threadPool) {
-this.readerCleanerSchedule = componentSettings.getAsTime("reader_cleaner_schedule", TimeValue.timeValueMinutes(1));
+        super(index, indexSettings);
 
-        this.readerCleanerSchedule = componentSettings.getAsTime("readerCleanerSchedule", TimeValue.timeValueMinutes(1));
+this.readerCleanerSchedule = componentSettings.getAsTime("reader_cleaner_schedule", TimeValue.timeValueMinutes(1));
 
         logger.debug("Using [" + type() + "] filter cache with readerCleanerSchedule [{}]", readerCleanerSchedule);
 

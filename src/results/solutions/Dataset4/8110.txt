@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class RestActions {
     public static void buildBroadcastShardsHeader(XContentBuilder builder, BroadcastOperationResponse response) throws IOException {
         builder.startObject("_shards");
         builder.field("total", response.getTotalShards());
-if (response.getShardFailures()!=null && response.getShardFailures().length>0) {
+        builder.field("successful", response.getSuccessfulShards());
         builder.field("failed", response.getFailedShards());
-        if (!response.getShardFailures().isEmpty()) {
+if (response.getShardFailures()!=null && response.getShardFailures().length>0) {
             builder.startArray("failures");
             for (ShardOperationFailedException shardFailure : response.getShardFailures()) {
                 builder.startObject();

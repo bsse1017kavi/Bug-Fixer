@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ public class CmpEntityBeanHomeRemoveInterceptorFactory extends EntityBeanHomeRem
     }
 
     protected void afterRemove(final EntityBeanComponentInstance instance) throws RemoveException, RemoteException {
-cmpInstance.getComponent().getStoreManager().removeEntity(cmpInstance.getEjbContext());
+        // Invoke CMP remove
         final CmpEntityBeanComponentInstance cmpInstance = CmpEntityBeanComponentInstance.class.cast(instance);
-        cmpInstance.getComponent().getStoreManager().removeEntity(cmpInstance.getEntityContext());
+cmpInstance.getComponent().getStoreManager().removeEntity(cmpInstance.getEjbContext());
         super.afterRemove(instance);
     }
 }

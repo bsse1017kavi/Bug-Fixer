@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public final class DeploymentReflectionIndex {
             if (index == null) {
                 classes.put(clazz, index = new ClassReflectionIndex<T>(clazz, this));
             }
-throw new RuntimeException("Error getting reflective information for " + clazz + " with ClassLoader " + clazz.getClassLoader(), e);
+            return index;
         } catch (Throwable e) {
-            throw new RuntimeException("Error getting reflective information for " + clazz, e);
+throw new RuntimeException("Error getting reflective information for " + clazz + " with ClassLoader " + clazz.getClassLoader(), e);
         }
     }
 }

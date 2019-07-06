@@ -1,4 +1,3 @@
-
 /**
  * <copyright> 
  *
@@ -117,9 +116,9 @@ public class ExtXptFacade {
 		all.add(rootObject);
 		EObject rootContainer = EcoreUtil.getRootContainer(rootObject);
 		TreeIterator<EObject> iter = rootContainer.eAllContents();
-Issues issuesImpl = new IssuesImpl();
+		while (iter.hasNext())
 			all.add(iter.next());
-		IssuesImpl issuesImpl = new IssuesImpl();
+Issues issuesImpl = new IssuesImpl();
 		IXtendXpandProject extxptProject = Activator.getExtXptModelManager().findProject(project);
 		if (extxptProject != null) {
 			IXtendXpandResource extxptResource = extxptProject.findExtXptResource(checkFile, CheckUtils.FILE_EXTENSION);

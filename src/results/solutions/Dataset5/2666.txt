@@ -1,4 +1,3 @@
-
 /*
  * $Id: DefaultExceptionResponseStrategy.java,v 1.1 2005/11/27 09:20:16 eelco12
  * Exp $ $Revision$ $Date$
@@ -81,9 +80,9 @@ public class DefaultExceptionResponseStrategy implements IExceptionResponseStrat
 
 			throw new RestartResponseAtInterceptPageException(accessDeniedPageClass);
 		}
-Class<? extends Page> internalErrorPageClass = application.getApplicationSettings()
+		else if (settings.getUnexpectedExceptionDisplay() != UnexpectedExceptionDisplay.SHOW_NO_EXCEPTION_PAGE)
 		{
-			Class internalErrorPageClass = application.getApplicationSettings()
+Class<? extends Page> internalErrorPageClass = application.getApplicationSettings()
 					.getInternalErrorPage();
 			Class responseClass = responsePage != null ? responsePage.getClass() : null;
 

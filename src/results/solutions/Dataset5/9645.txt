@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -156,9 +155,9 @@ public class ResourceReference implements Serializable
 	 */
 	public final String getSharedResourceKey()
 	{
-return SharedResources.resourceKey(application, scope, name, locale, style);
+		Application application = Application.get();
 		bind(application);
-		return SharedResources.path(application, scope, name, locale, style);
+return SharedResources.resourceKey(application, scope, name, locale, style);
 	}
 
 	/**

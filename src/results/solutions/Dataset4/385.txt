@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -54,9 +53,9 @@ public class UserListAdapter extends ItemListAdapter<User, UserItemView> {
     public UserListAdapter(final LayoutInflater inflater, final AvatarLoader avatarHelper) {
         this(inflater, null, avatarHelper);
     }
-protected void update(final int position, final UserItemView view, final User user) {
+
     @Override
-    protected void update(final UserItemView view, final User user) {
+protected void update(final int position, final UserItemView view, final User user) {
         avatarHelper.bind(view.avatarView, user);
         view.loginText.setText(user.getLogin());
     }

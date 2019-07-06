@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -134,9 +133,9 @@ public class WarDeploymentProcessor implements DeploymentUnitProcessor {
             throw new DeploymentUnitProcessingException("failed to resolve module for deployment " + deploymentRoot);
         }
         final ClassLoader classLoader = module.getClassLoader();
-.getAttachmentList(org.jboss.as.ee.component.Attachments.WEB_SETUP_ACTIONS);
+        final JBossWebMetaData metaData = warMetaData.getMergedJBossWebMetaData();
         final List<SetupAction> setupActions = deploymentUnit
-                .getAttachmentList(org.jboss.as.ee.component.Attachments.EE_SETUP_ACTIONS);
+.getAttachmentList(org.jboss.as.ee.component.Attachments.WEB_SETUP_ACTIONS);
 
         // Create the context
         final StandardContext webContext = new StandardContext();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -294,9 +293,9 @@ public class IpFieldMapper extends NumberFieldMapper<Long> {
         }
 
         final long value = ipToLong(ipAsString);
-field.setBoost(boost);
+        if (fieldType.indexed() || fieldType.stored()) {
             CustomLongNumericField field = new CustomLongNumericField(this, value, fieldType);
-            field.setBoost(context.fieldBoost(this));
+field.setBoost(boost);
             fields.add(field);
         }
         if (hasDocValues()) {

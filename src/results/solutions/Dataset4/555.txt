@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -798,9 +797,9 @@ public class Actor {
 	/** Draws a rectange for the bounds of this actor if {@link #getDebug()} is true. */
 	protected void drawDebugBounds (ShapeRenderer shapes) {
 		if (!debug) return;
-shapes.rect(x, y, originX, originY, width - 1, height - 1, scaleX, scaleY, rotation);
+		shapes.set(ShapeType.Line);
 		shapes.setColor(stage.getDebugColor());
-		shapes.rect(x, y, originX, originY, width, height, scaleX, scaleY, rotation);
+shapes.rect(x, y, originX, originY, width - 1, height - 1, scaleX, scaleY, rotation);
 	}
 
 	/** If true, {@link #drawDebug(ShapeRenderer)} will be called for this actor. */

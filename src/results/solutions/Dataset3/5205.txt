@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2013, Red Hat Middleware LLC, and individual contributors
@@ -66,9 +65,9 @@ class JSFSubsystemTransformers {
             public void transformResource(ResourceTransformationContext context, PathAddress address, Resource resource) throws OperationFailedException {
                 ModelNode model = resource.getModel();
                 if (model.hasDefined(SLOT_ATTRIBUTE_NAME)) {
-context.getLogger().logAttributeWarning(address, MESSAGES.invalidJSFSlotValue(slot.asString()), SLOT_ATTRIBUTE_NAME);
+                    ModelNode slot = model.get(SLOT_ATTRIBUTE_NAME);
                     if (!SLOT_DEFAULT_VALUE.equals(slot.asString())) {
-                        context.getLogger().logAttributeWarning(address, SLOT_ATTRIBUTE_NAME, MESSAGES.invalidJSFSlotValue(slot.asString()));
+context.getLogger().logAttributeWarning(address, MESSAGES.invalidJSFSlotValue(slot.asString()), SLOT_ATTRIBUTE_NAME);
                     }
                 }
                 Set<String> attributes = new HashSet<String>();

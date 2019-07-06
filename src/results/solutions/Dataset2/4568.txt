@@ -1,4 +1,3 @@
-
 /*
  * TipOfTheDay.java - Tip of the day window
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -132,9 +131,9 @@ public class TipOfTheDay extends EnhancedDialog
 		int count = tips.length;
 
 		// so that we don't see the same tip again if the user
-while(tipToShow == currentTip || !tips[tipToShow].getName().endsWith(".html"))
+		// clicks 'Next Tip'
 		int tipToShow = currentTip;
-		while(tipToShow == currentTip)
+while(tipToShow == currentTip || !tips[tipToShow].getName().endsWith(".html"))
 			tipToShow = Math.abs(new Random().nextInt()) % count;
 		try
 		{

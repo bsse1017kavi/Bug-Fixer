@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -253,9 +252,9 @@ abstract class XSDAbstractTraverser {
     private static final XSSimpleType fQNameDV = (XSSimpleType)SchemaGrammar.SG_SchemaNS.getGlobalTypeDecl(SchemaSymbols.ATTVAL_QNAME);
     // Temp data structures to be re-used in traversing facets
     private StringBuffer fPattern = new StringBuffer();
-static final class FacetInfo {
+    private final XSFacets xsFacets = new XSFacets();
     
-    class FacetInfo {
+static final class FacetInfo {
         XSFacets facetdata;
         Element nodeAfterFacets;
         short fPresentFacets;

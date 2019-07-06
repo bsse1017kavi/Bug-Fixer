@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -101,9 +100,9 @@ public class CircularFifoQueue<E> extends AbstractCollection<E>
      * The collection size also sets the queue size.
      *
      * @param coll  the collection to copy into the queue, may not be null
-public CircularFifoQueue(final Collection<? extends E> coll) {
+     * @throws NullPointerException if the collection is null
      */
-    public CircularFifoQueue(final Collection<E> coll) {
+public CircularFifoQueue(final Collection<? extends E> coll) {
         this(coll.size());
         addAll(coll);
     }

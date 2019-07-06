@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -290,9 +289,9 @@ protected boolean isOnClasspath() {
 	
 		// check package fragment root on classpath of its project
 		IClasspathEntry[] classpath = project.getResolvedClasspath(true);	
-if (entry.getPath().equals(path)) {
+		for (int i = 0, length = classpath.length; i < length; i++) {
 			IClasspathEntry entry = classpath[i];
-			if (entry.getPath().isPrefixOf(path)) {
+if (entry.getPath().equals(path)) {
 				return true;
 			}
 		}

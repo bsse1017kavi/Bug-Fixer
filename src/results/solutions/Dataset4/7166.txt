@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class GeoDistanceParser implements Aggregator.Parser {
 
         String field = null;
         List<RangeAggregator.Range> ranges = null;
-GeoDistance distanceType = GeoDistance.DEFAULT;
+        GeoPoint origin = null;
         DistanceUnit unit = DistanceUnit.KILOMETERS;
-        GeoDistance distanceType = GeoDistance.ARC;
+GeoDistance distanceType = GeoDistance.DEFAULT;
         boolean keyed = false;
 
         XContentParser.Token token;

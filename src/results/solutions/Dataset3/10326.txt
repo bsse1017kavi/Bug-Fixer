@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -262,9 +261,9 @@ public class WarMetaDataProcessor implements DeploymentUnitProcessor {
         }
         // Augment with meta data from fragments and annotations from the
         // corresponding JAR
-if (webFragmentMetaData == null || isComplete) {
+        for (String jar : order) {
             WebFragmentMetaData webFragmentMetaData = webFragments.get(jar);
-            if (webFragmentMetaData == null) {
+if (webFragmentMetaData == null || isComplete) {
                 webFragmentMetaData = new WebFragmentMetaData();
                 // Add non overriding default distributable flag
                 webFragmentMetaData.setDistributable(new EmptyMetaData());

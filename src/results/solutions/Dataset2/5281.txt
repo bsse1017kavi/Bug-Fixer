@@ -1,4 +1,3 @@
-
 package org.junit.runner;
 
 import java.util.Comparator;
@@ -51,9 +50,9 @@ public abstract class Request {
 	 * in a set of classes.
 	 * @param collectionName a name to identify this suite of tests
 	 * @param classes the classes containing the tests
-public static Request classes(String collectionName, Class<?>... classes) {
+	 * @return a <code>Request</code> that will cause all tests in the classes to be run
 	 */
-	public static Request classes(String collectionName, Class... classes) {
+public static Request classes(String collectionName, Class<?>... classes) {
 		return new ClassesRequest(collectionName, classes);
 	}
 

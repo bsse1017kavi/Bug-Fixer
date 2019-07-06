@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ final class BootstrapImpl implements Bootstrap {
             throw new IllegalArgumentException("serverEnvironment is null");
         }
         if (configurationPersister == null) {
-final ServiceContainer container = ServiceContainer.Factory.create("jbossas");
+            throw new IllegalArgumentException("configurationPersister is null");
         }
-        final ServiceContainer container = ServiceContainer.Factory.create();
+final ServiceContainer container = ServiceContainer.Factory.create("jbossas");
         final int threads = Runtime.getRuntime().availableProcessors();
         container.setExecutor(new ThreadPoolExecutor(threads, threads, Long.MAX_VALUE, TimeUnit.NANOSECONDS, new LinkedBlockingQueue<Runnable>()));
 

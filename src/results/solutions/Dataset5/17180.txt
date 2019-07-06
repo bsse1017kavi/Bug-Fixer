@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -107,9 +106,9 @@ public class OutjarTest extends AjcTestCase {
 	 *   -aspectpath
 	 *   -outjar 
 	 * 
-public void xtestOutjarDeletedOnError () {
+	 * Expected result = Compile fails with error message.
 	 */
-	public void testOutjarDeletedOnError () {
+public void xtestOutjarDeletedOnError () {
 		String[] args = new String[] {"-aspectpath", aspectjarName, "-injars", injarName, "-outjar", outjarName};
 		Message error = new Message(WeaverMessages.format(WeaverMessages.CANT_FIND_TYPE,"jar1.Parent"));
 		MessageSpec spec = new MessageSpec(null,newMessageList(error));

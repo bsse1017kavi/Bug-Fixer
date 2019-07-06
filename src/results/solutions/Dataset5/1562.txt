@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -305,9 +304,9 @@ public class BcelWorld extends World implements Repository {
 		}
 		
 		ReferenceType nameTypeX = (ReferenceType)fromTheMap;
-if (jc.isGeneric() && isInJava5Mode()) {
+        
         if (nameTypeX == null) {        	
-		    if (jc.isGeneric()) {
+if (jc.isGeneric() && isInJava5Mode()) {
 		    	nameTypeX =  ReferenceType.fromTypeX(UnresolvedType.forRawTypeName(jc.getClassName()),this);
 		        ret = makeBcelObjectType(nameTypeX, jc, true);
 		    	ReferenceType genericRefType = new ReferenceType(

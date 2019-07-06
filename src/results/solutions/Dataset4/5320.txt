@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -143,9 +142,9 @@ public class CustomFiltersScoreQueryParser implements QueryParser {
         for (int i = 0; i < filterFunctions.length; i++) {
             ScoreFunction scoreFunction;
             String script = scripts.get(i);
-scoreFunction = new CustomScoreQueryParser.ScriptScoreFunction(script, vars, searchScript);
+            if (script != null) {
                 SearchScript searchScript = context.scriptService().search(context.lookup(), scriptLang, script, vars);
-                scoreFunction = new CustomScoreQueryParser.ScriptScoreFunction(searchScript);
+scoreFunction = new CustomScoreQueryParser.ScriptScoreFunction(script, vars, searchScript);
             } else {
                 scoreFunction = new BoostScoreFunction(boosts.get(i));
             }

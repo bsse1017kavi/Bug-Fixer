@@ -1,4 +1,3 @@
-
 package org.eclipse.xpand3.parser.node2ast;
 
 import java.io.StringReader;
@@ -41,9 +40,9 @@ public class ParseStuff {
 		ANTLRStringStream stream = new ANTLRStringStream(s);
 		Xpand3NodeLexer lexer = new Xpand3NodeLexer(stream);
 		CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-Node rootNode = xpand3NodeParser.r_file();
+		Xpand3NodeParser xpand3NodeParser = new Xpand3NodeParser(tokenStream);
 
-		Node rootNode = xpand3NodeParser.file();
+Node rootNode = xpand3NodeParser.r_file();
 		// if (rootNode == null) {
 		// System.out.println("Nothing parsed.");
 		// } else {

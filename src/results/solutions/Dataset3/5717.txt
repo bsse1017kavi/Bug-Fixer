@@ -1,5 +1,4 @@
 
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -112,9 +111,9 @@ public class AbstractMgmtTestBase {
         steps[0] = op;
         steps[1] = addDeploymentOp;
         steps[2] = builder.buildRequest();
-OperationBuilder ob = new OperationBuilder(compositeOp, true);
+        ModelNode compositeOp = createCompositeNode(steps);
 
-        OperationBuilder ob = new OperationBuilder(compositeOp);
+OperationBuilder ob = new OperationBuilder(compositeOp, true);
         ob.addInputStream(new FileInputStream(getBrokenWar()));
 
         return modelControllerClient.execute(ob.build());

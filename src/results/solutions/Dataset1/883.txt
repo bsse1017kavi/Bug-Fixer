@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.standard;
 
 /**
@@ -193,9 +192,9 @@ public final class StandardPostingsWriter extends PostingsWriterBase {
     assert !omitTermFreqAndPositions: "omitTermFreqAndPositions is true";
     assert proxOut != null;
 
-assert delta >= 0: "position=" + position + " lastPosition=" + lastPosition;
+    final int delta = position - lastPosition;
     
-    assert delta > 0 || position == 0: "position=" + position + " lastPosition=" + lastPosition;            // not quite right (if pos=0 is repeated twice we don't catch it)
+assert delta >= 0: "position=" + position + " lastPosition=" + lastPosition;
 
     lastPosition = position;
 

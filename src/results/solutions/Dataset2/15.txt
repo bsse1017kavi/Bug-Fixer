@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -159,9 +158,9 @@ public TypeBinding resolveType(BlockScope scope) {
 	if (lhsType == null || rhsType == null) {
 		return null;
 	}
-if (left != null && !left.isVolatile() && left == getDirectBinding(this.expression)) {
+	// check for assignment with no effect
 	Binding left = getDirectBinding(this.lhs);
-	if (left != null && left == getDirectBinding(this.expression)) {
+if (left != null && !left.isVolatile() && left == getDirectBinding(this.expression)) {
 		scope.problemReporter().assignmentHasNoEffect(this, left.shortReadableName());
 	}
 

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -73,9 +72,9 @@ public class TestBooleanMinShouldMatch extends LuceneTestCase {
         }
 
         writer.optimize();
-r = IndexReader.open(index, true);
+        writer.close();
 
-        r = IndexReader.open(index);
+r = IndexReader.open(index, true);
         s = new IndexSearcher(r);
 
 //System.out.println("Set up " + getName());

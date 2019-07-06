@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public final class ExceptionPredicate<T> implements Predicate<T>, Serializable {
      *
      * @param <T>  the object type
      * @return the singleton instance
-@SuppressWarnings("unchecked") // the static instance works for all types
+     * @since 3.1
      */
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked") // the static instance works for all types
     public static <T> Predicate<T> exceptionPredicate() {
         return (Predicate<T>) INSTANCE;
     }

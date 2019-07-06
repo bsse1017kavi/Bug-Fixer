@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -86,9 +85,9 @@ throws IOException
 
 Record
 rdataFromString(Name name, short dclass, int ttl, Tokenizer st, Name origin)
-throw st.exception("no text format defined for OPT");
+throws IOException
 {
-	throw new TextParseException("no text format defined for OPT");
+throw st.exception("no text format defined for OPT");
 }
 
 /** Converts rdata to a String */

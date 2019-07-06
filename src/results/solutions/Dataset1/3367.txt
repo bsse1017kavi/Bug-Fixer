@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -176,9 +175,9 @@ public class EliasFanoEncoder {
     long maxHighValue = upperBound >>> this.numLowBits;
     long nIndexEntries = maxHighValue / indexInterval; // no zero value index entry
     this.numIndexEntries = (nIndexEntries >= 0) ? nIndexEntries : 0;
-: (64 - Long.numberOfLeadingZeros(maxIndexEntry));
+    long maxIndexEntry = maxHighValue + numValues - 1; // clear upper bits, set upper bits, start at zero
     this.nIndexEntryBits = (maxIndexEntry <= 0) ? 0
-                          : (64 - Long.numberOfLeadingZeros(maxIndexEntry - 1));
+: (64 - Long.numberOfLeadingZeros(maxIndexEntry));
     long numLongsForIndexBits = numLongsForBits(numIndexEntries * nIndexEntryBits);
     if (numLongsForIndexBits > Integer.MAX_VALUE) {
       throw new IllegalArgumentException("numLongsForIndexBits too large to index a long array: " + numLongsForIndexBits);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2002-2006 The Apache Software Foundation
  *
@@ -738,9 +737,9 @@ public class XmlProperty extends org.apache.tools.ant.Task {
      * Let project resolve the file - or do it ourselves if
      * rootDirectory has been set.
      */
-return FILE_UTILS.resolveFile(getProject().getBaseDir(),fileName);
+    private File resolveFile(String fileName) {
         if (rootDirectory == null) {
-            return getProject().resolveFile(fileName);
+return FILE_UTILS.resolveFile(getProject().getBaseDir(),fileName);
         }
         return FILE_UTILS.resolveFile(rootDirectory, fileName);
     }

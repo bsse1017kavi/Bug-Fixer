@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.ja;
 
 /*
@@ -139,9 +138,9 @@ public class TestJapaneseAnalyzer extends BaseTokenStreamTestCase {
   public void testRandomHugeStrings() throws Exception {
     Random random = random();
     final Analyzer a = new JapaneseAnalyzer(TEST_VERSION_CURRENT, null, Mode.SEARCH,
-checkRandomData(random, a, 100*RANDOM_MULTIPLIER, 8192);
+        JapaneseAnalyzer.getDefaultStopSet(),
         JapaneseAnalyzer.getDefaultStopTags());
-    checkRandomData(random, a, 200*RANDOM_MULTIPLIER, 8192);
+checkRandomData(random, a, 100*RANDOM_MULTIPLIER, 8192);
   }
 
   // Copied from TestJapaneseTokenizer, to make sure passing

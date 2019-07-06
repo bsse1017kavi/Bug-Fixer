@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -46,9 +45,9 @@ public class AjaxSelfUpdatingTimerBehavior extends AbstractAjaxTimerBehavior
 	 * @see org.apache.wicket.ajax.AbstractAjaxTimerBehavior#onTimer(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	@Override
-target.add(getComponent());
+	protected final void onTimer(final AjaxRequestTarget target)
 	{
-		target.addComponent(getComponent());
+target.add(getComponent());
 		onPostProcessTarget(target);
 	}
 

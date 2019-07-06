@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.types.SQLDouble
@@ -152,9 +151,9 @@ public final class SQLDouble extends NumberDataType
 	}
 
 	public BigDecimal	getBigDecimal()
-return new BigDecimal(Double.toString(value));
+	{
 		if (isNull()) return null;
-		return new BigDecimal(value);
+return new BigDecimal(Double.toString(value));
 	}
 
     // for lack of a specification: getDouble()==0 gives true

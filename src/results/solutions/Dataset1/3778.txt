@@ -1,4 +1,3 @@
-
  /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ class StreamRequestMetadataSerializer implements ICompactSerializer<StreamReques
         InetAddress target = CompactEndPointSerializationHelper.deserialize(dis);
         int size = dis.readInt();
         List<Range> ranges = (size == 0) ? null : new ArrayList<Range>();
-ranges.add((Range) Range.serializer().deserialize(dis));
+        for( int i = 0; i < size; ++i )
         {
-            ranges.add(Range.serializer().deserialize(dis));
+ranges.add((Range) Range.serializer().deserialize(dis));
         }            
         return new StreamRequestMetadata( target, ranges );
     }

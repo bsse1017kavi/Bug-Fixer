@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -145,9 +144,9 @@ public class ConcurrentPercolatorTests extends ElasticsearchIntegrationTest {
         assertThat(assertionError + " should be null", assertionError, nullValue());
     }
 
-assertAcked(prepareCreate("index").addMapping("type", "field1", "type=string", "field2", "type=string"));
+    @Test
     public void testConcurrentAddingAndPercolating() throws Exception {
-        createIndex("index");
+assertAcked(prepareCreate("index").addMapping("type", "field1", "type=string", "field2", "type=string"));
         ensureGreen();
         final int numIndexThreads = scaledRandomIntBetween(1, 3);
         final int numPercolateThreads = scaledRandomIntBetween(2, 6);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -363,9 +362,9 @@ public class IntegerFieldMapper extends NumberFieldMapper<Integer> {
         private final int number;
 
         private final NumberFieldMapper mapper;
-super(mapper, mapper.fieldType().stored() ? number : null, fieldType);
+
         public CustomIntegerNumericField(NumberFieldMapper mapper, int number, FieldType fieldType) {
-            super(mapper, mapper.fieldType().stored() ? Numbers.intToBytes(number) : null, fieldType);
+super(mapper, mapper.fieldType().stored() ? number : null, fieldType);
             this.mapper = mapper;
             this.number = number;
         }

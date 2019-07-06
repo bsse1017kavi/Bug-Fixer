@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -519,9 +518,9 @@ public class RecoveryTarget extends AbstractComponent {
                 String name = request.name();
                 if (shard.store().directory().fileExists(name)) {
                     name = name + "." + onGoingRecovery.startTime;
-indexOutput = shard.store().createOutputRaw(name);
+                }
 
-                indexOutput = shard.store().createOutputWithNoChecksum(name);
+indexOutput = shard.store().createOutputRaw(name);
 
                 onGoingRecovery.openIndexOutputs.put(request.name(), indexOutput);
             } else {

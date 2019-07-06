@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class SFSBInvocationInterceptor implements Interceptor {
         ComponentInstance componentInstance = context.getPrivateData(ComponentInstance.class);
         if (componentInstance == null) {
             throw MESSAGES.notSetInInterceptorContext("componentInstance", context);
-SFSBContextHandleImpl sfsbContextHandle = new SFSBContextHandleImpl(sfsb.getId());
+        }
         StatefulSessionComponentInstance sfsb = (StatefulSessionComponentInstance) componentInstance;
-        SFSBContextHandleImpl sfsbContextHandle = new SFSBContextHandleImpl(sfsb);
+SFSBContextHandleImpl sfsbContextHandle = new SFSBContextHandleImpl(sfsb.getId());
 
         SFSBCallStack.pushCall(sfsbContextHandle);
         try {

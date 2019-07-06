@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -122,9 +121,9 @@ public class ExplicitConstructorCall
 				}
 				codeStream.invokespecial(syntheticAccessor);
 			} else {
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+				codeStream.invokespecial(binding);
 			}
-			codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 		} finally {
 			((MethodScope) currentScope).isConstructorCall = false;
 		}

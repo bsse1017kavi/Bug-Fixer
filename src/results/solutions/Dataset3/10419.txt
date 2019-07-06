@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class ZkState {
             throw new RuntimeException(e);
         }
     }
-LOG.info("Writing " + path + " the data " + data.toString());
+
     public void writeJSON(String path, Map<Object, Object> data) {
-        LOG.debug("Writing " + path + " the data " + data.toString());
+LOG.info("Writing " + path + " the data " + data.toString());
         writeBytes(path, JSONValue.toJSONString(data).getBytes(Charset.forName("UTF-8")));
     }
 

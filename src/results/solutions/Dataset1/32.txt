@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -558,9 +557,9 @@ public final class ColumnFamilyStore implements ColumnFamilyStoreMBean
      * param @ filename - filename just flushed to disk
      */
     public void addSSTable(SSTableReader sstable)
-CompactionManager.instance.submitMinorIfNeeded(this);
+    {
         ssTables_.add(sstable);
-        CompactionManager.instance.submitMinor(this);
+CompactionManager.instance.submitMinorIfNeeded(this);
     }
 
     /*

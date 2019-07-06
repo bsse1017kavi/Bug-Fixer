@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 //1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -121,9 +120,9 @@ public class ToggleMarkCommand extends FolderCommand {
                 if (markVariant == MarkMessageCommand.MARK_AS_READ) {
                     if (flags.getSeen()) result = true;
                 } else if (markVariant == MarkMessageCommand.MARK_AS_FLAGGED) {
-if (flags.getDeleted()) result = true;
+                    if (flags.getFlagged()) result = true;
                 } else if (markVariant == MarkMessageCommand.MARK_AS_EXPUNGED) {
-                    if (flags.getExpunged()) result = true;
+if (flags.getDeleted()) result = true;
                 } else if (markVariant == MarkMessageCommand.MARK_AS_ANSWERED) {
                     if (flags.getAnswered()) result = true;
                 }  else if (markVariant == MarkMessageCommand.MARK_AS_DRAFT) {

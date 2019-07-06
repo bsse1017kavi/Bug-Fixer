@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -332,9 +331,9 @@ final class ManagedProcess {
                     } else {
                         processController.removeProcess(processName);
                         new Thread(new Runnable() {
-System.exit(ExitCodes.NORMAL);
+                            public void run() {
                                 processController.shutdown();
-                                System.exit(0);
+System.exit(ExitCodes.NORMAL);
                             }
                         }).start();
                     }

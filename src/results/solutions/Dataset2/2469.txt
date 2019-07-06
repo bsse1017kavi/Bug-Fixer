@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -588,9 +587,9 @@ public boolean hasErrors() {
 
 /**
  *	Common flow analysis for all types
-if ((this.binding.isPrivate() || (this.binding.tagBits & (TagBits.IsAnonymousType|TagBits.IsLocalType)) == TagBits.IsLocalType) && !this.binding.isUsed()) {
+ */
 private void internalAnalyseCode(FlowContext flowContext, FlowInfo flowInfo) {
-	if ((this.binding.isPrivate()/* || (this.binding.tagBits & (TagBits.IsAnonymousType|TagBits.IsLocalType)) == TagBits.IsLocalType*/) && !this.binding.isUsed()) {
+if ((this.binding.isPrivate() || (this.binding.tagBits & (TagBits.IsAnonymousType|TagBits.IsLocalType)) == TagBits.IsLocalType) && !this.binding.isUsed()) {
 		if (!this.scope.referenceCompilationUnit().compilationResult.hasSyntaxError) {
 			this.scope.problemReporter().unusedPrivateType(this);
 		}

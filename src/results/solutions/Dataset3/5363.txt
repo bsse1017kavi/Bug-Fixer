@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -318,9 +317,9 @@ class CommandContextImpl implements CommandContext {
 
     private void copyConfigSettingsToConsole(InputStream consoleInput, OutputStream consoleOutput) {
         if(consoleInput != null)
-Settings.getInstance().setStdOut(consoleOutput);
+            Settings.getInstance().setInputStream(consoleInput);
         if(consoleOutput != null)
-            Settings.getInstance().setOutputStream(consoleOutput);
+Settings.getInstance().setStdOut(consoleOutput);
 
         Settings.getInstance().setHistoryDisabled(!config.isHistoryEnabled());
         Settings.getInstance().setHistoryFile(new File(config.getHistoryFileDir(), config.getHistoryFileName()));

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  * 
@@ -56,9 +55,9 @@ class CollectionToArray extends AbstractCollectionConverter {
 		return array;
 	}
 	
-if (elementConverter == NoOpConversionExecutor.INSTANCE) {
+	private ConversionExecutor getElementConverter(Collection<?> source) {
 		ConversionExecutor elementConverter = getElementConverter();
-		if (elementConverter == NoOpConversionExecutor.INSTANCE && !source.isEmpty()) {
+if (elementConverter == NoOpConversionExecutor.INSTANCE) {
 			Iterator<?> it = source.iterator();
 			while (it.hasNext()) {
 				Object value = it.next();

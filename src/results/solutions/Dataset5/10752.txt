@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -150,9 +149,9 @@ public class FinderQueryImpl
                     dict.setUnknown(stmnt, i+1, params[i], _pkCols[i]);
                 }
             }
-params, _pkCols);
+
             rs = _select.executeQuery(conn, stmnt, getQueryString(), jstore,
-                params);
+params, _pkCols);
             return _select.getEagerResult(conn, stmnt, rs, jstore, 
                 (JDBCFetchConfiguration)fetch, forUpdate, _buffer);
         } catch (SQLException se) {

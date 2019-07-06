@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ public class InternalScrollSearchRequest extends TransportRequest {
     }
 
     public InternalScrollSearchRequest(SearchScrollRequest request, long id) {
-this.scroll = request.getScroll();
+        super(request);
         this.id = id;
-        this.scroll = request.scroll();
+this.scroll = request.getScroll();
     }
 
     public InternalScrollSearchRequest(long id) {

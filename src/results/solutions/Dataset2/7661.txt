@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -950,9 +949,9 @@ public abstract class Scope implements TypeConstants, TypeIds {
 		// we could hold onto the not visible field for extra error reporting
 		while (keepLooking) {
 			ReferenceBinding[] itsInterfaces = currentType.superInterfaces();
-? ((ParameterizedTypeBinding) currentType).genericType()
+			if (itsInterfaces == null) { // needed for statically imported types which don't know their hierarchy yet
 				ReferenceBinding sourceType = currentType.isParameterizedType()
-					? ((ParameterizedTypeBinding) enclosingType).genericType()
+? ((ParameterizedTypeBinding) currentType).genericType()
 					: currentType;
 				if (sourceType.isHierarchyBeingConnected())
 					return null; // looking for an undefined member type in its own superclass ref

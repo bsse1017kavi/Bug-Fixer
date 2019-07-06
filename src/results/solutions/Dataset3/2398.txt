@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -1032,9 +1031,9 @@ public class DispatcherPortlet extends FrameworkPortlet {
 			String[] paramValues = request.getParameterValues(paramName);
 			if (paramValues != null && !response.getRenderParameterMap().containsKey(paramName)) {
 				response.setRenderParameter(paramName, paramValues);
-response.setRenderParameter(ACTION_EXCEPTION_RENDER_PARAMETER, ex.toString());
+			}
 		}
-		response.setRenderParameter(ACTION_EXCEPTION_RENDER_PARAMETER, Boolean.TRUE.toString());
+response.setRenderParameter(ACTION_EXCEPTION_RENDER_PARAMETER, ex.toString());
 		request.getPortletSession().setAttribute(ACTION_EXCEPTION_SESSION_ATTRIBUTE, ex);
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -248,9 +247,9 @@ public final class ModelXmlParsers {
                         reader.handleAny(resultList);
                         for (AbstractSubsystemUpdate<?, ?> update : resultList) {
                             // I don't think this is really an unchecked cast (even though ? is bounded by Object, the class
-list.add(DomainSubsystemUpdate.create(name, update));
+                            // specifies an additional bound for E so it should be considered safe), but IDEA thinks it is...
                             //noinspection unchecked
-                            list.add(DomainProfileUpdate.create(name, update));
+list.add(DomainSubsystemUpdate.create(name, update));
                         }
                         break;
                     }

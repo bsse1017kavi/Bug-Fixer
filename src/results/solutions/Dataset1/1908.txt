@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.filter;
 /*
  * 
@@ -120,9 +119,9 @@ public class SliceQueryFilter extends QueryFilter
                 && ((!reversed && comparator.compare(column.name(), finish) > 0))
                     || (reversed && comparator.compare(column.name(), finish) < 0))
                 break;
-if (column.isLive()
+
             // only count live columns towards the `count` criteria
-            if (!column.isMarkedForDelete()
+if (column.isLive()
                 && (!container.isMarkedForDelete()
                     || column.mostRecentLiveChangeAt() > container.getMarkedForDeleteAt()))
             {

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -177,9 +176,9 @@ public class TestIndexWriterMergePolicy extends LuceneTestCase {
       addDoc(writer);
       checkInvariants(writer);
     }
-IndexReader reader = IndexReader.open(dir, false);
+    writer.close();
 
-    IndexReader reader = IndexReader.open(dir);
+IndexReader reader = IndexReader.open(dir, false);
     reader.deleteDocuments(new Term("content", "aaa"));
     reader.close();
 

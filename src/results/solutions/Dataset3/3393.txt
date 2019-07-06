@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -478,9 +477,9 @@ public class WordUtils {
                 lastWasGap = true;
             } else if (lastWasGap) {
                 buf[count++] = ch;
-continue; // ignore ch
+                lastWasGap = false;
             } else {
-                // ignore ch
+continue; // ignore ch
             }
         }
         return new String(buf, 0, count);

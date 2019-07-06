@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -239,9 +238,9 @@ public class UriComponentsBuilderTests {
 
 		builder = UriComponentsBuilder.newInstance().queryParam("baz", "qux", 42);
 		builder.replaceQueryParam("baz");
-assertNull("Query param should have been deleted", result.getQuery());
+		result = builder.build();
 		
-		assertEquals("baz", result.getQuery());
+assertNull("Query param should have been deleted", result.getQuery());
 	}
 
 }

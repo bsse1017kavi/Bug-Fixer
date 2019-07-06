@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -708,9 +707,9 @@ public class RegistrySharedObject extends BaseSharedObject implements IRemoteSer
 				if (value != null) {
 					properties.put(keys[i], value);
 				}
-properties.put(org.eclipse.ecf.remoteservice.Constants.SERVICE_CONTAINER_ID, remoteContainerID.getName());
+			}
 			final ID remoteContainerID = registration.getContainerID();
-			properties.put(org.eclipse.ecf.remoteservice.Constants.REMOTE_SERVICE_CONTAINER_ID, remoteContainerID.getName());
+properties.put(org.eclipse.ecf.remoteservice.Constants.SERVICE_CONTAINER_ID, remoteContainerID.getName());
 			final ServiceRegistration serviceRegistration = context.registerService(registration.getClasses(), service, properties);
 			addLocalServiceRegistration(remoteContainerID, serviceRegistration);
 		}

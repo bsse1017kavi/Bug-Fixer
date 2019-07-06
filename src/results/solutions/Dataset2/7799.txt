@@ -1,4 +1,3 @@
-
 package junit.tests;
 
 /**
@@ -16,9 +15,9 @@ public class TestListenerTest extends TestCase implements TestListener {
 		super(name);
 	}
 	public void addError(Test test, Throwable t) {
-public void addFailure(Test test, AssertionFailedError t) {
+		fErrorCount++;
 	}
-	public void addFailure(Test test, Throwable t) {
+public void addFailure(Test test, AssertionFailedError t) {
 		fFailureCount++;
 	}
 	public void endTest(Test test) {

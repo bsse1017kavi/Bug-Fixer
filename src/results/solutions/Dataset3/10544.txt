@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -216,9 +215,9 @@ public class PersistenceRefProcessor extends AbstractDeploymentDescriptorBinding
     private PersistenceUnitMetadata getPersistenceUnit(final DeploymentUnit deploymentUnit, final String puName)
         throws DeploymentUnitProcessingException {
 
-throw new DeploymentUnitProcessingException(MESSAGES.persistenceUnitNotFound(puName, deploymentUnit));
+        PersistenceUnitMetadata pu = PersistenceUnitSearch.resolvePersistenceUnitSupplier(deploymentUnit, puName);
         if (null == pu) {
-            throw new DeploymentUnitProcessingException(MESSAGES.deploymentUnitNotFound(puName, deploymentUnit));
+throw new DeploymentUnitProcessingException(MESSAGES.persistenceUnitNotFound(puName, deploymentUnit));
         }
         return pu;
     }

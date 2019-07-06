@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -52,9 +51,9 @@ public class CloseShieldOutputStreamTest extends TestCase {
         shielded.close();
         assertFalse("closed", closed);
         try {
-} catch (final IOException e) {
+            shielded.write('x');
             fail("write(b)");
-        } catch (IOException e) {
+} catch (final IOException e) {
             // expected
         }
         original.write('y');

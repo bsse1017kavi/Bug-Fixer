@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public class XMLSchemaAssertion extends AbstractTestElement implements Serializa
 
         byte data[] = response.getResponseData();
         if (data.length == 0) {
-String resultData = new String(getResultBody(data)); // TODO - charset?
+            return result.setResultForNull();
         }
-        String resultData = new String(getResultBody(data));
+String resultData = new String(getResultBody(data)); // TODO - charset?
 
         String xsdFileName = getXsdFileName();
         if (log.isDebugEnabled()) {

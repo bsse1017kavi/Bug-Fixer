@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util;
 
 /**
@@ -227,9 +226,9 @@ public final class PagedBytes {
   /** Copy BytesRef in, setting BytesRef out to the result.
    * Do not use this if you will use freeze(true).
    * This only supports bytes.length <= blockSize */
-if (bytes.length > left || currentBlock==null) {
+  public void copy(BytesRef bytes, BytesRef out) throws IOException {
     int left = blockSize - upto;
-    if (bytes.length > left) {
+if (bytes.length > left || currentBlock==null) {
       if (currentBlock != null) {
         blocks.add(currentBlock);
         blockEnd.add(upto);

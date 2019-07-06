@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -71,9 +70,9 @@ public class ThumbnailImageResource extends DynamicImageResource
 	public ThumbnailImageResource(WebResource unscaledImageResource, int maxSize)
 	{
 		super();
-throw new IllegalArgumentException("Argument unscaledImageResource must be not null");
+		if (unscaledImageResource == null)
 		{
-			throw new NullPointerException("unscaledImageResource must be not null");
+throw new IllegalArgumentException("Argument unscaledImageResource must be not null");
 		}
 		this.unscaledImageResource = unscaledImageResource;
 		this.maxSize = maxSize;

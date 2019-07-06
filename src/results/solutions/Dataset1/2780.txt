@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.standard;
 
 /**
@@ -155,9 +154,9 @@ public class StandardPostingsReader extends PostingsReaderBase {
 
     final int len = termsIn.readVInt();
     //System.out.println("SPR.readTermsBlock termsIn.fp=" + termsIn.getFilePointer());
-termState.bytesReader = new ByteArrayDataInput();
+    if (termState.bytes == null) {
       termState.bytes = new byte[ArrayUtil.oversize(len, 1)];
-      termState.bytesReader = new ByteArrayDataInput(null);
+termState.bytesReader = new ByteArrayDataInput();
     } else if (termState.bytes.length < len) {
       termState.bytes = new byte[ArrayUtil.oversize(len, 1)];
     }

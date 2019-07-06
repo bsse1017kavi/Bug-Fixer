@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -86,9 +85,9 @@ public class ComponentStringResourceLoaderTest extends StringResourceLoaderTestB
 		};
 		IStringResourceLoader loader = new ComponentStringResourceLoader();
 		try
-Assert.fail("IllegalStateException should be thrown");
+		{
 			loader.loadStringResource(c, "test.string", Locale.getDefault(), null);
-			Assert.fail("InvalidResourceSpecificationException should be thrown");
+Assert.fail("IllegalStateException should be thrown");
 		}
 		catch (IllegalStateException e)
 		{

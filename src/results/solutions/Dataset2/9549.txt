@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /*
@@ -50,9 +49,9 @@ public class EditorSelectionDialog extends Dialog implements Listener {
 	private IEditorDescriptor[] editorsToFilter;
 	private static final String [] Executable_Filters;
 	private static final int TABLE_WIDTH = 200;
-Executable_Filters = new String[] { "*.exe", "*.bat", "*.*"};//$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	static {
 		if(SWT.getPlatform().equals("win32")) {//$NON-NLS-1$
-			Executable_Filters = new String[] { "*.exe", "*.bat", "*.*"};//$NON-NLS-1$
+Executable_Filters = new String[] { "*.exe", "*.bat", "*.*"};//$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		} else {
 			Executable_Filters = new String[] {"*"};	//$NON-NLS-1$
 		}

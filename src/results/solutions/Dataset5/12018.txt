@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -114,9 +113,9 @@ public class Check<T> extends LabeledWebMarkupContainer<T>
 		tag.put("name", group.getInputName());
 		tag.put("value", uuid);
 
-Collection<? extends T> collection = group.getModelObject();
+		// check if the model collection of the group contains the model object.
 		// if it does check the check box.
-		Collection<T> collection = group.getModelObject();
+Collection<? extends T> collection = group.getModelObject();
 
 		// check for npe in group's model object
 		if (collection == null)

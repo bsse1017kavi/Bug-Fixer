@@ -1,4 +1,3 @@
-
 /*
  * $Id: WebExternalResourceRequestTarget.java,v 1.1 2005/11/24 20:59:02 eelco12
  * Exp $ $Revision$ $Date$
@@ -59,9 +58,9 @@ public class WebExternalResourceRequestTarget implements IRequestTarget
 	 */
 	public WebExternalResourceRequestTarget(String url)
 	{
-throw new IllegalArgumentException("Argument url must be not null");
+		if (url == null)
 		{
-			throw new NullPointerException("argument url must be not null");
+throw new IllegalArgumentException("Argument url must be not null");
 		}
 
 		this.url = url;

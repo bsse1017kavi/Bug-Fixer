@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 import org.eclipse.jface.util.Geometry;
@@ -70,9 +69,9 @@ public class OvalComposite extends Composite implements PaintListener {
 	    
 	    int[] shapeArray = targetShape.getData();
         if (interiorColor != null) {
-gc.drawPolyline(shapeArray);
+            gc.fillPolygon(shapeArray);
         }
-	    gc.drawPolygon(shapeArray);
+gc.drawPolyline(shapeArray);
 	}
 
 	public Rectangle getClientArea() {

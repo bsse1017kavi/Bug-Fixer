@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -529,9 +528,9 @@ public class BcelShadow extends Shadow {
 		InstructionList body = enclosingMethod.getBody();
 		UnresolvedType catchType = exceptionRange.getCatchType();
 		UnresolvedType inType = enclosingMethod.getEnclosingClass().getType();
-sig.setParameterNames(new String[] {findHandlerParamName(startOfHandler)});
+		
 		ResolvedMemberImpl sig = MemberImpl.makeExceptionHandlerSignature(inType, catchType);					
-		sig.parameterNames = new String[] {findHandlerParamName(startOfHandler)};
+sig.setParameterNames(new String[] {findHandlerParamName(startOfHandler)});
 		
         BcelShadow s =
             new BcelShadow(

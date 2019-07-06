@@ -1,4 +1,3 @@
-
 package org.apache.solr.search.grouping.endresulttransformer;
 
 /*
@@ -68,9 +67,9 @@ public class GroupedEndResultTransformer implements EndResultTransformer {
         FieldType groupFieldType = groupField.getType();
         for (GroupDocs<BytesRef> group : topGroups.groups) {
           SimpleOrderedMap<Object> groupResult = new SimpleOrderedMap<Object>();
-"groupValue", groupFieldType.toObject(groupField.createField(group.groupValue.utf8ToString(), 1.0f))
+          if (group.groupValue != null) {
             groupResult.add(
-                "groupValue", groupFieldType.toObject(groupField.createField(group.groupValue.utf8ToString(), 0.0f))
+"groupValue", groupFieldType.toObject(groupField.createField(group.groupValue.utf8ToString(), 1.0f))
             );
           } else {
             groupResult.add("groupValue", null);

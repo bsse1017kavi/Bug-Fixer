@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -366,9 +365,9 @@ public class ServerRootResourceDefinition extends SimpleResourceDefinition {
 
         // The sub-deployments registry
         deployments.registerSubModel(new SimpleResourceDefinition(PathElement.pathElement(SUBDEPLOYMENT), DeploymentAttributes.DEPLOYMENT_RESOLVER));
-resourceRegistration.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, parallelBoot, true, false));
+
         // Extensions
-        resourceRegistration.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, parallelBoot, false));
+resourceRegistration.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, parallelBoot, true, false));
         if (extensionRegistry != null) {
             //extension registry may be null during testing
             extensionRegistry.setSubsystemParentResourceRegistrations(resourceRegistration, deployments);

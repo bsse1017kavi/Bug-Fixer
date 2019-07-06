@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -77,9 +76,9 @@ public class Receiver implements Runnable {
      */
     public static Receiver createReceiver(ConnectionFactory factory, Destination receiveQueue,
             String principal, String credentials, boolean useResMsgIdAsCorrelId)
-Thread thread = new Thread(receiver, Thread.currentThread().getName()+"-JMS-Receiver");
+            throws JMSException {
         Receiver receiver = new Receiver(factory, receiveQueue, principal, credentials, useResMsgIdAsCorrelId);
-        Thread thread = new Thread(receiver, "JMS Receiever");
+Thread thread = new Thread(receiver, Thread.currentThread().getName()+"-JMS-Receiver");
         thread.start();
         return receiver;
     }

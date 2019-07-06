@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2006, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -32,9 +31,9 @@ public class WorkbenchErrorHandler extends AbstractStatusHandler {
 	 *      int)
 	 */
 	public void handle(final StatusAdapter statusAdapter, int style) {
-statusAdapter);
+		if ((style & StatusManager.SHOW) == StatusManager.SHOW) {
 			StatusNotificationManager.getInstance().addError(
-					statusAdapter.getStatus(), null);
+statusAdapter);
 		}
 
 		if ((style & StatusManager.LOG) == StatusManager.LOG) {

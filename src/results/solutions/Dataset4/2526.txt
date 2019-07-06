@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -201,9 +200,9 @@ public class InternalLongTermsFacet extends InternalTermsFacet {
         }
         first.entries = ordered;
         first.missing = missing;
-aggregated.close();
+        first.total = total;
 
-        aggregated.release();
+aggregated.close();
 
         return first;
     }

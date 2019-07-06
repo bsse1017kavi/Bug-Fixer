@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -261,9 +260,9 @@ public abstract class Scope
 		}
 		return typeVariableBindings;
 	}
-if (type.isValidBinding())
+	
 	public ArrayBinding createArrayType(TypeBinding type, int dimension) {
-		if (type.isValidBinding() && !type.isParameterizedType())
+if (type.isValidBinding())
 			return environment().createArrayType(type, dimension);
 		// do not cache obvious invalid types
 		return new ArrayBinding(type, dimension, environment());

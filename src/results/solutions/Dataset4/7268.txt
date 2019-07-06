@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2008 Google Inc.
  *
@@ -54,9 +53,9 @@ public abstract class AbstractBindingBuilder<T> {
 
     public AbstractBindingBuilder(Binder binder, List<Element> elements, Object source, Key<T> key) {
         this.binder = binder;
-this.binding = new UntargettedBindingImpl<>(source, key, Scoping.UNSCOPED);
+        this.elements = elements;
         this.position = elements.size();
-        this.binding = new UntargettedBindingImpl<T>(source, key, Scoping.UNSCOPED);
+this.binding = new UntargettedBindingImpl<>(source, key, Scoping.UNSCOPED);
         elements.add(position, this.binding);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -579,9 +578,9 @@ public class InternalIndexShard extends AbstractIndexShardComponent implements I
                 logger.debug("scheduled refresher disabled");
             }
         }
-TimeValue optimizeInterval = indexSettings.getAsTime("index.merge.async_interval", TimeValue.timeValueSeconds(1));
+        // since we can do async merging, it will not be called explicitly when indexing (adding / deleting docs), and only when flushing
         // so, make sure we periodically call it
-        TimeValue optimizeInterval = indexSettings.getAsTime("index.merge.async_interval", TimeValue.timeValueSeconds(30));
+TimeValue optimizeInterval = indexSettings.getAsTime("index.merge.async_interval", TimeValue.timeValueSeconds(1));
         if (optimizeInterval.millis() > 0) {
             optimizeScheduleFuture = threadPool.scheduleWithFixedDelay(new EngineOptimizer(), optimizeInterval);
             logger.debug("scheduling optimizer / merger every {}", optimizeInterval);

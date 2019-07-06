@@ -1,4 +1,3 @@
-
 package org.jboss.as.domain.http.server;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.FAILED;
@@ -85,9 +84,9 @@ public class DomainHttpServer implements HttpHandler {
         this.modelController = modelController;
         this.serverTempDir = new File(serverTempDir, UPLOAD_TEMP_DIRECTORY);
 
-this.serverTempDir.mkdirs();
+        // Create the upload sub-directory under the server temporary directory.
         if (!this.serverTempDir.exists()) {
-            this.serverTempDir.mkdir();
+this.serverTempDir.mkdirs();
         }
     }
 

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -75,9 +74,9 @@ addRRset(RRset rrset) {
 
 void
 addCNAME(CNAMERecord cname) {
-backtrace.insertElementAt(cname, 0);
+	if (backtrace == null)
 		backtrace = new Vector();
-	backtrace.addElement(cname);
+backtrace.insertElementAt(cname, 0);
 }
 
 /** Is the answer to the query unknown? */

@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -300,9 +299,9 @@ public final class TrunkInvoker extends ServiceMBeanSupport implements ITrunkLis
          // that subset FIXME it will speed up lookup times
 	 //Prove it before you do it -- david.  Should be constant time lookup in a hashmap.
          ObjectName mbean = (ObjectName) Registry.lookup(invocation.getObjectName());
-Object obj = getServer().invoke(mbean, "invoke", new Object[] { invocation }, Invocation.INVOKE_SIGNATURE);
+
          // The cl on the thread should be set in another interceptor
-         Object obj = getServer().invoke(mbean, "", new Object[] { invocation }, Invocation.INVOKE_SIGNATURE);
+Object obj = getServer().invoke(mbean, "invoke", new Object[] { invocation }, Invocation.INVOKE_SIGNATURE);
 	 //log.info("got return object: " + obj);
 
          return new MarshalledObject(obj);

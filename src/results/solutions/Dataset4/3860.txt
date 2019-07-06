@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class RestGetMappingAction extends BaseRestHandler {
 
     @Override public void handleRequest(final RestRequest request, final RestChannel channel) {
         final String[] indices = splitIndices(request.param("index"));
-ClusterStateRequest clusterStateRequest = Requests.clusterStateRequest()
+        final Set<String> types = ImmutableSet.copyOf(splitTypes(request.param("type")));
 
-        ClusterStateRequest clusterStateRequest = Requests.clusterState()
+ClusterStateRequest clusterStateRequest = Requests.clusterStateRequest()
                 .filterRoutingTable(true)
                 .filterNodes(true)
                 .filteredIndices(indices);

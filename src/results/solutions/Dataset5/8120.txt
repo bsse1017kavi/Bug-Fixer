@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -285,9 +284,9 @@ public class StyledTextDropTargetEffect extends DropTargetEffect {
 	 * @see DropTargetEvent
 	 */
 	public void dropAccept(DropTargetEvent event) {
-text.setSelection(currentOffset);
+		if (currentOffset != -1) {
 			StyledText text = (StyledText) getControl();
-			text.setCaretOffset(currentOffset);
+text.setSelection(currentOffset);
 			currentOffset = -1;
 		}
 	}

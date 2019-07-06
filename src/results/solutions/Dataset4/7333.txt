@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -175,9 +174,9 @@ public class MultiMatchQueryBuilder extends BaseQueryBuilder implements Boostabl
      * Adds a field to run the multi match against with a specific boost.
      */
     public MultiMatchQueryBuilder field(String field, float boost) {
-fieldsBoosts = new ObjectFloatOpenHashMap<>();
+        fields.add(field);
         if (fieldsBoosts == null) {
-            fieldsBoosts = new ObjectFloatOpenHashMap<String>();
+fieldsBoosts = new ObjectFloatOpenHashMap<>();
         }
         fieldsBoosts.put(field, boost);
         return this;

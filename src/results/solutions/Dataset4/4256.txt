@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class GeoDistanceFacetCollectorParser implements FacetCollectorParser {
             } else if (token.isValue()) {
                 if (currentName.equals("unit")) {
                     unit = DistanceUnit.fromString(parser.text());
-} else if ("value_field".equals(currentName) || "valueField".equals(currentName)) {
+                } else if (currentName.equals("distance_type") || currentName.equals("distanceType")) {
                     geoDistance = GeoDistance.fromString(parser.text());
-                } else if ("value_field".equals(currentName) || "valueName".equals(currentName)) {
+} else if ("value_field".equals(currentName) || "valueField".equals(currentName)) {
                     valueFieldName = parser.text();
                 } else if ("value_script".equals(currentName) || "valueScript".equals(currentName)) {
                     valueScript = parser.text();

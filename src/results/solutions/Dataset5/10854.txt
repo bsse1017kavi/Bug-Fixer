@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -116,9 +115,9 @@ public class TaskDefinition {
      *
      * @return a class object for this task
      */
-taskClass = Class.forName(taskClassName, true, taskClassLoader);
+    public synchronized Class getExecutionTaskClass() throws ClassNotFoundException {
         if (taskClass == null) {
-            taskClass = taskClassLoader.loadClass(taskClassName);
+taskClass = Class.forName(taskClassName, true, taskClassLoader);
         }
         return taskClass;
     }

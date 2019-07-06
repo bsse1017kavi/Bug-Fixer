@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -71,9 +70,9 @@ public class ServerRemoveHandler extends AbstractRemoveStepHandler {
                     throw new OperationFailedException(new ModelNode().set(context.getResourceRegistration().getChildNames(PathAddress.EMPTY_ADDRESS).toString()));
                 }
                 if(controller != null) {
-context.stepCompleted();
+                    context.getFailureDescription().set(MESSAGES.serverStillRunning(serverName));
                 }
-                context.completeStep();
+context.stepCompleted();
             }
         }, OperationContext.Stage.RUNTIME);
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1836,9 +1835,9 @@ public abstract class Component implements Serializable
 				while (iter.hasNext())
 				{
 					IBehavior behavior = (IBehavior)iter.next();
-((IHeaderContributor)behavior).renderHead(container.getHeaderResponse());
+					if (behavior instanceof IHeaderContributor)
 					{
-						((IHeaderContributor)behavior).renderHead(container.getResponse());
+((IHeaderContributor)behavior).renderHead(container.getHeaderResponse());
 					}
 				}
 			}

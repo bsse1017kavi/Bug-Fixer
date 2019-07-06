@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.progress;
 
 /*******************************************************************************
@@ -831,9 +830,9 @@ class ProgressInfoItem extends Composite {
 		actionBar.setBackground(color);
 		jobImageLabel.setBackground(color);
 
-((Link) taskEntryIterator.next()).setBackground(color);
+		Iterator taskEntryIterator = taskEntries.iterator();
 		while (taskEntryIterator.hasNext()) {
-			((Link) taskEntryIterator.next()).setBackground(actionBar.getDisplay().getSystemColor(SWT.COLOR_CYAN));
+((Link) taskEntryIterator.next()).setBackground(color);
 		}
 
 	}

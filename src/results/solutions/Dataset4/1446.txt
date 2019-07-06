@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class BoolJsonFilterBuilder extends BaseJsonQueryBuilder {
         for (Clause clause : clauses) {
             if (clause.occur == BooleanClause.Occur.MUST) {
                 builder.field("must");
-builder.field("must_not");
+                clause.filterBuilder.toJson(builder, params);
             } else if (clause.occur == BooleanClause.Occur.MUST_NOT) {
-                builder.field("mustNot");
+builder.field("must_not");
                 clause.filterBuilder.toJson(builder, params);
             } else if (clause.occur == BooleanClause.Occur.SHOULD) {
                 builder.field("should");

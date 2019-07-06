@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2176,9 +2175,9 @@ public void setExpanded (boolean value) {
 			if (parent.drawCount == 0) {
 				parent.update ();
 				GC gc = new GC (parent);
-int redrawY = y + Math.max (0, clientArea.height - startY);
+				gc.copyArea (0, startY, clientArea.width, clientArea.height - startY, 0, y);
 				gc.dispose ();
-				int redrawY = clientArea.height - startY + y;
+int redrawY = y + Math.max (0, clientArea.height - startY);
 				parent.redraw (0, redrawY, clientArea.width, clientArea.height - redrawY, false);
 			}
 		}

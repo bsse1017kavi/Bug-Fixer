@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class LocalAllocateDangledIndices extends AbstractComponent {
         DiscoveryNode masterNode = clusterState.nodes().masterNode();
         if (masterNode == null) {
             listener.onFailure(new MasterNotDiscoveredException("no master to send allocate dangled request"));
-AllocateDangledRequest request = new AllocateDangledRequest(clusterService.localNode(), indices);
+            return;
         }
-        AllocateDangledRequest request = new AllocateDangledRequest(clusterState.nodes().localNode(), indices);
+AllocateDangledRequest request = new AllocateDangledRequest(clusterService.localNode(), indices);
         transportService.sendRequest(masterNode, AllocateDangledRequestHandler.ACTION, request, new TransportResponseHandler<AllocateDangledResponse>() {
             @Override
             public AllocateDangledResponse newInstance() {

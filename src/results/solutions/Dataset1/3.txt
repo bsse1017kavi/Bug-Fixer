@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spell;
 
 /**
@@ -38,9 +37,9 @@ public class TestPlainTextDictionary extends LuceneTestCase {
     SpellChecker spellChecker = new SpellChecker(ramDir);
     spellChecker.indexDictionary(ptd);
     String[] similar = spellChecker.suggestSimilar("treeword", 2);
-assertEquals(similar[1], "oneword");
+    assertEquals(2, similar.length);
     assertEquals(similar[0], "threeword");
-    assertEquals(similar[1], "twoword");
+assertEquals(similar[1], "oneword");
     spellChecker.close();
     ramDir.close();
   }

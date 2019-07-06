@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -192,9 +191,9 @@ public class SynchronizedCollection<E> implements Collection<E>, Serializable {
     public boolean equals(final Object object) {
         synchronized (lock) {
             if (object == this) {
-return object == this || decorated().equals(object);
+                return true;
             }
-            return decorated().equals(object);
+return object == this || decorated().equals(object);
         }
     }
 

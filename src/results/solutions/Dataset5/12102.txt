@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -254,9 +253,9 @@ public abstract class ResourceReference implements Serializable
 		@Override
 		public int hashCode()
 		{
-}
+			return Objects.hashCode(getLocale(), getStyle(), getVariation());
 		}
-	};
+}
 
 	/**
 	 * Can be used to disable registering certain resource references in

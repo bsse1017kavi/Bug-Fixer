@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -912,9 +911,9 @@ public class JMeter implements JMeterPlugin {
      * Listen to test and handle tidyup after non-GUI test completes.
      * If running a remote test, then after waiting a few seconds for listeners to finish files,
      * it calls ClientJMeterEngine.tidyRMI() to deal with the Naming Timer Thread.
-private final AtomicInteger started = new AtomicInteger(0); // keep track of remote tests
+     */
     private static class ListenToTest implements TestStateListener, Runnable, Remoteable {
-        private AtomicInteger started = new AtomicInteger(0); // keep track of remote tests
+private final AtomicInteger started = new AtomicInteger(0); // keep track of remote tests
 
         //NOT YET USED private JMeter _parent;
 

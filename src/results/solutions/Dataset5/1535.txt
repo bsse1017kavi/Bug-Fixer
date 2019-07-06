@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1174,9 +1173,9 @@ public class MockHttpServletRequest implements HttpServletRequest
 	{
 		final IPageMap pageMap = component.getPage().getPageMap();
 		final String pageMapName = pageMap.isDefault() ? "" : pageMap.getName();
-final Class<? extends Page> clazz = ((BookmarkablePageLink<?>)component).getPageClass();
+		if (component instanceof BookmarkablePageLink)
 		{
-			final Class<? extends Page> clazz = ((BookmarkablePageLink)component).getPageClass();
+final Class<? extends Page> clazz = ((BookmarkablePageLink<?>)component).getPageClass();
 			parameters.put(WebRequestCodingStrategy.BOOKMARKABLE_PAGE_PARAMETER_NAME, pageMapName +
 				':' + clazz.getName());
 		}

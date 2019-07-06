@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.67 $ $Date$
@@ -489,9 +488,9 @@ public final class PageMap implements Serializable
 	 *            The page to put into this map
 	 */
 	final void put(final Page page)
-if (!page.isStateless() && !page.isErrorPage())
+	{
 		// Page only goes into session if it is stateless
-		if (!page.isStateless())
+if (!page.isStateless() && !page.isErrorPage())
 		{
 			// Get page map entry from page
 			final IPageMapEntry entry = page.getPageMapEntry();

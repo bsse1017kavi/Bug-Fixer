@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -135,9 +134,9 @@ public class ServletWebRequestTests {
 		servletRequest.addHeader("If-Modified-Since", oneMinuteAgo);
 
 		request.checkNotModified(currentTime);
-assertEquals(""+currentTime, servletResponse.getHeader("Last-Modified"));
+
 		assertEquals(200, servletResponse.getStatus());
-		assertEquals(currentTime, servletResponse.getHeader("Last-Modified"));
+assertEquals(""+currentTime, servletResponse.getHeader("Last-Modified"));
 	}
 
 	@Test

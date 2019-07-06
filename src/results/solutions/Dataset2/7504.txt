@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -137,9 +136,9 @@ addRR(Record record) {
 		data.put(record.name, nametable);
 /*System.out.println("Adding name <" + record.name + "> to [" + origin + "]");*/
 	}
-rrset = new RRset();
+	RRset rrset = (RRset) nametable.get(new Short(record.getType()));
 	if (rrset == null) {
-		rrset = new RRset(record.getName(), record.getType());
+rrset = new RRset();
 		nametable.put(new Short(record.getType()), rrset);
 	}
 	rrset.addRR(record);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -229,9 +228,9 @@ public class ServiceProviderRegistryService implements ServiceProviderRegistry, 
         // Only respond to remote post-modify events
         if (event.isPre() || event.isOriginLocal()) return;
         this.notifyListeners(Collections.singletonMap(event.getKey(), event.getValue().keySet()), false);
-interface Operation<R> extends CacheInvoker.Operation<String, Map<ClusterNode, Void>, R> {
+    }
 
-    static interface Operation<R> extends CacheInvoker.Operation<String, Map<ClusterNode, Void>, R> {
+interface Operation<R> extends CacheInvoker.Operation<String, Map<ClusterNode, Void>, R> {
     }
 
     class RpcDispatcher implements ServiceProviderRegistryRpcHandler {

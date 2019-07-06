@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -133,9 +132,9 @@ public class CommandLineMain {
         cmdRegistry.registerHandler(new VersionHandler(), "version");
 
         cmdRegistry.registerHandler(new DataSourceAddHandler(), "add-data-source");
-//cmdRegistry.registerHandler(new SimpleDataSourceOperationHandler("data-source"), "data-source");
+        cmdRegistry.registerHandler(new DataSourceModifyHandler(), "modify-data-source");
         cmdRegistry.registerHandler(new DataSourceRemoveHandler(), "remove-data-source");
-        cmdRegistry.registerHandler(new SimpleDataSourceOperationHandler("data-source"), "data-source");
+//cmdRegistry.registerHandler(new SimpleDataSourceOperationHandler("data-source"), "data-source");
         cmdRegistry.registerHandler(new XADataSourceAddHandler(), "add-xa-data-source");
         cmdRegistry.registerHandler(new XADataSourceRemoveHandler(), "remove-xa-data-source");
         cmdRegistry.registerHandler(new XADataSourceModifyHandler(), "modify-xa-data-source");

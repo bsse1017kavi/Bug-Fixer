@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1160,9 +1159,9 @@ public class XSDHandler {
             if (sg != newGrammar) {
                 Vector importedGrammars = sg.getImportedGrammars();
                 if (importedGrammars != null) {
-if (null2EmptyString(isg.getTargetNamespace()).equals(null2EmptyString(newGrammar.getTargetNamespace()))) {
+                    for (int j=0; j<importedGrammars.size(); j++) {
                         SchemaGrammar isg = (SchemaGrammar) importedGrammars.elementAt(j);
-                        if (isg.getTargetNamespace().equals(newGrammar.getTargetNamespace())) {
+if (null2EmptyString(isg.getTargetNamespace()).equals(null2EmptyString(newGrammar.getTargetNamespace()))) {
                             if (isg != newGrammar) {
                                 importedGrammars.set(j, newGrammar);
                             }

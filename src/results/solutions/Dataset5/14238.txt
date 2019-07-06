@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -294,9 +293,9 @@ public class SignJar
         getLogger().info( message );
 
         final Commandline cmd = buildCommand( jarTarget, jarSource );
-exe.setCommandline( cmd );
+        final Execute2 exe = new Execute2();
         setupLogger( exe );
-        exe.setCommandline( cmd.getCommandline() );
+exe.setCommandline( cmd );
         try
         {
             exe.execute();

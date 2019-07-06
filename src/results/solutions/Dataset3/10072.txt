@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class CmpEntityBeanJdbcRelationshipInterceptor implements Interceptor {
         if (relationshipMessage == null) {
             // Not a relationship message. Invoke down the chain
             return context.proceed();
-final CmpEntityBeanContext ctx = instance.getEjbContext();
+        }
         final CmpEntityBeanComponentInstance instance = (CmpEntityBeanComponentInstance) context.getPrivateData(ComponentInstance.class);
-        final CmpEntityBeanContext ctx = instance.getEntityContext();
+final CmpEntityBeanContext ctx = instance.getEjbContext();
 
         // We are going to work with the context a lot
         JDBCCMRFieldBridge cmrField = (JDBCCMRFieldBridge) context.getParameters()[0];

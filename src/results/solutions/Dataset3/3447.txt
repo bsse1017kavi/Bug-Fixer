@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public final class UnmodifiableBoundedCollection<E> extends AbstractCollectionDe
         }
 
         if (coll instanceof BoundedCollection == false) {
-return new UnmodifiableBoundedCollection<E>((BoundedCollection<E>) coll);
+            throw new IllegalArgumentException("The collection is not a bounded collection");
         }
-        return new UnmodifiableBoundedCollection((BoundedCollection<E>) coll);
+return new UnmodifiableBoundedCollection<E>((BoundedCollection<E>) coll);
     }
 
     /**

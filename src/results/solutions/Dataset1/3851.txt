@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -211,9 +210,9 @@ public abstract class AbstractPropertyPlaceholder implements ComponentDefinition
         return null;
     }
 
-pattern = Pattern.compile("\\Q" + placeholderPrefix + "\\E(.+?)\\Q" + placeholderSuffix + "\\E");
+    protected Pattern getPattern() {
         if (pattern == null) {
-            pattern = Pattern.compile("\\Q" + placeholderPrefix + "\\E(.+)\\Q" + placeholderSuffix + "\\E");
+pattern = Pattern.compile("\\Q" + placeholderPrefix + "\\E(.+?)\\Q" + placeholderSuffix + "\\E");
         }
         return pattern;
     }

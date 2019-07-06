@@ -1,4 +1,3 @@
-
 package org.eclipse.jst.jsf.facelet.core.internal.registry;
 
 import java.util.Collections;
@@ -96,9 +95,9 @@ public class VeryTemporaryDefaultFaceletResolver extends
         final MetadataAttributeAdvisor advisor =
             new MetadataAttributeAdvisor(tagId, _viewLoader);
         if (typeInfo instanceof ComponentTypeInfo)
-(ComponentTypeInfo) typeInfo, null, _factory, advisor);
+        {
             return new ComponentTag(tagId.getUri(), tagId.getTagName(),
-                    (ComponentTypeInfo) typeInfo, _factory, advisor);
+(ComponentTypeInfo) typeInfo, null, _factory, advisor);
         }
         else if (typeInfo instanceof ConverterTypeInfo)
         {

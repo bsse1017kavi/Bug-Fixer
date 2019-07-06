@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -69,9 +68,9 @@ public void insertTabViewItem(NSTabViewItem tabViewItem, int index) {
 	OS.objc_msgSend(this.id, OS.sel_insertTabViewItem_1atIndex_1, tabViewItem != null ? tabViewItem.id : 0, index);
 }
 
-OS.objc_msgSend_stret(result, this.id, OS.sel_minimumSize);
+public NSSize minimumSize() {
 	NSSize result = new NSSize();
-	OS.objc_msgSend_struct(result, this.id, OS.sel_minimumSize);
+OS.objc_msgSend_stret(result, this.id, OS.sel_minimumSize);
 	return result;
 }
 

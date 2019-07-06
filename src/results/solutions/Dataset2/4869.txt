@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -539,9 +538,9 @@ public String[][] resolveType(String typeName) throws JavaModelException {
 public String[][] resolveType(String typeName, WorkingCopyOwner owner) throws JavaModelException {
 	JavaProject project = (JavaProject)getJavaProject();
 	NameLookup lookup = null;
-lookup = project.getNameLookup();
+	try {
 		// set the units to look inside
-		lookup = ((JavaProject)project).getNameLookup();
+lookup = project.getNameLookup();
 		JavaModelManager manager = JavaModelManager.getJavaModelManager();
 		ICompilationUnit[] workingCopies = manager.getWorkingCopies(owner, true/*add primary WCs*/);
 		lookup.setUnitsToLookInside(workingCopies);

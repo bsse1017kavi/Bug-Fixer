@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2716,9 +2715,9 @@ public boolean post (Event event) {
 						case SWT.DEL: keysym = OS.XK_Delete; break;
 						case SWT.ESC: keysym = OS.XK_Escape; break;
 						case SWT.TAB: keysym = OS.XK_Tab; break;
-keysym = key;
+						case SWT.LF: keysym = OS.XK_Linefeed; break;
 						default:
-							keysym = wcsToMbcs (key);
+keysym = key;
 					}
 					keyCode = OS.XKeysymToKeycode (xDisplay, keysym);
 					if (keyCode == 0) return false;

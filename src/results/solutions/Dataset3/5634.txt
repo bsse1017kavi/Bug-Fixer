@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -290,9 +289,9 @@ public interface UndertowLogger extends BasicLogger {
     IllegalArgumentException handlerWasNotAHandlerOrWrapper(Class<?> handlerClass);
 
     @Message(id = 66, value = "Failed to configure handler %s")
-@Message(id = 67, value = "Could not find the port number listening for protocol %s")
+    RuntimeException failedToConfigureHandlerClass(String handlerClass, @Cause Exception e);
 
-    @Message(id = 67, value = "Servlet class not defined for servlet %s")
+@Message(id = 67, value = "Could not find the port number listening for protocol %s")
     IllegalArgumentException servletClassNotDefined(final String servletName);
 
     @LogMessage(level = ERROR)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -61,9 +60,9 @@ public class PredicatedSortedMap<K, V> extends PredicatedMap<K, V> implements So
      * @param map  the map to decorate, must not be null
      * @param keyPredicate  the predicate to validate the keys, null means no check
      * @param valuePredicate  the predicate to validate to values, null means no check
-public static <K, V> SortedMap<K, V> predicatedSortedMap(SortedMap<K, V> map,
+     * @throws IllegalArgumentException if the map is null
      */
-    public static <K, V> SortedMap<K, V> decorate(SortedMap<K, V> map,
+public static <K, V> SortedMap<K, V> predicatedSortedMap(SortedMap<K, V> map,
             Predicate<? super K> keyPredicate, Predicate<? super V> valuePredicate) {
         return new PredicatedSortedMap<K, V>(map, keyPredicate, valuePredicate);
     }

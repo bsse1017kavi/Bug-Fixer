@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -74,8 +73,8 @@ public void setDepth(int depth){
 }
 public void setFieldIndex(int index){
 }
-return "(" + (declaringType == null ? "<NO DECLARING TYPE>" : new String(declaringType)) + ")this"; //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-1$
+public String toStringExpression(){
 	char[] declaringType = this.evaluationContext.declaringTypeName;
-	return "("/*nonNLS*/ + (declaringType == null ? "<NO DECLARING TYPE>"/*nonNLS*/ : new String(declaringType)) + ")this"/*nonNLS*/;
+return "(" + (declaringType == null ? "<NO DECLARING TYPE>" : new String(declaringType)) + ")this"; //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-1$
 }
 }

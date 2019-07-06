@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -40,9 +39,9 @@ public class StandaloneMockMvcBuilderTests {
 	@Test
 	public void placeHoldersInRequestMapping() throws Exception {
 
-builder.addPlaceHolderValue("sys.login.ajax", "/foo");
+		StubWebApplicationContext cxt = new StubWebApplicationContext(new MockServletContext());
 		StandaloneMockMvcBuilder builder = new StandaloneMockMvcBuilder(new PlaceholderController());
-		builder.addPlaceHolderValues("sys.login.ajax", "/foo");
+builder.addPlaceHolderValue("sys.login.ajax", "/foo");
 		builder.initWebAppContext(cxt);
 
 		RequestMappingHandlerMapping hm = cxt.getBean(RequestMappingHandlerMapping.class);

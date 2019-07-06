@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -34,9 +33,9 @@ public class TestNGramPhraseQuery extends LuceneTestCase {
 
   @BeforeClass
   public static void beforeClass() throws Exception {
-writer.shutdown();
+    directory = newDirectory();
     RandomIndexWriter writer = new RandomIndexWriter(random(), directory);
-    writer.close();
+writer.shutdown();
     reader = DirectoryReader.open(directory);
   }
 

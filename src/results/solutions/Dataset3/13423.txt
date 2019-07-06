@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ import org.jboss.dmr.ModelNode;
  */
 public class GlobalOperationHandlers {
 
-public static final ModelQueryOperationHandler READ_RESOURCE = new ModelQueryOperationHandler() {
+    static final String[] NO_LOCATION = new String[0];
 
-    public static final ModelQueryOperationHandler READ_SUB_MODEL = new ModelQueryOperationHandler() {
+public static final ModelQueryOperationHandler READ_RESOURCE = new ModelQueryOperationHandler() {
         public Cancellable execute(NewOperationContext context, ModelNode operation, ResultHandler resultHandler) {
             try {
                 final ModelNode result;

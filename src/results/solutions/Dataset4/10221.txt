@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,8 +55,8 @@ public class ByteValuesComparatorSource extends IndexFieldData.XFieldComparatorS
             dMissingValue = reversed ? Byte.MAX_VALUE : Byte.MIN_VALUE;
         } else {
             dMissingValue = missingValue instanceof Number ? ((Number) missingValue).byteValue() : Byte.parseByte(missingValue.toString());
-return new ByteValuesComparator(indexFieldData, dMissingValue, numHits, reversed);
+        }
 
-        return new ByteValuesComparator(indexFieldData, dMissingValue, numHits);
+return new ByteValuesComparator(indexFieldData, dMissingValue, numHits, reversed);
     }
 }

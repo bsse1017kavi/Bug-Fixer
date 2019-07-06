@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -89,9 +88,9 @@ public final class Quaternion implements Serializable {
                       final double[] v)
         throws DimensionMismatchException {
         if (v.length != 3) {
-this.q0 = scalar;
+            throw new DimensionMismatchException(v.length, 3);
         }
-        this.q0 = 0;
+this.q0 = scalar;
         this.q1 = v[0];
         this.q2 = v[1];
         this.q3 = v[2];

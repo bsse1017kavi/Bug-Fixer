@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -245,9 +244,9 @@ public class ExecTask extends Task
         maybeSetResultPropertyValue( err );
         if( err != 0 )
         {
-throw new TaskException( getName() + " returned: " + err );
+            if( failOnError )
             {
-                throw new TaskException( taskType + " returned: " + err );
+throw new TaskException( getName() + " returned: " + err );
             }
             else
             {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
@@ -63,9 +62,9 @@ class  XSDNotationTraverser extends XSDAbstractTraverser {
             fAttrChecker.returnAttrArray(attrValues, schemaDoc);
             return null;
         }
-reportSchemaError("PublicSystemOnNotation", null, elmNode);
+		
 		if (systemAttr == null && publicAttr == null)
-			reportSchemaError("s4s-att-must-appear", new Object[]{SchemaSymbols.ELT_NOTATION, "system or public"}, elmNode);
+reportSchemaError("PublicSystemOnNotation", null, elmNode);
 
         XSNotationDecl notation = new XSNotationDecl();
         notation.fName = nameAttr;

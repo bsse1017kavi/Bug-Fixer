@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -52,9 +51,9 @@ public class ReflectionTest extends GdxTest {
 
 			Constructor copyConstroctor = ClassReflection.getConstructor(Vector2.class, Vector2.class);
 			Vector2 fromCopyConstructor = (Vector2)copyConstroctor.newInstance(fromDefaultConstructor);
-Method mMul = ClassReflection.getMethod(Vector2.class, "mul", float.class);
+			println("From copy constructor: " + fromCopyConstructor);
 
-			Method mMul = ClassReflection.getMethod(Vector2.class, "scl", float.class);
+Method mMul = ClassReflection.getMethod(Vector2.class, "mul", float.class);
 			println("Multiplied by 2; " + mMul.invoke(fromCopyConstructor, 2));
 
 			Method mNor = ClassReflection.getMethod(Vector2.class, "nor");

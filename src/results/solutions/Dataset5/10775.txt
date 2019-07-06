@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.tutorial.datashare;
 
 import org.eclipse.ecf.core.events.IContainerConnectedEvent;
@@ -33,9 +32,9 @@ public class MyChannel extends BaseChannel {
 			public boolean processEvent(Event event) {
 				// If event is IContainerConnectedEvent 
 				if (event instanceof IContainerConnectedEvent) {
-if (!ccevent.getTargetID().equals(getConnectedID())) sendHelloMessage();
+					IContainerConnectedEvent ccevent = (IContainerConnectedEvent) event;
 					// Check to make sure it's a client...not the groupID
-					if (!ccevent.getTargetID().equals(getGroupID())) sendHelloMessage();
+if (!ccevent.getTargetID().equals(getConnectedID())) sendHelloMessage();
 				}
 				return false;
 			}});

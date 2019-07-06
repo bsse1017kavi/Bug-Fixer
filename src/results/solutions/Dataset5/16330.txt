@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -459,9 +458,9 @@ public class MySQLDictionary
      * @see org.apache.openjpa.jdbc.sql.DBDictionary#getTypeName(org.apache.openjpa.jdbc.schema.Column)
      */
     @Override
-if (col.getSize() <= 0)   // unknown size
+    public String getTypeName(Column col) {
         if (col.getType() == Types.BLOB) {
-            if (col.getSize() == 0)   // unknown size
+if (col.getSize() <= 0)   // unknown size
                 return blobTypeName;  // return old default of 64KB
             else if (col.getSize() <= 255)
                 return tinyBlobTypeName;

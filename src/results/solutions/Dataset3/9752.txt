@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -268,9 +267,9 @@ class SimplexTableau implements Serializable {
      * Get new versions of the constraints which have positive right hand sides.
      * @param originalConstraints original (not normalized) constraints
      * @return new versions of the constraints
-List<LinearConstraint> normalized = new ArrayList<LinearConstraint>(originalConstraints.size());
+     */
     public List<LinearConstraint> normalizeConstraints(Collection<LinearConstraint> originalConstraints) {
-        List<LinearConstraint> normalized = new ArrayList<LinearConstraint>();
+List<LinearConstraint> normalized = new ArrayList<LinearConstraint>(originalConstraints.size());
         for (LinearConstraint constraint : originalConstraints) {
             normalized.add(normalize(constraint));
         }

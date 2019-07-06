@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -154,9 +153,9 @@ public class SimpleIndicesWarmerTests extends AbstractIntegrationTest {
         client().prepareIndex("test", "type1", "2").setSource("field", "value2").setRefresh(true).execute().actionGet();
     }
 
-createIndex("test");
+    @Test
     public void deleteNonExistentIndexWarmerTest() {
-        client().admin().indices().prepareCreate("test").execute().actionGet();
+createIndex("test");
 
         try {
             client().admin().indices().prepareDeleteWarmer().setIndices("test").setName("foo").execute().actionGet(1000);

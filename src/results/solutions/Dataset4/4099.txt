@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class NativeScriptTests extends ElasticsearchTestCase {
                 new SettingsModule(settings),
                 new ScriptModule(settings)).createInjector();
 
-ExecutableScript executable = scriptService.executable("native", "my", ScriptService.ScriptType.INLINE, null);
+        ScriptService scriptService = injector.getInstance(ScriptService.class);
 
-        ExecutableScript executable = scriptService.executable("native", "my", null);
+ExecutableScript executable = scriptService.executable("native", "my", ScriptService.ScriptType.INLINE, null);
         assertThat(executable.run().toString(), equalTo("test"));
     }
 

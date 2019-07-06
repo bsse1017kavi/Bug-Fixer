@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class CommandTestCase {
     }
 
     protected DefaultOperationCallbackHandler parse(String line) {
-args.parse(null, line);
+        DefaultOperationCallbackHandler args = new DefaultOperationCallbackHandler();
         try {
-            args.parse(line);
+args.parse(null, line);
         } catch (CommandFormatException e) {
             e.printStackTrace();
             org.junit.Assert.fail(e.getLocalizedMessage());

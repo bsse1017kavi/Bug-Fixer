@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -66,9 +65,9 @@ public class CompetitionIteration implements Streamable {
         this.millisPerHit = totalTime / (double)sumTotalHits;
     }
 
-final SinglePassStatistics single = new SinglePassStatistics();
+    public void computeStatistics() {
 
-        SinglePassStatistics single = new SinglePassStatistics();
+final SinglePassStatistics single = new SinglePassStatistics();
 
         for (long datum : iterationData.data()) {
             if (datum > -1) {   // ignore unset values in the underlying array

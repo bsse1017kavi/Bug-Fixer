@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -101,9 +100,9 @@ public class HtmlFileTransportHandler extends AbstractStreamingTransportHandler 
 		// we already validated the parameter..
 		String callback = request.getQueryParams().getFirst("c");
 
-response.flush();
+		String html = String.format(PARTIAL_HTML_CONTENT, callback);
 		response.getBody().write(html.getBytes("UTF-8"));
-		response.getBody().flush();
+response.flush();
 	}
 
 	@Override

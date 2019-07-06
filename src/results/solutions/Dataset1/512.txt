@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -59,9 +58,9 @@ public class BootstrapTest
         List<Range> ranges  = new ArrayList<Range>();
         IPartitioner partitioner = new CollatingOrderPreservingPartitioner();
         Range r = new Range(partitioner.getToken("0"), partitioner.getToken("zzzzzzz"));
-boolean result = store.forceCompaction(ranges, new EndPoint("127.0.0.1", 9150), 0, fileList);
+        ranges.add(r);
 
-        boolean result = store.doAntiCompaction(ranges, new EndPoint("127.0.0.1", 9150), fileList);
+boolean result = store.forceCompaction(ranges, new EndPoint("127.0.0.1", 9150), 0, fileList);
 
         assertEquals(true, result); // some keys should have qualified
         assertEquals(true, fileList.size() >= 3); //Data, index, filter files

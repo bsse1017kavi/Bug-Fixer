@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -131,9 +130,9 @@ public class HasParentQueryParser implements QueryParser {
         innerQuery.setBoost(boost);
         // wrap the query with type query
         innerQuery = new XFilteredQuery(innerQuery, parseContext.cacheFilter(parentDocMapper.typeFilter(), null));
-Set<String> parentTypes = new HashSet<>(5);
+
         ParentChildIndexFieldData parentChildIndexFieldData = null;
-        Set<String> parentTypes = new HashSet<String>(5);
+Set<String> parentTypes = new HashSet<>(5);
         parentTypes.add(parentType);
         for (DocumentMapper documentMapper : parseContext.mapperService()) {
             ParentFieldMapper parentFieldMapper = documentMapper.parentFieldMapper();

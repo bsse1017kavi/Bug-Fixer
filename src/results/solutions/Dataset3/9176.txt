@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -42,9 +41,9 @@ public class PromptPasswordState implements State {
     private StateValues stateValues;
 
     public PromptPasswordState(ConsoleWrapper theConsole, StateValues stateValues) {
-if ((stateValues != null && stateValues.isSilent() == false) && theConsole.getConsole() == null) {
+        this.theConsole = theConsole;
         this.stateValues = stateValues;
-        if (theConsole.getConsole() == null) {
+if ((stateValues != null && stateValues.isSilent() == false) && theConsole.getConsole() == null) {
             throw MESSAGES.noConsoleAvailable();
         }
     }

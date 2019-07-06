@@ -1,4 +1,3 @@
-
 /*
  * ==============================================================================
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -59,9 +58,9 @@ public class Initializer implements IInitializer
 			while (mbs.isRegistered(appBeanName))
 			{
 				tempDomain = name + "-" + i++;
-domain = tempDomain;
+				appBeanName = new ObjectName(tempDomain + ":type=Application");
 			}
-			name = tempDomain;
+domain = tempDomain;
 
 			Application appBean = new Application(application);
 			mbs.registerMBean(appBean, appBeanName);

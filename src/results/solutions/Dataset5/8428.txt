@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -259,9 +258,9 @@ public class PageProvider implements IPageProvider
 			{
 				page = getPageSource().newPageInstance(pageClass, pageParameters);
 				freshCreated = true;
-((Page)page).internalPrepareForRender(false);
+				if (prepareForRenderNewPage() && page instanceof Page)
 				{
-					((Page)page).prepareForRender(false);
+((Page)page).internalPrepareForRender(false);
 				}
 			}
 		}

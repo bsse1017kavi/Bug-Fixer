@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -61,9 +60,9 @@ String[] directoryList(String pathPrefix, char[][] compoundName, char[] packageN
 
 public boolean equals(Object o) {
 	if (this == o) return true;
-return binaryPath.equalsIgnoreCase(((ClasspathDirectory) o).binaryPath);
+	if (!(o instanceof ClasspathDirectory)) return false;
 
-	return binaryPath.equals(((ClasspathDirectory) o).binaryPath);
+return binaryPath.equalsIgnoreCase(((ClasspathDirectory) o).binaryPath);
 }
 
 boolean exists(String pathPrefix, String filename, char[][] packageName) {

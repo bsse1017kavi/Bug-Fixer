@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class RemoteStoreResourceDefinition extends StoreResourceDefinition {
     static final SimpleAttributeDefinition SOCKET_TIMEOUT = new SimpleAttributeDefinitionBuilder(ModelKeys.SOCKET_TIMEOUT, ModelType.LONG, true)
             .setXmlName(Attribute.SOCKET_TIMEOUT.getLocalName())
             .setMeasurementUnit(MeasurementUnit.MILLISECONDS)
-.setDefaultValue(new ModelNode().set(60000))
+            .setAllowExpression(true)
             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
-            .setDefaultValue(new ModelNode().set(60000L))
+.setDefaultValue(new ModelNode().set(60000))
             .build();
 
     // the remote servers parameter is required (not null), and the list of remote-server objects must have size >= 1

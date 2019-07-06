@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -314,9 +313,9 @@ public void finalizeProblems() {
 								Constant cst = value.constant;
 								if (cst != Constant.NotAConstant && cst.typeID() == T_JavaLangString) {
 									IrritantSet tokenIrritants = CompilerOptions.warningTokenToIrritants(cst.stringValue());
-&& options.isAnyEnabled(tokenIrritants) // if irritant is effectively enabled
+									if (tokenIrritants != null
 											&& !tokenIrritants.areAllSet() // no complaint against @SuppressWarnings("all")
-											&& options.isAnyEnabled(tokenIrritants) // if irritant is effectevely enabled
+&& options.isAnyEnabled(tokenIrritants) // if irritant is effectively enabled
 											&& (foundIrritants[iSuppress] == null || !foundIrritants[iSuppress].isAnySet(tokenIrritants))) { // if irritant had no matching problem
 										if (unusedWarningTokenIsWarning) {
 											int start = value.sourceStart, end = value.sourceEnd;

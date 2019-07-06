@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -262,9 +261,9 @@ public class BaseWicketTester
 		this.application = application;
 
 		// FIXME some tests are leaking applications by not calling destroy on them or overriding
-ThreadContext.setApplication(application);
+		// teardown() without calling super, for now we work around by making each name unique
 		this.application.setName("WicketTesterApplication-" + UUID.randomUUID());
-		this.application.set();
+ThreadContext.setApplication(application);
 
 		application.setServletContext(servletContext);
 

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -274,9 +273,9 @@ send(Message query) throws IOException {
 		 * Check that the response ID matches the query ID.  We want
 		 * to check this before actually parsing the message, so that
 		 * if there's a malformed response that's not ours, it
-int id = ((in[0] & 0xFF) << 8) + (in[1] & 0xFF);
+		 * doesn't confuse us.
 		 */
-		int id = ((in[0] & 0xFF) << 8) + in[1];
+int id = ((in[0] & 0xFF) << 8) + (in[1] & 0xFF);
 		int qid = query.getHeader().getID();
 		if (id != qid) {
 			if (Options.check("verbose")) {

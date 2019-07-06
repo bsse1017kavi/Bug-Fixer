@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -29,9 +28,9 @@ import java.io.IOException;
  * @author kimchy (Shay Banon)
  */
 public class HttpJsonBuilder {
-JsonBuilder builder = JsonBuilder.jsonBuilder();
+
     public static JsonBuilder cached(HttpRequest request) throws IOException {
-        JsonBuilder builder = JsonBuilder.cached();
+JsonBuilder builder = JsonBuilder.jsonBuilder();
         String prettyPrint = request.param("pretty");
         if (prettyPrint != null && "true".equals(prettyPrint)) {
             builder.prettyPrint();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public class RedirectRequestTarget implements IRequestTarget
 			{
 				String location = RequestCycle.get()
 					.getProcessor()
-if (location.startsWith("./") && location.length() > 2)
+					.getRequestCodingStrategy()
 					.rewriteStaticRelativeUrl(redirectUrl.substring(1));
-				if (location.startsWith("./"))
+if (location.startsWith("./") && location.length() > 2)
 				{
 					location = location.substring(2);
 				}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class RestGetIndexedScriptAction extends BaseRestHandler {
 
     @Inject
     public RestGetIndexedScriptAction(Settings settings, Client client,
-controller.registerHandler(GET, "/_scripts/{lang}/{id}", this);
+                                      ScriptService scriptService, RestController controller) {
         super(settings, client);
-        controller.registerHandler(GET, "/_search/script/{lang}/{id}", this);
+controller.registerHandler(GET, "/_scripts/{lang}/{id}", this);
     }
 
     @Override

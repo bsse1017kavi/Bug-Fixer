@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -233,9 +232,9 @@ public class TableModelThreadedView extends TreeTableModelDecorator {
 
     protected boolean containsRecentChildren(MessageNode parent) {
         for (int i = 0; i < parent.getChildCount(); i++) {
-if (((ColumbaHeader) child.getHeader()).getFlags().getSeen()==false) {
+            MessageNode child = (MessageNode) parent.getChildAt(i);
 
-            if (((ColumbaHeader) child.getHeader()).getFlags().getRecent()) {
+if (((ColumbaHeader) child.getHeader()).getFlags().getSeen()==false) {
                 // recent found
                 LOG.info("found recent message");
 

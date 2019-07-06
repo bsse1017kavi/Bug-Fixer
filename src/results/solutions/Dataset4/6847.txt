@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public class HighlightPhase extends AbstractComponent implements FetchSubPhase {
             }
 
             if (field.forceSource()) {
-throw new ElasticsearchIllegalArgumentException("source is forced for fields " +  fieldNamesToHighlight + " but type [" + hitContext.hit().type() + "] has disabled _source");
+                SourceFieldMapper sourceFieldMapper = context.mapperService().documentMapper(hitContext.hit().type()).sourceMapper();
                 if (!sourceFieldMapper.enabled()) {
-                    throw new ElasticsearchIllegalArgumentException("source is forced for field [" +  field.field() + "] but type [" + hitContext.hit().type() + "] has disabled _source");
+throw new ElasticsearchIllegalArgumentException("source is forced for fields " +  fieldNamesToHighlight + " but type [" + hitContext.hit().type() + "] has disabled _source");
                 }
             }
 

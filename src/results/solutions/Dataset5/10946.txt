@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -449,9 +448,9 @@ public class SourceAnnotationHandler
         return tmp.toString();
     }
     
-return new StringBuilder(e.getKind().toString()).append(" ")
+    String toDetails(Element e) {
         TypeMirror mirror = e.asType();
-        return new StringBuffer(e.getKind().toString()).append(" ")
+return new StringBuilder(e.getKind().toString()).append(" ")
                            .append(e.toString())
                            .append("Mirror ")
                            .append(mirror.getKind().toString())

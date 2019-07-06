@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -173,9 +172,9 @@ public class InterTypeFieldDeclaration extends InterTypeDeclaration {
 		ResolvedType declaringType = world.fromBinding(onTypeBinding).resolve(world.getWorld());
 		if (declaringType.isRawType() || declaringType.isParameterizedType()) {
 			declaringType = declaringType.getGenericType();
-new ResolvedMemberImpl(Member.FIELD, declaringType,
+		}
 		ResolvedMember sig = 
-			new ResolvedMember(Member.FIELD, declaringType,
+new ResolvedMemberImpl(Member.FIELD, declaringType,
 					declaredModifiers, world.fromBinding(binding.returnType),
 					new String(declaredSelector), UnresolvedType.NONE);
 		

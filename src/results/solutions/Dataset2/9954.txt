@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1602,9 +1601,9 @@ public class JavaProject
 		// Inherit from JavaCore options if specified
 		if (inheritJavaCoreOptions) {
 			Iterator propertyNames = projectOptions.keySet().iterator();
-String propertyValue = (String) projectOptions.get(propertyName);
+			while (propertyNames.hasNext()) {
 				String propertyName = (String) propertyNames.next();
-				String propertyValue = (String) perProjectInfo.options.get(propertyName);
+String propertyValue = (String) projectOptions.get(propertyName);
 				if (propertyValue != null && optionNames.contains(propertyName)){
 					options.put(propertyName, propertyValue.trim());
 				}

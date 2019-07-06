@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class TestPredicatedCollection<E> extends AbstractTestCollection<E> {
    //------------------------------------------------------------------------
     protected Predicate<E> truePredicate = TruePredicate.<E>truePredicate();
 
-return PredicatedCollection.predicatedCollection(collection, predicate);
+    protected Collection<E> decorateCollection(
                 Collection<E> collection, Predicate<E> predicate) {
-        return PredicatedCollection.decorate(collection, predicate);
+return PredicatedCollection.predicatedCollection(collection, predicate);
     }
 
     @Override

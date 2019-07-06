@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -132,9 +131,9 @@ public final class Tester implements CommandRunnerObserver
 	 *            if true, each thread will represent a seperate session. If false, the test behaves
 	 *            like one client issuing multiple concurrent requests
 	 */
-this(Arrays.asList(command), numberOfThreads, multipleSessions);
+	public Tester(Command command, int numberOfThreads, boolean multipleSessions)
 	{
-		this(Arrays.asList(new Command[] { command }), numberOfThreads, multipleSessions);
+this(Arrays.asList(command), numberOfThreads, multipleSessions);
 	}
 
 	/**

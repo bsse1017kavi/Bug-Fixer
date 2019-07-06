@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -183,9 +182,9 @@ public class SecurityRealmAddHandler implements OperationStepHandler {
         if (ssl != null || authTruststore != null) {
             ServiceName sslServiceName = addSSLService(context, ssl, authTruststore, realmServiceName, serviceTarget, newControllers);
             realmBuilder.addDependency(sslServiceName, SSLIdentityService.class, securityRealmService.getSSLIdentityInjector());
-realmBuilder.setInitialMode(ServiceController.Mode.ON_DEMAND);
+        }
 
-        realmBuilder.setInitialMode(Mode.ACTIVE);
+realmBuilder.setInitialMode(ServiceController.Mode.ON_DEMAND);
         ServiceController<?> sc = realmBuilder.install();
         if (newControllers != null) {
             newControllers.add(sc);

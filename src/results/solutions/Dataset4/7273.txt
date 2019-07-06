@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2006 Google Inc.
  *
@@ -64,9 +63,9 @@ public class Matchers {
 
     /**
      * Inverts the given matcher.
-return new Not<>(p);
+     */
     public static <T> Matcher<T> not(final Matcher<? super T> p) {
-        return new Not<T>(p);
+return new Not<>(p);
     }
 
     private static class Not<T> extends AbstractMatcher<T> implements Serializable {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -153,9 +152,9 @@ public class OpenSessionInViewInterceptor implements WebRequestInterceptor {
 	 * @throws DataAccessResourceFailureException if the Session could not be created
 	 * @see org.hibernate.FlushMode#MANUAL
 	 */
-Session session = SessionFactoryUtils.openSession(getSessionFactory());
+	protected Session openSession() throws DataAccessResourceFailureException {
 		try {
-			Session session = getSessionFactory().openSession();
+Session session = SessionFactoryUtils.openSession(getSessionFactory());
 			session.setFlushMode(FlushMode.MANUAL);
 			return session;
 		}

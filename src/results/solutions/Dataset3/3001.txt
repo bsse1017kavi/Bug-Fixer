@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -117,9 +116,9 @@ public class DeploymentScannerTestCase extends AbstractCliTestBase {
 
     private void removeDeploymentScanner() throws Exception {
         
-CLIOpResult result = cli.readAllAsOpResult(WAIT_TIMEOUT, WAIT_LINETIMEOUT);
+        // remove deployment scanner
         cli.sendLine("/subsystem=deployment-scanner/scanner=testScanner:remove()", false);
-        CLIOpResult result = cli.readAllAsOpResult(WAIT_TIMEOUT);
+CLIOpResult result = cli.readAllAsOpResult(WAIT_TIMEOUT, WAIT_LINETIMEOUT);
         assertTrue(result.isIsOutcomeSuccess());
         
         // delete deployment

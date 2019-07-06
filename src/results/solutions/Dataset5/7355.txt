@@ -1,4 +1,3 @@
-
 /*
  * $Id: org.eclipse.jdt.ui.prefs 5004 2006-03-17 20:47:08 -0800 (Fri, 17 Mar
  * 2006) eelco12 $ $Revision$ $Date: 2006-03-17 20:47:08 -0800 (Fri, 17
@@ -38,9 +37,9 @@ public class EmailPage extends WebPage
 	 * Construct
 	 * 
 	 */
-Form form = new Form<EmailPage>(this, "form", new CompoundPropertyModel<EmailPage>(this));
+	public EmailPage()
 	{
-		Form form = new Form(this, "form", new CompoundPropertyModel(this));
+Form form = new Form<EmailPage>(this, "form", new CompoundPropertyModel<EmailPage>(this));
 
 		TextField email = new TextField(form, "email");
 		email.add(EmailAddressPatternValidator.getInstance());

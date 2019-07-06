@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -83,9 +82,9 @@ public abstract class SingleEMTestCase
     protected boolean rollback() {
         EntityTransaction tx = em.getTransaction();
         if (!tx.isActive())
-tx.rollback();
+            return false;
 
-        tx.commit();
+tx.rollback();
         return true;
     }
 

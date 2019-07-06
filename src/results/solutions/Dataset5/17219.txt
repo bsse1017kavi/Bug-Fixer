@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -110,9 +109,9 @@ public class Ear extends Jar {
 
     protected void initZipOutputStream(ZipOutputStream zOut)
         throws IOException, BuildException
-if (deploymentDescriptor == null && !isInUpdateMode()) {
+    {
         // If no webxml file is specified, it's an error.
-        if (deploymentDescriptor == null) {
+if (deploymentDescriptor == null && !isInUpdateMode()) {
             throw new BuildException("appxml attribute is required", location);
         }
         

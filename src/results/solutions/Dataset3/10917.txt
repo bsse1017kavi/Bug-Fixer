@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -174,9 +173,9 @@ public class MasterDomainControllerOperationHandlerImpl extends AbstractModelCon
             filePath = input.readUTF();
         }
 
-final FileRepository localFileRepository = domainController.getLocalFileRepository();
+        @Override
         protected void processRequest() throws RequestProcessingException {
-            final FileRepository localFileRepository = domainController.getFileRepository();
+final FileRepository localFileRepository = domainController.getLocalFileRepository();
 
             switch (rootId) {
                 case DomainControllerProtocol.PARAM_ROOT_ID_FILE: {

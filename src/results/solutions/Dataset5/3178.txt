@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -220,9 +219,9 @@ public String open () {
 			}
 			String publicData = "public.data";
 			char [] buffer = new char [publicData.length ()];
-identifiers = OS.CFArrayCreateMutable (OS.kCFAllocatorDefault, 0, 0);
+			publicData.getChars (0, buffer.length, buffer, 0);
 			kUTTypeData = OS.CFStringCreateWithCharacters (OS.kCFAllocatorDefault, buffer, buffer.length);
-			identifiers = OS.CFArrayCreateMutable (OS.kCFAllocatorDefault, 1, 0);
+identifiers = OS.CFArrayCreateMutable (OS.kCFAllocatorDefault, 0, 0);
 			for (int i = 0; i < count; i++) {
 				int uti;
 				String extension = extensions [i];

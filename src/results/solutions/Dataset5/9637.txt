@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 Shane Clarke.
  * All rights reserved. This program and the accompanying materials
@@ -533,8 +532,8 @@ public class AnnotationsValuesEditingSupport extends EditingSupport {
         }
         if (undoChange != null) {
             undoChange.initializeValidationData(monitor);
-annotationsView.refreshLabels();
+            manager.addUndo(undoChange.getName(), undoChange);
         }
-        annotationsView.refresh();
+annotationsView.refreshLabels();
     }
 }

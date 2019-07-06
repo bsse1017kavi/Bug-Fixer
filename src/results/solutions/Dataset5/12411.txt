@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -107,9 +106,9 @@ public class AjBuildManager implements IOutputClassFileNameProvider,IBinarySourc
 	/**
 	 * This builder is static so that it can be subclassed and reset.  However, note
 	 * that there is only one builder present, so if two extendsion reset it, only
-public static AsmHierarchyBuilder asmHierarchyBuilder = new AsmHierarchyBuilder();
+	 * the latter will get used.
 	 */
-	private static AsmHierarchyBuilder asmHierarchyBuilder = new AsmHierarchyBuilder();
+public static AsmHierarchyBuilder asmHierarchyBuilder = new AsmHierarchyBuilder();
 	
 	static {
 		CompilationAndWeavingContext.registerFormatter(

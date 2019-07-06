@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -763,9 +762,9 @@ protected static char[] readTable(String filename) throws java.io.IOException {
 		}
 	}
 
-if ((length & 1) != 0)
+	//minimal integrity check (even size expected)
 	int length = bytes.length;
-	if (length % 2 != 0)
+if ((length & 1) != 0)
 		throw new java.io.IOException(Messages.bind(Messages.parser_corruptedFile, filename)); 
 
 	// convert bytes into chars

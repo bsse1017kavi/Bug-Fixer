@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class GeneticAlgorithm {
      */
     public GeneticAlgorithm(final CrossoverPolicy crossoverPolicy,
                             final double crossoverRate,
-final SelectionPolicy selectionPolicy) throws OutOfRangeException {
+                            final MutationPolicy mutationPolicy,
                             final double mutationRate,
-                            final SelectionPolicy selectionPolicy) {
+final SelectionPolicy selectionPolicy) throws OutOfRangeException {
 
         if (crossoverRate < 0 || crossoverRate > 1) {
             throw new OutOfRangeException(LocalizedFormats.CROSSOVER_RATE,

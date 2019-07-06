@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -569,9 +568,9 @@ public class Javadoc extends Task {
     public void setSourcefiles(String src) {
         StringTokenizer tok = new StringTokenizer(src, ",");
         while (tok.hasMoreTokens()) {
-sf.setFile(getProject().resolveFile(f.trim()));
+            String f = tok.nextToken();
             SourceFile sf = new SourceFile();
-            sf.setFile(getProject().resolveFile(f));
+sf.setFile(getProject().resolveFile(f.trim()));
             addSource(sf);
         }
     }

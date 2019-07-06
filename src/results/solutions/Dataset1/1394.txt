@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -349,9 +348,9 @@ public abstract class AbstractVector implements Vector {
 
   public void set(int index, double value) {
     if (index >= 0 && index < size()) {
-throw new IndexException(index, size());
+      setQuick(index, value);
     } else {
-      throw new IndexException();
+throw new IndexException(index, size());
     }
   }
 

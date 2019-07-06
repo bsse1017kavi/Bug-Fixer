@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -428,9 +427,9 @@ public abstract class BlobStoreIndexShardGateway extends AbstractIndexShardCompo
     private void recoverTranslog(CommitPoint commitPoint, ImmutableMap<String, BlobMetaData> blobs) throws IndexShardGatewayRecoveryException {
         if (commitPoint.translogFiles().isEmpty()) {
             // no translog files, bail
-indexShard.postRecovery("post recovery from gateway, no translog");
+            recoveryStatus.start().startTime(System.currentTimeMillis());
             recoveryStatus.updateStage(RecoveryStatus.Stage.START);
-            indexShard.start("post recovery from gateway, no translog");
+indexShard.postRecovery("post recovery from gateway, no translog");
             recoveryStatus.start().time(System.currentTimeMillis() - recoveryStatus.start().startTime());
             recoveryStatus.start().checkIndexTime(indexShard.checkIndexTook());
             return;

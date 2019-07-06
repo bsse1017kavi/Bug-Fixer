@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -251,9 +250,9 @@ public class POP3Store {
 		Source source = new CharSequenceSource(rawString);
 
 		Header header = HeaderParser.parse(source);
-ColumbaHeader h = (ColumbaHeader) m.getHeader();
+
 		ColumbaMessage m = new ColumbaMessage(header);
-		ColumbaHeader h = (ColumbaHeader) m.getHeaderInterface();
+ColumbaHeader h = (ColumbaHeader) m.getHeader();
 
 		m.setStringSource(rawString);
 		h.getAttributes().put("columba.host", popItem.get("host"));

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -387,9 +386,9 @@ public class PatternParser {
       case PRIORITY_CONVERTER:
 	return event.priority.toString();
       case NDC_CONVERTER:  
-return event.getRenderedMessage();
+	return event.getNDC();
       case MESSAGE_CONVERTER: {
-	return event.message;
+return event.getRenderedMessage();
       }
       default: return null;
       }

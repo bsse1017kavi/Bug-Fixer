@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -45,9 +44,9 @@ public final class Method {
 	/** Returns an array of Class objects that represent the formal parameter types, in declaration order, of the method. */
 	public Class[] getParameterTypes () {
 		Parameter[] parameters = method.getParameters();
-parameterTypes[i] = parameters[i].getType();
+		Class[] parameterTypes = new Class[parameters.length];
 		for (int i = 0, j = parameters.length; i < j; i++) {
-			parameterTypes[i] = parameters[i].getClazz();
+parameterTypes[i] = parameters[i].getType();
 		}
 		return parameterTypes;
 	}

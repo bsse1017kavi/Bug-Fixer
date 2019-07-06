@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -79,9 +78,9 @@ public class InfinispanBackingCacheEntryStoreSource<K extends Serializable, V ex
     private String clientMappingsCacheName = DEFAULT_CLIENT_MAPPING_CACHE;
     private int maxSize = ClusteredBackingCacheEntryStoreConfig.DEFAULT_MAX_SIZE;
     private boolean passivateEventsOnReplicate = DEFAULT_PASSIVATE_EVENTS_ON_REPLICATE;
-private CacheInvoker invoker = new RetryingCacheInvoker(new BatchCacheInvoker(), 10, 100);
+
     private final MarshallerFactory factory = Marshalling.getMarshallerFactory("river", MarshallerFactory.class.getClassLoader());
-    private CacheInvoker invoker = new RetryingCacheInvoker(new BatchCacheInvoker(), 0, 0);
+private CacheInvoker invoker = new RetryingCacheInvoker(new BatchCacheInvoker(), 10, 100);
     @SuppressWarnings("rawtypes")
     private final InjectedValue<Cache> groupCache = new InjectedValue<Cache>();
     private final InjectedValue<SharedLocalYieldingClusterLockManager> lockManager = new InjectedValue<SharedLocalYieldingClusterLockManager>();

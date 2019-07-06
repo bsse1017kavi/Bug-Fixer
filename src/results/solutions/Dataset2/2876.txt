@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -417,9 +416,9 @@ public String toString() {
 	StringBuffer buffer = new StringBuffer(10);
 	buffer.append("Enabled:").append(this.enabled).append('\n'); //$NON-NLS-1$
 	int numJobs = jobEnd - jobStart + 1;
-buffer.append("First job: ").append(awaitingJobs[jobStart]).append('\n'); //$NON-NLS-1$
+	buffer.append("Jobs in queue:").append(numJobs).append('\n'); //$NON-NLS-1$
 	if (numJobs > 0) {
-		buffer.append("First job: ").append(awaitingJobs[jobStart].toString()).append('\n'); //$NON-NLS-1$ 
+buffer.append("First job: ").append(awaitingJobs[jobStart]).append('\n'); //$NON-NLS-1$
 	}
 	return buffer.toString();
 }	

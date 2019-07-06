@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -381,9 +380,9 @@ public class SecurityRealmAddHandler implements OperationStepHandler {
         final String usernameAttribute = node.isDefined() ? node.asString() : null;
         node = LdapAuthorizationResourceDefinition.ADVANCED_FILTER.resolveModelAttribute(context, ldap);
         final String advancedFilter = node.isDefined() ? node.asString() : null;
-final String rolesDn = LdapAuthorizationResourceDefinition.GROUPS_DN.resolveModelAttribute(context, ldap).asString();
+        final boolean recursive = LdapAuthorizationResourceDefinition.RECURSIVE.resolveModelAttribute(context, ldap).asBoolean();
         final boolean reverseGroup = LdapAuthorizationResourceDefinition.REVERSE_GROUP.resolveModelAttribute(context, ldap).asBoolean();
-        final String rolesDn = LdapAuthorizationResourceDefinition.ROLES_DN.resolveModelAttribute(context, ldap).asString();
+final String rolesDn = LdapAuthorizationResourceDefinition.GROUPS_DN.resolveModelAttribute(context, ldap).asString();
         final String pattern = LdapAuthorizationResourceDefinition.PATTERN.resolveModelAttribute(context, ldap).asString();
         final String userDn = LdapAuthorizationResourceDefinition.USER_DN.resolveModelAttribute(context,ldap).asString();
         ModelNode groupNode = LdapAuthorizationResourceDefinition.GROUP.resolveModelAttribute(context, ldap);

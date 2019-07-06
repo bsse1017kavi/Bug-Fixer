@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -106,9 +105,9 @@ final class ServerControllerService implements Service<ServerController> {
     }
 
     /** {@inheritDoc} */
-final TrackingServiceTarget serviceTarget = new TrackingServiceTarget(container.subTarget());
+    public synchronized void start(final StartContext context) throws StartException {
         final ServiceContainer container = context.getController().getServiceContainer();
-        final TrackingServiceTarget serviceTarget = new TrackingServiceTarget(container);
+final TrackingServiceTarget serviceTarget = new TrackingServiceTarget(container.subTarget());
         serviceTarget.addDependency(context.getController().getName());
         final DelegatingServiceRegistry serviceRegistry = new DelegatingServiceRegistry(container);
         final Bootstrap.Configuration configuration = this.configuration;

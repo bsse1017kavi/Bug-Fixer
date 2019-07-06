@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -124,9 +123,9 @@ public class TransportDeleteWarmerAction extends TransportMasterNodeOperationAct
                 listener.onFailure(t);
             }
 
-MetaData.Builder mdBuilder = MetaData.builder(currentState.metaData());
+            @Override
             public ClusterState execute(ClusterState currentState) {
-                MetaData.Builder mdBuilder = MetaData.builder().metaData(currentState.metaData());
+MetaData.Builder mdBuilder = MetaData.builder(currentState.metaData());
 
                 boolean globalFoundAtLeastOne = false;
                 for (String index : request.indices()) {

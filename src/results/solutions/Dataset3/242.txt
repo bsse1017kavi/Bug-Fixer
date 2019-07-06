@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -35,8 +34,8 @@ import org.jboss.ejb.client.EJBClientContextInitializer;
  */
 public class TransactionRecoveryEJBClientContextInitializer implements EJBClientContextInitializer {
     @Override
-EjbLogger.ROOT_LOGGER.debug("Registered " + EJBTransactionRecoveryService.INSTANCE + " as a listener to EJB client context " + context);
+    public void initialize(EJBClientContext context) {
         context.registerEJBClientContextListener(EJBTransactionRecoveryService.INSTANCE);
-        EjbLogger.ROOT_LOGGER.debugf("Registered %s as a listener to EJB client context %s", EJBTransactionRecoveryService.INSTANCE, context);
+EjbLogger.ROOT_LOGGER.debug("Registered " + EJBTransactionRecoveryService.INSTANCE + " as a listener to EJB client context " + context);
     }
 }

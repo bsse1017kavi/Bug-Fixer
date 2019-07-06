@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -89,9 +88,9 @@ public class StructureViewPanel extends JPanel implements StructureViewRenderer 
  		setActiveNode(node, 0);
  	}
 
-// 		if (!(node.getStructureNode() instanceof IProgramElement)) return;
+	public void setActiveNode(IStructureViewNode node, int lineOffset) {
 		if (node == null) return;
- 		if (!(node.getStructureNode() instanceof IProgramElement)) return;
+// 		if (!(node.getStructureNode() instanceof IProgramElement)) return;
 		IProgramElement pNode = (IProgramElement)node.getStructureNode();
  		treeManager.highlightNode(pNode);
  		if (pNode.getSourceLocation() != null) {

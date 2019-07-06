@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -173,9 +172,9 @@ public final class ActiveShellSourceProvider extends AbstractSourceProvider {
 		/*
 		 * We will fallback to the workbench window, but only if a dialog is not
 		 * open.
-.getService(IContextService.class);
+		 */
 		final IContextService contextService = (IContextService) workbench
-				.getAdapter(IContextService.class);
+.getService(IContextService.class);
 		final int shellType = contextService.getShellType(newActiveShell);
 		if (shellType != IContextService.TYPE_DIALOG) {
 			final IWorkbenchWindow newActiveWorkbenchWindow = workbench

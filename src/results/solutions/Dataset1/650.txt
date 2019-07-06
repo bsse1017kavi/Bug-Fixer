@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.services.locks.Limit
@@ -42,9 +41,9 @@ public interface Limit {
 		@param group lock group the limit was set for
 		@param limit the limit's setting
 		@param lockList the list of Lockable's in the group
-@exception StandardException Standard Derby error policy.
+		@param lockCount the number of locks in the group
 
-        @exception StandardException Standard Cloudscape error policy.
+@exception StandardException Standard Derby error policy.
 	*/
 	public void reached(CompatibilitySpace compatibilitySpace, Object group,
 						int limit, Enumeration lockList, int lockCount)

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -51,9 +50,9 @@ public class TestMultiThreadTermVectors extends LuceneTestCase {
       Document doc = new Document();
       Field fld = newField("field", English.intToEnglish(i), customType);
       doc.add(fld);
-writer.shutdown();
+      writer.addDocument(doc);
     }
-    writer.close();
+writer.shutdown();
     
   }
   

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -274,9 +273,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
             byte[] rec = buffer.readRecord();
 
             if (rec == null) {
-+ " bytes unread. Occured at byte: " + getBytesRead());
+                // Unexpected EOF!
                 throw new IOException("unexpected EOF with " + numToRead
-                                      + " bytes unread. Occured at byte: " + getCount());
++ " bytes unread. Occured at byte: " + getBytesRead());
             }
             count(rec.length);
             int sz = numToRead;

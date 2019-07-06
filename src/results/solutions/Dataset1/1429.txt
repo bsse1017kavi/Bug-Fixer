@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -2605,9 +2604,9 @@ public class IndexWriter implements Closeable, TwoPhaseCommit {
           assert !directory.fileExists(newFileName): "file \"" + newFileName + "\" already exists";
           info.dir.copy(directory, file, newFileName, context);
         }
-IOUtils.closeSafely(false, cfsdir);
+      }
     } finally {
-      IOUtils.closeSafely(true, cfsdir);
+IOUtils.closeSafely(false, cfsdir);
     }
     
     info.dir = directory;

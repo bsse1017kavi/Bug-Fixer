@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class RestPendingClusterTasksAction extends AbstractCatAction {
     void documentation(StringBuilder sb) {
         sb.append("/_cat/pending_tasks\n");
     }
-public void doRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void doRequest(final RestRequest request, final RestChannel channel) {
+public void doRequest(final RestRequest request, final RestChannel channel, final Client client) {
         PendingClusterTasksRequest pendingClusterTasksRequest = new PendingClusterTasksRequest();
         pendingClusterTasksRequest.masterNodeTimeout(request.paramAsTime("master_timeout", pendingClusterTasksRequest.masterNodeTimeout()));
         pendingClusterTasksRequest.local(request.paramAsBoolean("local", pendingClusterTasksRequest.local()));

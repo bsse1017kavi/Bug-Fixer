@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class ValueCountAggregator extends MetricsAggregator.SingleValue {
         counts.increment(owningBucketOrdinal, values.setDocument(doc));
     }
 
-return valuesSource == null ? 0 : counts.get(owningBucketOrd);
+    @Override
     public double metric(long owningBucketOrd) {
-        return counts.get(owningBucketOrd);
+return valuesSource == null ? 0 : counts.get(owningBucketOrd);
     }
 
     @Override

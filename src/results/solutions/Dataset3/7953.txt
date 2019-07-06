@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class InfinispanSubsystemAdd implements ModelAddOperationHandler, Descrip
                         .install()
                         ;
                     String defaultContainer = operation.require(ModelKeys.DEFAULT_CACHE_CONTAINER).asString();
-target.addService(EmbeddedCacheManagerService.getServiceName(null), service)
+                    InjectedValue<EmbeddedCacheManager> container = new InjectedValue<EmbeddedCacheManager>();
                     ValueService<EmbeddedCacheManager> service = new ValueService<EmbeddedCacheManager>(container);
-                    target.addService(EmbeddedCacheManagerService.getServiceName(), service)
+target.addService(EmbeddedCacheManagerService.getServiceName(null), service)
                         .addDependency(EmbeddedCacheManagerService.getServiceName(defaultContainer), EmbeddedCacheManager.class, container)
                         .setInitialMode(ServiceController.Mode.ON_DEMAND)
                         .install()

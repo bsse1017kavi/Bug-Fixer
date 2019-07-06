@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -93,9 +92,9 @@ public class TimerTask<T extends TimerImpl> implements Runnable {
     @Override
     public void run() {
         final TimerImpl timer = timerService.getTimer(timerId);
-ROOT_LOGGER.debugf("Timer task was cancelled for %s", timer);
+        try {
             if (cancelled) {
-                ROOT_LOGGER.debug("Timer task was cancelled for " + timer);
+ROOT_LOGGER.debugf("Timer task was cancelled for %s", timer);
                 return;
             }
 

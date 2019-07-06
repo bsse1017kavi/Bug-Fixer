@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -337,9 +336,9 @@ public class IteratorView
             String nameText = nameFilter.getText();
             boolean matched = match.isSelected();
             if (nameNodeFilter==null) {
-if (nameText.length() == 0) {
+                nameNodeFilter = new NameNodeFilter();
             }
-            if (nameText.equals("")) {
+if (nameText.length() == 0) {
                 setMessage("NodeNameFilter name is \"\". Assuming null.");
                 nameText = null;
             }

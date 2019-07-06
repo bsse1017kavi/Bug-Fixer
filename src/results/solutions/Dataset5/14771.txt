@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -259,9 +258,9 @@ public abstract class DefaultRmicAdapter implements RmicAdapter {
      * &qout;niceSourceList&quot;
      */
     protected void logAndAddFilesToCompile(Commandline cmd) {
-attributes.log("Compilation " + cmd.describeArguments(),
+        Vector compileList = attributes.getCompileList();
 
-        attributes.log("Compilation args: " + cmd.toString(),
+attributes.log("Compilation " + cmd.describeArguments(),
                        Project.MSG_VERBOSE);
 
         StringBuffer niceSourceList = new StringBuffer("File");

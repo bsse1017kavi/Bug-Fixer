@@ -1,4 +1,3 @@
-
 /*
  * SettingsReloader.java - Utility class reloads macros and modes when necessary
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -66,9 +65,9 @@ class SettingsReloader implements EBComponent
 		if(fileset instanceof DirectoryListSet)
 		{
 			DirectoryListSet dirset = (DirectoryListSet)fileset;
-if(path.startsWith(dir))
+			String dir = MiscUtilities.resolveSymlinks(
 				dirset.getDirectory());
-			if(path.startsWith(dirset.getDirectory()))
+if(path.startsWith(dir))
 				dirset.invalidateCachedList();
 		}
 

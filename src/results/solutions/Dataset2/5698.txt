@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -528,9 +527,9 @@ public class Javadoc extends ASTNode {
 			case Scope.METHOD_SCOPE:
 				AbstractMethodDeclaration methodDeclaration = ((MethodScope)scope).referenceMethod();
 				// If no referenced method (field initializer for example) then report a problem for each param tag
-JavadocSingleTypeReference param = this.paramTypeParameters[i];
+				if (methodDeclaration == null) {
 					for (int i = 0; i < paramTypeParamLength; i++) {
-						JavadocSingleNameReference param = this.paramReferences[i];
+JavadocSingleTypeReference param = this.paramTypeParameters[i];
 						scope.problemReporter().javadocUnexpectedTag(param.tagSourceStart, param.tagSourceEnd);
 					}
 					return;

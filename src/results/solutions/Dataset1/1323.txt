@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -658,9 +657,9 @@ public class Table
     /**
      * Selects a list of columns in a column family from a given column for the specified key.
     */
-Row row = new Row(table_, key);
+    public Row getSliceFrom(String key, String cf, boolean isAscending, int count) throws IOException
     {
-        Row row = new Row(key);
+Row row = new Row(table_, key);
         String[] values = RowMutation.getColumnAndColumnFamily(cf);
         String cfName = values[0];
         String startWith = values.length > 1 ? values[1] : "";

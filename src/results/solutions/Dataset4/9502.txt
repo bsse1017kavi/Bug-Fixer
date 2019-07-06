@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -29,9 +28,9 @@ import org.elasticsearch.common.trove.ExtTLongObjectHashMap;
 
 public final class CacheRecycler  {
 
-String property = System.getProperty("es.cache.recycle");
+    private static final Recycler INSTANCE;
     static {
-        String property = System.getProperty("ES.RECYCLE");
+String property = System.getProperty("es.cache.recycle");
         if (property != null && !Boolean.parseBoolean(property)) {
             INSTANCE = new NoCacheCacheRecycler();
         } else {

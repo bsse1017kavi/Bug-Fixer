@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -243,9 +242,9 @@ public class DetachManager
         _proxy = broker.getConfiguration().getProxyManagerInstance();
         _opts = broker.getConfiguration().getDetachStateInstance();
         _copy = !full;
-_failFast = (broker.getConfiguration().getMetaDataRepositoryInstance().
+        _flushed = full;
         _call = call;
-        _failFast = (broker.getConfiguration().getMetaDataRepository().
+_failFast = (broker.getConfiguration().getMetaDataRepositoryInstance().
             getMetaDataFactory().getDefaults().getCallbackMode()
             & CallbackModes.CALLBACK_FAIL_FAST) != 0;
 

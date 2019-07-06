@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -164,9 +163,9 @@ final class ServletContextFacade implements ServletContext {
     public RequestDispatcher getNamedDispatcher(String name) {
         if (name == null)
 	    return null;
-Handler wrapper = context.getServletByName( name );
+
 	// We need to do the checks
-	ServletWrapper wrapper = context.getServletByName( name );
+Handler wrapper = context.getServletByName( name );
 	if (wrapper == null)
 	    return null;
 	RequestDispatcherImpl rD=new RequestDispatcherImpl( context );

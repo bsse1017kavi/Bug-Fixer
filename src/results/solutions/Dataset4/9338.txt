@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -470,9 +469,9 @@ public class GwtInput implements Input {
 				this.mouseY = (int)getRelativeY(e, canvas);
 			}
 			this.currentEventTimeStamp = TimeUtils.nanoTime();
-else processor.mouseMoved(mouseX, mouseY);
+			if(processor != null) {
 				if(touched) processor.touchDragged(mouseX, mouseY, 0);
-				else processor.touchMoved(mouseX, mouseY);
+else processor.mouseMoved(mouseX, mouseY);
 			}
 		}
 		

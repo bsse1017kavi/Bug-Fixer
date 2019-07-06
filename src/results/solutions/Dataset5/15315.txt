@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -32,9 +31,9 @@ import org.apache.wicket.request.http.WebResponse;
  * Calling {@link #reset()} on this response only clears the buffered headers. If there is any
  * content written to response it throws {@link IllegalStateException}.
  * 
-class HeaderBufferingWebResponse extends WebResponse implements ICookieSavingResponse
+ * @author Matej Knopp
  */
-class HeaderBufferingWebResponse extends WebResponse implements IBufferedWebResponse
+class HeaderBufferingWebResponse extends WebResponse implements ICookieSavingResponse
 {
 	private final WebResponse originalResponse;
 	private final BufferedWebResponse bufferedResponse;

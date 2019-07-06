@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -139,9 +138,9 @@ public class Concat extends Task implements ResourceCollection {
                 } else {
                     reader = new BufferedReader(
                         new InputStreamReader(new FileInputStream(file),
-value = FileUtils.safeReadFully(reader);
+                                              this.encoding));
                 }
-                value = FileUtils.readFully(reader);
+value = FileUtils.safeReadFully(reader);
             } catch (IOException ex) {
                 throw new BuildException(ex);
             } finally {

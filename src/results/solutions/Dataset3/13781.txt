@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public static final XaDataSourcePropertyRemove INSTANCE = new XaDataSourceProper
         final ModelNode address = operation.require(OP_ADDR);
         PathAddress path = PathAddress.pathAddress(address);
         final String jndiName = path.getElement(path.size() - 2).getValue();
-ServiceName serviceName = XADataSourceConfigService.SERVICE_NAME_BASE.append(jndiName).append("xa-datasource-properties").append(configPropertyName);
+        final String configPropertyName = PathAddress.pathAddress(address).getLastElement().getValue();
 
-        ServiceName serviceName = XADataSourceConfigService.SERVICE_NAME_BASE.append(jndiName).append(configPropertyName);
+ServiceName serviceName = XADataSourceConfigService.SERVICE_NAME_BASE.append(jndiName).append("xa-datasource-properties").append(configPropertyName);
 
         final ServiceController<?> dataSourceConfigController = registry.getService(serviceName);
         if (dataSourceConfigController != null) {

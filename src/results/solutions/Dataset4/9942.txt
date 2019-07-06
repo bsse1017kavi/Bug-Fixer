@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -98,9 +97,9 @@ public class TransportFlushAction extends TransportBroadcastOperationAction<Flus
     protected ShardFlushRequest newShardRequest() {
         return new ShardFlushRequest();
     }
-protected ShardFlushRequest newShardRequest(int numShards, ShardRouting shard, FlushRequest request) {
+
     @Override
-    protected ShardFlushRequest newShardRequest(ShardRouting shard, FlushRequest request) {
+protected ShardFlushRequest newShardRequest(int numShards, ShardRouting shard, FlushRequest request) {
         return new ShardFlushRequest(shard.index(), shard.id(), request);
     }
 

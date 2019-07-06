@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -76,9 +75,9 @@ public class TestMultiLevelSkipList extends LuceneTestCase {
       d1.add(newTextField(term.field(), term.text(), Field.Store.NO));
       writer.addDocument(d1);
     }
-writer.shutdown();
+    writer.commit();
     writer.forceMerge(1);
-    writer.close();
+writer.shutdown();
 
     AtomicReader reader = getOnlySegmentReader(DirectoryReader.open(dir));
     

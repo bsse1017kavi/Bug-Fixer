@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -345,9 +344,9 @@ public class FieldLUDecomposition<T extends FieldElement<T>> {
          * @throws DimensionMismatchException if the matrices dimensions do not match.
          * @throws SingularMatrixException if the decomposed matrix is singular.
          */
-final int length = b.getDimension();
+        public ArrayFieldVector<T> solve(ArrayFieldVector<T> b) {
             final int m = pivot.length;
-            final int length = b.getDataRef().length;
+final int length = b.getDimension();
             if (length != m) {
                 throw new DimensionMismatchException(length, m);
             }

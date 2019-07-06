@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public final class Features {
     /**
      * Tells whether all the features provided as argument are supported
      */
-if ("benchmark".equals(feature) && ElasticsearchIntegrationTest.cluster().numBenchNodes() > 0) {
+    public static boolean areAllSupported(List<String> features) {
         for (String feature : features) {
-            if ("benchmark".equals(feature) && ElasticsearchIntegrationTest.immutableCluster().numBenchNodes() > 0) {
+if ("benchmark".equals(feature) && ElasticsearchIntegrationTest.cluster().numBenchNodes() > 0) {
                 continue;
             }
             if (!SUPPORTED.contains(feature)) {

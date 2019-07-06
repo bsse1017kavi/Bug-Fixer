@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -80,9 +79,9 @@ public class WeldJpaInjectionServices implements JpaInjectionServices {
         //always be up
         final PersistenceUnitServiceImpl persistenceUnitService = (PersistenceUnitServiceImpl) serviceController.getValue();
         return new ResourceReferenceFactory<EntityManager>() {
-final TransactionScopedEntityManager result = new TransactionScopedEntityManager(scopedPuName, new HashMap<Object, Object>(), persistenceUnitService.getEntityManagerFactory(), context.synchronization());
+            @Override
             public ResourceReference<EntityManager> createResource() {
-                final TransactionScopedEntityManager result = new TransactionScopedEntityManager(scopedPuName, new HashMap<Object, Object>(), persistenceUnitService.getEntityManagerFactory(), context.synchronizationType());
+final TransactionScopedEntityManager result = new TransactionScopedEntityManager(scopedPuName, new HashMap<Object, Object>(), persistenceUnitService.getEntityManagerFactory(), context.synchronization());
                 return new SimpleResourceReference<EntityManager>(result);
             }
         };

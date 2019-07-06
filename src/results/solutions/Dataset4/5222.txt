@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -160,9 +159,9 @@ public abstract class AbstractNodesTests {
     public ImmutableSet<ClusterBlock> waitForNoBlocks(TimeValue timeout, String node) throws InterruptedException {
         long start = System.currentTimeMillis();
         ImmutableSet<ClusterBlock> blocks;
-.getState().blocks().global(ClusterBlockLevel.METADATA);
+        do {
             blocks = client(node).admin().cluster().prepareState().setLocal(true).execute().actionGet()
-                    .state().blocks().global(ClusterBlockLevel.METADATA);
+.getState().blocks().global(ClusterBlockLevel.METADATA);
         }
         while (!blocks.isEmpty() && (System.currentTimeMillis() - start) < timeout.millis());
         return blocks;

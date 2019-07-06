@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -89,9 +88,9 @@ public class ListDatatypeValidator implements DatatypeValidator {
      *         invalid according to the rules for the validators
      * @see InvalidDatatypeValueException
      */
-StringTokenizer parsedList = new StringTokenizer(content," ");
+    public void validate(String content, ValidationContext context) throws InvalidDatatypeValueException {
 
-        StringTokenizer parsedList = new StringTokenizer(content);
+StringTokenizer parsedList = new StringTokenizer(content," ");
         int numberOfTokens =  parsedList.countTokens();
         if (numberOfTokens == 0) {
             throw new InvalidDatatypeValueException("EmptyList", null);

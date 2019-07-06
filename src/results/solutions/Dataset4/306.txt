@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -142,9 +141,9 @@ public class Queries {
 
     private static Pattern spaceAroundLessThanPattern = Pattern.compile("(\\s+<\\s*)|(\\s*<\\s+)");
     private static Pattern spacePattern = Pattern.compile(" ");
-public static int calculateMinShouldMatch(int optionalClauseCount, String spec) {
+    private static Pattern lessThanPattern = Pattern.compile("<");
 
-    static int calculateMinShouldMatch(int optionalClauseCount, String spec) {
+public static int calculateMinShouldMatch(int optionalClauseCount, String spec) {
         int result = optionalClauseCount;
         spec = spec.trim();
 

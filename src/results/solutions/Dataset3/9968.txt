@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -246,9 +245,9 @@ public class ReadAttributeHandler extends BaseOperationCommand {
         if (node.isPresent(args)) {
             address = new DefaultOperationRequestAddress(ctx.getCurrentNodePath());
             CommandLineParser.CallbackHandler handler = new DefaultCallbackHandler(address);
-String nodePath = args.getOriginalLine();
+
             // this is for correct parsing of escaped characters
-            String nodePath = args.getSubstitutedLine();
+String nodePath = args.getOriginalLine();
             int nodeArgInd = nodePath.indexOf(" --node=");
             if(nodeArgInd < 0) {
                 throw new CommandFormatException("Couldn't locate ' --node=' in the line: '" + nodePath + "'");

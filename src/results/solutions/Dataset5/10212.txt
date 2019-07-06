@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -68,9 +67,9 @@ public interface EJBDeploymentTool {
      * deployment files.
      *
      * @param descriptorFilename the name of the deployment descriptor
-public void processDescriptor(File srcDir, File descriptorDir, String descriptorFilename, SAXParser saxParser)
+     * @param saxParser a SAX parser which can be used to parse the deployment descriptor. 
      */
-    public void processDescriptor(File srcDir, String descriptorFilename, SAXParser saxParser) 
+public void processDescriptor(File srcDir, File descriptorDir, String descriptorFilename, SAXParser saxParser)
         throws BuildException;
     
     /**

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public final class WebSubsystemElement extends AbstractSubsystemElement<WebSubsy
         return action;
     }
 
-final ServiceController<?> service = updateContext.getServiceRegistry().getService(WebSubsystemElement.JBOSS_WEB);
+    /** {@inheritDoc} */
     protected <P> void applyRemove(UpdateContext updateContext, UpdateResultHandler<? super Void, P> resultHandler, P param) {
-        final ServiceController<?> service = updateContext.getServiceContainer().getService(WebSubsystemElement.JBOSS_WEB);
+final ServiceController<?> service = updateContext.getServiceRegistry().getService(WebSubsystemElement.JBOSS_WEB);
         if(service == null) {
             resultHandler.handleSuccess(null, param);
         } else {

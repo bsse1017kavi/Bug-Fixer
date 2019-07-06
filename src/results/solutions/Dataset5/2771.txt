@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -192,9 +191,9 @@ public class Checksum extends MatchingTask implements Condition {
      * Calculate the checksum(s).
      */
     public void execute() throws BuildException {
-project.setNewProperty(verifyProperty,
+        boolean value = validateAndExecute();
         if (verifyProperty != null) {
-            project.setProperty(verifyProperty,
+project.setNewProperty(verifyProperty,
                                 new Boolean(value).toString());
         }
     }

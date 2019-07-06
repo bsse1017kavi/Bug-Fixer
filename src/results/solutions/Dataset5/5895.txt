@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -174,9 +173,9 @@ public int open () {
 	* If the parent is not NULL, MB_TASKMODAL behaves the
 	* same as MB_APPLMODAL.  The fix to set the parent HWND
 	* anyway and not rely on MB_MODAL to work by making the
-int /*long*/ hwndOwner = parent != null ? parent.handle : 0;
+	* parent be temporarily modal. 
 	*/
-	int hwndOwner = parent != null ? parent.handle : 0;
+int /*long*/ hwndOwner = parent != null ? parent.handle : 0;
 	Shell oldModal = null;
 	Display display = null;
 	if ((bits & OS.MB_TASKMODAL) != 0) {

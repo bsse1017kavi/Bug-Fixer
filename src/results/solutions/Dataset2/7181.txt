@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /******************************************************************************* 
@@ -329,9 +328,9 @@ public void describeLayout(StringBuffer buf) {
 		for (int idx = 0; idx < children.length; idx++) {
 			
 			LayoutPart next = children[idx];
-buf.append(", "); //$NON-NLS-1$
+			if (!(next instanceof PartPlaceholder)) {
 				if (visibleChildren > 0) {
-					buf.append(", ");
+buf.append(", "); //$NON-NLS-1$
 				}
 				
 				next.describeLayout(buf);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -40,9 +39,9 @@ public class JDBCPersistenceProductDerivation
     public void beforeConfigurationConstruct(ConfigurationProvider cp) {
     }
 
-JDBCStoreManager.class, JDBCFetchPlanImpl.class);
+    public void beforeConfigurationLoad(OpenJPAConfiguration c) {
         c.getStoreFacadeTypeRegistry().registerImplementation(FetchPlan.class, 
-            JDBCStoreManager.class, JDBCFetchPlan.class);
+JDBCStoreManager.class, JDBCFetchPlanImpl.class);
         if (!(c instanceof JDBCConfigurationImpl))
             return;
 

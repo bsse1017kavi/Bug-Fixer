@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -87,9 +86,9 @@ public class IterationCounter extends AbstractFunction implements Serializable {
 
 		boolean perThread = Boolean.valueOf(((CompoundVariable) variables[0]).execute()).booleanValue();
 
-varName = ((CompoundVariable) variables[1]).execute().trim();
+		String varName = ""; //$NON-NLS-1$
         if (variables.length >=2) {// Ensure variable has been provided
-            varName = ((CompoundVariable) variables[1]).execute();
+varName = ((CompoundVariable) variables[1]).execute().trim();
         }
 		
         String counterString = ""; //$NON-NLS-1$

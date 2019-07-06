@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -197,9 +196,9 @@ public class Reflection {
      * thrown by <code>Class.getDeclaredField()</code> for performance reasons.
      *
      * @since 0.9.8
-Field[] fields = AccessController.doPrivileged(
+     */
     private static Field getDeclaredField(Class cls, String name) {
-        Field[] fields = (Field[]) AccessController.doPrivileged(
+Field[] fields = AccessController.doPrivileged(
             J2DoPrivHelper.getDeclaredFieldsAction(cls));
         for (int i = 0 ; i < fields.length; i++) {
     	    if (name.equals(fields[i].getName()))

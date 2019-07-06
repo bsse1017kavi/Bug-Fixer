@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -136,9 +135,9 @@ public abstract class CacheAdd extends AbstractAddStepHandler {
         log.debugf("Loading Infinispan defaults from %s", url.toString());
         ParserRegistry parser = new ParserRegistry(ParserRegistry.class.getClassLoader());
         try (InputStream input = url.openStream()) {
-throw InfinispanMessages.MESSAGES.failedToParse(e, url);
+            return parser.parse(input);
         } catch (IOException e) {
-            throw new IllegalStateException(String.format("Failed to parse %s", url), e);
+throw InfinispanMessages.MESSAGES.failedToParse(e, url);
         }
     }
 

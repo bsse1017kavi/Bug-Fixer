@@ -1,4 +1,3 @@
-
 package org.jboss.as.connector.subsystems.datasources;
 
 import org.jboss.as.connector.StatisticsDescriptionProvider;
@@ -37,9 +36,9 @@ public class DataSourceStatisticsListener extends AbstractServiceListener<Object
                 StatisticsPlugin jdbcStats = deploymentMD.getDataSources()[0].getStatistics();
                 StatisticsPlugin poolStats = deploymentMD.getDataSources()[0].getPool().getStatistics();
                 int jdbcStatsSize = jdbcStats.getNames().size();
-ManagementResourceRegistration subRegistration = registration.isAllowsOverride() ? registration.registerOverrideModel(dsName, DataSourcesSubsystemProviders.OVERRIDE_DS_DESC) : registration;
+                int poolStatsSize = poolStats.getNames().size();
                 if (jdbcStatsSize > 0 || poolStatsSize > 0) {
-                    ManagementResourceRegistration subRegistration = registration.registerOverrideModel(dsName, DataSourcesSubsystemProviders.OVERRIDE_DS_DESC);
+ManagementResourceRegistration subRegistration = registration.isAllowsOverride() ? registration.registerOverrideModel(dsName, DataSourcesSubsystemProviders.OVERRIDE_DS_DESC) : registration;
 
                     if (jdbcStatsSize > 0) {
                         ManagementResourceRegistration jdbcRegistration = subRegistration.registerSubModel(PathElement.pathElement("statistics", "jdbc"), new StatisticsDescriptionProvider(DataSourcesSubsystemProviders.RESOURCE_NAME, "statistics", jdbcStats));

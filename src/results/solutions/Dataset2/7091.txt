@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.xml;
 
 /* ================================================================
@@ -77,9 +76,9 @@ public class ActivityRule extends BaseRule
      * is encountered.
      */
     public void end() throws Exception
-if(getState().equals(XMLImport.STATE_DB_INSERTION))
+    {
         log().debug("(" + getState() + ") activity end()");
-        if(getState().equals(DBImport.STATE_DB_INSERTION))
+if(getState().equals(XMLImport.STATE_DB_INSERTION))
         {
             Activity activity = new Activity();
             String description = (String)digester.pop();

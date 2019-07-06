@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -307,9 +306,9 @@ public class DomainModelUtil {
         ManagedDMRContentResourceDefinition planDef = ManagedDMRContentResourceDefinition.create(ROLLOUT_PLAN, contentValidator, DomainRootDescription.getResourceDescriptionResolver(ROLLOUT_PLAN));
         mgmtContent.registerSubModel(planDef);
 
-extensionRegistry.setSubsystemParentResourceRegistrations(profile, null);
+        // Extensions
         root.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, true));
-        extensionRegistry.setProfileResourceRegistration(profile);
+extensionRegistry.setSubsystemParentResourceRegistrations(profile, null);
 
         if(!isMaster) {
             ApplyRemoteMasterDomainModelHandler armdmh = new ApplyRemoteMasterDomainModelHandler(extensionRegistry, fileRepository, contentRepo, hostControllerInfo);

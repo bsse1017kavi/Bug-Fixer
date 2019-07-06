@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -271,9 +270,9 @@ public class HtmlHeaderContainer extends TransparentWebMarkupContainer
 	 */
 	public IHeaderResponse getHeaderResponse()
 	{
-headerResponse = getApplication().decorateHeaderResponse(newHeaderResponse());
+		if (headerResponse == null)
 		{
-			headerResponse = newHeaderResponse();
+headerResponse = getApplication().decorateHeaderResponse(newHeaderResponse());
 		}
 		return headerResponse;
 	}

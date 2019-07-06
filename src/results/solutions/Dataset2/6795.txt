@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -64,9 +63,9 @@ public void generateEmulatedReadAccessForField(FieldBinding fieldBinding) {
 	CodeSnippetCodeStream localCodeStream = (CodeSnippetCodeStream) this;
 	localCodeStream.generateEmulationForField(fieldBinding);
 	// swap  the field with the receiver
-if (!fieldBinding.type.isBaseType()) {
+	this.swap();
 	localCodeStream.invokeJavaLangReflectFieldGetter(fieldBinding.type.id);
-	if (fieldBinding.type.isArrayType()) {
+if (!fieldBinding.type.isBaseType()) {
 		this.checkcast(fieldBinding.type);
 	}
 }

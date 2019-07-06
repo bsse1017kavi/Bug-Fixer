@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -236,9 +235,9 @@ public class IpFieldMapper extends NumberFieldMapper<Long> {
         }
 
         if (ipAsString == null) {
-if (context.includeInAll(includeInAll, this)) {
+            return null;
         }
-        if (context.includeInAll(includeInAll)) {
+if (context.includeInAll(includeInAll, this)) {
             context.allEntries().addText(names.fullName(), ipAsString, boost);
         }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -1093,9 +1092,9 @@ public class NewMessagingSubsystemParser implements XMLStreamConstants, XMLEleme
         }
         if (has(value, PARAM)) {
             for(final Property parameter : value.get(PARAM).asPropertyList()) {
-writeAttribute(writer, Attribute.VALUE, parameter.getValue());
+                writer.writeStartElement(Element.PARAM.getLocalName());
                 writer.writeAttribute(Attribute.KEY.getLocalName(), parameter.getName());
-                writeAttribute(writer, Attribute.NAME, parameter.getValue());
+writeAttribute(writer, Attribute.VALUE, parameter.getValue());
                 writer.writeEndElement();
             }
         }

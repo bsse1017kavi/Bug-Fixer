@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -113,9 +112,9 @@ public abstract class WorkbenchPartReference implements IWorkbenchPartReference 
 		Object listeners[] = propChangeListeners.getListeners();
 		for (int i = 0; i < listeners.length; i++) {
 			part.addPropertyListener((IPropertyListener)listeners[i]);
-if(site != null && this.pane != null) {
+		}
 		PartSite site = (PartSite)part.getSite();
-		if(site != null) {
+if(site != null && this.pane != null) {
 			site.setPane(this.pane);
 			this.pane = null;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -177,9 +176,9 @@ public abstract class AbstractExceptionContextTest<T extends ExceptionContext & 
     
     @Test
     public void testJavaSerialization() {
-final T clone = (T) SerializationUtils.deserialize(SerializationUtils.serialize(exceptionContext));
+        exceptionContext.setContextValue("test Poorly written obj", "serializable replacement");
         
-        final T clone = SerializationUtils.deserialize(SerializationUtils.serialize(exceptionContext));
+final T clone = (T) SerializationUtils.deserialize(SerializationUtils.serialize(exceptionContext));
         assertEquals(exceptionContext.getFormattedExceptionMessage(null), clone.getFormattedExceptionMessage(null));
     }
 }

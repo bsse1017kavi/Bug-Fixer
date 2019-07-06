@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -203,9 +202,9 @@ public class SimpleMapper extends  BaseInterceptor  {
 	
 	// Now find the security restrictions for req
 	m=(Mappings)securityConstraints.get(ctxP);
-if( scontainer==null ) {
+	if( m==null) return OK;
 	Container scontainer=findContainer( m, path, context, req);
-	if( m==null ) {
+if( scontainer==null ) {
 	    // no security
 	    return OK;
 	}

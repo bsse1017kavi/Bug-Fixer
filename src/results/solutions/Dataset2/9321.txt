@@ -1,4 +1,3 @@
-
 // Copyright (c) 2001-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS.security;
@@ -113,9 +112,9 @@ throws IOException, SignatureException, InvalidKeyException,
 	 * RSA signatures are already in correct format, but Java DSA
 	 * routines use ASN.1; convert this to SIG format.
 	 */
-signature = DSASignature.toDNS(dsakey.getParams(), signature);
+	if (algorithm == DNSSEC.DSA) {
 		DSAKey dsakey = (DSAKey) privateKey;
-		signature = DSASignature.create(dsakey.getParams(), signature);
+signature = DSASignature.toDNS(dsakey.getParams(), signature);
 	}
 	
 	SIGRecord sig = new SIGRecord(Name.root, DClass.ANY, 0, 0, algorithm,

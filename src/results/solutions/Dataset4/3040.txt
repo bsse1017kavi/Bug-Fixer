@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -251,9 +250,9 @@ public class TextField extends Widget {
 		font.draw(batch, text, x + background.getLeftWidth() + textOffset, y + textY, visibleTextStart, visibleTextEnd);
 		if (parent.keyboardFocusedActor == this) {
 			blink();
-- textBounds.height - font.getDescent(), cursorPatch.getTotalWidth(), textBounds.height + font.getDescent() / 2);
+			if (cursorOn) {
 				cursorPatch.draw(batch, x + background.getLeftWidth() + glyphPositions.get(cursor) + renderOffset - 1, y + textY
-					- textBounds.height - font.getDescent() / 2, cursorPatch.getTotalWidth(), textBounds.height);
+- textBounds.height - font.getDescent(), cursorPatch.getTotalWidth(), textBounds.height + font.getDescent() / 2);
 			}
 		}
 	}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public class SumAggregator extends MetricsAggregator.SingleValue {
         sums.increment(owningBucketOrdinal, sum);
     }
 
-return valuesSource == null ? 0 : sums.get(owningBucketOrd);
+    @Override
     public double metric(long owningBucketOrd) {
-        return sums.get(owningBucketOrd);
+return valuesSource == null ? 0 : sums.get(owningBucketOrd);
     }
 
     @Override

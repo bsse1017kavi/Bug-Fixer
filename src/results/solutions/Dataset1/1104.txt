@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -434,9 +433,9 @@ public class QueryComponent extends SearchComponent
     boolean fsv = req.getParams().getBool(ResponseBuilder.FIELD_SORT_VALUES,false);
     if(fsv){
       Sort sort = searcher.weightSort(rb.getSortSpec().getSort());
-Field field = new StringField("dummy", "", Field.Store.NO); // a dummy Field
+      SortField[] sortFields = sort==null ? new SortField[]{SortField.FIELD_SCORE} : sort.getSort();
       NamedList<Object[]> sortVals = new NamedList<Object[]>(); // order is important for the sort fields
-      Field field = new StringField("dummy", ""); // a dummy Field
+Field field = new StringField("dummy", "", Field.Store.NO); // a dummy Field
       IndexReaderContext topReaderContext = searcher.getTopReaderContext();
       AtomicReaderContext[] leaves = topReaderContext.leaves();
       AtomicReaderContext currentLeaf = null;

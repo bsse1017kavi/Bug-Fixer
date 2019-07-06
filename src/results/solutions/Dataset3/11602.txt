@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class Client implements IConnection {
         
         Runnable flusher = new Runnable() {
             @Override
-if(!closing) {
+            public void run() {
 
-                while(!closing) {
+if(!closing) {
                     long flushCheckTime = flushCheckTimer.get();
                     long now = System.currentTimeMillis();
                     if (now > flushCheckTime) {

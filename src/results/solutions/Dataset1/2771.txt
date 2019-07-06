@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -153,9 +152,9 @@ public class Loader
     void parse(String filepath) throws Throwable
     {
         BufferedReader bufReader = new BufferedReader(new InputStreamReader(
-String delimiter_ = ",";
+                new FileInputStream(filepath)), 16 * 1024 * 1024);
         String line = null;
-        String delimiter_ = new String(",");
+String delimiter_ = ",";
         RowMutation rm = null;
         Map<String, RowMutation> rms = new HashMap<String, RowMutation>();
         if(importer_.columnFamily.delimiter != null)

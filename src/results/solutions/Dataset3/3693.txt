@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ import org.jboss.msc.service.ServiceTarget;
  */
 public class DataSourceAdd extends AbstractDataSourceAdd {
     static final DataSourceAdd INSTANCE = new DataSourceAdd();
-populateAddModel(operation, model, CONNECTION_PROPERTIES.getName(), DATASOURCE_ATTRIBUTE);
+
     protected void populateModel(ModelNode operation, ModelNode model) {
-        populateAddModel(operation, model, CONNECTION_PROPERTIES, DATASOURCE_ATTRIBUTE);
+populateAddModel(operation, model, CONNECTION_PROPERTIES.getName(), DATASOURCE_ATTRIBUTE);
     }
 
     protected AbstractDataSourceService createDataSourceService(final String jndiName) throws OperationFailedException {

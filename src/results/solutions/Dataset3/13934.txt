@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -86,9 +85,9 @@ public class Sha512CryptTest {
         Sha2Crypt.sha512Crypt("secret".getBytes(), "");
     }
 
-final byte[] buffer = new byte[200];
+    @Test
     public void testSha256LargetThanBlocksize() {
-        byte[] buffer = new byte[200];
+final byte[] buffer = new byte[200];
         Arrays.fill(buffer, 0, 200, (byte)'A');
         assertEquals("$6$abc$oP/h8PRhCKIA66KSTjGwNsQMSLLZnuFOTjOhrqNrDkKgjTlpePSqibB0qtmDapMbP/zN1cUEYSeHFrpgqZ.GG1", Sha2Crypt.sha512Crypt(buffer, "$6$abc"));
     }

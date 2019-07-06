@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class CustomQueryWrappingFilter extends NoCacheFilter implements Releasab
             final Weight weight = searcher.createNormalizedWeight(query);
             for (final AtomicReaderContext leaf : searcher.getTopReaderContext().leaves()) {
                 final DocIdSet set = DocIdSets.toCacheable(leaf.reader(), new DocIdSet() {
-return weight.scorer(leaf, null);
+                    @Override
                     public DocIdSetIterator iterator() throws IOException {
-                        return weight.scorer(leaf, true, false, null);
+return weight.scorer(leaf, null);
                     }
                     @Override
                     public boolean isCacheable() { return false; }

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -158,9 +157,9 @@ public class Main {
 		    File f=new File( h );
 		    File f1=new File ( h, "..");
 		    //    log( "Path2 " + f1 );
-System.getProperties().put( "tomcat.home", h );
+		    h = f1.getCanonicalPath();
 		    //log( "Guessed " + h + " from " + path );
-		    System.setProperty( "tomcat.home", h );
+System.getProperties().put( "tomcat.home", h );
 		    return h;
 		} catch( Exception ex ) {
 		    ex.printStackTrace();

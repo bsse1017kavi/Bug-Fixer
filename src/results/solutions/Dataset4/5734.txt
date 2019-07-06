@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -40,9 +39,9 @@ import static org.hamcrest.Matchers.equalTo;
 @Ignore
 public abstract class AbstractSnapshotTests extends ElasticsearchIntegrationTest {
 
-for (RepositoriesService repositoriesService : cluster().getDataNodeInstances(RepositoriesService.class)) {
+    public static long getFailureCount(String repository) {
         long failureCount = 0;
-        for (RepositoriesService repositoriesService : cluster().getInstances(RepositoriesService.class)) {
+for (RepositoriesService repositoriesService : cluster().getDataNodeInstances(RepositoriesService.class)) {
             MockRepository mockRepository = (MockRepository) repositoriesService.repository(repository);
             failureCount += mockRepository.getFailureCount();
         }

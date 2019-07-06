@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ class ConsoleHandlerAdd extends FlushingHandlerAddProperties<ConsoleHandlerServi
     @Override
     protected void updateRuntime(final OperationContext context, final ServiceBuilder<Handler> serviceBuilder, final String name, final ConsoleHandlerService service, final ModelNode model) throws OperationFailedException {
         super.updateRuntime(context, serviceBuilder, name, service, model);
-service.setTarget(Target.fromString(TargetValidator.properCase(target.asString())));
+        final ModelNode target = TARGET.resolveModelAttribute(context, model);
         if (target.isDefined()) {
-            service.setTarget(Target.fromString(target.asString()));
+service.setTarget(Target.fromString(TargetValidator.properCase(target.asString())));
         }
     }
 }

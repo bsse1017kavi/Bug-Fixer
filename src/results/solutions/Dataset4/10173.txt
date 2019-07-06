@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -165,9 +164,9 @@ public class WeightedFilterCache extends AbstractIndexComponent implements Filte
 
             FilterCacheValue<DocSet> cacheValue = innerCache.getIfPresent(cacheKey);
             if (cacheValue == null) {
-if (previous == null && (reader instanceof SegmentReader)) {
+                if (!cache.seenReaders.containsKey(reader.getCoreCacheKey())) {
                     Boolean previous = cache.seenReaders.putIfAbsent(reader.getCoreCacheKey(), Boolean.TRUE);
-                    if (previous == null) {
+if (previous == null && (reader instanceof SegmentReader)) {
                         ((SegmentReader) reader).addCoreClosedListener(cache);
                         cache.seenReadersCount.inc();
                     }

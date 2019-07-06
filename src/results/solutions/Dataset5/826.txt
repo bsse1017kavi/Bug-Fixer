@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class IndexedSharedResourceCodingStrategyTest extends WicketTestCase
 		params.add("0", "param0");
 		params.add("1", "param1");
 		params.put("test", new String[] { "testval1", "testval2" });
-assertEquals("test/param0/param1?test=testval1&test=testval2&foo=fooval", url);
+		params.add("foo", "fooval");
 		final String url = cycle.urlFor(new ResourceReference(RESOURCE_NAME), params).toString();
-		assertEquals("test/param0/param1?foo=fooval&test=testval1&test=testval2", url);
+assertEquals("test/param0/param1?test=testval1&test=testval2&foo=fooval", url);
 		tester.getServletRequest().setURL(URL_PREFIX + url);
 		tester.processRequestCycle(cycle);
 		assertEquals(4, resource.params.size());

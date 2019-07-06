@@ -1,4 +1,3 @@
-
 /*
  * Derby - class org.apache.derby.impl.drda.DRDAString
  *
@@ -111,9 +110,9 @@ final class DRDAString {
      * @return a <code>String</code> value
      */
     public String toString() {
-ccsidManager.convertToJavaString(buffer);
+        if (cachedString == null) {
             cachedString =
-                ccsidManager.convertToUCS2(buffer);
+ccsidManager.convertToJavaString(buffer);
         }
         return cachedString;
     }

@@ -1,5 +1,4 @@
 
-
 /*
 Derby - Class org.apache.derbyTesting.functionTests.tests.lang.CheckConstraintTest
 
@@ -748,9 +747,9 @@ public final class CheckConstraintTest extends BaseJDBCTestCase {
             {"C"},
             {"U"},
             {"C"}
-JDBC.assertUnorderedResultSet(rs, expRS, true);
+        };
         
-        JDBC.assertFullResultSet(rs, expRS, true);
+JDBC.assertUnorderedResultSet(rs, expRS, true);
         
         assertStatementError("42Y55", st,
             " drop table t2");

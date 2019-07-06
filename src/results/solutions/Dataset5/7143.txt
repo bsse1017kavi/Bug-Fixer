@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -125,9 +124,9 @@ public RGB open() {
 		panel.setColor(color);
 	}
 	SWTPanelDelegate delegate = (SWTPanelDelegate)new SWTPanelDelegate().alloc().init();
-OS.object_setInstanceVariable(delegate.id, Display.SWT_OBJECT, jniRef);
+	int jniRef = OS.NewGlobalRef(this);
 	if (jniRef == 0) SWT.error(SWT.ERROR_NO_HANDLES);
-	delegate.setTag(jniRef);
+OS.object_setInstanceVariable(delegate.id, Display.SWT_OBJECT, jniRef);
 	panel.setDelegate(delegate);
 	rgb = null;
 	panel.orderFront(null);

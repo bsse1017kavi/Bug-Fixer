@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -695,9 +694,9 @@ addMessage(Message in) {
 				else
 					responseType = SetResponse.NXRRSET;
 				response = SetResponse.ofType(responseType);
-} else {
+			}
 			/* NXT records are not cached yet. */
-		} else if (ns != null) {
+} else {
 			/* Referral response */
 			cred = getCred(Section.AUTHORITY, isAuth);
 			addRRset(ns, cred);

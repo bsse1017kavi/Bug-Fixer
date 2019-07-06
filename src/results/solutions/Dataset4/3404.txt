@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2008 Google Inc.
  *
@@ -52,9 +51,9 @@ public class ProviderMethod<T> implements ProviderWithDependencies<T> {
         this.scopeAnnotation = scopeAnnotation;
         this.instance = instance;
         this.dependencies = dependencies;
-this.exposed = method.getAnnotation(Exposed.class) != null;
+        this.method = method;
         this.parameterProviders = parameterProviders;
-        this.exposed = method.isAnnotationPresent(Exposed.class);
+this.exposed = method.getAnnotation(Exposed.class) != null;
 
         method.setAccessible(true);
     }

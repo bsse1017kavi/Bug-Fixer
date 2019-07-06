@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public abstract class SecondLevelCacheMetricsHandler extends AbstractRuntimeOnly
     protected void executeRuntimeStep(OperationContext context, ModelNode operation) throws OperationFailedException {
         SecondLevelCacheStatistics statistics = getSecondLevelCacheStatistics(operation);
         if (statistics != null) {
-context.stepCompleted();
+            handle(statistics, context, operation.require(ModelDescriptionConstants.NAME).asString());
         }
-        context.completeStep();
+context.stepCompleted();
     }
 
     protected abstract void handle(SecondLevelCacheStatistics statistics, OperationContext context, String attributeName);

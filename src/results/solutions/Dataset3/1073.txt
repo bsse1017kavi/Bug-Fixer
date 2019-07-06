@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -184,9 +183,9 @@ class DomainApiHandler implements ManagementHttpHandler {
         boolean encode = APPLICATION_DMR_ENCODED.equals(requestHeaders.getFirst(ACCEPT))
                 || APPLICATION_DMR_ENCODED.equals(requestHeaders.getFirst(CONTENT_TYPE));
 
-response = modelController.execute(new NewOperationBuilder(dmr).build());
+        try {
             dmr = isGet ? convertGetRequest(request) : convertPostRequest(http.getRequestBody(), encode);
-            response = modelController.execute(NewOperationBuilder.Factory.create(dmr).build());
+response = modelController.execute(new NewOperationBuilder(dmr).build());
         } catch (Throwable t) {
             log.error("Unexpected error executing model request", t);
 

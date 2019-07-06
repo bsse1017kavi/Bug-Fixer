@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs;
 
 /*
@@ -895,9 +894,9 @@ public class BlockTreeTermsWriter extends FieldsConsumer {
         //   Util.toDot(root.index, w, false, false);
         //   System.out.println("SAVED to " + dotFileName);
         //   w.close();
-assert sumTotalTermFreq == 0 || fieldInfo.getIndexOptions() == IndexOptions.DOCS_ONLY && sumTotalTermFreq == -1;
+        // }
       } else {
-        assert sumTotalTermFreq == 0;
+assert sumTotalTermFreq == 0 || fieldInfo.getIndexOptions() == IndexOptions.DOCS_ONLY && sumTotalTermFreq == -1;
         assert sumDocFreq == 0;
         assert docCount == 0;
       }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -89,9 +88,9 @@ public class VersionLockManager
      * and {@link #getVersionUpdateOnWriteLock}. Override to perform
      * additional locking.
      *
-protected void lockInternal(OpenJPAStateManager sm, int level, int timeout,
+     * @see StoreContext#transactional
      */
-    protected void lockInternal(OpenJPAStateManager sm, int level, long timeout,
+protected void lockInternal(OpenJPAStateManager sm, int level, int timeout,
         Object sdata) {
         // Set lock level first to prevent infinite recursion with
         // transactional(..) call

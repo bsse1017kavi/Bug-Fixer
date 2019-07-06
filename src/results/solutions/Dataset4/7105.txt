@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class MetaDataIndexTemplateService extends AbstractComponent {
                 if (!currentState.metaData().templates().containsKey(request.name)) {
                     listener.onFailure(new IndexTemplateMissingException(request.name));
                     return currentState;
-.removeTemplate(request.name);
+                }
                 MetaData.Builder metaData = MetaData.builder().metaData(currentState.metaData())
-                        .remoteTemplate(request.name);
+.removeTemplate(request.name);
 
                 return ClusterState.builder().state(currentState).metaData(metaData).build();
             }

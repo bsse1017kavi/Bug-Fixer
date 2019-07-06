@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -127,9 +126,9 @@ protected void markerFromProblemDetail(IResource resource, IProblemDetail proble
 	int sev = problem.getSeverity();
 	marker.setAttribute(IMarker.SEVERITY , ((sev & IProblemDetail.S_ERROR) != 0 ? IMarker.SEVERITY_ERROR : IMarker.SEVERITY_WARNING));
 	if ((sev & ProblemDetailImpl.S_SYNTAX_ERROR) != 0) {
-marker.setAttribute("ID"/*nonNLS*/, new Integer(problem.getID()));
+		setFlags(marker, ProblemDetailImpl.S_SYNTAX_ERROR);
 	}
-	marker.setAttribute("ID", new Integer(problem.getID()));
+marker.setAttribute("ID"/*nonNLS*/, new Integer(problem.getID()));
 
 	int start = problem.getStartPos();
 	marker.setAttribute(IMarker.CHAR_START, new Integer(start));

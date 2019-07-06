@@ -1,4 +1,3 @@
-
 /*
  * $Id: MyTree.java 5394 2006-04-16 06:36:52 -0700 (Sun, 16 Apr 2006)
  * jdonnerstag $ $Revision: 5394 $ $Date: 2005-10-02 01:14:57 +0200 (So, 02 Okt
@@ -77,9 +76,9 @@ public class AnotherTree extends Tree
 			// string, as we want to have the current value everytime
 			// the label is rendered
 			IModel junctionLabelModel = new AbstractReadOnlyModel()
-public Object getObject()
+			{
 				@Override
-				public Object getObject(Component component)
+public Object getObject()
 				{
 					return (!node.isLeaf()) ? (isExpanded(node)) ? "^" : ">" : "";
 				}

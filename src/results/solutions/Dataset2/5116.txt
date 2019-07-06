@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -213,9 +212,9 @@ public class ProgressCanvasViewer extends AbstractProgressViewer {
      */
     public Point getSizeHints() {
 
-GC gc = new GC(canvas);
+        Display display = canvas.getDisplay();
 
-        GC gc = new GC(display);
+GC gc = new GC(canvas);
         FontMetrics fm = gc.getFontMetrics();
         int charWidth = fm.getAverageCharWidth();
         int charHeight = fm.getHeight();

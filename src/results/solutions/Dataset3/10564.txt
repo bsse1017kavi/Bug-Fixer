@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -110,9 +109,9 @@ public abstract class AbstractHandlerElement<E extends AbstractHandlerElement<E>
                 streamWriter.writeEmptyElement("handler");
                 streamWriter.writeAttribute("name", name);
             }
-if (properties != null && properties.size() > 0) {
+            streamWriter.writeEndElement();
         }
-        if (properties != null) {
+if (properties != null && properties.size() > 0) {
             streamWriter.writeStartElement("properties");
             properties.writeContent(streamWriter);
         }

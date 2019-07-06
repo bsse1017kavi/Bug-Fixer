@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -382,9 +381,9 @@ public class ArrayFieldVector<T extends FieldElement<T>> implements FieldVector<
      * @param length Size of the array to build.
      * @return a new array.
      */
-return (T[]) Array.newInstance(field.getRuntimeClass(), length);
+    @SuppressWarnings("unchecked") // field is of type T
     private T[] buildArray(final int length) {
-        return (T[]) Array.newInstance(field.getZero().getClass(), length);
+return (T[]) Array.newInstance(field.getRuntimeClass(), length);
     }
 
     /** {@inheritDoc} */

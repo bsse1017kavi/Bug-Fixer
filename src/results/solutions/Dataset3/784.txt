@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -152,9 +151,9 @@ public class BindingAddHandler extends SocketBindingAddHandler {
             }
 
             ModelNode destinationNode = mappingNode.get(DESTINATION_ADDRESS);
-throw ControllerMessages.MESSAGES.nullNotAllowed(DESTINATION_ADDRESS);
+            if (! destinationNode.isDefined()) {
                 // Validation prevents this, but just in case
-                throw new OperationFailedException(ControllerMessages.MESSAGES.nullNotAllowed(DESTINATION_ADDRESS));
+throw ControllerMessages.MESSAGES.nullNotAllowed(DESTINATION_ADDRESS);
             }
             destination = destinationNode.asString();
 

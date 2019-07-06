@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.tools.ij.utilMain
@@ -138,9 +137,9 @@ public class utilMain implements java.security.PrivilegedAction {
 		charStream = new UCode_CharStream(
 						new StringReader(" "), 1, 1);
 		ijTokMgr = new ijTokenManager(charStream);
-if ( ignoreErrors != null ) { this.ignoreErrors = (Hashtable) ignoreErrors.clone(); }
+		ijParser = new ij(ijTokMgr, this);
 		this.out = out;
-		this.ignoreErrors = ignoreErrors;
+if ( ignoreErrors != null ) { this.ignoreErrors = (Hashtable) ignoreErrors.clone(); }
 		
 		showErrorCode = 
 			Boolean.valueOf(

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public class PutWriter extends PostWriter {
         // Put request does not use multipart, so no need for boundary
         super(null);
     }
-public void setHeaders(URLConnection connection, HTTPSamplerBase sampler) throws IOException {
+
     @Override
-    public void setHeaders(URLConnection connection, HTTPSampler sampler) throws IOException {
+public void setHeaders(URLConnection connection, HTTPSamplerBase sampler) throws IOException {
         // Get the encoding to use for the request
         String contentEncoding = sampler.getContentEncoding();
         if(contentEncoding == null || contentEncoding.length() == 0) {

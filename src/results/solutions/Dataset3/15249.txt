@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class HostXml extends CommonXml {
         final ModelNode modelNode = context.getModelNode();
 
         writer.writeStartDocument();
-if (modelNode.hasDefined(NAME)) {
+        writer.writeStartElement(Element.HOST.getLocalName());
 
-        if (hasDefinedChild(modelNode, NAME)) {
+if (modelNode.hasDefined(NAME)) {
             writeAttribute(writer, Attribute.NAME, modelNode.get(NAME).asString());
         }
 

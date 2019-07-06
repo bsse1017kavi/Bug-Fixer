@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -142,9 +141,9 @@ public class SolrConfig extends Config {
     filtOptEnabled = getBool("query/boolTofilterOptimizer/@enabled", false);
     filtOptCacheSize = getInt("query/boolTofilterOptimizer/@cacheSize",32);
     filtOptThreshold = getFloat("query/boolTofilterOptimizer/@threshold",.05f);
-queryResultWindowSize = Math.max(1, getInt("query/queryResultWindowSize", 1));
+    
     useFilterForSortedQuery = getBool("query/useFilterForSortedQuery", false);
-    queryResultWindowSize = getInt("query/queryResultWindowSize", 1);
+queryResultWindowSize = Math.max(1, getInt("query/queryResultWindowSize", 1));
     queryResultMaxDocsCached = getInt("query/queryResultMaxDocsCached", Integer.MAX_VALUE);
     enableLazyFieldLoading = getBool("query/enableLazyFieldLoading", false);
 

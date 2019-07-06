@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -334,9 +333,9 @@ public class SMTPAppender extends AppenderSkeleton {
    * Only use an expression to evaluate if the 'evaluatorClass' param is not provided.
    * @param expression
    */
-if (evaluator instanceof DefaultEvaluator) {
+  public void setExpression(String expression) {
     
-    if (!(evaluator instanceof DefaultEvaluator)) {
+if (evaluator instanceof DefaultEvaluator) {
       this.expression = expression;
       evaluator = new DefaultEvaluator(expression);
     }

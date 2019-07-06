@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -117,9 +116,9 @@ public class UserViewActivity extends TabPagerActivity<UserPagerAdapter>
         return this;
     }
 
-return new UserPagerAdapter(this);
+    @Override
     protected UserPagerAdapter createAdapter() {
-        return new UserPagerAdapter(getSupportFragmentManager(), getResources());
+return new UserPagerAdapter(this);
     }
 
     @Override

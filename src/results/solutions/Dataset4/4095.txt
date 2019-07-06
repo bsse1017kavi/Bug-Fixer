@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -145,9 +144,9 @@ public class UpdateHelper extends AbstractComponent {
         } else {
             Map<String, Object> ctx = new HashMap<>(2);
             ctx.put("_source", sourceAndContent.v2());
-ExecutableScript script = scriptService.executable(request.scriptLang, request.script, request.scriptType, request.scriptParams);
+
             try {
-                ExecutableScript script = scriptService.executable(request.scriptLang, request.script, request.scriptParams);
+ExecutableScript script = scriptService.executable(request.scriptLang, request.script, request.scriptType, request.scriptParams);
                 script.setNextVar("ctx", ctx);
                 script.run();
                 // we need to unwrap the ctx...

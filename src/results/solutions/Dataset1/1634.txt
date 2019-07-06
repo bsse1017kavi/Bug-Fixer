@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class Util {
         }
         Collection<Bundle> bundles = new ArrayList<Bundle>(activator.findProviderBundles(requestedClass));
         activator.log(LogService.LOG_DEBUG, "Found bundles providing " + requestedClass + ": " + bundles);
-args.put(new Pair<Integer, String>(0, Class.class.getName()), clsArg.getName());
+                
         Map<Pair<Integer, String>, String> args = new HashMap<Pair<Integer,String>, String>();
-        args.put(new Pair<Integer, String>(1, Class.class.getName()), clsArg.getName());
+args.put(new Pair<Integer, String>(0, Class.class.getName()), clsArg.getName());
         Collection<Bundle> allowedBundles = activator.findConsumerRestrictions(consumerBundle, className, methodName, args);
 
         if (allowedBundles != null) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -220,9 +219,9 @@ public class Host implements Service<Host>, WebHost {
 
         @Override
         public void destroy() throws Exception {
-container.removeDeployment(deploymentInfo);
+            manager.undeploy();
             ServletContainer container = getServerInjection().getValue().getServletContainer().getValue().getServletContainer();
-            container.removeDeployment(deploymentInfo.getDeploymentName());
+container.removeDeployment(deploymentInfo);
         }
     }
 

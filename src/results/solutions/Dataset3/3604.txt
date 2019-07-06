@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public class LookupWordCount {
 
         SimpleHBaseMapper mapper = new SimpleHBaseMapper().withRowKeyField("word");
         HBaseProjectionCriteria projectionCriteria = new HBaseProjectionCriteria();
-WordCountValueMapper rowToTupleMapper = new WordCountValueMapper();
+        projectionCriteria.addColumn(new HBaseProjectionCriteria.ColumnMetaData("cf", "count"));
 
-        WordCountRowToStormValueMapper rowToTupleMapper = new WordCountRowToStormValueMapper();
+WordCountValueMapper rowToTupleMapper = new WordCountValueMapper();
 
         HBaseLookupBolt hBaseLookupBolt = new HBaseLookupBolt("WordCount", mapper, rowToTupleMapper)
                 .withConfigKey("hbase.conf")

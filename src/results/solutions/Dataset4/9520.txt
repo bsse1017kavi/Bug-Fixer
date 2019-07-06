@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -160,9 +159,9 @@ public class MinimumMasterNodesTests extends ElasticsearchIntegrationTest {
             assertThat(client().prepareCount().setQuery(QueryBuilders.matchAllQuery()).execute().actionGet().getCount(), equalTo(100l));
         }
     }
-@TestLogging("cluster.service:TRACE,discovery:TRACE,indices.cluster:TRACE")
+
     @Test
-    @TestLogging("cluster.service:TRACE,discovery:TRACE")
+@TestLogging("cluster.service:TRACE,discovery:TRACE,indices.cluster:TRACE")
     public void multipleNodesShutdownNonMasterNodes() throws Exception {
         Settings settings = settingsBuilder()
                 .put("discovery.type", "zen")

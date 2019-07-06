@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -93,9 +92,9 @@ public void codeComplete(char[] snippet,int insertion,int position,char[][] loca
 	if (source != null && insertion > -1 && insertion < source.length()) {
 		String encoding = (String) JavaCore.getOptions().get(CompilerOptions.OPTION_Encoding);
 		if ("".equals(encoding)) encoding = null; //$NON-NLS-1$
-char[] suffix =  CharOperation.concat(new char[]{'}'}, source.substring(insertion).toCharArray());
+		
 		char[] prefix = CharOperation.concat(source.substring(0, insertion).toCharArray(), new char[]{'{'});
-		char[] suffix =  CharOperation.concat(source.substring(insertion).toCharArray(), new char[]{'}'});
+char[] suffix =  CharOperation.concat(new char[]{'}'}, source.substring(insertion).toCharArray());
 		char[] fakeSource = CharOperation.concat(prefix, snippet, suffix);
 		
 		BasicCompilationUnit cu = 

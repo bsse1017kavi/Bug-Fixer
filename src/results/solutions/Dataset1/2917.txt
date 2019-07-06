@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.catalog.SequenceUpdater
@@ -472,9 +471,9 @@ public abstract class SequenceUpdater implements Cacheable
             try {
                 return updateCurrentValueOnDisk( nestedTransaction, oldValue, newValue, false );
             }
-if ( !se.isLockTimeout() ) { throw se; }
+            catch (StandardException se)
             {
-                if ( !se.getMessageId().equals( SQLState.LOCK_TIMEOUT ) ) { throw se; }
+if ( !se.isLockTimeout() ) { throw se; }
             }
             finally
             {

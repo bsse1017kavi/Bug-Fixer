@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public abstract class InvertibleRealLinearOperator extends RealLinearOperator {
         }
         final RealVector x = solve(new ArrayRealVector(b, false));
         if (x instanceof ArrayRealVector) {
-return x.toArray();
+            return ((ArrayRealVector) x).getDataRef();
         } else {
-            return x.getData();
+return x.toArray();
         }
     }
 

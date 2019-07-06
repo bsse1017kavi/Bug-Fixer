@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -279,9 +278,9 @@ public class PathConvert extends Task {
         // Place the result into the specified property
         String value = rslt.toString();
 
-getProject().setNewProperty( property, value );
+        log( "Set property " + property + " = " + value, Project.MSG_VERBOSE );
 
-        getProject().setProperty( property, value );
+getProject().setNewProperty( property, value );
     }
 
     /**

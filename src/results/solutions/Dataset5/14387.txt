@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -33,9 +32,9 @@ public class Javac12 extends DefaultCompilerAdapter
         throws TaskException
     {
         getLogger().debug( "Using classic compiler" );
-OutputStream logstr = new LogOutputStream( getLogger(), true );
+        Commandline cmd = setupJavacCommand( true );
 
-        OutputStream logstr = new LogOutputStream( m_attributes.hackGetLogger(), true );
+OutputStream logstr = new LogOutputStream( getLogger(), true );
         try
         {
             // Create an instance of the compiler, redirecting output to

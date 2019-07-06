@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1811,9 +1810,9 @@ public abstract class Component implements IClusterable
 			{
 				final Iterator iter = this.behaviors.iterator();
 				while (iter.hasNext())
-if (behavior instanceof IHeaderContributor && isBehaviorAccepted(behavior))
+				{
 					IBehavior behavior = (IBehavior)iter.next();
-					if (behavior instanceof IHeaderContributor && behavior.isEnabled(this))
+if (behavior instanceof IHeaderContributor && isBehaviorAccepted(behavior))
 					{
 						((IHeaderContributor)behavior).renderHead(container.getHeaderResponse());
 					}

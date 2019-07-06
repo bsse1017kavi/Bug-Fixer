@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -115,9 +114,9 @@ public class JakartaRegexpMatcher implements RegexpMatcher
             reg.setMatchFlags( cOptions );
             return reg;
         }
-throw new TaskException( e.toString(), e );
+        catch( RESyntaxException e )
         {
-            throw new TaskException( e );
+throw new TaskException( e.toString(), e );
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -135,9 +134,9 @@ public class ContainerInterceptorBindingsDDProcessor implements DeploymentUnitPr
             final EJBComponentDescription ejbComponentDescription = (EJBComponentDescription) componentDescription;
             final Class<?> componentClass;
             try {
-throw MESSAGES.failToLoadComponentClass(e, ejbComponentDescription.getComponentClassName());
+                componentClass = module.getClassLoader().loadClass(ejbComponentDescription.getComponentClassName());
             } catch (ClassNotFoundException e) {
-                throw MESSAGES.failToLoadComponentClass(ejbComponentDescription.getComponentClassName());
+throw MESSAGES.failToLoadComponentClass(e, ejbComponentDescription.getComponentClassName());
             }
             final List<InterceptorBindingMetaData> bindingsApplicableForCurrentEJB = bindingsPerEJB.get(ejbComponentDescription.getComponentName());
             final Map<Method, List<InterceptorBindingMetaData>> methodInterceptors = new HashMap<Method, List<InterceptorBindingMetaData>>();

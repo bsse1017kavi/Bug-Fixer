@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -548,9 +547,9 @@ public class FBUtilities
     {
         Class cls = classForName(classname,  readable);
         T rval = null;
-rval = (T) cls.getDeclaredMethod("getInstance").invoke(new Object[] {null, null});
+        try
         {
-            rval = (T) cls.getDeclaredMethod("getInstance").invoke(null, (Object) null);
+rval = (T) cls.getDeclaredMethod("getInstance").invoke(new Object[] {null, null});
 
         }
         catch (NoSuchMethodException e)

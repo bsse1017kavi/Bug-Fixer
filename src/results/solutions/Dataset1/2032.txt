@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.ResultSet
@@ -4156,9 +4155,9 @@ public abstract class ResultSet implements java.sql.ResultSet,
     boolean listenToUnitOfWork_ = false;
 
     public void listenToUnitOfWork() {
-connection_.CommitAndRollbackListeners_.put(this, null);
+        if (!listenToUnitOfWork_) {
             listenToUnitOfWork_ = true;
-            connection_.CommitAndRollbackListeners_.add(this);
+connection_.CommitAndRollbackListeners_.put(this, null);
         }
     }
 

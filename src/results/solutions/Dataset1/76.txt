@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class SizeTieredCompactionStrategy extends AbstractCompactionStrategy
 
     private static List<Pair<SSTableReader, Long>> createSSTableAndLengthPairs(Collection<SSTableReader> collection)
     {
-tableLengthPairs.add(new Pair<SSTableReader, Long>(table, table.onDiskLength()));
+        List<Pair<SSTableReader, Long>> tableLengthPairs = new ArrayList<Pair<SSTableReader, Long>>();
         for(SSTableReader table: collection)
-            tableLengthPairs.add(new Pair<SSTableReader, Long>(table, table.length()));
+tableLengthPairs.add(new Pair<SSTableReader, Long>(table, table.onDiskLength()));
         return tableLengthPairs;
     }
 

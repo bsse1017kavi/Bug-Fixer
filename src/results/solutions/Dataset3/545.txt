@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -47,9 +46,9 @@ public class LazyResourceInjection {
     }
 
     public void install() {
-classDescription.getInjectionConfigurations().add(resource);
+        if(!installed) {
             final ResourceInjectionConfiguration resource = new ResourceInjectionConfiguration(injectionTarget, new LookupInjectionSource(localContextName));
-            classDescription.getConfigurators().add(new InjectionConfigurator(resource));
+classDescription.getInjectionConfigurations().add(resource);
             installed = true;
         }
     }

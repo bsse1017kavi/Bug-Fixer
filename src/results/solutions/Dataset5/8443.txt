@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -3505,9 +3504,9 @@ void setTableEmpty () {
 		OS.ImageList_Destroy (hImageList);
 		display.releaseImageList (imageList);
 		imageList = null;
-if ((style & SWT.VIRTUAL) == 0) customDraw = false;
+		if (itemHeight != -1) setItemHeight (false);
 	}
-	if ((style & SWT.VIRTUAL) != 0) customDraw = false;
+if ((style & SWT.VIRTUAL) == 0) customDraw = false;
 	items = new TableItem [4];
 }
 

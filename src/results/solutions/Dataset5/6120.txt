@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -183,9 +182,9 @@ public class Depend extends MatchingTask
     public Path createClasspath()
         throws TaskException
     {
-dependClasspath = new Path( getProject() );
+        if( dependClasspath == null )
         {
-            dependClasspath = new Path( project );
+dependClasspath = new Path( getProject() );
         }
         return dependClasspath.createPath();
     }

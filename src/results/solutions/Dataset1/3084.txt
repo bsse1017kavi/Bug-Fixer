@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -57,9 +56,9 @@ public class TestMultiValuedNumericRangeQuery extends LuceneTestCase {
         doc.add(new IntField("trie", value, Field.Store.NO));
       }
       writer.addDocument(doc);
-writer.shutdown();
+    }
     IndexReader reader = writer.getReader();
-    writer.close();
+writer.shutdown();
     
     IndexSearcher searcher=newSearcher(reader);
     num = atLeast(50);

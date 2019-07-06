@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -185,9 +184,9 @@ protected void copyExtraResourcesBack(ClasspathMultiDirectory sourceLocation, fi
 						IResource copiedResource = outputFolder.getFile(partialPath);
 						if (copiedResource.exists()) {
 							if (deletedAll) {
-createProblemFor(resource, Util.bind("build.duplicateResource", id), javaBuilder.javaProject.getOption(JavaCore.CORE_JAVA_BUILD_DUPLICATE_RESOURCE, true)); //$NON-NLS-1$
+								IResource originalResource = findOriginalResource(partialPath);
 								String id = originalResource.getFullPath().removeFirstSegments(1).toString();
-								createErrorFor(resource, Util.bind("build.duplicateResource", id)); //$NON-NLS-1$
+createProblemFor(resource, Util.bind("build.duplicateResource", id), javaBuilder.javaProject.getOption(JavaCore.CORE_JAVA_BUILD_DUPLICATE_RESOURCE, true)); //$NON-NLS-1$
 								return false;
 							}
 							copiedResource.delete(IResource.FORCE, null); // last one wins

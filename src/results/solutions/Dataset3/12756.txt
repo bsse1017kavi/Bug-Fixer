@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public final class ThreadFactoryAdd extends AbstractThreadsSubsystemUpdate<Void>
         service.setNamePattern(threadNamePattern);
         service.setPriority(priority);
         service.setThreadGroupName(groupName);
-final BatchServiceBuilder<ThreadFactory> builder = batchBuilder.addService(ThreadsServices.threadFactoryName(name), service);
+        final UpdateResultHandler.ServiceStartListener<P> listener = new UpdateResultHandler.ServiceStartListener<P>(handler, param);
         final BatchBuilder batchBuilder = updateContext.getBatchBuilder();
-        final BatchServiceBuilder<ThreadFactory> builder = batchBuilder.addService(Services.threadFactoryName(name), service);
+final BatchServiceBuilder<ThreadFactory> builder = batchBuilder.addService(ThreadsServices.threadFactoryName(name), service);
         builder.addListener(listener);
         builder.setInitialMode(ServiceController.Mode.IMMEDIATE);
         try {

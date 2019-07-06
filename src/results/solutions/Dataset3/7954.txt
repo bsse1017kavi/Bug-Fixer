@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -171,9 +170,9 @@ public class CSVRecordTest {
 
     @Test
     public void testToMapWithNoHeader() throws Exception {
-final Map<String, String> map = shortRec.toMap();
+       final CSVParser parser =  CSVParser.parse("a,b", CSVFormat.newFormat(','));
        final CSVRecord shortRec = parser.iterator().next();
-       Map<String, String> map = shortRec.toMap();
+final Map<String, String> map = shortRec.toMap();
        assertNotNull("Map is not null.", map);
        assertTrue("Map is empty.", map.isEmpty());
     }

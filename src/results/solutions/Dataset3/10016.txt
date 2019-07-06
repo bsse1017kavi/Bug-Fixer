@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class CustomLoadMetricDefinition extends SimpleResourceDefinition {
     static final AttributeDefinition[] ATTRIBUTES = {
             CLASS, LoadMetricDefinition.WEIGHT, LoadMetricDefinition.CAPACITY, LoadMetricDefinition.PROPERTY
     };
-if (ModClusterModel.VERSION_1_3_0.requiresTransformation(version)) {
+
     static void buildTransformation(ModelVersion version, ResourceTransformationDescriptionBuilder builder) {
-        if (ModClusterModel.VERSION_1_2_0.requiresTransformation(version)) {
+if (ModClusterModel.VERSION_1_3_0.requiresTransformation(version)) {
             builder.addChildResource(PATH)
                     .getAttributeBuilder()
                     .addRejectCheck(RejectAttributeChecker.SIMPLE_EXPRESSIONS, CLASS, WEIGHT)

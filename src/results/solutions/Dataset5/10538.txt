@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -676,9 +675,9 @@ public class Execute {
      */
     private static Vector addVMSLogicals(Vector environment, BufferedReader in)
         throws IOException {
-String line = null;
+        HashMap logicals = new HashMap();
         String logName = null, logValue = null, newLogName;
-        String line, lineSep = System.getProperty("line.separator");
+String line = null;
         while ((line = in.readLine()) != null) {
             // parse the VMS logicals into required format ("VAR=VAL[,VAL2]")
             if (line.startsWith("\t=")) {

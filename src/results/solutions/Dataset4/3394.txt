@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2008-2010, Matthias Mann
  * 
@@ -41,9 +40,9 @@ class GdxTexture implements Texture, Resource {
 	private final GdxRenderer renderer;
 	private final com.badlogic.gdx.graphics.Texture texture;
 
-texture = Gdx.graphics.newTexture(textureFile, TextureFilter.Nearest, TextureFilter.Nearest, TextureWrap.ClampToEdge,
+	public GdxTexture (GdxRenderer renderer, FileHandle textureFile) {
 		this.renderer = renderer;
-		texture = Gdx.graphics.newTexture(textureFile, TextureFilter.Linear, TextureFilter.Linear, TextureWrap.ClampToEdge,
+texture = Gdx.graphics.newTexture(textureFile, TextureFilter.Nearest, TextureFilter.Nearest, TextureWrap.ClampToEdge,
 			TextureWrap.ClampToEdge);
 	}
 

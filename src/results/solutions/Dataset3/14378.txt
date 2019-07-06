@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class BundleAccessesModuleServiceTestCase extends AbstractXServiceTestCas
         archive.setManifest(new Asset() {
             public InputStream openStream() {
                 OSGiManifestBuilder builder = OSGiManifestBuilder.newInstance();
-builder.addImportPackages(Logger.class, Services.class, Module.class, ServiceContainer.class);
+                builder.addBundleSymbolicName(archive.getName());
                 builder.addBundleManifestVersion(2);
-                builder.addImportPackages(Logger.class, Services.class, Module.class);
+builder.addImportPackages(Logger.class, Services.class, Module.class, ServiceContainer.class);
                 return builder.openStream();
             }
         });

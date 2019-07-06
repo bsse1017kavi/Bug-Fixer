@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -881,9 +880,9 @@ public int getOffset (int x, int y, int[] trailing) {
 			GC gc = new GC(device);
 			gc.setFont(getItemFont(run));
 			char[] chars = new char[run.length];
-int charWidth = gc.stringExtent(String.valueOf(chars[offset])).x;
+			text.getChars(run.start, run.start + run.length, chars, 0);
 			for (offset = 0; offset < chars.length; offset++) {
-				int charWidth = gc.stringExtent(String.valueOf(chars[0])).x;
+int charWidth = gc.stringExtent(String.valueOf(chars[offset])).x;
 				if (width + charWidth > x) {
 					if (trailing != null) {
 						trailing[0] = x < (width + charWidth / 2) ? 0 : 1;

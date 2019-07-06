@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class CorbaPOAService implements Service<POA> {
 
     private static final Logger log = Logger.getLogger("org.jboss.as.jacorb");
 
-private volatile POA poa;
+    public static final ServiceName SERVICE_NAME = ServiceName.JBOSS.append("jacorb", "poa-service");
 
-    private POA poa;
+private volatile POA poa;
 
     private final InjectedValue<ORB> orbInjector = new InjectedValue<ORB>();
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -566,9 +565,9 @@ final class OperationContextImpl extends AbstractOperationContext {
         }
         if (currentStage != Stage.MODEL) {
             throw MESSAGES.stageAlreadyComplete(Stage.MODEL);
-authorize(false, READ_WRITE_CONFIG);
+        }
         rejectUserDomainServerUpdates();
-        // TODO I believe that >>   authorize(false, READ_WRITE_CONFIG);   << belongs here; see readModelForUpdate
+authorize(false, READ_WRITE_CONFIG);
         if (!isModelAffected()) {
             takeWriteLock();
             model = model.clone();

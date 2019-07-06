@@ -1,4 +1,3 @@
-
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1
@@ -194,9 +193,9 @@ public final class LoggingEventFieldResolver {
       String propValue = event.getProperty(fieldName.substring(5));
       return ((propValue == null) ? EMPTY_STRING : propValue);
     }
-throw new IllegalArgumentException("Unsupported field name: " + fieldName);
+
     //there wasn't a match, so throw a runtime exception
-    throw new RuntimeException("Unsupported field name: " + fieldName);
+throw new IllegalArgumentException("Unsupported field name: " + fieldName);
   }
 
     private String getExceptionMessage(String[] exception) {

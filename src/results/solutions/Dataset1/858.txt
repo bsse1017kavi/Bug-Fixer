@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.JarUtil
@@ -391,9 +390,9 @@ public class JarUtil
 
 	private InputStream getAsStream(long generationId) throws StandardException {
 		try {
-throw StandardException.newException(SQLState.LANG_FILE_ERROR, ioe, ioe.toString());
+			return fr.getAsStream(JarDDL.mkExternalName(schemaName, sqlName, fr.getSeparatorChar()), generationId);
 		} catch (IOException ioe) {
-			throw StandardException.newException(SQLState.LANG_FILE_ERROR, ioe.toString(),ioe);	
+throw StandardException.newException(SQLState.LANG_FILE_ERROR, ioe, ioe.toString());
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -60,9 +59,9 @@ public class PatchConfigXmlUnitTestCase {
         assertNotNull(patchConfig.getPatchType());
         assertEquals(Patch.PatchType.CUMULATIVE, patchConfig.getPatchType());
         assertTrue(patchConfig.isGenerateByDiff());
-validateAppliesTo(patchConfig, "1.2.3");
+        assertEquals("2.3.4", patchConfig.getResultingVersion());
 
-        validateAppliesTo(patchConfig, "1.2.3", "1.2.4");
+validateAppliesTo(patchConfig, "1.2.3");
 
         validateInRuntimeUse(patchConfig);
     }

@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2006 Google Inc.
  *
@@ -36,9 +35,9 @@ public final class InternalContext {
     @SuppressWarnings("unchecked")
     public <T> ConstructionContext<T> getConstructionContext(Object key) {
         ConstructionContext<T> constructionContext
-constructionContext = new ConstructionContext<>();
+                = (ConstructionContext<T>) constructionContexts.get(key);
         if (constructionContext == null) {
-            constructionContext = new ConstructionContext<T>();
+constructionContext = new ConstructionContext<>();
             constructionContexts.put(key, constructionContext);
         }
         return constructionContext;

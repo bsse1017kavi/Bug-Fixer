@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -350,9 +349,9 @@ public class EjbCorbaServant extends Servant implements InvokeHandler, LocalIIOP
 
     private void prepareInterceptorContext(final SkeletonStrategy op, final Object[] params, final InterceptorContext interceptorContext) throws IOException, ClassNotFoundException {
         if (!home) {
-interceptorContext.putPrivateData(SessionID.class, sessionID);
+            if (componentView.getComponent() instanceof StatefulSessionComponent) {
                 final SessionID sessionID = (SessionID) unmarshalIdentifier();
-                interceptorContext.putPrivateData(SessionID.SESSION_ID_KEY, sessionID);
+interceptorContext.putPrivateData(SessionID.class, sessionID);
             } else if (componentView.getComponent() instanceof EntityBeanComponent) {
                 final Object pk = unmarshalIdentifier();
                 interceptorContext.putPrivateData(EntityBeanComponent.PRIMARY_KEY_CONTEXT_KEY, pk);

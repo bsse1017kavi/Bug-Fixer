@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -233,9 +232,9 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
         return new BigReal(d.subtract(a.d));
     }
 
-return new BigReal(d.divide(a.d, scale, roundingMode));
+    /** {@inheritDoc} */
     public BigReal divide(BigReal a) throws ArithmeticException {
-        return new BigReal(d.divide(a.d));
+return new BigReal(d.divide(a.d, scale, roundingMode));
     }
 
     /** {@inheritDoc} */

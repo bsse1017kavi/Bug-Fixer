@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public final class DetectArchiverTestCase extends AbstractTestCase {
 
         final ArchiveInputStream jar = factory.createArchiveInputStream(
                                                                         new BufferedInputStream(new FileInputStream(
-assertTrue(jar instanceof ZipArchiveInputStream);
+                                                                                                                    new File(getClass().getClassLoader().getResource("bla.jar").getFile()))));
         assertNotNull(jar);
-        assertTrue(jar instanceof JarArchiveInputStream);
+assertTrue(jar instanceof ZipArchiveInputStream);
 
         final ArchiveInputStream cpio = factory.createArchiveInputStream(
                                                                          new BufferedInputStream(new FileInputStream(

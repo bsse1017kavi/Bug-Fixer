@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -133,9 +132,9 @@ public class TransportIndicesSegmentsAction extends TransportBroadcastOperationA
         InternalIndexService indexService = (InternalIndexService) indicesService.indexServiceSafe(request.shardId().getIndex());
         InternalIndexShard indexShard = (InternalIndexShard) indexService.shardSafe(request.shardId().id());
         return new ShardSegments(indexShard.routingEntry(), indexShard.engine().segments());
-static class IndexShardSegmentRequest extends BroadcastShardOperationRequest {
+    }
 
-    public static class IndexShardSegmentRequest extends BroadcastShardOperationRequest {
+static class IndexShardSegmentRequest extends BroadcastShardOperationRequest {
 
         IndexShardSegmentRequest() {
         }

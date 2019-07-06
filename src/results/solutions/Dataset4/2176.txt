@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ public class CachedStreamOutput {
 
     private static final ThreadLocal<ThreadLocals.CleanableValue<Entry>> cache = new ThreadLocal<ThreadLocals.CleanableValue<Entry>>() {
         @Override protected ThreadLocals.CleanableValue<Entry> initialValue() {
-LZFStreamOutput lzf = new LZFStreamOutput(bytes, true);
+            BytesStreamOutput bytes = new BytesStreamOutput();
             HandlesStreamOutput handles = new HandlesStreamOutput(bytes);
-            LZFStreamOutput lzf = new LZFStreamOutput(bytes);
+LZFStreamOutput lzf = new LZFStreamOutput(bytes, true);
             return new ThreadLocals.CleanableValue<Entry>(new Entry(bytes, handles, lzf));
         }
     };

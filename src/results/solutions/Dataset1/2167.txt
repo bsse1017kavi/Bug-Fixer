@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -301,9 +300,9 @@ public class ColumnFamilyStore implements ColumnFamilyStoreMBean
     /**
      * Removes unnecessary files from the cf directory at startup: these include temp files, orphans, zero-length files
      * and compacted sstables. Files that cannot be recognized will be ignored.
-public static void scrubDataDirectories(String table, String columnFamily)
+     * @return A list of Descriptors that were removed.
      */
-    static void scrubDataDirectories(String table, String columnFamily)
+public static void scrubDataDirectories(String table, String columnFamily)
     {
         for (Map.Entry<Descriptor,Set<Component>> sstableFiles : files(table, columnFamily, true).entrySet())
         {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -89,9 +88,9 @@ public class BasicTestCase {
         // Discard all
         builder.discardChildResource(DISCARD);
 
-.getStringAttributeBuilder().setRejectExpressions("test-config").end()
+        // configuration=test/setting=directory > test=configuration/directory=setting
         builder.addChildRedirection(CONFIGURATION_TEST, TEST_CONFIGURATION)
-                .getStringAttributeBuilder().rejectExpressions("test-config").end()
+.getStringAttributeBuilder().setRejectExpressions("test-config").end()
                 .addChildRedirection(SETTING_DIRECTORY, DIRECTORY_SETTING);
 
         // Register at the server root

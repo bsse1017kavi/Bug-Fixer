@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -285,9 +284,9 @@ public class FileFloatSource extends ValueSource {
         termVal = lastVal;
       }
 
-int delimIndex = line.lastIndexOf(delimiter);
+
       for (String line; (line=r.readLine())!=null;) {
-        int delimIndex = line.indexOf(delimiter);
+int delimIndex = line.lastIndexOf(delimiter);
         if (delimIndex < 0) continue;
 
         int endIndex = line.length();

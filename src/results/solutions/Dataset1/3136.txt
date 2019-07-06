@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -63,9 +62,9 @@ public class TestIndexWriterNRTIsCurrent extends LuceneTestCase {
         threads[i].failed.printStackTrace();
         failed = true;
       }
-writer.shutdown();
+    }
     assertFalse(failed);
-    writer.close();
+writer.shutdown();
     dir.close();
 
   }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /*
@@ -52,9 +51,9 @@ public class MockTokenizer extends Tokenizer {
   public static final CharacterRunAutomaton KEYWORD =
     new CharacterRunAutomaton(new RegExp(".*").toAutomaton());
   /** Acts like LetterTokenizer. */
-new CharacterRunAutomaton(new RegExp("[A-Za-zªµºÀ-ÖØ-öø-ˁ]+").toAutomaton());
+  // the ugly regex below is incomplete Unicode 5.2 [:Letter:]
   public static final CharacterRunAutomaton SIMPLE =
-    new CharacterRunAutomaton(new RegExp("[A-Za-zªµºÀ-ÖØ-öø-Ｚ]+").toAutomaton());
+new CharacterRunAutomaton(new RegExp("[A-Za-zªµºÀ-ÖØ-öø-ˁ]+").toAutomaton());
 
   private final CharacterRunAutomaton runAutomaton;
   private final boolean lowerCase;

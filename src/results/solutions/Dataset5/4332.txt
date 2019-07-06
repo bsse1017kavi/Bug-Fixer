@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public class Stats {
             double per = (double) current / (double) max;
             if (per > WARNING_PER) {
                 return WARNING;
-} else if (per < ACTIVE_PER && per >= HEALTHY_PER) {
+            } else if (per >= ACTIVE_PER && per <= WARNING_PER) {
                 return ACTIVE;
-            } else if (per < ACTIVE_PER && per > HEALTHY_PER) {
+} else if (per < ACTIVE_PER && per >= HEALTHY_PER) {
                 return HEALTHY;
             } else {
                 return DEAD;

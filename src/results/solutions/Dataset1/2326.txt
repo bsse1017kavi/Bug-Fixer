@@ -1,4 +1,3 @@
-
 package org.apache.solr.spelling;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -201,9 +200,9 @@ public class SpellCheckCollator {
       
       //If the correction contains whitespace (because it involved breaking a word in 2+ words),
       //then be sure all of the new words have the same optional/required/prohibited status in the query.
-char previousChar = tok.startOffset()>0 ? origQuery.charAt(tok.startOffset()-1) : ' ';
+      while(indexOfSpace>-1 && indexOfSpace<corr.length()-1) {
         addParenthesis = true;
-        char previousChar = tok.startOffset()>0 ? collation.charAt(tok.startOffset()-1) : ' ';
+char previousChar = tok.startOffset()>0 ? origQuery.charAt(tok.startOffset()-1) : ' ';
         if(previousChar=='-' || previousChar=='+') {
           corrSb.insert(indexOfSpace + bump, previousChar);
           if(requiredOrProhibited==null) {

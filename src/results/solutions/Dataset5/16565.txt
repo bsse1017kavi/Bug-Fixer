@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class ServerAndClientTimeFilter implements IResponseFilter
 			defaultValue.append("Server parsetime: ");
 			defaultValue.append(((double)timeTaken) / 1000);
 			defaultValue.append("s, Client parsetime: ' + (new Date().getTime() - clientTimeVariable)/1000 +  's");
-"ServerAndClientTimeFilter.statustext", null, Model.ofMap(map),
+
 			String txt = Application.get().getResourceSettings().getLocalizer().getString(
-				"ServerAndClientTimeFilter.statustext", null, Model.of(map),
+"ServerAndClientTimeFilter.statustext", null, Model.ofMap(map),
 				defaultValue.toString());
 			AppendingStringBuffer endScript = new AppendingStringBuffer(150);
 			endScript.append("\n").append(JavascriptUtils.SCRIPT_OPEN_TAG);

@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -155,9 +154,9 @@ public class Save implements Command
         }
         Writer writer = null;
 		FileOutputStream ostream=null;
-if(SaveService.isSaveTestPlanFormat20())
+        try
         {
-            if(JMeterUtils.getPropDefault("file_format","2.1").equals("2.0"))
+if(SaveService.isSaveTestPlanFormat20())
             {
 				ostream=new FileOutputStream(updateFile);
                 OldSaveService.saveSubTree(subTree,ostream);

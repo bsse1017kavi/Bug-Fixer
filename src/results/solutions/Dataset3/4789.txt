@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -367,9 +366,9 @@ public abstract class ClassUtils {
 	 * Return the user-defined class for the given class: usually simply the given
 	 * class, but the original class in case of a CGLIB-generated subclass.
 	 * @param clazz the class to check
-public static Class<?> getUserClass(Class clazz) {
+	 * @return the user-defined class
 	 */
-	public static Class getUserClass(Class clazz) {
+public static Class<?> getUserClass(Class clazz) {
 		return (clazz != null && clazz.getName().contains(CGLIB_CLASS_SEPARATOR) ?
 				clazz.getSuperclass() : clazz);
 	}

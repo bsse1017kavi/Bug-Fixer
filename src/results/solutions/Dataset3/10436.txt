@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -55,9 +54,9 @@ public class ListValdidator extends ModelTypeValidator implements ParameterValid
      * @param type
      * @param nullable
      * @param allowExpressions
-super(ModelType.LIST, nullable, false, true);
+     */
     public ListValdidator(ParameterValidator elementValidator, boolean nullable, int minSize, int maxSize) {
-        super(ModelType.LIST, nullable, false);
+super(ModelType.LIST, nullable, false, true);
         this.min = minSize;
         this.max = maxSize;
         this.elementValidator = elementValidator;

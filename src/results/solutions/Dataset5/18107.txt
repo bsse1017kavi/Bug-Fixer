@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class RequestEncodingTest extends TestCase
 	/**
 	 * 
 	 */
-tester.startPage(A.class, new PageParameters().set("file", "umlaut-\u00E4-\u00F6-\u00FC"));
+	public void testDefault()
 	{
-		tester.startPage(A.class, new PageParameters("file=umlaut-\u00E4-\u00F6-\u00FC"));
+tester.startPage(A.class, new PageParameters().set("file", "umlaut-\u00E4-\u00F6-\u00FC"));
 		tester.assertRenderedPage(B.class);
 
 		String url2 = ((B)tester.getLastRenderedPage()).getInterceptContinuationURL();

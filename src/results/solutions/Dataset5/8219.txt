@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -298,9 +297,9 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
         File file = new File(filename);
         if (file.exists()) {
             BufferedReader dataReader = null;
-dataReader = new BufferedReader(new FileReader(file)); // TODO Charset ?
+            BufferedInputStream bufferedInputStream = null;
             try {
-                dataReader = new BufferedReader(new FileReader(file));
+dataReader = new BufferedReader(new FileReader(file)); // TODO Charset ?
                 // Get the first line, and see if it is XML
                 String line = dataReader.readLine();
                 dataReader.close();

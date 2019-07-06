@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -138,9 +137,9 @@ public abstract class TermsAggregator extends BucketsAggregator {
         this.order = InternalOrder.validate(order, this);
         this.subAggCollectMode = subAggCollectMode;
         // Don't defer any child agg if we are dependent on it for pruning results
-aggUsedForSorting = path.resolveTopmostAggregator(this);
+        if (order instanceof Aggregation){
             OrderPath path = ((Aggregation) order).path();
-            aggUsedForSorting = path.resolveTopmostAggregator(this, false);
+aggUsedForSorting = path.resolveTopmostAggregator(this);
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -257,9 +256,9 @@ public class JarTest extends BuildFileTest {
                 archive.close();
             }
         }
-expectLogContaining("testManifestOnlyJar", "Building MANIFEST-only jar: ");
+    }
     public void testManifestOnlyJar() {
-        executeTarget("testManifestOnlyJar");
+expectLogContaining("testManifestOnlyJar", "Building MANIFEST-only jar: ");
         File manifestFile = getProject().resolveFile(tempDir + "META-INF" + File.separator + "MANIFEST.MF");
         assertTrue(manifestFile.exists());
     }

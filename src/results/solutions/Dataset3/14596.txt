@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -75,9 +74,9 @@ public class WebIntegrationProcessor implements DeploymentUnitProcessor {
 
         if (!DeploymentTypeMarker.isType(DeploymentType.WAR, deploymentUnit)) {
             return; // Skip non web deployments
-if(!WeldDeploymentMarker.isPartOfWeldDeployment(deploymentUnit)) {
+        }
 
-        if(!WeldDeploymentMarker.isWeldDeployment(deploymentUnit)) {
+if(!WeldDeploymentMarker.isPartOfWeldDeployment(deploymentUnit)) {
             return; // skip non weld deployments
         }
 

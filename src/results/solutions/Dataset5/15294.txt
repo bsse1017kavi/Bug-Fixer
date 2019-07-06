@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -289,9 +288,9 @@ void drag(Event dragEvent) {
 	if (!event.doit || transferAgents == null || transferAgents.length == 0) return;
 	if (targetList == 0) return;
 	
-int /*long*/ context = OS.gtk_drag_begin(control.handle, targetList, actions, 1, 0);
+	int actions = opToOsOp(getStyle());
 	ImageData imageData = effect.getDragSourceImage(dragEvent.x, dragEvent.y);
-	int context = OS.gtk_drag_begin(control.handle, targetList, actions, 1, 0);
+int /*long*/ context = OS.gtk_drag_begin(control.handle, targetList, actions, 1, 0);
 	if (context != 0 && imageData != null) {
 		Image image = new Image(getDisplay(), imageData);
 		int /*long*/ pixbuf = createPixbuf(image);

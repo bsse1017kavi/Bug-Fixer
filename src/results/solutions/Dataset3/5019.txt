@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ class MessageDrivenInvocationContextInterceptor implements Interceptor {
             context.putPrivateData(InvocationContext.class, null);
         }
     }
-private final InterceptorContext context;
+
     protected static class CustomInvocationContext extends BaseInvocationContext implements TransactionalInvocationContext {
-        private InterceptorContext context;
+private final InterceptorContext context;
 
         protected CustomInvocationContext(InterceptorContext context, Method method, Object[] parameters) {
             super(method, parameters);

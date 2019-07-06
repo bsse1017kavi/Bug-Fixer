@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class RestNodesStatsAction extends BaseRestHandler {
 
                     builder.startObject("nodes");
                     for (NodeStats nodeStats : result) {
-builder.field("name", nodeStats.node().name(), XContentBuilder.FieldCaseConversion.NONE);
+                        builder.startObject(nodeStats.node().id(), XContentBuilder.FieldCaseConversion.NONE);
 
-                        builder.field("name", nodeStats.node().name());
+builder.field("name", nodeStats.node().name(), XContentBuilder.FieldCaseConversion.NONE);
 
                         if (nodeStats.indices() != null) {
                             nodeStats.indices().toXContent(builder, request);

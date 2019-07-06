@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -173,9 +172,9 @@ public class DeploymentAttributes {
     public static OperationDefinition UNDEPLOY_DEFINITION = new SimpleOperationDefinition(ModelDescriptionConstants.UNDEPLOY, DEPLOYMENT_RESOLVER);
     public static OperationDefinition REDEPLOY_DEFINITION = new SimpleOperationDefinition(ModelDescriptionConstants.REDEPLOY, DEPLOYMENT_RESOLVER);
 
-.setParameters(new AttributeDefinition[] { RUNTIME_NAME, CONTENT_ALL, ENABLED, /*PERSISTENT,*/}) // 'hide' the persistent attribute from users
+    /** Server add deployment definition */
     public static OperationDefinition SERVER_DEPLOYMENT_ADD_DEFINITION = new SimpleOperationDefinitionBuilder(ModelDescriptionConstants.ADD, DEPLOYMENT_RESOLVER)
-            .setParameters(new AttributeDefinition[] { RUNTIME_NAME, CONTENT_ALL, ENABLED, /*PERSISTENT,*/ STATUS}) // 'hide' the persistent attribute from users
+.setParameters(new AttributeDefinition[] { RUNTIME_NAME, CONTENT_ALL, ENABLED, /*PERSISTENT,*/}) // 'hide' the persistent attribute from users
             .build();
 
     /** Server group add deployment definition */

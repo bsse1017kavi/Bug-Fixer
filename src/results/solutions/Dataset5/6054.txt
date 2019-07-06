@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -191,9 +190,9 @@ public class WicketTester extends BaseWicketTester
 	/**
 	 * Dummy web application that does not support back button support but is
 	 * cheaper to use for unit tests. Uses {@link SecondLevelCacheSessionStore}
-public static class NonPageCachingDummyWebApplication extends DummyWebApplication
+	 * with a noop {@link IPageStore}.
 	 */
-	public static class NonCachingDummyWebApplication extends DummyWebApplication
+public static class NonPageCachingDummyWebApplication extends DummyWebApplication
 	{
 		protected ISessionStore newSessionStore()
 		{

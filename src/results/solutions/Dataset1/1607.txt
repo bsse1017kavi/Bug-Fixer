@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class CBayesThetaNormalizerReducer extends MapReduceBase implements
   
   private static final Logger log = LoggerFactory.getLogger(CBayesThetaNormalizerReducer.class);
   
-private ThreadLocal<HBaseConfiguration> hBconf = new ThreadLocal<HBaseConfiguration>();
+  private HTable table;
   
-  private ThreadLocal<HBaseConfiguration> hBconf;
+private ThreadLocal<HBaseConfiguration> hBconf = new ThreadLocal<HBaseConfiguration>();
   
   private boolean useHbase;
   

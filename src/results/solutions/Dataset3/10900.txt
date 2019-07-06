@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -73,9 +72,9 @@ class TestModelControllerService7_1_2 extends ModelTestModelControllerService {
     private final PathManagerService pathManagerService;
     private final ModelInitializer modelInitializer;
     private final ExtensionRegistry extensionRegistry;
-super(processType, runningModeControl, null, persister, validateOpsFilter, rootDescriptionProvider, processState, Controller71x.INSTANCE);
+    TestModelControllerService7_1_2(ProcessType processType, RunningModeControl runningModeControl, StringConfigurationPersister persister, ModelTestOperationValidatorFilter validateOpsFilter,
             TestModelType type, ModelInitializer modelInitializer, DescriptionProvider rootDescriptionProvider, ControlledProcessState processState, ExtensionRegistry extensionRegistry) {
-        super(processType, runningModeControl, null, persister, validateOpsFilter, rootDescriptionProvider, processState);
+super(processType, runningModeControl, null, persister, validateOpsFilter, rootDescriptionProvider, processState, Controller71x.INSTANCE);
         this.type = type;
         this.runningModeControl = runningModeControl;
         //this.pathManagerService = type == TestModelType.STANDALONE ? new ServerPathManagerService() : new HostPathManagerService();

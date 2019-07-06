@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -390,9 +389,9 @@ public class NewsListAdapter extends ItemListAdapter<Event, NewsItemView> {
         main.append(" to team");
 
         Team team = payload.getTeam();
-main.append(' ').bold(teamName);
+        String teamName = team != null ? team.getName() : null;
         if (teamName != null)
-            main.append(' ').append(teamName);
+main.append(' ').bold(teamName);
     }
 
     private final AvatarLoader avatars;

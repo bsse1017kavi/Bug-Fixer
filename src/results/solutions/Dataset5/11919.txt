@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2002,2004 The Apache Software Foundation.
  * 
@@ -486,9 +485,9 @@ public class Test implements DOMErrorHandler, LSResourceResolver{
             NodeList ls = test.getChildNodes();
             Assertion.verify(ls.getLength()==5, "List length");
             
-String compare2 = "Home Address: 1900 Dallas Road (East) City: Dallas. California. USA  PO #5668";
+            String compare1 = "Home Address: 1900 Dallas Road (East) City: Dallas. California. USA  PO #5668";
             Assertion.verify(((TextImpl)ls.item(0)).getWholeText().equals(compare1), "Compare1");
-            String compare2 = "Address: 1900 Dallas Road (East) City: Dallas. California. USA  PO #5668";
+String compare2 = "Home Address: 1900 Dallas Road (East) City: Dallas. California. USA  PO #5668";
             Assertion.verify(((TextImpl)ls.item(1)).getWholeText().equals(compare2), "Compare2");
             
 

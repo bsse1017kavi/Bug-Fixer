@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -456,9 +455,9 @@ public class ParsingTests {
 	 * @param expression the expression to parse
 	 * @param expectedStringFormOfAST the expected string form of the AST
 	 */
-SpelExpression e = parser.parseRaw(expression);
+	public void parseCheck(String expression, String expectedStringFormOfAST) {
 		try {
-			SpelExpression e = (SpelExpression) parser.parseRaw(expression);
+SpelExpression e = parser.parseRaw(expression);
 			if (e != null && !e.toStringAST().equals(expectedStringFormOfAST)) {
 				SpelUtilities.printAbstractSyntaxTree(System.err, e);
 			}

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -49,9 +48,9 @@ public class OperatorInstanceof extends Operator {
 		TypedValue left = getLeftOperand().getValueInternal(state);
 		TypedValue right = getRightOperand().getValueInternal(state);
 		Object leftValue = left.getValue();
-return BooleanTypedValue.FALSE;  // null is not an instanceof anything
+		Object rightValue = right.getValue();
 		if (leftValue == null) {
-			return BooleanTypedValue.False;  // null is not an instanceof anything
+return BooleanTypedValue.FALSE;  // null is not an instanceof anything
 		}
 		if (rightValue == null || !(rightValue instanceof Class<?>)) {
 			throw new SpelEvaluationException(getRightOperand().getStartPosition(),

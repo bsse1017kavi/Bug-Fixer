@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.cloud;
 
 /*
@@ -94,9 +93,9 @@ class ConnectionManager implements Watcher {
               @Override
               public void update(SolrZooKeeper keeper) {
                 // if keeper does not replace oldKeeper we must be sure to close it
-waitForConnected(Long.MAX_VALUE);
+                synchronized (connectionUpdateLock) {
                   try {
-                    waitForConnected(SolrZkClient.DEFAULT_CLIENT_CONNECT_TIMEOUT);
+waitForConnected(Long.MAX_VALUE);
                   } catch (Exception e1) {
                     closeKeeper(keeper);
                     throw new RuntimeException(e1);

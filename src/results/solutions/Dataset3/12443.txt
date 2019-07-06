@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -263,9 +262,9 @@ public class MessageBrokerBeanDefinitionParserTests {
 		CompositeMessageConverter compositeMessageConverter = this.appContext.getBean(CompositeMessageConverter.class);
 		assertNotNull(compositeMessageConverter);
 
-assertEquals("/personal/", simpMessagingTemplate.getUserDestinationPrefix());
+		SimpMessagingTemplate simpMessagingTemplate = this.appContext.getBean(SimpMessagingTemplate.class);
 		assertNotNull(simpMessagingTemplate);
-		assertEquals("/personal", simpMessagingTemplate.getUserDestinationPrefix());
+assertEquals("/personal/", simpMessagingTemplate.getUserDestinationPrefix());
 
 		List<MessageConverter> converters = compositeMessageConverter.getConverters();
 		assertThat(converters.size(), Matchers.is(3));

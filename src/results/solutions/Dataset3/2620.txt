@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class PoissonDistributionImpl extends AbstractIntegerDistribution
     public PoissonDistributionImpl(double p, double epsilon, int maxIterations) {
         if (p <= 0) {
             throw new NotStrictlyPositiveException(LocalizedFormats.MEAN, p);
-normal = new NormalDistribution(p, FastMath.sqrt(p));
+        }
         mean = p;
-        normal = new NormalDistributionImpl(p, FastMath.sqrt(p));
+normal = new NormalDistribution(p, FastMath.sqrt(p));
         this.epsilon = epsilon;
         this.maxIterations = maxIterations;
     }

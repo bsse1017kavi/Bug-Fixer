@@ -1,4 +1,3 @@
-
 /*
  * $Id: TagTypeHandler.java 5771 2006-05-19 12:04:06 +0000 (Fri, 19 May 2006)
  * joco01 $ $Revision$ $Date: 2006-05-25 22:41:52 +0000 (Thu, 25 May
@@ -99,9 +98,9 @@ public final class TagTypeHandler extends AbstractMarkupFilter
 
 			// Pop any simple tags off the top of the stack
 			if (requiresOpenBodyCloseTag(name))
-final XmlTag closeTag = new XmlTag();
+			{
 				tag.setType(XmlTag.Type.OPEN);
-				XmlTag closeTag = new XmlTag();
+final XmlTag closeTag = new XmlTag();
 				closeTag.setType(XmlTag.Type.CLOSE);
 				closeTag.setName(tag.getName());
 				closeTag.setNamespace(tag.getNamespace());

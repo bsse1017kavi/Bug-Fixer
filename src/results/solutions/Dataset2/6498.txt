@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -135,9 +134,9 @@ public class JavaProject
 				IPackageFragmentRoot[] roots = getPackageFragmentRoots(entries[i]);
 				for (int j = 0; j < roots.length; j++) {
 					if(roots[j] instanceof JarPackageFragmentRoot){
-jarRoot.getWorkspace().getRoot().setPersistentProperty(jarRoot.getSourceAttachmentPropertyName(), null); // lose info - will be recomputed
+						JarPackageFragmentRoot jarRoot = (JarPackageFragmentRoot) roots[j];
 						try {
-							jarRoot.getWorkspace().getRoot().setPersistentProperty(jarRoot.getSourceAttachmentPropertyName(), null); // loose info - will be recomputed
+jarRoot.getWorkspace().getRoot().setPersistentProperty(jarRoot.getSourceAttachmentPropertyName(), null); // lose info - will be recomputed
 						} catch(CoreException ce){
 						}
 					}

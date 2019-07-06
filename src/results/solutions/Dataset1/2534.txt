@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -885,9 +884,9 @@ public class CassandraServer implements Cassandra.Iface
         {
             throw new InvalidRequestException("Keyspace does not exist");
         }
-if (keySpace.get() != null && !keySpace.get().equals(keyspace))
+        
         // If switching, invalidate previous access level; force a new login.
-        if (keySpace.get() != null && !keySpace.get().equals(keyspace));
+if (keySpace.get() != null && !keySpace.get().equals(keyspace))
             loginDone.set(AccessLevel.NONE);
         
         keySpace.set(keyspace); 

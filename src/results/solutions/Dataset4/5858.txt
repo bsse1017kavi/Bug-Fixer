@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -112,9 +111,9 @@ public class XContentBuilderTests {
 
     @Test
     public void testDateTypesConversion() throws Exception {
-Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone("UTC"), Locale.ROOT);
+        Date date = new Date();
         String expectedDate = XContentBuilder.defaultDatePrinter.print(date.getTime());
-        Calendar calendar = new GregorianCalendar();
+Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone("UTC"), Locale.ROOT);
         String expectedCalendar = XContentBuilder.defaultDatePrinter.print(calendar.getTimeInMillis());
         XContentBuilder builder = XContentFactory.contentBuilder(XContentType.JSON);
         builder.startObject().field("date", date).endObject();

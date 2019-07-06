@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -276,9 +275,9 @@ class HttpRequest extends Request {
                 hostHeader = hostHeader.substring(i+1);
                 try{
                     serverPort=Integer.parseInt(hostHeader);
-}else serverNameMB.setString( hostHeader);
+                }catch(NumberFormatException  nfe){
                 }
-	    }
+}else serverNameMB.setString( hostHeader);
             return;
 	}
 	if( localHost != null ) {

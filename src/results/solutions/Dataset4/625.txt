@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -80,9 +79,9 @@ public class CircularBuffer {
 
 		return total;
 	}
-int total = count = Math.min(available, count);
+	
 	public int skip(int count) {
-		int total = Math.min(available, count);
+int total = count = Math.min(available, count);
 		available -= total;
 		readPosition = (readPosition + total) % buffer.length;
 		return total;

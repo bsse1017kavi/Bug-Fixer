@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class DomainClientImpl implements DomainClient {
     private final ModelControllerClient delegate;
 
     public DomainClientImpl(InetAddress address, int port) {
-this.delegate = ModelControllerClient.Factory.create(ModelControllerClient.Type.DOMAIN, address, port);
+        this.address = address;
         this.port = port;
-        this.delegate = ModelControllerClient.Factory.create(address, port);
+this.delegate = ModelControllerClient.Factory.create(ModelControllerClient.Type.DOMAIN, address, port);
     }
 
     @Override

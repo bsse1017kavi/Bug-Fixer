@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -397,9 +396,9 @@ public class ConcurrentMergeScheduler extends MergeScheduler {
     IndexWriter tWriter;
     MergePolicy.OneMerge startMerge;
     MergePolicy.OneMerge runningMerge;
-public MergeThread(IndexWriter writer, MergePolicy.OneMerge startMerge) {
+    private volatile boolean done;
 
-    public MergeThread(IndexWriter writer, MergePolicy.OneMerge startMerge) throws IOException {
+public MergeThread(IndexWriter writer, MergePolicy.OneMerge startMerge) {
       this.tWriter = writer;
       this.startMerge = startMerge;
     }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1272,9 +1271,9 @@ public final class Workbench implements IWorkbench {
 		Runnable work = new Runnable() {
 			IPreferenceStore store = getPreferenceStore();
 			final String pref = store.getString(IPreferenceConstants.PLUGINS_NOT_ACTIVATED_ON_STARTUP);
-IExtensionPoint point = registry.getExtensionPoint(PlatformUI.PLUGIN_ID, IWorkbenchConstants.PL_STARTUP);
+			public void run() {
 				IPluginRegistry registry = Platform.getPluginRegistry();
-				IExtensionPoint point = registry.getExtensionPoint(PlatformUI.PLUGIN_ID, IWorkbenchConstants.TAG_STARTUP);
+IExtensionPoint point = registry.getExtensionPoint(PlatformUI.PLUGIN_ID, IWorkbenchConstants.PL_STARTUP);
 				IExtension[] extensions = point.getExtensions();
 				for (int i = 0; i < extensions.length; i++) {
 					IExtension extension = extensions[i];

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class InternalSearchHitField implements SearchHitField {
 
     @Override
     public void readFrom(StreamInput in) throws IOException {
-values = new ArrayList<>(size);
+        name = in.readSharedString();
         int size = in.readVInt();
-        values = new ArrayList<Object>(size);
+values = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             values.add(in.readGenericValue());
         }

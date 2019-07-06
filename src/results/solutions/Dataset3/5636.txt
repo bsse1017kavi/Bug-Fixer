@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -284,9 +283,9 @@ public class JPAAnnotationParseProcessor implements DeploymentUnitProcessor {
                 properties = null;
             }
 
-return new PersistenceUnitInjectionSource(puServiceName, deploymentUnit, injectionTypeName);
+            return new PersistenceContextInjectionSource(type, properties, puServiceName, deploymentUnit, scopedPuName, injectionTypeName);
         } else {
-            return new PersistenceUnitInjectionSource(puServiceName, deploymentUnit, scopedPuName, injectionTypeName);
+return new PersistenceUnitInjectionSource(puServiceName, deploymentUnit, injectionTypeName);
         }
     }
 

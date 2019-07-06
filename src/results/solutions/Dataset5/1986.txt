@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -241,9 +240,9 @@ public class Depend extends MatchingTask {
                            
                         if (affectedClassName.indexOf("$") != -1) {
                             // need to delete the main class
-log("Top level class = " + topLevelClassName, Project.MSG_INFO);
+                            String topLevelClassName 
                                 = affectedClassName.substring(0, affectedClassName.indexOf("$"));
-                            System.out.println("Top level class = " + topLevelClassName);
+log("Top level class = " + topLevelClassName, Project.MSG_INFO);
                             ClassFileInfo topLevelClassInfo 
                                 = (ClassFileInfo)classFileInfoMap.get(topLevelClassName);
                             if (topLevelClassInfo.absoluteFile.exists()) {

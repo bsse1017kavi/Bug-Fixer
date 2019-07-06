@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public class SigarService extends AbstractComponent {
         try {
             sigar = new Sigar();
             // call it to make sure the library was loaded
-logger.trace("Failed to load sigar", t);
+            sigar.getPid();
         } catch (Throwable t) {
-            logger.debug("Failed to load sigar", t);
+logger.trace("Failed to load sigar", t);
             if (sigar != null) {
                 try {
                     sigar.close();

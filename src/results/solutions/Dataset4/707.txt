@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -82,9 +81,9 @@ public class SimpleTTLTests extends AbstractNodesTests {
         long currentTime = System.currentTimeMillis();
         GetResponse getResponse = client().prepareGet("test", "type1", "1").setFields("_ttl").setRealtime(true).execute().actionGet();
         long ttl0;
-assertThat(ttl0, greaterThan(-purgeInterval));
+        if (getResponse.isExists()) {
             ttl0 = ((Number) getResponse.getField("_ttl").getValue()).longValue();
-            assertThat(ttl0, greaterThan(0L));
+assertThat(ttl0, greaterThan(-purgeInterval));
             assertThat(ttl0, lessThan(providedTTLValue - (currentTime - now)));
         } else {
             assertTrue((providedTTLValue - (currentTime - now)) < 0);

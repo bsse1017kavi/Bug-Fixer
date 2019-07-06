@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -204,9 +203,9 @@ public class PlatformMBeanResourceRegistrar {
                 @Override
                 public ModelNode getModelDescription(Locale locale) {
                     return PlatformMBeanDescriptions.getBufferPoolRootResource(locale);
-ManagementResourceRegistration bufPool = bufPoolRoot.registerSubModel(PathElement.pathElement(NAME), new DescriptionProvider() {
+                }
             });
-            ManagementResourceRegistration bufPool = memPoolRoot.registerSubModel(PathElement.pathElement(NAME), new DescriptionProvider() {
+ManagementResourceRegistration bufPool = bufPoolRoot.registerSubModel(PathElement.pathElement(NAME), new DescriptionProvider() {
                 @Override
                 public ModelNode getModelDescription(Locale locale) {
                     return PlatformMBeanDescriptions.getBufferPoolResource(locale);

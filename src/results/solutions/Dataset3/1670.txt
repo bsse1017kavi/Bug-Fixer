@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -132,9 +131,9 @@ public class ServerOperationsResolverHandler implements OperationStepHandler {
             if (HOST_CONTROLLER_LOGGER.isTraceEnabled()) {
                 HOST_CONTROLLER_LOGGER.tracef("%s responseNode is %s", getClass().getSimpleName(), overallResult);
             }
-context.stepCompleted();
+        }
 
-        context.completeStep();
+context.stepCompleted();
     }
 
     private Map<Set<ServerIdentity>, ModelNode> getServerOperations(OperationContext context, ModelNode domainOp, PathAddress domainOpAddress, boolean pushToServers) {

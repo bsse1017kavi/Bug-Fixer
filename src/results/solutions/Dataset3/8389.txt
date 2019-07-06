@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2014 Red Hat Inc. and/or its affiliates and other contributors
@@ -36,9 +35,9 @@ import org.wildfly.clustering.infinispan.spi.service.CacheContainerServiceName;
 public class CacheContainerMetricsHandler extends AbstractRuntimeOnlyHandler {
 
     @Override
-String containerName = Operations.getPathAddress(operation).getLastElement().getValue();
+    protected void executeRuntimeStep(OperationContext context, ModelNode operation) {
         // Address is of the form: /subsystem=infinispan/cache-container=*
-        String containerName = context.getCurrentAddressValue();
+String containerName = Operations.getPathAddress(operation).getLastElement().getValue();
         String name = Operations.getAttributeName(operation);
 
         CacheContainerMetric metric = CacheContainerMetric.forName(name);

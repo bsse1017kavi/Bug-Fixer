@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -64,9 +63,9 @@ public class ContextParamWebApplicationFactory implements IWebApplicationFactory
 			ClassLoader loader = Thread.currentThread().getContextClassLoader();
 			if (loader == null)
 			{
-final Class<?> applicationClass = loader.loadClass(applicationClassName);
+				loader = getClass().getClassLoader();
 			}
-			final Class applicationClass = loader.loadClass(applicationClassName);
+final Class<?> applicationClass = loader.loadClass(applicationClassName);
 			if (WebApplication.class.isAssignableFrom(applicationClass))
 			{
 				// Construct WebApplication subclass

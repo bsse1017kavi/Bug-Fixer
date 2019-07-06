@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1118,9 +1117,9 @@ public void parseTypeMemberDeclarations(
 		initialize();
 		goForClassBodyDeclarations();
 		/* scanner initialization */
-scanner.taskTags = null;
+		scanner.setSource(contents);
 		scanner.recordLineSeparator = false;
-		scanner.toDoTag = null;
+scanner.taskTags = null;
 		scanner.resetTo(start, end);
 
 		/* unit creation */

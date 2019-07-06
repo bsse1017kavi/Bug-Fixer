@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class CSVPrinterTest {
         printer.flush();
         printer.close();
         final String result = sw.toString();
-final CSVParser parser = CSVParser.parse(result, format);
+        // System.out.println("### :" + printable(result));
 
-        final CSVParser parser = CSVParser.parseString(result, format);
+final CSVParser parser = CSVParser.parse(result, format);
         final List<CSVRecord> parseResult = parser.getRecords();
 
         Utils.compare("Printer output :" + printable(result), lines, parseResult);

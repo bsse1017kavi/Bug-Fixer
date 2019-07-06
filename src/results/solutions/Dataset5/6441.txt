@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class MarkupInheritanceResolver implements IComponentResolver
 	{
 		// If <wicket:extend...> or <wicket:child...>
 		if (tag.isExtendTag() || tag.isChildTag())
-+ tag.getId()).render(markupStream);
+		{
 			new TransparentWebMarkupContainer(container, Component.AUTO_COMPONENT_PREFIX
-					+ tag.getId()).autoAdded();
++ tag.getId()).render(markupStream);
 			return true;
 		}
 

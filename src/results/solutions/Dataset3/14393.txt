@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010-2011 the original author or authors.
  *
@@ -25,9 +24,9 @@ import org.springframework.cache.KeyGenerator;
  * Default key generator. Returns 0 if no param is given, the param itself if only one is given or a hash code computed
  * from all given params hash code. Uses a constant (53) for null objects.
  * 
-public class DefaultKeyGenerator implements KeyGenerator {
+ * @author Costin Leau
  */
-public class DefaultKeyGenerator implements KeyGenerator<Object> {
+public class DefaultKeyGenerator implements KeyGenerator {
 
 	public Object extract(Object target, Method method, Object... params) {
 		if (params.length == 1) {

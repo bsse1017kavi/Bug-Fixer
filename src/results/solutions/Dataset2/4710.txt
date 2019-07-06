@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.pipeline;
 
 import java.io.IOException;
@@ -71,9 +70,9 @@ public class AnonymousLoginValve extends AbstractValve
      */
     private void anonymousLogin(RunData data, ValveContext context)
     {
-ScarabUser user = (ScarabUser)TurbineSecurity.getUser(username);
+        try
         {
-            ScarabUser user = (ScarabUser)TurbineSecurity.getAuthenticatedUser(username, password);
+ScarabUser user = (ScarabUser)TurbineSecurity.getUser(username);
             data.setUser(user);
             user.setHasLoggedIn(Boolean.TRUE);
             user.updateLastLogin();

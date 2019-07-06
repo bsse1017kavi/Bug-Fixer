@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -249,9 +248,9 @@ public class Box2DTest extends GdxTest implements InputProcessor {
 		// simply apply the camera again and then call
 		// the renderer. the camera.apply() call is actually
 		// not needed as the opengl matrices are already set
-debugRenderer.render(world, camera.combined);
+		// by the spritebatch which in turn uses the camera matrices :)
 		camera.apply(Gdx.gl10);
-		debugRenderer.render(world);
+debugRenderer.render(world, camera.combined);
 
 		// finally we render all contact points
 		gl.glPointSize(4);

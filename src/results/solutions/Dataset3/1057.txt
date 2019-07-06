@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class ExampleRunner {
         DeploymentUtils utils = null;
         try {
             utils = new DeploymentUtils("jmsclient-mbean.sar", FakeJndi.class.getPackage());
-QueueConnectionFactory qcf = lookup(utils, "RemoteConnectionFactory", QueueConnectionFactory.class);
+            utils.deploy();
 
-            QueueConnectionFactory qcf = lookup(utils, "ConnectionFactory", QueueConnectionFactory.class);
+QueueConnectionFactory qcf = lookup(utils, "RemoteConnectionFactory", QueueConnectionFactory.class);
             Queue queue = lookup(utils, "queue/test", Queue.class);
 
             System.out.println("Got qcf " + qcf);

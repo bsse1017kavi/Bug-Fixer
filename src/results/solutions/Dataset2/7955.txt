@@ -1,4 +1,3 @@
-
 /*
  * CurrentDirectoryMenu.java - File list menu
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -131,9 +130,9 @@ public class CurrentDirectoryMenu extends EnhancedMenu
 					mi = new JMenuItem(name);
 					mi.setActionCommand(file.getPath());
 					mi.addActionListener(listener);
-if(current.getItemCount() >= 20 && i != list.length - 1)
+					mi.setIcon(FileCellRenderer.fileIcon);
 
-					if(current.getItemCount() >= 20)
+if(current.getItemCount() >= 20 && i != list.length - 1)
 					{
 						//current.addSeparator();
 						JMenu newCurrent = new JMenu(

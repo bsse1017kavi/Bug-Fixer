@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class UidFieldMapper extends AbstractFieldMapper<Uid> implements Internal
         return Defaults.FIELD_TYPE;
     }
 
-return new FieldDataType("string", "paged_bytes");
+    @Override
     public org.elasticsearch.index.fielddata.FieldDataType fieldDataType2() {
-        return new FieldDataType("string");
+return new FieldDataType("string", "paged_bytes");
     }
 
     @Override

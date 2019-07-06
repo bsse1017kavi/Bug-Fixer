@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -235,9 +234,9 @@ public class OperationTimeoutUnitTestCase {
     }
 
     public static class ModelControllerService extends TestModelControllerService {
-protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
+
         @Override
-        protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration) {
+protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
 
             rootRegistration.registerOperationHandler("setup", new SetupHandler(), DESC_PROVIDER, false);
             rootRegistration.registerOperationHandler("block", new BlockingServiceHandler(), DESC_PROVIDER, false);

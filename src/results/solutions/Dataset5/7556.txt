@@ -1,4 +1,3 @@
-
 /*
  * $Id: AjaxEventBehavior.java 4838 2006-03-08 15:59:03 -0800 (Wed, 08 Mar 2006)
  * eelco12 $ $Revision$ $Date: 2006-03-08 15:59:03 -0800 (Wed, 08 Mar
@@ -127,9 +126,9 @@ public abstract class AjaxEventBehavior extends AbstractDefaultAjaxBehavior
 		String script = super.getCallbackScript(partialCall, onSuccessScript, onFailureScript);
 		final ThrottlingSettings ts = throttlingSettings;
 
-script = AbstractDefaultAjaxBehavior.throttleScript(script, ts.getId(), ts.getDelay());
+		if (ts != null)
 		{
-			script = AbstractAjaxTimerBehavior.throttleScript(script, ts.getId(), ts.getDelay());
+script = AbstractDefaultAjaxBehavior.throttleScript(script, ts.getId(), ts.getDelay());
 		}
 		return script;
 	}

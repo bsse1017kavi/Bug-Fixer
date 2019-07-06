@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -220,9 +219,9 @@ public class CachedIntrospectionResults {
 	private CachedIntrospectionResults(Class beanClass, boolean cacheFullMetadata) throws BeansException {
 		try {
 			if (logger.isTraceEnabled()) {
-this.beanInfo = new ExtendedBeanInfo(Introspector.getBeanInfo(beanClass));
+				logger.trace("Getting BeanInfo for class [" + beanClass.getName() + "]");
 			}
-			this.beanInfo = Introspector.getBeanInfo(beanClass);
+this.beanInfo = new ExtendedBeanInfo(Introspector.getBeanInfo(beanClass));
 
 			// Immediately remove class from Introspector cache, to allow for proper
 			// garbage collection on class loader shutdown - we cache it here anyway,

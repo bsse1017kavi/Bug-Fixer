@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -108,9 +107,9 @@ public class BrowserStructureViewToolPanel extends JPanel {
 		}
 		filterMenu.add(new JSeparator());
 
-if (kinds[i].isMember()) {
+		IProgramElement.Kind[] kinds = IProgramElement.Kind.ALL;
 		for (int i = 0; i < kinds.length; i++) {
-			if (kinds[i].isMemberKind()) {
+if (kinds[i].isMember()) {
 				CheckBoxSelectionMenuButton menuItem = new CheckBoxSelectionMenuButton(kinds[i]);
 				menuItem.setIcon((Icon)AjdeUIManager.getDefault().getIconRegistry().getIcon(kinds[i]).getIconResource());
 				filterMenu.add(menuItem);

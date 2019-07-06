@@ -1,4 +1,3 @@
-
 /*
 * JBoss, the OpenSource J2EE webOS
 *
@@ -39,9 +38,9 @@ public class IpAddress
          MalformedObjectNameException,
          InvalidParentException
    {
-throw new InvalidParameterException( "There IP-Address must always be defined" );
+      super( "IpAddress", pName, pNode );
       if( pAddress == null || pAddress.length() == 0 ) {
-         throw new InvalidParameterException( "There driver must always be defined" );
+throw new InvalidParameterException( "There IP-Address must always be defined" );
       }
       mAddress = pAddress;
    }

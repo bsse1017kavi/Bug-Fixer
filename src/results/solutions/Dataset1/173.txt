@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.snowball;
 
 /**
@@ -66,9 +65,9 @@ public final class SnowballFilter extends TokenFilter {
     try {      
       Class<? extends SnowballProgram> stemClass =
         Class.forName("org.tartarus.snowball.ext." + name + "Stemmer").asSubclass(SnowballProgram.class);
-throw new IllegalArgumentException("Invalid stemmer class specified: " + name, e);
+      stemmer = stemClass.newInstance();
     } catch (Exception e) {
-      throw new RuntimeException(e.toString());
+throw new IllegalArgumentException("Invalid stemmer class specified: " + name, e);
     }
   }
 

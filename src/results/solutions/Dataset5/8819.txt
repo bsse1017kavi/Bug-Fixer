@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -122,9 +121,9 @@ public class StatisticalSampleSender implements SampleSender, Serializable {
      * breached the list of sample events is sent to a listener where the event
      * are fired locally.
      *
-public void sampleOccurred(SampleEvent e) {
+     * @param e a Sample Event
      */
-    public void SampleOccurred(SampleEvent e) {
+public void sampleOccurred(SampleEvent e) {
         synchronized (sampleStore) {
             // Locate the statistical sample colector
             String key = StatisticalSampleResult.getKey(e);

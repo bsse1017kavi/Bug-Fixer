@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class ServerGroupDeploymentRemove extends AbstractModelUpdate<ServerGroup
         return dep == null ? null : new ServerGroupDeploymentAdd(uniqueName, dep.getRuntimeName(), dep.getSha1Hash(), dep.isStart());
     }
 
-return new ServerModelDeploymentRemove(uniqueName);
+    @Override
     protected ServerModelDeploymentRemove getServerModelUpdate() {
-        return new ServerModelDeploymentRemove(uniqueName, true);
+return new ServerModelDeploymentRemove(uniqueName);
     }
 
     @Override

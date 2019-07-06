@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -72,9 +71,9 @@ public class FlagsFilter extends AbstractFilter {
 		} else if (headerField.equalsIgnoreCase("Draft")) {
 			searchHeaderField = new String("columba.flags.draft");
 		} else if (headerField.equalsIgnoreCase("Seen")) {
-searchHeaderField = new String("columba.spam");
+			searchHeaderField = new String("columba.flags.seen");
 		} else if (headerField.equalsIgnoreCase("Spam")) {
-			searchHeaderField = new String("columba.flags.spam");
+searchHeaderField = new String("columba.spam");
 		}
 
 		Boolean flags = (Boolean) folder.getAttribute(uid, searchHeaderField);

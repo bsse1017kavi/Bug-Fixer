@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2487,9 +2486,9 @@ StyleItem[] merge (int /*long*/ items, int itemCount) {
 		}
 		if (itemLimit == -1) {
 			nextItemIndex = itemIndex + 1;
-if (nextItemIndex < itemCount && ch == '\r' && segmentsText.charAt(itemLimit) == '\n') {
+			OS.MoveMemory(scriptItem, items + nextItemIndex * SCRIPT_ITEM.sizeof, SCRIPT_ITEM.sizeof);
 			itemLimit = scriptItem.iCharPos;
-			if (ch == '\r' && segmentsText.charAt(itemLimit) == '\n') {
+if (nextItemIndex < itemCount && ch == '\r' && segmentsText.charAt(itemLimit) == '\n') {
 				nextItemIndex = itemIndex + 2;
 				OS.MoveMemory(scriptItem, items + nextItemIndex * SCRIPT_ITEM.sizeof, SCRIPT_ITEM.sizeof);
 				itemLimit = scriptItem.iCharPos;

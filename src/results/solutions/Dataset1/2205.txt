@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -636,9 +635,9 @@ public class ColumnFamilyStore implements ColumnFamilyStoreMBean
                 {
                     if (subColumn.timestamp() > minTimestamp)
                     {
-sc.addColumn(subColumn);
+                        if (!subColumn.isMarkedForDelete() || subColumn.getLocalDeletionTime() > gcBefore)
                         {
-                            sc.addColumn(subColumn.name(), subColumn);
+sc.addColumn(subColumn);
                         }
                     }
                 }

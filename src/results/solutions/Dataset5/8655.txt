@@ -1,4 +1,3 @@
-
 /*
  * Created on Sep 14, 2004
  *
@@ -77,9 +76,9 @@ public class HTTPResultConverter extends SampleResultConverter
     */
    protected void saveSamplerData(HierarchicalStreamWriter writer,
          MarshallingContext context, HTTPSampleResult res,
-if (save.saveSamplerData(res))
+         SampleSaveConfiguration save)
    {
-      if (save.saveSamplerData())
+if (save.saveSamplerData(res))
       {
          writeString(writer, "cookies", res.getCookies());
          writeString(writer, "method", res.getHTTPMethod());

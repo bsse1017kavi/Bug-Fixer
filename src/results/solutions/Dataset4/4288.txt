@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -218,9 +217,9 @@ public class TransportIndexAction extends TransportShardReplicationOperationActi
             created = true;
         }
         if (request.refresh()) {
-} catch (Throwable e) {
+            try {
                 indexShard.refresh(new Engine.Refresh().force(false));
-            } catch (Exception e) {
+} catch (Throwable e) {
                 // ignore
             }
         }

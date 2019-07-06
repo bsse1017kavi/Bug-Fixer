@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -277,9 +276,9 @@ protected void privateRemoveEntry(LRUCacheEntry entry, boolean shuffle, boolean 
 			privateNotifyDeletionFromCache(entry);
 		} else {
 			if (!close(entry)) return;
-if (fEntryTable.get(entry._fKey) == null){
+			// buffer close will recursively call #privateRemoveEntry with external==true
 			// thus entry will already be removed if reaching this point.
-			if (fEntryTable.get(entry) == null){
+if (fEntryTable.get(entry._fKey) == null){
 				return;
 			} else {
 				// basic removal

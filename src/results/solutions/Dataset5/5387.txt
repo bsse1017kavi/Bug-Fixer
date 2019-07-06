@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -149,9 +148,9 @@ public abstract class BaseResourceCollectionContainer
         }
         dieOnCircularReference();
         //first the easy way, if all children are filesystem-only, return true:
-goEarly = ((ResourceCollection) i.next()).isFilesystemOnly();
+        boolean goEarly = true;
         for (Iterator i = rc.iterator(); goEarly && i.hasNext();) {
-            goEarly &= ((ResourceCollection) i.next()).isFilesystemOnly();
+goEarly = ((ResourceCollection) i.next()).isFilesystemOnly();
         }
         if (goEarly) {
             return true;

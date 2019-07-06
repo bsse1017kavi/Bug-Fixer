@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -235,9 +234,9 @@ public class ModuleConfigImpl implements ModuleConfig {
 
         module.addDependency(new ModuleDependency("a.module"));
         module.addDependency(new ModuleDependency("another.module"));
-XMLExtendedStreamWriter writer = create(XMLOutputFactory.newInstance().createXMLStreamWriter(strWriter));
+
         StringWriter strWriter = new StringWriter();
-        XMLExtendedStreamWriter writer = create(XMLOutputFactory.newFactory().createXMLStreamWriter(strWriter));
+XMLExtendedStreamWriter writer = create(XMLOutputFactory.newInstance().createXMLStreamWriter(strWriter));
         module.writeContent(writer, module);
         writer.flush();
         System.out.println(strWriter.toString());

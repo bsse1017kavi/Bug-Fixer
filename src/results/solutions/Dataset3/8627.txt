@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -377,9 +376,9 @@ public interface NamingMessages {
     NamingException threadInterrupt(ServiceName serviceName);
 
     @Message(id = 11863, value = "Invalid name for context binding %s")
-@Message(id = 11864, value = "Invalid binding name %s, name must start with one of %s")
+    DeploymentUnitProcessingException invalidNameForContextBinding(String name);
 
-    @Message(id = 11864, value = "Invaliding binding name %s, name must start with one of %s")
+@Message(id = 11864, value = "Invalid binding name %s, name must start with one of %s")
     OperationFailedException invalidNamespaceForBinding(String name, String namespaces);
 
     /**

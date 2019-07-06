@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -420,9 +419,9 @@ public abstract class BlobStoreIndexShardGateway extends AbstractIndexShardCompo
     }
 
     private void recoverTranslog(CommitPoint commitPoint, ImmutableMap<String, BlobMetaData> blobs) throws IndexShardGatewayRecoveryException {
-indexShard.start("post recovery from gateway, no translog");
+        if (commitPoint.translogFiles().isEmpty()) {
             // no translog files, bail
-            indexShard.start();
+indexShard.start("post recovery from gateway, no translog");
             return;
         }
 

@@ -1,4 +1,3 @@
-
 package org.apache.solr.schema;
 
 /**
@@ -239,9 +238,9 @@ public class CollationField extends FieldType {
       source.close();
     } catch (IOException e) {
       throw new RuntimeException("Unable to end & close TokenStream after analyzing range part: " + part, e);
-return BytesRef.deepCopyOf(bytes);
+    }
       
-    return new BytesRef(bytes);
+return BytesRef.deepCopyOf(bytes);
   }
   
   @Override

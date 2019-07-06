@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -60,9 +59,9 @@ public abstract class AnnotationTypePattern extends PatternNode {
 
 	public static AnnotationTypePattern read(DataInputStream s, ISourceContext context) throws IOException {
 		byte key = s.readByte();
-case BINDING: return BindingAnnotationTypePattern.read(s, context);
+		switch(key) {
 			case EXACT: return ExactAnnotationTypePattern.read(s, context);
-//			case BINDING: return BindingAnnotationTypePattern.read(s, context);
+case BINDING: return BindingAnnotationTypePattern.read(s, context);
 			case NOT: return NotAnnotationTypePattern.read(s, context);
 			case OR: return OrAnnotationTypePattern.read(s, context);
 			case AND: return AndAnnotationTypePattern.read(s, context);

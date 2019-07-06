@@ -1,4 +1,3 @@
-
 /*
  * $Id: Component.java 5023 2006-03-18 18:58:40 -0800 (Sat, 18 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-18 18:58:40 -0800 (Sat, 18 Mar
@@ -1997,9 +1996,9 @@ public abstract class Component<T> implements Serializable, ICoverterLocator
 		IModel prevModel = this.model;
 		// TODO really need such a check? Can we just store the wrapper in the
 		// state change?
-prevModel = prevModel.getNestedModel();
+		if (prevModel instanceof IWrapModel)
 		{
-			prevModel = model.getNestedModel();
+prevModel = prevModel.getNestedModel();
 		}
 
 		// Change model

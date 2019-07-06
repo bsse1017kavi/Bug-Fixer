@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1818,9 +1817,9 @@ boolean paint (GC gc, TreeColumn column, boolean backgroundOnly) {
 			gc.setFont (getFont (columnIndex, false));
 			int fontHeight = getFontHeight (columnIndex);
 			if (drawSelection && (orderedIndex == 0 || (parent.style & SWT.FULL_SELECTION) != 0)) {
-if (!isSelected || drawSelection) {
+				gc.setForeground (display.getSystemColor (SWT.COLOR_LIST_SELECTION_TEXT));
 			} else {
-				if (!isSelected) {
+if (!isSelected || drawSelection) {
 					gc.setForeground (getForeground (columnIndex));
 				}
 			}

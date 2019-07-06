@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.pulsing;
 
 /*
@@ -51,9 +50,9 @@ public class PulsingPostingsReader extends PostingsReaderBase {
 
   // Fallback reader for non-pulsed terms:
   final PostingsReaderBase wrappedPostingsReader;
-public PulsingPostingsReader(PostingsReaderBase wrappedPostingsReader) {
+  int maxPositions;
 
-  public PulsingPostingsReader(PostingsReaderBase wrappedPostingsReader) throws IOException {
+public PulsingPostingsReader(PostingsReaderBase wrappedPostingsReader) {
     this.wrappedPostingsReader = wrappedPostingsReader;
   }
 

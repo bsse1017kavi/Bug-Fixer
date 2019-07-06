@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -755,9 +754,9 @@ public abstract class AbstractCFMetaDataFactory
                         url = (URL) mitr.next();
                         clss = cparser.parseTypeNames(new URLMetaDataIterator
                             (url));
-log.trace(_loc.get("scan-found-names", newNames, rsrc));
+                        List<String> newNames = Arrays.asList(clss);
                         if (log.isTraceEnabled())
-                            log.trace(_loc.get("scan-found-names", clss, rsrc));
+log.trace(_loc.get("scan-found-names", newNames, rsrc));
                         names.addAll(newNames);
                         mapPersistentTypeNames(url, clss);
                     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -605,9 +604,9 @@ public class InternalSearchHit implements SearchHit {
     public void writeTo(StreamOutput out, InternalSearchHits.StreamContext context) throws IOException {
         out.writeFloat(score);
         out.writeUTF(id);
-out.writeBytesReference(source);
+        out.writeUTF(type);
         out.writeLong(version);
-        out.writeBytesReference(source, true);
+out.writeBytesReference(source);
         if (explanation == null) {
             out.writeBoolean(false);
         } else {

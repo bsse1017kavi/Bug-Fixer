@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -79,9 +78,9 @@ public class RandomGistTask extends RoboAsyncTask<Gist> {
         }
 
         if (gists.isEmpty())
-return store.addGist(gists.iterator().next());
+            throw new IllegalArgumentException(getContext().getString(string.no_gists_found));
 
-        return store.refreshGist(gists.iterator().next().getId());
+return store.addGist(gists.iterator().next());
     }
 
     protected void onSuccess(Gist gist) throws Exception {

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -618,9 +617,9 @@ public class Depend extends MatchingTask {
                 if (info == null) {
                     // there was no class file. add this class to the list
                     outOfDateClasses.put(className, className);
-> info.absoluteFile.lastModified()) {
+                } else {
                     if (srcFile.lastModified() 
-                        > (info.absoluteFile.lastModified() + TIME_TOLERANCE)) {
+> info.absoluteFile.lastModified()) {
                         outOfDateClasses.put(className, className);
                     }
                 }

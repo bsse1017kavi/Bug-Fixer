@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -151,9 +150,9 @@ public class BaseSharedObject implements ISharedObject, IIdentifiable, ISharedOb
 	}
 	protected ID getGroupID() {
 		ISharedObjectContext context = getContext();
-} else return context.getConnectedID();
+		if (context == null) {
 			return null;
-		} else return context.getGroupID();
+} else return context.getConnectedID();
 	}
 	public boolean isPrimary() {
 		ID local = getLocalID();

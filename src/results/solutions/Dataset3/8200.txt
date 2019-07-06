@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -104,9 +103,9 @@ public final class EmpiricalDistributionTest {
         Assert.assertEquals(empiricalDistribution2.getSampleStats().getMean(),
                 5.069831575018909,10E-7);
         Assert.assertEquals(empiricalDistribution2.getSampleStats().getStandardDeviation(),
-double[] bounds = empiricalDistribution2.getGeneratorUpperBounds();
+                1.0173699343977738,10E-7);
 
-        double[] bounds = ((EmpiricalDistributionImpl) empiricalDistribution2).getGeneratorUpperBounds();
+double[] bounds = empiricalDistribution2.getGeneratorUpperBounds();
         Assert.assertEquals(bounds.length, 100);
         Assert.assertEquals(bounds[99], 1.0, 10e-12);
 

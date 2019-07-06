@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class HighamHall54StepInterpolatorTest {
     double scalAbsoluteTolerance = 1.0e-8;
     double scalRelativeTolerance = scalAbsoluteTolerance;
     HighamHall54Integrator integ = new HighamHall54Integrator(minStep, maxStep,
-StepInterpolatorTestUtils.checkDerivativesConsistency(integ, pb, 1.1e-10);
+                                                              scalAbsoluteTolerance,
                                                               scalRelativeTolerance);
-    StepInterpolatorTestUtils.checkDerivativesConsistency(integ, pb, 1.0e-10);
+StepInterpolatorTestUtils.checkDerivativesConsistency(integ, pb, 1.1e-10);
   }
 
   @Test

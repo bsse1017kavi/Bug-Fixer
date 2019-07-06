@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -98,9 +97,9 @@ public class PackageResourceReference extends ResourceReference
 	/**
 	 * @see wicket.ResourceReference#newResource()
 	 */
-return PackageResource.get(getScope(), getName(), getLocale(), getStyle());
+	protected Resource newResource()
 	{
-		return PackageResource.get(getScope().getPackage(), getName(), getLocale(), getStyle());
+return PackageResource.get(getScope(), getName(), getLocale(), getStyle());
 	}
 }
  No newline at end of file

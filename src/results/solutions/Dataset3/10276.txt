@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -386,9 +385,9 @@ public class CLIWrapper implements Runnable {
         cliCommand = javaExec + " -Djboss.home.dir=" + asInst
                 + " -Djboss.modules.dir=" + asDist + "/modules"
                 + " -Djline.WindowsTerminal.directConsole=false"
-+ " org.jboss.as.cli"
+                + " -jar " + asDist + "/jboss-modules.jar"
                 + " -mp " + asDist + "/modules"
-                + " -logmodule org.jboss.logmanager org.jboss.as.cli"
++ " org.jboss.as.cli"
                 + " --user=" + USERNAME
                 + " --password=" + PASSWORD;
         return cliCommand;

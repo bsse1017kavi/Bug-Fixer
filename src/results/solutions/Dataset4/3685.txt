@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class HotThreadsTest extends ElasticsearchIntegrationTest {
     public void testHotThreadsDontFail() throws ExecutionException, InterruptedException {
         /**
          * This test just checks if nothing crashes or gets stuck etc.
-final int iters = scaledRandomIntBetween(2, 20);
+         */
         createIndex("test");
-        final int iters = atLeast(2);
+final int iters = scaledRandomIntBetween(2, 20);
         final AtomicBoolean hasErrors = new AtomicBoolean(false);
         for (int i = 0; i < iters; i++) {
             final String type;

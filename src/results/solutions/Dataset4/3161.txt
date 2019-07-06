@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class RestPercolateAction extends BaseRestHandler {
 
     @Override
     public void handleRequest(final RestRequest request, final RestChannel channel) {
-percolateRequest.source(request.content(), request.contentUnsafe());
+        PercolateRequest percolateRequest = new PercolateRequest(request.param("index"), request.param("type"));
         percolateRequest.listenerThreaded(false);
-        percolateRequest.source(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength(), request.contentUnsafe());
+percolateRequest.source(request.content(), request.contentUnsafe());
 
         // we just send a response, no need to fork
         percolateRequest.listenerThreaded(false);

@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase.
 All rights reserved. This program and the accompanying materials
@@ -23,9 +22,9 @@ import org.eclipse.xtend.backend.util.ReflectionHelper;
  */
 public final class StaticPropertyType extends AbstractType {
     public static final StaticPropertyType INSTANCE = new StaticPropertyType ();
-super ("StaticProperty", "{builtin}StaticProperty");
+    
     private StaticPropertyType () {
-        super ("Property");
+super ("StaticProperty", "{builtin}StaticProperty");
 
         register (new BuiltinProperty (this, StringType.INSTANCE, "name", ReflectionHelper.getKnownMethod(Property.class, "getName"), null));
         register (new BuiltinProperty (this, TypeType.INSTANCE, "returnType", ReflectionHelper.getKnownMethod(Property.class, "getType"), null));

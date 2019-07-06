@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -110,9 +109,9 @@ public class EJBUtilities implements EndpointDeployer, Service<EJBUtilities> {
                         }
                     }
                 }
-throw new IllegalStateException("No resource adapter registered with resource adapter name " + resourceAdapterName);
+            }
             if (!raFound) {
-                throw new IllegalStateException("Not found RA registered as " + resourceAdapterName);
+throw new IllegalStateException("No resource adapter registered with resource adapter name " + resourceAdapterName);
             }
             Set<String> ids = getResourceAdapterRepository().getResourceAdapters(messageListenerInterface);
             List<MessageListener> listeners = null;

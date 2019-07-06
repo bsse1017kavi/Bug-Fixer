@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class HistoryHandler extends CommandHandlerWithHelp {
         } else if(disable.isPresent(args)) {
             ctx.getHistory().setUseHistory(false);
         } else if(enable.isPresent(args)) {
-ctx.error("Unexpected argument '" + ctx.getArgumentsString() + '\'');
+            ctx.getHistory().setUseHistory(true);
         } else {
-            ctx.printLine("Unexpected argument '" + ctx.getArgumentsString() + '\'');
+ctx.error("Unexpected argument '" + ctx.getArgumentsString() + '\'');
         }
     }
 

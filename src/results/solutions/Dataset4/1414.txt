@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -33,9 +32,9 @@ public class IssueDashboardActivity extends RoboFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.issue_dashboard);
         setTitle(string.dashboard_issues_title);
-pager.setAdapter(new IssueDashboardPagerAdapter(getResources(), getSupportFragmentManager()));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        pager.setAdapter(new IssueDashboardPagerAdapter(getApplicationContext(), getSupportFragmentManager()));
+pager.setAdapter(new IssueDashboardPagerAdapter(getResources(), getSupportFragmentManager()));
         indicator.setViewPager(pager);
     }
 

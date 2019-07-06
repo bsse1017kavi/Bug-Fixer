@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.clustering.carrot2;
 
 /*
@@ -140,9 +139,9 @@ public class LuceneCarrot2TokenizerFactory implements ITokenizerFactory {
 
       public void setTermBuffer(MutableCharArray array) {
         array.reset(term.buffer(), 0, term.length());
-public void reset(Reader input) {
+      }
 
-      public void reset(Reader input) throws IOException {
+public void reset(Reader input) {
         try {
           sentenceTokenizer.reset(input);
           wordTokenFilter = (TokenStream) tokenFilterClass.getConstructor(

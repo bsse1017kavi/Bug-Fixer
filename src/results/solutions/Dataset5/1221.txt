@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -394,9 +393,9 @@ public class MacroDef extends AntlibDefinition  {
         public void setName(String name) {
             if (!isValidName(name)) {
                 throw new BuildException(
-this.name = name.toLowerCase(Locale.US);
+                    "Illegal name [" + name + "] for attribute");
             }
-            this.name = name;
+this.name = name.toLowerCase(Locale.US);
         }
 
         /**

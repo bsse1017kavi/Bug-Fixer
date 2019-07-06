@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public final class ComponentInstallProcessor implements DeploymentUnitProcessor 
         final ServiceTarget serviceTarget = phaseContext.getServiceTarget();
 
         final String applicationName = configuration.getApplicationName();
-final ServiceName baseName = configuration.getComponentDescription().getServiceName();
+        final String moduleName = configuration.getModuleName();
         final String componentName = configuration.getComponentName();
-        final ServiceName baseName = deploymentUnit.getServiceName().append("component").append(componentName);
+final ServiceName baseName = configuration.getComponentDescription().getServiceName();
 
         //create additional injectors
         final ServiceName createServiceName = baseName.append("CREATE");

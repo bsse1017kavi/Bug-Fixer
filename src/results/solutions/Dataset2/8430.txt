@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -143,9 +142,9 @@ public final class StandardSessionInterceptor  extends BaseInterceptor {
 	//	log( "No session ");
 	return 0;
     }
-ClassLoader newLoader = ctx.getClassLoader();
+    
     public void reload( Request req, Context ctx ) {
-	ClassLoader newLoader = ctx.getServletLoader().getClassLoader();
+ClassLoader newLoader = ctx.getClassLoader();
 	StandardManager sM = getManager( ctx );    
 	sM.handleReload(req, newLoader);
     }

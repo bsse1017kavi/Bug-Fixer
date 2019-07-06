@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class WebSecurityFORMTestCase extends AbstractWebSecurityFORMTestCase {
         war.addAsWebInfResource(WebSecurityFORMTestCase.class.getPackage(), "jboss-web.xml", "jboss-web.xml");
         war.addAsWebInfResource(WebSecurityFORMTestCase.class.getPackage(), "web.xml", "web.xml");
 
-//WebSecurityPasswordBasedBase.printWar(war);
+        war.addAsResource(WebSecurityFORMTestCase.class.getPackage(), "users.properties", "users.properties");
         war.addAsResource(WebSecurityFORMTestCase.class.getPackage(), "roles.properties", "roles.properties");
-        WebSecurityPasswordBasedBase.printWar(war);
+//WebSecurityPasswordBasedBase.printWar(war);
         return war;
     }
 }

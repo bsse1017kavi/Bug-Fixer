@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.jdbcapi.DatabaseMetaDataTest
@@ -1664,9 +1663,9 @@ public class DatabaseMetaDataTest extends BaseJDBCTestCase {
             boolean hasScale = true;
             switch (type)
             {
-maxScale = 31; // Max Scale for Decimal & Numeric is 31: Derby-2262
+            case Types.DECIMAL:
             case Types.NUMERIC:
-                maxScale = 32767; // 31; BUG DERBY-2262
+maxScale = 31; // Max Scale for Decimal & Numeric is 31: Derby-2262
                 break;
             case Types.TIMESTAMP:
                 maxScale = 6;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class TransportMultiGetAction extends BaseAction<MultiGetRequest, MultiGe
                 shardRequest.realtime(request.realtime);
                 shardRequest.refresh(request.refresh);
 
-shardRequest.add(i, item.type(), item.id(), item.fields());
+                shardRequests.put(shardId, shardRequest);
             }
-            shardRequest.add(i, item.type(), item.id());
+shardRequest.add(i, item.type(), item.id(), item.fields());
         }
 
         final MultiGetItemResponse[] responses = new MultiGetItemResponse[request.items.size()];

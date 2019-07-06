@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -365,9 +364,9 @@ public class JdoTransactionManager extends AbstractPlatformTransactionManager
 
 		catch (TransactionException ex) {
 			closePersistenceManagerAfterFailedBegin(txObject);
-catch (Throwable ex) {
+			throw ex;
 		}
-		catch (Exception ex) {
+catch (Throwable ex) {
 			closePersistenceManagerAfterFailedBegin(txObject);
 			throw new CannotCreateTransactionException("Could not open JDO PersistenceManager for transaction", ex);
 		}

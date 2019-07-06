@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -33,9 +32,9 @@ import org.jboss.as.controller.registry.ManagementResourceRegistration;
  */
 class MemoryPoolRootResourceDefinition extends SimpleResourceDefinition {
     static final MemoryPoolRootResourceDefinition INSTANCE = new MemoryPoolRootResourceDefinition();
-PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY_POOL));
+    private MemoryPoolRootResourceDefinition() {
         super(PlatformMBeanConstants.MEMORY_POOL_PATH,
-                PlatformMBeanDescriptions.getResolver(PlatformMBeanConstants.MEMORY_POOL));
+PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY_POOL));
     }
 
     @Override

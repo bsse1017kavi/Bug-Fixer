@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -52,9 +51,9 @@ public class SubDeploymentDependencyProcessor implements DeploymentUnitProcessor
         final AttachmentList<DeploymentUnit> subDeployments = parent.getAttachment(Attachments.SUB_DEPLOYMENTS);
         final ModuleLoader moduleLoader = deploymentUnit.getAttachment(Attachments.SERVICE_MODULE_LOADER);
         final ModuleIdentifier parentModule = parent.getAttachment(Attachments.MODULE_IDENTIFIER);
-moduleSpec.addDependency(new ModuleDependency(moduleLoader, parentModule, false, false, true));
+        if (parentModule != null) {
             // access to ear classes
-            moduleSpec.addDependency(new ModuleDependency(moduleLoader, parentModule, false, false, false));
+moduleSpec.addDependency(new ModuleDependency(moduleLoader, parentModule, false, false, true));
         }
 
         for(DeploymentUnit subDeployment : subDeployments){

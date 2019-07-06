@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -113,9 +112,9 @@ public class JndiViewOperation implements OperationStepHandler {
                     }
                     context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
                 }
-throw new OperationFailedException(new ModelNode().set(NamingLogger.ROOT_LOGGER.jndiViewNotAvailable()));
+            }, OperationContext.Stage.RUNTIME);
         } else {
-            throw new OperationFailedException(NamingLogger.ROOT_LOGGER.jndiViewNotAvailable());
+throw new OperationFailedException(new ModelNode().set(NamingLogger.ROOT_LOGGER.jndiViewNotAvailable()));
         }
         context.stepCompleted();
     }

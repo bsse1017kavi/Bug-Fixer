@@ -1,4 +1,3 @@
-
 package org.elasticsearch.cluster.allocation;
 
 /*
@@ -57,9 +56,9 @@ public class ShardsAllocatorModuleTests extends ElasticsearchIntegrationTest {
                 "org.elasticsearch.cluster.routing.allocation.allocator.EvenShardsCountAllocator").build();
         assertAllocatorInstance(build, EvenShardsCountAllocator.class);
     }
-while (cluster().size() != 0) {
+
     private void assertAllocatorInstance(Settings settings, Class<? extends ShardsAllocator> clazz) {
-        while (cluster().numNodes() != 0) {
+while (cluster().size() != 0) {
             cluster().stopRandomNode();     
         }
         cluster().startNode(settings);

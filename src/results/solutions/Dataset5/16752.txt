@@ -1,4 +1,3 @@
-
 /*
  * $Id: AbstractAjaxTimerBehavior.java 4673 2006-02-27 20:35:43 -0800 (Mon, 27
  * Feb 2006) ivaynberg $ $Revision$ $Date: 2006-02-27 20:35:43 -0800
@@ -79,9 +78,9 @@ public abstract class AbstractAjaxTimerBehavior extends AbstractDefaultAjaxBehav
 	 *            Duration between AJAX callbacks
 	 * @return JS script
 	 */
-return "setTimeout(function() { " + getCallbackScript(false, true) + " }, "
+	protected final String getJsTimeoutCall(final Duration updateInterval)
 	{
-		return "setTimeout(function() { " + getCallbackScript(false) + " }, "
+return "setTimeout(function() { " + getCallbackScript(false, true) + " }, "
 				+ updateInterval.getMilliseconds() + ");";
 	}
 

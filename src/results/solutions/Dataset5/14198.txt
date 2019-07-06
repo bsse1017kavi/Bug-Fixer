@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -110,9 +109,9 @@ public class DefaultDeployer
         try
         {
             final ClassLoader classLoader = m_classLoaderManager.createClassLoader( file );
-catch( final Exception e )
+            return createDeployment( classLoader, file.toURL() );
         }
-        catch( Exception e )
+catch( final Exception e )
         {
             final String message = REZ.getString( "deploy-from-file.error", file );
             throw new DeploymentException( message, e );

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -133,9 +132,9 @@ public class ResourceRefTestCase {
         
     @Test
     public void test2() throws Exception {
-URL expected = new URL("http://somewhere/url2");
+        ResUrlChecker bean = (ResUrlChecker) new InitialContext().lookup("java:app/resource-ref-test/ResUrlCheckerBean");
         // defined in jboss.xml
-        URL expected = new URL("http://localhost/url2");
+URL expected = new URL("http://somewhere/url2");
         URL actual = bean.getURL2();
         Assert.assertEquals(expected, actual);
     }

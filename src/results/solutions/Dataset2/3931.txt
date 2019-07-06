@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -105,9 +104,9 @@ public final boolean canBeSeenBy(TypeBinding receiverType, InvocationSite invoca
 			while (temp != null) {
 				outerInvocationType = temp;
 				temp = temp.enclosingType();
-ReferenceBinding outerDeclaringClass = (ReferenceBinding)declaringClass.erasure();
+			}
 
-			ReferenceBinding outerDeclaringClass = declaringClass;
+ReferenceBinding outerDeclaringClass = (ReferenceBinding)declaringClass.erasure();
 			temp = outerDeclaringClass.enclosingType();
 			while (temp != null) {
 				outerDeclaringClass = temp;

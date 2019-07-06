@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public interface Mapper extends ToXContent {
         @Nullable
         public Version indexCreatedVersion() {
             if (indexSettings == null) {
-return Version.indexCreated(indexSettings);
+                return null;
             }
-            return indexSettings.getAsVersion(IndexMetaData.SETTING_VERSION_CREATED, null);
+return Version.indexCreated(indexSettings);
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.10 $ $Date$
@@ -302,9 +301,9 @@ public abstract class AjaxHandler
 	 */
 	public final void bind(Component hostComponent)
 	{
-throw new IllegalArgumentException("Argument hostComponent must be not null");
+		if (hostComponent == null)
 		{
-			throw new NullPointerException("argument hostComponent must be not null");
+throw new IllegalArgumentException("Argument hostComponent must be not null");
 		}
 
 		if (this.component != null)

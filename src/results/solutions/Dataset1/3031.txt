@@ -1,4 +1,3 @@
-
 package org.apache.lucene.expressions;
 
 /*
@@ -64,9 +63,9 @@ public class TestExpressionRescorer extends LuceneTestCase {
     doc.add(new NumericDocValuesField("popularity", 2));
     iw.addDocument(doc);
     
-iw.shutdown();
+    reader = iw.getReader();
     searcher = new IndexSearcher(reader);
-    iw.close();
+iw.shutdown();
   }
   
   @Override

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1004,9 +1003,9 @@ public void setImage (int index, Image image) {
 		images [index] = image;
 	}
 	if ((parent.style & SWT.VIRTUAL) != 0) cached = true;
-parent.imageIndex (image, index);
+	
 	/* Ensure that the image list is created */
-	parent.imageIndex (image);
+parent.imageIndex (image, index);
 	
 	if (index == 0) {
 		parent.setScrollWidth (this, false);

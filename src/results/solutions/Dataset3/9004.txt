@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -89,9 +88,9 @@ public class CorrelatedRandomVectorGenerator
 
         int order = covariance.getRowDimension();
         if (mean.length != order) {
-this.mean = mean.clone();
+            throw new DimensionMismatchException(mean.length, order);
         }
-        this.mean = (double[]) mean.clone();
+this.mean = mean.clone();
 
         decompose(covariance, small);
 

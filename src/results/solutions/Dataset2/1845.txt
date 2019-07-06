@@ -1,4 +1,3 @@
-
 /*
  * jBoss, the OpenSource EJB server
  *
@@ -92,9 +91,9 @@ public class JaasSecurityManagerService
             if (smContext != null) {
                 for (Iterator it = smJndiNames.iterator(); it.hasNext(); ) {
                     smContext.unbind((String) it.next());
-//ic.destroySubcontext(JNDI_SM_CONTEXT_NAME); - OperationNotSupportedException
+                    it.remove();
                 }
-                ic.destroySubcontext(JNDI_SM_CONTEXT_NAME);
+//ic.destroySubcontext(JNDI_SM_CONTEXT_NAME); - OperationNotSupportedException
                 smContext = null;
             }
             ic.unbind(JNDI_NAME);

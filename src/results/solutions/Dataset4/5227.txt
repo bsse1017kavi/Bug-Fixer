@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public class GetStressTest {
                                 .execute().actionGet();
 
                         GetResponse getResponse = client.client().prepareGet("test", "type1", id)
-if (!getResponse.isExists()) {
+                                //.setFields(Strings.EMPTY_ARRAY)
                                 .execute().actionGet();
-                        if (!getResponse.exists()) {
+if (!getResponse.isExists()) {
                             System.err.println("Failed to find " + id);
                         }
 

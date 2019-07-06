@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.coordination.IBatchBolt;
@@ -51,9 +50,9 @@ public class TransactionalTopologyBuilder {
     // it would be very dangerous to have 2 topologies active with the same id in the same cluster    
     public TransactionalTopologyBuilder(String id, String spoutId, ITransactionalSpout spout, Number spoutParallelism) {
         _id = id;
-_spoutParallelism = (spoutParallelism == null) ? null : spoutParallelism.intValue();
+        _spoutId = spoutId;
         _spout = spout;
-        _spoutParallelism = spoutParallelism.intValue();
+_spoutParallelism = (spoutParallelism == null) ? null : spoutParallelism.intValue();
     }
     
     public TransactionalTopologyBuilder(String id, String spoutId, ITransactionalSpout spout) {

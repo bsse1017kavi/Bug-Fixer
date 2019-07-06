@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -110,8 +109,8 @@ public class BoolJsonQueryParser extends AbstractIndexComponent implements JsonQ
         }
         query.setBoost(boost);
         if (minimumNumberShouldMatch != -1) {
-return optimizeQuery(fixNegativeQueryIfNeeded(query));
+            query.setMinimumNumberShouldMatch(minimumNumberShouldMatch);
         }
-        return fixNegativeQueryIfNeeded(query);
+return optimizeQuery(fixNegativeQueryIfNeeded(query));
     }
 }

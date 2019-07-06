@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class RangeJsonQueryBuilder extends BaseJsonQueryBuilder {
     public RangeJsonQueryBuilder boost(float boost) {
         this.boost = boost;
         return this;
-@Override protected void doJson(JsonBuilder builder, Params params) throws IOException {
+    }
 
-    @Override protected void doJson(JsonBuilder builder) throws IOException {
+@Override protected void doJson(JsonBuilder builder, Params params) throws IOException {
         builder.startObject(RangeJsonQueryParser.NAME);
         builder.startObject(name);
         builder.field("from", from);

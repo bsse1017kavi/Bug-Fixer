@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -1044,9 +1043,9 @@ public class CoolBarManager extends ContributionManager implements IToolBarManag
 				// remove CoolBarItemContributions that are empty
 				IContributionItem[] items = getItems();
 				ArrayList cbItemsToRemove = new ArrayList(items.length);
-if (cbItem.isEmpty()) {
+				for (int i = 0; i < items.length; i++) {
 					CoolBarContributionItem cbItem = (CoolBarContributionItem) items[i];
-					if (cbItem.getItems().length == 0) {
+if (cbItem.isEmpty()) {
 						CoolItem coolItem = findCoolItem(cbItem);
 						if (!useRedraw && coolItem != null) {
 							int visualIndex = coolBar.indexOf(coolItem);

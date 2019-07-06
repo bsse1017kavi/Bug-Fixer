@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -1136,9 +1135,9 @@ public class Issue
                 .add(AttachmentPeer.ISSUE_ID, getIssueId())
                 .addJoin(AttachmentTypePeer.ATTACHMENT_TYPE_ID,
                          AttachmentPeer.ATTACHMENT_TYPE_ID)
-.addDescendingOrderByColumn(AttachmentPeer.CREATED_DATE);
+                .add(AttachmentTypePeer.ATTACHMENT_TYPE_ID, 
                      Attachment.COMMENT__PK)
-                .addAscendingOrderByColumn(AttachmentPeer.CREATED_DATE);
+.addDescendingOrderByColumn(AttachmentPeer.CREATED_DATE);
             if (!full)
             {
                 crit.setLimit(getCommentsLimit());

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -27,9 +26,9 @@ public class DiscardWorkingCopyOperation extends JavaModelOperation {
 	protected void executeOperation() throws JavaModelException {
 		CompilationUnit workingCopy = getWorkingCopy();
 		
-if (!workingCopy.isPrimary()) {
+		int useCount = JavaModelManager.getJavaModelManager().discardPerWorkingCopyInfo(workingCopy);
 		if (useCount == 0) {
-			if (workingCopy.owner != DefaultWorkingCopyOwner.PRIMARY) {
+if (!workingCopy.isPrimary()) {
 				// report removed java delta for a non-primary working copy
 				JavaElementDelta delta = new JavaElementDelta(this.getJavaModel());
 				delta.removed(workingCopy);

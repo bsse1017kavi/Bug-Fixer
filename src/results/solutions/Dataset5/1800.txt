@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -311,9 +310,9 @@ public void removeSelectionListener(SelectionListener listener) {
 	eventTable.unhook(SWT.DefaultSelection,listener);
 }
 
-int hitPart = (int)/*64*/((NSScroller)view).hitPart();
+void sendSelection () {
 	Event event = new Event();
-	int hitPart = ((NSScroller)view).hitPart();
+int hitPart = (int)/*64*/((NSScroller)view).hitPart();
 	int value = getSelection ();
 	switch (hitPart) {
 	    case OS.NSScrollerDecrementLine:

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -42,9 +41,9 @@ public final class Home extends AuthenticatedHtmlPage
                 public void populateCell(final Cell cell)
                 {
                     final Book book = (Book) cell.getModelObject();
-getLocalizer().getString("noBookTitle", this)));
+
                     cell.add(BookDetails.link("details", book,
-                            getLocalizedString("noBookTitle")));
+getLocalizer().getString("noBookTitle", this)));
                     cell.add(new Label("author", book));
                     cell.add(cell.moveUpLink("moveUp"));
                     cell.add(cell.moveDownLink("moveDown"));

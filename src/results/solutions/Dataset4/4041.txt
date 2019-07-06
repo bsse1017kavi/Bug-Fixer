@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -124,9 +123,9 @@ public class HasChildFilterParser implements FilterParser {
         // wrap the query with type query
         query = new XFilteredQuery(query, parseContext.cacheFilter(childDocMapper.typeFilter(), null));
 
-HasChildFilter childFilter = HasChildFilter.create(query, parentType, childType, searchContext, executionType);
+        SearchContext searchContext = SearchContext.current();
 
-        HasChildFilter childFilter = HasChildFilter.create(query, null, parentType, childType, searchContext, executionType);
+HasChildFilter childFilter = HasChildFilter.create(query, parentType, childType, searchContext, executionType);
         searchContext.addRewrite(childFilter);
 
         if (filterName != null) {

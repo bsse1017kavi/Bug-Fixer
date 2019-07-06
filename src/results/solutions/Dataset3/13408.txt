@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -82,9 +81,9 @@ public class SimpleBrokerMessageHandler extends AbstractBrokerMessageHandler {
 		SimpMessageType messageType = headers.getMessageType();
 		String destination = headers.getDestination();
 
-logger.trace("Ignoring message to destination=" + destination);
+		if (!checkDestinationPrefix(destination)) {
 			if (logger.isTraceEnabled()) {
-				logger.trace("Ingoring message to destination=" + destination);
+logger.trace("Ignoring message to destination=" + destination);
 			}
 			return;
 		}

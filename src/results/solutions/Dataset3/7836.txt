@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -122,9 +121,9 @@ public class DefaultInterceptorsTestCase {
     @Test
     public void testClassLevelExcludeDefaultMethodLevelExcludeClassInterceptors() throws NamingException {
         InitialContext ctx = new InitialContext();
-Assert.assertEquals(MethodInterceptor.MESSAGE + "Hello", message);
+        NoDefaultInterceptorsSLSB bean = (NoDefaultInterceptorsSLSB) ctx.lookup("java:module/" + NoDefaultInterceptorsSLSB.class.getSimpleName());
         final String message = bean.noClassLevel();
-        Assert.assertEquals("Hello", MethodInterceptor.MESSAGE + message);
+Assert.assertEquals(MethodInterceptor.MESSAGE + "Hello", message);
         Assert.assertTrue(!bean.isPostConstructCalled());
     }
 

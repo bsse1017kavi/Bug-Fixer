@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -389,9 +388,9 @@ public void saveIndexes(){
 		if (monitor == null) continue; // index got deleted since acquired
 		try {
 			monitor.enterWrite();
-System.out.println("-> merging index ("+ Thread.currentThread()+"): "+index.getIndexFile()); //$NON-NLS-1$//$NON-NLS-2$
+			if (IndexManager.VERBOSE){
 				if (index.hasChanged()){
-					System.out.println("-> merging index : "+index.getIndexFile()); //$NON-NLS-1$
+System.out.println("-> merging index ("+ Thread.currentThread()+"): "+index.getIndexFile()); //$NON-NLS-1$//$NON-NLS-2$
 				}
 			}
 			try {

@@ -1,4 +1,3 @@
-
 package org.aspectj.systemtest.ajc150;
 
 import java.io.File;
@@ -80,9 +79,9 @@ public class GenericITDsDesign extends XMLBasedAjcTestCase {
 		ClassPath cp = 
 			new ClassPath(ajc.getSandboxDirectory() + File.pathSeparator + 
 					      System.getProperty("java.class.path"));
-CrosscuttingMembers cmembers = resolvedType.collectCrosscuttingMembers(true);
+		recentWorld = new BcelWorld(cp.toString());
 		ReferenceType resolvedType = (ReferenceType)recentWorld.resolve(classname);
-		CrosscuttingMembers cmembers = resolvedType.collectCrosscuttingMembers();
+CrosscuttingMembers cmembers = resolvedType.collectCrosscuttingMembers(true);
 		List tmungers = cmembers.getTypeMungers();
 		return tmungers;
 	}

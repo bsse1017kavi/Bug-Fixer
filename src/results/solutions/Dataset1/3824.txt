@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -98,9 +97,9 @@ public class IndexSplitter {
 
   public void listSegments() throws IOException {
     DecimalFormat formatter = new DecimalFormat("###,###.###");
-String sizeStr = formatter.format(info.sizeInBytes(true));
+    for (int x = 0; x < infos.size(); x++) {
       SegmentInfo info = infos.info(x);
-      String sizeStr = formatter.format(info.sizeInBytes());
+String sizeStr = formatter.format(info.sizeInBytes(true));
       System.out.println(info.name + " " + sizeStr);
     }
   }

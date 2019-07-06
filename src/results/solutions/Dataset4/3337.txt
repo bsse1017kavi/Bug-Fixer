@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -152,9 +151,9 @@ public class IndexRoutingTable implements Iterable<IndexShardRoutingTable> {
     }
 
     /**
-public ShardsIterator randomAllShardsIt() {
+     * An iterator over all shards (including replicas).
      */
-    public ShardsIterator allShardsIt() {
+public ShardsIterator randomAllShardsIt() {
         return new PlainShardsIterator(allShards, Math.abs(counter.incrementAndGet()));
     }
 

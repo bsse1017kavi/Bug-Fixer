@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -123,9 +122,9 @@ public class DefaultDeployer
     public TypeDeployer createDeployer( final File file )
         throws DeploymentException
     {
-final URLClassLoader classLoader = getClassLoaderForFile( file );
+        try
         {
-            URLClassLoader classLoader = getClassLoaderForFile( file );
+final URLClassLoader classLoader = getClassLoaderForFile( file );
             return createDeployment( classLoader, file.toURL() );
         }
         catch( Exception e )

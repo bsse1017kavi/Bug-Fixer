@@ -1,4 +1,3 @@
-
 package org.apache.solr.core;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -38,9 +37,9 @@ public abstract class IndexReaderFactory implements NamedListInitializedPlugin {
    * The args are user-level initialization parameters that may be specified
    * when declaring an indexReaderFactory in solrconfig.xml
    *
-Integer v = (Integer)args.get("setTermIndexInterval");
+   */
   public void init(NamedList args) {
-    Integer v = (Integer)args.get("termInfosIndexDivisor");
+Integer v = (Integer)args.get("setTermIndexInterval");
     if (v != null) {
       termInfosIndexDivisor = v.intValue();
     }

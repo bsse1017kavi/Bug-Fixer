@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class ExampleRunner {
             System.out.println("Dumping config as xml\n");
             ModelNode request = new ModelNode();
             request.get("operation").set("read-config-as-xml");
-System.out.println(r.get("result").asString());
+            request.get("address").setEmptyList();
             ModelNode r = client.execute(request);
-            System.out.println(r.asString());
+System.out.println(r.get("result").asString());
 
         } finally {
             StreamUtils.safeClose(client);

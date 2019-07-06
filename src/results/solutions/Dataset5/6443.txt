@@ -1,4 +1,3 @@
-
 /*
 
 Copyright (c) Xerox Corporation 1998-2002.  All rights reserved.
@@ -29,9 +28,9 @@ package telecom;
  * some special discounts the customer has, special features, etc. In here,
  * it depends only on timing and on the type of the connection.
  */
-declare precedence: Billing, Timing;
+public aspect Billing {
     // domination required to get advice on endtiming in the right order
-    declare dominates: Billing, Timing;
+declare precedence: Billing, Timing;
 
     public static final long LOCAL_RATE = 3;
     public static final long LONG_DISTANCE_RATE = 10;

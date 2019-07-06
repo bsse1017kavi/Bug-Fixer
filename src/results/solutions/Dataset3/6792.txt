@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -123,9 +122,9 @@ public final class ResourceAdapterActivatorService extends AbstractResourceAdapt
             unregisterAll(deploymentName);
             throw MESSAGES.failedToStartRaDeployment(e, deploymentName);
         }
-ServiceName raServiceName = ConnectorServices.getResourceAdapterServiceName(raName, null);
+
         String raName = deploymentMD.getDeploymentName();
-        ServiceName raServiceName = ConnectorServices.registerResourceAdapter(raName);
+ServiceName raServiceName = ConnectorServices.getResourceAdapterServiceName(raName, null);
 
         value = new ResourceAdapterDeployment(deploymentMD, raName, raServiceName);
         registry.getValue().registerResourceAdapterDeployment(value);

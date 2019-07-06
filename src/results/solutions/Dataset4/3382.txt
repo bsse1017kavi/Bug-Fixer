@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -116,9 +115,9 @@ public class MultifieldAttachmentMapperTests extends ElasticsearchTestCase {
 
         // Let's force some values
         doc = documentMapper.parse("person", "1", XContentFactory.jsonBuilder()
-.field("_content", bytes)
+                .startObject()
                     .startObject("file")
-                        .field("content", bytes)
+.field("_content", bytes)
                         .field("_name", forcedName)
                     .endObject()
                 .endObject()

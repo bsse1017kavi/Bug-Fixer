@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -189,9 +188,9 @@ public class PropertyPlaceholderHelper {
 		int withinNestedPlaceholder = 0;
 		while (index < buf.length()) {
 			if (StringUtils.substringMatch(buf, index, this.placeholderSuffix)) {
-index = index + this.placeholderSuffix.length();
+				if (withinNestedPlaceholder > 0) {
 					withinNestedPlaceholder--;
-					index = index + this.placeholderPrefix.length() - 1;
+index = index + this.placeholderSuffix.length();
 				}
 				else {
 					return index;

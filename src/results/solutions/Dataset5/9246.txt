@@ -1,4 +1,3 @@
-
 /*******************************************************************************
   * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -20,9 +19,9 @@ import org.eclipse.equinox.concurrent.future.IFuture;
 import org.eclipse.equinox.concurrent.future.IProgressRunnable;
 import org.eclipse.osgi.util.NLS;
 
-protected static final long DEFAULT_TIMEOUT = new Long(System.getProperty("ecf.remotecall.timeout", "30000")).longValue(); //$NON-NLS-1$ //$NON-NLS-2$
+public class RemoteServiceImpl implements IRemoteService, InvocationHandler {
 
-	protected static final long DEFAULT_TIMEOUT = 30000;
+protected static final long DEFAULT_TIMEOUT = new Long(System.getProperty("ecf.remotecall.timeout", "30000")).longValue(); //$NON-NLS-1$ //$NON-NLS-2$
 
 	protected RemoteServiceRegistrationImpl registration = null;
 

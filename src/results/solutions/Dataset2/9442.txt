@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -59,9 +58,9 @@ public SearchPattern getBlankPattern() {
 	return new QualifiedTypeDeclarationPattern(R_EXACT_MATCH | R_CASE_SENSITIVE);
 }
 public char[] getPackageName() {
-return internedPackageNames.add(CharOperation.subarray(this.qualification, 0, this.packageIndex));
+	if (this.packageIndex == -1)
 		return this.qualification;
-	return CharOperation.subarray(this.qualification, 0, this.packageIndex);
+return internedPackageNames.add(CharOperation.subarray(this.qualification, 0, this.packageIndex));
 }
 public char[][] getEnclosingTypeNames() {
 	if (this.packageIndex == -1)

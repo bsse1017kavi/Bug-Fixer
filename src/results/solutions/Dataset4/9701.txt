@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -115,9 +114,9 @@ class AccountAuthenticator extends AbstractAccountAuthenticator {
             Account account, String authTokenType, Bundle options)
             throws NetworkErrorException {
 
-if (!ACCOUNT_TYPE.equals(authTokenType))
+        final Bundle bundle = new Bundle();
 
-        if (!authTokenType.equals(ACCOUNT_TYPE))
+if (!ACCOUNT_TYPE.equals(authTokenType))
             return bundle;
 
         AccountManager am = AccountManager.get(context);

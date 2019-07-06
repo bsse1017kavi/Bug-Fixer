@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -95,9 +94,9 @@ protected void executeOperation() throws JavaModelException {
 		} else {
 			throw new JavaModelException(new JavaModelStatus(IJavaModelStatusConstants.NAME_COLLISION));
 		}
-String encoding = JavaCore.getOption(JavaCore.CORE_ENCODING);
+	} else {
 		try {
-			String encoding = (String)JavaCore.getOptions().get(JavaCore.CORE_ENCODING);
+String encoding = JavaCore.getOption(JavaCore.CORE_ENCODING);
 			InputStream stream = new ByteArrayInputStream(encoding == null ? fSource.getBytes() : fSource.getBytes(encoding));
 			createFile(folder, unit.getElementName(), stream, false);
 			fResultElements = new IJavaElement[] {unit};

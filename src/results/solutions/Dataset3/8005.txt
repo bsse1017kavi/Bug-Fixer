@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -235,9 +234,9 @@ public class AutoTGT implements IAutoCredentials, ICredentialsRenewer {
         long end = tgt.getEndTime().getTime();
         return start + (long) ((end - start) * TICKET_RENEW_WINDOW);
     }
-public void renew(Map<String,String> credentials, Map topologyConf) {
+
     @Override
-    public void renew(Map<String,String> credentials) {
+public void renew(Map<String,String> credentials, Map topologyConf) {
         KerberosTicket tgt = getTGT(credentials);
         if (tgt != null) {
             long refreshTime = getRefreshTime(tgt);

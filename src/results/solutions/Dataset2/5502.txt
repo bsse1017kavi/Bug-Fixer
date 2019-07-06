@@ -1,4 +1,3 @@
-
 /*
  * HelpIndex.java - Index for help searching feature
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -133,9 +132,9 @@ public class HelpIndex
 			if(lname.endsWith(".html") || lname.endsWith(".txt"))
 			{
 				// only works for jEdit plugins
-+ "!/" + name;
+				String url = "jeditresource:/" +
 					MiscUtilities.getFileName(jar.getName())
-					+ "!" + name;
++ "!/" + name;
 				Log.log(Log.DEBUG,this,url);
 				indexStream(jar.getInputStream(entry),url);
 			}

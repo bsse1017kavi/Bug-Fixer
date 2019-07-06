@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -158,9 +157,9 @@ public abstract class UnivariateRealIntegratorImpl
      */
     protected void verifyInterval(double lower, double upper) throws
         IllegalArgumentException {
-LocalizedFormats.ENDPOINTS_NOT_AN_INTERVAL,
+        if (lower >= upper) {
             throw MathRuntimeException.createIllegalArgumentException(
-                    "endpoints do not specify an interval: [{0}, {1}]",
+LocalizedFormats.ENDPOINTS_NOT_AN_INTERVAL,
                     lower, upper);
         }
     }

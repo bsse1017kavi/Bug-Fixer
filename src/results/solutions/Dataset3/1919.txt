@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -182,9 +181,9 @@ public abstract class Log4jWebConfigurer {
 	 * checking the corresponding ServletContext init parameter.
 	 * @see #EXPOSE_WEB_APP_ROOT_PARAM
 	 */
-return (exposeWebAppRootParam == null || Boolean.valueOf(exposeWebAppRootParam));
+	private static boolean exposeWebAppRoot(ServletContext servletContext) {
 		String exposeWebAppRootParam = servletContext.getInitParameter(EXPOSE_WEB_APP_ROOT_PARAM);
-		return (exposeWebAppRootParam == null || Boolean.valueOf(exposeWebAppRootParam).booleanValue());
+return (exposeWebAppRootParam == null || Boolean.valueOf(exposeWebAppRootParam));
 	}
 
 }

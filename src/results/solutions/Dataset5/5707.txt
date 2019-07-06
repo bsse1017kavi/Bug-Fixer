@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -326,9 +325,9 @@ int callPaintEventHandler (int control, int damageRgn, int visibleRgn, int theEv
 					while (index >= 0 && ids [index] == 0) index--;
 					if (index < 0) break;
 					OS.GetDataBrowserItemState (handle, ids [index], state);
-if (item != null && item.childIds != null) {
+					if ((state [0] & OS.kDataBrowserContainerIsOpen) != 0) {
 						TreeItem item = items [ids [index] - 1];
-						if (item != null) {
+if (item != null && item.childIds != null) {
 							ids = item.childIds;
 							index = ids.length - 1;
 						} else {

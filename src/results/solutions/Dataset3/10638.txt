@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ import org.junit.runner.RunWith;
 public class ArquillianRunWithAnnotationProcessor implements DeploymentUnitProcessor {
 
     @Override
-final Index index = phaseContext.getDeploymentUnit().getAttachment(Attachments.ANNOTATION_INDEX);
+    public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
 
-        final Index index = phaseContext.getAttachment(Attachments.ANNOTATION_INDEX);
+final Index index = phaseContext.getDeploymentUnit().getAttachment(Attachments.ANNOTATION_INDEX);
         if (index == null)
             return; // Skip if there is no annotation index
 

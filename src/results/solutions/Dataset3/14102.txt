@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -137,9 +136,9 @@ public class ServerToHostOperationHandlerFactoryService implements ManagementCha
                 CONTROLLER_MANAGEMENT_LOGGER.serverRegistered(serverName, channel);
                 executorService.execute(new Runnable() {
                     @Override
-ServerToHostOperationHandlerFactoryService.this.callback.getValue().serverCommunicationRegistered(serverName, mgmtChannel, new ServerInventory.ProxyCreatedCallback() {
+                    public void run() {
                         final Channel mgmtChannel = channel;
-                        ServerToHostOperationHandlerFactoryService.this.callback.getValue().serverRegistered(serverName, mgmtChannel, new ServerInventory.ProxyCreatedCallback() {
+ServerToHostOperationHandlerFactoryService.this.callback.getValue().serverCommunicationRegistered(serverName, mgmtChannel, new ServerInventory.ProxyCreatedCallback() {
                             @Override
                             public void proxyOperationHandlerCreated(final ManagementMessageHandler handler) {
                                 channel.addCloseHandler(new CloseHandler<Channel>() {

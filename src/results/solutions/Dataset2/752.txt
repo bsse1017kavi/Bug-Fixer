@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.batch;
 
 /*
@@ -37,9 +36,9 @@ String[] directoryList(String qualifiedPackageName) {
 		int index = qualifiedPackageName.length();
 		int last = qualifiedPackageName.lastIndexOf(File.separatorChar);
 		while (--index > last && !Character.isUpperCase(qualifiedPackageName.charAt(index))) {}
-if (!doesFileExist(qualifiedPackageName, ""))  //$NON-NLS-1$
+		if (index > last) {
 			if (last == -1) {
-				if (!doesFileExist(qualifiedPackageName, ""))
+if (!doesFileExist(qualifiedPackageName, ""))  //$NON-NLS-1$
 					break notFound;
 			} else {
 				String packageName = qualifiedPackageName.substring(last + 1);

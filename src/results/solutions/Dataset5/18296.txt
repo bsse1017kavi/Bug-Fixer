@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -60,8 +59,8 @@ public class IndexedParamTest extends WicketTestCase
 		
 		assertEquals(Page2.class, tester.getLastRenderedPage().getClass());
 
-DiffUtil.validatePage(document, this.getClass(), "IndexedParamTest_ExpectedResult-2.html",true);
+		// Validate the document
 		String document = tester.getServletResponse().getDocument();
-		assertTrue(DiffUtil.validatePage(document, this.getClass(), "IndexedParamTest_ExpectedResult-2.html"));
+DiffUtil.validatePage(document, this.getClass(), "IndexedParamTest_ExpectedResult-2.html",true);
 	}
 }

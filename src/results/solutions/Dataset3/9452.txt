@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -242,9 +241,9 @@ public class UndertowDeploymentInfoService implements Service<DeploymentInfo> {
     private void handleIdentityManager(final DeploymentInfo deploymentInfo) {
 
         SecurityDomainContext sdc = securityDomainContextValue.getValue();
-if (auditManager != null && !mergedMetaData.isDisableAudit()) {
+        deploymentInfo.setIdentityManager(new JAASIdentityManagerImpl(sdc, mergedMetaData.getPrincipalVersusRolesMap()));
         AuditManager auditManager = sdc.getAuditManager();
-        if (auditManager != null) {
+if (auditManager != null && !mergedMetaData.isDisableAudit()) {
             deploymentInfo.addNotificationReceiver(new AuditNotificationReceiver(auditManager));
         }
         deploymentInfo.setConfidentialPortManager(getConfidentialPortManager());

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.AppRequester
@@ -336,9 +335,9 @@ class AppRequester
      * See DERBY-2602.
      */
     protected int getTimestampLength()
-DRDAConstants.JDBC_TIMESTAMP_LENGTH : DRDAConstants.DRDA_OLD_TIMESTAMP_LENGTH;
+    {
         return supportsTimestampNanoseconds() ?
-            DRDAConstants.JDBC_TIMESTAMP_LENGTH : DRDAConstants.DRDA_TIMESTAMP_LENGTH;
+DRDAConstants.JDBC_TIMESTAMP_LENGTH : DRDAConstants.DRDA_OLD_TIMESTAMP_LENGTH;
     }
 
 }

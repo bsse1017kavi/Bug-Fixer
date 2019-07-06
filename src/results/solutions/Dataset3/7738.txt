@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ public class MDBTestCase {
             jmsAdminOperations = JMSOperationsProvider.getInstance(managementClient);
             jmsAdminOperations.createJmsQueue("mdbtest/queue", "java:jboss/mdbtest/queue");
             jmsAdminOperations.createJmsQueue("mdbtest/replyQueue", "java:jboss/mdbtest/replyQueue");
-jmsAdminOperations.setSystemProperties("jboss/mdbtest/annoQueue", "hornetq-ra.rar");
+            jmsAdminOperations.createJmsQueue("mdbtest/annoQueue", "java:jboss/mdbtest/annoQueue");
             jmsAdminOperations.createJmsQueue("mdbtest/annoReplyQueue", "java:jboss/mdbtest/annoReplyQueue");
-            jmsAdminOperations.setSystemProperties("jboss/mdbtest/annoQueue", "hornetq-ra");
+jmsAdminOperations.setSystemProperties("jboss/mdbtest/annoQueue", "hornetq-ra.rar");
         }
 
         @Override

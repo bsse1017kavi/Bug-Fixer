@@ -1,4 +1,3 @@
-
 /*******************************************************************************
   * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -38,9 +37,9 @@ public class RemoteServiceImpl implements IRemoteService, InvocationHandler {
 	 * @see org.eclipse.ecf.remoteservice.IRemoteService#callAsynch(org.eclipse.ecf.remoteservice.IRemoteCall)
 	 */
 	public IFuture callAsynch(final IRemoteCall call) {
-public Object run(IProgressMonitor monitor) throws Exception {
+		JobsExecutor executor = new JobsExecutor(NLS.bind("callAsynch({0}", call.getMethod())); //$NON-NLS-1$
 		return executor.execute(new IProgressRunnable() {
-			public Object run(IProgressMonitor monitor) throws Throwable {
+public Object run(IProgressMonitor monitor) throws Exception {
 				return callSynch(call);
 			}
 		}, null);

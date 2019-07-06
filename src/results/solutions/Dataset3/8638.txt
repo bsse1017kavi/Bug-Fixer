@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ import javax.jms.TextMessage;
 
 /**
  * @author <a href="mailto:cdewolf@redhat.com">Carlo de Wolf</a>
-@ActivationConfigProperty(propertyName = "destination", propertyValue = "java:jboss/queue/test")
+ */
 @MessageDriven(activationConfig = {
-        @ActivationConfigProperty(propertyName = "destination", propertyValue = "queue/test")
+@ActivationConfigProperty(propertyName = "destination", propertyValue = "java:jboss/queue/test")
 })
 public class ReplyingMDB implements MessageListener {
     @Resource(lookup = "java:/JmsXA")

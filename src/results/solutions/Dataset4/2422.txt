@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class TransportBroadcastPingAction extends TransportBroadcastOperationAct
     @Override protected BroadcastPingRequest newRequest() {
         return new BroadcastPingRequest();
     }
-return clusterService.operationRouting().searchShards(clusterState, request.indices(), request.queryHint(), null, null);
+
     @Override protected GroupShardsIterator shards(BroadcastPingRequest request, ClusterState clusterState) {
-        return clusterService.operationRouting().searchShards(clusterState, request.indices(), request.queryHint(), null);
+return clusterService.operationRouting().searchShards(clusterState, request.indices(), request.queryHint(), null, null);
     }
 
     @Override protected BroadcastPingResponse newResponse(BroadcastPingRequest request, AtomicReferenceArray shardsResponses, ClusterState clusterState) {

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$ $Date:
  * 2006-05-26 07:46:36 +0200 (vr, 26 mei 2006) $
@@ -81,9 +80,9 @@ public class Check<T> extends WebMarkupContainer<T>
 
 		// must be attached to <input type="checkbox" .../> tag
 		checkComponentTag(tag, "input");
-CheckGroup<?> group = findParent(CheckGroup.class);
+		checkComponentTagAttribute(tag, "type", "checkbox");
 
-		CheckGroup group = findParent(CheckGroup.class);
+CheckGroup<?> group = findParent(CheckGroup.class);
 		String path = getPath();
 		if (group == null)
 		{

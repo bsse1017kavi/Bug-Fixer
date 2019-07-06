@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -29,9 +28,9 @@ import org.eclipse.swt.graphics.Image;
  */
 class JobInfo extends JobTreeElement {
 
-private volatile boolean canceled = false;
+    private IStatus blockedStatus;
 
-    private boolean canceled = false;
+private volatile boolean canceled = false;
     private List children = Collections.synchronizedList(new ArrayList());
 
     private Job job;

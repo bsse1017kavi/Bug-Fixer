@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -716,9 +715,9 @@ public class Redirector {
             String logHead = new StringBuffer("Error ").append(
                     ((appendErr) ? "appended" : "redirected")).append(" to ")
                     .toString();
-} else if (!(logError || outputStream == null) && errorProperty == null) {
+            errorStream = foldFiles(error, logHead, Project.MSG_VERBOSE,
                     appendErr, createEmptyFilesErr);
-        } else if (!(logError || outputStream == null)) {
+} else if (!(logError || outputStream == null) && errorProperty == null) {
             long funnelTimeout = 0L;
             OutputStreamFunneler funneler = new OutputStreamFunneler(
                     outputStream, funnelTimeout);

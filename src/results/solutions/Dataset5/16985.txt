@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -301,9 +300,9 @@ public class WebRequestCycle extends RequestCycle
 		// Get any component parameter
 		final String bookmarkableName = request.getParameter("bookmarkablePage");
 		if (bookmarkableName != null)
-Class pageClass = application.getPages().classForAlias(bookmarkableName);
+		{
 			// first see whether we have a logical mapping
-			Class pageClass = application.getPages().pageClassForAlias(bookmarkableName);
+Class pageClass = application.getPages().classForAlias(bookmarkableName);
 
 			// nope, we don't have a logical mapping, so this should be a full class name
 			if (pageClass == null)

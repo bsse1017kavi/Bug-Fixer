@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -228,9 +227,9 @@ public class SimplePageTest extends WicketTestCase
 		{
 			hit = true;
 
-assertTrue(mex.toString().contains("SimplePage_4.html"));
+			assertNotNull(mex.getMarkupStream());
 			assertTrue(mex.getMessage().contains("<span>"));
-			assertTrue(mex.getMessage().contains("SimplePage_4.html"));
+assertTrue(mex.toString().contains("SimplePage_4.html"));
 		}
 		assertTrue("Did expect a MarkupException", hit);
 	}

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -86,9 +85,9 @@ public class ServletClassLoaderImpl extends NetworkClassLoader implements Servle
 	this.context = context;
         initURLs(); 
     }
-URL baseURL = context.getDocumentBase();
+
     private void initURLs() {
-        URL baseURL = context.getServletBase();
+URL baseURL = context.getDocumentBase();
         String protocol = baseURL.getProtocol();
         int port = baseURL.getPort();
         String hostname = baseURL.getHost();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -57,9 +56,9 @@ abstract class AbstractSecurityMetaDataAccessorEJB implements SecurityMetaDataAc
     public String getSecurityDomain(final Deployment dep) {
         String securityDomain = null;
 
-if(nextSecurityDomain.isEmpty()) {
+        for (final EJBEndpoint ejbEndpoint : getEjbEndpoints(dep)) {
             String nextSecurityDomain = ejbEndpoint.getSecurityDomain();
-            if (nextSecurityDomain == null || nextSecurityDomain.isEmpty()) {
+if(nextSecurityDomain.isEmpty()) {
                 nextSecurityDomain = null;
             }
             securityDomain = getDomain(securityDomain, nextSecurityDomain);

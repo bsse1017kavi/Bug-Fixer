@@ -1,4 +1,3 @@
-
 package com.github.mobile.android;
 
 import static com.github.mobile.android.authenticator.Constants.GITHUB_ACCOUNT_TYPE;
@@ -66,9 +65,9 @@ public class GitHubModule extends AbstractModule {
     @Provides
     GitHubClient client(Account account, AccountManager accountManager) {
         return configureClient(new GitHubClient() {
-request.setRequestProperty(HEADER_ACCEPT, "application/vnd.github.beta.full+json");
+            protected HttpURLConnection configureRequest(final HttpURLConnection request) {
                 super.configureRequest(request);
-                request.setRequestProperty(HEADER_ACCEPT, "application/vnd.github.beta.html+json");
+request.setRequestProperty(HEADER_ACCEPT, "application/vnd.github.beta.full+json");
                 return request;
             }
         }, account, accountManager);

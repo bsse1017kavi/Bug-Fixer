@@ -1,4 +1,3 @@
-
 package org.apache.lucene.sandbox.queries;
 
 /*
@@ -60,9 +59,9 @@ public class DuplicateFilterTest extends LuceneTestCase {
     // Until we fix LUCENE-2348, the index must
     // have only 1 segment:
     writer.forceMerge(1);
-writer.shutdown();
+
     reader = writer.getReader();
-    writer.close();
+writer.shutdown();
     searcher = newSearcher(reader);
 
   }

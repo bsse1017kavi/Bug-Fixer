@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com), Nathan Sweet (admin@esotericsoftware.com)
  * 
@@ -70,9 +69,9 @@ public class GdxInvaders implements ApplicationListener {
 
 	}
 
-screen = new GameOver(Gdx.app);
+	@Override public void create () {
 		if (!isInitialized) {
-			screen = new MainMenu(Gdx.app);
+screen = new GameOver(Gdx.app);
 			Music music = Gdx.audio.newMusic(Gdx.files.getFileHandle("data/8.12.mp3", FileType.Internal));
 			music.setLooping(true);
 			music.play();

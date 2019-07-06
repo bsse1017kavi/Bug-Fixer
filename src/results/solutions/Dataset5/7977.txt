@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -133,9 +132,9 @@ public abstract class MetaDataKey implements Serializable
 	 *             Thrown if the type of the given object does not match the
 	 *             type for this key.
 	 */
-if (object != null && !type.isAssignableFrom(object.getClass()) )
+	void checkType(final Object object)
 	{
-		if (object != null && type.isAssignableFrom(object.getClass()) )
+if (object != null && !type.isAssignableFrom(object.getClass()) )
 		{
 			throw new IllegalArgumentException("MetaDataKey " + getClass()
 					+ " requires argument of " + type + ", not " + object.getClass());

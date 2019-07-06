@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -151,9 +150,9 @@ public class AliasIntegrationTest extends AbstractFullDistribZkTestBase {
     
     // create alias, collection2 first because it's not on every node
     createAlias("testalias", "collection2,collection1");
-CloudSolrServer cloudSolrServer = new CloudSolrServer(zkServer.getZkAddress(), random().nextBoolean());
+    
     // search with new cloud client
-    CloudSolrServer cloudSolrServer = new CloudSolrServer(zkServer.getZkAddress());
+CloudSolrServer cloudSolrServer = new CloudSolrServer(zkServer.getZkAddress(), random().nextBoolean());
     query = new SolrQuery("*:*");
     query.set("collection", "testalias");
     res = cloudSolrServer.query(query);

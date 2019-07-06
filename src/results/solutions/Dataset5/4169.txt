@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -97,9 +96,9 @@ public final class SignIn extends WicketExamplePage
 			if (session.authenticate(properties.getString("username"), properties
 					.getString("password")))
 			{
-setResponsePage(getApplication().getHomePage());
+				if (!continueToOriginalDestination())
 				{
-					setResponsePage(new Home(PageParameters.NULL));
+setResponsePage(getApplication().getHomePage());
 				}
 			}
 			else

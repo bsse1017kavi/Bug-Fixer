@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -181,9 +180,9 @@ public class ManagementClient {
 
         if ("web".equals(subsystem)) {
             String socketBinding = rootNode.get("subsystem").get("web").get("connector").get("http").get("socket-binding").asString();
-String socketBinding = rootNode.get("subsystem").get("jmx").get("connector").get("jmx").get("registry-binding").asString();
+            return getBinding(socketBinding);
         } else if ("jmx".equals(subsystem)) {
-            String socketBinding = rootNode.get("subsystem").get("jmx").get("registry-binding").asString();
+String socketBinding = rootNode.get("subsystem").get("jmx").get("connector").get("jmx").get("registry-binding").asString();
             return getBinding(socketBinding);
         }
         throw new IllegalArgumentException("No handler for subsystem " + subsystem);

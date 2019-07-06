@@ -1,4 +1,3 @@
-
 /* Copyright (c) 2006-2008 Jan S. Rellermeyer
  * Information and Communication Systems Research Group (IKS),
  * Department of Computer Science, ETH Zurich.
@@ -150,9 +149,9 @@ final class TCPChannelFactory implements NetworkChannelFactory {
 			if (port == -1) {
 				port = 9278;
 			}
-open(new Socket(endpointAddress.getHost(), port));
+			this.endpoint = endpoint;
 			this.remoteEndpointAddress = endpointAddress;
-			open(new Socket(endpointAddress.getHostName(), port));
+open(new Socket(endpointAddress.getHost(), port));
 			new ReceiverThread().start();
 		}
 

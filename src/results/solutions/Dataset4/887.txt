@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -256,9 +255,9 @@ public class FunctionScoreTests extends ElasticsearchIntegrationTest {
         if ("min".equals(scoreMode)) {
             expectedScore = Float.MAX_VALUE;
         }
-double functionScore = (double) weights[i] * scores[i];
+
         for (int i = 0; i < weights.length; i++) {
-            float functionScore = weights[i] * scores[i];
+double functionScore = (double) weights[i] * scores[i];
 
             if ("avg".equals(scoreMode)) {
                 expectedScore += functionScore;

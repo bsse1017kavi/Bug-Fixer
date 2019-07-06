@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class TestAction extends AbstractSampler {
 //             //Not yet implemented
 //            } else if (target==THREAD_GROUP) {
             } else if (target == TEST) {
-context.getEngine().stopTest();
+                if (action == STOP_NOW) {
                     log.info("Stopping all threads now");
-                    context.getEngine().askThreadsToStopNow();
+context.getEngine().stopTest();
                 } else {
                     log.info("Stopping all threads");
                     context.getEngine().askThreadsToStop();                    

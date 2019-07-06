@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -112,9 +111,9 @@ public class Math
         sel.groupBy(newSQLBuffer(sel, ctx, state));
     }
 
-sel.orderBy(newSQLBuffer(sel, ctx, state), asc, false, getSelectAs());
+    public void orderBy(Select sel, ExpContext ctx, ExpState state, 
         boolean asc) {
-        sel.orderBy(newSQLBuffer(sel, ctx, state), asc, false);
+sel.orderBy(newSQLBuffer(sel, ctx, state), asc, false, getSelectAs());
     }
 
     private SQLBuffer newSQLBuffer(Select sel, ExpContext ctx, ExpState state) {

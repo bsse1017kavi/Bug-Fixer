@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -42,9 +41,9 @@ class MethodSignatureImpl extends CodeSignatureImpl implements MethodSignature {
     String toString(StringMaker sm) {
         StringBuffer buf = new StringBuffer();
         buf.append(sm.makeModifiersString(getModifiers()));
-buf.append(sm.makePrimaryTypeName(getDeclaringType(),getDeclaringTypeName()));
+        if (sm.includeArgs) buf.append(sm.makeTypeName(getReturnType()));
         if (sm.includeArgs) buf.append(" ");        
-        buf.append(sm.makePrimaryTypeName(getDeclaringType()));
+buf.append(sm.makePrimaryTypeName(getDeclaringType(),getDeclaringTypeName()));
         buf.append(".");
         buf.append(getName());        
         sm.addSignature(buf, getParameterTypes());

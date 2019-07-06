@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.model.keyframe;
 
 import com.badlogic.gdx.graphics.g3d.materials.Material;
@@ -63,9 +62,9 @@ public class KeyframedModel implements AnimatedModel {
 		for(int i = 0; i < len; i++) {
 			KeyframedSubMesh subMesh = subMeshes[i];
 			KeyframedAnimation anim = subMesh.animations.get(animation);
-Keyframe keyframe = anim.keyframes[(int)time];
+			if(anim == null) throw new IllegalArgumentException("No animation with name '" + animation + "' in submesh #" + i);
 			// FIXME actually select frames and blend...
-			Keyframe keyframe = anim.keyframes[9];					
+Keyframe keyframe = anim.keyframes[(int)time];
 			
 			float[] src = keyframe.vertices;
 			int numComponents = keyframe.animatedComponents;

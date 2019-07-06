@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -50,8 +49,8 @@ class EstablishChannelModelControllerClient extends AbstractModelControllerClien
         this.port = port;
     }
 
-return ManagementClientChannelStrategy.create(hostName, port, executorService, null);
+    @Override
     ManagementClientChannelStrategy getClientChannelStrategy() throws URISyntaxException, IOException{
-        return ManagementClientChannelStrategy.create(hostName, port, executorService);
+return ManagementClientChannelStrategy.create(hostName, port, executorService, null);
     }
 }

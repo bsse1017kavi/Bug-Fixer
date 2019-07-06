@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -389,9 +388,9 @@ public class ZenDiscovery extends AbstractLifecycleComponent<Discovery> implemen
         } else {
             clusterService.submitStateUpdateTask("zen-disco-receive(from node[" + node + "])", new ClusterStateUpdateTask() {
                 @Override public ClusterState execute(ClusterState currentState) {
-logger.warn("Received a join request for an existing node [{}]", node);
+                    if (currentState.nodes().nodeExists(node.id())) {
                         // no change, the node already exists in the cluster
-                        logger.warn("Received an existing node [{}]", node);
+logger.warn("Received a join request for an existing node [{}]", node);
                         return currentState;
                     }
                     return newClusterStateBuilder().state(currentState).nodes(currentState.nodes().newNode(node)).build();

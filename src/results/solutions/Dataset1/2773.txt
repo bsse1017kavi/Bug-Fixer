@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ class CommitLogHeader
     private Map<Integer, Integer> lastFlushedAt; // position at which each CF was last flushed
     private final int cfCount; // we keep this in case cfcount changes in the interim (size of lastFlushedAt is not a good indication).
     
-this(new HashMap<Integer, Integer>(), CFMetaData.getCfToIdMap().size());
+    CommitLogHeader()
     {
-        this(new HashMap<Integer, Integer>(), CFMetaData.getCfIdMap().size());
+this(new HashMap<Integer, Integer>(), CFMetaData.getCfToIdMap().size());
     }
     
     /*

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -502,9 +501,9 @@ public class AssetManager implements Disposable {
 		// clear the rest of the stack
 		tasks.clear();
 
-listener.error(assetDesc, t);
+		// inform the listener that something bad happened
 		if (listener != null) {
-			listener.error(assetDesc.fileName, assetDesc.type, t);
+listener.error(assetDesc, t);
 		} else {
 			throw new GdxRuntimeException(t);
 		}

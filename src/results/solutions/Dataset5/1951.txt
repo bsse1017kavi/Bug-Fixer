@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.2 $ $Date$
@@ -88,9 +87,9 @@ public final class UrlResourceStream extends AbstractResourceStream
 			{
 				file = new File(new URI(url.toExternalForm()));
 			}
-log.info("cannot convert url: " + url + " to file (" + ex.getMessage() +
+			catch (Exception ex)
 			{
-				log.warn("cannot convert url: " + url + " to file (" + ex.getMessage() +
+log.info("cannot convert url: " + url + " to file (" + ex.getMessage() +
 						"), falling back to the inputstream for polling");
 			}
 			if (file != null && !file.exists())

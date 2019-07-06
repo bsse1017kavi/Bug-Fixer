@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -157,9 +156,9 @@ public class DefaultEjbClientContextService implements Service<EJBClientContext>
     /**
      * A {@link EJBClientConfiguration} which is applicable only for a {@link EJBClientContext}
      * consisting of just the {@link LocalEjbReceiver}. i.e. this client configuration cannot be used
-class LocalOnlyEjbClientConfiguration implements EJBClientConfiguration {
+     * for setting up connections to remote servers
      */
-    private class LocalOnlyEjbClientConfiguration implements EJBClientConfiguration {
+class LocalOnlyEjbClientConfiguration implements EJBClientConfiguration {
 
         private final DeploymentNodeSelector localPreferringDeploymentNodeSelector = new LocalEJBReceiverPreferringDeploymentNodeSelector();
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -211,9 +210,9 @@ public class RootObjectMapper extends ObjectMapper {
         String mappingType = dynamicTemplate.mappingType(dynamicType);
         Mapper.TypeParser typeParser = parserContext.typeParser(mappingType);
         if (typeParser == null) {
-return typeParser.parse(name, dynamicTemplate.mappingForName(name, dynamicType), parserContext);
+            throw new MapperParsingException("failed to find type parsed [" + mappingType + "] for [" + name + "]");
         }
-        return typeParser.parse(name, dynamicTemplate.mappingForName(name, mappingType), parserContext);
+return typeParser.parse(name, dynamicTemplate.mappingForName(name, dynamicType), parserContext);
     }
 
     public DynamicTemplate findTemplate(ContentPath path, String name, String dynamicType) {

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -28,9 +27,9 @@ public void computeConstant() {
 
 	int length = source.length - 1; //minus one because the last char is 'l' or 'L'
 	
-{	if (length == 1) { 	constant = Constant.fromValue(0L);	return;	}
+	long computedValue ;
 	if (source[0] == '0')
-	{	if (length == 1) { 	constant = Constant.fromValue(0);	return;	}
+{	if (length == 1) { 	constant = Constant.fromValue(0L);	return;	}
 		final int shift,radix;
 		int j ;
 		if ( (source[1] == 'x') | (source[1] == 'X') )

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -391,9 +390,9 @@ public abstract class Border extends WebMarkupContainerWithAssociatedMarkup
 			// Usually you add child components to Border instead of Body. Hence
 			// we need to help Body to properly resolve the children.
 			String id = tag.getId();
-Component component = Border.this.get(id);
+			if (!id.equals(BODY_ID))
 			{
-				Component component = get(id);
+Component component = Border.this.get(id);
 				if (component != null)
 				{
 					component.render(markupStream);

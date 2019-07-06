@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -155,9 +154,9 @@ public abstract class SolrTestCaseJ4 extends LuceneTestCase {
 
     SolrZkClient.numOpens.getAndSet(0);
     SolrZkClient.numCloses.getAndSet(0);
-if (endNumOpens-zkClientNumOpens != endNumCloses-zkClientNumCloses) {
+
     
-    if (endNumOpens-numOpens != endNumCloses-numCloses) {
+if (endNumOpens-zkClientNumOpens != endNumCloses-zkClientNumCloses) {
       String msg = "ERROR: SolrZkClient opens=" + (endNumOpens-zkClientNumOpens) + " closes=" + (endNumCloses-zkClientNumCloses);
       log.error(msg);
       testsFailed = true;

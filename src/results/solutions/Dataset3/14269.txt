@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class DeploymentUtils implements Closeable {
     public DeploymentUtils(String archiveName, Package... pkg) throws UnknownHostException {
         this();
         addDeployment(archiveName, pkg);
-public DeploymentUtils(Archive<?> archive) throws UnknownHostException {
+    }
 
-    public DeploymentUtils(Archive archive) throws UnknownHostException {
+public DeploymentUtils(Archive<?> archive) throws UnknownHostException {
         this();
         deployments.add(new ArbitraryDeployment(archive,false));
     }

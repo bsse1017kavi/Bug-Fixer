@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -270,9 +269,9 @@ public class PercolatorQueriesRegistry extends AbstractIndexShardComponent {
                     for (Map.Entry<HashedBytesRef, Query> entry : queries.entrySet()) {
                         Query previousQuery = percolateQueries.put(entry.getKey(), entry.getValue());
                         shardPercolateService.addedQuery(entry.getKey(), previousQuery, entry.getValue());
-searcher.close();
+                    }
                 } finally {
-                    searcher.release();
+searcher.close();
                 }
             } catch (Exception e) {
                 throw new PercolatorException(shardId.index(), "failed to load queries from percolator index", e);

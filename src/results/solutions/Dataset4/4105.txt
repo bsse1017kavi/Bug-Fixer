@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -51,8 +50,8 @@ public final class ElasticsearchThreadFilter implements ThreadFilter {
         if (threadName.contains("[" + MulticastChannel.SHARED_CHANNEL_NAME + "]")
                 || threadName.contains("[" + ElasticsearchSingleNodeTest.nodeName() + "]")
                 || threadName.contains("Keep-Alive-Timer")) {
-return nodePrefix.matcher(t.getName()).find();
+            return true;
         }
-        return nodePrefix.matcher(t.getName()).find() || true; // TODO disabled for now
+return nodePrefix.matcher(t.getName()).find();
     }
 }

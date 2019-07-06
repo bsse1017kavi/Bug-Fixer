@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -372,9 +371,9 @@ public class SQLStoreQuery
             tok.resetSyntax();
             tok.quoteChar('\'');
             tok.wordChars('0', '9');
-StringBuilder buf = new StringBuilder(sql.length());
+            tok.wordChars('?', '?');
 
-            StringBuffer buf = new StringBuffer(sql.length());
+StringBuilder buf = new StringBuilder(sql.length());
             for (int ttype; (ttype = tok.nextToken()) !=
                     StreamTokenizer.TT_EOF;) {
                 switch (ttype) {

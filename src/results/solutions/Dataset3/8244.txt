@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -49,9 +48,9 @@ public class TransferDrainer {
     for (String hostPort : bundles.keySet()) {
       IConnection connection = connections.get(hostPort);
       if (null != connection) { 
-if (null != iter && iter.hasNext()) {
+        ArrayList<ArrayList<TaskMessage>> bundle = bundles.get(hostPort);
         Iterator<TaskMessage> iter = getBundleIterator(bundle);
-        if (null != iter) {
+if (null != iter && iter.hasNext()) {
           connection.send(iter);
         }
       }

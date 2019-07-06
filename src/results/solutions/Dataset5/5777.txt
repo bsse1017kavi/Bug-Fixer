@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
@@ -83,9 +82,9 @@ public class XIncludeNamespaceSupport extends MultipleScopeNamespaceSupport {
      * @param prefix the prefix of the desired URI
      * @return the URI corresponding to the prefix in the context of the include parent
      */
-while (lastValidContext > 0 && !fValidContext[lastValidContext]) {
+    public String getURIFromIncludeParent(String prefix) {
         int lastValidContext = fCurrentContext - 1;
-        while (!fValidContext[lastValidContext]) {
+while (lastValidContext > 0 && !fValidContext[lastValidContext]) {
             lastValidContext--;
         }
         return getURI(prefix, lastValidContext);

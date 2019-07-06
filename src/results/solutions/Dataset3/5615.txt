@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -112,9 +111,9 @@ public class DeploymentManager implements Service<DeploymentManager> {
             final DeploymentServiceListener deploymentServiceListener = new DeploymentServiceListener();
             batchBuilder.addListener(deploymentServiceListener);
 
-deploymentServiceListener.waitForCompletion(); // Waiting for now.  This should not block at this point long term...
+            // Install the batch.
             batchBuilder.install();
-            deploymentServiceListener.waitForCompletion();
+deploymentServiceListener.waitForCompletion(); // Waiting for now.  This should not block at this point long term...
         } catch(DeploymentException e) {
             throw e;
         } catch(Throwable t) {

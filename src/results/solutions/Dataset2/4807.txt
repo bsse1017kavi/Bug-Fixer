@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -58,9 +57,9 @@ public class ClassScope extends Scope {
 		boolean hierarchyIsInconsistent = referenceContext.binding.isHierarchyInconsistent();
 		if (referenceContext.fields == null) {
 			if (hierarchyIsInconsistent) { // 72468
-new FieldBinding(IncompleteHierarchy, IntBinding, AccPrivate, referenceContext.binding, null);
+				referenceContext.binding.fields = new FieldBinding[1];
 				referenceContext.binding.fields[0] =
-					new FieldBinding(IncompleteHierarchy, VoidBinding, AccPrivate, referenceContext.binding, null);
+new FieldBinding(IncompleteHierarchy, IntBinding, AccPrivate, referenceContext.binding, null);
 			} else {
 				referenceContext.binding.fields = NoFields;
 			}

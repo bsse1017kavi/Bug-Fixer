@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -48,9 +47,9 @@ public class MeshShapeTest extends BaseBulletTest {
 		sphereConstructor.bodyInfo.setRestitution(1f);
 		world.addConstructor("sphere", sphereConstructor);
 		
-final BulletConstructor sceneConstructor = new BulletConstructor(sceneModel, 0f, new btBvhTriangleMeshShape(true, sceneModel));
+		final Model sceneModel = objLoader.loadModel(Gdx.files.internal("data/scene.obj"));
 		disposables.add(sceneModel);
-		final BulletConstructor sceneConstructor = new BulletConstructor(sceneModel, 0f, new btBvhTriangleMeshShape(sceneModel.meshParts));
+final BulletConstructor sceneConstructor = new BulletConstructor(sceneModel, 0f, new btBvhTriangleMeshShape(true, sceneModel));
 		sceneConstructor.bodyInfo.setRestitution(0.25f);
 		world.addConstructor("scene", sceneConstructor);
 		

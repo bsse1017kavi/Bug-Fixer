@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -87,9 +86,9 @@ public class ResourceUrlEncodingFilter extends OncePerRequestFilter {
 
 		private void initIndexLookupPath(ResourceUrlProvider urlProvider) {
 			if (this.indexLookupPath == null) {
-this.indexLookupPath = requestUri.lastIndexOf(lookupPath);
+				String requestUri = urlProvider.getPathHelper().getRequestUri(this.request);
 				String lookupPath = urlProvider.getPathHelper().getLookupPathForRequest(this.request);
-				this.indexLookupPath = requestUri.indexOf(lookupPath);
+this.indexLookupPath = requestUri.lastIndexOf(lookupPath);
 			}
 		}
 	}

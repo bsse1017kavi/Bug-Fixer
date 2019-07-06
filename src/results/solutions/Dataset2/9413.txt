@@ -1,4 +1,3 @@
-
 package uci.ui;
 
 import java.awt.*;
@@ -175,9 +174,9 @@ public class ToolBar extends JToolBar {
   protected static String stripJunk(String s) {
     String res = "";
     int len = s.length();
-if (Character.isJavaIdentifierPart(c)) res += c;
+    for (int i = 0; i < len; i++) {
       char c = s.charAt(i);
-      if (Character.isJavaLetterOrDigit(c)) res += c;
+if (Character.isJavaIdentifierPart(c)) res += c;
     }
     return res;
   }

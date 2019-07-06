@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -134,9 +133,9 @@ public class ClusterChangedEvent {
         // no need to check on version, since disco modules will make sure to use the
         // same instance if its a version match
         if (previousIndexMetaData == current) {
-return true;
+            return false;
         }
-        return false;
+return true;
     }
 
     public boolean blocksChanged() {

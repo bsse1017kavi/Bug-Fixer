@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class SessionManagerAdapterFactory implements io.undertow.servlet.api.Ses
 
     @Override
     public io.undertow.server.session.SessionManager createSessionManager(Deployment deployment) {
-SessionManager<LocalSessionContext> manager = this.factory.createSessionManager(context, factory, new LocalSessionContextFactory());
+        SessionContext context = new SessionContextAdapter(deployment);
         SessionIdentifierFactory factory = new SessionIdentifierFactoryAdapter(new SecureRandomSessionIdGenerator());
-        SessionManager<Void> manager = this.factory.createSessionManager(context, factory, null);
+SessionManager<LocalSessionContext> manager = this.factory.createSessionManager(context, factory, new LocalSessionContextFactory());
         return new SessionManagerAdapter(manager);
     }
 }

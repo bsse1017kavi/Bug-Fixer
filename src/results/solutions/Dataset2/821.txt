@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -390,9 +389,9 @@ public abstract class AttributeValue
     {
         if ( !Objects.equals(optionId, getOptionId()) )
         { 
-if ( !isNew() && !oldOptionIdIsSet && getOptionId() != null)
+            // if the value is set multiple times before saving only
             // save the last saved value
-            if ( !isNew() && !oldOptionIdIsSet ) 
+if ( !isNew() && !oldOptionIdIsSet && getOptionId() != null)
             {
                 oldOptionId = new NumberKey(getOptionId());
                 oldOptionIdIsSet = true;

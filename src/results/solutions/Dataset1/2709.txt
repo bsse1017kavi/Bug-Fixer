@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util;
 
 /**
@@ -293,9 +292,9 @@ public final class BytesRef implements Comparable<BytesRef>, Externalizable {
     offset = 0;
     if (length > 0) {
       bytes = new byte[length];
-bytes = EMPTY_BYTES;
+      in.read(bytes, 0, length);
     } else {
-      bytes = null;
+bytes = EMPTY_BYTES;
     }
   }
 }

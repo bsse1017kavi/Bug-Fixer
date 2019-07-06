@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ import static org.jboss.as.naming.util.NamingUtils.notAContextException;
  * nodes or binding nodes.  The context nodes are allowed to have children and can be represented by a NamingContext.  A
  * binding node is only allowed to have a normal object binding.
  *
-public class InMemoryNamingStore implements WritableNamingStore {
+ * @author John E. Bailey
  */
-public class InMemoryNamingStore implements NamingStore {
+public class InMemoryNamingStore implements WritableNamingStore {
 
     /* The root node of the tree.  Represents a JNDI name of "" */
     private final ContextNode root = new ContextNode(null, null, new CompositeName(), new NamingContext(this, null));

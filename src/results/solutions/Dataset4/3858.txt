@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class RestClusterHealthAction extends BaseRestHandler {
         controller.registerHandler(RestRequest.Method.GET, "/_cluster/health", this);
         controller.registerHandler(RestRequest.Method.GET, "/_cluster/health/{index}", this);
     }
-ClusterHealthRequest clusterHealthRequest = clusterHealthRequest(RestActions.splitIndices(request.param("index")));
+
     @Override public void handleRequest(final RestRequest request, final RestChannel channel) {
-        ClusterHealthRequest clusterHealthRequest = clusterHealth(RestActions.splitIndices(request.param("index")));
+ClusterHealthRequest clusterHealthRequest = clusterHealthRequest(RestActions.splitIndices(request.param("index")));
         int level = 0;
         try {
             clusterHealthRequest.timeout(request.paramAsTime("timeout", clusterHealthRequest.timeout()));

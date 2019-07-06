@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -81,9 +80,9 @@ public class TestMixedLockManagerRefreshException extends SequencedActionsTest {
             {Act.Find},
             {Act.SaveVersion},
             {Act.TestEmployee, 1, Default_FirstName},
-{Act.TestException, 0, null },
+            
             {Act.RefreshWithLock, 1, LockModeType.NONE },
-            {Act.TestException, 0, TransactionRequiredException.class },
+{Act.TestException, 0, null },
             
             {Act.RefreshWithLock, 1, LockModeType.READ },
             {Act.TestException, 0, TransactionRequiredException.class },

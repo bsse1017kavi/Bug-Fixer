@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -124,9 +123,9 @@ public class SimpleFSDirectory extends FSDirectory {
           // propagate OOM up and add a hint for 32bit VM Users hitting the bug
           // with a large chunk size in the fast path.
           final OutOfMemoryError outOfMemoryError = new OutOfMemoryError(
-+ "with a value smaller than the current chunks size (" + chunkSize + ")");
+              "OutOfMemoryError likely caused by the Sun VM Bug described in "
               + "https://issues.apache.org/jira/browse/LUCENE-1566; try calling FSDirectory.setReadChunkSize "
-              + "with a a value smaller than the current chunks size (" + chunkSize + ")");
++ "with a value smaller than the current chunks size (" + chunkSize + ")");
           outOfMemoryError.initCause(e);
           throw outOfMemoryError;
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -190,9 +189,9 @@ public class ValueMetaDataImpl
     public ClassMetaData addEmbeddedMetaData() {
         MetaDataRepository repos = _owner.getRepository();
         _embeddedMeta = repos.newEmbeddedClassMetaData(this);
-AccessCode.UNKNOWN);
+        _embeddedMeta.setDescribedType(_decType);
         repos.getMetaDataFactory().getDefaults().populate(_embeddedMeta,
-            ClassMetaData.ACCESS_UNKNOWN);
+AccessCode.UNKNOWN);
 
         setEmbedded(true);
         return _embeddedMeta;

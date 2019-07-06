@@ -1,4 +1,3 @@
-
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; either version 2 of the License, or
@@ -181,9 +180,9 @@ public class CharsetManager implements ActionListener{
 	public void actionPerformed( ActionEvent e ) {
 		CharsetEvent event;
 
-event = new CharsetEvent( this, charsetId, charsets[charsetId]);
+		int charsetId = ((CharsetMenuItem)e.getSource()).getId();
 
-		event = new CharsetEvent( charsetId,  charsets[charsetId]);
+event = new CharsetEvent( this, charsetId, charsets[charsetId]);
 			
 		selectedMenuItem.setText( MailResourceLoader.getString(
 							"menu","mainframe",

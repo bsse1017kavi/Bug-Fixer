@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -504,9 +503,9 @@ public interface Translog extends IndexShardComponent {
 
         public DeleteByQuery() {
         }
-this(deleteByQuery.source(), deleteByQuery.filteringAliases(), deleteByQuery.types());
+
         public DeleteByQuery(Engine.DeleteByQuery deleteByQuery) {
-            this(deleteByQuery.source(), deleteByQuery.types());
+this(deleteByQuery.source(), deleteByQuery.filteringAliases(), deleteByQuery.types());
         }
 
         public DeleteByQuery(byte[] source, String[] filteringAliases, String... types) {

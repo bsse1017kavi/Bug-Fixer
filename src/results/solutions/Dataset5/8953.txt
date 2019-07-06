@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,9 +25,9 @@ import javax.persistence.*;
 @Table(name="DEP1_MBI")
 public class Dependent1 {
     @EmbeddedId
-@MapsId("empPK")
+    DependentId1 id;
     
-    @MappedById("empPK")
+@MapsId("empPK")
     @ManyToOne Employee1 emp;
     
     public Employee1 getEmp() {

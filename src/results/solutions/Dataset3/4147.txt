@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012 Red Hat Inc. and/or its affiliates and other contributors
@@ -312,9 +311,9 @@ public class CacheMetricsHandler extends AbstractRuntimeOnlyHandler {
                                                                                     Class<T> interceptorClass) {
         for (CommandInterceptor interceptor : interceptors) {
             boolean isSubclass = interceptorClass.isAssignableFrom(interceptor.getClass());
-return interceptorClass.cast(interceptor);
+            if (isSubclass) {
                 Collections.emptyList();
-                return (T) interceptor;
+return interceptorClass.cast(interceptor);
             }
         }
         return null;

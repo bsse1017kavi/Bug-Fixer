@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public final class PropertyRemove extends AbstractPropertyUpdate {
         this.name = name;
     }
 
-public AbstractPropertyUpdate getCompensatingUpdate(final PropertiesElement original) {
+    /** {@inheritDoc} */
     @Override
-    protected AbstractPropertyUpdate getCompensatingUpdate(final PropertiesElement original) {
+public AbstractPropertyUpdate getCompensatingUpdate(final PropertiesElement original) {
         return new PropertyAdd(name, original.getProperty(name));
     }
 

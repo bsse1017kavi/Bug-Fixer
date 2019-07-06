@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -116,9 +115,9 @@ public class MockWebApplication extends WebApplication
      */
     public ApplicationSettings createApplicationSettings()
     {
-public IResourceFinder newResourceFinder()
+    	return new ApplicationSettings(this)
     	{
-    		public IResourceFinder createResourceFinder()
+public IResourceFinder newResourceFinder()
     		{
     			return new WebApplicationPath(context);
     		}

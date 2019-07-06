@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2002-2003, Simon Nieuviarts
  *
@@ -100,9 +99,9 @@ public class RoundRobin extends StubLB {
     }
 
     private static StubLBFilter emptyFilter = new StubLBFilter();
-return get(emptyFilter);
+
     public synchronized Remote get() throws NoMoreStubException {
-        return get(null);
+return get(emptyFilter);
     }
 
     public synchronized Remote get(StubLBFilter f) throws NoMoreStubException {

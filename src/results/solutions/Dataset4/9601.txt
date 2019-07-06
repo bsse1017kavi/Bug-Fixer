@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.particles;
 
 import java.awt.BorderLayout;
@@ -236,9 +235,9 @@ public class ParticleEditor extends JFrame {
 		private Sprite bgImage; // BOZO - Add setting background image to UI.
 
 		public void create () {
-Texture.setEnforcePotImages(false);
+			if (spriteBatch != null) return;
 
-			((LwjglGraphics)Gdx.graphics).setEnforcePotImages(false);
+Texture.setEnforcePotImages(false);
 
 			spriteBatch = new SpriteBatch();
 

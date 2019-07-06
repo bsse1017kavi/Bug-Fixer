@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -312,9 +311,9 @@ public class LoggerTestCase extends TestCase {
   void testHierarchy1() {
     Hierarchy h = new Hierarchy(new RootCategory((Level) Level.ERROR));
     Logger a0 = h.getLogger("a");
-assertSame(Level.ERROR, a0.getEffectiveLevel());
+    assertEquals("a", a0.getName());
     assertNull(a0.getLevel());
-    assertSame(Level.ERROR, a0.getChainedLevel());
+assertSame(Level.ERROR, a0.getEffectiveLevel());
 
     Logger a1 = h.getLogger("a");
     assertSame(a0, a1);

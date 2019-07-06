@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ class WebConnectorMetrics implements OperationStepHandler {
     static final String[] NO_LOCATION = new String[0];
     static final String[] ATTRIBUTES = new String[] {Constants.BYTES_SENT, Constants.BYTES_RECEIVED, Constants.PROCESSING_TIME, Constants.ERROR_COUNT, Constants.MAX_TIME, Constants.REQUEST_COUNT};
 
-if (context.isNormalServer()) {
+    @Override
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 @Override
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

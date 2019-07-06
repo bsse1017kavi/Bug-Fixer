@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -15,9 +14,9 @@ import org.eclipse.jdt.internal.compiler.lookup.*;
 
 public class SelectionNodeFound extends RuntimeException {
 	public Binding binding;
-this(null, false); // we found a problem in the selection node
+	public boolean isDeclaration;
 public SelectionNodeFound() {
-	this(null); // we found a problem in the selection node
+this(null, false); // we found a problem in the selection node
 }
 public SelectionNodeFound(Binding binding) {
 	this(binding, false);

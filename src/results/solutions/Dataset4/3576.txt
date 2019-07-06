@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -236,9 +235,9 @@ public abstract class TransportBroadcastOperationAction<Request extends Broadcas
                 performOperation(shardIt, nextShard, shardIndex);
             } else {
                 if (logger.isDebugEnabled()) {
-logger.debug("{}: failed to executed [{}]", t, shard != null ? shard.shortSummary() : shardIt.shardId(), request);
+                    if (t != null) {
                         if (!TransportActions.isShardNotAvailableException(t)) {
-                            logger.debug("{}: failed to execute [{}]", t, shard != null ? shard.shortSummary() : shardIt.shardId(), request);
+logger.debug("{}: failed to executed [{}]", t, shard != null ? shard.shortSummary() : shardIt.shardId(), request);
                         }
                     }
                 }

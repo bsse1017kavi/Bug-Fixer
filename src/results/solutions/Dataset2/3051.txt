@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 import java.util.List;
@@ -58,9 +57,9 @@ public class ReportPeer
         {
             report = (Report)reports.get(0);
         }
-throw new ScarabException(L10NKeySet.ExceptionMultipleReports,
+        else if (reports.size() > 1) 
         {
-            throw ScarabException.create(L10NKeySet.ExceptionMultipleReports,
+throw new ScarabException(L10NKeySet.ExceptionMultipleReports,
                                       name);
         }
         

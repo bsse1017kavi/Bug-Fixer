@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -23,9 +22,9 @@ import org.springframework.util.ClassUtils;
 /**
  * Creates a mapping target by calling its default constructor.
  * @author Keith Donald
-final class DefaultMapperTargetFactory implements MapperTargetFactory {
+ * @see BeanUtils#instantiate(Class)
  */
-class DefaultMapperTargetFactory implements MapperTargetFactory {
+final class DefaultMapperTargetFactory implements MapperTargetFactory {
 
 	public boolean supports(TypeDescriptor targetType) {
 		return ClassUtils.hasConstructor(targetType.getType(), null);

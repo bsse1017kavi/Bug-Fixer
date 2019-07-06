@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -226,9 +225,9 @@ public class ServerControllerUnitTestCase {
         protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration) {
             this.rootRegistration = rootRegistration;
             Properties properties = new Properties();
-ServerControllerModelUtil.initOperations(rootRegistration, null, persister, environment, processState, null, false);
+            properties.put("jboss.home.dir", ".");
             final ServerEnvironment environment = new ServerEnvironment(properties, new HashMap<String, String>(), null, ServerEnvironment.LaunchType.DOMAIN);
-            ServerControllerModelUtil.initOperations(rootRegistration, null, persister, environment, processState, null);
+ServerControllerModelUtil.initOperations(rootRegistration, null, persister, environment, processState, null, false);
         }
 
         @Override

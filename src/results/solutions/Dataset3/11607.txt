@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public final class ZTestCase extends AbstractTestCase {
                     .createCompressorInputStream(CompressorStreamFactory.Z, is);
             }
         });
-private void testUnarchive(StreamWrapper<CompressorInputStream> wrapper) throws Exception {
+    }
 
-    private void testUnarchive(StreamWrapper wrapper) throws Exception {
+private void testUnarchive(StreamWrapper<CompressorInputStream> wrapper) throws Exception {
         final File input = getFile("bla.tar.Z");
         final File output = new File(dir, "bla.tar");
         final InputStream is = new FileInputStream(input);

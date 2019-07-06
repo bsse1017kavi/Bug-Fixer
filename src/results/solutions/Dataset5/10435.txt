@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -2801,9 +2800,9 @@ public class PCEnhancer {
         code.getstatic().setField(PRE + "FieldNames", String[].class);
         code.getstatic().setField(PRE + "FieldTypes", Class[].class);
         code.getstatic().setField(PRE + "FieldFlags", byte[].class);
-if (_meta.isMapped() || _meta.isAbstract())
+        code.getstatic().setField(SUPER, Class.class);
         
-        if (_meta.isMapped())
+if (_meta.isMapped() || _meta.isAbstract())
             code.constant().setValue(_meta.getTypeAlias());
         else
             code.constant().setNull();

@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.remoteservice;
 
 import org.eclipse.ecf.remoteservice.events.*;
@@ -12,9 +11,9 @@ import org.eclipse.ecf.remoteservice.events.*;
 public abstract class AbstractRemoteCallListener implements IRemoteCallListener {
 
 	protected IRemoteCall remoteCall;
-public void handleEvent(IRemoteCallEvent event) {
+	protected IRemoteServiceReference remoteReference;
 
-	public void handleServiceEvent(IRemoteServiceEvent event) {
+public void handleEvent(IRemoteCallEvent event) {
 		if (event instanceof IRemoteCallStartEvent)
 			this.handleRemoteCallStartEvent((IRemoteCallStartEvent) event);
 		else if (event instanceof IRemoteCallCompleteEvent)

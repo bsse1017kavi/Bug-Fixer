@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public class TestArbitraryIndexDir extends AbstractSolrTestCase{
 
     //add a doc in the new index dir
     Directory dir = newFSDirectory(newDir);
-new IndexWriterConfig(TEST_VERSION_CURRENT, new StandardAnalyzer(TEST_VERSION_CURRENT))
+    IndexWriter iw = new IndexWriter(
         dir,
-        new IndexWriterConfig(Version.LUCENE_40, new StandardAnalyzer(Version.LUCENE_40))
+new IndexWriterConfig(TEST_VERSION_CURRENT, new StandardAnalyzer(TEST_VERSION_CURRENT))
     );
     Document doc = new Document();
     doc.add(new TextField("id", "2", Field.Store.YES));

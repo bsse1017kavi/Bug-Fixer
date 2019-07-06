@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.backends.jglfw;
 
 import static com.badlogic.jglfw.Glfw.*;
@@ -98,9 +97,9 @@ public class JglfwInput implements Input {
 		if (queueEvents)
 			inputProcessor = processorQueue = new InputProcessorQueue(inputProcessor);
 		else
-app.callbacks.add(new GlfwInputProcessor(inputProcessor));
+			processorQueue = null;
 
-		app.getCallbacks().add(new GlfwInputProcessor(inputProcessor));
+app.callbacks.add(new GlfwInputProcessor(inputProcessor));
 	}
 
 	public void update () {

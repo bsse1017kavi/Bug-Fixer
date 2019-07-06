@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -338,9 +337,9 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 	 * Add one or more interceptors to be invoked after the execution of a controller
 	 * method annotated with {@code @ResponseBody} or returning {@code ResponseEntity}
 	 * but before the body is written to the response with the selected
-public void setResponseBodyInterceptors(List<ResponseBodyInterceptor<?>> responseBodyInterceptors) {
+	 * {@code HttpMessageConverter}.
 	 */
-	public void setResponseBodyInterceptors(List<ResponseBodyInterceptor> responseBodyInterceptors) {
+public void setResponseBodyInterceptors(List<ResponseBodyInterceptor<?>> responseBodyInterceptors) {
 		this.responseBodyInterceptors.clear();
 		if (responseBodyInterceptors != null) {
 			this.responseBodyInterceptors.addAll(responseBodyInterceptors);

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.actions;
 
 /* ================================================================
@@ -129,9 +128,9 @@ public class ChangePassword extends ScarabTemplateAction
                     scarabR.setConfirmMessage(l10n.get("PasswordChanged"));
                     setTarget(data, "Login.vm");
                 }
-scarabR.setAlertMessage(l10n.getMessage(pme));
+                catch (PasswordMismatchException pme)
                 {
-                    scarabR.setAlertMessage(pme.getMessage());
+scarabR.setAlertMessage(l10n.getMessage(pme));
                     setTarget(data, template);
                 }
             }

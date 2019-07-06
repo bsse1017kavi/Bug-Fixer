@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -96,9 +95,9 @@ public class TransportGetAction extends TransportShardSingleOperationAction<GetR
     protected GetResponse shardOperation(GetRequest request, int shardId) throws ElasticSearchException {
         IndexService indexService = indicesService.indexServiceSafe(request.index());
         IndexShard indexShard = indexService.shardSafe(shardId);
-indexShard.refresh(new Engine.Refresh("refresh_flag_get").force(REFRESH_FORCE));
+
         if (request.refresh() && !request.realtime()) {
-            indexShard.refresh(new Engine.Refresh().force(REFRESH_FORCE).source("refresh_flag_get"));
+indexShard.refresh(new Engine.Refresh("refresh_flag_get").force(REFRESH_FORCE));
         }
 
         GetResult result = indexShard.getService().get(request.type(), request.id(), request.fields(),

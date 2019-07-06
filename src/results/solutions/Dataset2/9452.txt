@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -56,9 +55,9 @@ public class ResourceUpdateListener implements IResourceChangeListener {
 	 * 
 	 * @see org.eclipse.core.resources.IResourceChangeListener#resourceChanged(org.eclipse.core.resources.IResourceChangeEvent)
 	 */
-if (definitionsToNatures == null || event.getDelta() == null)
+	public void resourceChanged(IResourceChangeEvent event) {
 
-		if (definitionsToNatures == null)
+if (definitionsToNatures == null || event.getDelta() == null)
 			return;
 
 		IResourceDelta[] deltas = event.getDelta().getAffectedChildren();

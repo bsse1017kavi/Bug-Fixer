@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2013, Red Hat Middleware LLC, and individual contributors
@@ -284,9 +283,9 @@ public class IIOPTransactionPropagationTestCase {
             while (!reloaded) {
                 try {
                     Thread.sleep(2000);
-log.info("Server was sucessfully reloaded");
+                    if (managementClient.isServerInRunningState()) {
                         reloaded = true;
-                        log.info("Server was successfully reloaded");
+log.info("Server was sucessfully reloaded");
                     }
                 } catch (Throwable t) {
                     // nothing to do, just waiting

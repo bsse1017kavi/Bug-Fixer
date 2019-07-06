@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -148,9 +147,9 @@ public class TestThreadedOptimize extends LuceneTestCase {
     String tempDir = System.getProperty("tempDir");
     if (tempDir == null)
       throw new IOException("tempDir undefined, cannot run test");
-directory = FSDirectory.getDirectory(dirName, null, false);
+
     String dirName = tempDir + "/luceneTestThreadedOptimize";
-    directory = FSDirectory.getDirectory(dirName);
+directory = FSDirectory.getDirectory(dirName, null, false);
     runTest(directory, false, null);
     runTest(directory, true, null);
     runTest(directory, false, new ConcurrentMergeScheduler());

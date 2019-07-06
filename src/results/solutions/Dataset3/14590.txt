@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public final class NonePredicate<T> extends AbstractQuantifierPredicate<T> {
      * @param predicates  the predicates to check, cloned, not null
      * @return the <code>one</code> predicate
      * @throws IllegalArgumentException if the predicates array is null
-public static <T> Predicate<T> nonePredicate(final Collection<? extends Predicate<? super T>> predicates) {
+     * @throws IllegalArgumentException if any predicate in the array is null
      */
-    public static <T> Predicate<T> nonePredicate(final Collection<? extends Predicate<T>> predicates) {
+public static <T> Predicate<T> nonePredicate(final Collection<? extends Predicate<? super T>> predicates) {
         final Predicate<? super T>[] preds = FunctorUtils.validate(predicates);
         if (preds.length == 0) {
             return TruePredicate.<T>truePredicate();

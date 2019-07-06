@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -171,9 +170,9 @@ public class ConstantScoreQuery extends Query {
 
   protected class ConstantScorer extends Scorer {
     final DocIdSetIterator docIdSetIterator;
-public ConstantScorer(DocIdSetIterator docIdSetIterator, Weight w, float theScore) {
+    final float theScore;
 
-    public ConstantScorer(DocIdSetIterator docIdSetIterator, Weight w, float theScore) throws IOException {
+public ConstantScorer(DocIdSetIterator docIdSetIterator, Weight w, float theScore) {
       super(w);
       this.theScore = theScore;
       this.docIdSetIterator = docIdSetIterator;

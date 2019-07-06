@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -102,9 +101,9 @@ protected int matchContainer() {
 public void initializePolymorphicSearch(MatchLocator locator, IProgressMonitor progressMonitor) {
 	try {
 		this.allSuperDeclaringTypeNames = 
-locator,
+			new SuperTypeNamesCollector(
 				this, 
-				locator.handleFactory,
+locator,
 				this.declaringType, 
 				progressMonitor).collect();
 	} catch (JavaModelException e) {

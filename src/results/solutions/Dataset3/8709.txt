@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -67,9 +66,9 @@ public class SessionDisconnectEvent extends ApplicationEvent {
 		return this.status;
 	}
 
-return "SessionDisconnectEvent[sessionId=" + this.sessionId + ", " +
+	@Override
 	public String toString() {
-		return "SessionDisconnectEvent[sessionId=" + this.sessionId +
+return "SessionDisconnectEvent[sessionId=" + this.sessionId + ", " +
 				(this.status != null ? this.status.toString() : "closeStatus=null") + "]";
 	}
 }

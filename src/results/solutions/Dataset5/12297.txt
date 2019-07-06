@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -131,9 +130,9 @@ final class ObjectFactory {
         ClassLoader cl = findClassLoader();
 
         // Use the system property first
-if (systemProp != null && systemProp.length() > 0) {
+        try {
             String systemProp = SecuritySupport.getSystemProperty(factoryId);
-            if (systemProp != null) {
+if (systemProp != null && systemProp.length() > 0) {
                 if (DEBUG) debugPrintln("found system property, value=" + systemProp);
                 return newInstance(systemProp, cl, true);
             }

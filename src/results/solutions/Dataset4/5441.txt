@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -143,9 +142,9 @@ public class IndexFieldMapper extends AbstractFieldMapper<String> implements Int
     @Override public String indexedValue(String value) {
         return value;
     }
-return names().createIndexNameTerm(value);
+
     public Term term(String value) {
-        return termFactory.createTerm(value);
+return names().createIndexNameTerm(value);
     }
 
     @Override public void preParse(ParseContext context) throws IOException {

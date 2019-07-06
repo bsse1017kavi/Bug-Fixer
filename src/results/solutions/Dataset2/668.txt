@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -134,9 +133,9 @@ public  class IssueTemplateInfo
         if (user.hasPermission(ScarabSecurity.ITEM__APPROVE, module))
         {
             setApproved(true);
-setScopeId(Scope.MODULE__PK);
+            if (approved)
             {
-                setScopeId(Scope.GLOBAL__PK);
+setScopeId(Scope.MODULE__PK);
             }
             save();
         } 

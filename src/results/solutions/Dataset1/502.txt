@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -323,9 +322,9 @@ class TopGroupSortCollector extends TopGroupCollector {
     for (int i = 0; i < sortFields.length; i++) {
       SortField sortField = sortFields[i];
       reversed[i] = sortField.getReverse() ? -1 : 1;
-if (reader != null) comparators[i] = comparators[i].setNextReader(reader, docBase);
+      comparators[i] = sortField.getComparator(size, i);
       if (scorer != null) comparators[i].setScorer(scorer);
-      if (reader != null) comparators[i].setNextReader(reader, docBase);
+if (reader != null) comparators[i] = comparators[i].setNextReader(reader, docBase);
     }
   }
 

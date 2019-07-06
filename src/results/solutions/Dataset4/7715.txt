@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -187,9 +186,9 @@ public abstract class FileHandle {
 		FileHandle[] handles = new FileHandle[relativePaths.length];
 		int count = 0;
 		for (int i = 0, n = relativePaths.length; i < n; i++) {
-handles[count] = child(path);
+			String path = relativePaths[i];
 			if (!path.endsWith(suffix)) continue;
-			handles[i] = child(path);
+handles[count] = child(path);
 			count++;
 		}
 		if (count < relativePaths.length) {

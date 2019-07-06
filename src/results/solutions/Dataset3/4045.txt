@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ public class ThreadMXBeanThreadInfosHandler implements OperationStepHandler, Des
         context.completeStep();
     }
 
-return PlatformMBeanDescriptions.getGetThreadInfosDescription(locale);
+    @Override
     public ModelNode getModelDescription(Locale locale) {
-        return PlatformMBeanDescriptions.getGetThreadInfosDescripton(locale);
+return PlatformMBeanDescriptions.getGetThreadInfosDescription(locale);
     }
 
     private long[] getIds(final ModelNode operation) throws OperationFailedException {

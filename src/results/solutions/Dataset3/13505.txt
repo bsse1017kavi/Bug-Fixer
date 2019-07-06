@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class JBossStandaloneEJBContainer extends EJBContainer {
                 log.warnf(e, "Failed to undeploy %s", deployment);
             }
         }
-tempFile.delete();
+        server.stop();
         for(File tempFile : tempFiles) {
-            //tempFile.delete();
+tempFile.delete();
         }
     }
 

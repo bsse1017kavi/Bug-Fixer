@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ class LogStoreAddHandler implements OperationStepHandler {
     @Override
     public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {
         // Add the log store resource
-for (final SimpleAttributeDefinition attribute : LogStoreDefinition.LOG_STORE_ATTRIBUTE) {
+        final ModelNode model = resource.getModel();
 
-        for (final SimpleAttributeDefinition attribute : LogStoreProviders.LOG_STORE_ATTRIBUTE) {
+for (final SimpleAttributeDefinition attribute : LogStoreDefinition.LOG_STORE_ATTRIBUTE) {
             if (operation.get(attribute.getName()).isDefined())  {
                 attribute.validateAndSet(operation, model);
             } else {

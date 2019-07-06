@@ -1,4 +1,3 @@
-
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +32,9 @@ public class DeploymentManifest extends Manifest {
 	public static DeploymentManifest newInstance(SubsystemManifest manifest, SubsystemEnvironment environment) {
 		DeploymentManifest result = new DeploymentManifest();
 		result.headers.put(ManifestVersionHeader.NAME, manifest.getManifestVersion());
-Requirement requirement = new OsgiIdentityRequirement(content.getName(), content.getVersionRange(), content.getType(), false);
+		Collection<Requirement> requirements = new ArrayList<Requirement>();
 		for (SubsystemContentHeader.Content content : manifest.getSubsystemContent().getContents()) {
-			Requirement requirement = OsgiIdentityRequirement.newInstance(content);
+Requirement requirement = new OsgiIdentityRequirement(content.getName(), content.getVersionRange(), content.getType(), false);
 			requirements.add(requirement);
 		}
 		// TODO This does not validate that all content bundles were found.

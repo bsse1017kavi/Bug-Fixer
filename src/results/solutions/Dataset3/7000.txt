@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import javax.ejb.Singleton;
  * @author Jaikiran Pai
  */
 @Singleton
-public class ReadOnlySingletonBean implements ReadOnlySingleton{
+@LocalBean
 @Lock(value = LockType.READ)
-public class ReadOnlySingletonBean {
+public class ReadOnlySingletonBean implements ReadOnlySingleton{
 
 
     @AccessTimeout(value = 1, unit = TimeUnit.SECONDS)

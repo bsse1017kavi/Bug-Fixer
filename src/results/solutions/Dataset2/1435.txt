@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -726,9 +725,9 @@ public class LogUI extends JFrame implements ChainsawViewer, SettingsListener {
     preferencesFrame.setTitle("'Application-wide Preferences");
     preferencesFrame.setIconImage(
       ((ImageIcon) ChainsawIcons.ICON_PREFERENCES).getImage());
-preferencesFrame.setSize(640, 520);
+    preferencesFrame.getContentPane().add(applicationPreferenceModelPanel);
 
-    preferencesFrame.setSize(640, 480);
+preferencesFrame.setSize(640, 520);
 
     Dimension screenDimension = Toolkit.getDefaultToolkit().getScreenSize();
     preferencesFrame.setLocation(

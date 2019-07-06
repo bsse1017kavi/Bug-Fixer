@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -122,9 +121,9 @@ public class ChannelOpenListenerService implements Service<Void>, OpenListener {
         final ManagementChannel managementChannel = new ManagementChannelFactory(handler).create(channelName, channel);
         channels.add(managementChannel);
         log.tracef("Opened %s: %s with handler %s", channelName, managementChannel, handler);
-public void handleClose(final Channel closed, final IOException exception) {
+        managementChannel.startReceiving();
         channel.addCloseHandler(new CloseHandler<Channel>() {
-            public void handleClose(Channel closed) {
+public void handleClose(final Channel closed, final IOException exception) {
                 channels.remove(managementChannel);
                 try {
                     managementChannel.sendByeBye();

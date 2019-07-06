@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -47,9 +46,9 @@ public class WebInjectionContainer {
         this.classloader = classloader;
         this.componentRegistry = componentRegistry;
         this.instanceMap = new ConcurrentReferenceHashMap<Object, ManagedReference>
-ConcurrentReferenceHashMap.ReferenceType.WEAK, EnumSet.of(ConcurrentReferenceHashMap.Option.IDENTITY_COMPARISONS));
+                (256, ConcurrentReferenceHashMap.DEFAULT_LOAD_FACTOR,
                         Runtime.getRuntime().availableProcessors(), ConcurrentReferenceHashMap.ReferenceType.STRONG,
-                        ConcurrentReferenceHashMap.ReferenceType.STRONG, EnumSet.of(ConcurrentReferenceHashMap.Option.IDENTITY_COMPARISONS));
+ConcurrentReferenceHashMap.ReferenceType.WEAK, EnumSet.of(ConcurrentReferenceHashMap.Option.IDENTITY_COMPARISONS));
     }
 
 

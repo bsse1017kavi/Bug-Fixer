@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ class DirectServerCommunicationListener{
             Server server = serverManager.getServer(processName);
 
             if (server == null) {
-server.setCommunicationHandler(DirectServerCommunicationHandler.create(SocketConnection.accepted(socket), processName, new MessageHandler(serverManager), serverManager));
+                throw new InitialSocketRequestException("Server acceptor: unknown server " + processName);
             }
-            server.setCommunicationHandler(DirectServerCommunicationHandler.create(SocketConnection.accepted(socket), processName, new MessageHandler(serverManager)));
+server.setCommunicationHandler(DirectServerCommunicationHandler.create(SocketConnection.accepted(socket), processName, new MessageHandler(serverManager), serverManager));
         }
     }
 }

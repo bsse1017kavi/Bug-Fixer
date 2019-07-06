@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -94,9 +93,9 @@ public class UnicastZenPing extends AbstractLifecycleComponent<ZenPing> implemen
         List<String> hosts = Lists.newArrayList(componentSettings.getAsArray("hosts"));
         if (componentSettings.get("hosts") != null) {
             hosts.addAll(Strings.commaDelimitedListToSet(componentSettings.get("hosts")));
-logger.debug("Using hosts {}", hosts);
+        }
 
-        logger.debug("Using hosts ", hosts);
+logger.debug("Using hosts {}", hosts);
 
         List<DiscoveryNode> nodes = Lists.newArrayList();
         int idCounter = 0;

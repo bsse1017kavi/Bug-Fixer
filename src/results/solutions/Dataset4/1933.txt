@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class DiscoveryNode implements Streamable, Serializable {
         }
         return master.equals("true");
     }
-String data = settings.get("node.data");
+
     public static boolean dataNode(Settings settings) {
-        String data = settings.get("data");
+String data = settings.get("node.data");
         if (data == null) {
             return !clientNode(settings);
         }

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -278,9 +277,9 @@ public class ZipFile implements Closeable {
      * @return all entries as {@link ZipArchiveEntry} instances
      *
      * @since 1.1
-ZipArchiveEntry[] allEntries = entries.toArray(new ZipArchiveEntry[entries.size()]);
+     */
     public Enumeration<ZipArchiveEntry> getEntriesInPhysicalOrder() {
-        ZipArchiveEntry[] allEntries = entries.toArray(new ZipArchiveEntry[0]);
+ZipArchiveEntry[] allEntries = entries.toArray(new ZipArchiveEntry[entries.size()]);
         Arrays.sort(allEntries, OFFSET_COMPARATOR);
         return Collections.enumeration(Arrays.asList(allEntries));
     }

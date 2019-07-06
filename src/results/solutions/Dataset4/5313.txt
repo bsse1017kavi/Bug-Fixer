@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -138,9 +137,9 @@ public class ChildMemoryCircuitBreaker implements CircuitBreaker {
                             new ByteSizeValue(bytes), label, new ByteSizeValue(newUsed),
                             memoryBytesLimit, new ByteSizeValue(memoryBytesLimit),
                             newUsedWithOverhead, new ByteSizeValue(newUsedWithOverhead));
-logger.warn("[{}] New used memory {} [{}] from field [{}] would be larger than configured breaker: {} [{}], breaking",
+                }
                 if (memoryBytesLimit > 0 && newUsedWithOverhead > memoryBytesLimit) {
-                    logger.error("[{}] New used memory {} [{}] from field [{}] would be larger than configured breaker: {} [{}], breaking",
+logger.warn("[{}] New used memory {} [{}] from field [{}] would be larger than configured breaker: {} [{}], breaking",
                             this.name,
                             newUsedWithOverhead, new ByteSizeValue(newUsedWithOverhead), label,
                             memoryBytesLimit, new ByteSizeValue(memoryBytesLimit));

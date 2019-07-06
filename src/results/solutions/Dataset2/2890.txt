@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -66,9 +65,9 @@ public class SaveMessageCommand extends Command {
 
 		SendableMessage message = (SendableMessage) r.getMessage();
 
-.getModel())).compose(worker, r.isAppendSignature());
+		if (message == null) {
 			message = new MessageComposer(((ComposerModel) composerController
-					.getModel())).compose(worker);
+.getModel())).compose(worker, r.isAppendSignature());
 		}
 		
 		

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class HttpRequest {
         } catch (InterruptedException e) {
             // should not happen
             throw new RuntimeException(e);
-throw new IOException(e);
+        } catch (ExecutionException e) {
             // by virtue of the Callable redefinition above I can cast
-            throw (IOException) e.getCause();
+throw new IOException(e);
         } finally {
             executor.shutdownNow();
             try {

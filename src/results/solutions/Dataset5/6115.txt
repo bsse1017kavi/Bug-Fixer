@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -392,9 +391,9 @@ public class ExecTask extends Task
         if( dir == null ) dir = getBaseDirectory();
         // show the command
         log( cmdl.toString(), Project.MSG_VERBOSE );
-exe.setAntRun( getProject() );
+
         Execute exe = new Execute( createHandler(), createWatchdog() );
-        exe.setAntRun( project );
+exe.setAntRun( getProject() );
         exe.setWorkingDirectory( dir );
         exe.setVMLauncher( vmLauncher );
         String[] environment = env.getVariables();

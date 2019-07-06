@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -184,9 +183,9 @@ class ConfigurationClassParser {
 			int nLocations = locations.length;
 			if (nLocations == 0) {
 				throw new IllegalArgumentException("At least one @PropertySource(value) location is required");
-locations[i] = this.environment.resolveRequiredPlaceholders(locations[i]);
+			}
 			for (int i = 0; i < nLocations; i++) {
-				locations[0] = this.environment.resolveRequiredPlaceholders(locations[0]);
+locations[i] = this.environment.resolveRequiredPlaceholders(locations[i]);
 			}
 			ClassLoader classLoader = this.resourceLoader.getClassLoader();
 			if (!StringUtils.hasText(name)) {

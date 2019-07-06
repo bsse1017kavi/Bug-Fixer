@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -164,9 +163,9 @@ public class PackedArrayIndexFieldData extends AbstractIndexFieldData<AtomicNume
                 if (missingValue != 0) {
                     sValues.fill(0, sValues.size(), missingValue);
                 }
-if (ord != Ordinals.MISSING_ORDINAL) {
+                for (int i = 0; i < reader.maxDoc(); i++) {
                     final long ord = ordinals.getOrd(i);
-                    if (ord > 0) {
+if (ord != Ordinals.MISSING_ORDINAL) {
                         sValues.set(i, values.get(ord - 1) - minValue);
                     }
                 }

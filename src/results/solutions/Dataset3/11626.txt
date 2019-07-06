@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -69,9 +68,9 @@ public abstract class AbstractParser {
      * @return the string representing the raw eleemnt text
      * @throws XMLStreamException
      */
-elementtext = elementtext == null || elementtext.trim().length() == 0 ? null : elementtext.trim();
+    public String rawElementText(XMLStreamReader reader) throws XMLStreamException {
         String elementtext = reader.getElementText();
-        elementtext = elementtext == null ? null : elementtext.trim();
+elementtext = elementtext == null || elementtext.trim().length() == 0 ? null : elementtext.trim();
         return elementtext;
     }
 

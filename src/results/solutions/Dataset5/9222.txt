@@ -1,4 +1,3 @@
-
 /*
  * $Id: WicketTagComponentResolver.java,v 1.4 2005/01/18 08:04:29 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -46,9 +45,9 @@ public class ParentResolver implements IComponentResolver
 	 */
 	public boolean resolve(final MarkupContainer container, final MarkupStream markupStream,
 			final ComponentTag tag)
-if (tag instanceof WicketTag)
+	{
 		// Ignore special tags like _panel, _border, _extend etc.
-		if ((tag instanceof WicketTag) || tag.getId().startsWith("_"))
+if (tag instanceof WicketTag)
 		{
 			return false;
 		}

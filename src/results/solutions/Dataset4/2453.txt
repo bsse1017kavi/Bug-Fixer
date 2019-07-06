@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -119,9 +118,9 @@ public class FsChannelSnapshot implements Translog.Snapshot {
             cacheBuffer.clear();
             cacheBuffer.limit(opSize);
             channel.read(cacheBuffer, position);
-lastOperationRead = TranslogStreams.readTranslogOperation(new BytesStreamInput(cacheBuffer.array(), 0, opSize, true));
+            cacheBuffer.flip();
             position += opSize;
-            lastOperationRead = TranslogStreams.readTranslogOperation(new BytesStreamInput(cacheBuffer.array(), 0, opSize));
+lastOperationRead = TranslogStreams.readTranslogOperation(new BytesStreamInput(cacheBuffer.array(), 0, opSize, true));
             return true;
         } catch (Exception e) {
             return false;

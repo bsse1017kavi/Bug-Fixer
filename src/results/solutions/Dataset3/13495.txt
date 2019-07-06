@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public final class RemoteDeployer implements Deployer {
         deploymentManager = ServerDeploymentManager.Factory.create(address, 9999);
     }
 
-final DeploymentPlanBuilder builder = deploymentManager.newDeploymentPlan().withRollback().add(archiveURL).andDeploy();
+    @Override
     public void deploy(final URL archiveURL) throws Exception {
-        final DeploymentPlanBuilder builder = deploymentManager.newDeploymentPlan().add(archiveURL).andDeploy();
+final DeploymentPlanBuilder builder = deploymentManager.newDeploymentPlan().withRollback().add(archiveURL).andDeploy();
         final DeploymentPlan plan = builder.build();
         final DeploymentAction deployAction = builder.getLastAction();
         final String uniqueId = deployAction.getDeploymentUnitUniqueName();

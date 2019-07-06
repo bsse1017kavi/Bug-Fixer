@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -320,9 +319,9 @@ public class ReportTreeListener implements TreeSelectionListener, MouseListener,
         log.warn("Shouldn't be here");
         if (popup != null) {
             popup.pack();
-popup.requestFocusInWindow();
+            popup.show(tree, e.getX(), e.getY());
             popup.setVisible(true);
-            popup.requestFocus();
+popup.requestFocusInWindow();
         }
     }
 }

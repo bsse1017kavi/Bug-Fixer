@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -91,9 +90,9 @@ rdataFromString(Name name, int dclass, long ttl, Tokenizer st, Name origin)
 throws IOException
 {
 	SOARecord rec = new SOARecord(name, dclass, ttl);
-rec.serial = st.getUInt32();
+	rec.host = st.getName(origin);
 	rec.admin = st.getName(origin);
-	rec.serial = (int) st.getUInt32();
+rec.serial = st.getUInt32();
 	rec.refresh = st.getTTL();
 	rec.retry = st.getTTL();
 	rec.expire = st.getTTL();

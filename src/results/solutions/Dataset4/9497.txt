@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -233,9 +232,9 @@ public class InternalEngine extends AbstractIndexShardComponent implements Engin
             // its inactive, make sure we do a full flush in this case, since the memory
             // changes only after a "data" change has happened to the writer
             if (indexingBufferSize == Engine.INACTIVE_SHARD_INDEXING_BUFFER && preValue != Engine.INACTIVE_SHARD_INDEXING_BUFFER) {
-flush(new Flush().type(Flush.Type.COMMIT));
+                logger.debug("updating index_buffer_size from [{}] to (inactive) [{}]", preValue, indexingBufferSize);
                 try {
-                    flush(new Flush().type(Flush.Type.NEW_WRITER));
+flush(new Flush().type(Flush.Type.COMMIT));
                 } catch (EngineClosedException e) {
                     // ignore
                 } catch (FlushNotAllowedEngineException e) {

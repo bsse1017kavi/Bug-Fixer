@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -753,9 +752,9 @@ public class MillerUpdatingRegression implements UpdatingMultipleLinearRegressio
                     d[m] = d1 * X * X;
                     r[m1] = 1.0 / X;
                     for (int _i = m1 + 1; _i < m1 + nvars - m - 1; _i++) {
-rhs[m] /= X;
+                        r[_i] /= X;
                     }
-                    rhs[m] = rhs[m] / X;
+rhs[m] /= X;
                     bSkipTo40 = true;
                     //break;
                 }

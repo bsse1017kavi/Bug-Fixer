@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -128,9 +127,9 @@ public class AuthenticatorActivity extends RoboSherlockAccountAuthenticatorActiv
         username = intent.getStringExtra(PARAM_USERNAME);
         authTokenType = intent.getStringExtra(PARAM_AUTHTOKEN_TYPE);
         requestNewAccount = username == null;
-setContentView(layout.login);
+        confirmCredentials = intent.getBooleanExtra(PARAM_CONFIRMCREDENTIALS, false);
 
-        setContentView(layout.login_activity);
+setContentView(layout.login);
 
         TextView signupText = (TextView) findViewById(id.tv_signup);
         signupText.setMovementMethod(LinkMovementMethod.getInstance());

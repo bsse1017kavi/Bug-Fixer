@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -785,9 +784,9 @@ public class DirectUpdateHandler2 extends UpdateHandler implements SolrCoreState
         if (th instanceof OutOfMemoryError) {
           throw (OutOfMemoryError) th;
         }
-if (writer != null) writer.shutdown();
+      }
 
-      if (writer != null) writer.close();
+if (writer != null) writer.shutdown();
 
     } finally {
       solrCoreState.getCommitLock().unlock();

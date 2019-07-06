@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class Load implements Command {
 				if (merging) {
 					log.info("Merging file: " + f);
 				} else {
-if (!Close.performAction(e)) return;
+					log.info("Loading file: " + f);
                     // Close the test plan currently open
-					ActionRouter.getInstance().doActionNow(new ActionEvent(e.getSource(), e.getID(), ActionNames.CLOSE));
+if (!Close.performAction(e)) return;
 
 					FileServer.getFileServer().setBasedir(f.getAbsolutePath());
 				}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -201,9 +200,9 @@ public class ObjectTableModel extends DefaultTableModel {
     }
 
     /** {@inheritDoc} */
-List<Object> subList = new ArrayList(objects.subList(start, end));
+    @Override
     public void moveRow(int start, int end, int to) {
-        List<Object> subList = objects.subList(start, end);
+List<Object> subList = new ArrayList(objects.subList(start, end));
         for (int x = end - 1; x >= start; x--) {
             objects.remove(x);
         }

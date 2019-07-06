@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -200,9 +199,9 @@ public final class MultiTermsEnum extends TermsEnum {
     boolean seekOpt = false;
     if (lastSeek != null && termComp.compare(lastSeek, term) <= 0) {
       seekOpt = true;
-lastSeekScratch.copyBytes(term);
+    }
 
-    lastSeekScratch.copy(term);
+lastSeekScratch.copyBytes(term);
     lastSeek = lastSeekScratch;
 
     for(int i=0;i<numSubs;i++) {

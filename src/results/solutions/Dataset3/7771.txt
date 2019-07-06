@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -1605,9 +1604,9 @@ public abstract class CommonXml implements XMLElementReader<List<ModelNode>>, XM
                 if (contentItem.hasDefined(DEPLOYMENT)) {
                     final ModelNode deployments = contentItem.get(DEPLOYMENT);
                     Set<String> deploymentNames = deployments.keys();
-final ModelNode depNode = deployments.get(deploymentName);
+                    if (deploymentNames.size() > 0) {
                         for (String deploymentName : deploymentNames) {
-                            final ModelNode depNode = deployments.get(uniqueName);
+final ModelNode depNode = deployments.get(deploymentName);
                             final boolean regEx = depNode.hasDefined(REGULAR_EXPRESSION) ? depNode.get(REGULAR_EXPRESSION).asBoolean() : false;
                             writer.writeStartElement(Element.DEPLOYMENT.getLocalName());
                             writeAttribute(writer, Attribute.NAME, deploymentName);

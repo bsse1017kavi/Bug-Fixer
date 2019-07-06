@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class RestDeleteByQueryAction extends BaseRestHandler {
     @Override public void handleRequest(final RestRequest request, final RestChannel channel) {
         DeleteByQueryRequest deleteByQueryRequest = new DeleteByQueryRequest(splitIndices(request.param("index")));
         // we just build a response and send it, no need to fork a thread
-deleteByQueryRequest.query(RestActions.parseQuerySource(request));
+        deleteByQueryRequest.listenerThreaded(false);
         try {
-            deleteByQueryRequest.querySource(RestActions.parseQuerySource(request));
+deleteByQueryRequest.query(RestActions.parseQuerySource(request));
             deleteByQueryRequest.queryParserName(request.param("query_parser_name"));
             String typesParam = request.param("type");
             if (typesParam != null) {

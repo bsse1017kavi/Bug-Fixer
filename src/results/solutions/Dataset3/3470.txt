@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -2469,8 +2468,8 @@ public interface ControllerMessages {
      * @return a {@link XMLStreamException} for the error.
      */
     @Message(id = 14857, value = "Value %s for attribute %s is not a valid multicast address")
-@Message(id = 14858, value="Path '%s' cannot be removed, since the following paths depend on it: %s")
+    OperationFailedException unknownMulticastAddress(@Cause UnknownHostException cause, String value, String name);
 
-    @Message(id = 14856, value="Path '%s' cannot be removed, since the following paths depend on it: %s")
+@Message(id = 14858, value="Path '%s' cannot be removed, since the following paths depend on it: %s")
     OperationFailedException cannotRemovePathWithDependencies(String pathName, Set<String> dependencies);
 }

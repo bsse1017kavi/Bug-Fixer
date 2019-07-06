@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class PanelWithHeaderPart extends Panel
 	@Override
 	public void renderHead(IHeaderResponse response)
 	{
-response.renderJavaScriptReference(new JavaScriptResourceReference(
+		response.renderCSSReference(new PackageResourceReference(PanelWithHeaderPart.class,
 			"test.css"));
-		response.renderJavascriptReference(new JavaScriptResourceReference(
+response.renderJavaScriptReference(new JavaScriptResourceReference(
 			PanelWithHeaderPart.class, "test.js"));
 	}
 

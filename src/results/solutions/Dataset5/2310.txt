@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -528,9 +527,9 @@ public class Target implements TaskContainer {
         }
 
         public boolean eval() throws BuildException {
-return !propertyHelper.testUnlessCondition(o);
+            PropertyHelper propertyHelper = PropertyHelper.getPropertyHelper(getProject());
             Object o = propertyHelper.parseProperties(condition);
-            return propertyHelper.testUnlessCondition(o);
+return !propertyHelper.testUnlessCondition(o);
         }
 
     }

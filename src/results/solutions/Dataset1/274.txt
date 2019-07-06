@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.types.SQLReal
@@ -160,9 +159,9 @@ public final class SQLReal
 	 * @see DataValueDescriptor#getBigDecimal 
 	 */
 	public BigDecimal	getBigDecimal()
-return new BigDecimal(Float.toString(value));
+	{
 		if (isNull()) return null;
-		return new BigDecimal(value);
+return new BigDecimal(Float.toString(value));
 	}
 
     // for lack of a specification: 0 or null is false,

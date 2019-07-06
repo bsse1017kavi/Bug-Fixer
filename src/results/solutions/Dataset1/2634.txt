@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.gms;
 /*
  * 
@@ -47,9 +46,9 @@ public class GossipDigestAck2VerbHandler implements IVerbHandler
         byte[] bytes = message.getMessageBody();
         DataInputStream dis = new DataInputStream( new ByteArrayInputStream(bytes) );
         GossipDigestAck2Message gDigestAck2Message;
-gDigestAck2Message = GossipDigestAck2Message.serializer().deserialize(dis, message.getVersion());
+        try
         {
-            gDigestAck2Message = GossipDigestAck2Message.serializer().deserialize(dis);
+gDigestAck2Message = GossipDigestAck2Message.serializer().deserialize(dis, message.getVersion());
         }
         catch (IOException e)
         {

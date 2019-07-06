@@ -1,4 +1,3 @@
-
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,9 +179,9 @@ public class BundleResource implements Resource, RepositoryContent {
 					.append('=')
 					.append(service.getInterface())
 					.append(')');
-builder.append(filter);
+			String filter = service.getFilter();
 			if (filter != null)
-				builder.append('(').append(filter).append(')');
+builder.append(filter);
 			builder.append(')');
 			requirements.add(new BasicRequirement.Builder()
 					.namespace(ServiceNamespace.SERVICE_NAMESPACE)

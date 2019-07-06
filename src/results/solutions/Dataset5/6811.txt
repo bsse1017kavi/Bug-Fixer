@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1641,9 +1640,9 @@ public class EntityManagerImpl
                 }
                 fCfg.setReadLockLevel(setReadLevel);
             }
-.getDBDictionaryInstance().supportsIsolationForUpdate()) {
+            // Set overriden isolation level for pessimistic-read/write
             if (((JDBCConfiguration) _broker.getConfiguration())
-                .getDBDictionaryInstance().supportIsolationForUpdate()) {
+.getDBDictionaryInstance().supportsIsolationForUpdate()) {
                 switch (setReadLevel) {
                 case JPA2LockLevels.LOCK_PESSIMISTIC_READ:
                     fcPushed = setIsolationForPessimisticLock(fCfg, fcPushed,

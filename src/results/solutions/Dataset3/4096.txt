@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class MathParseException extends MathRuntimeException {
      * @param type Class of the object supposedly represented by the
      * {@code wrong} string.
      */
-Class<?> type) {
+    public MathParseException(String wrong,
                               int position,
-                              Class type) {
+Class<?> type) {
         super(null, null, LocalizedFormats.CANNOT_PARSE_AS_TYPE,
               wrong, new Integer(position), type.getName());
     }

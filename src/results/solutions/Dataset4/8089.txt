@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -199,9 +198,9 @@ public class IndexingMemoryController extends AbstractLifecycleComponent<Indexin
                 shardsIndicesStatus.put(indexShard.shardId(), new ShardIndexingStatus());
             }
         }
-public void afterIndexShardClosed(ShardId shardId) {
+
         @Override
-        public void afterIndexShardClosed(ShardId shardId, boolean delete) {
+public void afterIndexShardClosed(ShardId shardId) {
             synchronized (mutex) {
                 calcAndSetShardIndexingBuffer("removed_shard[" + shardId.index().name() + "][" + shardId.id() + "]");
                 shardsIndicesStatus.remove(shardId);

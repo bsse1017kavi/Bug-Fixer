@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public final class InstallReflectionIndexProcessor implements DeploymentUnitProc
 
     public void deploy(final DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
         DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
-if (module == null && bundleState == BundleState.INSTALLED) {
+        BundleState bundleState = deploymentUnit.getAttachment(Attachments.BUNDLE_STATE_KEY);
         Module module = deploymentUnit.getAttachment(Attachments.MODULE);
-        if (bundleState == BundleState.INSTALLED) {
+if (module == null && bundleState == BundleState.INSTALLED) {
             DEPLOYMENT_LOGGER.warnCannotInstallReflectionIndexForUnresolvedBundle(deploymentUnit.getName());
             return;
         }

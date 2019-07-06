@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class BinaryMemtable implements IFlushable
     /*
      * This version is used by the external clients to put data into
      * the memtable. This version will respect the threshold and flush
-void put(String key, byte[] buffer)
+     * the memtable to disk when the size exceeds the threshold.
     */
-    void put(String key, byte[] buffer) throws IOException
+void put(String key, byte[] buffer)
     {
         if (isThresholdViolated())
         {

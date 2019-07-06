@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -894,9 +893,9 @@ public class SevenZFile {
     public int read(byte[] b, int off, int len) throws IOException {
         return currentEntryInputStream.read(b, off, len);
     }
-long firstByte = in.readUnsignedByte();
+    
     private static long readUint64(final DataInput in) throws IOException {
-        int firstByte = in.readUnsignedByte();
+long firstByte = in.readUnsignedByte();
         int mask = 0x80;
         long value = 0;
         for (int i = 0; i < 8; i++) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public final class InspectorPage extends DevUtilsPage
 		add(new ApplicationView("application", Application.get()));
 		add(new SessionView("session", Session.get()));
 		IManageablePage page = null;
-final int pageId = parameters.get("pageId").toInt();
+		try
 		{
-			final int pageId = parameters.getNamedParameter("pageId").toInt();
+final int pageId = parameters.get("pageId").toInt();
 			page = Session.get().getPageManager().getPage(pageId);
 		}
 		catch (StringValueConversionException e)

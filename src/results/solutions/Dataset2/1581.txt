@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -424,9 +423,9 @@ public abstract class Expression extends Statement {
 		if (match == castType) {
 			if (!isNarrowing) tagAsUnnecessaryCast(scope, castType);
 			return true;
-if (match.isProvablyDistinctFrom(isNarrowing ? expressionType : castType, 0)) {
+		}
 		if (castType.isBoundParameterizedType() || castType.isGenericType()) {
-			if (match.isProvablyDistinctFrom(isNarrowing ? expressionType : castType)) {
+if (match.isProvablyDistinctFrom(isNarrowing ? expressionType : castType, 0)) {
 				reportIllegalCast(scope, castType, expressionType);
 				return false; 
 			}

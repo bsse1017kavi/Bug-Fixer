@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1498,9 +1497,9 @@ public class DBDictionary
                     return getPreferredType(Types.VARCHAR);
                 return getPreferredType(Types.BIGINT);
             case JavaTypes.BIGDECIMAL:
-return getPreferredType(Types.NUMERIC);
+                if (storeLargeNumbersAsStrings)
                     return getPreferredType(Types.VARCHAR);
-                return getPreferredType(Types.DOUBLE);
+return getPreferredType(Types.NUMERIC);
             case JavaTypes.NUMBER:
                 if (storeLargeNumbersAsStrings)
                     return getPreferredType(Types.VARCHAR);

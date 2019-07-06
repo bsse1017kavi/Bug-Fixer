@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -320,9 +319,9 @@ public class Files extends AbstractSelectorContainer
         int fct = ds.getIncludedFilesCount();
         int dct = ds.getIncludedDirsCount();
         if (fct + dct == 0) {
-FileResourceIterator result = new FileResourceIterator(getProject());
+            return EMPTY_ITERATOR;
         }
-        FileResourceIterator result = new FileResourceIterator();
+FileResourceIterator result = new FileResourceIterator(getProject());
         if (fct > 0) {
             result.addFiles(ds.getIncludedFiles());
         }

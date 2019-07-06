@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class ExplicitTransformationDescriptionBuilder extends TransformationDesc
     public TransformationDescription build() {
         return new AbstractDescription(pathElement, pathTransformation) {
 
-parent.registerSubResource(pathElement, pathTransformation, resourceTransformer, operationTransformer);
+            @Override
             public void register(TransformersSubRegistration parent) {
-                parent.registerSubResource(pathElement, resourceTransformer, operationTransformer);
+parent.registerSubResource(pathElement, pathTransformation, resourceTransformer, operationTransformer);
             }
 
         };

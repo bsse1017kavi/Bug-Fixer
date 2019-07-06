@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -520,9 +519,9 @@ void createHandle () {
 	*/
 //	if ((style & SWT.ON_TOP) != 0) display.lockActiveWindow = true;'
 	if (handle == 0 || embedded) {
-state |= CANVAS;
+		super.createHandle ();
 	} else {
-		state |= CANVAS | DRAG_DETECT;
+state |= CANVAS;
 		if ((style & (SWT.H_SCROLL | SWT.V_SCROLL)) == 0) {
 			state |= THEME_BACKGROUND;
 		}

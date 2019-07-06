@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -86,9 +85,9 @@ public class PolygonRegionLoader extends SynchronousAssetLoader<PolygonRegion, P
 					image = line.substring(params.texturePrefix.length());
 					break;
 				}
-Gdx.app.error(PolygonRegionLoader.class.getSimpleName(), "could not read " + fileName, e);
+			reader.close();
 		} catch (IOException e) {
-			throw new GdxRuntimeException("Error reading " + fileName, e);
+Gdx.app.error(PolygonRegionLoader.class.getSimpleName(), "could not read " + fileName, e);
 		}
 
 		if (image == null && params.textureExtensions != null) for (String extension : params.textureExtensions) {

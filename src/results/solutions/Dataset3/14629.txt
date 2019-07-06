@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -192,9 +191,9 @@ public class CpioArchiveInputStream extends ArchiveInputStream implements
 
         this.entryBytesRead = 0;
         this.entryEOF = false;
-if (this.entry.getName().equals(CPIO_TRAILER)) {
+        this.crc = 0;
 
-        if (this.entry.getName().equals("TRAILER!!!")) {
+if (this.entry.getName().equals(CPIO_TRAILER)) {
             this.entryEOF = true;
             return null;
         }

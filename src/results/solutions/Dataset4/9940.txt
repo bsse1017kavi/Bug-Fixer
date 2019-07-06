@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -1637,9 +1636,9 @@ public class SimpleIndexQueryParserTests extends ElasticsearchSingleNodeTest {
 
         // get MLT query, other clause is for include/exclude items
         MoreLikeThisQuery mltQuery = (MoreLikeThisQuery) parsedQuery.getClauses()[0].getQuery();
-mltQuery.setMinimumShouldMatch("100%");
+
         // all terms must match
-        mltQuery.setPercentTermsToMatch(1.0f);
+mltQuery.setMinimumShouldMatch("100%");
         mltQuery.setMinWordLen(0);
         mltQuery.setMinDocFreq(0);
 

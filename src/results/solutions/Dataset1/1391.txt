@@ -1,4 +1,3 @@
-
 /*
    Derby - Class org.apache.derbyTesting.functionTests.tests.store.AccessTest
 
@@ -1755,9 +1754,9 @@ public final class AccessTest extends BaseJDBCTestCase {
         // Mostly this returns 1, but sometimes, 2 pages visited.
         // See DERBY-5377.
         // Passing in null to prevent uninteresting failures.
-"{0}", "1", "0", null, "0", "0", "btree",
+        assertStatsOK(st, 
             indexOrConstraint, "FOO", indexName, 
-            "{0}", "1", "0", "1", "0", "0", "btree",
+"{0}", "1", "0", null, "0", "0", "btree",
             ">= on first 1 column(s).","> on first 1 column(s).","None", null);
 
         st.execute("drop table foo");

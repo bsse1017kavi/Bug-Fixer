@@ -1,4 +1,3 @@
-
 package storm.trident;
 
 import storm.trident.planner.Node;
@@ -12,9 +11,9 @@ public class TridentState {
         _topology = topology;
         _node = node;
     }
-return new Stream(_topology, _node);
+    
     public Stream newValuesStream() {
-        return new Stream(_topology, _node.name, _node);
+return new Stream(_topology, _node);
     }
     
     public TridentState parallelismHint(int parallelism) {

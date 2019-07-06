@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -119,9 +118,9 @@ public class FailureDetector implements IFailureDetector, FailureDetectorMBean
         InetAddress localHost = FBUtilities.getLocalAddress();
         if (localHost.equals(ep))
             return true;
-EndPointState epState = Gossiper.instance.getEndpointStateForEndpoint(ep);
+
     	/* Incoming port is assumed to be the Storage port. We need to change it to the control port */
-        EndPointState epState = Gossiper.instance.getEndPointStateForEndPoint(ep);
+EndPointState epState = Gossiper.instance.getEndpointStateForEndpoint(ep);
         return epState.isAlive();
     }
     

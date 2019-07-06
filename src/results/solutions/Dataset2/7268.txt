@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -194,9 +193,9 @@ try{
         {
             String attId = getIntakeTool()
                 .get("Attribute", IntakeTool.DEFAULT_KEY).get("Id").toString();
-attribute = Attribute.getNewInstance();
+            if ( attId == null || attId.length() == 0 )
             {
-                attribute = new Attribute();
+attribute = Attribute.getNewInstance();
             }
             else 
             {

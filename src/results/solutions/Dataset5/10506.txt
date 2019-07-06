@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -210,9 +209,9 @@ public class ParameterTemplate {
                 param = new StringBuffer();
             } else if (ch == '}' && param != null) {
                 if (_params.containsKey(param.toString()))
-copy.append(AccessController.doPrivileged(
+                    copy.append(_params.get(param.toString()));
                 else
-                    copy.append((String) AccessController.doPrivileged(
+copy.append(AccessController.doPrivileged(
                         J2DoPrivHelper.getPropertyAction(param.toString())));
                 param = null;
             } else if (param != null)

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -70,9 +69,9 @@ public class WebFragmentParsingDeploymentProcessor implements DeploymentUnitProc
         List<ResourceRoot> resourceRoots = deploymentUnit.getAttachment(Attachments.RESOURCE_ROOTS);
         if(resourceRoots == null) {
             return;
-if (resourceRoot.getRoot().getName().toLowerCase().endsWith(".jar")) {
+        }
         for (ResourceRoot resourceRoot : resourceRoots) {
-            if (resourceRoot.getRoot().getLowerCaseName().endsWith(".jar")) {
+if (resourceRoot.getRoot().getName().toLowerCase().endsWith(".jar")) {
                 VirtualFile webFragment = resourceRoot.getRoot().getChild(WEB_FRAGMENT_XML);
                 if (webFragment.exists() && webFragment.isFile()) {
                     InputStream is = null;

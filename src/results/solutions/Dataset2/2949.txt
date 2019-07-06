@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -43,9 +42,9 @@ import javax.swing.Timer;
 public class ShutdownDialog extends JFrame implements ActionListener {
     protected static final String RESOURCE_PATH = "org.columba.core.i18n.dialog";
     private JProgressBar progressBar;
-public ShutdownDialog() throws Exception{
+    private Timer timer;
 
-    public ShutdownDialog() {
+public ShutdownDialog() throws Exception{
         super(GlobalResourceLoader.getString(RESOURCE_PATH, "session",
                 "exit_title"));
 

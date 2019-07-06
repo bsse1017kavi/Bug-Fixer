@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 Shane Clarke.
  * All rights reserved. This program and the accompanying materials
@@ -232,9 +231,9 @@ public class AnnotationsView extends ViewPart implements INullSelectionListener,
             }
 
             if (javaElement.getElementType() == IJavaElement.METHOD) {
-.getMethodParameter(null, method, offset);
+                IMethod method = (IMethod) javaElement;
                 SingleVariableDeclaration parameter = AnnotationUtils
-                        .getMethodParameter(method, offset);
+.getMethodParameter(null, method, offset);
                 if (parameter != null) {
                     annotationTreeViewer.setInput(parameter);
                 } else {

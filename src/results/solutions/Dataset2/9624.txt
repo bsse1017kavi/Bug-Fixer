@@ -1,4 +1,3 @@
-
 /*
  * @(#)BorderTool.java
  *
@@ -46,9 +45,9 @@ public  class BorderTool extends ActionTool {
 		if ((e.getModifiers() & InputEvent.CTRL_MASK) == 0) {
 			super.mouseDown(e, x, y);
 		}
-if ((target != null) && (target != target.getDecoratedFigure())) {
+		else {
 			Figure target = drawing().findFigure(x, y);
-			if (target != null && target instanceof DecoratorFigure) {
+if ((target != null) && (target != target.getDecoratedFigure())) {
 				view().addToSelection(target);
 				reverseAction(target);
 			}

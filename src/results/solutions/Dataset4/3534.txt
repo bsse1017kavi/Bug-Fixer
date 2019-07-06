@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class TransportAnalyzeAction extends TransportSingleCustomOperationAction
         super(settings, threadPool, clusterService, transportService);
         this.indicesService = indicesService;
     }
-return ThreadPool.Names.INDEX;
+
     @Override protected String executor() {
-        return ThreadPool.Names.CACHED;
+return ThreadPool.Names.INDEX;
     }
 
     @Override protected AnalyzeRequest newRequest() {

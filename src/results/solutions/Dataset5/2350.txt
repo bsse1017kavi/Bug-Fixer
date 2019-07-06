@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -121,9 +120,9 @@ public class TaskAdapter extends Task {
         try {
             Class c = proxy.getClass();
             setProjectM = 
-setProjectM.invoke(proxy, new Object[] {getProject()});
+                c.getMethod("setProject", new Class[] {Project.class});
             if (setProjectM != null) {
-                setProjectM.invoke(proxy, new Object[] {project});
+setProjectM.invoke(proxy, new Object[] {getProject()});
             }
         } catch (NoSuchMethodException e) {
             // ignore this if the class being used as a task does not have

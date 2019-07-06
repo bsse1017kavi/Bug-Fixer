@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -461,9 +460,9 @@ public String getAttachedJavadoc(IProgressMonitor monitor, String defaultEncodin
 
 	String contents = ((BinaryType) declaringType).getJavadocContents(monitor, defaultEncoding);
 	return extractJavadoc(declaringType, contents);
-if (contents == null) return null;
+}
 private String extractJavadoc(IType declaringType, String contents) throws JavaModelException {
-	if (contents == null) throw new JavaModelException(new JavaModelStatus(IJavaModelStatusConstants.CANNOT_RETRIEVE_ATTACHED_JAVADOC, this));
+if (contents == null) return null;
 
 	String typeQualifiedName = declaringType.getTypeQualifiedName('.');
 	typeQualifiedName = typeQualifiedName.replace('$', '.');

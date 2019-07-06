@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -181,9 +180,9 @@ public class TermsFacetBuilder extends AbstractFacetBuilder {
         if (fieldName == null && fieldsNames == null && script == null) {
             throw new SearchSourceBuilderException("field/fields/script must be set on terms facet for facet [" + name + "]");
         }
-builder.startObject(TermsFacet.TYPE);
+        builder.startObject(name);
 
-        builder.startObject(TermsFacetCollectorParser.NAME);
+builder.startObject(TermsFacet.TYPE);
         if (fieldsNames != null) {
             if (fieldsNames.length == 1) {
                 builder.field("field", fieldsNames[0]);

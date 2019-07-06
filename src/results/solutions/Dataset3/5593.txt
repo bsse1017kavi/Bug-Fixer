@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public class DimensionMismatchException extends MathIllegalNumberException {
      * @param expected Expected dimension.
      */
     public DimensionMismatchException(Localizable specific,
-super(specific, Integer.valueOf(wrong), Integer.valueOf(expected));
+                                      int wrong,
                                       int expected) {
-        super(specific, wrong, expected);
+super(specific, Integer.valueOf(wrong), Integer.valueOf(expected));
         dimension = expected;
     }
 

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -249,9 +248,9 @@ public class ZipFile {
      *
      * <p>May return false if it is set up to use encryption or a
      * compression method that hasn't been implemented yet.</p>
-public boolean canReadEntryData(ZipArchiveEntry ze) {
+     * @since Apache Commons Compress 1.1
      */
-    public boolean canRead(ZipArchiveEntry ze) {
+public boolean canReadEntryData(ZipArchiveEntry ze) {
         return !ze.isEncrypted() &&
             (ze.getMethod() == ZipArchiveEntry.STORED
              || ze.getMethod() == ZipArchiveEntry.DEFLATED);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class TransportMultiSearchAction extends TransportAction<MultiSearchReque
 
     private final TransportSearchAction searchAction;
 
-super(settings, MultiSearchAction.NAME, threadPool);
+    @Inject
     public TransportMultiSearchAction(Settings settings, ThreadPool threadPool, TransportService transportService, ClusterService clusterService, TransportSearchAction searchAction) {
-        super(settings, threadPool);
+super(settings, MultiSearchAction.NAME, threadPool);
         this.clusterService = clusterService;
         this.searchAction = searchAction;
 

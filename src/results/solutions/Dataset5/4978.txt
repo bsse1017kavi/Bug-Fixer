@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -280,9 +279,9 @@ public class ClassMapping
      */
     public Joinable assertJoinable(Column col) {
         Joinable join = getJoinable(col);
-col.getQualifiedPath().toString()));
+        if (join == null)
             throw new MetaDataException(_loc.get("no-joinable",
-                col.getFullName()));
+col.getQualifiedPath().toString()));
         return join;
     }
 

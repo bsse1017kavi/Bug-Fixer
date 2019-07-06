@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -241,9 +240,9 @@ public class DropDownChoice<T> extends AbstractSingleSelectChoice<T> implements 
 				tag.put("onchange", form.getJsForInterfaceUrl(url.toString()));
 			}
 			else
-(url.toString().indexOf('?') > -1 ? "&" : "?") + getInputName() +
+			{
 				tag.put("onchange", "window.location.href='" + url +
-					(url.toString().indexOf('?') > -1 ? "&amp;" : "?") + getInputName() +
+(url.toString().indexOf('?') > -1 ? "&" : "?") + getInputName() +
 					"=' + this.options[this.selectedIndex].value;");
 			}
 		}

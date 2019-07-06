@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -492,9 +491,9 @@ public class SourceTypeConverter implements CompilerModifiers {
 	
 			/* source type has a constructor ?           */
 			/* by default, we assume that one is needed. */
-int kind = type.kind();
+			int extraConstructor = 0;
 			int methodCount = 0;
-			int kind = type.getKind();
+int kind = type.kind();
 			boolean isAbstract = kind == IGenericType.INTERFACE || kind == IGenericType.ANNOTATION_TYPE;
 			if (!isAbstract) {
 				extraConstructor = needConstructor ? 1 : 0;

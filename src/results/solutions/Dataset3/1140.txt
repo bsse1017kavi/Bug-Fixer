@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public final class LookupInjectionSource extends InjectionSource {
         final String moduleName = resolutionContext.getModuleName();
         final String componentName = resolutionContext.getComponentName();
         final boolean compUsesModule = resolutionContext.isCompUsesModule();
-if (componentName != null && !compUsesModule) {
+        final String lookupName;
         if(! this.lookupName.startsWith("java:")) {
-            if (componentName != null) {
+if (componentName != null && !compUsesModule) {
                 lookupName = "java:comp/env/" + this.lookupName;
             } else if (compUsesModule) {
                 lookupName = "java:module/env/" + this.lookupName;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -2380,9 +2379,9 @@ public class DBDictionary
         if (castlhs)
             appendCast(buf, lhs, type);
         else
-if (mod && !supportsModOperator)
+            lhs.appendTo(buf);
 
-        if (mod)
+if (mod && !supportsModOperator)
             buf.append(", ");
         else
             buf.append(" ").append(op).append(" ");

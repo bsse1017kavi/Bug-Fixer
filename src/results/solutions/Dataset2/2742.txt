@@ -1,4 +1,3 @@
-
 package org.junit.tests.experimental.theories.runner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -132,9 +131,9 @@ public class WithDataPointMethod {
 				.size(), is(0));
 	}
 
-return Assignments.allUnassigned(method, HasDateMethod.class, true)
+	private List<PotentialAssignment> potentialValues(Method method)
 			throws Exception {
-		return Assignments.allUnassigned(method, HasDateMethod.class)
+return Assignments.allUnassigned(method, HasDateMethod.class, true)
 				.potentialsForNextUnassigned();
 	}
 

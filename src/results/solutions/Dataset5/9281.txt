@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -48,9 +47,9 @@ public class Mkdir extends Task
             {
                 String msg = "Directory " + dir.getAbsolutePath() + " creation was not " +
                     "successful for an unknown reason";
-getLogger().info( "Created dir: " + dir.getAbsolutePath() );
+                throw new TaskException( msg );
             }
-            log( "Created dir: " + dir.getAbsolutePath() );
+getLogger().info( "Created dir: " + dir.getAbsolutePath() );
         }
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -133,9 +132,9 @@ public class RecoverySource extends AbstractComponent {
                                 IndexInput indexInput = null;
                                 try {
                                     final int BUFFER_SIZE = (int) recoverySettings.fileChunkSize().bytes();
-indexInput = shard.store().openInputRaw(name);
+                                    byte[] buf = new byte[BUFFER_SIZE];
                                     StoreFileMetaData md = shard.store().metaData(name);
-                                    indexInput = snapshot.getDirectory().openInput(name);
+indexInput = shard.store().openInputRaw(name);
                                     long len = indexInput.length();
                                     long readCount = 0;
                                     while (readCount < len) {

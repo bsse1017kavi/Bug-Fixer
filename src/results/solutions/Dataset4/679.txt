@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -83,9 +82,9 @@ public class SoundTest extends GdxTest {
 		ui.addActor(table);
 
 		play.setClickListener(new ClickListener() {
-soundId = sound.play(volume.getValue());
+			@Override
 			public void click (Actor actor) {
-				soundId = sound.play();
+soundId = sound.play(volume.getValue());
 				sound.setPitch(soundId, pitch.getValue());
 				sound.setPan(soundId, pan.getValue(), volume.getValue());
 			}

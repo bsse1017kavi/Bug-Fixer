@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public abstract class ThreadPoolMetricsHandler extends AbstractRuntimeOnlyHandle
     protected ServiceController<?> getService(final OperationContext context, final ModelNode operation)
             throws OperationFailedException {
         final String name = Util.getNameFromAddress(operation.require(OP_ADDR));
-throw ThreadsLogger.ROOT_LOGGER.threadPoolServiceNotFoundForMetrics(serviceNameBase.append(name));
+        ServiceController<?> controller = context.getServiceRegistry(false).getService(serviceNameBase.append(name));
         if (controller == null) {
-            throw ThreadsMessages.MESSAGES.threadPoolServiceNotFoundForMetrics(serviceNameBase.append(name));
+throw ThreadsLogger.ROOT_LOGGER.threadPoolServiceNotFoundForMetrics(serviceNameBase.append(name));
         }
         return controller;
     }

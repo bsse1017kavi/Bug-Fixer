@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.simpletext;
 
 /**
@@ -98,9 +97,9 @@ public class SimpleTextStoredFieldsWriter extends StoredFieldsWriter {
     write(NAME);
     write(field.name());
     newLine();
-final NumericField.DataType numericType = field.fieldType().numericType();
+    
     write(TYPE);
-    final NumericField.DataType numericType = field.numericDataType();
+final NumericField.DataType numericType = field.fieldType().numericType();
 
     if (numericType != null) {
       switch (numericType) {

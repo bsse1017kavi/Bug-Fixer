@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -100,9 +99,9 @@ public class HibernatePersistenceProviderAdaptor implements PersistenceProviderA
         }
         return null;
     }
-return ServiceName.JBOSS.append("infinispan", container, cache, "config");
+
     private ServiceName getCacheConfigServiceName(String container, String cache) {
-        return ServiceName.JBOSS.append("infinispan", container, "config", cache);
+return ServiceName.JBOSS.append("infinispan", container, cache, "config");
     }
 
     private void putPropertyIfAbsent(Map properties, String property, Object value) {

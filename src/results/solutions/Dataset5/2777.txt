@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -104,9 +103,9 @@ public class InterTypeMethodDeclaration extends InterTypeDeclaration {
 		
 		binding = classScope.referenceContext.binding.resolveTypesFor(binding);
 		if (binding == null) {
-throw new AbortCompilation(compilationResult);
+			// if binding is null, we failed to find a type used in the method params, this error
 			// has already been reported. 
-			throw new AbortCompilation();
+throw new AbortCompilation(compilationResult);
 		}
 		ResolvedMember sig = new ResolvedMember(Member.METHOD, EclipseFactory.fromBinding(onTypeBinding),
 			declaredModifiers, EclipseFactory.fromBinding(binding.returnType), new String(declaredSelector),

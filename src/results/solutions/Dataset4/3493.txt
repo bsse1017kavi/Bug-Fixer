@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public class TransportMoreLikeThisAction extends TransportAction<MoreLikeThisReq
     @Override
     protected void doExecute(final MoreLikeThisRequest request, final ActionListener<SearchResponse> listener) {
         // update to actual index name
-final String concreteIndex = clusterState.metaData().concreteSingleIndex(request.index());
+        ClusterState clusterState = clusterService.state();
         // update to the concrete index
-        final String concreteIndex = clusterState.metaData().concreteIndex(request.index());
+final String concreteIndex = clusterState.metaData().concreteSingleIndex(request.index());
 
         Iterable<MutableShardRouting> routingNode = clusterState.getRoutingNodes().routingNodeIter(clusterService.localNode().getId());
         if (routingNode == null) {

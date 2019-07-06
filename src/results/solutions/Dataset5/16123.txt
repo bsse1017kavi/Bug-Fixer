@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class ComponentBorderTest extends WicketTestCase
 		executeTest(HideableBorderPage.class, "HideableBorderPage_ExpectedResult.html");
 
 		Page page = tester.getLastRenderedPage();
-AjaxLink<?> link = (AjaxLink<?>)border.get("hideLink");
+		Border border = (Border)page.get("hideable");
 		assertNotNull(border);
-		AjaxLink link = (AjaxLink)border.get("hideLink");
+AjaxLink<?> link = (AjaxLink<?>)border.get("hideLink");
 		assertNotNull(link);
 		WebMarkupContainer wrapper = (WebMarkupContainer)border.get("wrapper");
 		assertNotNull(wrapper);

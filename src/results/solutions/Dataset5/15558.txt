@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -60,9 +59,9 @@ public class TestIndirectRecursion extends SingleEMFTestCase {
         { 0, 0, 0, 0, 1 }, // s4
         { 0, 0, 0, 0, 0 }  // s5
     };
-super.setUp(DROP_TABLES, State.class, Transition.class);
+
     public void setUp() {
-        super.setUp(CLEAR_TABLES, State.class, Transition.class);
+super.setUp(DROP_TABLES, State.class, Transition.class);
         
         DBDictionary dict = ((JDBCConfiguration) emf.getConfiguration()).getDBDictionaryInstance();
         if (dict instanceof OracleDictionary) {

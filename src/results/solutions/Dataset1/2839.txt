@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public abstract class ValueSourceParser implements NamedListInitializedPlugin {
       }
     });
     addParser("literal", new ValueSourceParser() {
-return new LiteralValueSource(fp.parseArg());
+      @Override
       public ValueSource parse(FunctionQParser fp) throws ParseException {
-        return new LiteralValueSource(fp.getString());
+return new LiteralValueSource(fp.parseArg());
       }
     });
     addParser("rord", new ValueSourceParser() {

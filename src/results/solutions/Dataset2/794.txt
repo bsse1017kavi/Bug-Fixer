@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2001 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -119,9 +118,9 @@ implements NotationName, ArgoModuleEventListener {
         if (k2.equals("")) return k1;
 	return k1 + "." + k2;
     }
-ArgoEventPump.fireEvent(new ArgoNotationEvent(eventType, nn));
+
     private static void fireEvent(int eventType,  NotationName nn) {
-     ArgoEventPump.getInstance().fireEvent(new ArgoNotationEvent(eventType, nn));
+ArgoEventPump.fireEvent(new ArgoNotationEvent(eventType, nn));
     }
 
     /** Create a NotationName with or without a version.

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -331,9 +330,9 @@ public void recordUsingNullReference(Scope scope, LocalVariableBinding local,
 			}
 			if (flowInfo.isDefinitelyNull(local)) {
 				scope.problemReporter().localVariableCanOnlyBeNull(local, reference);
-if (flowInfo.cannotBeDefinitelyNullOrNonNull(local)) {
+				return;
 			}
-			if (flowInfo.isPotentiallyUnknown(local)) {
+if (flowInfo.cannotBeDefinitelyNullOrNonNull(local)) {
 				return;
 			}
 			if (flowInfo.isPotentiallyNonNull(local)) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -32,9 +31,9 @@ public class SimplePageTest extends WicketTestCase
 	/**
 	 * @throws Exception
 	 */
-tester.startComponentInPage(MyFormComponentPanel.class);
+	public void testRenderHomePage() throws Exception
 	{
-		tester.startComponent(MyFormComponentPanel.class, null);
+tester.startComponentInPage(MyFormComponentPanel.class);
 		String doc = tester.getLastResponseAsString();
 		// log.error(doc);
 		assertEquals(doc, "<wicket:panel>test</wicket:panel>");

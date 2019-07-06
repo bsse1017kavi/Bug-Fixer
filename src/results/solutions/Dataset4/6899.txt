@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -119,9 +118,9 @@ public class InternalHistogram<B extends InternalHistogram.Bucket> extends Inter
             InternalAggregations aggs = InternalAggregations.reduce(aggregations, bigArrays);
             return (B) getFactory().createBucket(key, docCount, aggs, formatter);
         }
-if (formatter != null && formatter != ValueFormatter.RAW) {
+
         void toXContent(XContentBuilder builder, Params params, boolean keyed, @Nullable ValueFormatter formatter) throws IOException {
-            if (formatter != null) {
+if (formatter != null && formatter != ValueFormatter.RAW) {
                 Text keyTxt = new StringText(formatter.format(key));
                 if (keyed) {
                     builder.startObject(keyTxt.string());

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -46,9 +45,9 @@ import org.apache.lucene.util.Bits;
  * are created and modified the same way. For example, if you add
  * documents to one index, you need to add the same documents in the
  * same order to the other indexes. <em>Failure to do so will result in
-public class ParallelAtomicReader extends AtomicReader {
+ * undefined behavior</em>.
  */
-public final class ParallelAtomicReader extends AtomicReader {
+public class ParallelAtomicReader extends AtomicReader {
   private final FieldInfos fieldInfos;
   private final ParallelFields fields = new ParallelFields();
   private final AtomicReader[] parallelReaders, storedFieldsReaders;

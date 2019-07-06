@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -42,9 +41,9 @@ public class Contact {
 	/**
 	 * Get the world manifold.
 	 */
-public WorldManifold getWorldManifold () {
+	private final float[] tmp = new float[6];
 
-	public WorldManifold GetWorldManifold () {
+public WorldManifold getWorldManifold () {
 		int numContactPoints = jniGetWorldManifold(addr, tmp);
 
 		worldManifold.numContactPoints = numContactPoints;

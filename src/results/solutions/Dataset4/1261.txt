@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -118,9 +117,9 @@ public class TTLFieldMapper extends LongFieldMapper implements InternalMapper, R
 
     protected TTLFieldMapper(FieldType fieldType, boolean enabled, long defaultTTL, Explicit<Boolean> ignoreMalformed,
                              PostingsFormatProvider provider) {
-provider, null);
+        super(new Names(Defaults.NAME, Defaults.NAME, Defaults.NAME, Defaults.NAME), Defaults.PRECISION_STEP,
                 Defaults.FUZZY_FACTOR, Defaults.BOOST, fieldType, Defaults.NULL_VALUE, ignoreMalformed,
-                provider);
+provider, null);
         this.enabled = enabled;
         this.defaultTTL = defaultTTL;
     }

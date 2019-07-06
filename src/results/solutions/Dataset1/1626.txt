@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.derbynet.SecureServerTest
@@ -329,9 +328,9 @@ public class SecureServerTest extends BaseJDBCTestCase
         boolean     serverCameUp = serverCameUp();
         boolean     outputOK = ( serverOutput.indexOf( _outcome.expectedServerOutput() ) >= 0 );
 
-if (!(runsWithEmma() || runsWithJaCoCo())) {
+        assertEquals( myName + ": serverCameUp = " + serverCameUp, _outcome.serverShouldComeUp(), serverCameUp );
 
-        if (!runsWithEmma()) {
+if (!(runsWithEmma() || runsWithJaCoCo())) {
             // With Emma we run without the security manager, so we can't
             // assert on seeing it.
             assertTrue( myName + "\nExpected: " +

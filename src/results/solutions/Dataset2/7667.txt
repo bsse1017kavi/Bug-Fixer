@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -182,9 +181,9 @@ public class AccessInterceptor extends  BaseInterceptor  {
 	String reqURI = req.getRequestURI();
 	String ctxPath= ctx.getPath();
 	String path=reqURI.substring( ctxPath.length());
-if( ctx.getDebug() > 0 ) log( "ACCESS: checking " + path );
+	String method=req.getMethod();
 
-	log( "ACCESS: checking " + path );
+if( ctx.getDebug() > 0 ) log( "ACCESS: checking " + path );
 	
 	for( int i=0; i< ctxSec.patterns ; i++ ) {
 	    Container ct=ctxSec.securityPatterns[i];

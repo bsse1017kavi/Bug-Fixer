@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -178,9 +177,9 @@ public class DeploymentDescriptorMethodProcessor implements DeploymentUnitProces
         if (metaData instanceof SessionBeanMetaData) {
 
             final SessionBeanMetaData sessionBeanMetadata = (SessionBeanMetaData) metaData;
-if (prePassivates != null) {
+            // pre-passivate(s) of the interceptor configured (if any) in the deployment descriptor
             final LifecycleCallbacksMetaData prePassivates = sessionBeanMetadata.getPrePassivates();
-            if (preDestroys != null) {
+if (prePassivates != null) {
                 for (final LifecycleCallbackMetaData prePassivate : prePassivates) {
                     final InterceptorClassDescription.Builder builder = InterceptorClassDescription.builder();
                     final String methodName = prePassivate.getMethodName();

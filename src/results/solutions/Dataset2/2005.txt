@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1441,9 +1440,9 @@ protected void showEditorArea() {
 	presentation.getLayout().replace(editorHolder, editorArea);
 	editorHolder = null;
 }
-ArrayList workbooks = ((EditorSashContainer)editorArea).getEditorWorkbooks();
+
 private void setEditorAreaVisible(boolean visible) {
-	ArrayList workbooks = ((EditorArea)editorArea).getEditorWorkbooks();
+ArrayList workbooks = ((EditorSashContainer)editorArea).getEditorWorkbooks();
 	for (Iterator iter = workbooks.iterator(); iter.hasNext();) {
 		EditorStack workbook = (EditorStack) iter.next();
 		workbook.setVisible(visible);

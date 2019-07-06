@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class ProxyStepHandler implements NewStepHandler {
         final PathAddress addr = PathAddress.pathAddress(execute.require(ADDRESS));
         if (addr.size() > 0) {
             final PathAddress newAddr;
-} else if (proxyController.getProxyNodeAddress().size() > addr.size()) {
+            if (addr.size() == proxyController.getProxyNodeAddress().size()) {
                 newAddr = PathAddress.EMPTY_ADDRESS;
-            } else if (proxyController.getProxyNodeAddress().size() < addr.size()) {
+} else if (proxyController.getProxyNodeAddress().size() > addr.size()) {
                 throw new IllegalArgumentException(addr + " does not appear to capture proxy " + proxyController.getProxyNodeAddress());
             } else {
                 newAddr = addr.subAddress(proxyController.getProxyNodeAddress().size());

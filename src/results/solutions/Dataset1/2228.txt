@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.NetworkServerControlImpl
@@ -2488,9 +2487,9 @@ public final class NetworkServerControlImpl {
 
 			case DASHARG_SSL:
 				if (pos < args.length) {
-consolePropertyMessage("DRDA_MissingValue.U", "DRDA_SslMode.I");
+					setSSLMode(getSSLModeValue(args[pos]));
 				} else {
-					setSSLMode(SSL_OFF);
+consolePropertyMessage("DRDA_MissingValue.U", "DRDA_SslMode.I");
 				}
 				break;
 

@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -57,9 +56,9 @@ public IToolBarManager getToolBarManager() {
 			CoolBarManager cBarMgr = ((CoolBarManager)parentMgr);
 			coolItemToolBarMgr = new CoolItemToolBarManager(cBarMgr.getStyle());
 			toolBarMgr = createSubToolBarManager(coolItemToolBarMgr);
-new CoolBarContributionItem(cBarMgr, coolItemToolBarMgr, actionSetId);
+			// Just create the CoolBarContributionItem, PluginActionSetBuilder will add the item to
 			// the CoolBarManager.
-			CoolBarContributionItem coolBarItem = new CoolBarContributionItem(cBarMgr, coolItemToolBarMgr, actionSetId);
+new CoolBarContributionItem(cBarMgr, coolItemToolBarMgr, actionSetId);
 			coolItemToolBarMgr.setVisible(active);
 		}
 		return coolItemToolBarMgr;

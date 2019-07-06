@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -187,9 +186,9 @@ public class FileList extends DataType implements ResourceCollection {
     /**
      * Fulfill the ResourceCollection contract.
      * @return an Iterator of Resources.
-public Iterator<Resource> iterator() {
+     * @since Ant 1.7
      */
-    public Iterator iterator() {
+public Iterator<Resource> iterator() {
         if (isReference()) {
             return ((FileList) getRef(getProject())).iterator();
         }

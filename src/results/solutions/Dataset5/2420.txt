@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1987,9 +1986,9 @@ public class Form<T> extends WebMarkupContainer implements IFormSubmitListener, 
 	 * @param response
 	 */
 	protected void registerJavascriptNamespaces(IHeaderResponse response)
-"if (typeof(Wicket)=='undefined') { Wicket={}; } if (typeof('Wicket.Forms')=='undefined') { Wicket.Forms={}; }",
+	{
 		response.renderJavascript(
-			"if (Wicket==undefined) { Wicket={}; } if (Wicket.Forms==undefined) { Wicket.Forms={}; }",
+"if (typeof(Wicket)=='undefined') { Wicket={}; } if (typeof('Wicket.Forms')=='undefined') { Wicket.Forms={}; }",
 			Form.class.getName());
 	}
 

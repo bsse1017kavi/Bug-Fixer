@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.derbynet.SSLTest
@@ -192,9 +191,9 @@ public class SSLTest extends BaseJDBCTestCase
         try {
             Connection c2 = ds.getConnection();
             c2.close();
-assertSQLState("08006", e);
+            fail();
         } catch (SQLException e) {
-            assertSQLState("8006", e);
+assertSQLState("08006", e);
         }
     }
 }

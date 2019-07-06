@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -96,9 +95,9 @@ public class TransportOptimizeAction extends TransportBroadcastOperationAction<O
         return new ShardOptimizeRequest();
     }
 
-return new ShardOptimizeRequest(shard.shardId(), request);
+    @Override
     protected ShardOptimizeRequest newShardRequest(int numShards, ShardRouting shard, OptimizeRequest request) {
-        return new ShardOptimizeRequest(shard.index(), shard.id(), request);
+return new ShardOptimizeRequest(shard.shardId(), request);
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -141,9 +140,9 @@ class RegexpHTMLParser extends HTMLParser {
      *
      * @see org.apache.jmeter.protocol.http.parser.HtmlParser#getEmbeddedResourceURLs(byte[],
      *      java.net.URL)
-public Iterator<URL> getEmbeddedResourceURLs(byte[] html, URL baseUrl, URLCollection urls) {
+     */
     @Override
-    public Iterator getEmbeddedResourceURLs(byte[] html, URL baseUrl, URLCollection urls) {
+public Iterator<URL> getEmbeddedResourceURLs(byte[] html, URL baseUrl, URLCollection urls) {
 
         Perl5Matcher matcher = JMeterUtils.getMatcher();
         PatternMatcherInput input = localInput.get();

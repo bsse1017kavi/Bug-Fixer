@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -90,9 +89,9 @@ public class PrefixQueryParser implements QueryParser {
 
         if (value == null) {
             throw new QueryParsingException(parseContext.index(), "No value specified for prefix query");
-MultiTermQuery.RewriteMethod method = QueryParsers.parseRewriteMethod(rewriteMethod, null);
+        }
 
-        MultiTermQuery.RewriteMethod method = QueryParsers.parseRewriteMethod(rewriteMethod);
+MultiTermQuery.RewriteMethod method = QueryParsers.parseRewriteMethod(rewriteMethod, null);
 
         Query query = null;
         MapperService.SmartNameFieldMappers smartNameFieldMappers = parseContext.smartFieldMappers(fieldName);

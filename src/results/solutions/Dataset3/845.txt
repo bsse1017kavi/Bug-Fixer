@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -150,9 +149,9 @@ public class HttpRequest {
     private static String processResponse(HttpURLConnection conn) throws IOException {
         int responseCode = conn.getResponseCode();
         if (responseCode != HttpURLConnection.HTTP_OK) {
-throw new IOException("HTTP Status " + responseCode + " Response: " + read(err));
+            final InputStream err = conn.getErrorStream();
             try {
-                throw new IOException(read(err));
+throw new IOException("HTTP Status " + responseCode + " Response: " + read(err));
             }
             finally {
                 err.close();

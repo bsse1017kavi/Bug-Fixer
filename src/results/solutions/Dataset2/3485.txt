@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -40,9 +39,9 @@ public class RollingFileAppenderBeanInfo extends SimpleBeanInfo {
       // different properties
       Introspector.flushFromCaches(RollingFileAppender.class);
     } catch(IntrospectionException e) {
-LogLog.error("Could not find setter method for RollingFileAppender.", e);
+      LogLog.error("Could not inspect RollingFileAppender.", e);
     } catch(NoSuchMethodException e) {
-      LogLog.error("Could find setter method for RollingFileAppender.", e);
+LogLog.error("Could not find setter method for RollingFileAppender.", e);
     }
   }
 

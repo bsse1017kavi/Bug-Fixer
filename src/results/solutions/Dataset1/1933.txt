@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class Inserter extends Operation
         {
             // supers = [SuperColumn('S' + str(j), columns) for j in xrange(supers_per_key)]
             for (int i = 0; i < session.getSuperColumns(); i++)
-superColumns.add(new SuperColumn(ByteBufferUtil.bytes(superColumnName), columns));
+            {
                 String superColumnName = "S" + Integer.toString(i);
-                superColumns.add(new SuperColumn(ByteBuffer.wrap(superColumnName.getBytes()), columns));
+superColumns.add(new SuperColumn(ByteBufferUtil.bytes(superColumnName), columns));
             }
         }
 

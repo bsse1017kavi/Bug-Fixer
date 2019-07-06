@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -181,9 +180,9 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
 			try {
                 bufferedInputStream = new BufferedInputStream(new FileInputStream(getFilename()));
                 readSamples(SaveService.loadTestResults(bufferedInputStream));
-log.warn("File load failure, trying old data format: "+e.getLocalizedMessage());
+				parsedOK = true;
 			} catch (Exception e) {
-				log.warn("File load failure, trying old data format.");
+log.warn("File load failure, trying old data format: "+e.getLocalizedMessage());
 				try {
 					Configuration savedSamples = getConfiguration(getFilename());
 					Configuration[] samples = savedSamples.getChildren();

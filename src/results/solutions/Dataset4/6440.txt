@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -32,9 +31,9 @@ abstract class AbstractArray implements BigArray {
         this.clearOnResize = clearOnResize;
     }
 
-bigArrays.ramBytesUsed.addAndGet(-ramBytesUsed());
+    @Override
     public final void close() {
-        bigArrays.ramBytesUsed.addAndGet(-sizeInBytes());
+bigArrays.ramBytesUsed.addAndGet(-ramBytesUsed());
         assert !released : "double release";
         released = true;
         doClose();

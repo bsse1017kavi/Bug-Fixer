@@ -1,4 +1,3 @@
-
 /*
  * $Id: DefaultRequestTargetResolverStrategy.java,v 1.4 2005/12/30 21:47:05
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -299,9 +298,9 @@ public class DefaultRequestTargetResolverStrategy implements IRequestTargetResol
 			// mounted
 			BookmarkablePageRequestTarget homepageTarget = new BookmarkablePageRequestTarget(
 					homePageClass, parameters);
-CharSequence path = requestCodingStrategy.pathForTarget(homepageTarget);
+			IRequestCodingStrategy requestCodingStrategy = requestCycle.getProcessor()
 					.getRequestCodingStrategy();
-			String path = requestCodingStrategy.pathForTarget(homepageTarget);
+CharSequence path = requestCodingStrategy.pathForTarget(homepageTarget);
 
 			if (path != null)
 			{

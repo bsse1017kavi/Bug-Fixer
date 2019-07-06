@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -263,9 +262,9 @@ public class HTTPHC4Impl extends HTTPHCAbstractImpl {
             } else if (method.equals(HTTPConstants.GET)) {
                 httpRequest = new HttpGet(uri);
             } else if (method.equals(HTTPConstants.PATCH)) {
-throw new IllegalArgumentException("Unexpected method: '"+method+"'");
+                httpRequest = new HttpPatch(uri);
             } else {
-                throw new IllegalArgumentException("Unexpected method: "+method);
+throw new IllegalArgumentException("Unexpected method: '"+method+"'");
             }
             setupRequest(url, httpRequest, res); // can throw IOException
         } catch (Exception e) {

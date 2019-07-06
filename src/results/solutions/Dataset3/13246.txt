@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -78,9 +77,9 @@ public class ComponentRegistry {
 
     public ManagedReference createInstance(final Object instance) {
 
-return classIntrospectorInjectedValue.getValue().createInstance(instance);
+        final ComponentManagedReferenceFactory factory = componentsByClass.get(instance.getClass());
         if (factory == null) {
-            return null;
+return classIntrospectorInjectedValue.getValue().createInstance(instance);
         }
         return factory.getReference(instance);
     }

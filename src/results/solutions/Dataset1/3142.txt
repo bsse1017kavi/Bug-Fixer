@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -57,9 +56,9 @@ public class TestUniqueTermCount extends LuceneTestCase {
     for (int i = 0; i < 100; i++) {
       foo.setStringValue(addValue());
       writer.addDocument(doc);
-writer.shutdown();
+    }
     reader = writer.getReader();
-    writer.close();
+writer.shutdown();
   }
   
   @Override

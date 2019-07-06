@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -963,9 +962,9 @@ public class DeploymentOverlayHandler extends CommandHandlerWithHelp {
         }
 
         final ModelNode result = response.get(Util.RESULT);
-if(descr != null && (descr.contains("JBAS014807") || descr.contains("JBAS014793"))) {
+        if(!result.isDefined()) {
             final String descr = Util.getFailureDescription(response);
-            if(descr != null && descr.contains("JBAS014807")) {
+if(descr != null && (descr.contains("JBAS014807") || descr.contains("JBAS014793"))) {
                 // resource doesn't exist
                 return null;
             }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -153,9 +152,9 @@ public class DefaultExecManager
                 // Windows 98/95 - need to use an auxiliary script
                 final String script = resolveCommand( antDir, "bin/antRun.bat" );
                 launcher = new ScriptCommandLauncher( script );
-else if( Os.isFamily( "netware" ) )
+            }
         }
-        else if( ( new Os( "netware" ) ).eval() )
+else if( Os.isFamily( "netware" ) )
         {
             // NetWare.  Need to determine which JDK we're running in
             final String perlScript = resolveCommand( antDir, "bin/antRun.pl" );

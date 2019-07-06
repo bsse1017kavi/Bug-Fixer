@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -40,9 +39,9 @@ public class RequiredValidator extends AbstractValidator
 		final String value = component.getRequestString();
 
 		// Check value
-error(component, value);
+		if (value == null || value.trim().equals(""))
 		{
-			error(value, component);
+error(component, value);
 		}
 	}
 

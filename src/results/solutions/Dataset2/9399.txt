@@ -1,4 +1,3 @@
-
 /**********************************************************************
 Copyright (c) 2002 IBM Corp. and others.
 All rights reserved.   This program and the accompanying materials
@@ -185,9 +184,9 @@ public class CompilationUnitProblemFinder extends Compiler {
 						endPosition,
 						lineNumber);
 				// only report local problems
-System.out.println("PROBLEM FOUND while reconciling : "+problem.getMessage());//$NON-NLS-1$
+				if (CharOperation.equals(originatingFileName, fileName)){
 					if (JavaModelManager.VERBOSE){
-						System.out.println("PROBLEM FOUND while reconciling : "+problem.getMessage());
+System.out.println("PROBLEM FOUND while reconciling : "+problem.getMessage());//$NON-NLS-1$
 					}
 					problemRequestor.acceptProblem(problem);
 				}

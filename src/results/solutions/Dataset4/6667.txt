@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -181,9 +180,9 @@ public abstract class AbstractFieldMapper<T> implements FieldMapper<T>, Mapper {
             this.includeInAll = includeInAll;
             return builder;
         }
-return new Names(name, buildIndexName(context), indexName == null ? name : indexName, buildFullName(context), context.path().sourcePath());
+
         protected Names buildNames(BuilderContext context) {
-            return new Names(name, buildIndexName(context), indexName == null ? name : indexName, buildFullName(context));
+return new Names(name, buildIndexName(context), indexName == null ? name : indexName, buildFullName(context), context.path().sourcePath());
         }
 
         protected String buildIndexName(BuilderContext context) {

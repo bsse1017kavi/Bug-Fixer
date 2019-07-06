@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -110,9 +109,9 @@ public class LdapAuthenticationResourceDefinition extends SimpleResourceDefiniti
                 public void execute(OperationContext context, ModelNode ignored) throws OperationFailedException {
                     final Resource resource = context.readResource(PathAddress.EMPTY_ADDRESS);
                     final ModelNode model = resource.getModel();
-context.stepCompleted();
+                    validateAttributeCombination(model);
 
-                    context.completeStep();
+context.stepCompleted();
                 }
             }, OperationContext.Stage.MODEL);
             super.execute(context, operation);

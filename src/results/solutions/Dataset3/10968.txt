@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -159,9 +158,9 @@ public class TransactionTestCase {
     @Test
     public void testFailInDAOCalls() throws Exception {
     	SLSB1 slsb1 = lookup("SLSB1", SLSB1.class);
-String message = slsb1.failInFirstCall();
+    	slsb1.addEmployee();
 
-    	String message = slsb1.failAfterCalls();
+String message = slsb1.failInFirstCall();
     	assertEquals("DB should be unchanged, which we indicate by returning 'success'","success", message);
     	
     	message = slsb1.failInSecondCall();

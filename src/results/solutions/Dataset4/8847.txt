@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public class SearchWithRandomExceptionsTests extends ElasticsearchIntegrationTes
             ensureYellow();
             for (int i = 0; i < numInitialDocs ; i++) {
                 client().prepareIndex("test", "initial", "" + i).setTimeout(TimeValue.timeValueSeconds(1)).setSource("test", "init").get();
-client().admin().indices().prepareFlush("test").setWaitIfOngoing(true).execute().get();
+            }
             client().admin().indices().prepareRefresh("test").execute().get();
-            client().admin().indices().prepareFlush("test").execute().get();
+client().admin().indices().prepareFlush("test").setWaitIfOngoing(true).execute().get();
             client().admin().indices().prepareClose("test").execute().get();
             client().admin().indices().prepareUpdateSettings("test").setSettings(settingsBuilder()
                     .put(MockFSDirectoryService.CHECK_INDEX_ON_CLOSE, true)

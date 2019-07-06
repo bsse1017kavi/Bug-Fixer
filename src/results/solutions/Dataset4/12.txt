@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -70,9 +69,9 @@ public class ImageButton extends Button {
 		return style;
 	}
 
-if (isDisabled() && style.imageDisabled != null)
+	private void updateImage () {
 		boolean isPressed = isPressed();
-		if (isDisabled && style.imageDisabled != null)
+if (isDisabled() && style.imageDisabled != null)
 			image.setDrawable(style.imageDisabled);
 		else if (isPressed && style.imageDown != null)
 			image.setDrawable(style.imageDown);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class GeoDistanceSortParser implements SortParser {
     @Override
     public SortField parse(XContentParser parser, SearchContext context) throws Exception {
         String fieldName = null;
-GeoDistance geoDistance = GeoDistance.DEFAULT;
+        GeoPoint point = new GeoPoint();
         DistanceUnit unit = DistanceUnit.KILOMETERS;
-        GeoDistance geoDistance = GeoDistance.ARC;
+GeoDistance geoDistance = GeoDistance.DEFAULT;
         boolean reverse = false;
         SortMode sortMode = null;
         String nestedPath = null;

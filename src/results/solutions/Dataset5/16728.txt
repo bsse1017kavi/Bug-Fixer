@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2001-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -87,9 +86,9 @@ public class Ajc11CompilerAdapter extends DefaultCompilerAdapter {
             int result = runCompiler(args);
             return (0 == result);
         } catch (BuildException e) {
-if (x.isSilent()) { // no message, just return
+            throw e;
         } catch (AbortException x) {
-            if (AbortException.ABORT.equals(x)) { // no message, just return
+if (x.isSilent()) { // no message, just return
                 return false;
             } else {
                 Throwable t = x.getThrown();

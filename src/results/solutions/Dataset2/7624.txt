@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -459,9 +458,9 @@ public class CorrectionEngine implements ProblemReasons {
 	 * @return a String which can be used in <code>@SuppressWarnings</code> annotation,
 	 * or <code>null</code> if unable to suppress this warning.
 	 * @since 3.1
-int irritant = ProblemReporter.getIrritant(problemID);
+	 */
 	public static String getWarningToken(int problemID){
-		long irritant = ProblemReporter.getIrritant(problemID);
+int irritant = ProblemReporter.getIrritant(problemID);
 		if (irritant != 0) {
 			return CompilerOptions.warningTokenFromIrritant(irritant);
 		}

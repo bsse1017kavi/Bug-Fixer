@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -134,9 +133,9 @@ public class XTSExtension implements Extension {
                 ParseUtils.requireNoNamespaceAttribute(reader, i);
                 final String value = reader.getAttributeValue(i);
                 final Attribute attribute = Attribute.forName(reader.getAttributeLocalName(i));
-store.get(ModelDescriptionConstants.URL).set(ParseUtils.parsePossibleExpression(value));
+                switch (attribute) {
                     case URL:
-                        store.get(ModelDescriptionConstants.URL).set(value);
+store.get(ModelDescriptionConstants.URL).set(ParseUtils.parsePossibleExpression(value));
                         break;
                     default:
                         throw ParseUtils.unexpectedAttribute(reader, i);

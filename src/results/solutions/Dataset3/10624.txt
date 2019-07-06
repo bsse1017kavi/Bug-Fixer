@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -180,9 +179,9 @@ public class TimerResourceDefinition<T extends EJBComponent> extends SimpleResou
                         public void handleRollback(OperationContext context, ModelNode operation) {
                             timer.suspend();
                         }
-throw EjbLogger.ROOT_LOGGER.timerIsActive(timer);
+                    });
                 } else {
-                    throw EjbLogger.ROOT_LOGGER.timerIsActive(timer.getId());
+throw EjbLogger.ROOT_LOGGER.timerIsActive(timer);
                 }
             }
         });

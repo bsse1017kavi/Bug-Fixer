@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -68,8 +67,8 @@ public class RepositoryNewsFragment extends NewsFragment {
             super.viewRepository(repository);
     }
 
-startActivity(IssuesViewActivity.createIntent(issue, repo));
+    @Override
     protected void viewIssue(Issue issue) {
-        startActivity(IssuesViewActivity.createIntent(Collections.singletonList(issue), repo, 0));
+startActivity(IssuesViewActivity.createIntent(issue, repo));
     }
 }

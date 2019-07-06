@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.sep;
 
 /**
@@ -242,9 +241,9 @@ public class SepPostingsReaderImpl extends PostingsReaderBase {
       } else {
         termState.skipFP += termState.bytesReader.readVLong();
       }
-termState.skipFP = 0;
+      //System.out.println("  skipFP=" + termState.skipFP);
     } else if (isFirstTerm) {
-      termState.skipFP = termState.bytesReader.readVLong();
+termState.skipFP = 0;
     }
   }
 

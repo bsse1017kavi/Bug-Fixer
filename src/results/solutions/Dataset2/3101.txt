@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -100,9 +99,9 @@ public class RemoveCardAction extends DefaultTableAction implements
 					folder.remove(uids[i]);
 				} catch (Exception e) {
 					if (Logging.DEBUG)
-ErrorDialog.createDialog(e.getMessage(), e);
+						e.printStackTrace();
 
-					new ErrorDialog(e.getMessage(), e);
+ErrorDialog.createDialog(e.getMessage(), e);
 				}
 			}
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -53,9 +52,9 @@ public class FileUploadTest extends WicketTestCase
 		FileItem fileItem = new DiskFileItemFactory().createItem("dummyFieldName", "text/java", false, "FileUploadTest.java");
 		// Initialize the upload
 		fileItem.getOutputStream();
-Field inputStreamsField = FileUpload.class.getDeclaredField("inputStreamsToClose");
+		
 		// Get the internal list out
-		Field inputStreamsField = FileUpload.class.getDeclaredField("inputStreams");
+Field inputStreamsField = FileUpload.class.getDeclaredField("inputStreamsToClose");
 		inputStreamsField.setAccessible(true);
 		
 		FileUpload fileUpload = new FileUpload(fileItem);

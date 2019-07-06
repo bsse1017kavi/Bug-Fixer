@@ -1,4 +1,3 @@
-
 package wicket.examples.compref;
 
 import java.util.ArrayList;
@@ -42,9 +41,9 @@ public class CheckGroupPage extends WicketExamplePage
 		new CheckGroupSelector(group, "groupselector");
 		new ListView<Person>(group, "persons", ComponentReferenceApplication.getPersons())
 		{
-protected void populateItem(final ListItem<Person> item)
+
 			@Override
-			protected void populateItem(ListItem<Person> item)
+protected void populateItem(final ListItem<Person> item)
 			{
 				new Check<Person>(item, "checkbox", item.getModel());
 				new Label(item, "name", new PropertyModel(item.getModel(), "name"));

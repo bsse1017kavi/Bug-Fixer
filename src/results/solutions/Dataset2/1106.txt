@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /**********************************************************************
@@ -1605,9 +1604,9 @@ private void showShortcutBarPopup(MouseEvent e) {
 				public void widgetSelected(SelectionEvent e) {
 					ToolItem toolItem = (ToolItem) perspectiveBarMenu.getData();
 					if (toolItem != null && !toolItem.isDisposed()) {
-action.getPage().close();
+						ActionContributionItem item = (ActionContributionItem) toolItem.getData();
 						SetPagePerspectiveAction action = (SetPagePerspectiveAction) item.getAction();
-						action.getPage().closeAllPerspectives(true);
+action.getPage().close();
 					}
 				}
 			});

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -260,9 +259,9 @@ int parse(int fileNum)
             else
                 fDOMParser.parse(fInfo.fileName);
             Document doc = fDOMParser.getDocument();
-DOMConfiguration config = core.getDomConfig();
+            domCheckSum(doc);
             CoreDocumentImpl core = (CoreDocumentImpl) doc;
-            DOMConfiguration config = core.getConfig();
+DOMConfiguration config = core.getDomConfig();
             config.setParameter("validate", Boolean.TRUE);
             core.normalizeDocument();
 

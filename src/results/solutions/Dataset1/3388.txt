@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -139,9 +138,9 @@ public final class ModelSerializerTest extends MahoutTestCase {
     assertEquals(learner.auc(), olr2.auc(), 0.02);
     double auc2 = learner.auc();
     assertTrue(auc2 > auc1);
-//  @Test
+  }
 
-  @Test
+//  @Test
   public void adaptiveLogisticRegressionRoundTrip() {
     AdaptiveLogisticRegression learner = new AdaptiveLogisticRegression(2, 5, new L1());
     learner.setInterval(200);

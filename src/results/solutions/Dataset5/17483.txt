@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -684,9 +683,9 @@ public class Rmic extends MatchingTask
             try
             {
                 if( filtering )
-FileUtils.copyFile( oldFile, newFile, filters );
+                {
                     final FilterSetCollection filters = new FilterSetCollection( project.getGlobalFilterSet() );
-                    FileUtils.newFileUtils().copyFile( oldFile, newFile, filters );
+FileUtils.copyFile( oldFile, newFile, filters );
                 }
                 else
                 {

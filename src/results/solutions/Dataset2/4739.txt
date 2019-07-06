@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.core;
 
 /*
@@ -793,9 +792,9 @@ public final class JavaCore extends Plugin implements IExecutableExtension {
 		for (int i = 0; i < propertyNames.length; i++){
 			String propertyName = propertyNames[i];
 			defaultOptions.put(propertyName, preferences.getDefaultString(propertyName));
-defaultOptions.put(CORE_ENCODING, ""/*ResourcesPlugin.getEncoding()*/); //$NON-NLS-1$
+		}		
 		// get encoding through resource plugin
-		defaultOptions.put(CompilerOptions.OPTION_Encoding, ResourcesPlugin.getEncoding()); //$NON-NLS-1$
+defaultOptions.put(CORE_ENCODING, ""/*ResourcesPlugin.getEncoding()*/); //$NON-NLS-1$
 		
 		return defaultOptions;
 	}

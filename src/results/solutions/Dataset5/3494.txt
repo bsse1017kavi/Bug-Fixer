@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2008 ZXing authors
  *
@@ -71,9 +70,9 @@ public final class CalendarResultHandler extends ResultHandler {
   }
 
   @Override
-StringBuffer result = new StringBuffer(100);
+  public CharSequence getDisplayContents() {
     CalendarParsedResult calResult = (CalendarParsedResult) getResult();
-    StringBuffer result = new StringBuffer();
+StringBuffer result = new StringBuffer(100);
     ParsedResult.maybeAppend(calResult.getSummary(), result);
     appendTime(calResult.getStart(), result);
 

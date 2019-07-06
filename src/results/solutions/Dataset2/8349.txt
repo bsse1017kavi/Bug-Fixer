@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -89,9 +88,9 @@ send(Message query) {
 	for (q = 0; q < 20; q++) {
 		boolean ok = false;
 		for (r = 0; r < resolvers.length; r++)
-break;
+			ok |= sendTo(query, r, q);
 		if (!ok)
-			return null;
+break;
 		Message m = null;
 		synchronized (queue) {
 			try {

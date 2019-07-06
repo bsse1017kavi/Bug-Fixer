@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ import org.junit.runner.RunWith;
 @ServerSetup(CreateQueueSetupTask.class)
 public class JMSMessageDrivenBeanTestCase {
     @Deployment
-.addClasses(ReplyingMDB.class,JMSMessagingUtil.class)
+    public static Archive<?> deployment() {
         final Archive<?> deployment = ShrinkWrap.create(JavaArchive.class, "ejb3mdb.jar")
-                .addPackage(ReplyingMDB.class.getPackage())
+.addClasses(ReplyingMDB.class,JMSMessagingUtil.class)
                 .addClass(CreateQueueSetupTask.class);
         return deployment;
     }

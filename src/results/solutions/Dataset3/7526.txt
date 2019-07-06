@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class PromptPasswordState implements State {
                 }
                 // Prompt for password.
                 theConsole.printf(DomainManagementLogger.ROOT_LOGGER.passwordPrompt());
-return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.noPasswordExiting());
+                char[] tempChar = theConsole.readPassword(" : ");
                 if (tempChar == null || tempChar.length == 0) {
-                    return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.noPasswordExiting(), stateValues);
+return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.noPasswordExiting());
                 }
                 stateValues.setPassword(new String(tempChar));
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -410,9 +409,9 @@ public abstract class RequestCycle
 	 * Gets the page class that is to be instantiated and rendered for this request in case the last
 	 * set request target is of type {@link BookmarkablePageRequestTarget}.
 	 * 
-public final Class<? extends Page> getResponsePageClass()
+	 * @return the page class or null
 	 */
-	public final Class getResponsePageClass()
+public final Class<? extends Page> getResponsePageClass()
 	{
 		IRequestTarget target = getRequestTarget();
 		if (target != null && (target instanceof IBookmarkablePageRequestTarget))

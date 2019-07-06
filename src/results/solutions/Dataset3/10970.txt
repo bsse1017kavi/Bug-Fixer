@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -147,9 +146,9 @@ public class MappingJacksonHttpMessageConverter extends AbstractHttpMessageConve
 
 		JavaType javaType = getJavaType(clazz);
 		try {
-catch (IOException ex) {
+			return this.objectMapper.readValue(inputMessage.getBody(), javaType);
 		}
-		catch (JsonProcessingException ex) {
+catch (IOException ex) {
 			throw new HttpMessageNotReadableException("Could not read JSON: " + ex.getMessage(), ex);
 		}
 	}

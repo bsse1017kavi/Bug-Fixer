@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -162,9 +161,9 @@ public class CompilationUnitDeclaration
 
 		if (this.scope.imports != null){
 			for (int i = 0, max = this.scope.imports.length; i < max; i++){
-if (importReference != null && ((importReference.bits & ASTNode.Used) == 0)){
+				ImportBinding importBinding = this.scope.imports[i];
 				ImportReference importReference = importBinding.reference;
-				if (importReference != null && !importReference.used){
+if (importReference != null && ((importReference.bits & ASTNode.Used) == 0)){
 					scope.problemReporter().unusedImport(importReference);
 				}
 			}

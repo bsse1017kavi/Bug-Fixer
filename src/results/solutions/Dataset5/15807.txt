@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.9 $ $Date$
@@ -87,9 +86,9 @@ public abstract class WebApplication extends Application
 	{
 		return new ISessionFactory()
 		{
-return new WebSession(WebApplication.this);
+			public Session newSession()
 			{
-				return new HttpSession(WebApplication.this);
+return new WebSession(WebApplication.this);
 			}
 		};
 	}

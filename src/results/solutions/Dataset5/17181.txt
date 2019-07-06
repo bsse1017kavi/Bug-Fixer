@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1431,9 +1430,9 @@ public class Form<T> extends WebMarkupContainer implements IFormSubmitListener
 	 * 
 	 * @return false if form is multipart and upload failed
 	 */
-if (isMultiPart())
+	protected boolean handleMultiPart()
 	{
-		if (isMultiPart() && !((WebRequest)getRequest()).isAjax())
+if (isMultiPart())
 		{
 			// Change the request to a multipart web request so parameters are
 			// parsed out correctly

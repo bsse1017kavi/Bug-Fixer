@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -436,9 +435,9 @@ public final class ManagedServerOperationsFactory {
         if (group.has(INCLUDES) && group.get(INCLUDES).isDefined()) {
             for (final ModelNode include : group.get(INCLUDES).asList()) {
                 final String ref = include.asString();
-if (includedGroup == null) {
+                if (processed.add(ref)) {
                     final ModelNode includedGroup = groups.get(ref);
-                    if (group == null) {
+if (includedGroup == null) {
                         throw MESSAGES.undefinedSocketBindingGroup(ref);
                     }
                     mergeBindingGroups(updates, groups, groupName, includedGroup, processed);

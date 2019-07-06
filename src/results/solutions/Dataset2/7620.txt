@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -149,9 +148,9 @@ public class FieldDeclaration extends AbstractVariableDeclaration {
 			this.hasBeenResolved = true;
 
 			if (isTypeUseDeprecated(this.binding.type, initializationScope))
-this.type.resolvedType = this.binding.type; // update binding for type reference
+				initializationScope.problemReporter().deprecatedType(this.binding.type, this.type);
 
-			this.type.binding = this.binding.type; // update binding for type reference
+this.type.resolvedType = this.binding.type; // update binding for type reference
 
 			// the resolution of the initialization hasn't been done
 			if (this.initialization == null) {

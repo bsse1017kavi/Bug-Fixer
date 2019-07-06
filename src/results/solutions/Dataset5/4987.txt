@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -126,9 +125,9 @@ public class TextAreaEditor extends PropertyEditorSupport implements FocusListen
     }
 
     @Override
-if (source instanceof ComboStringEditor) {
+    public void propertyChange(PropertyChangeEvent evt) {
         Object source = evt.getSource();
-        if (source instanceof ComboStringEditor && source != null) {
+if (source instanceof ComboStringEditor) {
             ComboStringEditor cse = (ComboStringEditor) source;
             String lang = cse.getAsText().toLowerCase();
             if (languageProperties.containsKey(lang)) {

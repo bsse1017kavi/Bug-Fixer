@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -182,9 +181,9 @@ public class TransportClientNodesService extends AbstractComponent implements Cl
             for (final DiscoveryNode listedNode : listedNodes) {
                 threadPool.execute(new Runnable() {
                     @Override public void run() {
-transportService.sendRequest(listedNode, TransportActions.Admin.Cluster.Node.INFO, Requests.nodesInfoRequest("_local"), new BaseTransportResponseHandler<NodesInfoResponse>() {
+                        try {
                             transportService.connectToNode(listedNode); // make sure we are connected to it
-                            transportService.sendRequest(listedNode, TransportActions.Admin.Cluster.Node.INFO, Requests.nodesInfo("_local"), new BaseTransportResponseHandler<NodesInfoResponse>() {
+transportService.sendRequest(listedNode, TransportActions.Admin.Cluster.Node.INFO, Requests.nodesInfoRequest("_local"), new BaseTransportResponseHandler<NodesInfoResponse>() {
 
                                 @Override public NodesInfoResponse newInstance() {
                                     return new NodesInfoResponse();

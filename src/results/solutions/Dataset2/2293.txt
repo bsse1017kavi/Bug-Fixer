@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -208,9 +207,9 @@ public final class ImportRewrite {
 		return new ImportRewrite((ICompilationUnit) typeRoot, astRoot, existingImport);
 	}
 		
-this.astRoot= astRoot; // might be null
+	private ImportRewrite(ICompilationUnit cu, CompilationUnit astRoot, List existingImports) {
 		this.compilationUnit= cu;
-		this.astRoot= null; // might be null
+this.astRoot= astRoot; // might be null
 		if (existingImports != null) {
 			this.existingImports= existingImports;
 			this.restoreExistingImports= !existingImports.isEmpty();

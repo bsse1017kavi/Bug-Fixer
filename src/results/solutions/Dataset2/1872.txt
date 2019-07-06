@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -112,9 +111,9 @@ protected void addToResult(char[][] compoundName) {
  * Parse the given compiation unit and build its type bindings.
  */
 protected CompilationUnitDeclaration buildBindings(ICompilationUnit compilationUnit, boolean isTopLevelOrMember) throws JavaModelException {
-final char[] mainTypeName = fileName.substring(0, fileName.length() - 5).toCharArray(); //TODO (jerome) should not hardcode extension length
+	final IFile file = (IFile) compilationUnit.getResource();
 	final String fileName = file.getFullPath().lastSegment();
-	final char[] mainTypeName = fileName.substring(0, fileName.length() - 5).toCharArray();
+final char[] mainTypeName = fileName.substring(0, fileName.length() - 5).toCharArray(); //TODO (jerome) should not hardcode extension length
 
 	// source unit
 	IBuffer buffer = compilationUnit.getBuffer();

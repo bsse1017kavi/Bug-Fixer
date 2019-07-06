@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -374,9 +373,9 @@ protected void toStringChildren(int tab, StringBuffer buffer, Object info) {
  * Debugging purposes
  */
 protected void toStringInfo(int tab, StringBuffer buffer, Object info) {
-buffer.append("<default>"); //$NON-NLS-1$
+	buffer.append(this.tabString(tab));
 	if (getElementName().length() == 0) {
-		buffer.append("[default]"); //$NON-NLS-1$
+buffer.append("<default>"); //$NON-NLS-1$
 	} else {
 		buffer.append(getElementName());
 	}

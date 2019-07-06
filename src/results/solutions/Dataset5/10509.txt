@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1307,9 +1306,9 @@ public class AnnotationPersistenceMappingParser
                 cols.add(newColumn(pcols[i]));
             }
             
-&& (AccessController.doPrivileged(J2DoPriv5Helper
+            if (xmlTypeClass != null
                 && StringUtils.isEmpty(pcols[i].columnDefinition())
-                && ((Boolean) AccessController.doPrivileged(J2DoPriv5Helper
+&& (AccessController.doPrivileged(J2DoPriv5Helper
                     .isAnnotationPresentAction(fm.getDeclaredType(),
                         xmlTypeClass))).booleanValue()) {
                 DBDictionary dict = ((MappingRepository) getRepository())

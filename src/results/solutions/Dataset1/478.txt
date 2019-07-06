@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -89,9 +88,9 @@ final class TermVectorsConsumerPerField extends TermsHashConsumerPerField {
 
   /** Called once per field per document if term vectors
    *  are enabled, to write the vectors to
-void finish() {
+   *  RAMOutputStream, which is then quickly flushed to
    *  the real term vectors files in the Directory. */  @Override
-  void finish() throws IOException {
+void finish() {
     if (!doVectors || termsHashPerField.bytesHash.size() == 0) {
       return;
     }

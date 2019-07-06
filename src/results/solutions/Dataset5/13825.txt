@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class JavaConstantResource extends AbstractClasspathResource {
      * @param cl the classloader to use. Will be null if the system classloader is used
      * @return an open input stream for the resource
      * @throws IOException if an error occurs.
-Class<?> clazz;
+     */
     protected InputStream openInputStream(ClassLoader cl) throws IOException {
-        Class clazz;
+Class<?> clazz;
         String constant = getName();
         int index1 = constant.lastIndexOf('.');
         if (index1 < 0) {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -378,9 +377,9 @@ public class CallMetaDataContext {
 						}
 					}
 					else {
-workParameters.add(this.metaDataProvider.createDefaultOutParameter(returnNameToUse, meta));
+						String returnNameToUse =(StringUtils.hasLength(meta.getParameterName()) ?
 								parNameToUse : getFunctionReturnName());
-						workParameters.add(new SqlOutParameter(returnNameToUse, meta.getSqlType()));
+workParameters.add(this.metaDataProvider.createDefaultOutParameter(returnNameToUse, meta));
 						if (isFunction()) {
 							setFunctionReturnName(returnNameToUse);
 							outParameterNames.add(returnNameToUse);

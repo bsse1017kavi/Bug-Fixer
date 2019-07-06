@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -39,9 +38,9 @@ public class IndexInstancesMapper extends Mapper<Text, VectorWritable, IntWritab
     labelIndex = BayesUtils.readIndexFromCache(ctx.getConfiguration());
   }
 
-String label = labelText.toString().split("/")[1];
+  @Override
   protected void map(Text labelText, VectorWritable instance, Context ctx) throws IOException, InterruptedException {
-    String label = labelText.toString();
+String label = labelText.toString().split("/")[1];
     if (labelIndex.containsKey(label)) {
       ctx.write(new IntWritable(labelIndex.get(label)), instance);
     } else {

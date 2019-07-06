@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public class TransportIndexAction extends TransportShardReplicationOperationActi
 
     @Override
     protected boolean resolveRequest(ClusterState state, IndexRequest request, ActionListener<IndexResponse> indexResponseActionListener) {
-request.index(metaData.concreteSingleIndex(request.index()));
+        MetaData metaData = clusterService.state().metaData();
         String aliasOrIndex = request.index();
-        request.index(metaData.concreteIndex(request.index()));
+request.index(metaData.concreteSingleIndex(request.index()));
         MappingMetaData mappingMd = null;
         if (metaData.hasIndex(request.index())) {
             mappingMd = metaData.index(request.index()).mappingOrDefault(request.type());

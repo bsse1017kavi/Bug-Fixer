@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -163,9 +162,9 @@ public abstract class GwtApplication implements EntryPoint, Application {
 		lastHeight = graphics.getHeight();
 		Gdx.app = this;
 		Gdx.audio = new GwtAudio();
-Gdx.gl = Gdx.gl20;
+		Gdx.graphics = graphics;
 		Gdx.gl20 = graphics.getGL20();
-		Gdx.gl = graphics.getGLCommon();
+Gdx.gl = Gdx.gl20;
 		Gdx.files = new GwtFiles(preloader);
 		this.input = new GwtInput(graphics.canvas);
 		Gdx.input = this.input;

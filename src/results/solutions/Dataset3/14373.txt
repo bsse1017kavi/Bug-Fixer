@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class CSVLexerTest {
         return new CSVLexer(format, new ExtendedBufferedReader(new StringReader(input)));
     }
 
-public void testIgnoreSurroundingSpacesAreDeleted() throws IOException {
+    // Single line (without comment)
     @Test
-    public void testNextToken1() throws IOException {
+public void testIgnoreSurroundingSpacesAreDeleted() throws IOException {
         final String code = "abc,def, hijk,  lmnop,   qrst,uv ,wxy   ,z , ,";
         final Lexer parser = getLexer(code, CSVFormat.newBuilder().withIgnoreSurroundingSpaces(true).build());
         assertThat(parser.nextToken(new Token()), matches(TOKEN, "abc"));

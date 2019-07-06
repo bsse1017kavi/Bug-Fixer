@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class RestNodesStatsAction extends BaseRestHandler {
 
         controller.registerHandler(GET, "/_nodes/{nodeId}/stats/{metric}/{indexMetric}", this);
     }
-public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void handleRequest(final RestRequest request, final RestChannel channel) {
+public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
         String[] nodesIds = Strings.splitStringByCommaToArray(request.param("nodeId"));
         Set<String> metrics = Strings.splitStringByCommaToSet(request.param("metric", "_all"));
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -92,9 +91,9 @@ public class NodeEnvironment extends AbstractComponent {
                         }
                         break;
                     }
-lastException = new IOException("failed to obtain lock on " + dir.getAbsolutePath(), e);
+                } catch (IOException e) {
                     logger.trace("failed to obtain node lock on {}", e, dir.getAbsolutePath());
-                    lastException = e;
+lastException = new IOException("failed to obtain lock on " + dir.getAbsolutePath(), e);
                     // release all the ones that were obtained up until now
                     for (int i = 0; i < locks.length; i++) {
                         if (locks[i] != null) {

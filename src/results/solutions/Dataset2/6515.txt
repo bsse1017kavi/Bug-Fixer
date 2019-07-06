@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 import java.util.List;
@@ -90,9 +89,9 @@ public  class RModuleIssueType
         ModuleEntity module = getModule();
 
         if (user.hasPermission(ScarabSecurity.MODULE__EDIT, module))
-List attGroups = getIssueType().getAttributeGroups(module);
+        {
             // Delete attribute groups first
-            List attGroups = getIssueType().getAttributeGroups(); 
+List attGroups = getIssueType().getAttributeGroups(module);
             for (int j=0; j<attGroups.size(); j++)
             {
                 // delete attribute-attribute group map

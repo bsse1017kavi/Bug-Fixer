@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -85,9 +84,9 @@ public class TestSegmentReader extends LuceneTestCase {
     SegmentInfo info = DocHelper.writeDoc(dir, docToDelete);
     SegmentReader deleteReader = SegmentReader.get(false, info, IndexReader.DEFAULT_TERMS_INDEX_DIVISOR);
     assertTrue(deleteReader != null);
-assertTrue(deleteReader.getDeletedDocs().get(0));
+    assertTrue(deleteReader.numDocs() == 1);
     deleteReader.deleteDocument(0);
-    assertTrue(deleteReader.isDeleted(0) == true);
+assertTrue(deleteReader.getDeletedDocs().get(0));
     assertTrue(deleteReader.hasDeletions() == true);
     assertTrue(deleteReader.numDocs() == 0);
     deleteReader.close();

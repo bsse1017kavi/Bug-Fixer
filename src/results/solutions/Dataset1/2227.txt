@@ -1,4 +1,3 @@
-
 package org.apache.mahout.vectorizer;
 
 import org.apache.hadoop.conf.Configuration;
@@ -34,9 +33,9 @@ public class DocumentProcessorTest extends MahoutTestCase {
     String documentId2 = "456";
     String text2 = "and another one";
     writer.append(new Text(documentId2), new Text(text2));
-DocumentProcessor.tokenizeDocuments(input, DefaultAnalyzer.class, output, configuration);
+    writer.close();
 
-    DocumentProcessor.tokenizeDocuments(input, DefaultAnalyzer.class, output);
+DocumentProcessor.tokenizeDocuments(input, DefaultAnalyzer.class, output, configuration);
 
     FileStatus[] statuses = fs.listStatus(output);
     assertEquals(1, statuses.length);

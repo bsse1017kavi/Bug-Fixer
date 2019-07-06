@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -125,9 +124,9 @@ public CacheResponse
 lookupRecords(Name name, short type, byte minCred) {
 	CacheElement element = (CacheElement) findSet(name, type);
 	if (element == null)
-removeSet(name, type, element);
+		return new CacheResponse(CacheResponse.UNKNOWN);
 	if (element.expiredTTL()) {
-		removeSet(name, type);
+removeSet(name, type, element);
 		return new CacheResponse(CacheResponse.UNKNOWN);
 	}
 	if (element.credibility >= minCred) {

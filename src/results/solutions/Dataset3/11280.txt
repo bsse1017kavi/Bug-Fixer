@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -194,9 +193,9 @@ class AppClientServerConfiguration {
 
     private static void interfaces(List<ModelNode> nodes) {
         ModelNode add = new ModelNode();
-add.get(CRITERIA).get("inet-address").set("127.0.0.1");
+        add.get(OP_ADDR).set(new ModelNode().setEmptyList()).add(INTERFACE, "public");
         add.get(OP).set(ADD);
-        add.get(CRITERIA).add().set("inet-address", "127.0.0.1");
+add.get(CRITERIA).get("inet-address").set("127.0.0.1");
         nodes.add(add);
     }
 

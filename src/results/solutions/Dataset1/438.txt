@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 /**
  * Copyright 2006 The Apache Software Foundation
@@ -311,9 +310,9 @@ public class TestIndexWriterMerging extends LuceneTestCase
   // Just intercepts all merges & verifies that we are never
   // merging a segment with >= 20 (maxMergeDocs) docs
   private class MyMergeScheduler extends MergeScheduler {
-throws IOException {
+    @Override
     synchronized public void merge(IndexWriter writer)
-      throws CorruptIndexException, IOException {
+throws IOException {
 
       while(true) {
         MergePolicy.OneMerge merge = writer.getNextMerge();

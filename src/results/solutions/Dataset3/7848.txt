@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -321,9 +320,9 @@ public class InfinispanSessionManager<V, L> implements SessionManager<L>, KeyGen
         oldAddresses.removeAll(newHash.getMembers());
         if (!oldAddresses.isEmpty()) {
             // Iterate over sessions in memory
-if (key instanceof String) {
+            for (Object key: cache.getAdvancedCache().withFlags(Flag.CACHE_MODE_LOCAL, Flag.SKIP_CACHE_LOAD, Flag.SKIP_LOCKING).keySet()) {
                 // Cache may contain non-string keys, so ignore any others
-                if (this.accept(key)) {
+if (key instanceof String) {
                     String sessionId = (String) key;
                     Address oldOwner = oldHash.locatePrimaryOwner(sessionId);
                     // If the old owner of this session has left the cache view...

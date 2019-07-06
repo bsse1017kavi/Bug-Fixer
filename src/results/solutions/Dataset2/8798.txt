@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder;
 
 /*
@@ -124,9 +123,9 @@ protected void copyExtraResourcesBack() throws CoreException {
 							IResource copiedResource = outputFolder.getFile(partialPath);
 							if (copiedResource.exists()) {
 								createErrorFor(resource, Util.bind("build.duplicateResource")); //$NON-NLS-1$
-copiedResource.setDerived(true);
+							} else {
 								resource.copy(copiedResource.getFullPath(), true, null);
-								resource.setDerived(true);
+copiedResource.setDerived(true);
 							}
 							return false;
 						case IResource.FOLDER :

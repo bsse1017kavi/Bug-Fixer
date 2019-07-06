@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public abstract class AbstractDecimalConverter extends AbstractNumberConverter
 	public NumberFormat getNumberFormat(Locale locale)
 	{
 		NumberFormat numberFormat = numberFormats.get(locale);
-numberFormat = newNumberFormat(locale);
+		if (numberFormat == null)
 		{
-			numberFormat = NumberFormat.getInstance(locale);
+numberFormat = newNumberFormat(locale);
 			if (numberFormat instanceof DecimalFormat)
 				((DecimalFormat)numberFormat).setParseBigDecimal(true);
 

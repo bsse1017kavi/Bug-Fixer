@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -202,9 +201,9 @@ public class LocalEjbReceiver extends EJBReceiver implements Service<LocalEjbRec
     private Object clone(final Class<?> target, final ObjectCloner cloner, final Object object, final boolean allowPassByReference) {
         if (object == null) {
             return null;
-if (allowPassByReference && (target.isPrimitive() || target.isAssignableFrom(object.getClass()))) {
+        }
 
-        if (allowPassByReference && target.isAssignableFrom(object.getClass())) {
+if (allowPassByReference && (target.isPrimitive() || target.isAssignableFrom(object.getClass()))) {
             return object;
         }
         return clone(cloner, object);

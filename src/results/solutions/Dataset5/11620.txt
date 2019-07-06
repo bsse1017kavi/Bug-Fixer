@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1732,9 +1731,9 @@ public class BrokerImpl
             if (_operationCount == 1 && (_autoDetach & DETACH_NONTXREAD) != 0
                 && (_flags & FLAG_ACTIVE) == 0) {
                 detachAllInternal(null);
-throw new InternalException(_loc.get("multi-threaded-access"));
+            }
             if (_operationCount < 1)
-                throw new InternalException();
+throw new InternalException(_loc.get("multi-threaded-access"));
             return _operationCount == 1;
         } catch (OpenJPAException ke) {
             throw ke;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -712,8 +711,8 @@ public class Actor {
 		if (name == null) {
 			name = getClass().getName();
 			int dotIndex = name.lastIndexOf('.');
-return name + " " + x + "," + y + " " + width + "x" + height;
+			if (dotIndex != -1) name = name.substring(dotIndex + 1);
 		}
-		return name;
+return name + " " + x + "," + y + " " + width + "x" + height;
 	}
 }

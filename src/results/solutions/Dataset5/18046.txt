@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -138,9 +137,9 @@ public class PackageRequestTargetUrlCodingStrategy extends AbstractRequestTarget
 					IBookmarkablePageRequestTarget.class.getName());
 		}
 		AppendingStringBuffer url = new AppendingStringBuffer(40);
-url.append("/").append(Classes.simpleName(target.getPageClass())).append("/");
+		url.append(getMountPath());
 		IBookmarkablePageRequestTarget target = (IBookmarkablePageRequestTarget)requestTarget;
-		url.append("/").append(Classes.simpleName(target.getPageClass()));
+url.append("/").append(Classes.simpleName(target.getPageClass())).append("/");
 
 		PageParameters pageParameters = target.getPageParameters();
 		if (target.getPageMapName() != null)

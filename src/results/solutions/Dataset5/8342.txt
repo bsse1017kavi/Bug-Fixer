@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -630,9 +629,9 @@ public abstract class Application
 		// Load any wicket properties files we can find
 		try
 		{
-"wicket.properties");
+			// Load properties files used by all libraries
 			final Enumeration resources = getClass().getClassLoader().getResources(
-					"org.apache.wicket.properties");
+"wicket.properties");
 			while (resources.hasMoreElements())
 			{
 				InputStream in = null;

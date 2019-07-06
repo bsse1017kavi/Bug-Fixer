@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * ScheduledExecutorService decorator that records recurring tasks and cancels them on shutdown.
  * @author Paul Ferraro
-private final List<Future<?>> futures = new LinkedList<>();
+ */
 public class ManagedScheduledExecutorService extends ManagedExecutorService implements ScheduledExecutorService {
-    private final List<Future<?>> futures = new LinkedList<Future<?>>();
+private final List<Future<?>> futures = new LinkedList<>();
     private volatile boolean shutdown = false;
     private volatile boolean terminated = false;
     private final ScheduledExecutorService executor;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2005 The Apache Software Foundation.
  * 
@@ -116,9 +115,9 @@ public class Functor {
 
 	public Object invoke() {
 		try {
-log.warn("Trouble functing method: "+methodName+" invokee: "+invokee.getClass().getName(), e);
+			return createMethod(getTypes()).invoke(invokee, getArgs());
 		} catch (Exception e) {
-			log.warn("Trouble functing method: ", e);
+log.warn("Trouble functing method: "+methodName+" invokee: "+invokee.getClass().getName(), e);
 			throw new org.apache.jorphan.util.JMeterError(e); // JDK1.4
 		}
 	}

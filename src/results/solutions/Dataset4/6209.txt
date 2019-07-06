@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -119,9 +118,9 @@ public class TransportFlushAction extends TransportBroadcastOperationAction<Flus
     /**
      * The refresh request works against *all* shards.
      */
-return clusterState.routingTable().allActiveShardsGrouped(concreteIndices, true, true);
+    @Override
     protected GroupShardsIterator shards(ClusterState clusterState, FlushRequest request, String[] concreteIndices) {
-        return clusterState.routingTable().allActiveShardsGrouped(concreteIndices, true);
+return clusterState.routingTable().allActiveShardsGrouped(concreteIndices, true, true);
     }
 
     @Override

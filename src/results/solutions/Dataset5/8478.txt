@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -391,9 +390,9 @@ abstract class VAJLocalUtil implements VAJUtil
                     spec.getClass().getDeclaredMethod( methodName, methodParams );
                 method.invoke( spec, new Object[]{fileArr} );
             }
-throw new BuildException( "Error", e );
+            catch( Exception e )
             {
-                throw new BuildException( e );
+throw new BuildException( "Error", e );
             }
             if( files.size() > 0 )
             {

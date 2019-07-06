@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -307,9 +306,9 @@ public class BcelTypeMunger extends ConcreteTypeMunger {
           String subReturnTypeSig   = subMethod.getReturnType().getSignature();
           if (!superReturnTypeSig.equals(subReturnTypeSig)) {
             // Allow for covariance - wish I could test this (need Java5...)
-if (!superType.isAssignableFrom(subType)) {
+            ResolvedType subType   = weaver.getWorld().resolve(subMethod.getReturnType());
             ResolvedType superType = weaver.getWorld().resolve(superMethod.getReturnType());
-            if (!subType.isAssignableFrom(superType)) {
+if (!superType.isAssignableFrom(subType)) {
                 ISourceLocation sloc = subMethod.getSourceLocation();
                 weaver.getWorld().getMessageHandler().handleMessage(MessageUtil.error(
                         "The return type is incompatible with "+superMethod.getDeclaringType()+"."+superMethod.getName()+superMethod.getParameterSignature(),

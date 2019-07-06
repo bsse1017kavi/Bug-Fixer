@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -462,9 +461,9 @@ public class WorkbenchPlugin extends AbstractUIPlugin {
             //Get the pages from the registry
             PreferencePageRegistryReader registryReader = new PreferencePageRegistryReader(
                     getWorkbench());
-preferenceManager.addPagesAndGroups(registryReader.getTopLevelNodes(),registryReader.getGroups());
+            registryReader
                     .loadFromRegistry(Platform.getExtensionRegistry());
-            preferenceManager.addPagesAndGroups(registryReader.getTopLevelNodes(),registryReader.getTopLevelGroups());
+preferenceManager.addPagesAndGroups(registryReader.getTopLevelNodes(),registryReader.getGroups());
            
         }
         return preferenceManager;

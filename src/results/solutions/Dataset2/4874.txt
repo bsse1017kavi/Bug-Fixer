@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -68,9 +67,9 @@ public static ClasspathLocation[] computeLocations(
 	IJavaProject javaProject,
 	String outputFolderLocation,
 	ArrayList sourceFolders,
-IClasspathEntry[] classpathEntries = ((JavaProject) javaProject).getExpandedClasspath(true, true);
+	SimpleLookupTable prereqOutputFolders) throws JavaModelException {
 
-	IClasspathEntry[] classpathEntries = ((JavaProject) javaProject).getExpandedClasspath(true);
+IClasspathEntry[] classpathEntries = ((JavaProject) javaProject).getExpandedClasspath(true, true);
 	int cpCount = 0;
 	int max = classpathEntries.length;
 	ClasspathLocation[] classpathLocations = new ClasspathLocation[max];

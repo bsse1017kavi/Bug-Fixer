@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -57,9 +56,9 @@ final class CollectionToStringConverter implements GenericConverter {
 		int i = 0;
 		for (Object sourceElement : sourceCollection) {
 			if (i > 0) {
-Object targetElement = this.conversionService.convert(sourceElement, sourceType.elementTypeDescriptor(sourceElement), targetType);
+				sb.append(DELIMITER);
 			}
-			Object targetElement = this.conversionService.convert(sourceElement, sourceType.elementType(sourceElement), targetType);
+Object targetElement = this.conversionService.convert(sourceElement, sourceType.elementTypeDescriptor(sourceElement), targetType);
 			sb.append(targetElement);
 			i++;
 		}

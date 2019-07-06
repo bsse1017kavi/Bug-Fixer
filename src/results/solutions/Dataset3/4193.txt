@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -155,9 +154,9 @@ public class MultidimensionalCounterTest {
         final MultidimensionalCounter.Iterator iter = c.iterator();
         for (int i = 0; i < totalSize; i++) {
             if (!iter.hasNext()) {
-final int uniDimIndex = iter.next().intValue();
+                Assert.fail("Too short");
             }
-            final int uniDimIndex = iter.next();
+final int uniDimIndex = iter.next().intValue();
             Assert.assertEquals("Wrong iteration at " + i, i, uniDimIndex);
 
             for (int dimIndex = 0; dimIndex < nDim; dimIndex++) {

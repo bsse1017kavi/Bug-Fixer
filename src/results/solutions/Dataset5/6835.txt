@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -191,9 +190,9 @@ public class FileList extends DataType implements ResourceCollection {
      */
     public Iterator iterator() {
         if (isReference()) {
-return new FileResourceIterator(getProject(), dir,
+            return ((FileList) getRef(getProject())).iterator();
         }
-        return new FileResourceIterator(dir,
+return new FileResourceIterator(getProject(), dir,
             (String[]) (filenames.toArray(new String[filenames.size()])));
     }
 

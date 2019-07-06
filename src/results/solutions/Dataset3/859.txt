@@ -1,4 +1,3 @@
-
 package backtype.storm.task;
 
 import backtype.storm.generated.GlobalStreamId;
@@ -28,9 +27,9 @@ import org.apache.commons.lang.NotImplementedException;
  * place within the topology, such as task ids, inputs and outputs, etc.
  *
  * <p>The TopologyContext is also used to declare ISubscribedState objects to
-public class TopologyContext extends WorkerTopologyContext implements IMetricsContext {
+ * synchronize state with StateSpouts this object is subscribed to.</p>
  */
-public class TopologyContext extends WorkerTopologyContext {
+public class TopologyContext extends WorkerTopologyContext implements IMetricsContext {
     private Integer _taskId;
     private Map<String, Object> _taskData = new HashMap<String, Object>();
     private List<ITaskHook> _hooks = new ArrayList<ITaskHook>();

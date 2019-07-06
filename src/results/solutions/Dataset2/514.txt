@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -2394,9 +2393,9 @@ public class LogPanel extends DockablePanel implements EventBatchListener,
                 } else if (
                   (System.currentTimeMillis() - lastTimeStamp) < (2 * CHECK_PERIOD)) {
                   // they stopped typing recently, but have stopped for at least
-if (filterText != null && (!(filterText.getText().equals(lastFilterText)))) {
+                  // 1 sample period. lets apply the filter
                   //                LogLog.debug("Typed something recently applying filter");
-                  if (filterText.getText() != lastFilterText) {
+if (filterText != null && (!(filterText.getText().equals(lastFilterText)))) {
                     lastFilterText = filterText.getText();
                     setFilter();
                   }

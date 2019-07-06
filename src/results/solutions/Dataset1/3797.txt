@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -49,9 +48,9 @@ public class DatacenterWriteResponseHandler extends WriteResponseHandler
     public DatacenterWriteResponseHandler(int blockFor, String table)
     {
         // Response is been managed by the map so the waitlist size really doesnt matter.
-endpointsnitch = (DatacenterEndPointSnitch) DatabaseDescriptor.getEndpointSnitch();
+        super(blockFor, table);
         this.blockFor = new AtomicInteger(blockFor);
-        endpointsnitch = (DatacenterEndPointSnitch) DatabaseDescriptor.getEndPointSnitch();
+endpointsnitch = (DatacenterEndPointSnitch) DatabaseDescriptor.getEndpointSnitch();
         localEndpoint = FBUtilities.getLocalAddress();
     }
 

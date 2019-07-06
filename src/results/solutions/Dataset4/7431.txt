@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class ZenUnicastDiscoveryTests extends ElasticsearchIntegrationTest {
                 .put("discovery.zen.ping.unicast.hosts", "localhost:15300,localhost:15301,localhost:15302")
                 .put("transport.tcp.port", "15300-15400")
                 .build();
-final AtomicArray<String> nodes = new AtomicArray<>(3);
+
         final CountDownLatch latch = new CountDownLatch(3);
-        final AtomicArray<String> nodes = new AtomicArray<String>(3);
+final AtomicArray<String> nodes = new AtomicArray<>(3);
         Runnable r1 = new Runnable() {
 
             @Override

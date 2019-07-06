@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class WhileClosure<E> implements Closure<E>, Serializable {
      * @param closure  the closure the execute, not null
      * @param doLoop  true to act as a do-while loop, always executing the closure once
      * @return the <code>while</code> closure
-public static <E> Closure<E> whileClosure(Predicate<? super E> predicate, Closure<? super E> closure, boolean doLoop) {
+     * @throws IllegalArgumentException if the predicate or closure is null
      */
-    public static <E> Closure<E> getInstance(Predicate<? super E> predicate, Closure<? super E> closure, boolean doLoop) {
+public static <E> Closure<E> whileClosure(Predicate<? super E> predicate, Closure<? super E> closure, boolean doLoop) {
         if (predicate == null) {
             throw new IllegalArgumentException("Predicate must not be null");
         }

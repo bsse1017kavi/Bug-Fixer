@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public class TransportClearIndicesCacheAction extends TransportBroadcastOperatio
     protected ShardClearIndicesCacheRequest newShardRequest() {
         return new ShardClearIndicesCacheRequest();
     }
-protected ShardClearIndicesCacheRequest newShardRequest(int numShards, ShardRouting shard, ClearIndicesCacheRequest request) {
+
     @Override
-    protected ShardClearIndicesCacheRequest newShardRequest(ShardRouting shard, ClearIndicesCacheRequest request) {
+protected ShardClearIndicesCacheRequest newShardRequest(int numShards, ShardRouting shard, ClearIndicesCacheRequest request) {
         return new ShardClearIndicesCacheRequest(shard.index(), shard.id(), request);
     }
 

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -147,8 +146,8 @@ public final class Factory {
     }
     
 
-return new SourceLocationImpl(lexicalClass, this.filename, line);
+    public SourceLocation makeSourceLoc(int line, int col)
     {
-        return new SourceLocationImpl(lexicalClass, this.filename, line, col);
+return new SourceLocationImpl(lexicalClass, this.filename, line);
     }
 }

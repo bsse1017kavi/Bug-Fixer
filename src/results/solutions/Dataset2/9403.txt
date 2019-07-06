@@ -1,4 +1,3 @@
-
 /*
  * BeanShell.java - BeanShell scripting support
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -408,9 +407,9 @@ public class BeanShell
 		String name = "__internal_" + id;
 
 		// evaluate a method declaration
-_eval(null,global,name + "(ns) {\nthis.callstack.set(0,ns);\n" + code + "\n}");
+		if(namespace)
 		{
-			_eval(null,global,name + "(ns) {\this.callstack.set(0,ns);\n" + code + "\n}");
+_eval(null,global,name + "(ns) {\nthis.callstack.set(0,ns);\n" + code + "\n}");
 			return global.getMethod(name,new Class[] { NameSpace.class });
 		}
 		else

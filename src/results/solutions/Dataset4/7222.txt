@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -256,9 +255,9 @@ public class PercolateResponse extends BroadcastOperationResponse implements Ite
             id = in.readText();
             index = in.readText();
             score = in.readFloat();
-hl = new HashMap<>(size);
+            int size = in.readVInt();
             if (size > 0) {
-                hl = new HashMap<String, HighlightField>(size);
+hl = new HashMap<>(size);
                 for (int j = 0; j < size; j++) {
                     hl.put(in.readString(), HighlightField.readHighlightField(in));
                 }

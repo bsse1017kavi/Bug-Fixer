@@ -1,4 +1,3 @@
-
 package org.junit.runners;
 
 import static org.junit.Assert.assertEquals;
@@ -119,9 +118,9 @@ public class Parameterized extends TestClassRunner {
 					throw new Exception(String.format("%s.%s() must return a Collection of arrays.", fKlass.getName(), getParametersMethod().getName()));
 			}
 		}
-return (Collection<?>) getParametersMethod().invoke(null);
+
 		private Collection<?> getParametersList() throws IllegalAccessException, InvocationTargetException, Exception {
-			return (Collection) getParametersMethod().invoke(null);
+return (Collection<?>) getParametersMethod().invoke(null);
 		}
 		
 		private Method getParametersMethod() throws Exception {

@@ -1,4 +1,3 @@
-
 /*
  * KillRing.java - Stores deleted text
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -34,9 +33,9 @@ import org.gjt.sp.util.Log;
 public class KillRing
 {
 	//{{{ propertiesChanged() method
-int newSize = Math.max(1,jEdit.getIntegerProperty("history",25));
+	public static void propertiesChanged()
 	{
-		int newSize = jEdit.getIntegerProperty("history",25);
+int newSize = Math.max(1,jEdit.getIntegerProperty("history",25));
 		if(ring == null)
 			ring = new UndoManager.Remove[newSize];
 		else if(newSize != ring.length)

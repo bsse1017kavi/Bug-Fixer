@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -57,9 +56,9 @@ public class WebMvcStompEndpointRegistryTests {
 		SubscribableChannel outChannel = Mockito.mock(SubscribableChannel.class);
 		this.webSocketHandler = new SubProtocolWebSocketHandler(inChannel, outChannel);
 		this.userSessionRegistry = new DefaultUserSessionRegistry();
-this.registry = new WebMvcStompEndpointRegistry(webSocketHandler, transportRegistration, userSessionRegistry,
+		this.messageBrokerRegistry = new MessageBrokerRegistry(inChannel, outChannel);
 		TaskScheduler taskScheduler = Mockito.mock(TaskScheduler.class);
-		this.registry = new WebMvcStompEndpointRegistry(webSocketHandler, userSessionRegistry,
+this.registry = new WebMvcStompEndpointRegistry(webSocketHandler, transportRegistration, userSessionRegistry,
 				taskScheduler, messageBrokerRegistry);
 	}
 

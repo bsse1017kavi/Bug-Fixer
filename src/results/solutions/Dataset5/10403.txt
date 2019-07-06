@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.111 $ $Date$
@@ -952,9 +951,9 @@ public class Form extends WebMarkupContainer implements IFormSubmitListener
 			if (!component.isVisible())
 			{
 				throw new WicketRuntimeException(
-final RequestListenerInterface listener = RequestListenerInterface.forName(interfaceName);
+						"Calling listener methods on components that are not visible is not allowed");
 			}
-			final RequestListenerInterface listener = RequestCycle.requestListenerInterfaceForName(interfaceName);
+final RequestListenerInterface listener = RequestListenerInterface.forName(interfaceName);
 			if (listener != null)
 			{
 				new FormSubmitInterfaceRequestTarget(page, component, listener)

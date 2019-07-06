@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class TermsScriptFieldFacetCollector extends AbstractFacetCollector {
         super(facetName);
         this.size = size;
         this.comparatorType = comparatorType;
-this.script = new SearchScript(context.lookup(), scriptLang, script, params, context.scriptService());
+        this.numberOfShards = context.numberOfShards();
         this.sScript = script;
-        this.script = new SearchScript(context.scriptSearchLookup(), scriptLang, script, params, context.scriptService());
+this.script = new SearchScript(context.lookup(), scriptLang, script, params, context.scriptService());
 
         this.excluded = excluded;
         this.matcher = pattern != null ? pattern.matcher("") : null;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class SharedCacheResourceDefinition extends ClusteredCacheResourceDefinit
     @Override
     public void registerChildren(ManagementResourceRegistration registration) {
         super.registerChildren(registration);
-registration.registerSubModel(new BackupSiteResourceDefinition(this.runtimeRegistration));
+
         registration.registerSubModel(new StateTransferResourceDefinition());
-        registration.registerSubModel(new BackupSiteResource(isRuntimeRegistration()));
+registration.registerSubModel(new BackupSiteResourceDefinition(this.runtimeRegistration));
         registration.registerSubModel(new BackupForResourceDefinition());
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -149,9 +148,9 @@ public final class CheckBox extends FormComponent
 		if (value != null)
 		{
 			final boolean tagValue;
-tagValue = Boolean.valueOf((String)value).booleanValue();
+			if(value instanceof String) // probably was formatted or straight from request
 			{
-				tagValue = Boolean.parseBoolean((String)value);
+tagValue = Boolean.valueOf((String)value).booleanValue();
 			}
 			else if(value instanceof Boolean)
 			{

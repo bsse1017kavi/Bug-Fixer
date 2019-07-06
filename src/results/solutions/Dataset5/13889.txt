@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -608,9 +607,9 @@ public abstract class AbstractCFMetaDataFactory
             for (Iterator itr = files.iterator(); itr.hasNext();) {
                 file = (File) itr.next();
                 if (file.isDirectory()) {
-scan(new FileMetaDataIterator(file, newMetaDataFilter()),
+                    if (log.isTraceEnabled())
                         log.trace(_loc.get("scanning-directory", file));
-                    scan(new FileMetaDataIterator(dir, newMetaDataFilter()),
+scan(new FileMetaDataIterator(file, newMetaDataFilter()),
                         cparser, names, true, file);
                 } else if (file.getName().endsWith(".jar")) {
                     if (log.isTraceEnabled())

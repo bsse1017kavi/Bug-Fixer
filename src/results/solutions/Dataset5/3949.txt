@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -140,9 +139,9 @@ public class AjaxTimerBehaviorTest extends WicketTestCase
 	private void validate(MyAjaxSelfUpdatingTimerBehavior timer, boolean inBodyOnLoad)
 	{
 		String document = tester.getServletResponse().getDocument();
-String bodyOnLoadUpdateScript = "Wicket.Event.add(window, \"load\", function() { " + updateScript + ";});";
+
 		String updateScript = timer.getUpdateScript();
-		String bodyOnLoadUpdateScript = "<body onload=\"" + Strings.replaceAll(updateScript, "\"", "\\\"")+ "\">";
+String bodyOnLoadUpdateScript = "Wicket.Event.add(window, \"load\", function() { " + updateScript + ";});";
 
 		if (inBodyOnLoad) 
 		{

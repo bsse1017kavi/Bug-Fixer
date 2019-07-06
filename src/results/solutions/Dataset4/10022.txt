@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -155,9 +154,9 @@ public class RandomAllocationDeciderTests extends ElasticsearchTestCase {
         final int lowerBound = (int) Math.round(((shards / numNodes) * 0.90));
         for (int i = 0; i < nodeIdCounter; i++) {
             if (clusterState.getRoutingNodes().node("NODE_" + i) == null) {
-assertThat(clusterState.getRoutingNodes().node("NODE_" + i).size(), Matchers.anyOf(
+                continue;
             }
-            assertThat(clusterState.getRoutingNodes().node("NODE_" + i).shards().size(), Matchers.anyOf(
+assertThat(clusterState.getRoutingNodes().node("NODE_" + i).size(), Matchers.anyOf(
                     Matchers.anyOf(equalTo((shards / numNodes) + 1), equalTo((shards / numNodes) - 1), equalTo((shards / numNodes))),
                     Matchers.allOf(Matchers.greaterThanOrEqualTo(lowerBound), Matchers.lessThanOrEqualTo(upperBound))));
         }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -79,9 +78,9 @@ public abstract class WeaveTestCase extends TestCase {
 		BcelObjectType classType =
 			(BcelObjectType) world.resolve(classFile.getClassName());
 		LazyClassGen gen = weaver.weave(classFile, classType);
-gen = classType.getLazyClassGen(); //new LazyClassGen(classType);
+		if (gen == null) {
 			// we didn't do any weaving, but let's make a gen anyway
-			gen = new LazyClassGen(classType);
+gen = classType.getLazyClassGen(); //new LazyClassGen(classType);
 		}
 		try {
 			checkClass(gen, outDir, outName + ".txt");

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.br;
 
 /* ====================================================================
@@ -116,9 +115,9 @@ public final class BrazilianStemFilter extends TokenFilter {
       return token;
     } else {
       String s = stemmer.stem(token.termText());
-return new Token(s, token.startOffset(), token.endOffset(), token.type());
+      // If not stemmed, dont waste the time creating a new token.
       if ((s != null) && !s.equals(token.termText())) {
-        return new Token(s, 0, s.length(), token.type());
+return new Token(s, token.startOffset(), token.endOffset(), token.type());
       }
       return token;
     }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -505,9 +504,9 @@ public class Rmic extends MatchingTask
         if( verify )
         {
             getLogger().info( "Verify has been turned on." );
-String compiler = getProperty( "build.rmic" ).toString();
+        }
 
-        String compiler = getProject().getProperty( "build.rmic" );
+String compiler = getProperty( "build.rmic" ).toString();
         RmicAdapter adapter = RmicAdapterFactory.getRmic( compiler, this );
 
         // now we need to populate the compiler adapter

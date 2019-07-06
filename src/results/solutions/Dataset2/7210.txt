@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -172,9 +171,9 @@ throws IOException
 	else
 		dclass = DClass.IN;
 		
-throw new IOException("Parse error: invalid type '" + s + "'");
+
 	if ((type = Type.value(s)) < 0)
-		throw new IOException("Parse error");
+throw new IOException("Parse error: invalid type '" + s + "'");
 
 	return Record.fromString(name, type, dclass, ttl, st, origin);
 }

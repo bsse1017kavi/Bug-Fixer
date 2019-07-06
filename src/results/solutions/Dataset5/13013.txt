@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2010-2011 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -107,9 +106,9 @@ public class EndpointDescriptionLocator {
 						defaultEndpointDescriptionFactory,
 						(Dictionary) properties);
 		// setup/register default endpointDescriptionReader
-new EndpointDescriptionReader(), (Dictionary) properties);
+		defaultEndpointDescriptionReaderRegistration = context.registerService(
 				IEndpointDescriptionReader.class.getName(),
-				new EndpointDescriptionReader(), properties);
+new EndpointDescriptionReader(), (Dictionary) properties);
 
 		// Create thread group, event manager, and eventQueue, and setup to
 		// dispatch EndpointListenerEvents

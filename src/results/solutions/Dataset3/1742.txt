@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -553,9 +552,9 @@ public class CompositeOperationHandlerUnitTestCase {
                 i.set(controller.execute(getOperation("good", "attr1", 3), null, null, null).get("result").asInt());
                 latch.countDown();
             }
-assertEquals(2, i.get());
+        }).start();
         latch.await();
-        assertEquals(1, i.get());
+assertEquals(2, i.get());
     }
 
     public static ModelNode getCompositeOperation(Boolean rollback, ModelNode... steps) {

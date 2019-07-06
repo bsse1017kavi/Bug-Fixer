@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public class EJBViewDescription extends ViewDescription {
     protected InjectionSource createInjectionSource(final ServiceName serviceName) {
         if(methodIntf != MethodIntf.REMOTE) {
             return super.createInjectionSource(serviceName);
-final EEModuleDescription desc = componentDescription.getModuleDescription();
+        } else {
             final EJBComponentDescription componentDescription = getComponentDescription();
-            EEModuleDescription desc = componentDescription.getModuleDescription();
+final EEModuleDescription desc = componentDescription.getModuleDescription();
             return new RemoteViewInjectionSource(serviceName, desc.getApplicationName(), desc.getModuleName(), desc.getDistinctName(), componentDescription.getComponentName(), getViewClassName() , componentDescription.isStateful());
         }
     }

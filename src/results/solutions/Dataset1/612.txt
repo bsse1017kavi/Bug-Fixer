@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -90,9 +89,9 @@ public class TestRingCache
         
         TestRingCache tester = new TestRingCache(keyspace);
 
-ByteBuffer row = ByteBufferUtil.bytes((rowPrefix + nRows));
+        for (int nRows = minRow; nRows < maxRow; nRows++)
         {
-            ByteBuffer row = ByteBuffer.wrap((rowPrefix + nRows).getBytes());
+ByteBuffer row = ByteBufferUtil.bytes((rowPrefix + nRows));
             ColumnPath col = new ColumnPath("Standard1").setSuper_column((ByteBuffer)null).setColumn("col1".getBytes());
             ColumnParent parent = new ColumnParent("Standard1").setSuper_column((ByteBuffer)null);
 

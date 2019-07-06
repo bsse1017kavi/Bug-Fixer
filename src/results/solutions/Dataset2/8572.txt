@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -139,9 +138,9 @@ public class ArrayAllocationExpression extends Expression {
 		if (initializer == null) {
 			if (explicitDimIndex < 0) {
 				scope.problemReporter().mustDefineDimensionsOrInitializer(this);
-if (referenceType != null && !referenceType.isReifiable()) {
+			}
 			// allow new List<?>[5] - only check for generic array when no initializer, since also checked inside initializer resolution
-			if (referenceType != null && (referenceType.isBoundParameterizedType() || referenceType.isGenericType() || referenceType.isTypeVariable())) {
+if (referenceType != null && !referenceType.isReifiable()) {
 			    scope.problemReporter().illegalGenericArray(referenceType, this);
 			}
 		} else if (explicitDimIndex >= 0) {

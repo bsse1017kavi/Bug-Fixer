@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -76,9 +75,9 @@ public abstract class JSR223TestElement extends AbstractTestElement
     private String scriptLanguage; // JSR223 language to use
 
     /**
-private static final Map<String, CompiledScript> compiledScriptsCache =
+     * Cache of compiled scripts
      */
-    private static Map<String, CompiledScript> compiledScriptsCache = 
+private static final Map<String, CompiledScript> compiledScriptsCache =
             Collections.synchronizedMap(
                     new LRUMap(JMeterUtils.getPropDefault("jsr223.compiled_scripts_cache_size", 100)));
     //-- For TestBean implementations only

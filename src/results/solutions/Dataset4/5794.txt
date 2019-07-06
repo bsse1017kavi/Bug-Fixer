@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import static android.view.View.GONE;
@@ -95,9 +94,9 @@ public class IssueHeaderViewHolder implements ViewHolder<Issue> {
 
         User assignee = issue.getAssignee();
         if (assignee != null) {
-avatarHelper.bind(assigneeAvatar, assignee);
+            assigneeText.setText(assignee.getLogin());
             assigneeAvatar.setVisibility(VISIBLE);
-            avatarHelper.bind(assigneeAvatar, issue.getUser());
+avatarHelper.bind(assigneeAvatar, assignee);
         } else {
             assigneeAvatar.setVisibility(GONE);
             assigneeText.setText("Unassigned");

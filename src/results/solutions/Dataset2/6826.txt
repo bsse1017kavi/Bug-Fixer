@@ -1,4 +1,3 @@
-
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1
@@ -134,9 +133,9 @@ class FileLoadAction extends AbstractAction {
     chooser.setAcceptAllFileFilterUsed(true);
 
     chooser.setFileFilter(
-return (f.getName().toLowerCase().endsWith(".xml")|| f.isDirectory());
+      new FileFilter() {
         public boolean accept(File f) {
-          return f.getName().toLowerCase().endsWith(".xml");
+return (f.getName().toLowerCase().endsWith(".xml")|| f.isDirectory());
         }
 
         public String getDescription() {

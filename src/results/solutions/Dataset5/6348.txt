@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -132,8 +131,8 @@ public class HTTPArgumentsPanel extends ArgumentsPanel
     protected boolean isMetaDataNormal(HTTPArgument arg)
     {
         return arg.getMetaData() == null
-arg.getValue().length() > 0);
+            || arg.getMetaData().equals("=")
             || (arg.getValue() != null &&
-                arg.getValue().toString().length() > 0);
+arg.getValue().length() > 0);
     }
 }

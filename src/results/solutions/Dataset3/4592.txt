@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -173,9 +172,9 @@ public class DomainFinalResultHandler implements OperationStepHandler {
         final Map<String, Set<HostServer>> groupToServerMap = new HashMap<String, Set<HostServer>>();
         for (Map.Entry<ServerIdentity, ModelNode> entry : domainOperationContext.getServerResults().entrySet()) {
             final String serverGroup = entry.getKey().getServerGroupName();
-final String serverName = entry.getKey().getServerName();
+            groupNames.add(serverGroup);
             final String hostName = entry.getKey().getHostName();
-            final String serverName = entry.getKey().getHostName();
+final String serverName = entry.getKey().getServerName();
             if (!groupToServerMap.containsKey(serverGroup)) {
                 groupToServerMap.put(serverGroup, new TreeSet<HostServer>());
             }

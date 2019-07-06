@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -199,9 +198,9 @@ public abstract class DefaultRmicAdapter implements RmicAdapter {
         }
 
         Path classpath = getCompileClasspath();
-cmd.createArgument().setFile(attributes.getOutputDir());
+
         cmd.createArgument().setValue("-d");
-        cmd.createArgument().setFile(attributes.getBase());
+cmd.createArgument().setFile(attributes.getOutputDir());
 
         if (attributes.getExtdirs() != null) {
             cmd.createArgument().setValue("-extdirs");

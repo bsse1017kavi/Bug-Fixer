@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -316,9 +315,9 @@ public final class LocalizedImageResource implements Serializable, IResourceList
 			/**
 			 * @see wicket.ResourceReference#newResource()
 			 */
-return PackageResource.get(getScope(), getName(), locale, style);
+			protected Resource newResource()
 			{
-				return PackageResource.get(getScope().getPackage(), getName(), locale, style);
+return PackageResource.get(getScope(), getName(), locale, style);
 			}
 		};
 		resourceReference.setLocale(locale);

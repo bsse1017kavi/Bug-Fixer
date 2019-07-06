@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.TemporaryRowHolderResultSet
@@ -988,9 +987,9 @@ class TemporaryRowHolderResultSet implements CursorResultSet, NoPutResultSet, Cl
         DataValueDescriptor[]) may be be modified by drainer of the RowSource, 
         and the drainer may keep a reference to it after making the subsequent 
         nextRow call.  In this case the client should severe all references to 
-@exception StandardException Standard Derby Error Policy
+        the row after returning it from getNextRowFromRowSource().
 
-		@exception StandardException Cloudscape Standard Error Policy
+@exception StandardException Standard Derby Error Policy
 	 */
 	public DataValueDescriptor[] getNextRowFromRowSource() throws StandardException
 	{ 

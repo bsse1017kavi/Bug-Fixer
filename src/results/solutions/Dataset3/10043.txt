@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -49,9 +48,9 @@ public class StandardWebSocketHandlerAdapterTests {
 
 	@Before
 	public void setup() {
-this.webSocketSession = new StandardWebSocketSession(null, null, null, null);
+		this.session = mock(Session.class);
 		this.webSocketHandler = mock(WebSocketHandler.class);
-		this.webSocketSession = new StandardWebSocketSession(null, null, null);
+this.webSocketSession = new StandardWebSocketSession(null, null, null, null);
 		this.adapter = new StandardWebSocketHandlerAdapter(this.webSocketHandler, this.webSocketSession);
 	}
 

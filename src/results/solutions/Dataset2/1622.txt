@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -256,9 +255,9 @@ public static ClassFileReader classFileReader(IType type) {
 
 	PackageFragment pkg = (PackageFragment) type.getPackageFragment();
 	IPackageFragmentRoot root = (IPackageFragmentRoot) pkg.getParent();
-return ClassFileReader.read(type.getResource().getLocation().toOSString());
+	try {
 		if (!root.isArchive())
-			return ClassFileReader.read(type.getPath().toOSString());
+return ClassFileReader.read(type.getResource().getLocation().toOSString());
 
 		IPath zipPath = root.isExternal() ? root.getPath() : root.getResource().getLocation();
 		if (zipPath == null) return null; // location is null

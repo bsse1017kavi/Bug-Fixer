@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,9 +29,9 @@ import org.apache.openjpa.lib.util.MultiClassLoader;
  *
  * @author Steve Kim
  */
-final private MultiClassLoader _loader = AccessController
+public class MultiLoaderClassResolver implements ClassResolver {
 
-    final private MultiClassLoader _loader = (MultiClassLoader) AccessController
+final private MultiClassLoader _loader = AccessController
         .doPrivileged(J2DoPrivHelper.newMultiClassLoaderAction());
 
     public MultiLoaderClassResolver() {

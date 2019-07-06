@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -3084,9 +3083,9 @@ public class IndexWriter implements Closeable, TwoPhaseCommit {
     // Must note the change to segmentInfos so any commits
     // in-flight don't lose it:
     checkpoint();
-infoStream.message("IW", "after commitMerge: " + segString());
+
     if (infoStream.isEnabled("IW")) {
-      infoStream.message("IW", "after commit: " + segString());
+infoStream.message("IW", "after commitMerge: " + segString());
     }
 
     if (merge.maxNumSegments != -1 && !dropSegment) {

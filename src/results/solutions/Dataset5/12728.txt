@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -31,9 +30,9 @@ public class RedirectorElementTest extends BuildFileTest {
         configureProject("src/etc/testcases/types/redirector.xml", Project.MSG_VERBOSE);
     }
 
-assertTrue((getProject().<Object> getReference("test1")
+    public void test1() {
         executeTarget("test1");
-        assertTrue((getProject().getReference("test1")
+assertTrue((getProject().<Object> getReference("test1")
             instanceof RedirectorElement));
     }
 

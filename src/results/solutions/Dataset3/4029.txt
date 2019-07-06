@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -30,9 +29,9 @@ import org.jboss.as.server.DomainServerMain;
 /**
  * @author Emanuel Muckenhuber
  */
-static DomainServerMain.HostControllerCommunicationActivator createServerCommunicationActivator(final InetSocketAddress managementSocket, final String serverName, final String serverProcessName,
+class HostCommunicationServices {
 
-    static DomainServerMain.HostControllerCommunicationActivator createServerCommuncationActivator(final InetSocketAddress managementSocket, final String serverName, final String serverProcessName,
+static DomainServerMain.HostControllerCommunicationActivator createServerCommunicationActivator(final InetSocketAddress managementSocket, final String serverName, final String serverProcessName,
             final byte[] authKey, final boolean managementSubsystemEndpoint) {
         return new DomainServerMain.HostControllerCommunicationActivator(managementSocket, serverName, serverProcessName, authKey, managementSubsystemEndpoint);
     }

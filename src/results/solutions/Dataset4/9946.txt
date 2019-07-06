@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -123,9 +122,9 @@ public class TransportIndicesSegmentsAction extends TransportBroadcastOperationA
     protected IndexShardSegmentRequest newShardRequest() {
         return new IndexShardSegmentRequest();
     }
-protected IndexShardSegmentRequest newShardRequest(int numShards, ShardRouting shard, IndicesSegmentsRequest request) {
+
     @Override
-    protected IndexShardSegmentRequest newShardRequest(ShardRouting shard, IndicesSegmentsRequest request) {
+protected IndexShardSegmentRequest newShardRequest(int numShards, ShardRouting shard, IndicesSegmentsRequest request) {
         return new IndexShardSegmentRequest(shard.index(), shard.id(), request);
     }
 

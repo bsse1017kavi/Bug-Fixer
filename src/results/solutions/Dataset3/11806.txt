@@ -1,4 +1,3 @@
-
 package backtype.storm.utils;
 
 import com.lmax.disruptor.ClaimStrategy;
@@ -50,9 +49,9 @@ public class DisruptorQueue {
         publish(HALT_PROCESSING);
     }
     
-_executor.shutdownNow();
+    public void shutdown() {
         _disruptor.shutdown();
-        _executor.shutdown();
+_executor.shutdownNow();
     }
     
     static class WaiterEventHandler implements EventHandler<MutableObject> {

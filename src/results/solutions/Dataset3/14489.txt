@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public final class ThreadFactoryRemove extends AbstractThreadsSubsystemUpdate<Vo
         if (! properties.isEmpty()) add.getProperties().putAll(properties);
         return add;
     }
-final ServiceController<?> controller = updateContext.getServiceRegistry().
+
     protected <P> void applyUpdate(final UpdateContext updateContext, final UpdateResultHandler<? super Void, P> handler, final P param) {
-        final ServiceController<?> controller = updateContext.getServiceContainer().
+final ServiceController<?> controller = updateContext.getServiceRegistry().
                 getService(ThreadsServices.threadFactoryName(name));
         if (controller == null) {
             handler.handleSuccess(null, param);

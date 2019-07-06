@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class IndexFieldDataService extends AbstractIndexComponent {
                 .put("geo_point", new GeoPointDoubleArrayIndexFieldData.Builder())
                 .immutableMap();
 
-.put(Tuple.tuple("string", "paged_bytes"), new PagedBytesIndexFieldData.Builder())
+        buildersByTypeAndFormat = MapBuilder.<Tuple<String, String>, IndexFieldData.Builder>newMapBuilder()
                 .put(Tuple.tuple("string", "concrete_bytes"), new ConcreteBytesRefIndexFieldData.Builder())
-                .put(Tuple.tuple("string", "paged_bytes"), new PagesBytesIndexFieldData.Builder())
+.put(Tuple.tuple("string", "paged_bytes"), new PagedBytesIndexFieldData.Builder())
                 .put(Tuple.tuple("float", "array"), new FloatArrayIndexFieldData.Builder())
                 .put(Tuple.tuple("double", "array"), new DoubleArrayIndexFieldData.Builder())
                 .put(Tuple.tuple("byte", "array"), new ByteArrayIndexFieldData.Builder())

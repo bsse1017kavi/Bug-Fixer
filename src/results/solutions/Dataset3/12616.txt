@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1127,9 +1126,9 @@ public class Flat3Map<K, V> implements IterableMap<K, V>, Serializable, Cloneabl
             return delegateMap.toString();
         }
         if (size == 0) {
-StringBuilder buf = new StringBuilder(128);
+            return "{}";
         }
-        StringBuffer buf = new StringBuffer(128);
+StringBuilder buf = new StringBuilder(128);
         buf.append('{');
         switch (size) {  // drop through
             case 3:

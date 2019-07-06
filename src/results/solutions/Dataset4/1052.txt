@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -85,9 +84,9 @@ public class AssigneeDialog {
 
             @Override
             protected void onException(Exception e) throws RuntimeException {
-ToastUtils.show(activity, e, string.error_assignee_update);
+                super.onException(e);
 
-                ToastUtils.show(activity, e.getMessage());
+ToastUtils.show(activity, e, string.error_assignee_update);
             }
 
             @Override

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2012, Red Hat, Inc., and individual contributors
@@ -67,8 +66,8 @@ public abstract class AbstractRuntimeMetricsHandler extends AbstractRuntimeOnlyH
     @Override
     protected void executeRuntimeStep(final OperationContext context, final ModelNode operation) throws OperationFailedException {
         final ServiceName componentServiceName = componentServiceName(operation);
-context.stepCompleted();
+        final EJBComponent component = (EJBComponent) context.getServiceRegistry(false).getRequiredService(componentServiceName).getValue();
         executeReadMetricStep(context, operation, component);
-        context.completeStep();
+context.stepCompleted();
     }
 }

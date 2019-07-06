@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -608,9 +607,9 @@ protected void recordParticipantResult(CompilationParticipantResult result) {
 		this.notifier.updateProblemCounts(problems);
 		try {
 			storeProblemsFor(result.sourceFile, problems);
-Util.log(e, "JavaBuilder logging CompilationParticipant's CoreException to help debugging"); //$NON-NLS-1$
+		} catch (CoreException e) {
 			// must continue with compile loop so just log the CoreException
-			e.printStackTrace();
+Util.log(e, "JavaBuilder logging CompilationParticipant's CoreException to help debugging"); //$NON-NLS-1$
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public class TermsActionTests extends AbstractNodesTests {
     @Test public void testSimpleStringTerms() throws Exception {
         IndexStatus indexStatus = client.admin().indices().status(indicesStatus("test")).actionGet().index("test");
 
-TermsResponse termsResponse = client.prepareTerms("test").setFields("value").execute().actionGet();
+        // verify no freqs
         logger.info("Verify no freqs");
-        TermsResponse termsResponse = client.terms(termsRequest("test").fields("value")).actionGet();
+TermsResponse termsResponse = client.prepareTerms("test").setFields("value").execute().actionGet();
         assertThat(termsResponse.successfulShards(), equalTo(indexStatus.shards().size()));
         assertThat(termsResponse.failedShards(), equalTo(0));
         assertThat(termsResponse.fieldsAsMap().isEmpty(), equalTo(false));

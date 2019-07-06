@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class WebAccessLogDefinition extends SimpleResourceDefinition {
 
     protected static final SimpleAttributeDefinition PREFIX =
             new SimpleAttributeDefinitionBuilder(Constants.PREFIX, ModelType.STRING, true)
-.setDefaultValue(new ModelNode("access_log."))
+                    .setXmlName(Constants.PREFIX)
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
-                    .setDefaultValue(new ModelNode(false))
+.setDefaultValue(new ModelNode("access_log."))
                     .setValidator(new StringLengthValidator(1, true))
                     .build();
 

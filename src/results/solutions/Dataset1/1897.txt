@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -71,9 +70,9 @@ public class LuceneSegmentInputFormatTest extends AbstractLuceneStorageTest {
 
   // Use reflection to abstract this incompatibility between Hadoop 1 & 2 APIs.
   private JobContext getJobContext(Configuration conf, JobID jobID) throws
-Class<? extends JobContext> clazz;
+      ClassNotFoundException, NoSuchMethodException, IllegalAccessException,
       InvocationTargetException, InstantiationException {
-    Class<? extends JobContext> clazz = null;
+Class<? extends JobContext> clazz;
     if (!JobContext.class.isInterface()) {
       clazz = JobContext.class;
     } else {

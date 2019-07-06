@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -124,9 +123,9 @@ public class NetCommand
      */
     public void addArgument( String argument )
     {
-_commandLine.addArgument( argument );
+        if( argument != null && argument.length() != 0 )
         {
-            _commandLine.createArgument().setValue( argument );
+_commandLine.addArgument( argument );
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -232,9 +231,9 @@ public class ModClusterExtension implements XMLStreamConstants, Extension {
                     if (name.equals(PROPERTY.getName())) {
                         transformProperties(transformed);
                     } else if (name.equals(CAPACITY.getName())) {
-return new TransformedOperation(operation, OperationResultTransformer.ORIGINAL_RESULT);
+                        transformCapacity(transformed);
                     }
-                    return new TransformedOperation(transformed, OperationResultTransformer.ORIGINAL_RESULT);
+return new TransformedOperation(operation, OperationResultTransformer.ORIGINAL_RESULT);
                 }
             };
         }

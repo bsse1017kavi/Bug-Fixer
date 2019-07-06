@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -241,9 +240,9 @@ public class TreeViewTransferHandler extends TransferHandler {
 
 		AbstractFolder dragTarget = treeView.getSelectedNodeBeforeDragAction();
 
-canImport = dropTarget.supportsAddFolder(dragTarget.getType());
+		if ((dragTarget != null) && (!dragTarget.isNodeDescendant(dropTarget))
 				&& (dragTarget != dropTarget)) {
-			canImport = dropTarget.supportsAddFolder(dragTarget);
+canImport = dropTarget.supportsAddFolder(dragTarget.getType());
 		}
 
 		return canImport;

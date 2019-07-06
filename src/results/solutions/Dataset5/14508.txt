@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2009 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -103,9 +102,9 @@ public class ForEachStatement extends StatementWithBody {
 	public void evaluateInternal(XpandExecutionContext ctx) {
 		Object o = getTarget().evaluate(ctx);
 		if (o == null)
-if (!(o instanceof Collection<?>))
+			o = new ArrayList<Object>();
 
-		if (!(o instanceof Collection))
+if (!(o instanceof Collection<?>))
 			throw new EvaluationException("Collection expected!", getTarget(), ctx);
 		final Collection<?> col = (Collection<?>) o;
 		final String sep = (String) (getSeparator() != null ? getSeparator().evaluate(ctx) : null);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class TransportShardDeleteByQueryAction extends TransportShardReplication
 
     @Override protected void checkBlock(ShardDeleteByQueryRequest request, ClusterState state) {
         state.blocks().indexBlockedRaiseException(ClusterBlockLevel.WRITE, request.index());
-@Override protected ShardDeleteByQueryResponse shardOperationOnPrimary(ClusterState clusterState, ShardOperationRequest shardRequest) {
+    }
 
-    @Override protected ShardDeleteByQueryResponse shardOperationOnPrimary(ShardOperationRequest shardRequest) {
+@Override protected ShardDeleteByQueryResponse shardOperationOnPrimary(ClusterState clusterState, ShardOperationRequest shardRequest) {
         ShardDeleteByQueryRequest request = shardRequest.request;
         indexShard(shardRequest).deleteByQuery(request.querySource(), request.queryParserName(), request.types());
         return new ShardDeleteByQueryResponse();

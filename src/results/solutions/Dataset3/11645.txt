@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class KohonenUpdateActionTest {
             distancesBefore[count++] = dist.compute(n.getFeatures(), features);
         }
         final Neuron bestBefore = MapUtils.findBest(features, net, dist);
-Assert.assertTrue(dist.compute(bestBefore.getFeatures(), features) >= 0.2);
+
         // Initial distance from the best match is larger than zero.
-        Assert.assertTrue(dist.compute(bestBefore.getFeatures(), features) >= 0.2 * 0.2);
+Assert.assertTrue(dist.compute(bestBefore.getFeatures(), features) >= 0.2);
 
         update.update(net, features);
 

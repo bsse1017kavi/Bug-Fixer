@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 Versant Corp.
  * All rights reserved. This program and the accompanying materials
@@ -146,9 +145,9 @@ public class JSLPDiscoveryContainer extends AbstractDiscoveryContainerAdapter im
 		List result = new ArrayList();
 		try {
 			ServiceLocationEnumeration slenum = Activator.getDefault().getLocator().findServiceTypes(null, null);
-IServiceID sid = (IServiceID) getConnectNamespace().createInstance(new Object[] {st, ""}); //$NON-NLS-1$
+			for (; slenum.hasMoreElements();) {
 				ServiceType st = new ServiceType((String) slenum.nextElement());
-				IServiceID sid = (IServiceID) getConnectNamespace().createInstance(new Object[] {st.toString()});
+IServiceID sid = (IServiceID) getConnectNamespace().createInstance(new Object[] {st, ""}); //$NON-NLS-1$
 				result.add(sid.getServiceTypeID());
 			}
 		} catch (ServiceLocationException e) {

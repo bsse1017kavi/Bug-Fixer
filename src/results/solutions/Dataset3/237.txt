@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -445,9 +444,9 @@ public abstract class EJBComponent extends BasicComponent implements ServerActiv
                 throw EjbLogger.ROOT_LOGGER.failToLookupJNDI(name, ne);
             }
         } else {
-ROOT_LOGGER.debug("Looking up " + namespaceStrippedJndiName + " in jndi context: " + jndiContext);
+            throw EjbLogger.ROOT_LOGGER.failToLookupJNDINameSpace(name);
         }
-        ROOT_LOGGER.debugf("Looking up %s in jndi context: %s", namespaceStrippedJndiName, jndiContext);
+ROOT_LOGGER.debug("Looking up " + namespaceStrippedJndiName + " in jndi context: " + jndiContext);
         try {
             return jndiContext.lookup(namespaceStrippedJndiName);
         } catch (NamingException ne) {

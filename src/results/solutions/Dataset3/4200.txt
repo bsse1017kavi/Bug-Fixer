@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -86,9 +85,9 @@ public class Base32Test extends TestCase {
             for (int j=0; j< unencoded.length; j++) {
                 codec.encode(unencoded, j, 1);
             }
-codec.readResults(singly, 0, 100);
+            codec.encode(unencoded, 0, -1);
             byte singly[] = new byte[allInOne.length];
-            int bytes = codec.readResults(singly, 0, 100);
+codec.readResults(singly, 0, 100);
             if (!Arrays.equals(allInOne, singly)){
                 fail();
             }

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public final class WSHandlerChainAnnotationProcessor implements DeploymentUnitPr
         if (DeploymentTypeMarker.isType(DeploymentType.EAR, unit)) {
             return;
         }
-if (!unit.getName().endsWith(".war") && EjbDeploymentMarker.isEjbDeployment(unit)) {
+        // wars define resource roots
         AttachmentList<ResourceRoot> resourceRoots = unit.getAttachment(RESOURCE_ROOTS);
-        if (EjbDeploymentMarker.isEjbDeployment(unit)) {
+if (!unit.getName().endsWith(".war") && EjbDeploymentMarker.isEjbDeployment(unit)) {
             // ejb archives don't define resource roots, using root resource
             resourceRoots = new AttachmentList<ResourceRoot>(ResourceRoot.class);
             final ResourceRoot root = unit.getAttachment(DEPLOYMENT_ROOT);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -200,9 +199,9 @@ public class RestClusterStateAction extends BaseRestHandler {
                                 builder.map(mapping);
                             }
                             builder.endObject();
-for (String alias : indexMetaData.aliases().keySet()) {
+
                             builder.startArray("aliases");
-                            for (String alias : indexMetaData.aliases()) {
+for (String alias : indexMetaData.aliases().keySet()) {
                                 builder.value(alias);
                             }
                             builder.endArray();

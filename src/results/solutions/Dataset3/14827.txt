@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public class GeneticAlgorithmTestPermutations {
 
         public double fitness() {
             int res = 0;
-int value = decoded.get(i);
+            List<Integer> decoded = decode(sequence);
             for (int i=0; i<decoded.size(); i++) {
-                int value = (Integer) decoded.get(i);
+int value = decoded.get(i);
                 if (value != i) {
                     // bad position found
                     res += Math.abs(value - i);

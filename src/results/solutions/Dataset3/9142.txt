@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -515,9 +514,9 @@ public class HornetQBackupActivationTestCase {
     }
 
     private static void executeWithFailure(ModelControllerClient client, ModelNode operation) throws IOException {
-assertTrue(result.toJSONString(true), result.get(FAILURE_DESCRIPTION).asString().contains("JBAS011678"));
+        ModelNode result = client.execute(operation);
         assertEquals(result.toJSONString(true), FAILED, result.get(OUTCOME).asString());
-        assertTrue(result.toJSONString(true), result.get(FAILURE_DESCRIPTION).asString().contains("WFLYMSG0066"));
+assertTrue(result.toJSONString(true), result.get(FAILURE_DESCRIPTION).asString().contains("JBAS011678"));
         assertFalse(result.has(RESULT));
     }
 

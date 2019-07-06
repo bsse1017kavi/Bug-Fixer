@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -150,9 +149,9 @@ public class SynchronizeFolderListCommand extends Command {
 		// and the unsubscribed folders in unsubscribedFolders
 		// Next step: Create a treestructure
 		DefaultMutableTreeNode root = new CheckableItemImpl();
-String pattern = "([^\\Q" + store.getDelimiter() + "]+)\\E"
+
 		// Initialize the Pattern
-		String pattern = "([^\\" + store.getDelimiter() + "]+)\\"
+String pattern = "([^\\Q" + store.getDelimiter() + "]+)\\E"
 				+ store.getDelimiter() + "?";
 		delimiterPattern = Pattern.compile(pattern);
 		delimiter = store.getDelimiter();

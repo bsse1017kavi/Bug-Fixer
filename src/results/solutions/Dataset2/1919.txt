@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -636,9 +635,9 @@ public class WorkbenchWindow extends ApplicationWindow implements
             // Only do the check if it is OK to close if we are not closing
             // via the workbench as the workbench will check this itself.
             Workbench workbench = getWorkbenchImpl();
-if (!workbench.isStarting() && !workbench.isClosing() && count <= 1 && workbench.getWorkbenchConfigurer().getExitOnLastWindowClose()) {
+            int count = workbench.getWorkbenchWindowCount();
             //also check for starting - if the first window dies on startup then we'll need to open a default window.
-            if (!workbench.isStarting() && !workbench.isClosing() && count <= 1) {
+if (!workbench.isStarting() && !workbench.isClosing() && count <= 1 && workbench.getWorkbenchConfigurer().getExitOnLastWindowClose()) {
                 windowClosed = workbench.close();
             } else {
                 if (okToClose()) {

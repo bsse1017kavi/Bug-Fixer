@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class GrowthList<E> extends AbstractSerializableListDecorator<E> {
      * Factory method to create a growth list.
      *
      * @param list  the list to decorate, must not be null
-public static <E> List<E> growthList(List<E> list) {
+     * @throws IllegalArgumentException if list is null
      */
-    public static <E> List<E> decorate(List<E> list) {
+public static <E> List<E> growthList(List<E> list) {
         return new GrowthList<E>(list);
     }
 

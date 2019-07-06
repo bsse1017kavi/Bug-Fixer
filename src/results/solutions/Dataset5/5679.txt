@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2794,9 +2793,9 @@ void doMouseLocationChange(int x, int y, boolean select) {
 	newCaretLine = content.getLineAtOffset(newCaretOffset);
 	// Is the mouse within the left client area border or on 
 	// a different line? If not the autoscroll selection 
-(x >= 0 && x < getClientArea().width || wordWrap ||
+	// could be incorrectly reset. Fixes 1GKM3XS
 	if (y >= 0 && y < getClientArea().height && 
-		(x >= 0 && x < getClientArea().width || 
+(x >= 0 && x < getClientArea().width || wordWrap ||
 		newCaretLine != content.getLineAtOffset(caretOffset))) {
 		if (newCaretOffset != caretOffset || advancing != oldAdvancing) {
 			caretOffset = newCaretOffset;

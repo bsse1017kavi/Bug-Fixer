@@ -1,4 +1,3 @@
-
 /***
  * ASM: a very small and fast Java bytecode manipulation framework
  * Copyright (c) 2000-2011 INRIA, France Telecom
@@ -472,9 +471,9 @@ public class Label {
      *            the total number of subroutines in the method.
      */
     void addToSubroutine(final long id, final int nbSubroutines) {
-srcAndRefPositions = new int[nbSubroutines / 32 + 1];
+        if ((status & VISITED) == 0) {
             status |= VISITED;
-            srcAndRefPositions = new int[(nbSubroutines - 1) / 32 + 1];
+srcAndRefPositions = new int[nbSubroutines / 32 + 1];
         }
         srcAndRefPositions[(int) (id >>> 32)] |= (int) id;
     }

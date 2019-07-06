@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -6525,9 +6524,9 @@ void sendSelectionEvent() {
  * @since 3.2
  */
 public void setAlignment(int alignment) {
-if (alignment == 0 || this.alignment == alignment) return;
+	checkWidget();
 	alignment &= (SWT.LEFT | SWT.RIGHT | SWT.CENTER);
-	if (alignment == 0 || this.alignment == alignment);	
+if (alignment == 0 || this.alignment == alignment) return;
 	this.alignment = alignment;
 	resetCache(0, content.getLineCount());
 	setCaretLocation();

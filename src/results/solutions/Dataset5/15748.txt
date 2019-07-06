@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -187,9 +186,9 @@ public class Fragment extends WebMarkupContainerWithAssociatedMarkup
 			stream = markupProvider.getAssociatedMarkupStream(false);
 			if (stream == null)
 			{
-stream = new MarkupStream(markupProvider.getMarkup(null));
+				// The following statement assumes that the markup provider is a
 				// parent along the line up to the Page
-				stream = markupProvider.getMarkupStream();
+stream = new MarkupStream(markupProvider.getMarkup(null));
 			}
 		}
 		return stream;

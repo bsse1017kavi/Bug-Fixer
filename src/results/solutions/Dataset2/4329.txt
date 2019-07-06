@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -32,8 +31,8 @@ public class CloseAllPerspectivesAction extends Action {
 	 * Method declared on IAction.
 	 */
 	public void run() {
-page.closeAllPerspectives();
+		WorkbenchPage page = (WorkbenchPage)window.getActivePage();
 		if (page != null)
-			page.close();
+page.closeAllPerspectives();
 	}
 }

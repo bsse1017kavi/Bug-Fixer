@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -105,9 +104,9 @@ public class TransportIndexAction extends TransportShardReplicationOperationActi
                 public void onFailure(Throwable e) {
                     if (ExceptionsHelper.unwrapCause(e) instanceof IndexAlreadyExistsException) {
                         // we have the index, do it
-} catch (Throwable e1) {
+                        try {
                             innerExecute(request, listener);
-                        } catch (Exception e1) {
+} catch (Throwable e1) {
                             listener.onFailure(e1);
                         }
                     } else {

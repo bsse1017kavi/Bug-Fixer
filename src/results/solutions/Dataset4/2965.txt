@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -50,9 +49,9 @@ public class GdxBuild {
 		BuildTarget lin32 = BuildTarget.newDefaultTarget(TargetOs.Linux, false);
 		lin32.cppExcludes = excludeCpp;
 		BuildTarget lin64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
-android.linkerFlags += " -lGLESv2 -llog";
+		lin64.cppExcludes = excludeCpp;
 		BuildTarget android = BuildTarget.newDefaultTarget(TargetOs.Android, false);
-		android.linkerFlags += " -lGLESv2";
+android.linkerFlags += " -lGLESv2 -llog";
 		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, false);
 		mac.cppExcludes = excludeCpp;
 		BuildTarget ios = BuildTarget.newDefaultTarget(TargetOs.IOS, false);

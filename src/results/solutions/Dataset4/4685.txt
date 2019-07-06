@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class StringTerms extends InternalTerms {
     }
 
 
-BytesRef termBytes;
+    public static class Bucket extends InternalTerms.Bucket {
 
-        final BytesRef termBytes;
+BytesRef termBytes;
 
         public Bucket(BytesRef term, long docCount, InternalAggregations aggregations) {
             super(docCount, aggregations);

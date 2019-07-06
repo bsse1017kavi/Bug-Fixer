@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public class DoubleArrayIndexFieldData extends AbstractIndexFieldData<DoubleArra
                 nativeOrdinals[i] = ordinals.get(i);
             }
             return new DoubleArrayAtomicFieldData.WithOrdinals(
-Ordinals.Factories.createFromFlatOrdinals(nativeOrdinals, termOrd, fieldDataType.getSettings())
+                    values.toArray(new double[values.size()]),
                     reader.maxDoc(),
-                    Ordinals.Factories.createFromFlatOrdinals(nativeOrdinals, termOrd, fieldDataType.getOptions())
+Ordinals.Factories.createFromFlatOrdinals(nativeOrdinals, termOrd, fieldDataType.getSettings())
             );
         }
     }

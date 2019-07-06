@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -69,9 +68,9 @@ public class BloomFilter extends Filter
         {
             logger.warn(String.format("Cannot provide an optimal BloomFilter for %d elements (%d/%d buckets per element).",
                                       numElements, bucketsPerElement, targetBucketsPerElem));
-logger.trace("Creating bloom filter for {} elements and spec {}", numElements, spec);
+        }
         BloomCalculations.BloomSpecification spec = BloomCalculations.computeBloomSpec(bucketsPerElement);
-        logger.debug("Creating bloom filter for {} elements and spec {}", numElements, spec);
+logger.trace("Creating bloom filter for {} elements and spec {}", numElements, spec);
         return new BloomFilter(spec.K, bucketsFor(numElements, spec.bucketsPerElement));
     }
 

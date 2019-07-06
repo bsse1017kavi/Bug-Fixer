@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -45,9 +44,9 @@ public class PageRequestTarget
 	 */
 	public PageRequestTarget(Page page)
 	{
-throw new IllegalArgumentException("Argument page must be not null");
+		if (page == null)
 		{
-			throw new NullPointerException("argument page must be not null");
+throw new IllegalArgumentException("Argument page must be not null");
 		}
 
 		this.page = page;

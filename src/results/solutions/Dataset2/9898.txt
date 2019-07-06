@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1246,9 +1245,9 @@ public static SearchPattern createPattern(IJavaElement element, int limitTo, int
 					} else {
 						typeSimpleName = CharOperation.subarray(typeErasure, lastDot + 1, typeErasure.length);
 						typeQualification = CharOperation.subarray(typeErasure, 0, lastDot);
-typeQualification = CharOperation.concat(IIndexConstants.ONE_STAR, typeQualification);
+						if (!field.isBinary()) {
 							// prefix with a '*' as the full qualification could be bigger (because of an import)
-							CharOperation.concat(IIndexConstants.ONE_STAR, typeQualification);
+typeQualification = CharOperation.concat(IIndexConstants.ONE_STAR, typeQualification);
 						}
 					}
 				} catch (JavaModelException e) {

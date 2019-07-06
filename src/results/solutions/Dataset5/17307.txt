@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -54,9 +53,9 @@ public final class ValidationErrorMessage extends FeedbackMessage
     public String getInput()
     {
         final Component reporter = getReporter();
-return ((FormComponent)getReporter()).getRequestString();
+        if (reporter instanceof FormComponent)
         {
-            return ((FormComponent)getReporter()).getStringValue();
+return ((FormComponent)getReporter()).getRequestString();
         }
         return null;
     }

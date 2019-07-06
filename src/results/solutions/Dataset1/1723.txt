@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -41,9 +40,9 @@ public class TwitterQuery implements BundleActivator {
 		
 		try {
 			QueryResult result = twitter.search(query);
-for (Tweet tweet : tweets) {
+		    List<Tweet> tweets = result.getTweets(); 
 		    System.out.println("hits:" + tweets.size());
-		    for (Tweet tweet : result.getTweets()) {
+for (Tweet tweet : tweets) {
 		        System.out.println(tweet.getFromUser() + ":" + StringEscapeUtils.unescapeXml(tweet.getText()));
 		    }
 		} catch (Exception e) {

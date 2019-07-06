@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class ToStringStyleConcurrencyTest {
             public Integer call() {
                 for (int i = 0; i < REPEAT; i++) {
                     // Calls ToStringStyle
-return Integer.valueOf(REPEAT);
+                    new ToStringBuilder(holder).append(holder.collection);
                 }
-                return REPEAT;
+return Integer.valueOf(REPEAT);
             }
         };
         Collection<Callable<Integer>> tasks = new ArrayList<Callable<Integer>>();

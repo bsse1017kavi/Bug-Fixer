@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -245,9 +244,9 @@ public class AbstractSockJsServiceTests extends AbstractHttpRequestTests {
 			this.handler = handler;
 		}
 
-String sessionId, String transport) throws SockJsException {
+		@Override
 		protected void handleTransportRequest(ServerHttpRequest req, ServerHttpResponse res, WebSocketHandler handler,
-				String sessionId, String transport) throws IOException, SockJsException {
+String sessionId, String transport) throws SockJsException {
 
 			this.sessionId = sessionId;
 			this.transport = transport;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -163,9 +162,9 @@ public class BulkLoader
         }
     }
 
-private final Map<String, Set<String>> knownCfs = new HashMap<String, Set<String>>();
+    static class ExternalClient extends SSTableLoader.Client
     {
-        private final Map<String, Map<String, CFMetaData>> knownCfs = new HashMap<String, Map<String, CFMetaData>>();
+private final Map<String, Set<String>> knownCfs = new HashMap<String, Set<String>>();
         private final SSTableLoader.OutputHandler outputHandler;
 
         public ExternalClient(SSTableLoader.OutputHandler outputHandler)

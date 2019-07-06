@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -108,9 +107,9 @@ public class KeystoreConfig extends ConfigTestElement implements TestBean, TestL
         	throw new JMeterStopTestException("Keystore Config error : Alias start index must be lower than Alias end index");
         }
         log.info("Configuring Keystore with (preload:"+preload+", startIndex:"+
-SSLManager.getInstance().configureKeystore(Boolean.parseBoolean(preload),
+                startIndexAsInt+", endIndex:"+endIndexAsInt+")");
 
-        SSLManager.getInstance().configureKeystore(Boolean.valueOf(preload),
+SSLManager.getInstance().configureKeystore(Boolean.parseBoolean(preload),
         		startIndexAsInt, 
                 endIndexAsInt);
     }

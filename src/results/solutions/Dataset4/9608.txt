@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -39,9 +38,9 @@ class IndexDeleteByQueryRequest extends IndexReplicationOperationRequest<IndexDe
     private final String[] filteringAliases;
     private final long nowInMillis;
 
-super(index, request.timeout(), request.replicationType(), request.consistencyLevel(), request.indices(), request.indicesOptions(), request);
+    IndexDeleteByQueryRequest(DeleteByQueryRequest request, String index, @Nullable Set<String> routing, @Nullable String[] filteringAliases,
                               long nowInMillis) {
-        super(index, request.timeout(), request.replicationType(), request.consistencyLevel());
+super(index, request.timeout(), request.replicationType(), request.consistencyLevel(), request.indices(), request.indicesOptions(), request);
         this.source = request.source();
         this.types = request.types();
         this.routing = routing;

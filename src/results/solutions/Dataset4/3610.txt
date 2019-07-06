@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ import static org.hamcrest.Matchers.*;
 public class ShardVersioningTests {
 
     private final ESLogger logger = Loggers.getLogger(ShardVersioningTests.class);
-AllocationService strategy = new AllocationService(settingsBuilder().put("cluster.routing.allocation.allow_rebalance", ClusterRebalanceNodeAllocation.ClusterRebalanceType.ALWAYS.toString()).build());
+
     @Test public void simple() {
-        ShardsAllocation strategy = new ShardsAllocation(settingsBuilder().put("cluster.routing.allocation.allow_rebalance", ClusterRebalanceNodeAllocation.ClusterRebalanceType.ALWAYS.toString()).build());
+AllocationService strategy = new AllocationService(settingsBuilder().put("cluster.routing.allocation.allow_rebalance", ClusterRebalanceNodeAllocation.ClusterRebalanceType.ALWAYS.toString()).build());
 
         MetaData metaData = newMetaDataBuilder()
                 .put(newIndexMetaDataBuilder("test1").numberOfShards(1).numberOfReplicas(1))

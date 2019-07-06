@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -4360,9 +4359,9 @@ public class XMLSchemaValidator
          */
         public void endElement() {
             if (fGlobalMapStack.isEmpty()) {
-HashMap oldMap = (HashMap) fGlobalMapStack.pop();
+                return; // must be an invalid doc!
             }
-            Hashtable oldMap = (Hashtable) fGlobalMapStack.pop();
+HashMap oldMap = (HashMap) fGlobalMapStack.pop();
             // return if there is no element
             if (oldMap == null) {
                 return;

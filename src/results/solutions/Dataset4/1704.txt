@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -495,9 +494,9 @@ public class TransferThreadPoolExecutor extends AbstractExecutorService {
     private boolean workerCanExit() {
         final ReentrantLock mainLock = this.mainLock;
         mainLock.lock();
-canExit = runState >= STOP || (queueSize.get() == 0 && poolSize.get() > corePoolSize);
+        boolean canExit;
         try {
-            canExit = runState >= STOP || queueSize.get() == 0;
+canExit = runState >= STOP || (queueSize.get() == 0 && poolSize.get() > corePoolSize);
         } finally {
             mainLock.unlock();
         }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene;
 
 /*
@@ -83,9 +82,9 @@ public class TestSearchForDuplicates extends LuceneTestCase {
         Document d = new Document();
         d.add(newTextField(PRIORITY_FIELD, HIGH_PRIORITY, Field.Store.YES));
         d.add(new IntField(ID_FIELD, j, Field.Store.YES));
-writer.shutdown();
+        writer.addDocument(d);
       }
-      writer.close();
+writer.shutdown();
 
       // try a search without OR
       IndexReader reader = DirectoryReader.open(directory);

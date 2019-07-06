@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.jdbc.authentication.NativeAuthenticationServiceImpl
@@ -422,9 +421,9 @@ public final class NativeAuthenticationServiceImpl
             properties.setProperty( Attribute.USERNAME_ATTR, userName );
             properties.setProperty( Attribute.PASSWORD_ATTR, userPassword );
 
-Connection  conn = InternalDriver.activeDriver().connect( connectionURL, properties, 0 );
+            String  connectionURL = Attribute.PROTOCOL + _credentialsDB;
 
-            Connection  conn = InternalDriver.activeDriver().connect( connectionURL, properties );
+Connection  conn = InternalDriver.activeDriver().connect( connectionURL, properties, 0 );
             
             warnings = conn.getWarnings();
             conn.close();

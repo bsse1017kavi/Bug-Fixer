@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS.security;
@@ -107,9 +106,9 @@ verifySIG(RRset set, RRSIGRecord sigrec, Cache cache) {
 		case DNSSEC.RSAMD5:
 			sig = sigrec.getSignature();
 			algString = "MD5withRSA";
-sig = DSASignature.fromDNS(sigrec.getSignature());
+			break;
 		case DNSSEC.DSA:
-			sig = DSASignature.create(sigrec.getSignature());
+sig = DSASignature.fromDNS(sigrec.getSignature());
 			algString = "SHA1withDSA";
 			break;
 		case DNSSEC.RSASHA1:

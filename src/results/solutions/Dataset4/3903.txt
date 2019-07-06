@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class RandomTests extends ElasticsearchIntegrationTest {
     public void testDuelTerms() throws Exception {
         final int numDocs = scaledRandomIntBetween(1000, 2000);
         final int maxNumTerms = randomIntBetween(10, 5000);
-cluster().wipeIndices("idx");
+
         final IntOpenHashSet valuesSet = new IntOpenHashSet();
-        immutableCluster().wipeIndices("idx");
+cluster().wipeIndices("idx");
         prepareCreate("idx")
                 .setSettings(ImmutableSettings.builder().put(InternalGlobalOrdinalsBuilder.ORDINAL_MAPPING_THRESHOLD_INDEX_SETTING_KEY, randomIntBetween(1, maxNumTerms)))
                 .addMapping("type", jsonBuilder().startObject()

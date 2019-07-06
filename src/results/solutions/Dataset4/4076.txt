@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -436,9 +435,9 @@ public class AssetManager implements Disposable {
 	/** Clears and disposes all assets and the preloading queue. */
 	public synchronized void clear () {
 		loadQueue.clear();
-HashMap<String, Integer> dependencyCount = new HashMap<String, Integer>(); // FIXME use ObjectIntMap once its ready.
+		while (!update());
 
-		HashMap<String, Integer> dependencyCount = new HashMap<String, Integer>();
+HashMap<String, Integer> dependencyCount = new HashMap<String, Integer>(); // FIXME use ObjectIntMap once its ready.
 		while(assetTypes.size > 0) {
 			// for each asset, figure out how often it was referenced
 			dependencyCount.clear();

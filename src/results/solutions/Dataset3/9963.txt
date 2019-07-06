@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ class SyslogHandlerResourceDefinition extends SimpleResourceDefinition {
             .setAllowExpression(true)
             .setAttributeMarshaller(new DefaultAttributeMarshaller() {
                 @Override
-writer.writeStartElement(AbstractHandlerDefinition.FORMATTER.getXmlName());
+                public void marshallAsElement(final AttributeDefinition attribute, final ModelNode resourceModel, final boolean marshallDefault, final XMLStreamWriter writer) throws XMLStreamException {
                     if (isMarshallable(attribute, resourceModel, marshallDefault)) {
-                        writer.writeStartElement(CommonAttributes.FORMATTER.getXmlName());
+writer.writeStartElement(AbstractHandlerDefinition.FORMATTER.getXmlName());
                         writer.writeStartElement(attribute.getXmlName());
                         final String content = resourceModel.get(attribute.getName()).asString();
                         writer.writeAttribute(Attribute.SYSLOG_TYPE.getLocalName(), content);

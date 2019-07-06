@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.load.Export
@@ -53,9 +52,9 @@ public class Export extends ExportAbstract{
 				throw LoadError.dataFileNull();
 			try {
 				doAllTheWork();
-throw LoadError.errorWritingData(iex);
+			} catch (IOException iex) {
 				//in case of ioexception, catch it and throw it as our own exception
-				throw LoadError.errorWritingData();
+throw LoadError.errorWritingData(iex);
 			}
 		} catch (Exception ex) {
 			throw LoadError.unexpectedError(ex);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class TransportCreateIndexAction extends TransportMasterNodeOperationActi
         }
 
         CreateIndexClusterStateUpdateRequest updateRequest = new CreateIndexClusterStateUpdateRequest(cause, request.index())
-.aliases(request.aliases()).customs(request.customs());
+                .ackTimeout(request.timeout()).masterNodeTimeout(request.masterNodeTimeout())
                 .settings(request.settings()).mappings(request.mappings())
-                .customs(request.customs());
+.aliases(request.aliases()).customs(request.customs());
 
         createIndexService.createIndex(updateRequest, new ClusterStateUpdateListener() {
 

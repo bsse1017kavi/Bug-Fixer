@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -131,9 +130,9 @@ public class AnnotationImpl implements Annotation {
                        return method.getAnnotation(annotationClass);
                     } catch (Throwable t) {
                        clazz = clazz.getSuperclass();
-} else { // onClass
+                    }
                 }
-            } else { // onclass
+} else { // onClass
                 Class<?> clazz = cl.loadClass(className);
                 return clazz.getAnnotation(annotationClass);
             }

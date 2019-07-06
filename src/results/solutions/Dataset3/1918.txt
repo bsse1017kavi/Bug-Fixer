@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -69,9 +68,9 @@ class AnnotationDrivenJmsBeanDefinitionParser implements BeanDefinitionParser {
 				builder.addPropertyValue("containerFactoryBeanName", containerFactory);
 			}
 
-builder.addPropertyReference("messageHandlerMethodFactory", handlerMethodFactory);
+			String handlerMethodFactory = element.getAttribute("handler-method-factory");
 			if (StringUtils.hasText(handlerMethodFactory)) {
-				builder.addPropertyReference("jmsHandlerMethodFactory", handlerMethodFactory);
+builder.addPropertyReference("messageHandlerMethodFactory", handlerMethodFactory);
 			}
 
 			registerInfrastructureBean(parserContext, builder,

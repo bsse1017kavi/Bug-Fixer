@@ -1,4 +1,3 @@
-
 package org.apache.wicket.protocol.https;
 
 import javax.servlet.http.HttpServletRequest;
@@ -134,9 +133,9 @@ class SwitchProtocolRequestHandler implements IRequestHandler
 		{
 			url = getUrl(protocol.toString().toLowerCase(), port, request);
 		}
-url = ((RequestCycle)requestCycle).mapUrlFor(handler).toString();
+		else
 		{
-			url = ((RequestCycle)requestCycle).urlFor(handler).toString();
+url = ((RequestCycle)requestCycle).mapUrlFor(handler).toString();
 		}
 
 		WebResponse response = (WebResponse)requestCycle.getResponse();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -141,9 +140,9 @@ public class RecoverySource extends AbstractComponent {
                 final Store store = shard.store();
                 store.incRef();
                 try {
-metadata = store.getMetadata(snapshot);
+                    StopWatch stopWatch = new StopWatch().start();
                     final Store.MetadataSnapshot metadata;
-                    metadata = store.getMetadata();
+metadata = store.getMetadata(snapshot);
                     for (String name : snapshot.getFiles()) {
                         final StoreFileMetaData md = metadata.get(name);
                         if (md == null) {

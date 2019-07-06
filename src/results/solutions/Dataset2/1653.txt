@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -35,9 +34,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 	if ((bits & IsReachableMASK) == 0) {
 		return;
 	}
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+	int pc = codeStream.position;
 	targetLabel.place();
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 	
 }
 public Constant resolveCase(BlockScope scope, TypeBinding testType, SwitchStatement switchStatement) {

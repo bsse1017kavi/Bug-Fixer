@@ -1,4 +1,3 @@
-
 package org.apache.solr.search.similarities;
 
 /*
@@ -179,9 +178,9 @@ public class SweetSpotSimilarityFactory extends DefaultSimilarityFactory {
   }
 
   private static final class HyperbolicSweetSpotSimilarity 
-public float tf(float freq) {
+    extends SweetSpotSimilarity {
     @Override
-    public float tf(int freq) {
+public float tf(float freq) {
       return hyperbolicTf(freq);
     }
   };

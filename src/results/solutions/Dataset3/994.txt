@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ final class TransactionsSubsystemElement extends AbstractSubsystemElement<Transa
         // BES this doesn't work right now; see if we can fix it as it should
         //streamWriter.writeStartElement(Namespace.TRANSACTIONS_1_0.name(), Element.CORE_ENVIRONMENT.getLocalName());
         streamWriter.writeStartElement(Element.CORE_ENVIRONMENT.getLocalName());
-streamWriter.writeEmptyElement(Element.OBJECT_STORE.getLocalName());
+        coreEnvironmentElement.writeContent(streamWriter);
 
-        streamWriter.writeStartElement(Element.OBJECT_STORE.getLocalName());
+streamWriter.writeEmptyElement(Element.OBJECT_STORE.getLocalName());
         objectStoreEnvironmentElement.writeContent(streamWriter);
 
         streamWriter.writeEndElement();

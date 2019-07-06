@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -448,9 +447,9 @@ public final class OldSaveService implements SaveServiceConstants
             }
         }
 
-if (saveConfig.saveSamplerData(result))
+        AssertionResult[] assResults = result.getAssertionResults();
 
-        if (saveConfig.saveSamplerData())
+if (saveConfig.saveSamplerData(result))
         {
             config.addChild(
                 createConfigForString("samplerData", result.getSamplerData()));

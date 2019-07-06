@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2008 Google Inc.
  *
@@ -110,9 +109,9 @@ class InheritingState implements State {
     }
 
     public List<TypeListenerBinding> getTypeListenerBindings() {
-= new ArrayList<>(parentBindings.size() + 1);
+        List<TypeListenerBinding> parentBindings = parent.getTypeListenerBindings();
         List<TypeListenerBinding> result
-                = new ArrayList<TypeListenerBinding>(parentBindings.size() + 1);
+= new ArrayList<>(parentBindings.size() + 1);
         result.addAll(parentBindings);
         result.addAll(listenerBindings);
         return result;

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -251,9 +250,9 @@ public class UnionDatatypeValidator extends AbstractDatatypeValidator {
      * @param content A string containing the content to be validated
      * @param pattern: true if pattern facet was applied, false otherwise
      * @param enumeration enumeration facet
-protected void checkContentEnum( String content,  ValidationContext state, boolean pattern, Vector enumeration ) throws InvalidDatatypeValueException
+     * @exception throws InvalidDatatypeException if the content is not valid
      */
-    private void checkContentEnum( String content,  ValidationContext state, boolean pattern, Vector enumeration ) throws InvalidDatatypeValueException
+protected void checkContentEnum( String content,  ValidationContext state, boolean pattern, Vector enumeration ) throws InvalidDatatypeValueException
     {
         // for UnionDatatype we have to wait till the union baseValidators are known, thus
         // if the content is valid "against" ListDatatype, but pattern was applied - report an error. To do so we pass @param pattern;

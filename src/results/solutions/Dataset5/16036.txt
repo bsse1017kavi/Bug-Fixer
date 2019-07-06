@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -76,9 +75,9 @@ class FilePathToURI {
             gAfterEscaping2[i] = gHexChs[i & 0xf];
         }
         gNeedEscaping[0x7f] = true;
-char[] escChs = {' ', '<', '>', '#', '%', '"', '{', '}',
+        gAfterEscaping1[0x7f] = '7';
         gAfterEscaping2[0x7f] = 'F';
-        char[] escChs = {' ', '<', '>', '#', '%', '"', '"', '}',
+char[] escChs = {' ', '<', '>', '#', '%', '"', '{', '}',
                          '|', '\\', '^', '~', '[', ']', '`'};
         int len = escChs.length;
         char ch;

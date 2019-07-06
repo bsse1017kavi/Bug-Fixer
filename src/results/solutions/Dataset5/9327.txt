@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -241,9 +240,9 @@ public class CovReport extends Task
             // we need to run Coverage from his directory due to dll/jar issues
             cmdl.setExecutable( new File( home, "jpcovreport" ).getAbsolutePath() );
             String[] params = getParameters();
-cmdl.addArgument( params[ i ] );
+            for( int i = 0; i < params.length; i++ )
             {
-                cmdl.createArgument().setValue( params[ i ] );
+cmdl.addArgument( params[ i ] );
             }
 
             // use the custom handler for stdin issues

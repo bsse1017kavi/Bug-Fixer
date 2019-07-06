@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -119,9 +118,9 @@ public class TransportShardDeleteAction extends TransportShardReplicationOperati
         Engine.Delete delete = indexShard.prepareDelete(request.type(), request.id(), request.version(), VersionType.INTERNAL, Engine.Operation.Origin.REPLICA);
 
         // IndexDeleteAction doesn't support version type at the moment. Hard coded for the INTERNAL version
-assert delete.versionType().validateVersionForWrites(delete.version());
+        delete = new Engine.Delete(delete, VersionType.INTERNAL.versionTypeForReplicationAndRecovery());
 
-        assert delete.versionType().validateVersion(delete.version());
+assert delete.versionType().validateVersionForWrites(delete.version());
 
         indexShard.delete(delete);
 

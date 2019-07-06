@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -215,9 +214,9 @@ public class PreparedQueryImpl implements PreparedQuery {
         if (executor instanceof StoreQuery.Executor == false)
             return new Object[]{null, _loc.get("exclude-not-executor", _id)};
         _exps = ((StoreQuery.Executor)executor).getQueryExpressions();
-if (exp.hasInExpression)
+        for (int i = 0; i < _exps.length; i++) {
             QueryExpressions exp = _exps[i];
-            if (exp.hasParameterizedInExpression)
+if (exp.hasInExpression)
                 return new Object[]{null, _loc.get("exclude-in-expression", _id)};
             if (isUsingExternalizedParameter(exp)) {
                 return new Object[]{null, _loc.get("exclude-externalized-param", _id)};

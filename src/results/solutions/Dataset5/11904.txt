@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2004 The Apache Software Foundation.
  * 
@@ -416,9 +415,9 @@ public class Writer {
         Method getXMLVersion = null;
         try {
             getXMLVersion = document.getClass().getMethod("getXmlVersion", new Class[]{});
-version = (String) getXMLVersion.invoke(document, (Object[]) null);
+            // If Document class implements DOM L3, this method will exist.
             if (getXMLVersion != null) {
-                version = (String) getXMLVersion.invoke(document, null);
+version = (String) getXMLVersion.invoke(document, (Object[]) null);
             }
         } 
         catch (Exception e) { 

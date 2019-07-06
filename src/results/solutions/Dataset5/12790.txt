@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -232,9 +231,9 @@ public class ManagedClassSubclasser {
             && !meta.isMixedAccess()) ||  meta.isMixedAccess())
             && !redefineAvailable) {
             // only warn about declared fields; superclass fields will be
-if (AccessCode.isProperty(fmd.getAccessType()))
+            // warned about when the superclass is handled
             for (FieldMetaData fmd : meta.getDeclaredFields()) {
-                if (fmd.getAccessType() == ClassMetaData.ACCESS_PROPERTY)
+if (AccessCode.isProperty(fmd.getAccessType()))
                     continue;
                 switch (fmd.getTypeCode()) {
                     case JavaTypes.COLLECTION:

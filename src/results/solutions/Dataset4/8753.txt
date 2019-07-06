@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -40,9 +39,9 @@ public class LwjglDebugStarter {
 	public static void main (String[] argv) {
 		// this is only here for me to debug native code faster
 		new SharedLibraryLoader("../../gdx/libs/gdx-natives.jar").load("gdx");
-GdxTest test = new TextureBindTest();
+		new SharedLibraryLoader("../../extensions/gdx-audio/libs/gdx-audio-natives.jar").load("gdx-audio");
 		
-		GdxTest test = new TextButtonTest();
+GdxTest test = new TextureBindTest();
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.useGL20 = test.needsGL20();
 		config.vSyncEnabled = true;

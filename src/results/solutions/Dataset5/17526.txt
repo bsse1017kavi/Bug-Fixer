@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -189,9 +188,9 @@ public class AjCompilerAdapter extends AbstractCompilerAdapter {
 			if (isXTerminateAfterCompilation || (reportedErrors && !proceedOnError)) {
 				// no point weaving... just tell the requestor we're done
 				notifyRequestor();
-//		        weaver.getWorld().flush(); // pr152257
+			} else {
 				weave();  // notification happens as weave progresses...
-				weaver.getWorld().flush();
+//		        weaver.getWorld().flush(); // pr152257
 			}
 		} catch (IOException ex) {
 			AbortCompilation ac = new AbortCompilation(null,ex);

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.ReclaimSpaceHelper
@@ -536,9 +535,9 @@ public class ReclaimSpaceHelper
 						ContainerHandle.MODE_LOCK_NOWAIT); 
 		} catch (StandardException se) {
 			// DERBY-4059
-if (!se.isLockTimeout()) {
+			// if this is a lock timeout just return null.
 			// otherwise throw the exception
-			if (!se.getSQLState().equals(SQLState.LOCK_TIMEOUT)) {
+if (!se.isLockTimeout()) {
 				throw se;
 			}
 		}

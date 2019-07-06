@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -139,9 +138,9 @@ public PrinterData open() {
 				} else {
 					OS.PMSetPageRange(printSettings, 1, OS.kPMPrintAllPages);
 				}
-OS.PMSetOrientation(pageFormat, printerData.orientation == PrinterData.LANDSCAPE ? OS.kPMLandscape : OS.kPMPortrait, false);
+				OS.PMSetCopies(printSettings, printerData.copyCount, false);
 				OS.PMSetCollate(printSettings, printerData.collate);
-				OS.PMSetOrientation(pageFormat, (short)(printerData.orientation == PrinterData.LANDSCAPE ? OS.kPMLandscape : OS.kPMPortrait), false);
+OS.PMSetOrientation(pageFormat, printerData.orientation == PrinterData.LANDSCAPE ? OS.kPMLandscape : OS.kPMPortrait, false);
 				boolean[] accepted = new boolean [1];
 				if (OS.VERSION >= 0x1050) {
 					int printDialogOptions = OS.kPMShowDefaultInlineItems | OS.kPMShowPageAttributesPDE;

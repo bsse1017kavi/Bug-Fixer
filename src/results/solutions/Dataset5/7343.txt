@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -165,9 +164,9 @@ public class Ant extends Task {
         }
     }
 
-final int count = listeners.size();
+    private void initializeProject() {
         Vector listeners = project.getBuildListeners();
-        final int count = properties.size();
+final int count = listeners.size();
         for (int i = 0; i < count; i++) {
             newProject.addBuildListener((BuildListener)listeners.elementAt(i));
         }

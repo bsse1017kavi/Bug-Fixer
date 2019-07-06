@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -479,9 +478,9 @@ public abstract class AjAttribute {
 				UnresolvedType.writeArray(declaredExceptions, s);
 			}
 		}
-return world.createAdviceMunger(this, pointcut, signature);
+		
 		public Advice reify(Member signature, World world) {
-			return world.concreteAdvice(this, pointcut, signature);
+return world.createAdviceMunger(this, pointcut, signature);
 		}
 		
 		public String toString() {

@@ -1,4 +1,3 @@
-
 package backtype.storm.scheduler;
 
 import java.util.Collection;
@@ -15,7 +14,7 @@ public interface INimbus {
     // mesos should call launchTasks on an executor for this topology... 
     // gives it the executor with:
     //   - name: the node id
-void assignSlots(Collection<TopologyDetails> topologies, Collection<WorkerSlot> newSlots);
+    // set the task id to {nodeid-port}
     // this should be called after the assignment is changed in ZK
-    void assignSlots(Collection<WorkerSlot> slot, TopologyDetails topology);
+void assignSlots(Collection<TopologyDetails> topologies, Collection<WorkerSlot> newSlots);
 }

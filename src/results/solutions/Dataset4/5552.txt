@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -181,9 +180,9 @@ public class CouchdbRiver extends AbstractRiverComponent implements River {
         String seq = map.get("seq").toString();
         String id = map.get("id").toString();
 
-logger.trace("ignoring design document {}", id);
+        // Ignore design documents
         if (id.startsWith("_design/")) {
-            logger.info("ignoring design document {}", id);
+logger.trace("ignoring design document {}", id);
             return seq;
         }
 

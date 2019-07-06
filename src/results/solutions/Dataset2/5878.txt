@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -122,9 +121,9 @@ public IType createType(String content, IJavaElement sibling, boolean force, IPr
 		//autogenerate this compilation unit
 		IPackageFragment pkg = (IPackageFragment) getParent();
 		String source = ""; //$NON-NLS-1$
-source = "package " + pkg.getElementName() + ";"  + JavaModelManager.LINE_SEPARATOR + JavaModelManager.LINE_SEPARATOR; //$NON-NLS-1$ //$NON-NLS-2$
+		if (pkg.getElementName().length() > 0) {
 			//not the default package...add the package declaration
-			source = "package " + pkg.getElementName() + ";" + JavaModelManager.LINE_SEPARATOR; //$NON-NLS-1$ //$NON-NLS-2$
+source = "package " + pkg.getElementName() + ";"  + JavaModelManager.LINE_SEPARATOR + JavaModelManager.LINE_SEPARATOR; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		CreateCompilationUnitOperation op = new CreateCompilationUnitOperation(pkg, fName, source, force);
 		runOperation(op, monitor);

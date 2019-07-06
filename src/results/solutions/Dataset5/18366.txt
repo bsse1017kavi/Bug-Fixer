@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -36,8 +35,8 @@ public class PerformanceTestCase extends CommandTestCase {
 		}
 	}
 	
-TestUtil.runMain("out", "LazyTjp");
+	public void testLazyTjp() throws IOException {
 		checkCompile("src1/LazyTjp.aj", new String[] {"-XlazyTjp","-Xlint:error"}, new int[] {96});
-	//	TestUtil.runMain("out", "LazyTjp");
+TestUtil.runMain("out", "LazyTjp");
 	}
 }

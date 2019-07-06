@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -38,9 +37,9 @@ public class TestMultipleMappedSuperclassHierarchy
 
     public void setUp() {
         String types = MappedSuperclassBase.class.getName() + ";"
-Map props = new HashMap(System.getProperties());
+            + MappedSuperclassL2.class.getName() + ";"
             + EntityL3.class.getName();
-        Map props = new HashMap();
+Map props = new HashMap(System.getProperties());
         props.put("openjpa.MetaDataFactory", "jpa(Types=" + types + ")");
         emf = Persistence.createEntityManagerFactory("test", props);
     }

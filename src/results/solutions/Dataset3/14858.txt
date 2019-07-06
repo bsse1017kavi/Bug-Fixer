@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -112,9 +111,9 @@ public abstract class SessionBeanComponent extends EJBComponent implements org.j
             } else {
                 instance = view.createInstance();
             }
-throw new IllegalStateException("View of type " + businessInterface + " not found on bean " + this);
+            return (T) instance.createProxy();
         } else {
-            throw new IllegalArgumentException("View of type " + businessInterface + " not found on bean " + this);
+throw new IllegalStateException("View of type " + businessInterface + " not found on bean " + this);
         }
 
     }

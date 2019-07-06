@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class ReadableSelector implements FileSelector, ResourceSelector {
     public boolean isSelected(File basedir, String filename, File file) {
         return file != null && file.canRead();
     }
-FileProvider fp = r.as(FileProvider.class);
+
     public boolean isSelected(Resource r) {
-        FileProvider fp = (FileProvider) r.as(FileProvider.class);
+FileProvider fp = r.as(FileProvider.class);
         if (fp != null) {
             return isSelected(null, null, fp.getFile());
         }

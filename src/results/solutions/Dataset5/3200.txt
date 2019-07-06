@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2003 Contributors.
  * All rights reserved. 
@@ -50,9 +49,9 @@ public class CompilerMessagesTest extends AjdeTestCase {
 			String fullyQualifiedFile = task.getContainedMessage().getSourceLocation().getSourceFile().getCanonicalPath();
 			// this name has a tester specific prefix, followed by the location of the file.
 			// we can validate the ending.
-fullyQualifiedFile.endsWith("/examples/declare-warning/apackage/SomeClass.java"));
+			fullyQualifiedFile = fullyQualifiedFile.replace('\\','/');  // ignore platform differences in slashes
 			assertTrue( "Fully-qualified source file location returned", 
-				fullyQualifiedFile.endsWith("testdata/examples/declare-warning/apackage/SomeClass.java"));
+fullyQualifiedFile.endsWith("/examples/declare-warning/apackage/SomeClass.java"));
 		} catch (IOException ex) {
 			assertTrue( "Unable to convert source file location: " + task.getContainedMessage().getSourceLocation().getSourceFile(), false);
 		}

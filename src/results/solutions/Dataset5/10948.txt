@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class JoinPath extends AbstractDomainObject implements DomainObject {
 		return (AbstractDomainObject)super.getParent();
 	}
 		
-return new StringBuilder(getOperator().toString())
+	@Override
 	public String asJoinable(AliasContext ctx) {
-		return new StringBuffer(getOperator().toString())
+return new StringBuilder(getOperator().toString())
 		   .append(getParent().asProjection(ctx))
 		   .append(NAVIGATION)
 		   .append(getLastSegment())

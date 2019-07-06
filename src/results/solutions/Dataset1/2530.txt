@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1653,9 +1652,9 @@ public class ColumnFamilyStore implements ColumnFamilyStoreMBean
                 continue;
             // check column data vs expression
             IColumn column = data.getColumn(expression.column_name);
-int v = data.metadata().getValueValidator(expression.column_name).compare(column.value(), expression.value);
+            if (column == null)
                 return false;
-            int v = data.getComparator().compare(column.value(), expression.value);
+int v = data.metadata().getValueValidator(expression.column_name).compare(column.value(), expression.value);
             if (!satisfies(v, expression.op))
                 return false;
         }

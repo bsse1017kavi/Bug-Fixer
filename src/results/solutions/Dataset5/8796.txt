@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -298,9 +297,9 @@ public class AjcSpecTest extends TestCase {
         assertTrue(lhs != null);
         assertTrue(rhs != null);
         assertTrue(lhs.getKind() == rhs.getKind());
-sameSourceLocation(lhs.getSourceLocation(), rhs.getSourceLocation(), a);
+        same(lhs.getMessage(), rhs.getMessage(), a);
         assertEquals(lhs.getThrown(), rhs.getThrown());
-        sameSourceLocation(lhs.getISourceLocation(), rhs.getISourceLocation(), a);        
+sameSourceLocation(lhs.getSourceLocation(), rhs.getSourceLocation(), a);
 	}
 
 	public static void sameSourceLocation(ISourceLocation lhs, ISourceLocation rhs, Assert a) {

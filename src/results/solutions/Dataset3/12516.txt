@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ public class HttpManagementWriteAttributeHandler extends AbstractWriteAttributeH
                     throw ServerMessages.MESSAGES.illegalCombinationOfHttpManagementInterfaceConfigurations(
                             INTERFACE.getName(),
                             HttpManagementResourceDefinition.SOCKET_BINDING.getName(),
-context.stepCompleted();
+                            HttpManagementResourceDefinition.SECURE_SOCKET_BINDING.getName());
                 }
-                context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
             }
         }, OperationContext.Stage.MODEL);
 

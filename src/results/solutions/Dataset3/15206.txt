@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public interface ResourceInjection {
                 throw new IllegalArgumentException("Invalid resource injection configuration.", e);
             }
             switch(resourceConfiguration.getTargetType()) {
-return new FieldResourceInjection<V>(field, value, argClass.isPrimitive());
+                case FIELD: {
                     final Field field = reflectionIndex.getField(resourceConfiguration.getName());
-                    return new FieldResourceInjection<V>(Values.immediateValue(field), value, argClass.isPrimitive());
+return new FieldResourceInjection<V>(field, value, argClass.isPrimitive());
                 }
                 case METHOD: {
                     final Method method = reflectionIndex.getMethod(Void.class, resourceConfiguration.getName(), argClass);

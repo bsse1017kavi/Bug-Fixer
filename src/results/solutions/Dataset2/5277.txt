@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1343,9 +1342,9 @@ public class WorkbenchWindow extends ApplicationWindow implements IWorkbenchWind
 		if (pageList.isEmpty()) {
 			try {
 				String defPerspID =
-new WorkbenchPage(this, defPerspID, getAdvisor().getDefaultPageInput());
+					getWorkbenchImpl().getPerspectiveRegistry().getDefaultPerspective();
 				WorkbenchPage newPage =
-					new WorkbenchPage(this, defPerspID, getAdvisor().getDefaultWindowInput());
+new WorkbenchPage(this, defPerspID, getAdvisor().getDefaultPageInput());
 				pageList.add(newPage);
 				firePageOpened(newPage);
 			} catch (WorkbenchException e) {

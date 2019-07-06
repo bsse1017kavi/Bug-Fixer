@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public class FixedOrderComparator<T> implements Comparator<T>, Serializable {
      * The array is copied, so later changes will not affect the comparator.
      *
      * @param items  the items that the comparator can compare in order
-public FixedOrderComparator(final T... items) {
+     * @throws IllegalArgumentException if the array is null
      */
-    public FixedOrderComparator(final T[] items) {
+public FixedOrderComparator(final T... items) {
         super();
         if (items == null) {
             throw new IllegalArgumentException("The list of items must not be null");

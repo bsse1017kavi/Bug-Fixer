@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -136,9 +135,9 @@ public class TransportSearchAction extends TransportAction<SearchRequest, Search
             execute(request, new ActionListener<SearchResponse>() {
                 @Override
                 public void onResponse(SearchResponse result) {
-} catch (Throwable e) {
+                    try {
                         channel.sendResponse(result);
-                    } catch (Exception e) {
+} catch (Throwable e) {
                         onFailure(e);
                     }
                 }

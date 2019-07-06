@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import org.jboss.msc.service.ServiceRegistry;
 /**
  * @author Paul Ferraro
  */
-@Listener
+@Stateless
 @Remote(ViewChangeListener.class)
-@Listener(sync = false)
+@Listener
 public class ViewChangeListenerBean implements ViewChangeListener {
     // TODO lower this timeout; workarounds issue when AS process became stale and FD kicks in after 30 seconds
     public static final long TIMEOUT = 35000;

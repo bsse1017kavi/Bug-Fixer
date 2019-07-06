@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests.g3d;
 
 import com.badlogic.gdx.Gdx;
@@ -124,9 +123,9 @@ public class BatchRenderTest extends GdxTest {
 		renderBatch.begin(cam);
 		for (int i = 0; i < instances.size; i++) {
 			if (instances.get(i).model == null)
-renderBatch.render(lights, instances.get(i));
+				Gdx.app.log("Test", "Model "+i+" is null");
 			else
-				renderBatch.render(instances.get(i), lights);
+renderBatch.render(lights, instances.get(i));
 		}
 		renderBatch.end();		
 	}

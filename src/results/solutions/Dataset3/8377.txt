@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -178,9 +177,9 @@ public class BasicThreadFactoryTest {
         EasyMock.expect(wrapped.newThread(r)).andReturn(t);
         EasyMock.replay(wrapped, r);
         BasicThreadFactory factory = builder.wrappedFactory(wrapped).daemon(
-assertTrue("Wrong daemon flag", flag == t.isDaemon());
+                flag).build();
         assertSame("Wrong thread", t, factory.newThread(r));
-        assertEquals("Wrong daemon flag", flag, t.isDaemon());
+assertTrue("Wrong daemon flag", flag == t.isDaemon());
         EasyMock.verify(wrapped, r);
     }
 

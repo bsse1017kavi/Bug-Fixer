@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -320,9 +319,9 @@ public class ListOrderedMap<K, V>
      */
     public String toString() {
         if (isEmpty()) {
-StringBuilder buf = new StringBuilder();
+            return "{}";
         }
-        StringBuffer buf = new StringBuffer();
+StringBuilder buf = new StringBuilder();
         buf.append('{');
         boolean first = true;
         for (Map.Entry<K, V> entry : entrySet()) {

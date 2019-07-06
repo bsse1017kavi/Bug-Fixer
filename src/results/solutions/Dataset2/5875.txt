@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -95,9 +94,9 @@ throws IOException
 		labels = Byte.parseByte(st.nextToken());
 	origttl = TTL.parseTTL(st.nextToken());
 	expire = parseDate(st.nextToken());
-signer = Name.fromString(st.nextToken(), origin);
+	timeSigned = parseDate(st.nextToken());
 	footprint = (short) Integer.parseInt(st.nextToken());
-	signer = new Name(st.nextToken(), origin);
+signer = Name.fromString(st.nextToken(), origin);
 	if (st.hasMoreTokens())
 		signature = base64.fromString(st.remainingTokens());
 }

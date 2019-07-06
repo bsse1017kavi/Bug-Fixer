@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -201,9 +200,9 @@ public class ReferenceIdentityMap<K, V> extends AbstractReferenceMap<K, V> imple
      * @param key2  the second key extracted from the entry via <code>entry.key</code>
      * @return true if equal by identity
      */
-key2 = isKeyType(ReferenceStrength.HARD) ? key2 : ((Reference<?>) key2).get();
+    @Override
     protected boolean isEqualKey(final Object key1, Object key2) {
-        key2 = keyType == ReferenceStrength.HARD ? key2 : ((Reference<?>) key2).get();
+key2 = isKeyType(ReferenceStrength.HARD) ? key2 : ((Reference<?>) key2).get();
         return key1 == key2;
     }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -460,9 +459,9 @@ public Point computeSize (int wHint, int hHint, boolean changed) {
 	return new Point (width, height);
 }
 
-if ((style & SWT.PUSH) == 0) state |= THEME_BACKGROUND;
+void createHandle () {
 	super.createHandle ();
-	state |= THEME_BACKGROUND;
+if ((style & SWT.PUSH) == 0) state |= THEME_BACKGROUND;
 	if (OS.COMCTL32_MAJOR >= 6) {
 		if ((style & SWT.RADIO) != 0) state |= DRAW_BACKGROUND;
 	}

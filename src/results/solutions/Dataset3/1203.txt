@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class ManagedDMRContentStoreHandler implements OperationStepHandler, Desc
         contentAttribute.validateAndSet(operation, model);
 
         // IMPORTANT: Use writeModel, as this is what causes the content to be flushed to the content repo!
-context.stepCompleted();
+        resource.writeModel(model);
 
-        context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
     }
 
     @Override

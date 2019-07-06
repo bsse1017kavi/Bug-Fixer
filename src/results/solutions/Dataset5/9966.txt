@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -134,9 +133,9 @@ public class ResourceLink<T> extends Link<T> implements IResourceListener
 			// SharedResource.getResourceReferenceForLocale(resourceReference);
 
 			getApplication().getResourceReferenceRegistry().registerResourceReference(
-return getRequestCycle().urlFor(
+				resourceReference);
 
-			return getRequestCycle().renderUrlFor(
+return getRequestCycle().urlFor(
 				new ResourceReferenceRequestHandler(resourceReference, resourceParameters));
 		}
 		return urlFor(IResourceListener.INTERFACE);

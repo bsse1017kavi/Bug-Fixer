@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -176,9 +175,9 @@ public class BulkRequest extends ActionRequest<BulkRequest> {
     private void addPayload(Object payload) {
         if (payloads == null) {
             if (payload == null) {
-payloads = new ArrayList<>(requests.size() + 10);
+                return;
             }
-            payloads = new ArrayList<Object>(requests.size() + 10);
+payloads = new ArrayList<>(requests.size() + 10);
             // add requests#size-1 elements to the payloads if it null (we add for an *existing* request)
             for (int i = 1; i < requests.size(); i++) {
                 payloads.add(null);

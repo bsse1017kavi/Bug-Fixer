@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -52,9 +51,9 @@ public class LocalDomainControllerRemoveHandler implements OperationStepHandler,
     @Override
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
         final Resource resource = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS);
-context.stepCompleted();
+        final ModelNode model = resource.getModel();
         model.get(DOMAIN_CONTROLLER).setEmptyObject();
-        context.completeStep();
+context.stepCompleted();
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -155,9 +154,9 @@ public class BeanShellSampler extends BeanShellTestElement implements Sampler
         // but we do trap this error to make tests work better
         catch (NoClassDefFoundError ex) {
             log.error("BeanShell Jar missing? " + ex.toString());
-res.setStopThread(true); // No point continuing
+            res.setResponseCode("501");//$NON-NLS-1$
             res.setResponseMessage(ex.toString());
-            response.setStopThread(true); // No point continuing
+res.setStopThread(true); // No point continuing
         } catch (Exception ex) // Mainly for bsh.EvalError
         {
             log.warn(ex.toString());

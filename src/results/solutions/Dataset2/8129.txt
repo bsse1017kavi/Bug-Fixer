@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -152,9 +151,9 @@ public class FieldDeclaration extends AbstractVariableDeclaration {
 		//--------------------------------------------------------
 		if (!this.hasBeenResolved && this.binding != null && this.binding.isValidBinding()) {
 
-resolveAnnotations(initializationScope, this.annotations, this.binding);
+			this.hasBeenResolved = true;
 
-			resolveAnnotations(this.annotations, initializationScope);
+resolveAnnotations(initializationScope, this.annotations, this.binding);
 
 			// check if field is hiding some variable - issue is that field binding already got inserted in scope
 			// thus must lookup separately in super type and outer context

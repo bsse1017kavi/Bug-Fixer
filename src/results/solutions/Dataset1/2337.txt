@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene40.values;
 
 /**
@@ -57,9 +56,9 @@ class FixedSortedBytesImpl {
   static final class Writer extends DerefBytesWriterBase {
     private final Comparator<BytesRef> comp;
 
-super(dir, id, CODEC_NAME, VERSION_CURRENT, bytesUsed, context, fasterButMoreRam, Type.BYTES_FIXED_SORTED);
+    public Writer(Directory dir, String id, Comparator<BytesRef> comp,
         Counter bytesUsed, IOContext context, boolean fasterButMoreRam) throws IOException {
-      super(dir, id, CODEC_NAME, VERSION_CURRENT, bytesUsed, context, fasterButMoreRam);
+super(dir, id, CODEC_NAME, VERSION_CURRENT, bytesUsed, context, fasterButMoreRam, Type.BYTES_FIXED_SORTED);
       this.comp = comp;
     }
 

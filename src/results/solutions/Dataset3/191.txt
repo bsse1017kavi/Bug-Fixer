@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -520,9 +519,9 @@ public class ModelTestUtils {
             ModelTestUtils.checkOutcome(mainServices.executeOperation(op));
             checkFailedTransformedAddOperation(mainServices, modelVersion, op.clone(), config);
 
-TransformedOperation transformedOperation = mainServices.transformOperation(modelVersion, writeOp.clone());
+            List<ModelNode> writeOps = config.createWriteAttributeOperations(op);
             for (ModelNode writeOp : writeOps) {
-                TransformedOperation transformedOperation = mainServices.transformOperation(modelVersion, writeOp);
+TransformedOperation transformedOperation = mainServices.transformOperation(modelVersion, writeOp.clone());
                 ModelNode result = mainServices.executeOperation(modelVersion, transformedOperation);
                 if (!config.expectFailedWriteAttributeOperation(writeOp)) {
                     Assert.assertEquals("Failed: " + writeOp + "\n" + result, SUCCESS, result.get(OUTCOME).asString());

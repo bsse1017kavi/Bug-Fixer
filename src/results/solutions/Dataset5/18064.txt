@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -858,9 +857,9 @@ public class ProjectHelperImpl extends ProjectHelper {
         public void init(String propType, AttributeList attrs) throws SAXParseException {
             Class parentClass = parent.getClass();
             IntrospectionHelper ih = IntrospectionHelper.getHelper(helperImpl.project, parentClass);
-String elementName = propType.toLowerCase(Locale.ENGLISH);
+
             try {
-                String elementName = propType.toLowerCase(Locale.US);
+String elementName = propType.toLowerCase(Locale.ENGLISH);
                 if (parent instanceof UnknownElement) {
                     UnknownElement uc = new UnknownElement(elementName);
                     uc.setProject(helperImpl.project);

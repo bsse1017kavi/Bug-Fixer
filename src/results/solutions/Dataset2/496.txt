@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -253,9 +252,9 @@ private IType[] findSuperInterfaces(IGenericType type, ReferenceBinding typeBind
 	ClassScope scope;
 	if (typeBinding instanceof SourceTypeBinding && (scope = ((SourceTypeBinding) typeBinding).scope) != null) {
 		TypeDeclaration typeDeclaration = scope.referenceContext;
-if (superInterfaces != null && (length = superInterfaces.length) > (interfaceBindings == null ? 0 : interfaceBindings.length)) { // check for interfaceBindings being null (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=139689)
+		TypeReference[] superInterfaces = typeDeclaration == null ? null : typeDeclaration.superInterfaces;
 		int length;
-		if (superInterfaces != null && (length = superInterfaces.length) > interfaceBindings.length) {
+if (superInterfaces != null && (length = superInterfaces.length) > (interfaceBindings == null ? 0 : interfaceBindings.length)) { // check for interfaceBindings being null (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=139689)
 			
 			interfaceBindings = new ReferenceBinding[length];
 			int index = 0;

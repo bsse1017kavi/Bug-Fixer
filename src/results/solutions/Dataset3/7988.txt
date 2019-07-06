@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 the original author or authors.
  *
@@ -698,9 +697,9 @@ public class CciTemplateTests {
 		connection.close();
 
 		replay(connectionFactory, connection, interaction);
-Record tmpOutputRecord = ct.execute(interactionSpec,
+
 		CciTemplate ct = new CciTemplate(connectionFactory);
-		Record tmpOutputRecord = (Record) ct.execute(interactionSpec,
+Record tmpOutputRecord = ct.execute(interactionSpec,
 				inputOutputRecord);
 		assertNull(tmpOutputRecord);
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -213,9 +212,9 @@ public class MasterFaultDetection extends AbstractComponent {
                                 // check if the master node did not get switched on us...
                                 if (sentToNode.equals(MasterFaultDetection.this.masterNode())) {
                                     int retryCount = ++MasterFaultDetection.this.retryCount;
-logger.debug("Master [{}] failed on ping, tried [{}] times, each with [{}] timeout", masterNode, pingRetryCount, pingRetryTimeout);
+                                    logger.trace("Master [{}] failed to ping, retry [{}] out of [{}]", exp, masterNode, retryCount, pingRetryCount);
                                     if (retryCount >= pingRetryCount) {
-                                        logger.trace("Master [{}] failed on ping", masterNode);
+logger.debug("Master [{}] failed on ping, tried [{}] times, each with [{}] timeout", masterNode, pingRetryCount, pingRetryTimeout);
                                         // not good, failure
                                         notifyMasterFailure(sentToNode);
                                     }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -222,9 +221,9 @@ public class MessageTest extends TestCase {
             assertTrue("not null", null != m);
             assertTrue(""+input, equals(input, m.getMessage()));
             assertTrue(""+kind, kind == m.getKind());
-equals(sourceLocation, m.getSourceLocation()));
+            assertTrue(""+thrown, equals(thrown, m.getThrown()));
             assertTrue(""+sourceLocation, 
-                equals(sourceLocation, m.getISourceLocation()));
+equals(sourceLocation, m.getSourceLocation()));
             String err = new KindTest().testKindSet(message, kind);
             if (null != err) {
                 assertTrue(err, false);

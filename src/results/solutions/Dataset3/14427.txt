@@ -1,4 +1,3 @@
-
 package org.jboss.as.controller.transform;
 
 import org.jboss.as.controller.ModelVersion;
@@ -16,9 +15,9 @@ public abstract class AbstractSubsystemTransformer extends AbstractResourceModel
     protected AbstractSubsystemTransformer(final String subsystemName) {
         this(new ResourceDefinitionLoader() {
             @Override
-return TransformationUtils.loadSubsystemDefinition(subsystemName, version);
+            public ResourceDefinition load(TransformationTarget target) {
                 final ModelVersion version = target.getSubsystemVersion(subsystemName);
-                return TransformationUtils.loadSubsystemDefinition(subsystemName, version.getMajor(), version.getMinor());
+return TransformationUtils.loadSubsystemDefinition(subsystemName, version);
             }
         });
     }

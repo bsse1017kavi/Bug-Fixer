@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -114,9 +113,9 @@ public class HistogramScriptFacetBuilder extends AbstractFacetBuilder {
         if (valueScript == null) {
             throw new SearchSourceBuilderException("value_script must be set on histogram script facet for facet [" + name + "]");
         }
-builder.startObject(HistogramFacet.TYPE);
+        builder.startObject(name);
 
-        builder.startObject(HistogramFacetCollectorParser.NAME);
+builder.startObject(HistogramFacet.TYPE);
         if (keyFieldName != null) {
             builder.field("key_field", keyFieldName);
         } else if (keyScript != null) {

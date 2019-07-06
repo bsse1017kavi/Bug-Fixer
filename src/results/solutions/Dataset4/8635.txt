@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests;
 
 import com.badlogic.gdx.Gdx;
@@ -30,9 +29,9 @@ public class SpritePerformanceTest extends GdxTest {
 	int mode = 0;
 	
 	public void create() {
-vboBatch = new SpriteBatch(1000, VertexDataType.VertexBufferObject);
+		texture = Gdx.graphics.newTexture(Gdx.files.internal("data/badlogicsmall.jpg"), TextureFilter.Linear, TextureFilter.Linear, TextureWrap.ClampToEdge, TextureWrap.ClampToEdge);
 		vaBatch = new SpriteBatch(1000);
-		vboBatch = new SpriteBatch(1000);
+vboBatch = new SpriteBatch(1000, VertexDataType.VertexBufferObject);
 		cache = new SpriteCache();
 		
 		sprites = new Sprite[SPRITES];

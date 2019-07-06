@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -505,9 +504,9 @@ public class RemoteDomainConnectionService implements MasterDomainControllerClie
         public void deleteDeployment(byte[] deploymentHash) {
             localFileRepository.deleteDeployment(deploymentHash);
         }
-interface RemoteFileRepositoryExecutor {
+    }
 
-    static interface RemoteFileRepositoryExecutor {
+interface RemoteFileRepositoryExecutor {
         File getFile(final String relativePath, final byte repoId, HostFileRepository localFileRepository);
     }
 

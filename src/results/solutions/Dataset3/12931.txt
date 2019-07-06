@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class FastDateFormatTest extends TestCase {
             FastDateFormat format2 = FastDateFormat.getInstance("MM/DD/yyyy");
             FastDateFormat format3 = FastDateFormat.getInstance("MM/DD/yyyy", Locale.GERMANY);
 
-assertEquals(Locale.GERMANY, format1.getLocale());
+            assertTrue(format1 != format2); // -- junit 3.8 version -- assertFalse(format1 == format2);
             assertSame(format1, format3);
-            assertSame(Locale.GERMANY, format1.getLocale());
+assertEquals(Locale.GERMANY, format1.getLocale());
 
         } finally {
             Locale.setDefault(realDefaultLocale);

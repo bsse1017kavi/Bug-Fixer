@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -848,9 +847,9 @@ public class SevenZFile implements Closeable {
         LinkedList<SevenZMethodConfiguration> methods = new LinkedList<SevenZMethodConfiguration>();
         for (final Coder coder : folder.getOrderedCoders()) {
             if (coder.numInStreams != 1 || coder.numOutStreams != 1) {
-SevenZMethod method = SevenZMethod.byId(coder.decompressionMethodId);
+                throw new IOException("Multi input/output stream coders are not yet supported");
             }
-            SevenZMethod method = Coders.findBySignature(coder.decompressionMethodId);
+SevenZMethod method = SevenZMethod.byId(coder.decompressionMethodId);
             methods.addFirst(new SevenZMethodConfiguration(method));
             inputStreamStack = Coders.addDecoder(inputStreamStack, coder, password);
         }

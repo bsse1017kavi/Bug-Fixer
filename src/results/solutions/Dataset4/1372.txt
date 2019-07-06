@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -194,9 +193,9 @@ public class QueryPhase implements SearchPhase {
                     searchContext.searcher().search(query, countCollector);
                 } catch (ScanCollector.StopCollectingException e) {
                     // all is well
-} else if (searchContext.searchType() == SearchType.SCAN) {
+                }
                 topDocs = countCollector.topDocs();
-            } else if (searchContext.scanning()) {
+} else if (searchContext.searchType() == SearchType.SCAN) {
                 ScanCollector scanCollector = new ScanCollector(searchContext.from(), searchContext.size());
                 try {
                     searchContext.searcher().search(query, scanCollector);

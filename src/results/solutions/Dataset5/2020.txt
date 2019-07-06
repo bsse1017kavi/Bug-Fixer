@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -279,9 +278,9 @@ public class HTMLSerializer
         // separated with a space so the element can be broken on
         // multiple lines.
         if ( attrs != null ) {
-name = attrs.getQName( i ).toLowerCase();;
+            for ( i = 0 ; i < attrs.getLength() ; ++i ) {
                 _printer.printSpace();
-                name = attrs.getRawName( i ).toLowerCase();;
+name = attrs.getQName( i ).toLowerCase();;
                 value = attrs.getValue( i );
                 if ( _xhtml || namespaceURI != null ) {
                     // XHTML: print empty string for null values.

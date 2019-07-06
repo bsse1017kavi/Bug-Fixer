@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -71,9 +70,9 @@ public class TransportTypesExistsAction extends TransportMasterNodeOperationActi
         return state.blocks().indicesBlockedException(ClusterBlockLevel.METADATA, request.indices());
     }
 
-String[] concreteIndices = state.metaData().concreteIndices(request.indices(), request.indicesOptions());
+    @Override
     protected void masterOperation(final TypesExistsRequest request, final ClusterState state, final ActionListener<TypesExistsResponse> listener) throws ElasticSearchException {
-        String[] concreteIndices = state.metaData().concreteIndices(request.indices(), request.ignoreIndices(), false);
+String[] concreteIndices = state.metaData().concreteIndices(request.indices(), request.indicesOptions());
         if (concreteIndices.length == 0) {
             listener.onResponse(new TypesExistsResponse(false));
             return;

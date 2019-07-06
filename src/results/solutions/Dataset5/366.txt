@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -81,9 +80,9 @@ public class DefaultMarkupResourceStreamProvider implements IMarkupResourceStrea
 		// hierarchy up to MarkupContainer to find the containers markup
 		// resource.
 		while (containerClass != MarkupContainer.class)
-IResourceStream resourceStream = locator.newResourceStream(container.getClass(), path, style,
+		{
 			String path = containerClass.getName().replace('.', '/');
-			IResourceStream resourceStream = locator.locate(container.getClass(), path, style,
+IResourceStream resourceStream = locator.newResourceStream(container.getClass(), path, style,
 					locale, ext);
 
 			// Did we find it already?

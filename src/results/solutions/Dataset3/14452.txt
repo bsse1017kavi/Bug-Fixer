@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -149,9 +148,9 @@ public class ResourceAdaptersExtension implements Extension {
         resourceadapter.registerOperationHandler(ADD, RaAdd.INSTANCE, ADD_RESOURCEADAPTER_DESC, false);
         resourceadapter.registerOperationHandler(REMOVE, RaRemove.INSTANCE, REMOVE_RESOURCEADAPTER_DESC, false);
 
-RaConfigWriteHandler.INSTANCE, Storage.CONFIGURATION);
+        for (final String attributeName : RaConfigRWHandler.ATTRIBUTES) {
             resourceadapter.registerReadWriteAttribute(attributeName, RaConfigReadHandler.INSTANCE,
-                    RaConfigWriteHandler.INSTANCE, Storage.RUNTIME);
+RaConfigWriteHandler.INSTANCE, Storage.CONFIGURATION);
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -111,9 +110,9 @@ public class InfinispanBeanManagerFactory<G, I, T> extends AbstractService<BeanM
         Cache<G, BeanGroupEntry<I, T>> groupCache = this.cache.getValue();
         org.infinispan.configuration.cache.Configuration config = groupCache.getCacheConfiguration();
         BeanGroupFactory<G, I, T> groupFactory = new InfinispanBeanGroupFactory<>(groupCache, this.invoker, factory, context);
-final String beanName = this.context.getBeanName();
+        Configuration<G, G, BeanGroupEntry<I, T>, BeanGroupFactory<G, I, T>> groupConfiguration = new SimpleConfiguration<>(groupCache, groupFactory, groupIdentifierFactory);
         Cache<BeanKey<I>, BeanEntry<G>> beanCache = this.cache.getValue();
-        final String beanName = this.context.getBeanClass().getName();
+final String beanName = this.context.getBeanName();
         // If cache is clustered or configured with a write-through cache store
         // then we need to trigger any @PrePassivate/@PostActivate per request
         // See EJB.4.2.1 Instance Passivation and Conversational State

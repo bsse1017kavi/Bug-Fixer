@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ abstract class AbstractPatchTestBuilder<T> extends ModificationBuilderTarget<T> 
     public T addFileWithRandomContent(byte[] resultingHash, String... path) throws IOException {
         return addFile(resultingHash, randomString(), path);
     }
-final ContentModification modification = ContentModificationUtils.modifyMisc(getPatchDir(), getPatchId(), randomString(), Arrays.copyOf(existingHash, existingHash.length), path);
+
     public T updateFileWithRandomContent(byte[] existingHash, byte[] resultingHash, String... path) throws IOException {
-        final ContentModification modification = ContentModificationUtils.modifyMisc(getPatchDir(), getPatchId(), randomString(), existingHash, path);
+final ContentModification modification = ContentModificationUtils.modifyMisc(getPatchDir(), getPatchId(), randomString(), Arrays.copyOf(existingHash, existingHash.length), path);
         return addContentModification(modification, resultingHash);
     }
 

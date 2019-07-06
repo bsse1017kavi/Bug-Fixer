@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class SimpleIndicesBoostSearchTests extends ElasticsearchIntegrationTest 
     public void testIndicesBoost() throws Exception {
         ElasticsearchAssertions.assertHitCount(client().prepareSearch().setQuery(termQuery("test", "value")).get(), 0);
 
-fail("should fail");
+        try {
             client().prepareSearch("test").setQuery(termQuery("test", "value")).execute().actionGet();
-            assert false : "should fail";
+fail("should fail");
         } catch (Exception e) {
             // ignore, no indices
         }

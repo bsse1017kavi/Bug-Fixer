@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004 The Apache Software Foundation.
  * 
@@ -170,9 +169,9 @@ public class MutableLong extends Number implements Comparable, Mutable {
      * @throws ClassCastException if the argument is not a MutableLong
      */
     public int compareTo(Object obj) {
-return value < anotherVal ? -1 : (value == anotherVal ? 0 : 1);
+        MutableLong other = (MutableLong) obj;
         long anotherVal = other.value;
-        return (value < anotherVal ? -1 : (value == anotherVal ? 0 : 1));
+return value < anotherVal ? -1 : (value == anotherVal ? 0 : 1);
     }
 
     /**

@@ -1,4 +1,3 @@
-
 package org.jboss.as.host.controller.model.host;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.HOST;
@@ -263,9 +262,9 @@ public class HostResourceDefinition extends SimpleResourceDefinition {
 
         DomainServerLifecycleHandlers.initializeServerInventory(serverInventory);
         DomainSocketBindingGroupRemoveHandler.INSTANCE.initializeServerInventory(serverInventory);
-hostRegistration.registerOperationHandler(ValidateOperationHandler.DEFINITION_PRIVATE, validateOperationHandler);
+
         ValidateOperationHandler validateOperationHandler = hostControllerInfo.isMasterDomainController() ? ValidateOperationHandler.INSTANCE : ValidateOperationHandler.SLAVE_HC_INSTANCE;
-        hostRegistration.registerOperationHandler(ValidateOperationHandler.DEFINITION, validateOperationHandler);
+hostRegistration.registerOperationHandler(ValidateOperationHandler.DEFINITION_PRIVATE, validateOperationHandler);
 
 
         SnapshotDeleteHandler snapshotDelete = new SnapshotDeleteHandler(configurationPersister.getHostPersister());

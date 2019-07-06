@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ public final class InjectionDeploymentAspect extends AbstractDeploymentAspect {
         private final InstanceProvider delegate;
         private final String endpointName;
         private final String endpointClass;
-private final Map<String, Reference> cache = new HashMap<String, Reference>(8);
+        private final ServiceName componentPrefix;
         private static final String componentSuffix = "START";
-        private final Map<String, Reference> cache = new HashMap<String, Reference>();
+private final Map<String, Reference> cache = new HashMap<String, Reference>(8);
 
         private InjectionAwareInstanceProvider(final InstanceProvider delegate, final Endpoint endpoint, final DeploymentUnit unit) {
             this.delegate = delegate;

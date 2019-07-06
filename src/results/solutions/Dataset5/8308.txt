@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class SliceImplHelper {
 		} else {
 			policy = conf.getDistributionPolicyInstance();
 			targets = new String[]{((DistributionPolicy)policy).distribute 
-assertSlices(targets, pc, conf.getActiveSliceNames(), policy);
+				(pc, actives, ctx)};
 		}
-		assertSlices(targets, pc, actives, policy);
+assertSlices(targets, pc, conf.getActiveSliceNames(), policy);
 		return new SliceInfo(replicated, targets);
 	}
 	

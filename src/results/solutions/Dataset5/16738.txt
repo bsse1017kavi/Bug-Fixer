@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -349,9 +348,9 @@ public class TarUtils {
         int len = name.length();
         ByteBuffer b = encoding.encode(name);
         while (b.limit() > length && len > 0) {
-final int limit = b.limit() - b.position();
+            b = encoding.encode(name.substring(0, --len));
         }
-        final int limit = b.limit();
+final int limit = b.limit() - b.position();
         System.arraycopy(b.array(), b.arrayOffset(), buf, offset, limit);
 
         // Pad any remaining output bytes with NUL

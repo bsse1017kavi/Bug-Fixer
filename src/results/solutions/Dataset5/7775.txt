@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -527,9 +526,9 @@ public class RequestCycle implements IRequestCycle, IEventSink
 			onEndRequest();
 			listeners.onEndRequest(this);
 		}
-log.error("Exception occurred during onEndRequest", e);
+		catch (RuntimeException e)
 		{
-			log.error("Exception occurred during onAfterRequest", e);
+log.error("Exception occurred during onEndRequest", e);
 		}
 
 		try

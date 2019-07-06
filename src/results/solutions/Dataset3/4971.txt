@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class PatchingException extends Exception {
         conflicts = Collections.emptyList();
     }
 
-super("Conflicts detected: " + conflicts.toString());
+    public PatchingException(Collection<ContentItem> conflicts) {
         // FIXME message is mandatory to wrap it into a OperationFailedException
-        super("Conficts detected: " + conflicts.toString());
+super("Conflicts detected: " + conflicts.toString());
         this.conflicts = conflicts;
     }
 

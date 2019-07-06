@@ -1,5 +1,4 @@
 
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -144,9 +143,9 @@ public class AbstractMgmtTestBase {
         brokenWar.deleteOnExit();
         new ZipExporterImpl(war).exportTo(brokenWar, true);
         return brokenWar;
-assert result.isDefined();
+    }
     protected Map<String, ModelNode> getChildren(final ModelNode result) {
-        assertTrue(result.isDefined());
+assert result.isDefined();
         final Map<String, ModelNode> steps = new HashMap<String, ModelNode>();
         for (final Property property : result.asPropertyList()) {
             steps.put(property.getName(), property.getValue());

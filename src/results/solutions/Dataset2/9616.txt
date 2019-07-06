@@ -1,4 +1,3 @@
-
 package junit.tests.runner;
 
 import java.lang.reflect.*;
@@ -32,9 +31,9 @@ public class TestCaseClassLoaderTest extends TestCase {
 	public void testJarClassLoading() throws Exception {
 		URL url= getClass().getResource("test.jar");
 		assertNotNull("Cannot find test.jar", url);
-Class loadedClass= loader.loadClass("junit.tests.runner.LoadedFromJar", true);
+		String path= url.getFile();
 		TestCaseClassLoader loader= new TestCaseClassLoader(path);
-		Class loadedClass= loader.loadClass("junit.tests.LoadedFromJar", true);
+Class loadedClass= loader.loadClass("junit.tests.runner.LoadedFromJar", true);
 		Object o= loadedClass.newInstance();			
 		//
 		// Invoke the assertClassLoaders method via reflection.

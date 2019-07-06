@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1103,9 +1102,9 @@ private MethodBinding resolveTypesFor(MethodBinding method) {
 		ReferenceBinding resolvedExceptionType;
 		for (int i = 0; i < size; i++) {
 			resolvedExceptionType = (ReferenceBinding) exceptionTypes[i].resolveType(methodDecl.scope, true /* check bounds*/);
-if (resolvedExceptionType.isGenericType() || resolvedExceptionType.isBoundParameterizedType()) {
+			if (resolvedExceptionType == null)
 				continue;
-			if (resolvedExceptionType.isGenericType() || resolvedExceptionType.isParameterizedType()) {
+if (resolvedExceptionType.isGenericType() || resolvedExceptionType.isBoundParameterizedType()) {
 				methodDecl.scope.problemReporter().invalidParameterizedExceptionType(resolvedExceptionType, exceptionTypes[i]);
 				continue;
 			}

@@ -1,4 +1,3 @@
-
 package org.jboss.as.host.controller.operations;
 
 import java.util.List;
@@ -42,9 +41,9 @@ public class NativeManagementServices {
 
         if(serviceContainer.getService(ManagementRemotingServices.MANAGEMENT_ENDPOINT) == null) {
 
-ManagementRemotingServices.installRemotingEndpoint(serviceTarget, ManagementRemotingServices.MANAGEMENT_ENDPOINT,
+            ManagementChannelRegistryService.addService(serviceTarget, ManagementRemotingServices.MANAGEMENT_ENDPOINT);
 
-            ManagementRemotingServices.installRemotingManagementEndpoint(serviceTarget, ManagementRemotingServices.MANAGEMENT_ENDPOINT,
+ManagementRemotingServices.installRemotingEndpoint(serviceTarget, ManagementRemotingServices.MANAGEMENT_ENDPOINT,
                     hostName, EndpointService.EndpointType.MANAGEMENT, CONNECTION_OPTIONS, verificationHandler, newControllers);
 
 

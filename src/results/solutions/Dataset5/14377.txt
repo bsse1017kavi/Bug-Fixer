@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -140,9 +139,9 @@ public class WebSession extends Session implements HttpSessionBindingListener
 	 * @see javax.servlet.http.HttpSessionBindingListener#valueUnbound(javax.servlet.http.HttpSessionBindingEvent)
 	 */
 	public void valueUnbound(HttpSessionBindingEvent event)
-String id = getSessionStore().getId();
+	{
 		// will happen when the session gets invalidated or a timeout.
-		String id = event.getSession().getId();
+String id = getSessionStore().getId();
 		Application application = getApplication();
 		if(application instanceof WebApplication)
 		{

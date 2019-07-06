@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2004 The Apache Software Foundation.
  *
@@ -2105,9 +2104,9 @@ public class XSDHandler {
             Document doc = ele.getOwnerDocument();
             String sid = (String)fDoc2SystemId.get(doc);
             // line/column numbers are stored in the element node
-l.setValues(sid, sid, line, column, ele.getCharacterOffset());
+            int line = ele.getLineNumber();
             int column = ele.getColumnNumber();
-            l.setValues(sid, sid, line, column);
+l.setValues(sid, sid, line, column, ele.getCharacterOffset());
             return true;
         }
         return false;

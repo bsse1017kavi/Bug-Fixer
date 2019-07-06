@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -46,9 +45,9 @@ class VersionAttachStrategy
 
     protected Object getDetachedObjectId(AttachManager manager,
         Object toAttach) {
-getMetaDataRepositoryInstance().getMetaData(toAttach.getClass(),
+        Broker broker = manager.getBroker();
         ClassMetaData meta = broker.getConfiguration().
-            getMetaDataRepository().getMetaData(toAttach.getClass(),
+getMetaDataRepositoryInstance().getMetaData(toAttach.getClass(),
             broker.getClassLoader(), true);
         return ApplicationIds.create((PersistenceCapable) toAttach, meta);
     }

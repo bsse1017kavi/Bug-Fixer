@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ import javax.persistence.EntityManager;
 public class NonTxEmCloser {
     /**
      * Each thread will have its own list of SB invocations in progress.
-public static final ThreadLocalStack<Map<String, EntityManager>> nonTxStack = new ThreadLocalStack<Map<String, EntityManager>>();
+     * Key = scoped persistence unit name
      */
-    public static ThreadLocalStack<Map<String, EntityManager>> nonTxStack = new ThreadLocalStack<Map<String, EntityManager>>();
+public static final ThreadLocalStack<Map<String, EntityManager>> nonTxStack = new ThreadLocalStack<Map<String, EntityManager>>();
 
     /**
      * entered new session bean invocation, start new collection for tracking transactional entity managers created

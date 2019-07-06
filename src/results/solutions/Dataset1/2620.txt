@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.ramonly;
 
 /*
@@ -554,9 +553,9 @@ public final class RAMOnlyPostingsFormat extends PostingsFormat {
   public FieldsProducer fieldsProducer(SegmentReadState readState)
     throws IOException {
 
-IndexInput in = readState.directory.openInput(idFileName, readState.context);
+    // Load our ID:
     final String idFileName = IndexFileNames.segmentFileName(readState.segmentInfo.name, readState.segmentSuffix, ID_EXTENSION);
-    IndexInput in = readState.dir.openInput(idFileName, readState.context);
+IndexInput in = readState.directory.openInput(idFileName, readState.context);
     boolean success = false;
     final int id;
     try {

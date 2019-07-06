@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -105,9 +104,9 @@ public class HistogramFacetProcessor extends AbstractComponent implements FacetP
         if (valueScript != null) {
             return new KeyValueScriptHistogramFacetCollector(facetName, keyField, scriptLang, valueScript, params, interval, comparatorType, context);
         } else if (valueField == null) {
-return new FullHistogramFacetCollector(facetName, keyField, interval, comparatorType, context);
+            return new CountHistogramFacetCollector(facetName, keyField, interval, comparatorType, context);
         } else if (keyField.equals(valueField)) {
-            return new CountAndTotalHistogramFacetCollector(facetName, keyField, interval, comparatorType, context);
+return new FullHistogramFacetCollector(facetName, keyField, interval, comparatorType, context);
         } else {
             // we have a value field, and its different than the key
             return new KeyValueHistogramFacetCollector(facetName, keyField, valueField, interval, comparatorType, context);

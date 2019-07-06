@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -90,9 +89,9 @@ public abstract class AbstractServerDeploymentManager implements ServerDeploymen
         ModelNode steps = op.get(STEPS);
         steps.setEmptyList();
         op.get(OPERATION_HEADERS, ROLLBACK_ON_RUNTIME_FAILURE).set(plan.isGlobalRollback());
-NewOperationBuilder builder = new NewOperationBuilder(op);
+        // FIXME deal with shutdown params
 
-        NewOperationBuilder builder = NewOperationBuilder.Factory.create(op);
+NewOperationBuilder builder = new NewOperationBuilder(op);
 
         int stream = 0;
         for (DeploymentActionImpl action : plan.getDeploymentActionImpls()) {

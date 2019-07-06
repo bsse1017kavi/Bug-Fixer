@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -35,9 +34,9 @@ import org.jboss.as.controller.registry.ManagementResourceRegistration;
 class BufferPoolRootResourceDefinition extends SimpleResourceDefinition {
     static final BufferPoolRootResourceDefinition INSTANCE = new BufferPoolRootResourceDefinition();
 
-PlatformMBeanUtil.getResolver(PlatformMBeanConstants.BUFFER_POOL));
+    private BufferPoolRootResourceDefinition() {
         super(PlatformMBeanConstants.BUFFER_POOL_PATH,
-                PlatformMBeanDescriptions.getResolver(PlatformMBeanConstants.BUFFER_POOL));
+PlatformMBeanUtil.getResolver(PlatformMBeanConstants.BUFFER_POOL));
     }
 
     @Override

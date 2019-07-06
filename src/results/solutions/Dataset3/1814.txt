@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -146,9 +145,9 @@ public class LoginModulesAttributeDefinition extends ListAttributeDefinition {
         flag.get(DESCRIPTION);  // placeholder
         flag.get(TYPE).set(ModelType.STRING);
         flag.get(NILLABLE).set(false);
-flag.get(ALLOWED).add(value.toString());
+
         for (ModuleFlag value : ModuleFlag.values())
-            flag.get(ALLOWED).add(value.name());
+flag.get(ALLOWED).add(value.toString());
 
         final ModelNode moduleOptions = valueType.get(Constants.MODULE_OPTIONS);
         moduleOptions.get(DESCRIPTION);  // placeholder

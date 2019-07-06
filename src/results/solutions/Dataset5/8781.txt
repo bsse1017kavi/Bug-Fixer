@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -151,9 +150,9 @@ int accessibilityAttributeNames(int /*long*/ id, int /*long*/ sel) {
 boolean accessibilityIsIgnored(int /*long*/ id, int /*long*/ sel) {
 	// If we have an accessible and it represents a valid accessible role, this view is not ignored.
 	if (view != null && id == view.id) {
-if (role != null) return false;
+		if (accessible != null) {
 			id role = accessible.internal_accessibilityAttributeValue(OS.NSAccessibilityRoleAttribute, ACC.CHILDID_SELF);
-			return (role == null); 
+if (role != null) return false;
 		}
 	}
 

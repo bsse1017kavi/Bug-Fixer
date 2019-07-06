@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryParser.core.config;
 
 /**
@@ -59,9 +58,9 @@ public abstract class QueryConfigHandler extends AttributeSource {
    *          the field name
    * @return a {@link FieldConfig} object containing the field name
    *         configuration or <code>null</code>, if the implemented
-public FieldConfig getFieldConfig(String fieldName) {
+   *         {@link QueryConfigHandler} has no configuration for that field
    */
-  public FieldConfig getFieldConfig(CharSequence fieldName) {
+public FieldConfig getFieldConfig(String fieldName) {
     FieldConfig fieldConfig = new FieldConfig(fieldName);
 
     for (FieldConfigListener listener : this.listeners) {

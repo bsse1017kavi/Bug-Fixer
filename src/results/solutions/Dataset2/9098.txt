@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -73,9 +72,9 @@ public class AssertStatement extends Statement {
 
 	public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 		if ((bits & IsReachableMASK) == 0) {
-int pc = codeStream.position;
+			return;
 		}
-		int pc = codeStream.position, divergePC;
+int pc = codeStream.position;
 	
 		//  codegen here
 		if (this.assertionSyntheticFieldBinding != null) {

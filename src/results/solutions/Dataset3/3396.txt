@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -849,9 +848,9 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
     private boolean handleSSLFailure() throws CommandLineException {
         Certificate[] lastChain;
         if (trustManager == null || (lastChain = trustManager.getLastFailedCertificateChain()) == null) {
-printLine("Unable to connect due to unrecognised server certificate");
+            return false;
         }
-        error("Unable to connect due to unrecognised server certificate");
+printLine("Unable to connect due to unrecognised server certificate");
         for (Certificate current : lastChain) {
             if (current instanceof X509Certificate) {
                 X509Certificate x509Current = (X509Certificate) current;

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs;
 
 /**
@@ -859,9 +858,9 @@ public class BlockTreeTermsWriter extends FieldsConsumer {
 
       assert stats.docFreq > 0;
       //if (DEBUG) System.out.println("BTTW.finishTerm term=" + fieldInfo.name + ":" + toString(text) + " seg=" + segment + " df=" + stats.docFreq);
-pending.add(new PendingTerm(BytesRef.deepCopyOf(text), stats));
+
       blockBuilder.add(text, noOutputs.getNoOutput());
-      pending.add(new PendingTerm(new BytesRef(text), stats));
+pending.add(new PendingTerm(BytesRef.deepCopyOf(text), stats));
       postingsWriter.finishTerm(stats);
       numTerms++;
     }

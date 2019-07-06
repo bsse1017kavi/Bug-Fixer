@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -47,9 +46,9 @@ public class TestEarlyTermination extends LuceneTestCase {
   }
 
   @Override
-writer.shutdown();
+  public void tearDown() throws Exception {
     super.tearDown();
-    writer.close();
+writer.shutdown();
     dir.close();
   }
 

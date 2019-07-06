@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ public class Test implements TestMBean {
 
     @Override
     public String echo(String s) {
-final BeanWithSimpleInjected bean = LookupService.getBean();
+        log.info("-----> In test()");
         log.info("-----> Found BeanWithSimpleInjected, calling echo(\"Test\")");
-        final BeanWithSimpleInjected bean = LookupService.bean;
+final BeanWithSimpleInjected bean = LookupService.getBean();
         s = bean.echo(s);
         if(bean.getSimple() == null) {
             throw new RuntimeException("Injection not complete");

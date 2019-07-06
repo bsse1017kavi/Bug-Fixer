@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -137,9 +136,9 @@ public class WebSubsystemTestCase extends AbstractSubsystemBaseTest {
 
         KernelServices mainServices = builder.build();
         KernelServices legacyServices = mainServices.getLegacyServices(modelVersion);
-checkSubsystemModelTransformation(mainServices, modelVersion);
+        Assert.assertNotNull(legacyServices);
 
-        checkSubsystemTransformer(mainServices, modelVersion);
+checkSubsystemModelTransformation(mainServices, modelVersion);
 
         ModelNode mainModel = mainServices.readWholeModel().get(SUBSYSTEM, SUBSYSTEM_NAME);
         ModelNode legacyModel = legacyServices.readWholeModel().get(SUBSYSTEM, SUBSYSTEM_NAME);

@@ -1,4 +1,3 @@
-
 package org.apache.solr.update;
 
 /**
@@ -82,9 +81,9 @@ final class CommitTracker implements Runnable {
   public void close() {
     if (pending != null) {
       pending.cancel(true);
-scheduler.shutdownNow();
+      pending = null;
     }
-    scheduler.shutdown();
+scheduler.shutdownNow();
   }
   
   /** schedule individual commits */

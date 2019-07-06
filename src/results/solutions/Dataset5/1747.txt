@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1115,9 +1114,9 @@ public class DirectoryScanner
     }
 
     private void processSlowScan(String[] arr) {
-if (!couldHoldIncluded(path) || contentsExcluded(path)) {
+        for (int i = 0; i < arr.length; i++) {
             TokenizedPath path  = new TokenizedPath(arr[i]);
-            if (!couldHoldIncluded(path)) {
+if (!couldHoldIncluded(path) || contentsExcluded(path)) {
                 scandir(new File(basedir, arr[i]), path, false);
             }
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -277,9 +276,9 @@ public class SourceFieldMapper extends AbstractFieldMapper<byte[]> implements In
                         XContentBuilder builder = XContentFactory.contentBuilder(formatContentType, cachedEntry.bytes(CompressorFactory.defaultCompressor()));
                         builder.copyCurrentStructure(XContentFactory.xContent(contentType).createParser(source));
                         builder.close();
-source.writeTo(streamOutput);
+                    } else {
                         StreamOutput streamOutput = cachedEntry.bytes(CompressorFactory.defaultCompressor());
-                        streamOutput.writeBytesReference(source, false);
+source.writeTo(streamOutput);
                         streamOutput.close();
                     }
                     // we copy over the byte array, since we need to push back the cached entry

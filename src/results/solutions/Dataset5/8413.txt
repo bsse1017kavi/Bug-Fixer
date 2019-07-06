@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -279,9 +278,9 @@ public class RowManagerImpl
             this.table = table;
             this.sm = sm;
         }
-return ((table == null) ? 0  : table.hashCode()) + ((sm == null) ? 0  : sm.hashCode()) % Integer.MAX_VALUE;
+
         public int hashCode() {
-            return (table.hashCode() + sm.hashCode()) % Integer.MAX_VALUE;
+return ((table == null) ? 0  : table.hashCode()) + ((sm == null) ? 0  : sm.hashCode()) % Integer.MAX_VALUE;
         }
 
         public boolean equals(Object other) {

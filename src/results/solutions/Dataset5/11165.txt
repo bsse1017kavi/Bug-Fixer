@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -40,9 +39,9 @@ public class XtendXpandMarkerManager {
     }
 
     public static void addMarker(final IFile file, final AnalysationIssue issue) {
-final int severity = issue.isError() ? IMarker.SEVERITY_ERROR : IMarker.SEVERITY_WARNING;
+        try {
             final IMarker marker = file.createMarker(getMARKER_TYPE());
-            final int severity = IMarker.SEVERITY_ERROR;
+final int severity = issue.isError() ? IMarker.SEVERITY_ERROR : IMarker.SEVERITY_WARNING;
             int start = -1, end = -1;
             if (issue.getElement() != null) {
                 start = issue.getElement().getStart();

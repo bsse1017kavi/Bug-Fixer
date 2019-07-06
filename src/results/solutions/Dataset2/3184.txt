@@ -1,4 +1,3 @@
-
 /*
  * EditingOptionPane.java - Mode-specific options panel
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -243,9 +242,9 @@ public class EditingOptionPane extends AbstractOptionPane
 				saveMode();
 				selectMode();
 			}
-modeProps[mode.getSelectedIndex() - 1].useDefaults =
+			else if(evt.getSource() == useDefaults)
 			{
-				modeProps[mode.getSelectedIndex()].useDefaults =
+modeProps[mode.getSelectedIndex() - 1].useDefaults =
 					useDefaults.isSelected();
 				updateEnabled();
 			}

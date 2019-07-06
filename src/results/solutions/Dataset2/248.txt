@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1394,9 +1393,9 @@ public MethodBinding resolveTypesFor(MethodBinding method) {
 			Argument arg = arguments[i];
 			if (arg.annotations != null) {
 				method.tagBits |= TagBits.HasParameterAnnotations;
-boolean deferRawTypeCheck = !reportUnavoidableGenericTypeProblems && !method.isConstructor() && (arg.type.bits & ASTNode.IgnoreRawTypeCheck) == 0;
+			}
 			// https://bugs.eclipse.org/bugs/show_bug.cgi?id=322817
-			boolean deferRawTypeCheck = !reportUnavoidableGenericTypeProblems && (arg.type.bits & ASTNode.IgnoreRawTypeCheck) == 0;
+boolean deferRawTypeCheck = !reportUnavoidableGenericTypeProblems && !method.isConstructor() && (arg.type.bits & ASTNode.IgnoreRawTypeCheck) == 0;
 			TypeBinding parameterType;
 			if (deferRawTypeCheck) {
 				arg.type.bits |= ASTNode.IgnoreRawTypeCheck;

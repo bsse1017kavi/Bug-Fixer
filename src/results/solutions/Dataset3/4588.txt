@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class EJBSecurityViewConfigurator implements ViewConfigurator {
             }
             if (viewMethod.getDeclaringClass() == WriteReplaceInterface.class) {
                 continue;
-EJBMethodSecurityAttribute ejbMethodSecurityMetaData = ejbComponentDescription.getMethodPermissions().getViewAttribute(ejbViewDescription.getMethodIntf(), viewMethod.getName(), MethodIdentifier.getIdentifierForMethod(viewMethod).getParameterTypes());
+            }
             // setup the authorization interceptor
-            EJBMethodSecurityMetaData ejbMethodSecurityMetaData = ejbComponentDescription.getMethodPermissions().getViewAttribute(ejbViewDescription.getMethodIntf(), viewMethod.getName(), MethodIdentifier.getIdentifierForMethod(viewMethod).getParameterTypes());
+EJBMethodSecurityAttribute ejbMethodSecurityMetaData = ejbComponentDescription.getMethodPermissions().getViewAttribute(ejbViewDescription.getMethodIntf(), viewMethod.getName(), MethodIdentifier.getIdentifierForMethod(viewMethod).getParameterTypes());
             if (ejbMethodSecurityMetaData == null) {
                 ejbMethodSecurityMetaData = ejbComponentDescription.getMethodPermissions().getViewAttribute(MethodIntf.BEAN, viewMethod.getName(), MethodIdentifier.getIdentifierForMethod(viewMethod).getParameterTypes());
             }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -49,9 +48,9 @@ public class TestIsCurrent extends LuceneTestCase {
   }
 
   @Override
-writer.shutdown();
+  public void tearDown() throws Exception {
     super.tearDown();
-    writer.close();
+writer.shutdown();
     directory.close();
   }
 

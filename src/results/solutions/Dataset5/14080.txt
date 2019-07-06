@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -390,9 +389,9 @@ extends XMLDocumentScannerImpl {
         boolean isVC =  fHasExternalDTD && !fStandalone;
 
         // REVISIT: it seems that this function should not take attributes, and length
-oldLen, isVC,fCurrentElement.rawname);
+        scanAttributeValue(this.fTempString, fTempString2,
                            fAttributeQName.rawname, attributes,
-                           oldLen, isVC);
+oldLen, isVC,fCurrentElement.rawname);
         String value = fTempString.toString();
         attributes.setValue(oldLen, value);
         attributes.setNonNormalizedValue(oldLen, fTempString2.toString());

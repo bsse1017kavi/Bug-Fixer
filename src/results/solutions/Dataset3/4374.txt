@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public abstract class AbstractServer {
     void start(final ServerModel config) throws ServerStartException {
         if(config == null)  {
             throw new IllegalArgumentException("null standalone config");
-log.infof("Starting server '%s'", environment.getProcessName());
+        }
         this.config = config;
-        log.infof("Starting server '%s'", config.getServerName());
+log.infof("Starting server '%s'", environment.getProcessName());
         serviceContainer = ServiceContainer.Factory.create();
 
         final ServerStartupListener listener = new ServerStartupListener(createListenerCallback());

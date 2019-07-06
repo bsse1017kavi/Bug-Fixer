@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -107,9 +106,9 @@ public class StatefulComponentDescription extends SessionBeanComponentDescriptio
                 @Override
                 public void configure(DeploymentPhaseContext context, ComponentConfiguration componentConfiguration, ViewDescription description, ViewConfiguration configuration) throws DeploymentUnitProcessingException {
                     final ComponentInterceptorFactory bmtComponentInterceptorFactory = new ComponentInterceptorFactory() {
-if (component instanceof StatefulSessionComponent == false) {
+                        @Override
                         protected Interceptor create(Component component, InterceptorFactoryContext context) {
-                            if (component instanceof StatefulComponentDescription == false) {
+if (component instanceof StatefulSessionComponent == false) {
                                 throw new IllegalArgumentException("Component " + component + " with component class: " + component.getComponentClass() +
                                         " isn't a stateful component");
                             }

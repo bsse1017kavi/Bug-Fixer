@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class InfinispanSubsystemDescribe implements OperationStepHandler {
         result.add(InfinispanSubsystemAdd.createOperation(rootAddress.toModelNode(), subsystemModel));
 
         // add operations to recreate the cache container ModelNodes in their current state
-context.stepCompleted();
+        addCacheContainerCommands(subsystemModel, rootAddress.toModelNode(), result);
 
-        context.completeStep();
+context.stepCompleted();
     }
 
     /**

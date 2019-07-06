@@ -1,4 +1,3 @@
-
 /*
  * @(#) JeremieRegistry.java	1.0 02/07/15
  *
@@ -65,9 +64,9 @@ public class JeremieRegistry implements NameService {
 		    registry = LocateRegistry.createRegistry(port);
 		    // add a shudown hook for this process
 		    Runtime.getRuntime().addShutdownHook(new Thread() {
-JeremieRegistry.this.stop();
+			    public void run() {
 				try {
-				    stop();
+JeremieRegistry.this.stop();
 				} catch (Exception e) {
 				    TraceCarol.error("JeremieRegistry ShutdownHook problem" ,e);
 				}

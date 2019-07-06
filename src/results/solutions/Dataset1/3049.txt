@@ -1,4 +1,3 @@
-
 package org.apache.lucene.demo.facet;
 
 import java.io.IOException;
@@ -75,9 +74,9 @@ public class ExpressionAggregationFacetsExample {
     doc.add(new TextField("c", "foo foo bar", Store.NO));
     doc.add(new NumericDocValuesField("popularity", 3L));
     doc.add(new FacetField("A", "C"));
-indexWriter.shutdown();
+    indexWriter.addDocument(config.build(taxoWriter, doc));
     
-    indexWriter.close();
+indexWriter.shutdown();
     taxoWriter.close();
   }
 

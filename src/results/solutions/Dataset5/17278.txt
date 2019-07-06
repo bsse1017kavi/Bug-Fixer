@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -96,9 +95,9 @@ class PreparedStatementManagerImpl
                 if (failed != null)
                     _exceptions.add(new OptimisticException(failed));
                 else if (row.getAction() == Row.ACTION_INSERT)
-sql).getMessage());
+                    throw new SQLException(_loc.get(
                         "update-failed-no-failed-obj", String.valueOf(count),
-                        sql));
+sql).getMessage());
             }
         } catch (SQLException se) {
             throw SQLExceptions.getStore(se, row.getFailedObject(), _dict);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class TribeTests extends ElasticsearchIntegrationTest {
     private Client tribeClient;
 
     @Before
-cluster2 = new TestCluster(randomLong(), 2, 2, cluster().getClusterName() + "-2");
+    public void setupSecondCluster() {
         // create another cluster
-        cluster2 = new TestCluster(randomLong(), 2, cluster().getClusterName() + "-2");
+cluster2 = new TestCluster(randomLong(), 2, 2, cluster().getClusterName() + "-2");
         cluster2.beforeTest(getRandom(), getPerTestTransportClientRatio());
         cluster2.ensureAtLeastNumNodes(2);
 

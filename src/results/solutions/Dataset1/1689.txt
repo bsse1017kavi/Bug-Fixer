@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -542,9 +541,9 @@ public class QueryElevationComponent extends SearchComponent implements SolrCore
         Bits liveDocs = context.reader().getLiveDocs();
 
         for (String id : elevations.ids) {
-docsEnum = termsEnum.docs(liveDocs, docsEnum, 0);
+          term.copyChars(id);
           if (seen.contains(id) == false  && termsEnum.seekExact(term, false)) {
-            docsEnum = termsEnum.docs(liveDocs, docsEnum, false);
+docsEnum = termsEnum.docs(liveDocs, docsEnum, 0);
             if (docsEnum != null) {
               int docId = docsEnum.nextDoc();
               if (docId == DocIdSetIterator.NO_MORE_DOCS ) continue;  // must have been deleted

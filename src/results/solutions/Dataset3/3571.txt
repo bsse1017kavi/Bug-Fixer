@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -93,9 +92,9 @@ public class ExtensionAddHandler extends AbstractAddStepHandler implements Descr
     void initializeExtension(String module) throws OperationFailedException {
         try {
             for (Extension extension : Module.loadServiceFromCallerModuleLoader(ModuleIdentifier.fromString(module), Extension.class)) {
-extension.initialize(extensionContext.createTracking(module));
+                ClassLoader oldTccl = SecurityActions.setThreadContextClassLoader(extension.getClass());
                 try {
-                    extension.initialize(extensionContext.createWrapper(module));
+extension.initialize(extensionContext.createTracking(module));
                 } finally {
                     SecurityActions.setThreadContextClassLoader(oldTccl);
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2002,2004-2006 The Apache Software Foundation.
  * 
@@ -2417,9 +2416,9 @@ extends ParentNode implements Document  {
      * Call user data handlers when a node is deleted (finalized)
      * @param n The node this operation applies to.
      * @param c The copy node or null.
-protected void callUserDataHandlers(Node n, Node c, short operation) {
+     * @param operation The operation - import, clone, or delete.
      */
-    void callUserDataHandlers(Node n, Node c, short operation) {
+protected void callUserDataHandlers(Node n, Node c, short operation) {
         if (userData == null) {
             return;
         }

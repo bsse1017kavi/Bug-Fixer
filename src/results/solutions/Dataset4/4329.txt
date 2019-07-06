@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -227,9 +226,9 @@ public class GdxSetup {
                 if(!params.containsKey("dir") || !params.containsKey("name") || !params.containsKey("package") || !params.containsKey("mainClass") || ((!params.containsKey("sdkLocation") && System.getenv("ANDROID_HOME") == null))) {
 			new GdxSetupUI();
 			printHelp();
-if (System.getenv("ANDROID_HOME") != null && !params.containsKey("sdkLocation")) {
+		} else {
 			String sdkLocation = "";
-			if (System.getenv("ANDROID_HOME") != null) {
+if (System.getenv("ANDROID_HOME") != null && !params.containsKey("sdkLocation")) {
 				sdkLocation = System.getenv("ANDROID_HOME");
 			} else {
 				sdkLocation = params.get("sdkLocation");

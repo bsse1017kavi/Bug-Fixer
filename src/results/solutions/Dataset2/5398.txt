@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -374,9 +373,9 @@ public abstract class AbstractMethodDeclaration
 
 		try {
 			bindArguments(); 
-resolveAnnotations(scope, this.annotations, this.binding);
+			bindThrownExceptions();
 			resolveJavadoc();
-			resolveAnnotations(this.annotations, scope);
+resolveAnnotations(scope, this.annotations, this.binding);
 			resolveStatements();
 		} catch (AbortMethod e) {	// ========= abort on fatal error =============
 			this.ignoreFurtherInvestigation = true;

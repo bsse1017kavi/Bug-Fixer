@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public class DeploymentHolderService extends AbstractService<Deployment> {
 
         return name;
     }
-ServiceName deploymentServiceName = Services.deploymentUnitName(contextName);
+
     public static ServiceName getServiceName(String contextName) {
-        ServiceName deploymentServiceName = Services.JBOSS_DEPLOYMENT.append(contextName);
+ServiceName deploymentServiceName = Services.deploymentUnitName(contextName);
         return SERVICE_NAME_BASE.append(deploymentServiceName.getSimpleName());
     }
 

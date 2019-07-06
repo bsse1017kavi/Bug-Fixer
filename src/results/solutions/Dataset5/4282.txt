@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -447,9 +446,9 @@ public class ApplicationIds {
                     throw new InvalidStateException(_loc2.get(
                             "existing-value-override-excep", pks[i]
                                     .getFullName(false)));
-pks[i].setValueGenerated(true);
+                // Assign the generated value
                 if (store.assignField(sm, pks[i].getIndex(), preFlush))
-                    pks[i].set_generated(true);
+pks[i].setValueGenerated(true);
                 else
                     return false;
             }

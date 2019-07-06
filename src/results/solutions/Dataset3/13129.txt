@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -152,9 +151,9 @@ public abstract class AbstractSubsystemBaseTest extends AbstractSubsystemTest {
         final KernelServices servicesC = super.installInController(additionalInit, operations);
         final ModelNode modelC = servicesC.readWholeModel();
 
-assertRemoveSubsystemResources(servicesC, getIgnoredChildResourcesForRemovalTest());
+        compare(modelA, modelC);
 
-        assertRemoveSubsystemResources(servicesA, getIgnoredChildResourcesForRemovalTest());
+assertRemoveSubsystemResources(servicesC, getIgnoredChildResourcesForRemovalTest());
     }
 
     protected void validateModel(ModelNode model) {

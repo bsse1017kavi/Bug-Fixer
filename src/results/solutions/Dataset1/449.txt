@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -146,9 +145,9 @@ public class RAMOutputStream extends IndexOutput {
       len -= bytesToCopy;
       bufferPosition += bytesToCopy;
     }
-private final void switchCurrentBuffer() {
+  }
 
-  private final void switchCurrentBuffer() throws IOException {
+private final void switchCurrentBuffer() {
     if (currentBufferIndex == file.numBuffers()) {
       currentBuffer = file.addBuffer(BUFFER_SIZE);
     } else {

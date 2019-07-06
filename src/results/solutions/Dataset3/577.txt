@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class HelpHandler extends CommandHandlerWithHelp {
     public void handle(CommandContext ctx) {
         boolean printCommands;
         try {
-ctx.error(e.getLocalizedMessage());
+            printCommands = commands.isPresent(ctx.getParsedCommandLine());
         } catch (CommandFormatException e) {
-            ctx.printLine(e.getLocalizedMessage());
+ctx.error(e.getLocalizedMessage());
             return;
         }
 

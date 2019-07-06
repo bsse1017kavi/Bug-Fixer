@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -245,9 +244,9 @@ public class SpellCheckComponent extends SearchComponent implements SolrCoreAwar
           if (className == null)
             className = IndexBasedSpellChecker.class.getName();
           SolrResourceLoader loader = core.getResourceLoader();
-String dictionary = checker.init(spellchecker, core);
+          SolrSpellChecker checker = (SolrSpellChecker) loader.newInstance(className);
           if (checker != null) {
-            String dictionary = checker.init(spellchecker, loader);
+String dictionary = checker.init(spellchecker, core);
             if (dictionary != null) {
               boolean isDefault = dictionary.equals(SolrSpellChecker.DEFAULT_DICTIONARY_NAME);
               if (isDefault == true && hasDefault == false){

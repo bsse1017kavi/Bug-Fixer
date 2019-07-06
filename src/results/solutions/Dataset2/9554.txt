@@ -1,4 +1,3 @@
-
 package org.apache.log4j.multiplex;
 
 import junit.framework.TestCase;
@@ -36,9 +35,9 @@ public class MultiplexAppenderTest extends TestCase {
 	public void testIllegalStates() {
 		MultiplexAppender appender = null;
 
-appender.activateOptions();
+		appender = new MultiplexAppender();
 		try {
-			appender.activate();
+appender.activateOptions();
 			fail("Should have thrown an IllegalStateException because it should not be configured correctly");
 		} catch (Exception e) {
 			// expected

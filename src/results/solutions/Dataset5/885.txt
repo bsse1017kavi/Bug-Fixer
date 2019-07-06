@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2000-2004 The Apache Software Foundation.
  * 
@@ -241,9 +240,9 @@ public class StandardJMeterEngine implements JMeterEngine, JMeterThreadMonitor, 
 	}
 
 	public synchronized void threadFinished(JMeterThread thread) {
-log.info("Ending thread " + thread.getThreadName());
+		try {
             allThreads.remove(thread);
-            log.info("Ending thread " + thread.getThreadNum());
+log.info("Ending thread " + thread.getThreadName());
             if (!serialized && allThreads.size() == 0 && !schcdule_run) {
             	log.info("Stopping test");
             	stopTest();

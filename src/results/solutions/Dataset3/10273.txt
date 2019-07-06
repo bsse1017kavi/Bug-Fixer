@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ final class PropertyAdd extends AbstractAddStepHandler {
             final String propertyValue = operation.has(VALUE) ? Attributes.VALUE.resolveModelAttribute(context,operation).asString() : null;
             for (final CommonConfig cfg : getConfigs(config, configType)) {
                 if (configName.equals(cfg.getConfigName())) {
-context.reloadRequired();
+                    cfg.setProperty(propertyName, propertyValue);
                     if (!context.isBooting()) {
-                        context.restartRequired();
+context.reloadRequired();
                     }
                     return;
                 }

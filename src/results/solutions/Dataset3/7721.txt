@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class BindingRemoveHandler extends SocketBindingRemoveHandler {
         PathAddress address = PathAddress.pathAddress(operation.require(OP_ADDR));
         String name = address.getLastElement().getValue();
         ServiceName svcName = SocketBinding.JBOSS_BINDING_NAME.append(name);
-if (controller != null && controller.getState() == ServiceController.State.UP && controller.getSubstate().isRestState()) {
+        ServiceRegistry registry = context.getServiceRegistry(true);
         ServiceController<?> controller = registry.getService(svcName);
-        if (controller != null && controller.getState() == ServiceController.State.UP) {
+if (controller != null && controller.getState() == ServiceController.State.UP && controller.getSubstate().isRestState()) {
             context.reloadRequired();
         } else {
             context.removeService(SocketBinding.JBOSS_BINDING_NAME.append(name));

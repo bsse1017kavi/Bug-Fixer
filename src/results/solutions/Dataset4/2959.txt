@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.loader;
 
 import com.badlogic.gdx.assets.AssetLoaderParameters;
@@ -113,9 +112,9 @@ public class G3dModelLoader extends ModelLoader<AssetLoaderParameters<Model>> {
 				jsonPart.primitiveType = parseType(type);
 				
 				JsonValue indices = meshPart.require("indices");
-for (JsonValue value = indices.child(); value != null; value = value.next(), j++) {
+				short[] partIndices = new short[indices.size()];
 				int k = 0;
-				for (JsonValue value = indices.child(); value != null; value = value.next(), k++) {
+for (JsonValue value = indices.child(); value != null; value = value.next(), j++) {
 					partIndices[k] = (short)indices.getInt(k);
 				}
 				jsonPart.indices = partIndices;

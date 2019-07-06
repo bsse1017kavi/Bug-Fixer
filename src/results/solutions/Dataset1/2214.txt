@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public final class SimpleBundleInfo implements BundleInfo {
   
   public Set<Content> getExportService() {
     if (_exportServices == null) {
-return _exportServices;
+      _exportServices = getContentSetFromHeader (_attributes, Constants.EXPORT_SERVICE);
     }
-    return _exportPackages;
+return _exportServices;
   }
 
   public Map<String, String> getHeaders() {

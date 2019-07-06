@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -375,9 +374,9 @@ public class Context {
 	    
 	    if (name.equals("org.apache.tomcat.jsp_classpath")) {
 		String cp= getServletLoader().getClassPath();
-if( name.equals( "org.apache.tomcat.protection_domain") ) {
+		return cp;
 	    }
-	    if( name.equals( Constants.ATTRIB_JSP_ProtectionDomain) ) {
+if( name.equals( "org.apache.tomcat.protection_domain") ) {
 		return getProtectionDomain();
 	    }
 	    if(name.equals("org.apache.tomcat.classloader")) {

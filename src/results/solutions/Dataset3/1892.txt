@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class ModuleTaskTestCase extends AbstractTaskTestCase{
 
         assertPatchHasBeenApplied(result, patch);
 
-tree(env.getInstalledImage().getJbossHome());
+        File modulesPatchDir = env.getModulePatchDirectory(patchID);
         assertDirExists(modulesPatchDir);
-        tree(result.getPatchInfo().getEnvironment().getInstalledImage().getJbossHome());
+tree(env.getInstalledImage().getJbossHome());
         assertContains(modulesPatchDir, result.getPatchInfo().getModulePath());
         assertDefinedModule(result.getPatchInfo().getModulePath(), moduleName, newHash);
     }

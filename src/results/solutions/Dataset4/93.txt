@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -67,9 +66,9 @@ public class TransportClientHeadersTests extends AbstractClientHeadersTests {
         public <T extends TransportResponse> void sendRequest(DiscoveryNode node, String action, TransportRequest request, TransportRequestOptions options, TransportResponseHandler<T> handler) {
             if (NodesInfoAction.NAME.equals(action)) {
                 ((TransportResponseHandler<NodesInfoResponse>) handler).handleResponse(new NodesInfoResponse(ClusterName.DEFAULT, new NodeInfo[0]));
-handler.handleException(new TransportException("", new InternalException(action, request)));
+                return;
             }
-            handler.handleException(new TransportException("", new InternalException(action, request.getHeaders())));
+handler.handleException(new TransportException("", new InternalException(action, request)));
         }
 
         @Override

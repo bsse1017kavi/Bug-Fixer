@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -220,9 +219,9 @@ public class SourceTypeConverter implements CompilerModifiers {
 	/*
 	 * Convert a source element type into a parsed type declaration
 	 */
-TypeDeclaration type = new TypeDeclaration(compilationResult);
+	private TypeDeclaration convert(ISourceType sourceType, CompilationResult compilationResult) {
 		/* create type declaration - can be member type */
-		TypeDeclaration type = type = new TypeDeclaration(compilationResult);
+TypeDeclaration type = new TypeDeclaration(compilationResult);
 		if (sourceType.getEnclosingType() != null) {
 			type.bits |= ASTNode.IsMemberTypeMASK;
 		}

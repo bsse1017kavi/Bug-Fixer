@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -261,9 +260,9 @@ public class CliClient
     private void executeConnect(CommonTree ast) throws TException
     {
         int portNumber = Integer.parseInt(ast.getChild(1).getText());
-StringBuilder hostName = new StringBuilder();
+        Tree idList = ast.getChild(0);
         
-        StringBuffer hostName = new StringBuffer();
+StringBuilder hostName = new StringBuilder();
         int idCount = idList.getChildCount(); 
         for (int idx = 0; idx < idCount; idx++)
         {

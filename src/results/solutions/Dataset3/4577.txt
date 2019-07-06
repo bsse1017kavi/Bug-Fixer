@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -160,9 +159,9 @@ class SessionProviderFactory {
             if (ref == null) {
                 throw MailMessages.MESSAGES.outboundSocketBindingNotAvailable(ref);
             }
-destinationAddress = binding.getResolvedDestinationAddress();
+            final InetAddress destinationAddress;
             try {
-                destinationAddress = binding.getDestinationAddress();
+destinationAddress = binding.getResolvedDestinationAddress();
             } catch (UnknownHostException uhe) {
                 throw MailMessages.MESSAGES.unknownOutboundSocketBindingDestination(uhe, ref);
             }

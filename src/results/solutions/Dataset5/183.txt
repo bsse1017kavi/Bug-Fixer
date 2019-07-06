@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.gui.action;
 
 import java.awt.event.ActionEvent;
@@ -36,9 +35,9 @@ public class Cut extends AbstractAction
     {
         Copy.setCopiedNode(
             GuiPackage.getInstance().getTreeListener().getDraggedNode());
-JMeterTreeNode currentNode = treeListener.getCurrentNode();//NOTUSED
+        JMeterTreeListener treeListener =
             GuiPackage.getInstance().getTreeListener();
-        JMeterTreeNode currentNode = treeListener.getCurrentNode();
+JMeterTreeNode currentNode = treeListener.getCurrentNode();//NOTUSED
         GuiPackage.getInstance().getTreeModel().removeNodeFromParent(
             GuiPackage.getInstance().getTreeListener().getDraggedNode());
         GuiPackage.getInstance().getMainFrame().repaint();

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UpdateNode
@@ -378,9 +377,9 @@ public final class UpdateNode extends DMLModStatementNode
         // don't allow overriding of generation clauses
         forbidGenerationOverrides( resultSet.getResultColumns(), true, addedGeneratedColumns );
         
-resultSet.getResultColumns().forbidOverrides(null);
+		LanguageConnectionContext lcc = getLanguageConnectionContext();
 		if (lcc.getAutoincrementUpdate() == false)
-			resultSet.getResultColumns().checkAutoincrement(null);
+resultSet.getResultColumns().forbidOverrides(null);
 
 		/*
 		** Mark the columns in this UpdateNode's result column list as

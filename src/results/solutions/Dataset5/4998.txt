@@ -1,4 +1,3 @@
-
 /*
  *  ====================================================================
  *  The Apache Software License, Version 1.1
@@ -312,9 +311,9 @@ public class GraphModel implements Clearable, Serializable
             median = statCalc.getMedian().longValue();
         }
 
-startTime = timeStamp - sample;
+        if (samples.size() == 0)
         {
-            startTime = timeStamp;
+startTime = timeStamp - sample;
         }
 
         float throughput = 0;

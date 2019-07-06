@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -66,9 +65,9 @@ public class MultiReader extends IndexReader {
   public MultiReader(IndexReader[] subReaders, boolean closeSubReaders) {
     initialize(subReaders, closeSubReaders);
   }
-this.subReaders = (IndexReader[]) subReaders.clone();
+  
   private void initialize(IndexReader[] subReaders, boolean closeSubReaders) {
-    this.subReaders = subReaders;
+this.subReaders = (IndexReader[]) subReaders.clone();
     starts = new int[subReaders.length + 1];    // build starts array
     decrefOnClose = new boolean[subReaders.length];
     for (int i = 0; i < subReaders.length; i++) {

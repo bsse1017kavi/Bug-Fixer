@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -88,9 +87,9 @@ public class EjbLookupInjectionSource extends InjectionSource {
 
                         }
 
-if(type != null && value instanceof org.omg.CORBA.Object) {
+                        @Override
                         public Object getInstance() {
-                            if(type != null) {
+if(type != null && value instanceof org.omg.CORBA.Object) {
                                 return PortableRemoteObject.narrow(value, type);
                             } else {
                                 return value;

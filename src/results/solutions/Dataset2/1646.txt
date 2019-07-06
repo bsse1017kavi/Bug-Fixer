@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@anomaly.munge.com)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -149,9 +148,9 @@ sectionToString(int i) {
 }
 
 public String
-sb.append(getHeader() + "\n");
+toString() {
 	StringBuffer sb = new StringBuffer();
-	sb.append(getHeader());
+sb.append(getHeader() + "\n");
 	for (int i = 0; i < 4; i++)
 		sb.append(sectionToString(i) + "\n");
 	sb.append(";; done (" + numBytes() + " bytes)");

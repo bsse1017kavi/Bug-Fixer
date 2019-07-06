@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -196,9 +195,9 @@ public final class ChecksumRandomAccessFile extends RandomAccessFile
         long pos = (chunk == 0) ? 0 : (chunk - 1)*buffSz;
         int startOffset = 0;
         int chksumChunkId = (int)(chksumChunks*(chunk - 1) + 1);
-int fId = ChecksumManager.getFileId(filename_);
+        do
         {            
-            int fId = SequenceFile.getFileId(filename_);               
+int fId = ChecksumManager.getFileId(filename_);
             switch( chksumOps )
             {
                 case LOG:                    

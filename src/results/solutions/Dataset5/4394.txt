@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -934,9 +933,9 @@ public class LDAPExtSampler extends AbstractSampler implements TestListener {
             sortAttributes(sortedAttrs);
             for (Iterator<Attribute> ait = sortedAttrs.iterator(); ait.hasNext();)
             {
-StringBuilder sb = new StringBuilder();
+                final Attribute     attr = ait.next();
 
-                StringBuffer sb = new StringBuffer();
+StringBuilder sb = new StringBuilder();
                 if (attr.size() == 1) {
                     sb.append(getWriteValue(attr.get()));
                 } else {

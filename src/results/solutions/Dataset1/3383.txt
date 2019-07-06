@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db;
 /*
  * 
@@ -74,9 +73,9 @@ public class CommitLogExecutorService extends AbstractExecutorService implements
         new Thread(runnable, "COMMIT-LOG-WRITER").start();
 
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
-mbs.registerMBean(this, new ObjectName("org.apache.cassandra.db:type=Commitlog"));
+        try
         {
-            mbs.registerMBean(this, new ObjectName("org.apache.cassandra.concurrent:type=COMMITLOG"));
+mbs.registerMBean(this, new ObjectName("org.apache.cassandra.db:type=Commitlog"));
         }
         catch (Exception e)
         {

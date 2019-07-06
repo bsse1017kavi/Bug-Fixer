@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -95,9 +94,9 @@ throws TextParseException
 {
 	CERTRecord rec = new CERTRecord(name, dclass, ttl);
 	rec.certType = (short) Integer.parseInt(nextString(st));
-rec.cert = base64.fromString(remainingStrings(st));
+	rec.keyTag = (short) Integer.parseInt(nextString(st));
 	rec.alg = (byte) Integer.parseInt(nextString(st));
-	rec.cert = base64.fromString(st.remainingTokens());
+rec.cert = base64.fromString(remainingStrings(st));
 	return rec;
 }
 

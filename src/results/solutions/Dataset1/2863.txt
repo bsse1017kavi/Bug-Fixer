@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.tools.ImportExportTest
@@ -166,9 +165,9 @@ public class ImportExportTest extends BaseJDBCTestCase {
 		Connection c = getConnection();
 		try {
 			doImportFromFile(c, "extin/EndOfFile.txt" , "T4" , null , null , null, 0);
-assertSQLState(JDBC.vmSupportsJDBC4() ? "XIE0R" : "XIE0E", e);
+		} catch (SQLException e) {
 			// DERBY-1440: JDBC 4 client driver doesn't include nested exception SQLStates
-			assertSQLState(JDBC.vmSupportsJDBC4() ? "38000" : "XIE0E", e);
+assertSQLState(JDBC.vmSupportsJDBC4() ? "XIE0R" : "XIE0E", e);
 		}
 	}
 	

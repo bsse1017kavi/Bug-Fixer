@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -78,9 +77,9 @@ public class AnnotationMetadataTests extends TestCase {
 		Map<String, Object> scopeAttrs = metadata.getAnnotationAttributes(Scope.class.getName());
 		assertEquals(1, scopeAttrs.size());
 		assertEquals("myScope", scopeAttrs.get("value"));
-assertEquals(String.class.getName(), specialAttrs.get("clazz"));
+		Map<String, Object> specialAttrs = metadata.getAnnotationAttributes(SpecialAttr.class.getName());
 		assertEquals(2, specialAttrs.size());
-		assertEquals(String.class, specialAttrs.get("clazz"));
+assertEquals(String.class.getName(), specialAttrs.get("clazz"));
 		assertEquals(Thread.State.NEW, specialAttrs.get("state"));
 	}
 	

@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTargetUrlCodingStrategy.java,v 1.1 2005/12/10
  * 21:28:56 eelco12 Exp $ $Revision$ $Date: 2006-04-02 14:09:16 -0700
@@ -85,9 +84,9 @@ public abstract class AbstractRequestTargetUrlCodingStrategy
 	 *            query string
 	 * @param urlParameters
 	 *            query string parameters
-protected ValueMap decodeParameters(String urlFragment, Map urlParameters)
+	 * @return Parameters created from the url fragment and query string
 	 */
-	protected ValueMap decodeParameters(String urlFragment, Map<String,? extends Object> urlParameters)
+protected ValueMap decodeParameters(String urlFragment, Map urlParameters)
 	{
 		// Hack off any leading slash
 		if (urlFragment.startsWith("/"))

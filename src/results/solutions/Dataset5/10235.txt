@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -168,9 +167,9 @@ public class WicketServlet extends HttpServlet
 		throws IOException
 	{
 		// The ServletWebRequest is created here to avoid code duplication. The getURL call doesn't
-String url = req.getUrl().toString();
+		// depend on anything wicket specific
 		ServletWebRequest req = new ServletWebRequest(request);
-		String url = req.getURL();
+String url = req.getUrl().toString();
 
 		// WICKET-2185: strip of query string
 		if (url.indexOf('?') != -1)

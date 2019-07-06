@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -158,9 +157,9 @@ abstract class XSDAbstractTraverser {
                 else {
                     prefix = rawname.substring(0,colonIndex);
                     localpart = rawname.substring(colonIndex+1);
-if (annotationDecl.getAttributeNS(uri, localpart).length() != 0) {
+                }
                 String uri = schemaDoc.fNamespaceSupport.getURI(fSymbolTable.addSymbol(prefix));
-                if (!annotationDecl.getAttributeNS(uri, localpart).equals("")) {
+if (annotationDecl.getAttributeNS(uri, localpart).length() != 0) {
                     i++; // skip the next value, too
                     continue;
                 }

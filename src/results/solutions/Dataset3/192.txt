@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -305,9 +304,9 @@ public class DataSourcesExtension implements Extension {
 
         for (final SimpleAttributeDefinition attribute : DataSourcesSubsystemProviders.DATASOURCE_ATTRIBUTE) {
             if (PoolConfigurationRWHandler.ATTRIBUTES.contains(attribute.getName())) {
-dataSources.registerReadOnlyAttribute(attribute.getName(), XMLDataSourceRuntimeHandler.INSTANCE, Storage.RUNTIME);
+                dataSources.registerReadOnlyAttribute(attribute.getName(), PoolConfigurationReadHandler.INSTANCE, Storage.RUNTIME);
             } else {
-                dataSources.registerReadOnlyAttribute(attribute.getName(), null, Storage.RUNTIME);
+dataSources.registerReadOnlyAttribute(attribute.getName(), XMLDataSourceRuntimeHandler.INSTANCE, Storage.RUNTIME);
             }
         }
 

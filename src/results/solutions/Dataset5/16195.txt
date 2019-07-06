@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -366,9 +365,9 @@ int /*long*/ gtk_value_changed (int /*long*/ adjustment) {
 		case OS.GTK_SCROLL_STEP_LEFT:
 		case OS.GTK_SCROLL_STEP_BACKWARD:	event.detail = SWT.ARROW_UP; break;
 	}
-parent.updateScrollBarValue (this);
+	detail = OS.GTK_SCROLL_NONE;
 	postEvent (SWT.Selection, event);
-	parent.setScrollBarValue (this);
+parent.updateScrollBarValue (this);
 	return 0;
 }
 

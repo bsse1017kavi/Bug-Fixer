@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class ArgumentValueState extends DefaultParsingState {
         super(ID);
         this.setEnterHandler(new CharacterHandler() {
             @Override
-getHandler(ctx.getCharacter()).handle(ctx);
+            public void handle(ParsingContext ctx) throws OperationFormatException {
                 if(ctx.getCharacter() != '=') {
-                    ArgumentValueState.this.getDefaultHandler().handle(ctx);
+getHandler(ctx.getCharacter()).handle(ctx);
                 }
             }});
         putHandler(' ', GlobalCharacterHandlers.LEAVE_STATE_HANDLER);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -225,9 +224,9 @@ public class TestIndexWriterWithThreads extends LuceneTestCase {
       DocsEnum tdocs = _TestUtil.docs(random(), reader,
                                       "field",
                                       new BytesRef("aaa"),
-false);
+                                      MultiFields.getLiveDocs(reader),
                                       null,
-                                      0);
+false);
       int count = 0;
       while(tdocs.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
         count++;

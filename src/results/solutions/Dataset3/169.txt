@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -610,9 +609,9 @@ public class GlobalOperationsTestCase extends AbstractGlobalOperationsTestCase {
         }
 
         operation.get(NAME).set("testA1-2");
-assertEquals("testA1-2", result.require(OPERATION_NAME).asString());
+        ModelNode result = executeForResult(operation);
         assertEquals(ModelType.OBJECT, result.getType());
-        assertEquals("testA2", result.require(OPERATION_NAME).asString());
+assertEquals("testA1-2", result.require(OPERATION_NAME).asString());
         assertEquals(ModelType.STRING, result.require(REQUEST_PROPERTIES).require("paramA2").require(TYPE).asType());
     }
 

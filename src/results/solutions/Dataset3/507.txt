@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public final class ResourceAdaptersAdd extends AbstractSubsystemAdd<ResourceAdap
     }
 
     @Override
-updateContext.addDeploymentProcessor(INIT_ME, new ResourceAdaptersAttachingProcessor(resourceAdapters), Phase.RESOURCE_ADAPTERS_ATTACHING_PROCESSOR);
+    protected void applyUpdateBootAction(final BootUpdateContext updateContext) {
         applyUpdate(updateContext, UpdateResultHandler.NULL, null);
-        updateContext.addDeploymentProcessor(new ResourceAdaptersAttachingProcessor(resourceAdapters), Phase.RESOURCE_ADAPTERS_ATTACHING_PROCESSOR);
+updateContext.addDeploymentProcessor(INIT_ME, new ResourceAdaptersAttachingProcessor(resourceAdapters), Phase.RESOURCE_ADAPTERS_ATTACHING_PROCESSOR);
     }
 
     protected ResourceAdaptersSubsystemElement createSubsystemElement() {

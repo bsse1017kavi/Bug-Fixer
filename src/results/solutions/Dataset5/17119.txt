@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -1016,9 +1015,9 @@ public class MetaDataRepository
             throw new MetaDataException(_loc.get("no-meta", cls));
         if (cls == null)
             return EMPTY_METAS;
-loadRegisteredClassMetaData(envLoader);
+
         // get impls of given interface / abstract class
-        processRegisteredClasses();
+loadRegisteredClassMetaData(envLoader);
         Collection vals = (Collection) _impls.get(cls);
         ClassMetaData meta;
         Collection mapped = null;

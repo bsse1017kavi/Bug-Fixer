@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -158,9 +157,9 @@ public class Sum extends AbstractStorelessUnivariateStatistic implements Seriali
                            final int begin, final int length) {
         double sum = Double.NaN;
         if (test(values, weights, begin, length)) {
-sum += values[i] * weights[i];
+            sum = 0.0;
             for (int i = begin; i < begin + length; i++) {
-                sum += (values[i] * weights[i]);
+sum += values[i] * weights[i];
             }
         }
         return sum;

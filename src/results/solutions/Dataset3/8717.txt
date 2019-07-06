@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -215,9 +214,9 @@ public class GzipCompressorInputStream extends CompressorInputStream {
         }
     }
 
-return read(oneByte, 0, 1) == -1 ? -1 : oneByte[0] & 0xFF;
+    @Override
     public int read() throws IOException {
-        return read(oneByte, 0, 1) == -1 ? -1 : (oneByte[0] & 0xFF);
+return read(oneByte, 0, 1) == -1 ? -1 : oneByte[0] & 0xFF;
     }
 
     /**

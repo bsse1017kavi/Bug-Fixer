@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -376,9 +375,9 @@ public class IndicesClusterStateService extends AbstractLifecycleComponent<Indic
             this.shardRouting = shardRouting;
             this.indexService = indexService;
         }
-shardStateAction.shardStarted(shardRouting, "after recovery (replica) from node [" + request.sourceNode() + "]");
+
         @Override public void onRecoveryDone() {
-            shardStateAction.shardStarted(shardRouting, "after recovery (backup) from node [" + request.sourceNode() + "]");
+shardStateAction.shardStarted(shardRouting, "after recovery (replica) from node [" + request.sourceNode() + "]");
         }
 
         @Override public void onRetryRecovery(TimeValue retryAfter) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -124,9 +123,9 @@ public class ModuleAccessesBundleServiceTestCase extends AbstractXServiceTestCas
         archive.addClasses(ClientModuleTwoActivator.class);
         archive.addAsServiceProvider(ServiceActivator.class, ClientModuleTwoActivator.class);
         archive.setManifest(new Asset() {
-builder.addManifestHeader("Dependencies", "org.osgi.core,org.jboss.modules,org.jboss.logging,org.jboss.osgi.framework,deployment.example-xservice-mab-target-bundle");
+            public InputStream openStream() {
                 ManifestBuilder builder = ManifestBuilder.newInstance();
-                builder.addManifestHeader("Dependencies", "org.osgi.core,org.jboss.modules,org.jboss.logging,org.jboss.osgi.framework,deployment.example-xservice-mab-target-bundle:0.0.0");
+builder.addManifestHeader("Dependencies", "org.osgi.core,org.jboss.modules,org.jboss.logging,org.jboss.osgi.framework,deployment.example-xservice-mab-target-bundle");
                 return builder.openStream();
             }
         });

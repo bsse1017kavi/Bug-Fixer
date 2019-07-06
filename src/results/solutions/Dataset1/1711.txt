@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.dataimport;
 
 /*
@@ -94,9 +93,9 @@ public class TestSolrEntityProcessorEndToEnd extends AbstractDataImportHandlerTe
         + (useDeadServer ? DEAD_SOLR_SERVER : getSourceUrl()) + "' " + options + " />\r\n" + "  </document>\r\n"
         + "</dataConfig>\r\n";
   }
-return buildUrl(jetty.getLocalPort(), "/solr");
+  
   private String getSourceUrl() {
-    return "http" + (isSSLMode() ? "s" : "") +"://127.0.0.1:" + jetty.getLocalPort() + "/solr";
+return buildUrl(jetty.getLocalPort(), "/solr");
   }
   
   //TODO: fix this test to close its directories

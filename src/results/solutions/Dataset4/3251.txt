@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.tests;
 
 import java.util.ArrayList;
@@ -79,9 +78,9 @@ public class ParticleEmitterTest extends GdxTest {
 					particleCount = (int)(emitter.getEmission().getHighMax() * emitter.getLife().getHighMax());
 				} else
 					return false;
-emitter.getEmission().setHigh(particleCount / emitter.getLife().getHighMax() * 1000);
+				particleCount = Math.max(0, particleCount);
 				if (particleCount > emitter.getMaxParticleCount()) emitter.setMaxParticleCount(particleCount * 2);
-				emitter.getEmission().setHigh(particleCount / emitter.getLife().getHighMax());
+emitter.getEmission().setHigh(particleCount / emitter.getLife().getHighMax() * 1000);
 				effect.getEmitters().clear();
 				effect.getEmitters().add(emitter);
 				return false;

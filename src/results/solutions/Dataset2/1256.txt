@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -583,9 +582,9 @@ public class Request {
 	    getInterceptors(Container.H_authorize);
 
 	// Call all authorization callbacks. 
-if ( status != BaseInterceptor.DECLINED ) {
+	for( int i=0; i< reqI.length; i++ ) {
 	    status = reqI[i].authorize( this, response, checkRoles );
-	    if ( status != 0 ) {
+if ( status != BaseInterceptor.DECLINED ) {
 		break;
 	    }
 	}

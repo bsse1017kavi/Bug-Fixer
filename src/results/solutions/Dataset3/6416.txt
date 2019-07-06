@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -57,9 +56,9 @@ public class VaultResourceDefinition extends SimpleResourceDefinition {
 
     public static PropertiesAttributeDefinition VAULT_OPTIONS = new PropertiesAttributeDefinition.Builder(ModelDescriptionConstants.VAULT_OPTIONS, true)
             .addFlag(Flag.RESTART_ALL_SERVICES)
-.setValidator(new StringLengthValidator(1, true, true))
+            .setAllowExpression(true)
             .setCorrector(MapAttributeDefinition.LIST_TO_MAP_CORRECTOR)
-            .setValidator(new StringLengthValidator(1))
+.setValidator(new StringLengthValidator(1, true, true))
             .build();
 
     public static AttributeDefinition[] ALL_ATTRIBUTES = new AttributeDefinition[]{CODE, VAULT_OPTIONS};

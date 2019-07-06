@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -164,9 +163,9 @@ public class AggregationPhase implements SearchPhase {
             aggregationContext.setNextReader(context);
         }
 
-return !aggregationContext.scoreDocsInOrder();
+        @Override
         public boolean acceptsDocsOutOfOrder() {
-            return true;
+return !aggregationContext.scoreDocsInOrder();
         }
 
         @Override

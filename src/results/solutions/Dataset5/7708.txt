@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -56,9 +55,9 @@ public class CompilerMessagesCellRenderer extends JLabel implements ListCellRend
 			if (kind.equals(IMessage.WARNING)) {
 				setIcon(AjdeUIManager.getDefault().getIconRegistry().getWarningIcon());
 			} else if (IMessage.ERROR.isSameOrLessThan(kind)) {
-setIcon(AjdeUIManager.getDefault().getIconRegistry().getInfoIcon());
+                setIcon(AjdeUIManager.getDefault().getIconRegistry().getErrorIcon());
 			} else {
-                setIcon(null);
+setIcon(AjdeUIManager.getDefault().getIconRegistry().getInfoIcon());
 			}
 			if (isSelected) {
 				setBackground(list.getSelectionBackground());

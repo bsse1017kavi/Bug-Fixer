@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -249,9 +248,9 @@ class SortedSetDocValuesWriter extends DocValuesWriter {
     @Override
     public Number next() {
       if (!hasNext()) {
-while (currentUpto == currentLength) {
+        throw new NoSuchElementException();
       }
-      if (currentUpto == currentLength) {
+while (currentUpto == currentLength) {
         // refill next doc, and sort remapped ords within the doc.
         currentUpto = 0;
         currentLength = (int) counts.next();

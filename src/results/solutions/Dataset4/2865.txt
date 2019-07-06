@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -247,9 +246,9 @@ public class TransportService extends AbstractLifecycleComponent<TransportServic
             RequestHolder holder = clientHandlers.remove(requestId);
             if (holder == null) {
                 // lets see if its in the timeout holder
-logger.warn("Transport response handler timed out, action [{}], node [{}], id [{}]", timeoutInfoHolder.action(), timeoutInfoHolder.node(), requestId);
+                TimeoutInfoHolder timeoutInfoHolder = timeoutInfoHandlers.remove(requestId);
                 if (timeoutInfoHolder != null) {
-                    logger.warn("Transport response handler timed out, action [{}], node [{}]", timeoutInfoHolder.action(), timeoutInfoHolder.node());
+logger.warn("Transport response handler timed out, action [{}], node [{}], id [{}]", timeoutInfoHolder.action(), timeoutInfoHolder.node(), requestId);
                 } else {
                     logger.warn("Transport response handler not found of id [{}]", requestId);
                 }

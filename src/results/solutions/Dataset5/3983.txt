@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -31,9 +30,9 @@ public class Student {
     int id;
 
     String name;
-@JoinTable(name="CENROLLS",
+
     @ManyToMany
-    @JoinTable(name="ENROLLMENTS",
+@JoinTable(name="CENROLLS",
             joinColumns=@JoinColumn(name="STUDENT"),
             inverseJoinColumns=@JoinColumn(name="SEMESTER"))
             @MapKeyJoinColumn(name="COURSE")    

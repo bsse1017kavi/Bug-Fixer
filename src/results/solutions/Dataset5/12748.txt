@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -136,9 +135,9 @@ public PrinterData open() {
 	dict.setValue_forKey_(NSNumber.numberWithBool(scope == PrinterData.ALL_PAGES), new NSString(OS.NSPrintAllPages()));
 	if (scope == PrinterData.PAGE_RANGE) {
 		dict.setValue_forKey_(NSNumber.numberWithInt(startPage), new NSString(OS.NSPrintFirstPage()));
-panel.setOptions(OS.NSPrintPanelShowsPageSetupAccessory | panel.options());
+		dict.setValue_forKey_(NSNumber.numberWithInt(endPage), new NSString(OS.NSPrintLastPage()));
 	}
-	//TODO open page layout panel either as a separate dialog or as a accessory view
+panel.setOptions(OS.NSPrintPanelShowsPageSetupAccessory | panel.options());
 	if (panel.runModalWithPrintInfo(printInfo) != OS.NSCancelButton) {
 		NSPrinter printer = printInfo.printer();
 		NSString str = printer.name();

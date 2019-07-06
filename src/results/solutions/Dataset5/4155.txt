@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -147,9 +146,9 @@ public class UrlConfigGui extends JPanel
             (TestElement) el
                 .getProperty(HTTPSamplerBase.ARGUMENTS)
                 .getObjectValue());
-String portString = el.getPropertyAsString(HTTPSamplerBase.PORT);
+        domain.setText(el.getPropertyAsString(HTTPSamplerBase.DOMAIN));
         
-        String portString = (String) el.getPropertyAsString(HTTPSamplerBase.PORT);
+String portString = el.getPropertyAsString(HTTPSamplerBase.PORT);
 
         // Only display the port number if it is meaningfully specified
         if (portString.equals("" + HTTPSamplerBase.UNSPECIFIED_PORT))

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -391,9 +390,9 @@ public abstract class SessionBeanComponentDescription extends EJBComponentDescri
                 configuration.addPreDestroyInterceptor(CurrentInvocationContextInterceptor.FACTORY, InterceptorOrder.ComponentPreDestroy.EJB_SESSION_CONTEXT_INTERCEPTOR);
                 if(description.isPassivationApplicable()) {
                     configuration.addPrePassivateInterceptor(CurrentInvocationContextInterceptor.FACTORY, InterceptorOrder.ComponentPassivation.EJB_SESSION_CONTEXT_INTERCEPTOR);
-configuration.getConcurrentContext().addFactory(EJBContextHandleFactory.INSTANCE);
+                    configuration.addPostActivateInterceptor(CurrentInvocationContextInterceptor.FACTORY, InterceptorOrder.ComponentPassivation.EJB_SESSION_CONTEXT_INTERCEPTOR);
                 }
-                configuration.getAllChainedContextHandleFactory().add(EJBContextHandleFactory.INSTANCE);
+configuration.getConcurrentContext().addFactory(EJBContextHandleFactory.INSTANCE);
             }
         });
     }

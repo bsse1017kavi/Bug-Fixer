@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public abstract class AutoDriverDataSource
     @Override
     public Connection getConnection(Properties props) throws SQLException {
         // if we're using managed transactions, or user specified a DBCP driver
-!isDBCPLoaded(getClassLoader())) {
+        // or DBCP is not on the classpath, then use SimpleDriver
         if (conf == null || conf.isTransactionModeManaged() || conf.isConnectionFactoryModeManaged() ||
-                !isDBCPLoaded()) {
+!isDBCPLoaded(getClassLoader())) {
             return getSimpleConnection(props);
         } else {
             // use DBCPDriverDataSource

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -129,9 +128,9 @@ public class StreamOutManager
         if (files.size() > 0)
         {
             File file = new File(files.get(0).getFilename());
-MessagingService.instance.stream(file.getAbsolutePath(), to);
+            if (logger.isDebugEnabled())
               logger.debug("Streaming " + file.length() + " length file " + file + " ...");
-            MessagingService.instance.stream(file.getAbsolutePath(), 0L, file.length(), FBUtilities.getLocalAddress(), to);
+MessagingService.instance.stream(file.getAbsolutePath(), to);
         }
     }
 

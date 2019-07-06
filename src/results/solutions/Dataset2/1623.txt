@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -90,9 +89,9 @@ public class ToolBarXMLDecoder {
 
 		Document doc = retrieveDocument(is);
 
-LOG.severe("root element <toolbar> expected, but was "+toolBarElement.getName());
+		Element toolBarElement = doc.getRootElement();
 		if (toolBarElement.getName().equals("toolbar") == false) {
-			LOG.severe("root element <toolbar> expected");
+LOG.severe("root element <toolbar> expected, but was "+toolBarElement.getName());
 			return;
 		}
 

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.maps.tiled;
 
 import java.io.ByteArrayInputStream;
@@ -43,9 +42,9 @@ import com.badlogic.gdx.utils.XmlReader.Element;
  */
 public class TmxMapLoader extends SynchronousAssetLoader<TiledMap, TmxMapLoader.Parameters> {
 
-boolean yUp = true;
+	public static class Parameters extends AssetLoaderParameters<TiledMap> {
 		/** Whether to load the map for a y-up coordinate system */
-		public boolean yUp = true;
+boolean yUp = true;
 	}
 	
 	protected static final int FLAG_FLIP_HORIZONTALLY = 0x80000000;

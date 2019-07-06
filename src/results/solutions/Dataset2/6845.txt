@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -72,9 +71,9 @@ public class FilterList extends DefaultItem {
 	public static Filter createEmptyFilter() {
 		XmlElement filter = new XmlElement("filter");
 		filter.addAttribute("description", "new filter");
-rules.addAttribute("condition", "matchall");
+		filter.addAttribute("enabled","true");
 		XmlElement rules = new XmlElement("rules");
-		rules.addAttribute("condition", "match_all");
+rules.addAttribute("condition", "matchall");
 		XmlElement criteria = new XmlElement("criteria");
 		criteria.addAttribute("type", "Subject");
 		criteria.addAttribute("headerfield", "Subject");

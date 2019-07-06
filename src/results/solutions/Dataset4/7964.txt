@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -83,9 +82,9 @@ public class HttpImageGetter implements ImageGetter {
     @Inject
     public HttpImageGetter(Context context) {
         this.context = context;
-loading = new LoadingImageGetter(context, 24);
+        dir = context.getCacheDir();
         width = ServiceUtils.getDisplayWidth(context);
-        loading = new LoadingImageGetter(context, 48);
+loading = new LoadingImageGetter(context, 24);
     }
 
     private HttpImageGetter show(final TextView view, final CharSequence html) {

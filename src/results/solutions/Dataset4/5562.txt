@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -177,9 +176,9 @@ public class PagedBytesIndexFieldData extends AbstractIndexFieldData<PagedBytesA
                 nativeOrdinals[i] = ordinals.get(i);
             }
             return new PagedBytesAtomicFieldData(
-Ordinals.Factories.createFromFlatOrdinals(nativeOrdinals, termOrd, fieldDataType.getSettings())
+                    bytesReader,
                     termOrdToBytesOffsetReader,
-                    Ordinals.Factories.createFromFlatOrdinals(nativeOrdinals, termOrd, fieldDataType.getOptions())
+Ordinals.Factories.createFromFlatOrdinals(nativeOrdinals, termOrd, fieldDataType.getSettings())
             );
         }
 

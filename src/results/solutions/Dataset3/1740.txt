@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -117,9 +116,9 @@ public abstract class PropertiesFileLoader {
         }
 
         return properties;
-public synchronized void persistProperties() throws IOException {
+    }
 
-    private synchronized void persistProperties() throws IOException {
+public synchronized void persistProperties() throws IOException {
         Properties toSave = (Properties) properties.clone();
 
         File backup = new File(propertiesFile.getCanonicalPath() + ".bak");

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -552,9 +551,9 @@ public class TableJDBCSeq
         String sName = mapping.getTable().getSchemaName();
         String tableName;
         if (sName == null)
-tableName = sName + "." + table.getName();
+            tableName = table.getFullName();
         else
-            tableName = sName + "." + table.getFullName();
+tableName = sName + "." + table.getName();
         return tableName;
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -234,9 +233,9 @@ public class SimpleAllMapperTests extends ElasticsearchTestCase {
 
         byte[] json = jsonBuilder().startObject()
                 .field("foo", "bar")
-.endObject().bytes().toBytes();
+                .field("_id", 1)
                 .field("foobar", "foobar")
-                .endObject().bytes().array();
+.endObject().bytes().toBytes();
         Document doc = builtDocMapper.parse(new BytesArray(json)).rootDoc();
         AllField field = (AllField) doc.getField("_all");
         if (enabled) {

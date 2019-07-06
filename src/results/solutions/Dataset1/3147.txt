@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -54,9 +53,9 @@ public class TestForTooMuchCloning extends LuceneTestCase {
       final Document doc = new Document();
       doc.add(new TextField("field", sb.toString(), Field.Store.NO));
       w.addDocument(doc);
-w.shutdown();
+    }
     final IndexReader r = w.getReader();
-    w.close();
+w.shutdown();
 
     final int cloneCount = dir.getInputCloneCount();
     //System.out.println("merge clone count=" + cloneCount);

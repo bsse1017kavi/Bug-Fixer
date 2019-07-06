@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ final class ArjunaTransactionManagerService implements Service<com.arjuna.ats.jb
             coreEnvironmentBean.setSocketProcessIdPort(socketProcessBindingInjector.getValue().getSocketAddress().getPort());
             coreEnvironmentBean.setNodeIdentifier(coreNodeIdentifier);
             coreEnvironmentBean.setSocketProcessIdMaxPorts(coreSocketProcessIdMaxPorts);
-jtaEnvironmentBean.setLastResourceOptimisationInterfaceClassName(LastResource.class.getName());
+
             final JTAEnvironmentBean jtaEnvironmentBean = jtaPropertyManager.getJTAEnvironmentBean();
-            jtaEnvironmentBean.setLastResourceOptimisationInterface(LastResource.class.getName());
+jtaEnvironmentBean.setLastResourceOptimisationInterfaceClassName(LastResource.class.getName());
             jtaEnvironmentBean.setXaRecoveryNodes(Collections.singletonList("1"));
             jtaEnvironmentBean.setXaResourceOrphanFilterClassNames(Arrays.asList(JTATransactionLogXAResourceOrphanFilter.class.getName(), JTANodeNameXAResourceOrphanFilter.class.getName()));
 

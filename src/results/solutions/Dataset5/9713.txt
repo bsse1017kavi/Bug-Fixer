@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -577,9 +576,9 @@ public abstract class RequestCycle
 					setPage(getPageFactory().newPage(application.getPages().getInternalErrorPage()));
 				}
 				else
-setPage(new ExceptionErrorPage(e, getPage()));
+				{
 					// otherwise show full details
-					setPage(new ExceptionErrorPage(e));
+setPage(new ExceptionErrorPage(e, getPage()));
 				}
 				// We generally want to redirect the response because we were
 				// in the middle of rendering and the page may end up looking

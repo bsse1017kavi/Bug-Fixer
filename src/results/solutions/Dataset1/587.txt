@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.
@@ -336,9 +335,9 @@ public class ImportExportLobTest extends ImportExportBaseTest
                                    null, null , "8859_1", 0);
         verifyData(" * ");
 
-"4, 3, 2, 1", fileName, null, null, "8859_1", 1);
+        // perform import with column names specified in random order.
         doImportDataLobsFromExtFile(null, "BOOKS_IMP", "PIC, CONTENT, NAME, ID", 
-                                  "4, 3, 2, 1", fileName, null, null, null, 1);
+"4, 3, 2, 1", fileName, null, null, "8859_1", 1);
         verifyData("PIC, CONTENT, NAME, ID");
 
 	//DERBY-2925: need to delete export files first

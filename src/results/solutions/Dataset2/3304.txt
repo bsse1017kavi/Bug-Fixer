@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -267,9 +266,9 @@ findExactMatch(Name name, short type) {
  * @see Record
  */
 public void
-short type = r.getRRsetType();
+addRecord(Record r) {
 	Name name = r.getName();
-	short type = r.getType();
+short type = r.getRRsetType();
 	RRset rrset = (RRset) findExactSet (name, type, dclass);
 	if (rrset == null)
 		addSet(name, type, dclass, rrset = new RRset());

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -342,9 +341,9 @@ public class BufferedRandomAccessFile extends RandomAccessFile implements FileDa
             throw new EOFException(String.format("unable to seek to position %d in %s (%d bytes) in read-only mode",
                                                  newPosition, filePath, fileLength));
 
-if (newPosition > (bufferOffset + validBufferBytes) || newPosition < bufferOffset)
+        current = newPosition;
 
-        if (newPosition >= bufferOffset + validBufferBytes || newPosition < bufferOffset)
+if (newPosition > (bufferOffset + validBufferBytes) || newPosition < bufferOffset)
             reBuffer(); // this will set bufferEnd for us
     }
 

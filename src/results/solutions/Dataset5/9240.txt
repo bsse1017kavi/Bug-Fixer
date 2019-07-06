@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2005 The Apache Software Foundation.
  *
@@ -77,8 +76,8 @@ public class LineGraphTest extends JMeterTestCase {
         JComponent gr = lgraph.renderChart(list);
         assertNotNull(gr);
         SaveGraphicsService serv = new SaveGraphicsService();
-serv.saveJComponent("./testfiles/" + filename,SaveGraphicsService.PNG,gr);
+        String filename = lgraph.getTitle();
         filename = filename.replace(' ','_');
-        serv.saveJComponent(filename,SaveGraphicsService.PNG,gr);
+serv.saveJComponent("./testfiles/" + filename,SaveGraphicsService.PNG,gr);
     }
 }

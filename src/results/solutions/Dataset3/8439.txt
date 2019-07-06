@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class ValidatePasswordState extends AbstractValidationState {
                     case REJECT:
                         if (warnResult && !stateValues.isSilentOrNonInteractive()) {
                             return confirmWeakPassword(result);
-return new ErrorState(theConsole, result.getMessage(), getRetryState(), stateValues);
+                        }
                         if (rejectResult) {
-                            return new ErrorState(theConsole, result.getMessage(), getRetryState());
+return new ErrorState(theConsole, result.getMessage(), getRetryState(), stateValues);
                         }
                         break;
                     default:

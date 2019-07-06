@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -83,9 +82,9 @@ public class WeaverStateInfo {
 	
 	// Use 'bits' for these capabilities - only valid in EXTENDED mode
 	private static final byte REWEAVABLE_BIT             = 1<<4;
-public static final WeaverStateInfo read(VersionedDataInputStream s, ISourceContext context) throws IOException {
+	private static final byte REWEAVABLE_COMPRESSION_BIT = 1<<5;
 	
-	public static final WeaverStateInfo read(DataInputStream s, ISourceContext context) throws IOException {
+public static final WeaverStateInfo read(VersionedDataInputStream s, ISourceContext context) throws IOException {
 		byte b = s.readByte();
 		
 		boolean isReweavable = ((b&REWEAVABLE_BIT)!=0);

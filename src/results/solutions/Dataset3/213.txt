@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -47,9 +46,9 @@ public class ExposeModelResourceResolved extends ExposeModelResource {
     static final SimpleAttributeDefinition PROPER_PROPERTY_FORMAT = SimpleAttributeDefinitionBuilder.create(CommonAttributes.PROPER_PROPERTY_FORMAT, ModelType.BOOLEAN, true)
             .setAllowExpression(true)
             .setDefaultValue(new ModelNode(true))
-ExposeModelResourceResolved(JmxManagedAuditLogger auditLoggerInfo) {
+            .build();
 
-    ExposeModelResourceResolved(AuditLoggerInfo auditLoggerInfo) {
+ExposeModelResourceResolved(JmxManagedAuditLogger auditLoggerInfo) {
         super(PATH_ELEMENT, auditLoggerInfo, DOMAIN_NAME, PROPER_PROPERTY_FORMAT);
     }
 

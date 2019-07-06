@@ -1,4 +1,3 @@
-
 package org.junit.internal.runners;
 
 import junit.extensions.TestDecorator;
@@ -19,9 +18,9 @@ public class OldTestClassRunner extends Runner {
 	
 	private Test fTest;
 	
-this(new TestSuite(klass.asSubclass(TestCase.class)));
+	@SuppressWarnings("unchecked")
 	public OldTestClassRunner(Class<?> klass) {
-		this(new TestSuite((Class<? extends TestCase>) klass));
+this(new TestSuite(klass.asSubclass(TestCase.class)));
 	}
 
 	public OldTestClassRunner(Test test) {

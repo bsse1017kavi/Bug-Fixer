@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -287,9 +286,9 @@ public class MySQLDictionary
     public String[] getDeleteTableContentsSQL(Table[] tables,Connection conn) {
         // mysql >= 4 supports more-optimal delete syntax
         if (!optimizeMultiTableDeletes)
-StringBuilder buf = new StringBuilder(tables.length * 8);
+            return super.getDeleteTableContentsSQL(tables,conn);
         else {
-            StringBuffer buf = new StringBuffer(tables.length * 8);
+StringBuilder buf = new StringBuilder(tables.length * 8);
             buf.append("DELETE FROM ");
             for (int i = 0; i < tables.length; i++) {
                 buf.append(tables[i].getFullName());

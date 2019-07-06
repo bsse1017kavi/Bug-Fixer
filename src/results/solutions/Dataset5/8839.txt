@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -45,9 +44,9 @@ public class BrowserManager {
 	
 	public static final String TITLE = "AspectJ Browser";
     
-public final IStructureModelListener VIEW_LISTENER = new IStructureModelListener() {
+    private static TopFrame topFrame = null;
     
-	public final StructureModelListener VIEW_LISTENER = new StructureModelListener() {
+public final IStructureModelListener VIEW_LISTENER = new IStructureModelListener() {
 		public void modelUpdated(StructureModel model) {        	
 			FileStructureView fsv = Ajde.getDefault().getStructureViewManager().getDefaultFileView();
 			if (fsv != null) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public class RaXmlDeploymentProcessor implements DeploymentUnitProcessor {
         final ResourceAdapters raxmls = getResourceAdaptersAttachment(deploymentUnit);
         if (raxmls == null)
             return;
-Module module = deploymentUnit.getAttachment(Attachments.MODULE);
+
         log.tracef("processing Raxml");
-        Module module = phaseContext.getAttachment(Attachments.MODULE);
+Module module = deploymentUnit.getAttachment(Attachments.MODULE);
 
         if (module == null)
             throw new DeploymentUnitProcessingException("Failed to get module attachment for " + deploymentUnit);

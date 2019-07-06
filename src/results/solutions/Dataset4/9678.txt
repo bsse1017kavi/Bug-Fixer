@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -156,9 +155,9 @@ public class TransportGetAction extends TransportSingleOperationAction<GetReques
 
     private byte[] extractSource(Document doc, DocumentMapper documentMapper) {
         byte[] source = null;
-source = documentMapper.sourceMapper().nativeValue(sourceField);
+        Fieldable sourceField = doc.getFieldable(documentMapper.sourceMapper().names().indexName());
         if (sourceField != null) {
-            source = documentMapper.sourceMapper().value(sourceField);
+source = documentMapper.sourceMapper().nativeValue(sourceField);
             doc.removeField(documentMapper.sourceMapper().names().indexName());
         }
         return source;

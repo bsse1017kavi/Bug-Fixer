@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search;
 
 /*
@@ -66,9 +65,9 @@ private void buildResourceVector() throws JavaModelException {
 			}
 			String resourcePath = 
 				zipFileName + 
-".class"/*nonNLS*/;
+				JAR_FILE_ENTRY_SEPARATOR + 
 				type.getFullyQualifiedName().replace('.', '/') +
-				".class";
+".class"/*nonNLS*/;
 			this.resourcePaths.put(resourcePath, resourcePath);
 			paths.put(jar.getPath(), type);
 		} else {

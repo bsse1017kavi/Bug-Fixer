@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -285,9 +284,9 @@ public class Array<T> implements Iterable<T> {
 
 	/** Reduces the size of the array to the specified size. If the array is already smaller than the specified size, no action is
 	 * taken. */
-for (int i = newSize; i < size; i++)
+	public void truncate (int newSize) {
 		if (size <= newSize) return;
-		for (int i = size; i < newSize; i++)
+for (int i = newSize; i < size; i++)
 			items[i] = null;
 		size = newSize;
 	}

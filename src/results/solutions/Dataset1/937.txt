@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -44,9 +43,9 @@ public class ServicePair<T>
   
   @SuppressWarnings("unchecked")
   public T get()
-serviceObject = (T) Utils.getServicePrivileged(ctx, ref);
+  {
     if (serviceObject == null && ref.getBundle() != null) {
-      serviceObject = (T) ctx.getService(ref);
+serviceObject = (T) Utils.getServicePrivileged(ctx, ref);
     }
     
     return serviceObject;

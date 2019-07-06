@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class UploadWebRequest extends ServletWebRequest
 	 */
 	@Override
 	public MultipartServletWebRequest newMultipartWebRequest(final Bytes maxsize)
-return new MultipartRequest(getContainerRequest(), getFilterPrefix(), maxsize);
+		throws FileUploadException
 	{
-		return new MultipartRequest(getHttpServletRequest(), getFilterPrefix(), maxsize);
+return new MultipartRequest(getContainerRequest(), getFilterPrefix(), maxsize);
 	}
 
 	private static final String SESSION_KEY = UploadWebRequest.class.getName();

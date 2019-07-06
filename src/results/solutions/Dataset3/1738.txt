@@ -1,4 +1,3 @@
-
 /*
  *  Copyright 2001-2004 The Apache Software Foundation
  *
@@ -329,9 +328,9 @@ public class TestBeanMap extends AbstractTestMap {
         assertEquals(map1.get("someIntValue"), new Integer(0));
     }
 
-Method method = BeanWithProperties.class.getDeclaredMethod("getSomeIntegerValue", (Class[]) null);
+    public void testMethodAccessor() throws Exception {
         BeanMap map = (BeanMap) makeFullMap();
-        Method method = BeanWithProperties.class.getDeclaredMethod("getSomeIntegerValue", null);
+Method method = BeanWithProperties.class.getDeclaredMethod("getSomeIntegerValue", (Class[]) null);
         assertEquals(method, map.getReadMethod("someIntegerValue"));
     }
     

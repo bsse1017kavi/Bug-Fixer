@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -471,9 +470,9 @@ doAssert(MyStringTokenizer st) {
 		if (answers.length < 1 || !(answers[0] instanceof SOARecord))
 			print("Invalid response (no SOA)");
 		else {
-if (serial != Integer.parseInt(expected)) {
+			SOARecord soa = (SOARecord) answers[0];
 			int serial = soa.getSerial();
-			if (serial != new Integer(expected).intValue()) {
+if (serial != Integer.parseInt(expected)) {
 				value = new Integer(serial).toString();
 				flag = false;
 			}

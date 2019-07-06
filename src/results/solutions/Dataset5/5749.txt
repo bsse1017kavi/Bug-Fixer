@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -83,9 +82,9 @@ public class QueryResultCacheImpl
      */
     private QueryKey toQueryKey(Query q) {
         QueryImpl impl = (QueryImpl) q;
-impl.getPositionalParameters());
+        if (impl.hasPositionalParameters())
             return QueryKey.newInstance(impl.getDelegate(),
-                impl.getPositionalParameters().toArray());
+impl.getPositionalParameters());
         return QueryKey.newInstance(impl.getDelegate(),
             impl.getNamedParameters());
     }

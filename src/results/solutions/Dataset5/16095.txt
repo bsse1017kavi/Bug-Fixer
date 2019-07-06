@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.provider.comm.tcp;
 
 import java.io.BufferedOutputStream;
@@ -36,9 +35,9 @@ public final class Client implements ISynchAsynchConnection {
     public static class Creator implements ISynchAsynchConnectionInstantiator {
         public ISynchAsynchConnection makeInstance(ISynchAsynchConnectionEventHandler handler, Class[] clazzes,
                 Object[] args) throws ConnectionInstantiationException {
-if (args != null && args.length > 0) {
+            try {
                 Integer ka = new Integer(0);
-                if (args.length > 0) {
+if (args != null && args.length > 0) {
                     ka = (Integer) args[0];
                 }
                 return new Client(handler,

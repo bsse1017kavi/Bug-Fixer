@@ -1,4 +1,3 @@
-
 /* 
 
    Derby - Class org.apache.derbyTesting.functionTests.harness.RunList
@@ -381,9 +380,9 @@ public class RunList
 
         if ( (jvmflags != null) && (jvmflags.length()>0) )
         {
-jvmProps.addElement("jvmflags=" + jvmflags);
+            // We want to pass this down to RunTest so it will
             // run an individual test with jvmflags like -nojit
-            jvmProps.addElement("jvmflags=" + '"' + jvmflags + '"');
+jvmProps.addElement("jvmflags=" + jvmflags);
         }
 
         if ( (timeout != null) && (timeout.length()>0) )

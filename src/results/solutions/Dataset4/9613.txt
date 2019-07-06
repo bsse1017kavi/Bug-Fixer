@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -486,9 +485,9 @@ public abstract class BlobStoreIndexShardGateway extends AbstractIndexShardCompo
                             indexShard.performRecoveryOperation(operation);
                             if (si.position() >= bos.size()) {
                                 position = si.position();
-} catch (Throwable e) {
+                                break;
                             }
-                        } catch (Exception e) {
+} catch (Throwable e) {
                             logger.warn("failed to retrieve translog after [{}] operations, ignoring the rest, considered corrupted", e, recoveryStatus.translog().currentTranslogOperations());
                             ignore = true;
                             latch.countDown();

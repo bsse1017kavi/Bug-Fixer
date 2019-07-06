@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -305,9 +304,9 @@ public void restore() throws JavaModelException {
 /**
  * @private Debugging purposes
  */
-buffer.append("(working copy)\n"/*nonNLS*/);
+protected void toString(int tab, StringBuffer buffer) {
 	buffer.append(this.tabString(tab));
-	buffer.append("(working copy)\n"); //$NON-NLS-1$
+buffer.append("(working copy)\n"/*nonNLS*/);
 	super.toString(tab, buffer);
 }
 }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ import org.jboss.msc.value.InjectedValue;
  */
 public class HandlerFileService implements Service<String> {
     private final InjectedValue<String> relativeTo = new InjectedValue<String>();
-private volatile String fileName;
+    private final String path;
 
-    private String fileName;
+private volatile String fileName;
 
     public HandlerFileService(String path) {
         this.path = path;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -344,9 +343,9 @@ public class ShowInMenu extends ContributionItem implements
 	 * (non-Javadoc)
 	 * 
 	 * @see org.eclipse.jface.action.ContributionItem#dispose()
-if (currentManager!=null && currentManager.getSize() > 0) {
+	 */
 	public void dispose() {
-		if (currentManager.getSize() > 0) {
+if (currentManager!=null && currentManager.getSize() > 0) {
 			IMenuService service = (IMenuService) locator
 					.getService(IMenuService.class);
 			service.releaseContributions(currentManager);

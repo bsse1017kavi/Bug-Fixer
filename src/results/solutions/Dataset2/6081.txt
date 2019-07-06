@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.util;
 
 /*
@@ -18,9 +17,9 @@ public class AnonymousFileSource {
  */
 public AnonymousFileSource(File directory) {
 	if (!directory.exists()) {
-throw new IllegalArgumentException("Directory arguments should be a directory."/*nonNLS*/);
+		directory.mkdirs();
 	} else if (!directory.isDirectory()) {
-		throw new IllegalArgumentException("Directory arguments should be a directory.");
+throw new IllegalArgumentException("Directory arguments should be a directory."/*nonNLS*/);
 	}
 	fDirectory = directory;	
 }

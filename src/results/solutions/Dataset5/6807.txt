@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class RuntimeStrategyInstaller
     }
 
     public void installStrategy(FieldMapping field) {
-if (owner != null && !owner.isEmbeddable() && !owner.isAbstract())
+        FieldStrategy strategy = null;
         ClassMapping owner = getOutermostDefiningMapping(field); 
-        if (owner != null && !owner.isEmbeddable())
+if (owner != null && !owner.isEmbeddable() && !owner.isAbstract())
             strategy = repos.namedStrategy(field, true);
         if (strategy == null) {
             try {

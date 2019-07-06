@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.layout;
 
 import org.eclipse.jface.action.ContributionItem;
@@ -92,9 +91,9 @@ public class TrimCommonUIHandle extends Composite {
      * the Drag and Drop manager tells it to
      */
     private Listener dragListener = new Listener() {
-if (event.button != 3) {
+        public void handleEvent(Event event) {
         	// Only allow 'left mouse' drags...
-        	if (event.button == 1) {
+if (event.button != 3) {
 	            Point position = DragUtil.getEventLoc(event);
 	            startDraggingTrim(position);
         	}

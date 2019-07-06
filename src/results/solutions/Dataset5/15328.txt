@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -137,9 +136,9 @@ public class BatchingPreparedStatementManagerImpl extends
     
     /**
      * flush all cached up statements to be executed as a single or batched
-protected void flushBatch() throws SQLException {
+     * prepared statements.
      */
-    protected void flushBatch() {
+protected void flushBatch() throws SQLException {
         List batchedRows = getBatchedRows();
         String batchedSql = getBatchedSql();
         if (batchedRows == null)

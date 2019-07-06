@@ -1,4 +1,3 @@
-
 /*
  * $Id: CharSetUtil.java 2939 2005-10-06 20:36:12 +0000 (Thu, 06 Oct 2005)
  * jdonnerstag $ $Revision$ $Date: 2005-10-06 20:36:12 +0000 (Thu, 06 Oct
@@ -64,9 +63,9 @@ public class CharSetUtil
 	private synchronized static final void initialize(final WebApplication application)
 	{
 		if (charSetMap == null)
-final ServletContext context = application.getServletContext();
+		{
 			// Get servlet context
-			final ServletContext context = application.getWicketServlet().getServletContext();
+final ServletContext context = application.getServletContext();
 
 			final InputStream inputStream = context.getResourceAsStream("/WEB-INF/"
 					+ CharSetMap.CHARSET_RESOURCE);

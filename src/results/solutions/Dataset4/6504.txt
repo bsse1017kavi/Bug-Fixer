@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.backends.iosrobovm;
 
 import java.io.File;
@@ -32,9 +31,9 @@ public class IOSFiles implements Files {
 		return new IOSFileHandle(path, FileType.Classpath);
 	}
 
-return new IOSFileHandle(new File(internalPath, path), FileType.Internal);
+	@Override
 	public FileHandle internal (String path) {
-		return new IOSFileHandle(path, FileType.Internal);
+return new IOSFileHandle(new File(internalPath, path), FileType.Internal);
 	}
 
 	@Override

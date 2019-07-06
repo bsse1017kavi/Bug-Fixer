@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -465,9 +464,9 @@ public class EjbIIOPService implements Service<EjbIIOPService> {
                     marshaller.start(new OutputStreamByteOutput(stream));
                     marshaller.writeObject(((EntityEJBLocator) locator).getPrimaryKey());
                     marshaller.finish();
-throw new RuntimeException("Unknown locator type " + locator);
+                    return beanReferenceFactory.createReferenceWithId(stream.toByteArray(), beanRepositoryIds[0]);
                 }
-                throw new RuntimeException("Unkown locator type " + locator);
+throw new RuntimeException("Unknown locator type " + locator);
             } else {
                 throw new IllegalArgumentException("Provided locator " + locator + " was not for EJB " + ejbComponent);
             }

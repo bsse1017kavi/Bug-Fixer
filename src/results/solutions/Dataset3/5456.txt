@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -378,9 +377,9 @@ public class LevenbergMarquardtOptimizerTest
                                double costRelativeTolerance, double parRelativeTolerance,
                                double orthoTolerance, boolean shouldFail) {
         try {
-optimizer.setMaxIterations(maxCostEval);
+            LevenbergMarquardtOptimizer optimizer = new LevenbergMarquardtOptimizer();
             optimizer.setInitialStepBoundFactor(initialStepBoundFactor);
-            optimizer.setMaxEvaluations(maxCostEval);
+optimizer.setMaxIterations(maxCostEval);
             optimizer.setCostRelativeTolerance(costRelativeTolerance);
             optimizer.setParRelativeTolerance(parRelativeTolerance);
             optimizer.setOrthoTolerance(orthoTolerance);

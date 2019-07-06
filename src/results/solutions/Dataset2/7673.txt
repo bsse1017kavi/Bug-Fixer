@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -444,9 +443,9 @@ MethodBinding computeSubstituteMethod(MethodBinding inheritedMethod, MethodBindi
 		System.arraycopy(typeVariables, 0, arguments, 0, length);
 		for (int i = length; i < inheritedLength; i++)
 			arguments[i] = inheritedTypeVariables[i].upperBound();
-this.environment.createParameterizedGenericMethod(inheritedMethod, arguments);
+	}
 	ParameterizedGenericMethodBinding substitute =
-		new ParameterizedGenericMethodBinding(inheritedMethod, arguments, this.environment);
+this.environment.createParameterizedGenericMethod(inheritedMethod, arguments);
 
 	// interface I { <T> void foo(T t); }
 	// class X implements I { public <T extends I> void foo(T t) {} }

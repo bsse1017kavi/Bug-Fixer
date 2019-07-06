@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -261,9 +260,9 @@ public class ContentConflictsUnitTestCase extends AbstractTaskTestCase {
         createModule0(baseModuleDir, moduleConflictName, "oops");
         // create a conflict for bundle
         createBundle0(baseBundleDir, bundleConflictName, "oops");
-ctx.handle("patch rollback --patch-id=" + patchID + " --distribution=" + env.getInstalledImage().getJbossHome() + " --reset-configuration=false");
+
         try {
-            ctx.handle("patch rollback --patch-id=" + patchID + " --distribution=" + env.getInstalledImage().getJbossHome());
+ctx.handle("patch rollback --patch-id=" + patchID + " --distribution=" + env.getInstalledImage().getJbossHome() + " --reset-configuration=false");
             fail("Conflicts expected");
         } catch(CommandLineException e) {
             final int relativeIndex = env.getInstalledImage().getJbossHome().getAbsolutePath().length() + 1;

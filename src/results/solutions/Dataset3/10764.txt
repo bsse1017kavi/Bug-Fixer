@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class ConstantInitializer<T> implements ConcurrentInitializer<T> {
      *
      * @return a string for this object
      */
-return String.format(FMT_TO_STRING, Integer.valueOf(System.identityHashCode(this)),
+    @Override
     public String toString() {
-        return String.format(FMT_TO_STRING, System.identityHashCode(this),
+return String.format(FMT_TO_STRING, Integer.valueOf(System.identityHashCode(this)),
                 String.valueOf(getObject()));
     }
 }

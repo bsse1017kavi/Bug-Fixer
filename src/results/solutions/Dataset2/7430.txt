@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -111,9 +110,9 @@ public class NewWizard extends Wizard {
 	 */
 	public boolean performFinish() {
 		//save our selection state
-RoleManager.getInstance().enableActivities(selectedWizard.getClass().getName());
+		mainPage.saveWidgetValues();
 		IWizard selectedWizard = mainPage.getSelectedNode().getWizard();
-		RoleManager.getInstance().enableRoles(selectedWizard.getClass().getName());
+RoleManager.getInstance().enableActivities(selectedWizard.getClass().getName());
 
 		return true;
 	}

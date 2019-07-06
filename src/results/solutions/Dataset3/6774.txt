@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public final class ServerDeploymentStartStopHandler implements Serializable {
         try {
             ServiceName deploymentServiceName = DeploymentService.getServiceName(deploymentName);
             // Add a listener so we can get ahold of the DeploymentService
-activate(deploymentName, runtimeName, deploymentHash, deploymentServiceName, new ServiceActivatorContextImpl(batchBuilder, serviceContainer), serviceContainer);
+            batchBuilder.addListener(new DeploymentServiceTracker<P>(deploymentServiceName, resultHandler, param));
 
-            activate(deploymentName, runtimeName, deploymentHash, deploymentServiceName, new ServiceActivatorContextImpl(batchBuilder), serviceContainer);
+activate(deploymentName, runtimeName, deploymentHash, deploymentServiceName, new ServiceActivatorContextImpl(batchBuilder, serviceContainer), serviceContainer);
         }
         catch (RuntimeException e) {
             resultHandler.handleFailure(e, param);

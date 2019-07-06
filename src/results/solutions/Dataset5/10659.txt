@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2006 The Apache Software Foundation
  *
@@ -95,9 +94,9 @@ public final class IntrospectionHelper implements BuildListener {
      * Map from primitive types to wrapper classes for use in
      * createAttributeSetter (Class to Class). Note that char
      * and boolean are in here even though they get special treatment
-private static final Map PRIMITIVE_TYPE_MAP = new HashMap(8);
+     * - this way we only need to test for the wrapper class.
      */
-    private static final Hashtable PRIMITIVE_TYPE_MAP = new Hashtable(8);
+private static final Map PRIMITIVE_TYPE_MAP = new HashMap(8);
 
     // Set up PRIMITIVE_TYPE_MAP
     static {

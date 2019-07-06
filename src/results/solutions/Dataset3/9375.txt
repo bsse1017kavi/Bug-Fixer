@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -109,9 +108,9 @@ public class TCPSyslogSocketHandler implements Runnable {
                             break;
                     }
                 }
-LOGGER.warn("IOException occurred", e);
+            } while (b != -1);
         } catch (IOException e) {
-            LOGGER.warn("IOException occured", e);
+LOGGER.warn("IOException occurred", e);
         } finally {
             IOUtils.closeQuietly(socket);
             sockets.remove(socket);

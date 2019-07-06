@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -74,9 +73,9 @@ public void move(IJavaElement container, IJavaElement sibling, String rename, bo
 protected void openHierarchy() throws JavaModelException {
 	Openable openableParent = (Openable)getOpenableParent();
 	if (openableParent != null) {
-openableParent.openWhenClosed(null, null);
+		JavaElementInfo openableParentInfo = (JavaElementInfo) fgJavaModelManager.getInfo((IJavaElement) openableParent);
 		if (openableParentInfo == null) {
-			openableParent.openWhenClosed(null);
+openableParent.openWhenClosed(null, null);
 			openableParentInfo = (JavaElementInfo) fgJavaModelManager.getInfo((IJavaElement) openableParent);
 		}
 		ClassFileInfo cfi = (ClassFileInfo) openableParentInfo;

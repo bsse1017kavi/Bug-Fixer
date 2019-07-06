@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -41,9 +40,9 @@ public abstract class AbstractEndpointUpgradeStrategy implements RequestUpgradeS
 	protected final Log logger = LogFactory.getLog(getClass());
 
 
-String protocol, WebSocketHandler webSocketHandler) throws IOException {
+	@Override
 	public void upgrade(ServerHttpRequest request, ServerHttpResponse response,
-			String protocol, WebSocketHandler<?> webSocketHandler) throws IOException {
+String protocol, WebSocketHandler webSocketHandler) throws IOException {
 
 		upgradeInternal(request, response, protocol, new StandardEndpointAdapter(webSocketHandler));
 	}

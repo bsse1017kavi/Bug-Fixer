@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -111,9 +110,9 @@ public abstract class CommandTestCase extends TestCase {
 			for (int i=0, len=expectedErrors.length; i < len; i++) {
 				int line = expectedErrors[i];
 				boolean found = false;
-if (m.getSourceLocation() != null && m.getSourceLocation().getLine() == line) {
+				for (Iterator iter = errors.iterator(); iter.hasNext(); ) {
 					IMessage m = (IMessage)iter.next();
-					if (m.getISourceLocation() != null && m.getISourceLocation().getLine() == line) {
+if (m.getSourceLocation() != null && m.getSourceLocation().getLine() == line) {
 						found = true;
 						iter.remove();
 					}

@@ -1,4 +1,3 @@
-
 /***
  * ASM: a very small and fast Java bytecode manipulation framework
  * Copyright (c) 2000-2011 INRIA, France Telecom
@@ -103,9 +102,9 @@ final class AnnotationWriter extends AnnotationVisitor {
      *            where in <tt>parent</tt> the number of annotation values must
      *            be stored.
      */
-super(Opcodes.ASM6);
+    AnnotationWriter(final ClassWriter cw, final boolean named,
             final ByteVector bv, final ByteVector parent, final int offset) {
-        super(Opcodes.ASM5);
+super(Opcodes.ASM6);
         this.cw = cw;
         this.named = named;
         this.bv = bv;

@@ -1,4 +1,3 @@
-
 package org.jboss.as.controller.transform;
 
 import java.io.File;
@@ -39,9 +38,9 @@ public class SubsystemDescriptionDump implements OperationStepHandler {
 
     @Override
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
-context.stepCompleted();
+        String path = PATH.resolveModelAttribute(context, operation).asString();
         dumpManagementResourceRegistration(extensionRegistry, path);
-        context.completeStep();
+context.stepCompleted();
     }
 
     public static void dumpManagementResourceRegistration(final ExtensionRegistry registry, final String path) throws OperationFailedException{

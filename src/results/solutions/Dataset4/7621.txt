@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -405,9 +404,9 @@ public class CustomScoreSearchTests extends AbstractSharedClusterTest {
                 .setExplain(true)
                 .execute().actionGet();
 
-assertThat(searchResponse.getHits().getAt(0).id(), anyOf(equalTo("1"), equalTo("3"))); // could be both depending on the order of the docs internally (lucene order)
+        assertThat(Arrays.toString(searchResponse.getShardFailures()), searchResponse.getFailedShards(), equalTo(0));
         assertThat(searchResponse.getHits().totalHits(), equalTo(4l));
-        assertThat(searchResponse.getHits().getAt(0).id(), equalTo("1"));
+assertThat(searchResponse.getHits().getAt(0).id(), anyOf(equalTo("1"), equalTo("3"))); // could be both depending on the order of the docs internally (lucene order)
         assertThat(searchResponse.getHits().getAt(0).score(), equalTo(5.0f));
         logger.info("--> Hit[0] {} Explanation {}", searchResponse.getHits().getAt(0).id(), searchResponse.getHits().getAt(0).explanation());
 

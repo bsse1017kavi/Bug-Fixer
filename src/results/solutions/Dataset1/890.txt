@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.regex;
 
 import org.apache.lucene.index.Term;
@@ -64,9 +63,9 @@ public class SpanRegexQuery extends SpanQuery {
     return terms;
   }
 
-if (!(o instanceof SpanRegexQuery)) return false;
+  public boolean equals(Object o) {
     if (this == o) return true;
-    if (!(o instanceof TermQuery)) return false;
+if (!(o instanceof SpanRegexQuery)) return false;
     final SpanRegexQuery that = (SpanRegexQuery) o;
     return term.equals(that.term) && getBoost() == that.getBoost();
   }

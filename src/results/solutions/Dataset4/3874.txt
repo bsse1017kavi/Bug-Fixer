@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -101,9 +100,9 @@ public class TransportDeleteAction extends TransportShardReplicationOperationAct
     protected boolean resolveRequest(final ClusterState state, final DeleteRequest request, final ActionListener<DeleteResponse> listener) {
         request.routing(state.metaData().resolveIndexRouting(request.routing(), request.index()));
         request.index(state.metaData().concreteIndex(request.index()));
-MappingMetaData mappingMd = state.metaData().index(request.index()).mappingOrDefault(request.type());
+        if (state.metaData().hasIndex(request.index())) {
             // check if routing is required, if so, do a broadcast delete
-            MappingMetaData mappingMd = state.metaData().index(request.index()).mapping(request.type());
+MappingMetaData mappingMd = state.metaData().index(request.index()).mappingOrDefault(request.type());
             if (mappingMd != null && mappingMd.routing().required()) {
                 if (request.routing() == null) {
                     indexDeleteAction.execute(new IndexDeleteRequest(request), new ActionListener<IndexDeleteResponse>() {

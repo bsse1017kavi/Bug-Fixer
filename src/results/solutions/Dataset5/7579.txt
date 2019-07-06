@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -94,9 +93,9 @@ public class ClassicProjectListener
     {
         // Write the exception, if any
         final Throwable throwable = event.getThrowable();
-getWriter().println( ExceptionUtil.printStackTrace( throwable, 8, true ) );
+        if( throwable != null )
         {
-            getWriter().println( ExceptionUtil.printStackTrace( throwable, 5, true ) );
+getWriter().println( ExceptionUtil.printStackTrace( throwable, 8, true ) );
         }
     }
 }

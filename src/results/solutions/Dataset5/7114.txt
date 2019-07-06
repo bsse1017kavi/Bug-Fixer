@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -320,9 +319,9 @@ public class PortletSessionStore implements ISessionStore
 	 * @see wicket.session.ISessionStore#newVersionManager(wicket.Page)
 	 */
 	public IPageVersionManager newVersionManager(Page page)
-return new UndoPageVersionManager(page, 20);
+	{
 		final IPageSettings settings = page.getSession().getApplication().getPageSettings();
-		return new UndoPageVersionManager(page, settings.getMaxPageVersions());
+return new UndoPageVersionManager(page, 20);
 	}
 
 	/**

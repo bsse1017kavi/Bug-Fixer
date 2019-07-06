@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -321,9 +320,9 @@ class CommandContextImpl implements CommandContext {
         cmdRegistry.registerHandler(new CreateJmsResourceHandler(this), false, "create-jms-resource");
         cmdRegistry.registerHandler(new DeleteJmsResourceHandler(this), false, "delete-jms-resource");
 
-rolloutPlan.addValueConverter("content", new HeadersArgumentValueConverter(this));
+        // rollout plan
         final GenericTypeOperationHandler rolloutPlan = new GenericTypeOperationHandler(this, "/management-client-content=rollout-plans/rollout-plan", null);
-        rolloutPlan.addValueConverter("content", ArgumentValueConverter.HEADERS);
+rolloutPlan.addValueConverter("content", new HeadersArgumentValueConverter(this));
         rolloutPlan.addValueCompleter("content", RolloutPlanCompleter.INSTANCE);
         cmdRegistry.registerHandler(rolloutPlan, "rollout-plan");
 

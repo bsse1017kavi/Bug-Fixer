@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -129,9 +128,9 @@ public abstract class Continuus extends Task {
             exe.setAntRun(getProject());
             exe.setWorkingDirectory(getProject().getBaseDir());
             exe.setCommandline(cmd.getCommandline());
-throw new BuildException(e, getLocation());
+            return exe.execute();
         } catch (java.io.IOException e) {
-            throw new BuildException(e, location);
+throw new BuildException(e, getLocation());
         }
     }
 

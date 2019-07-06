@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -639,9 +638,9 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
             Throwable t1 = t.getCause();
             while(t1 != null) {
                 if(t1.getLocalizedMessage() != null) {
-buf.append(": ").append(t1.getClass().getName());
+                    buf.append(": ").append(t1.getLocalizedMessage());
                 } else {
-                    t1.printStackTrace();
+buf.append(": ").append(t1.getClass().getName());
                 }
                 t1 = t1.getCause();
             }

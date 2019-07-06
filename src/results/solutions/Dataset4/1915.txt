@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class CountFacet implements Facet {
 
     public void increment(long increment) {
         count += increment;
-@Override public void toJson(JsonBuilder builder, Params params) throws IOException {
+    }
 
-    @Override public void toJson(JsonBuilder builder) throws IOException {
+@Override public void toJson(JsonBuilder builder, Params params) throws IOException {
         builder.field(name, count);
     }
 

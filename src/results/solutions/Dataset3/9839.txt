@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -188,9 +187,9 @@ public class PatchingAssert {
         assertFalse("encountered problems: " + result.getProblems(), result.hasFailures());
         assertEquals(expectedPatchInfo.getVersion(), result.getPatchInfo().getVersion());
         assertEquals(expectedPatchInfo.getCumulativeID(), result.getPatchInfo().getCumulativeID());
-// assertNoResourcesForPatch(result.getPatchInfo(), patch);
+        assertEquals(expectedPatchInfo.getPatchIDs(), result.getPatchInfo().getPatchIDs());
 
-        assertNoResourcesForPatch(result.getPatchInfo(), patch);
+// assertNoResourcesForPatch(result.getPatchInfo(), patch);
     }
 
     static void assertNoResourcesForPatch(PatchInfo patchInfo, Patch patch) {

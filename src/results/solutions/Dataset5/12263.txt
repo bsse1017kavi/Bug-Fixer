@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -109,9 +108,9 @@ public class SharedObjectFactory implements ISharedObjectFactory {
 	public SharedObjectTypeDescription getDescriptionByName(String name) throws SharedObjectCreateException {
 		trace("getDescriptionByName(" + name + ")"); //$NON-NLS-1$ //$NON-NLS-2$
 		SharedObjectTypeDescription res = getDescription0(name);
-throw new SharedObjectCreateException(NLS.bind(Messages.SharedObjectFactory_SharedObjectDescription_X_Not_Found, name));
+		if (res == null) {
 			//throw new SharedObjectCreateException(Messages.SharedObjectFactory_Exception_Create_Shared_Object + name + Messages.SharedObjectFactory_Exception_Create_Shared_Object_Not_Found);
-			throw new SharedObjectCreateException(NLS.bind(Messages.SharedObjectFactory_SharedObjectCreateException_X_Not_Found, name));
+throw new SharedObjectCreateException(NLS.bind(Messages.SharedObjectFactory_SharedObjectDescription_X_Not_Found, name));
 		}
 		return res;
 	}

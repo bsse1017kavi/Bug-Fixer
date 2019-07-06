@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -455,9 +454,9 @@ public class TransportClientNodesService extends AbstractComponent {
                 latch.await();
             } catch (InterruptedException e) {
                 return;
-HashSet<DiscoveryNode> newNodes = new HashSet<>();
+            }
 
-            HashSet<DiscoveryNode> newNodes = new HashSet<>(listedNodes);
+HashSet<DiscoveryNode> newNodes = new HashSet<>();
             HashSet<DiscoveryNode> newFilteredNodes = new HashSet<>();
             for (Map.Entry<DiscoveryNode, ClusterStateResponse> entry : clusterStateResponses.entrySet()) {
                 if (!ignoreClusterName && !clusterName.equals(entry.getValue().getClusterName())) {

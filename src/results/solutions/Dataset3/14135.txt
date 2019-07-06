@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -263,9 +262,9 @@ public class SnappyDecompressor {
      *             closed.
      */
     private void flushDecompressBuffer(final OutputStream os)
-System.arraycopy(decompressBuf, blockSize, decompressBuf, 0,
+            throws IOException {
         os.write(decompressBuf, 0, this.blockSize);
-        System.arraycopy(decompressBuf, BLOCK_SIZE, decompressBuf, 0,
+System.arraycopy(decompressBuf, blockSize, decompressBuf, 0,
                 this.blockSize);
         decompressBufIndex -= this.blockSize;
     }

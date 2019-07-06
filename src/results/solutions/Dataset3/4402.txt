@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class ServerGroupDeploymentStartStopUpdate extends AbstractModelUpdate<Se
         return new ServerGroupDeploymentStartStopUpdate(deploymentUnitName, !isStart);
     }
 
-return new ServerModelDeploymentStartStopUpdate(deploymentUnitName, isStart);
+    @Override
     protected ServerModelDeploymentStartStopUpdate getServerModelUpdate() {
-        return new ServerModelDeploymentStartStopUpdate(this);
+return new ServerModelDeploymentStartStopUpdate(deploymentUnitName, isStart);
     }
 
     @Override

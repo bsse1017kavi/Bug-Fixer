@@ -1,4 +1,3 @@
-
 /*
  * @(#) JUnicastServerRef.java	1.0 02/07/15
  *
@@ -80,9 +79,9 @@ public class JeremiePRODelegate implements PortableRemoteObjectDelegate {
     public void exportObject(Remote obj) throws RemoteException {
 	try {
 	    Method exportO = unicastClass.getMethod("exportObject",  new Class [] { Remote.class, Integer.TYPE });
-throw new RemoteException(e.toString(), e);
+	    exportO.invoke(unicastClass, (new Object[] { obj , new Integer(port)} ));
 	} catch (Exception e) {
-	    throw new RemoteException(e.toString());
+throw new RemoteException(e.toString(), e);
 	}
     }
 

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.highlight;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -284,9 +283,9 @@ public class Highlighter
 			if (
 //					if there is text beyond the last token considered..
 					(lastEndOffset < text.length()) 
-(text.length()<= maxDocCharsToAnalyze)
+					&&
 //					and that text is not too large...
-					(text.length()< maxDocCharsToAnalyze)
+(text.length()<= maxDocCharsToAnalyze)
 				)				
 			{
 				//append it to the last fragment

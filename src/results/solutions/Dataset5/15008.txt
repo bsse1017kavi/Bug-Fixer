@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -444,9 +443,9 @@ public class ModifiedSelector extends BaseExtendSelector
         } else {
             try {
                 // How to handle non-file-Resources? I copy temporarily the
-File tmpFile = fu.createTempFileName("modified-", ".tmp", null, true);
+                // resource to a file and use the file-implementation.
                 FileUtils fu = FileUtils.getFileUtils();
-                File tmpFile = fu.createTempFile("modified-", ".tmp", null);
+File tmpFile = fu.createTempFileName("modified-", ".tmp", null, true);
                 Resource tmpResource = new FileResource(tmpFile);
                 ResourceUtils.copyResource(resource, tmpResource);
                 boolean isSelected = isSelected(tmpFile.getParentFile(),

@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab;
 
 import org.eclipse.core.runtime.IStatus;
@@ -55,9 +54,9 @@ public class PresenceContainerUI {
                             .getActiveWorkbenchWindow();
                     IWorkbenchPage wp = ww.getActivePage();
                     IViewPart view = wp.showView("org.eclipse.ecf.example.collab.ui.CollabRosterView");
-if (nick != null && !nick.equals("")) {
+                    rosterView = (RosterView) view;
                     String nickname = null;
-                    if (nick != null) {
+if (nick != null && !nick.equals("")) {
                         nickname = nick;
                     } else {
                         String name = localUser.getName();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2006 The Apache Software Foundation.
  *
@@ -1927,9 +1926,9 @@ public class XMLSchemaValidator
         if (fElementDepth == 0 && fRootTypeQName != null) {
             String rootTypeNamespace = fRootTypeQName.getNamespaceURI();
             if (rootTypeNamespace != null && rootTypeNamespace.equals(XMLConstants.NULL_NS_URI)) {
-if (SchemaSymbols.URI_SCHEMAFORSCHEMA.equals(rootTypeNamespace)) {
+                rootTypeNamespace = null;
             }
-            if (rootTypeNamespace == SchemaSymbols.URI_SCHEMAFORSCHEMA) {
+if (SchemaSymbols.URI_SCHEMAFORSCHEMA.equals(rootTypeNamespace)) {
                 fCurrentType = SchemaGrammar.SG_SchemaNS.getGlobalTypeDecl(fRootTypeQName.getLocalPart());
             }
             else {

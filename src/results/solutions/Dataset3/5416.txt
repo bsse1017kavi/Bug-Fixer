@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public class PredicatedMap<K, V>
      * @param map  the map to decorate, must not be null
      * @param keyPredicate  the predicate to validate the keys, null means no check
      * @param valuePredicate  the predicate to validate to values, null means no check
-public static <K, V> IterableMap<K, V> predicatedMap(Map<K, V> map, Predicate<? super K> keyPredicate, Predicate<? super V> valuePredicate) {
+     * @throws IllegalArgumentException if the map is null
      */
-    public static <K, V> IterableMap<K, V> decorate(Map<K, V> map, Predicate<? super K> keyPredicate, Predicate<? super V> valuePredicate) {
+public static <K, V> IterableMap<K, V> predicatedMap(Map<K, V> map, Predicate<? super K> keyPredicate, Predicate<? super V> valuePredicate) {
         return new PredicatedMap<K, V>(map, keyPredicate, valuePredicate);
     }
 

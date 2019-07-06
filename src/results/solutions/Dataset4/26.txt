@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -113,9 +112,9 @@ public class RepoListFragment extends ItemListFragment<Repository> implements Or
                 User org = RepoListFragment.this.org.get();
                 if (org == null)
                     return Collections.emptyList();
-List<Repository> repos = cache.getRepos(org, isForceRefresh(args));
+
                 RecentRepositories recent = recentRepos.get();
-                List<Repository> repos = cache.getRepos(org, isForcedReload(args));
+List<Repository> repos = cache.getRepos(org, isForceRefresh(args));
                 Collections.sort(repos, recent);
                 return repos;
             }

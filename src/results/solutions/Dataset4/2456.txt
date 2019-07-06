@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -84,9 +83,9 @@ public class ClusterSerializationTests {
         AllocationService strategy = new AllocationService();
         RoutingTable source = strategy.reroute(clusterState).routingTable();
 
-BytesStreamInput inStream = new BytesStreamInput(outStream.copiedByteArray(), false);
+        BytesStreamOutput outStream = new BytesStreamOutput();
         RoutingTable.Builder.writeTo(source, outStream);
-        BytesStreamInput inStream = new BytesStreamInput(outStream.copiedByteArray());
+BytesStreamInput inStream = new BytesStreamInput(outStream.copiedByteArray(), false);
         RoutingTable target = RoutingTable.Builder.readFrom(inStream);
 
         assertThat(target.prettyPrint(), equalTo(source.prettyPrint()));

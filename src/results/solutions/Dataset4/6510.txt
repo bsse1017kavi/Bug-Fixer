@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -244,9 +243,9 @@ public class GeoPointFieldMapper extends AbstractFieldMapper<GeoPoint> implement
                 } else if (fieldName.equals("normalize_lat")) {
                     builder.normalizeLat = XContentMapValues.nodeBooleanValue(fieldNode);
                 } else if (fieldName.equals("normalize_lon")) {
-parseMultiField(builder, name, parserContext, fieldName, fieldNode);
+                    builder.normalizeLon = XContentMapValues.nodeBooleanValue(fieldNode);
                 } else {
-                    parseMultiField(builder, name, node, parserContext, fieldName, fieldNode);
+parseMultiField(builder, name, parserContext, fieldName, fieldNode);
                 }
             }
             return builder;

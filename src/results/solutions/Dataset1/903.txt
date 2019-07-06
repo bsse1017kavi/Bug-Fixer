@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -174,9 +173,9 @@ public class CounterMutation implements IMutation
         {
             ColumnFamily cf = cf_.cloneMeShallow();
             ColumnFamilyStore cfs = table.getColumnFamilyStore(cf.id());
-cf.addColumn(column.localCopy(cfs));
+            for (IColumn column : cf_.getColumnsMap().values())
             {
-                cf.addColumn(column.localCopy(null)); // TODO fix this
+cf.addColumn(column.localCopy(cfs));
             }
             rm.add(cf);
         }

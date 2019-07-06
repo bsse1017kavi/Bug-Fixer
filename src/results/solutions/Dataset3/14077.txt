@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class LoggerAdd extends AbstractAddStepHandler {
         }
         try {
             // install logger handler services
-newControllers.addAll(LoggerAssignHandler.addHandlers(HANDLERS, model, context, name, verificationHandler));
+            final ModelNode handlers = HANDLERS.resolveModelAttribute(context, model);
             if (handlers.isDefined()) {
-                newControllers.addAll(LogServices.installLoggerHandlers(target, name, handlers, verificationHandler));
+newControllers.addAll(LoggerAssignHandler.addHandlers(HANDLERS, model, context, name, verificationHandler));
             }
         } catch (Throwable t) {
             throw new OperationFailedException(new ModelNode().set(t.getLocalizedMessage()));

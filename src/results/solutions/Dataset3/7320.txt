@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -121,9 +120,9 @@ final class ApplicationServerService implements Service<AsyncFuture<ServiceConta
 
         final BootstrapListener bootstrapListener = new BootstrapListener(container, startTime, serviceTarget, futureContainer, configuration);
         serviceTarget.addListener(bootstrapListener);
-ServerDeploymentRepositoryImpl.addService(serviceTarget, contentRepository);
+        myController.addListener(bootstrapListener);
         ContentRepositoryImpl contentRepository = ContentRepositoryImpl.addService(serviceTarget, serverEnvironment.getServerDeployDir());
-        ServerDeploymentRepositoryImpl.addService(serviceTarget, serverEnvironment.getServerDeployDir(), serverEnvironment.getServerSystemDeployDir(), contentRepository);
+ServerDeploymentRepositoryImpl.addService(serviceTarget, contentRepository);
         ServiceModuleLoader.addService(serviceTarget, configuration);
         ExternalModuleService.addService(serviceTarget);
         ModuleIndexService.addService(serviceTarget);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -153,9 +152,9 @@ public class DistributableSessionManager<O extends OutgoingDistributableSessionD
         this.notificationPolicy = this.createClusteredSessionNotificationPolicy();
 
         String host = context.getParent().getName();
-this.name = String.format("//%s/%s", this.hostName, this.contextName.isEmpty() ? "ROOT" : this.contextName);
+        this.hostName = (host == null) ? "localhost" : host;
         this.contextName = context.getName();
-        this.name = String.format("//%s/%s", this.hostName, this.contextName);
+this.name = String.format("//%s/%s", this.hostName, this.contextName.isEmpty() ? "ROOT" : this.contextName);
         this.resolver = resolver;
         this.distributedCacheManager = factory.getDistributedCacheManager(this);
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -132,9 +131,9 @@ public class UrlCompressingWebCodingStrategy extends WebRequestCodingStrategy
 		{
 			url.append(params.getUrlDepth());
 		}
-url.append(url.indexOf("?") > -1 ? "&" : "?").append(
+		if (IActivePageBehaviorListener.INTERFACE.getName().equals(rli.getName()))
 		{
-			url.append(url.indexOf("?") > -1 ? "&amp;" : "?").append(
+url.append(url.indexOf("?") > -1 ? "&" : "?").append(
 				IGNORE_IF_NOT_ACTIVE_PARAMETER_NAME).append("=true");
 		}
 		return requestCycle.getOriginalResponse().encodeURL(url);

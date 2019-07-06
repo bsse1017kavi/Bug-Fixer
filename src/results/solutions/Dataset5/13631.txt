@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1156,9 +1155,9 @@ public class AjBuildManager implements IOutputClassFileNameProvider,IBinarySourc
 						getInterimResultRequestor(),
 						progressListener,
 						this,  // IOutputFilenameProvider
-buildConfig.isTerminateAfterCompilation(),
+						this,  // IBinarySourceProvider
 						state.getBinarySourceMap(),
-						buildConfig.isNoWeave(),
+buildConfig.isTerminateAfterCompilation(),
 						buildConfig.getProceedOnError(),
 						buildConfig.isNoAtAspectJAnnotationProcessing(),
 						state);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -77,9 +76,9 @@ public class DistributedCacheManagerFactory implements org.jboss.as.clustering.w
 
     @Override
     public <T extends OutgoingDistributableSessionData> org.jboss.as.clustering.web.DistributedCacheManager<T> getDistributedCacheManager(LocalDistributableSessionManager manager) throws ClusteringNotSupportedException {
-if (!sessionCache.getCacheConfiguration().invocationBatching().enabled()) {
+        @SuppressWarnings("unchecked")
         AdvancedCache<SessionKeyImpl, Map<Object, Object>> sessionCache = this.sessionCache.getValue().getAdvancedCache().with(this.getClass().getClassLoader());
-        if (!sessionCache.getConfiguration().isInvocationBatchingEnabled()) {
+if (!sessionCache.getCacheConfiguration().invocationBatching().enabled()) {
             throw new ClusteringNotSupportedException(MESSAGES.failedToConfigureWebApp(sessionCache.getCacheManager().getGlobalConfiguration().getCacheManagerName(), sessionCache.getName()));
         }
         @SuppressWarnings("unchecked")

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -42,9 +41,9 @@ public static void main (String [] args) {
 				if (table.isDisposed ()) return;
 				final int [] index = new int [] {i};
 				display.syncExec (new Runnable () {
-TableItem item = new TableItem (table, SWT.NONE);
+					public void run () {
 						if (table.isDisposed ()) return;
-						TableItem item = new TableItem (table, SWT.NULL);
+TableItem item = new TableItem (table, SWT.NONE);
 						item.setText ("Table Item " + index [0]);
 						item.setImage (image);
 					}

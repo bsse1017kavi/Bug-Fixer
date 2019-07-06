@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -95,9 +94,9 @@ public class WorldTestCase extends AbstractWorldTestCase {
         
     }
 
-ResolvedType iter = world.getCoreType(UnresolvedType.forRawTypeName("java.util.Iterator"));
+    public void testIterator() {
         int abstractPublic = Modifier.ABSTRACT | Modifier.PUBLIC;
-        ResolvedType iter = world.getCoreType(UnresolvedType.forRawTypeNames("java.util.Iterator"));
+ResolvedType iter = world.getCoreType(UnresolvedType.forRawTypeName("java.util.Iterator"));
       
         modifiersTest(iter, abstractPublic | Modifier.INTERFACE);
         fieldsTest(iter, ResolvedMember.NONE);

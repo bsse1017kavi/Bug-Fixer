@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -113,9 +112,9 @@ public class IndexFieldMapper extends AbstractFieldMapper<String> implements Int
     }
 
     public IndexFieldMapper(String name, String indexName, float boost, FieldType fieldType, boolean enabled,
-Lucene.KEYWORD_ANALYZER, provider, null);
+                            PostingsFormatProvider provider) {
         super(new Names(name, indexName, indexName, name), boost, fieldType, Lucene.KEYWORD_ANALYZER,
-                Lucene.KEYWORD_ANALYZER, provider);
+Lucene.KEYWORD_ANALYZER, provider, null);
         this.enabled = enabled;
     }
 

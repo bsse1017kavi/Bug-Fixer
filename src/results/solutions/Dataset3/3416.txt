@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -158,9 +157,9 @@ public class LexerTest {
                 "# penultimate comment\n"+ // 6
                 "\n"+                      // 6b
                 "\n"+                      // 6c
-assertFalse("Should not ignore empty lines", format.isIgnoringEmptyLines());
+                "# Final comment\n";       // 7
         final CSVFormat format = CSVFormat.DEFAULT.withCommentStart('#').withIgnoreEmptyLines(false);
-        assertFalse("Should not ignore empty lines", format.getIgnoreEmptyLines());
+assertFalse("Should not ignore empty lines", format.isIgnoringEmptyLines());
 
         final Lexer parser = getLexer(code, format);
 

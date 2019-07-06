@@ -1,4 +1,3 @@
-
 /* 
  * The Apache Software License, Version 1.1
  *
@@ -5628,9 +5627,9 @@ throws Exception {
                     if(fixedStr.length() > 0) {
                         if((referredAttrDecl.defaultType & XMLAttributeDecl.VALUE_CONSTRAINT_FIXED) == 0) {
                             referredAttrDecl.defaultType |= valueDigits;
-referredAttrDecl.defaultValue = fixedStr;
+                            referredAttrDecl.defaultType ^= valueDigits; // clear the value
                             referredAttrDecl.defaultType |= XMLAttributeDecl.VALUE_CONSTRAINT_FIXED;
-                            referredAttrDecl.defaultValue = fStringPool.toString(attValueConstraint);
+referredAttrDecl.defaultValue = fixedStr;
                             updated = true;
 					}
 			}

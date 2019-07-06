@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -54,9 +53,9 @@ public class SendFileTransfer extends AbstractOutgoingFileTransfer {
 	protected void openStreams() throws SendFileTransferException {
 		try {
 			// Get/open input file
-final IFileStore fileStore = EFS.getStore(new URI(getRemoteFileURL().getPath()));
+			setInputStream(new BufferedInputStream(new FileInputStream(getFileTransferInfo().getFile())));
 			// Open target
-			final IFileStore fileStore = EFS.getStore(new URI(getRemoteFileURL().getFile()));
+final IFileStore fileStore = EFS.getStore(new URI(getRemoteFileURL().getPath()));
 			setOutputStream(fileStore.openOutputStream(0, null));
 			// Notify listener
 			listener.handleTransferEvent(new IOutgoingFileTransferResponseEvent() {

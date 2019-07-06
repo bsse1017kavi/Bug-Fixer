@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -86,9 +85,9 @@ public class PublishClusterStateAction extends AbstractComponent {
         private PublishClusterStateRequest(ClusterState clusterState) {
             this.clusterState = clusterState;
         }
-clusterState = ClusterState.Builder.readFrom(in, nodesProvider.nodes().localNode());
+
         @Override public void readFrom(StreamInput in) throws IOException {
-            clusterState = ClusterState.Builder.readFrom(in, settings, nodesProvider.nodes().localNode());
+clusterState = ClusterState.Builder.readFrom(in, nodesProvider.nodes().localNode());
         }
 
         @Override public void writeTo(StreamOutput out) throws IOException {

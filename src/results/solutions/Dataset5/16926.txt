@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -46,9 +45,9 @@ public class BcelCflowStackFieldAdder extends BcelTypeMunger {
 		LazyMethodGen clinit = gen.getAjcPreClinit(); //StaticInitializer();
 		InstructionList setup = new InstructionList();
 		InstructionFactory fact = gen.getFactory();
-setup.append(InstructionFactory.createDup(1));
+
 		setup.append(fact.createNew(new ObjectType(NameMangler.CFLOW_STACK_TYPE)));
-		setup.append(fact.createDup(1));
+setup.append(InstructionFactory.createDup(1));
 		setup.append(fact.createInvoke(
 			NameMangler.CFLOW_STACK_TYPE, 
 			"<init>", 

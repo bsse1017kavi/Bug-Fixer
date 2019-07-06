@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -110,9 +109,9 @@ public class ShardsRoutingStrategy extends AbstractComponent {
         changed |= electPrimaries(routingNodes);
 
         // now allocate all the unassigned to available nodes
-changed |= preferUnallocatedShardUnassignedStrategy.allocateUnassigned(routingNodes, nodes);
+        if (routingNodes.hasUnassigned()) {
             if (preferUnallocatedShardUnassignedStrategy != null) {
-                changed |= preferUnallocatedShardUnassignedStrategy.allocateUnassigned(routingNodes);
+changed |= preferUnallocatedShardUnassignedStrategy.allocateUnassigned(routingNodes, nodes);
             }
             changed |= allocateUnassigned(routingNodes);
             // elect primaries again, in case this is needed with unassigned allocation

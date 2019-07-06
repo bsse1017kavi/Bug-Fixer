@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -93,9 +92,9 @@ public class KuromojiIndicesAnalysis extends AbstractComponent {
                         return "kuromoji_part_of_speech";
                     }
 
-return new JapanesePartOfSpeechStopFilter(Version.LUCENE_48,
+                    @Override
                     public TokenStream create(TokenStream tokenStream) {
-                        return new JapanesePartOfSpeechStopFilter(Version.LUCENE_44,
+return new JapanesePartOfSpeechStopFilter(Version.LUCENE_48,
                                 tokenStream, JapaneseAnalyzer
                                 .getDefaultStopTags());
                     }

@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.Config;
@@ -16,9 +15,9 @@ import java.util.Map;
 public class TransactionalSpoutCoordinator implements IRichSpout {
     public static final String TRANSACTION_BATCH_STREAM_ID = TransactionalSpoutCoordinator.class.getName() + "/batch";
     public static final String TRANSACTION_COMMIT_STREAM_ID = TransactionalSpoutCoordinator.class.getName() + "/commit";
-private ICoordinatorState _state;
+
     private ITransactionalSpout _spout;
-    private ITransactionState _state;
+private ICoordinatorState _state;
     
     Map<Integer, TransactionStatus> _activeTx = new HashMap<Integer, TransactionStatus>();
     

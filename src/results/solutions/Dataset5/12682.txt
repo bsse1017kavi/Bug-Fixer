@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -360,9 +359,9 @@ public final class AutoLinkResolver implements IComponentResolver
 		{
 			// Default handling for tag
 			super.onComponentTag(tag);
-String url = getRequestCycle().urlFor(resourceReference);
+
 			// Set href to link to this link's linkClicked method
-			String url = getPage().urlFor(resourceReference.getPath());
+String url = getRequestCycle().urlFor(resourceReference);
 
 			// generate the href attribute
 			tag.put("href", Strings.replaceAll(url, "&", "&amp;"));

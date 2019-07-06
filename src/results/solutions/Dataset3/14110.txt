@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -857,9 +856,9 @@ public class ThreadsExtension implements Extension {
 
         private void writeQueuelessThreadPool(final XMLExtendedStreamWriter writer, final ModelNode node) throws XMLStreamException {
             writer.writeStartElement(Element.QUEUELESS_THREAD_POOL.getLocalName());
-writeAttribute(writer, Attribute.NAME, node.get(NAME));
+
             if (node.hasDefined(NAME)) {
-                writeAttribute(writer, Attribute.BLOCKING, node.get(NAME));
+writeAttribute(writer, Attribute.NAME, node.get(NAME));
             }
             if (node.hasDefined(BLOCKING)) {
                 writeAttribute(writer, Attribute.BLOCKING, node.get(BLOCKING));

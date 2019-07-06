@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -107,9 +106,9 @@ public class WebRequestCycle extends RequestCycle
 	 * If all four steps are executed and content cannot be found to satisfy the
 	 * request, then false is returned.
 	 * 
-protected final boolean parseRequest()
+	 * @return True if a Page should be rendered back to the user
 	 */
-	protected boolean onRespond()
+protected final boolean parseRequest()
 	{
 		// Try different methods of parsing and dispatching the request
 		if (callComponentListener() || bookmarkablePage() || homePage())

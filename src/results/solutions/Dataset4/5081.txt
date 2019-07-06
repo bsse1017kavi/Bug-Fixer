@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.hiero;
 
 import java.awt.Font;
@@ -110,9 +109,9 @@ public class BMFontUtil {
 		if (ttfFileRef == null)
 			System.out.println("Kerning information could not be output because a TTF font file was not specified.");
 		else {
-kerning.load(Gdx.files.internal(ttfFileRef).read(), font.getSize());
+			Kerning kerning = new Kerning();
 			try {
-				kerning.load(Gdx.files.readFile(ttfFileRef, FileType.Internal), font.getSize());
+kerning.load(Gdx.files.internal(ttfFileRef).read(), font.getSize());
 			} catch (IOException ex) {
 				System.out.println("Unable to read kerning information from font: " + ttfFileRef);
 			}

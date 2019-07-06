@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -59,9 +58,9 @@ public class TestTopScoreDocCollector extends LuceneTestCase {
       assertEquals(3, sd.length);
       for (int j = 0; j < sd.length; j++) {
         assertEquals("expected doc Id " + j + " found " + sd[j].doc, j, sd[j].doc);
-writer.shutdown();
+      }
     }
-    writer.close();
+writer.shutdown();
     reader.close();
     dir.close();
   }

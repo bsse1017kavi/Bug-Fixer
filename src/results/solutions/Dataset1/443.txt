@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -71,9 +70,9 @@ final class BugReproTokenStream extends TokenStream {
   private final int starts[] = new int[]{0, 0, 4, 4};
   private final int ends[] = new int[]{3, 3, 11, 11};
   private final int incs[] = new int[]{1, 0, 1, 0};
-public boolean incrementToken() {
+
   @Override
-  public boolean incrementToken() throws IOException {
+public boolean incrementToken() {
     if (nextTokenIndex < tokenCount) {
       termAtt.setEmpty().append(terms[nextTokenIndex]);
       offsetAtt.setOffset(starts[nextTokenIndex], ends[nextTokenIndex]);

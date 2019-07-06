@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.startup;
 
 import java.net.*;
@@ -835,9 +834,9 @@ public class EmbededTomcat {
     {
 	if( dL > 0 ) debug( "Init class loaders " + noClassLoaders );
         if( noClassLoaders ) {
-commonCL=jdk11Compat.newClassLoaderInstance(new URL [] {}, null);
+            commonCL=this.getClass().getClassLoader();
             if( commonCL == null ) {
-                commonCL=new java.net.URLClassLoader( new URL[] {}, null );
+commonCL=jdk11Compat.newClassLoaderInstance(new URL [] {}, null);
             }
             parentCL=commonCL;
             containerCL=commonCL;

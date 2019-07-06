@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public abstract class NetworkUtils {
     static {
         InetAddress localAddressX = null;
         try {
-logger.trace("Failed to find local host", e);
+            localAddressX = InetAddress.getLocalHost();
         } catch (UnknownHostException e) {
-            logger.warn("Failed to find local host", e);
+logger.trace("Failed to find local host", e);
         }
         localAddress = localAddressX;
     }

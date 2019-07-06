@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -85,9 +84,9 @@ public abstract class TransportShardSingleOperationAction<Request extends Single
     protected abstract ClusterBlockException checkGlobalBlock(ClusterState state, Request request);
 
     protected abstract ClusterBlockException checkRequestBlock(ClusterState state, Request request);
-request.index(state.metaData().concreteSingleIndex(request.index(), request.indicesOptions()));
+
     protected void resolveRequest(ClusterState state, Request request) {
-        request.index(state.metaData().concreteSingleIndex(request.index()));
+request.index(state.metaData().concreteSingleIndex(request.index(), request.indicesOptions()));
     }
 
     protected abstract ShardIterator shards(ClusterState state, Request request) throws ElasticsearchException;

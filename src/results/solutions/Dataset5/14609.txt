@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ import org.apache.openjpa.lib.util.EventManager;
  */
 public abstract class AbstractConcurrentEventManager implements EventManager {
 
-protected final Collection _listeners;
+    private static Exception[] EMPTY_EXCEPTIONS = new Exception[0];
 
-    private final Collection _listeners;
+protected final Collection _listeners;
     private boolean _failFast = false;
 
     /**

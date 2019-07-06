@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -304,9 +303,9 @@ public class AsmElementFormatter {
 			for (int i = 0; i < argArray.length; i++) {
 				String argName = new String(argArray[i].name);
 				//String argType = "<UnknownType>"; // pr135052
-if (typeR!=null && md.scope!=null) {
+				if (acceptArgument(argName, argArray[i].type.toString())) {
 					TypeReference typeR = argArray[i].type;
-					if (typeR!=null) {
+if (typeR!=null && md.scope!=null) {
 						TypeBinding typeB = typeR.resolvedType;
 						if (typeB==null) {
 							typeB = typeR.resolveType(md.scope);

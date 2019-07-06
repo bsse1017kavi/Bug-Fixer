@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class SignificantLongTermsAggregator extends LongTermsAggregator {
 
         BucketSignificancePriorityQueue ordered = new BucketSignificancePriorityQueue(size);
         SignificantLongTerms.Bucket spare = null;
-spare = new SignificantLongTerms.Bucket(0, 0, 0, 0, 0, null, formatter);
+        for (long i = 0; i < bucketOrds.size(); i++) {
             if (spare == null) {
-                spare = new SignificantLongTerms.Bucket(0, 0, 0, 0, 0, null);
+spare = new SignificantLongTerms.Bucket(0, 0, 0, 0, 0, null, formatter);
             }
             spare.term = bucketOrds.get(i);
             spare.subsetDf = bucketDocCount(i);

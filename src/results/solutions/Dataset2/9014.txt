@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -123,9 +122,9 @@ public class ImageViewer extends JPanel implements IMimePartViewer {
 			float scaling = (float) cwidth / image.getIconWidth();
 
 			image = new ImageIcon(image.getImage()
-Image.SCALE_FAST));
+					.getScaledInstance((int) (image.getIconWidth() * scaling),
 							(int) (image.getIconHeight() * scaling),
-							Image.SCALE_SMOOTH));
+Image.SCALE_FAST));
 		}
 
 		JLabel label = new JLabel(image);

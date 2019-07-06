@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class SystemMapper extends CompoundRequestMapper
 	{
 		this.application = application;
 		add(RestartResponseAtInterceptPageException.MAPPER);
-add(new HomePageMapper(new HomePageProvider<Page>(application)));
+		add(new PageInstanceMapper());
 		add(new BookmarkableMapper());
-		add(new HomePageMapper(new HomePageProvider(application)));
+add(new HomePageMapper(new HomePageProvider<Page>(application)));
 		add(new ResourceReferenceMapper(new PageParametersEncoder(),
 			new ParentFolderPlaceholderProvider(application), getResourceCachingStrategy()));
 		add(new BufferedResponseMapper());

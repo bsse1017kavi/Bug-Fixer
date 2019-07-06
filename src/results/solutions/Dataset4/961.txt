@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -73,9 +72,9 @@ public class LwjglFrame extends JFrame {
 		initialize();
 		Dimension size = getSize();
 		if (size.width == 0 && size.height == 0) pack();
-setVisible(true); // Has to happen on OSX before display is created.
+		Point location = getLocation();
 		if (location.x == 0 && location.y == 0) setLocationRelativeTo(null);
-		setVisible(true);
+setVisible(true); // Has to happen on OSX before display is created.
 		lwjglCanvas.getCanvas().requestFocus();
 	}
 

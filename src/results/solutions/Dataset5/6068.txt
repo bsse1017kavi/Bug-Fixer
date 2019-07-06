@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -227,9 +226,9 @@ public abstract class WebApplication extends Application
 	 * @return The session object
 	 */
 	final WebSession getSession(final WebRequest request, boolean create)
-final HttpSession httpSession = ((WebRequest)request).getHttpServletRequest()
+	{
 		// Get session, creating if it doesn't exist
-		final HttpSession httpSession = ((ServletWebRequest)request).getHttpServletRequest()
+final HttpSession httpSession = ((WebRequest)request).getHttpServletRequest()
 				.getSession(true);
 		if (!create && (httpSession == null))
 		{

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -168,9 +167,9 @@ public class HunspellService extends AbstractComponent {
             throw new ElasticsearchException(String.format(Locale.ROOT, "Missing affix file for hunspell dictionary [%s]", locale));
         }
         InputStream affixStream = null;
-List<InputStream> dicStreams = new ArrayList<>(dicFiles.length);
+
         File[] dicFiles = dicDir.listFiles(DIC_FILE_FILTER);
-        List<InputStream> dicStreams = new ArrayList<InputStream>(dicFiles.length);
+List<InputStream> dicStreams = new ArrayList<>(dicFiles.length);
         try {
 
             for (int i = 0; i < dicFiles.length; i++) {

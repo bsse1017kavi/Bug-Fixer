@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.tools;
 
 import java.io.File;
@@ -108,9 +107,9 @@ public class FileProcessor {
 
 	private void process (File[] files, File outputRoot, File outputDir, HashMap<File, ArrayList<InputFile>> dirToEntries,
 		int depth) {
-if (inputRegex.size > 0) {
+		for (File file : files) {
 			if (file.isFile()) {
-				if (inputRegex != null) {
+if (inputRegex.size > 0) {
 					boolean found = false;
 					for (Pattern pattern : inputRegex) {
 						if (pattern.matcher(file.getName()).matches()) {

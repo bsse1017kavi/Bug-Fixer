@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.parser;
 
 /*
@@ -54,9 +53,9 @@ public RecoveredElement add(AbstractMethodDeclaration methodDeclaration, int bra
 				(methods = new RecoveredMethod[2 * methodCount]), 
 				0, 
 				methodCount); 
-RecoveredMethod element = new RecoveredMethod(methodDeclaration, this, bracketBalance, this.recoveringParser);
+		}
 	}
-	RecoveredMethod element = new RecoveredMethod(methodDeclaration, this, bracketBalance);
+RecoveredMethod element = new RecoveredMethod(methodDeclaration, this, bracketBalance, this.recoveringParser);
 	methods[methodCount++] = element;
 
 	/* consider that if the opening brace was not found, it is there */

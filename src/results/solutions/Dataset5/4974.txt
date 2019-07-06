@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -4862,9 +4861,9 @@ public static GC win32_new(Drawable drawable, GCData data) {
  */
 public static GC win32_new(int /*long*/ hDC, GCData data) {
 	GC gc = new GC();
-if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (4, 10)) {
+	gc.device = data.device;
 	data.style |= SWT.LEFT_TO_RIGHT;
-	if (OS.WIN32_VERSION >= OS.VERSION (4, 10)) {
+if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (4, 10)) {
 		int flags = OS.GetLayout (hDC);
 		if ((flags & OS.LAYOUT_RTL) != 0) {
 			data.style |= SWT.RIGHT_TO_LEFT | SWT.MIRRORED;

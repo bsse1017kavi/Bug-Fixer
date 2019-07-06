@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -194,9 +193,9 @@ public abstract class DefaultRmicAdapter
         classpath.addLocation( attributes.getBase() );
 
         // add the classpath
-classpath.add( attributes.getClasspath() );
+        if( attributes.getClasspath() != null )
         {
-            classpath.addPath( attributes.getClasspath() );
+classpath.add( attributes.getClasspath() );
         }
 
         return classpath;

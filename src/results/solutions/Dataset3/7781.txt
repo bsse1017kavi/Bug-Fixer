@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -56,9 +55,9 @@ final class ConfigurationClassMethod {
 	public Location getResourceLocation() {
 		return new Location(this.declaringClass.getResource(), metadata);
 	}
-if (this.declaringClass.getMetadata().isAnnotated(Configuration.class.getName()) && !getMetadata().isOverridable()) {
+
 	public void validate(ProblemReporter problemReporter) {
-		if (this.declaringClass.getMetadata().hasAnnotation(Configuration.class.getName()) && !getMetadata().isOverridable()) {
+if (this.declaringClass.getMetadata().isAnnotated(Configuration.class.getName()) && !getMetadata().isOverridable()) {
 			problemReporter.error(new NonOverridableMethodError());
 		}
 	}

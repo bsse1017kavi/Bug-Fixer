@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -49,9 +48,9 @@ public class TestLazyProxSkipping extends LuceneTestCase {
     private String term2 = "yy";
     private String term3 = "zz";
 
-super(random, delegate);
+    private class SeekCountingDirectory extends MockDirectoryWrapper {
       public SeekCountingDirectory(Directory delegate) {
-        super(delegate);
+super(random, delegate);
       }
 
       @Override

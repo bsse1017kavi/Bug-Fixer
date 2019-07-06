@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class SphereGenerator implements SupportBallGenerator<Euclidean3D, Vector
 
     /** {@inheritDoc} */
     public EnclosingBall<Euclidean3D, Vector3D> ballOnSupport(final List<Vector3D> support) {
-return new EnclosingBall<Euclidean3D, Vector3D>(Vector3D.ZERO, Double.NEGATIVE_INFINITY);
+
         if (support.size() < 1) {
-            return new EnclosingBall<Euclidean3D, Vector3D>(Vector3D.ZERO, -1.0);
+return new EnclosingBall<Euclidean3D, Vector3D>(Vector3D.ZERO, Double.NEGATIVE_INFINITY);
         } else {
             final Vector3D vA = support.get(0);
             if (support.size() < 2) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public final class UnmodifiableOrderedMapIterator<K, V> implements OrderedMapIte
      * Decorates the specified iterator such that it cannot be modified.
      *
      * @param iterator  the iterator to decorate
-public static <K, V> OrderedMapIterator<K, V> unmodifiableOrderedMapIterator(OrderedMapIterator<K, V> iterator) {
+     * @throws IllegalArgumentException if the iterator is null
      */
-    public static <K, V> OrderedMapIterator<K, V> decorate(OrderedMapIterator<K, V> iterator) {
+public static <K, V> OrderedMapIterator<K, V> unmodifiableOrderedMapIterator(OrderedMapIterator<K, V> iterator) {
         if (iterator == null) {
             throw new IllegalArgumentException("OrderedMapIterator must not be null");
         }

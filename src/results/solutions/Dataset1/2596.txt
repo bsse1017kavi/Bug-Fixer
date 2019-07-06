@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -187,9 +186,9 @@ public class MultiPassIndexSplitter {
       doUndeleteAll(); // initialize main bitset
     }
 
-return liveDocs.cardinality();
+    @Override
     public int numDocs() {
-      return (int) liveDocs.cardinality();
+return liveDocs.cardinality();
     }
 
     /**

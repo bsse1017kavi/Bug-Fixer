@@ -1,4 +1,3 @@
-
 /*
  * $Id: Fragment.java 5075 2006-03-21 18:59:42 -0800 (Tue, 21 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-21 18:59:42 -0800 (Tue, 21 Mar
@@ -178,9 +177,9 @@ public class Fragment extends WebMarkupContainer
 	@Override
 	protected void onComponentTag(final ComponentTag tag)
 	{
-tag.setType(XmlTag.Type.OPEN);
+		if (tag.isOpenClose())
 		{
-			tag.setType(XmlTag.OPEN);
+tag.setType(XmlTag.Type.OPEN);
 		}
 		super.onComponentTag(tag);
 	}

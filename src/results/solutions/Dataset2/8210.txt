@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2843,9 +2842,9 @@ public class ClassFile
 				resizeContents(2);
 			}
 			final int elementNameIndex = constantPool.literalIndex(VALUE);
-MethodBinding methodBinding = singleMemberAnnotation.memberValuePairs()[0].binding;
+			contents[contentsOffset++] = (byte) (elementNameIndex >> 8);
 			contents[contentsOffset++] = (byte) elementNameIndex;
-			MethodBinding methodBinding = singleMemberAnnotation.singlePair.binding;
+MethodBinding methodBinding = singleMemberAnnotation.memberValuePairs()[0].binding;
 			if (methodBinding == null) {
 				contentsOffset = attributeOffset;
 			} else {

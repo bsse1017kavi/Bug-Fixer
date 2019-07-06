@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -222,9 +221,9 @@ public class GlobalOpsTestCase extends AbstractCliTestBase {
         String response = HttpRequest.get(cURL, 10, TimeUnit.SECONDS);
         assertTrue("Invalid response: " + response, response.indexOf("JBoss") >=0);
 
-cli.sendLine("/subsystem=web/connector=test-connector:remove{allow-resource-service-restart=true}");
+
         // remove connector
-        cli.sendLine("/subsystem=web/connector=test-connector:remove");
+cli.sendLine("/subsystem=web/connector=test-connector:remove{allow-resource-service-restart=true}");
         result = cli.readAllAsOpResult();
         assertTrue(result.isIsOutcomeSuccess());
 

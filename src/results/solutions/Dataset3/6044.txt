@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -176,9 +175,9 @@ public class FileTimerPersistence implements TimerPersistence, Service<FileTimer
             persistTimer(TimerImpl, false);
         }
     }
-public boolean shouldRun(TimerImpl timer, TransactionManager tm) {
+
     @Override
-    public boolean shouldRun(TimerImpl timer) {
+public boolean shouldRun(TimerImpl timer, TransactionManager tm) {
         return true;
     }
 

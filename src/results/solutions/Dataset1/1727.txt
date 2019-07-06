@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.pulsing;
 
 /**
@@ -474,9 +473,9 @@ public class PulsingPostingsReader extends PostingsReaderBase {
         //System.out.println("PR     code=" + code);
         if ((code & 1) != 0) {
           payloadLength = postings.readVInt();
-position += code >>> 1;
+          //System.out.println("PR     new payload len=" + payloadLength);
         }
-        position += code >> 1;
+position += code >>> 1;
         payloadRetrieved = false;
       } else {
         position += postings.readVInt();

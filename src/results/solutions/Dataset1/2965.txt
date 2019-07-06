@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -80,9 +79,9 @@ public class TestSegmentTermEnum extends LuceneTestCase
   }
 
   private void verifyDocFreq()
-IndexReader reader = IndexReader.open(dir, true);
+      throws IOException
   {
-      IndexReader reader = IndexReader.open(dir);
+IndexReader reader = IndexReader.open(dir, true);
       TermEnum termEnum = null;
 
     // create enumeration of all terms

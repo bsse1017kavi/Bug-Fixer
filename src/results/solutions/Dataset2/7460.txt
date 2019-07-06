@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -109,9 +108,9 @@ public class ScarabModulePeer
         criteria.add(PARENT_ID, ((Module)group).getParentId());
         List results = BasePeer.doSelect(criteria);
         if(results.size() > 1)
-name + "' exist!"); //EXCEPTION
+        {
             throw new DataBackendException("Multiple groups named '" +
-                name + "' exist!");
+name + "' exist!"); //EXCEPTION
         }
         return (results.size()==1);
     }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public abstract class AbstractComponentInstance implements ComponentInstance {
 
     /** {@inheritDoc} */
     public Interceptor getInterceptor(final Method method) throws IllegalStateException {
-throw new IllegalStateException("Method does not exist " + method);
+        Interceptor interceptor = methodMap.get(method);
         if (interceptor == null) {
-            throw new IllegalStateException("Method does not exist");
+throw new IllegalStateException("Method does not exist " + method);
         }
         return interceptor;
     }

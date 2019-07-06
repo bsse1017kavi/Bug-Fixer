@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -121,9 +120,9 @@ private void drawChevron (int /*long*/ hDC, RECT rect) {
 	OS.SelectObject (hDC, oldBrush);
 	rect.left += 4;
 	rect.top += 4;
-int /*long*/ hPen = OS.CreatePen (OS.PS_SOLID, 1, parent.getForegroundPixel ());
+	rect.right -= 4;
 	rect.bottom -= 4;
-	int /*long*/ hPen = OS.CreatePen (OS.PS_SOLID, 1, parent.foreground);
+int /*long*/ hPen = OS.CreatePen (OS.PS_SOLID, 1, parent.getForegroundPixel ());
 	int /*long*/ oldPen = OS.SelectObject (hDC, hPen);
 	int [] polyline1, polyline2;
 	if (expanded) {

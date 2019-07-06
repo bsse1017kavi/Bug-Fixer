@@ -1,4 +1,3 @@
-
 package org.jboss.as.mail.extension;
 
 import org.jboss.as.controller.AbstractAddStepHandler;
@@ -26,9 +25,9 @@ import java.util.List;
 public class MailSessionAdd extends AbstractAddStepHandler {
 
     static final MailSessionAdd INSTANCE = new MailSessionAdd();
-private final Logger log = Logger.getLogger(MailSessionAdd.class);
+    public static final ServiceName SERVICE_NAME_BASE = ServiceName.JBOSS.append("mail-session");
 
-    private final Logger log = Logger.getLogger(MailSubsystemAdd.class);
+private final Logger log = Logger.getLogger(MailSessionAdd.class);
 
     private MailSessionAdd() {
     }

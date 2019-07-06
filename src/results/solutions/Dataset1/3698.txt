@@ -1,4 +1,3 @@
-
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class JMXAgentImpl implements JMXAgent {
         serviceStateHandler.open();
         mbeansHandlers.add(serviceStateHandler);
         MBeanHandler packageStateHandler = new PackageStateMBeanHandler(bc, logger);
-MBeanHandler permissionAdminHandler = new PermissionAdminMBeanHandler(agentContext);
+        packageStateHandler.open();
         mbeansHandlers.add(packageStateHandler);
-        MBeanHandler permissionAdminHandler = new PermissionAdminMBeanHandler(bc, logger);
+MBeanHandler permissionAdminHandler = new PermissionAdminMBeanHandler(agentContext);
         permissionAdminHandler.open();
         mbeansHandlers.add(permissionAdminHandler);
         MBeanHandler userAdminHandler = new UserAdminMBeanHandler(agentContext);

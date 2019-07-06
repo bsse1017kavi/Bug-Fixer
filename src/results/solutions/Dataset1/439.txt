@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -43,9 +42,9 @@ import org.apache.lucene.util._TestUtil;
   against it, and add documents to it.
 */
 
-private void verifyCommitOrder(List<? extends IndexCommit> commits) {
+public class TestDeletionPolicy extends LuceneTestCase {
   
-  private void verifyCommitOrder(List<? extends IndexCommit> commits) throws IOException {
+private void verifyCommitOrder(List<? extends IndexCommit> commits) {
     final IndexCommit firstCommit =  commits.get(0);
     long last = SegmentInfos.generationFromSegmentsFileName(firstCommit.getSegmentsFileName());
     assertEquals(last, firstCommit.getGeneration());

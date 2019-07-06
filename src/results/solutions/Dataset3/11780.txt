@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public final class DomainSystemPropertyUpdate extends AbstractDomainModelUpdate<
     protected void applyUpdate(final DomainModel element) throws UpdateFailedException {
         propertyUpdate.applyUpdate(element.getSystemProperties());
     }
-public DomainSystemPropertyUpdate getCompensatingUpdate(final DomainModel original) {
+
     /** {@inheritDoc} */
-    protected DomainSystemPropertyUpdate getCompensatingUpdate(final DomainModel original) {
+public DomainSystemPropertyUpdate getCompensatingUpdate(final DomainModel original) {
         return new DomainSystemPropertyUpdate(propertyUpdate.getCompensatingUpdate(original.getSystemProperties()));
     }
 

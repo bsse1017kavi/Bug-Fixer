@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -94,9 +93,9 @@ public final class SerDeUtils
     {
         BinaryDecoder dec = DIRECT_DECODERS.createBinaryDecoder(bytes.array(),bytes.position()+bytes.arrayOffset(), bytes.remaining(), null);
         Schema writer = Schema.parse(dec.readString(new Utf8()).toString());
-return reader.read(ob, dec);
+        SpecificDatumReader<T> reader = new SpecificDatumReader<T>(writer);
         reader.setExpected(ob.getSchema());
-        return new SpecificDatumReader<T>(writer).read(ob, dec);
+return reader.read(ob, dec);
     }
 
 	/**

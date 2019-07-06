@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -200,9 +199,9 @@ public class BlockScope extends Scope {
 				&& (!hasMoreVariables || (subscopes[iscope].startIndex() <= ilocal))) {
 				// consider subscope first
 				if (subscopes[iscope] instanceof BlockScope) {
-subscope.shiftScope == null ? this.offset : subscope.shiftScope.maxOffset;
+					BlockScope subscope = (BlockScope) subscopes[iscope];
 					int subOffset =
-						subscope.shiftScope == null ? this.offset : subscope.shiftScope.offset;
+subscope.shiftScope == null ? this.offset : subscope.shiftScope.maxOffset;
 					subscope.computeLocalVariablePositions(subOffset, codeStream);
 					if (subscope.maxOffset > this.maxOffset)
 						this.maxOffset = subscope.maxOffset;

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -144,9 +143,9 @@ public class SSHExec extends SSHBase {
         if (getUserInfo().getKeyfile() == null
             && getUserInfo().getPassword() == null) {
             throw new BuildException("Password or Keyfile is required.");
-throw new BuildException("Command or commandResource is required.");
+        }
         if (command == null && commandResource == null) {
-            throw new BuildException("Command or commandFile is required.");
+throw new BuildException("Command or commandResource is required.");
         }
 
         /* called once */

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -237,9 +236,9 @@ static int checkBits (int style, int int0, int int1, int int2, int int3, int int
 boolean checkEvent (int e) {
 	if (isDisposed ()) return false;
 	int routedEventType =  OS.RoutedEventArgs_typeid ();
-source = OS.RoutedEventArgs_OriginalSource (e);
+	int source = 0;
 	if (OS.Type_IsInstanceOfType (routedEventType, e)) {
-		source = OS.RoutedEventArgs_Source (e);
+source = OS.RoutedEventArgs_OriginalSource (e);
 	}
 	OS.GCHandle_Free (routedEventType);
 	if (source == 0) return true;

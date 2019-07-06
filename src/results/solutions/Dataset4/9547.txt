@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -48,9 +47,9 @@ public class ShapeRendererTest extends GdxTest {
 		cam.position.set(0, 0, 2);
 		cam.near = 0.1f;
 		controller = new PerspectiveCamController(cam);
-font = new BitmapFont(Gdx.files.internal("data/arial-15.fnt"), false);
+		Gdx.input.setInputProcessor(controller);
 		batch = new SpriteBatch();
-		font = new BitmapFont();
+font = new BitmapFont(Gdx.files.internal("data/arial-15.fnt"), false);
 	}
 
 	public void render () {

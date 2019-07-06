@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,8 +64,8 @@ public class TypeFilterParser implements FilterParser {
         if (documentMapper == null) {
             filter = new TermFilter(new Term(TypeFieldMapper.NAME, type));
         } else {
-return parseContext.cacheFilter(filter, null);
+            filter = documentMapper.typeFilter();
         }
-        return parseContext.cacheFilter(filter);
+return parseContext.cacheFilter(filter, null);
     }
 }

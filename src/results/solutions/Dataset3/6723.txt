@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ import org.jboss.as.controller.registry.OperationEntry;
 public class XmlAuthenticationResourceDefinition extends SimpleResourceDefinition {
 
     public XmlAuthenticationResourceDefinition() {
-new SecurityRealmChildAddHandler(true, false),
+        super(PathElement.pathElement(ModelDescriptionConstants.AUTHENTICATION, ModelDescriptionConstants.USERS),
                 ControllerResolver.getResolver("core.management.security-realm.authentication.xml"),
-                new SecurityRealmChildAddHandler(true),
+new SecurityRealmChildAddHandler(true, false),
                 new SecurityRealmChildRemoveHandler(true),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES,
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES);

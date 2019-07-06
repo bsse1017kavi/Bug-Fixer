@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -107,9 +106,9 @@ public class FilteredQueryParser implements QueryParser {
         if (cache) {
             filter = parseContext.cacheFilter(filter, cacheKey);
         }
-if (Queries.isConstantMatchAllQuery(query)) {
+
         // if its a match_all query, use constant_score
-        if (Queries.isMatchAllQuery(query)) {
+if (Queries.isConstantMatchAllQuery(query)) {
             Query q = new DeletionAwareConstantScoreQuery(filter);
             q.setBoost(boost);
             return q;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class NamingLookupValue<T> implements Value<T> {
     public T getValue() throws IllegalStateException {
         final Context context = contextValue.getValue();
         try {
-throw new IllegalStateException("Jndi entry '" + contextName + "' is not yet registered in context '" + context + "'", e);
+            return (T)context.lookup(contextName);
         } catch (NamingException e) {
-            throw new IllegalStateException("Jndi entry '" + contextName + "' is not yet registered in context '" + context + "'");
+throw new IllegalStateException("Jndi entry '" + contextName + "' is not yet registered in context '" + context + "'", e);
         }
     }
 

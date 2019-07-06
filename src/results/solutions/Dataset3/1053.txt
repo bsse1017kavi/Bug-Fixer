@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -603,9 +602,9 @@ public abstract class AbstractJdbcInsert {
 	private void setParameterValues(PreparedStatement preparedStatement, List<Object> values, int[] columnTypes)
 			throws SQLException {
 		int colIndex = 0;
-if (columnTypes == null || colIndex > columnTypes.length) {
+		for (Object value : values) {
 			colIndex++;
-			if (columnTypes == null || colIndex < columnTypes.length) {
+if (columnTypes == null || colIndex > columnTypes.length) {
 				StatementCreatorUtils.setParameterValue(preparedStatement, colIndex, SqlTypeValue.TYPE_UNKNOWN, value);
 			}
 			else {

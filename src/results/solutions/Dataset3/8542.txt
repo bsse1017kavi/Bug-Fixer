@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -22,9 +21,9 @@ import org.springframework.messaging.MessagingException;
 
 /**
  * @author Mark Fisher
-public interface DestinationResolvingMessageSendingOperations<D> extends MessageSendingOperations<D> {
+ * @since 4.0
  */
-public interface ResolvableDestinationMessageSendingOperations<D> extends MessageSendingOperations<D> {
+public interface DestinationResolvingMessageSendingOperations<D> extends MessageSendingOperations<D> {
 
 	<P> void send(String destinationName, Message<P> message) throws MessagingException;
 

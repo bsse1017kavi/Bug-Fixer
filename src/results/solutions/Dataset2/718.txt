@@ -1,4 +1,3 @@
-
 package org.columba.mail.folder;
 
 import java.util.Date;
@@ -29,9 +28,9 @@ public class RemoteSearchEngine implements SearchEngineInterface {
 	protected IMAPRootFolder rootFolder;
 
 	public RemoteSearchEngine(Folder folder) {
-rootFolder = (IMAPRootFolder) ((IMAPFolder) folder).getRootFolder();
+		this.folder = folder;
 
-		rootFolder = ((IMAPFolder) folder).getImapRootFolder();
+rootFolder = (IMAPRootFolder) ((IMAPFolder) folder).getRootFolder();
 		//imap = rootFolder.getImapServerConnection();
 
 	}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -106,9 +105,9 @@ public class RecoveryAction extends AbstractIndexShardComponent {
         fileChunkTransportAction = shardId.index().name() + "/" + shardId.id() + "/recovery/fileChunk";
         transportService.registerHandler(fileChunkTransportAction, new FileChunkTransportRequestHandler());
         snapshotTransportAction = shardId.index().name() + "/" + shardId.id() + "/recovery/snapshot";
-this.fileChunkSize = componentSettings.getAsSize("fileChunkSize", new SizeValue(100, SizeUnit.KB));
+        transportService.registerHandler(snapshotTransportAction, new SnapshotTransportRequestHandler());
 
-        this.fileChunkSize = componentSettings.getAsSize("fileChunkSize", new SizeValue(16, SizeUnit.KB));
+this.fileChunkSize = componentSettings.getAsSize("fileChunkSize", new SizeValue(100, SizeUnit.KB));
         logger.trace("Recovery Action registered, using fileChunkSize[{}]", fileChunkSize);
     }
 

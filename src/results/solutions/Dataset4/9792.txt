@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class NodeEnvironment extends AbstractComponent {
             logger.debug("using node location [{}], local_node_id [{}]", nodesFiles, localNodeId);
         }
         if (logger.isTraceEnabled()) {
-sb.append(" -> ").append(file.getAbsolutePath()).append(", free_space [").append(new ByteSizeValue(file.getFreeSpace())).append("], usable_space [").append(new ByteSizeValue(file.getUsableSpace())).append("]\n");
+            StringBuilder sb = new StringBuilder("node data locations details:\n");
             for (File file : nodesFiles) {
-                sb.append(" -> ").append(file.getAbsolutePath()).append(", free_space [").append(new ByteSizeValue(file.getFreeSpace())).append(", usable_space [").append(new ByteSizeValue(file.getUsableSpace())).append("\n");
+sb.append(" -> ").append(file.getAbsolutePath()).append(", free_space [").append(new ByteSizeValue(file.getFreeSpace())).append("], usable_space [").append(new ByteSizeValue(file.getUsableSpace())).append("]\n");
             }
             logger.trace(sb.toString());
         }

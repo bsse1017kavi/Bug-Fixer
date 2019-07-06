@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -110,9 +109,9 @@ public class WebSecurityProgrammaticLoginTestCase {
 
     protected void makeCall(String user, String pass, int expectedStatusCode) throws Exception {
         DefaultHttpClient httpclient = new DefaultHttpClient();
-HttpGet httpget = new HttpGet(managementClient.getWebUri() + "/" + getContextPath()  + "/login/?username=" + user + "&password=" + pass);
+        try {
             // test hitting programmatic login servlet
-            HttpGet httpget = new HttpGet("http://" + managementClient.getMgmtAddress() + ":8080/" + getContextPath()  + "/login/?username=" + user + "&password=" + pass);
+HttpGet httpget = new HttpGet(managementClient.getWebUri() + "/" + getContextPath()  + "/login/?username=" + user + "&password=" + pass);
 
             System.out.println("executing request" + httpget.getRequestLine());
             HttpResponse response = httpclient.execute(httpget);

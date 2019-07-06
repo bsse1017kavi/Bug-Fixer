@@ -1,4 +1,3 @@
-
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,9 +164,9 @@ public class BundleResourceInstaller extends ResourceInstaller {
 	
 	private BundleRevision installBundle() {
 		final Bundle bundle;
-bundle = provisionTo.getRegion().installBundleAtLocation(getLocation(), is);
+		InputStream is = ((RepositoryContent)resource).getContent();
 		try {
-			bundle = provisionTo.getRegion().installBundle(getLocation(), is);
+bundle = provisionTo.getRegion().installBundleAtLocation(getLocation(), is);
 		}
 		catch (BundleException e) {
 			throw new SubsystemException(e);

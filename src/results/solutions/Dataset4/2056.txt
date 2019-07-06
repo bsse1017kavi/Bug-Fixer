@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -88,9 +87,9 @@ public class AggregatedDfs implements Streamable {
             out.writeString(term.field());
             out.writeBytesRef(term.bytes());
             TermStatistics stats = termTermStatisticsEntry.getValue();
-out.writeVLong(DfsSearchResult.plusOne(stats.totalTermFreq()));
+            out.writeBytesRef(stats.term());
             out.writeVLong(stats.docFreq());
-            out.writeVLong(DfsSearchResult.makePositive(stats.totalTermFreq()));
+out.writeVLong(DfsSearchResult.plusOne(stats.totalTermFreq()));
         }
         DfsSearchResult.writeFieldStats(out, fieldStatistics);
         out.writeVLong(maxDoc);

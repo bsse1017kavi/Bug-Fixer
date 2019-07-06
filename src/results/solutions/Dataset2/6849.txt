@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /*
@@ -66,9 +65,9 @@ public void createControl(Composite parent) {
 
 	//Create a table for the list
 	Table table = new Table(outerContainer, SWT.BORDER);
-int availableRows = DialogUtil.availableRows(parent);
+	GridData data = new GridData(GridData.FILL_BOTH);
 	
-	int availableRows = Dialog.availableRows(parent);
+int availableRows = DialogUtil.availableRows(parent);
 	
 	//Only give a height hint if the dialog is going to be too small
 	if(availableRows > 50){

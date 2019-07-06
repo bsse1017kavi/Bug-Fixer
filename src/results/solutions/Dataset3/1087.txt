@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -104,9 +103,9 @@ public class AbstractSensitivity {
     public Boolean getConfiguredRequiresWritePermission() {
         return configuredRequiresWritePermission;
     }
-if (actionEffect == Action.ActionEffect.ADDRESS) {
+
     public boolean isSensitive(Action.ActionEffect actionEffect) {
-        if (actionEffect == Action.ActionEffect.ACCESS) {
+if (actionEffect == Action.ActionEffect.ADDRESS) {
             return getRequiresAccessPermission();
         } else if (actionEffect == Action.ActionEffect.READ_CONFIG || actionEffect == Action.ActionEffect.READ_RUNTIME) {
             return getRequiresReadPermission();

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -92,9 +91,9 @@ public class CrosscuttingMembers {
 	public void addDeclare(Declare declare) {
 		// this is not extensible, oh well
 		if (declare instanceof DeclareErrorOrWarning) {
-} else if (declare instanceof DeclarePrecedence) {
+			ShadowMunger m = new Checker((DeclareErrorOrWarning)declare);
 			addShadowMunger(m);
-		} else if (declare instanceof DeclareDominates) {
+} else if (declare instanceof DeclarePrecedence) {
 			declareDominates.add(declare);
 		} else if (declare instanceof DeclareParents) {
 			DeclareParents dp = (DeclareParents)declare;

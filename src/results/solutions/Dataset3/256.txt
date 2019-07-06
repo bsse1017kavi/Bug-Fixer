@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ public final class ServerCommunicationHandlerFactory {
     public static ServerCommunicationHandlerFactory getInstance() {
         return INSTANCE;
     }
-return new ServerCommunicationHandler(environment.getProcessName(), environment.getProcessManagerAddress(), environment.getProcessManagerPort(), handler);
+    
     public ServerCommunicationHandler getServerCommunicationHandler(ServerEnvironment environment, MessageHandler handler) {
-        return new ServerCommunicationHandler(environment.getStdin(), environment.getStdout(), handler);
+return new ServerCommunicationHandler(environment.getProcessName(), environment.getProcessManagerAddress(), environment.getProcessManagerPort(), handler);
     }
     
     private ServerCommunicationHandlerFactory() {}

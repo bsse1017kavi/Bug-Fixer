@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -1204,8 +1203,8 @@ public final class ThreadsParser implements XMLStreamConstants, XMLElementReader
         writer.writeAttribute(attr.getLocalName(), value.asString());
     }
 
-writer.writeAttribute(attr.getLocalName(), value.asString().toLowerCase(Locale.ENGLISH));
+    private void writeAttributeLowerCaseValue(final XMLExtendedStreamWriter writer, final Attribute attr, final ModelNode value)
             throws XMLStreamException {
-        writer.writeAttribute(attr.getLocalName(), value.asString().toLowerCase());
+writer.writeAttribute(attr.getLocalName(), value.asString().toLowerCase(Locale.ENGLISH));
     }
 }

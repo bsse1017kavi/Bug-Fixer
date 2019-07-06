@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import org.jboss.invocation.InterceptorFactory;
  *
  * @author Stuart Douglas
  */
-public static final InterceptorFactory FACTORY = new ImmediateInterceptorFactory(new SFSBPreCreateInterceptor());
+public class SFSBPreCreateInterceptor implements Interceptor {
 
-    public static InterceptorFactory FACTORY = new ImmediateInterceptorFactory(new SFSBPreCreateInterceptor());
+public static final InterceptorFactory FACTORY = new ImmediateInterceptorFactory(new SFSBPreCreateInterceptor());
 
     @Override
     public Object processInvocation(InterceptorContext interceptorContext) throws Exception {

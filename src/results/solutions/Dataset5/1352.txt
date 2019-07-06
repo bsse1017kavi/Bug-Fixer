@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2008 ZXing authors
  *
@@ -96,9 +95,9 @@ public final class ShareActivity extends Activity {
       // Should always be true, because we grey out the clipboard button in onResume() if it's empty
       if (clipboard.hasText()) {
         Intent intent = new Intent(Intents.Encode.ACTION);
-intent.putExtra(Intents.Encode.DATA, clipboard.getText().toString());
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         intent.putExtra(Intents.Encode.TYPE, Contents.Type.TEXT);
-        intent.putExtra(Intents.Encode.DATA, clipboard.getText());
+intent.putExtra(Intents.Encode.DATA, clipboard.getText().toString());
         intent.putExtra(Intents.Encode.FORMAT, Contents.Format.QR_CODE);
         startActivity(intent);
       }

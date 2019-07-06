@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -191,9 +190,9 @@ public class OBRAriesResolver implements AriesApplicationResolver
       Map<String,Set<String>> refinedReqs = refineUnsatisfiedRequirements(obrResolver, reasons);
       StringBuffer reqList = new StringBuffer();
       List<String> unsatisfiedRequirements = new LinkedList<String>();
-log.debug("unable to satisfy the filter , filter = " + filterEntry.getKey() + "required by "+filterEntry.getValue());
+
       for (Map.Entry<String, Set<String>> filterEntry : refinedReqs.entrySet()) {
-        log.debug("unable to satisfied the filter , filter = " + filterEntry.getKey() + "required by "+filterEntry.getValue());
+log.debug("unable to satisfy the filter , filter = " + filterEntry.getKey() + "required by "+filterEntry.getValue());
        
         String reason = extractConsumableMessageInfo(filterEntry.getKey(),filterEntry.getValue());
 

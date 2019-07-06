@@ -1,4 +1,3 @@
-
 /*
  * @(#)PolyLineFigure.java
  *
@@ -318,9 +317,9 @@ public  class PolyLineFigure extends AbstractFigure {
 	public void setAttribute(FigureAttributeConstant attributeConstant, Object value) {
 		if (attributeConstant.equals(FigureAttributeConstant.FRAME_COLOR)) {
 			setFrameColor((Color)value);
-else if (attributeConstant.equals(FigureAttributeConstant.ARROW_MODE)) {
+			changed();
 		}
-		else if (attributeConstant.equals(FigureAttributeConstant.ARROW_MODE.getName())) {
+else if (attributeConstant.equals(FigureAttributeConstant.ARROW_MODE)) {
 			Integer intObj = (Integer)value;
 			if (intObj != null) {
 				int decoration = intObj.intValue();

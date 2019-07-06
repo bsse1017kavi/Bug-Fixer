@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.jdbc.EmbeddedSimpleDataSource
@@ -404,9 +403,9 @@ public final class EmbeddedSimpleDataSource implements DataSource {
 		if (createDatabase != null)
 			info.put(Attribute.CREATE_ATTR, "true");
 		if (shutdownDatabase != null)
-Connection conn = findDriver().connect( jdbcurl, info, loginTimeout );
+			info.put(Attribute.SHUTDOWN_ATTR, "true");
 
-		Connection conn = findDriver().connect(jdbcurl, info);
+Connection conn = findDriver().connect( jdbcurl, info, loginTimeout );
 
 		// JDBC driver's getConnection method returns null if
 		// the driver does not handle the request's URL.

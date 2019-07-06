@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -247,9 +246,9 @@ public class XmlLogger implements BuildListener {
             case Project.MSG_INFO: name = "info"; break;
             default: name = "debug"; break;
         }
-Text messageText = doc.createCDATASection(event.getMessage());
+        messageElement.setAttribute(PRIORITY_ATTR, name);
 
-        Text messageText = doc.createTextNode(event.getMessage());
+Text messageText = doc.createCDATASection(event.getMessage());
         messageElement.appendChild(messageText);
 
         TimedElement parentElement = null;

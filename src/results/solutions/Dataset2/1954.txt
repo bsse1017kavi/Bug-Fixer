@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -99,9 +98,9 @@ public class AuthServlet extends HttpServlet {
 		// We can't forward to the page - because we set some headers in getSession
 		// 		RequestDispatcher rd= ctx.getRequestDispatcher( page );
 		// 		rd.include( request, response );
-if( ctx.getDebug() > 0 ) ctx.log("Setting orig location " + req.getRequestURI());
+
 		session.setAttribute( "tomcat.auth.originalLocation", req.getRequestURI());
-		ctx.log("Setting orig location " + req.getRequestURI());
+if( ctx.getDebug() > 0 ) ctx.log("Setting orig location " + req.getRequestURI());
 		if( ! page.startsWith("/")) page="/" + page;
 		response.sendRedirect( ctx.getPath() + page );
 		return; 

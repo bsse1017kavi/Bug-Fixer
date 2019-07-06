@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -319,9 +318,9 @@ public class Proxy extends Thread {
                     kmf.init(ks, JMeterUtils.getPropDefault("proxy.cert.keypassword", DEFAULT_PASSWORD).toCharArray()); // $NON-NLS-1$
                     SSLContext sslcontext = SSLContext.getInstance(SSLCONTEXT_PROTOCOL);
                     sslcontext.init(kmf.getKeyManagers(), null, null);
-log.info(port + "KeyStore for SSL loaded OK and put host in map ("+host+")");
+                    SSLSocketFactory sslFactory = sslcontext.getSocketFactory();
                     hashHost.put(host, sslFactory);
-                    log.info(port + "KeyStore for SSL loaded OK and put host in map (localPort+"+host+")");
+log.info(port + "KeyStore for SSL loaded OK and put host in map ("+host+")");
                     return sslFactory;
                 } catch (NoSuchAlgorithmException e) {
                     except=e;

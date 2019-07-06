@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public abstract class CertifiedDataAbstractTest extends TestCase {
         certifiedValues = null;
     }
     
-Double expectedValue = certifiedValues.get(name);
+    public void testCertifiedValues() {
         for (String name : certifiedValues.keySet()) {
-            Double expectedValue = (Double)certifiedValues.get(name);
+Double expectedValue = certifiedValues.get(name);
 
             Double summariesValue = getProperty(summaries, name);
             if (summariesValue != null) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -173,9 +172,9 @@ public class DormandPrince853IntegratorTest
     integ.addStepHandler(new KeplerHandler(pb));
     integ.integrate(pb,
                     pb.getInitialTime(), pb.getInitialState(),
-assertTrue(pb.getCalls() < 3300);
+                    pb.getFinalTime(), new double[pb.getDimension()]);
 
-    assertTrue(pb.getCalls() < 2900);
+assertTrue(pb.getCalls() < 3300);
 
   }
 

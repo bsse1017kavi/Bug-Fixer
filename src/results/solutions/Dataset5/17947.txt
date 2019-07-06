@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -137,9 +136,9 @@ public class ObjectIdValueHandler
     }
     
     private boolean isReferenceField(FieldMapping fm, DBIdentifier refColName) {
-if (fm.getName().equals(refColName.getName()))
+        List cols = fm.getValueInfo().getColumns();
         if (cols.size() == 0) {
-            if (fm.getName().equals(refColName))
+if (fm.getName().equals(refColName.getName()))
                 return true;                
         } else {
             if (((Column)cols.get(0)).getIdentifier().equals(refColName))

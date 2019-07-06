@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -309,9 +308,9 @@ public class RestTestSuiteRunner extends ParentRunner<RestTestCandidate> {
                     final long testSectionSeed = determineTestSectionSeed(restTestSuite.getDescription() + "/" + testSection.getName());
                     for (int i = 0; i < iterations; i++) {
                         //test section name argument needs to be unique here
-final LinkedHashMap<String, Object> args = new LinkedHashMap<>();
+                        long thisSeed = (fixedSeed ? testSectionSeed : testSectionSeed ^ MurmurHash3.hash((long) i));
 
-                        final LinkedHashMap<String, Object> args = new LinkedHashMap<String, Object>();
+final LinkedHashMap<String, Object> args = new LinkedHashMap<>();
                         if (hasRepetitions) {
                             args.put("#", i);
                         }

@@ -1,4 +1,3 @@
-
 /*
  * HyperSearchRequest.java - HyperSearch request, run in I/O thread
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -55,9 +54,9 @@ public class HyperSearchRequest extends WorkRequest
 
 	//{{{ run() method
 	public void run()
-setProgressMaximum(fileset.getFileCount(view));
+	{
 		SearchFileSet fileset = SearchAndReplace.getSearchFileSet();
-		setProgressMaximum(fileset.getFileCount());
+setProgressMaximum(fileset.getFileCount(view));
 		setStatus(jEdit.getProperty("hypersearch.status"));
 
 		int resultCount = 0;

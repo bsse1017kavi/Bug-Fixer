@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.gui.action;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -29,9 +28,9 @@ public class ChangeLanguage implements Command
 	/**
 	 * @see org.apache.jmeter.gui.action.Command#doAction(ActionEvent)
 	 */
-Locale loc = new Locale(((Component)e.getSource()).getName(),"");
+	public void doAction(ActionEvent e)
 	{
-		Locale loc = new Locale(((Component)e.getSource()).getName());
+Locale loc = new Locale(((Component)e.getSource()).getName(),"");
 		log.debug("Changing language to "+loc.getLanguage());
 		JMeterUtils.reinitializeLocale(loc);
 	}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class TransformedQueue<E> extends TransformedCollection<E> implements Que
                                                            final Transformer<? super E, ? extends E> transformer) {
         // throws IAE if queue or transformer is null
         final TransformedQueue<E> decorated = new TransformedQueue<E>(queue, transformer); 
-final E[] values = (E[]) queue.toArray(); // NOPMD - false positive for generics
+        if (queue.size() > 0) {
             @SuppressWarnings("unchecked") // queue is type <E>
-            final E[] values = (E[]) queue.toArray();
+final E[] values = (E[]) queue.toArray(); // NOPMD - false positive for generics
             queue.clear();
             for (final E value : values) {
                 decorated.decorated().add(transformer.transform(value));

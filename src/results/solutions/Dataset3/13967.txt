@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 The Apache Software Foundation.
  * 
@@ -832,9 +831,9 @@ public class ReflectionToStringBuilder extends ToStringBuilder {
      */
     public ReflectionToStringBuilder setExcludeFieldNames(String[] excludeFieldNamesParam) {
         if (excludeFieldNamesParam == null) {
-this.excludeFieldNames = toNoNullStringArray(excludeFieldNamesParam);
+            this.excludeFieldNames = null;
         } else {
-            this.excludeFieldNames = (String[])toNoNullStringArray(excludeFieldNamesParam);
+this.excludeFieldNames = toNoNullStringArray(excludeFieldNamesParam);
             Arrays.sort(this.excludeFieldNames);
         }
         return this;

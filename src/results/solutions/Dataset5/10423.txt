@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -205,9 +204,9 @@ public class ListMultipleChoice<T> extends AbstractChoice<Collection<T>, T>
 	@Override
 	public final String getModelValue()
 	{
-if (modelObject != null && !(modelObject instanceof Collection))
+		// Get the list of selected values
 		Object modelObject = getModelObject();
-		if (!(modelObject instanceof Collection))
+if (modelObject != null && !(modelObject instanceof Collection))
 		{
 			throw new WicketRuntimeException(
 					"Model object for a ListMultipleChoice must be a Collection (found "

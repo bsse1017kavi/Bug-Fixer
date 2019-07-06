@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -99,9 +98,9 @@ public class TestMatchAllDocsQuery extends LuceneTestCase {
     is.getIndexReader().deleteDocument(0);
     hits = is.search(new MatchAllDocsQuery(), null, 1000).scoreDocs;
     assertEquals(2, hits.length);
-QueryParser qp = new QueryParser(Version.LUCENE_CURRENT, "key", analyzer);
+    
     // test parsable toString()
-    QueryParser qp = new QueryParser("key", analyzer);
+QueryParser qp = new QueryParser(Version.LUCENE_CURRENT, "key", analyzer);
     hits = is.search(qp.parse(new MatchAllDocsQuery().toString()), null, 1000).scoreDocs;
     assertEquals(2, hits.length);
 

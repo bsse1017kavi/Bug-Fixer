@@ -1,4 +1,3 @@
-
 /*
  * @(#)PertFigure.java
  *
@@ -305,9 +304,9 @@ public class PertFigure extends CompositeFigure {
 
 	public List readTasks(StorableInput dr) throws IOException {
 		int size = dr.readInt();
-l.add(dr.readStorable());
+		List l = CollectionsFactory.current().createList(size);
 		for (int i=0; i<size; i++) {
-			l.add((Figure)dr.readStorable());
+l.add(dr.readStorable());
 		}
 		return l;
 	}

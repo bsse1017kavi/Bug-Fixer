@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -115,9 +114,9 @@ public class AjCompilerAdapter implements ICompilerAdapter {
 		if (compiler.options.complianceLevel == CompilerOptions.JDK1_5) inJava5Mode = true;
 		
 		IMessageHandler msgHandler = world.getMessageHandler();
-((WeaverMessageHandler)msgHandler).resetCompiler(compiler);
+		// Do we need to reset the message handler or create a new one? (This saves a ton of memory lost on incremental compiles...)
 		if (msgHandler instanceof WeaverMessageHandler) {
-			((WeaverMessageHandler)msgHandler).resetCompiler(null);
+((WeaverMessageHandler)msgHandler).resetCompiler(compiler);
 			weaverMessageHandler = (WeaverMessageHandler)msgHandler;
 		} else {
 			weaverMessageHandler = new WeaverMessageHandler(msgHandler, compiler);

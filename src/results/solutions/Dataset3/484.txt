@@ -1,4 +1,3 @@
-
 package backtype.storm.security.auth;
 
 import backtype.storm.utils.Utils;
@@ -60,9 +59,9 @@ public class ThriftClient {
 				//apply Storm configuration for JAAS login 
 				Map conf = Utils.readStormConfig();
 				loginConfigurationFile = (String)conf.get("java.security.auth.login.config");
-LOG.info("SASL ANONYMOUS client transport is being established");
+			}
 			if ((loginConfigurationFile==null) || (loginConfigurationFile.length()==0)) { //ANONYMOUS
-				LOG.debug("SASL ANONYMOUS client transport is being established");
+LOG.info("SASL ANONYMOUS client transport is being established");
 				_transport = new TSaslClientTransport(AuthUtils.ANONYMOUS, 
 						null, 
 						AuthUtils.SERVICE,

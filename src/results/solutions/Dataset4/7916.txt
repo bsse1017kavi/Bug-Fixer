@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -42,9 +41,9 @@ public abstract class FsIndexStore extends AbstractIndexStore {
     private final File location;
 
     public FsIndexStore(Index index, @IndexSettings Settings indexSettings, IndexService indexService, NodeEnvironment nodeEnv) {
-this.location = new File(new File(nodeEnv.nodeDataLocation(), "indices"), index.name());
+        super(index, indexSettings, indexService);
         if (nodeEnv.hasNodeFile()) {
-            this.location = new File(new File(nodeEnv.nodeLocation(), "indices"), index.name());
+this.location = new File(new File(nodeEnv.nodeDataLocation(), "indices"), index.name());
         } else {
             this.location = null;
         }

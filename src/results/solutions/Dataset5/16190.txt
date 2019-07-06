@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc., Peter Nehrer, Boris Bokowski. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -308,9 +307,9 @@ public class BaseChannel extends TransactionSharedObject implements IChannel {
 			// Now get receiver IChannel...throw if we can't get it
 			final IChannel receiver = container.getChannel(rcvr);
 			if (receiver == null) throw new SharedObjectInitException("receiver channel is null/not available");
-if (listener == null) {
+			setChannelListener(receiver.getListener());
 		} 
-		if (l == null) {
+if (listener == null) {
 			setChannelListener(new IChannelListener() {
 				public void handleChannelEvent(IChannelEvent event) {
 					receiveUndeliveredChannelEvent(event);

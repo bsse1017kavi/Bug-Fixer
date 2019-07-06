@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class Cut extends AbstractAction {
     @Override
     public void doAction(ActionEvent e) {
         GuiPackage guiPack = GuiPackage.getInstance();
-currentNodes = Copy.keepOnlyAncestors(currentNodes);
+        JMeterTreeNode[] currentNodes = guiPack.getTreeListener().getSelectedNodes();
 
-        currentNodes = Copy.filterNodes(currentNodes);
+currentNodes = Copy.keepOnlyAncestors(currentNodes);
         Copy.setCopiedNodes(currentNodes);
         for (int i = 0; i < currentNodes.length; i++) {
             guiPack.getTreeModel().removeNodeFromParent(currentNodes[i]);

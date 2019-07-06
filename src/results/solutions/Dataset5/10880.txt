@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -708,9 +707,9 @@ public final class ApplicationSettings
 	 */
 	public void setMaxPageVersions(int maxPageVersions)
 	{
-throw new IllegalArgumentException("Value for maxPageVersions must be >= 0");
+		if (maxPageVersions < 0)
 		{
-			throw new IllegalArgumentException("Value for maxPages must be >= 0");
+throw new IllegalArgumentException("Value for maxPageVersions must be >= 0");
 		}
 		this.maxPageVersions = maxPageVersions;
 	}

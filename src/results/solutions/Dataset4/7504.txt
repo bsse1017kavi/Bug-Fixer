@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class AllField extends Field {
     public Reader readerValue() {
         return null;
     }
-public TokenStream tokenStream(Analyzer analyzer) throws IOException {
+
     @Override
-    public TokenStream tokenStreamValue() {
+public TokenStream tokenStream(Analyzer analyzer) throws IOException {
         try {
             allEntries.reset(); // reset the all entries, just in case it was read already
             return AllTokenStream.allTokenStream(name, allEntries, analyzer);

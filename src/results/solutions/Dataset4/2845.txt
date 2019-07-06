@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -173,9 +172,9 @@ public class TransportMoreLikeThisAction extends BaseAction<MoreLikeThisRequest,
                         .extraSource(searchSource()
                                 .query(boolBuilder)
                         )
-searchRequest.source(request.searchSource(), request.searchSourceOffset(), request.searchSourceLength(), request.searchSourceUnsafe());
+                        .listenerThreaded(request.listenerThreaded());
                 if (request.searchSource() != null) {
-                    searchRequest.source(request.searchSource(), request.searchSourceOffset(), request.searchSourceLength());
+searchRequest.source(request.searchSource(), request.searchSourceOffset(), request.searchSourceLength(), request.searchSourceUnsafe());
                 }
                 searchAction.execute(searchRequest, new ActionListener<SearchResponse>() {
                     @Override public void onResponse(SearchResponse response) {

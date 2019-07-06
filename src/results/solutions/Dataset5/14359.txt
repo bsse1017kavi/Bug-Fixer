@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -177,9 +176,9 @@ public class OpenJPAConfigurationImpl
         classResolverPlugin.setInstantiatingGetter("getClassResolverInstance");
 
         brokerFactoryPlugin = new BrokerFactoryValue();
-brokerPlugin = new BrokerValue();
+        addValue(brokerFactoryPlugin);
 
-        brokerPlugin = new BrokerValue("BrokerImpl");
+brokerPlugin = new BrokerValue();
         addValue(brokerPlugin);
 
         dataCacheManagerPlugin = addPlugin("DataCacheManager", true);

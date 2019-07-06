@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class HintedHandOffManager
             ColumnFamily cf = cfstore.getColumnFamily(new IdentityQueryFilter(key, new QueryPath(cfstore.getColumnFamilyName())));
             if (cf != null)
                 rm.add(cf);
-WriteResponseHandler responseHandler = new WriteResponseHandler(1, tableName);
+        }
         Message message = rm.makeRowMutationMessage();
-        WriteResponseHandler responseHandler = new WriteResponseHandler(1);
+WriteResponseHandler responseHandler = new WriteResponseHandler(1, tableName);
         MessagingService.instance.sendRR(message, new InetAddress[] { endPoint }, responseHandler);
 
         try

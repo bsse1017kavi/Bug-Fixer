@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class ConnectHandler implements CommandHandler {
 
             if(portStr != null) {
                 try {
-ctx.printLine("The port must be a valid non-negative integer: '" + args + "'");
+                    port = Integer.parseInt(portStr);
                 } catch(NumberFormatException e) {
-                    ctx.log("The port must be a valid non-negative integer: '" + args + "'");
+ctx.printLine("The port must be a valid non-negative integer: '" + args + "'");
                     port = -1;
                 }
             }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -182,9 +181,9 @@ public class Vector1D implements Vector<Euclidean1D> {
         Vector1D v1 = (Vector1D) v;
         return new Vector1D(x - factor * v1.getX());
     }
-public Vector1D normalize() throws MathArithmeticException {
+
     /** {@inheritDoc} */
-    public Vector1D normalize() {
+public Vector1D normalize() throws MathArithmeticException {
         double s = getNorm();
         if (s == 0) {
             throw new MathArithmeticException(LocalizedFormats.CANNOT_NORMALIZE_A_ZERO_NORM_VECTOR);

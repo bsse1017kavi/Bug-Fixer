@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -192,9 +191,9 @@ final class CharReader extends AbstractCharReader {
                         //
                         // Copy the input data to the end of the output buffer.
                         //
-if (fOutputOffset == CharDataChunk.CHUNK_SIZE) {
+                        boolean alldone = copyNormalize(fOverflow, fOverflowOffset, fMostRecentData, fOutputOffset);
                         if (alldone) {
-                            if (fOverflowEnd == CharDataChunk.CHUNK_SIZE) {
+if (fOutputOffset == CharDataChunk.CHUNK_SIZE) {
                                 //
                                 // Special case - everything fit into the overflow buffer,
                                 // except that there is no room for the nul char we use to

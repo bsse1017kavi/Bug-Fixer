@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -541,9 +540,9 @@ public class TestIndexWriterReader extends LuceneTestCase {
     // get a reader to put writer into near real-time mode
     IndexReader r1 = writer.getReader();
     
-for (int i = 0; i < 100*_TestUtil.getRandomMultiplier(); i++) {
+    ((LogMergePolicy) writer.getConfig().getMergePolicy()).setMergeFactor(2);
 
-    for (int i = 0; i < 10; i++) {
+for (int i = 0; i < 100*_TestUtil.getRandomMultiplier(); i++) {
       writer.addDocument(createDocument(i, "test", 4));
     }
     ((ConcurrentMergeScheduler) writer.getConfig().getMergeScheduler()).sync();

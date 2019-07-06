@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -171,9 +170,9 @@ public class IdFieldMapper extends AbstractFieldMapper<String> implements Intern
     public Query termQuery(Object value, @Nullable QueryParseContext context) {
         if (fieldType.indexed() || context == null) {
             return super.termQuery(value, context);
-return new ConstantScoreQuery(termFilter(value, context));
+        }
         // no need for constant score filter, since we don't cache the filter, and it always takes deletes into account
-        return new XLuceneConstantScoreQuery(termFilter(value, context));
+return new ConstantScoreQuery(termFilter(value, context));
     }
 
     @Override

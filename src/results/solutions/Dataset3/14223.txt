@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class JmsQueueAddHandler extends BatchModeCommandHandler {
         };
 
         name = new ArgumentWithValue(this, /*0,*/ "--name") {
-if(ctx.isDomainMode() && !profile.isValueComplete(ctx.getParsedArguments())) {
+            @Override
             public boolean canAppearNext(CommandContext ctx) throws CommandFormatException {
-                if(ctx.isDomainMode() && !profile.isPresent(ctx.getParsedArguments())) {
+if(ctx.isDomainMode() && !profile.isValueComplete(ctx.getParsedArguments())) {
                     return false;
                 }
                 return super.canAppearNext(ctx);

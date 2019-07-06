@@ -1,6 +1,5 @@
 
 
-
 import org.aspectj.testing.Tester;
 import org.aspectj.lang.JoinPoint;
 
@@ -8,9 +7,9 @@ import library1.Library1;
 import library2.Library2;
 
 /** extend abstract, and implement needed */
-public pointcut targetJoinPoints() :
+aspect AnotherAspect extends Library2 {
 
-    pointcut targetJoinPoints() : 
+public pointcut targetJoinPoints() :
         execution(public static void Main.main(..));
 
     protected String renderId(JoinPoint jp) {

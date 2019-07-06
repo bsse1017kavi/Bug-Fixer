@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.junit.Decorator
@@ -212,9 +211,9 @@ public class Decorator {
      * @param attributes properties to set in the connection URL or in the
      * connectionAttributes of a data source when connecting to the database
      * @param test Test to decorate
-public static Test attributesDatabase(
+     * @return Decorated test
      */
-    private static Test attributesDatabase(
+public static Test attributesDatabase(
             final Properties attributes, Test test)
     {
         test = new ChangeConfigurationSetup(test) {

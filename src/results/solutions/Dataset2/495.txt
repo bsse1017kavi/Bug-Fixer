@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2001 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -47,9 +46,9 @@ public class EmptyStatement extends Statement {
 	 * Method declared on ASTNode.
 	 */
 	ASTNode clone(AST target) {
-result.copyLeadingComment(this);
+		EmptyStatement result = new EmptyStatement(target);
 		result.setSourceRange(this.getStartPosition(), this.getLength());
-		result.setLeadingComment(getLeadingComment());
+result.copyLeadingComment(this);
 		return result;
 	}
 

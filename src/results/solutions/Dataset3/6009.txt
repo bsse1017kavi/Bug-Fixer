@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -832,9 +831,9 @@ public class Dfp implements FieldElement<Dfp> {
      * Gets a hashCode for the instance.
      * @return a hash code value for this object
      */
-return 17 + (sign << 8) + (nans << 16) + exp + Arrays.hashCode(mant);
+    @Override
     public int hashCode() {
-        return 17 + (sign << 8) + (nans << 16) + exp + mant.hashCode();
+return 17 + (sign << 8) + (nans << 16) + exp + Arrays.hashCode(mant);
     }
 
     /** Check if instance is not equal to x.

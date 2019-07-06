@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class ContextIndexSearcher extends ExtendedIndexSearcher {
     public void useGlobalCollectors(boolean useGlobalCollectors) {
         this.useGlobalCollectors = useGlobalCollectors;
     }
-if (original == searchContext.query() || original == searchContext.parsedQuery().query()) {
+
     @Override public Query rewrite(Query original) throws IOException {
-        if (original == searchContext.query() || original == searchContext.originalQuery()) {
+if (original == searchContext.query() || original == searchContext.parsedQuery().query()) {
             // optimize in case its the top level search query and we already rewrote it...
             if (searchContext.queryRewritten()) {
                 return searchContext.query();

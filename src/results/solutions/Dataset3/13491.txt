@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class PatchXmlUnitTestCase {
         // Cumulative Patch
         assertNotNull(patch);
         assertNotNull(patch.getPatchId());
-assertEquals(Patch.PatchType.UPGRADE, patch.getPatchType());
+        assertNotNull(patch.getDescription());
         assertNotNull(patch.getPatchType());
-        assertEquals(Patch.PatchType.CUMULATIVE, patch.getPatchType());
+assertEquals(Patch.PatchType.UPGRADE, patch.getPatchType());
         assertNotNull(patch.getResultingVersion());
         assertNotNull(patch.getAppliesTo().get(0));
     }

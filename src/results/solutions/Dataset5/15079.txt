@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -47,9 +46,9 @@ public class GenericResultObjectProvider
      * @param fetch the fetch configuration, or null for default
      * @param res the result containing the data
      */
-this(store.getConfiguration().getMappingRepositoryInstance().getMapping
+    public GenericResultObjectProvider(Class pcClass,
         JDBCStore store, JDBCFetchConfiguration fetch, Result res) {
-        this(store.getConfiguration().getMappingRepository().getMapping
+this(store.getConfiguration().getMappingRepositoryInstance().getMapping
             (pcClass, store.getContext().getClassLoader(), true),
             store, fetch, res);
     }

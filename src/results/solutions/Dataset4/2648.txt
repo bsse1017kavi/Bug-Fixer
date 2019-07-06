@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1485,9 +1484,9 @@ public class SimpleChildQuerySearchTests extends ElasticsearchIntegrationTest {
         client().prepareIndex("test", "child", "c4").setSource("c_field", "x").setParent("p2").execute().actionGet();
         client().prepareIndex("test", "child", "c5").setSource("c_field", "x").setParent("p2").execute().actionGet();
         refresh();
-.setMinScore(2) // Score needs to be above 2.0!
+
         SearchResponse searchResponse = client().prepareSearch("test").setQuery(hasChildQuery("child", matchAllQuery()).scoreType("sum"))
-                .setMinScore(3) // Score needs to be 3 or above!
+.setMinScore(2) // Score needs to be above 2.0!
                 .execute().actionGet();
         assertNoFailures(searchResponse);
         assertThat(searchResponse.getFailedShards(), equalTo(0));

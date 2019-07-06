@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.streaming;
 /*
  * 
@@ -43,9 +42,9 @@ public class StreamFinishedVerbHandler implements IVerbHandler
         byte[] body = message.getMessageBody();
         ByteArrayInputStream bufIn = new ByteArrayInputStream(body);
 
-FileStatus streamStatus = FileStatus.serializer().deserialize(new DataInputStream(bufIn));
+        try
         {
-            CompletedFileStatus streamStatus = CompletedFileStatus.serializer().deserialize(new DataInputStream(bufIn));
+FileStatus streamStatus = FileStatus.serializer().deserialize(new DataInputStream(bufIn));
 
             switch (streamStatus.getAction())
             {

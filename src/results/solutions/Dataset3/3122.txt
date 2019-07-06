@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -112,9 +111,9 @@ public class ResourceUrlProviderJavaConfigTests {
 
 		@Override
 		public void addResourceHandlers(ResourceHandlerRegistry registry) {
-.addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
+			registry.addResourceHandler("/resources/**")
 				.addResourceLocations("classpath:org/springframework/web/servlet/resource/test/")
-				.addContentVersionStrategy("/**");
+.addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
 		}
 	}
 

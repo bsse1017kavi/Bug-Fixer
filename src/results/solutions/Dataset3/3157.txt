@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class IronJacamarDeploymentParsingProcessor implements DeploymentUnitProc
         final VirtualFile deploymentRoot = resourceRoot.getRoot();
 
         if (deploymentRoot == null || !deploymentRoot.exists())
-final String deploymentRootName = deploymentRoot.getName().toLowerCase();
+            return;
 
-        final String deploymentRootName = deploymentRoot.getLowerCaseName();
+final String deploymentRootName = deploymentRoot.getName().toLowerCase();
         VirtualFile serviceXmlFile = null;
         if (deploymentRootName.endsWith(".rar")) {
             serviceXmlFile = deploymentRoot.getChild("/META-INF/ironjacamar.xml");

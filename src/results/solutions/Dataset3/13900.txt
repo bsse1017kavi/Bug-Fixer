@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -334,9 +333,9 @@ public class ApplyRemoteMasterDomainModelHandler implements OperationStepHandler
                 accessControl = true;
                 if (idx == resourceAddress.size() - 1) {
                     writeResourceModel = false;
-for (AttributeDefinition ad : AccessAuthorizationResourceDefinition.CONFIG_ATTRIBUTES) {
+                    // Invoke a specialized op for high level rbac config
                     ModelNode configureOp = Util.createEmptyOperation(AccessAuthorizationDomainSlaveConfigHandler.OPERATION_NAME, resourceAddress);
-                    for (AttributeDefinition ad : AccessAuthorizationResourceDefinition.ATTRIBUTES) {
+for (AttributeDefinition ad : AccessAuthorizationResourceDefinition.CONFIG_ATTRIBUTES) {
                         String attrName = ad.getName();
                         if (resourceModel.hasDefined(attrName)) {
                             configureOp.get(attrName).set(resourceModel.get(attrName));

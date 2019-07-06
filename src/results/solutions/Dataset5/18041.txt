@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -202,9 +201,9 @@ public class NetCommand
     {
         // default directory to the project's base directory
         File dir = _owner.getBaseDirectory();
-_exe = new Execute( handler );
+        ExecuteStreamHandler handler = new LogStreamHandler( _owner,
                                                              Project.MSG_INFO, Project.MSG_WARN );
-        _exe = new Execute( handler, null );
+_exe = new Execute( handler );
         _exe.setWorkingDirectory( dir );
     }
 }//class

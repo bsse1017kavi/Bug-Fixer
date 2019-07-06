@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -389,9 +388,9 @@ public class LukeRequestHandler extends RequestHandlerBase
       }
       Term term = new Term(fieldName, text);
       docsEnum = reader.termDocsEnum(reader.getLiveDocs(),
-0);
+          term.field(),
           new BytesRef(term.text()),
-          false);
+0);
       if (docsEnum != null) {
         int docId;
         if ((docId = docsEnum.nextDoc()) != DocIdSetIterator.NO_MORE_DOCS) {

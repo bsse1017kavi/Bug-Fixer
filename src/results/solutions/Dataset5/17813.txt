@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 EclipseSource and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -48,9 +47,9 @@ public class DefaultProxyContainerFinder extends AbstractContainerFinder
 				continue;
 			// And make sure that the namespaces match
 			if (includeContainerWithConnectNamespace(
-.getProperty(IServicePublication.ENDPOINT_CONTAINERID_NAMESPACE)))
+					allContainers[i],
 					(String) endpointDescription
-							.getProperty(IServicePublication.PROP_KEY_ENDPOINT_CONTAINERID_NAMESPACE)))
+.getProperty(IServicePublication.ENDPOINT_CONTAINERID_NAMESPACE)))
 				results.add(allContainers[i]);
 		}
 		return (IContainer[]) results.toArray(new IContainer[] {});

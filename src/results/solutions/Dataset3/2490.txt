@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class SubDeploymentProcessor implements DeploymentUnitProcessor {
 
                 serviceTarget.addService(serviceName, service)
                         .addDependency(Services.JBOSS_DEPLOYMENT_CHAINS, DeployerChains.class, service.getDeployerChainsInjector())
-phaseContext.addDeploymentDependency(serviceName, Attachments.SUB_DEPLOYMENTS);
+                        .setInitialMode(ServiceController.Mode.ACTIVE)
                         .install();
-                deploymentUnit.addToAttachmentList(Attachments.SUB_DEPLOYMENTS, serviceName);
+phaseContext.addDeploymentDependency(serviceName, Attachments.SUB_DEPLOYMENTS);
             }
 
         }

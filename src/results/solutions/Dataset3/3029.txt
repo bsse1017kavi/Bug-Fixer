@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public interface Console {
 
             org.jboss.aesh.console.Console aeshConsole = null;
             try {
-throw new CliInitializationException(e);
+                aeshConsole = new org.jboss.aesh.console.Console();
             } catch (IOException e) {
-                e.printStackTrace();
+throw new CliInitializationException(e);
             }
 
             final org.jboss.aesh.console.Console finalAeshConsole = aeshConsole;

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -95,9 +94,9 @@ throws IOException
 {
 	CERTRecord rec = new CERTRecord(name, dclass, ttl);
 	rec.certType = st.getUInt16();
-rec.cert = st.getBase64();
+	rec.keyTag = st.getUInt16();
 	rec.alg = st.getUInt8();
-	rec.cert = base64.fromString(remainingStrings(st));
+rec.cert = st.getBase64();
 	return rec;
 }
 

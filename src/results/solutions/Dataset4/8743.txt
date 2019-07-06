@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -234,9 +233,9 @@ public class Bootstrap {
             System.exit(3);
         }
     }
-StringBuilder errorMessage = new StringBuilder("{").append(Version.CURRENT).append("}: ");
+
     private static String buildErrorMessage(String stage, Throwable e) {
-        StringBuilder errorMessage = new StringBuilder("{").append(Version.full()).append("}: ");
+StringBuilder errorMessage = new StringBuilder("{").append(Version.CURRENT).append("}: ");
         try {
             if (ANSI.isEnabled()) {
                 errorMessage.append(attrib(ANSI.Code.FG_RED)).append(stage).append(" Failed ...").append(attrib(ANSI.Code.OFF)).append("\n");

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -86,9 +85,9 @@ public class TestBufferedIndexInput extends LuceneTestCase {
     // provides a workaround for a JVM Bug that incorrectly raises a OOM Error
     // when a large byte buffer is passed to a file read.
     // NOTE: this does only test the chunked reads and NOT if the Bug is triggered.
-File tmpInputFile = _TestUtil.createTempFile("IndexInput", "tmpFile", TEMP_DIR);
+    //final int tmpFileSize = 1024 * 1024 * 5;
     final int inputBufferSize = 128;
-    File tmpInputFile = File.createTempFile("IndexInput", "tmpFile");
+File tmpInputFile = _TestUtil.createTempFile("IndexInput", "tmpFile", TEMP_DIR);
     tmpInputFile.deleteOnExit();
     writeBytes(tmpInputFile, TEST_FILE_LENGTH);
 

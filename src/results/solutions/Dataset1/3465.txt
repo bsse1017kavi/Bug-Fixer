@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ class ContentStreamState extends StartState
     ContentStreamState(TcpReader stream)
     {
         super(stream); 
-String remoteHost = remoteAddress.getAddress().getHostAddress();
+        SocketChannel socketChannel = stream.getStream();
         InetSocketAddress remoteAddress = (InetSocketAddress)socketChannel.socket().getRemoteSocketAddress();
-        String remoteHost = remoteAddress.getHostName();        
+String remoteHost = remoteAddress.getAddress().getHostAddress();
         streamContext_ = StreamContextManager.getStreamContext(remoteHost);   
         streamStatus_ = StreamContextManager.getStreamStatus(remoteHost);
     }

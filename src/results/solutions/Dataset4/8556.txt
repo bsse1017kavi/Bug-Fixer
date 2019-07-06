@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -151,9 +150,9 @@ public class IndexShardGatewayService extends AbstractIndexShardComponent implem
                 while (!recoveryThrottler.tryRecovery(shardId, "gateway")) {
                     if (indexShard.state() == IndexShardState.CLOSED) {
                         listener.onIgnoreRecovery("ignoring recovery while waiting on retry, closed");
-recoveryStatus.updateStage(RecoveryStatus.Stage.THROTTLE);
+                        return;
                     }
-                    recoveryStatus.updateStage(RecoveryStatus.Stage.RETRY);
+recoveryStatus.updateStage(RecoveryStatus.Stage.THROTTLE);
                     try {
                         Thread.sleep(recoveryThrottler.throttleInterval().millis());
                         recoveryStatus.retryTime(System.currentTimeMillis() - recoveryStatus.startTime());

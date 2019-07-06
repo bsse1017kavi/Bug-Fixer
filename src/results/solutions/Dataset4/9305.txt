@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class InternalTransportIndicesAdminClient extends AbstractIndicesAdminCli
         this.nodesService = nodesService;
         this.threadPool = threadPool;
         MapBuilder<IndicesAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<IndicesAction, TransportActionNodeProxy>();
-actionsBuilder.put((IndicesAction) action, new TransportActionNodeProxy(settings, action, transportService));
+        for (GenericAction action : actions.values()) {
             if (action instanceof IndicesAction) {
-                actionsBuilder.put((IndicesAction) action, new TransportActionNodeProxy(action, transportService));
+actionsBuilder.put((IndicesAction) action, new TransportActionNodeProxy(settings, action, transportService));
             }
         }
         this.actions = actionsBuilder.immutableMap();

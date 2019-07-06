@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class XmlStreamWriterTest extends TestCase {
     private static void checkXmlWriter(String text, String encoding, String defaultEncoding)
             throws IOException {
         String xml = createXmlContent(text, encoding);
-effectiveEncoding = defaultEncoding == null ? "UTF-8" : defaultEncoding;
+        String effectiveEncoding = encoding;
         if (effectiveEncoding == null) {
-            effectiveEncoding = (defaultEncoding == null ? "UTF-8" : defaultEncoding);
+effectiveEncoding = defaultEncoding == null ? "UTF-8" : defaultEncoding;
         }
         checkXmlContent(xml, effectiveEncoding, defaultEncoding);
     }

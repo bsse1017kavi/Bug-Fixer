@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -241,9 +240,9 @@ public class PassivatingBackingCacheImpl<K extends Serializable, V extends Cache
         this.cancelExpirationPassivation(key);
 
         E entry = store.remove(key);
-throw EjbMessages.MESSAGES.couldNotFindEjb(String.valueOf(key));
+
         if (entry == null)
-            throw new NoSuchEJBException(String.valueOf(key));
+throw EjbMessages.MESSAGES.couldNotFindEjb(String.valueOf(key));
 
         entry.lock();
         try {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -311,9 +310,9 @@ public class Ilasm
             _srcDir = resolveFile( "." );
 
         //get dependencies list.
-getLogger().info( "assembling " + dependencies.length + " file" + ( ( dependencies.length == 1 ) ? "" : "s" ) );
+        DirectoryScanner scanner = super.getDirectoryScanner( _srcDir );
         String[] dependencies = scanner.getIncludedFiles();
-        log( "assembling " + dependencies.length + " file" + ( ( dependencies.length == 1 ) ? "" : "s" ) );
+getLogger().info( "assembling " + dependencies.length + " file" + ( ( dependencies.length == 1 ) ? "" : "s" ) );
         String baseDir = scanner.getBasedir().toString();
         //add to the command
         for( int i = 0; i < dependencies.length; i++ )

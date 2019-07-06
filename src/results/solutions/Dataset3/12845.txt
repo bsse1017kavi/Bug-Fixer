@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -122,9 +121,9 @@ public class BufferingStompDecoder extends StompDecoder {
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
 		List<Message<byte[]>> messages = decode(bufferToDecode, headers);
 
-this.expectedContentLength = StompHeaderAccessor.getContentLength(headers);
+		if (bufferToDecode.hasRemaining()) {
 			this.chunks.add(bufferToDecode);
-			this.expectedContentLength = getContentLength(headers);
+this.expectedContentLength = StompHeaderAccessor.getContentLength(headers);
 		}
 
 		return messages;

@@ -1,4 +1,3 @@
-
 /*
  * $Id: Settings.java 4858 2006-03-12 00:26:31 -0800 (Sun, 12 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-12 00:26:31 -0800 (Sun, 12 Mar
@@ -624,9 +623,9 @@ public final class Settings
 	 */
 	public wicket.resource.IPropertiesFactory getPropertiesFactory()
 	{
-propertiesFactory = new PropertiesFactory(this.application);
+		if (propertiesFactory == null)
 		{
-			propertiesFactory = new PropertiesFactory();
+propertiesFactory = new PropertiesFactory(this.application);
 		}
 		return propertiesFactory;
 	}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class PlugInSubjectSupplemental extends AbstractPlugInService implements 
             private Set<RealmGroup> loadGroups(final RealmUser user) throws IOException {
                 Set<RealmGroup> response;
                 String[] groups = ap.loadRoles(user.getName(), getRealmName());
-response.add(new RealmGroup(getRealmName(), current));
+                response = new HashSet<RealmGroup>(groups.length);
                 for (String current : groups) {
-                    response.add(new RealmGroup(current));
+response.add(new RealmGroup(getRealmName(), current));
                 }
                 return response;
             }

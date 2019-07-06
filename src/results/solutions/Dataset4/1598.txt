@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2013 Jaroslaw Wisniewski <j.wisniewski@appsisle.com>
  * 
@@ -189,9 +188,9 @@ public abstract class AndroidLiveWallpaperService extends WallpaperService {
 	public void initialize (ApplicationListener listener, AndroidApplicationConfiguration config) {
 		if (DEBUG) Log.d(TAG, " > AndroidLiveWallpaperService - initialize()");
 		
-if (config.getTouchEventsForLiveWallpaper && Integer.parseInt(android.os.Build.VERSION.SDK) < 9)
+		app.initialize(listener, config);
 		
-		if (config.getTouchEventsForLiveWallpaper && Integer.parseInt(android.os.Build.VERSION.SDK) >= 7)
+if (config.getTouchEventsForLiveWallpaper && Integer.parseInt(android.os.Build.VERSION.SDK) < 9)
 			linkedEngine.setTouchEventsEnabled(true);
 		
 		//onResume(); do not call it there

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 3292 $ $Date$
@@ -49,9 +48,9 @@ public class RefreshingPage extends BasePage
 		// populate list of contacts to be displayed
 		ContactDataProvider dp = new ContactDataProvider();
 		Iterator it = dp.iterator(0, 10);
-contacts.add(dp.model(it.next()));
+		while (it.hasNext())
 		{
-			contacts.add(dp.model((Contact)it.next()));
+contacts.add(dp.model(it.next()));
 		}
 
 		// create the refreshing view

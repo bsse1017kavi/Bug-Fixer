@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public abstract class AbstractEJBComponentResourceDefinition extends SimpleResou
             .setFlags(AttributeAccess.Flag.STORAGE_RUNTIME)
             .build();
 
-.setValidator(new StringLengthValidator(1))
+    public static final ListAttributeDefinition DECLARED_ROLES = new PrimitiveListAttributeDefinition.Builder("declared-roles", ModelType.STRING)
             .setAllowNull(true)
-            .setElementValidator(new StringLengthValidator(1))
+.setValidator(new StringLengthValidator(1))
             .setStorageRuntime()
             .build();
 

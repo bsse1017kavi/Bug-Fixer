@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1995,9 +1994,9 @@ void setToolTipText (int /*long*/ rootWidget, int /*long*/ tipWidget, String str
 		int /*long*/ tipWindow = OS.GTK_WIDGET_WINDOW (rootWidget);
 		if (tipWindow != 0) {
 			int [] x = new int [1], y = new int [1];
-if (window != 0) OS.gdk_window_get_user_data (window, user_data);
+			int /*long*/ window = OS.gdk_window_at_pointer (x, y);
 			int /*long*/ [] user_data = new int /*long*/ [1];
-			OS.gdk_window_get_user_data (window, user_data);
+if (window != 0) OS.gdk_window_get_user_data (window, user_data);
 			if (tipWidget == user_data [0]) {
 				eventPtr = OS.gdk_event_new (OS.GDK_MOTION_NOTIFY);
 				GdkEventMotion event = new GdkEventMotion ();

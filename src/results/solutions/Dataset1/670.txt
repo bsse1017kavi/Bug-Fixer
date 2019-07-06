@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -175,9 +174,9 @@ public class StreamOut
         {
             Descriptor desc = sstable.descriptor;
             List<Pair<Long,Long>> sections = sstable.getPositionsForRanges(ranges);
-pending.add(new PendingFile(sstable, desc, SSTable.COMPONENT_DATA, sections, type, sstable.estimatedKeys()));
+            if (sections.isEmpty())
                 continue;
-            pending.add(new PendingFile(sstable, desc, SSTable.COMPONENT_DATA, sections, type));
+pending.add(new PendingFile(sstable, desc, SSTable.COMPONENT_DATA, sections, type, sstable.estimatedKeys()));
         }
         logger.info("Stream context metadata {}, {} sstables.", pending, sstables.size());
         return pending;

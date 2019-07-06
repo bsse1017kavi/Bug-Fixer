@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -102,9 +101,9 @@ public class ShellSpout implements ISpout {
         }
         
         //get metric by name
-throw new RuntimeException("Could not find metric by name["+name+"] ");
+        IMetric iMetric = _context.getRegisteredMetricByName(name);
         if (iMetric == null) {
-            throw new RuntimeException("Not find metric by name["+name+"] ");
+throw new RuntimeException("Could not find metric by name["+name+"] ");
         }
         if ( !(iMetric instanceof IShellMetric)) {
             throw new RuntimeException("Metric["+name+"] is not IShellMetric, can not call by RPC");

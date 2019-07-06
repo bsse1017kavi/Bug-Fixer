@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public final class RootLoggerElement extends AbstractLoggerElement<RootLoggerEle
 
     RootLoggerElement() {
     }
-return builder.addService(LoggingSubsystemElement.JBOSS_LOGGING.append("logger", "root"), new LoggerLevelService(""));
+
     BatchServiceBuilder<Logger> createService(final BatchBuilder builder) {
-        return builder.addService(LoggingSubsystemElement.JBOSS_LOGGING.append("logger", "root"), new LoggerLevelService());
+return builder.addService(LoggingSubsystemElement.JBOSS_LOGGING.append("logger", "root"), new LoggerLevelService(""));
     }
 
     void configureService(final BatchServiceBuilder<Logger> serviceBuilder, final BatchBuilder builder, final AbstractLoggerService loggerService) {

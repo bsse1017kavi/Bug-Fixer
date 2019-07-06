@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public final class JDBCCustomFinderQuery implements JDBCQueryCommand {
 
     public Collection execute(Method unused, Object[] args, CmpEntityBeanContext ctx, EntityProxyFactory factory) throws FinderException {
         try {
-final EntityBeanComponentInstance componentInstance = ctx.getComponent().getCache().get(ctx.getPrimaryKeyUnchecked());
+            // invoke implementation method on ejb instance
             Object value;
-            final EntityBeanComponentInstance componentInstance = ctx.getComponent().getCache().get(ctx.getPrimaryKey());
+final EntityBeanComponentInstance componentInstance = ctx.getComponent().getCache().get(ctx.getPrimaryKeyUnchecked());
             try {
                 value = finderMethod.invoke(componentInstance, args);
             } finally {

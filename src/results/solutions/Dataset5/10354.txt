@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1209,9 +1208,9 @@ public class Main implements AntMain {
             }
             msg.append(lSep);
             if (!dependencies.isEmpty()) {
-msg.append("   depends on: ");
+                Enumeration deps = (Enumeration) dependencies.elementAt(i);
                 if (deps.hasMoreElements()) {
-                    msg.append("   depends of: ");
+msg.append("   depends on: ");
                     while (deps.hasMoreElements()) {
                         msg.append(deps.nextElement());
                         if (deps.hasMoreElements()) {

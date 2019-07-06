@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -254,9 +253,9 @@ try{
             {
                 String dependId = getIntakeTool()
                     .get("Depend", IntakeTool.DEFAULT_KEY).get("Id").toString();
-depend = Depend.getInstance();
+                if ( dependId == null || dependId.length() == 0 )
                 {
-//                    depend = Depend.getInstance();
+depend = Depend.getInstance();
                 }
                 else 
                 {

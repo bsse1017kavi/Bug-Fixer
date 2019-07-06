@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class RestNodesHotThreadsAction extends BaseRestHandler {
         controller.registerHandler(RestRequest.Method.GET, "/_nodes/{nodeId}/hotthreads", this);
         controller.registerHandler(RestRequest.Method.GET, "/_nodes/{nodeId}/hot_threads", this);
     }
-public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void handleRequest(final RestRequest request, final RestChannel channel) {
+public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
         String[] nodesIds = Strings.splitStringByCommaToArray(request.param("nodeId"));
         NodesHotThreadsRequest nodesHotThreadsRequest = new NodesHotThreadsRequest(nodesIds);
         nodesHotThreadsRequest.threads(request.paramAsInt("threads", nodesHotThreadsRequest.threads()));

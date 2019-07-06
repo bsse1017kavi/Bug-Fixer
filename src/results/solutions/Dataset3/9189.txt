@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -48,9 +47,9 @@ public abstract class AbstractAdvisingBeanPostProcessor extends ProxyConfig
 	 * This should run after all other post-processors, so that it can just add
 	 * an advisor to existing proxies rather than double-proxy.
 	 */
-private final Map<Class<?>, Boolean> eligibleBeans = new ConcurrentHashMap<Class<?>, Boolean>(64);
+	private int order = Ordered.LOWEST_PRECEDENCE;
 
-	private final Map<Class, Boolean> eligibleBeans = new ConcurrentHashMap<Class, Boolean>(64);
+private final Map<Class<?>, Boolean> eligibleBeans = new ConcurrentHashMap<Class<?>, Boolean>(64);
 
 
 	/**

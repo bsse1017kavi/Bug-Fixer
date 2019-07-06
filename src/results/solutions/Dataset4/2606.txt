@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -209,9 +208,9 @@ public class SnapshotBackwardsCompatibilityTest extends ElasticsearchBackwardsCo
                 countResponse = client().prepareCount().get();
                 assertHitCount(countResponse, numDocs);
             } while (upgraded);
-if (randomBoolean()) {
+            client().admin().indices().prepareUpdateSettings("test").setSettings(ImmutableSettings.builder().put(EnableAllocationDecider.INDEX_ROUTING_ALLOCATION_ENABLE, "all")).get();
         }
-        if (cluster().numDataNodes() > 1 && randomBoolean()) { // only bump the replicas if we have enough nodes
+if (randomBoolean()) {
             client().admin().indices().prepareUpdateSettings("test").setSettings(ImmutableSettings.builder().put(IndexMetaData.SETTING_NUMBER_OF_REPLICAS, randomIntBetween(1,2))).get();
         }
 

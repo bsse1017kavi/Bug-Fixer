@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -35,9 +34,9 @@ public abstract class Clipboard {
 	public static Clipboard getDefaultClipboard () {
 		if (Gdx.app.getType() == ApplicationType.Android)
 			return new AndroidClipboard();
-return (Clipboard)Class.forName("com.badlogic.gdx.scenes.scene2d.ui.utils.DesktopClipboard").newInstance();
+		else {
 			try {
-				return (Clipboard)(Class.forName("com.badlogic.gdx.scenes.scene2d.ui.utils.DesktopClipboard").newInstance());
+return (Clipboard)Class.forName("com.badlogic.gdx.scenes.scene2d.ui.utils.DesktopClipboard").newInstance();
 			} catch (Exception e) {
 				throw new GdxRuntimeException("Couldn't instantiate desktop clipboard", e);
 			}

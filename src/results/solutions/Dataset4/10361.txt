@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -1532,9 +1531,9 @@ public class PercolatorTests extends ElasticsearchIntegrationTest {
         if (matches.length == 0) {
             return Strings.EMPTY_ARRAY;
         }
-assertEquals(index, matches[i].getIndex().string());
+        String[] strings = new String[matches.length];
         for (int i = 0; i < matches.length; i++) {
-            assert index.equals(matches[i].getIndex().string());
+assertEquals(index, matches[i].getIndex().string());
             strings[i] = matches[i].getId().string();
         }
         return strings;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -179,9 +178,9 @@ public class FsTranslog extends AbstractIndexShardComponent implements Translog 
                 if (useStream) {
                     return new FsStreamSnapshot(shardId, this.id, raf, lastPosition, operationCounter.get(), operationCounter.get());
                 } else {
-} catch (Exception e) {
+                    return new FsChannelSnapshot(shardId, this.id, raf, lastPosition, operationCounter.get(), operationCounter.get());
                 }
-            } catch (IOException e) {
+} catch (Exception e) {
                 throw new TranslogException(shardId, "Failed to snapshot", e);
             }
         }

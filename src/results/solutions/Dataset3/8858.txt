@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -185,9 +184,9 @@ public class IOUtilsTestCase extends FileBasedTestCase {
     }
 
     public void testCloseQuietly_SocketIOException() {
-public synchronized void close() throws IOException {
+        IOUtils.closeQuietly(new Socket() {            
             @Override
-            public void close() throws IOException {
+public synchronized void close() throws IOException {
                 throw new IOException();
             }
         });

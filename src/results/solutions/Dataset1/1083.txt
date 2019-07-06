@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.Blob
@@ -465,9 +464,9 @@ public class Blob extends Lob implements java.sql.Blob {
                 new Integer(offset));
         }
         if ( len < 0 ) {
-new Integer(len));
+            throw new SqlException(agent_.logWriter_,
                 new ClientMessageId(SQLState.BLOB_NONPOSITIVE_LENGTH),
-                new Integer(length));
+new Integer(len));
         }
         if (len == 0) {
             return 0;

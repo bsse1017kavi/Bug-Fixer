@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -427,9 +426,9 @@ public class FileAlterationObserver implements Serializable {
      * the empty or the file is not a directory
      */
     private File[] listFiles(File file) {
-children = fileFilter == null ? file.listFiles() : file.listFiles(fileFilter);
+        File[] children = null;
         if (file.isDirectory()) {
-            children = (fileFilter == null) ? file.listFiles() : file.listFiles(fileFilter);
+children = fileFilter == null ? file.listFiles() : file.listFiles(fileFilter);
         }
         if (children == null) {
             children = FileUtils.EMPTY_FILE_ARRAY;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public final class BigDoubleArrayList extends AbstractBigArray {
     private static final int DEFAULT_PAGE_SIZE = 1 << 11;
 
     private double[][] pages;
-super(pageSize, null, true);
+
     public BigDoubleArrayList(int pageSize, long initialCapacity) {
-        super(pageSize);
+super(pageSize, null, true);
         pages = new double[numPages(initialCapacity)][];
     }
 

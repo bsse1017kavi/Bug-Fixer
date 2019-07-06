@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -808,9 +807,9 @@ public class BasicSearchEngine {
 							} else /*if (type.isInterface())*/ {
 								kind = TypeDeclaration.INTERFACE_DECL;
 							}
-((TypeNameMatchRequestorWrapper)nameRequestor).requestor.acceptTypeNameMatch(new TypeNameMatch(type, type.getFlags()));
+							if (match(typeSuffix, packageName, typeName, typeMatchRule, kind, packageDeclaration, simpleName)) {
 								if (nameRequestor instanceof TypeNameMatchRequestorWrapper) {
-									((TypeNameMatchRequestorWrapper)nameRequestor).requestor.acceptTypeNameMatch(new TypeNameMatch(type));
+((TypeNameMatchRequestorWrapper)nameRequestor).requestor.acceptTypeNameMatch(new TypeNameMatch(type, type.getFlags()));
 								} else {
 									nameRequestor.acceptType(type.getFlags(), packageDeclaration, simpleName, enclosingTypeNames, path, null);
 								}

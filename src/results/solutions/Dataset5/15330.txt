@@ -1,4 +1,3 @@
-
 /*
  * $Id: WicketTagComponentResolver.java,v 1.4 2005/01/18 08:04:29 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -82,9 +81,9 @@ public class PackageResourceTest extends TestCase
 	 * @throws Exception
 	 */
 	public void testBindGlobPackageResource() throws Exception
-PackageResource.bind(application, PackageResourceTest.class, Pattern.compile(".*\\.js"), false);
+	{
 		final SharedResources sharedResources = Application.get().getSharedResources();
-		PackageResource.bind(application, PackageResourceTest.class, Pattern.compile(".*\\.js"));
+PackageResource.bind(application, PackageResourceTest.class, Pattern.compile(".*\\.js"), false);
 		assertNotNull("resource packaged3.js should be available as a packaged resource",
 				sharedResources.get(PackageResourceTest.class, "packaged3.js", null, null, true));
 		assertNotNull("resource packaged4.js should be available as a packaged resource",

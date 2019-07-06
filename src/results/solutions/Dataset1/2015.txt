@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -292,9 +291,9 @@ public class AntiEntropyService
      * @param major True if the validator will see all of the data contained in the column family.
      * @return A Validator.
      */
-if (!major || table.equals(Table.SYSTEM_TABLE))
+    public IValidator getValidator(String table, String cf, InetAddress initiator, boolean major)
     {
-        if (!major || table.equals(Table.SYSTEM_TABLE) || table.equals(Table.DEFINITIONS))
+if (!major || table.equals(Table.SYSTEM_TABLE))
             return new NoopValidator();
         if (StorageService.instance.getTokenMetadata().sortedTokens().size()  < 1)
             // gossiper isn't started

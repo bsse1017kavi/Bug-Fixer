@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -291,9 +290,9 @@ public class EjbIIOPService implements Service<EjbIIOPService> {
                 Policy csiv2Policy = orb.create_policy(CSIv2Policy.TYPE, secPolicy);
                 policyList.add(csiv2Policy);
 
-if (iorSecurityConfigMetaData != null) {
+                // Create SSLPolicy (SSL_REQUIRED ensures home and remote IORs will have port 0 in the primary address).
                 boolean sslRequired = false;
-                if (iorSecurityConfigMetaData != null && iorSecurityConfigMetaData.getTransportConfig() != null) {
+if (iorSecurityConfigMetaData != null) {
                     IORTransportConfigMetaData tc = iorSecurityConfigMetaData.getTransportConfig();
                     sslRequired = IORTransportConfigMetaData.INTEGRITY_REQUIRED.equals(tc.getIntegrity())
                             || IORTransportConfigMetaData.CONFIDENTIALITY_REQUIRED.equals(tc.getConfidentiality())

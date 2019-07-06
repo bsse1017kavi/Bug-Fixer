@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -1089,9 +1088,9 @@ try{
     public Issue getIssueByPk(String key)
     {
         Issue issue = null;
-issue = IssueManager.getInstance(new NumberKey(key));
+        try
         {
-            issue = IssueManager.getInstance(new NumberKey(key), false);
+issue = IssueManager.getInstance(new NumberKey(key));
         }
         catch (Exception e)
         {

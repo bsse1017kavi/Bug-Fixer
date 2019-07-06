@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.hi;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -46,8 +45,8 @@ public class TestHindiAnalyzer extends BaseTokenStreamTestCase {
     checkOneTermReuse(a, "हिंदी", "हिंदी");
   }
   
-checkRandomData(random(), new HindiAnalyzer(TEST_VERSION_CURRENT), 1000*RANDOM_MULTIPLIER);
+  /** blast some random strings through the analyzer */
   public void testRandomStrings() throws Exception {
-    checkRandomData(random(), new HindiAnalyzer(TEST_VERSION_CURRENT), 10000*RANDOM_MULTIPLIER);
+checkRandomData(random(), new HindiAnalyzer(TEST_VERSION_CURRENT), 1000*RANDOM_MULTIPLIER);
   }
 }

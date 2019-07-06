@@ -1,4 +1,3 @@
-
 package org.apache.solr.core;
 
 /*
@@ -238,9 +237,9 @@ public class ZkContainer {
         log.error("Could not find config name for collection:" + collection);
         throw new ZooKeeperException(SolrException.ErrorCode.SERVER_ERROR,
             "Could not find config name for collection:" + collection);
-loader.getClassLoader(), dcore.getSubstitutableProperties(), zkController);
+      }
       solrLoader = new ZkSolrResourceLoader(instanceDir, zkConfigName,
-          loader.getClassLoader(), dcore.getCoreProperties(), zkController);
+loader.getClassLoader(), dcore.getSubstitutableProperties(), zkController);
       config = getSolrConfigFromZk(zkConfigName, dcore.getConfigName(),
           solrLoader);
       schema = IndexSchemaFactory.buildIndexSchema(dcore.getSchemaName(),

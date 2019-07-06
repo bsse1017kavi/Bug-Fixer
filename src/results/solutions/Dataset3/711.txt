@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class __TestStandaloneClient {
             throw new IllegalStateException("No file sar-example.sar");
         }
         String deployment = manager.addDeploymentContent(file.toURL());
-Future<ServerDeploymentPlanResult> deploymentResult = manager.execute(manager.newDeploymentPlan().add(deployment, file).deploy(deployment).build());
+        System.out.println("Added deployment " + deployment);
 
-        Future<ServerDeploymentPlanResult> deploymentResult = manager.execute(manager.newDeploymentPlan().deploy(deployment).build());
+Future<ServerDeploymentPlanResult> deploymentResult = manager.execute(manager.newDeploymentPlan().add(deployment, file).deploy(deployment).build());
         System.out.println("Deployment result:" + deploymentResult);
         System.out.println("Contained deployment result:" + deploymentResult.get());
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2031,9 +2030,9 @@ void printWidget (int /*long*/ hwnd, int /*long*/ hdc, GC gc) {
 		RECT rect2 = new RECT ();
 		OS.GetWindowRect (hwndShell, rect2);
 		OS.IntersectRect (rect2, rect1, rect2);
-int /*long*/ hwndInsertAfter = OS.GetWindow (hwnd, OS.GW_HWNDPREV);
+		boolean fixPrintWindow = !OS.EqualRect (rect2, rect1);
 		int bits = OS.GetWindowLong (hwnd, OS.GWL_STYLE);
-		int hwndInsertAfter = OS.GetWindow (hwnd, OS.GW_HWNDPREV);
+int /*long*/ hwndInsertAfter = OS.GetWindow (hwnd, OS.GW_HWNDPREV);
 		/*
 		* Bug in Windows.  For some reason, when GetWindow ()
 		* with GW_HWNDPREV is used to query the previous window

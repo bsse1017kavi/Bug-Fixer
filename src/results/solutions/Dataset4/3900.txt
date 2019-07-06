@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -202,9 +201,9 @@ public class TTLPercolatorTests extends ElasticsearchIntegrationTest {
                 logger.debug("delete count [{}]", indicesStatsResponse.getIndices().get("test").getTotal().getIndexing().getTotal().getDeleteCount());
                 // TTL deletes one doc, but it is indexed in the primary shard and replica shards
                 return indicesStatsResponse.getIndices().get("test").getTotal().getIndexing().getTotal().getDeleteCount() != 0;
-internalCluster().wipeIndices("test");
+            }
         }, 5, TimeUnit.SECONDS), equalTo(true));
-        cluster().wipeIndices("test");
+internalCluster().wipeIndices("test");
         client().admin().indices().prepareCreate("test")
                 .addMapping("type1", typeMapping)
                 .execute().actionGet();

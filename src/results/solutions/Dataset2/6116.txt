@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -148,9 +147,9 @@ public class MethodDeclaration extends AbstractMethodDeclaration {
 			if (this.scope.compilerOptions().sourceLevel < ClassFileConstants.JDK1_5) break checkOverride;
 			int bindingModifiers = this.binding.modifiers;
 			boolean hasOverrideAnnotation = (this.binding.tagBits & TagBits.AnnotationOverride) != 0;
-if ((bindingModifiers & ExtraCompilerModifiers.AccOverriding) == 0 || isInterfaceMethod || this.binding.isStatic())
+			boolean isInterfaceMethod = this.binding.declaringClass.isInterface();
 			if (hasOverrideAnnotation) {
-				if ((bindingModifiers & ExtraCompilerModifiers.AccOverriding) == 0 || isInterfaceMethod)
+if ((bindingModifiers & ExtraCompilerModifiers.AccOverriding) == 0 || isInterfaceMethod || this.binding.isStatic())
 					// claims to override, and doesn't actually do so
 					this.scope.problemReporter().methodMustOverride(this);					
 			} else if (!isInterfaceMethod 	&& (bindingModifiers & (ClassFileConstants.AccStatic|ExtraCompilerModifiers.AccOverriding)) == ExtraCompilerModifiers.AccOverriding) {

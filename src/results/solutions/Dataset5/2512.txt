@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -81,9 +80,9 @@ public class AjaxFormValidatingBehavior extends AjaxFormSubmitBehavior
 	{
 		getComponent().getPage().visitChildren(IFeedback.class, new IVisitor<Component, Void>()
 		{
-target.add(component);
+			public void component(final Component component, final IVisit<Void> visit)
 			{
-				target.addComponent(component);
+target.add(component);
 			}
 		});
 	}

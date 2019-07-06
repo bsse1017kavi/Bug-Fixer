@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 // JDK classes
@@ -93,9 +92,9 @@ public class Module
                 throw new ScarabException("Can't save a project without" + 
                     "first assigning an owner.");
             }         
-addRModuleUser(relation);
+            relation.setUserId(getOwnerId());
             relation.setDeleted(false);
-            addRModuleUsers(relation);
+addRModuleUser(relation);
 
             // make sure the code has a value;
             String code = getCode();

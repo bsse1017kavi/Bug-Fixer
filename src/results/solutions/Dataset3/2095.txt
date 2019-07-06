@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class FixedSizeMap<K, V>
      * Factory method to create a fixed size map.
      * 
      * @param map  the map to decorate, must not be null
-public static <K, V> FixedSizeMap<K, V> fixedSizeMap(Map<K, V> map) {
+     * @throws IllegalArgumentException if map is null
      */
-    public static <K, V> IterableMap<K, V> fixedSizeMap(Map<K, V> map) {
+public static <K, V> FixedSizeMap<K, V> fixedSizeMap(Map<K, V> map) {
         return new FixedSizeMap<K, V>(map);
     }
 

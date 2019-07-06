@@ -1,4 +1,3 @@
-
 /*
  * $Id: org.eclipse.jdt.ui.prefs 5004 2006-03-17 20:47:08 -0800 (Fri, 17 Mar
  * 2006) eelco12 $ $Revision: 5004 $ $Date: 2006-03-17 20:47:08 -0800 (Fri, 17
@@ -219,9 +218,9 @@ public class WicketFilter implements Filter
 		final WebSession session = webApplication.getSession(request);
 
 		// Create a response object and set the output encoding according to
-response.setAjax(request.isAjax());
+		// wicket's application setttings.
 		final WebResponse response = webApplication.newWebResponse(servletResponse);
-		response.setWebRequest(request);
+response.setAjax(request.isAjax());
 		response.setCharacterEncoding(webApplication.getRequestCycleSettings()
 				.getResponseRequestEncoding());
 

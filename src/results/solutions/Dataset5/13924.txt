@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -156,9 +155,9 @@ public abstract class AbstractAjaxTimerBehavior extends AbstractDefaultAjaxBehav
 	@Override
 	protected final void respond(final AjaxRequestTarget target)
 	{
-if (!stopped && isEnabled(getComponent()))
+		onTimer(target);
 
-		if (!stopped)
+if (!stopped && isEnabled(getComponent()))
 		{
 			target.getHeaderResponse().renderOnLoadJavascript(getJsTimeoutCall(updateInterval));
 		}

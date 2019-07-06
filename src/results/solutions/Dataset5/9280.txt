@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -773,9 +772,9 @@ public class Javac extends MatchingTask
         if( compileList.length > 0 )
         {
 
-getLogger().info( "Compiling " + compileList.length +
+            CompilerAdapter adapter = CompilerAdapterFactory.getCompiler(
                 compiler, this );
-            log( "Compiling " + compileList.length +
+getLogger().info( "Compiling " + compileList.length +
                  " source file"
                  + ( compileList.length == 1 ? "" : "s" )
                  + ( destDir != null ? " to " + destDir : "" ) );

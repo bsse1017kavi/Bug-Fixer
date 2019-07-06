@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ import org.jboss.msc.service.StopContext;
  */
 public class JPAService implements Service<Void> {
 
-private static volatile String defaultDataSourceName = null;
+    public static final ServiceName SERVICE_NAME = JPAServiceNames.getJPAServiceName();
 
-    private static String defaultDataSourceName = null;
+private static volatile String defaultDataSourceName = null;
 
     public static String getDefaultDataSourceName() {
         return defaultDataSourceName;

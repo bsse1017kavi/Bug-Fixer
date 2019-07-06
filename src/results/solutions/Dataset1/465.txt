@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -54,9 +53,9 @@ class DisjunctionMaxScorer extends Scorer {
    * @param numScorers
    *          The actual number of scorers to iterate on. Note that the array's
    *          length may be larger than the actual number of scorers.
-Scorer[] subScorers, int numScorers) {
+   */
   public DisjunctionMaxScorer(Weight weight, float tieBreakerMultiplier,
-      Scorer[] subScorers, int numScorers) throws IOException {
+Scorer[] subScorers, int numScorers) {
     super(weight);
     this.tieBreakerMultiplier = tieBreakerMultiplier;
     // The passed subScorers array includes only scorers which have documents

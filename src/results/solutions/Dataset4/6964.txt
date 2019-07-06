@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com), Nathan Sweet (admin@esotericsoftware.com)
  * 
@@ -33,9 +32,9 @@ public class ManagedTest extends GdxTest {
 		mesh = new Mesh(true, 4, 4, new VertexAttribute(Usage.Position, 2, "a_position"), new VertexAttribute(
 			Usage.TextureCoordinates, 2, "a_texCoord"));
 		mesh.setVertices(new float[] {-0.5f, -0.5f, 0, 0, 0.5f, -0.5f, 1, 0, 0.5f, 0.5f, 1, 1, -0.5f, 0.5f, 0, 1});
-texture = new Texture(Gdx.files.internal("data/badlogic.jpg"), true);
+		mesh.setIndices(new short[] {0, 1, 2, 3});
 
-		texture = new Texture(Gdx.files.internal("data/badlogic.jpg"));
+texture = new Texture(Gdx.files.internal("data/badlogic.jpg"), true);
 		texture.setFilter(TextureFilter.MipMap, TextureFilter.Linear);		
 	}
 

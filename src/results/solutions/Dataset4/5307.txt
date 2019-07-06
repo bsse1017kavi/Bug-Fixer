@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -149,9 +148,9 @@ public class IndexBufferObjectSubData implements IndexData {
 	 * @param count the number of floats to copy
 	 */
 	public void setIndices (short[] indices, int offset, int count) {
-buffer.put(indices, offset, count);
+		isDirty = true;
 		buffer.clear();
-		buffer.put(indices);
+buffer.put(indices, offset, count);
 		buffer.flip();
 		byteBuffer.position(0);
 		byteBuffer.limit(count << 1);

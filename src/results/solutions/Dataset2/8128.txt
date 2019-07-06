@@ -1,4 +1,3 @@
-
 import java.awt.BorderLayout;
 import java.io.File;
 import java.net.MalformedURLException;
@@ -30,9 +29,9 @@ public class ConfigExample extends AbstractConfigPlugin {
 		super();
 
 		// open configuration file 
-xmlFile = new XmlIO(file.toURL());
+		File file = Facade.getPluginConfigFile("org.columba.example.ConfigExample");
 		try {
-			XmlIO xmlIO = new XmlIO(file.toURL());
+xmlFile = new XmlIO(file.toURL());
 			xmlFile.load();
 			
 			parent = xmlFile.getRoot();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -804,9 +803,9 @@ public abstract class ClusteredSession<O extends OutgoingDistributableSessionDat
         if (!isValidInternal()) {
             throw MESSAGES.expiredSession();
         }
-throw MESSAGES.failToReplicateAttribute(name, value.getClass().getCanonicalName());
+
         if (canAttributeBeReplicated(value) == false) {
-            throw MESSAGES.failToReplicateAttribute();
+throw MESSAGES.failToReplicateAttribute(name, value.getClass().getCanonicalName());
         }
 
         // Construct an event with the new value

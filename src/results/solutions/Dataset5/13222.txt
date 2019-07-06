@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -619,9 +618,9 @@ public class AjaxRequestTarget implements IRequestTarget
 
 		try
 		{
-component.internalRenderHead(headerResponse);
+			final IHeaderResponse headerResponse = new AjaxHeaderResponse(encodingResponse);
 			RequestCycle.get().setResponse(headerResponse.getResponse());
-			component.renderHead(headerResponse);
+component.internalRenderHead(headerResponse);
 		}
 		finally
 		{

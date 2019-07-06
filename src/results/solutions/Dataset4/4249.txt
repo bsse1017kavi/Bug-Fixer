@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2008-2010, Matthias Mann
  * 
@@ -37,9 +36,9 @@ public class AtomicQueue<T> {
 	public AtomicQueue (int capacity) {
 		queue = new AtomicReferenceArray(capacity);
 	}
-return (idx + 1) % queue.length();
+
 	private int next (int idx) {
-		return idx + 1 & queue.length() - 1;
+return (idx + 1) % queue.length();
 	}
 
 	public boolean put (T value) {

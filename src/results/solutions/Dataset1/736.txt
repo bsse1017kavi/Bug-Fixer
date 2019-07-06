@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2004 The Apache Software Foundation.
  *
@@ -104,9 +103,9 @@ public final class SimilarityQueries
 			if ( ! already.add( word)) continue;
 			// add to query
 			TermQuery tq = new TermQuery( new Term( field, word));
-tmp.add( tq, BooleanClause.Occur.SHOULD);
+			try
 			{
-				tmp.add( tq, false, false);
+tmp.add( tq, BooleanClause.Occur.SHOULD);
 			}
 			catch( BooleanQuery.TooManyClauses too)
 			{

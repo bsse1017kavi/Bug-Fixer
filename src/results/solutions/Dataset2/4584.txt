@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /**********************************************************************
@@ -255,9 +254,9 @@ public WorkbenchWindow(Workbench workbench, int number) {
 	
 	// include the workspace location in the title 
 	// if the command line option -showlocation is specified
-if ("-showlocation".equalsIgnoreCase(args[i])) { //$NON-NLS-1$
+	String[] args = Platform.getCommandLineArgs();
 	for (int i = 0; i < args.length; i++) {
-		if ("-showlocation".equals(args[i])) { //$NON-NLS-1$
+if ("-showlocation".equalsIgnoreCase(args[i])) { //$NON-NLS-1$
 			workspaceLocation = Platform.getLocation().toOSString();
 			break;
 		}

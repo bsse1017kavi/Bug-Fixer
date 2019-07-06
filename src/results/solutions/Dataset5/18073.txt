@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -64,9 +63,9 @@ public class CompoundPropertyModel extends AbstractPropertyModel implements ICom
 	 */
 	protected Class propertyType(final Component component)
 	{
-return ((FormComponent)component).getType();
+		if (component instanceof FormComponent)
 		{
-			return ((FormComponent)component).getValidationType();
+return ((FormComponent)component).getType();
 		}
 		return null;
 	}

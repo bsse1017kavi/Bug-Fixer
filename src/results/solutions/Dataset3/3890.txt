@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class StartBatchServlet extends AbstractBatchServlet {
                 default:
                     b = false;
                     break;
-throw new IllegalStateException(String.format("Batch job '%s' did not complete withing allotted time.", jobXml));
+            }
             if (timeout <= 0) {
-                throw new IllegalStateException(String.format("Batch job '%s' did not complete within allotted time.", jobXml));
+throw new IllegalStateException(String.format("Batch job '%s' did not complete withing allotted time.", jobXml));
             }
         }
         if (waitForCompletion)

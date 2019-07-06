@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -840,9 +839,9 @@ protected void updateIndex(Openable element, IResourceDelta delta) {
 					case IResourceDelta.ADDED:
 					case IResourceDelta.REMOVED:
 						IPackageFragment pkg = null;
-pkg = root.getPackageFragment(""); //$NON-NLS-1$
+						if (element instanceof IPackageFragmentRoot) {
 							IPackageFragmentRoot root = (IPackageFragmentRoot)element;
-							pkg = root.getPackageFragment("");
+pkg = root.getPackageFragment(""); //$NON-NLS-1$
 						} else {
 							pkg = (IPackageFragment)element;
 						}

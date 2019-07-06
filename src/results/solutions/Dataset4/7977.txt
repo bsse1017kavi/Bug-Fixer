@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -136,9 +135,9 @@ public class TransportIndexAction extends TransportShardReplicationOperationActi
             updateMappingOnMaster(request);
         }
         return new IndexResponse(request.index(), request.type(), request.id());
-@Override protected void shardOperationOnReplica(ShardOperationRequest shardRequest) {
+    }
 
-    @Override protected void shardOperationOnBackup(ShardOperationRequest shardRequest) {
+@Override protected void shardOperationOnReplica(ShardOperationRequest shardRequest) {
         IndexRequest request = shardRequest.request;
         if (request.opType() == IndexRequest.OpType.INDEX) {
             indexShard(shardRequest).index(request.type(), request.id(), request.source());

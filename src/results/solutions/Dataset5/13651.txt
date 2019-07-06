@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -666,9 +665,9 @@ public class JMeter implements JMeterPlugin {
 			reader = new FileInputStream(f);
 			log.info("Loading file: " + f);
 
-JMeterTreeModel treeModel = new JMeterTreeModel(new Object());// Create non-GUI version to avoid headless problems
+			HashTree tree = SaveService.loadTree(reader);
 
-            JMeterTreeModel treeModel = new JMeterTreeModel();
+JMeterTreeModel treeModel = new JMeterTreeModel(new Object());// Create non-GUI version to avoid headless problems
             JMeterTreeNode root = (JMeterTreeNode) treeModel.getRoot();
             treeModel.addSubTree(tree, root);
 

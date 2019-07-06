@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -140,9 +139,9 @@ public class BundlePatchingTestCase extends AbstractTaskTestCase {
         createBundle(env.getInstalledImage().getJbossHome(), bundleName, true);
         byte[] existingHash = hashFile(new File(bundlesDir, bundleName));
 
-ContentModification bundleRemoved = new ContentModification(new BundleItem(bundleName, null, NO_CONTENT), existingHash, REMOVE);
+        // build a one-off patch for the base installation
         // with 1 bundle removed
-        ContentModification bundleRemoved = new ContentModification(new BundleItem(bundleName, null, existingHash), existingHash, REMOVE);
+ContentModification bundleRemoved = new ContentModification(new BundleItem(bundleName, null, NO_CONTENT), existingHash, REMOVE);
 
         Patch patch = PatchBuilder.create()
                 .setPatchId(randomString())

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -142,9 +141,9 @@ public class WicketFilterTest extends TestCase
 
 	private String getFilterPath(String string, InputStream in)
 	{
-return new WebXmlFile().getFilterPath(false, string, in);
+		try
 		{
-			return new WebXmlFile().getFilterPath(string, in);
+return new WebXmlFile().getFilterPath(false, string, in);
 		}
 		catch (ParserConfigurationException ex)
 		{

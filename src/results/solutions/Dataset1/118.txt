@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -1262,9 +1261,9 @@ public class IndexWriter implements Closeable, TwoPhaseCommit {
     if (readerIn instanceof AtomicReader) {
       // Reader is already atomic: use the incoming docID:
       reader = (AtomicReader) readerIn;
-List<AtomicReaderContext> leaves = readerIn.leaves();
+    } else {
       // Composite reader: lookup sub-reader and re-base docID:
-      List<AtomicReaderContext> leaves = readerIn.getTopReaderContext().leaves();
+List<AtomicReaderContext> leaves = readerIn.leaves();
       int subIndex = ReaderUtil.subIndex(docID, leaves);
       reader = leaves.get(subIndex).reader();
       docID -= leaves.get(subIndex).docBase;

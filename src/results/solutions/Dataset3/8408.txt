@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -126,9 +125,9 @@ public class DataSourceResourcesUnitTestCase {
         HashSet<String> keys = new HashSet<String>();
         for (final Entry<String, ModelNode> child : children.entrySet()) {
             Assert.assertTrue(child.getKey() != null);
-Assert.assertTrue(keys.contains("driver-xa-datasource-class-name"));
+            keys.add(child.getKey());
         }
-        Assert.assertTrue(keys.contains("driver-xa-data-source-class-name"));
+Assert.assertTrue(keys.contains("driver-xa-datasource-class-name"));
         Assert.assertTrue(keys.contains("module-slot"));
         Assert.assertTrue(keys.contains("driver-name"));
     }

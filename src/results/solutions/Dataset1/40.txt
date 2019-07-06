@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -31,9 +30,9 @@ public class HashFactory {
     LINEAR, POLYNOMIAL, MURMUR
   }
 
-Random seed = RandomUtils.getRandom(11);
+  public static HashFunction[] createHashFunctions(HashType type, int numFunctions) {
     HashFunction[] hashFunction = new HashFunction[numFunctions];
-    Random seed = new Random(11);
+Random seed = RandomUtils.getRandom(11);
     switch (type) {
       case LINEAR:
         for (int i = 0; i < numFunctions; i++) {

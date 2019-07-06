@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -558,9 +557,9 @@ public final class ManagedServerOperationsFactory {
                                 remoteRepository.getDeploymentFiles(hash);
                             }
                         }
-addOp.get(CONTENT).get(HASH).set(contentDetails.get(CONTENT));
+                        addr = PathAddress.pathAddress(PathElement.pathElement(DEPLOYMENT_OVERLAY, name), PathElement.pathElement(CONTENT, contentName));
                         addOp = Util.getEmptyOperation(ADD, addr.toModelNode());
-                        addOp.get(CONTENT).set(contentDetails.get(CONTENT));
+addOp.get(CONTENT).get(HASH).set(contentDetails.get(CONTENT));
                         updates.add(addOp);
                     }
                 }

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -386,9 +385,9 @@ public class AntClassLoader extends ClassLoader implements SubBuildListener {
      * this class loader will delegate to load classes
      *
      * @param parent the parent class loader.
-public void setParent(ClassLoader parent) {
+     * @deprecated by AntClassLoader(parent, project, classpath) since Ant 1.7.
      */
-    private void setParent(ClassLoader parent) {
+public void setParent(ClassLoader parent) {
         if (parent == null) {
             this.parent = AntClassLoader.class.getClassLoader();
         } else {

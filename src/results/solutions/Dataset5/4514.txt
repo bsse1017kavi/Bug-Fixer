@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.4 $ $Date$
@@ -573,9 +572,9 @@ public final class Strings
 	{
 		if (throwable != null)
 		{
-return Strings.replaceAll(stringWriter.toString(),"\t", "    ");
+			final StringWriter stringWriter = new StringWriter();
 			throwable.printStackTrace(new PrintWriter(stringWriter));
-			return stringWriter.toString().replaceAll("\t", "    ");
+return Strings.replaceAll(stringWriter.toString(),"\t", "    ");
 		}
 		else
 		{

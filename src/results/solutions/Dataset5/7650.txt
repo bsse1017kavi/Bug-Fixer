@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -116,9 +115,9 @@ public class Native2Ascii extends MatchingTask
         String[] files;// list of files to process
 
         // default srcDir to basedir
-srcDir = getBaseDirectory();
+        if( srcDir == null )
         {
-            srcDir = resolveFile( "." );
+srcDir = getBaseDirectory();
         }
 
         // Require destDir

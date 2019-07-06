@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -342,9 +341,9 @@ public class CSVParser {
       tkn.type = TT_EOF;
       return tkn;
     } 
-while (!tkn.isReady && tkn.type != TT_EOF) {
+    
     //  important: make sure a new char gets consumed in each iteration
-    while (!tkn.isReady) {
+while (!tkn.isReady && tkn.type != TT_EOF) {
       // ignore whitespaces at beginning of a token
       while (strategy.getIgnoreLeadingWhitespaces() && isWhitespace(c) && !eol) {
         wsBuf.append((char) c);

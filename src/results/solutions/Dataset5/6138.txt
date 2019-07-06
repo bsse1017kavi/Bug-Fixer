@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1218,9 +1217,9 @@ public class FileUtils {
         // catch exception if normalize thinks this is not an absolute path
         try {
             path = normalize(path).getAbsolutePath();
-if (!path.startsWith(File.separator)) {
+            sb.append("//");
             // add an extra slash for filesystems with drive-specifiers
-            if (!path.startsWith("/")) {
+if (!path.startsWith(File.separator)) {
                 sb.append("/");
             }
 

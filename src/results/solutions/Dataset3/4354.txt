@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public class ExclamationTopology {
     conf.setDebug(true);
 
     if (args != null && args.length > 0) {
-StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
+      conf.setNumWorkers(3);
 
-      StormSubmitter.submitTopologyWithProgressBar(args[0], conf, builder.createTopology());
+StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
     }
     else {
 

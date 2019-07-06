@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.admin;
 
 /*
@@ -378,9 +377,9 @@ public class CollectionsHandler extends RequestHandlerBase {
 
   private void copyPropertiesIfNotNull(SolrParams params, Map<String, Object> props) {
     Iterator<String> iter =  params.getParameterNamesIterator();
-if (param.startsWith(OverseerCollectionProcessor.COLL_PROP_PREFIX)) {
+    while (iter.hasNext()) {
       String param = iter.next();
-      if (param.indexOf(OverseerCollectionProcessor.COLL_PROP_PREFIX) != -1) {
+if (param.startsWith(OverseerCollectionProcessor.COLL_PROP_PREFIX)) {
         props.put(param, params.get(param));
       }
     }

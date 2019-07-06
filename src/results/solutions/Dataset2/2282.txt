@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.index.impl;
 
 /*
@@ -74,9 +73,9 @@ public class IFileDocument extends PropertyDocument {
 	 * @see IDocument#getType
 	 */
 	public String getType() {
-return ""; //$NON-NLS-1$
+		String extension= file.getFileExtension();
 		if (extension == null)
-			return ""/*nonNLS*/;
+return ""; //$NON-NLS-1$
 		return extension;
 	}
 }

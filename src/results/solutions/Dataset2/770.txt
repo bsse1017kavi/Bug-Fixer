@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -138,9 +137,9 @@ public class Theories extends JUnit4ClassRunner {
 			return new Statement() {
 				@Override
 				public void evaluate() throws Throwable {
-nullsOk());
+					try {
 						final Object[] values= complete.getMethodArguments(
-								nullsOk(), freshInstance);
+nullsOk());
 						method.invokeExplosively(freshInstance, values);
 					} catch (CouldNotGenerateValueException e) {
 						// ignore

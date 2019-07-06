@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.maps.tiled;
 
 import java.io.IOException;
@@ -101,9 +100,9 @@ public class TmxMapLoader extends AsynchronousAssetLoader<TiledMap, TmxMapLoader
 				texture.setFilter(parameters.textureMinFilter, parameters.textureMagFilter);
 				textures.put(textureFile.path(), texture);
 			}
-map.setOwnedResources(textures.values().toArray());
+			DirectImageResolver imageResolver = new DirectImageResolver(textures);
 			TiledMap map = loadTilemap(root, tmxFile, imageResolver);
-			map.setOwnedTextures(textures.values().toArray());
+map.setOwnedResources(textures.values().toArray());
 			return map;
 		} catch (IOException e) {
 			throw new GdxRuntimeException("Couldn't load tilemap '" + fileName + "'", e);

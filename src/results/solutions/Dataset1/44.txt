@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -96,9 +95,9 @@ public class TestDocumentWriter extends LuceneTestCase {
 
     // test that the norms are not present in the segment if
     // omitNorms is true
-assertTrue(fi.omitsNorms() == (reader.getNormValues(fi.name) == null));
+    for (FieldInfo fi : reader.getFieldInfos()) {
       if (fi.isIndexed()) {
-        assertTrue(fi.omitsNorms() == (reader.simpleNormValues(fi.name) == null));
+assertTrue(fi.omitsNorms() == (reader.getNormValues(fi.name) == null));
       }
     }
     reader.close();

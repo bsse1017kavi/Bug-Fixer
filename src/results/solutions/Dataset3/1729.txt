@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -196,9 +195,9 @@ public class WebServiceRefAnnotationParsingProcessor extends AbstractComponentCo
         //setup injection target description
         final InjectionTargetDescription targetDescription = new InjectionTargetDescription();
         targetDescription.setName(name);
-targetDescription.setDeclaredValueClassName(ref.getServiceRefType());
+        targetDescription.setClassName(className);
         targetDescription.setType(processor.getInjectionType());
-        targetDescription.setValueClassName(ref.getServiceRefType());
+targetDescription.setDeclaredValueClassName(ref.getServiceRefType());
         bindingDescription.getInjectionTargetDescriptions().add(targetDescription);
 
         return bindingDescription;

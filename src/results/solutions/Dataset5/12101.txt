@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -96,9 +95,9 @@ class BasicResourceReferenceMapper extends AbstractResourceReferenceMapper
 			Class<?> scope = resolveClass(className);
 			if (scope != null)
 			{
-attributes.getStyle(), attributes.getVariation(), true, true);
+				ResourceReference res = getContext().getResourceReferenceRegistry()
 					.getResourceReference(scope, name.toString(), attributes.getLocale(),
-						attributes.getStyle(), attributes.getVariation(), true);
+attributes.getStyle(), attributes.getVariation(), true, true);
 
 				if (res != null)
 				{

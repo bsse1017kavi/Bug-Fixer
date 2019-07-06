@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -67,9 +66,9 @@ class PackageBinding implements IPackageBinding {
 				int fragType = pkgs[i].getKind();
 				switch(fragType) {
 					case IPackageFragmentRoot.K_SOURCE:
-if (unit != null && unit.exists()) {
+						String unitName = "package-info.java"; //$NON-NLS-1$
 						ICompilationUnit unit = pkgs[i].getCompilationUnit(unitName);
-						if (unit != null) {
+if (unit != null && unit.exists()) {
 							ASTParser p = ASTParser.newParser(AST.JLS3);
 							p.setSource(unit);
 							p.setResolveBindings(true);

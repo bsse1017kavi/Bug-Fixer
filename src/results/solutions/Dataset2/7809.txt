@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist.select;
 
 /*
@@ -40,9 +39,9 @@ public class SelectionOnMessageSend extends MessageSend {
 			selector.length > 0) {
 				
 			MethodBinding closestMethod = null;
-} else if(receiverType instanceof ReferenceBinding) {
+			if(binding != null) {
 				closestMethod = ((ProblemMethodBinding)binding).closestMatch;
-			} else {
+} else if(receiverType instanceof ReferenceBinding) {
 				closestMethod = scope.findMethod((ReferenceBinding)receiverType, selector, new TypeBinding[]{}, this);
 			}
 			

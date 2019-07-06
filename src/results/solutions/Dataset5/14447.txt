@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -226,9 +225,9 @@ public class StatusHandlingComponent implements TestBedComponent {
 		public static Object create(IMemento memento) {
 			String source = memento.getString(SOURCEPLUGIN);
 			String message = memento.getString(MESSAGE);
-boolean wrapped = new Boolean(memento.getString(WRAPPED)).booleanValue();
+			int severity = memento.getInteger(SEVERITY).intValue();
 			int hint = memento.getInteger(HINT).intValue();
-			boolean wrapped = Boolean.getBoolean(memento.getString(WRAPPED));
+boolean wrapped = new Boolean(memento.getString(WRAPPED)).booleanValue();
 			String explanation = memento.getString(EXPLANATION);
 			if (explanation != null && explanation.length() == 0)
 				explanation = null;

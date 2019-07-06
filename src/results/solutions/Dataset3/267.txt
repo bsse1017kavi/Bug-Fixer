@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -29,8 +28,8 @@ import org.jboss.as.controller.TransactionalProxyController;
  * @author <a href="kabir.khan@jboss.com">Kabir Khan</a>
  * @version $Revision: 1.1 $
  */
-void startServers(DomainControllerSlave domainController);
+public interface ServerStartupTransactionalProxyController extends TransactionalProxyController {
     String getName();
-    void startServers(DomainController domainController);
+void startServers(DomainControllerSlave domainController);
     void stopServers();
 }

@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class DatabaseDescriptorTest
     }
 
     @Test
-for (KSMetaData ksm : DatabaseDescriptor.tables.values())
+    public void testKSMetaDataSerialization() throws IOException 
     {
-        for (KSMetaData ksm : DatabaseDescriptor.tables_.values())
+for (KSMetaData ksm : DatabaseDescriptor.tables.values())
         {
             byte[] ser = KSMetaData.serialize(ksm);
             KSMetaData ksmDupe = KSMetaData.deserialize(new ByteArrayInputStream(ser));

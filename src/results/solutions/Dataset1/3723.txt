@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -844,9 +843,9 @@ public class FullSolrCloudTest extends AbstractDistributedZkTestCase {
     
     checkShardConsistency(true, false);
   }
-handle.put("explain", SKIPVAL);
+  
   private void testDebugQueries() throws Exception {
-    handle.put("explain", UNORDERED);
+handle.put("explain", SKIPVAL);
     handle.put("debug", UNORDERED);
     handle.put("time", SKIPVAL);
     query("q", "now their fox sat had put", "fl", "*,score",

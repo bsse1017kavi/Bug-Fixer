@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class OSGiXServiceParseProcessor implements DeploymentUnitProcessor {
 
         try {
             metadata = OSGiMetaDataBuilder.load(xserviceFile.openStream());
-throw MESSAGES.cannotParseOSGiMetadata(ex, xserviceFile);
+            OSGiMetaDataAttachment.attachOSGiMetaData(deploymentUnit, metadata);
         } catch (IOException ex) {
-            throw new DeploymentUnitProcessingException(MESSAGES.cannotParse(xserviceFile));
+throw MESSAGES.cannotParseOSGiMetadata(ex, xserviceFile);
         }
     }
 

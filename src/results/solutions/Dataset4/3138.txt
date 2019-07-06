@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -282,9 +281,9 @@ public class DeleteByQueryRequest extends IndicesReplicationOperationRequest {
     }
 
     public void writeTo(StreamOutput out) throws IOException {
-out.writeBytesReference(querySource);
+        super.writeTo(out);
 
-        out.writeBytesReference(querySource, true);
+out.writeBytesReference(querySource);
 
         if (routing == null) {
             out.writeBoolean(false);

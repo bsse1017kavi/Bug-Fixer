@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -75,9 +74,9 @@ public abstract class AbstractTransactionalAnnotatedConfigClassTests {
 		this.dataSourceViaInjection = dataSource;
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-return jdbcTemplate.queryForObject("SELECT COUNT(0) FROM " + tableName, Integer.class);
+
 	private int countRowsInTable(String tableName) {
-		return jdbcTemplate.queryForInt("SELECT COUNT(0) FROM " + tableName);
+return jdbcTemplate.queryForObject("SELECT COUNT(0) FROM " + tableName, Integer.class);
 	}
 
 	private int createPerson(String name) {

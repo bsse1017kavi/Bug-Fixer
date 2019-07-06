@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -118,9 +117,9 @@ public void build(boolean computeSubtypes) {
 			if (((Member)focusType).getOuterMostLocalContext() == null) {
 				// top level or member type
 				allPossibleSubtypes = this.determinePossibleSubTypes(localTypes, possibleSubtypesMonitor);
-allPossibleSubtypes = CharOperation.NO_STRINGS;
+			} else {
 				// local or anonymous type
-				allPossibleSubtypes = new String[0];
+allPossibleSubtypes = CharOperation.NO_STRINGS;
 			}
 			if (allPossibleSubtypes != null) {
 				IProgressMonitor buildMonitor = 

@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -155,9 +154,9 @@ public class POP3Server {
 	        headerCache.remove(uid);
 	        
 	        // set dirty flag
-if( e.getResponse() != null && e.getResponse().isERR() ) {
+	        setCacheChanged(true);
         } catch (POP3Exception e) {
-        	if( e.getResponse().isERR() ) {
+if( e.getResponse() != null && e.getResponse().isERR() ) {
         		// Message already deleted from server
         		headerCache.remove(uid);
         		setCacheChanged(true);

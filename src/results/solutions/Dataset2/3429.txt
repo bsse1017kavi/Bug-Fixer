@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -193,9 +192,9 @@ toWireCanonical(DataByteOutputStream out) throws IOException {
 /**
  * Converts a Record into canonical DNS uncompressed wire format (all names are
  * converted to lowercase).
-toWireCanonical() throws IOException {
+ */
 public byte []
-toWireCanonical(int section) throws IOException {
+toWireCanonical() throws IOException {
 	DataByteOutputStream out = new DataByteOutputStream();
 	toWireCanonical(out);
 	return out.toByteArray();

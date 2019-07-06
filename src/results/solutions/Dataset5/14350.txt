@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -436,9 +435,9 @@ int drawLine(int lineIndex, int paintX, int paintY, GC gc, Color widgetBackgroun
 	int[] ranges = null;
 	for (int i = 0; i < styles.length; i++) {
 		if (styles[i].metrics != null) {
-int length = ranges[(i << 1) + 1] - start + 1;
+			if (ranges == null) ranges = layout.getRanges();
 			int start = ranges[i << 1];
-			int length = ranges[(i << 1) + 1] - start;
+int length = ranges[(i << 1) + 1] - start + 1;
 			Point point = layout.getLocation(start, false);
 			FontMetrics metrics = layout.getLineMetrics(layout.getLineIndex(start));
 			StyleRange style = (StyleRange)((StyleRange)styles[i]).clone();

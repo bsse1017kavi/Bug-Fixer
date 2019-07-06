@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -101,9 +100,9 @@ public class TestRegexpQuery extends LuceneTestCase {
       private Automaton quickBrownAutomaton = BasicOperations.union(Arrays
           .asList(BasicAutomata.makeString("quick"),
           BasicAutomata.makeString("brown"),
-public Automaton getAutomaton(String name) {
+          BasicAutomata.makeString("bob")));
       
-      public Automaton getAutomaton(String name) throws IOException {
+public Automaton getAutomaton(String name) {
         if (name.equals("quickBrown")) return quickBrownAutomaton;
         else return null;
       }

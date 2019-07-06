@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class ManagedBeansExtension implements Extension {
         }
     };
 
-context.registerSubsystem(NAMESPACE, PARSER);
+    /** {@inheritDoc} */
     public void initialize(ExtensionContext context) {
-        context.registerSubsystem(NAMESPACE, FACTORY, PARSER);
+context.registerSubsystem(NAMESPACE, PARSER);
     }
 
     /**

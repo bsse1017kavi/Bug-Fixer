@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ public class ServiceDeploymentParsingProcessor implements DeploymentUnitProcesso
             final XMLStreamReader reader = inputFactory.createXMLStreamReader(xmlStream);
             final ParseResult<JBossServiceXmlDescriptor> result = new ParseResult<JBossServiceXmlDescriptor>();
             xmlMapper.parseDocument(result, reader);
-phaseContext.getDeploymentUnit().putAttachment(JBossServiceXmlDescriptor.ATTACHMENT_KEY, xmlDescriptor);
+            final JBossServiceXmlDescriptor xmlDescriptor = result.getResult();
             if(xmlDescriptor != null)
-                phaseContext.putAttachment(JBossServiceXmlDescriptor.ATTACHMENT_KEY, xmlDescriptor);
+phaseContext.getDeploymentUnit().putAttachment(JBossServiceXmlDescriptor.ATTACHMENT_KEY, xmlDescriptor);
             else
                 throw new DeploymentUnitProcessingException("Failed to parse service xml [" + serviceXmlFile + "]");
         } catch(Exception e) {

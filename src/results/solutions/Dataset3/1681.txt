@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class ResolveExpressionOnHostHandler implements OperationStepHandler, Des
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
 
         // Just validate. The real work happens on the servers
-context.stepCompleted();
+        ResolveExpressionHandler.EXPRESSION.validateOperation(operation);
 
-        context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
     }
 
     @Override

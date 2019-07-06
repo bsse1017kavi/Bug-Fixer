@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -196,9 +195,9 @@ public class WebPageRenderer extends PageRenderer
 			// if the policy is never to redirect
 			// or one pass render mode is on
 			// or the targetUrl matches current url and the page is not stateless
-BufferedWebResponse response = renderPage(currentUrl, requestCycle);
+			// or the targetUrl matches current url, page is stateless but it's redirect-to-render
 			// just render the page
-			BufferedWebResponse response = renderPage(targetUrl, requestCycle);
+BufferedWebResponse response = renderPage(currentUrl, requestCycle);
 			if (response != null)
 			{
 				response.writeTo((WebResponse)requestCycle.getResponse());

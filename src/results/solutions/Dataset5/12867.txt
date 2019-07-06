@@ -1,4 +1,3 @@
-
 import org.aspectj.testing.Tester;
 
 public aspect AdviceOnIntroduced {
@@ -7,9 +6,9 @@ public aspect AdviceOnIntroduced {
     public static void test() {
 	Tester.checkEqual(new Foo(10).foo(5), 6, "foo");
     }
-Foo.new(int w) { this(); }
+    
     int Foo.foo(int n) { return n; }
-    Foo.new(int w) {}
+Foo.new(int w) { this(); }
         
     int around(int n):
         within(AdviceOnIntroduced) &&

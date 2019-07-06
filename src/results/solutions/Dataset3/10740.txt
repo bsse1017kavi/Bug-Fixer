@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -101,9 +100,9 @@ public class FieldRetrievingFactoryBeanTests extends TestCase {
 		}
 	}
 
-fr.setBeanName("test.beans.PackageLevelVisibleBean.CONSTANT");
+	public void testWithConstantOnClassWithPackageLevelVisibility() throws Exception {
 		FieldRetrievingFactoryBean fr = new FieldRetrievingFactoryBean();
-		fr.setBeanName("org.springframework.beans.factory.PackageLevelVisibleBean.CONSTANT");
+fr.setBeanName("test.beans.PackageLevelVisibleBean.CONSTANT");
 		fr.afterPropertiesSet();
 		assertEquals("Wuby", fr.getObject());
 	}

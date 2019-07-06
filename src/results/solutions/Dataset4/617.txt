@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -42,9 +41,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class TransportClientBackwardsCompatibilityTest extends ElasticsearchBackwardsCompatIntegrationTest {
 
     @Test
-Settings settings = ImmutableSettings.builder().put(requiredSettings()).put("client.transport.nodes_sampler_interval", "1s")
+    public void testSniffMode() throws ExecutionException, InterruptedException {
 
-        Settings settings = ImmutableSettings.builder().put("client.transport.nodes_sampler_interval", "1s")
+Settings settings = ImmutableSettings.builder().put(requiredSettings()).put("client.transport.nodes_sampler_interval", "1s")
                 .put("name", "transport_client_sniff_mode").put(ClusterName.SETTING, cluster().getClusterName())
                 .put("client.transport.sniff", true).build();
 

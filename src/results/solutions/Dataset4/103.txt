@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class RestFlushAction extends BaseRestHandler {
             // since we don't spawn, don't allow no_threads, but change it to a single thread
             operationThreading = BroadcastOperationThreading.THREAD_PER_SHARD;
         }
-client.admin().indices().flush(flushRequest, new ActionListener<FlushResponse>() {
+        flushRequest.operationThreading(operationThreading);
         flushRequest.refresh(request.paramAsBoolean("refresh", flushRequest.refresh()));
-        client.admin().indices().execFlush(flushRequest, new ActionListener<FlushResponse>() {
+client.admin().indices().flush(flushRequest, new ActionListener<FlushResponse>() {
             @Override public void onResponse(FlushResponse response) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

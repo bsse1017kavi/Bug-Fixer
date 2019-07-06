@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -314,9 +313,9 @@ public abstract class IndentTree extends Tree
             HtmlContainer nodeContainer = new HtmlContainer("node");
             Serializable userObject = treeNodeModel.getUserObject();
 
-throw new RuntimeException("User object cannot be null");
+            if (userObject == null)
             {
-                throw new RuntimeException("userObject == null");
+throw new RuntimeException("User object cannot be null");
             }
             TreeNodeLink expandCollapsLink = IndentTree.this.createJunctionLink(treeNodeModel);
             nodeContainer.add(expandCollapsLink);

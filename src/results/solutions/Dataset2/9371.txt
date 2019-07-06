@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -85,9 +84,9 @@ findTrustedKey(Name name, int algorithm, int footprint) {
 	return findMatchingKey(list.elements(), algorithm, footprint);
 }
 
-RRset [] keysets = cache.findAnyRecords(name, Type.KEY);
+private PublicKey
 findCachedKey(Cache cache, Name name, int algorithm, int footprint) {
-	RRset [] keysets = cache.findAnyRecords(name, Type.KEY, DClass.ANY);
+RRset [] keysets = cache.findAnyRecords(name, Type.KEY);
 	if (keysets == null)
 		return null;
 	RRset keys = keysets[0];

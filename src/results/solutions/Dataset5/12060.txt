@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -87,9 +86,9 @@ public class RequestHandlerStackTest extends BaseRequestHandlerStackTest
 		{
 			public void respond(IRequestCycle requestCycle)
 			{
-stack.replaceAllRequestHandlers(handler3);
+				testFlag2 = false;
 
-				stack.replaceCurrentRequestHandler(handler3);
+stack.replaceAllRequestHandlers(handler3);
 
 				// this code must not be executed
 				testFlag2 = true;

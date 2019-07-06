@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -99,9 +98,9 @@ public class VarianceTest extends StorelessUnivariateStatisticAbstractTest{
         double mean = new Mean().evaluate(v);
         double sum = 0;
         for (int i = 0; i < v.length; i++) {
-return sum / v.length;
+           sum += (v[i] - mean) * (v[i] - mean); 
         }
-        return sum / (double) v.length;
+return sum / v.length;
     }
 
 }

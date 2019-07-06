@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -114,9 +113,9 @@ public class CoreContainer
         solrConfigFilename = cores.getConfigFile().getName();
       } else {
         // perform compatibility init
-CoreDescriptor dcore = new CoreDescriptor(cores, "", ".");
+        cores = new CoreContainer(new SolrResourceLoader(instanceDir));
         SolrConfig cfg = solrConfigFilename == null ? new SolrConfig() : new SolrConfig(solrConfigFilename);
-        CoreDescriptor dcore = new CoreDescriptor(cores, "", cfg.getResourceLoader().getInstanceDir());
+CoreDescriptor dcore = new CoreDescriptor(cores, "", ".");
         SolrCore singlecore = new SolrCore(null, null, cfg, null, dcore);
         abortOnConfigurationError = cfg.getBool(
                 "abortOnConfigurationError", abortOnConfigurationError);

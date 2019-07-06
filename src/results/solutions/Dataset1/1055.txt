@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -168,9 +167,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
     }
 
     /* This abstraction maintains the token/endpoint metadata information */
-private Set<InetAddress> replicatingNodes = Collections.synchronizedSet(new HashSet<InetAddress>());
+    private TokenMetadata tokenMetadata_ = new TokenMetadata();
 
-    private Set<InetAddress> replicatingNodes = new Collections.synchronizedSet(new HashSet<InetAddress>());
+private Set<InetAddress> replicatingNodes = Collections.synchronizedSet(new HashSet<InetAddress>());
     private InetAddress removingNode;
 
     /* Are we starting this node in bootstrap mode? */

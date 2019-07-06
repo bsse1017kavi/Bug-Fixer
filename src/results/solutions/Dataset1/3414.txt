@@ -1,4 +1,3 @@
-
 package org.apache.solr.analysis;
 
 
@@ -50,9 +49,9 @@ public class UAX29URLEmailTokenizerFactory extends BaseTokenizerFactory {
     maxTokenLength = getInt("maxTokenLength",
                             StandardAnalyzer.DEFAULT_MAX_TOKEN_LENGTH);
   }
-UAX29URLEmailTokenizer tokenizer = new UAX29URLEmailTokenizer(luceneMatchVersion, input);
+
   public UAX29URLEmailTokenizer create(Reader input) {
-    UAX29URLEmailTokenizer tokenizer = new UAX29URLEmailTokenizer(input); 
+UAX29URLEmailTokenizer tokenizer = new UAX29URLEmailTokenizer(luceneMatchVersion, input);
     tokenizer.setMaxTokenLength(maxTokenLength);
     return tokenizer;
   }

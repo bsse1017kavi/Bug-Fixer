@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -1503,9 +1502,9 @@ public class PercolatorTests extends ElasticsearchIntegrationTest {
         assertThat(matches[4].getHighlightFields().get("field1").fragments()[0].string(), equalTo("The quick brown <em>fox</em> jumps over the lazy dog"));
     }
 
-DeleteIndexResponse deleteIndexResponse = client().admin().indices().prepareDelete("_all").execute().actionGet();
+    @Test
     public void testDeletePercolatorType() throws Exception {
-        DeleteIndexResponse deleteIndexResponse = client().admin().indices().prepareDelete().execute().actionGet();
+DeleteIndexResponse deleteIndexResponse = client().admin().indices().prepareDelete("_all").execute().actionGet();
         assertThat("Delete Index failed - not acked", deleteIndexResponse.isAcknowledged(), equalTo(true));
         ensureGreen();
 

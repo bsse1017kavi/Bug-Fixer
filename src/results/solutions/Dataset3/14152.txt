@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -45,8 +44,8 @@ public class SSOMutator<V> implements Mutator {
         this.value = value;
     }
 
-this.invoker.invoke(this.cache, new MutateOperation<>(this.id, this.value), Flag.IGNORE_RETURN_VALUES);
+    @Override
     public void mutate() {
-        this.invoker.invoke(this.cache, new MutateOperation<String, V>(this.id, this.value), Flag.IGNORE_RETURN_VALUES);
+this.invoker.invoke(this.cache, new MutateOperation<>(this.id, this.value), Flag.IGNORE_RETURN_VALUES);
     }
 }

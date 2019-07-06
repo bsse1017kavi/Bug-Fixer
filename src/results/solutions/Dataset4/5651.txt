@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -61,9 +60,9 @@ public class ETC1 {
 			byte[] buffer = new byte[1024 * 10];
 			DataInputStream in = null;
 			try {
-compressedData = BufferUtils.newUnsafeByteBuffer(fileSize);
+				in = new DataInputStream(new BufferedInputStream(new GZIPInputStream(pkmFile.read())));
 				int fileSize = in.readInt();
-				compressedData = BufferUtils.newByteBuffer(fileSize);
+compressedData = BufferUtils.newUnsafeByteBuffer(fileSize);
 				int readBytes = 0;
 				while ((readBytes = in.read(buffer)) != -1) {
 					compressedData.put(buffer, 0, readBytes);

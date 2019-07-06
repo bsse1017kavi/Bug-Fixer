@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -108,9 +107,9 @@ public class PerObject extends PerClause {
 
         // FIXME AV - don't use lateMunger here due to test "inheritance, around advice and abstract pointcuts"
         // see #75442 thread. Issue with weaving order.
-inAspect.crosscuttingMembers.addLateTypeMunger(world.concreteTypeMunger(munger, inAspect));
+		ResolvedTypeMunger munger =
 			new PerObjectInterfaceTypeMunger(inAspect, concreteEntry);
-		inAspect.crosscuttingMembers.addTypeMunger(world.concreteTypeMunger(munger, inAspect));
+inAspect.crosscuttingMembers.addLateTypeMunger(world.concreteTypeMunger(munger, inAspect));
 
         //ATAJ: add a munger to add the aspectOf(..) to the @AJ aspects
         if (inAspect.isAnnotationStyleAspect()) {

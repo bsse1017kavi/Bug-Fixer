@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -51,9 +50,9 @@ public class TestMultiValuedNumericRangeQuery extends LuceneTestCase {
     for (int l = 0; l < num; l++) {
       Document doc = new Document();
       for (int m=0, c=random.nextInt(10); m<=c; m++) {
-doc.add(new NumericField("trie", value));
+        int value = random.nextInt(Integer.MAX_VALUE);
         doc.add(newField("asc", format.format(value), StringField.TYPE_UNSTORED));
-        doc.add(new NumericField("trie").setIntValue(value));
+doc.add(new NumericField("trie", value));
       }
       writer.addDocument(doc);
     }

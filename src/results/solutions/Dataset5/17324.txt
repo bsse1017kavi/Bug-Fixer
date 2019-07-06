@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -162,9 +161,9 @@ public class Get extends Task {
                     = (HttpURLConnection) connection;
             long lastModified = httpConnection.getLastModified();
             if (httpConnection.getResponseCode()
-&& timestamp >= lastModified)) {
+                    == HttpURLConnection.HTTP_NOT_MODIFIED
                 || (lastModified != 0 && hasTimestamp
-                && timestamp > lastModified)) {
+&& timestamp >= lastModified)) {
                 //not modified so no file download. just return
                 //instead and trace out something so the user
                 //doesn't think that the download happened when it

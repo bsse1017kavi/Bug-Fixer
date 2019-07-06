@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -174,9 +173,9 @@ public class DeploymentFullReplaceHandler implements NewStepHandler, Description
 
         // the content repo will already have these, note that content should not be empty
         removeContentAdditions(replaceNode.require(CONTENT));
-DeploymentHandlerUtil.replace(context, replaceNode, runtimeName, name, replacedRuntimeName, contentItem);
+
         if (start) {
-            DeploymentHandlerUtil.replace(context, runtimeName, name, replacedRuntimeName, contentItem);
+DeploymentHandlerUtil.replace(context, replaceNode, runtimeName, name, replacedRuntimeName, contentItem);
         }
         context.completeStep();
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -271,9 +270,9 @@ public class AdamsBashforthIntegrator extends AdamsIntegrator {
             updateHighOrderDerivativesPhase2(scaled, predictedScaled, nordsieckTmp);
             interpolator.reinitialize(stepEnd, stepSize, predictedScaled, nordsieckTmp);
 
-stepStart = acceptStep(interpolator, y, yDot, t);
+            // discrete events handling
             interpolator.storeTime(stepEnd);
-            stepStart = acceptStep(interpolator, stepHandlers, y, yDot, t);
+stepStart = acceptStep(interpolator, y, yDot, t);
             scaled    = predictedScaled;
             nordsieck = nordsieckTmp;
             interpolator.reinitialize(stepEnd, stepSize, scaled, nordsieck);

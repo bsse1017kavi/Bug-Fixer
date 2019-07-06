@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -67,9 +66,9 @@ SIGRecord(Name name, int dclass, long ttl, int covered, int alg, int origttl,
 	checkU8("alg", alg);
 	checkU8("labels", labels);
 	TTL.check(origttl);
-this.alg = alg;
+	checkU16("footprint", footprint);
 	this.covered = covered;
-	this.alg = (byte) alg;
+this.alg = alg;
 	this.labels = name.labels();
 	this.origttl = origttl;
 	this.expire = expire;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -268,9 +267,9 @@ public abstract class AbstractAdaptableMessageListener
 	 */
 	protected Message buildMessage(Session session, Object result) throws JMSException {
 		MessageConverter converter = getMessageConverter();
-return this.messagingMessageConverter.toMessage(result, session);
+		if (converter != null) {
 			if (result instanceof org.springframework.messaging.Message) {
-				return messagingMessageConverter.toMessage(result, session);
+return this.messagingMessageConverter.toMessage(result, session);
 			}
 			else {
 				return converter.toMessage(result, session);

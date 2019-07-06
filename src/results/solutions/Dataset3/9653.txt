@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -486,9 +485,9 @@ public class JvmXml {
         if (JvmAttributes.HEAP_SIZE.isMarshallable(jvmElement) || JvmAttributes.MAX_HEAP_SIZE.isMarshallable(jvmElement)) {
             writer.writeEmptyElement(Element.HEAP.getLocalName());
             JvmAttributes.HEAP_SIZE.marshallAsAttribute(jvmElement, writer);
-if (JvmAttributes.PERMGEN_SIZE.isMarshallable(jvmElement) || JvmAttributes.MAX_PERMGEN_SIZE.isMarshallable(jvmElement)) {
+            JvmAttributes.MAX_HEAP_SIZE.marshallAsAttribute(jvmElement, writer);
         }
-        if (JvmAttributes.PERMGEN_SIZE.isMarshallable(jvmElement) || JvmAttributes.MAX_HEAP_SIZE.isMarshallable(jvmElement)) {
+if (JvmAttributes.PERMGEN_SIZE.isMarshallable(jvmElement) || JvmAttributes.MAX_PERMGEN_SIZE.isMarshallable(jvmElement)) {
             writer.writeEmptyElement(Element.PERMGEN.getLocalName());
             JvmAttributes.PERMGEN_SIZE.marshallAsAttribute(jvmElement, writer);
             JvmAttributes.MAX_PERMGEN_SIZE.marshallAsAttribute(jvmElement, writer);

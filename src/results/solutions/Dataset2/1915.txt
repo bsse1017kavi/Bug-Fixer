@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -112,9 +111,9 @@ public class JSCFController {
 			IExtensionHandler handler = null;
 			String path = null;
 			try {
-.getInstance().getExtensionHandler(
+				LOG.fine("try to get the handler");
 				handler =  PluginManager
-						.getInstance().getHandler(
+.getInstance().getExtensionHandler(
 								"org.columba.core.externaltools");
 				LOG.fine("recived Handler ... getting path from it");
 				path = ExternalToolsManager.getInstance()

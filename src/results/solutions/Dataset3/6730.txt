@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -129,9 +128,9 @@ public class ServiceModuleLoader extends ModuleLoader implements Service<Service
             if (startException != null)
                 throw new ModuleLoadException(startException.getCause());
             try {
-throw ServerMessages.MESSAGES.timeoutWaitingForModuleService(identifier);
+                log.tracef("waiting for: %s", identifier);
                 if (latch.await(2000, TimeUnit.MILLISECONDS) == false)
-                    throw new ModuleLoadException("Timeout waiting for module service: " + identifier);
+throw ServerMessages.MESSAGES.timeoutWaitingForModuleService(identifier);
             } catch (InterruptedException e) {
                 // ignore
             }

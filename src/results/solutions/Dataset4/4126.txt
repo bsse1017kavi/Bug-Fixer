@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -150,9 +149,9 @@ public class XContentAttachmentMapper implements XContentMapper {
      *
      * @author kimchy (shay.banon)
      */
-@SuppressWarnings({"unchecked"}) @Override public XContentMapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+    public static class TypeParser implements XContentTypeParser {
 
-        @Override public XContentMapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+@SuppressWarnings({"unchecked"}) @Override public XContentMapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
             XContentAttachmentMapper.Builder builder = new XContentAttachmentMapper.Builder(name);
 
             for (Map.Entry<String, Object> entry : node.entrySet()) {

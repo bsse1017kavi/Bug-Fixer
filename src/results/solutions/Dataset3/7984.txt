@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -126,9 +125,9 @@ public class DelegatingActionProxy extends Action {
 	 * @see #determineActionBeanName
 	 */
 	protected Action getDelegateAction(ActionMapping mapping) throws BeansException {
-return wac.getBean(beanName, Action.class);
+		WebApplicationContext wac = getWebApplicationContext(getServlet(), mapping.getModuleConfig());
 		String beanName = determineActionBeanName(mapping);
-		return (Action) wac.getBean(beanName, Action.class);
+return wac.getBean(beanName, Action.class);
 	}
 
 	/**

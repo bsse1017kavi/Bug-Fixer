@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public class PredicatedList<E> extends PredicatedCollection<E> implements List<E
      * @param predicate  the predicate to use for validation, must not be null
      * @return the decorated list
      * @throws IllegalArgumentException if list or predicate is null
-public static <T> List<T> predicatedList(List<T> list, Predicate<? super T> predicate) {
+     * @throws IllegalArgumentException if the list contains invalid elements
      */
-    public static <T> List<T> decorate(List<T> list, Predicate<? super T> predicate) {
+public static <T> List<T> predicatedList(List<T> list, Predicate<? super T> predicate) {
         return new PredicatedList<T>(list, predicate);
     }
 

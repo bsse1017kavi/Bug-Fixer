@@ -1,4 +1,3 @@
-
 /*
  * JBoss, the OpenSource J2EE webOS
  *
@@ -80,9 +79,9 @@ public class MetricsInterceptor extends AbstractInterceptor
      * @param   container   set by the container initialization code
      */
     public void setContainer(Container container) {
-applicationName = container.getEjbModule().getName();
+        this.container  = container;
         
-        applicationName = container.getApplication().getName();
+applicationName = container.getEjbModule().getName();
         beanName        = container.getBeanMetaData().getJndiName();
     }
     

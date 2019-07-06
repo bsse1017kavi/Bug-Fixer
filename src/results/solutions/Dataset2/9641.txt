@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -439,9 +438,9 @@ public class TryStatement extends SubRoutineStatement {
 		BlockScope tryScope = new BlockScope(scope);
 		BlockScope finallyScope = null;
 		
-if ((finallyBlock.bits & UndocumentedEmptyBlockMASK) != 0) {
+		if (finallyBlock != null) {
 			if (finallyBlock.isEmptyBlock()) {
-				if ((finallyBlock.bits & UncommentedEmptyBlockMASK) != 0) {
+if ((finallyBlock.bits & UndocumentedEmptyBlockMASK) != 0) {
 					scope.problemReporter().undocumentedEmptyBlock(finallyBlock);
 				}
 			} else {

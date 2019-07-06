@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -136,9 +135,9 @@ public class AnalyzeResponse extends ActionResponse implements Iterable<AnalyzeR
 
     @Override
     public void readFrom(StreamInput in) throws IOException {
-tokens = new ArrayList<>(size);
+        super.readFrom(in);
         int size = in.readVInt();
-        tokens = new ArrayList<AnalyzeToken>(size);
+tokens = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             tokens.add(AnalyzeToken.readAnalyzeToken(in));
         }

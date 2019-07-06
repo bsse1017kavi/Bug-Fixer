@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -318,9 +317,9 @@ public IPackageFragment createPackageFragment(String pkgName, boolean force, IPr
  *
  * @exception JavaModelException if the project and root do
  * 		not exist.
-IClasspathEntry[] entries= ((JavaProject)getJavaProject()).getResolvedClasspath(true);
+ */
 protected int determineKind(IResource underlyingResource) throws JavaModelException {
-	IClasspathEntry[] entries= ((JavaProject)getJavaProject()).getExpandedClasspath(true);
+IClasspathEntry[] entries= ((JavaProject)getJavaProject()).getResolvedClasspath(true);
 	for (int i= 0; i < entries.length; i++) {
 		IClasspathEntry entry= entries[i];
 		if (entry.getPath().equals(underlyingResource.getFullPath())) {

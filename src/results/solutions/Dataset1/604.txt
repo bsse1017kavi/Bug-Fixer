@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.RAFContainer
@@ -1679,9 +1678,9 @@ class RAFContainer extends FileContainer implements PrivilegedExceptionAction
                          SQLState.FILE_CANNOT_REMOVE_FILE, ioe2, file, ioe.toString());
                  }
                  catch (SecurityException se)
-SQLState.FILE_CANNOT_REMOVE_FILE, se, file, se.toString());
+                 {
                      throw StandardException.newException(
-                         SQLState.FILE_CANNOT_REMOVE_FILE, se, file, stub);
+SQLState.FILE_CANNOT_REMOVE_FILE, se, file, se.toString());
                  }
              }
 	

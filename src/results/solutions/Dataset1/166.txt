@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -245,9 +244,9 @@ public class SearchHandler extends RequestHandlerBase implements SolrCoreAware ,
 
             // TODO: map from shard to address[]
             for (String shard : sreq.actualShards) {
-params.set("distrib", "false");               // not a top-level request
+              ModifiableSolrParams params = new ModifiableSolrParams(sreq.params);
               params.remove(ShardParams.SHARDS);      // not a top-level request
-              params.remove("distrib");               // not a top-level request
+params.set("distrib", "false");               // not a top-level request
               params.remove("indent");
               params.remove(CommonParams.HEADER_ECHO_PARAMS);
               params.set(ShardParams.IS_SHARD, true);  // a sub (shard) request

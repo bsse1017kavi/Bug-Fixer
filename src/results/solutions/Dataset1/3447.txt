@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -62,9 +61,9 @@ final class SegmentTermEnum extends TermEnum implements Cloneable {
       // we have a format version number
       format = firstInt;
 
-throw new IndexFormatTooNewException(null, format, -1, TermInfosWriter.FORMAT_CURRENT);
+      // check that it is a format we can understand
       if (format < TermInfosWriter.FORMAT_CURRENT)
-        throw new CorruptIndexException("Unknown format version:" + format + " expected " + TermInfosWriter.FORMAT_CURRENT + " or higher");
+throw new IndexFormatTooNewException(null, format, -1, TermInfosWriter.FORMAT_CURRENT);
 
       size = input.readLong();                    // read the size
       

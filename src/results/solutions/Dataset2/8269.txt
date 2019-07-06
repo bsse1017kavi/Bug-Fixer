@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.registry;
 
 /*
@@ -223,9 +222,9 @@ public List getPreferenceContributions(IPluginRegistry registry) {
 /**
  * Get the preference nodes that are defined in the registry
  */
-readRegistry(registry, PlatformUI.PLUGIN_ID, IWorkbenchConstants.PL_PREFERENCES);
+protected void loadNodesFromRegistry(IPluginRegistry registry) {
 	nodes = new ArrayList();
-	readRegistry(registry, IWorkbenchConstants.PLUGIN_ID, IWorkbenchConstants.PL_PREFERENCES);
+readRegistry(registry, PlatformUI.PLUGIN_ID, IWorkbenchConstants.PL_PREFERENCES);
 }
 /**
  * Read preference page element.

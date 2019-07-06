@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class SimpleFsStore extends FsStore<Directory> {
     @Inject public SimpleFsStore(ShardId shardId, @IndexSettings Settings indexSettings, IndexStore indexStore) throws IOException {
         super(shardId, indexSettings);
         // by default, we don't need to sync to disk, since we use the gateway
-File location = ((FsIndexStore) indexStore).shardIndexLocation(shardId);
+        this.syncToDisk = componentSettings.getAsBoolean("sync_to_disk", false);
         LockFactory lockFactory = buildLockFactory();
-        File location = ((FsIndexStore) indexStore).shardLocation(shardId);
+File location = ((FsIndexStore) indexStore).shardIndexLocation(shardId);
         location.mkdirs();
         this.fsDirectory = new CustomSimpleFSDirectory(location, lockFactory, syncToDisk);
 

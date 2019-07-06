@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -131,9 +130,9 @@ public class AutolinkComponentResolver implements IComponentResolver
         classPath = page.getClass().getPackage().getName() + "." + classPath;
         
         Class clazz = page.getApplicationSettings().getDefaultClassResolver().resolveClass(classPath);
-final String id = componentName + page.getAutoIndex();
+
         // Make the componentName (page-)unique
-        final String id = componentName + "-" + page.getAutoIndex();
+final String id = componentName + page.getAutoIndex();
         
         return new BookmarkablePageLink(id, clazz, pageParameters);
     }

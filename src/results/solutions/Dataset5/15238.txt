@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1748,9 +1747,9 @@ public class XSchemaValidator implements XMLValidator {
                      name.equals(ELT_UNPARSEDENTITYDECL)) {
 
                 int entityName = fStringPool.addSymbol(child.getAttribute(ATT_NAME));
-int value = fStringPool.addString(child.getFirstChild().getFirstChild().getNodeValue());
+
                 if (name.equals(ELT_TEXTENTITYDECL)) {
-                    int value = fStringPool.addString(child.getFirstChild().getNodeValue());
+int value = fStringPool.addString(child.getFirstChild().getFirstChild().getNodeValue());
                     fEntityPool.addEntityDecl(entityName, value, -1, -1, -1, -1, true);
                 }
                 else {

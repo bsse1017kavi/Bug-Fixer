@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public final class PropertyVariableInterpolator extends VariableInterpolator
 	 * @return the interpolated <code>String</code>
 	 */
 	public static String interpolate(final String string, final Object object)
-if (string.contains("${"))
+	{
 		// If there's any reason to go to the expense of property expressions
-		if (string.indexOf("${") != -1)
+if (string.contains("${"))
 		{
 			// Do property expression interpolation
 			return new PropertyVariableInterpolator(string, object).toString();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -78,9 +77,9 @@ public class IncludeExclude {
 
     /**
      * Computes which global ordinals are accepted by this IncludeExclude instance.
-TermsEnum globalTermsEnum = valueSource.globalBytesValues().getTermsEnum();
+     */
     public LongBitSet acceptedGlobalOrdinals(BytesValues.WithOrdinals globalOrdinals, ValuesSource.Bytes.WithOrdinals valueSource) {
-        TermsEnum globalTermsEnum = valueSource.getGlobalTermsEnum();
+TermsEnum globalTermsEnum = valueSource.globalBytesValues().getTermsEnum();
         LongBitSet acceptedGlobalOrdinals = new LongBitSet(globalOrdinals.getMaxOrd());
         try {
             for (BytesRef term = globalTermsEnum.next(); term != null; term = globalTermsEnum.next()) {

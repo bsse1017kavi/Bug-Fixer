@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -159,9 +158,9 @@ public final class ProcessControllerServerHandler implements ConnectionHandler {
                                 for (int i = 0; i < envCount; i ++) {
                                     env.put(readUTFZBytes(dataStream), readUTFZBytes(dataStream));
                                 }
-processController.addProcess(processName, authKey, Arrays.asList(command), env, workingDirectory, false, false);
+                                final String workingDirectory = readUTFZBytes(dataStream);
                                 SERVER_LOGGER.tracef("Received add_process for process %s", processName);
-                                processController.addProcess(processName, Arrays.asList(command), env, workingDirectory, false, false);
+processController.addProcess(processName, authKey, Arrays.asList(command), env, workingDirectory, false, false);
                             } else {
                                 SERVER_LOGGER.tracef("Ignoring add_process message from untrusted source");
                             }

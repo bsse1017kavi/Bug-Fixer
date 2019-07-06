@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.functions;
 
 import java.io.Serializable;
@@ -66,9 +65,9 @@ public class RegexFunction extends AbstractFunction implements Serializable
     public RegexFunction()
     {
         valueIndex = between = name = "";
-templatePattern = compiler.compile("\\$(\\d+)\\$", Perl5Compiler.READ_ONLY_MASK);
+        try
         {
-            templatePattern = compiler.compile("\\$(\\d+)\\$");
+templatePattern = compiler.compile("\\$(\\d+)\\$", Perl5Compiler.READ_ONLY_MASK);
         }
         catch (MalformedPatternException e)
         {

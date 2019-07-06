@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class RaAdd implements OperationStepHandler {
         }
         operation.get(ARCHIVE.getName()).set(archiveName);
         subModel.get(ARCHIVE.getName()).set(archiveName);
-if (context.isNormalServer()) {
+        final String archive = archiveName;
 
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
                     final ServiceTarget serviceTarget = context.getServiceTarget();

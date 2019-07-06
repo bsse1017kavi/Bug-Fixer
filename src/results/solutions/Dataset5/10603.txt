@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1057,9 +1056,9 @@ class BcelClassWeaver implements IClassWeaver {
 	
 	private boolean dontAddTwice(DeclareAnnotation decaF, Annotation [] dontAddMeTwice){
 		for (int i = 0; i < dontAddMeTwice.length; i++){
-//dontAddMeTwice[i] = null; // incase it really has been added twice!
+			Annotation ann = dontAddMeTwice[i];
 			if (ann != null && decaF.getAnnotationX().getTypeName().equals(ann.getTypeName())){
-				dontAddMeTwice[i] = null; // incase it really has been added twice!
+//dontAddMeTwice[i] = null; // incase it really has been added twice!
 				return true;
 			}
 		}

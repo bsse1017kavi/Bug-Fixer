@@ -1,4 +1,3 @@
-
 /*
  * GrabKeyDialog.java - Grabs keys from the keyboard
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -400,9 +399,9 @@ public class GrabKeyDialog extends JDialog
 
 		//{{{ processKeyEvent() method
 		protected void processKeyEvent(KeyEvent _evt)
-if(KeyEventWorkaround.isModifier(_evt.getKeyCode()))
+		{
 			KeyEvent evt = KeyEventWorkaround.processKeyEvent(_evt);
-			if(KeyEventWorkaround.isModifier(_evt))
+if(KeyEventWorkaround.isModifier(_evt.getKeyCode()))
 				evt = null;
 
 			if(debugBuffer != null)

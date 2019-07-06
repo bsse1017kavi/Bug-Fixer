@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -166,9 +165,9 @@ public class RequestListenerInterface
 	 * @param component
 	 *            The component
 	 */
-if (!component.canCallListenerInterface())
+	public final void invoke(final IRequestableComponent component)
 	{
-		if (!component.isEnabledInHierarchy() || !component.isVisibleInHierarchy())
+if (!component.canCallListenerInterface())
 		{
 			// just return so that we have a silent fail and just re-render the
 			// page

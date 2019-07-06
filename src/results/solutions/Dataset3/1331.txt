@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -104,9 +103,9 @@ public class ArquillianService implements Service<ArquillianService> {
         final ArquillianService arqService = this;
         listener = new AbstractServiceListener<Object>() {
 
-switch (transition.getAfter()) {
+            @Override
             public void transition(ServiceController<? extends Object> serviceController, ServiceController.Transition transition) {
-                switch (serviceController.getState()) {
+switch (transition.getAfter()) {
                     case UP: {
                         ServiceName serviceName = serviceController.getName();
                         String simpleName = serviceName.getSimpleName();

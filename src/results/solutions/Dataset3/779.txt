@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -551,9 +550,9 @@ public class ModelTestModelDescriptionValidator {
                 } catch (Exception e) {
                     return "'" + descriptor + "' is not a list";
                 }
-entry.asString();
+                for (ModelNode entry : list) {
                     try {
-                        String s = entry.asString();
+entry.asString();
                     } catch (Exception e) {
                         return "'" + descriptor + "' is not a string";
                     }

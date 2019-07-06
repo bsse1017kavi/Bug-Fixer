@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries;
 
 /*
@@ -289,9 +288,9 @@ public class CustomScoreQuery extends Query {
     private final CustomScoreProvider provider;
     private final float[] vScores; // reused in score() to avoid allocating this array for each doc
 
-Scorer subQueryScorer, Scorer[] valSrcScorers) {
+    // constructor
     private CustomScorer(CustomScoreProvider provider, CustomWeight w, float qWeight,
-        Scorer subQueryScorer, Scorer[] valSrcScorers) throws IOException {
+Scorer subQueryScorer, Scorer[] valSrcScorers) {
       super(w);
       this.qWeight = qWeight;
       this.subQueryScorer = subQueryScorer;

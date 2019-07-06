@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -377,9 +376,9 @@ int /*long*/ gtk_motion_notify_event (int /*long*/ widget, int /*long*/ eventPtr
 	return result;
 }
 
-return super.gtk_realize (widget);
+int /*long*/ gtk_realize (int /*long*/ widget) {
 	setCursor (cursor != null ? cursor.handle : 0);
-	return 0;
+return super.gtk_realize (widget);
 }
 
 void hookEvents () {

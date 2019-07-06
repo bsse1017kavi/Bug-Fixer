@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.internal.examples.remoteservices.server;
 
 import org.eclipse.core.runtime.Assert;
@@ -75,9 +74,9 @@ public class Activator implements BundleActivator {
 			System.out.println("Remote service registered for class " + className);
 
 			// then register for discovery
-serviceInfo = new ServiceInfo(Constants.DISCOVERY_SERVICE_TYPE, null, 80, serviceID, new ServiceProperties(new DiscoveryProperties(className, ECF_GENERIC_CLIENT, serviceHostContainer)));
+			final String serviceName = System.getProperty("user.name") + System.currentTimeMillis();
 			final IServiceID serviceID = ServiceIDFactory.getDefault().createServiceID(discovery.getServicesNamespace(), REMOTE_SERVICE_TYPE, serviceName);
-			serviceInfo = new ServiceInfo(null, 80, serviceID, new ServiceProperties(new DiscoveryProperties(className, ECF_GENERIC_CLIENT, serviceHostContainer)));
+serviceInfo = new ServiceInfo(Constants.DISCOVERY_SERVICE_TYPE, null, 80, serviceID, new ServiceProperties(new DiscoveryProperties(className, ECF_GENERIC_CLIENT, serviceHostContainer)));
 			// register discovery here
 			discovery.registerService(serviceInfo);
 			System.out.println("Service registered for discovery with IServiceID: " + serviceID);

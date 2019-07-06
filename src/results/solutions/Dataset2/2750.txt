@@ -1,4 +1,3 @@
-
 package org.junit.tests.experimental.theories.extendingwithstubs;
 
 
@@ -17,9 +16,9 @@ public class StubbedTheories extends Theories {
 	public StubbedTheories(Class<?> klass) throws InitializationError {
 		super(klass);
 	}
-public Statement childBlock(TestMethod method) {
+
 	@Override
-	public Statement chain(TestMethod method) {
+public Statement childBlock(TestMethod method) {
 		return new StubbedTheoryAnchor(method);
 	}
 	

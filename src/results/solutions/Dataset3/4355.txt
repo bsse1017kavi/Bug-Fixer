@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -189,9 +188,9 @@ public class ReachTopology {
       cluster.shutdown();
       drpc.shutdown();
     }
-StormSubmitter.submitTopology(args[0], conf, builder.createRemoteTopology());
+    else {
       conf.setNumWorkers(6);
-      StormSubmitter.submitTopologyWithProgressBar(args[0], conf, builder.createRemoteTopology());
+StormSubmitter.submitTopology(args[0], conf, builder.createRemoteTopology());
     }
   }
 }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -145,9 +144,9 @@ public class MessageTest extends TestCase {
         kind = IMessage.FAIL;
         roundTrip(input, kind, thrown, sl, descriptor, exClass);
 
-thrown = new AbortException();
+        // -- throwable
         kind = IMessage.FAIL;
-        thrown = AbortException.ABORT;
+thrown = new AbortException();
         input = null;
         roundTrip(input, kind, thrown, sl, descriptor, exClass);
 

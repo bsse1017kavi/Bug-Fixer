@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryparser.xml.builders;
 
 /*
@@ -75,9 +74,9 @@ public class TestNumericRangeFilterBuilder extends LuceneTestCase {
         reader.close();
       }
     }
-writer.shutdown();
+    finally {
       writer.commit();
-      writer.close();
+writer.shutdown();
       ramDir.close();
     }
   }

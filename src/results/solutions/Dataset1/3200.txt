@@ -1,4 +1,3 @@
-
 package org.apache.lucene.classification.utils;
 
 /*
@@ -85,9 +84,9 @@ public class DataSplitterTest extends LuceneTestCase {
 
   @Override
   @After
-indexWriter.shutdown();
+  public void tearDown() throws Exception {
     originalIndex.close();
-    indexWriter.close();
+indexWriter.shutdown();
     dir.close();
     super.tearDown();
   }

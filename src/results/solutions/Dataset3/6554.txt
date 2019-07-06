@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -195,9 +194,9 @@ public class EarStructureProcessor implements DeploymentUnitProcessor {
                 // now check the rest of the archive for any other jar files
                 for (final VirtualFile child : childArchives) {
                     if (subDeploymentFiles.contains(child)) {
-if (child.getLowerCaseName().toLowerCase().endsWith(JAR_EXTENSION)) {
+                        continue;
                     }
-                    if (child.getName().toLowerCase().endsWith(JAR_EXTENSION)) {
+if (child.getLowerCaseName().toLowerCase().endsWith(JAR_EXTENSION)) {
                         final Closeable closable = child.isFile() ? VFS.mountZip(child, child, TempFileProviderService
                                 .provider()) : null;
                         final MountHandle mountHandle = new MountHandle(closable);

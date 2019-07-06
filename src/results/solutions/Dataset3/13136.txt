@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -441,9 +440,9 @@ public final class JDBCStoreManager implements JDBCEntityPersistenceStore {
 
     public boolean loadEntity(CmpEntityBeanContext ctx, boolean failIfNotFound) {
         // is any on the data already in the entity valid
-log.trace("RESET PERSISTENCE CONTEXT: id=" + ctx.getPrimaryKeyUnchecked());
+        if (!ctx.isValid()) {
             if (log.isTraceEnabled()) {
-                log.trace("RESET PERSISTENCE CONTEXT: id=" + ctx.getPrimaryKey());
+log.trace("RESET PERSISTENCE CONTEXT: id=" + ctx.getPrimaryKeyUnchecked());
             }
             entityBridge.resetPersistenceContext(ctx);
         }

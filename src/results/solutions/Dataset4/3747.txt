@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.util;
 
 import static android.content.Intent.ACTION_VIEW;
@@ -86,9 +85,9 @@ public class HtmlViewer implements Runnable {
         int issueNumber = issueMatcher.getNumber(url);
         if (issueNumber > 0) {
             Issue issue = new Issue();
-context.startActivity(ViewIssueActivity.createIntent(issue));
+            issue.setNumber(issueNumber);
             issue.setHtmlUrl(url);
-            context.startActivity(ViewIssueActivity.viewIssueIntentFor(issue));
+context.startActivity(ViewIssueActivity.createIntent(issue));
             return;
         }
 

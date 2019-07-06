@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -146,9 +145,9 @@ public class QualifiedNameReference extends NameReference {
 					&& currentScope.allowBlankFinalFieldAssignment(lastFieldBinding) 
 					&& indexOfFirstFieldBinding == 1) {
 				if (flowInfo.isPotentiallyAssigned(lastFieldBinding)) {
-flowContext.recordSettingFinal(lastFieldBinding, this, flowInfo);
+					currentScope.problemReporter().duplicateInitializationOfBlankFinalField(lastFieldBinding, this);
 				} else {
-					flowContext.recordSettingFinal(lastFieldBinding, this);
+flowContext.recordSettingFinal(lastFieldBinding, this, flowInfo);
 				}
 				flowInfo.markAsDefinitelyAssigned(lastFieldBinding);
 			} else {

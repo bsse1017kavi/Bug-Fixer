@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -72,9 +71,9 @@ public class WarClassloadingDependencyProcessor implements DeploymentUnitProcess
 
         moduleSpecification.addDependency(new ModuleDependency(moduleLoader, BEAN_VALIDATION, false, false, true));
 
-moduleSpecification.addDependency(new ModuleDependency(moduleLoader, JBOSS_WEB, false, false, true));
+        // FIXME we need to revise the exports of the web module, so that we
         // don't export our internals
-        moduleSpecification.addDependency(new ModuleDependency(moduleLoader, JBOSS_WEB, false, false, false));
+moduleSpecification.addDependency(new ModuleDependency(moduleLoader, JBOSS_WEB, false, false, true));
         moduleSpecification.addDependency(new ModuleDependency(moduleLoader, LOG, false, false, false));
 
     }

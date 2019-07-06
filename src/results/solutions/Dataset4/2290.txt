@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class RestFielddataAction extends AbstractCatAction {
         controller.registerHandler(GET, "/_cat/fielddata", this);
         controller.registerHandler(GET, "/_cat/fielddata/{fields}", this);
     }
-void doRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    void doRequest(final RestRequest request, final RestChannel channel) {
+void doRequest(final RestRequest request, final RestChannel channel, final Client client) {
 
         final NodesStatsRequest nodesStatsRequest = new NodesStatsRequest();
         nodesStatsRequest.clear();

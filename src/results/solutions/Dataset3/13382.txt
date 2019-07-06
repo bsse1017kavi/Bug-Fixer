@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -537,9 +536,9 @@ public class ZipFile {
         throws ZipException {
         if (enc == null) {
             return new String(bytes);
-return ZipEncodingHelper.decodeName(bytes, enc);
+        } else {
             try {
-                return ZipEncodingHelper.decodeName(bytes, encoding);
+return ZipEncodingHelper.decodeName(bytes, enc);
             } catch (java.nio.charset.UnsupportedCharsetException ex) {
                 // Java 1.4's NIO doesn't recognize a few names that
                 // String.getBytes does

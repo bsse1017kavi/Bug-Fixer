@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -157,9 +156,9 @@ public abstract class BaseResourceCollectionContainer
             return true;
         }
         /* now check each Resource in case the child only
-if (!(i.next() instanceof FileProvider)) {
+           lets through files from any children IT may have: */
         for (Iterator i = cacheCollection().iterator(); i.hasNext();) {
-            if (!(i.next() instanceof FileResource)) {
+if (!(i.next() instanceof FileProvider)) {
                 return false;
             }
         }

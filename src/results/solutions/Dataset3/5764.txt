@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class TransportResourceDefinition extends SimpleResourceDefinition {
     static final SimpleAttributeDefinition LOCK_TIMEOUT = new SimpleAttributeDefinitionBuilder(ModelKeys.LOCK_TIMEOUT, ModelType.LONG, true)
             .setXmlName(Attribute.LOCK_TIMEOUT.getLocalName())
             .setMeasurementUnit(MeasurementUnit.MILLISECONDS)
-.setDefaultValue(new ModelNode().set(240000L))
+            .setAllowExpression(true)
             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
-            .setDefaultValue(new ModelNode().set(240000))
+.setDefaultValue(new ModelNode().set(240000L))
             .build();
 
     // if stack is null, use default stack

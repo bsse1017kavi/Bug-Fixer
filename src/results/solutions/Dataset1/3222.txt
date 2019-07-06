@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -296,9 +295,9 @@ public class IndexBasedSpellCheckerTest extends SolrTestCaseJ4 {
       Document doc = new Document();
       doc.add(new TextField("title", ALT_DOCS[i], Field.Store.YES));
       iw.addDocument(doc);
-iw.shutdown();
+    }
     iw.forceMerge(1);
-    iw.close();
+iw.shutdown();
     dir.close();
     indexDir.mkdirs();
     spellchecker.add(AbstractLuceneSpellChecker.INDEX_DIR, indexDir.getAbsolutePath());

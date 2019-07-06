@@ -1,4 +1,3 @@
-
 // AttributesImpl.java - default implementation of Attributes.
 // Written by David Megginson, sax@megginson.com
 // NO WARRANTY!  This class is in the public domain.
@@ -436,9 +435,9 @@ public class AttributesImpl implements Attributes
 	    data[index*5+2] = null;
 	    data[index*5+3] = null;
 	    data[index*5+4] = null;
-(length-index-1)*5);
+	    if (index < length - 1) {
 		System.arraycopy(data, (index+1)*5, data, index*5,
-				 (length-index)*5);
+(length-index-1)*5);
 	    }
 	    length--;
 	} else {

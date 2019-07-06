@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -930,9 +929,9 @@ public class JDBCStoreManager
             if (mode != fetch.EAGER_PARALLEL && !fms[i].isEagerSelectToMany()
                 && fms[i].supportsSelect(sel, jtype, sm, this, fetch) > 0
                 && sel.eagerClone(fms[i], jtype, false, 1) != null)
-boolean hasJoin = fetch.hasJoin(fms[i].getFullName(false));
+                continue;
 
-            boolean hasJoin = fetch.hasJoin(fms[i].getFullName());
+boolean hasJoin = fetch.hasJoin(fms[i].getFullName(false));
 
             // if the field declares a preferred select mode of join or does not
             // have a preferred mode and we're doing a by-id lookup, try

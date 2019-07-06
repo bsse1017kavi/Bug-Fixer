@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public abstract class AbstractTaskTestCase {
         return result;
     }
 
-final PatchingResult result = runner.rollback(patchId, ContentVerificationPolicy.STRICT, false, true);
+    PatchingResult rollback(final PatchInfo info, final String patchId) throws PatchingException {
         final PatchingTaskRunner runner = new PatchingTaskRunner(info, env);
-        final PatchingResult result = runner.rollback(patchId, false);
+final PatchingResult result = runner.rollback(patchId, ContentVerificationPolicy.STRICT, false, true);
         result.commit();
         return result;
     }

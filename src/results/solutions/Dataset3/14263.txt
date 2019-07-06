@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ import org.jboss.logging.Logger;
 @MessageDriven(
         name="ConfiguredResourceAdapterNameMDB",
         activationConfig = {
-@ResourceAdapter(value = "RARNameOverridenInJBossEJB3Xml.rar")
+                @ActivationConfigProperty(propertyName = "destination", propertyValue = ConfiguredResourceAdapterNameTestCase.QUEUE_JNDI_NAME)
 })
-@ResourceAdapter(value = "NoRAShouldBeNamedLikeThis.rar")
+@ResourceAdapter(value = "RARNameOverridenInJBossEJB3Xml.rar")
 public class ConfiguredResourceAdapterNameMDB implements MessageListener {
 
     private static final Logger logger = Logger.getLogger(ConfiguredResourceAdapterNameMDB.class);

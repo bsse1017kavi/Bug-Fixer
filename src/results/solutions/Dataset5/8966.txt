@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -127,9 +126,9 @@ public class ExecProg extends GenericSharedObject
 
     public void activated(ID [] others)
     {
-if (!getContext().isGroupManager() || includeServer.equals(Boolean.TRUE)) {
+        debug("activated()");
         try {
-            if (!getContext().isGroupServer() || includeServer.equals(Boolean.TRUE)) {
+if (!getContext().isGroupManager() || includeServer.equals(Boolean.TRUE)) {
                 startup();
             } else {
             	debug("Not executing commands because is server");

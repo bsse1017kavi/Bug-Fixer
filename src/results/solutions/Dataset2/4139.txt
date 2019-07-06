@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -859,9 +858,9 @@ public class Main implements ProblemSeverities, SuffixConstants {
 
 		public void setLog(String logFileName) throws InvalidInputException {
 			try {
-if (index != -1) {
+				this.log = new PrintWriter(new FileOutputStream(logFileName, false));
 				int index = logFileName.lastIndexOf('.');
-				if (index != 0) {
+if (index != -1) {
 					if (logFileName.substring(index).toLowerCase().equals(".xml")) { //$NON-NLS-1$
 						this.isXml = true;
 						this.log.println(XML_HEADER);

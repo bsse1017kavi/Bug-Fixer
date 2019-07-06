@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -144,9 +143,9 @@ public class TestFilterIterator<E> extends AbstractTestIterator<E> {
         filterIterator.setPredicate(truePredicate());
         // this predicate matches
         assertEquals(true, filterIterator.hasNext());
-filterIterator.setPredicate(NotNullPredicate.notNullPredicate());
+
         // this predicate doesn't match
-        filterIterator.setPredicate(NotNullPredicate.getInstance());
+filterIterator.setPredicate(NotNullPredicate.notNullPredicate());
         assertEquals(false, filterIterator.hasNext());
     }
 

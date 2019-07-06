@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class RestPutMappingAction extends BaseRestHandler {
     @Override public void handleRequest(final RestRequest request, final RestChannel channel) {
         PutMappingRequest putMappingRequest = putMappingRequest(splitIndices(request.param("index")));
         putMappingRequest.type(request.param("type"));
-putMappingRequest.ignoreConflicts(request.paramAsBoolean("ignore_conflicts", putMappingRequest.ignoreConflicts()));
+        putMappingRequest.mappingSource(request.contentAsString());
         putMappingRequest.timeout(request.paramAsTime("timeout", timeValueSeconds(10)));
-        putMappingRequest.ignoreConflicts(request.paramAsBoolean("ignoreConflicts", putMappingRequest.ignoreConflicts()));
+putMappingRequest.ignoreConflicts(request.paramAsBoolean("ignore_conflicts", putMappingRequest.ignoreConflicts()));
         client.admin().indices().putMapping(putMappingRequest, new ActionListener<PutMappingResponse>() {
             @Override public void onResponse(PutMappingResponse response) {
                 try {

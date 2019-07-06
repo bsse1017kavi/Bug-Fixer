@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1170,9 +1169,9 @@ public class CoreDocumentImpl
      *   parameter is from an other document.
      */
     public String saveXML(Node node)
-this != node.getOwnerDocument() ) {
+                          throws DOMException {
         if ( node != null &&
-             getOwnerDocument() != node.getOwnerDocument() ) {
+this != node.getOwnerDocument() ) {
             String msg = DOMMessageFormatter.formatMessage(DOMMessageFormatter.DOM_DOMAIN, "WRONG_DOCUMENT_ERR", null);
             throw new DOMException(DOMException.WRONG_DOCUMENT_ERR, msg);
         }

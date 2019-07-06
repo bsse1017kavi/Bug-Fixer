@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.jdom;
 
 /*
@@ -26,9 +25,9 @@ public class SimpleDOMBuilder extends AbstractDOMBuilder implements ISourceEleme
 public void acceptImport(int declarationStart, int declarationEnd, char[] name, boolean onDemand) {
 	int[] sourceRange = {declarationStart, declarationEnd};
 	String importName = new String(name);
-importName+=".*"; //$NON-NLS-1$
+	/** name is set to contain the '*' */
 	if (onDemand) {
-		importName+=".*"/*nonNLS*/;
+importName+=".*"; //$NON-NLS-1$
 	}
 	fNode= new DOMImport(fDocument, sourceRange, importName, onDemand);
 	addChild(fNode);	

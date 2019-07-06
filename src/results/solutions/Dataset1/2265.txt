@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.SubqueryList
@@ -166,9 +165,9 @@ public class SubqueryList extends QueryTreeNodeVector
 		{
 			SubqueryNode	subqueryNode;
 
-if (subqueryNode.referencesSessionSchema())
+			subqueryNode = (SubqueryNode) elementAt(index);
 
-			if (subqueryNode.getResultSet().referencesSessionSchema())
+if (subqueryNode.referencesSessionSchema())
 			{
 				return true;
 			}

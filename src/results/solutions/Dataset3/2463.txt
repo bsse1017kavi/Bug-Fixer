@@ -1,4 +1,3 @@
-
 package org.apache.commons.lang3.text.translate;
 
 /**
@@ -89,9 +88,9 @@ public class JavaUnicodeEscaper extends UnicodeEscaper {
      * @param codePoint
      *            a Unicode code point
      */
-final char[] surrogatePair = Character.toChars(codepoint);
+    @Override
     protected String toUtf16Escape(final int codepoint) {
-        char[] surrogatePair = Character.toChars(codepoint);
+final char[] surrogatePair = Character.toChars(codepoint);
         return "\\u" + hex(surrogatePair[0]) + "\\u" + hex(surrogatePair[1]);
     }
 

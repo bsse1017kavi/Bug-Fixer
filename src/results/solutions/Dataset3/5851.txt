@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -48,9 +47,9 @@ public class SnapshotTakeHandler implements OperationStepHandler, DescriptionPro
 
     @Override
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
-context.getResult().set(name);
+        try {
             String name = persister.snapshot();
-            context.getResult().get().set(name);
+context.getResult().set(name);
             context.completeStep();
         } catch (ConfigurationPersistenceException e) {
             throw new OperationFailedException(e.getMessage(), new ModelNode().set(e.getMessage()));

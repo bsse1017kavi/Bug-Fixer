@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.services.crypto.CipherFactory
@@ -66,9 +65,9 @@ public interface CipherFactory
 	/**
 		Returns a CipherProvider which is the encryption or decryption engine.
 		@param mode is either ENCRYPT or DECRYPT.  The CipherProvider can only
-@exception StandardException Standard Derby Error Policy
+				do encryption or decryption but not both.
 
-		@exception StandardException Standard Cloudscape Error Policy
+@exception StandardException Standard Derby Error Policy
 	 */
 	CipherProvider createNewCipher(int mode)
 		 throws StandardException;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -259,9 +258,9 @@ public class DefaultCodeFormatter extends CodeFormatter implements ICodeFormatte
 		this.preferences.line_delimiter = lineSeparator;
 		this.preferences.initial_indentation_level = indentationLevel;
 
-String result = this.newCodeFormatter.format(source, positions, constructorDeclaration);
+		this.newCodeFormatter = new CodeFormatterVisitor(this.preferences, options);
 		
-		String result = this.newCodeFormatter.format(source, positions, constructorDeclaration);;
+String result = this.newCodeFormatter.format(source, positions, constructorDeclaration);
 		if (positions != null) {
 			System.arraycopy(this.newCodeFormatter.scribe.mappedPositions, 0, positions, 0, positions.length);
 		}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -180,9 +179,9 @@ public class PathImpl<Z,X> extends ExpressionImpl<X> implements Path<X> {
                 val.setAlias(q.getAlias(this));
                 return val;
             }
-path.setMetaData(model.getRepository().getCachedMetaData(getJavaType()));
+        } else if (_parent == null) {
             path = factory.newPath();
-            path.setMetaData(model.repos.getCachedMetaData(getJavaType()));
+path.setMetaData(model.getRepository().getCachedMetaData(getJavaType()));
         }
         if (_member != null && !_member.isCollection()) {
             path.setImplicitType(getJavaType());

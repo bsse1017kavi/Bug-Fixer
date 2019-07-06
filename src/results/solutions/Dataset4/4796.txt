@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -135,9 +134,9 @@ public abstract class TransportShardSingleOperationAction<Request extends Single
                 Exception failure = lastException;
                 if (failure == null) {
                     failure = new NoShardAvailableActionException(shardIt.shardId(), "No shard available for [" + request + "]");
-logger.debug(shardIt.shardId() + ": Failed to execute [{}]", failure, request);
+                } else {
                     if (logger.isDebugEnabled()) {
-                        logger.debug(shardIt.shardId() + ": Failed to get [{}]", failure, request);
+logger.debug(shardIt.shardId() + ": Failed to execute [{}]", failure, request);
                     }
                 }
                 listener.onFailure(failure);

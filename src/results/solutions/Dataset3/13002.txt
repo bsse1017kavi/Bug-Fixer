@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class AS7Plugin implements JdrPlugin {
 
         return Arrays.asList(
             new TreeCommand(),
-new CallAS7("dump-services").resource("core-service", "service-container"),
+            new JarCheck(),
             new CallAS7("configuration").param("recursive", "true"),
-            new CallAS7("dump-services").operation("dump-services").resource("core-service", "service-container"),
+new CallAS7("dump-services").resource("core-service", "service-container"),
             new CallAS7("cluster-proxies-configuration").resource("subsystem", "modcluster"),
             new CollectFiles("*/standalone/configuration/*").sanitizer(xmlSanitizer, passwordSanitizer),
             new CollectFiles("*/domain/configuration/*").sanitizer(xmlSanitizer, passwordSanitizer),

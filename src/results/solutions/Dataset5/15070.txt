@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -67,9 +66,9 @@ public class Model<T extends Serializable> implements IModel<T>
 	/**
 	 * @param map
 	 *            The Map, which may or may not be Serializable
-public static Model valueOf(final Map map)
+	 * @return A Model object wrapping the Map
 	 */
-	public static Model< ? > valueOf(final Map map)
+public static Model valueOf(final Map map)
 	{
 		return new Model(map instanceof Serializable ? (Serializable)map : new HashMap(map));
 	}

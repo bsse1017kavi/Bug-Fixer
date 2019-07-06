@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class UserIsDnResourceDefintion extends BaseLdapUserSearchResource {
     public static final ResourceDefinition INSTANCE = new UserIsDnResourceDefintion();
 
     private UserIsDnResourceDefintion() {
-new SecurityRealmChildAddHandler(false, false, ATTRIBUTE_DEFINITIONS), new SecurityRealmChildRemoveHandler(false));
+        super(UserSearchType.USERNAME_IS_DN,
               ControllerResolver.getResolver("core.management.security-realm.authorization.ldap.user-search.username-to-dn"),
-              new SecurityRealmChildAddHandler(false, ATTRIBUTE_DEFINITIONS), new SecurityRealmChildRemoveHandler(false));
+new SecurityRealmChildAddHandler(false, false, ATTRIBUTE_DEFINITIONS), new SecurityRealmChildRemoveHandler(false));
     }
 
     @Override

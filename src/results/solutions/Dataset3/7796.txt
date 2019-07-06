@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -50,9 +49,9 @@ public class JsonpPollingTransportHandler extends AbstractHttpSendingTransportHa
 		return new MediaType("application", "javascript", Charset.forName("UTF-8"));
 	}
 
-Assert.state(getSockJsConfig() != null, "This transport requires SockJsConfiguration");
+	@Override
 	public PollingSockJsSession createSession(String sessionId, WebSocketHandler handler) {
-		Assert.notNull(getSockJsConfig(), "This transport requires SockJsConfiguration");
+Assert.state(getSockJsConfig() != null, "This transport requires SockJsConfiguration");
 		return new PollingSockJsSession(sessionId, getSockJsConfig(), handler);
 	}
 

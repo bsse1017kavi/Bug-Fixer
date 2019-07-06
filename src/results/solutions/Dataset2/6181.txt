@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -118,9 +117,9 @@ public final class SimpleSessionStore  extends BaseInterceptor {
     public void reload( Request req, Context ctx ) throws TomcatException {
 	ClassLoader newLoader = ctx.getClassLoader();
 	SimpleSessionManager sM = getManager( ctx );    
-Enumeration sessionEnum=sM.getSessions();
+
 	// remove all non-serializable objects from session
-	Enumeration sessionEnum=sM.getSessionIds();
+Enumeration sessionEnum=sM.getSessions();
 	while( sessionEnum.hasMoreElements() ) {
 	    ServerSession session = (ServerSession)sessionEnum.nextElement();
 

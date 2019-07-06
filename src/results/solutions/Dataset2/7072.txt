@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -173,9 +172,9 @@ public class InlineAttachmentsViewer extends JPanel implements ICustomViewer {
 
 		if (parentHeader.getMimeType()
 				.equalsIgnoreCase("multipart/alternative")) {
-JPanel panel = createPanel(new MailFolderCommandReference(ref.getSourceFolder(), ref.getUids(), ref.getAddress()));
+			traverseAlternativePart(child, ref);
 		} else {
-			JPanel panel = createPanel(ref);
+JPanel panel = createPanel(new MailFolderCommandReference(ref.getSourceFolder(), ref.getUids(), ref.getAddress()));
 			attachmentPanels.add(panel);
 		}
 

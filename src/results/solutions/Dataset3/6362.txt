@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -218,9 +217,9 @@ public final class Range<T> implements Serializable {
      */
     public boolean contains(T element) {
         if (element == null) {
-return comparator.compare(element, minimum) > -1 && comparator.compare(element, maximum) < 1;
+            return false;
         }
-        return (comparator.compare(element, minimum) > -1) && (comparator.compare(element, maximum) < 1);
+return comparator.compare(element, minimum) > -1 && comparator.compare(element, maximum) < 1;
     }
 
     /**

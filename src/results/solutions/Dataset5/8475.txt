@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -115,9 +114,9 @@ public abstract class ClearCase extends Task
             exe.setCommandline( cmd.getCommandline() );
             return exe.execute();
         }
-throw new BuildException( "Error", e );
+        catch( java.io.IOException e )
         {
-            throw new BuildException( e );
+throw new BuildException( "Error", e );
         }
     }
 

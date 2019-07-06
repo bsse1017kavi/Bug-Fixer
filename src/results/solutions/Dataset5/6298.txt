@@ -1,4 +1,3 @@
-
 /*
  * $Id: Session.java 5063 2006-03-21 11:21:19 -0800 (Tue, 21 Mar 2006)
  * jonathanlocke $ $Revision$ $Date: 2006-03-21 11:21:19 -0800 (Tue, 21
@@ -742,9 +741,9 @@ public abstract class Session implements Serializable
 	 */
 	public final FeedbackMessages getFeedbackMessages()
 	{
-feedbackMessages = new FeedbackMessages();
+		if (feedbackMessages == null)
 		{
-			feedbackMessages = new FeedbackMessages(true);
+feedbackMessages = new FeedbackMessages();
 		}
 		return feedbackMessages;
 	}

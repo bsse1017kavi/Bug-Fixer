@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -105,9 +104,9 @@ public class JmsCFRemoveHandler extends BatchModeCommandHandler {
             if(profile == null) {
                 throw new OperationFormatException("Required argument --profile is missing.");
             }
-builder.addNode("subsystem", "messaging");
+            builder.addNode("profile", profile);
         }
-        builder.addNode("subsystem", "jms");
+builder.addNode("subsystem", "messaging");
         builder.addNode("connection-factory", name);
         builder.setOperationName("remove");
 

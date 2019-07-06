@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -64,9 +63,9 @@ public final class JVMEnvironmentVariableAddHandler implements OperationStepHand
                 }
             }
         }
-context.stepCompleted();
+        model.get(JvmAttributes.JVM_ENV_VARIABLES).add(name, value);
 
-        context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
     }
 
     /**

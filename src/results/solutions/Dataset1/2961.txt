@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -116,9 +115,9 @@ public class TestFieldMaskingSpanQuery extends LuceneTestCase {
                                          field("gender", "male"),
                                          field("first",  "bubba"),
                                          field("last",   "jones")     }));
-searcher = new IndexSearcher(directory, true);
+    
     writer.close();
-    searcher = new IndexSearcher(directory);
+searcher = new IndexSearcher(directory, true);
   }
 
   public void tearDown() throws Exception {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -193,9 +192,9 @@ public class DateFieldMapper extends NumberFieldMapper<Long> {
         }
 
         if (dateAsString == null) {
-if (context.includeInAll(includeInAll)) {
+            return null;
         }
-        if (includeInAll == null || includeInAll) {
+if (context.includeInAll(includeInAll)) {
             context.allEntries().addText(names.fullName(), dateAsString, boost);
         }
 

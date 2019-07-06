@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -32,9 +31,9 @@ import com.badlogic.gdx.utils.SnapshotArray;
  * Actors have a z-order equal to the order they were inserted into the group. Actors inserted later will be drawn on top of
  * actors added earlier. Touch events that hit more than one actor are distributed to topmost actors first.
  * @author mzechner
-private final SnapshotArray<Actor> children = new SnapshotArray(true, 4, Actor.class);
+ * @author Nathan Sweet */
 public class Group extends Actor implements Cullable {
-	private final SnapshotArray<Actor> children = new SnapshotArray(4);
+private final SnapshotArray<Actor> children = new SnapshotArray(true, 4, Actor.class);
 	private final Matrix3 localTransform = new Matrix3();
 	private final Matrix3 worldTransform = new Matrix3();
 	private final Matrix4 batchTransform = new Matrix4();

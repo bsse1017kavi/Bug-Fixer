@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -293,9 +292,9 @@ public class TypePatternTestCase extends TestCase {
 		DataOutputStream out = new DataOutputStream(bo);
 		p.write(out);
 		out.close();
-VersionedDataInputStream in = new VersionedDataInputStream(bi);
+		
 		ByteArrayInputStream bi = new ByteArrayInputStream(bo.toByteArray());
-		DataInputStream in = new DataInputStream(bi);
+VersionedDataInputStream in = new VersionedDataInputStream(bi);
 		TypePattern newP = TypePattern.read(in, null);
 		
 		assertEquals("write/read", p, newP);	

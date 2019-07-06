@@ -1,5 +1,4 @@
 
-
 /*
    Derby - Class org.apache.derbyTesting.functionTests.tests.jdbcapi.CacheSessionDataTest
    Licensed to the Apache Software Foundation (ASF) under one
@@ -448,9 +447,9 @@ public class CacheSessionDataTest extends BaseJDBCTestCase {
         assertEquals(serverSql, client);
         assertEquals(serverJdbc, client);
     }
-if (usingDerbyNetClient()) {
+    
     private void verifyCachedSchema(Connection c) throws SQLException {
-        if (c instanceof org.apache.derby.client.am.Connection) {
+if (usingDerbyNetClient()) {
             String cached =
                     ((org.apache.derby.client.am.Connection) c).
                     getCurrentSchemaName();

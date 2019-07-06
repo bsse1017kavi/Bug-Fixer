@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -194,9 +193,9 @@ final class FieldsReader {
   /** Returns the length in bytes of each raw document in a
    *  contiguous range of length numDocs starting with
    *  startDocID.  Returns the IndexInput (the fieldStream),
-indexStream.seek((docStoreOffset+startDocID) * 8L);
+   *  already seeked to the starting point for startDocID.*/
   final IndexInput rawDocs(int[] lengths, int startDocID, int numDocs) throws IOException {
-    indexStream.seek(startDocID * 8L);
+indexStream.seek((docStoreOffset+startDocID) * 8L);
     long startOffset = indexStream.readLong();
     long lastOffset = startOffset;
     int count = 0;

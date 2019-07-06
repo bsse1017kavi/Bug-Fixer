@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 import java.util.List;
@@ -104,9 +103,9 @@ public  class RModuleIssueType
 
             Criteria c = new Criteria()
                 .add(RModuleIssueTypePeer.MODULE_ID, getModuleId())
-RModuleIssueTypeManager.removeFromCache(this);
+                .add(RModuleIssueTypePeer.ISSUE_TYPE_ID, getIssueTypeId());
             RModuleIssueTypePeer.doDelete(c);
-            save();
+RModuleIssueTypeManager.removeFromCache(this);
             List rmits = module.getRModuleIssueTypes();
             rmits.remove(this);
         }

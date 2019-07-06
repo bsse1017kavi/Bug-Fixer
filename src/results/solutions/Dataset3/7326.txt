@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -85,9 +84,9 @@ public final class EmbeddedDeployableContainer extends CommonDeployableContainer
 
         // Set bundle path
         final String bundlePath = config.getBundlePath();
-throw new IllegalStateException("Invalid modules directory: " + bundlesDir);
+        final File bundlesDir = new File(bundlePath);
         if (!bundlesDir.isDirectory()) {
-            throw new IllegalStateException("Invalid modules directory: " + modulesDir);
+throw new IllegalStateException("Invalid modules directory: " + bundlesDir);
         }
         SecurityActions.setSystemProperty(SYSPROP_KEY_BUNDLE_PATH, bundlePath);
 

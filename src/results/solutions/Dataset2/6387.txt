@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -184,9 +183,9 @@ public class ActivityEnabler {
 		label = new Label(c, SWT.NONE);
 		label.setText(ActivityMessages.getString("ActivityEnabler.description")); //$NON-NLS-1$
 		label.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-descriptionText = new Text(c, SWT.READ_ONLY | SWT.WRAP | SWT.BORDER);
+		label.setFont(parent.getFont());
 		
-		descriptionText = new Text(c, SWT.READ_ONLY | SWT.WRAP);
+descriptionText = new Text(c, SWT.READ_ONLY | SWT.WRAP | SWT.BORDER);
 		descriptionText.setFont(parent.getFont());
 		descriptionText.setLayoutData(new GridData(GridData.FILL_BOTH | GridData.VERTICAL_ALIGN_BEGINNING));
 		setInitialStates();

@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2003-2004 The Apache Software Foundation.
@@ -78,9 +77,9 @@ public class HTMLAssertion extends AbstractTestElement implements Serializable, 
 		log.debug("HTMLAssertions.getResult() called");
 
 		// no error as default
-if (inResponse.getResponseData().length == 0) {
+		AssertionResult result = new AssertionResult();
 
-		if (inResponse.getResponseData() == null) {
+if (inResponse.getResponseData().length == 0) {
 			return result.setResultForNull();
 		}
 

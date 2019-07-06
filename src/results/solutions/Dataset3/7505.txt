@@ -1,4 +1,3 @@
-
 package backtype.storm.metric;
 
 import backtype.storm.metric.api.IMetricsConsumer;
@@ -27,9 +26,9 @@ public class MetricsConsumerBolt implements IBolt {
             _metricsConsumer = (IMetricsConsumer)Class.forName(_consumerClassName).newInstance();
         } catch (Exception e) {
             throw new RuntimeException("Could not instantiate a class listed in config under section " +
-_metricsConsumer.prepare(stormConf, _registrationArgument, context, collector);
+                Config.TOPOLOGY_METRICS_CONSUMER_REGISTER + " with fully qualified name " + _consumerClassName, e);
         }
-        _metricsConsumer.prepare(stormConf, _registrationArgument, context);
+_metricsConsumer.prepare(stormConf, _registrationArgument, context, collector);
         _collector = collector;
     }
     

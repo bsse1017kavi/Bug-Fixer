@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -97,9 +96,9 @@ public class PropertySetter {
    */
   public
   void setProperties(Properties properties, String prefix) {
-for (Enumeration e = properties.propertyNames(); e.hasMoreElements(); ) {
+    int len = prefix.length();
     
-    for (Enumeration e = properties.keys(); e.hasMoreElements(); ) {
+for (Enumeration e = properties.propertyNames(); e.hasMoreElements(); ) {
       String key = (String) e.nextElement();
       
       // handle only properties that start with the desired frefix.

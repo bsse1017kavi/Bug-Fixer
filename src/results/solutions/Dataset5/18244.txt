@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -318,9 +317,9 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
         try {
             context = getInitialContext();
             Object obj = context.lookup(getQueueConnectionFactory());
-+ obj.getClass().getName();
+            if (!(obj instanceof QueueConnectionFactory)) {
                 String msg = "QueueConnectionFactory expected, but got "
-                    + obj == null ? "null" :  obj.getClass().getName();
++ obj.getClass().getName();
                 LOGGER.fatalError(msg);
                 throw new IllegalStateException(msg);
             }

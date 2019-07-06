@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -37,9 +36,9 @@ class JDBCRelatedFieldOrder
     private final FieldMapping _fm;
     private final boolean _asc;
 
-if (!rel.isInDefaultFetchGroup() && !rel.isPrimaryKey())
+    public JDBCRelatedFieldOrder(FieldMapping owner, FieldMapping rel,
         boolean asc) {
-        if (!rel.isInDefaultFetchGroup())
+if (!rel.isInDefaultFetchGroup() && !rel.isPrimaryKey())
             throw new MetaDataException(_loc.get("nondfg-field-orderable",
                 owner, rel.getName()));
 

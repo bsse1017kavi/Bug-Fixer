@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2002 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -50,9 +49,9 @@ public class PropPanelInteraction extends PropPanelModelElement {
 	
     	addField(Argo.localize("UMLMenu", "label.name"), nameField);  	
     	addField(Argo.localize("UMLMenu", "label.stereotype"), stereotypeBox);
-JList contextList = new UMLLinkedList(this, new UMLInteractionContextListModel(this));
+        addField(Argo.localize("UMLMenu", "label.namespace"), namespaceScroll);
         
-        JList contextList = new UMLLinkedList(this, new UMLInteractionCollaborationListModel(this));
+JList contextList = new UMLLinkedList(this, new UMLInteractionContextListModel(this));
         contextList.setVisibleRowCount(1);
         JScrollPane contextScroll = new JScrollPane(contextList);
         addField(Argo.localize("UMLMenu", "label.context"), contextScroll);

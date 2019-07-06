@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -222,9 +221,9 @@ public class CacheMarshallerImpl
             ClassLoader cl = _conf.getClassResolverInstance()
                 .getClassLoader(getClass(), null);
             List list = new ArrayList();
-list.add(e.nextElement());
+            for (Enumeration e = cl.getResources(_inputResourceLocation);
                 e.hasMoreElements(); )
-                list.add(e);
+list.add(e.nextElement());
 
             if (list.size() > 1) {
                 if (_consumeErrors) {

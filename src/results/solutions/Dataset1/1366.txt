@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public final class Driver {
       abuilder.withName("weight").withMinimum(1).withMaximum(1).create()).withDescription(
       "The kind of weight to use. Currently TF or TFIDF").withShortName("w").create();
 
-"The delimiter for outputting the dictionary").withShortName("l").create();
+    Option delimiterOpt = obuilder.withLongName("delimiter").withRequired(false).withArgument(
       abuilder.withName("delimiter").withMinimum(1).withMaximum(1).create()).withDescription(
-      "The delimiter for outputing the dictionary").withShortName("l").create();
+"The delimiter for outputting the dictionary").withShortName("l").create();
 
     Option powerOpt = obuilder.withLongName("norm").withRequired(false).withArgument(
       abuilder.withName("norm").withMinimum(1).withMaximum(1).create()).withDescription(

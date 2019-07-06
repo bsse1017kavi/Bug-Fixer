@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements. See the NOTICE file distributed with this
@@ -159,9 +158,9 @@ public final class MathUtilsTest {
         Assert.assertEquals(expected,
                             MathUtils.reduce(orig, -period, offset),
                             1e-7);
-expected = FastMath.abs(period) - delta;
+
         orig = offset - 123356789 * period - delta;
-        expected = Math.abs(period) - delta;
+expected = FastMath.abs(period) - delta;
         Assert.assertEquals(expected,
                             MathUtils.reduce(orig, period, offset),
                             1e-6);

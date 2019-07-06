@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.ResultSet
@@ -3834,9 +3833,9 @@ public abstract class ResultSet implements java.sql.ResultSet,
 
         // calculate the absolutePosition of the current row directly.
         long rowToFetch = getRowUncast() - absolutePosition_;
-if (rowToFetch != 0) {
+
         // if rowToFetch is zero, already positioned on the current row
-        if (rowToFetch != 0 || cursorUnpositionedOnServer_) {
+if (rowToFetch != 0) {
             writePositioningFetch_((generatedSection_ == null) ? statement_.section_ : generatedSection_,
                     scrollOrientation_relative__,
                     rowToFetch);

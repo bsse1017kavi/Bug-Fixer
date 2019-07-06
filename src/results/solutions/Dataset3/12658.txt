@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -176,9 +175,9 @@ public abstract class AbstractDataSourceAdd implements ModelAddOperationHandler 
     protected abstract AbstractDataSourceService createDataSourceService(final String jndiName, final ModelNode operation)
             throws OperationFailedException;
 
-if (existingModel.hasDefined(connectionPropertiesProp)) {
+    static void populateAddModel(final ModelNode existingModel, final ModelNode newModel,
             final String connectionPropertiesProp, final AttributeDefinition[] attributes) {
-        if (existingModel.has(connectionPropertiesProp)) {
+if (existingModel.hasDefined(connectionPropertiesProp)) {
             for (Property property : existingModel.get(connectionPropertiesProp).asPropertyList()) {
                 newModel.get(connectionPropertiesProp, property.getName()).set(property.getValue().asString());
             }

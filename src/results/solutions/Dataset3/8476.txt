@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -96,9 +95,9 @@ public class DeploymentReplaceHandler implements ModelUpdateOperationHandler, De
 
                     ModelNode compensatingOp = operation.clone();
                     compensatingOp.get(NAME).set(toReplace);
-DeploymentHandlerUtil.replace(deployNode, toReplace, context, resultHandler);
+                    compensatingOp.get(TO_REPLACE).set(name);
 
-                    DeploymentHandlerUtil.replace(deployNode, toReplace, context, resultHandler, compensatingOp);
+DeploymentHandlerUtil.replace(deployNode, toReplace, context, resultHandler);
                 }
             }
 

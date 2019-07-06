@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -63,9 +62,9 @@ public class WeldInjectionFactory implements InjectionFactory{
      * @param component The component to generate an injector for
      * @return a WeldInjector for the component
      */
-final ServiceName serviceName = deploymentUnit.getServiceName().append("component",component.getComponentName(),"weldinjector");
+    @Override
     public ComponentInjector createInjector(AbstractComponentConfiguration component) {
-        final ServiceName serviceName = deploymentUnit.getServiceName().append("component",component.getDescription().getComponentName(),"weldinjector");
+final ServiceName serviceName = deploymentUnit.getServiceName().append("component",component.getComponentName(),"weldinjector");
         WeldComponentInjectionService service = new WeldComponentInjectionService(serviceName,component.getComponentClass(),classLoader);
         serviceTarget.addService(serviceName,service)
                 .addDependency(beanManagerServiceName, BeanManagerImpl.class, service.getBeanManager())

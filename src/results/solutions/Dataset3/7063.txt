@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ import org.jboss.staxmapper.XMLExtendedStreamWriter;
 /**
  * @author Paul Ferraro
  */
-static final String SUBSYSTEM_NAME = "infinispan";
+public class InfinispanExtension implements Extension, XMLElementReader<List<ModelNode>>, XMLElementWriter<SubsystemMarshallingContext>, DescriptionProvider {
 
-    private static final String SUBSYSTEM_NAME = "infinispan";
+static final String SUBSYSTEM_NAME = "infinispan";
 
     private static final PathElement containerPath = PathElement.pathElement(ModelKeys.CACHE_CONTAINER);
     private static final InfinispanSubsystemAdd add = new InfinispanSubsystemAdd();

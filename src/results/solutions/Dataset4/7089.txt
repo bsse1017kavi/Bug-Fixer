@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class RestSpec {
             for (File jsonFile : FileUtils.findJsonSpec(optionalPathPrefix, path)) {
                 try {
                     XContentParser parser = JsonXContent.jsonXContent.createParser(new FileInputStream(jsonFile));
-} catch (Throwable ex) {
+                    RestApi restApi = new RestApiParser().parse(parser);
                     restSpec.addApi(restApi);
-                } catch (IOException ex) {
+} catch (Throwable ex) {
                     throw new IOException("Can't parse rest spec file: [" + jsonFile + "]", ex);
                 }
             }

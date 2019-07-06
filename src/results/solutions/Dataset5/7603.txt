@@ -1,5 +1,4 @@
 
-
 /** @testcase expect CE for declaration collision between subaspects instead of domination order */
 public class DeclarationCollisionCE {
     public static void main (String[] args) {
@@ -9,9 +8,9 @@ public class DeclarationCollisionCE {
 }
 
 class C {}
-abstract aspect AA { declare precedence: AA, B;
+
 // bug: dominates clause prevents collision error
-abstract aspect AA { declare dominates: AA, B; 
+abstract aspect AA { declare precedence: AA, B;
     // same result if this line is uncommented
     //public String C.title() { return "[AA] C.title()"; }
 }

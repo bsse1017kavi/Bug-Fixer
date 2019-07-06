@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1801,9 +1800,9 @@ public class XMLDTDValidator
         case XMLSimpleType.TYPE_ENUMERATION: {
                 StringBuffer buffer = new StringBuffer();
                 buffer.append('(');
-buffer.append('|');
+                for (int i=0; i<attrDecl.simpleType.enumeration.length ; i++) {
                     if (i > 0) {
-                        buffer.append("|");
+buffer.append('|');
                     }
                     buffer.append(attrDecl.simpleType.enumeration[i]);
                 }

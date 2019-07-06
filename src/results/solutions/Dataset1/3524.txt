@@ -1,4 +1,3 @@
-
 /* 
 
    Derby - Class org.apache.derbyTesting.functionTests.harness.RunList
@@ -226,9 +225,9 @@ public class RunList
                 System.out.println("Suite runall file not found for " + suiteName);
                 continue;
             }
-runlistFile = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+
             // Create a BufferedReader to read the list of tests to run
-            runlistFile = new BufferedReader(new InputStreamReader(is));
+runlistFile = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             if (runlistFile == null)
             {
                 System.out.println("The suite runall file could not be read.");

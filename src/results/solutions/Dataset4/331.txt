@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -121,9 +120,9 @@ public class MapperService extends AbstractIndexComponent implements Iterable<Do
             this.dynamicMappingLocation = dynamicMappingLocation;
         }
 
-dynamicMappingSource = Streams.copyToString(new InputStreamReader(dynamicMappingUrl.openStream(), "UTF-8"));
+        if (dynamic) {
             try {
-                dynamicMappingSource = Streams.copyToString(new InputStreamReader(dynamicMappingUrl.openStream(), "UTF8"));
+dynamicMappingSource = Streams.copyToString(new InputStreamReader(dynamicMappingUrl.openStream(), "UTF-8"));
             } catch (IOException e) {
                 throw new MapperException("Failed to load default mapping source from [" + dynamicMappingLocation + "]", e);
             }

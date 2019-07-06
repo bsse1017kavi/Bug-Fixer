@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -108,9 +107,9 @@ public class ClickListener extends InputListener {
 	public void dragStop (InputEvent event, float x, float y, int pointer) {
 	}
 
-Actor hit = actor.hit(x, y, true);
+	/** Returns true if the specified position is over the specified actor or within the tap square. */
 	public boolean isOver (Actor actor, float x, float y) {
-		Actor hit = actor.hit(x, y);
+Actor hit = actor.hit(x, y, true);
 		if (hit == null || !hit.isDescendant(actor)) {
 			if (touchDownX == -1 && touchDownY == -1) return false;
 			return Math.abs(x - touchDownX) < tapSquareSize && Math.abs(y - touchDownY) < tapSquareSize;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class BayesDriver implements BayesJob {
     log.info("Calculating the weight Normalisation factor for each class...");
     // Calculate the normalization factor Sigma_W_ij for each complement class.
     BayesThetaNormalizerDriver normalizer = new BayesThetaNormalizerDriver();
-if (params.isSkipCleanup()) {
+    normalizer.runJob(input, output, params);
     
-    if (Boolean.parseBoolean(params.get("skipCleanup"))) {
+if (params.isSkipCleanup()) {
       return;
     }
     

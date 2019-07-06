@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -572,9 +571,9 @@ public class DocumentMapper implements ToXContent {
         try {
             XContentBuilder builder = XContentFactory.contentBuilder(XContentType.JSON);
             builder.startObject();
-this.mappingSource = new CompressedString(builder.underlyingBytes(), 0, builder.underlyingBytesLength());
+            toXContent(builder, ToXContent.EMPTY_PARAMS);
             builder.endObject();
-            this.mappingSource = new CompressedString(builder.string());
+this.mappingSource = new CompressedString(builder.underlyingBytes(), 0, builder.underlyingBytesLength());
         } catch (Exception e) {
             throw new FailedToGenerateSourceMapperException(e.getMessage(), e);
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -31,9 +30,9 @@ import org.elasticsearch.test.ElasticsearchLuceneTestCase;
 @SuppressCodecs({ "Lucene3x", "Lucene40", "Lucene41", "Lucene42" }) // these codecs dont support missing values
 public class TestReplaceMissing extends ElasticsearchLuceneTestCase {
     
-IndexWriterConfig iwc = newIndexWriterConfig(null);
+    public void test() throws Exception {
         Directory dir = newDirectory();
-        IndexWriterConfig iwc = newIndexWriterConfig(TEST_VERSION_CURRENT, null);
+IndexWriterConfig iwc = newIndexWriterConfig(null);
         iwc.setMergePolicy(newLogMergePolicy());
         IndexWriter iw = new IndexWriter(dir, iwc);
         

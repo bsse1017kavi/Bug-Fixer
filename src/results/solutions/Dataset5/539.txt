@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1509,9 +1508,9 @@ void windowDidResize(int /*long*/ id, int /*long*/ sel, int /*long*/ notificatio
 	}
 }
 
-//	Display display = this.display;
+void windowDidResignKey(int /*long*/ id, int /*long*/ sel, int /*long*/ notification) {
 	super.windowDidResignKey(id, sel, notification);
-	Display display = this.display;
+//	Display display = this.display;
 	sendEvent (SWT.Deactivate);
 	if (isDisposed ()) return;
 //	saveFocus ();

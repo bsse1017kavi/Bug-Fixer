@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -94,9 +93,9 @@ public class CountingMessageHandler implements IMessageHandler {
         } else if (!orGreater) {
             result = numMessages(kind);
         } else {
-if (kind.isSameOrLessThan(k)) {
+            for (Iterator iter = IMessage.KINDS.iterator(); iter.hasNext();) {
                 IMessage.Kind k = (IMessage.Kind) iter.next();
-                if (0 >= IMessage.Kind.COMPARATOR.compare(kind, k)) {
+if (kind.isSameOrLessThan(k)) {
                     result += numMessages(k);
                 }
             }

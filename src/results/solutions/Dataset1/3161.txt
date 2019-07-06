@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -89,9 +88,9 @@ public class TestStressAdvance extends LuceneTestCase {
         assertEquals(TermsEnum.SeekStatus.FOUND, te.seekCeil(new BytesRef("b")));
         de = TestUtil.docs(random(), te, null, de, DocsEnum.FLAG_NONE);
         testOne(de, bDocIDs);
-w.shutdown();
+      }
 
-      w.close();
+w.shutdown();
       r.close();
       dir.close();
     }

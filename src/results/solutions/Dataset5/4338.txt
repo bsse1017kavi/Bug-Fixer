@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -57,9 +56,9 @@ public final class RedirectPage extends WebPage
 	 *            redirecting
 	 */
 	public RedirectPage(final String url, final int waitBeforeRedirectInSeconds)
-final String content = waitBeforeRedirectInSeconds + ";URL=" + url;
+	{
 		final WebMarkupContainer redirect = new WebMarkupContainer("redirect");
-		final String content = waitBeforeRedirectInSeconds + "; " + url;
+final String content = waitBeforeRedirectInSeconds + ";URL=" + url;
 		redirect.add(new AttributeModifier("content", new Model(content)));
 		add(redirect);
 	}

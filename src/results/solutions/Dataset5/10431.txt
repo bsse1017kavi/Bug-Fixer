@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -390,9 +389,9 @@ public class StatGraphVisualizer extends AbstractVisualizer implements Clearable
             if (chooser == null) {
                 return;
             }
-writer = new FileWriter(chooser.getSelectedFile()); // TODO Charset ?
+            FileWriter writer = null;
             try {
-                writer = new FileWriter(chooser.getSelectedFile());
+writer = new FileWriter(chooser.getSelectedFile()); // TODO Charset ?
                 CSVSaveService.saveCSVStats(getAllTableData(),writer,saveHeaders.isSelected() ? COLUMNS : null);
             } catch (FileNotFoundException e) {
                 log.warn(e.getMessage());

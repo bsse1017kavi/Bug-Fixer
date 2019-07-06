@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class WebRequestCodingStrategyTest extends TestCase
 		BookmarkablePageRequestTarget requestTarget = new BookmarkablePageRequestTarget(
 				MockPage.class, params);
 		app.setupRequestAndResponse();
-"?wicket:bookmarkablePage=:org.apache.wicket.protocol.http.MockPage&a=1&a=2", cs
+		CharSequence cs = wrcs.encode(app.createRequestCycle(), requestTarget);
 		assertEquals(
-				"?wicket:bookmarkablePage=%3Aorg.apache.wicket.protocol.http.MockPage&a=1&a=2", cs
+"?wicket:bookmarkablePage=:org.apache.wicket.protocol.http.MockPage&a=1&a=2", cs
 						.toString());
 		app.destroy();
 	}

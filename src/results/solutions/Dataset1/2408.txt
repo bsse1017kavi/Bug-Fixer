@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -496,9 +495,9 @@ public class CoreAdminHandler extends RequestHandlerBase {
       // make sure we can write out the descriptor first
       coreContainer.getCoresLocator().create(coreContainer, dcore);
       
-coreContainer.register(core, false);
+      SolrCore core = coreContainer.create(dcore);
       
-      coreContainer.register(dcore.getName(), core, false);
+coreContainer.register(core, false);
       
       if (coreContainer.getCoresLocator() instanceof SolrXMLCoresLocator) {
         // hack - in this case we persist once more because a core create race might

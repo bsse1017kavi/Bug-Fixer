@@ -1,5 +1,4 @@
 
-
 package com.dozingcatsoftware.bouncy.elements;
 
 import java.util.Collection;
@@ -109,9 +108,9 @@ public class WallElement extends FieldElement {
 		if (killBall) {
 			field.removeBall(ball);
 		} else {
-ball.applyLinearImpulse(impulse, ball.getWorldCenter());
+			Vector2 impulse = this.impulseForBall(ball);
 			if (impulse != null) {
-				ball.applyLinearImpulse(impulse, ball.getWorldCenter(), true);
+ball.applyLinearImpulse(impulse, ball.getWorldCenter());
 				flashForFrames(3);
 			}
 		}

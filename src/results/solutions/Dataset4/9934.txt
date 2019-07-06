@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -592,9 +591,9 @@ public class ImmutableSettings implements Settings {
             SettingsLoader settingsLoader = SettingsLoaderFactory.loaderFromSource(source);
             try {
                 Map<String, String> loadedSettings = settingsLoader.load(source);
-throw new SettingsException("Failed to load settings from [" + source + "]", e);
+                put(loadedSettings);
             } catch (Exception e) {
-                throw new SettingsException("Failed to load settings from [" + source + "]");
+throw new SettingsException("Failed to load settings from [" + source + "]", e);
             }
             return this;
         }

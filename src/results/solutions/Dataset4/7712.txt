@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -159,9 +158,9 @@ public class SimpleDistributorTests extends ElasticsearchIntegrationTest {
 
     private Directory getStoreDirectory(String index, int shardId) {
         Set<String> nodes = internalCluster().nodesInclude("test");
-InternalIndexShard indexShard = (InternalIndexShard) (indicesService.indexService(index).shardSafe(shardId));
+        assertThat(nodes.isEmpty(), equalTo(false));
         IndicesService indicesService = internalCluster().getInstance(IndicesService.class, nodes.iterator().next());
-        InternalIndexShard indexShard = (InternalIndexShard) (indicesService.indexService(index).shard(shardId));
+InternalIndexShard indexShard = (InternalIndexShard) (indicesService.indexService(index).shardSafe(shardId));
         return indexShard.store().directory();
     }
 }

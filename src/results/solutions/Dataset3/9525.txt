@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -85,9 +84,9 @@ public class MockServletContextTests {
 	 * Introduced to dispel claims in a thread on Stack Overflow:
 	 * <a href="http://stackoverflow.com/questions/22986109/testing-spring-managed-servlet">Testing Spring managed servlet</a>
 	 */
-FileTypeMap defaultFileTypeMap = FileTypeMap.getDefaultFileTypeMap();
+	@Test
 	public void getMimeTypeWithCustomConfiguredType() {
-		FileTypeMap defaultFileTypeMap = MimetypesFileTypeMap.getDefaultFileTypeMap();
+FileTypeMap defaultFileTypeMap = FileTypeMap.getDefaultFileTypeMap();
 		assertThat(defaultFileTypeMap, instanceOf(MimetypesFileTypeMap.class));
 		MimetypesFileTypeMap mimetypesFileTypeMap = (MimetypesFileTypeMap) defaultFileTypeMap;
 		mimetypesFileTypeMap.addMimeTypes("text/enigma    enigma");

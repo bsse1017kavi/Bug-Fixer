@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ import static org.hamcrest.Matchers.nullValue;
 public class IndicesLeaksTests extends ElasticsearchIntegrationTest {
 
 
-@BadApple(bugUrl = "https://github.com/elasticsearch/elasticsearch/issues/3232")
+    @SuppressWarnings({"ConstantConditions", "unchecked"})
     @Test
-    @BadApple
+@BadApple(bugUrl = "https://github.com/elasticsearch/elasticsearch/issues/3232")
     public void testIndexShardLifecycleLeak() throws Exception {
 
         client().admin().indices().prepareCreate("test")

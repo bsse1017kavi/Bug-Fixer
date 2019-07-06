@@ -1,4 +1,3 @@
-
 /*
  * @(#) JInterceptorStore.java	1.0 02/07/15
  *
@@ -99,9 +98,9 @@ public class JInterceptorStore {
 	    // Load the Interceptors
 	    try {
 		JInitInfo jrmpInfo = new JRMPInitInfoImpl();
-JInitializer jinit = (JInitializer) Thread.currentThread().getContextClassLoader().loadClass(ins[i]).newInstance();
+		String [] ins = getJRMPInitializers();
 		for (int i = 0; i < ins.length ; i ++) {
-		    JInitializer jinit = (JInitializer) Class.forName(ins[i]).newInstance();
+JInitializer jinit = (JInitializer) Thread.currentThread().getContextClassLoader().loadClass(ins[i]).newInstance();
 		    jinit.pre_init(jrmpInfo);
 		    jinit.post_init(jrmpInfo);
 		}	    

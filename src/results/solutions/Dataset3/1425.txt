@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public final class LocalShowHistoryHandler implements OperationStepHandler {
                 fillHistory(result, ONE_OFF, oneOffPatchID, historyDir);
             }
             context.getResult().set(result);
-PatchManagementLogger.ROOT_LOGGER.debugf(t, "failed to get history");
+            context.stepCompleted();
         } catch (Throwable t) {
-            t.printStackTrace();
+PatchManagementLogger.ROOT_LOGGER.debugf(t, "failed to get history");
             throw PatchManagementMessages.MESSAGES.failedToShowHistory(t);
         }
     }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -237,9 +236,9 @@ public class DataSourceTransactionManager extends AbstractPlatformTransactionMan
 			if (txObject.isNewConnectionHolder()) {
 				TransactionSynchronizationManager.bindResource(getDataSource(), txObject.getConnectionHolder());
 			}
-catch (Throwable ex) {
+		}
 
-		catch (Exception ex) {
+catch (Throwable ex) {
 			DataSourceUtils.releaseConnection(con, this.dataSource);
 			throw new CannotCreateTransactionException("Could not open JDBC Connection for transaction", ex);
 		}

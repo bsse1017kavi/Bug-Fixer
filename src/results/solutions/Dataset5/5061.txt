@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -2056,9 +2055,9 @@ public class JUnitTask extends Task {
      *
      * @see https://issues.apache.org/bugzilla/show_bug.cgi?id=45227
      */
-int index = test.getName().lastIndexOf('.');
+    private static JUnitTest createDummyTestForBatchTest(JUnitTest test) {
         JUnitTest t = (JUnitTest) test.clone();
-        int index = test.getName().indexOf('.');
+int index = test.getName().lastIndexOf('.');
         // make sure test looks as if it was in the same "package" as
         // the last test of the batch
         String pack = index > 0 ? test.getName().substring(0, index + 1) : "";

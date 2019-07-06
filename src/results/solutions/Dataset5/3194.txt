@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.6 $ $Date$
@@ -157,9 +156,9 @@ public abstract class Response
 	 */
 	public String getCharacterEncoding()
 	{
-return Application.get().getRequestCycleSettings().getResponseRequestEncoding();
+		if (this.defaultEncoding == null)
 		{
-			return Application.get().getSettings().getResponseRequestEncoding();
+return Application.get().getRequestCycleSettings().getResponseRequestEncoding();
 		}
 		else
 		{

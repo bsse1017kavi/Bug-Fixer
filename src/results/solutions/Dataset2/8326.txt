@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -386,9 +385,9 @@ public class SaveMessageBodyAsCommand extends FolderCommand {
         if (charset == null) {
             try {
                 // get charset from message
-} catch (Exception ex) {
+                charset = Charset.forName(bodyPart.getHeader()
                                                   .getContentParameter("charset"));
-            } catch (UnsupportedCharsetException ex) {
+} catch (Exception ex) {
                 // decode using default charset
                 charset = Charset.forName(System.getProperty("file.encoding"));
             }

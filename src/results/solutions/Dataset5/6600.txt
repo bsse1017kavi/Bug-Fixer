@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -812,9 +811,9 @@ public class WildTypePattern extends TypePattern {
 	private boolean verifyTypeParameters(ResolvedType baseType,IScope scope, boolean requireExactType) {
 		ResolvedType genericType = baseType.getGenericType();
 		if (genericType == null) {
-WeaverMessages.format(WeaverMessages.NOT_A_GENERIC_TYPE,baseType.getName()),
+			// issue message "does not match because baseType.getName() is not generic"
 			scope.message(MessageUtil.warn(
-					WeaverMessages.format(WeaverMessages.NOT_A_GENERIC_TYPE,genericType.getName()),
+WeaverMessages.format(WeaverMessages.NOT_A_GENERIC_TYPE,baseType.getName()),
 					getSourceLocation()));
 			return false;
 		}

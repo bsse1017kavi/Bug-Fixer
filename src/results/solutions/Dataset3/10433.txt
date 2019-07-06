@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -135,9 +134,9 @@ public class WSDeploymentAspectParser {
             Class<? extends DeploymentAspect> clazz = (Class<? extends DeploymentAspect>) Class.forName(deploymentAspectClass);
             deploymentAspect = clazz.newInstance();
         } catch (Exception e) {
-String priority = reader.getAttributeValue(null, PRIORITY);
+            throw new IllegalStateException("Could not create a deploymeny aspect of class: " + deploymentAspectClass, e);
         }
-        String priority = reader.getAttributeValue("", PRIORITY);
+String priority = reader.getAttributeValue(null, PRIORITY);
         if (priority != null) {
             deploymentAspect.setRelativeOrder(Integer.parseInt(priority.trim()));
         }

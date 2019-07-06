@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -206,9 +205,9 @@ public class CookieManager
                 String[] st = split(line, "\t", " ");
                 int domain = 0;
                 int path = 2;
-boolean secure = Boolean.valueOf(st[3]).booleanValue();
+                if (st[path].equals(" "))
                     st[path] = "/";
-                boolean secure = new Boolean(st[3]).booleanValue();
+boolean secure = Boolean.valueOf(st[3]).booleanValue();
                 long expires = new Long(st[4]).longValue();
                 int name = 5;
                 int value = 6;

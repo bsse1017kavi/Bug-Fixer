@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -937,9 +936,9 @@ class ASTConverter {
 	 * Used to convert class body declarations
 	 */
 	public TypeDeclaration convert(org.eclipse.jdt.internal.compiler.ast.ASTNode[] nodes) {
-int nodesLength = nodes == null ? 0 : nodes.length;
+		final TypeDeclaration typeDecl = new TypeDeclaration(this.ast);
 		typeDecl.setInterface(false);
-		int nodesLength = nodes.length;
+int nodesLength = nodes == null ? 0 : nodes.length;
 		for (int i = 0; i < nodesLength; i++) {
 			org.eclipse.jdt.internal.compiler.ast.ASTNode node = nodes[i];
 			if (node instanceof org.eclipse.jdt.internal.compiler.ast.Initializer) {

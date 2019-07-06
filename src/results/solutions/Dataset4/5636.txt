@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class BalancedSegmentMergePolicyProvider extends AbstractIndexShardCompon
         this.maxSmallSegments = componentSettings.getAsInt("max_small_segments", 2 * LogMergePolicy.DEFAULT_MERGE_FACTOR);
 
         this.useCompoundFile = componentSettings.getAsBoolean("use_compound_file", store == null || store.suggestUseCompoundFile());
-mergeFactor, minMergeSize, maxMergeSize, maxMergeDocs, useCompoundFile);
+
         logger.debug("Using [balanced] merge policy with merge_factor[{}], min_merge_size[{}], max_merge_size[{}], max_merge_docs[{}] use_compound_file[{}]",
-                new Object[]{mergeFactor, minMergeSize, maxMergeSize, maxMergeDocs, useCompoundFile});
+mergeFactor, minMergeSize, maxMergeSize, maxMergeDocs, useCompoundFile);
     }
 
     @Override public BalancedSegmentMergePolicy newMergePolicy(IndexWriter indexWriter) {

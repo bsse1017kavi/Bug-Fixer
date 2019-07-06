@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -134,9 +133,9 @@ public class SizeFieldMapper extends IntegerFieldMapper implements RootMapper {
     @Override
     protected Fieldable parseCreateField(ParseContext context) throws IOException {
         if (!enabled) {
-return new CustomIntegerNumericField(this, context.source().length());
+            return null;
         }
-        return new CustomIntegerNumericField(this, context.sourceLength());
+return new CustomIntegerNumericField(this, context.source().length());
     }
 
     @Override

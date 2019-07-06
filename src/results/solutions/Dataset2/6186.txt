@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -322,9 +321,9 @@ public class SwitchStatement extends Statement {
 				if (constantCount == caseCount // ignore diagnosis if unresolved constants
 						&& caseCount != ((ReferenceBinding)expressionType).enumConstantCount()) {
 					FieldBinding[] enumFields = ((ReferenceBinding)expressionType.erasure()).fields();
-if ((enumConstant.modifiers & ClassFileConstants.AccEnum) == 0) continue;
+					for (int i = 0, max = enumFields.length; i <max; i++) {
 						FieldBinding enumConstant = enumFields[i];
-						if ((enumConstant.modifiers & AccEnum) == 0) continue;
+if ((enumConstant.modifiers & ClassFileConstants.AccEnum) == 0) continue;
 						findConstant : {
 							for (int j = 0; j < caseCount; j++) {
 								if (enumConstant.id == this.constants[j]) break findConstant;

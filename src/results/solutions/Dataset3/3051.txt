@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class ModuleRegisterService implements Service<ModuleRegisterService> {
         final ServiceName serviceName = getServiceName(module.getIdentifier());
         final ServiceTarget serviceTarget = phaseContext.getServiceTarget();
         ServiceBuilder<ModuleRegisterService> builder = serviceTarget.addService(serviceName, service);
-builder.addDependency(Services.FRAMEWORK_ACTIVATOR);
+        builder.addDependency(Services.BUNDLE_MANAGER, BundleManagerService.class, service.injectedBundleManager);
         builder.addDependency(ServiceModuleLoader.moduleServiceName(module.getIdentifier()));
-        builder.addDependency(Services.FRAMEWORK_ACTIVE);
+builder.addDependency(Services.FRAMEWORK_ACTIVATOR);
         builder.install();
     }
 

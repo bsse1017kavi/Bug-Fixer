@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -254,9 +253,9 @@ public int sourceEnd(){
 	return this.methodDeclaration.declarationSourceEnd;
 }
 public String toString(int tab) {
-result.append(this.methodDeclaration.print(tab + 1, result));
+	StringBuffer result = new StringBuffer(tabString(tab));
 	result.append("Recovered method:\n"); //$NON-NLS-1$
-	result.append(this.methodDeclaration.toString(tab + 1));
+result.append(this.methodDeclaration.print(tab + 1, result));
 	if (this.localTypes != null) {
 		for (int i = 0; i < this.localTypeCount; i++) {
 			result.append("\n"); //$NON-NLS-1$

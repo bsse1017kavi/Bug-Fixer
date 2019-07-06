@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -277,9 +276,9 @@ public abstract class World {
 		//??? We probably want to cache this result.  This is order N where N is the
 		//??? number of dominates declares in the whole system.
 		//??? This method can be called a large number of times.
-DeclarePrecedence d = (DeclarePrecedence)i.next();
+		int order = 0;
 		for (Iterator i = crosscuttingMembersSet.getDeclareDominates().iterator(); i.hasNext(); ) {
-			DeclareDominates d = (DeclareDominates)i.next();
+DeclarePrecedence d = (DeclarePrecedence)i.next();
 			int thisOrder = d.compare(aspect1, aspect2);
 			//System.out.println("comparing: " + thisOrder + ": " + d);
 			if (thisOrder != 0) {

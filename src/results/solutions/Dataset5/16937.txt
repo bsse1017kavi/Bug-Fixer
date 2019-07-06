@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -467,9 +466,9 @@ public class BcelWeaver implements IWeaver {
 		if (classType.isSynthetic()) {
 			if (dump) dumpUnchanged(classFile);
 			return null;
-//		JavaClass javaClass = classType.getJavaClass();
+		}
 		
-		JavaClass javaClass = classType.getJavaClass();
+//		JavaClass javaClass = classType.getJavaClass();
 		List shadowMungers = fastMatch(shadowMungerList, classType.getResolvedTypeX());
 		List typeMungers = classType.getResolvedTypeX().getInterTypeMungers();
         

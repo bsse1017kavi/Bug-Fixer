@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -42,9 +41,9 @@ public class TestDocCount extends LuceneTestCase {
     ir.close();
     iw.forceMerge(1);
     ir = iw.getReader();
-iw.shutdown();
+    verifyCount(ir);
     ir.close();
-    iw.close();
+iw.shutdown();
     dir.close();
   }
   

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source
 * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -110,9 +109,9 @@ public final class SocketBinding {
         return socketBindings;
     }
 
-if (!isFixedPort) {
+    private int calculatePort() {
         int port = this.port;
-        if (port > 0 && isFixedPort == false) {
+if (!isFixedPort) {
             port += socketBindings.getPortOffset();
         }
         return port;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -243,9 +242,9 @@ public class HostModelUtil {
         SnapshotTakeHandler snapshotTake = new SnapshotTakeHandler(configurationPersister.getHostPersister());
         hostRegistration.registerOperationHandler(SnapshotTakeHandler.OPERATION_NAME, snapshotTake, snapshotTake, false);
 
-ExtensionContext extensionContext = new ExtensionContextImpl(hostRegistration, null, configurationPersister, ExtensionContext.ProcessType.SLAVE_HOST_CONTROLLER);
+        //Extensions
         ManagementResourceRegistration extensions = hostRegistration.registerSubModel(PathElement.pathElement(EXTENSION), CommonProviders.EXTENSION_PROVIDER);
-        ExtensionContext extensionContext = new ExtensionContextImpl(hostRegistration, null, configurationPersister);
+ExtensionContext extensionContext = new ExtensionContextImpl(hostRegistration, null, configurationPersister, ExtensionContext.ProcessType.SLAVE_HOST_CONTROLLER);
         ExtensionAddHandler addExtensionHandler = new ExtensionAddHandler(extensionContext);
         extensions.registerOperationHandler(ExtensionAddHandler.OPERATION_NAME, addExtensionHandler, addExtensionHandler, false);
         extensions.registerOperationHandler(ExtensionRemoveHandler.OPERATION_NAME, ExtensionRemoveHandler.INSTANCE, ExtensionRemoveHandler.INSTANCE, false);

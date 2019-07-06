@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -751,9 +750,9 @@ public boolean execute(String script) {
 	
 	/* get IHTMLDocument2 */
 	int[] rgdispid = auto.getIDsOfNames(new String[]{"Document"}); //$NON-NLS-1$
-if (pVarResult == null || pVarResult.getType() == COM.VT_EMPTY) return false;
+	int dispIdMember = rgdispid[0];
 	Variant pVarResult = auto.getProperty(dispIdMember);
-	if (pVarResult == null) return false;
+if (pVarResult == null || pVarResult.getType() == COM.VT_EMPTY) return false;
 	OleAutomation document = pVarResult.getAutomation();
 
 	rgdispid = document.getIDsOfNames(new String[]{"parentWindow"}); //$NON-NLS-1$ 

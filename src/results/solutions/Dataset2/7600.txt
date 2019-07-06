@@ -1,4 +1,3 @@
-
 /*
  * @(#)PertDependency.java
  *
@@ -36,9 +35,9 @@ public class PertDependency extends LineConnection {
 
 	public void handleConnect(Figure start, Figure end) {
 		PertFigure source = (PertFigure)start;
-setAttribute(FigureAttributeConstant.FRAME_COLOR.getName(), Color.red);
+		PertFigure target = (PertFigure)end;
 		if (source.hasCycle(target)) {
-			setAttribute("FrameColor", Color.red);
+setAttribute(FigureAttributeConstant.FRAME_COLOR.getName(), Color.red);
 		}
 		else {
 			target.addPreTask(source);

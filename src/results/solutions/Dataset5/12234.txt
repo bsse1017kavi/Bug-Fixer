@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -106,9 +105,9 @@ public class DropTargetEffect extends DropTargetAdapter {
 			item = table.getItem(i);
 			Rectangle rect = item.getBounds();
 			rect.x = area.x;
-if (rect.y > area.y + area.height) break;
+			rect.width = area.width;
 			if (rect.contains(coordinates)) return item;
-			if (!(area.contains(rect.x, rect.y))) break;
+if (rect.y > area.y + area.height) break;
 		}
 		return null;
 	}

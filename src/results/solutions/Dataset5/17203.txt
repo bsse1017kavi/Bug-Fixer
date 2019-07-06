@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -222,9 +221,9 @@ public static Program [] getPrograms () {
 				while ((id = enumerator.nextObject()) != null) {
 					enumerator.skipDescendents();
 					NSString fullPath = path.stringByAppendingPathComponent(new NSString(id.id));
-if (bundle != null) vector.addElement(getProgram(bundle));
+					if (workspace.isFilePackageAtPath(fullPath)) {
 						NSBundle bundle = NSBundle.bundleWithPath(fullPath);
-						vector.addElement(getProgram(bundle));
+if (bundle != null) vector.addElement(getProgram(bundle));
 					}
 				}
 			}

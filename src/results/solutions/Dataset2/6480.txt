@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -84,9 +83,9 @@ public class LabeledStatement extends Statement {
 	 */
 	public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 		
-targetLabel.initialize(codeStream);
+		int pc = codeStream.position;
 		if (targetLabel != null) {
-			targetLabel.codeStream = codeStream;
+targetLabel.initialize(codeStream);
 			if (statement != null) {
 				statement.generateCode(currentScope, codeStream);
 			}

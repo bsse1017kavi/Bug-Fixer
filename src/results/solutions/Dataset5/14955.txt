@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class FragmentPage extends WicketExamplePage
 		add(new MyFragment("fragment", "fragmentid"));
 	}
 
-String html = "<wicket:fragment wicket:id=\"fragmentid\">...</wicket:fragment>";
+	protected void explain()
 	{
-		String html = "<org.apache.wicket:fragment wicket:id=\"fragmentid\">...</org.apache.wicket:fragment>";
+String html = "<wicket:fragment wicket:id=\"fragmentid\">...</wicket:fragment>";
 		String code = "private class MyFragment extends Fragment {\n ...\n"
 				+ "add(new MyFragment(\"fragment\", \"fragmentid\"));";
 		add(new ExplainPanel(html, code));

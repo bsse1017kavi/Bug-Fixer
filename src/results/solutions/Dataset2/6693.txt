@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -152,9 +151,9 @@ public final class LegacyActionPersistence extends RegistryPersistence {
 		if (locationInfo == null) {
 			locationElement = leafElement;
 		} else {
-return new SLocation(locationElement, null, mnemonic, imageStyle);
+			locationElement = locationInfo.append(leafElement);
 		}
-		return new SLocation(mnemonic, imageStyle, null, locationElement);
+return new SLocation(locationElement, null, mnemonic, imageStyle);
 	}
 
 	/**

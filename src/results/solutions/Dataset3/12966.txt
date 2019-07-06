@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -66,9 +65,9 @@ public class StandardWebSocketClient implements WebSocketClient {
 		URI uri = UriComponentsBuilder.fromUriString(uriTemplate).buildAndExpand(uriVariables).encode().toUri();
 		return doHandshake(webSocketHandler, null, uri);
 	}
-public WebSocketSession doHandshake(WebSocketHandler webSocketHandler,
+
 	@Override
-	public WebSocketSession doHandshake(WebSocketHandler<?> webSocketHandler,
+public WebSocketSession doHandshake(WebSocketHandler webSocketHandler,
 			final HttpHeaders httpHeaders, URI uri) throws WebSocketConnectFailureException {
 
 		Endpoint endpoint = new StandardEndpointAdapter(webSocketHandler);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public final class DeploymentReflectionIndex {
      * Get the (possibly cached) index for a given class.
      *
      * @param clazz the class
-public synchronized ClassReflectionIndex getClassIndex(Class<?> clazz) {
+     * @return the index
      */
-    public ClassReflectionIndex getClassIndex(Class<?> clazz) {
+public synchronized ClassReflectionIndex getClassIndex(Class<?> clazz) {
         ClassReflectionIndex index = classes.get(clazz);
         if (index == null) {
             classes.put(clazz, index = new ClassReflectionIndex(clazz));

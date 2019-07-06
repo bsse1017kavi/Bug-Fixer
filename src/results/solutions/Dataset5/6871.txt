@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -146,9 +145,9 @@ public class Button extends FormComponent
 		// Default handling for component tag
 		super.onComponentTag(tag);
 
-String value = getModelObjectAsString();
+		try
 		{
-			String value = getValue();
+String value = getModelObjectAsString();
 			if (value != null && !"".equals(value))
 			{
 				tag.put("value", value);

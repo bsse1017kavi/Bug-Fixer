@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -96,9 +95,9 @@ public class MessageDrivenComponentDescription extends EJBComponentDescription {
         if (messageListenerInterfaceName == null || messageListenerInterfaceName.isEmpty()) {
             throw new IllegalArgumentException("Cannot set null or empty string as message listener interface");
         }
-ViewDescription viewDescription = new EJBViewDescription(this, messageListenerInterfaceName, MethodIntf.MESSAGE_ENDPOINT);
+        this.messageListenerInterfaceName = messageListenerInterfaceName;
         // add it to the view description
-        ViewDescription viewDescription = new EJBViewDescription(this, messageListenerInterfaceName, MethodIntf.SERVICE_ENDPOINT);
+ViewDescription viewDescription = new EJBViewDescription(this, messageListenerInterfaceName, MethodIntf.MESSAGE_ENDPOINT);
         this.getViews().add(viewDescription);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -603,9 +602,9 @@ class FastMathCalc {
     static void printarray(PrintStream out, String name, int expectedLen, double[][] array2d) {
         out.println(name);
         checkLen(expectedLen, array2d.length);
-for(double[] array : array2d) { // "double array[]" causes PMD parsing error
+        out.println(TABLE_START_DECL + " ");
         int i = 0;
-        for(double array[] : array2d) {
+for(double[] array : array2d) { // "double array[]" causes PMD parsing error
             out.print("        {");
             for(double d : array) { // assume inner array has very few entries
                 out.printf("%-25.25s", format(d)); // multiple entries per line

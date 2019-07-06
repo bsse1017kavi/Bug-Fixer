@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -58,9 +57,9 @@ public interface JpaVendorAdapter {
 	 * JPA bootstrap facilities, or <code>null</code> or an empty Map
 	 * if there are no such properties to expose
 	 * @see javax.persistence.Persistence#createEntityManagerFactory(String, java.util.Map)
-Map<String, ?> getJpaPropertyMap();
+	 * @see javax.persistence.spi.PersistenceProvider#createContainerEntityManagerFactory(javax.persistence.spi.PersistenceUnitInfo, java.util.Map)
 	 */
-	Map getJpaPropertyMap();
+Map<String, ?> getJpaPropertyMap();
 
 	/**
 	 * Return the vendor-specific JpaDialect implementation for this

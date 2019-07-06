@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -151,9 +150,9 @@ public class EjbInjectionSource extends InjectionSource {
         final ResourceRoot deploymentRoot = deploymentUnit.getAttachment(Attachments.DEPLOYMENT_ROOT);
         final Set<ViewDescription> componentsForViewName;
         if (beanName != null) {
-componentsForViewName = applicationDescription.getComponentsForViewName(typeName, deploymentRoot.getRoot());
+            componentsForViewName = applicationDescription.getComponents(beanName, typeName, deploymentRoot.getRoot());
         } else {
-            componentsForViewName = applicationDescription.getComponentsForViewName(typeName);
+componentsForViewName = applicationDescription.getComponentsForViewName(typeName, deploymentRoot.getRoot());
         }
         return componentsForViewName;
     }

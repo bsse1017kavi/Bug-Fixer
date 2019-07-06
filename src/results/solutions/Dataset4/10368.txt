@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class SimpleNettyTransportTests extends AbstractSimpleTransportTests {
 
     @Test
     public void testConnectException() {
-fail();
+        try {
             serviceA.connectToNode(new DiscoveryNode("C", new InetSocketTransportAddress("localhost", 9876), Version.CURRENT));
-            assert false;
+fail();
         } catch (ConnectTransportException e) {
 //            e.printStackTrace();
             // all is well

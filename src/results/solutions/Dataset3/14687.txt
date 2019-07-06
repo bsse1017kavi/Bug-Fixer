@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class StatefulComponentSessionIdGeneratingInterceptorFactory implements I
         return new StatefulComponentSessionIdGeneratingInterceptor(sessionIdReference);
     }
 
-final private AtomicReference<Serializable> sessionIdReference;
+    private class StatefulComponentSessionIdGeneratingInterceptor implements Interceptor {
 
-        private AtomicReference<Serializable> sessionIdReference;
+final private AtomicReference<Serializable> sessionIdReference;
 
         StatefulComponentSessionIdGeneratingInterceptor(AtomicReference<Serializable> sessionIdReference) {
             this.sessionIdReference = sessionIdReference;

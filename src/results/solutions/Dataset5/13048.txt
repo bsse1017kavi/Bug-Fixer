@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -139,9 +138,9 @@ public abstract class DocumentBuilderFactory {
         try {
             return (DocumentBuilderFactory) FactoryFinder.find(
                 /* The default property name according to the JAXP spec */
-"org.apache.xerces.jaxp.DocumentBuilderFactoryImpl");
+                "javax.xml.parsers.DocumentBuilderFactory",
                 /* The fallback implementation class name */
-                null);
+"org.apache.xerces.jaxp.DocumentBuilderFactoryImpl");
         } catch (FactoryFinder.ConfigurationError e) {
             throw new FactoryConfigurationError(e.getException(),
                                                 e.getMessage());

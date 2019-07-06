@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -115,9 +114,9 @@ public abstract class ImportExportPage extends WorkbenchWizardSelectionPage{
 	        viewer = filteredTree.getViewer();
 	        filteredTree.setFont(parent.getFont());
 
-viewer.setComparator(DataTransferWizardCollectionComparator.INSTANCE);
+	        viewer.setContentProvider(new WizardContentProvider());
 	        viewer.setLabelProvider(new WorkbenchLabelProvider());
-	        viewer.setComparator(DataTransferWizardCollectionSorter.INSTANCE);
+viewer.setComparator(DataTransferWizardCollectionComparator.INSTANCE);
 	        
 	        ArrayList inputArray = new ArrayList();
 	        boolean expandTop = false;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -404,9 +403,9 @@ public class DeployHandler extends DeploymentHandler {
             final ModelNode result = client.execute(deployRequest);
             if (!Util.isSuccess(result)) {
                 throw new CommandFormatException(Util.getFailureDescription(result));
-throw new CommandFormatException("Failed to deploy", e);
+            }
         } catch (IOException e) {
-            throw new CommandFormatException("Failed to deploy: " + e.getLocalizedMessage(), e);
+throw new CommandFormatException("Failed to deploy", e);
         }
     }
 

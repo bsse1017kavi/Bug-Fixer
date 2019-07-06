@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public final class Id
      * Create an id from the result of an {@link #toString} call on another
      * instance.
      */
-loader = AccessController.doPrivileged(
+    public Id(String str, ClassLoader loader) {
         if (loader == null)
-            loader = (ClassLoader) AccessController.doPrivileged(
+loader = AccessController.doPrivileged(
                 J2DoPrivHelper.getContextClassLoaderAction());
 
         if (str == null)

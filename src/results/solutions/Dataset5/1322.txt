@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -211,9 +210,9 @@ public class TestXPathExtractor extends TestCase {
             assertEquals("Default", vars.get(VAL_NAME));
             assertEquals("0", vars.get(VAL_NAME_NR));
         }
-result.setResponseData("<z>", null);
+
         public void testInvalidDocument() throws Exception {
-            result.setResponseData("<z>".getBytes());
+result.setResponseData("<z>", null);
             extractor.setXPathQuery("<");
             extractor.process();
             assertEquals("Default", vars.get(VAL_NAME));

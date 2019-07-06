@@ -1,4 +1,3 @@
-
 /*
  * TestCalendarFields.java
  *
@@ -91,9 +90,9 @@ public class TestCalendarFields extends BaseKernelTest {
         endEm(pm);
 
         pm = getPM();
-assertTimeZonesEquals(c1, (CalendarFields) pm.detachCopy(c2));
+        c2 = (CalendarFields) pm.find(CalendarFields.class, id2);
         assertTimeZonesEquals(c1, c2);
-        assertTimeZonesEquals(c1, (CalendarFields) pm.detach(c2));
+assertTimeZonesEquals(c1, (CalendarFields) pm.detachCopy(c2));
         endEm(pm);
     }
 

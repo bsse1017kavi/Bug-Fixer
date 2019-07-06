@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements. See the NOTICE file
@@ -92,9 +91,9 @@ public class PostingsHighlighter implements Highlighter {
         List<Snippet> snippets = new ArrayList<Snippet>();
         int numberOfFragments;
 
-List<Object> textsToHighlight = HighlightUtils.loadFieldValues(fieldMapper, context, hitContext, field.forceSource());
+        try {
             //we manually load the field values (from source if needed)
-            List<Object> textsToHighlight = HighlightUtils.loadFieldValues(fieldMapper, context, hitContext);
+List<Object> textsToHighlight = HighlightUtils.loadFieldValues(fieldMapper, context, hitContext, field.forceSource());
             CustomPostingsHighlighter highlighter = new CustomPostingsHighlighter(mapperHighlighterEntry.passageFormatter, textsToHighlight, mergeValues, Integer.MAX_VALUE-1, field.noMatchSize());
 
              if (field.numberOfFragments() == 0) {

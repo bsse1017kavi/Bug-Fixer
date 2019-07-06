@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2001 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -907,9 +906,9 @@ class ColumnReturn extends ColumnDescriptor {
     String s = (String) value;
     ProjectBrowser pb = ProjectBrowser.TheInstance;
     Project p = pb.getProject();
-MParameter rp = MMUtil.SINGLETON.buildParameter();
+    MClassifier rt = p.findType(s);
     ParserDisplay pd = ParserDisplay.SINGLETON;
-	MParameter rp = new MParameterImpl();
+MParameter rp = MMUtil.SINGLETON.buildParameter();
 	rp.setType(rt);
 	MMUtil.SINGLETON.setReturnParameter(op, rp);
   }

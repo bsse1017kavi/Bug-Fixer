@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -96,9 +95,9 @@ public class BinaryFormsTestCase extends CommandTestCase {
 		
 		CommandTestCase.runCompiler(args, new int[] {24, 30});
 
-args.add("out/lib.jar" + File.pathSeparator + AjcTests.aspectjrtClasspath());
+		args = new ArrayList();
 		args.add("-classpath");
-        args.add(AjcTests.aspectjrtClasspath());
+args.add("out/lib.jar" + File.pathSeparator + AjcTests.aspectjrtClasspath());
 		
 		args.add("-d");
 		args.add("out");

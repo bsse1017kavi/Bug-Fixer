@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class MultipleObjectPartialActivationTestCase extends ArquillianResourceM
                 List<ModelNode> operations = xmlToModelOperations(xml, Namespace.CURRENT.getUriString(), new ResourceAdapterSubsystemParser());
                 executeOperation(operationListToCompositeOperation(operations));
         }
-public void tearDown(final ManagementClient managementClient, final String containerId) throws IOException, MgmtOperationException {
+
         @Override
-        public void tearDown(final ManagementClient managementClient) throws IOException, MgmtOperationException {
+public void tearDown(final ManagementClient managementClient, final String containerId) throws IOException, MgmtOperationException {
 
             final ModelNode address = new ModelNode();
             address.add("subsystem", "resource-adapters");

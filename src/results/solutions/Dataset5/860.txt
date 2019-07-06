@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class CompUser
 
 	@Basic
 	@Column(name="compName", length=50)
-@PersistentCollection(fetch=FetchType.EAGER)
+	private String computerName;
 
-	@PersistentCollection
+@PersistentCollection(fetch=FetchType.EAGER)
 	private String[] nicknames = new String[0];
 
 	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -625,9 +624,9 @@ public static IPath canonicalizedPath(IPath externalPath) {
 				// default root
 				return getPackageFragmentRoot(getProject());
 			}
-if ("jar".equalsIgnoreCase(ext) || "zip".equalsIgnoreCase(ext)) {
+		} else {
 			String ext= path.getFileExtension();
-			if ("jar".equalsIgnoreCase(ext) || "class".equalsIgnoreCase(ext)) {
+if ("jar".equalsIgnoreCase(ext) || "zip".equalsIgnoreCase(ext)) {
 				// external jar
 				return getPackageFragmentRoot(path.toString()); 
 			} else {

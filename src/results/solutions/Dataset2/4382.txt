@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -58,9 +57,9 @@ public void analyseCode(ClassScope classScope, InitializationFlowContext initial
 		if ((this.bits & ASTNode.IsDefaultConstructor) != 0) break checkUnused;
 		if (constructorBinding.isUsed()) break checkUnused;
 		if (constructorBinding.isPrivate()) {
-} else if (!constructorBinding.isOrEnclosedByPrivateType()) {
+			if ((this.binding.declaringClass.tagBits & TagBits.HasNonPrivateConstructor) == 0)
 				break checkUnused; // tolerate as known pattern to block instantiation
-		} else if ((this.binding.declaringClass.tagBits & (TagBits.IsAnonymousType|TagBits.IsLocalType)) != TagBits.IsLocalType) {
+} else if (!constructorBinding.isOrEnclosedByPrivateType()) {
 			break checkUnused;
 		}
 		// complain unused

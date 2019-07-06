@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class BundleFrameworkImpl implements BundleFramework
   {
     if (_compositeBundle.getCompositeFramework().getState() != Framework.ACTIVE)
     {
-_packageAdminTracker = new ServiceTracker(_compositeBundle.getCompositeFramework().getBundleContext(),
+      _compositeBundle.start(Bundle.START_ACTIVATION_POLICY);
   
-      _packageAdminTracker = new ServiceTracker(_compositeBundle.getBundleContext(),
+_packageAdminTracker = new ServiceTracker(_compositeBundle.getCompositeFramework().getBundleContext(),
           PackageAdmin.class.getName(), null);
       _packageAdminTracker.open();
     }

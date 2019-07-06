@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class ValidationError implements IValidationError, IClusterable
 {
 	private static final long serialVersionUID = 1L;
 
-private final List keys = new ArrayList(1);
+	// XXX 2.0: optimization - keys can be null by default until a key is added
 	/** List of message keys to try against the {@link IErrorMessageSource} */
-	private List keys = new ArrayList(1);
+private final List keys = new ArrayList(1);
 
 	/** Variable map to use in variable substitution */
 	private Map vars;

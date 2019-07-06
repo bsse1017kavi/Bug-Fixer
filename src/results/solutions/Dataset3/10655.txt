@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -62,9 +61,9 @@ public class HeaderRequestMatcherTests {
 
 	@Test
 	public void testString() throws Exception {
-.andExpect(header("Accept", "application/json, application/*+json"))
+
 		this.mockServer.expect(requestTo("/person/1"))
-			.andExpect(header("Accept", "application/json"))
+.andExpect(header("Accept", "application/json, application/*+json"))
 			.andRespond(withSuccess(RESPONSE_BODY, MediaType.APPLICATION_JSON));
 
 		this.restTemplate.getForObject(new URI("/person/1"), Person.class);

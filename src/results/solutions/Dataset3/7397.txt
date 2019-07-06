@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -205,9 +204,9 @@ public class ModuleAccessesOSGiServiceTestCase extends AbstractOSGiSubsystemTest
             @Override
             public void execute(BatchBuilder batchBuilder) throws Exception {
                 Object service = loadClass(moduleId, EchoInvokerService.class.getName()).newInstance();
-serviceBuilder.setInitialMode(Mode.ACTIVE);
+                BatchServiceBuilder<?> serviceBuilder = batchBuilder.addService(EchoInvokerService.SERVICE_NAME, (Service<?>) service);
                 serviceBuilder.addDependency(FrameworkService.SERVICE_NAME);
-                serviceBuilder.setInitialMode(Mode.IMMEDIATE);
+serviceBuilder.setInitialMode(Mode.ACTIVE);
             }
         };
         runWithLatchedBatch(work);

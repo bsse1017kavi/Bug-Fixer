@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -32,9 +31,9 @@ public class FieldMappersFieldSelector implements FieldSelector {
 
     private final HashSet<String> names = new HashSet<String>();
 
-names.add(fieldMapper.names().indexName());
+    public void add(FieldMappers fieldMappers) {
         for (FieldMapper fieldMapper : fieldMappers) {
-            names.add(fieldMapper.indexName());
+names.add(fieldMapper.names().indexName());
         }
     }
 

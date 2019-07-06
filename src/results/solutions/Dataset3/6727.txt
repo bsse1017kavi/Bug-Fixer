@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -101,9 +100,9 @@ public class DeploymentAddHandler implements ModelAddOperationHandler, Descripti
             throw new OperationFailedException(new ModelNode().set("Can't pass in both an input-stream-index and a hash"));
         } else if (operation.hasDefined(INPUT_STREAM_INDEX)) {
             InputStream in = getContents(context, operation);
-hash = deploymentRepository.addDeploymentContent(in);
+            try {
                 try {
-                    hash = deploymentRepository.addDeploymentContent(name, runtimeName, in);
+hash = deploymentRepository.addDeploymentContent(in);
                 } catch (IOException e) {
                     throw new OperationFailedException(new ModelNode().set(e.toString()));
                 }

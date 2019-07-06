@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -967,9 +966,9 @@ boolean sendKeyEvent (int type, int msg, int wParam, int lParam, Event event) {
 	if (isDisposed ()) return false;
 	return event.doit;
 }
-return sendMouseEvent (type, button, display.getClickCount (type, button, hwnd, lParam), 0, false, hwnd, msg, wParam, lParam);
+
 boolean sendMouseEvent (int type, int button, int hwnd, int msg, int wParam, int lParam) {
-	return sendMouseEvent (type, button, 0, 0, false, hwnd, msg, wParam, lParam);
+return sendMouseEvent (type, button, display.getClickCount (type, button, hwnd, lParam), 0, false, hwnd, msg, wParam, lParam);
 }
 
 boolean sendMouseEvent (int type, int button, int count, int detail, boolean send, int hwnd, int msg, int wParam, int lParam) {

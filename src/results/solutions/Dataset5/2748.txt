@@ -1,4 +1,3 @@
-
 /*
  * $Id: WebMarkupContainerWithAssociatedMarkup.java,v 1.4 2006/03/04 08:49:02
  * jdonnerstag Exp $ $Revision: 1.1 $ $Date: 2006/03/10 22:31:50 $
@@ -92,8 +91,8 @@ public abstract class PropertyListView<T> extends ListView<T>
 	 * @return a BoundCompoundPropertyModel wrapping a ListItemModel
 	 */
 	@Override
-return new BoundCompoundPropertyModel<T>(super.getListItemModel(model, index));
+	protected IModel<T> getListItemModel(final IModel<List<T>> model, final int index)
 	{
-		return new BoundCompoundPropertyModel(super.getListItemModel(model, index));
+return new BoundCompoundPropertyModel<T>(super.getListItemModel(model, index));
 	}
 }

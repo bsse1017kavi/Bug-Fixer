@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -416,9 +415,9 @@ public class ModelControllerMBeanHelper {
         return resourceRegistration;
     }
 
-return result.get(FAILURE_DESCRIPTION).toString();
+    private String getFailureDescription(ModelNode result) {
         if (result.hasDefined(FAILURE_DESCRIPTION)) {
-            return result.get(FAILURE_DESCRIPTION).asString();
+return result.get(FAILURE_DESCRIPTION).toString();
         }
         return null;
     }

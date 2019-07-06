@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ public class FetchPhase implements SearchPhase {
             // don't load the source field in this case, makes little sense to get it with all stored fields
             fieldSelector = AllButSourceFieldSelector.INSTANCE;
         } else {
-FieldMappers x = context.smartNameFieldMappers(fieldName);
+            FieldMappersFieldSelector fieldSelectorMapper = new FieldMappersFieldSelector();
             for (String fieldName : context.fieldNames()) {
-                FieldMappers x = context.mapperService().smartNameFieldMappers(fieldName);
+FieldMappers x = context.smartNameFieldMappers(fieldName);
                 if (x != null && x.mapper().stored()) {
                     fieldSelectorMapper.add(x);
                 } else {

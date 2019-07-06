@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -164,9 +163,9 @@ public class ObjectTypeAttributeDefinition extends SimpleAttributeDefinition {
         result.get(ModelDescriptionConstants.DESCRIPTION); // placeholder
         result.get(ModelDescriptionConstants.EXPRESSIONS_ALLOWED).set(valueType.isAllowExpression());
         if (forOperation) {
-result.get(ModelDescriptionConstants.NILLABLE).set(valueType.isAllowNull());
+            result.get(ModelDescriptionConstants.REQUIRED).set(!valueType.isAllowNull());
         }
-        result.get(ModelDescriptionConstants.NILLABLE).set(isAllowNull());
+result.get(ModelDescriptionConstants.NILLABLE).set(valueType.isAllowNull());
         final ModelNode defaultValue = valueType.getDefaultValue();
         if (!forOperation && defaultValue != null && defaultValue.isDefined()) {
             result.get(ModelDescriptionConstants.DEFAULT).set(defaultValue);

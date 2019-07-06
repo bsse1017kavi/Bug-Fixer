@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class FileImpl implements IFile
     file = f;
     this.rootDirFile = rootFile;
     rootDir = rootFile.getAbsolutePath();
-else name = file.getAbsolutePath().substring(rootDir.length() + 1).replace('\\', '/');
+    
     if (f.equals(rootFile)) name = "";
-    else name = file.getAbsolutePath().substring(rootDir.length() + 1);
+else name = file.getAbsolutePath().substring(rootDir.length() + 1).replace('\\', '/');
   }
   
   @Override

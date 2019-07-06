@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -185,9 +184,9 @@ public abstract class ReferenceManager<G> implements Closeable {
    * currently refreshing, this method blocks until that thread completes. It is
    * useful if you want to guarantee that the next call to {@link #acquire()}
    * will return a refreshed instance. Otherwise, consider using the
-public final void maybeRefreshBlocking() throws IOException {
+   * non-blocking {@link #maybeRefresh()}.
    */
-  public final void maybeRefreshBlocking() throws IOException, InterruptedException {
+public final void maybeRefreshBlocking() throws IOException {
     ensureOpen();
 
     // Ensure only 1 thread does refresh at once

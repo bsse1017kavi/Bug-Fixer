@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -109,9 +108,9 @@ public abstract class RelationToManyTableFieldStrategy
                     field, mapped));
             field.getMappingInfo().assertNoSchemaComponents(field, !adapt);
             vinfo.assertNoSchemaComponents(elem, !adapt);
-if (!mapped.isMapped() || mapped.isSerialized())
+            mapped.resolve(mapped.MODE_META | mapped.MODE_MAPPING);
 
-            if (!mapped.getDefiningMapping().isMapped())
+if (!mapped.isMapped() || mapped.isSerialized())
                 throw new MetaDataException(_loc.get("mapped-by-unmapped",
                     field, mapped));
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -38,9 +37,9 @@ public class InternalTickTest extends BaseBulletTest {
 			int idx = 0;
 			for (int i = 0; i < objs.size(); i++) {
 				btRigidBody body = (btRigidBody)(objs.at(i));
-body.applyCentralForce(Vector3.tmp.set(0f, 8.0f + (float)(6.0 * Math.random()), 0f));
+				if (body == null || body.isStaticOrKinematicObject()) continue;
 				body.applyGravity();
-				body.applyCentralForce(tmpV1.set(0f, 8.0f + (float)(6.0 * Math.random()), 0f));
+body.applyCentralForce(Vector3.tmp.set(0f, 8.0f + (float)(6.0 * Math.random()), 0f));
 				idx++;
 			}
 		}

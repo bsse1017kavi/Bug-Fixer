@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -353,9 +352,9 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
      * @exception FunctionEvaluationException if the objective function throws one during
      * the search
      * @exception OptimizationException if the algorithm failed to converge
-protected abstract VectorialPointValuePair doOptimize()
+     * @exception IllegalArgumentException if the start point dimension is wrong
      */
-    abstract protected VectorialPointValuePair doOptimize()
+protected abstract VectorialPointValuePair doOptimize()
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException;
 
 }

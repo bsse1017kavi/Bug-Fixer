@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public class TopHitsAggregator extends MetricsAggregator implements ScorerAware 
         if (topDocsCollector == null) {
             Sort sort = topHitsContext.sort();
             int topN = topHitsContext.from() + topHitsContext.size();
-topDocsCollector = sort != null ? TopFieldCollector.create(sort, topN, true, topHitsContext.trackScores(), topHitsContext.trackScores(), false) : TopScoreDocCollector.create(topN, false)
+            topDocsCollectors.put(
                     bucketOrdinal,
-                    topDocsCollector = sort != null ? TopFieldCollector.create(sort, topN, true, topHitsContext.trackScores(), true, false) : TopScoreDocCollector.create(topN, false)
+topDocsCollector = sort != null ? TopFieldCollector.create(sort, topN, true, topHitsContext.trackScores(), topHitsContext.trackScores(), false) : TopScoreDocCollector.create(topN, false)
             );
             topDocsCollector.setNextReader(currentContext);
             topDocsCollector.setScorer(currentScorer);

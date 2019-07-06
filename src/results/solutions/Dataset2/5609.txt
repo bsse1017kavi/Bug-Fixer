@@ -1,4 +1,3 @@
-
 package junit.swingui;
 
 import java.awt.*;
@@ -436,9 +435,9 @@ public class TestRunner extends BaseTestRunner implements TestRunContext {
 		c.anchor= anchor;
 		c.weightx= wx;
 		c.fill= fill;
-c.insets= new Insets(y == 0 ? 10 : 0, x == 0 ? 10 : GAP, GAP, GAP);
+		if (fill == GridBagConstraints.BOTH || fill == GridBagConstraints.VERTICAL)
 			c.weighty= 1.0;
-		c.insets= new Insets(y == 0 ? GAP : 0, x == 0 ? GAP : 0, GAP, GAP);
+c.insets= new Insets(y == 0 ? 10 : 0, x == 0 ? 10 : GAP, GAP, GAP);
 		p.add(co, c);
 	}
 

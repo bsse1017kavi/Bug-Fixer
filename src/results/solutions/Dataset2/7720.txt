@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -131,9 +130,9 @@ public class DefaultServlet extends HttpServlet {
 	    requestURI = request.getRequestURI();
 	}
 
-if (pathInfo == null) // pathInfo can't be "" ( spec )
+	// Clean up pathInfo
 	File file = null;
-	if ((pathInfo == null) || (pathInfo.length() < 1))
+if (pathInfo == null) // pathInfo can't be "" ( spec )
 	    file = new File(docBase);
 	else		// Avoid double slashes because docBase ends with one
 	    file = new File(docBase + pathInfo.substring(1));

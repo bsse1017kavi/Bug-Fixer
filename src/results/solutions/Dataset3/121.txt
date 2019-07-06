@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public abstract class ManagedExecutorService implements ExecutorService {
 
     private final ExecutorService executor;
 
-throw ThreadsLogger.ROOT_LOGGER.nullExecutor();
+    public ManagedExecutorService(ExecutorService executor) {
         if(executor == null) {
-            throw ThreadsMessages.MESSAGES.nullExecutor();
+throw ThreadsLogger.ROOT_LOGGER.nullExecutor();
         }
         this.executor = protectExecutor(executor);
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class NameSortTest extends CleanupHelper
                 int j = Integer.valueOf(ByteBufferUtil.string(superColumn.name()).split("-")[1]);
                 Collection<IColumn> subColumns = superColumn.getSubColumns();
                 assert subColumns.size() == 4;
-long k = subColumn.name().getLong(subColumn.name().position());
+                for (IColumn subColumn : subColumns)
                 {
-                    long k = subColumn.name().getLong(subColumn.name().position() + subColumn.name().arrayOffset());
+long k = subColumn.name().getLong(subColumn.name().position());
                     byte[] bytes = (j + k) % 2 == 0 ? "a".getBytes() : "b".getBytes();
                     assertEquals(new String(bytes), ByteBufferUtil.string(subColumn.value()));
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -74,9 +73,9 @@ public class DocletInfo
     public Path createPath()
         throws TaskException
     {
-m_path = new Path();
+        if( m_path == null )
         {
-            m_path = new Path( null );
+m_path = new Path();
         }
         return m_path.createPath();
     }

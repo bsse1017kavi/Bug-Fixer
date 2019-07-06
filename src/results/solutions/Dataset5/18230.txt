@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -495,9 +494,9 @@ int MapUrlToZone(int /*long*/ pwszUrl, int /*long*/ pdwZone, int dwFlags) {
 	IE ie = (IE)((Browser)getParent().getParent()).webBrowser;
 	/*
 	* For some reason IE8 invokes this function after the Browser has
-if (ie.auto != null && ie.getUrl().startsWith(IE.ABOUT_BLANK) && !ie.untrustedText) {
+	* been disposed.  To detect this case check for ie.auto != null. 
 	*/
-	if (ie.auto != null && ie.getUrl().startsWith(IE.ABOUT_BLANK)) {
+if (ie.auto != null && ie.getUrl().startsWith(IE.ABOUT_BLANK) && !ie.untrustedText) {
 		COM.MoveMemory(pdwZone, new int[] {IE.URLZONE_INTRANET}, 4);
 		return COM.S_OK;
 	}

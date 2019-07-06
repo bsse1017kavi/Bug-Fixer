@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -365,9 +364,9 @@ public class ZipArchiveInputStream extends ArchiveInputStream {
     @Override
     public boolean canReadEntryData(ArchiveEntry ae) {
         if (ae instanceof ZipArchiveEntry) {
-&& ze.getMethod() != ZipMethod.UNSHRINKING.getCode()
+            ZipArchiveEntry ze = (ZipArchiveEntry) ae;
             return ZipUtil.canHandleEntryData(ze)
-                && ze.getMethod() == ZipMethod.UNSHRINKING.getCode()
+&& ze.getMethod() != ZipMethod.UNSHRINKING.getCode()
                 && supportsDataDescriptorFor(ze);
 
         }

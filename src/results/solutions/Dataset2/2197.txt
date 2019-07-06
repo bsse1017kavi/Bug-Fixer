@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -149,9 +148,9 @@ public abstract class ASTNode implements BaseTypes, CompilerModifiers, TypeConst
 			arguments[i].computeConversion(scope, parameterType, argumentType);
 			if (argumentType != NullBinding && parameterType.isWildcard() && ((WildcardBinding)parameterType).kind != Wildcard.SUPER) {
 			    unsafeWildcardInvocation = true;
-&& (parameterType.isBoundParameterizedType() || parameterType.isGenericType())) {
+			} else if (argumentType != parameterType 
 			        && argumentType.isRawType() 
-			        && (parameterType.isParameterizedType() || parameterType.isGenericType())) {
+&& (parameterType.isBoundParameterizedType() || parameterType.isGenericType())) {
 			    scope.problemReporter().unsafeRawConversion(arguments[i], argumentType, parameterType);
 			}
 		}

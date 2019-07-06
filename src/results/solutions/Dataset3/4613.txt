@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public final class EEModuleDescription implements ResourceInjectionTarget {
     public EEModuleDescription(final String applicationName, final String moduleName, final String earApplicationName, final boolean appClient) {
         this.applicationName = applicationName;
         this.moduleName = moduleName;
-this.concurrentContext = new ConcurrentContext();
+        this.earApplicationName = earApplicationName;
         this.appClient = appClient;
-        this.concurrentContext = new ConcurrentContext(getApplicationName(),getModuleName(),null);
+this.concurrentContext = new ConcurrentContext();
         this.defaultResourceJndiNames = new EEDefaultResourceJndiNames();
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ import org.jboss.msc.service.StopContext;
  * @author <a href="mailto:darran.lofthouse@jboss.com">Darran Lofthouse</a>
  */
 public class ServletContainerService implements Service<ServletContainerService> {
-private final Map<String, Integer> secureListeners = new ConcurrentHashMap<>(1);
+    private volatile ServletContainer servletContainer;
     @Deprecated
-    private Map<String, Integer> secureListeners = new ConcurrentHashMap<>(1);
+private final Map<String, Integer> secureListeners = new ConcurrentHashMap<>(1);
 
     static String getDeployedContextPath(DeploymentInfo deploymentInfo) {
         return "".equals(deploymentInfo.getContextPath()) ? "/" : deploymentInfo.getContextPath();

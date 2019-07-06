@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -26,9 +25,9 @@ package org.jboss.as.undertow.session.notification;
  * Base superclass for a {@link ClusteredSessionNotificationPolicy} implementation.
  * @author Brian Stansberry
  */
-private volatile ClusteredSessionNotificationCapability capability;
+public abstract class ClusteredSessionNotificationPolicyBase implements ClusteredSessionNotificationPolicy {
 
-    private ClusteredSessionNotificationCapability capability;
+private volatile ClusteredSessionNotificationCapability capability;
 
     @Override
     public void setClusteredSessionNotificationCapability(ClusteredSessionNotificationCapability capability) {

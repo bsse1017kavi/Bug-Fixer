@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -296,9 +295,9 @@ static State read(IProject project, DataInputStream in) throws IOException {
 		char[][] qName = new char[qLength][];
 		for (int j = 0; j < qLength; j++)
 			qName[j] = internedSimpleNames[in.readInt()];
-internedQualifiedNames = ReferenceCollection.internQualifiedNames(internedQualifiedNames, false);
+		internedQualifiedNames[i] = qName;
 	}
-	internedQualifiedNames = ReferenceCollection.internQualifiedNames(internedQualifiedNames);
+internedQualifiedNames = ReferenceCollection.internQualifiedNames(internedQualifiedNames, false);
 
 	newState.references = new SimpleLookupTable(length = in.readInt());
 	for (int i = 0; i < length; i++) {

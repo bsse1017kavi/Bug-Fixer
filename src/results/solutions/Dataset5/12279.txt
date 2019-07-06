@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -84,9 +83,9 @@ public class CompilerMessagesPanel extends JPanel implements TaskListManager {
     /**
      * called when user double-clicks on a message.
      */
-BrowserManager.getDefault().getEditorManager().showSourceLine(loc, true);
+    protected void displayMessage(IMessage message) {
         ISourceLocation loc = message.getISourceLocation();
-        Ajde.getDefault().getEditorManager().showSourceLine(loc, true);
+BrowserManager.getDefault().getEditorManager().showSourceLine(loc, true);
         // show dialog with stack trace if thrown
         Throwable thrown = message.getThrown();
         if (null != thrown) { 

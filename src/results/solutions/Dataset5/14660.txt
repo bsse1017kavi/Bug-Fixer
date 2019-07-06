@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -199,9 +198,9 @@ public class HTTPSampleResult extends SampleResult {
             // Extract the content-type if present
             final String METATAG = "<meta http-equiv=\"content-type\" content=\""; // $NON-NLS-1$
             int tagstart=prefix.indexOf(METATAG);
-int tagend = prefix.indexOf('\"', tagstart); // $NON-NLS-1$
+            if (tagstart!=-1){
                 tagstart += METATAG.length();
-                int tagend = prefix.indexOf("\"", tagstart); // $NON-NLS-1$
+int tagend = prefix.indexOf('\"', tagstart); // $NON-NLS-1$
                 if (tagend!=-1){
                     // TODO use fixed charset:
                     final String ct = new String(bytes,tagstart,tagend-tagstart); // TODO - charset?

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -106,9 +105,9 @@ public class TestEmbeddableSuperclass
             getMapping(EmbeddableSuperSub.class, null, true);
         FieldMapping fm = cls.getFieldMapping("sub");
         assertTrue(fm.getStrategy() instanceof RelationFieldStrategy);
-assertEquals(RelationFieldStrategy.class, fm.getStrategy().getClass());
+
         fm = cls.getFieldMapping("sup");
-        assertTrue(fm.getStrategy() instanceof EmbedFieldStrategy);
+assertEquals(RelationFieldStrategy.class, fm.getStrategy().getClass());
     }
 
     public void testPersistAndFind() {

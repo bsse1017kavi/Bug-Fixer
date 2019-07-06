@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -71,9 +70,9 @@ public class RestMoreLikeThisAction extends BaseRestHandler {
             String searchScroll = request.param("search_scroll");
             if (searchScroll != null) {
                 mltRequest.searchScroll(new Scroll(parseTimeValue(searchScroll, null)));
-mltRequest.searchSource(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength(), request.contentUnsafe());
+            }
             if (request.hasContent()) {
-                mltRequest.searchSource(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength());
+mltRequest.searchSource(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength(), request.contentUnsafe());
             } else {
                 String searchSource = request.param("search_source");
                 if (searchSource != null) {

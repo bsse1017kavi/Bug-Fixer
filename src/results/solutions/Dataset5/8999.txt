@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -26,9 +25,9 @@ import org.apache.jmeter.samplers.Interruptible;
  */
 public class HTTPSampler extends HTTPSamplerBase implements Interruptible {
 
-private final transient HTTPJavaImpl hc;
+    private static final long serialVersionUID = 241L;
 
-    private final transient HTTPAbstractImpl hc;
+private final transient HTTPJavaImpl hc;
     
     public HTTPSampler(){
         hc = new HTTPJavaImpl(this);

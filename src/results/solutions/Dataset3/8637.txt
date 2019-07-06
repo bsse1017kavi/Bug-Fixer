@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class JMSMessagingUtil {
         connection = this.connectionFactory.createConnection();
         connection.start();
         session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-@Resource(mappedName = "java:/ConnectionFactory")
+    }
 
-    @Resource(mappedName = "java:/JmsXA")
+@Resource(mappedName = "java:/ConnectionFactory")
     public void setConnectionFactory(final ConnectionFactory connectionFactory) {
         this.connectionFactory = connectionFactory;
     }

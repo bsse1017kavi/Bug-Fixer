@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -87,9 +86,9 @@ public class CSVRecord implements Serializable, Iterable<String> {
             return index != null ? values[index.intValue()] : null;
         } catch (final ArrayIndexOutOfBoundsException e) {
             throw new IllegalArgumentException(
-name, index, Integer.valueOf(values.length)));
+                    String.format(
                             "Index for header '%s' is %d but CSVRecord only has %d values!",
-                            name, index.intValue(), values.length));
+name, index, Integer.valueOf(values.length)));
         }
     }
 

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -409,9 +408,9 @@ byteArrayToString(byte [] array, boolean quote) {
 	for (int i = 0; i < array.length; i++) {
 		int b = array[i] & 0xFF;
 		if (b < 0x20 || b >= 0x7f) {
-} else if (b == '"' || b == '\\') {
+			sb.append('\\');
 			sb.append(byteFormat.format(b));
-		} else if (b == '"' || b == ';' || b == '\\') {
+} else if (b == '"' || b == '\\') {
 			sb.append('\\');
 			sb.append((char)b);
 		} else

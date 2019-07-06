@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ public class EndPoint implements Serializable, Comparable<EndPoint>
     private static final long serialVersionUID = -4962625949179835907L;
     private static Map<CharBuffer, String> hostNames_ = new HashMap<CharBuffer, String>();
 
-protected static EndPoint sentinelLocalEndPoint_;
+    // use as a kind of magic number to send ourselves a message indicating listening state
     protected static final int sentinelPort_ = 5555;
-    public static EndPoint sentinelLocalEndPoint_;
+protected static EndPoint sentinelLocalEndPoint_;
     
     static
     {

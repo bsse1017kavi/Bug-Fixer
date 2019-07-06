@@ -1,4 +1,3 @@
-
 /*
  * $Id: AutoComponentResolver.java,v 1.4 2005/01/18 08:04:29 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -118,9 +117,9 @@ public final class AutoComponentResolver implements IComponentResolver
             if (parent != null)
             {
                 final Component component = parent.get(tag.getId());
-component.render(markupStream);
+                if (component != null)
                 {
-                    component.render();
+component.render(markupStream);
                     return true;
                 }
             }

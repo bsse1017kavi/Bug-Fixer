@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.taxonomy.directory;
 
 import java.io.IOException;
@@ -181,9 +180,9 @@ public class ParallelTaxonomyArrays {
    * <p>
    * <b>NOTE:</b> you should call this method from a thread-safe code.
    */
-int[] newarray = ArrayUtil.grow(parents, ordinal + 1);
+  ParallelTaxonomyArrays add(int ordinal, int parentOrdinal) {
     if (ordinal >= parents.length) {
-      int[] newarray = ArrayUtil.grow(parents);
+int[] newarray = ArrayUtil.grow(parents, ordinal + 1);
       newarray[ordinal] = parentOrdinal;
       return new ParallelTaxonomyArrays(newarray);
     }

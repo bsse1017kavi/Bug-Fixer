@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -166,9 +165,9 @@ public class AnnotationMessageService extends AbstractMessageService implements 
 		handleMessage(message, this.unsubscribeMethods);
 	}
 
-PubSubHeaders headers = PubSubHeaders.fromMessageHeaders(message.getHeaders());
+	private void handleMessage(final Message<?> message, Map<MappingInfo, HandlerMethod> handlerMethods) {
 
-		PubSubHeaders headers = new PubSubHeaders(message.getHeaders(), true);
+PubSubHeaders headers = PubSubHeaders.fromMessageHeaders(message.getHeaders());
 		String destination = headers.getDestination();
 
 		HandlerMethod match = getHandlerMethod(destination, handlerMethods);

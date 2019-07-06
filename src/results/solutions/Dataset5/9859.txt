@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -2869,9 +2868,9 @@ XMLDocumentFilter, XMLDTDFilter, XMLDTDContentModelFilter {
         else {
             //  resolve the element
             fCurrentElementIndex = fDTDGrammar.getElementDeclIndex(element, -1);
-if (fCurrentContentSpecType == -1 && fPerformValidation) {
+
             fCurrentContentSpecType = getContentSpecType(fCurrentElementIndex);
-            if (fCurrentElementIndex == -1 && fPerformValidation) {
+if (fCurrentContentSpecType == -1 && fPerformValidation) {
                 fErrorReporter.reportError(XMLMessageFormatter.XML_DOMAIN, 
                                            "MSG_ELEMENT_NOT_DECLARED",
                                            new Object[]{ element.rawname},

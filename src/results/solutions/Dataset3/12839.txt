@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ public class AbstractRTSService {
         }
     }
 
-final int port = injectedSocketBinding.getValue().getPort();
+    protected String getBaseUrl() {
         final String address = injectedSocketBinding.getValue().getAddress().getHostAddress();
-        final int port = injectedSocketBinding.getValue().getAbsolutePort();
+final int port = injectedSocketBinding.getValue().getPort();
 
         if (injectedSocketBinding.getValue().getAddress() instanceof Inet4Address) {
             return "http://" + address + ":" + port;

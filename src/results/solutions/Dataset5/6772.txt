@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -132,9 +131,9 @@ public class PCClassFileTransformer
             enhancer.setEnforcePropertyRestrictions
                 (_flags.enforcePropertyRestrictions);
 
-return enhancer.getPCBytecode().toByteArray();
+            if (enhancer.run() == PCEnhancer.ENHANCE_NONE)
                 return null;
-            return enhancer.getBytecode().toByteArray();
+return enhancer.getPCBytecode().toByteArray();
         } catch (Throwable t) {
             _log.warn(_loc.get("cft-exception-thrown", className), t);
             if (t instanceof RuntimeException)

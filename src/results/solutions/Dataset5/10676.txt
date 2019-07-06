@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -153,9 +152,9 @@ void showDropTargetEffect(int effect, int x, int y) {
 		if (hItem != -1 && expandIndex == hItem && expandBeginTime != 0) {
 			if (System.currentTimeMillis() >= expandBeginTime) {
 				if (OS.SendMessage (handle, OS.TVM_GETNEXTITEM, OS.TVGN_CHILD, hItem) != 0) {
-tvItem.mask = OS.TVIF_HANDLE | OS.TVIF_STATE;
+					TVITEM tvItem = new TVITEM ();
 					tvItem.hItem = hItem;
-					tvItem.mask = OS.TVIF_STATE;
+tvItem.mask = OS.TVIF_HANDLE | OS.TVIF_STATE;
 					OS.SendMessage (handle, OS.TVM_GETITEM, 0, tvItem);
 					if ((tvItem.state & OS.TVIS_EXPANDED) == 0) {
 						OS.SendMessage (handle, OS.TVM_EXPAND, OS.TVE_EXPAND, hItem);

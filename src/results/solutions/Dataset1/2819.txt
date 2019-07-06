@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -309,9 +308,9 @@ public class RowMutation
     {
         if (del.predicate != null && del.predicate.column_names != null)
         {
-if (del.super_column == null && DatabaseDescriptor.getColumnFamilyType(rm.table_, cfName) == ColumnFamilyType.Super)
+            for(byte[] c : del.predicate.column_names)
             {
-                if (del.super_column == null && DatabaseDescriptor.getColumnFamilyType(rm.table_, cfName).equals("Super"))
+if (del.super_column == null && DatabaseDescriptor.getColumnFamilyType(rm.table_, cfName) == ColumnFamilyType.Super)
                     rm.delete(new QueryPath(cfName, c), del.timestamp);
                 else
                     rm.delete(new QueryPath(cfName, del.super_column, c), del.timestamp);

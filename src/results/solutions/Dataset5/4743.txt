@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -568,9 +567,9 @@ public class SimpleContentModel
         //
         //  For this one, having the empty slot at the insertion point is 
         //  a problem. So lets compress the array down. We know that it has
-for (int index = info.insertAt; index < info.childCount-1; index++) {
+        //  to have at least the empty slot at the insertion point.
         //
-        for (int index = info.insertAt; index < info.childCount; index++) {
+for (int index = info.insertAt; index < info.childCount-1; index++) {
             info.curChildren[index].setValues(info.curChildren[index+1]);
         }
         info.childCount--;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -130,9 +129,9 @@ public class RegexFunction extends AbstractFunction implements Serializable {
 		}
 
 		JMeterVariables vars = getVariables();// Relatively expensive
-if (previousResult == null || previousResult.getResponseData().length == 0) {
+												// operation, so do it once
 		vars.put(name, defaultValue);
-		if (previousResult == null || previousResult.getResponseData() == null) {
+if (previousResult == null || previousResult.getResponseData().length == 0) {
 			return defaultValue;
 		}
 

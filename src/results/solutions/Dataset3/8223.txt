@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ public class ServiceNameExternalizer extends AbstractSimpleExternalizer<ServiceN
     public void writeObject(ObjectOutput output, ServiceName name) throws IOException {
         output.writeUTF(name.getCanonicalName());
     }
-public ServiceName readObject(ObjectInput input) throws IOException {
+
     @Override
-    public ServiceName readObject(ObjectInput input) throws IOException, ClassNotFoundException {
+public ServiceName readObject(ObjectInput input) throws IOException {
         return ServiceName.parse(input.readUTF());
     }
 }

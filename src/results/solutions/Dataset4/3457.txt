@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -105,9 +104,9 @@ public class Dialog extends Window {
 			private void focusChanged (FocusEvent event) {
 				Stage stage = getStage();
 				if (isModal && stage != null && stage.getRoot().getChildren().size > 0
-if (newFocusedActor != null && !newFocusedActor.isDescendantOf(Dialog.this)) event.cancel();
+					&& stage.getRoot().getChildren().peek() == Dialog.this) { // Dialog is top most actor.
 					Actor newFocusedActor = event.getRelatedActor();
-					if (newFocusedActor == null || !newFocusedActor.isDescendantOf(Dialog.this)) event.cancel();
+if (newFocusedActor != null && !newFocusedActor.isDescendantOf(Dialog.this)) event.cancel();
 				}
 			}
 		});

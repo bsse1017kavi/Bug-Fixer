@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -59,9 +58,9 @@ public class SchemaLocationAddHandler extends AbstractModelUpdateHandler {
             .setAllowNull(false)
             .setValidator(new ModelTypeValidator(ModelType.STRING, false))
             .build();
-.setParameters(SCHEMA_LOCATION, URI)
+
     public static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(OPERATION_NAME, ControllerResolver.getResolver("schema-locations"))
-            .setReplyParameters(SCHEMA_LOCATION, URI)
+.setParameters(SCHEMA_LOCATION, URI)
             .build();
 
     public static final SchemaLocationAddHandler INSTANCE = new SchemaLocationAddHandler();

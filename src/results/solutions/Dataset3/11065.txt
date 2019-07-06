@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public class RaActivate implements OperationStepHandler {
     public void execute(OperationContext context, ModelNode operation)  throws OperationFailedException {
 
         final ModelNode model = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel();
-if (context.isNormalServer()) {
+        final ModelNode address = operation.require(OP_ADDR);
         final String raName = PathAddress.pathAddress(address).getLastElement().getValue();
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 public void execute(final OperationContext context, ModelNode operation) throws OperationFailedException {
 

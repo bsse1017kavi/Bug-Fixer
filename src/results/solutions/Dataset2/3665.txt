@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -109,9 +108,9 @@ public class DefaultTabFolder extends AbstractTabFolder {
 	        ToolItem pullDownButton = new ToolItem(actualToolBar, SWT.PUSH);
 	        Image hoverImage = WorkbenchImages
 	                .getImage(IWorkbenchGraphicConstants.IMG_LCL_VIEW_MENU);
-pullDownButton.setToolTipText(WorkbenchMessages.Menu);
+	        pullDownButton.setDisabledImage(hoverImage);
 	        pullDownButton.setImage(hoverImage);
-	        pullDownButton.setToolTipText(WorkbenchMessages.getString("Menu")); //$NON-NLS-1$
+pullDownButton.setToolTipText(WorkbenchMessages.Menu);
             actualToolBar.addMouseListener(new MouseAdapter() {
                 public void mouseDown(MouseEvent e) {
                     fireEvent(TabFolderEvent.EVENT_PANE_MENU, getSelection(), getPaneMenuLocation());

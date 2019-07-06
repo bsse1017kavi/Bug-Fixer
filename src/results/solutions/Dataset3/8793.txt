@@ -1,4 +1,3 @@
-
 package org.wildfly.extension.undertow.deployment;
 
 import io.undertow.UndertowLogger;
@@ -93,9 +92,9 @@ public class VirtualFileResourceManager implements ResourceManager {
                             String basePath = base.getAbsolutePath();
                             final List<ResourceChangeEvent> events = new ArrayList<ResourceChangeEvent>();
                             for (FileChangeEvent change : changes) {
-events.add(new ResourceChangeEvent(path, ResourceChangeEvent.Type.valueOf(change.getType().name())));
+                                if (change.getFile().getAbsolutePath().startsWith(basePath)) {
                                     String path = change.getFile().getAbsolutePath().substring(basePath.length());
-                                    events.add(new ResourceChangeEvent(getResource(path), ResourceChangeEvent.Type.valueOf(change.getType().name())));
+events.add(new ResourceChangeEvent(path, ResourceChangeEvent.Type.valueOf(change.getType().name())));
                                 }
                             }
                             for (ResourceChangeListener listener : listeners) {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -180,9 +179,9 @@ public class MSVSSCHECKOUT extends MSVSS
                 {
                     String msg = "Directory " + m_LocalPath + " creation was not " +
                         "succesful for an unknown reason";
-log( "Created dir: " + dir.getAbsolutePath() );
+                    throw new TaskException( msg );
                 }
-                project.log( "Created dir: " + dir.getAbsolutePath() );
+log( "Created dir: " + dir.getAbsolutePath() );
             }
 
             cmd.createArgument().setValue( FLAG_OVERRIDE_WORKING_DIR + m_LocalPath );

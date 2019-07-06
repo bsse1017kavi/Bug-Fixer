@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -98,9 +97,9 @@ public class AjaxRequestTargetTest extends WicketTestCase
 
 					Component comp = con.newInstance(new Object[] { MockPageWithLinkAndComponent.COMPONENT_ID });
 					page.replace(comp);
-target.add(comp);
+					comp.setOutputMarkupId(true);
 
-					target.addComponent(comp);
+target.add(comp);
 				}
 				catch (Exception e)
 				{

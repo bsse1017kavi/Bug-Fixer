@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class UidFieldTests {
         DirectoryReader directoryReader = DirectoryReader.open(writer, true);
         AtomicReader atomicReader = SlowCompositeReaderWrapper.wrap(directoryReader);
         MatcherAssert.assertThat(UidField.loadVersion(atomicReader.getContext(), new Term("_uid", "1")), equalTo(-1l));
-doc.add(new Field("_uid", "1", UidFieldMapper.Defaults.FIELD_TYPE));
+
         Document doc = new Document();
-        doc.add(new Field("_uid", "1", UidFieldMapper.Defaults.UID_FIELD_TYPE));
+doc.add(new Field("_uid", "1", UidFieldMapper.Defaults.FIELD_TYPE));
         writer.addDocument(doc);
         directoryReader = DirectoryReader.openIfChanged(directoryReader);
         atomicReader = SlowCompositeReaderWrapper.wrap(directoryReader);

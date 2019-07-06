@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -407,9 +406,9 @@ protected IJavaElement getSourceElementAt(int position) throws JavaModelExceptio
 			IJavaElement aChild = children[i];
 			if (aChild instanceof SourceRefElement) {
 				SourceRefElement child = (SourceRefElement) children[i];
-if (child instanceof IParent) {
+				ISourceRange range = child.getSourceRange();
 				if (position < range.getOffset() + range.getLength() && position >= range.getOffset()) {
-					if (child.getElementType() == TYPE) {
+if (child instanceof IParent) {
 						return child.getSourceElementAt(position);
 					} else {
 						return child;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -60,9 +59,9 @@ abstract protected void addEvaluationResultForCompilationProblem(Map resultsByID
  * If the compilation result has more than one problem, then the problems are broken down so that
  * each evaluation result has the same evaluation id. 
  */
-IProblem[] problems = result.getAllProblems();
+protected EvaluationResult[] evaluationResultsForCompilationProblems(CompilationResult result, char[] cuSource) {
 	// Break down the problems and group them by ids in evaluation results
-	IProblem[] problems = result.getProblems();
+IProblem[] problems = result.getAllProblems();
 	HashMap resultsByIDs = new HashMap(5);
 	for (int i = 0; i < problems.length; i++) {
 		addEvaluationResultForCompilationProblem(resultsByIDs, problems[i], cuSource);

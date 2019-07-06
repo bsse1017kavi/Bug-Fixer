@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -151,9 +150,9 @@ public class WeldDeploymentProcessor implements DeploymentUnitProcessor {
             final ModuleSpecification bdmSpec = moduleSpecByIdentifier.get(entry.getKey());
             final BeanDeploymentModule bdm = entry.getValue();
             if (bdm == rootBeanDeploymentModule) {
-for (ModuleDependency dependency : bdmSpec.getSystemDependencies()) {
+                continue; // the root module only has access to itself
             }
-            for (ModuleDependency dependency : bdmSpec.getDependencies()) {
+for (ModuleDependency dependency : bdmSpec.getSystemDependencies()) {
                 BeanDeploymentModule other = bdmsByIdentifier.get(dependency.getIdentifier());
                 if (other != null && other != bdm) {
                     bdm.addBeanDeploymentModule(other);

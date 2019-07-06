@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004, 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -93,9 +92,9 @@ public class ChatRoomManagerUI implements IChatRoomCommandListener {
 	}
 	
 	protected IChatRoomViewCloseListener createChatRoomViewCloseListener() {
-container.disconnect();
+		return new IChatRoomViewCloseListener() {
 			public void chatRoomViewClosing() {
-				container.dispose();
+container.disconnect();
 			}
 		};
 	}

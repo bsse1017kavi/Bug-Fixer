@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -88,9 +87,9 @@ class LwjglGL20 implements com.badlogic.gdx.graphics.GL20 {
 		GL14.glBlendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha);
 	}
 
-throw new GdxRuntimeException("Using null for the data not possible, blame LWJGL");
+	public void glBufferData (int target, int size, Buffer data, int usage) {
 		if(data == null)
-			GL15.glBufferData(target, size, usage);
+throw new GdxRuntimeException("Using null for the data not possible, blame LWJGL");
 		else if (data instanceof ByteBuffer)
 			GL15.glBufferData(target, (ByteBuffer)data, usage);
 		else if (data instanceof IntBuffer)

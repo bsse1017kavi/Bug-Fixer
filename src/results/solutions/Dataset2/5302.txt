@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -50,9 +49,9 @@ public class DynamicHelpAction extends Action implements IWorkbenchAction {
 	public DynamicHelpAction(IWorkbenchWindow window) {
 		if (window == null) {
 			throw new IllegalArgumentException();
-setActionDefinitionId(IWorkbenchCommandConstants.HELP_DYNAMIC_HELP);
+		}
 		this.workbenchWindow = window;
-		setActionDefinitionId(IWorkbenchCommandConstants.HELP_DYNAMICHELP);
+setActionDefinitionId(IWorkbenchCommandConstants.HELP_DYNAMIC_HELP);
 
 		// support for allowing a product to override the text for the action
 		String overrideText = PrefUtil.getAPIPreferenceStore().getString(

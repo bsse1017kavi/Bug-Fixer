@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.io;
 
 import java.io.File;
@@ -27,9 +26,9 @@ public class SSTableDeletingReference extends PhantomReference<SSTableReader>
 
     SSTableDeletingReference(SSTableTracker tracker, SSTableReader referent, ReferenceQueue<? super SSTableReader> q)
     {
-this.path = referent.getFilename();
+        super(referent, q);
         this.tracker = tracker;
-        this.path = referent.path;
+this.path = referent.getFilename();
         this.size = referent.bytesOnDisk();
     }
 

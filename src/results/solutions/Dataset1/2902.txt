@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -162,9 +161,9 @@ public final class LuceneIterableTest extends MahoutTestCase {
   
   static RAMDirectory createTestIndex(Field.TermVector termVector,
                                               RAMDirectory directory,
-IndexWriter writer = new IndexWriter( directory, new IndexWriterConfig(Version.LUCENE_42,new StandardAnalyzer(Version.LUCENE_42)));
+                                              boolean createNew,
                                               int startingId) throws IOException {
-    IndexWriter writer = new IndexWriter( directory, new IndexWriterConfig(Version.LUCENE_41,new StandardAnalyzer(Version.LUCENE_41)));
+IndexWriter writer = new IndexWriter( directory, new IndexWriterConfig(Version.LUCENE_42,new StandardAnalyzer(Version.LUCENE_42)));
         
     try {
       for (int i = 0; i < DOCS.length; i++) {

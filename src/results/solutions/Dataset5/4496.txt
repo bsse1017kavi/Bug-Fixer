@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1023,9 +1022,9 @@ public abstract class FormComponent extends LabeledWebMarkupContainer
 		validateRequired();
 		if (isValid())
 		{
-if (isValid() && isRequired() && getConvertedInput() == null && !isInputNullable())
+			convertInput();
 
-			if (isValid() && isRequired() && getConvertedInput() == null)
+if (isValid() && isRequired() && getConvertedInput() == null && !isInputNullable())
 			{
 				reportRequiredError();
 			}

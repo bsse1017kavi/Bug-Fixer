@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ class WebVirtualHostService implements Service<Host> {
         }
         if(rewrite != null) {
             host.addValve(createRewriteValve(rewrite));
-host.setDefaultWebapp(defaultWebModule);
+        }
         if (defaultWebModule != null) {
-        // FIXME: host.setDefaultWebapp(defaultWebModule);
+host.setDefaultWebapp(defaultWebModule);
         }
         try {
             final WebServer server = webServer.getValue();

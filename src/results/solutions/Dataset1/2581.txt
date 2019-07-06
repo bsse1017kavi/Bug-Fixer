@@ -1,4 +1,3 @@
-
 package org.apache.lucene.misc;
 
 /**
@@ -254,9 +253,9 @@ final class TotalTermFreqComparatorSortDescending implements Comparator<TermStat
 /**
  * Priority queue for TermStats objects ordered by docFreq
  **/
-super(size);
+final class TermStatsQueue extends PriorityQueue<TermStats> {
   TermStatsQueue(int size) {
-    initialize(size);
+super(size);
   }
   
   @Override

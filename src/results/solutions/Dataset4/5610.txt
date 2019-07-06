@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -309,9 +308,9 @@ public class MasterFaultDetection extends AbstractComponent {
                                         logger.debug("[master] pinging a master {} that is no longer a master", masterNode);
                                         notifyMasterFailure(masterToPing, "no longer master");
                                         return;
-notifyMasterFailure(masterToPing, "not master");
+                                    } else if (exp.getCause() instanceof NotMasterException) {
                                         logger.debug("[master] pinging a master {} that is not the master", masterNode);
-                                        notifyMasterFailure(masterToPing, "no longer master");
+notifyMasterFailure(masterToPing, "not master");
                                         return;
                                     } else if (exp.getCause() instanceof NodeDoesNotExistOnMasterException) {
                                         logger.debug("[master] pinging a master {} but we do not exists on it, act as if its master failure", masterNode);

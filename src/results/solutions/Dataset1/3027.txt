@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.postingshighlight;
 
 /*
@@ -377,9 +376,9 @@ public final class PostingsHighlighter {
       int start = dp.startOffset();
       if (start == -1) {
         throw new IllegalArgumentException("field '" + field + "' was indexed without offsets, cannot highlight");
-if (start >= current.endOffset) {
+      }
       int end = dp.endOffset();
-      if (start > current.endOffset) {
+if (start >= current.endOffset) {
         if (current.startOffset >= 0) {
           // finalize current
           current.score *= scorer.norm(current.startOffset);

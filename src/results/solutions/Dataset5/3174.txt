@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -146,9 +145,9 @@ public class ArgsAnnotationPointcut extends NameBindingPointcut {
 					// we need a test...
 					ResolvedTypeX rAnnType = ap.annotationType.resolve(shadow.getIWorld());
 					if (ap instanceof BindingAnnotationTypePattern) {
-state.set(btp.getFormalIndex(),annvar);
+						BindingAnnotationTypePattern btp = (BindingAnnotationTypePattern)ap;
 						Var annvar = shadow.getArgAnnotationVar(argsIndex,rAnnType);
-						state.set(argsIndex,annvar);
+state.set(btp.getFormalIndex(),annvar);
 						ret = Test.makeAnd(ret,Test.makeHasAnnotation(shadow.getArgVar(argsIndex),rAnnType));
 						argsIndex++;
 					} else {

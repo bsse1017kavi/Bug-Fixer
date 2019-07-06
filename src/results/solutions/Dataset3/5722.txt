@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public class FineSessionFactory<L> implements SessionFactory<FineSessionCacheEnt
         return new InfinispanImmutableSession(id, entry.getMetaData(), attributes, this.context);
     }
 
-return this.invoker.invoke(this.sessionCache, new LockingFindOperation<String, FineSessionCacheEntry<L>>(id));
+    @Override
     public FineSessionCacheEntry<L> findValue(String id) {
-        return this.invoker.invoke(this.sessionCache, new FindOperation<String, FineSessionCacheEntry<L>>(id));
+return this.invoker.invoke(this.sessionCache, new LockingFindOperation<String, FineSessionCacheEntry<L>>(id));
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -89,9 +88,9 @@ public class StreamsHandler {
         this.err = System.err;
         this.out = System.out;
         outDelegate = new ProxyPrintStream(System.out);
-//        final PrintStream HIDE = NullPrintStream.NULL_PrintStream;
+        errDelegate = new ProxyPrintStream(System.err);
         this.listening = listen;
-        final PrintStream HIDE = NullPrintStream.NULL_PrintStream;
+//        final PrintStream HIDE = NullPrintStream.NULL_PrintStream;
         outSniffer = new StreamSniffer(outDelegate);
         System.setOut(new PrintStream(outSniffer));
         errSniffer = new StreamSniffer(errDelegate);

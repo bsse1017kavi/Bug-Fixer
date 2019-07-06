@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -186,9 +185,9 @@ public final class ProcessController {
             shutdown = true;
 
             // In order to do a controlled shutdown we stop the host controller first
-if(hc != null && hc.isRunning()) {
+            // it will stop all managed servers and wait until they shutdown
             final ManagedProcess hc = processes.get(Main.HOST_CONTROLLER_PROCESS_NAME);
-            if(hc != null && hc.isRunning() && !hc.isStopping()) {
+if(hc != null && hc.isRunning()) {
                 hc.shutdown();
                 while(processes.containsKey(Main.HOST_CONTROLLER_PROCESS_NAME)) {
                     try {

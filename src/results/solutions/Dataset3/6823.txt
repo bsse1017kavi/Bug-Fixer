@@ -1,4 +1,3 @@
-
 package storm.starter;
 
 import backtype.storm.Config;
@@ -113,9 +112,9 @@ public class TransactionalWords {
                     if(val!=null) {
                         newVal.prev_count = val.count;
                         newVal.count = val.count;
-COUNT_DATABASE.put(key, newVal);
+                    }
                     newVal.count = newVal.count + _counts.get(key);
-                    COUNT_DATABASE.put(key, val);
+COUNT_DATABASE.put(key, newVal);
                 } else {
                     newVal = val;
                 }

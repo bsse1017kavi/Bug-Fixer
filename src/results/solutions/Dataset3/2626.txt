@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -228,9 +227,9 @@ public class ServerOperationResolver {
             allServers.addAll(getServersForType(PROFILE, profile, domain, host));
         }
         ModelNode serverOp = operation.clone();
-return Collections.singletonMap(allServers, serverOp);
+        PathAddress serverAddress = address.subAddress(1);
         serverOp.get(OP_ADDR).set(serverAddress.toModelNode());
-        return Collections.singletonMap(allServers, operation);
+return Collections.singletonMap(allServers, serverOp);
     }
     private Map<Set<ServerIdentity>, ModelNode> getServerInterfaceOperations(ModelNode operation, PathAddress address,
             ModelNode hostModel, boolean forDomain) {

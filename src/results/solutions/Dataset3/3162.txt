@@ -1,4 +1,3 @@
-
 package org.jboss.as.messaging.deployment;
 
 import java.io.File;
@@ -97,9 +96,9 @@ public class MessagingXmlParsingDeploymentUnitProcessor implements DeploymentUni
         final VirtualFile deploymentRoot = deploymentUnit.getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
         if (deploymentRoot == null || !deploymentRoot.exists()) {
             return Collections.emptySet();
-final String deploymentRootName = deploymentRoot.getName().toLowerCase();
+        }
 
-        final String deploymentRootName = deploymentRoot.getLowerCaseName();
+final String deploymentRootName = deploymentRoot.getName().toLowerCase();
 
         if (deploymentRootName.endsWith("-jms.xml")) {
             return Collections.singleton(deploymentRoot);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -128,9 +127,9 @@ public abstract class FieldDataTermsFilter extends Filter {
         @Override
         public DocIdSet getDocIdSet(AtomicReaderContext context, Bits acceptDocs) throws IOException {
             // make sure there are terms to filter on
-final BytesValues values = fieldData.load(context).getBytesValues(); // load fielddata
+            if (terms == null || terms.isEmpty()) return null;
 
-            final BytesValues values = fieldData.load(context).getBytesValues(false); // load fielddata
+final BytesValues values = fieldData.load(context).getBytesValues(); // load fielddata
             return new MatchDocIdSet(context.reader().maxDoc(), acceptDocs) {
                 @Override
                 protected boolean matchDoc(int doc) {

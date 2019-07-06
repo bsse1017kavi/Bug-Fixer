@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -278,9 +277,9 @@ public interface WebMessages {
     RuntimeException failToCreateSessionNotificationPolicy(String className, String policyClass, @Cause Throwable t);
 
     @Message(id = 18075, value = "Number of active sessions exceeds limit %s trying to create session %s")
-@Message(id = 18076, value = "Exception expiring or passivating session %s")
+    IllegalStateException tooManyActiveSessions(int limit, String id);
 
-    @Message(id = 18076, value = "Exception expiring or passivating sesion %s")
+@Message(id = 18076, value = "Exception expiring or passivating session %s")
     String errorPassivatingSession(String id);
 
     @Message(id = 18077, value = "Failed to load session %s for passivation")

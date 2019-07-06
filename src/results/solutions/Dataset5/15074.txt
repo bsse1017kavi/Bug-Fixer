@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -107,9 +106,9 @@ public class Move extends Copy {
                         executionFilterSet.addFilterSet(project.getGlobalFilterSet());
                     }
                     for (Enumeration filterEnum = getFilterSets().elements(); filterEnum.hasMoreElements();) {
-getFileUtils().copyFile(fromFile, toFile, executionFilterSet,
+                        executionFilterSet.addFilterSet((FilterSet)filterEnum.nextElement());
                     }
-                    FileUtils.copyFile(fromFile, toFile, executionFilterSet,
+getFileUtils().copyFile(fromFile, toFile, executionFilterSet,
                                        forceOverwrite);
 
                     File f = new File(fromFile);

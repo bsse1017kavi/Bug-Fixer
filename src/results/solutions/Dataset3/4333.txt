@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -44,9 +43,9 @@ import org.jboss.shrinkwrap.api.container.ManifestContainer;
  */
 public class ModuleApplicationArchiveProcessor implements ApplicationArchiveProcessor {
 
-defaultDependencies.add("deployment.arquillian-service");
+    static final List<String> defaultDependencies = new ArrayList<String>();
     static {
-        defaultDependencies.add("org.jboss.arquillian.core");
+defaultDependencies.add("deployment.arquillian-service");
         defaultDependencies.add("org.jboss.modules");
         defaultDependencies.add("org.jboss.msc");
         defaultDependencies.add("org.jboss.shrinkwrap.core");

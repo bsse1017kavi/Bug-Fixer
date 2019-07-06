@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public class DsXmlParser extends DsParser {
                 case START_ELEMENT: {
                     DsSecurity.Tag tag = DsSecurity.Tag.forName(reader.getLocalName());
                     switch (tag) {
-if (propertyResolver != null && password != null && password.trim().length() != 0) {
+                        case PASSWORD: {
                             password = elementAsString(reader);
-                            if (propertyResolver != null && password != null) {
+if (propertyResolver != null && password != null && password.trim().length() != 0) {
                                 String resolvedPassword = propertyResolver.resolve(password);
                                 if (resolvedPassword != null)
                                     password = resolvedPassword;

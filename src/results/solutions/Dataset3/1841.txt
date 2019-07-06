@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -237,9 +236,9 @@ public class TransportHandlingSockJsService extends AbstractSockJsService implem
 					SockJsSessionFactory sessionFactory = (SockJsSessionFactory) transportHandler;
 					session = createSockJsSession(sessionId, sessionFactory, handler, attributes);
 				}
-logger.warn("Session not found, sessionId=" + sessionId);
+				else {
 					response.setStatusCode(HttpStatus.NOT_FOUND);
-					logger.warn("Session not found");
+logger.warn("Session not found, sessionId=" + sessionId);
 					return;
 				}
 			}

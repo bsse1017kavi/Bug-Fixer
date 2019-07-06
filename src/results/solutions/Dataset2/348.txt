@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -42,9 +41,9 @@ private Object[] computeNonJavaResources(IResource resource) {
 		IResource[] members = ((IContainer) resource).members();
 		for (int i = 0, max = members.length; i < max; i++) {
 			IResource child = members[i];
-if (!"java"/*nonNLS*/.equalsIgnoreCase(extension) && !"class"/*nonNLS*/.equalsIgnoreCase(extension)) {
+			if (child.getType() != IResource.FOLDER) {
 				String extension = child.getProjectRelativePath().getFileExtension();
-				if (!"java".equalsIgnoreCase(extension) && !"class".equalsIgnoreCase(extension)) { //$NON-NLS-1$ //$NON-NLS-2$
+if (!"java"/*nonNLS*/.equalsIgnoreCase(extension) && !"class"/*nonNLS*/.equalsIgnoreCase(extension)) {
 					if (nonJavaResources.length == nonJavaResourcesCounter) {
 						// resize
 						System.arraycopy(

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class JNDIResourceAttributeDefinition extends SimpleAttributeDefinition {
     protected JNDIResourceAttributeDefinition(String name, String xmlName) {
         super(name, xmlName, null, ModelType.STRING, false, false, null);
     }
-public void marshallAsElement(ModelNode resourceModel,final boolean marshalDefault, XMLStreamWriter writer) throws XMLStreamException {
+
     @Override
-    public void marshallAsElement(ModelNode resourceModel, XMLStreamWriter writer) throws XMLStreamException {
+public void marshallAsElement(ModelNode resourceModel,final boolean marshalDefault, XMLStreamWriter writer) throws XMLStreamException {
         if (resourceModel.hasDefined(getName())) {
             String name = resourceModel.get(getName()).asString();
             writer.writeEmptyElement(getXmlName());

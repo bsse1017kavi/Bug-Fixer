@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public class CmpEntityBeanRemoveInterceptorFactory implements InterceptorFactory
                     context.setTarget(null);
                     context.putPrivateData(ComponentInstance.class, null);
                 }
-component.getStoreManager().removeEntity(instance.getEjbContext());
+
                 // Invoke CMP remove
-                component.getStoreManager().removeEntity(instance.getEntityContext());
+component.getStoreManager().removeEntity(instance.getEjbContext());
                 instance.setRemoved(true);
                 return null;
             }

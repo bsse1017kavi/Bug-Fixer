@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public abstract class AbstractXMLDataSourceRuntimeHandler<T> extends AbstractRun
         final T dataSource = getDataSourceConfig(address);
 
         if (ModelDescriptionConstants.READ_ATTRIBUTE_OPERATION.equals(opName)) {
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+            final String attributeName = operation.require(ModelDescriptionConstants.NAME).asString();
             executeReadAttribute(attributeName, context, dataSource, address);
-            context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
         } else {
             throw unknownOperation(opName);
         }

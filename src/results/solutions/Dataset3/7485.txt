@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -589,9 +588,9 @@ public abstract class FrameworkServlet extends HttpServletBean {
 					"] is not of type ConfigurableWebApplicationContext");
 		}
 		ConfigurableWebApplicationContext wac =
-wac.setEnvironment(getEnvironment());
+				(ConfigurableWebApplicationContext) BeanUtils.instantiateClass(contextClass);
 
-		wac.setEnvironment(this.getEnvironment());
+wac.setEnvironment(getEnvironment());
 		wac.setParent(parent);
 		wac.setConfigLocation(getContextConfigLocation());
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -85,9 +84,9 @@ public class BitmapFontLoader extends AsynchronousAssetLoader<BitmapFont, Bitmap
 		if (parameter != null && parameter.atlasName != null) {
 			TextureAtlas atlas = manager.get(parameter.atlasName, TextureAtlas.class);
 			String name = file.sibling(data.imagePaths[0]).nameWithoutExtension().toString();
-if (region == null) throw new GdxRuntimeException(String.format("Could not find font region " + name + " in atlas "+ parameter.atlasName));
+			AtlasRegion region = atlas.findRegion(name);
 
-			if (region == null) throw new GdxRuntimeException("Could not find font region " + name + " in atlas " + parameter.atlasName);
+if (region == null) throw new GdxRuntimeException(String.format("Could not find font region " + name + " in atlas "+ parameter.atlasName));
 			return new BitmapFont(file, region);
 		} else {
 			TextureRegion[] regs = new TextureRegion[data.getImagePaths().length];

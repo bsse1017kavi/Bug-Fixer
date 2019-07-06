@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryParser.standard.config;
 
 /**
@@ -46,9 +45,9 @@ public class FieldBoostMapFCListener implements FieldConfigListener {
   public void buildFieldConfig(FieldConfig fieldConfig) {    
     if (this.config.hasAttribute(FieldBoostMapAttribute.class)) {
       FieldBoostMapAttribute fieldBoostMapAttr = this.config.getAttribute(FieldBoostMapAttribute.class);
-Float boost = fieldBoostMapAttr.getFieldBoostMap().get(fieldConfig.getField());
+      BoostAttribute boostAttr = fieldConfig.addAttribute(BoostAttribute.class);
       
-      Float boost = fieldBoostMapAttr.getFieldBoostMap().get(fieldConfig.getFieldName());
+Float boost = fieldBoostMapAttr.getFieldBoostMap().get(fieldConfig.getField());
 
       if (boost != null) {
         boostAttr.setBoost(boost.floatValue());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -122,9 +121,9 @@ public class ModuleDeploymentTestCaseSetup extends JcaMgmtServerSetupTask {
                 throw new IllegalStateException(
                         "Neither -Dmodule.path nor -Djboss.home were set");
             }
-modulePath = modulePath.split(File.pathSeparator)[1];
+            modulePath = jbossHome + File.separatorChar + "modules";
         } else {
-            modulePath = modulePath.split(File.pathSeparator)[0];
+modulePath = modulePath.split(File.pathSeparator)[1];
         }
         File moduleDir = new File(modulePath);
         if (!moduleDir.exists()) {

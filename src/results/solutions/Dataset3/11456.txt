@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -173,9 +172,9 @@ public class WebSocketServerSockJsSession extends AbstractSockJsSession implemen
 		this.webSocketSession.sendMessage(message);
 	}
 
-if (isActive()) {
+	@Override
 	protected void disconnect(CloseStatus status) throws IOException {
-		if (this.webSocketSession != null) {
+if (isActive()) {
 			this.webSocketSession.close(status);
 		}
 	}

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.jdbc.BrokeredCallableStatement
@@ -216,9 +215,9 @@ public class BrokeredCallableStatement extends BrokeredPreparedStatement
 	*/
 
 	protected final CallableStatement getCallableStatement() throws SQLException {
-public final PreparedStatement getPreparedStatement() throws SQLException {
+		return control.getRealCallableStatement();
 	}
-	protected final PreparedStatement getPreparedStatement() throws SQLException {
+public final PreparedStatement getPreparedStatement() throws SQLException {
 		return getCallableStatement();
 	}
 	/**

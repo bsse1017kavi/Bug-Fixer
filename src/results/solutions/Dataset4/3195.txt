@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ public class PersianAnalyzerProvider extends AbstractIndexAnalyzerProvider<Persi
     private final PersianAnalyzer analyzer;
 
     @Inject public PersianAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
-Analysis.parseStopWords(env, settings, PersianAnalyzer.getDefaultStopSet(), version));
+        super(index, indexSettings, name, settings);
         analyzer = new PersianAnalyzer(version,
-                Analysis.parseStopWords(env, settings, PersianAnalyzer.getDefaultStopSet()));
+Analysis.parseStopWords(env, settings, PersianAnalyzer.getDefaultStopSet(), version));
     }
 
     @Override public PersianAnalyzer get() {

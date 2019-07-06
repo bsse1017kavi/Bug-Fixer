@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -48,9 +47,9 @@ class ManagementRootConsoleRedirectHandler implements HttpHandler {
             METHOD_NOT_ALLOWED_HANDLER.handleRequest(exchange);
             return;
         }
-if (consoleHandler != null && "/".equals(exchange.getRequestPath())) {
+
         String requestUrl = exchange.getRequestURL();
-        if (consoleHandler != null && "/".equals(exchange.getCanonicalPath())) {
+if (consoleHandler != null && "/".equals(exchange.getRequestPath())) {
             StringBuilder redirect = new StringBuilder(requestUrl);
             redirect.append(consoleHandler.getContext()).append(consoleHandler.getDefaultPath());
             exchange.getResponseHeaders().add(Headers.LOCATION, redirect.toString());

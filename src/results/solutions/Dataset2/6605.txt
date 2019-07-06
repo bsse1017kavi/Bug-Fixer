@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -257,9 +256,9 @@ public class IMAPFolder extends AbstractRemoteFolder {
 		// Sort the uid list
 		Collections.sort(localUids);
 
-int largestLocalUid =  localUids.size() > 0 ? ((Integer)localUids.get(localUids.size()-1)).intValue() : -1;
+		int newMessages = 0;
 		
-		int largestLocalUid = ((Integer)localUids.get(localUids.size()-1)).intValue();
+int largestLocalUid =  localUids.size() > 0 ? ((Integer)localUids.get(localUids.size()-1)).intValue() : -1;
 		int largestLocalUidIndex = -1;
 
 		int largestRemoteUid = (int)status.getUidNext() - 1;

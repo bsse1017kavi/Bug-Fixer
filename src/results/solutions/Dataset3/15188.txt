@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ class JPASubsystemAdd implements ModelAddOperationHandler, BootOperationHandler 
 
         if (context instanceof BootOperationContext) {
 
-PersistenceProviderResolverImpl.getInstance());
+            /* set Hibernate persistence provider as the default provider */
             javax.persistence.spi.PersistenceProviderResolverHolder.setPersistenceProviderResolver(
-                new PersistenceProviderResolverImpl());
+PersistenceProviderResolverImpl.getInstance());
 
             PersistenceProviderAdapterRegistry.putPersistenceProviderAdaptor(
                 "org.hibernate.ejb.HibernatePersistence", new HibernatePersistenceProviderAdaptor());

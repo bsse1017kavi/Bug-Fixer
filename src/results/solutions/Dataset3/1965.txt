@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -140,9 +139,9 @@ public class SwitchIdentityTestCase {
         jar.addAsManifestResource(SwitchIdentityTestCase.class.getPackage(), "jboss-ejb3.xml", "jboss-ejb3.xml");
         jar.addAsManifestResource(new StringAsset(ClientSecurityInterceptor.class.getName()),
                 "services/org.jboss.ejb.client.EJBClientInterceptor");
-"org.jboss.as.controller", "org.jboss.as.core-security"), "jboss-deployment-structure.xml");
+        jar.addAsManifestResource(SwitchIdentityTestCase.class.getPackage(), "jboss-ejb-client.xml", "jboss-ejb-client.xml");
         jar.addAsManifestResource(Utils.getJBossDeploymentStructure("org.jboss.remoting3", "org.jboss.as.domain-management",
-                "org.jboss.as.controller"), "jboss-deployment-structure.xml");
+"org.jboss.as.controller", "org.jboss.as.core-security"), "jboss-deployment-structure.xml");
         final Properties props = EJBUtil.createEjbClientConfiguration(StringUtils.strip(
                 TestSuiteEnvironment.getServerAddress(), "[]"));
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();

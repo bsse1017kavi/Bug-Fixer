@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -329,9 +328,9 @@ public abstract class EJBComponentDescription extends ComponentDescription {
                 try {
                     TO_STRING_METHOD = Object.class.getMethod("toString", new Class<?>[0]);
                 } catch (NoSuchMethodException nsme) {
-List<Method> methods = configuration.getProxyFactory().getCachedMethods();
+                    throw new DeploymentUnitProcessingException(nsme);
                 }
-                Method[] methods = configuration.getProxyFactory().getCachedMethods();
+List<Method> methods = configuration.getProxyFactory().getCachedMethods();
                 for (Method method : methods) {
                     if (TO_STRING_METHOD.equals(method)) {
                         configuration.addClientInterceptor(method, new ImmediateInterceptorFactory(new ToStringMethodInterceptor(EJBComponentDescription.this.getComponentName())), InterceptorOrder.Client.TO_STRING);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs;
 
 /**
@@ -63,9 +62,9 @@ public final class DefaultTermVectorsWriter extends TermVectorsWriter {
       tvf = directory.createOutput(IndexFileNames.segmentFileName(segment, "", DefaultTermVectorsReader.VECTORS_FIELDS_EXTENSION), context);
       tvf.writeInt(DefaultTermVectorsReader.FORMAT_CURRENT);
       success = true;
-abort();
+    } finally {
       if (!success) {
-        IOUtils.closeWhileHandlingException(tvx, tvd, tvf);
+abort();
       }
     }
   }

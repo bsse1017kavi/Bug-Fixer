@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -423,9 +422,9 @@ public class BcelTypeMunger extends ConcreteTypeMunger {
 										csig+" is missing",this.getSourceLocation()));
         						  return false;
                                 }
-int idx = cpg.addMethodref(newParent.getName(), invokeSpecial.getMethodName(cpg), invokeSpecial.getSignature(cpg));
+        					}
                      
-        					int idx = cpg.addMethodref(newParent.getClassName(), invokeSpecial.getMethodName(cpg), invokeSpecial.getSignature(cpg));
+int idx = cpg.addMethodref(newParent.getName(), invokeSpecial.getMethodName(cpg), invokeSpecial.getSignature(cpg));
         					invokeSpecial.setIndex(idx);
         				}
         			}

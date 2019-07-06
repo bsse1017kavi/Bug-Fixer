@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -37,9 +36,9 @@ public class AbstractRunSpecTest extends TestCase {
         spec.setKeywords("keyword1, keyword2");
         spec.setPaths("path1.java, path2.java");
         spec.setDescription("some description, with extra");
-//out.close();//FIXME this close System.out and makes the IntelliJ test runner hang (AV)
+        XMLWriter out = new XMLWriter(new PrintWriter(System.out));
         spec.writeXml(out);
-        out.close();
+//out.close();//FIXME this close System.out and makes the IntelliJ test runner hang (AV)
     }
 
     public void testSetOptions() {

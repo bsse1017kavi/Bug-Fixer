@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class CoreManagementResourceDefinition extends SimpleResourceDefinition {
 
     @Override
     public void registerChildren(ManagementResourceRegistration resourceRegistration) {
-resourceRegistration.registerSubModel(LdapConnectionResourceDefinition.INSTANCE);
+        if (environment != Environment.DOMAIN) {
             resourceRegistration.registerSubModel(SecurityRealmResourceDefinition.INSTANCE);
-            resourceRegistration.registerSubModel(LdapConnectionResourceDefinition.newInstance());
+resourceRegistration.registerSubModel(LdapConnectionResourceDefinition.INSTANCE);
         }
 
         for (ResourceDefinition current : interfaces) {

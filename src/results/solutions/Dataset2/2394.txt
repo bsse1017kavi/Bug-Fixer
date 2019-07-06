@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -46,9 +45,9 @@ public class SMTPMin {
     cat.debug( "Message " + i++);
     cat.debug("Message " + i++,  new Exception("Just testing."));
     cat.info( "Message " + i++);
-cat.log(Level.FATAL, "Message " + i++);
+    cat.warn( "Message " + i++);
     cat.error( "Message " + i++);
-    cat.log(Priority.FATAL, "Message " + i++);
+cat.log(Level.FATAL, "Message " + i++);
     LogManager.shutdown();
     Thread.currentThread().getThreadGroup().list();
   }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -156,9 +155,9 @@ public class EditorAreaHelper {
             IEditorReference result = pane.getEditorReference();
             IEditorPart editorPart = (IEditorPart) result.getPart(false);
             if ((editorPart != null) && (editorPart instanceof MultiEditor)) {
-result = (IEditorReference) site.getPartReference();
+                editorPart = ((MultiEditor) editorPart).getActiveEditor();
                 EditorSite site = (EditorSite) editorPart.getSite();
-                result = (IEditorReference) site.getPane().getPartReference();
+result = (IEditorReference) site.getPartReference();
             }
             return result;
         }

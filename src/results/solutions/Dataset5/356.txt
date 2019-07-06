@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -204,9 +203,9 @@ class InterfaceImplGenerator {
     private static boolean isGetter(Class iface, FieldMetaData fmd) {
         if (fmd.getType() != boolean.class && fmd.getType() != Boolean.class)
             return true;
-(fmd.getName()), (Class[]) null);
+        try {
             Method meth = iface.getDeclaredMethod("is" + StringUtils.capitalize
-                (fmd.getName()), null);
+(fmd.getName()), (Class[]) null);
             return meth == null;
         } catch (NoSuchMethodException e) {}
         return true;

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC),
  *               2003 Contributors.
@@ -84,9 +83,9 @@ public class CompilerAdapter {
 			AjBuildConfig buildConfig = genBuildConfig(configFile);
 			buildConfig.setGenerateModelMode(buildModel);
 			if (null == buildConfig) {
-currNotifier = new BuildNotifierAdapter(progressMonitor, buildManager);
+                return false;
 			}
-			currNotifier = new BuildNotifierAdapter(progressMonitor);		
+currNotifier = new BuildNotifierAdapter(progressMonitor, buildManager);
 			buildManager.setProgressListener(currNotifier);
 			messageHandler.setBuildNotifierAdapter(currNotifier);
 			

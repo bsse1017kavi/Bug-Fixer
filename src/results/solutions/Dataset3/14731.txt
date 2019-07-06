@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -573,9 +572,9 @@ public class RemoteProxyControllerProtocolTestCase {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-final RemoteProxyController proxyController = RemoteProxyController.create(support, PathAddress.pathAddress(), ProxyOperationAddressTranslator.HOST, false);
+        final Channel clientChannel = channels.getClientChannel();
         final ManagementChannelHandler support = new ManagementChannelHandler(clientChannel, channels.getExecutorService());
-        final RemoteProxyController proxyController = RemoteProxyController.create(support, PathAddress.pathAddress(), ProxyOperationAddressTranslator.HOST);
+final RemoteProxyController proxyController = RemoteProxyController.create(support, PathAddress.pathAddress(), ProxyOperationAddressTranslator.HOST, false);
         clientChannel.addCloseHandler(new CloseHandler<Channel>() {
             @Override
             public void handleClose(Channel closed, IOException exception) {

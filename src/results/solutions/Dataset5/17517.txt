@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -146,9 +145,9 @@ public class NestedFormsPage extends WebPage
 			form.setEnabled(!form.isEnabled());
 			form.info(form.getId() + ".isEnabled() == " + form.isEnabled());
 		}
-public void onComponentTagBody(MarkupStream markupStream, ComponentTag openTag)
+
 		@Override
-		protected void onComponentTagBody(MarkupStream markupStream, ComponentTag openTag)
+public void onComponentTagBody(MarkupStream markupStream, ComponentTag openTag)
 		{
 			String state = form.isEnabled() ? "enabled" : "disabled";
 			replaceComponentTagBody(markupStream, openTag, "form is " + state);

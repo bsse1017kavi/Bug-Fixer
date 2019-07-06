@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -88,9 +87,9 @@ public class NameLookup implements SuffixConstants {
 	 * units or working copies).
 	 * Allows working copies to take precedence over compilation units.
 	 */
-public NameLookup(IPackageFragmentRoot[] packageFragmentRoots, HashMap packageFragments, ICompilationUnit[] workingCopies) {
+	protected HashMap unitsToLookInside;
 
-	public NameLookup(IPackageFragmentRoot[] packageFragmentRoots, HashMap packageFragments, ICompilationUnit[] workingCopies) throws JavaModelException {
+public NameLookup(IPackageFragmentRoot[] packageFragmentRoots, HashMap packageFragments, ICompilationUnit[] workingCopies) {
 		this.packageFragmentRoots = packageFragmentRoots;
 		this.packageFragments = packageFragments;
 		if (workingCopies != null) {

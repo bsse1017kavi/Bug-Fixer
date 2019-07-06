@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -28,9 +27,9 @@ import java.util.List;
 /**
  * This class serves as a way to calculate the median, max, min etc. of a list of values.
  * It is not threadsafe.
-public abstract class StatCalculator<T extends Number & Comparable<? super T>> {
+ * 
  */
-public abstract class StatCalculator<T extends Number & Comparable<T>> {
+public abstract class StatCalculator<T extends Number & Comparable<? super T>> {
     
     private final List<T> values = new ArrayList<T>();
 

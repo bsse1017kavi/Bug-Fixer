@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -26,9 +25,9 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.collision.BoundingBox;
 
 public class StillModel implements Model {
-public StillModel (SubMesh... subMeshes) {
+	final public StillSubMesh[] subMeshes;
 
-	public StillModel (SubMesh[] subMeshes) {
+public StillModel (SubMesh... subMeshes) {
 		this.subMeshes = new StillSubMesh[subMeshes.length];
 		for (int i = 0; i < subMeshes.length ; ++i) {
 			this.subMeshes[i] = (StillSubMesh)subMeshes[i];

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -154,9 +153,9 @@ public class InternalCountHistogramFacet extends InternalHistogramFacet {
         for (int i = 0; i < states.length; i++) {
             if (states[i]) {
                 entries[entryIndex++] = new CountEntry(keys[i], values[i]);
-counts.close();
+            }
         }
-        counts.release();
+counts.close();
 
         Arrays.sort(entries, comparatorType.comparator());
 

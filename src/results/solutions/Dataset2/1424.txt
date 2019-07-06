@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -102,9 +101,9 @@ public class AppenderAction extends Action {
     if (o != appender) {
       logger.warn(
         "The object at the of the stack is not the appender named ["
-logger.debug(
+        + appender.getName() + "] pushed earlier.");
     } else {
-      logger.warn(
+logger.debug(
         "Popping appender named [" + appender.getName()
         + "] from the object stack");
       ec.popObject();

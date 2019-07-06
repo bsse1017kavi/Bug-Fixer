@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com)
  * 
@@ -120,9 +119,9 @@ final class JoglAudio implements Audio, Runnable {
 	 */
 	@Override public Music newMusic (FileHandle file) {
 		try {
-} catch (Throwable e) {
+			JoglMusic music = new JoglMusic(((JoglFileHandle)file));
 			return music;
-		} catch (Exception e) {
+} catch (Throwable e) {
 			throw new GdxRuntimeException("Couldn't create Music instance from file '" + file + "'", e);
 		}
 	}

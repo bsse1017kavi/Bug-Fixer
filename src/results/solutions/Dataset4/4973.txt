@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -185,9 +184,9 @@ public class CouchdbRiver extends AbstractRiverComponent implements River {
         if (id.startsWith("_design/")) {
             logger.trace("ignoring design document {}", id);
             return seq;
-if (map.containsKey("deleted") && map.get("deleted").equals(Boolean.TRUE)) {
+        }
 
-        if (map.containsKey("delete") && map.get("deleted").equals("true")) {
+if (map.containsKey("deleted") && map.get("deleted").equals(Boolean.TRUE)) {
             bulk.add(deleteRequest(indexName).type(typeName).id(id));
         } else if (map.containsKey("doc")) {
             Map<String, Object> doc = (Map<String, Object>) map.get("doc");

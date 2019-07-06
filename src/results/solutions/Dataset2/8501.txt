@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -522,9 +521,9 @@ private boolean isWorthBuilding() throws CoreException {
  * Instruct the build manager that this project is involved in a cycle and
  * needs to propagate structural changes to the other projects in the cycle.
  */
-javaProject.updateCycleParticipants(null, new ArrayList(), cycleParticipants, workspaceRoot, new HashSet(3));
+void mustPropagateStructuralChanges() {
 	HashSet cycleParticipants = new HashSet(3);
-	javaProject.updateCycleParticipants(null, new ArrayList(), cycleParticipants, workspaceRoot);
+javaProject.updateCycleParticipants(null, new ArrayList(), cycleParticipants, workspaceRoot, new HashSet(3));
 
 	Iterator i= cycleParticipants.iterator();
 	while (i.hasNext()) {

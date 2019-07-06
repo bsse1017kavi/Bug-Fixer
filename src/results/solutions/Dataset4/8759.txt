@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -101,9 +100,9 @@ public class IdsQueryParser implements QueryParser {
             types = parseContext.queryTypes();
         } else if (types.size() == 1 && Iterables.getFirst(types, null).equals("_all")) {
             types = parseContext.mapperService().types();
-UidFilter filter = new UidFilter(types, ids);
+        }
 
-        UidFilter filter = new UidFilter(types, ids, parseContext.indexCache().bloomCache());
+UidFilter filter = new UidFilter(types, ids);
         // no need for constant score filter, since we don't cache the filter, and it always takes deletes into account
         ConstantScoreQuery query = new ConstantScoreQuery(filter);
         query.setBoost(boost);

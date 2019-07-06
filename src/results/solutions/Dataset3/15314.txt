@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -75,9 +74,9 @@ public class ServerGroupDeploymentAddHandler implements OperationStepHandler, De
     public void execute(OperationContext context, ModelNode operation) {
         final ModelNode opAddr = operation.get(OP_ADDR);
         PathAddress address = PathAddress.pathAddress(opAddr);
-final Resource deploymentResource = context.readResourceFromRoot(PathAddress.pathAddress(PathElement.pathElement(DEPLOYMENT, name)));
+        String name = address.getLastElement().getValue();
 
-        final Resource deploymentResource = context.getRootResource().navigate(PathAddress.pathAddress(PathElement.pathElement(DEPLOYMENT, name)));
+final Resource deploymentResource = context.readResourceFromRoot(PathAddress.pathAddress(PathElement.pathElement(DEPLOYMENT, name)));
         ModelNode deployment = deploymentResource.getModel();
 
         for (ModelNode content : deployment.require(CONTENT).asList()) {

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -152,9 +151,9 @@ public class ExplicitConstructorCall
 	 * Dependency mechanism is used whenever dealing with source target
 	 * types, since by the time we reach them, we might not yet know their
 	 * exact need.
-ReferenceBinding superType;
+	 */
 	void manageEnclosingInstanceAccessIfNecessary(BlockScope currentScope) {
-		ReferenceBinding invocationType, superType;
+ReferenceBinding superType;
 
 		// perform some emulation work in case there is some and we are inside a local type only
 		if ((superType = binding.declaringClass).isNestedType()

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class RestClusterHealthAction extends BaseRestHandler {
         controller.registerHandler(RestRequest.Method.GET, "/_cluster/health", this);
         controller.registerHandler(RestRequest.Method.GET, "/_cluster/health/{index}", this);
     }
-public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void handleRequest(final RestRequest request, final RestChannel channel) {
+public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
         ClusterHealthRequest clusterHealthRequest = clusterHealthRequest(Strings.splitStringByCommaToArray(request.param("index")));
         clusterHealthRequest.local(request.paramAsBoolean("local", clusterHealthRequest.local()));
         clusterHealthRequest.listenerThreaded(false);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1049,9 +1048,9 @@ public class Util {
 				URI locationURI = file.getLocationURI();
 				if (locationURI == null)
 					throw new CoreException(new Status(IStatus.ERROR, JavaCore.PLUGIN_ID, Messages.bind(Messages.file_notFound, file.getFullPath().toString())));
-throw new JavaModelException(e, IJavaModelStatusConstants.ELEMENT_DOES_NOT_EXIST);
+				length = EFS.getStore(locationURI).fetchInfo().getLength();
 			} catch (CoreException e) {
-				throw new JavaModelException(e);
+throw new JavaModelException(e, IJavaModelStatusConstants.ELEMENT_DOES_NOT_EXIST);
 			}
 		} else {
 			// local file

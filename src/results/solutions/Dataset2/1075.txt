@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -102,9 +101,9 @@ public boolean equals(Object o) {
 public NameEnvironmentAnswer findClass(String sourceFileWithoutExtension, String qualifiedPackageName, String qualifiedSourceFileWithoutExtension) {
 	
 	String sourceFolderPath = this.sourceFolder.getFullPath().toString() + IPath.SEPARATOR;
-String extension = '.' + new String(javaLikeExtensions[i]);
+	char[][] javaLikeExtensions = Util.getJavaLikeExtensions();
 	for (int i = 0, length = javaLikeExtensions.length; i < length; i++) {
-		String extension = new String(javaLikeExtensions[i]);
+String extension = '.' + new String(javaLikeExtensions[i]);
 		String sourceFileName = sourceFileWithoutExtension + extension;
 		if (!doesFileExist(sourceFileName, qualifiedPackageName)) continue; // most common case
 	

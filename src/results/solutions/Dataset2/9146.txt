@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -176,9 +175,9 @@ public class LoadOnStartupInterceptor extends BaseInterceptor {
 	request.setQueryString( "jsp_precompile=true" );
 	
 	request.setContext(context);
-RequestDispatcher rd = context.getFacade().getRequestDispatcher(requestURI);
+	request.getSession(true);
 	
-	RequestDispatcher rd = context.getRequestDispatcher(requestURI);
+RequestDispatcher rd = context.getFacade().getRequestDispatcher(requestURI);
 	
 	try {
 	    rd.forward(request.getFacade(), response.getFacade());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ class RootLoggerRemove extends AbstractRemoveStepHandler {
     protected void performRemove(NewOperationContext context, ModelNode operation, ModelNode model) {
         context.readModelForUpdate(PathAddress.EMPTY_ADDRESS).get(CommonAttributes.ROOT_LOGGER).clear();
     }
-context.removeService(LogServices.ROOT_LOGGER);
+
     protected void performRuntime(NewOperationContext context, ModelNode operation, ModelNode model) {
-        context.removeService(LogServices.ROOT_LOGGER)
+context.removeService(LogServices.ROOT_LOGGER);
         if (model.get(CommonAttributes.ROOT_LOGGER).has(CommonAttributes.HANDLERS)) {
             LogServices.uninstallLoggerHandlers(context, "", model.get(CommonAttributes.ROOT_LOGGER, CommonAttributes.HANDLERS));
         }

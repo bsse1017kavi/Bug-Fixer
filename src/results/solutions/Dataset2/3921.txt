@@ -1,4 +1,3 @@
-
 /*
  * SearchBar.java - Search & replace toolbar
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -176,9 +175,9 @@ public class SearchBar extends JPanel
 		//{{{ If nothing entered, show search and replace dialog box
 		if(text.length() == 0)
 		{
-SearchDialog.showSearchDialog(view,null,SearchDialog.CURRENT_BUFFER);
+			jEdit.setBooleanProperty("search.hypersearch.toggle",
 				hyperSearch.isSelected());
-			new SearchDialog(view,null);
+SearchDialog.showSearchDialog(view,null,SearchDialog.CURRENT_BUFFER);
 		} //}}}
 		//{{{ HyperSearch
 		else if(hyperSearch.isSelected())

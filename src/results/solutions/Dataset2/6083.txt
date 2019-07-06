@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -898,9 +897,9 @@ public class IMAPFolder extends AbstractRemoteFolder {
 		// Parser the header
 		Header header = withHeaderInputStream.getHeader();
 
-IColumbaHeader cHeader = new ColumbaHeader(header, (Attributes)attributes.clone(), imapFlags);
+
 		// update the HeaderList
-		IColumbaHeader cHeader = new ColumbaHeader(header, attributes, imapFlags);
+IColumbaHeader cHeader = new ColumbaHeader(header, (Attributes)attributes.clone(), imapFlags);
 		header.set("columba.uid", uid);
 		
 		headerList.add(cHeader, uid);

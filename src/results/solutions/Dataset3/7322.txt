@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -68,9 +67,9 @@ public class DeploymentRedeployHandler implements ModelQueryOperationHandler, De
         ModelNode model = context.getSubModel();
         ModelNode compensatingOp = Util.getEmptyOperation(OPERATION_NAME, operation.get(OP_ADDR));
         final String name = model.require(NAME).asString();
-redeploy(context, runtimeName, name, resultHandler, contents);
+        final String runtimeName = model.require(RUNTIME_NAME).asString();
         final DeploymentHandlerUtil.ContentItem[] contents = getContents(model.require(CONTENT));
-        redeploy(context, name, runtimeName, resultHandler, contents);
+redeploy(context, runtimeName, name, resultHandler, contents);
 
         return new BasicOperationResult(compensatingOp);
     }

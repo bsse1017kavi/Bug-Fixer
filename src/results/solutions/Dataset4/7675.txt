@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -129,9 +128,9 @@ public class IssuesFragment extends PagedItemFragment<Issue> {
 
     @Override
     protected void configureList(Activity activity, ListView listView) {
-getListAdapter().addHeader(filterHeader);
+        super.configureList(activity, listView);
 
-        getListAdapter().addHeader(filterHeader, null, false);
+getListAdapter().addHeader(filterHeader);
     }
 
     private void updateFilterSummary() {

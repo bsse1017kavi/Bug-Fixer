@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -67,9 +66,9 @@ class TriDiagonalTransformer implements Serializable {
      * @exception InvalidMatrixException if matrix is not square
      */
     public TriDiagonalTransformer(RealMatrix matrix)
-throw new NonSquareMatrixException(matrix.getRowDimension(), matrix.getColumnDimension());
+        throws InvalidMatrixException {
         if (!matrix.isSquare()) {
-            throw new InvalidMatrixException("transformation to tridiagonal requires that the matrix be square");
+throw new NonSquareMatrixException(matrix.getRowDimension(), matrix.getColumnDimension());
         }
 
         final int m = matrix.getRowDimension();

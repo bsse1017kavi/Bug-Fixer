@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public final class SortedSetDVBytesAtomicFieldData extends SortedSetDVAtomicFiel
         super(reader, field);
     }
 
-return new ScriptDocValues.Strings(getBytesValues());
+    @Override
     public Strings getScriptValues() {
-        return new ScriptDocValues.Strings(getBytesValues(false));
+return new ScriptDocValues.Strings(getBytesValues());
     }
 
 }

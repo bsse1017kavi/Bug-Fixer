@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -45,9 +44,9 @@ public interface TermPositions
      * Returns the length of the payload at the current term position.
      * This is invalid until {@link #nextPosition()} is called for
      * the first time.<br>
-int getPayloadLength() throws IOException;
+     * @return length of the current payload in number of bytes
      */
-    int getPayloadLength();
+int getPayloadLength() throws IOException;
     
     /** 
      * Returns the payload data at the current term position.

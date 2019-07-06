@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -59,9 +58,9 @@ public class ExampleRunner {
             URL uploadContent = new URL("http://localhost:9990/domain-api/add-content");
             HttpURLConnection connection =(HttpURLConnection) uploadContent.openConnection();
             connection.setDoInput(true);
-connection.setRequestProperty("Content-Type","multipart/form-data;boundary=---------------------------261773107125236");
+            connection.setDoOutput(true);
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Content-Type","multipart/form-data;boundary=-----------------------------261773107125236");
+connection.setRequestProperty("Content-Type","multipart/form-data;boundary=---------------------------261773107125236");
             os = new BufferedOutputStream(connection.getOutputStream());
 
             StringBuilder builder = new StringBuilder();

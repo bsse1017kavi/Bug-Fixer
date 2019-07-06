@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.71 $ $Date$
@@ -250,9 +249,9 @@ public class Applet extends WebComponent implements IResourceListener, IFormSubm
 			}
 		};
 
-+ Strings.beforeLastPathComponent(jarResourceReference.getSharedResourceKey(), '/') + "/");
+		String servletPath = ((ServletWebRequest)getRequest()).getServletPath();
 		tag.put("codebase", servletPath + '/'
-				+ Strings.beforeLastPathComponent(jarResourceReference.getRelativeUrl(), '/') + "/");
++ Strings.beforeLastPathComponent(jarResourceReference.getSharedResourceKey(), '/') + "/");
 		tag.put("archive", jarName);
 		tag.put("name", getPageRelativePath().replace(':', '_'));
 		final int width = getWidth();

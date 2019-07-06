@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public final class StreamManager
     {
         private static Logger logger_ = Logger.getLogger( BootstrapInitiateDoneVerbHandler.class );
 
-byte[] body = message.getMessageBody();
+        public void doVerb(Message message)
         {
-            byte[] body = (byte[])message.getMessageBody()[0];
+byte[] body = message.getMessageBody();
             DataInputBuffer bufIn = new DataInputBuffer();
             bufIn.reset(body, body.length);
 

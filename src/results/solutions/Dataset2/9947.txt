@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -57,9 +56,9 @@ public class ClassFile extends Openable implements IClassFile, SuffixConstants {
 /*
  * Creates a handle to a class file.
  *
-protected ClassFile(PackageFragment parent, String name) {
+ * @exception IllegalArgumentExcpetion if the name does not end with ".class"
  */
-protected ClassFile(IPackageFragment parent, String name) {
+protected ClassFile(PackageFragment parent, String name) {
 	super(CLASS_FILE, parent, name);
 	if (!Util.isClassFileName(name)) {
 		throw new IllegalArgumentException(Util.bind("element.invalidClassFileName")); //$NON-NLS-1$

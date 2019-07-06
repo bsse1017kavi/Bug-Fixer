@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -166,9 +165,9 @@ public class DefaultOperationDescriptionProvider implements DescriptionProvider 
                 ModelNode deprecated = ad.addDeprecatedInfo(result);
                 if (deprecated != null) {
                     deprecated.get(ModelDescriptionConstants.REASON).set(attributeDescriptionResolver.getOperationParameterDeprecatedDescription(operationName, ad.getName(), locale, attributeBundle));
-reply.get(TYPE).set(replyType == null ? ModelType.OBJECT : replyType);
+                }
             } else {
-                reply.get(TYPE).set(ModelType.OBJECT);
+reply.get(TYPE).set(replyType == null ? ModelType.OBJECT : replyType);
                 for (AttributeDefinition ad : replyParameters) {
                     final ModelNode param = ad.addOperationParameterDescription(new ModelNode(), operationName, attributeDescriptionResolver, locale, bundle);
                     reply.get(VALUE_TYPE, ad.getName()).set(param);

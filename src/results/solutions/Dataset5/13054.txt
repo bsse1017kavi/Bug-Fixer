@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -118,9 +117,9 @@ public class ScriptRunner extends ScriptRunnerBase {
      * @param execName the name that will be passed to BSF for this script
      *        execution.
      * @return the result of the evalulation
-public Object evaluateScript(String execName)
+     * @exception BuildException if someting goes wrong exectuing the script.
      */
-    public Object evalulateScript(String execName)
+public Object evaluateScript(String execName)
         throws BuildException {
         checkLanguage();
         ClassLoader origLoader = replaceContextLoader();

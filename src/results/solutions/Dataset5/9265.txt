@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -143,9 +142,9 @@ public class JMeterTreeListener implements TreeSelectionListener, MouseListener,
 
     @Override
     public void valueChanged(TreeSelectionEvent e) {
-actionHandler.actionPerformed(new ActionEvent(this, 3333, ActionNames.EDIT)); // $NON-NLS-1$
+        log.debug("value changed, updating currentPath");
         currentPath = e.getNewLeadSelectionPath();
-        actionHandler.actionPerformed(new ActionEvent(this, 3333, "edit")); // $NON-NLS-1$
+actionHandler.actionPerformed(new ActionEvent(this, 3333, ActionNames.EDIT)); // $NON-NLS-1$
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -699,9 +698,9 @@ public class RecoveryAction extends AbstractIndexShardComponent implements Close
         }
 
         @Override public void messageReceived(VoidStreamable stream, TransportChannel channel) throws Exception {
-indexShard.performRecoveryFinalization(false);
+            receiveSnapshotRecoveryThread = Thread.currentThread();
             try {
-                indexShard.performRecoveryFinalization();
+indexShard.performRecoveryFinalization(false);
                 channel.sendResponse(VoidStreamable.INSTANCE);
             } finally {
                 receiveSnapshotRecoveryThread = null;

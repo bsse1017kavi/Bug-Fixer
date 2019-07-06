@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -95,9 +94,9 @@ public class DefaultSubscriptionRegistry extends AbstractSubscriptionRegistry {
 	@Override
 	protected void removeSubscriptionInternal(String sessionId, String subsId, Message<?> message) {
 		SessionSubscriptionInfo info = this.subscriptionRegistry.getSubscriptions(sessionId);
-if (destination != null) {
+		if (info != null) {
 			String destination = info.removeSubscription(subsId);
-			if (destination != null && info.getSubscriptions(destination) == null) {
+if (destination != null) {
 				this.destinationCache.updateAfterRemovedSubscription(destination, sessionId, subsId);
 			}
 		}

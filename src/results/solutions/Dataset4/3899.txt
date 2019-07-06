@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -135,9 +134,9 @@ public class MoreLikeThisActionTests extends ElasticsearchIntegrationTest {
         mltResponse = client().moreLikeThis(moreLikeThisRequest("test").type("type1").id("1").minTermFreq(1).minDocFreq(1).searchIndices("release")).actionGet();
         assertHitCount(mltResponse, 1l);
         assertThat(mltResponse.getHits().getAt(0).id(), equalTo("2"));
-mltResponse = internalCluster().clientNodeClient().moreLikeThis(moreLikeThisRequest("beta").type("type1").id("1").minTermFreq(1).minDocFreq(1)).actionGet();
+
         logger.info("Running moreLikeThis on alias with node client");
-        mltResponse = cluster().clientNodeClient().moreLikeThis(moreLikeThisRequest("beta").type("type1").id("1").minTermFreq(1).minDocFreq(1)).actionGet();
+mltResponse = internalCluster().clientNodeClient().moreLikeThis(moreLikeThisRequest("beta").type("type1").id("1").minTermFreq(1).minDocFreq(1)).actionGet();
         assertHitCount(mltResponse, 1l);
         assertThat(mltResponse.getHits().getAt(0).id(), equalTo("3"));
 

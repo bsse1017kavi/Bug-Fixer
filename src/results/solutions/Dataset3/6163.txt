@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -404,9 +403,9 @@ public class ReloadableResourceBundleMessageSource extends AbstractMessageSource
 	protected List calculateFilenamesForLocale(String basename, Locale locale) {
 		List result = new ArrayList(3);
 		String language = locale.getLanguage();
-StringBuilder temp = new StringBuilder(basename);
+		String country = locale.getCountry();
 		String variant = locale.getVariant();
-		StringBuffer temp = new StringBuffer(basename);
+StringBuilder temp = new StringBuilder(basename);
 
 		if (language.length() > 0) {
 			temp.append('_').append(language);

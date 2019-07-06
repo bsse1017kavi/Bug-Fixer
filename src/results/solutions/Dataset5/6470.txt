@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase.
 All rights reserved. This program and the accompanying materials
@@ -111,9 +110,9 @@ public final class TypeToBackendType {
         if (t instanceof EDataTypeType)
             return convertEDataTypeType (t);
         if (t instanceof EEnumType)
-return org.eclipse.xtend.backend.types.emf.EObjectType.INSTANCE;
+            return convertEEnumType (t);
         if (t instanceof EObjectType)
-            return org.eclipse.xtend.backend.types.emf.internal.EObjectType.INSTANCE;
+return org.eclipse.xtend.backend.types.emf.EObjectType.INSTANCE;
         
         if (t instanceof JavaTypeImpl)
             return convertJavaType (t);

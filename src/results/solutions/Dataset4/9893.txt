@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class QueryPhase implements SearchPhase {
             } else {
                 topDocs = searchContext.searcher().search(query, searchContext.from() + searchContext.size());
             }
-throw new QueryPhaseExecutionException(searchContext, "Failed to execute main query", e);
+            searchContext.queryResult().topDocs(topDocs);
         } catch (Exception e) {
-            throw new QueryPhaseExecutionException(searchContext, "", e);
+throw new QueryPhaseExecutionException(searchContext, "Failed to execute main query", e);
         }
 
         facetsPhase.execute(searchContext);

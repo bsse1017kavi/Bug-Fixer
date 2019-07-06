@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -991,9 +990,9 @@ public abstract class FormComponent<T> extends LabeledWebMarkupContainer
 	public final FormComponent<T> setRequired(final boolean required)
 	{
 		if (!required && getType() != null && getType().isPrimitive())
-"FormComponent can't be required when the type is primitive class: " + this);
+		{
 			throw new WicketRuntimeException(
-				"FormComponent can't be not required when the type is primitive class: " + this);
+"FormComponent can't be required when the type is primitive class: " + this);
 		}
 		if (required != isRequired())
 		{

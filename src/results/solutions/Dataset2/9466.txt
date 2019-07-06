@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -772,9 +771,9 @@ public abstract class JavaElement extends PlatformObject implements IJavaElement
 		} finally {
 			if (stream != null) {
 				try {
-// ignore
+					stream.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+// ignore
 				}
 			}
 			if (connection2 != null) {

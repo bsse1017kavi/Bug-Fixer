@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class BlueprintExtender implements BundleActivator, SynchronousBundleList
 
     public void start(BundleContext context) {
         LOGGER.debug("Starting blueprint extender...");
-eventDispatcher = new BlueprintEventDispatcher(context, executors);
+
         this.context = context;
-        eventDispatcher = new BlueprintEventDispatcher(context);
+eventDispatcher = new BlueprintEventDispatcher(context, executors);
         handlers = new NamespaceHandlerRegistryImpl(context);
         executors = Executors.newScheduledThreadPool(3);
         containers = new HashMap<Bundle, BlueprintContainerImpl>();

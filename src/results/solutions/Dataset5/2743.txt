@@ -1,4 +1,3 @@
-
 /*
  *  The Apache Software License, Version 1.1
  *
@@ -73,9 +72,9 @@ public class ReferencesTest extends TestCase{
      * look at the type of a reference we have created
      */
     public static void testReferencesAreSoft() {
-if ((reference.getClass().getName().indexOf("HardReference") > 0 )
+        boolean isJava11=JavaEnvUtils.isJavaVersion(JavaEnvUtils.JAVA_1_1);
         WeakishReference reference = WeakishReference.createReference(new Object());
-        if (reference instanceof WeakishReference.HardReference
+if ((reference.getClass().getName().indexOf("HardReference") > 0 )
             && !isJava11) {
             fail("We should be creating soft references in this version of Java");
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1805,9 +1804,9 @@ public class Dfp implements RealFieldElement<Dfp> {
                     continue;
                 }
 
-minadj /= divisor.mant[mant.length-1] + 1;
+                /* find out how far off the remainder is telling us we are */
                 minadj = (remainder[mant.length] * RADIX)+remainder[mant.length-1];
-                minadj /= (divisor.mant[mant.length-1]+1);
+minadj /= divisor.mant[mant.length-1] + 1;
 
                 if (minadj >= 2) {
                     min = trial+minadj;  // update the minimum

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -75,9 +74,9 @@ public class WildcardQueryBuilder extends BaseQueryBuilder {
     }
 
     @Override
-if (boost == -1 && rewrite == null) {
+    public void doXContent(XContentBuilder builder, Params params) throws IOException {
         builder.startObject(WildcardQueryParser.NAME);
-        if (boost == -1 && rewrite != null) {
+if (boost == -1 && rewrite == null) {
             builder.field(name, wildcard);
         } else {
             builder.startObject(name);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -720,9 +719,9 @@ public void duplicateInitializationOfBlankFinalField(FieldBinding field, Referen
 		reference.sourceEnd);
 }
 public void duplicateInitializationOfFinalLocal(LocalVariableBinding local, AstNode location) {
-local.isBlankFinal() ? IProblem.DuplicateFinalLocalInitialization : IProblem.NonBlankFinalLocalAssignment,
+	String[] arguments = new String[] { new String(local.readableName())};
 	this.handle(
-		IProblem.DuplicateFinalLocalInitialization,
+local.isBlankFinal() ? IProblem.DuplicateFinalLocalInitialization : IProblem.NonBlankFinalLocalAssignment,
 		arguments,
 		arguments,
 		location.sourceStart,

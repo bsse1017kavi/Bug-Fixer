@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.util;
 
 import android.text.Html.ImageGetter;
@@ -30,9 +29,9 @@ public class Html {
             return "";
         if (html.length() == 0)
             return html;
-html = html.replace("</p>", "<br><br>");
+        // These add extra padding that should be styled explicitly
         html = html.replace("<p>", "");
-        html = html.replace("</p>", "<br>");
+html = html.replace("</p>", "<br><br>");
         while (html.length() > 0)
             if (html.startsWith("<br>"))
                 html = html.substring(4);

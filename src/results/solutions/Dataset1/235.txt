@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -284,9 +283,9 @@ public final class SegmentInfos implements Cloneable, Iterable<SegmentInfoPerCom
         int numSegments = input.readInt();
         for(int seg=0;seg<numSegments;seg++) {
           String segName = input.readString();
-SegmentInfo info = codec.segmentInfoFormat().getSegmentInfoReader().read(directory, segName, IOContext.READ);
+          Codec codec = Codec.forName(input.readString());
           //System.out.println("SIS.read seg=" + seg + " codec=" + codec);
-          SegmentInfo info = codec.segmentInfoFormat().getSegmentInfosReader().read(directory, segName, IOContext.READ);
+SegmentInfo info = codec.segmentInfoFormat().getSegmentInfoReader().read(directory, segName, IOContext.READ);
           info.setCodec(codec);
           long delGen = input.readLong();
           int delCount = input.readInt();

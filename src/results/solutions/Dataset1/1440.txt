@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.GrantNode
@@ -93,9 +92,9 @@ public class GrantNode extends MiscellaneousStatementNode
 	 *
 	 * @exception StandardException	Standard error policy.
 	 */
-privileges = (PrivilegeNode) privileges.bind( new HashMap(), grantees, true);
+	public QueryTreeNode bind() throws StandardException
 	{
-		privileges = (PrivilegeNode) privileges.bind( new HashMap(), grantees);
+privileges = (PrivilegeNode) privileges.bind( new HashMap(), grantees, true);
 		return this;
 	} // end of bind
 

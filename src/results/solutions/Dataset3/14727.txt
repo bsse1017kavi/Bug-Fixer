@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ import org.jboss.msc.value.InjectedValue;
 /**
  * @author John Bailey
  */
-private static final String OBJECT_NAME = "jboss.naming:type=JNDIView";
+public class JndiView implements JndiViewMBean, Service<JndiView> {
     private static final Logger log = Logger.getLogger("org.jboss.as.naming");
-    private static final String OBJECT_NAME = "jboss:type=JNDIView";
+private static final String OBJECT_NAME = "jboss.naming:type=JNDIView";
 
     private final InjectedValue<MBeanServer> mbeanServerValue = new InjectedValue<MBeanServer>();
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ public class EJBViewDescription extends ViewDescription {
         return true;
     }
 
-if(methodIntf != MethodIntf.REMOTE && methodIntf != MethodIntf.HOME) {
+    @Override
     protected InjectionSource createInjectionSource(final ServiceName serviceName) {
-        if(methodIntf != MethodIntf.REMOTE) {
+if(methodIntf != MethodIntf.REMOTE && methodIntf != MethodIntf.HOME) {
             return super.createInjectionSource(serviceName);
         } else {
             final EJBComponentDescription componentDescription = getComponentDescription();

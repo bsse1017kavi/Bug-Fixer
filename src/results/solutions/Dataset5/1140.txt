@@ -1,4 +1,3 @@
-
 /*
  * TestOpenJPAEntityManagerFactoryImpl.java
  *
@@ -186,9 +185,9 @@ public class TestPersistenceManagerFactoryImpl extends BaseKernelTest {
      * concrete PMF implementation.
      */
     public void testPlatform() {
-assertNotNull(pmf.getProperties().get("Platform"));
+        OpenJPAEntityManagerFactory pmf =
             (OpenJPAEntityManagerFactory) getEmf();
-        assertNotNull(pmf.getProperties().getProperty("Platform"));
+assertNotNull(pmf.getProperties().get("Platform"));
     }
 
     protected OpenJPAEntityManagerFactory getEmf(Map props) {

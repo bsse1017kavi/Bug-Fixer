@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class NodeClient extends AbstractClient implements InternalClient {
     @Inject
     public NodeClient(Settings settings, ThreadPool threadPool, NodeAdminClient admin, Map<GenericAction, TransportAction> actions) {
         this.settings = settings;
-MapBuilder<Action, TransportAction> actionsBuilder = new MapBuilder<>();
+        this.threadPool = threadPool;
         this.admin = admin;
-        MapBuilder<Action, TransportAction> actionsBuilder = new MapBuilder<Action, TransportAction>();
+MapBuilder<Action, TransportAction> actionsBuilder = new MapBuilder<>();
         for (Map.Entry<GenericAction, TransportAction> entry : actions.entrySet()) {
             if (entry.getKey() instanceof Action) {
                 actionsBuilder.put((Action) entry.getKey(), entry.getValue());

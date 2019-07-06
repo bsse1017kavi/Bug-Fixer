@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene40;
 
 /*
@@ -82,9 +81,9 @@ class Lucene40DocValuesReader extends DocValuesProducer {
           break;
         case FLOAT_64:
           instance = loadDoubleField(field);
-throw new AssertionError();
+          break;
         default: 
-          throw new AssertionError(); // nocommit, implement the other types
+throw new AssertionError();
       }
       numericInstances.put(field.number, instance);
     }

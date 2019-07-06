@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -212,9 +211,9 @@ public class ListIteratorWrapper<E> implements ResettableListIterator<E> {
         int removeIndex = currentIndex;
         if (currentIndex == wrappedIteratorIndex) {
             --removeIndex;
-throw new IllegalStateException(MessageFormat.format(CANNOT_REMOVE_MESSAGE, Integer.valueOf(removeIndex)));
+        }
         if (!removeState || wrappedIteratorIndex - currentIndex > 1) {
-            throw new IllegalStateException(MessageFormat.format(CANNOT_REMOVE_MESSAGE, removeIndex));
+throw new IllegalStateException(MessageFormat.format(CANNOT_REMOVE_MESSAGE, Integer.valueOf(removeIndex)));
         }
         iterator.remove();
         list.remove(removeIndex);

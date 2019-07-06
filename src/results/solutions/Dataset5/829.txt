@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class MaxEmbeddedBlobFieldStrategy
     }
 
     protected void update(OpenJPAStateManager sm, Row row)
-if (b == null || (b.length > _maxSize && !field.getColumns()[0].isNotNull()))
+        throws SQLException {
         byte[] b = (byte[]) sm.getImplData(field.getIndex());
-        if (b == null || b.length > _maxSize)
+if (b == null || (b.length > _maxSize && !field.getColumns()[0].isNotNull()))
             row.setNull(field.getColumns()[0], true);
         else {
             sm.setImplData(field.getIndex(), null);

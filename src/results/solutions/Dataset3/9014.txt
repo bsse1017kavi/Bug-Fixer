@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -215,9 +214,9 @@ public class JGroupsExtension implements Extension, DescriptionProvider, XMLElem
             String value = reader.getAttributeValue(i);
             Attribute attribute = Attribute.forName(reader.getAttributeLocalName(i));
             switch (attribute) {
-this.getClass().getClassLoader().loadClass(org.jgroups.conf.ProtocolConfiguration.protocol_prefix + '.' + value).asSubclass(targetClass).newInstance();
+                case TYPE: {
                     try {
-                        Class.forName("org.jgroups.protocols." + value).asSubclass(targetClass).newInstance();
+this.getClass().getClassLoader().loadClass(org.jgroups.conf.ProtocolConfiguration.protocol_prefix + '.' + value).asSubclass(targetClass).newInstance();
                         protocol.get(ModelKeys.TYPE).set(value);
                     } catch (Exception e) {
                         throw ParseUtils.invalidAttributeValue(reader, i);

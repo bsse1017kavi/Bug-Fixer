@@ -1,4 +1,3 @@
-
 package org.apache.lucene.demo;
 
 /*
@@ -117,9 +116,9 @@ public class IndexFiles {
       // worth it when your index is relatively static (ie
       // you're done adding documents to it):
       //
-writer.shutdown();
+      // writer.forceMerge(1);
 
-      writer.close();
+writer.shutdown();
 
       Date end = new Date();
       System.out.println(end.getTime() - start.getTime() + " total milliseconds");

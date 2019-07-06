@@ -1,4 +1,3 @@
-
 /*
  * Licensed under the Apache License, 
  * Version 2.0 (the "License"); you may not use this file except in compliance with the License.
@@ -43,9 +42,9 @@ import org.apache.lucene.util.Version;
 /*
  * Constructors and makeCommonSet based on similar code in StopFilter
  */
-public static final String GRAM_TYPE = "gram";
+public final class CommonGramsFilter extends TokenFilter {
 
-  static final String GRAM_TYPE = "gram";
+public static final String GRAM_TYPE = "gram";
   private static final char SEPARATOR = '_';
 
   private final CharArraySet commonWords;

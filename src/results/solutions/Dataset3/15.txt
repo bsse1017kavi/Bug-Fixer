@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -73,9 +72,9 @@ class ConfigurationModelBeanDefinitionReader {
 	 * class itself, all its {@link Bean} methods
 	 */
 	private void loadBeanDefinitionsForConfigurationClass(ConfigurationClass configClass) {
-for (BeanMethod method : configClass.getBeanMethods())
+		doLoadBeanDefinitionForConfigurationClass(configClass);
 
-		for (BeanMethod method : configClass.getMethods())
+for (BeanMethod method : configClass.getBeanMethods())
 			loadBeanDefinitionsForModelMethod(method);
 
 //		Annotation[] pluginAnnotations = configClass.getPluginAnnotations();

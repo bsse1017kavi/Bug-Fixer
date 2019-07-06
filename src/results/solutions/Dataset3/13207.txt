@@ -1,4 +1,3 @@
-
 package org.springframework.ui.lifecycle;
 
 import static org.junit.Assert.assertEquals;
@@ -30,9 +29,9 @@ public class BindAndValidateLifecycleTests {
 	@Before
 	public void setUp() {
 		model = new TestBean();
-lifecycle = new BindAndValidateLifecycle(binder, null, alertContext);
+		alertContext = new DefaultAlertContext();
 		Binder binder = new WebBinderFactory().getBinder(model);
-		lifecycle = new BindAndValidateLifecycle(binder, alertContext);
+lifecycle = new BindAndValidateLifecycle(binder, null, alertContext);
 	}
 
 	@Test

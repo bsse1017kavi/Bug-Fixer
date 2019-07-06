@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.repo;
 
 import android.content.Context;
@@ -81,9 +80,9 @@ public class RepoBrowseActivity extends RoboActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.repo_list);
         user = (User) getIntent().getSerializableExtra("user");
-Avatar.bind(this, ((ImageView) findViewById(R.id.iv_gravatar)), user);
+
         ((TextView) findViewById(R.id.tv_org_name)).setText(user.getLogin());
-        Avatar.bind(this, ((ImageView) findViewById(R.id.iv_gravatar)), user.getLogin(), user.getAvatarUrl());
+Avatar.bind(this, ((ImageView) findViewById(R.id.iv_gravatar)), user);
 
         repoList.setOnItemClickListener(new OnItemClickListener() {
 

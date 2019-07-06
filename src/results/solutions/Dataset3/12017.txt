@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -211,9 +210,9 @@ public abstract class CommonXml implements XMLElementReader<List<ModelNode>>, XM
                     b.toString());
         }
     }
-final boolean needXsd = modelNode.hasDefined(SCHEMA_LOCATIONS) && modelNode.get(SCHEMA_LOCATIONS).asInt() > 0;
+
     protected void writeNamespaces(final XMLExtendedStreamWriter writer, final ModelNode modelNode) throws XMLStreamException {
-        final boolean needXsd = modelNode.hasDefined(SCHEMA_LOCATIONS);
+final boolean needXsd = modelNode.hasDefined(SCHEMA_LOCATIONS) && modelNode.get(SCHEMA_LOCATIONS).asInt() > 0;
         final boolean hasNamepaces = modelNode.hasDefined(NAMESPACES);
         if (!needXsd && !hasNamepaces) {
             return;

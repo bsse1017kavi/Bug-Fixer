@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -436,9 +435,9 @@ public class FSDirectory extends Directory {
     return new FSIndexOutput(file);
   }
 
-return openInput(name, BufferedIndexInput.BUFFER_SIZE);
+  // Inherit javadoc
   public IndexInput openInput(String name) throws IOException {
-    return new FSIndexInput(new File(directory, name));
+return openInput(name, BufferedIndexInput.BUFFER_SIZE);
   }
 
   // Inherit javadoc

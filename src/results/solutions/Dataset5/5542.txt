@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -269,9 +268,9 @@ public abstract class Advice extends ShadowMunger {
     /** @param fromType is guaranteed to be a non-abstract aspect
      *  @param clause has been concretized at a higher level
      */
-Pointcut p = pointcut.concretize(fromType, getDeclaringType(), signature.getArity(), this);
+    public ShadowMunger concretize(ResolvedType fromType, World world, PerClause clause) {
     	// assert !fromType.isAbstract();
-        Pointcut p = pointcut.concretize(fromType, signature.getArity(), this);
+Pointcut p = pointcut.concretize(fromType, getDeclaringType(), signature.getArity(), this);
         if (clause != null) {
         	Pointcut oldP = p;
         	p = new AndPointcut(clause, p);

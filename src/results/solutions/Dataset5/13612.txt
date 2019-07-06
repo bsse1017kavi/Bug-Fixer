@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.170 $ $Date$
@@ -920,9 +919,9 @@ public abstract class Page extends MarkupContainer implements IRedirectListener,
 		// or negative as a temporary boolean in the components, and when a
 		// authorization exception is thrown it will block the rendering of this
 		// page
-public Object component(final Component component)
+		visitChildren(new IVisitor()
 		{
-			public Object component(Component component)
+public Object component(final Component component)
 			{
 				// Find out if this component can be rendered
 				boolean renderAllowed = component.authorize(RENDER);

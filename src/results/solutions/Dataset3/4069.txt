@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ import org.jboss.msc.service.ServiceTarget;
 public final class ManagedServer {
     private static final MarshallerFactory MARSHALLER_FACTORY;
     private static final MarshallingConfiguration CONFIG;
-MARSHALLER_FACTORY = Marshalling.getMarshallerFactory("river", Module.getModuleFromCurrentLoader(ModuleIdentifier.fromString("org.jboss.marshalling.river")).getClassLoader());
+    static {
         try {
-            MARSHALLER_FACTORY = Marshalling.getMarshallerFactory("river", Module.getModuleFromDefaultLoader(ModuleIdentifier.fromString("org.jboss.marshalling.river")).getClassLoader());
+MARSHALLER_FACTORY = Marshalling.getMarshallerFactory("river", Module.getModuleFromCurrentLoader(ModuleIdentifier.fromString("org.jboss.marshalling.river")).getClassLoader());
         } catch (ModuleLoadException e) {
             throw new RuntimeException(e);
         }

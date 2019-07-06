@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class TreeList<E> extends AbstractList<E> {
      * Constructs a new empty list that copies the specified collection.
      *
      * @param coll  the collection to copy
-public TreeList(final Collection<? extends E> coll) {
+     * @throws NullPointerException if the collection is null
      */
-    public TreeList(final Collection<E> coll) {
+public TreeList(final Collection<? extends E> coll) {
         super();
         if (!coll.isEmpty()) {
             root = new AVLNode<E>(coll);

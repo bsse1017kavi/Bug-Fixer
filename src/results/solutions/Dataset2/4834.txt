@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -114,9 +113,9 @@ public class Scribe implements IJavaDocTagConstants {
 	static final int UNMODIFIABLE_TRAILING_COMMENT = 0x0400;
 	private int formatComments = 0;
 	private int headerEndPosition = -1;
-class LineComment {
+	String commentIndentation; // indentation requested in comments (usually in javadoc root tags description)
 	// Class to store previous line comment information
-	static class LineComment {
+class LineComment {
 		boolean contiguous = false;
 		int currentIndentation, indentation;
 		int lines;

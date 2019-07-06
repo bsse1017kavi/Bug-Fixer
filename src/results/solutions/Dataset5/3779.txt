@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -949,9 +948,9 @@ public class RelationFieldStrategy
             Column col = cols[0];
             if (fk != null)
                 col = fk.getColumn(col);   
-return id;
+            long id = res.getLong(col, joins);
             if (field.getObjectIdFieldTypeCode() == JavaTypes.LONG)
-                return Numbers.valueOf(id);
+return id;
             return store.newDataStoreId(id, relmapping, field.getPolymorphic() 
                 != ValueMapping.POLY_FALSE);
         }

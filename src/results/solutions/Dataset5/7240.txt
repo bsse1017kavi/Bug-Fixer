@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -672,9 +671,9 @@ public class BcelWeaver implements IWeaver {
 		onType.clearInterTypeMungers();
 		
 		// need to do any declare parents before the matching below
-List newParents = p.findMatchingNewParents(onType,true);
+		for (Iterator i = declareParentsList.iterator(); i.hasNext(); ) {
 			DeclareParents p = (DeclareParents)i.next();
-			List newParents = p.findMatchingNewParents(onType);
+List newParents = p.findMatchingNewParents(onType,true);
 			if (!newParents.isEmpty()) {
 				BcelObjectType classType = BcelWorld.getBcelObjectType(onType);
 				//System.err.println("need to do declare parents for: " + onType);

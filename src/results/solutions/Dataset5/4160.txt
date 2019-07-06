@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2003-2004 The Apache Software Foundation.
@@ -348,9 +347,9 @@ public class TCLogParser implements LogParser
             // for tomcat we should have 3 tokens if there
             // isn't any additional information in the logs
             tokens = this.tokenize(entry, "\"");
-String toke = tokens.nextToken();
+            while (tokens.hasMoreTokens())
             {
-                String toke = (String) tokens.nextToken();
+String toke = tokens.nextToken();
                 // if checkMethod on the token is true
                 // we tokenzie it using space and escape
                 // the while loop. Only the first matching

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
@@ -71,9 +70,9 @@ public class JNDITestCase {
 
     @Test
     public void testJNDIAccess() throws Exception {
-Object lookup = iniCtx.lookup("java:jboss");
+        bundle.start();
         InitialContext iniCtx = getInitialContext(bundle.getBundleContext());
-        Object lookup = iniCtx.lookup("jboss");
+Object lookup = iniCtx.lookup("java:jboss");
         assertNotNull("Lookup not null", lookup);
 
         // Naming context is read-only

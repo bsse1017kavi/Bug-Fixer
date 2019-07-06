@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012 Red Hat Inc. and/or its affiliates and other contributors
@@ -202,9 +201,9 @@ public class GuiMain {
         return metaCmdMenu;
     }
 
-tabs.addTab("Command Builder", new ManagementModel(cliGuiCtx));
+    private static JTabbedPane makeTabbedPane(CliGuiContext cliGuiCtx, JPanel output) {
         JTabbedPane tabs = new JTabbedPane();
-        tabs.addTab("Command Builder", new JScrollPane(new ManagementModel(cliGuiCtx)));
+tabs.addTab("Command Builder", new ManagementModel(cliGuiCtx));
         tabs.addTab("Output", output);
         return tabs;
     }

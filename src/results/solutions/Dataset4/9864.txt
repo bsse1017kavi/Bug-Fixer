@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -187,9 +186,9 @@ public class TransportBulkAction extends TransportAction<BulkRequest, BulkRespon
                         List<BulkItemRequest> list = requestsByShard.get(shardIt.shardId());
                         if (list == null) {
                             list = Lists.newArrayList();
-list.add(new BulkItemRequest(i, new DeleteRequest(deleteRequest)));
+                            requestsByShard.put(shardIt.shardId(), list);
                         }
-                        list.add(new BulkItemRequest(i, request));
+list.add(new BulkItemRequest(i, new DeleteRequest(deleteRequest)));
                     }
                 } else {
                     ShardId shardId = clusterService.operationRouting().deleteShards(clusterState, deleteRequest.index(), deleteRequest.type(), deleteRequest.id(), deleteRequest.routing()).shardId();

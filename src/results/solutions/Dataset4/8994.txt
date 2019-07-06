@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -32,9 +31,9 @@ public abstract class ScoreFunction {
     
     public abstract void setNextReader(AtomicReaderContext context);
 
-public abstract Explanation explainScore(int docId, float subQueryScore);
+    public abstract double score(int docId, float subQueryScore);
 
-    public abstract Explanation explainScore(int docId, Explanation subQueryExpl);
+public abstract Explanation explainScore(int docId, float subQueryScore);
 
     public CombineFunction getDefaultScoreCombiner() {
         return scoreCombiner;

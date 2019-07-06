@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -104,9 +103,9 @@ public class GetFieldMappingsResponse extends ActionResponse implements ToXConte
             return fullName;
         }
 
-return XContentHelper.convertToMap(source, true).v2();
+        /** Returns the mappings as a map. Note that the returned map has a single key which is always the field's {@link Mapper#name}. */
         public Map<String, Object> sourceAsMap() {
-            return XContentHelper.convertToMap(source.array(), source.arrayOffset(), source.length(), true).v2();
+return XContentHelper.convertToMap(source, true).v2();
         }
 
         public boolean isNull() {

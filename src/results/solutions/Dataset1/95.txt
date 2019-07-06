@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -68,9 +67,9 @@ public class TestRandomStoredFields extends LuceneTestCase {
     customType2.setStored(true);
     for(int i=0;i<docCount;i++) {
       Document doc = new Document();
-idField.setStringValue(id);
+      doc.add(idField);
       final String id = ""+i;
-      idField.setValue(id);
+idField.setStringValue(id);
       docs.put(id, doc);
       if (VERBOSE) {
         System.out.println("TEST: add doc id=" + id);

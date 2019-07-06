@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC)
@@ -427,9 +426,9 @@ public class AjcTaskTest extends TestCase {
 		File logFile = new File("testLogFile1.txt");
 		String s = logFile.getAbsolutePath();
 		logFile.delete();
-runTest(task,null,MessageHolderChecker.INFOS);
+		long initialLength = logFile.length();
 		task.setLog(logFile);
-		runTest(task,null,null);
+runTest(task,null,MessageHolderChecker.INFOS);
 		long newLength = logFile.length();
 		assertTrue(newLength > initialLength);
 		logFile.delete();

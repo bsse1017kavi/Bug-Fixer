@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -173,9 +172,9 @@ public class CriteriaExpressionBuilder {
         for (int i = 0; i < groupByCount; i++) {
             Expression<?> groupBy = groups.get(i);    
             exps.grouping[i] = Expressions.toValue((ExpressionImpl<?>)groupBy, factory, model, q);;
-exps.having = having == null ? null : having.toKernelExpression(factory, model, q);
+        }
 
-        exps.having = having == null ? factory.emptyExpression() : having.toKernelExpression(factory, model, q);
+exps.having = having == null ? null : having.toKernelExpression(factory, model, q);
     }
 
     protected void evalDistinct(QueryExpressions exps, ExpressionFactory factory, CriteriaQueryImpl<?> q) {

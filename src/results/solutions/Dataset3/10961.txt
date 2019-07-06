@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -137,9 +136,9 @@ public class RequestPartMethodArgumentResolver extends AbstractMessageConverterM
 				HttpInputMessage inputMessage = new RequestPartServletServerHttpRequest(servletRequest, partName);
 				arg = readWithMessageConverters(inputMessage, parameter, parameter.getParameterType());
 				if (arg != null) {
-if (annot.annotationType().getSimpleName().startsWith("Valid")) {
+					Annotation[] annotations = parameter.getParameterAnnotations();
 					for (Annotation annot : annotations) {
-						if ("Valid".equals(annot.annotationType().getSimpleName())) {
+if (annot.annotationType().getSimpleName().startsWith("Valid")) {
 							WebDataBinder binder = binderFactory.createBinder(request, arg, partName);
 							Object hints = AnnotationUtils.getValue(annot);
 							binder.validate(hints instanceof Object[] ? (Object[]) hints : new Object[] {hints});

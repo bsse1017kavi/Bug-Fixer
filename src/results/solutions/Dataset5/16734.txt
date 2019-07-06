@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
@@ -761,9 +760,9 @@ public class XIncludeHandler
             }
             if (fDocumentHandler != null
                     && getState() == STATE_NORMAL_PROCESSING) {
-fDocumentHandler.startElement(element, attributes, augs);
+                augs = modifyAugmentations(augs);
                 attributes = processAttributes(attributes);
-                fDocumentHandler.emptyElement(element, attributes, augs);
+fDocumentHandler.startElement(element, attributes, augs);
             }
         }
         else if (

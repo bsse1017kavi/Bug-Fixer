@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist.select;
 
 /*
@@ -161,9 +160,9 @@ protected void consumeEnterAnonymousClassBody() {
 		super.consumeEnterAnonymousClassBody();
 		return;
 	}
-new AnonymousLocalTypeDeclaration(this.compilationUnit.compilationResult);
+	QualifiedAllocationExpression alloc;
 	AnonymousLocalTypeDeclaration anonymousType = 
-		new AnonymousLocalTypeDeclaration(); 
+new AnonymousLocalTypeDeclaration(this.compilationUnit.compilationResult);
 	alloc = 
 		anonymousType.allocation = new SelectionOnQualifiedAllocationExpression(anonymousType); 
 	markCurrentMethodWithLocalType();

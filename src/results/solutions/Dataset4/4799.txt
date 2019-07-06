@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements. See the NOTICE file
@@ -80,9 +79,9 @@ public final class FileUtils {
     private static File resolveFile(String optionalPathPrefix, String path, String optionalFileSuffix) throws FileNotFoundException {
         //try within classpath with and without file suffix (as it could be a single test suite)
         URL resource = findResource(path, optionalFileSuffix);
-String newPath = optionalPathPrefix + "/" + path;
+        if (resource == null) {
             //try within classpath with optional prefix: /rest-spec/test (or /rest-test/api) is optional
-            String newPath = optionalPathPrefix + File.separator + path;
+String newPath = optionalPathPrefix + "/" + path;
             resource = findResource(newPath, optionalFileSuffix);
             if (resource == null) {
                 //if it wasn't on classpath we look outside ouf the classpath

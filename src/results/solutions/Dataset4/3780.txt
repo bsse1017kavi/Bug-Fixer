@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -95,8 +94,8 @@ public class WildcardQueryParser extends AbstractIndexComponent implements XCont
         }
 
         WildcardQuery query = new WildcardQuery(new Term(fieldName, value));
-return wrapSmartNameQuery(query, smartNameFieldMappers, parseContext);
+        query.setRewriteMethod(MultiTermQuery.CONSTANT_SCORE_AUTO_REWRITE_DEFAULT);
         query.setBoost(boost);
-        return wrapSmartNameQuery(query, smartNameFieldMappers, parseContext.indexCache());
+return wrapSmartNameQuery(query, smartNameFieldMappers, parseContext);
     }
 }

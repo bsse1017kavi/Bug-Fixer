@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public final class JmeterKeyStore {
             int index = 0;
             Enumeration<String> aliases = store.aliases();
             while (aliases.hasMoreElements()) {
-if (index >= startIndex && index <= endIndex) {
+                String alias = aliases.nextElement();
                 if (store.isKeyEntry(alias)) {
-                    if ((index >= startIndex && index <= endIndex)) {
+if (index >= startIndex && index <= endIndex) {
                         _key = (PrivateKey) store.getKey(alias, pw);
                         if (null == _key) {
                             throw new Exception("No key found for alias: " + alias); // Should not happen

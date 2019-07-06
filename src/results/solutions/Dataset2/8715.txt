@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000-2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -425,9 +424,9 @@ public class ParameterizedTypeBinding extends ReferenceBinding implements Substi
 					this.tagBits |= HasDirectWildcard;
 				}
 				if (!isWildcardArgument || ((WildcardBinding) someArgument).kind != Wildcard.UNBOUND) {
-this.tagBits |= someArgument.tagBits & HasTypeVariable;
+					this.tagBits |= IsBoundParameterizedType;
 				}
-			    this.tagBits |= someArgument.tagBits & (HasTypeVariable);
+this.tagBits |= someArgument.tagBits & HasTypeVariable;
 			}
 		}	    
 		this.tagBits |= someType.tagBits & (IsLocalType| IsMemberType | IsNestedType);

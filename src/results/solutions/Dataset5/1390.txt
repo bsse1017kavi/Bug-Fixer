@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2009 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -63,9 +62,9 @@ public class HelloConsumerApplication implements IApplication,
 
 		// Create service tracker to track IHello instances that have the 'service.imported'
 		// property set (as defined by OSGi 4.2 remote services spec).
-helloServiceTracker.open();
+		helloServiceTracker = new ServiceTracker(bundleContext,
 				createRemoteFilter(), this);
-		helloServiceTracker.open(true);
+helloServiceTracker.open();
 
 		waitForDone();
 

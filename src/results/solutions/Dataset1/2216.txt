@@ -1,4 +1,3 @@
-
 package org.apache.mahout.ep;
 
 import java.util.Arrays;
@@ -96,9 +95,9 @@ public class State<T extends Payload<T>> implements Comparable<State<T>> {
     r.omni = magnitude * -Math.log(1 - gen.nextDouble());
     for (int i = 0; i < step.length; i++) {
       r.step[i] = lambda * step[i] + r.omni * gen.nextGaussian();
-if (this.payload != null) {
+      r.params[i] += r.step[i];
     }
-    if (r.payload != null) {
+if (this.payload != null) {
       r.payload.update(r.getMappedParams());
     }
     return r;

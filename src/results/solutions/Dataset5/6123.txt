@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -254,9 +253,9 @@ public class EjbJar extends MatchingTask
      */
     public Path createClasspath()
     {
-config.classpath = new Path( getProject() );
+        if( config.classpath == null )
         {
-            config.classpath = new Path( project );
+config.classpath = new Path( getProject() );
         }
         return config.classpath.createPath();
     }

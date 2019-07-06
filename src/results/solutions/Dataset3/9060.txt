@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class SosInterpreterTestCase {
         String path = "file:C:\\path\\to\\thing.jar!/path/inside/jar";
         assertEquals("C:\\path\\to\\thing.jar", SosInterpreter.getPath(path));
     }
-public void testWindowsEncodedPath() throws Exception {
+
     @Test
-    public void testWindowsEncodedPath() {
+public void testWindowsEncodedPath() throws Exception {
         String path = "file:C:%5Cjboss%5Cas%5Cfoo";
         assertEquals("file:C:\\\\jboss\\\\as\\\\foo", SosInterpreter.cleanPath(path));
     }

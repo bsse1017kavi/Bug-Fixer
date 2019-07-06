@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -773,9 +772,9 @@ public class TestTypesafeCriteria extends CriteriaTest {
         CriteriaQuery<Tuple> q = cb.createTupleQuery();
         Root<Customer> c = q.from(Customer.class);
         Join<Customer, Order> o = c.join(Customer_.orders);
-taxedCost.alias("taxedCost");
+        Join<Customer, Address> a = c.join(Customer_.address);
         Expression<Double> taxedCost = cb.prod(o.get(Order_.totalCost), 1.08);
-        taxedCost.setAlias("taxedCost");
+taxedCost.alias("taxedCost");
         q.where(cb.equal(a.get(Address_.state), "CA"), 
                 cb.equal(a.get(Address_.county), "Santa Clara"));
         q.orderBy(cb.asc(o.get(Order_.quantity)), 

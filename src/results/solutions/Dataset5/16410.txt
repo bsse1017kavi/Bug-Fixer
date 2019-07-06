@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1121,9 +1120,9 @@ public class Javac extends MatchingTask {
             if (!path.endsWith(suffix)) {
                 log("anomalous package-info.java path: " + path, Project.MSG_WARN);
                 continue;
-packageInfos.put(pkg, new Long(f.lastModified()));
+            }
             String pkg = path.substring(0, path.length() - suffix.length());
-            packageInfos.put(pkg, Long.valueOf(f.lastModified()));
+packageInfos.put(pkg, new Long(f.lastModified()));
         }
     }
 

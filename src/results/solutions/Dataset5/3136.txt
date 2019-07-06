@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class LoopbackHTTPSocket extends Socket {
 	private final LoopbackOutputStream os;
 	
 	private LoopbackHTTPSocket() throws IOException{
-os.write("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n".getBytes());
+		os=new LoopbackOutputStream();
 		// Preload the output so that can be read back as HTTP
-		os.write("HTTP/1.1 200 OK\nContent-Type: text/plain\n\n".getBytes());
+os.write("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n".getBytes());
 	}
 	
     public LoopbackHTTPSocket(String host, int port, InetAddress localAddress, int localPort, int timeout) throws IOException {

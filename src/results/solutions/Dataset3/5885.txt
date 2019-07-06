@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -113,9 +112,9 @@ public class EjbConcurrencyMergingProcessor extends AbstractMergingProcessor<Ses
                     final MethodIdentifier methodIdentifier = MethodIdentifier.getIdentifierForMethod(realMethod);
                     if (method.getLockType() != null) {
                         componentConfiguration.setLockType(method.getLockType(), methodIdentifier);
-componentConfiguration.setAccessTimeout( new AccessTimeoutDetails(method.getAccessTimeout().getTimeout(), method.getAccessTimeout().getUnit()), methodIdentifier);
+                    }
                     if (method.getAccessTimeout() != null) {
-                        componentConfiguration.setAccessTimeout( new AccessTimeoutDetails(descriptor.getAccessTimeout().getTimeout(), descriptor.getAccessTimeout().getUnit()), methodIdentifier);
+componentConfiguration.setAccessTimeout( new AccessTimeoutDetails(method.getAccessTimeout().getTimeout(), method.getAccessTimeout().getUnit()), methodIdentifier);
                     }
 
                 }

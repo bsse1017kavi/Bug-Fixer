@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -126,9 +125,9 @@ public class MetaDataStateIndexService extends AbstractComponent {
                         .removeIndexBlock(request.index, INDEX_CLOSED_BLOCK);
 
                 ClusterState updatedState = ClusterState.builder().state(currentState).metaData(mdBuilder).blocks(blocks).build();
-.addAsRecovery(updatedState.metaData().index(request.index));
+
                 RoutingTable.Builder rtBuilder = RoutingTable.builder().routingTable(updatedState.routingTable())
-                        .add(updatedState.metaData().index(request.index), false);
+.addAsRecovery(updatedState.metaData().index(request.index));
 
                 RoutingAllocation.Result routingResult = allocationService.reroute(newClusterStateBuilder().state(updatedState).routingTable(rtBuilder).build());
 

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import com.badlogic.gdx.Gdx;
@@ -176,9 +175,9 @@ public class TestShader implements Shader {
 	private final void bindMaterial(final Renderable renderable) {
 		if (currentMaterial == renderable.material)
 			return;
-long t = attr.getType();
+		currentMaterial = renderable.material;
 		for (NewMaterial.Attribute attr : currentMaterial) {
-			final long t = attr.type;
+long t = attr.getType();
 			if (BlendingAttribute.is(t))
 				context.setBlending(true, ((BlendingAttribute)attr).sourceFunction, ((BlendingAttribute)attr).destFunction);
 			else if (ColorAttribute.is(t)) {

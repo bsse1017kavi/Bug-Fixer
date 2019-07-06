@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -760,9 +759,9 @@ public class ComposerController extends DefaultFrameController implements
 				String oldBody = composerModel.getBodyText();
 				String newBody;
 
-newBody = HtmlParser.textToHtml(oldBody, "", null, getCharset().toString());
+				if (html) {
 					LOG.fine("Converting body text to html");
-					newBody = HtmlParser.textToHtml(oldBody, "", null);
+newBody = HtmlParser.textToHtml(oldBody, "", null, getCharset().toString());
 				} else {
 					LOG.fine("Converting body text to text");
 					newBody = HtmlParser.htmlToText(oldBody);

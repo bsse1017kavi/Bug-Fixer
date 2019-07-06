@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -140,9 +139,9 @@ public class MillerUpdatingRegression implements UpdatingMultipleLinearRegressio
         if ((!this.hasIntercept && x.length != nvars) ||
                (this.hasIntercept && x.length + 1 != nvars)) {
             throw new IllegalArgumentException("Length of regressor list is less that numberOfVariables");
-include(MathUtils.copyOf(x, x.length), 1.0, y);
+        }
         if (!this.hasIntercept) {
-            include(Arrays.copyOf(x, x.length), 1.0, y);
+include(MathUtils.copyOf(x, x.length), 1.0, y);
         } else {
             double[] tmp = new double[x.length + 1];
             System.arraycopy(x, 0, tmp, 1, x.length);

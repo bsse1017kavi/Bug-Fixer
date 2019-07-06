@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util.automaton.fst;
 
 /**
@@ -539,9 +538,9 @@ public class TestFSTs extends LuceneTestCase {
             System.out.println("TEST: check term=" + inputToString(inputMode, term) + " output=" + fst.outputs.outputToString(pair.output));
           }
           Object output = run(fst, term, null);
-assertEquals(pair.output, output);
+
           assertNotNull("term " + inputToString(inputMode, term) + " is not accepted", output);
-          assertEquals(output, pair.output);
+assertEquals(pair.output, output);
 
           // verify enum's next
           IntsRefFSTEnum.InputOutput<T> t = fstEnum.next();

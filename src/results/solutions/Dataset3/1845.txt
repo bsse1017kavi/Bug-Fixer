@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -53,9 +52,9 @@ public class WeldEjbInterceptorIntegrationProcessor implements DeploymentUnitPro
 
     @Override
     public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
-if (!WeldDeploymentMarker.isWeldDeployment(deploymentUnit)) {
+        final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
 
-        if (!WeldDeploymentMarker.isPartOfWeldDeployment(deploymentUnit)) {
+if (!WeldDeploymentMarker.isWeldDeployment(deploymentUnit)) {
             return;
         }
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -80,9 +79,9 @@ public class MultiSourceTypeFactory
         {
             final Object object = factory.create( name );
 
-final String message = REZ.getString( "mismatched-type.error", name, object.getClass().getName() );
+            if( !m_type.isInstance( object ) )
             {
-                final String message = REZ.getString( "no-factory.error", name, m_type.getName() );
+final String message = REZ.getString( "mismatched-type.error", name, object.getClass().getName() );
                 throw new TypeException( message );
             }
 

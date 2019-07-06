@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -127,9 +126,9 @@ protected void executeOperation() throws JavaModelException {
 				// element is append at the end
 				buffer.append(fCreatedElement.getCharacters(), true);
 				break;
-if (fInsertionPosition == buffer.getLength() - 1 && buffer.getChar(fInsertionPosition) == '{') {
+			case 0 :
 				// element is inserted
-				if (fInsertionPosition == buffer.getLength() - 1) {
+if (fInsertionPosition == buffer.getLength() - 1 && buffer.getChar(fInsertionPosition) == '{') {
 					buffer.append(fCreatedElement.getCharacters(), true);
 				} else {
 					buffer.replace(fInsertionPosition, 0, fCreatedElement.getCharacters(), true);

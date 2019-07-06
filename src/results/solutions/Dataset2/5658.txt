@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.hierarchy;
 
 /*
@@ -56,9 +55,9 @@ public HierarchyBuilder(TypeHierarchy hierarchy) throws JavaModelException {
 	this.hierarchy = hierarchy;
 	JavaProject project = (JavaProject)hierarchy.javaProject();
 	this.searchableEnvironment = (SearchableEnvironment)project.getSearchableNameEnvironment();
-new HierarchyResolver(this.searchableEnvironment, JavaCore.getOptions(), this, new DefaultProblemFactory());
+	this.nameLookup = project.getNameLookup();
 	this.hierarchyResolver = 
-		new HierarchyResolver(this.searchableEnvironment, this, new DefaultProblemFactory());
+new HierarchyResolver(this.searchableEnvironment, JavaCore.getOptions(), this, new DefaultProblemFactory());
 	this.infoToHandle = new Hashtable(5);
 }
 public abstract void build(boolean computeSubtypes) throws JavaModelException, CoreException;

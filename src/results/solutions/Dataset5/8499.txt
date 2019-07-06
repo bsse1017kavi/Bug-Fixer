@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -521,9 +520,9 @@ public class TestDataCacheBehavesIdentical extends AbstractTestCase {
             em.getTransaction().rollback();
         }
     }
-verifyDeleteDetectionOnRefresh(WITH_DATACACHE, !DIRTY, NOLOCK, ENTITY_NOT_FOUND_ERROR);
+
     public void testDeleteIsNotDetectedOnCleanRefreshWithoutLockWithDataCache() {
-        verifyDeleteDetectionOnRefresh(WITH_DATACACHE, !DIRTY, NOLOCK, NO_ERROR);
+verifyDeleteDetectionOnRefresh(WITH_DATACACHE, !DIRTY, NOLOCK, ENTITY_NOT_FOUND_ERROR);
     }
     
     public void testDeleteIsDetectedOnCleanRefreshWithLockWithDataCache() {

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -99,9 +98,9 @@ public class Base64BinaryDatatypeValidator extends AbstractStringValidator{
             throw new InvalidDatatypeValueException( "Value '"+content+"' is not encoded in Base64" );
         }
     }
-return Base64.getDecodedDataLength(content.getBytes());
+
     protected int getLength( String content) {
-        return Base64.getDataLength(content.getBytes());
+return Base64.getDecodedDataLength(content.getBytes());
     }
 
 }

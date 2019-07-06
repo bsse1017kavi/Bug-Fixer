@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase, André Arnold.
 All rights reserved. This program and the accompanying materials
@@ -102,9 +101,9 @@ public class XtendComponent extends AbstractExpressionsUsingWorkflowComponent {
         return is != null;
     }
 
-super.checkConfigurationInternal (issues);
+    @Override
     public void checkConfigurationInternal (Issues issues) {
-        super.checkConfiguration (issues);
+super.checkConfigurationInternal (issues);
         
         // Try to create detailed error message (see Bug#172567)
         String compPrefix = getId()!=null ? getId()+": " : "";

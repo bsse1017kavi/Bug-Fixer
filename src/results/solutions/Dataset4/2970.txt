@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -191,9 +190,9 @@ public class IndexFieldMapper extends AbstractFieldMapper<String> implements Int
         // if all defaults, no need to write it at all
         if (fieldType().stored() == Defaults.FIELD_TYPE.stored() && enabledState == Defaults.ENABLED_STATE) {
             return builder;
-if (fieldType().stored() != Defaults.FIELD_TYPE.stored() && enabledState.enabled) {
+        }
         builder.startObject(CONTENT_TYPE);
-        if (fieldType().stored() != Defaults.FIELD_TYPE.stored()) {
+if (fieldType().stored() != Defaults.FIELD_TYPE.stored() && enabledState.enabled) {
             builder.field("store", fieldType().stored());
         }
         if (enabledState != Defaults.ENABLED_STATE) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -109,9 +108,9 @@ public interface PatchingTask {
             final ModificationType type = modification.getType();
             switch (type) {
                 case ADD:
-return new FileUpdateTask(item, target, backup, modification);
+                    return new FileAddTask(item, target, backup, modification);
                 case MODIFY:
-                    return new FileModifyTask(item, target, backup, modification);
+return new FileUpdateTask(item, target, backup, modification);
                 case REMOVE:
                     return new FileRemoveTask(item, target, backup, modification);
                 default:

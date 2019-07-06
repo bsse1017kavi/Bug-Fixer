@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -46,9 +45,9 @@ public class ViewMessageAction extends AbstractColumbaAction {
                                                                              .getSelection("mail.table");
         Object[] uids = references[0].getUids();
 
-ColumbaLogger.log.info(
+        if (uids.length == 1) {
             if (oldUid == uids[0]) {
-                ColumbaLogger.log.debug(
+ColumbaLogger.log.info(
                     "this message was already selected, don't fire any event");
 
                 return;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -461,9 +460,9 @@ public class XSConstraints {
                                 new Object[]{types[j].fName});
                     }
                 }
-XSCMValidator cm = types[j].getContentModel(cmBuilder, true);
+                // 3. UPA
                 // get the content model and check UPA
-                XSCMValidator cm = types[j].getContentModel(cmBuilder);
+XSCMValidator cm = types[j].getContentModel(cmBuilder, true);
                 further = false;
                 if (cm != null) {
                     try {

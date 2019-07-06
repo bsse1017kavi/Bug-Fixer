@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -291,9 +290,9 @@ public class AsmElementFormatter {
 		pe.setParameterTypes(types);
 		
 		if (argArray == null) return;
-String argType = argArray[i].type.resolvedType.debugName();
+		for (int i = 0; i < argArray.length; i++) {
 			String argName = new String(argArray[i].name);
-			String argType = argArray[i].type.toString();
+String argType = argArray[i].type.resolvedType.debugName();
 			if (acceptArgument(argName, argType)) { 
 				names.add(argName);
 				types.add(argType);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -443,9 +442,9 @@ public class CloudIndexShardGateway extends AbstractIndexShardComponent implemen
                 index++;
             }
             currentTranslogPartToWrite = index;
-indexShard.performRecoveryFinalization(true);
+
             indexShard.performRecoveryPrepareForTranslog();
-            indexShard.performRecoveryFinalization();
+indexShard.performRecoveryFinalization(true);
 
             return new RecoveryStatus.Translog(operations.size());
         } catch (Exception e) {

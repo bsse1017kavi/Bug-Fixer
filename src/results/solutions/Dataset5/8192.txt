@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -157,9 +156,9 @@ public class Check extends WebMarkupContainer
 			}
 			else
 			{
-tag.put("onclick", "window.location.href='" + url + "&amp;" + group.getInputName()
+				// NOTE: do not encode the url as that would give invalid
 				// JavaScript
-				tag.put("onclick", "window.location.href='" + url + "&" + group.getInputName()
+tag.put("onclick", "window.location.href='" + url + "&amp;" + group.getInputName()
 						+ "=' + this.value;");
 			}
 		}

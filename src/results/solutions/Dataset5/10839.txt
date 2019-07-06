@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public abstract class PersistenceTestCase
             map.put("openjpa.MetaDataFactory",
                 "jpa(Types=" + buf.toString() + oldValue + ")");
         }
-if (fresh || oemf == null || !oemf.isOpen()) {
+        EMFKey key = new EMFKey(pu, map);
         OpenJPAEntityManagerFactorySPI oemf = _emfs.get(key);
-        if (fresh || oemf == null) {
+if (fresh || oemf == null || !oemf.isOpen()) {
             Map config = new HashMap(System.getProperties());
             config.putAll(map);
             oemf = (OpenJPAEntityManagerFactorySPI) 

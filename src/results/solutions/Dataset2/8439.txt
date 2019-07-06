@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 // JDK classes
@@ -197,9 +196,9 @@ public class Module
         List rModOpts = null;
         Module module = this;
         Module prevModule = null;
-rModOpts = module.getRModuleOptions(crit);
+        do
         {
-            rModOpts = module.getRModuleOptionsJoinAttributeOption(crit);
+rModOpts = module.getRModuleOptions(crit);
             prevModule = module;
             module = prevModule.getModuleRelatedByParentId();
         }

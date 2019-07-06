@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public final class NoisyChannelSpellChecker {
                     return;
                 }
                 anyUnigram = true;
-long freq = 0;
+                if (posIncAttr.getPositionIncrement() == 0 && typeAttribute.type() == SynonymFilter.TYPE_SYNONYM) {
                     assert currentSet != null;
-                    int freq = 0;
+long freq = 0;
                     if ((freq = generator.frequency(term)) > 0) {
                         currentSet.addOneCandidate(generator.createCandidate(BytesRef.deepCopyOf(term), freq, realWordLikelihood));
                     }

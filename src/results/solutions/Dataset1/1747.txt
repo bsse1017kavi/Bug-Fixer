@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -378,9 +377,9 @@ public class Table
     /**
      * This method adds the row to the Commit Log associated with this table.
      * Once this happens the data associated with the individual column families
-public void apply(RowMutation mutation, byte[] serializedMutation, boolean writeCommitLog) throws IOException
+     * is also written to the column family store's memtable.
     */
-    public void apply(RowMutation mutation, Object serializedMutation, boolean writeCommitLog) throws IOException
+public void apply(RowMutation mutation, byte[] serializedMutation, boolean writeCommitLog) throws IOException
     {
         List<Memtable> memtablesToFlush = Collections.emptyList();
         if (logger.isDebugEnabled())

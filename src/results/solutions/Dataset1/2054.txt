@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs;
 
 /*
@@ -50,9 +49,9 @@ public abstract class PostingsReaderBase implements Closeable {
   /** Actually decode metadata for next term */
   public abstract void nextTerm(FieldInfo fieldInfo, BlockTermState state) throws IOException;
 
-public abstract DocsEnum docs(FieldInfo fieldInfo, BlockTermState state, Bits skipDocs, DocsEnum reuse, boolean needsFreqs) throws IOException;
+  /** Must fully consume state, since after this call that
    *  TermState may be reused. */
-  public abstract DocsEnum docs(FieldInfo fieldInfo, BlockTermState state, Bits skipDocs, DocsEnum reuse, int flags) throws IOException;
+public abstract DocsEnum docs(FieldInfo fieldInfo, BlockTermState state, Bits skipDocs, DocsEnum reuse, boolean needsFreqs) throws IOException;
 
   /** Must fully consume state, since after this call that
    *  TermState may be reused. */

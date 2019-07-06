@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -71,9 +70,9 @@ public class TrunkResponse
       return result.get();
    }
 
-ByteArrayOutputStream baos = new ByteArrayOutputStream(1000);
+   public byte[] serialize() throws IOException
    {
-      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+ByteArrayOutputStream baos = new ByteArrayOutputStream(1000);
       ObjectOutputStream out = new CustomObjectOutputStream(baos);
 
       if (correlationRequestId == null)

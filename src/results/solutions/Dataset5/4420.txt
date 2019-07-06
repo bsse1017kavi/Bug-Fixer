@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -187,9 +186,9 @@ public class War extends Jar {
             if (addedWebXmlFile != null) {
                 //a second web.xml file, so skip it
                 addFile = false;
-logOnFirstPass("Warning: selected " + archiveType
+                //check to see if we warn or not
                 if (!FILE_UTILS.fileNameEquals(addedWebXmlFile, file)) {
-                    log("Warning: selected " + archiveType
+logOnFirstPass("Warning: selected " + archiveType
                             + " files include a second " + XML_DESCRIPTOR_PATH
                             + " which will be ignored.\n"
                             + "The duplicate entry is at " + file + '\n'

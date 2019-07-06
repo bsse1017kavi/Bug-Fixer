@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class MockServerDeploymentRepository implements ServerDeploymentRepositor
     private Set<Closeable> handles = new HashSet<Closeable>();
     private final File root;
 
-batchBuilder.addService(SERVICE_NAME, service).install();
+    public static void addService(BatchBuilder batchBuilder, File root) {
         MockServerDeploymentRepository service = new MockServerDeploymentRepository(root);
-        batchBuilder.addService(SERVICE_NAME, service);
+batchBuilder.addService(SERVICE_NAME, service).install();
     }
     public MockServerDeploymentRepository(File root) {
         this.root = root;

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -144,9 +143,9 @@ public class TypeValidator extends StringValidator
 	 * @return a map with variables for interpolation
 	 */
 	protected Map messageModel(FormComponent formComponent, final ConversionException e)
-model.put("type", Classes.simpleName(type));
+	{
 		final Map model = super.messageModel(formComponent);
-		model.put("type", Classes.name(type));
+model.put("type", Classes.simpleName(type));
 		final Locale locale = e.getLocale();
 		if (locale != null)
 		{

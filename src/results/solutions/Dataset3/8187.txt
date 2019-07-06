@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -244,9 +243,9 @@ public class DomainTestUtils {
             final ModelNode result = executeForResult(operation, client);
             return result.asList().contains(e);
         } catch (MgmtOperationException ex) {
-if(failureDescription.contains("WFLYCTL0202") && failureDescription.contains(element.getKey())) {
+            if(! checkType) {
                 final String failureDescription = ex.getResult().get(FAILURE_DESCRIPTION).asString();
-                if(failureDescription.contains("JBAS014793") && failureDescription.contains(element.getKey())) {
+if(failureDescription.contains("WFLYCTL0202") && failureDescription.contains(element.getKey())) {
                     return false;
                 }
             }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -87,9 +86,9 @@ public class ThisOrTargetAnnotationPointcut extends NameBindingPointcut {
 	protected FuzzyBoolean matchInternal(Shadow shadow) {
 		if (!couldMatch(shadow)) return FuzzyBoolean.NO;
 	    ResolvedTypeX toMatchAgainst = 
-if (annotationTypePattern.matchesRuntimeType(toMatchAgainst).alwaysTrue()) {
+	        (isThis ? shadow.getThisType() : shadow.getTargetType() ).resolve(shadow.getIWorld());
 	    annotationTypePattern.resolve(shadow.getIWorld());
-	    if (annotationTypePattern.matches(toMatchAgainst).alwaysTrue()) {
+if (annotationTypePattern.matchesRuntimeType(toMatchAgainst).alwaysTrue()) {
 	    	return FuzzyBoolean.YES;
 	    } else {
 	    	// a subtype may match at runtime

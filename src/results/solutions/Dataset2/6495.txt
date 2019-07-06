@@ -1,4 +1,3 @@
-
 /*
  * BeanShell.java - BeanShell scripting support
  * Copyright (C) 2000, 2001 Slava Pestov
@@ -118,9 +117,9 @@ public class BeanShell
 					Selection s = selection[i];
 					for(int j = s.getStartLine(); j <= s.getEndLine(); j++)
 					{
-j - s.getStartLine()));
+						global.setVariable("line",new Integer(j));
 						global.setVariable("index",new Integer(
-							j - s.getStartLine() + 1));
+j - s.getStartLine()));
 						int start = s.getStart(buffer,j);
 						int end = s.getEnd(buffer,j);
 						String text = buffer.getText(start,

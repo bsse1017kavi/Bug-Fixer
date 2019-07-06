@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -229,9 +228,9 @@ public final class DistributorDirectory extends BaseDirectory {
      */
     public void renameFile(DirectoryService directoryService, String from, String to) throws IOException {
         Directory directory = getDirectory(from);
-+ " to: " + to + ": target file already exists");
+        if (nameDirMapping.putIfAbsent(to, directory) != null) {
             throw new IOException("Can't rename file from " + from
-                    + " to: " + to + "target file already exists");
++ " to: " + to + ": target file already exists");
         }
         boolean success = false;
         try {

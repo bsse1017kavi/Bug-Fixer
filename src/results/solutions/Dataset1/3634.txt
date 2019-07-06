@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.VerifyAggregateExpressionsVisitor
@@ -81,9 +80,9 @@ public class VerifyAggregateExpressionsVisitor implements Visitor
 				throw StandardException.newException(SQLState.LANG_INVALID_COL_REF_NON_GROUPED_SELECT_LIST, cr.getSQLColumnName());
 			}
 
-throw StandardException.newException(SQLState.LANG_INVALID_COL_REF_GROUPED_SELECT_LIST, cr.getSQLColumnName());
+			if (groupByList.findGroupingColumn(cr) == null)
 			{
-				throw StandardException.newException(SQLState.LANG_INVALID_GROUPED_SELECT_LIST);
+throw StandardException.newException(SQLState.LANG_INVALID_COL_REF_GROUPED_SELECT_LIST, cr.getSQLColumnName());
 			}
 		} 
 		

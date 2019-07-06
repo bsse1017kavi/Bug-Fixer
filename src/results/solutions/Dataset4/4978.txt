@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class RangeFacetCollector extends AbstractFacetCollector {
     @Override protected void doCollect(int doc) throws IOException {
         fieldData.forEachValueInDoc(doc, rangeProc);
     }
-return new InternalRangeFacet(facetName, fieldName, fieldName, entries);
+
     @Override public Facet facet() {
-        return new InternalRangeDistanceFacet(facetName, fieldName, fieldName, entries);
+return new InternalRangeFacet(facetName, fieldName, fieldName, entries);
     }
 
     public static class RangeProc implements NumericFieldData.DoubleValueInDocProc {

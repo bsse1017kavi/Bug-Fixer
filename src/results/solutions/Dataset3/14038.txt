@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public class NamingExtension implements Extension {
 
         if (context.isRuntimeOnlyRegistrationValid()) {
             registration.registerOperationHandler(JndiViewOperation.OPERATION_NAME, JndiViewOperation.INSTANCE, NamingSubsystemRootResourceDefinition.JNDI_VIEW, false, EnumSet.of(Flag.RUNTIME_ONLY));
-subsystem.registerXMLElementWriter(NamingSubsystem13Parser.INSTANCE);
+        }
 
-        subsystem.registerXMLElementWriter(NamingSubsystem12Parser.INSTANCE);
+subsystem.registerXMLElementWriter(NamingSubsystem13Parser.INSTANCE);
     }
 
     /**

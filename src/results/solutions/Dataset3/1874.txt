@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ class ErrorContextHandler {
                 .setResourceManager(cpresource)
                 .setDirectoryListingEnabled(false)
                 .setCachable(Predicates.<HttpServerExchange>falsePredicate());
-PredicateHandler predicateHandler = new PredicateHandler(path("/"), new RedirectHandler(ERROR_CONTEXT + DEFAULT_RESOURCE), handler);
+
         //we also need to setup the default resource redirect
-        PredicateHandler predicateHandler = new PredicateHandler(path(""), new RedirectHandler(ERROR_CONTEXT + DEFAULT_RESOURCE), handler);
+PredicateHandler predicateHandler = new PredicateHandler(path("/"), new RedirectHandler(ERROR_CONTEXT + DEFAULT_RESOURCE), handler);
         return predicateHandler;
     }
 

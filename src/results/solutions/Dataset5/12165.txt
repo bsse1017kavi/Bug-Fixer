@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class AntClassLoaderTest extends BuildFileTest {
         String path = myLoader.getClasspath();
         assertEquals(mainjarstring + File.pathSeparator + extjarstring, path);
     }
-AntClassLoader loader = p.createClassLoader(path);
+    public void testCleanup() throws BuildException {
         Path path = new Path(p, ".");
-        AntClassLoader loader = new AntClassLoader(p, path);
+AntClassLoader loader = p.createClassLoader(path);
         try {
             // we don't expect to find this
             loader.findClass("fubar");

@@ -1,4 +1,3 @@
-
 /*
  * $Id: AbstractAjaxTimerBehavior.java 4673 2006-02-27 20:35:43 -0800 (Mon, 27
  * Feb 2006) ivaynberg $ $Revision$ $Date: 2006-02-27 20:35:43 -0800
@@ -68,9 +67,9 @@ public abstract class AbstractAjaxTimerBehavior extends AbstractDefaultAjaxBehav
 
 		if (this.attachedBodyOnLoadModifier == false)
 		{
-getJsTimeoutCall(updateInterval), getComponent());
+			this.attachedBodyOnLoadModifier = true;
 			((WebPage)getComponent().getPage()).getBodyContainer().addOnLoadModifier(
-					getJsTimeoutCall(updateInterval));
+getJsTimeoutCall(updateInterval), getComponent());
 		}
 	}
 

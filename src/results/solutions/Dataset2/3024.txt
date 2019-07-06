@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -100,9 +99,9 @@ lookup(Name name, short type, short dclass, byte cred) {
 	Record [] answers;
 	int answerCount = 0, n = 0;
 	Enumeration e;
-SetResponse cached = cache.lookupRecords(name, type, dclass, cred);
+
 /*System.out.println("lookup of " + name + " " + Type.string(type));*/
-	CacheResponse cached = cache.lookupRecords(name, type, dclass, cred);
+SetResponse cached = cache.lookupRecords(name, type, dclass, cred);
 /*System.out.println(cached);*/
 	if (cached.isSuccessful()) {
 		RRset [] rrsets = cached.answers();

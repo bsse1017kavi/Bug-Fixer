@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -405,9 +404,9 @@ public class GenericConversionService implements ConversionService, ConverterReg
 		public void add(GenericConverter converter) {
 			if (converter instanceof ConditionalGenericConverter) {
 				if (this.conditionalConverters == null) {
-this.conditionalConverters.addFirst((ConditionalGenericConverter) converter);
+					this.conditionalConverters = new LinkedList<ConditionalGenericConverter>();
 				}
-				this.conditionalConverters.add((ConditionalGenericConverter) converter);
+this.conditionalConverters.addFirst((ConditionalGenericConverter) converter);
 			} else {
 				this.defaultConverter = converter;
 			}

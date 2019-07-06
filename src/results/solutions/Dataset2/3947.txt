@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1041,9 +1040,9 @@ public TypeBinding resolveType(BlockScope scope) {
 				this.bits |= Binding.TYPE;
 			case Binding.TYPE : //=============only type ==============
 			    TypeBinding type = (TypeBinding) this.binding;
-type = scope.environment().convertToRawType(type, false /*do not force conversion of enclosing types*/);
+//					if (isTypeUseDeprecated(type, scope))
 //						scope.problemReporter().deprecatedType(type, this);
-				type = scope.environment().convertToRawType(type);
+type = scope.environment().convertToRawType(type, false /*do not force conversion of enclosing types*/);
 				return this.resolvedType = type;
 		}
 	}

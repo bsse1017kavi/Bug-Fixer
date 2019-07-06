@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search.sampling;
 
 import java.util.List;
@@ -67,9 +66,9 @@ public abstract class BaseSampleTestTopK extends BaseTestTopK {
   /**
    * Try out faceted search with sampling enabled and complements either disabled or enforced
    * Lots of randomly generated data is being indexed, and later on a "90% docs" faceted search
-public void testCountUsingSampling() throws Exception {
+   * is performed. The results are compared to non-sampled ones.
    */
-  public void testCountUsingSamping() throws Exception {
+public void testCountUsingSampling() throws Exception {
     boolean useRandomSampler = random().nextBoolean();
     for (int partitionSize : partitionSizes) {
       try {

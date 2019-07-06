@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.testelement.property;
 
 import org.apache.jmeter.engine.util.CompoundVariable;
@@ -58,9 +57,9 @@ public class FunctionProperty extends AbstractProperty
      * string representation of the function is provided.
      * @see org.apache.jmeter.testelement.property.JMeterProperty#getStringValue()
      */
-if (!isRunningVersion() || !JMeterContextService.getContext().isSamplingStarted())
+    public String getStringValue()
     {
-        if (!isRunningVersion())
+if (!isRunningVersion() || !JMeterContextService.getContext().isSamplingStarted())
         {
             log.debug("Not running version, return raw function string");
             return function.getRawParameters();

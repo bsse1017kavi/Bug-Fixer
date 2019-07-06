@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public final class PhraseSuggestParser implements SuggestContextParser {
         if (suggestion.getField() == null) {
             throw new ElasticSearchIllegalArgumentException("The required field option is missing");
         }
-suggestion.setModel(StupidBackoffScorer.FACTORY);
+        
         if (suggestion.model() == null) {
-            suggestion.setModel(LaplaceScorer.FACTORY);
+suggestion.setModel(StupidBackoffScorer.FACTORY);
         }
         
         if (!gramSizeSet || suggestion.generators().isEmpty()) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class HandlerFileChange implements OperationStepHandler {
         final Resource resource = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS);
         final ModelNode originalModel = resource.getModel().clone();
         final ModelNode model = resource.getModel();
-if (context.isNormalServer() && !context.isBooting()) {
+        FILE.validateAndSet(operation, model);
 
-        if (context.getType() == OperationContext.Type.SERVER && !context.isBooting()) {
+if (context.isNormalServer() && !context.isBooting()) {
             context.addStep(new OperationStepHandler() {
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
                     final PathAddress address = PathAddress.pathAddress(operation.require(OP_ADDR));

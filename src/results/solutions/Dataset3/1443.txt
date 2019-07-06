@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -330,9 +329,9 @@ public class DomainModelUtil {
             ApplyRemoteMasterDomainModelHandler armdmh = new ApplyRemoteMasterDomainModelHandler(fileRepository,
                     contentRepo, hostControllerInfo, ignoredDomainResourceRegistry);
             root.registerOperationHandler(ApplyRemoteMasterDomainModelHandler.OPERATION_NAME, armdmh, armdmh, false, OperationEntry.EntryType.PRIVATE);
-root.registerOperationHandler(SubsystemDescriptionDump.DEFINITION, dumper, false);
+        } else {
             final SubsystemDescriptionDump dumper = new SubsystemDescriptionDump(extensionRegistry);
-            root.registerOperationHandler(SubsystemDescriptionDump.OPERATION_NAME, dumper, SubsystemDescriptionDump.DESCRIPTION, false, OperationEntry.EntryType.PRIVATE, EnumSet.of(OperationEntry.Flag.READ_ONLY));
+root.registerOperationHandler(SubsystemDescriptionDump.DEFINITION, dumper, false);
         }
     }
 

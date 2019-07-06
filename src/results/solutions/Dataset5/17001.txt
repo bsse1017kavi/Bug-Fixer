@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -31,9 +30,9 @@ class ConstructorSignatureImpl extends CodeSignatureImpl implements ConstructorS
     public String getName() { return "<init>"; }
     
     String toString(StringMaker sm) {
-buf.append(sm.makePrimaryTypeName(getDeclaringType(),getDeclaringTypeName()));
+        StringBuffer buf = new StringBuffer();
         buf.append(sm.makeModifiersString(getModifiers()));
-        buf.append(sm.makePrimaryTypeName(getDeclaringType()));
+buf.append(sm.makePrimaryTypeName(getDeclaringType(),getDeclaringTypeName()));
         sm.addSignature(buf, getParameterTypes());
         sm.addThrows(buf, getExceptionTypes());
         return buf.toString();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -115,9 +114,9 @@ public abstract class AbstractServerDeploymentManager implements ServerDeploymen
                 step.get(OP).set(DEPLOYMENT_FULL_REPLACE_OPERATION);
                 step.get(OP_ADDR).setEmptyList();
                 step.get(NAME).set(uniqueName);
-step.get(CONTENT).get(0).get(INPUT_STREAM_INDEX).set(stream++);
+                step.get(RUNTIME_NAME).set(action.getNewContentFileName());
                 builder.addInputStream(action.getContentStream());
-                step.get(INPUT_STREAM_INDEX).set(stream++);
+step.get(CONTENT).get(0).get(INPUT_STREAM_INDEX).set(stream++);
                 break;
             }
             case REDEPLOY: {

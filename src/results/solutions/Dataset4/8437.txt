@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ import static org.hamcrest.Matchers.*;
 public class SimpleIcuAnalysisTests {
 
     @Test public void testDefaultsIcuAnalysis() {
-new IndexSettingsModule(index, EMPTY_SETTINGS),
+        Index index = new Index("test");
         Injector injector = new ModulesBuilder().add(
-                new IndexSettingsModule(EMPTY_SETTINGS),
+new IndexSettingsModule(index, EMPTY_SETTINGS),
                 new IndexNameModule(index),
                 new AnalysisModule(EMPTY_SETTINGS).addProcessor(new IcuAnalysisBinderProcessor())).createInjector();
 

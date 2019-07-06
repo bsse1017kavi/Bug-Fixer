@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics;
 
 import com.badlogic.gdx.Graphics;
@@ -118,9 +117,9 @@ public final class SpriteBatch
 								"void main()                                  \n" +
 							    "{                                            \n" +							    							   
 							    "  gl_FragColor = v_color * texture2D(u_texture, v_texCoords);\n" +
-shader = new ShaderProgram( graphics.getGL20(), vertexShader, fragmentShader, true);
+							    "}"; 
 		
-		shader = new ShaderProgram( graphics.getGL20(), vertexShader, fragmentShader);
+shader = new ShaderProgram( graphics.getGL20(), vertexShader, fragmentShader, true);
 		if( shader.isCompiled() == false )
 			throw new IllegalArgumentException( "couldn't compile shader: " + shader.getLog()  );
 	}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -113,9 +112,9 @@ public class DataSourceCfgMetricUnitTestCase  extends DsMgmtTestBase{
     }
 
     @Test
-assertEquals("NOWARN",readAttribute(baseAddress,"track-statements").asString());
+    public void testStatementDefaultProperties()throws Exception {
     	setModel("statement-properties.xml");
-        assertEquals("\"NOWARN\"",readAttribute(baseAddress,"track-statements").asString());
+assertEquals("NOWARN",readAttribute(baseAddress,"track-statements").asString());
         assertFalse(readAttribute(baseAddress,"share-prepared-statements").asBoolean());
         removeDs();
     }

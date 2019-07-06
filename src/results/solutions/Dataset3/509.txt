@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -473,9 +472,9 @@ public class GenericTypeOperationHandler extends BatchModeCommandHandler {
         if(opResponse.hasDefined(Util.RESPONSE_HEADERS)) {
             final ModelNode headers = opResponse.get(Util.RESPONSE_HEADERS);
             final Set<String> keys = headers.keys();
-table.addLine(new String[]{key + ':', headers.get(key).asString()});
+            final SimpleTable table = new SimpleTable(2);
             for(String key : keys) {
-                table.addLine(new String[]{key, headers.get(key).asString()});
+table.addLine(new String[]{key + ':', headers.get(key).asString()});
             }
             if(buf == null) {
                 buf = new StringBuilder();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -583,9 +582,9 @@ public class ParallelReader extends IndexReader {
     void addField(String field, IndexReader r) throws IOException {
       PerDocValues perDocs = MultiPerDocValues.getPerDocs(r);
       fields.put(field, perDocs.docValues(field));
-//@Override -- not until Java 1.6
+    }
 
-    @Override
+//@Override -- not until Java 1.6
     public void close() throws IOException {
       // nothing to do here
     }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -233,9 +232,9 @@ public class JoranConfigurator extends ConfiguratorBase {
     rs.addRule(new Pattern("*/param"), new ParamAction());
 
     joranInterpreter = new Interpreter(rs);
-joranInterpreter.addImplicitAction(new NestComponentIA());
+
     // The following line adds the capability to parse nested components
-    joranInterpreter.addImplcitAction(new NestComponentIA());
+joranInterpreter.addImplicitAction(new NestComponentIA());
     ExecutionContext ec = joranInterpreter.getExecutionContext();
 
     HashMap omap = ec.getObjectMap();

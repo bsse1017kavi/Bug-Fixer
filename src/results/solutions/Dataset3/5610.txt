@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -192,9 +191,9 @@ public class NonExistingProfileTestCase extends AbstractLoggingTest {
 				new FileInputStream(loggingTestLog), StandardCharsets.UTF_8));
 		String line;
 		boolean warningFound = false;
-if (line.contains("WFLYLOG0010")) {
+		while ((line = br.readLine()) != null) {
 			// Look for message id in order to support all languages
-			if (line.contains("JBAS011509")) {
+if (line.contains("WFLYLOG0010")) {
 				warningFound = true;
 				break;
 			}

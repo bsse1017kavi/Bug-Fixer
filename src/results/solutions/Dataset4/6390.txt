@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2011, Nathan Sweet <nathan.sweet@gmail.com>
  * All rights reserved.
@@ -110,9 +109,9 @@ public class TableLayout extends BaseTableLayout<Actor, Table, TableLayout, Libg
 
 	/** Invalidates the layout, forcing the next call to {@link #layout()} to relayout. If a widget is resized or otherwise changed
 	 * in a way that affects its layout, {@link #invalidate()} should be called. */
-getTable().sizeInvalid = true;
+	public void invalidate () {
 		needsLayout = true;
-		getTable().prefSizeInvalid = true;
+getTable().sizeInvalid = true;
 	}
 
 	/** Invalides the layout of this widget and every parent widget to the root of the hierarchy. */

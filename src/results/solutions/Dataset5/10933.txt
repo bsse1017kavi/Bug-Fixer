@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -916,9 +915,9 @@ public class FetchConfigurationImpl
     
     private String getPathString() {
         List<FetchConfigurationImpl> path = getPath();
-StringBuilder buf = new StringBuilder().append (": ");
+        if (path.isEmpty())
             return "";
-        StringBuffer buf = new StringBuffer().append (": ");
+StringBuilder buf = new StringBuilder().append (": ");
         for (Iterator<FetchConfigurationImpl> itr = path.iterator(); itr.hasNext();) {
             buf.append(itr.next().getTraversedFromField());
             if (itr.hasNext())

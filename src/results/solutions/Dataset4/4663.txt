@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,9 +102,9 @@ public class TransportShardMultiPercolateAction extends TransportShardSingleOper
             Response.Item responseItem = new Response.Item();
             responseItem.slot = item.slot;
             try {
-logger.debug("[{}][{}] failed to multi percolate", e, request.index(), request.shardId());
+                responseItem.response = percolatorService.percolate(item.request);
             } catch (Throwable e) {
-                logger.trace("[{}][{}] failed to multi percolate", e, request.index(), request.shardId());
+logger.debug("[{}][{}] failed to multi percolate", e, request.index(), request.shardId());
                 if (TransportActions.isShardNotAvailableException(e)) {
                     throw new ElasticSearchException("", e);
                 } else {

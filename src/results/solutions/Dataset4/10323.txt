@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.loaders.ogre;
 
 import java.io.InputStream;
@@ -135,9 +134,9 @@ public class OgreXmlLoader {
 						case 4: numTexCoords = Integer.valueOf(buffer.getTextureCoordDimensions4()); break;
 						case 5: numTexCoords = Integer.valueOf(buffer.getTextureCoordDimensions5()); break;
 						case 6: numTexCoords = Integer.valueOf(buffer.getTextureCoordDimensions6()); break;
-attributes.add(new VertexAttribute(Usage.TextureCoordinates, numTexCoords, ShaderProgram.TEXCOORD_ATTRIBUTE + k));
+						case 7: numTexCoords = Integer.valueOf(buffer.getTextureCoordDimensions7()); break;
 						}
-						attributes.add(new VertexAttribute(Usage.TextureCoordinates, numTexCoords, ShaderProgram.TEXCOORDS_ATTRIBUTE + k));						
+attributes.add(new VertexAttribute(Usage.TextureCoordinates, numTexCoords, ShaderProgram.TEXCOORD_ATTRIBUTE + k));
 						offset += numTexCoords;
 					} catch(NumberFormatException e) {
 						throw new GdxRuntimeException("Can't process texture coords with dimensions != 1, 2, 3, 4 (e.g. float1)");

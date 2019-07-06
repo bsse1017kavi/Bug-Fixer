@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -60,9 +59,9 @@ public void acceptProblem(CategorizedProblem problem, char[] fragmentSource, int
 		marker.setAttribute(IMarker.CHAR_END, problem.getSourceEnd() + 1);
 		marker.setAttribute(IMarker.LINE_NUMBER, problem.getSourceLineNumber());
 		//marker.setAttribute(IMarker.LOCATION, "#" + problem.getSourceLineNumber());
-marker.setAttribute(IMarker.GENERATED_BY, JavaBuilder.SOURCE_ID);
+		marker.setAttribute(IMarker.MESSAGE, problem.getMessage());
 		marker.setAttribute(IMarker.SEVERITY, (problem.isWarning() ? IMarker.SEVERITY_WARNING : IMarker.SEVERITY_ERROR));
-		marker.setAttribute(IMarker.GENERATED_BY, JavaBuilder.GENERATED_BY);
+marker.setAttribute(IMarker.GENERATED_BY, JavaBuilder.SOURCE_ID);
 		this.requestor.acceptProblem(marker, new String(fragmentSource), fragmentKind);
 	} catch (CoreException e) {
 		e.printStackTrace();

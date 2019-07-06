@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -120,9 +119,9 @@ public class WebSession extends Session
 				dirty();
 			}
 
-if (getApplication().usesDevelopmentConfig())
+			// see if any component related feedback messages were left unrendered and warn if in
 			// dev mode
-			if (Application.DEVELOPMENT.equals(getApplication().getConfigurationType()))
+if (getApplication().usesDevelopmentConfig())
 			{
 				List<FeedbackMessage> messages = getFeedbackMessages().messages(
 					WebSession.MESSAGES_FOR_COMPONENTS);

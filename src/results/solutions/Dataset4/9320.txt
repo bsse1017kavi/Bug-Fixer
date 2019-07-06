@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -174,9 +173,9 @@ public class G3dtLoader {
 		int numAnimations = readInt(in);
 		ObjectMap<String, KeyframedAnimation> animations = new ObjectMap<String, KeyframedAnimation>(numAnimations);
 		for (int i = 0; i < numAnimations; i++) {
-float frameDuration = readFloat(in);
+			String animationName = readString(in);
 			int numKeyframes = readInt(in);
-			float frameDuration = readFloat(in); // in seconds
+float frameDuration = readFloat(in);
 
 			Keyframe[] keyframes = new Keyframe[numKeyframes];
 			float time = 0;

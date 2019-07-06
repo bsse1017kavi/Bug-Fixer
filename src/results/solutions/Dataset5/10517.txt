@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -60,9 +59,9 @@ public void paint(GC gc, int width, int height) {
         radial[i*2] = (int)((1+Math.cos(r))*centerX);
         radial[i*2+1] = (int)((1+Math.sin(r))*centerY);
         pos = (pos + POINTS/2) % POINTS;
-gc.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_YELLOW));
+    }
 	gc.setFillRule(fillRuleCb.getSelectionIndex() != 0 ? SWT.FILL_WINDING : SWT.FILL_EVEN_ODD);
-	gc.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_WHITE));
+gc.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_YELLOW));
     gc.fillPolygon(radial);
     gc.drawPolygon(radial);
 }

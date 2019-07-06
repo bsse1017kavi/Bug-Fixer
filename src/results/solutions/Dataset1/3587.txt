@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public final class KSMetaData
         this.strategyClass = strategyClass;
         this.replicationFactor = replicationFactor;
         Map<String, CFMetaData> cfmap = new HashMap<String, CFMetaData>();
-this.cfMetaData = Collections.unmodifiableMap(cfmap);
+        for (CFMetaData cfm : cfDefs)
             cfmap.put(cfm.cfName, cfm);
-        this.cfMetaData = Collections.<String, CFMetaData>unmodifiableMap(cfmap);
+this.cfMetaData = Collections.unmodifiableMap(cfmap);
     }
     
     public boolean equals(Object obj)

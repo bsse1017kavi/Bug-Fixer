@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -333,9 +332,9 @@ protected void matchReportReference(ASTNode reference, IJavaElement element, Bin
 		if (this.pattern.findReferences && reference instanceof MessageSend) {
 			IJavaElement focus = ((InternalSearchPattern) this.pattern).focus;
 			// verify closest match if pattern was bound
-if (methodBinding != null && methodBinding.declaringClass != null) {
+			// (see bug 70827)
 			if (focus != null && focus.getElementType() == IJavaElement.METHOD) {
-				if (methodBinding != null) {
+if (methodBinding != null && methodBinding.declaringClass != null) {
 					boolean isPrivate = Flags.isPrivate(((IMethod) focus).getFlags());
 					if (isPrivate && !CharOperation.equals(methodBinding.declaringClass.sourceName, focus.getParent().getElementName().toCharArray())) {
 						return; // finally the match was not possible

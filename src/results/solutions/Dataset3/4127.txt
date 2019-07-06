@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -151,9 +150,9 @@ public class OperationRequestHandler implements CommandHandler, OperationCommand
             outcome = client.execute(opDescrReq);
         } catch(Exception e) {
             throw new CommandFormatException("Failed to perform " + Util.READ_OPERATION_DESCRIPTION + " to validate the request: " + e.getLocalizedMessage());
-throw new CommandFormatException("Failed to get the list of the operation properties: \"" + Util.getFailureDescription(outcome) + '\"');
+        }
         if (!Util.isSuccess(outcome)) {
-            throw new CommandFormatException("Failed to get the list of supported operation properties.");
+throw new CommandFormatException("Failed to get the list of the operation properties: \"" + Util.getFailureDescription(outcome) + '\"');
         }
 
         if(!outcome.has(Util.RESULT)) {

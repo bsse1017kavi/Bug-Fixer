@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -935,9 +934,9 @@ public abstract class AbstractFieldMapper<T> implements FieldMapper<T> {
 
         // No need for locking, because locking is taken care of in ObjectMapper#merge and DocumentMapper#merge
         public void merge(Mapper mergeWith, MergeContext mergeContext) throws MergeMappingException {
-List<FieldMapper<?>> newFieldMappers = null;
+            AbstractFieldMapper mergeWithMultiField = (AbstractFieldMapper) mergeWith;
 
-            List<FieldMapper> newFieldMappers = null;
+List<FieldMapper<?>> newFieldMappers = null;
             ImmutableOpenMap.Builder<String, Mapper> newMappersBuilder = null;
 
             for (ObjectCursor<Mapper> cursor : mergeWithMultiField.multiFields.mappers.values()) {

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2005 Contributors.
  * All rights reserved. 
@@ -194,9 +193,9 @@ public class GenericSignatureParser {
 				  List nestedTypeList = new ArrayList();
 				  do {
 					  ret.append(".");
-nestedTypeList.add(sig);
+					  SimpleClassTypeSignature sig = parseSimpleClassTypeSignature();
 					  ret.append(sig.toString());
-					  nestedTypeList.add(ret);
+nestedTypeList.add(sig);
 				  } while(maybeEat("."));
 				  nestedTypes = new SimpleClassTypeSignature[nestedTypeList.size()];
 				  nestedTypeList.toArray(nestedTypes);

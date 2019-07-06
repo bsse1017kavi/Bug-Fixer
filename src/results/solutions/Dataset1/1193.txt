@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.ar;
 
 /*
@@ -95,8 +94,8 @@ public class TestArabicAnalyzer extends BaseTokenStreamTestCase {
     assertAnalyzesToReuse(a, "كبيرة the quick ساهدهات", new String[] { "كبير","the", "quick", "ساهد" });
   }
   
-checkRandomData(random(), new ArabicAnalyzer(TEST_VERSION_CURRENT), 1000*RANDOM_MULTIPLIER);
+  /** blast some random strings through the analyzer */
   public void testRandomStrings() throws Exception {
-    checkRandomData(random(), new ArabicAnalyzer(TEST_VERSION_CURRENT), 10000*RANDOM_MULTIPLIER);
+checkRandomData(random(), new ArabicAnalyzer(TEST_VERSION_CURRENT), 1000*RANDOM_MULTIPLIER);
   }
 }

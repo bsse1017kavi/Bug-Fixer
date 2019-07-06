@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -393,9 +392,9 @@ public class PersistenceUnitDeploymentProcessor implements DeploymentUnitProcess
                     }
                     persistenceProviderAdaptor = adaptor;
                     log.debugf("loaded persistence provider adapter %s", adapterModule);
-persistenceProviderAdaptor.injectJtaManager(JtaManagerImpl.getInstance());
+                }
                 if (persistenceProviderAdaptor != null) {
-                    persistenceProviderAdaptor.setJtaManager(JtaManagerImpl.getInstance());
+persistenceProviderAdaptor.injectJtaManager(JtaManagerImpl.getInstance());
                     PersistenceProviderAdapterRegistry.putPersistenceProviderAdaptor(persistenceProviderClass, persistenceProviderAdaptor);
                     PersistenceProviderAdapterRegistry.putPersistenceProviderAdaptor(persistenceProviderClass, adapterModule, persistenceProviderAdaptor);
                 }

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -167,9 +166,9 @@ public class ManifestClassPathTest
     public void testDifferentWindowsDrive() {
         if (!Os.isFamily("windows")) {
             System.out.println("Test with drive letters only run on windows");
-new java.io.File("D:/foo.txt").getCanonicalPath();
+        } else {
             try {
-                new java.io.File("D:/").getCanonicalPath();
+new java.io.File("D:/foo.txt").getCanonicalPath();
             } catch (java.io.IOException e) {
                 System.out.println("drive d: doesn't exist or is not ready,"
                                    + " skipping test");

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class BatchDiscardHandler extends CommandHandlerWithHelp {
     @Override
     protected void doHandle(CommandContext ctx) {
 
-ctx.error("There is no active batch to discard.");
+        boolean result = ctx.getBatchManager().discardActiveBatch();
         if(!result) {
-            ctx.printLine("There is no active batch to discard.");
+ctx.error("There is no active batch to discard.");
         }
     }
 

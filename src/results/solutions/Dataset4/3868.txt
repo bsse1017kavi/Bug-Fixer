@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -101,8 +100,8 @@ public class JsonXContent implements XContent {
         return createParser(bytes.streamInput());
     }
 
-return new JsonXContentParser(jsonFactory.createParser(reader));
+    @Override
     public XContentParser createParser(Reader reader) throws IOException {
-        return new JsonXContentParser(jsonFactory.createJsonParser(reader));
+return new JsonXContentParser(jsonFactory.createParser(reader));
     }
 }

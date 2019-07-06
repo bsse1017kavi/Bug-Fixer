@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -453,9 +452,9 @@ protected IBuffer openBuffer(IProgressMonitor pm) throws JavaModelException {
 			ICompilationUnit cu = lookup.findCompilationUnit(qualifiedName);
 			if (cu != null) {
 				return cu.getBuffer();
-IPath sourceFilePath = getPath().removeFileExtension().addFileExtension("java"); //$NON-NLS-1$
+			} else	{
 				// root is a class folder
-				IPath sourceFilePath = getPath().removeFileExtension().addFileExtension("java");
+IPath sourceFilePath = getPath().removeFileExtension().addFileExtension("java"); //$NON-NLS-1$
 				IWorkspace workspace = ResourcesPlugin.getWorkspace();
 				if (workspace == null) {
 					checkAutomaticSourceMapping = true; // we don't want to check again

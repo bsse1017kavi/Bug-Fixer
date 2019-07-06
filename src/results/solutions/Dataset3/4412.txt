@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -153,9 +152,9 @@ public final class ProcessManagerSlave {
         if (processName == null) {
             throw new IllegalArgumentException("processName is null");
         }
-b.append(processName).append('\0');
+        final StringBuilder b = new StringBuilder();
         b.append(Command.SEND_BYTES).append('\0');
-        b.append(processName).append(0);
+b.append(processName).append('\0');
         StreamUtils.writeString(output, b);
         output.write(message.length);
         output.write(message);

@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.clustering.carrot2;
 
 /**
@@ -262,9 +261,9 @@ public class CarrotClusteringEngine extends SearchClusteringEngine {
     // Get the documents
     boolean produceSummary = solrParams.getBool(CarrotParams.PRODUCE_SUMMARY, false);
 
-if (produceSummary) {
+    SolrQueryRequest req = null;
     String[] snippetFieldAry = null;
-    if (produceSummary == true) {
+if (produceSummary) {
       highlighter = core.getHighlighter();
       if (highlighter != null){
         Map<String, Object> args = Maps.newHashMap();

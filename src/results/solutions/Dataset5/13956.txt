@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase, André Arnold.
 All rights reserved. This program and the accompanying materials
@@ -280,9 +279,9 @@ public final class XpandBackendFacade {
         //TODO ProtectedRegionResolver
         
         final XpandExecutionContextImpl ctx = new XpandExecutionContextImpl (output, null);
-ctx.getResourceManager().setFileEncoding (fileEncoding);
+        for (MetaModel mm: mms)
             ctx.registerMetaModel (mm);
-        ctx.setFileEncoding (fileEncoding);
+ctx.getResourceManager().setFileEncoding (fileEncoding);
 
         return ctx;
     }

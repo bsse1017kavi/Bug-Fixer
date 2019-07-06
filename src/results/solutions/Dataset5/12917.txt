@@ -1,4 +1,3 @@
-
 /**
  * Copyright (c) 2006 Ecliptical Software Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -76,9 +75,9 @@ public class PubSubView extends ViewPart {
 	protected final Vector sharedLists = new Vector();
 	
 	public void init(IViewSite site) throws PartInitException {
-final Action shareSomethingAction = new Action("Share something") {
+		super.init(site);
 		
-		final Action shareSomethingAction = new Action("Share something...") {
+final Action shareSomethingAction = new Action("Share something") {
 			public void run() {
 				try {
 					IMasterModel sds = SharedModelFactory.getInstance().createSharedDataSource(container, IDFactory.getDefault().createGUID(), new AppendableList(), ListAppender.ID);

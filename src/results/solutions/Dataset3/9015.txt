@@ -1,4 +1,3 @@
-
 package org.jboss.as.web;
 
 import org.jboss.as.controller.ReloadRequiredWriteAttributeHandler;
@@ -38,9 +37,9 @@ public class WebVirtualHostDefinition extends SimpleResourceDefinition {
                     .build();
     protected static final SimpleAttributeDefinition DEFAULT_WEB_MODULE =
             new SimpleAttributeDefinitionBuilder(Constants.DEFAULT_WEB_MODULE, ModelType.STRING, true)
-.setValidator(new StringLengthValidator(1, true, false))
+                    .setXmlName(Constants.DEFAULT_WEB_MODULE)
                     .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES)
-                    .setValidator(new StringLengthValidator(1, true,true))
+.setValidator(new StringLengthValidator(1, true, false))
                     .setDefaultValue(new ModelNode("ROOT.war"))
                     .build();
     protected static final SimpleAttributeDefinition ENABLE_WELCOME_ROOT =

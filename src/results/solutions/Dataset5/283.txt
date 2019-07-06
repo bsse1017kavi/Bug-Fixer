@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -144,9 +143,9 @@ public class ServerSOContainer extends SOContainer implements ISharedObjectConta
                         forwardExcluding(getID(), remoteID, ContainerMessage
                                 .createViewChangeMessage(getID(), remoteID,
                                         getNextSequenceNumber(),
-traceStack("Exception in acceptNewClient sending view change message",e);
+                                        new ID[] { remoteID }, true, null));
                     } catch (IOException e) {
-                    	dumpStack("Exception in acceptNewClient sending view change message",e);
+traceStack("Exception in acceptNewClient sending view change message",e);
                     }
                     // Get current membership
                     memberIDs = groupManager.getMemberIDs();

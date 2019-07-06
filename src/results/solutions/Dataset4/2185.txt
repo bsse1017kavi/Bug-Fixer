@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -70,9 +69,9 @@ public class GeoMappingTests extends ElasticsearchIntegrationTest {
         ImmutableOpenMap<String, ImmutableOpenMap<String, MappingMetaData>> mappings = client().admin().indices().getMappings(new GetMappingsRequest().indices("test").types("type1")).actionGet().getMappings();
         assertNotNull(mappings);
         Map<String, ?> properties = (Map<String, ?>) mappings.get("test").get("type1").getSourceAsMap().get("properties");
-Distance precision = Distance.parseDistance(pinFieldData.get("precision").toString());
+        Map<String, ?> pinProperties = (Map<String, ?>) properties.get("pin");
         Map<String, ?> pinFieldData = (Map<String, ?>) pinProperties.get("fielddata");
-        Distance precision = Distance.parseDistance(pinFieldData.get("precision").toString(), DistanceUnit.METERS);
+Distance precision = Distance.parseDistance(pinFieldData.get("precision").toString());
         assertEquals(expected, precision);
     }
 

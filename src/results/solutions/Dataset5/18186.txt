@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -41,9 +40,9 @@ import javax.persistence.UniqueConstraint;
 @Table(name="\"primary entityF\"", schema="\"delim id\"",
     uniqueConstraints=
         @UniqueConstraint(columnNames={"\"f name\"", "f_nonDelimName"}))
-@UniqueConstraint(name="\"sec unq\"",
+@SecondaryTable(name="\"secondary entityF\"", schema="\"delim id\"",
     uniqueConstraints=
-        @UniqueConstraint(name="\"sec_unq\"", 
+@UniqueConstraint(name="\"sec unq\"",
             columnNames={"\"secondary name\""}))         
 public class EntityF {
     @TableGenerator(name = "f_id_gen", table = "\"f_id_gen\"", 

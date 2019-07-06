@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -142,9 +141,9 @@ public class Ejbc extends MatchingTask {
         for (int i = 0; i < files.length; ++i) {
             args += " " + files[i];
         }
-helperTask.setClasspath(new Path(execClassPath));
+                                    
         helperTask.setArgs(args);
-        helperTask.setClasspath(execClassPath);
+helperTask.setClasspath(new Path(execClassPath));
         if (helperTask.executeJava() != 0) {                         
             throw new BuildException("Execution of ejbc helper failed");
         }

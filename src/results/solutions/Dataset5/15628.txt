@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -859,9 +858,9 @@ public class ProxyControl extends GenericController {
         }
         myTarget = findFirstNodeOfType(WorkBench.class);
         if (myTarget != null) {
-log.error("Program error: test script recording target not found.");
+            return myTarget;
         }
-        log.error("Program error: proxy recording target not found.");
+log.error("Program error: test script recording target not found.");
         return null;
     }
 

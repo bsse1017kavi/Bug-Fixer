@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -261,9 +260,9 @@ public class RedirectView extends AbstractUrlBasedView {
 			vars.putAll(model);
 			targetUrl = new StringBuilder(uriTemplate.expand(vars).toString());
 			model = removeKeys(model, uriTemplate.getVariableNames());
-FlashMap flashMap = RequestContextUtils.getOutputFlashMap(request);
+		}
 
-		FlashMap flashMap = RequestContextUtils.getFlashMap(request);
+FlashMap flashMap = RequestContextUtils.getOutputFlashMap(request);
 		if (!CollectionUtils.isEmpty(flashMap)) {
 			flashMap.setExpectedRequestUri(request, targetUrl.toString());
 		}

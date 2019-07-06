@@ -1,4 +1,3 @@
-
 package junit.runner;
 
 import java.io.BufferedReader;
@@ -122,9 +121,9 @@ public abstract class BaseTestRunner implements TestListener {
 			runFailed("Suite() method must be static");
 			return null;
 		}
-test= (Test)suiteMethod.invoke(null, (Object[])new Class[0]); // static method
+		Test test= null;
 		try {
-			test= (Test)suiteMethod.invoke(null, new Class[0]); // static method
+test= (Test)suiteMethod.invoke(null, (Object[])new Class[0]); // static method
 			if (test == null)
 				return test;
 		}

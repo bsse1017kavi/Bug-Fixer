@@ -1,4 +1,3 @@
-
 package org.eclipse.jst.jsf.facelet.core.internal.registry;
 
 import org.eclipse.core.resources.IProject;
@@ -81,9 +80,9 @@ import org.eclipse.jst.jsf.facelet.core.internal.tagmodel.ValidatorTag;
 
             ComponentTypeInfo typeInfo = null;
 
-typeInfo = DTComponentIntrospector.getComponent(componentType,
+            if (componentClass != null)
             {
-                typeInfo = DTComponentIntrospector.getComponent(componentClass,
+typeInfo = DTComponentIntrospector.getComponent(componentType,
                         componentClass, _project,
                         new IConfigurationContributor[]
                         { new ELProxyContributor(_project) });

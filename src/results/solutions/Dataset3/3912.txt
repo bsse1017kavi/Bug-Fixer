@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public abstract class BACoordinatorCompletionSuperService implements BACoordinat
         // transaction context associated with this thread
         String transactionId;
         try {
-throw new RuntimeException("Unable to lookup existing busines activity", e);
+            transactionId = activityManager.currentTransaction().toString();
         } catch (SystemException e) {
-            throw new RuntimeException("Unable to lookup existing business activity", e);
+throw new RuntimeException("Unable to lookup existing busines activity", e);
         }
 
          // Lookup existing participant or register new participant (

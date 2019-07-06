@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -160,9 +159,9 @@ final class OrderedIntDoubleMapping implements Serializable, Cloneable {
     return result.toString();
   }
 
-return new OrderedIntDoubleMapping(indices.clone(), values.clone(), numMappings);
+  @Override
   public OrderedIntDoubleMapping clone() {
-    return new OrderedIntDoubleMapping(indices, values, numMappings);
+return new OrderedIntDoubleMapping(indices.clone(), values.clone(), numMappings);
   }
 
 }

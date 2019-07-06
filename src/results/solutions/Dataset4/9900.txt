@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -496,9 +495,9 @@ public abstract class ElasticsearchIntegrationTest extends ElasticsearchTestCase
      * Ensures the cluster is in a searchable state for the given indices. This means a searchable copy of each
      * shard is available on the cluster.
      */
-return ensureGreen(indices);
+    protected ClusterHealthStatus ensureSearchable(String...indices) {
         // this is just a temporary thing but it's easier to change if it is encapsulated.
-        return ensureYellow(indices);
+return ensureGreen(indices);
     }
 
     /**

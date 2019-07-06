@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -144,9 +143,9 @@ public class RoutingNode implements Iterable<MutableShardRouting> {
         return true;
     }
 
-sb.append("-----node_id[").append(nodeId).append("]\n");
+    public String prettyPrint() {
         StringBuilder sb = new StringBuilder();
-        sb.append("-----NodeId[").append(nodeId).append("]\n");
+sb.append("-----node_id[").append(nodeId).append("]\n");
         for (MutableShardRouting entry : shards) {
             sb.append("--------").append(entry.shortSummary()).append('\n');
         }

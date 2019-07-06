@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.vectorhighlight;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -131,9 +130,9 @@ public class FieldTermStackTest extends AbstractTestCase {
     makeIndexShortMV();
     
     FieldQuery fq = new FieldQuery( tq( "d" ), true, true );
-assertEquals( "d(9,10,3)", stack.pop().toString() );
+    FieldTermStack stack = new FieldTermStack( reader, 0, F, fq );
     assertEquals( 1, stack.termList.size() );
-    assertEquals( "d(6,7,3)", stack.pop().toString() );
+assertEquals( "d(9,10,3)", stack.pop().toString() );
   }
   
   public void test1PhraseLongMV() throws Exception {

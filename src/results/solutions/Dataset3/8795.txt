@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -206,9 +205,9 @@ public class UndertowDeploymentProcessor implements DeploymentUnitProcessor {
         final ServiceName hostServiceName = UndertowService.virtualHostName(serverInstanceName, hostName);
         TldsMetaData tldsMetaData = deploymentUnit.getAttachment(TldsMetaData.ATTACHMENT_KEY);
         UndertowDeploymentInfoService undertowDeploymentInfoService = UndertowDeploymentInfoService.builder()
-.setDeploymentName(pathName) //todo: is this deployment name concept really applicable?
+                        .setAttributes(deploymentUnit.getAttachment(ServletContextAttribute.ATTACHMENT_KEY))
                 .setContextPath(pathName)
-                .setDeploymentName(deploymentUnit.getName())
+.setDeploymentName(pathName) //todo: is this deployment name concept really applicable?
                 .setDeploymentRoot(deploymentRoot)
                 .setMergedMetaData(warMetaData.getMergedJBossWebMetaData())
                 .setModule(module)

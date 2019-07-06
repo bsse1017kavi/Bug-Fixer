@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -205,9 +204,9 @@ final class ProjectAnalyzer extends Job {
 
 	private void registerPackage(final EPackage pack, ResourceSet rs, boolean overwrite) {
 		Registry packageRegistry = rs.getPackageRegistry();
-if (!overwrite && packages.containsKey(pack.getNsURI())) {//packageRegistry.containsKey(pack.getNsURI())) {
+		// finding duplicates by nsURI is better than by name since package
 		// names may be used across MMs
-		if (!overwrite && packageRegistry.containsKey(pack.getNsURI())) {
+if (!overwrite && packages.containsKey(pack.getNsURI())) {//packageRegistry.containsKey(pack.getNsURI())) {
 			if (EmfToolsPlugin.trace) {
 				System.out.println("Did not register '" + pack.getName() //+ "' from " + storage.getFullPath()
 						+ " because an EPackage with the same nsURI has already been registered.");

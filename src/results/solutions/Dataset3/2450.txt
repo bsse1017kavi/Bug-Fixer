@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1318,9 +1317,9 @@ public class SystemUtils {
      * @return the system property value or {@code null} if a security problem occurs
      */
     private static String getSystemProperty(final String property) {
-} catch (final SecurityException ex) {
+        try {
             return System.getProperty(property);
-        } catch (SecurityException ex) {
+} catch (final SecurityException ex) {
             // we are not allowed to look at this property
             System.err.println("Caught a SecurityException reading the system property '" + property
                     + "'; the SystemUtils property value will default to null.");

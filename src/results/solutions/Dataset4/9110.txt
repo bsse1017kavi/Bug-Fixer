@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -91,9 +90,9 @@ public class RestDeleteAction extends BaseRestHandler {
                     RestStatus status = OK;
                     if (result.isNotFound()) {
                         status = NOT_FOUND;
-} catch (Throwable e) {
+                    }
                     channel.sendResponse(new XContentRestResponse(request, status, builder));
-                } catch (Exception e) {
+} catch (Throwable e) {
                     onFailure(e);
                 }
             }

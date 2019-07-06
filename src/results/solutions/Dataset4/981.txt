@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -32,9 +31,9 @@ public class ParticleEffectPool extends Pool<PooledEffect> {
 		return new PooledEffect(effect);
 	}
 
-effect.reset();
+	public PooledEffect obtain () {
 		PooledEffect effect = super.obtain();
-		effect.start();
+effect.reset();
 		return effect;
 	}
 

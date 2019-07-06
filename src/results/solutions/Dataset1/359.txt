@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -786,9 +785,9 @@ public class Grouping {
         // The only option I currently see is the use the FieldType for this
         if (group.groupValue != null) {
           SchemaField schemaField = searcher.getSchema().getField(groupBy);
-IndexableField field = schemaField.createField(readableValue, 1.0f);
+          FieldType fieldType = schemaField.getType();
           String readableValue = fieldType.indexedToReadable(group.groupValue.utf8ToString());
-          IndexableField field = schemaField.createField(readableValue, 0.0f);
+IndexableField field = schemaField.createField(readableValue, 1.0f);
           nl.add("groupValue", fieldType.toObject(field));
         } else {
           nl.add("groupValue", null);

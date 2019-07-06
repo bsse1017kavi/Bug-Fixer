@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -166,9 +165,9 @@ public class XContentDocumentMapperParser extends AbstractIndexComponent impleme
         }
         docBuilder.attributes(attributes);
 
-documentMapper.refreshSource();
+        XContentDocumentMapper documentMapper = docBuilder.build();
         // update the source with the generated one
-        documentMapper.mappingSource(documentMapper.buildSource());
+documentMapper.refreshSource();
         return documentMapper;
     }
 

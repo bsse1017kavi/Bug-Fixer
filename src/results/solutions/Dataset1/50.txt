@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.memory;
 
 /*
@@ -1147,9 +1146,9 @@ public class MemoryIndex {
     private NumericDocValues cachedNormValues;
     private String cachedFieldName;
     private Similarity cachedSimilarity;
-public NumericDocValues getNormValues(String field) {
+    
     @Override
-    public NumericDocValues simpleNormValues(String field) {
+public NumericDocValues getNormValues(String field) {
       if (fieldInfos.get(field).omitsNorms())
         return null;
       NumericDocValues norms = cachedNormValues;

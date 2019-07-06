@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -39,9 +38,9 @@ newRecord(dnsName name, short type, short dclass, int ttl, int length,
 	dnsRecord rec;
 	try {
 		Class rrclass;
-rrclass = Class.forName("DNS.dns" + s + "Record");
+		Constructor m;
 
-		rrclass = Class.forName("dns" + s + "Record");
+rrclass = Class.forName("DNS.dns" + s + "Record");
 		m = rrclass.getConstructor(new Class [] {
 						dnsName.class,
 						Short.TYPE,

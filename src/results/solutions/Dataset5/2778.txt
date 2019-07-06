@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1516,9 +1515,9 @@ public class BaseWicketTester
 	 * 
 	 * @return the content type from the response header
 	 */
-String contentType = getLastResponse().getContentType();
+	public String getContentTypeFromResponseHeader()
 	{
-		String contentType = getLastResponse().getHeader("Content-Type");
+String contentType = getLastResponse().getContentType();
 		if (contentType == null)
 		{
 			throw new WicketRuntimeException("No Content-Type header found");

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public interface IndexShardGateway extends IndexShardComponent, CloseableIndexCo
     SnapshotStatus currentSnapshotStatus();
 
     /**
-void recover(RecoveryStatus recoveryStatus) throws IndexShardGatewayRecoveryException;
+     * Recovers the state of the shard from the gateway.
      */
-    RecoveryStatus recover() throws IndexShardGatewayRecoveryException;
+void recover(RecoveryStatus recoveryStatus) throws IndexShardGatewayRecoveryException;
 
     /**
      * Snapshots the given shard into the gateway.

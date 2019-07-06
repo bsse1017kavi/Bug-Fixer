@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public abstract class InternalLZWInputStream extends CompressorInputStream {
     protected int[] prefixes;
     protected byte[] characters;
     private byte[] outputStack;
-protected InternalLZWInputStream(InputStream inputStream) {
+    private int outputStackLocation;
 
-    protected InternalLZWInputStream(InputStream inputStream) throws IOException {
+protected InternalLZWInputStream(InputStream inputStream) {
         this.in = inputStream;
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -44,8 +43,8 @@ public class RedirectPageRequestTarget extends AbstractListenerInterfaceRequestT
 	/**
 	 * @see wicket.request.target.mixin.IEventProcessor#processEvents(wicket.RequestCycle)
 	 */
-invokeInterface(getTarget(), getListenerMethod(), getPage());
+	public final void processEvents(final RequestCycle requestCycle)
 	{
-		invokeInterface(getComponent(), getListenerMethod(), getPage());
+invokeInterface(getTarget(), getListenerMethod(), getPage());
 	}	
 }

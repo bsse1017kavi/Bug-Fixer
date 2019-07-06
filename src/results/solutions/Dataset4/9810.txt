@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class RestGetSourceAction extends BaseRestHandler {
         getRequest.operationThreaded(true);
         getRequest.refresh(request.paramAsBoolean("refresh", getRequest.refresh()));
         getRequest.routing(request.param("routing"));  // order is important, set it after routing, so it will set the routing
-getRequest.realtime(request.paramAsBoolean("realtime", null));
+        getRequest.parent(request.param("parent"));
         getRequest.preference(request.param("preference"));
-        getRequest.realtime(request.paramAsBooleanOptional("realtime", null));
+getRequest.realtime(request.paramAsBoolean("realtime", null));
 
         getRequest.fetchSourceContext(FetchSourceContext.parseFromRestRequest(request));
 

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -77,9 +76,9 @@ public class RemotingSubsystemRootResource extends SimpleResourceDefinition {
     private void registerReadWriteIntAttribute(ManagementResourceRegistration resourceRegistration, AttributeDefinition attr) {
         resourceRegistration.registerReadWriteAttribute(attr, null, new ThreadWriteAttributeHandler(attr, processType));
     }
-return SimpleAttributeDefinitionBuilder.create(name, ModelType.INT, true).setDefaultValue(new ModelNode().set(defaultValue)).setXmlName(attribute.getLocalName()).setValidator(new IntRangeValidator(1, true)).build();
+
     private static SimpleAttributeDefinition createIntAttribute(String name, Attribute attribute, int defaultValue) {
-        return SimpleAttributeDefinitionBuilder.create(name, ModelType.INT, true).setDefaultValue(new ModelNode().set(defaultValue)).setXmlName(attribute.getLocalName()).setValidator(new IntRangeValidator(1)).build();
+return SimpleAttributeDefinitionBuilder.create(name, ModelType.INT, true).setDefaultValue(new ModelNode().set(defaultValue)).setXmlName(attribute.getLocalName()).setValidator(new IntRangeValidator(1, true)).build();
     }
 
     private static class ThreadWriteAttributeHandler extends RestartParentWriteAttributeHandler {

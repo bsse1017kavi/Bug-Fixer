@@ -1,4 +1,3 @@
-
 package org.jboss.as.connector.deployers.processors;
 
 import org.jboss.as.connector.metadata.xmldescriptors.ConnectorXmlDescriptor;
@@ -34,9 +33,9 @@ public class RarConfigProcessor implements DeploymentUnitProcessor {
     public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
         if(phaseContext.getDeploymentUnit().getAttachment(ConnectorXmlDescriptor.ATTACHMENT_KEY) == null) {
             return;  // Skip non ra deployments
-final ModuleLoader moduleLoader = Module.getBootModuleLoader();
+        }
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
-        final ModuleLoader moduleLoader = Module.getSystemModuleLoader();
+final ModuleLoader moduleLoader = Module.getBootModuleLoader();
         final ModuleSpecification moduleSpecification = deploymentUnit.getAttachment(Attachments.MODULE_SPECIFICATION);
         moduleSpecification.addDependency(new ModuleDependency(moduleLoader, JAVAX_ID, false, false, false));
         moduleSpecification.addDependency(new ModuleDependency(moduleLoader, LOGGING_ID, false, false, false));

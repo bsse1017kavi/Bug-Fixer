@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -77,9 +76,9 @@ public class ValidateQueryResponse extends BroadcastOperationResponse {
     public void readFrom(StreamInput in) throws IOException {
         super.readFrom(in);
         valid = in.readBoolean();
-queryExplanations = new ArrayList<>(size);
+        int size = in.readVInt();
         if (size > 0) {
-            queryExplanations = new ArrayList<QueryExplanation>(size);
+queryExplanations = new ArrayList<>(size);
             for (int i = 0; i < size; i++) {
                 queryExplanations.add(readQueryExplanation(in));
             }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -401,9 +400,9 @@ class TypeBinding implements ITypeBinding {
 
 	/**
 	 * @see org.eclipse.jdt.core.dom.ITypeBinding#getQualifiedName()
-if (isAnonymous() || isLocal() || isPrimitive() || isArray() || isNullType()) {
+	 */
 	public String getQualifiedName() {
-		if (isAnonymous() || isLocal()) {
+if (isAnonymous() || isLocal() || isPrimitive() || isArray() || isNullType()) {
 			return null;
 		}
 		StringBuffer buffer = new StringBuffer();

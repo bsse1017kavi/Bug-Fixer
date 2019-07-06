@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -116,9 +115,9 @@ protected void layout(Composite composite, boolean flushCache) {
 	rect.x += marginWidth;
 	rect.y += marginHeight;
 	rect.width -= 2 * marginWidth;
-if (children[i] == topControl) children[i].setBounds(rect);
+	rect.height -= 2 * marginHeight;
 	for (int i = 0; i < children.length; i++) {
-		children[i].setBounds(rect);
+if (children[i] == topControl) children[i].setBounds(rect);
 		children[i].setVisible(children[i] == topControl);
 			
 	}

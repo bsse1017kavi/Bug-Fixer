@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,9 +102,9 @@ public class TransportCountAction extends TransportBroadcastOperationAction<Coun
     }
 
     @Override
-return clusterService.operationRouting().searchShards(clusterState, request.indices(), concreteIndices, routingMap, null);
+    protected GroupShardsIterator shards(ClusterState clusterState, CountRequest request, String[] concreteIndices) {
         Map<String, Set<String>> routingMap = clusterState.metaData().resolveSearchRouting(request.routing(), request.indices());
-        return clusterService.operationRouting().searchShards(clusterState, request.indices(), concreteIndices, request.queryHint(), routingMap, null);
+return clusterService.operationRouting().searchShards(clusterState, request.indices(), concreteIndices, routingMap, null);
     }
 
     @Override

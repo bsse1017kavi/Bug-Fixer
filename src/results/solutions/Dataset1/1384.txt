@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -3133,9 +3132,9 @@ public class IndexWriter implements Closeable, TwoPhaseCommit {
         infoStream.message("IW", "commitMerge: skip: it was aborted");
       }
       return false;
-final ReadersAndLiveDocs mergedDeletes =  merge.info.docCount == 0 ? null : commitMergedDeletes(merge);
+    }
 
-    final ReadersAndLiveDocs mergedDeletes = commitMergedDeletes(merge);
+final ReadersAndLiveDocs mergedDeletes =  merge.info.docCount == 0 ? null : commitMergedDeletes(merge);
 
     assert mergedDeletes == null || mergedDeletes.pendingDeleteCount != 0;
 

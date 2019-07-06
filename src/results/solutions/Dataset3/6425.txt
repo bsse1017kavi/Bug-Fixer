@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import org.jboss.as.controller.SimpleResourceDefinition;
  *
  * @author <a href="http://jmesnil.net">Jeff Mesnil</a> (c) 2012 Red Hat Inc.
  */
-public static final SimpleAttributeDefinition SOCKET_BINDING = create("socket-binding", STRING)
+public class GenericTransportDefinition extends AbstractTransportDefinition {
 
-    public static final SimpleAttributeDefinition SOCKET_BINDING = create(CommonAttributes.SOCKET_BINDING, STRING)
+public static final SimpleAttributeDefinition SOCKET_BINDING = create("socket-binding", STRING)
             .setAllowNull(true)
             .setRestartAllServices()
             .build();

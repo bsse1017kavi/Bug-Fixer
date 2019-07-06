@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class NettyTransportChannel implements TransportChannel {
         sendResponse(message, TransportResponseOptions.EMPTY);
     }
 
-options.withCompress(true);
+    @Override public void sendResponse(Streamable message, TransportResponseOptions options) throws IOException {
         if (transport.compress) {
-            options.withCompress();
+options.withCompress(true);
         }
         byte[] data = TransportStreams.buildResponse(requestId, message, options);
         ChannelBuffer buffer = ChannelBuffers.wrappedBuffer(data);

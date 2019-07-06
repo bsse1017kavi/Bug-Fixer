@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
@@ -48,9 +47,9 @@ public class NamespaceImportStatement extends SyntaxElement {
 			} else {
 				knownNamespace = true;
 			}
-issues.add(new AnalysationIssue(AnalysationIssue.INTERNAL_ERROR, msg, this, true));
+			if (!knownNamespace) {
 				final String msg = "Namespace " + this.getImportedId().getValue() + " is unknown or unused.";
-				issues.add(new AnalysationIssue(AnalysationIssue.INTERNAL_ERROR, msg, this));
+issues.add(new AnalysationIssue(AnalysationIssue.INTERNAL_ERROR, msg, this, true));
 			}
 		}
 		finally {

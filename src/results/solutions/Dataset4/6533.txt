@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -215,9 +214,9 @@ public class XContentDocumentMapperParser extends AbstractIndexComponent impleme
     private AnalyzerMapper.Builder parseAnalyzerField(Map<String, Object> analyzerNode, XContentMapper.TypeParser.ParserContext parserContext) {
         AnalyzerMapper.Builder builder = analyzer();
         for (Map.Entry<String, Object> entry : analyzerNode.entrySet()) {
-if (fieldName.equals("path")) {
+            String fieldName = Strings.toUnderscoreCase(entry.getKey());
             Object fieldNode = entry.getValue();
-            if (fieldName.equals("field")) {
+if (fieldName.equals("path")) {
                 builder.field(fieldNode.toString());
             }
         }

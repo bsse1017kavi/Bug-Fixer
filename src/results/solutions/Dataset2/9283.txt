@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.xml;
 
 /* ================================================================
@@ -72,9 +71,9 @@ public class AttachmentPathRule extends BaseRule
      * @param text The text of the body of this element
      */
     public void body(String text) throws Exception
-if(getState().equals(XMLImport.STATE_DB_INSERTION))
+    {
         log().debug("(" + getState() + ") attachment path body: " + text);
-        if(getState().equals(DBImport.STATE_DB_INSERTION))
+if(getState().equals(XMLImport.STATE_DB_INSERTION))
         {
             Attachment attachment = (Attachment)digester.pop();
             attachment.setFilePath(text);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -54,9 +53,9 @@ public class JacksonTypesBenchmark {
     private final JsonType[] types;
 
     public JacksonTypesBenchmark(String jsonString) throws IOException {
-this.objectMapper = defaultObjectMapper();
+        Preconditions.checkNotNull(jsonString, "jsonString must have a value");
         this.jsonString = jsonString;
-        this.objectMapper = newObjectMapper();
+this.objectMapper = defaultObjectMapper();
         this.factor = 10;
         this.cycles = 10000;
 

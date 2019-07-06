@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -113,9 +112,9 @@ class ModClusterSubsystemAdd extends AbstractAddStepHandler {
             PathAddress parent = opAddress.append(ModClusterExtension.CONFIGURATION_PATH);
             ModelNode targetOperation = Util.createAddOperation(parent);
             for (AttributeDefinition def : ModClusterConfigResourceDefinition.ATTRIBUTES) {
-context.addStep(targetOperation, ModClusterConfigAdd.INSTANCE, OperationContext.Stage.MODEL, true);
+                def.validateAndSet(operation, targetOperation);
             }
-            context.addStep(targetOperation, ModClusterConfigAdd.INSTANCE, OperationContext.Stage.IMMEDIATE);
+context.addStep(targetOperation, ModClusterConfigAdd.INSTANCE, OperationContext.Stage.MODEL, true);
         }
     }
 

@@ -1,4 +1,3 @@
-
 package com.github.mobile.android;
 
 import android.test.AndroidTestCase;
@@ -10,9 +9,9 @@ public class GitHubApiTest extends AndroidTestCase {
 
     private static final String TAG = "GHAT";
 
-for (Repository repo : service.getRepositories("git")) {
+    public void testRepoApi() throws Exception {
         RepositoryService service = new RepositoryService();
-    	for (Repository repo : service.getRepositories("defunkt")) {
+for (Repository repo : service.getRepositories("git")) {
             Log.d(TAG, repo.getName() + " Watchers: " + repo.getWatchers());
         }
     }

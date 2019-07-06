@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -192,9 +191,9 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
 					log.warn("Error parsing XML results " + e);
 					log.info("Assuming CSV format instead");
 					dataReader = new BufferedReader(new FileReader(getFilename()));
-sendToVisualizer(OldSaveService.makeResultFromDelimitedString(line,getSaveConfig()));
+					String line;
 					while ((line = dataReader.readLine()) != null) {
-						sendToVisualizer(OldSaveService.makeResultFromDelimitedString(line));
+sendToVisualizer(OldSaveService.makeResultFromDelimitedString(line,getSaveConfig()));
 					}
 					parsedOK = true;
 				}

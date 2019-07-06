@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -93,9 +92,9 @@ public class SourceHttpMessageConverterTests {
 		rootElement.setTextContent("Hello World");
 		DOMSource domSource = new DOMSource(document);
 
-converter.write(domSource, null, outputMessage);
+		SourceHttpMessageConverter<Source> converter = new SourceHttpMessageConverter<Source>();
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
-		converter.write(domSource, outputMessage);
+converter.write(domSource, null, outputMessage);
 		assertXMLEqual("Invalid result", "<root>Hello World</root>",
 				outputMessage.getBodyAsString(Charset.forName("UTF-8")));
 		assertEquals("Invalid content-type", new MediaType("application", "xml"),

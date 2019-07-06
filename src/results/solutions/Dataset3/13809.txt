@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class EJB3IIOPAdd extends AbstractBoottimeAddStepHandler {
         final Boolean useQualifiedName = EJB3IIOPResourceDefinition.USE_QUALIFIED_NAME.resolveModelAttribute(context, model).asBoolean();
         final IIOPSettingsService settingsService = new IIOPSettingsService(enableByDefault, useQualifiedName);
         context.addStep(new AbstractDeploymentChainStep() {
-processorTarget.addDeploymentProcessor(EJB3Extension.SUBSYSTEM_NAME, Phase.POST_MODULE, Phase.POST_MODULE_EJB_IIOP, new EjbIIOPDeploymentUnitProcessor(settingsService));
+            protected void execute(DeploymentProcessorTarget processorTarget) {
                 ROOT_LOGGER.debug("Adding EJB IIOP support");
-                    processorTarget.addDeploymentProcessor(Phase.POST_MODULE, Phase.POST_MODULE_EJB_IIOP, new EjbIIOPDeploymentUnitProcessor(settingsService));
+processorTarget.addDeploymentProcessor(EJB3Extension.SUBSYSTEM_NAME, Phase.POST_MODULE, Phase.POST_MODULE_EJB_IIOP, new EjbIIOPDeploymentUnitProcessor(settingsService));
             }
         }, OperationContext.Stage.RUNTIME);
 

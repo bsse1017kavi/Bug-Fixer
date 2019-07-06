@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -23,9 +22,9 @@ int timeoutValue = 60 * 1000;
 static String defaultResolver = "localhost";
 
 public
-hostname = FindServer.server();
+SimpleResolver(String hostname) throws UnknownHostException {
 	if (hostname == null) {
-		hostname = FindServer.find1();
+hostname = FindServer.server();
 		if (hostname == null)
 			hostname = defaultResolver;
 	}

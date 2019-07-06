@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -66,9 +65,9 @@ public class RemoteChannelProxyControllerTestCase extends AbstractProxyControlle
         final Channel clientChannel = channels.getClientChannel();
         final RemoteProxyController proxyController = RemoteProxyController.create(channels.getExecutorService(), proxyNodeAddress, ProxyOperationAddressTranslator.SERVER, channels.getClientChannel());
         clientChannel.addCloseHandler(new CloseHandler<Channel>() {
-proxyController.shutdownNow();
+            @Override
             public void handleClose(Channel closed, IOException exception) {
-                proxyController.shutdown();
+proxyController.shutdownNow();
             }
         });
         clientChannel.receiveMessage(ManagementChannelReceiver.createDelegating(proxyController));

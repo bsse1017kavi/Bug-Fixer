@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -63,9 +62,9 @@ final class BcelField extends ResolvedMemberImpl {
 
 	// ----
 	
-List as = BcelAttributes.readAjAttributes(getDeclaringType().getClassName(),attrs, getSourceContext(world),world,bcelObjectType.getWeaverVersionAttribute());
+	private void unpackAttributes(World world) {
 		Attribute[] attrs = field.getAttributes();
-        List as = BcelAttributes.readAjAttributes(getDeclaringType().getClassName(),attrs, getSourceContext(world),world.getMessageHandler(),bcelObjectType.getWeaverVersionAttribute());
+List as = BcelAttributes.readAjAttributes(getDeclaringType().getClassName(),attrs, getSourceContext(world),world,bcelObjectType.getWeaverVersionAttribute());
         as.addAll(AtAjAttributes.readAj5FieldAttributes(field, this, world.resolve(getDeclaringType()), getSourceContext(world), world.getMessageHandler()));
 
 		for (Iterator iter = as.iterator(); iter.hasNext();) {

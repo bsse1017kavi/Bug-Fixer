@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -30,9 +29,9 @@ import org.apache.jmeter.threads.JMeterVariables;
  */
 public class VariablesCollection implements Serializable {
 
-private final Map<String, JMeterVariables> varMap = new HashMap<String, JMeterVariables>();
+    private static final long serialVersionUID = 240L;
 
-    private Map<String, JMeterVariables> varMap = new HashMap<String, JMeterVariables>();
+private final Map<String, JMeterVariables> varMap = new HashMap<String, JMeterVariables>();
 
     public void addJMeterVariables(JMeterVariables jmVars) {
         varMap.put(Thread.currentThread().getName(), jmVars);

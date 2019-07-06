@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.fr;
 
 /**
@@ -106,9 +105,9 @@ public final class FrenchStemFilter extends TokenFilter {
 	 * Set an alternative exclusion list for this filter.
    * @deprecated use {@link KeywordAttribute} with {@link KeywordMarkerFilter} instead.
 	 */
-exclusions = exclusiontable.keySet();
+	@Deprecated // TODO remove in 3.2
 	public void setExclusionTable( Map<?,?> exclusiontable ) {
-		exclusions = new HashSet(exclusiontable.keySet());
+exclusions = exclusiontable.keySet();
 	}
 }
 

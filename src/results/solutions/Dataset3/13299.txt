@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1049,9 +1048,9 @@ public class PatriciaTrie<K, V> extends PatriciaTrieBase<K, V> implements Trie<K
             private EntryIterator(
                     TrieEntry<K,V> first, 
                     TrieEntry<K,V> last) {
-this.excludedKey = last != null ? last.getKey() : null;
+                super(first);
                 
-                this.excludedKey = (last != null ? last.getKey() : null);
+this.excludedKey = last != null ? last.getKey() : null;
             }
 
             /**

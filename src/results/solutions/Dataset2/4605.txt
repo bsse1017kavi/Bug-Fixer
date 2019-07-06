@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -134,9 +133,9 @@ void branchWide() {
 		// Leave 4 bytes free to generate the jump offset afterwards
 		this.tagBits |= WIDE;
 		codeStream.position += 4;
-codeStream.writeWidePosition(this);
+		codeStream.classFileOffset += 4;
 	} else { //Position is set. Write it!
-		codeStream.writeWidePosition(position - codeStream.position + 1);
+codeStream.writeWidePosition(this);
 	}
 }
 

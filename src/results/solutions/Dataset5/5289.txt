@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -95,9 +94,9 @@ public final class SignIn extends WicketExamplePage
                     properties.getString("password")))
             {
                 final RequestCycle cycle = getRequestCycle();
-cycle.setResponsePage(new Home(PageParameters.NULL));
+                if (!cycle.continueToOriginalDestination())
                 {
-                    cycle.setPage(new Home(PageParameters.NULL));
+cycle.setResponsePage(new Home(PageParameters.NULL));
                 }
             }
             else

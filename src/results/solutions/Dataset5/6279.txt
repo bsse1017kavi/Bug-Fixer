@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -464,9 +463,9 @@ LRESULT WM_SIZE (int wParam, int lParam) {
 }
 
 LRESULT wmScrollChild (int wParam, int lParam) {
-int code = OS.LOWORD (wParam);
+	
 	/* Do nothing when scrolling is ending */
-	int code = wParam & 0xFFFF;
+int code = OS.LOWORD (wParam);
 	switch (code) {
 		case OS.TB_ENDTRACK:
 		case OS.TB_THUMBPOSITION:

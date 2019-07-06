@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -182,9 +181,9 @@ public class MulticastZenPing extends AbstractLifecycleComponent<ZenPing> implem
             datagramPacketSend = null;
             if (multicastSocket != null) {
                 multicastSocket.close();
-logger.warn("disabled, failed to setup multicast discovery on port [{}], [{}]: {}", port, multicastInterface, e.getMessage());
+                multicastSocket = null;
             }
-            logger.warn("disabled, failed to setup multicast discovery on {}: {}", multicastInterface, e.getMessage());
+logger.warn("disabled, failed to setup multicast discovery on port [{}], [{}]: {}", port, multicastInterface, e.getMessage());
             if (logger.isDebugEnabled()) {
                 logger.debug("disabled, failed to setup multicast discovery on {}", e, multicastInterface);
             }

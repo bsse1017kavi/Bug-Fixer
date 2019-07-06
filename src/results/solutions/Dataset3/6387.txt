@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -397,9 +396,9 @@ public class StandaloneXml extends CommonXml {
         Set<String> deploymentNames = modelNode.keys();
         if (deploymentNames.size() > 0) {
             boolean deploymentWritten = false;
-if(deployment.hasDefined(PERSISTENT) && !deployment.get(PERSISTENT).asBoolean()) {
+            for (String uniqueName : deploymentNames) {
                 final ModelNode deployment = modelNode.get(uniqueName);
-                if(!deployment.get(PERSISTENT).asBoolean()) {
+if(deployment.hasDefined(PERSISTENT) && !deployment.get(PERSISTENT).asBoolean()) {
                     continue;
                 }
                 if(!deploymentWritten) {

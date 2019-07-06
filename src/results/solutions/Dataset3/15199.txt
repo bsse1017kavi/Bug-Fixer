@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public class FrameworkActivateProcessor implements DeploymentUnitProcessor {
         for (AnnotationInstance instance : annotationList) {
             AnnotationTarget target = instance.target();
             if (target instanceof FieldInfo) {
-if (typeName.startsWith("org.osgi.framework") || typeName.startsWith("org.osgi.service")) {
+                FieldInfo fieldInfo = (FieldInfo) target;
                 String typeName = fieldInfo.type().toString();
-                if (typeName.startsWith("org.osgi.framework")) {
+if (typeName.startsWith("org.osgi.framework") || typeName.startsWith("org.osgi.service")) {
                     LOGGER.debugf("OSGi injection point of type '%s' detected: %s", typeName, fieldInfo.declaringClass());
                     result = true;
                     break;

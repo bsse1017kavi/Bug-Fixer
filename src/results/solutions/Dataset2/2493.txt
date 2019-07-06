@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -21,9 +20,9 @@ public class AboutAction extends Action {
 /**
  * Creates a new <code>AboutAction</code> with the given label
  */
-AboutInfo aboutInfo = ((Workbench) PlatformUI.getWorkbench()).getConfigurationInfo().getAboutInfo();
+public AboutAction(IWorkbenchWindow window) {
 	this.workbenchWindow = window;
-	AboutInfo aboutInfo = ((Workbench) PlatformUI.getWorkbench()).getAboutInfo();
+AboutInfo aboutInfo = ((Workbench) PlatformUI.getWorkbench()).getConfigurationInfo().getAboutInfo();
 	String productName = aboutInfo.getProductName();
 	if (productName == null) {
 		productName = ""; //$NON-NLS$

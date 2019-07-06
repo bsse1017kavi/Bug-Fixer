@@ -1,4 +1,3 @@
-
 // Copyright (c) 2002-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -379,9 +378,9 @@ follow(Name name, Name oldname) {
 		done = true;
 		return;
 	}
-aliases.add(oldname);
+	if (aliases == null)
 		aliases = new ArrayList();
-	aliases.add(name);
+aliases.add(oldname);
 	lookup(name);
 }
 

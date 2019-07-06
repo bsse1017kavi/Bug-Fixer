@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -78,9 +77,9 @@ public class ContainerWithAssociatedMarkupHelper extends AbstractBehavior
 
 		// Position pointer at current (first) header
 		noMoreWicketHeadTagsAllowed = false;
-Class<?> markupClass = markupStream.getTag().getMarkupClass();
+		while (nextHeaderMarkup(markupStream) != -1)
 		{
-			Class<?> markupClass = ((WicketTag)markupStream.getTag()).getMarkupClass();
+Class<?> markupClass = markupStream.getTag().getMarkupClass();
 			if (markupClass == null)
 			{
 				markupClass = markupStream.getContainerClass();

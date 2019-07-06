@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -59,9 +58,9 @@ public abstract class AbstractIndexer implements IIndexConstants {
 	}
 	public void addFieldReference(char[] fieldName) {
 		addIndexEntry(FIELD_REF, FieldPattern.createIndexKey(fieldName));
-SearchParticipant.addIndexEntry(category, key, this.document, this.indexPath);
+	}
 	protected void addIndexEntry(char[] category, char[] key) {
-		SearchParticipant.addIndexEntry(category, key, this.document.getPath(), this.indexPath);
+SearchParticipant.addIndexEntry(category, key, this.document, this.indexPath);
 	}
 	public void addInterfaceDeclaration(int modifiers, char[] packageName, char[] name, char[][] enclosingTypeNames, char[][] superinterfaces) {
 		addIndexEntry(TYPE_DECL, TypeDeclarationPattern.createIndexKey(packageName, enclosingTypeNames, name, false));

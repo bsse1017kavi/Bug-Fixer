@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -98,9 +97,9 @@ public class LocalDomainControllerClient implements DomainControllerClient {
         final R result = null;  // TODO execute update
         return new ModelUpdateResponse<R>(result);
     }
-ManagedServer server = serverManager.getServer(serverName);
+
     private <R> ModelUpdateResponse<R> executeUpdate(final AbstractServerModelUpdate<R> update, final String serverName) {
-        Server server = serverManager.getServer(serverName);
+ManagedServer server = serverManager.getServer(serverName);
         if (server == null) {
             // TODO better handle removal of server while client is concurrently
             // processing results

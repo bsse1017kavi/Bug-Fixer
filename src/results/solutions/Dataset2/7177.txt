@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2003 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -1263,9 +1262,9 @@ public class CoreHelper {
     public Collection getAllPossibleNamespaces(MModelElement m) {
         List ret = new ArrayList();
         if (m == null)
-ProjectManager.getManager().getCurrentProject().getRoot();
+            return ret;
         MNamespace model =
-            ProjectManager.getManager().getCurrentProject().getModel();
+ProjectManager.getManager().getCurrentProject().getRoot();
         if (isValidNamespace(m, model))
             ret.add(model);
         Iterator it =

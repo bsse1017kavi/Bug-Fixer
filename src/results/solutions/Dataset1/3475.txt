@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene41;
 
 /*
@@ -129,9 +128,9 @@ public class Lucene41Codec extends Codec {
 
   private final PostingsFormat defaultFormat = PostingsFormat.forName("Lucene41");
   // nocommit
-private final NormsFormat simpleNormsFormat = new Lucene41NormsFormat();
+  private final DocValuesFormat defaultDVFormat = DocValuesFormat.forName("Lucene41");
 
-  private final NormsFormat simpleNormsFormat = new Lucene41SimpleNormsFormat();
+private final NormsFormat simpleNormsFormat = new Lucene41NormsFormat();
 
   @Override
   public NormsFormat normsFormat() {

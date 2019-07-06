@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public class HttpRequestHdr {
 	 * Optionally number the requests
 	 */
 	private static final boolean numberRequests = 
-private static volatile int requestNumber = 0;// running number
+        JMeterUtils.getPropDefault("proxy.number.requests", false); // $NON-NLS-1$
 
-	private static int requestNumber = 0;// running number
+private static volatile int requestNumber = 0;// running number
 
 	public HttpRequestHdr() {
 		this.sampler = HTTPSamplerFactory.newInstance();

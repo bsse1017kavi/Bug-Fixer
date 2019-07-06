@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -157,9 +156,9 @@ public class DefaultHornetQProviderJMSOperations implements JMSOperations {
         removeResourceAdapterOp.get(ClientConstants.OP_ADDR).add("system-property", "resource.adapter");
 
         final ModelNode disableSubstitutionOp = new ModelNode();
-disableSubstitutionOp.get(NAME).set("ejb-annotationr-property-replacement");
+        disableSubstitutionOp.get(OP_ADDR).set(SUBSYSTEM, "ee");
         disableSubstitutionOp.get(OP).set(WRITE_ATTRIBUTE_OPERATION);
-        disableSubstitutionOp.get(NAME).set("ejb-annotation-property-replacement");
+disableSubstitutionOp.get(NAME).set("ejb-annotationr-property-replacement");
         disableSubstitutionOp.get(VALUE).set(false);
 
         try {

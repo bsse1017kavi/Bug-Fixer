@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public interface IResourceListener extends IRequestListener
 {
 	/** Resource listener interface object */
 	public static final RequestListenerInterface INTERFACE = new RequestListenerInterface(
-public IRequestTarget newRequestTarget(Page page, Component< ? > component,
+			IResourceListener.class)
 	{
-		public IRequestTarget newRequestTarget(Page page, Component component,
+public IRequestTarget newRequestTarget(Page page, Component< ? > component,
 				RequestListenerInterface listener, RequestParameters requestParameters)
 		{
 			return new ComponentResourceRequestTarget(page, component, listener);

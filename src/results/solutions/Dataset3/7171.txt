@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -41,9 +40,9 @@ public class ServerInterfaceElement extends AbstractInterfaceElement<ServerInter
      * @throws NullPointerException if {@code fullySpecified} is {@code null}
      * @throws IllegalArgumentException if {@code fullySpecified.isFullySpecified()}
      *             returns {@code false}.
-super(fullySpecified);
+     */
     public ServerInterfaceElement(InterfaceElement fullySpecified) {
-        super(fullySpecified.getName(), fullySpecified.getCriteriaElements());
+super(fullySpecified);
         if (!fullySpecified.isFullySpecified()) {
             throw new IllegalArgumentException(fullySpecified + " is not fully specified");
         }

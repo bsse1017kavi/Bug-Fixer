@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -49,9 +48,9 @@ public class DetachedValueStateManager
     private StoreContext _ctx;
     private ClassMetaData _meta;
 
-getMetaDataRepositoryInstance().getMetaData(pc.getClass(),
+    public DetachedValueStateManager(Object pc, StoreContext ctx) {
         this((PersistenceCapable) pc, ctx.getConfiguration().
-            getMetaDataRepository().getMetaData(pc.getClass(),
+getMetaDataRepositoryInstance().getMetaData(pc.getClass(),
             ctx.getClassLoader(), true), ctx);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -295,9 +294,9 @@ public class DBDictionaryFactory {
      * database metadata.
      */
     public static String toString(DatabaseMetaData meta)
-StringBuilder buf = new StringBuilder(4096);
+        throws SQLException {
         String lineSep = J2DoPrivHelper.getLineSeparator();
-        StringBuffer buf = new StringBuffer();
+StringBuilder buf = new StringBuilder(4096);
         try {
             buf.append("catalogSeparator: ")
                 .append(meta.getCatalogSeparator())

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -113,9 +112,9 @@ public class TermsFacetProcessor extends AbstractComponent implements FacetProce
                     allTerms = parser.booleanValue();
                 } else if ("regex".equals(currentFieldName)) {
                     regex = parser.text();
-} else if ("order".equals(currentFieldName) || "comparator".equals(currentFieldName)) {
+                } else if ("regex_flags".equals(currentFieldName) || "regexFlags".equals(currentFieldName)) {
                     regexFlags = parser.text();
-                } else if ("order".equals(currentFieldName) || "comparator".equals(field)) {
+} else if ("order".equals(currentFieldName) || "comparator".equals(currentFieldName)) {
                     comparatorType = TermsFacet.ComparatorType.fromString(parser.text());
                 } else if ("script".equals(currentFieldName)) {
                     script = parser.text();

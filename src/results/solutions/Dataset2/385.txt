@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2393,9 +2392,9 @@ public abstract class Scope
 					ImportReference importReference = ((ImportBinding) binding).reference;
 					if (importReference != null) importReference.used = true;
 					typeOrPackageCache.put(name, binding = ((ImportBinding) binding).resolvedImport); // already know its visible
-if (foundType != null && foundType.problemId() != NotVisible && binding.problemId() != Ambiguous)
+				}
 				if ((mask & Binding.TYPE) != 0) {
-					if (foundType != null && binding.problemId() != Ambiguous)
+if (foundType != null && foundType.problemId() != NotVisible && binding.problemId() != Ambiguous)
 						return foundType; // problem type from above supercedes NotFound type but not Ambiguous import case
 					if (binding instanceof ReferenceBinding)
 						return binding; // cached type found in previous walk below

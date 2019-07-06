@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 import java.net.*;
@@ -91,9 +90,9 @@ update(InputStream in) throws IOException {
 			else if (operation.equals("key")) {
 				String keyname = st.getString();
 				String keydata = st.getString();
-res.setTSIGKey(new TSIG(keyname, keydata));
+				if (res == null)
 					res = new SimpleResolver(server);
-				res.setTSIGKey(keyname, keydata);
+res.setTSIGKey(new TSIG(keyname, keydata));
 			}
 
 			else if (operation.equals("edns")) {

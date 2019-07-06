@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -77,9 +76,9 @@ public class MapAccessTests extends ExpressionTestCase {
 		public boolean canRead(EvaluationContext context, Object target, String name) throws AccessException {
 			return (((Map) target).containsKey(name));
 		}
-return new TypedValue(((Map) target).get(name), TypeDescriptor.OBJECT);
+
 		public TypedValue read(EvaluationContext context, Object target, String name) throws AccessException {
-			return new TypedValue(((Map) target).get(name), TypeDescriptor.valueOf(Object.class));
+return new TypedValue(((Map) target).get(name), TypeDescriptor.OBJECT);
 		}
 
 		public boolean canWrite(EvaluationContext context, Object target, String name) throws AccessException {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -187,9 +186,9 @@ public class CommandCommandHandler extends CommandHandlerWithHelp {
 
             if(cmdRegistry.getCommandHandler(cmdName) != null) {
                 ctx.printLine("Command '" + cmdName + "' already registered.");
-cmdRegistry.registerHandler(new GenericTypeOperationHandler(ctx, nodePath, propName), cmdName);
+                return;
             }
-            cmdRegistry.registerHandler(new GenericTypeOperationHandler(nodePath, propName), cmdName);
+cmdRegistry.registerHandler(new GenericTypeOperationHandler(ctx, nodePath, propName), cmdName);
             return;
         }
 

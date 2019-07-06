@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -44,9 +43,9 @@ public class OptionsItem implements CheckableItem {
  * @see org.columba.core.gui.checkablelist.CheckableItem#isSelected()
  */
     public boolean isSelected() {
-return item.getBooleanWithDefault("overwrite", false);
+        IDefaultItem item = new DefaultItem(element);
 
-        return item.getBoolean("overwrite", false);
+return item.getBooleanWithDefault("overwrite", false);
     }
 
     /**

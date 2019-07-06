@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public class NativeApiUtilsForPatching {
         final ModelNode readOp = new ModelNode();
         readOp.get(ModelDescriptionConstants.OP_ADDR).add("core-service", "patching");
         readOp.get(ModelDescriptionConstants.OP).set("show-history");
-if (item.get("patch-id").asString().equalsIgnoreCase(patchId))
+        List<ModelNode> list = client.execute(readOp).get("result").asList();
         for (ModelNode item : list) {
-            if (item.get("one-off").asString().equalsIgnoreCase(patchId))
+if (item.get("patch-id").asString().equalsIgnoreCase(patchId))
                 return item;
         }
         return null;

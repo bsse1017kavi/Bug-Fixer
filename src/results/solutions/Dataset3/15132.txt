@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -82,9 +81,9 @@ public class JmsListenerContainerFactoryIntegrationTests {
 	}
 
 	@SuppressWarnings("unchecked")
-containerFactory.createListenerContainer(endpoint);
+	private void invokeListener(JmsListenerEndpoint endpoint, Message message) throws JMSException {
 		DefaultMessageListenerContainer messageListenerContainer =
-				containerFactory.createMessageListenerContainer(endpoint);
+containerFactory.createListenerContainer(endpoint);
 		Object listener = messageListenerContainer.getMessageListener();
 		if (listener instanceof SessionAwareMessageListener) {
 			((SessionAwareMessageListener<Message>) listener).onMessage(message, mock(Session.class));

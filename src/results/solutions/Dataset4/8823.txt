@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -136,9 +135,9 @@ public class MetaDataUpdateSettingsService extends AbstractComponent implements 
 
         final Settings closeSettings = updatedSettingsBuilder.build();
 
-if (!IndexMetaData.hasDynamicSetting(key)) {
+        final Set<String> removedSettings = Sets.newHashSet();
         for (String key : updatedSettingsBuilder.internalMap().keySet()) {
-            if (!IndexMetaData.dynamicSettings().contains(key)) {
+if (!IndexMetaData.hasDynamicSetting(key)) {
                 removedSettings.add(key);
             }
         }

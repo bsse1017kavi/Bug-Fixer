@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -65,9 +64,9 @@ final class JFaceUtil {
 		
 		Policy.setStatusHandler(new StatusHandler() {
 			public void show(IStatus status, String title) {
-StatusManager.getManager().handle(statusAdapter, StatusManager.SHOW);
+				StatusAdapter statusAdapter = new StatusAdapter(status);
 				statusAdapter.setProperty(StatusAdapter.TITLE_PROPERTY, title);
-				StatusManager.getManager().handle(statusAdapter, StatusManager.BLOCK);
+StatusManager.getManager().handle(statusAdapter, StatusManager.SHOW);
 			}
 		});
 

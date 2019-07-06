@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class NewDeploymentSubsystemAdd implements ModelAddOperationHandler {
 
     /** {@inheritDoc} */
     public Cancellable execute(NewOperationContext context, ModelNode operation, ResultHandler resultHandler) {
-context.getSubModel().get(CommonAttributes.DEPLOYMENT_SCANNER).setEmptyObject();
+
         // Initialize the scanner
-        context.getSubModel().get(CommonAttributes.DEPLOYMENT_SCANNER);
+context.getSubModel().get(CommonAttributes.DEPLOYMENT_SCANNER).setEmptyObject();
 
         final ModelNode compensatingOperation = new ModelNode();
         compensatingOperation.get(OP).set("remove");

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public final class AddConnectorUpdate extends AbstractRemotingSubsystemUpdate<Vo
         final ServiceName connectorName = ConnectorElement.connectorName(name);
         final BatchServiceBuilder<ChannelListener<ConnectedStreamChannel<InetSocketAddress>>> serviceBuilder = batchBuilder.addService(connectorName, connectorService);
         serviceBuilder.addDependency(connectorName.append("auth-provider"), ServerAuthenticationProvider.class, connectorService.getAuthenticationProviderInjector());
-serviceBuilder.setInitialMode(ServiceController.Mode.ACTIVE);
+        serviceBuilder.addDependency(RemotingSubsystemElement.JBOSS_REMOTING_ENDPOINT, Endpoint.class, connectorService.getEndpointInjector());
         serviceBuilder.addListener(listener);
-        serviceBuilder.setInitialMode(ServiceController.Mode.IMMEDIATE);
+serviceBuilder.setInitialMode(ServiceController.Mode.ACTIVE);
 
         // TODO create XNIO connector service from socket-binding, with dependency on connectorName
         try {

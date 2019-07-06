@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class SnowballAnalyzerProvider extends AbstractIndexAnalyzerProvider<Snow
     private final SnowballAnalyzer analyzer;
 
     @Inject public SnowballAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, @Assisted String name, @Assisted Settings settings) {
-String language = settings.get("language", settings.get("name", "English"));
+        super(index, indexSettings, name);
 
-        String language = settings.get("language", "English");
+String language = settings.get("language", settings.get("name", "English"));
         Set<?> defaultStopwords = defaultLanguageStopwords.containsKey(language) ? defaultLanguageStopwords.get(language) : ImmutableSet.<Set<?>>of();
         Set<?> stopWords = Analysis.parseStopWords(settings, defaultStopwords);
 

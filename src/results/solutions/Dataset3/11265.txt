@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -274,9 +273,9 @@ public class ContextNames {
         if (bindName.startsWith("jboss/")) {
             parentContextName = JBOSS_CONTEXT_SERVICE_NAME;
             bindName = bindName.substring(6);
-bindName = bindName.substring(7);
+        } else if (bindName.startsWith("global/")) {
             parentContextName = GLOBAL_CONTEXT_SERVICE_NAME;
-            bindName = bindName.substring(6);
+bindName = bindName.substring(7);
         } else if (bindName.startsWith("/")) {
             parentContextName = JAVA_CONTEXT_SERVICE_NAME;
             bindName = bindName.substring(1);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -190,9 +189,9 @@ public class NodeVersionAllocationDeciderTests extends ElasticsearchAllocationTe
 
         ClusterState clusterState = ClusterState.builder().metaData(metaData).routingTable(routingTable).build();
         assertThat(routingTable.shardsWithState(UNASSIGNED).size(), equalTo(routingTable.allShards().size()));
-int iters = scaledRandomIntBetween(10, 100);
+        List<DiscoveryNode> nodes = new ArrayList<DiscoveryNode>();
         int nodeIdx = 0;
-        int iters = atLeast(10);
+int iters = scaledRandomIntBetween(10, 100);
         for (int i = 0; i < iters; i++) {
             DiscoveryNodes.Builder nodesBuilder = DiscoveryNodes.builder();
             int numNodes = between(1, 20);

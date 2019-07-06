@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -375,9 +374,9 @@ public abstract class SessionExpirationTestCase extends ClusterAbstractTestCase 
 
             // Trigger timeout of sessionId
             Thread.sleep(2000);
-response = client.execute(new HttpGet(SessionOperationServlet.createGetURI(baseURL1, "a")));
+
             // Timeout should trigger session destroyed event and valueUnbound binding event
-            response = client.execute(new HttpGet(SessionOperationServlet.createGetURI(baseURL2, "a")));
+response = client.execute(new HttpGet(SessionOperationServlet.createGetURI(baseURL1, "a")));
             try {
                 Assert.assertEquals(HttpServletResponse.SC_OK, response.getStatusLine().getStatusCode());
                 Assert.assertFalse(response.containsHeader(SessionOperationServlet.RESULT));

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class AnonymousMechanism implements AuthenticationMechanism {
         SocketAddress address = exchange.getConnection().getPeerAddress();
         if (address instanceof InetSocketAddress) {
             subject.getPrincipals().add(new InetAddressPrincipal(((InetSocketAddress) address).getAddress()));
-context.authenticationComplete(new RealmIdentityAccount(subject, user), ANONYMOUS_MECH, false);
+        }
 
-        context.authenticationComplete(new RealmIdentityAccount(subject, user), ANONYMOUS_MECH);
+context.authenticationComplete(new RealmIdentityAccount(subject, user), ANONYMOUS_MECH, false);
 
         return AuthenticationMechanismOutcome.AUTHENTICATED;
     }

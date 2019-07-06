@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -200,9 +199,9 @@ public class ExpiringCache<T extends Identifiable> implements Cache<T> {
         this.factory = tStatefulObjectFactory;
     }
 
-if (millisecondTimeout >= 0) {
+    @Override
     public synchronized void start() {
-        if (millisecondTimeout != -1) {
+if (millisecondTimeout >= 0) {
             expiryThread = new ExpirationTask();
             expiryThread.setDaemon(true);
             expiryThread.start();

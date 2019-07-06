@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -52,9 +51,9 @@ import org.springframework.core.OrderComparator;
 public abstract class AbstractApplicationEventMulticaster implements ApplicationEventMulticaster, BeanFactoryAware {
 
 	private final ListenerRetriever defaultRetriever = new ListenerRetriever(false);
-new ConcurrentHashMap<ListenerCacheKey, ListenerRetriever>(64);
+
 	private final Map<ListenerCacheKey, ListenerRetriever> retrieverCache =
-			new ConcurrentHashMap<ListenerCacheKey, ListenerRetriever>();
+new ConcurrentHashMap<ListenerCacheKey, ListenerRetriever>(64);
 
 	private BeanFactory beanFactory;
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -425,9 +424,9 @@ public class GetTermVectorTests extends AbstractTermVectorTests {
             String term = iterator.term().utf8ToString();
             DocsAndPositionsEnum docsAndPositions = iterator.docsAndPositions(null, null);
             assertThat(docsAndPositions.nextDoc(), equalTo(0));
-assertNotNull(docsAndPositions);
+            List<BytesRef> curPayloads = payloads.get(term);
             assertThat(term, curPayloads, Matchers.notNullValue());
-            assert docsAndPositions != null;
+assertNotNull(docsAndPositions);
             for (int k = 0; k < docsAndPositions.freq(); k++) {
                 docsAndPositions.nextPosition();
                 if (docsAndPositions.getPayload()!=null){

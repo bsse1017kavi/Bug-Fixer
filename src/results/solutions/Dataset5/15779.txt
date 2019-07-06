@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -28,9 +27,9 @@ public class Jvc extends DefaultCompilerAdapter
     public boolean execute()
         throws TaskException
     {
-Path classpath = new Path();
+        getLogger().debug( "Using jvc compiler" );
 
-        Path classpath = new Path( m_project );
+Path classpath = new Path();
 
         // jvc doesn't support bootclasspath dir (-bootclasspath)
         // so we'll emulate it for compatibility and convenience.

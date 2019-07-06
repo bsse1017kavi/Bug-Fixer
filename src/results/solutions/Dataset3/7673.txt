@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -90,9 +89,9 @@ public abstract class Pair<L, R> implements Serializable, Map.Entry<L, R> {
      * Returns a String representation of the Pair in the form: (L,R)
      * @return a string for this object
      */
-StringBuilder builder = new StringBuilder(this.getClass().getSimpleName());
+    @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(ClassUtils.getShortClassName(this, null));
+StringBuilder builder = new StringBuilder(this.getClass().getSimpleName());
         builder.append("(");
         builder.append(getLeftElement());
         builder.append(",");

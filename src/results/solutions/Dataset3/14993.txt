@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -214,9 +213,9 @@ public class BundleManagerService implements Service<BundleManager> {
         private static final String EXTENDED_FRAMEWORK_IDENTIFIER = "org.jboss.osgi.framework.extended";
         private final ModuleSpec moduleSpec;
 
-ModuleLoader moduleLoader = Module.getBootModuleLoader();
+        FrameworkModuleLoader(BundleManager bundleManager) throws ModuleLoadException {
 
-            ModuleLoader moduleLoader = Module.getSystemModuleLoader();
+ModuleLoader moduleLoader = Module.getBootModuleLoader();
             Module frameworkModule = moduleLoader.loadModule(ModuleIdentifier.create("org.jboss.osgi.framework"));
 
             // Setup the extended framework module spec

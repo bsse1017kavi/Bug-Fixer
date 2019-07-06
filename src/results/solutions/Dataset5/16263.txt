@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -119,9 +118,9 @@ public class Zip extends MatchingTask {
             if (new File(baseDir,files[i]).lastModified() > 
                 zipFile.lastModified())
                 upToDate = false;
-log("Building "+ archiveType +": "+ zipFile.getAbsolutePath());
+        if (upToDate) return;
 
-        project.log("Building "+ archiveType +": "+ zipFile.getAbsolutePath());
+log("Building "+ archiveType +": "+ zipFile.getAbsolutePath());
 
         try {
             ZipOutputStream zOut = new ZipOutputStream(new FileOutputStream(zipFile));

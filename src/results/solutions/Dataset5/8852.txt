@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -183,9 +182,9 @@ public class HC3CookieHandler implements CookieHandler {
                     if (debugEnabled){
                         log.debug("Dropping expired Cookie: "+newCookie.toString());
                     }
-log.warn("Not storing invalid cookie: <"+cookieHeader+"> for URL "+url+" ("+e.getLocalizedMessage()+")");
+                }
             } catch (MalformedCookieException e) { // This means the cookie was wrong for the URL
-                log.debug("Not storing invalid cookie: <"+cookieHeader+"> for URL "+url+" ("+e.getLocalizedMessage()+")");
+log.warn("Not storing invalid cookie: <"+cookieHeader+"> for URL "+url+" ("+e.getLocalizedMessage()+")");
             } catch (IllegalArgumentException e) {
                 log.warn(cookieHeader+e.getLocalizedMessage());
             }

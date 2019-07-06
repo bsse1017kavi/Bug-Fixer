@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /**********************************************************************
@@ -296,9 +295,9 @@ public void dispose() {
  * Zooms in on the active page in this workbook.
  */
 private void doZoom() {
-visibleEditor.getPage().toggleZoom(visibleEditor.getPartReference());
+	if (visibleEditor == null)
 		return;
-	((WorkbenchPage)(getWorkbenchWindow().getActivePage())).toggleZoom(visibleEditor.getPartReference().getPart(true));
+visibleEditor.getPage().toggleZoom(visibleEditor.getPartReference());
 }
 /**
  * Draws the applicable gradient on the active tab

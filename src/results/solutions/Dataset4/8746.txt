@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -137,9 +136,9 @@ public class TransportDeleteMappingAction extends TransportMasterNodeOperationAc
                     throw new TypeMissingException(new Index("_all"), request.types(), "No index has the type.");
                 }
                 request.types(types.toArray(new String[types.size()]));
-deleteByQueryAction.execute(Requests.deleteByQueryRequest(concreteIndices).types(request.types()).source(querySourceBuilder), new ActionListener<DeleteByQueryResponse>() {
+                QuerySourceBuilder querySourceBuilder = new QuerySourceBuilder()
                         .setQuery(QueryBuilders.filteredQuery(QueryBuilders.matchAllQuery(), filterBuilder));
-                deleteByQueryAction.execute(Requests.deleteByQueryRequest(concreteIndices).source(querySourceBuilder), new ActionListener<DeleteByQueryResponse>() {
+deleteByQueryAction.execute(Requests.deleteByQueryRequest(concreteIndices).types(request.types()).source(querySourceBuilder), new ActionListener<DeleteByQueryResponse>() {
                     @Override
                     public void onResponse(DeleteByQueryResponse deleteByQueryResponse) {
                         if (logger.isTraceEnabled()) {

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UnaryComparisonOperatorNode
@@ -408,9 +407,9 @@ public class UnaryComparisonOperatorNode extends UnaryOperatorNode
 		** and translate it to an index column position.
 		*/
 		if (bestCD.isIndex())
-getKeyColumnPosition(columnPosition);
+		{
 			columnPosition = bestCD.getIndexDescriptor().
-			  getKeyColumnPosition(new Integer(columnPosition)).intValue();
+getKeyColumnPosition(columnPosition);
 
 			if (SanityManager.DEBUG)
 			{

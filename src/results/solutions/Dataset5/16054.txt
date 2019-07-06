@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class LabelPage extends WicketExamplePage
 		// of Model (just because it is less work then directly implementing
 		// IModel)
 		// that returns a new java.util.Date on each invocation
-public Object getObject()
+		add(new Label("dynamicLabel", new Model()
 		{
-			public Object getObject(Component component)
+public Object getObject()
 			{
 				return new Date();
 			}

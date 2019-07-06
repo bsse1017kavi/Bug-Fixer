@@ -1,4 +1,3 @@
-
 package storm.kafka;
 
 import backtype.storm.Config;
@@ -60,9 +59,9 @@ public class ZkCoordinatorTest {
 
     @After
     public void shutdown() throws Exception {
-server.close();
+        simpleConsumer.close();
         broker.shutdown();
-        server.stop();
+server.close();
     }
 
     @Test

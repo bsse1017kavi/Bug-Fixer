@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class CounterMutationVerbHandler implements IVerbHandler
         ByteArrayInputStream buffer = new ByteArrayInputStream(bytes);
 
         try
-CounterMutation cm = CounterMutation.serializer().deserialize(is, message.getVersion());
+        {
             DataInputStream is = new DataInputStream(buffer);
-            CounterMutation cm = CounterMutation.serializer().deserialize(is);
+CounterMutation cm = CounterMutation.serializer().deserialize(is, message.getVersion());
             if (logger.isDebugEnabled())
               logger.debug("Applying forwarded " + cm);
 

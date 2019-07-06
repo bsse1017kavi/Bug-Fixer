@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -235,9 +234,9 @@ public class ClusterHealthResponse extends ActionResponse implements Iterable<Cl
         }
         out.writeBoolean(timedOut);
 
-out.writeString(failure);
+        out.writeVInt(validationFailures.size());
         for (String failure : validationFailures) {
-            out.writeUTF(failure);
+out.writeString(failure);
         }
     }
 

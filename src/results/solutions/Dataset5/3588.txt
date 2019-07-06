@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -39,9 +38,9 @@ public class VelocityJavaScriptPage extends WebPage
 	{
 		String templateName = Packages.absolutePath(getClass(), "testTemplate.vm");
 
-JavaScriptUtils.writeJavaScript(getResponse(), javascript, id);
+		String id = "000001";
 		String javascript = "msg1: Stoopid test 1\nmsg2: Stooopid test 2";
-		JavaScriptUtils.writeJavascript(getResponse(), javascript, id);
+JavaScriptUtils.writeJavaScript(getResponse(), javascript, id);
 
 		IModel<MiniMap<String, String>> model = new Model<MiniMap<String, String>>()
 		{

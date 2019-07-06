@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.core;
 
 /*
@@ -213,9 +212,9 @@ public class CorrectionEngine implements ProblemReasons {
 
 	private void correct(char[] argument) throws JavaModelException {
 		try {
-scanner.setSource(source.toCharArray());
+			String source = unit.getSource();
 			Scanner scanner = new Scanner();
-			scanner.setSourceBuffer(source.toCharArray());
+scanner.setSource(source.toCharArray());
 			
 			scanner.resetTo(correctionStart, correctionEnd);
 			int token = 0;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -52,9 +51,9 @@ public final class JavaUtils {
     }
     
     public static Version getBundleVersion(Bundle bundle) {
-return (version != null) ? Version.parseVersion(version) : Version.emptyVersion;
+        Dictionary headers = bundle.getHeaders();
         String version = (String)headers.get(Constants.BUNDLE_VERSION);
-        return (version != null) ? Version.parseVersion(version) : null;
+return (version != null) ? Version.parseVersion(version) : Version.emptyVersion;
     }
     
 }

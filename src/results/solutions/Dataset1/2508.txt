@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search.sampling;
 
 import java.util.List;
@@ -144,9 +143,9 @@ public abstract class BaseSampleTestTopK extends BaseTestTopK {
     samplingParams.setSampleRatio(0.8 * retryFactor);
     samplingParams.setMinSampleSize((int) (100 * retryFactor));
     samplingParams.setMaxSampleSize((int) (10000 * retryFactor));
-samplingParams.setSamplingThreshold(11000); //force sampling
+    samplingParams.setOversampleFactor(5.0 * retryFactor);
 
-    samplingParams.setSampingThreshold(11000); //force sampling 
+samplingParams.setSamplingThreshold(11000); //force sampling
     Sampler sampler = useRandomSampler ? 
         new RandomSampler(samplingParams, new Random(random().nextLong())) :
           new RepeatableSampler(samplingParams);

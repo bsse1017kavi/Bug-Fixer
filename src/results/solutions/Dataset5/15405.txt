@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -26,9 +25,9 @@ import org.apache.jorphan.collections.HashTree;
 public interface JMeterEngine {
     void configure(HashTree testPlan);
 
-void stopTest(boolean now);
+    void runTest() throws JMeterEngineException;
 
-    void stopTest();
+void stopTest(boolean now);
 
     void reset();
 

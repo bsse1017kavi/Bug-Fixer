@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public final class CDMahoutEvaluatorTest extends MahoutTestCase {
     }
 
     // dataset
-Path input = fs.makeQualified(new Path(Resources.getResource("wdbc").toURI()));
+    // This is sensitive to the working directory where the test is run:
     FileSystem fs = FileSystem.get(new Configuration());
-    Path input = fs.makeQualified(new Path(Resources.getResource("wdbc").toString()));
+Path input = fs.makeQualified(new Path(Resources.getResource("wdbc").toURI()));
     CDMahoutEvaluator.initializeDataSet(input);
 
     // evaluate the rules

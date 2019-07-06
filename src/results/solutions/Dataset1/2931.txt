@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /**
@@ -69,9 +68,9 @@ public class TestCachingTokenFilter extends BaseTokenStreamTestCase {
     // 2) now add the document to the index and verify if all tokens are indexed
     //    don't reset the stream here, the DocumentWriter should do that implicitly
     writer.addDocument(doc);
-IndexReader reader = IndexReader.open(dir, true);
+    writer.close();
     
-    IndexReader reader = IndexReader.open(dir);
+IndexReader reader = IndexReader.open(dir, true);
     TermPositions termPositions = reader.termPositions(new Term("preanalyzed", "term1"));
     assertTrue(termPositions.next());
     assertEquals(1, termPositions.freq());

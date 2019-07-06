@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -309,9 +308,9 @@ public class ReplaceRegExp
                 "' with '" + subs.getExpression() +
                 "' in '" + f.getPath() + "'" +
                 ( byline ? " by line" : "" ) +
-getContext().info( message );
+                ( flags.length() > 0 ? " with flags: '" + flags + "'" : "" ) +
                 ".";
-            getContext().warn( message );
+getContext().info( message );
 
             if( byline )
             {

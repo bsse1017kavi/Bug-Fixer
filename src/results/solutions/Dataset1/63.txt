@@ -1,4 +1,3 @@
-
 package org.apache.solr.update;
 
 /*
@@ -196,9 +195,9 @@ public class SolrCmdDistributor {
     UpdateRequest uReq = new UpdateRequest();
     uReq.setParams(params);
     
-log.debug("Distrib commit to: {} params: {}", nodes, params);
+    addCommit(uReq, cmd);
     
-    log.debug("Distrib commit to:" + nodes + " params:" + params);
+log.debug("Distrib commit to: {} params: {}", nodes, params);
     
     for (Node node : nodes) {
       submit(new Req(cmd.toString(), node, uReq, false));

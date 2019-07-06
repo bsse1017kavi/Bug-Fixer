@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -100,9 +99,9 @@ public class AndroidApplication extends Activity implements Application {
 		graphics = new AndroidGraphics(this, config, config.resolutionStrategy == null ? new FillResolutionStrategy()
 			: config.resolutionStrategy);
 		input = new AndroidInput(this, graphics.view, config);
-net = new AndroidNet();
+		audio = new AndroidAudio(this, config);
 		files = new AndroidFiles(this.getAssets(), this.getFilesDir().getAbsolutePath());
-		net = new AndroidNet(this);
+net = new AndroidNet();
 		this.listener = listener;
 		this.handler = new Handler();
 

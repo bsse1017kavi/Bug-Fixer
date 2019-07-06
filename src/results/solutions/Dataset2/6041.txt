@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version
 //1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -36,9 +35,9 @@ public class IMAPCache implements Runnable {
 	
 	protected IMAPCache() {
 		File configDir = Config.getInstance().getConfigDirectory();
-ShutdownManager.getInstance().register(this);
+		cache = new StreamCache(new File(configDir, "imap_cache"));
 		
-		ShutdownManager.getShutdownManager().register(this);
+ShutdownManager.getInstance().register(this);
 	}
 	
 	public static IMAPCache getInstance() {

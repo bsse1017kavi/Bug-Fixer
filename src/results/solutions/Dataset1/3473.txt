@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -166,9 +165,9 @@ public class ClusterClassificationDriverTest extends MahoutTestCase {
         PathFilters.partFilter());
     for (FileStatus partFile : listStatus) {
       SequenceFile.Reader classifiedVectors = new SequenceFile.Reader(fs,
-WeightedPropertyVectorWritable point = new WeightedPropertyVectorWritable();
+          partFile.getPath(), conf);
       Writable clusterIdAsKey = new IntWritable();
-      WeightedVectorWritable point = new WeightedVectorWritable();
+WeightedPropertyVectorWritable point = new WeightedPropertyVectorWritable();
       while (classifiedVectors.next(clusterIdAsKey, point)) {
         collectVector(clusterIdAsKey.toString(), point.getVector());
       }

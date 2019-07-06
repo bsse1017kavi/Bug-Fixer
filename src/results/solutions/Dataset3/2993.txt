@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -79,9 +78,9 @@ public class ApplicationClientStartService implements Service<ApplicationClientS
         this.mainMethod = mainMethod;
         this.parameters = parameters;
         this.namespaceContextSelectorInjectedValue = namespaceContextSelectorInjectedValue;
-this.contextSelector = new LazyConnectionContextSelector(hostUrl, callbackHandler, classLoader);
+        this.classLoader = classLoader;
         this.setupActions = setupActions;
-        this.contextSelector = new LazyConnectionContextSelector(hostUrl, callbackHandler);
+this.contextSelector = new LazyConnectionContextSelector(hostUrl, callbackHandler, classLoader);
     }
 
     public ApplicationClientStartService(final Method mainMethod, final String[] parameters, final InjectedEENamespaceContextSelector namespaceContextSelectorInjectedValue, final ClassLoader classLoader,  final List<SetupAction> setupActions, final EJBClientConfiguration configuration) {

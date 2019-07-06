@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -510,9 +509,9 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
      *
      * <p>May return false if it is set up to use encryption or a
      * compression method that hasn't been implemented yet.</p>
-public boolean canWriteEntryData(ArchiveEntry ae) {
+     * @since Apache Commons Compress 1.1
      */
-    public boolean canWrite(ArchiveEntry ae) {
+public boolean canWriteEntryData(ArchiveEntry ae) {
         if (ae instanceof ZipArchiveEntry) {
             ZipArchiveEntry ze = (ZipArchiveEntry) ae;
             return !ze.isEncrypted() &&

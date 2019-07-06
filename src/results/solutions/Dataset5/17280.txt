@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -89,9 +88,9 @@ public class ClassNameDiscriminatorStrategy
             String className;
             while (rs.next()) {
                 className = dict.getString(rs, 1);
-disc.getClassMapping(), col).getMessage());
+                if (className == null || className.length() == 0)
                     throw new ClassNotFoundException(_loc.get("no-class-name",
-                        disc.getClassMapping(), col));
+disc.getClassMapping(), col).getMessage());
                 Class.forName(className, true, loader);
             }
             disc.setSubclassesLoaded(true);

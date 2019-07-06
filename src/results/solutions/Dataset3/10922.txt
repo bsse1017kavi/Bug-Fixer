@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ class LocalOutboundConnectionAdd extends AbstractOutboundConnectionAddHandler {
             for (final Map.Entry<String, String> entry : connectionCreationOptions.entrySet()) {
                 if (entry.getKey() == null) {
                     // skip
-addOperation.get(CommonAttributes.CONNECTION_CREATION_OPTIONS).add(entry.getKey(), entry.getValue());
+                    continue;
                 }
-                addOperation.get(CommonAttributes.CONNECTION_CREATION_OPTIONS).set(entry.getKey(), entry.getValue());
+addOperation.get(CommonAttributes.CONNECTION_CREATION_OPTIONS).add(entry.getKey(), entry.getValue());
             }
         }
 

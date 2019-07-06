@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -51,9 +50,9 @@ public class InjectedSocketBindingStreamServerService extends AbstractStreamServ
     }
 
     @Override
-RemotingConnectorBindingInfoService.install(context.getChildTarget(), context.getController().getName().getSimpleName(), getSocketBinding(), Protocol.REMOTE.toString());
+    public void start(final StartContext context) throws StartException {
         super.start(context);
-        RemotingConnectorBindingInfoService.install(context.getChildTarget(), context.getController().getName().getSimpleName(), getSocketBinding(), Protocols.REMOTE);
+RemotingConnectorBindingInfoService.install(context.getChildTarget(), context.getController().getName().getSimpleName(), getSocketBinding(), Protocol.REMOTE.toString());
     }
 
     @Override

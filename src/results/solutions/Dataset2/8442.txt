@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler;
 
 /*
@@ -85,9 +84,9 @@ public class Compiler implements ITypeRequestor, ProblemSeverities {
 			new LookupEnvironment(this, options, problemReporter, environment);
 		this.parser =
 			new Parser(
-this.options.assertMode);
+				problemReporter, 
 				this.options.parseLiteralExpressionsAsConstants, 
-				this.options.getAssertMode());
+this.options.assertMode);
 	}
 	
 	/**

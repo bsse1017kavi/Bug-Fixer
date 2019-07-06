@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -110,9 +109,9 @@ public abstract class AbstractQueryCacheTest extends SingleEMFTestCase {
      */
     protected void deleteAllData() {
         EntityManager em = emf.createEntityManager();
-em.createNativeQuery("delete from Supplier_Part").executeUpdate();
+        em.getTransaction().begin();
 
-        em.createNativeQuery("delete from supplier_part").executeUpdate();
+em.createNativeQuery("delete from Supplier_Part").executeUpdate();
         em.createQuery("delete from PartBase s").executeUpdate();
         em.createQuery("delete from Supplier s").executeUpdate();
         em.createQuery("delete from Usage u").executeUpdate();

@@ -1,4 +1,3 @@
-
 package storm.trident.testing;
 
 import backtype.storm.task.IMetricsContext;
@@ -71,9 +70,9 @@ public class LRUMemoryMapState<T> implements Snapshottable<T>, ITupleCollection,
             _maxSize = maxSize;
         }
 
-return new LRUMemoryMapState(_maxSize, _id);
+        @Override
         public State makeState(Map conf, IMetricsContext metrics, int partitionIndex, int numPartitions) {
-            return new LRUMemoryMapState(_maxSize, _id + partitionIndex);
+return new LRUMemoryMapState(_maxSize, _id);
         }
     }
 

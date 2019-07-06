@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public class TransportExplainAction extends TransportShardSingleOperationAction<
             return new ExplainResponse(shardId.getIndex(), request.type(), request.id(), false);
         }
 
-new ShardSearchRequest(request).types(new String[]{request.type()})
+        SearchContext context = new DefaultSearchContext(
                 0,
-                new ShardSearchRequest().types(new String[]{request.type()})
+new ShardSearchRequest(request).types(new String[]{request.type()})
                         .filteringAliases(request.filteringAlias())
                         .nowInMillis(request.nowInMillis),
                 null, result.searcher(), indexService, indexShard,

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class FilteredCollector extends Collector {
     }
 
     @Override
-docSet = DocSets.convert(context.reader(), filter.getDocIdSet(context, null));
+    public void setNextReader(AtomicReaderContext context) throws IOException {
         collector.setNextReader(context);
-        docSet = DocSets.convert(context.reader(), filter.getDocIdSet(context));
+docSet = DocSets.convert(context.reader(), filter.getDocIdSet(context, null));
     }
 
     @Override

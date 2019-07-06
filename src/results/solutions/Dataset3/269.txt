@@ -1,4 +1,3 @@
-
 package org.jboss.as.controller.transform;
 
 import org.jboss.as.controller.ModelVersion;
@@ -43,9 +42,9 @@ public class ReadTransformedResourceOperation implements OperationStepHandler {
     public ReadTransformedResourceOperation(final TransformerRegistry transformerRegistry) {
         validator.registerValidator(SUBSYSTEM, new ModelTypeValidator(ModelType.STRING, false));
         this.transformerRegistry = transformerRegistry;
-private ModelNode transformReadResourceResult(final OperationContext context, ModelNode original, String subsystem, int major, int minor, int micro) throws OperationFailedException {
+    }
 
-    private ModelNode transformReadResourceResult(final OperationContext context, ModelNode original, String subsystem, int major, int minor, int micro) {
+private ModelNode transformReadResourceResult(final OperationContext context, ModelNode original, String subsystem, int major, int minor, int micro) throws OperationFailedException {
         ModelNode rootData = original.get(ModelDescriptionConstants.RESULT);
 
         final ModelNode subsystems = new ModelNode();

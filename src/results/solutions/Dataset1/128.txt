@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -86,9 +85,9 @@ public class MahoutEvaluator {
       throws IOException {
     Path inpath = new Path(fs.getWorkingDirectory(), "input");
 
-fs.delete(inpath, true);
+    // Delete the input if it already exists
     if (fs.exists(inpath)) {
-      FileUtil.fullyDelete(fs, inpath);
+fs.delete(inpath, true);
     }
 
     fs.mkdirs(inpath);

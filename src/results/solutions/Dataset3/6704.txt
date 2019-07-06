@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -76,9 +75,9 @@ public class DeploymentRedeployHandler implements ModelQueryOperationHandler, Ru
     private void redeploy(ModelNode model, NewOperationContext context, ResultHandler resultHandler,
             ModelNode compensatingOp) {
         if (context instanceof NewRuntimeOperationContext) {
-final ServiceName deploymentUnitServiceName = Services.deploymentUnitName(deploymentUnitName);
+            NewRuntimeOperationContext updateContext = (NewRuntimeOperationContext) context;
             String deploymentUnitName = model.require(NAME).asString();
-            final ServiceName deploymentUnitServiceName = Services.JBOSS_DEPLOYMENT.append(deploymentUnitName);
+final ServiceName deploymentUnitServiceName = Services.deploymentUnitName(deploymentUnitName);
             final ServiceRegistry serviceRegistry = updateContext.getServiceRegistry();
 
             final ServiceController<?> controller = serviceRegistry.getService(deploymentUnitServiceName);

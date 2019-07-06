@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -354,9 +353,9 @@ public class ThreePaneMailFrameController extends AbstractMailFrameController
 	 */
 	public void selectionChanged(SelectionChangedEvent e) {
 		TreeSelectionChangedEvent event = (TreeSelectionChangedEvent) e;
-if( selectedFolders.length == 1 && selectedFolders[0] != null) {
+		
 		AbstractFolder[] selectedFolders = event.getSelected();
-		if( selectedFolders.length == 1) {
+if( selectedFolders.length == 1 && selectedFolders[0] != null) {
 			getContainer().getFrame().setTitle(selectedFolders[0].getName());
 		}
 	}

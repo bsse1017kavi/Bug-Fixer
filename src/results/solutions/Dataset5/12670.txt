@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1944,9 +1943,9 @@ public class ClassMetaData
                 m = Reflection.findGetter(oid, fmds[i].getName(), false);
                 if (m == null || !m.getReturnType().isAssignableFrom(c))
                     throw new MetaDataException(_loc.get("invalid-id",
-fmds[i].getObjectIdFieldType(), false);
+                        _type, fmds[i].getName()));
                 m = Reflection.findSetter(oid, fmds[i].getName(),
-                    fmds[i].getDeclaredType(), false);
+fmds[i].getObjectIdFieldType(), false);
                 if (m == null || m.getReturnType() != void.class)
                     throw new MetaDataException(_loc.get("invalid-id",
                         _type, fmds[i].getName()));

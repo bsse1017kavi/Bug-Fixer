@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.util.xml;
 
 import org.apache.tomcat.util.*;
@@ -217,9 +216,9 @@ public class XmlMapper
 	    } catch (javax.xml.parsers.FactoryConfigurationError jaxpE ) {
 		org.xml.sax.Parser saxparser=null;
 		if(System.getProperty("org.xml.sax.parser") != null )
-saxparser=ParserFactory.makeParser("com.sun.xml.parser.Parser");
+		    saxparser=ParserFactory.makeParser();
 		else
-		    saxparser=ParserFactory.makeParser("org.apache.crimson.parser.Parser");
+saxparser=ParserFactory.makeParser("com.sun.xml.parser.Parser");
 
 		saxparser.setDocumentHandler( this );
 		saxparser.setEntityResolver( this );

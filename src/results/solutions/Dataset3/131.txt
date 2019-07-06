@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public abstract class AbstractServerModelUpdate<R> extends AbstractModelUpdate<S
      *
      * @param updateContext the update context
      * @param resultHandler the handler to call back with the result
-public <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super R, P> resultHandler, P param) {
+     * @param param the parameter value to pass to the result handler
      */
-    protected <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super R, P> resultHandler, P param) {
+public <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super R, P> resultHandler, P param) {
         resultHandler.handleSuccess(null, param);
     }
 

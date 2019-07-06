@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.19 $ $Date$
@@ -92,9 +91,9 @@ public class CheckBox extends FormComponent
 					tag.remove("checked");
 				}
 			}
-throw new WicketRuntimeException("Invalid boolean value \"" + value + "\"", e);
+			catch (StringValueConversionException e)
 			{
-				throw new WicketRuntimeException("Invalid boolean value \"" + value + "\"");
+throw new WicketRuntimeException("Invalid boolean value \"" + value + "\"", e);
 			}
 		}
 

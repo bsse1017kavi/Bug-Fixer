@@ -1,4 +1,3 @@
-
 /*
  * TestOpenJPAEntityManagerFactoryImpl.java
  *
@@ -191,9 +190,9 @@ public class TestPersistenceManagerFactoryImpl extends BaseKernelTest {
         assertNotNull(pmf.getProperties().getProperty("Platform"));
     }
 
-return (OpenJPAEntityManagerFactory) super.getEmf(props);
+    protected OpenJPAEntityManagerFactory getEmf(Map props) {
         props.put("openjpa.BrokerFactory", BrokerFactoryTest.class.getName());
-        return (OpenJPAEntityManagerFactory) getEmf(props);
+return (OpenJPAEntityManagerFactory) super.getEmf(props);
     }
 
     public static class BrokerFactoryTest extends AbstractBrokerFactory {

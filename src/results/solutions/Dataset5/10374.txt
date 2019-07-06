@@ -1,4 +1,3 @@
-
 package org.apache.openjpa.persistence.query;
 
 import javax.persistence.Expression;
@@ -10,8 +9,8 @@ public class IsEmptyExpression extends UnaryExpressionPredicate {
 			UnaryConditionalOperator.ISEMPTY_NOT);
 	}
 	
-return ((Visitable)_e).asExpression(ctx) + SPACE + _op;
+	@Override
 	public String asExpression(AliasContext ctx) {
-		return ((Visitable)_e).asExpression(ctx) + " " + _op;
+return ((Visitable)_e).asExpression(ctx) + SPACE + _op;
 	}
 }

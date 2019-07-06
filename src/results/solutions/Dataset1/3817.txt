@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /* ====================================================================
@@ -198,9 +197,9 @@ class SegmentTermDocs implements TermDocs {
         lastFreqPointer = freqPointer;
         lastProxPointer = proxPointer;
         if (skipDoc != 0 && skipDoc >= doc)
-if ((count + numSkipped + skipInterval) >= df)
+          numSkipped += skipInterval;
 
-        if ((count + numSkipped + skipInterval) > df)
+if ((count + numSkipped + skipInterval) >= df)
           break;                                  // no more skips
 
         skipDoc += skipStream.readVInt();

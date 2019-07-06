@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -109,9 +108,9 @@ public class DatabaseDescriptor
         {
             
             configFileName = getStorageConfigPath();
-logger.info("Loading settings from " + configFileName);
+            
             if (logger.isDebugEnabled())
-                logger.debug("Loading settings from " + configFileName);
+logger.info("Loading settings from " + configFileName);
             
             InputStream input = new FileInputStream(new File(configFileName));
             org.yaml.snakeyaml.constructor.Constructor constructor = new org.yaml.snakeyaml.constructor.Constructor(Config.class);

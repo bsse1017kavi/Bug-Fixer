@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.text.Html.fromHtml;
@@ -120,9 +119,9 @@ public class GistViewHolder implements ViewHolder<Gist> {
         if (TextUtils.isEmpty(description))
             description = Html.fromHtml("<i>No description</i>");
         title.setText(description);
-avatar.setImageDrawable(null);
+
         if (avatarHelper != null) {
-            avatar.setBackgroundDrawable(null);
+avatar.setImageDrawable(null);
             avatarHelper.bind(avatar, gist.getUser());
             created.setText(fromHtml("<b>" + gist.getUser().getLogin() + "</b> "
                     + Time.relativeTimeFor(gist.getCreatedAt())));

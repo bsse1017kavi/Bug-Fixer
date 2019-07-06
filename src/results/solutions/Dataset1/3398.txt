@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.lang.TriggerTest
@@ -557,9 +556,9 @@ public class TriggerTest extends BaseJDBCTestCase {
                 // for multiple rows the trigger can match the previous one.
                 boolean orderOk =
                     modifiedRowCount > 1 ? (order >= lastOrder) :
-+info+". Triggers got fired in this order:"+TRIGGER_INFO.get().toString(), orderOk);
+                        (order > lastOrder);
                 assertTrue("matching triggers need to be fired in order creation:"
-                        +info, orderOk);
++info+". Triggers got fired in this order:"+TRIGGER_INFO.get().toString(), orderOk);
                 lastOrder = order;
                 continue;
             }

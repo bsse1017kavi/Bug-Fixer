@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -638,9 +637,9 @@ public class HTTPHC4Impl extends HTTPHCAbstractImpl {
                     // TODO - what other headers are not allowed?
                     if (! HEADER_CONTENT_LENGTH.equalsIgnoreCase(n)){
                         String v = header.getValue();
-v = v.replaceFirst(":\\d+$",""); // remove any port specification // $NON-NLS-1$ $NON-NLS-2$
+                        if (HEADER_HOST.equalsIgnoreCase(n)) {
                             int port = url.getPort();
-                            v = removePortInHostHeader(v, port);
+v = v.replaceFirst(":\\d+$",""); // remove any port specification // $NON-NLS-1$ $NON-NLS-2$
                             if (port != -1) {
                                 if (port == url.getDefaultPort()) {
                                     port = -1; // no need to specify the port if it is the default

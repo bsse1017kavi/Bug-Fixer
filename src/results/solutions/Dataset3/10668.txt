@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public class GillIntegratorTest {
             Assert.assertEquals(pb.getFinalTime(), stopTime, 1.0e-10);
         }
 
-Assert.assertTrue(valueError < 1.01 * FastMath.abs(previousValueError));
+        double valueError = handler.getMaximalValueError();
         if (i > 5) {
-          Assert.assertTrue(valueError < FastMath.abs(previousValueError));
+Assert.assertTrue(valueError < 1.01 * FastMath.abs(previousValueError));
         }
         previousValueError = valueError;
 

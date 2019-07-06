@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -179,9 +178,9 @@ public class MetaDataIndexAliasesService extends AbstractComponent {
                         listener.onResponse(new Response(true));
                         return currentState;
                     }
-indicesService.removeIndex(index, "created for alias processing");
+                } finally {
                     for (String index : indicesToClose) {
-                        indicesService.cleanIndex(index, "created for alias processing");
+indicesService.removeIndex(index, "created for alias processing");
                     }
                 }
             }

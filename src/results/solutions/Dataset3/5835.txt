@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class JdbcDriverRemove implements ModelRemoveOperationHandler {
                         final int minorVersion = driver.getMinorVersion();
 
                         final ServiceName serviceName = ServiceName.JBOSS.append("jdbc-driver", driver.getClass().getName(), Integer.toString(majorVersion), Integer.toString(minorVersion));
-controller.setMode(ServiceController.Mode.REMOVE);
+                        final ServiceController<?> controller = registry.getService(serviceName);
                         if (controller != null) {
-                            controller.addListener(new ResultHandler.ServiceRemoveListener(resultHandler));
+controller.setMode(ServiceController.Mode.REMOVE);
                         }
                     }
                     resultHandler.handleResultComplete();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryparser.xml;
 
 /*
@@ -79,9 +78,9 @@ public class TestParser extends LuceneTestCase {
       doc.add(new IntField("date2", Integer.valueOf(date), Field.Store.NO));
       writer.addDocument(doc);
       line = d.readLine();
-writer.shutdown();
+    }
     d.close();
-    writer.close();
+writer.shutdown();
     reader = DirectoryReader.open(dir);
     searcher = newSearcher(reader);
 

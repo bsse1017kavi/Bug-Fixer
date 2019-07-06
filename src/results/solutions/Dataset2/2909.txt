@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -530,9 +529,9 @@ public class DecodeInterceptor extends  BaseInterceptor  {
 	}
 	if (pathMB.indexOf('%') >= 0 || pathMB.indexOf( '+' ) >= 0) {
 	    try {
-req.getURLDecoder().convert( pathMB , false );
+		if(debug>1 )
 		    log( "Before " + pathMB.toString());
-		req.getURLDecoder().convert( pathMB );
+req.getURLDecoder().convert( pathMB , false );
 		pathMB.resetStringValue();
 		if(debug>1 )
 		    log( "After " + pathMB.toString());

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.expressions;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -48,9 +47,9 @@ class ExpressionComparator extends FieldComparator<Double> {
     // TODO: might be cleaner to lazy-init 'source' and set scorer after?
     assert readerContext != null;
     try {
-context.put("scorer", scorer);
+      Map<String,Object> context = new HashMap<String,Object>();
       assert scorer != null;
-      context.put("scorer", new ScoreFunctionValues(scorer));
+context.put("scorer", scorer);
       scores = source.getValues(context, readerContext);
     } catch (IOException e) {
       throw new RuntimeException(e);

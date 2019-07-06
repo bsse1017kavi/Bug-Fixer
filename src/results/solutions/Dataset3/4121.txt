@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -34,9 +33,9 @@ public class TransactionTimeoutAnnotationInformationFactory extends ClassAnnotat
     protected TransactionTimeoutAnnotationInformationFactory() {
         super(TransactionTimeout.class, null);
     }
-protected Integer fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
+
     @Override
-    protected Integer fromAnnotation(final AnnotationInstance annotationInstance) {
+protected Integer fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
         final long timeout = annotationInstance.value().asLong();
         AnnotationValue unitAnnVal = annotationInstance.value("unit");
         final TimeUnit unit = unitAnnVal != null ? TimeUnit.valueOf(unitAnnVal.asEnum()) : TimeUnit.SECONDS;

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -418,9 +417,9 @@ public class WebPage extends Page implements INewBrowserWindowListener
 					
 					// FIXME this only works with links that open a new window
 					// and browser configurations that start with a blank home
-response.write("<script language=\"JavaScript\">if((history.length == 0 && document.all) || (history.length == 1 && !document.all)){ if (!document.all) window.location.hash='some-random-hash!'; document.location.href = '");
+					// page (which is usually not the default), in which case
 					// the page count is 2 (or 1 for IE)
-					response.write("<script language=\"javascript\">if((history.length == 0 && document.all) || (history.length == 1 && !document.all)){ if (!document.all) window.location.hash='some-random-hash!'; document.location.href = '");
+response.write("<script language=\"JavaScript\">if((history.length == 0 && document.all) || (history.length == 1 && !document.all)){ if (!document.all) window.location.hash='some-random-hash!'; document.location.href = '");
 					response.write(url);
 					response.write("'}</script>");
 				}

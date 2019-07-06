@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -67,9 +66,9 @@ public class ThrowStatement extends Statement {
 		if (exceptionType == NullBinding
 				&& scope.environment().options.complianceLevel <= ClassFileConstants.JDK1_3){
 			// if compliant with 1.4, this problem will not be reported
-exception.computeConversion(scope, exceptionType, exceptionType);
+			scope.problemReporter().cannotThrowNull(this);
 	 	}
-		exception.implicitWidening(exceptionType, exceptionType);
+exception.computeConversion(scope, exceptionType, exceptionType);
 	}
 
 	public void traverse(ASTVisitor visitor, BlockScope blockScope) {

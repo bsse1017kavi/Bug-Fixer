@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -849,9 +848,9 @@ private void addPotentialMatch(PotentialMatch potentialMatch) {
 				DefaultErrorHandlingPolicies.proceedWithAllProblems(),
 				options,
 				problemFactory);
-this.parser = new MatchLocatorParser(problemReporter, options.assertMode);
+		this.lookupEnvironment =
 			new LookupEnvironment(this, options, problemReporter, nameEnvironment);
-		this.parser = new MatchLocatorParser(problemReporter, options.getAssertMode());
+this.parser = new MatchLocatorParser(problemReporter, options.assertMode);
 		this.parsedUnits = new HashtableOfObject(10);
 		return this.pattern.initializeFromLookupEnvironment(this.lookupEnvironment);
 	}

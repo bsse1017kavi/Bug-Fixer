@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.kuromoji;
 
 /**
@@ -647,9 +646,9 @@ public final class KuromojiTokenizer extends Tokenizer {
         Position leastPosData = null;
         for(int pos2=pos;pos2<positions.getNextPos();pos2++) {
           final Position posData2 = positions.get(pos2);
-final int cost = posData2.costs[idx];
+          for(int idx=0;idx<posData2.count;idx++) {
             //System.out.println("    idx=" + idx + " cost=" + cost);
-            final int cost = posData.costs[idx];
+final int cost = posData2.costs[idx];
             if (cost < leastCost) {
               leastCost = cost;
               leastIDX = idx;

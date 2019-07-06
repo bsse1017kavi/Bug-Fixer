@@ -1,4 +1,3 @@
-
 package org.elasticsearch.index.fielddata.fieldcomparator;
 /*
  * Licensed to ElasticSearch and Shay Banon under one
@@ -24,9 +23,9 @@ import org.apache.lucene.search.FieldComparator;
 import org.elasticsearch.index.fielddata.DoubleValues;
 import org.elasticsearch.index.fielddata.IndexNumericFieldData;
 
-abstract class DoubleValuesComparatorBase<T extends Number> extends NumberComparatorBase<T> {
+import java.io.IOException;
 
-abstract class DoubleValuesComparatorBase<T extends Number> extends FieldComparator<T> {
+abstract class DoubleValuesComparatorBase<T extends Number> extends NumberComparatorBase<T> {
 
     protected final IndexNumericFieldData<?> indexFieldData;
     protected final double missingValue;

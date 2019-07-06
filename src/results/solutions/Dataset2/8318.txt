@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -74,9 +73,9 @@ public void generateStoreSaveValueIfNecessary(CodeStream codeStream){
 			codeStream.swap();
 		}
 
-codeStream.generateBoxingConversion(this.expression.resolvedType.id);
+		// generate wrapper if needed
 		if (this.expression.resolvedType.isBaseType() && this.expression.resolvedType != TypeBinding.NULL) { 
-			((CodeSnippetCodeStream)codeStream).generateObjectWrapperForType(this.expression.resolvedType);
+codeStream.generateBoxingConversion(this.expression.resolvedType.id);
 		}
 
 		// generate the expression type

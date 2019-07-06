@@ -1,4 +1,3 @@
-
 // Bind this and target on call and change it with proceed
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -9,9 +8,9 @@ public class A10 {
   M newM3 = new M("3");
 
   @Around("call(void M.method(String)) && args(p) && this(t) && target(t2)")
-pjp.proceed(new Object[]{newM2,newM3,"faked"});
+  public void a( ProceedingJoinPoint pjp, M t,String p, M t2) throws Throwable {
     System.err.println("advice from ataj aspect");
-    pjp.proceed(new Object[]{newM2,"faked",newM3});
+pjp.proceed(new Object[]{newM2,newM3,"faked"});
   }
 
   public static void main(String []argv) {

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation
  * All rights reserved. 
@@ -239,9 +238,9 @@ public class CompileSpec implements ITestStep {
 		// convention that any jar on file list should be added to inpath
 		String files = getFiles();
 	    if (files == null) files = "";
-final String file = strTok.nextToken();
+		StringTokenizer strTok = new StringTokenizer(files,",");
 		while (strTok.hasMoreTokens()) {
-			String file = strTok.nextToken();
+final String file = strTok.nextToken();
 			if (file.endsWith(".jar")) {
 				jarList.add(file);
 			} else {

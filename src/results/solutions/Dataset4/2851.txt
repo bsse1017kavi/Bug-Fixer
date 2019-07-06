@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public final class HighlightUtils {
             }
         } else {
             SearchLookup lookup = searchContext.lookup();
-textsToHighlight = lookup.source().extractRawValues(hitContext.getSourcePath(mapper.names().sourcePath()));
+            lookup.setNextReader(hitContext.readerContext());
             lookup.setNextDocId(hitContext.docId());
-            textsToHighlight = lookup.source().extractRawValues(mapper.names().sourcePath());
+textsToHighlight = lookup.source().extractRawValues(hitContext.getSourcePath(mapper.names().sourcePath()));
         }
         assert textsToHighlight != null;
         return textsToHighlight;

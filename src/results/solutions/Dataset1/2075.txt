@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.access.heap.Heap
@@ -1143,9 +1142,9 @@ public class Heap
      **/
 	protected void writeExternal_v10_2(ObjectOutput out) throws IOException
     {
-FormatIdUtil.writeFormatIdInteger(out, conglom_format_id);
+
         // write the format id of this conglomerate
-        FormatIdUtil.writeFormatIdInteger(out, this.getTypeFormatId());
+FormatIdUtil.writeFormatIdInteger(out, conglom_format_id);
 
 		out.writeInt((int) id.getSegmentId());
         out.writeLong(id.getContainerId());

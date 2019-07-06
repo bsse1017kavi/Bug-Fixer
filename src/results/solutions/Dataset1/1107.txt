@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search;
 
 import java.io.IOException;
@@ -327,9 +326,9 @@ public class TestTopKInEachNodeResultHandler extends LuceneTestCase {
     ArrayList<CategoryPath> cps = new ArrayList<CategoryPath>();
     CategoryPath cp = new CategoryPath(strings);
     cps.add(cp);
-d.add(new TextField("content", "alpha", Field.Store.YES));
+    Document d = new Document();
     new CategoryDocumentBuilder(tw, iParams).setCategoryPaths(cps).build(d);
-    d.add(new Field("content", "alpha", TextField.TYPE_STORED));
+d.add(new TextField("content", "alpha", Field.Store.YES));
     iw.addDocument(d);
   }
 

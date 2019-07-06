@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -213,9 +212,9 @@ public class NewRemoteProxyController implements NewProxyController, ManagementO
             executeRequestContext = new ExecuteRequestContext(messageHandler, control, attachments);
         }
 
-return NewModelControllerProtocol.EXECUTE_TX_REQUEST;
+        @Override
         protected byte getRequestCode() {
-            return NewModelControllerProtocol.EXECUTE_REQUEST;
+return NewModelControllerProtocol.EXECUTE_TX_REQUEST;
         }
 
         @Override

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UnionNode
@@ -409,9 +408,9 @@ public class UnionNode extends SetOperatorNode
 			 * child of the DistinctNode, which means that the NormalizeResultSet
 			 * won't get generated above the PRN.)
 			 */
-treeTop = genNormalizeResultSetNode(false);
+			if (! columnTypesAndLengthsMatch())
 			{
-				treeTop = genNormalizeResultSetNode(this, false);	
+treeTop = genNormalizeResultSetNode(false);
 			}
 
 			treeTop = (ResultSetNode) getNodeFactory().getNode(

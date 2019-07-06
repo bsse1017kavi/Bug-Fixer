@@ -1,4 +1,3 @@
-
 package storm.trident.state;
 
 import java.util.List;
@@ -14,9 +13,9 @@ public class ReducerValueUpdater implements ValueUpdater<Object> {
         this.tuples = tuples;
     }
 
-Object ret = stored;
+    @Override
     public Object update(Object stored) {
-        Object ret = (stored == null) ? this.agg.init() : stored;
+Object ret = stored;
         for(TridentTuple t: tuples) {
            ret =  this.agg.reduce(ret, t);
         }

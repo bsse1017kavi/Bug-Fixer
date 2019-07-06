@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -725,9 +724,9 @@ public class GeoPointFieldMapper extends AbstractFieldMapper<GeoPoint> implement
 
         private final ObjectOpenHashSet<GeoPoint> points;
 
-points = new ObjectOpenHashSet<>(2);
+        public CustomGeoPointDocValuesField(String  name, double lat, double lon) {
             super(name);
-            points = new ObjectOpenHashSet<GeoPoint>(2);
+points = new ObjectOpenHashSet<>(2);
             points.add(new GeoPoint(lat, lon));
         }
 

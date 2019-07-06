@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -91,9 +90,9 @@ public class MapperService extends AbstractIndexComponent implements Iterable<Do
         this.documentParser = new JsonDocumentMapperParser(analysisService);
         this.searchAnalyzer = new SmartIndexNameSearchAnalyzer(analysisService.defaultSearchAnalyzer());
         this.indexClassLoader = indexSettings.getClassLoader();
-String dynamicMappingLocation = componentSettings.get("dynamic_mapping_location");
+
         this.dynamic = componentSettings.getAsBoolean("dynamic", true);
-        String dynamicMappingLocation = componentSettings.get("dynamicMappingLocation");
+String dynamicMappingLocation = componentSettings.get("dynamic_mapping_location");
         URL dynamicMappingUrl;
         if (dynamicMappingLocation == null) {
             try {

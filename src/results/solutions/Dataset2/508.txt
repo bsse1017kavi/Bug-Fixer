@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2002, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -43,9 +42,9 @@ public class CodeSnippetParsingUtil {
 				problems = compilationResultProblems;
 			} else {
 				System.arraycopy(compilationResultProblems, 0, (problems = new IProblem[problemsCount]), 0, problemsCount);
-return new RecordedParsingInformation(problems, compilationResult.getLineSeparatorPositions(), parser.getCommentsPositions());
+			}
 		}
-		return new RecordedParsingInformation(problems, compilationResult.lineSeparatorPositions, parser.getCommentsPositions());
+return new RecordedParsingInformation(problems, compilationResult.getLineSeparatorPositions(), parser.getCommentsPositions());
 	}
 
 	public ASTNode[] parseClassBodyDeclarations(char[] source, Map settings, boolean recordParsingInformation) {

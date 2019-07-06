@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -32,9 +31,9 @@ public class IOSObjectALSound implements Sound {
 	private ALSource soundSource;
 	private ALBuffer soundBuffer;
 	private String soundPath;
-soundPath = filePath.path();
+
 	public IOSObjectALSound (FileHandle filePath) {
-		soundPath = filePath.file().getPath().replace('\\', '/');
+soundPath = filePath.path();
 		soundBuffer = OALSimpleAudio.sharedInstance().preloadEffect(soundPath);
 	}
 

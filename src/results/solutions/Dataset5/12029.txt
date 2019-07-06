@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -134,9 +133,9 @@ void handleFocus () {
 void handleMouseDown () {
 	int shellStyle = browser.getShell ().getStyle (); 
 	if ((shellStyle & SWT.ON_TOP) != 0 && (((shellStyle & SWT.NO_FOCUS) == 0) || ((browser.getStyle () & SWT.NO_FOCUS) == 0))) {
-if (browser == null || browser.isDisposed ()) return;
+		browser.getDisplay ().asyncExec (new Runnable () {
 			public void run () {
-				if (browser.isDisposed ()) return;
+if (browser == null || browser.isDisposed ()) return;
 				((Mozilla)browser.webBrowser).Activate ();
 			}
 		});

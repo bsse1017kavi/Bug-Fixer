@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -95,9 +94,9 @@ public class UriTemplate implements Serializable {
 	 * @throws IllegalArgumentException if <code>uriVariables</code> is <code>null</code>;
 	 * or if it does not contain values for all the variable names
 	 */
-Object[] values = new Object[this.variableNames.size()];
+	public URI expand(Map<String, ?> uriVariables) {
 		Assert.notNull(uriVariables, "'uriVariables' must not be null");
-		Object[] values = new String[this.variableNames.size()];
+Object[] values = new Object[this.variableNames.size()];
 		for (int i = 0; i < this.variableNames.size(); i++) {
 			String name = this.variableNames.get(i);
 			if (!uriVariables.containsKey(name)) {

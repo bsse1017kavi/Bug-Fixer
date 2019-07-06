@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -40,9 +39,9 @@ public class TestTopFieldCollector extends LuceneTestCase {
     for (int i = 0; i < numDocs; i++) {
       Document doc = new Document();
       iw.addDocument(doc);
-iw.shutdown();
+    }
     ir = iw.getReader();
-    iw.close();
+iw.shutdown();
     is = newSearcher(ir);
   }
   

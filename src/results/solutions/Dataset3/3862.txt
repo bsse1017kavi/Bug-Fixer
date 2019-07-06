@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -454,9 +453,9 @@ class HornetQServerAdd implements OperationStepHandler {
                 final ModelNode config = property.getValue();
 
                 if(config.hasDefined(CommonAttributes.ROLE)) {
-roles.add(SecurityRoleDefinition.transform(context, role.getName(), role.getValue()));
+                    final Set<Role> roles = new HashSet<Role>();
                     for (final Property role : config.get(CommonAttributes.ROLE).asPropertyList()) {
-                        roles.add(SecurityRoleAdd.transform(context, role.getName(), role.getValue()));
+roles.add(SecurityRoleDefinition.transform(context, role.getName(), role.getValue()));
                     }
                     configuration.getSecurityRoles().put(match, roles);
                 }

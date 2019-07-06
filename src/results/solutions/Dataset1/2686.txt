@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -594,9 +593,9 @@ public class LukeRequestHandler extends RequestHandlerBase
       int slot = 32 - Integer.numberOfLeadingZeros(Math.max(0, freq - 1));
       buckets[slot] = buckets[slot] + 1;
       if (freq > tiq.minFreq) {
-tiq.distinctTerms = new Long(terms.size()).intValue();
+        UnicodeUtil.UTF8toUTF16(text, spare);
         String t = spare.toString();
-        tiq.distinctTerms = new Long(terms.getUniqueTermCount()).intValue();
+tiq.distinctTerms = new Long(terms.size()).intValue();
 
         tiq.add(new TopTermQueue.TermInfo(new Term(field, t), termsEnum.docFreq()));
         if (tiq.size() > numTerms) { // if tiq full

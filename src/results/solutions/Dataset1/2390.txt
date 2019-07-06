@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.cql.jdbc;
 /*
  * 
@@ -290,9 +289,9 @@ public class PreparedStatementTest extends EmbeddedServiceBase
     }
     
     @Test
-PreparedStatement stmt = con.prepareStatement("update JdbcInteger set ?=?, ?=? where key = ?");
+    public void testInteger() throws SQLException
     {
-÷        PreparedStatement stmt = con.prepareStatement("update JdbcInteger set ?=?, ?=? where key = ?");
+PreparedStatement stmt = con.prepareStatement("update JdbcInteger set ?=?, ?=? where key = ?");
         for (int i = 0; i < 5; i++)
         {
             byte[] key = Integer.toString(i).getBytes();

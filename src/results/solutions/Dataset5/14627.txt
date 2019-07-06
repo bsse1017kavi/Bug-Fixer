@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -209,9 +208,9 @@ public class WebPage extends Page
 			// and attribute modifiers can be attached. <body> tags without
 			// wicket:id get automatically a wicket:id="body" assigned.
 			// find the body tag
-final MarkupElement element = markupStream.next();
+			while (markupStream.hasMore())
 			{
-				final MarkupElement element = (MarkupElement)markupStream.next();
+final MarkupElement element = markupStream.next();
 				if (element instanceof ComponentTag)
 				{
 					final ComponentTag tag = (ComponentTag)element;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public abstract class AbstractJMSRuntimeHandler<T> extends AbstractRuntimeOnlyHa
 
         T config = resources.get(new ResourceConfig(server, name));
 
-throw new OperationFailedException(exceptionMessage);
+        if (config == null) {
             String exceptionMessage = MessagingLogger.ROOT_LOGGER.noDestinationRegisteredForAddress(operationAddress);
-            throw new OperationFailedException(new ModelNode().set(exceptionMessage));
+throw new OperationFailedException(exceptionMessage);
         }
 
         return config;

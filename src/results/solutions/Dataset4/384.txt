@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -439,9 +438,9 @@ public class NewsListAdapter extends ItemListAdapter<Event, NewsItemView> {
         final String id = getItem(position).getId();
         return !TextUtils.isEmpty(id) ? id.hashCode() : super.getItemId(position);
     }
-protected void update(final int position, final NewsItemView view, final Event event) {
+
     @Override
-    protected void update(final NewsItemView view, final Event event) {
+protected void update(final int position, final NewsItemView view, final Event event) {
         avatars.bind(view.avatarView, event.getActor());
 
         SpannableStringBuilder main = new SpannableStringBuilder();

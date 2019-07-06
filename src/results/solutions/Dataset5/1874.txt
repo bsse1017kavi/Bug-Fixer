@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -645,9 +644,9 @@ public final class GuiPackage implements LocaleChangeListener {
         getMainFrame().setFileRevertEnabled(f != null);
         getMainFrame().setProjectFileLoaded(f);
 
-} catch (IllegalStateException e1) {
+        try {
             FileServer.getFileServer().setBasedir(testPlanFile);
-        } catch (IOException e1) {
+} catch (IllegalStateException e1) {
             log.error("Failure setting file server's base dir", e1);
         }
     }

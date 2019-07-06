@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -47,9 +46,9 @@ class ShardOptimizeRequest extends BroadcastShardOperationRequest {
         super(shardId, request);
         waitForMerge = request.waitForMerge();
         maxNumSegments = request.maxNumSegments();
-upgrade = request.upgrade();
+        onlyExpungeDeletes = request.onlyExpungeDeletes();
         flush = request.flush();
-        upgrade = request.force() || request.upgrade();
+upgrade = request.upgrade();
     }
 
     boolean waitForMerge() {

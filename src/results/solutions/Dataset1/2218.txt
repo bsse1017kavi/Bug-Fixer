@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.cache;
 /*
  * 
@@ -66,9 +65,9 @@ public class FreeableMemory extends Memory
      * avoid re-freeing already-freed memory
      */
     @Override
-assert references.get() <= 0;
+    protected void finalize()
     {
-        assert references.get() == 0;
+assert references.get() <= 0;
         assert peer == 0;
     }
     

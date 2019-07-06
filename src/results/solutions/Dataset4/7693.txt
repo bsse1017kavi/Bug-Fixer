@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -105,9 +104,9 @@ public abstract class TransportSingleOperationAction<Request extends SingleOpera
             request.index(clusterState.metaData().concreteIndex(request.index()));
 
             checkBlock(request, clusterState);
-.getShards(clusterState, request.index(), request.type(), request.id(), request.routing());
+
             this.shardsIt = clusterService.operationRouting()
-                    .getShards(clusterState, request.index(), request.type(), request.id());
+.getShards(clusterState, request.index(), request.type(), request.id(), request.routing());
         }
 
         public void start() {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -430,9 +429,9 @@ public void resolve(IGenericType[] suppliedTypes, ICompilationUnit[] sourceUnits
 		// build type bindings
 		for (int i = 0; i < suppliedLength; i++) {
 			if (suppliedTypes[i].isBinaryType()) {
-remember(suppliedTypes[i], binaryBindings[i]);
+				if (binaryBindings[i] != null) {
 					try {
-						remember((IBinaryType) suppliedTypes[i], binaryBindings[i]);
+remember(suppliedTypes[i], binaryBindings[i]);
 					} catch (AbortCompilation e) {
 						// classpath problem for this type: ignore
 					}

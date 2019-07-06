@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.mockrandom;
 
 /**
@@ -150,9 +149,9 @@ public class MockRandomCodec extends Codec {
           selector = new VariableGapTermsIndexWriter.IndexTermSelector() {
               final Random rand = new Random(seed2);
 
-return rand.nextInt(gap) == 17;
+              @Override
               public boolean isIndexTerm(BytesRef term, TermStats stats) {
-                return random.nextInt(gap) == 17;
+return rand.nextInt(gap) == 17;
               }
 
               @Override

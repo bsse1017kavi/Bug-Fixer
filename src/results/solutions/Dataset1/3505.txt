@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -303,9 +302,9 @@ public class SolrDispatchFilter implements Filter
           // a servlet/jsp can retrieve it
           else {
             req.setAttribute("org.apache.solr.SolrCore", core);
-req.getRequestDispatcher( pathPrefix == null ? path : pathPrefix + path ).forward( request, response );
+              // Modify the request so each core gets its own /admin
             if( singlecore == null && path.startsWith( "/admin" ) ) {
-              req.getRequestDispatcher( path ).forward( request, response );
+req.getRequestDispatcher( pathPrefix == null ? path : pathPrefix + path ).forward( request, response );
               return; 
             }
           }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -800,9 +799,9 @@ void drawInteriorWithFrame_inView (int /*long*/ id, int /*long*/ sel, int /*long
 		// TODO how to handle rearranged columns?  The third clause below ensures that
 		// there are either 0 columns or that column 0 is still the first physical column.
 		if (columnIndex == 0 && (style & SWT.CHECK) != 0 && (columnCount == 0 || tableView.columnWithIdentifier (columns[0].nsColumn) == 1)) {
-eraseItemRect.width = fullRect.x + fullRect.width;
+			eraseItemRect = new NSRect ();
 			eraseItemRect.y = fullRect.y;
-			eraseItemRect.width = fullRect.width + checkColumn.width ();
+eraseItemRect.width = fullRect.x + fullRect.width;
 			eraseItemRect.height = fullRect.height;
 		} else {
 			eraseItemRect = fullRect;

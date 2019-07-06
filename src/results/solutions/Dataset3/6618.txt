@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -582,9 +581,9 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 				TransactionSynchronizationManager.bindResource(getSessionFactory(), txObject.getSessionHolder());
 			}
 			txObject.getSessionHolder().setSynchronizedWithTransaction(true);
-catch (Throwable ex) {
+		}
 
-		catch (Exception ex) {
+catch (Throwable ex) {
 			if (txObject.isNewSession()) {
 				try {
 					if (session.getTransaction().isActive()) {

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -738,9 +737,9 @@ public class ModifiedSelector extends BaseExtendSelector
         if (myClassLoader == null) {
             myClassLoader = (classpath == null)
                           // the usual classloader
-: getProject().createClassLoader(classpath);
+                          ? getClass().getClassLoader()
                           // additional use the provided classpath
-                          : new org.apache.tools.ant.AntClassLoader(getProject(), classpath);
+: getProject().createClassLoader(classpath);
         }
         return myClassLoader;
     }

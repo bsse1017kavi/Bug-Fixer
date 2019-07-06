@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.testelement.property;
 
 import org.apache.jmeter.testelement.TestElement;
@@ -29,9 +28,9 @@ public class TestElementProperty extends AbstractProperty
     {
         if (o instanceof TestElementProperty)
         {
-return value.equals(((JMeterProperty) o).getObjectValue());
+            if (value != null)
             {
-                return value.equals(((TestElementProperty) o).getObjectValue());
+return value.equals(((JMeterProperty) o).getObjectValue());
             }
         }
         return false;

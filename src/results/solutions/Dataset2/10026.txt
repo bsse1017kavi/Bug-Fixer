@@ -1,4 +1,3 @@
-
 package org.junit.tests.experimental;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -31,9 +30,9 @@ public class AssumptionTest {
 
 	@Test
 	public void failedAssumptionsMeanIgnored() {
-assertThat(result.getUnrunnableCount(), is(1));
+		Result result= JUnitCore.runClasses(HasFailingAssumption.class);
 		assertThat(result.getRunCount(), is(0));
-		assertThat(result.getIgnoreCount(), is(1));
+assertThat(result.getUnrunnableCount(), is(1));
 		assertThat(result.getFailureCount(), is(0));
 	}
 

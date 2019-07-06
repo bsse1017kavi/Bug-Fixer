@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -225,9 +224,9 @@ public abstract class ThresholdingOutputStream
 
     /**
      * Resets the byteCount to zero.  You can call this from 
-protected void resetByteCount()
+     * {@link #thresholdReached()} if you want the event to be triggered again. 
      */
-    protected void reset() 
+protected void resetByteCount()
     {
         this.thresholdExceeded = false;
         this.written = 0;

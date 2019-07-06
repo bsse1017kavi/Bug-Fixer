@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -172,9 +171,9 @@ public final class Client implements ISynchAsynchConnection {
 			debug("connect;" + anURI); //$NON-NLS-1$
 			// send connect data and get synchronous response
 			send(new ConnectRequestMessage(anURI, (Serializable) data));
-throw new ECFException("Exception during connection to " + remote.getName(), e); //$NON-NLS-1$
+			res = (ConnectResultMessage) readObject();
 		} catch (final Exception e) {
-			throw new ECFException("Exception during connection to " + remote.getName(), e);
+throw new ECFException("Exception during connection to " + remote.getName(), e); //$NON-NLS-1$
 		}
 		debug("connect;rcv:" + res); //$NON-NLS-1$
 		// Setup threads

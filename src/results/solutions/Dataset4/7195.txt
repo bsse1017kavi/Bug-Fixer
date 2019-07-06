@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import static android.view.ViewGroup.LayoutParams.FILL_PARENT;
@@ -179,8 +178,8 @@ public class IssuesFragment extends ListLoadingFragment<Issue> {
     }
 
     @Override
-reflectiveFactoryFor(RepoIssueViewHolder.class, RepoIssueViewHolder.computeMaxDigits(items)));
+    protected ListAdapter adapterFor(List<Issue> items) {
         return new ViewHoldingListAdapter<Issue>(items, viewInflatorFor(getActivity(), layout.repo_issue_list_item),
-                reflectiveFactoryFor(RepoIssueViewHolder.class));
+reflectiveFactoryFor(RepoIssueViewHolder.class, RepoIssueViewHolder.computeMaxDigits(items)));
     }
 }

@@ -1,4 +1,3 @@
-
 package org.columba.mail.folder.mh;
 
 import java.util.Enumeration;
@@ -73,9 +72,9 @@ public class CachedMHFolder extends MHFolder {
 
 		String source = getMessageSource(uid, worker);
 		ColumbaHeader header = getMessageHeader(uid, worker);
-new Rfc822Parser().parse(source, true, header, 0);
+		
 		AbstractMessage message =
-			new Rfc822Parser().parse(source, false, header, 0);
+new Rfc822Parser().parse(source, true, header, 0);
 		message.setUID(uid);
 		message.setSource( source );
 

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.xml;
 
 /* ================================================================
@@ -73,9 +72,9 @@ public class RoleRule extends BaseRule
             !UserRule.isUserInUserList(getImportBean()) && 
             text.length() > 0)
         {
-") found role: " + text);
+            getImportBean().getRoleList().add(text);
             log().debug("(" + getImportBean().getState() + 
-                ") added role: " + text);
+") found role: " + text);
         }
     }
 }

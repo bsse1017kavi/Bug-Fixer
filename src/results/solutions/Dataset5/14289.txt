@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -97,9 +96,9 @@ public class ConnectionFactory implements TestListener {
 				Object objfac = ctx.lookup(fac);
 				if (objfac instanceof TopicConnectionFactory) {
 					factory = (TopicConnectionFactory) objfac;
-log.error(e.toString());
+				}
 			} catch (NamingException e) {
-				log.error(e.getRootCause().toString());// JDK1.4 getCause()
+log.error(e.toString());
 			}
 		}
 		return factory;

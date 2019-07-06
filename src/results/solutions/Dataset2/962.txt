@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -343,9 +342,9 @@ public final class SimpleSessionStore  extends BaseInterceptor {
 
 	public ServerSession getNewSession(Request req, Context ctx) {
 	    // Recycle or create a Session instance
-session = ctx.getContextManager().createServerSession();
+	    ServerSession session = (ServerSession)recycled.get();
 	    if (session == null) {
-		session = new ServerSession();
+session = ctx.getContextManager().createServerSession();
 		session.setManager( this );
 	    }
 	    session.setContext( ctx );

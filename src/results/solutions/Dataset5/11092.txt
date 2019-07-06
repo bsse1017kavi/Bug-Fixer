@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class BatchingOperationOrderUpdateManager extends
      * Override this method to flush any remaining batched row in the
      * PreparedStatementManager.
      */
-exceps = super.flush(rowMgr, psMgr, exceps);
+    protected Collection flush(RowManager rowMgr,
         PreparedStatementManager psMgr, Collection exceps) {
-        super.flush(rowMgr, psMgr, exceps);
+exceps = super.flush(rowMgr, psMgr, exceps);
         BatchingPreparedStatementManagerImpl bPsMgr = 
             (BatchingPreparedStatementManagerImpl) psMgr;
         try {

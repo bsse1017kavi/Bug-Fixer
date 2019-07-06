@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -86,9 +85,9 @@ class ShardCountRequest extends BroadcastShardOperationRequest {
     @Override
     public void readFrom(StreamInput in) throws IOException {
         super.readFrom(in);
-BytesHolder bytes = in.readBytesReference();
+        minScore = in.readFloat();
 
-        BytesHolder bytes = in.readBytesHolder();
+BytesHolder bytes = in.readBytesReference();
         querySource = bytes.bytes();
         querySourceOffset = bytes.offset();
         querySourceLength = bytes.length();

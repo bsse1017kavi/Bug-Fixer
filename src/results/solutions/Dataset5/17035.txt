@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class WLJspc extends MatchingTask {
         //XXX  this array stuff is a remnant of prev trials.. gotta remove.
         args[j++] = "-d";
         args[j++] = destinationDirectory.getAbsolutePath().trim();
-args[j++] = "-keepgenerated";
+        args[j++] = "-docroot";
         args[j++] = sourceDirectory.getAbsolutePath().trim();
-        args[j++] = "-keepgenerated";  //TODO: Parameterise ??
+args[j++] = "-keepgenerated";
         //Call compiler as class... dont want to fork again
         //Use classic compiler -- can be parameterised?
         args[j++] =  "-compilerclass";

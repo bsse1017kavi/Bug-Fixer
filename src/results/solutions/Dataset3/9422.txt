@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ final class ConnectorConfigService implements Service<ConnectorSubsystemConfigur
     }
 
     @Override
-log.tracef("config=%s", value);
+    public void start(StartContext context) throws StartException {
         log.infof("Starting JCA Subsystem (%s)", Version.FULL_VERSION);
-        log.infof("config=%s", value);
+log.tracef("config=%s", value);
     }
 
     @Override

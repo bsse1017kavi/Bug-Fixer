@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.parser;
 
 /*
@@ -1901,9 +1900,9 @@ public final void recordComment(boolean isJavadoc) {
 public void resetTo(int begin, int end) {
 	//reset the scanner to a given position where it may rescan again
 
-eofPosition = end < Integer.MAX_VALUE ? end + 1 : end;
+	diet = false;
 	initialPosition = startPosition = currentPosition = begin;
-	eofPosition = end + 1;
+eofPosition = end < Integer.MAX_VALUE ? end + 1 : end;
 	commentPtr = -1; // reset comment stack
 }
 

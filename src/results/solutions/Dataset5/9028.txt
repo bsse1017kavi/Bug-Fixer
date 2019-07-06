@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2005 The Apache Software Foundation
  *
@@ -540,9 +539,9 @@ public class WebsphereDeploymentTool extends GenericDeploymentTool {
      *      jarfile.
      */
     private void buildWebsphereJar(File sourceJar, File destJar) {
-Java javaTask = new Java(getTask());
+        try {
             if (ejbdeploy) {
-                Java javaTask = (Java) getTask().getProject().createTask("java");
+Java javaTask = new Java(getTask());
                 // Set the JvmArgs
                 javaTask.createJvmarg().setValue("-Xms64m");
                 javaTask.createJvmarg().setValue("-Xmx128m");

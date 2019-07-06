@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -31,9 +30,9 @@ public class ConstructorInvocationTests extends ExpressionTestCase {
 		evaluate("new String('hello world')", "hello world", String.class);
 	}
 	
-evaluateAndCheckError("new FooBar()",SpelMessage.CONSTRUCTOR_INVOCATION_PROBLEM);
+	@Test
 	public void testNonExistentType() {
-		evaluateAndCheckError("new FooBar()",SpelMessages.CONSTRUCTOR_INVOCATION_PROBLEM);
+evaluateAndCheckError("new FooBar()",SpelMessage.CONSTRUCTOR_INVOCATION_PROBLEM);
 	}
 	
 	@Test

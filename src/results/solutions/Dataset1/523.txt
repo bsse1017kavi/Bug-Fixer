@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries.function.valuesource;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -54,9 +53,9 @@ public class LiteralValueSource extends ValueSource {
         return string;
       }
 
-target.copyBytes(bytesRef);
+      @Override
       public boolean bytesVal(int doc, BytesRef target) {
-        target.copy(bytesRef);
+target.copyBytes(bytesRef);
         return true;
       }
 

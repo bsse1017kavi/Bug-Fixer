@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -143,9 +142,9 @@ public class SingletonService<T extends Serializable> implements Service<T>, Ser
 
         nodes.retainAll(candidates);
 
-return (this.electionPolicy == null) ? nodes.get(0) : this.electionPolicy.elect(nodes);
+        if (nodes.isEmpty()) return null;
 
-        return (this.electionPolicy == null) || (nodes.size() == 1) ? nodes.get(0) : this.electionPolicy.elect(nodes);
+return (this.electionPolicy == null) ? nodes.get(0) : this.electionPolicy.elect(nodes);
     }
 
     private void startNewMaster() {

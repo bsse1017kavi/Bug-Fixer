@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -89,8 +88,8 @@ import org.springframework.context.annotation.Import;
  * @since 3.1
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Import({DelegatingWebMvcConfiguration.class, ViewResolutionImportSelector.class})
+@Target(ElementType.TYPE)
 @Documented
-@Import({DelegatingWebMvcConfiguration.class, ViewConfigurationsImportSelector.class})
+@Import({DelegatingWebMvcConfiguration.class, ViewResolutionImportSelector.class})
 public @interface EnableWebMvc {
 }

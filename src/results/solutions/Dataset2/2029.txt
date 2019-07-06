@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -140,9 +139,9 @@ public class ReplyWithTemplateCommand extends ReplyCommand {
 		}
 
 		InputStream bodyStream = templateFolder.getMimePartBodyStream(uid, mp
-String body = StreamUtils.readCharacterStream(bodyStream).toString();
+				.getAddress());
 
-		String body = StreamUtils.readInString(bodyStream).toString();
+String body = StreamUtils.readCharacterStream(bodyStream).toString();
 
 		bodyStream.close();
 		return body;

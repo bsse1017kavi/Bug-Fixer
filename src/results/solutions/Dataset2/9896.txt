@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -87,9 +86,9 @@ public class OpenAttachmentCommand extends SaveAttachmentCommand {
             //inline = true;
             //openInlineMessage(part, tempFile);
         } else {
-viewer.open(header, tempFile, false);
+            //inline = false;
             MimeTypeViewer viewer = new MimeTypeViewer();
-            viewer.open(header, tempFile);
+viewer.open(header, tempFile, false);
         }
     }
 

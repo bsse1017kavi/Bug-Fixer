@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class LocalDestinationOutboundSocketBindingService extends OutboundSocket
     }
 
     @Override
-return localDestinationSocketBinding.getSocketAddress().getAddress();
+    protected synchronized InetAddress getDestinationAddress() {
         final SocketBinding localDestinationSocketBinding = this.localDestinationSocketBindingInjectedValue.getValue();
-        return localDestinationSocketBinding.getAddress();
+return localDestinationSocketBinding.getSocketAddress().getAddress();
     }
 
     @Override

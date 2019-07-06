@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class ParentQueryTests extends ElasticsearchLuceneTestCase {
                         childIdToScore = parentValueToChildIds.lget();
                     } else {
                         parentValueToChildIds.put(parentValue, childIdToScore = new TreeMap<String, Float>());
-assertFalse("child ["+ child + "] already has a score", childIdToScore.containsKey(child));
+                    }
                     if (!markChildAsDeleted && !filterMe) {
-                        assert !childIdToScore.containsKey(child);
+assertFalse("child ["+ child + "] already has a score", childIdToScore.containsKey(child));
                         childIdToScore.put(child, 1f);
                         childIdToParentId.put(Integer.valueOf(child), parentDocId);
                     }

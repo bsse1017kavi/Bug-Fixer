@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class ChildrenTests extends ElasticsearchIntegrationTest {
 
     @Override
     public void setupSuiteScopeCluster() throws Exception {
-.addMapping("article", "_id", "index=not_analyzed")
+        assertAcked(
                 prepareCreate("test")
-                    .addMapping("article")
+.addMapping("article", "_id", "index=not_analyzed")
                     .addMapping("comment", "_parent", "type=article", "_id", "index=not_analyzed")
         );
 

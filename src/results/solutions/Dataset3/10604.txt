@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -94,9 +93,9 @@ abstract class AbstractListenerContainerParser implements BeanDefinitionParser {
 
 		NodeList childNodes = element.getChildNodes();
 		for (int i = 0; i < childNodes.getLength(); i++) {
-String localName = parserContext.getDelegate().getLocalName(child);
+			Node child = childNodes.item(i);
 			if (child.getNodeType() == Node.ELEMENT_NODE) {
-				String localName = child.getLocalName();
+String localName = parserContext.getDelegate().getLocalName(child);
 				if (LISTENER_ELEMENT.equals(localName)) {
 					parseListener((Element) child, element, parserContext);
 				}

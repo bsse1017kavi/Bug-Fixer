@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -462,9 +461,9 @@ public final class WorkbenchHelpSystem implements IWorkbenchHelpSystem {
 			private IConfigurationElement findElement(
 					String desiredHelpSystemId, IExtension[] extensions) {
 				for (int i = 0; i < extensions.length; i++) {
-IConfigurationElement[] elements = extension
+					IExtension extension = extensions[i];
 					if (desiredHelpSystemId.equals(extension.getUniqueIdentifier())) {
-						IConfigurationElement[] elements = extensions[0]
+IConfigurationElement[] elements = extension
 								.getConfigurationElements();
 						if (elements.length == 0) {
 							// help UI present but mangled - act like there was

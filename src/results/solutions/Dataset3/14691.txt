@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class DefaultContextServiceTestEJB {
     /**
      * @param task
      * @return
-public Future<?> submit(TestEJBRunnable task) throws NamingException {
+     * @throws javax.naming.NamingException
      */
-    public Future<?> submit(TestRunnable task) throws NamingException {
+public Future<?> submit(TestEJBRunnable task) throws NamingException {
         final Principal principal = ejbContext.getCallerPrincipal();
         logger.debugf("Principal: %s", principal);
         task.setExpectedPrincipal(principal);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -151,9 +150,9 @@ public class TransportShardMultiPercolateAction extends TransportShardSingleOper
             preference = in.readOptionalString();
             int size = in.readVInt();
             items = new ArrayList<>(size);
-PercolateShardRequest shardRequest = new PercolateShardRequest(new ShardId(index, shardId));
+            for (int i = 0; i < size; i++) {
                 int slot = in.readVInt();
-                PercolateShardRequest shardRequest = new PercolateShardRequest(index(), shardId);
+PercolateShardRequest shardRequest = new PercolateShardRequest(new ShardId(index, shardId));
                 shardRequest.documentType(in.readString());
                 shardRequest.source(in.readBytesReference());
                 shardRequest.docSource(in.readBytesReference());

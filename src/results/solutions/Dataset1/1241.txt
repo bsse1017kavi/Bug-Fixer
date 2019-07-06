@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.jdbc.EmbedPooledConnection
@@ -183,9 +182,9 @@ class EmbedPooledConnection implements javax.sql.PooledConnection, BrokeredConne
 		defaultReadOnly = rc.isReadOnly();
 		if (currentConnectionHandle != null)
 			realConnection.setApplicationConnection(currentConnectionHandle);
-final Connection getNewCurrentConnectionHandle() throws SQLException {
+	}
 
-	final Connection getNewCurrentConnectionHandle() {
+final Connection getNewCurrentConnectionHandle() throws SQLException {
 		Connection applicationConnection = currentConnectionHandle =
 			((org.apache.derby.jdbc.Driver20) (realConnection.getLocalDriver())).newBrokeredConnection(this);
 		realConnection.setApplicationConnection(applicationConnection);

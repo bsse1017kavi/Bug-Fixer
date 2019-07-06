@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -289,9 +288,9 @@ public class LocaleUtils {
         private static final Set<Locale> AVAILABLE_LOCALE_SET;
         
         static {
-AVAILABLE_LOCALE_SET = Collections.unmodifiableSet(new HashSet<Locale>(list));
+            List<Locale> list = new ArrayList<Locale>(Arrays.asList(Locale.getAvailableLocales()));  // extra safe
             AVAILABLE_LOCALE_LIST = Collections.unmodifiableList(list);
-            AVAILABLE_LOCALE_SET = Collections.unmodifiableSet(new HashSet<Locale>(availableLocaleList()));
+AVAILABLE_LOCALE_SET = Collections.unmodifiableSet(new HashSet<Locale>(list));
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -481,9 +480,9 @@ public class TarArchiveOutputStreamTest extends AbstractTestCase {
         IOUtils.copy(in, tos);
         in.close();
         tos.closeArchiveEntry();
-assertEquals(TarConstants.DEFAULT_BLKSIZE, f.length());
+        tos.close();
         // test1.xml is small enough to fit into the default blockv size
-        assertEquals(TarBuffer.DEFAULT_BLKSIZE, f.length());
+assertEquals(TarConstants.DEFAULT_BLKSIZE, f.length());
     }
 
 }

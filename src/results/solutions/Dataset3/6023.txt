@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -180,9 +179,9 @@ public class RemoteDomainConnectionService implements MasterDomainControllerClie
                 }
                 if (System.currentTimeMillis() > endTime) {
                     throw MESSAGES.connectionToMasterTimeout(e, retries, timeout);
-HostControllerLogger.ROOT_LOGGER.cannotConnect(localHostInfo.getRemoteDomainControllerHost(), localHostInfo.getRemoteDomainControllerPort(), e);
+                }
                 try {
-                    HostControllerLogger.ROOT_LOGGER.cannotConnect(localHostInfo.getRemoteDomainControllerHost(), localHostInfo.getRemoteDomainControllerPort());
+HostControllerLogger.ROOT_LOGGER.cannotConnect(localHostInfo.getRemoteDomainControllerHost(), localHostInfo.getRemoteDomainControllerPort(), e);
                     ReconnectPolicy.CONNECT.wait(retries);
                     retries++;
                 } catch (InterruptedException ie) {

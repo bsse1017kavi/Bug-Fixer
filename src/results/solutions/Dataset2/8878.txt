@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -190,9 +189,9 @@ nextRecord() throws IOException {
 		}
 		catch (NumberFormatException e) {
 			if (last == null && defaultTTL < 0)
-ttl = defaultTTL;
+				throw st.exception("missing TTL");
 			else if (defaultTTL >= 0)
-				ttl = (int) defaultTTL;
+ttl = defaultTTL;
 			else
 				ttl = last.getTTL();
 		}

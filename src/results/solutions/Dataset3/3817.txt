@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -54,9 +53,9 @@ public class ApplicationIntegrationTestCase {
     @Deployment(testable = false)
     public static Archive<?> deploy() {
         WebArchive war = ShrinkWrap.create(WebArchive.class,"jaxrsapp.war");
-war.addAsWebInfResource(WebXml.get("<servlet-mapping>\n" +
+        war.addPackage(HttpRequest.class.getPackage());
         war.addClasses(ApplicationIntegrationTestCase.class, HelloWorldResource.class,HelloWorldApplication.class);
-        war.addAsWebResource(WebXml.get("<servlet-mapping>\n" +
+war.addAsWebInfResource(WebXml.get("<servlet-mapping>\n" +
                 "        <servlet-name>"+HelloWorldApplication.class.getName()+"</servlet-name>\n" +
                 "        <url-pattern>/hello/*</url-pattern>\n" +
                 "    </servlet-mapping>\n" +

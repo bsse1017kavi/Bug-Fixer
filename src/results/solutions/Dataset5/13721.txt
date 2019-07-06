@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -674,9 +673,9 @@ public abstract class Component implements Serializable
 	/**
 	 * @return The shared resource for this component
 	 */
-return getApplication().getSharedResources().get(Application.class, getId(), getLocale(), getStyle());
+	public final Resource getResource()
 	{
-		return getApplication().getResource(Application.class, getId(), getLocale(), getStyle());
+return getApplication().getSharedResources().get(Application.class, getId(), getLocale(), getStyle());
 	}
 
 	/**

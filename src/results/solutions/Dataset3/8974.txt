@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -227,9 +226,9 @@ public class ServerEnvironment implements Serializable {
         }
         modulesDir = tmp;
 
-tmp = new File(homeDir, standalone ? "standalone" : "domain/servers/" + serverName);
+        tmp = getFileFromProperty(SERVER_BASE_DIR, props);
         if (tmp == null) {
-            tmp = new File(homeDir, "standalone");
+tmp = new File(homeDir, standalone ? "standalone" : "domain/servers/" + serverName);
         }
         serverBaseDir = tmp;
 

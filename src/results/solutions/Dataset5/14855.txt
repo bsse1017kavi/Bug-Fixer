@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -51,9 +50,9 @@ public abstract class Unpack
 
         if( src.lastModified() > dest.lastModified() )
         {
-getContext().verbose( message );
+            final String message = "Expanding " + src.getAbsolutePath() +
                 " to " + dest.getAbsolutePath();
-            getContext().info( message );
+getContext().verbose( message );
 
             extract();
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public final class RemotingSubsystemAdd extends AbstractSubsystemAdd<RemotingSub
         // todo configure option map
         endpointService.setOptionMap(OptionMap.EMPTY);
         final BatchServiceBuilder<Endpoint> endpointBuilder = updateContext.getBatchBuilder().addService(RemotingServices.ENDPOINT, endpointService);
-endpointBuilder.setInitialMode(ServiceController.Mode.ACTIVE);
+        final Injector<Executor> executorInjector = endpointService.getExecutorInjector();
         endpointBuilder.addDependency(ThreadsServices.executorName(threadPoolName), new CastingInjector<Executor>(executorInjector, Executor.class));
-        endpointBuilder.setInitialMode(ServiceController.Mode.IMMEDIATE);
+endpointBuilder.setInitialMode(ServiceController.Mode.ACTIVE);
     }
 
     protected RemotingSubsystemElement createSubsystemElement() {

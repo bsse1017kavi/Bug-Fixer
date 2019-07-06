@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -34,9 +33,9 @@ public final class RemoveDuplicatesTokenFilter extends TokenFilter {
 
   private final CharTermAttribute termAttribute = addAttribute(CharTermAttribute.class);
   private final PositionIncrementAttribute posIncAttribute =  addAttribute(PositionIncrementAttribute.class);
-private final CharArraySet previous = new CharArraySet(Version.LUCENE_CURRENT, 8, false);
+  
   // use a fixed version, as we don't care about case sensitivity.
-  private final CharArraySet previous = new CharArraySet(Version.LUCENE_50, 8, false);
+private final CharArraySet previous = new CharArraySet(Version.LUCENE_CURRENT, 8, false);
 
   /**
    * Creates a new RemoveDuplicatesTokenFilter

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -471,9 +470,9 @@ private Binding findImport(char[][] compoundName, int length) {
 	} else {
 		type = (ReferenceBinding) binding;
 	}
-type = (ReferenceBinding)environment.convertToRawType(type, false /*do not force conversion of enclosing types*/); // type imports are necessarily raw for all except last
+
 	while (i < length) {
-		type = (ReferenceBinding)environment.convertToRawType(type); // type imports are necessarily raw for all except last
+type = (ReferenceBinding)environment.convertToRawType(type, false /*do not force conversion of enclosing types*/); // type imports are necessarily raw for all except last
 		if (!type.canBeSeenBy(fPackage))
 			return new ProblemReferenceBinding(CharOperation.subarray(compoundName, 0, i), type, ProblemReasons.NotVisible);
 

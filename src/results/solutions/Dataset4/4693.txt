@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class AnalysisModuleTests {
         assertThat(custom1.tokenizerFactory(), instanceOf(StandardTokenizerFactory.class));
         assertThat(custom1.tokenFilters().length, equalTo(2));
 
-assertThat((Iterable<String>) stop1.stopWords(), hasItem("test-stop"));
+        StopTokenFilterFactory stop1 = (StopTokenFilterFactory) custom1.tokenFilters()[0];
         assertThat(stop1.stopWords().size(), equalTo(1));
-        assertThat(stop1.stopWords(), hasItem("test-stop"));
+assertThat((Iterable<String>) stop1.stopWords(), hasItem("test-stop"));
 
         analyzer = analysisService.analyzer("custom2").analyzer();
         assertThat(analyzer, instanceOf(CustomAnalyzer.class));

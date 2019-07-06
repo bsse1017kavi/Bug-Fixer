@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public class ResourceAddRemoveTestBase {
     @SuppressWarnings({ "rawtypes", "unchecked" })
     protected OperationContext mockOperationContext(SubsystemState stateService, final List<OperationStepHandler> addedSteps, ResultAction stepResult) {
         ServiceRegistry serviceRegistry = Mockito.mock(ServiceRegistry.class);
-Mockito.when(serviceRegistry.getService(SubsystemState.SERVICE_NAME)).thenReturn(serviceController);
+        ServiceController serviceController = Mockito.mock(ServiceController.class);
         Mockito.when(serviceController.getValue()).thenReturn(stateService);
-        Mockito.when(serviceRegistry.getRequiredService(SubsystemState.SERVICE_NAME)).thenReturn(serviceController);
+Mockito.when(serviceRegistry.getService(SubsystemState.SERVICE_NAME)).thenReturn(serviceController);
         ModelNode result = new ModelNode();
         OperationContext context = Mockito.mock(OperationContext.class);
         Resource resource = Mockito.mock(Resource.class);

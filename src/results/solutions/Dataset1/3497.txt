@@ -1,4 +1,3 @@
-
 /**
  *  Derby - Class org.apache.derbyTesting.functionTests.tests.lang.ResultSetStreamTest
  *  
@@ -412,9 +411,9 @@ public class ResultSetStreamTest extends BaseJDBCTestCase {
     public static Test basesuite(String name) {
         TestSuite suite = new TestSuite(ResultSetStreamTest.class, name);
         Test test = new SupportFilesSetup(suite, new String[] {
-"functionTests/testData/ResultSetStream/resultsetStream.gif" });
+                "functionTests/testData/ResultSetStream/littleclob.utf",
                 "functionTests/testData/ResultSetStream/short.utf",
-                "functionTests/testData/ResultSetStream/resultsetstream.gif" });
+"functionTests/testData/ResultSetStream/resultsetStream.gif" });
 
         return new CleanDatabaseTestSetup(test) {
             protected void decorateSQL(Statement s) throws SQLException {

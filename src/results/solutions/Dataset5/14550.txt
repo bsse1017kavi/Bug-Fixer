@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -225,9 +224,9 @@ public class AttributeModifier extends AbstractBehavior implements Serializable
 	 */
 	public final void replaceAttibuteValue(final Component component, final ComponentTag tag)
 	{
-final ValueMap<String, CharSequence> attributes = tag.getAttributes();
+		if (isEnabled())
 		{
-			final ValueMap attributes = tag.getAttributes();
+final ValueMap<String, CharSequence> attributes = tag.getAttributes();
 			final Object replacementValue = getReplacementOrNull(component);
 
 			if (VALUELESS_ATTRIBUTE_ADD.equals(replacementValue))

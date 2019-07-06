@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -136,9 +135,9 @@ public class BundleReplaceTestCase {
     public void testInstallRuntimeNameExists() throws Exception {
         ServerDeploymentHelper server = new ServerDeploymentHelper(managementClient.getControllerClient());
         String runtimeName = server.deploy(V200_JAR, deployer.getDeployment(V200_JAR));
-context.installBundle(V200_JAR, deployer.getDeployment(V201_JAR));
+        try {
             try {
-                context.installBundle(V200_JAR, deployer.getDeployment(V100_JAR));
+context.installBundle(V200_JAR, deployer.getDeployment(V201_JAR));
                 Assert.fail("BundleException expected");
             } catch (BundleException ex) {
                 // expected

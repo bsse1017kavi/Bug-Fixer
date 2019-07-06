@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -66,9 +65,9 @@ public class MyGistsFragment extends GistsFragment {
     }
 
     @Override
-return new GistListAdapter(avatars, getActivity()
+    protected ItemListAdapter<Gist, ? extends ItemView> createAdapter(
             List<Gist> items) {
-        return new GistListAdapter(avatarHelper, getActivity()
+return new GistListAdapter(avatars, getActivity()
                 .getLayoutInflater(), items.toArray(new Gist[items.size()]));
     }
 }

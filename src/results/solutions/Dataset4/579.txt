@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -90,9 +89,9 @@ public class RestActions {
                 queryBuilder.defualtOperator(QueryStringJsonQueryBuilder.Operator.AND);
             } else {
                 throw new ElasticSearchIllegalArgumentException("Unsupported defaultOperator [" + defaultOperator + "], can either be [OR] or [AND]");
-return queryBuilder.buildAsString();
+            }
         }
-        return queryBuilder.build();
+return queryBuilder.buildAsString();
     }
 
     public static String[] splitIndices(String indices) {

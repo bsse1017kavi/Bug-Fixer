@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2000, 2001, 2002 IBM Corp.
 All rights reserved.  This program and the accompanying materials
@@ -108,9 +107,9 @@ public final class KeyMachine {
 			Iterator iterator = getMatchSet().iterator();
 			
 			while (iterator.hasNext()) {
-if (match.getBinding().getKeySequence().isChildOf(mode, false))
+				Match match = (Match) iterator.next();
 
-				if (match.getBinding().getKeySequence().isChildOf(mode))
+if (match.getBinding().getKeySequence().isChildOf(mode, false))
 					matchSetForMode.add(match);				
 			}
 

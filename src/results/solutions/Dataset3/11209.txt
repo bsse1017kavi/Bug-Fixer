@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -106,9 +105,9 @@ public class ServletInvocableHandlerMethod extends InvocableHandlerMethod {
 		}
 
 		mavContainer.setRequestHandled(false);
-returnValueHandlers.handleReturnValue(returnValue, getReturnValueType(returnValue), mavContainer, request);
+
 		try {
-			returnValueHandlers.handleReturnValue(returnValue, getReturnType(), mavContainer, request);
+returnValueHandlers.handleReturnValue(returnValue, getReturnValueType(returnValue), mavContainer, request);
 		} catch (Exception ex) {
 			if (logger.isTraceEnabled()) {
 				logger.trace(getReturnValueHandlingErrorMessage("Error handling return value", returnValue), ex);

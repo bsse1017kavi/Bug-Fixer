@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -467,9 +466,9 @@ public final class Intersector {
 					lowest = t;
 				}
 			}
-if (ray.origin.z <= box.min.z && ray.direction.z > 0) {
+		}
 		// min z
-		if (ray.origin.z <= box.min.y && ray.direction.z > 0) {
+if (ray.origin.z <= box.min.z && ray.direction.z > 0) {
 			t = (box.min.z - ray.origin.z) / ray.direction.z;
 			if (t >= 0) {
 				Vector3.tmp3.set(ray.direction).scl(t).add(ray.origin);

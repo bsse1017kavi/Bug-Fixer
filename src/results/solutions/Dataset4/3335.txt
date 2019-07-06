@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,9 +73,9 @@ public class TransportAnalyzeAction extends TransportSingleCustomOperationAction
         return "indices/analyze/shard";
     }
 
-return clusterState.routingTable().index(request.index()).randomAllShardsIt();
+    @Override protected ShardsIterator shards(ClusterState clusterState, AnalyzeRequest request) {
         request.index(clusterState.metaData().concreteIndex(request.index()));
-        return clusterState.routingTable().index(request.index()).allShardsIt();
+return clusterState.routingTable().index(request.index()).randomAllShardsIt();
     }
 
     @Override protected AnalyzeResponse shardOperation(AnalyzeRequest request, int shardId) throws ElasticSearchException {

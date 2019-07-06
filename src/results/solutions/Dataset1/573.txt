@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.store.raw.LockingPolicy
@@ -158,9 +157,9 @@ public interface LockingPolicy {
 	/**
         Request a write lock which will be released immediately upon grant.
 
-@param lockForPreviousKey       Lock is for a previous key of a insert.
+        @param t                        Transaction to associate lock with.
         @param record                   Record to lock.
-        @param lockForInsertPreviouskey Lock is for a previous key of a insert.
+@param lockForPreviousKey       Lock is for a previous key of a insert.
         @param waitForLock              Should lock request wait until granted?
 
 		@return true if the lock was obtained, false if it wasn't. 

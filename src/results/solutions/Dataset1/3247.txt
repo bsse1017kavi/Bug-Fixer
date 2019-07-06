@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1737,9 +1736,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
         // Find the endpoints that are going to become responsible for data
         replicatingNodes = Collections.synchronizedSet(new HashSet<InetAddress>());
         for (String table : DatabaseDescriptor.getNonSystemTables())
-if (Table.open(table).getReplicationStrategy().getReplicationFactor() == 1)
+        {
             // if the replication factor is 1 the data is lost so we shouldn't wait for confirmation
-            if (DatabaseDescriptor.getReplicationFactor(table) == 1)
+if (Table.open(table).getReplicationStrategy().getReplicationFactor() == 1)
                 continue;
 
             // get all ranges that change ownership (that is, a node needs

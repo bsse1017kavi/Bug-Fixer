@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -66,9 +65,9 @@ public class EscapeOroRegexpChars extends AbstractFunction {
     /** {@inheritDoc} */
     @Override
     public synchronized String execute(SampleResult previousResult, Sampler currentSampler)
-String valueToEscape = values[0].execute();
+            throws InvalidVariableException {
 
-        String valueToEscape = values[0].execute().trim();       
+String valueToEscape = values[0].execute();
         
         String varName = "";//$NON-NLS-1$
         if (values.length >= PARAM_NAME) {

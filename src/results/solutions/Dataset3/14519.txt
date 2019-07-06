@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ class PatchableTargetsArtifact extends AbstractArtifact<PatchingXmlArtifact.XmlA
         super(artifacts);
     }
 
-final InstalledIdentity identity = processor.getValidationContext().getInstalledIdentity();
+    @Override
     public boolean process(PatchingXmlArtifact.XmlArtifactState<Patch> parent, PatchingArtifactProcessor processor) {
-        final InstalledIdentity identity = processor.getValidationContext().getCurrentPatchIdentity();
+final InstalledIdentity identity = processor.getValidationContext().getInstalledIdentity();
         final Patch patch = parent.getPatch();
         if (Constants.BASE.equals(patch.getPatchId())) {
             return true;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -99,9 +98,9 @@ public class ContentModificationUtils {
 
     public static ContentModification modifyModule(File patchDir, String patchElementID, byte[] existingHash, Module newModule) throws IOException {
         File baseDir = newFile(patchDir, patchElementID, MODULES);
-ContentModification moduleUpdated = new ContentModification(new ModuleItem(newModule.getName(), newModule.getSlot(), newHash), existingHash, MODIFY);
+        File mainDir = newModule.writeToDisk(baseDir);
         byte[] newHash = hashFile(mainDir);
-        ContentModification moduleUpdated = new ContentModification(new ModuleItem(newModule.getName(), ModuleItem.MAIN_SLOT, newHash), existingHash, MODIFY);
+ContentModification moduleUpdated = new ContentModification(new ModuleItem(newModule.getName(), newModule.getSlot(), newHash), existingHash, MODIFY);
         return moduleUpdated;
     }
 

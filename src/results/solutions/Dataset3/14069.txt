@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -66,8 +65,8 @@ public class CommandDispatcherFactoryServiceInstaller implements GroupServiceIns
         ContextNames.BindInfo bindInfo = createBinding(group);
 
         this.logger.debugf("Installing %s service, bound to ", name.getCanonicalName(), bindInfo.getAbsoluteJndiName());
-new BinderServiceBuilder<>(bindInfo, name, CommandDispatcherFactory.class).build(target).install();
+
         this.builder.build(target, name, group, module).setInitialMode(ServiceController.Mode.ON_DEMAND).install();
-        new BinderServiceBuilder(target).build(bindInfo, name, CommandDispatcherFactory.class).install();
+new BinderServiceBuilder<>(bindInfo, name, CommandDispatcherFactory.class).build(target).install();
     }
 }

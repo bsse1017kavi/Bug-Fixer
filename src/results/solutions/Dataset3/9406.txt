@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -70,9 +69,9 @@ public abstract class AbstractFeatureSpecification implements SourceAwareSpecifi
 		return this.sourceName;
 	}
 
-BeanUtils.instantiateClass(this.executorType);
+	public void execute(SpecificationContext specificationContext) {
 		FeatureSpecificationExecutor executor =
-			BeanUtils.instantiateClass(this.executorType, FeatureSpecificationExecutor.class);
+BeanUtils.instantiateClass(this.executorType);
 		executor.execute(this, specificationContext);
 	}
 

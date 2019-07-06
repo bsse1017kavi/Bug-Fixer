@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -223,9 +222,9 @@ public class ManifestTest extends BuildFileTest {
         value = mainSection.getAttributeValue(LONG_70_NAME);
         assertEquals("LONG_70_NAME_VALUE_MISMATCH", VALUE, value);
         value = mainSection.getAttributeValue(NOT_LONG_NAME);
-BufferedReader in = new BufferedReader(new FileReader(new File(System.getProperty("root"), EXPANDED_MANIFEST)));
+        assertEquals("NOT_LONG_NAME_VALUE_MISMATCH", VALUE, value);
         
-        BufferedReader in = new BufferedReader(new FileReader(EXPANDED_MANIFEST));
+BufferedReader in = new BufferedReader(new FileReader(new File(System.getProperty("root"), EXPANDED_MANIFEST)));
         
         Set set = new HashSet();
         String read = in.readLine();

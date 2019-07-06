@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -67,9 +66,9 @@ public abstract class AbstractMockPredicateTest<T> {
      * Verifies all the mock predicates created for the test.
      */
     @After
-for (final Predicate<? super T> predicate : mockPredicatesToVerify) {
+    public final void verifyPredicates()
     {
-        for (Predicate<? super T> predicate : mockPredicatesToVerify) {
+for (final Predicate<? super T> predicate : mockPredicatesToVerify) {
             verify(predicate);
         }
     }

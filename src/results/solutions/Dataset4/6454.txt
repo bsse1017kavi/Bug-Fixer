@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -59,9 +58,9 @@ import java.util.Locale;
 public enum PreBuiltTokenFilters {
 
     WORD_DELIMITER(CachingStrategy.ONE) {
-if (version.luceneVersion.onOrAfter(org.apache.lucene.util.Version.LUCENE_4_8)) {
+        @Override
         public TokenStream create(TokenStream tokenStream, Version version) {
-            if (version.luceneVersion.onOrAfter(org.apache.lucene.util.Version.LUCENE_48)) {
+if (version.luceneVersion.onOrAfter(org.apache.lucene.util.Version.LUCENE_4_8)) {
                 return new WordDelimiterFilter(version.luceneVersion, tokenStream,
                            WordDelimiterFilter.GENERATE_WORD_PARTS |
                            WordDelimiterFilter.GENERATE_NUMBER_PARTS |

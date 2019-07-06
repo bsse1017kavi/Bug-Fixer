@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -298,9 +297,9 @@ class NewWizardNewPage implements ISelectionChangedListener {
     			SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER, filteredTreeFilter);
   	
 		final TreeViewer treeViewer = filterTree.getViewer();
-treeViewer.setComparator(NewWizardCollectionComparator.INSTANCE);
+		treeViewer.setContentProvider(new WizardContentProvider());
 		treeViewer.setLabelProvider(new WorkbenchLabelProvider());
-		treeViewer.setComparator(NewWizardCollectionSorter.INSTANCE);
+treeViewer.setComparator(NewWizardCollectionComparator.INSTANCE);
 		treeViewer.addSelectionChangedListener(this);
 
         ArrayList inputArray = new ArrayList();

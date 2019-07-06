@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -287,9 +286,9 @@ void doCommandBySelector (int /*long*/ id, int /*long*/ sel, int /*long*/ select
 }
 
 void drawWidget (int /*long*/ id, NSGraphicsContext context, NSRect rect, boolean sendPaint) {
-fillBackground (view, context, rect, -1);
+	if ((state & CANVAS) != 0) {
 		if ((style & SWT.NO_BACKGROUND) == 0) {
-			fillBackground (view, context, rect);
+fillBackground (view, context, rect, -1);
 		}
 	}
 	super.drawWidget (id, context, rect, sendPaint);

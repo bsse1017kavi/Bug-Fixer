@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public interface JDBCQueryCommand {
         class Util {
             static Collection<Object> getEntityCollection(final EntityProxyFactory factory, final Collection<Object> ids) {
                 List<Object> result = new ArrayList<Object>();
-result.add(id != null ? factory.getEntityObject(id) : null);
+                if (!ids.isEmpty()) {
                     for (Object id : ids) {
-                        result.add(factory.getEntityObject(id));
+result.add(id != null ? factory.getEntityObject(id) : null);
                     }
                 }
                 return result;

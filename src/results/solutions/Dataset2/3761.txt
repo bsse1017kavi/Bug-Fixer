@@ -1,4 +1,3 @@
-
 /*
  * jBoss, the OpenSource EJB server
  *
@@ -92,9 +91,9 @@ public class RMIClientConnectorImpl
 			System.out.println( "RMIClientConnectorImp.start(), got Naming Context: " +	lNamingContext +
 				", environment: " + lNamingContext.getEnvironment() +
 				", name in namespace: " + lNamingContext.getNameInNamespace()
-mRemoteConnector = (RMIConnector) new InitialContext().lookup( "jmx:" + pServer + ":rmi" );
+			);
 			// This has to be adjusted later on to reflect the given parameter
-			mRemoteConnector = (RMIConnector) new InitialContext().lookup( "jmx:rmi" );
+mRemoteConnector = (RMIConnector) new InitialContext().lookup( "jmx:" + pServer + ":rmi" );
 			System.err.println( "RMIClientConnectorImpl.start(), got remote connector: " + mRemoteConnector );
 			mServer = pServer;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -384,9 +383,9 @@ public class NettyTransport extends AbstractLifecycleComponent<Transport> implem
 
     @Override public <T extends Streamable> void sendRequest(final DiscoveryNode node, final long requestId, final String action, final Streamable message, TransportRequestOptions options) throws IOException, TransportException {
         Channel targetChannel = nodeChannel(node);
-options.withCompress(true);
+
         if (compress) {
-            options.withCompress();
+options.withCompress(true);
         }
 
         byte[] data = TransportStreams.buildRequest(requestId, action, message, options);

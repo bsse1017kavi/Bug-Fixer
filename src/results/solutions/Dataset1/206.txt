@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -511,9 +510,9 @@ final class IndexFileDeleter {
         // we assume that when a delete fails it is because
         // the file is open in another process, and queue
         // the file for subsequent deletion.
-message("unable to remove file \"" + fileName + "\": " + e.toString() + "; Will re-try later.");
+
         if (infoStream != null) {
-          message("IndexFileDeleter: unable to remove file \"" + fileName + "\": " + e.toString() + "; Will re-try later.");
+message("unable to remove file \"" + fileName + "\": " + e.toString() + "; Will re-try later.");
         }
         if (deletable == null) {
           deletable = new ArrayList<String>();

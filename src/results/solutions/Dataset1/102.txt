@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -167,9 +166,9 @@ public class TestClassifier {
 
     String testDirPath = (String) cmdLine.getValue(dirOpt);
     File dir = new File(testDirPath);
-ResultAnalyzer resultAnalyzer = new ResultAnalyzer(model.getLabels(), defaultCat);
+    File[] subdirs = dir.listFiles();
 
-    ResultAnalyzer resultAnalyzer = new ResultAnalyzer(model.getLabels());
+ResultAnalyzer resultAnalyzer = new ResultAnalyzer(model.getLabels(), defaultCat);
 
     if (subdirs != null) {
       for (int loop = 0; loop < subdirs.length; loop++) {

@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTarget.java,v 1.3 2005/12/07 00:52:26 ivaynberg
  * Exp $ $Revision$ $Date$
@@ -214,9 +213,9 @@ public class BookmarkablePageRequestTarget implements IBookmarkablePageRequestTa
 		if (pageClass != null)
 		{
 			if (requestCycle.getRedirect())
-String redirectUrl = processor.getRequestCodingStrategy().encode(requestCycle,this).toString();
+			{
 				IRequestCycleProcessor processor = requestCycle.getProcessor();
-				String redirectUrl = processor.getRequestCodingStrategy().encode(requestCycle,this);
+String redirectUrl = processor.getRequestCodingStrategy().encode(requestCycle,this).toString();
 				requestCycle.getResponse().redirect(redirectUrl);
 			}
 			else

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -74,9 +73,9 @@ public class DefaultConfigurerTest
 
         // Find the configurer
         m_configurer = (Configurer)getServiceManager().lookup( Configurer.ROLE );
-m_context = new DefaultTaskContext( null, getServiceManager(), getLogger() );
+
         // Setup a context
-        m_context = new DefaultTaskContext();
+m_context = new DefaultTaskContext( null, getServiceManager(), getLogger() );
         final File baseDir = new File( "." ).getAbsoluteFile();
         m_context.setProperty( TaskContext.BASE_DIRECTORY, baseDir );
     }

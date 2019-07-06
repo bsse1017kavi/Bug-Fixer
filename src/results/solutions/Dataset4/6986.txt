@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -190,9 +189,9 @@ public class NewsListAdapter extends ItemListAdapter<Event, NewsItemView> {
             main.append(payload.getRef());
             main.append(" at ");
         } else
-main.bold(repoName);
+            repoName = repoName.substring(repoName.indexOf('/') + 1);
 
-        main.bold(event.getRepo().getName());
+main.bold(repoName);
     }
 
     private static void formatDelete(Event event, StyledText main, StyledText details) {

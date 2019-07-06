@@ -1,4 +1,3 @@
-
 /*
  * $Id: org.eclipse.jdt.ui.prefs 5004 2006-03-17 20:47:08 -0800 (Fri, 17 Mar 2006) eelco12 $
  * $Revision: 5004 $
@@ -78,9 +77,9 @@ public class ButtonTest extends WicketTestCase
 	{
 		application.startPage(MockFormAndButtonPage.class);
 
-boolean contains = doc.contains("<input onclick=\"var e=document.getElementById('form:hf:fs'); e.name='button2'; e.value='x';var f=document.getElementById('form');var ff=f;if (ff.onsubmit != undefined) { if (ff.onsubmit()==false) return false; }f.submit();e.value='';e.name='';return false;\" type=\"submit\" name=\"button2\" wicket:id=\"button2\"/>");
+		application.assertContains("<input name=\"button\" type=\"submit\" wicket:id=\"button\"/>");
 		String doc = application.getServletResponse().getDocument();
-		boolean contains = doc.contains("<input onclick=\"var e=document.getElementById('form:hf:fs'); e.name='button2'; e.value='x';var f=document.getElementById('form');if (f.onsubmit != undefined) { if (f.onsubmit()==false) return false; }f.submit();e.value='';e.name='';return false;\" type=\"submit\" name=\"button2\" wicket:id=\"button2\"/>");
+boolean contains = doc.contains("<input onclick=\"var e=document.getElementById('form:hf:fs'); e.name='button2'; e.value='x';var f=document.getElementById('form');var ff=f;if (ff.onsubmit != undefined) { if (ff.onsubmit()==false) return false; }f.submit();e.value='';e.name='';return false;\" type=\"submit\" name=\"button2\" wicket:id=\"button2\"/>");
 		assertTrue(contains);
 	}
 }

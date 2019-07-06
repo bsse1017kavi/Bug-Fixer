@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1247,9 +1246,9 @@ public class DirectoryScanner
         for (int i = 0; i < newfiles.length; i++) {
             String name = vpath + newfiles[i];
             TokenizedPath newPath = new TokenizedPath(path, newfiles[i]);
-if (children == null || (children.length == 0 && file.isFile())) {
+            File file = new File(dir, newfiles[i]);
             String[] children = file.list();
-            if (children == null || file.isFile()) {
+if (children == null || (children.length == 0 && file.isFile())) {
                 if (isIncluded(newPath)) {
                     accountForIncludedFile(newPath, file);
                 } else {

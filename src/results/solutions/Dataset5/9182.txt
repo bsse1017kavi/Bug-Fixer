@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -200,9 +199,9 @@ public class ServletWebRequest extends WebRequest
 		 * 
 		 * PathInfo: The part of the request path that is not part of the
 		 * Context Path or the Servlet Path. It is either null if there is no
-String url = getServletPath();
+		 * extra path, or is a string with a leading "/".
 		 */
-		String url = httpServletRequest.getServletPath();
+String url = getServletPath();
 		final String pathInfo = httpServletRequest.getPathInfo();
 
 		if (pathInfo != null)

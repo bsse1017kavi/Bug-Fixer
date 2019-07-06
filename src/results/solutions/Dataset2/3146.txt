@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -67,9 +66,9 @@ public class TableView extends TreeTable {
 		setModel(headerTableModel);
 
 		// load plugin handler used for the columns
-.getInstance().getExtensionHandler(
+		try {
 			handler =  PluginManager
-					.getInstance().getHandler(
+.getInstance().getExtensionHandler(
 							IExtensionHandlerKeys.ORG_COLUMBA_MAIL_TABLERENDERER);
 		} catch (PluginHandlerNotFoundException ex) {
 			ex.printStackTrace();

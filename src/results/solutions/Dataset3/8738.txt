@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -56,9 +55,9 @@ class WebDeploymentService implements Service<Context> {
         try {
             context.start();
         } catch (LifecycleException e) {
-Logger.getLogger("org.jboss.web").info("starting context " + context.getName() + ": " + (System.currentTimeMillis() - time));
+            throw new StartException("failed to start context", e);
         }
-        Logger.getLogger("org.jboss.web").info("starting context " + (System.currentTimeMillis() - time));
+Logger.getLogger("org.jboss.web").info("starting context " + context.getName() + ": " + (System.currentTimeMillis() - time));
         /*
          * Add security association valve after the authorization valves so that the authenticated user may be associated
          * with the request thread/session.

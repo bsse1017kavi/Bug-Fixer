@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -730,9 +729,9 @@ public int getTopPixel () {
 	return 0;
 }
 
-if (!checkEvent (e)) return;
+void HandleKeyDown (int sender, int e) {
 	super.HandleKeyDown (sender, e);
-	if (isDisposed ()) return;
+if (!checkEvent (e)) return;
 	if ((style & SWT.SINGLE) != 0) {
 		int key = OS.KeyEventArgs_Key (e);
 		if (key == OS.Key_Return) postEvent (SWT.DefaultSelection);

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -112,9 +111,9 @@ ClassFile[] getClasses() {
 	CompilerRequestor compilerRequestor = new CompilerRequestor();
 	Compiler compiler = getCompiler(compilerRequestor);
 	compiler.compile(new ICompilationUnit[] {new ICompilationUnit() {
-return CharOperation.concat(Evaluator.this.getClassName(), ".java"/*nonNLS*/.toCharArray());
+		public char[] getFileName() {
 			 // Name of class is name of CU
-			return CharOperation.concat(Evaluator.this.getClassName(), ".java".toCharArray()); //$NON-NLS-1$
+return CharOperation.concat(Evaluator.this.getClassName(), ".java"/*nonNLS*/.toCharArray());
 		}
 		public char[] getContents() {
 			return source;

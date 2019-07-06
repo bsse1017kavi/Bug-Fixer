@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -32,9 +31,9 @@ import org.aspectj.weaver.ResolvedTypeX;
  */
 public class OrTypePattern extends TypePattern {
 	private TypePattern left, right;
-super(false,false);  //??? we override all methods that care about includeSubtypes
+	
 	public OrTypePattern(TypePattern left, TypePattern right) {
-		super(false);  //??? we override all methods that care about includeSubtypes
+super(false,false);  //??? we override all methods that care about includeSubtypes
 		this.left = left;
 		this.right = right;
 		setLocation(left.getSourceContext(), left.getStart(), right.getEnd());

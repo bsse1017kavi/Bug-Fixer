@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -197,9 +196,9 @@ public class EmbeddedCacheManagerConfigurationService implements Service<Embedde
 
         MBeanServer server = this.dependencies.getMBeanServer();
         if (server != null) {
-.jmxDomain(EmbeddedCacheManagerService.BASE_SERVICE_NAME.getCanonicalName())
+            jmxBuilder.enabled(this.statistics)
                 .mBeanServerLookup(new MBeanServerProvider(server))
-                .jmxDomain(EmbeddedCacheManagerService.getServiceName(null).getCanonicalName())
+.jmxDomain(EmbeddedCacheManagerService.BASE_SERVICE_NAME.getCanonicalName())
                 .allowDuplicateDomains(true)
             ;
         } else {

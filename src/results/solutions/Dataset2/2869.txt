@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -204,9 +203,9 @@ public final class ContactFacade implements IContactFacade {
 			if (flattenGroupItems) {
 				// retrieve all contact items and add those to the list only
 				Iterator<IGroupItem> it2 = groupList.iterator();
-List<IContactItem> l = groupItem.getContacts();
+				while (it2.hasNext()) {
 					IGroupItem groupItem = it2.next();
-					List<IContactItem> l = groupItem.getAllContacts();
+List<IContactItem> l = groupItem.getContacts();
 					v.addAll(l);
 				}
 			} else {

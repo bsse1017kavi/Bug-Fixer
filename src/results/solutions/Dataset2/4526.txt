@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -85,9 +84,9 @@ public class MoveMessageAction
 		if (dialog.success()) {
 			Folder destFolder = dialog.getSelectedFolder();
 
-((AbstractMailFrameController) getFrameMediator()).getTableSelection();
+			FolderCommandReference[] result = new FolderCommandReference[2];
 			FolderCommandReference[] r1 =
-			((AbstractMailFrameController) getFrameController()).getTableSelection();
+((AbstractMailFrameController) getFrameMediator()).getTableSelection();
 			FolderCommandReference r2 = new FolderCommandReference(destFolder);
 
 			result[0] = r1[0];

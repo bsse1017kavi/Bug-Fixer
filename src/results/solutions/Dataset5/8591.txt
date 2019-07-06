@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -418,9 +417,9 @@ public class JMeterTest extends JMeterTestCase {
             return;
         }
         if (!name.endsWith("TestBeanGUI")) {
-assertTrue("Label should not be null or empty for "+name,label != null && label.length() > 0);
+            try {
                 String label = guiItem.getLabelResource();
-                assertTrue(label.length() > 0);
+assertTrue("Label should not be null or empty for "+name,label != null && label.length() > 0);
                 assertFalse("'" + label + "' should be in resource file for " + name, JMeterUtils.getResString(
                         label).startsWith(JMeterUtils.RES_KEY_PFX));
             } catch (UnsupportedOperationException uoe) {

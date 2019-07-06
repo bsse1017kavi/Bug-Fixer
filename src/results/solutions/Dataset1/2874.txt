@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -196,9 +195,9 @@ public class TestOmitTf extends LuceneTestCase {
     reader.close();
     ram.close();
   }
-final String[] files = dir.listAll();
+
   private void assertNoPrx(Directory dir) throws Throwable {
-    final String[] files = dir.list();
+final String[] files = dir.listAll();
     for(int i=0;i<files.length;i++)
       assertFalse(files[i].endsWith(".prx"));
   }

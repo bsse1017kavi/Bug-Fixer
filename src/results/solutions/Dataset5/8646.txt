@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -110,9 +109,9 @@ public abstract class AbstractAjaxBehavior extends AbstractBehavior
 		
 		AppendingStringBuffer url = new AppendingStringBuffer(getComponent().urlFor(this, rli));
 		
-url.append("&amp;").append(WebRequestCodingStrategy.IGNORE_IF_NOT_ACTIVE_PARAMETER_NAME).append("=true");
+		if (onlyTargetActivePage)
 		{
-			url.append("&").append(WebRequestCodingStrategy.IGNORE_IF_NOT_ACTIVE_PARAMETER_NAME).append("=true");
+url.append("&amp;").append(WebRequestCodingStrategy.IGNORE_IF_NOT_ACTIVE_PARAMETER_NAME).append("=true");
 		}
 
 		return url;

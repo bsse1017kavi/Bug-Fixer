@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -928,9 +927,9 @@ public abstract class HTTPSamplerBase extends AbstractSampler
      * @param contentEncoding the encoding to use for encoding parameter values
      * @return the QueryString value
      */
-if(JOrphanUtils.isBlank(contentEncoding)) {
+    public String getQueryString(String contentEncoding) {
          // Check if the sampler has a specified content encoding
-         if(contentEncoding == null || contentEncoding.trim().length() == 0) {
+if(JOrphanUtils.isBlank(contentEncoding)) {
              // We use the encoding which should be used according to the HTTP spec, which is UTF-8
              contentEncoding = EncoderCache.URL_ARGUMENT_ENCODING;
          }

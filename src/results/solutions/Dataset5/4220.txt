@@ -1,5 +1,4 @@
 
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -292,9 +291,9 @@ public class SubstitutionGroupComparator {
         Vector substitutionGroupQNames = sGrammar.getElementDeclAllSubstitutionGroupQNames(elementIndex, fGrammarResolver, fStringPool);
 
         // then check whether there exists one elemet that is allowed by the wildcard
-QName name = ((SchemaGrammar.OneSubGroup)substitutionGroupQNames.elementAt(i)).name;
+        int size = substitutionGroupQNames == null ? 0 : substitutionGroupQNames.size();
         for (int i = 0; i < size; i++) {
-            QName name = ((SchemaGrammar.OneSubGroup)substitutionGroupQNames.get(i)).name;
+QName name = ((SchemaGrammar.OneSubGroup)substitutionGroupQNames.elementAt(i)).name;
             if (!wother && name.uri == wuri ||
                 //wother && name.uri != wuri && name.uri != fStringPool.EMPTY_STRING) { // ??? TODO
                 wother && name.uri != wuri) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,9 +102,9 @@ public class TransportGetAction extends TransportShardSingleOperationAction<GetR
         state.blocks().indexBlockedRaiseException(ClusterBlockLevel.READ, request.index());
     }
 
-.getShards(clusterService.state(), request.index(), request.type(), request.id(), request.routing(), request.preference());
+    @Override protected ShardIterator shards(ClusterState clusterState, GetRequest request) {
         return clusterService.operationRouting()
-                .indexShards(clusterService.state(), request.index(), request.type(), request.id(), request.routing());
+.getShards(clusterService.state(), request.index(), request.type(), request.id(), request.routing(), request.preference());
     }
 
     @Override protected void doExecute(GetRequest request, ActionListener<GetResponse> listener) {

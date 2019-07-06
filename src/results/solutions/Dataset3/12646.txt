@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional.partitioned;
 
 import backtype.storm.Config;
@@ -82,9 +81,9 @@ public class PartitionedTransactionalSpoutExecutor implements ITransactionalSpou
         }
 
         @Override
-state.cleanupBefore(txid);
+        public void cleanupBefore(BigInteger txid) {
             for(RotatingTransactionalState state: _partitionStates.values()) {
-                state.commit(txid);
+state.cleanupBefore(txid);
             }
         }
 

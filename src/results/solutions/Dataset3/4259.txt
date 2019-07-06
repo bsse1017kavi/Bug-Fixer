@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ class RealmReadinessFilter extends Filter {
     public void doFilter(HttpExchange exchange, Chain chain) throws IOException {
         if (domainCBH.isReady()) {
             chain.doFilter(exchange);
-responseHeaders.add(LOCATION, redirectTo);
+        } else {
             Headers responseHeaders = exchange.getResponseHeaders();
-            responseHeaders.add(LOCATION, redirectTo + "/");
+responseHeaders.add(LOCATION, redirectTo);
             exchange.sendResponseHeaders(TEMPORARY_REDIRECT, 0);
             exchange.close();
         }

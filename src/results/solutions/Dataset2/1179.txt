@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2546,9 +2545,9 @@ private static int appendClassTypeSignature(char[] string, int start, boolean fu
 			 	break;
 			 default :
 				if (innerTypeStart != -1 && !inAnonymousType && Character.isDigit(c)) {
-buffer.insert(checkpoint, "new "); //$NON-NLS-1$
+					inAnonymousType = true;
 					buffer.setLength(innerTypeStart); // remove '.'
-					buffer.insert(0, "new "); //$NON-NLS-1$
+buffer.insert(checkpoint, "new "); //$NON-NLS-1$
 					buffer.append("(){}"); //$NON-NLS-1$
 				}
 			 	if (!inAnonymousType)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -449,9 +448,9 @@ public class ComplexFormat extends Format implements Serializable {
         int n = sb.length();
         int startIndex = pos.getIndex();
         int endIndex = startIndex + n;
-ret = new Double(value);
+        if (endIndex < source.length()) {
             if (source.substring(startIndex, endIndex).compareTo(sb.toString()) == 0) {
-                ret = Double.valueOf(value);
+ret = new Double(value);
                 pos.setIndex(endIndex);
             }
         }

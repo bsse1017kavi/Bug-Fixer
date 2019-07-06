@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryParser.surround.query;
 
 /**
@@ -38,9 +37,9 @@ public class Test02Boolean extends LuceneTestCase {
     "ord1 ord2 ord3",
     "orda1 orda2 orda3 word2 worda3",
     "a c e a b c"
-SingleFieldTestDb db1 = new SingleFieldTestDb(random, docs1, fieldName);
+  };
 
-  SingleFieldTestDb db1 = new SingleFieldTestDb(docs1, fieldName);
+SingleFieldTestDb db1 = new SingleFieldTestDb(random, docs1, fieldName);
 
   public void normalTest1(String query, int[] expdnrs) throws Exception {
     BooleanQueryTst bqt = new BooleanQueryTst( query, expdnrs, db1, fieldName, this,

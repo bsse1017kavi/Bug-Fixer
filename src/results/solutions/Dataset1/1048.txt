@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -1127,9 +1126,9 @@ public class TestIndexReader extends LuceneTestCase {
       }
       return s;
     }
-File dirFile = _TestUtil.getTempDir("deletetest");
+
     public void testOpenReaderAfterDelete() throws IOException {
-      File dirFile = new File(TEMP_DIR, "deletetest");
+File dirFile = _TestUtil.getTempDir("deletetest");
       Directory dir = newFSDirectory(dirFile);
       try {
         IndexReader.open(dir, false);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -61,9 +60,9 @@ public class InternalRange<B extends InternalRange.Bucket> extends InternalAggre
     public static class Bucket implements Range.Bucket {
 
         private double from = Double.NEGATIVE_INFINITY;
-InternalAggregations aggregations;
+        private double to = Double.POSITIVE_INFINITY;
         private long docCount;
-        private InternalAggregations aggregations;
+InternalAggregations aggregations;
         private String key;
         private boolean explicitKey;
 

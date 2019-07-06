@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements. See the NOTICE file distributed with this
@@ -91,9 +90,9 @@ public class AbstractLeastSquaresOptimizerTest {
         final double[] sig = optimizer.getSigma();
         final double[] expected = dataset.getParametersStandardDeviations();
         for (int i = 0; i < sig.length; i++) {
-expected[i], actual, 1.3e-8 * expected[i]);
+            final double actual = FastMath.sqrt(optimizer.getChiSquare()/dof)*sig[i];
             Assert.assertEquals(dataset.getName() + ", parameter #" + i,
-                                actual, expected[i], 1E-8 * expected[i]);
+expected[i], actual, 1.3e-8 * expected[i]);
         }
     }
 }

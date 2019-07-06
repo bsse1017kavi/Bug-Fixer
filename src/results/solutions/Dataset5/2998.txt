@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public abstract class DataViewBase<T> extends AbstractPageableView<T>
 	 * @param <T>
 	 *            Model object type
 	 */
-private final Iterator< ? extends T> items;
+	private static final class ModelIterator<T> implements Iterator<IModel<T>>
 	{
-		private final Iterator<T> items;
+private final Iterator< ? extends T> items;
 		private final IDataProvider<T> dataProvider;
 		private final int max;
 		private int index;

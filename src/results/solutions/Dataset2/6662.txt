@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -6,9 +5,9 @@ package org.junit.internal.runners.links;
 
 import org.junit.internal.runners.model.EachTestNotifier;
 
-public void run(EachTestNotifier context) {
+public class IgnoreTestNotifier extends Notifier {
 	@Override
-	public void run(EachTestNotifier context) throws Throwable {
+public void run(EachTestNotifier context) {
 		context.fireTestIgnored();
 	}
 }

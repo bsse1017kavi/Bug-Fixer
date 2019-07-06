@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -92,9 +91,9 @@ abstract class AttachStrategy
             newInstance = pc.pcNewInstance(null, false);
         else // application identity: use existing fields
             newInstance = pc.pcNewInstance(null, appId, false);
-(newInstance, appId, explicit, manager.getBehavior(), !manager.getCopyNew());
+
         return (StateManagerImpl) manager.getBroker().persist
-            (newInstance, appId, explicit, manager.getBehavior());
+(newInstance, appId, explicit, manager.getBehavior(), !manager.getCopyNew());
     }
 
     /**

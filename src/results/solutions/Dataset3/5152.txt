@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class DatabaseDataStoreResourceDefinition extends SimpleResourceDefinitio
 
     public static final SimpleAttributeDefinition PARTITION =
             new SimpleAttributeDefinitionBuilder(EJB3SubsystemModel.PARTITION, ModelType.STRING, true)
-.setDefaultValue(new ModelNode(""))
+                    .setAllowExpression(true)
                     .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES)
-                    .setDefaultValue(new ModelNode("default"))
+.setDefaultValue(new ModelNode(""))
                     .setValidator(new StringLengthValidator(0))
                     .build();
 

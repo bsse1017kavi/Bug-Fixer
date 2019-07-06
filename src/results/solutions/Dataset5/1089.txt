@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -143,9 +142,9 @@ public final class JUnitHelper {
      * @return the file or directory containing the resource or
      * <tt>null</tt> if it does not know how to handle it.
      */
-if (url == null) {
+    public static File getResourceEntry(String resource) {
         URL url = JUnitHelper.class.getResource(resource);
-        if (url != null) {
+if (url == null) {
             // can't find the resource...
             return null;
         }

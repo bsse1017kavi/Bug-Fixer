@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ class SecurityRoleAdd implements OperationStepHandler, DescriptionProvider {
         final Resource resource = context.createResource(PathAddress.EMPTY_ADDRESS);
         final ModelNode subModel = resource.getModel();
         for(final AttributeDefinition attribute : ROLE_ATTRIBUTES) {
-if(context.isNormalServer()) {
+            attribute.validateAndSet(operation, subModel);
         }
-        if(context.getType() == OperationContext.Type.SERVER) {
+if(context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 @Override
                 public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {

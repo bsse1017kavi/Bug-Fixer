@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -184,9 +183,9 @@ public class AutolinkComponentResolver implements IComponentResolver
                 final String path = Strings.stripEnding(href, ".html");
 
                 try
-.getSettings().getDefaultPageFactory().classForName(
+                {
                     automaticLinkPageClass = RequestCycle.get().getApplication()
-                    	.getSettings().getPageFactory().getClassInstance(
+.getSettings().getDefaultPageFactory().classForName(
                     	        page.getClass().getPackage().getName() + "." + path);
 
                     if (parameters != null)

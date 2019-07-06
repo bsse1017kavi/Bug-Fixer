@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -271,9 +270,9 @@ void createHandle (int index, boolean fixed, boolean scrolled) {
 	handle = OS.g_object_new (display.gtk_fixed_get_type (), 0);
 	if (handle == 0) SWT.error (SWT.ERROR_NO_HANDLES);
 	OS.gtk_fixed_set_has_window (handle, true);
-if ((state & CANVAS) != 0) {
+	OS.GTK_WIDGET_SET_FLAGS(handle, OS.GTK_CAN_FOCUS);
 	if ((style & SWT.EMBEDDED) == 0) {
-		if ((state & CANVAS) != 0 && (style & SWT.NO_FOCUS) == 0) {
+if ((state & CANVAS) != 0) {
 			/* Prevent an input method context from being created for the Browser widget */
 			if (display.getData (NO_INPUT_METHOD) == null) {
 				imHandle = OS.gtk_im_multicontext_new ();

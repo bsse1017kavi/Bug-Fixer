@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -183,9 +182,9 @@ public class HighamHall54IntegratorTest
         public double g(double t, double[] y) throws SwitchException {
           double middle = (pb.getInitialTime() + pb.getFinalTime()) / 2;
           double offset = t - middle;
-new Object[] { Double.valueOf(t) });
+          if (offset > 0) {
             throw new SwitchException("Evaluation failed for argument = {0}",
-                                      new Object[] { new Double(t) });
+new Object[] { Double.valueOf(t) });
           }
           return offset;
         }

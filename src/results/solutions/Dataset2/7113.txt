@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -132,9 +131,9 @@ public class Javadoc extends ASTNode {
 				if (methDecl != null && (methDecl.isConstructor() || overriding) && !superRef) {
 					if (this.references[i] instanceof JavadocMessageSend) {
 						JavadocMessageSend messageSend = (JavadocMessageSend) this.references[i];
-if (methDecl.binding.declaringClass.isCompatibleWith(messageSend.actualReceiverType) &&
+						// if binding is valid then look if we have a reference to an overriden method/constructor
 						if (messageSend.binding != null && messageSend.binding.isValidBinding()) {
-							if (methDecl.binding.declaringClass.isCompatibleWith(messageSend.receiverType) &&
+if (methDecl.binding.declaringClass.isCompatibleWith(messageSend.actualReceiverType) &&
 								CharOperation.equals(messageSend.selector, methDecl.selector) &&
 								(messageSend.binding.returnType == methDecl.binding.returnType)) {
 								if (messageSend.arguments == null && methDecl.arguments == null) {

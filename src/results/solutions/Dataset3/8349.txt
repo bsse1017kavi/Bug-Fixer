@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -104,9 +103,9 @@ public class OperatingSystemMXBeanAttributeHandler extends AbstractPlatformMBean
         } else if (PlatformMBeanConstants.SYSTEM_LOAD_AVERAGE.equals(name)) {
             store.set(ManagementFactory.getOperatingSystemMXBean().getSystemLoadAverage());
         } else if (PlatformMBeanConstants.OPERATING_SYSTEM_READ_ATTRIBUTES.contains(name)
-throw PlatformMBeanMessages.MESSAGES.badReadAttributeImpl8(name);
+                    || PlatformMBeanConstants.OPERATING_SYSTEM_METRICS.contains(name)) {
             // Bug
-            throw new IllegalStateException(String.format("Read support for attribute %s was not properly implemented", name));
+throw PlatformMBeanMessages.MESSAGES.badReadAttributeImpl8(name);
         }
     }
 }

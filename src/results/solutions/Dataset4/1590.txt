@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class DiscoveryNodeFilters {
                     if (node.id().equals(value)) {
                         return true;
                     }
-} else if ("_name".equals(attr) || "name".equals(attr)) {
+                }
                 return false;
-            } else if ("_name".equals(attr)) {
+} else if ("_name".equals(attr) || "name".equals(attr)) {
                 for (String value : values) {
                     if (Regex.simpleMatch(value, node.name())) {
                         return true;

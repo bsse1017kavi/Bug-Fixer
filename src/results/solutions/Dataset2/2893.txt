@@ -1,4 +1,3 @@
-
 /*
  * Created on Nov 17, 2004
  *
@@ -105,9 +104,9 @@ public static final String DEBUG_KEY = "log4j.debug";
   static public void attachTemporaryConsoleAppender(LoggerRepository repository) {
     Logger ll = repository.getLogger(Constants.LOG4J_PACKAGE_NAME);
     
-new PatternLayout("TEMPORARY CONSOLE APPPENDER: %d %level [%t] %c - %m%n"));
+    ConsoleAppender appender = new ConsoleAppender();
     appender.setLayout(
-      new PatternLayout("LOG4J-INTERNAL: %d %level [%t] %c - %m%n"));
+new PatternLayout("TEMPORARY CONSOLE APPPENDER: %d %level [%t] %c - %m%n"));
     appender.setName(Constants.TEMP_CONSOLE_APPENDER_NAME);
     appender.activateOptions();
     ll.addAppender(appender);

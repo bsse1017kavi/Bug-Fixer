@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$ $Date:
  * 2006-05-26 07:46:36 +0200 (vr, 26 mei 2006) $
@@ -81,9 +80,9 @@ public class Radio<T> extends WebMarkupContainer<T>
 
 		// must be attached to <input type="radio" .../> tag
 		checkComponentTag(tag, "input");
-final RadioGroup group = findParent(RadioGroup.class);
+		checkComponentTagAttribute(tag, "type", "radio");
 
-		final RadioGroup group = (RadioGroup)findParent(RadioGroup.class);
+final RadioGroup group = findParent(RadioGroup.class);
 		final String path = getPath();
 		final String relativePath = path.substring(group.getPath().length() + 1);
 		

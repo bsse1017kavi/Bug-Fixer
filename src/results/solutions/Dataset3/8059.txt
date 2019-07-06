@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -56,9 +55,9 @@ public interface BackingCacheEntryStore<K extends Serializable, V extends Cachea
      * Gets the entry with the given id from the store.
      *
      * @param key {@link Identifiable#getId() id} of the entry. Cannot be <code>null</code>.
-E get(K key, boolean lock);
+     * @return the object store under <code>id</code>. May return <code>null</code>.
      */
-    E get(K key);
+E get(K key, boolean lock);
 
     /**
      * Update an already cached item.

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -154,9 +153,9 @@ public String open () {
 				int dataPtr = OS.NewPtr (maximumSize);
 				int [] actualSize = new int [1];
 				int status = OS.AEGetNthPtr (selection, 1, OS.typeFSRef, theAEKeyword, typeCode, dataPtr, maximumSize, actualSize);
-OS.memmove (fsRef, dataPtr, actualSize [0]);
+				if (status == OS.noErr && typeCode [0] == OS.typeFSRef) {
 					byte [] fsRef = new byte [actualSize [0]];
-					OS.memcpy (fsRef, dataPtr, actualSize [0]);
+OS.memmove (fsRef, dataPtr, actualSize [0]);
 					int dirUrl = OS.CFURLCreateFromFSRef (OS.kCFAllocatorDefault, fsRef);
 					int dirString = OS.CFURLCopyFileSystemPath(dirUrl, OS.kCFURLPOSIXPathStyle);
 					OS.CFRelease (dirUrl);						

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -102,9 +101,9 @@ public class PluginActionContributionItem extends ActionContributionItem {
         // if there is an object for this contribution could 
         // not be created, return isVisible().
         if (activityObject == null) 
-Collection activeObjects = objectManager.getEnabledObjects();
+            return super.isVisible();
 
-        Collection activeObjects = objectManager.getActiveObjects();
+Collection activeObjects = objectManager.getEnabledObjects();
         // check for visibility only if the active objects contains this object.
         if (activeObjects.contains(activityObject)) {
             return super.isVisible();

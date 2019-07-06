@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -55,9 +54,9 @@ abstract class OpenGLTab {
 		gridData.widthHint = 400;
 		gridData.verticalAlignment = GridData.BEGINNING;
 		GLData data = new GLData();
-glCanvas = new GLCanvas(tabFolderPage, SWT.NO_BACKGROUND, data);
+		data.doubleBuffer = true;
 		data.stencilSize = 8;
-		glCanvas = new GLCanvas(tabFolderPage, SWT.NONE, data);
+glCanvas = new GLCanvas(tabFolderPage, SWT.NO_BACKGROUND, data);
 		glCanvas.setLayout(new GridLayout());
 		glCanvas.setLayoutData(gridData);
 		glCanvas.setSize(400, 400);		// needed for windows

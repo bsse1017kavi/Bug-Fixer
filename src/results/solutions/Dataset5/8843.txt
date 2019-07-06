@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -59,9 +58,9 @@ public class AsmBuilderTest extends TestCase {
 		LocalTypeDeclaration local = new LocalTypeDeclaration(new CompilationResult(cu, 0, 0, 0));
 		local.name = new char[2];
 		BlockScope scope = null;
-new AsmHierarchyBuilder(new CompilationResult(cu, 0, 0, 0)).visit(local, scope);
+		
 		try { 
-			new AsmBuilder(new CompilationResult(cu, 0, 0, 0)).visit(local, scope);
+new AsmHierarchyBuilder(new CompilationResult(cu, 0, 0, 0)).visit(local, scope);
 		} catch (Exception e) {
 			assertTrue(e instanceof EmptyStackException);
 		}

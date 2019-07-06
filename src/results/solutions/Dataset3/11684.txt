@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -83,9 +82,9 @@ public class RequestMappingHandlerMapping extends RequestMappingInfoHandlerMappi
 				new PatternsRequestCondition(annotation.value(), getUrlPathHelper(), getPathMatcher()),
 				new RequestMethodsRequestCondition(annotation.method()),
 				new ParamsRequestCondition(annotation.params()),
-new ProducesRequestCondition(annotation.produces(), annotation.headers()), null);
+				new HeadersRequestCondition(annotation.headers()),
 				new ConsumesRequestCondition(annotation.consumes(), annotation.headers()),
-				new ProducesRequestCondition(annotation.produces(), annotation.headers()));
+new ProducesRequestCondition(annotation.produces(), annotation.headers()), null);
 	}
 	
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -276,9 +275,9 @@ public abstract class Application
 			throw new IllegalArgumentException("argument listener may not be null");
 		}
 
-if (listener.equals(element))
+		for (IComponentInstantiationListener element : componentInstantiationListeners)
 		{
-			if (listener == element)
+if (listener.equals(element))
 			{
 				return;
 			}

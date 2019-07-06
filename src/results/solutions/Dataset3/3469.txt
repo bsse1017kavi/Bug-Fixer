@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -42,9 +41,9 @@ class RealmAuthenticationProviderService implements Service<RealmAuthenticationP
     private final InjectedValue<CallbackHandler> serverCallbackValue = new InjectedValue<CallbackHandler>();
 
     private RealmAuthenticationProvider realmAuthenticationProvider = null;
-realmAuthenticationProvider = new RealmAuthenticationProvider(securityRealmInjectedValue.getValue(), serverCallbackValue.getOptionalValue());
+
     public void start(StartContext startContext) throws StartException {
-        realmAuthenticationProvider = new RealmAuthenticationProvider(securityRealmInjectedValue.getValue(), serverCallbackValue.getValue());
+realmAuthenticationProvider = new RealmAuthenticationProvider(securityRealmInjectedValue.getValue(), serverCallbackValue.getOptionalValue());
     }
 
     public void stop(StopContext stopContext) {

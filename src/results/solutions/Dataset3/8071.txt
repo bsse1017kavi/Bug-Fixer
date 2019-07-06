@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -130,9 +129,9 @@ class HostAdd extends AbstractAddStepHandler {
         addCommonHostListenerDeps(context, parent, builder, UndertowExtension.HTTP_LISTENER_PATH);
         addCommonHostListenerDeps(context, parent, builder, UndertowExtension.AJP_LISTENER_PATH);
         addCommonHostListenerDeps(context, parent, builder, UndertowExtension.HTTPS_LISTENER_PATH);
-builder.setInitialMode(Mode.PASSIVE);
+
         builder.addListener(verificationHandler);
-        builder.setInitialMode(Mode.ON_DEMAND);
+builder.setInitialMode(Mode.PASSIVE);
         return builder.install();
     }
 

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -588,9 +587,9 @@ public class SourceMapper
 				}
 			}
 		} catch (CoreException e) {
-if (zip != null && JavaModelManager.getJavaModelManager().zipFiles == null) {
+			return null;
 		} finally {
-			if (zip != null) {
+if (zip != null && JavaModelManager.getJavaModelManager().zipFiles == null) {
 				try {
 					zip.close();
 				} catch (IOException e) {

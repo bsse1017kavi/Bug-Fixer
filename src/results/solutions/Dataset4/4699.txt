@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -92,9 +91,9 @@ public class RestTestSuiteParser implements RestTestFragmentParser<RestTestSuite
                 }
             }
 
-throw new RestTestParseException("duplicate test section [" + testSection.getName() + "] found in [" + restTestSuite.getPath() + "]");
+            TestSection testSection = parseContext.parseTestSection();
             if (!restTestSuite.addTestSection(testSection)) {
-                throw new RestTestParseException("duplicate test section [" + testSection.getName() + "] found in [" + restTestSuite.getDescription() + "]");
+throw new RestTestParseException("duplicate test section [" + testSection.getName() + "] found in [" + restTestSuite.getPath() + "]");
             }
         }
 

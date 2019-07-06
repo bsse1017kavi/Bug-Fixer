@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class TestPreparedQueryCache extends TestCase {
 	public void setUp()  {
         if (emf == null) {
             Properties config = new Properties();
-config.put("openjpa.jdbc.QuerySQLCache", "true(EnableStatistics=true)");
+            config.put("openjpa.jdbc.SynchronizeMappings", "buildSchema(ForeignKeys=true,SchemaAction='drop,add')");
             config.put("openjpa.jdbc.JDBCListeners", new JDBCListener[] { auditor = new SQLAuditor()});
-            config.put("openjpa.jdbc.QuerySQLCache", "true");
+config.put("openjpa.jdbc.QuerySQLCache", "true(EnableStatistics=true)");
             config.put("openjpa.RuntimeUnenhancedClasses", "unsupported");
             config.put("openjpa.DynamicEnhancementAgent", "false");
             emf = (OpenJPAEntityManagerFactorySPI)OpenJPAPersistence.createEntityManagerFactory(

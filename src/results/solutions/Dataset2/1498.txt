@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.eval;
 
 /*
@@ -63,9 +62,9 @@ protected void checkBuilderState() throws JavaModelException {
 public void codeComplete(String codeSnippet, int position, ICodeCompletionRequestor requestor) throws JavaModelException {
 	this.context.complete(
 		codeSnippet.toCharArray(),
-new CompletionRequestorWrapper(requestor,this.project.getNameLookup()),
+		position,
 		this.project.getSearchableNameEnvironment(),
-		new CompletionRequestorWrapper(requestor),
+new CompletionRequestorWrapper(requestor,this.project.getNameLookup()),
 		JavaCore.getOptions()
 	);
 }

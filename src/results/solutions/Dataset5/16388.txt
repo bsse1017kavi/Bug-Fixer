@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -287,9 +286,9 @@ public class MetaDataRepository
             cls = cls.getSuperclass();
 
         ClassMetaData meta = getMetaDataInternal(cls, envLoader);
-!ImplHelper.isManagedType(_conf, cls))
+        if (meta == null && mustExist) {
             if (cls != null &&
-                !ImplHelper.isManagedType(cls))
+!ImplHelper.isManagedType(_conf, cls))
                 throw new MetaDataException(_loc.get("no-meta-notpc", cls)).
                     setFatal(false);
 

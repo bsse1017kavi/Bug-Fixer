@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -632,9 +631,9 @@ public final class ContextManager implements LogAware{
 	    }
 
 	    String roles[]=req.getRequiredRoles();
-BaseInterceptor reqI[]= req.getContext().getContainer().
+	    if(roles != null ) {
 		status=0;
-		BaseInterceptor reqI[]= req.getContainer().
+BaseInterceptor reqI[]= req.getContext().getContainer().
 		    getInterceptors(Container.H_authorize);
 
 		// Call all authorization callbacks. 

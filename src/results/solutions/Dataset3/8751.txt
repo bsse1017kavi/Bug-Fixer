@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -81,9 +80,9 @@ public final class LoggingSubsystemParser implements XMLElementReader<ParseResul
     static LoggingSubsystemElement parseLoggingSubsystemElement(final XMLExtendedStreamReader reader) throws XMLStreamException {
         // No attributes
         if (reader.getAttributeCount() > 0) {
-final LoggingSubsystemElement subsystemElement = new LoggingSubsystemElement(reader.getName());
+            throw unexpectedAttribute(reader, 0);
         }
-        final LoggingSubsystemElement subsystemElement = new LoggingSubsystemElement(null, reader.getName());
+final LoggingSubsystemElement subsystemElement = new LoggingSubsystemElement(reader.getName());
 
         // Elements
         final EnumSet<Element> encountered = EnumSet.noneOf(Element.class);

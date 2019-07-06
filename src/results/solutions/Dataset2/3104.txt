@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -196,9 +195,9 @@ class MethodBinding implements IMethodBinding {
 	 */
 	public IJavaElement getJavaElement() {
 		IType declaringType = (IType) getDeclaringClass().getJavaElement();
-MethodDeclaration method = (MethodDeclaration) ((DefaultBindingResolver) this.resolver).bindingTables.bindingsToAstNodes.get(this);
+		if (declaringType == null) return null;
 		if (!(this.resolver instanceof DefaultBindingResolver)) return null;
-		MethodDeclaration method = (MethodDeclaration) ((DefaultBindingResolver) this.resolver).bindingsToAstNodes.get(this);
+MethodDeclaration method = (MethodDeclaration) ((DefaultBindingResolver) this.resolver).bindingTables.bindingsToAstNodes.get(this);
 		if (method == null) return null;
 		ArrayList parameterSignatures = new ArrayList();
 		Iterator iterator = method.parameters().iterator();

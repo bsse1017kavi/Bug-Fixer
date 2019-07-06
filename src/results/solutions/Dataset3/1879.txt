@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -687,9 +686,9 @@ public class AnnotationMethodHandlerAdapter extends WebContentGenerator
 					customArgumentResolvers, messageConverters);
 		}
 
-throw new MissingServletRequestParameterException(paramName, paramType.getSimpleName());
+		@Override
 		protected void raiseMissingParameterException(String paramName, Class paramType) throws Exception {
-			throw new MissingServletRequestParameterException(paramName, paramType.getName());
+throw new MissingServletRequestParameterException(paramName, paramType.getSimpleName());
 		}
 
 		@Override

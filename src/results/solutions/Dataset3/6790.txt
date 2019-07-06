@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -195,9 +194,9 @@ public class DomainFinalResultHandler implements OperationStepHandler {
                 final ModelNode serverNode = new ModelNode();
                 serverNode.get(HOST).set(hostServer.hostName);
                 serverNode.get(RESPONSE).set(hostServer.result);
-result.get(SERVER_GROUPS, groupName).set(groupNode);
+                groupNode.get(hostServer.serverName).set(serverNode);
             }
-            result.get(SERVER_GROUPS).add(groupName, groupNode);
+result.get(SERVER_GROUPS, groupName).set(groupNode);
         }
         if(!serverGroupSuccess) {
             context.getFailureDescription().set("Operation failed or was rolled back on all servers.");

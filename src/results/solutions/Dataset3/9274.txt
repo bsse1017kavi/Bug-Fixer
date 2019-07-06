@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -59,9 +58,9 @@ public class TypeReference extends SpelNodeImpl {
 		Class<?> clazz = state.findType(typename);
 		clazz = makeArrayIfNecessary(clazz);
 		return new TypedValue(clazz);
-private Class<?> makeArrayIfNecessary(Class<?> clazz) {
+	}
 
-	private Class makeArrayIfNecessary(Class clazz) {
+private Class<?> makeArrayIfNecessary(Class<?> clazz) {
 		if (this.dimensions!=0) {
 			for (int i=0;i<this.dimensions;i++) {
 				Object o = Array.newInstance(clazz, 0);

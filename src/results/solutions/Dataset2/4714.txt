@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -239,9 +238,9 @@ public void exitInterface(int declarationEnd) {
 public void exitMethod(int declarationEnd) {
 	this.methodDepth--;
 }
-enclosingTypeNames[--depth] = null;
+public void popTypeName(){
 	try {
-	enclosingTypeNames[depth--] = null;
+enclosingTypeNames[--depth] = null;
 	} catch (ArrayIndexOutOfBoundsException e) {
 		e.printStackTrace();
 	}

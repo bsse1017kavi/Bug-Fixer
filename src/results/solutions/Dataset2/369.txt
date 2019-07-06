@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist.impl;
 
 /*
@@ -602,9 +601,9 @@ protected NameReference getUnspecifiedReferenceOptimized() {
 		reference = this.createSingleAssistNameReference(assistIdentifier(), positions[0]);
 	} else {
 		/* completion inside subsequent identifier */
-reference.bits &= ~AstNode.RestrictiveFlagMASK;
+		reference = this.createQualifiedAssistNameReference(subset, assistIdentifier(), positions);
 	};
-	reference.bits &= ~NameReference.RestrictiveFlagMASK;
+reference.bits &= ~AstNode.RestrictiveFlagMASK;
 	reference.bits |= LOCAL | FIELD;
 	
 	assistNode = reference;

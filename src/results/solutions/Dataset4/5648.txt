@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -82,9 +81,9 @@ public class ShortArrayIndexFieldData extends AbstractIndexFieldData<ShortArrayA
     public ShortArrayAtomicFieldData loadDirect(AtomicReaderContext context) throws Exception {
         AtomicReader reader = context.reader();
 
-return ShortArrayAtomicFieldData.EMPTY;
+        Terms terms = reader.terms(getFieldNames().indexName());
         if (terms == null) {
-            return new ShortArrayAtomicFieldData.SingleFixedSet(new short[1], 0, new FixedBitSet(1));
+return ShortArrayAtomicFieldData.EMPTY;
         }
 
         // TODO: how can we guess the number of terms? numerics end up creating more terms per value...

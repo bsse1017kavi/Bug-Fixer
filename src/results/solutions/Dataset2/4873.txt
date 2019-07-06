@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -115,9 +114,9 @@ class XMLFileHandler
     {
         if (TAG_EVENT.equals(aQName)) {
             mThreadName = aAtts.getValue("thread");
-mPriority = Priority.toPriority(aAtts.getValue("level"));
+            mTimeStamp = Long.parseLong(aAtts.getValue("timestamp"));
             mCategoryName = aAtts.getValue("category");
-            mPriority = Priority.toPriority(aAtts.getValue("priority"));
+mPriority = Priority.toPriority(aAtts.getValue("level"));
         } else if (TAG_LOCATION_INFO.equals(aQName)) {
             mLocationDetails = aAtts.getValue("class") + "."
                 + aAtts.getValue("method")

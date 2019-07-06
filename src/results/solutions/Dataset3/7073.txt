@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -113,9 +112,9 @@ public class RegressionResults implements Serializable {
         this.rank = rank;
         this.containsConstant = containsConstant;
         this.globalFitInfo = new double[5];
-if (rank > 0) {
+        Arrays.fill(this.globalFitInfo, Double.NaN);
 
-        if (rank > 2) {
+if (rank > 0) {
             this.globalFitInfo[SST_IDX] = containsConstant ?
                     (sumysq - sumy * sumy / ((double) nobs)) : sumysq;
         }

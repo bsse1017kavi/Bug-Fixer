@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class LoggerLevelChange extends AbstractModelUpdateHandler {
     protected void performRuntime(final OperationContext context, final ModelNode operation, final ModelNode model,
                                   final ServiceVerificationHandler verificationHandler, final List<ServiceController<?>> newControllers) throws OperationFailedException {
         final PathAddress address = PathAddress.pathAddress(operation.require(OP_ADDR));
-final ServiceRegistry serviceRegistry = context.getServiceRegistry(true);
+        final String name = address.getLastElement().getValue();
         final ModelNode level = LEVEL.validateResolvedOperation(model);
-        final ServiceRegistry serviceRegistry = context.getServiceRegistry(false);
+final ServiceRegistry serviceRegistry = context.getServiceRegistry(true);
         final ServiceController<Logger> controller = (ServiceController<Logger>) serviceRegistry.getService(LogServices.loggerName(name));
         if (controller != null && level.isDefined()) {
             controller.getValue().setLevel(Level.parse(level.asString()));

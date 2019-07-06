@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -103,9 +102,9 @@ public class ExpressionLanguageScenarioTests extends ExpressionTestCase {
 		expr = parser.parseExpression("#primes.get(1)");
 		value = expr.getValue(ctx);
 		assertEquals(3, value);
-expr = parser.parseExpression("#primes.?[#this>10]");
+
 		// all prime numbers > 10 from the list (using selection ?{...})
-		expr = parser.parseExpression("#primes.?{#this>10}");
+expr = parser.parseExpression("#primes.?[#this>10]");
 		value = expr.getValue(ctx);
 		assertEquals("[11, 13, 17]", value.toString());			
 	}

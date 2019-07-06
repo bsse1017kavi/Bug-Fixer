@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -108,9 +107,9 @@ public class Projection extends SpelNodeImpl {
 			}
 			return new TypedValue(result,op.getTypeDescriptor());
 		} else {
-return TypedValue.NULL;
+			if (operand==null) {
 				if (nullSafe) {
-					return TypedValue.NULL_TYPED_VALUE;
+return TypedValue.NULL;
 				} else {					
 					throw new SpelEvaluationException(getStartPosition(),SpelMessage.PROJECTION_NOT_SUPPORTED_ON_TYPE, "null");
 				}

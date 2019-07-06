@@ -1,4 +1,3 @@
-
 package de.swagner.paxbritannica.background;
 
 import com.badlogic.gdx.Gdx;
@@ -57,9 +56,9 @@ public class Debris extends Sprite {
 		delta = Math.min(0.06f, Gdx.graphics.getDeltaTime());
 
 		since_alive += delta;
-position.add(facing.mul((SPEED + random_speed) * delta));
+
 		facing.rotate((SPEED + random_speed) * delta).nor();
-		position.add(facing.scl((SPEED + random_speed) * delta));
+position.add(facing.mul((SPEED + random_speed) * delta));
 		this.setPosition(position.x, position.y);
 
 		if (since_alive < FADE_TIME) {

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -45,9 +44,9 @@ update(InputStream in) throws IOException {
 			br = (BufferedReader)inputs.lastElement();
 
 			if (is == System.in)
-line = Master.readExtendedLine(br);
+				System.out.print("> ");
 
-			line = IO.readExtendedLine(br);
+line = Master.readExtendedLine(br);
 			if (line == null) {
 				br.close();
 				inputs.removeElement(br);

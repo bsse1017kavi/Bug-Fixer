@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -46,9 +45,9 @@ public class ClassfileSet extends FileSet
      * @return The DirectoryScanner value
      */
     public DirectoryScanner getDirectoryScanner( Project p )
-scanner.setBasedir( getDir() );
+    {
         DependScanner scanner = new DependScanner();
-        scanner.setBasedir( getDir( p ) );
+scanner.setBasedir( getDir() );
         scanner.setRootClasses( rootClasses );
         scanner.scan();
         return scanner;

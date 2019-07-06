@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -379,9 +378,9 @@ public class SSTableReader extends SSTable implements Comparable<SSTableReader>
      * @return The position in the data file to find the key, or -1 if the key is not present
      */
     public long getPosition(DecoratedKey decoratedKey, Operator op)
-if (op == Operator.EQ && !bf.isPresent(decoratedKey.key))
+    {
         // first, check bloom filter
-        if (op == Operator.EQ && !bf.isPresent(partitioner.convertToDiskFormat(decoratedKey)))
+if (op == Operator.EQ && !bf.isPresent(decoratedKey.key))
             return -1;
 
         // next, the key cache

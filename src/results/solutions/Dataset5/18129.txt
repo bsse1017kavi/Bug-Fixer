@@ -1,4 +1,3 @@
-
 /* Copyright (c) 2006-2008 Jan S. Rellermeyer
  * Systems Group,
  * Department of Computer Science, ETH Zurich.
@@ -978,9 +977,9 @@ final class RemoteOSGiServiceImpl implements RemoteOSGiService, Remoting {
 		final String filter = "".equals(serviceID) ? null : '(' //$NON-NLS-1$
 				+ Constants.SERVICE_ID + "=" + serviceID + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 
-.getContext().getServiceReferences(null, filter);
+		try {
 			final ServiceReference[] refs = RemoteOSGiActivator.getActivator()
-					.getContext().getServiceReferences((String) null, filter);
+.getContext().getServiceReferences(null, filter);
 			if (refs == null) {
 				if (log != null) {
 					log.log(LogService.LOG_WARNING, "COULD NOT FIND " + filter); //$NON-NLS-1$

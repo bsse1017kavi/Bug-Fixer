@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -148,9 +147,9 @@ public class BitFieldTest extends TestCase {
             assertEquals(bf_multi.getShortValue(bf_multi.setShortValue((short) 0, (short) j)), (short) j);
             assertEquals(bf_multi.setShortValue((short) 0, (short) j), (short) (j << 7));
         }
-assertEquals(bf_zero.setShortValue((short) 0, (short) j), (short) 0);
+        for (int j = 0; j < 128; j++) {
             assertEquals(bf_zero.getShortValue(bf_zero.setShortValue((short) 0, (short) j)), (short) 0);
-            assertEquals(bf_zero.setShortValue((short) 0, (short) j), (short) (0));
+assertEquals(bf_zero.setShortValue((short) 0, (short) j), (short) 0);
         }
 
         // verify that excess bits are stripped off

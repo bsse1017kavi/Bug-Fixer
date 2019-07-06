@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2002-2004 The Apache Software Foundation.
@@ -102,9 +101,9 @@ public class TableVisualizer extends AbstractVisualizer implements Clearable {
 
 	public void add(SampleResult res) {
 		synchronized (calc) {
-.getCount(), res.getTimeStamp(),res.getBytes());
+			calc.addValue(res.getTime());
 			Sample newS = new Sample(res.getSampleLabel(), res.getTime(), 0, 0, 0, 0, 0, 0, res.isSuccessful(), calc
-					.getCount(), res.getTimeStamp(),res.getResponseData().length);
+.getCount(), res.getTimeStamp(),res.getBytes());
 			model.addRow(newS);
 		}
 		currentData = res.getTime();

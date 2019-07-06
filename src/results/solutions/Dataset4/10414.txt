@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -162,9 +161,9 @@ public class HasParentQueryParser implements QueryParser {
         boolean deleteByQuery = "delete_by_query".equals(SearchContext.current().source());
         Query query;
         if (!deleteByQuery && score) {
-query = new ParentConstantScoreQuery(innerQuery, parentType, childrenFilter);
+            query = new ParentQuery(innerQuery, parentType, childrenFilter);
         } else {
-            query = new ParentConstantScoreQuery(innerQuery, parentType, childrenFilter, true);
+query = new ParentConstantScoreQuery(innerQuery, parentType, childrenFilter);
             if (deleteByQuery) {
                 query = new XConstantScoreQuery(new DeleteByQueryWrappingFilter(query));
             }

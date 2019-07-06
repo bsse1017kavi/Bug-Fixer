@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -255,9 +254,9 @@ public class NullInputStream extends InputStream {
             throw new UnsupportedOperationException("Mark not supported");
         }
         if (mark < 0) {
-if (position > mark + readlimit) {
+            throw new IOException("No position has been marked");
         }
-        if (position > (mark + readlimit)) {
+if (position > mark + readlimit) {
             throw new IOException("Marked position [" + mark +
                     "] is no longer valid - passed the read limit [" +
                     readlimit + "]");

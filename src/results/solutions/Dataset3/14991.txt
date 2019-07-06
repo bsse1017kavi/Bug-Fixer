@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class ManagedBeanDependencyProcessor implements DeploymentUnitProcessor {
         final List<AnnotationInstance> instances = compositeIndex.getAnnotations(MANAGED_BEAN_ANNOTATION_NAME);
         if (instances == null || instances.isEmpty()) {
             return;
-final ModuleLoader moduleLoader = Module.getBootModuleLoader();
+        }
 
-        final ModuleLoader moduleLoader = Module.getSystemModuleLoader();
+final ModuleLoader moduleLoader = Module.getBootModuleLoader();
         moduleSpecification.addDependency(new ModuleDependency(moduleLoader, JAVAEE_API_ID, false, false, false));
     }
 

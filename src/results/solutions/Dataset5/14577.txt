@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -98,9 +97,9 @@ public class OS extends C {
 				int /*long*/ hModule = OS.GetLibraryHandle ();
 				while (OS.GetModuleFileName (hModule, buffer, buffer.length ()) == buffer.length ()) {
 					buffer = new TCHAR (0, buffer.length () + MAX_PATH);
-int byteCount = buffer.length () * (OS.IsUnicode ? 2 : 1);
+				}
 				int /*long*/ hHeap = OS.GetProcessHeap ();
-				int byteCount = buffer.length () * TCHAR.sizeof;
+int byteCount = buffer.length () * (OS.IsUnicode ? 2 : 1);
 				int /*long*/ pszText = OS.HeapAlloc (hHeap, HEAP_ZERO_MEMORY, byteCount);
 				OS.MoveMemory (pszText, buffer, byteCount);	
 				ACTCTX pActCtx = new ACTCTX ();

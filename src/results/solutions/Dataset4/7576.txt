@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -761,9 +760,9 @@ public abstract class BlobStoreIndexShardGateway extends AbstractIndexShardCompo
                     String md5 = Digest.md5HexFromByteArray(container.readBlobFully(name + ".md5"));
                     if (cachedMd5 != null) {
                         cachedMd5.put(name, md5);
-} catch (Exception e) {
+                    }
                     builder.put(name, new PlainBlobMetaData(name, sizeInBytes, md5));
-                } catch (IOException e) {
+} catch (Exception e) {
                     // don't add it!
                 }
             }

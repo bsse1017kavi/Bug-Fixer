@@ -1,4 +1,3 @@
-
 package storm.kafka;
 
 import backtype.storm.Config;
@@ -193,9 +192,9 @@ public class PartitionManager {
             LOG.info("No new offset for " + _partition + " for topology: " + _topologyInstanceId);
         }
     }
-return _spoutConfig.zkRoot + "/" + _spoutConfig.id + "/" +  _spoutConfig.topic + "/" + _partition.getId();
+
     private String committedPath() {
-        return _spoutConfig.zkRoot + "/" + _spoutConfig.id + "/" + _partition.getId();
+return _spoutConfig.zkRoot + "/" + _spoutConfig.id + "/" +  _spoutConfig.topic + "/" + _partition.getId();
     }
 
     public long queryPartitionOffsetLatestTime() {

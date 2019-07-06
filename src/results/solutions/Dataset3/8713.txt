@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -137,9 +136,9 @@ public class ServerToHostOperationHandlerFactoryService implements ManagementCha
 
                 log.infof("Server [%s] registered using connection [%s]", serverName, channel);
                 executorService.execute(new Runnable() {
-final Channel mgmtChannel = channel;
+                    @Override
                     public void run() {
-                        final ManagementChannel mgmtChannel = new ManagementChannel(serverName, channel);
+final Channel mgmtChannel = channel;
                         ServerToHostOperationHandlerFactoryService.this.callback.getValue().serverRegistered(serverName, mgmtChannel, new ManagedServerLifecycleCallback.ProxyCreatedCallback() {
                             @Override
                             public void proxyOperationHandlerCreated(final ManagementMessageHandler handler) {

@@ -1,4 +1,3 @@
-
 package backtype.storm.drpc;
 
 import backtype.storm.Config;
@@ -34,9 +33,9 @@ public class ReturnResults implements IRichBolt {
             String host = (String) retMap.get("host");
             int port = (int) ((Long) retMap.get("port")).longValue();
             String id = (String) retMap.get("id");
-client = (DistributedRPC.Iface) ServiceRegistry.getService(host);
+            DistributedRPC.Iface client;
             if(local) {
-                client = (ILocalDRPC) ServiceRegistry.getService(host);
+client = (DistributedRPC.Iface) ServiceRegistry.getService(host);
             } else {
                 client = new DRPCClient(host, port);
             }

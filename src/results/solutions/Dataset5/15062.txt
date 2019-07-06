@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1227,9 +1226,9 @@ LRESULT WM_GETDLGCODE (int /*long*/ wParam, int /*long*/ lParam) {
 	* Return DLGC_BUTTON so that mnemonics will be
 	* processed without needing to press the ALT key
 	* when the widget has focus.
-return new LRESULT (OS.DLGC_BUTTON | OS.DLGC_WANTARROWS);
+	*/
 	if (result != null) return result;
-	return new LRESULT (OS.DLGC_BUTTON);
+return new LRESULT (OS.DLGC_BUTTON | OS.DLGC_WANTARROWS);
 }
 
 LRESULT WM_KEYDOWN (int /*long*/ wParam, int /*long*/ lParam) {

@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.view.View.GONE;
@@ -150,9 +149,9 @@ public class ViewGistActivity extends DialogFragmentActivity implements LoaderCa
         switch (item.getItemId()) {
         case id.gist_comment:
             startActivityForResult(CreateCommentActivity.createIntent(), REQUEST_CODE_COMMENT);
-ConfirmDialogFragment.show(this, REQUEST_CONFIRM_DELETE, "Confirm Delete",
+            return true;
         case id.gist_delete:
-            ConfirmDialogFragment.confirm(this, REQUEST_CONFIRM_DELETE, "Confirm Delete",
+ConfirmDialogFragment.show(this, REQUEST_CONFIRM_DELETE, "Confirm Delete",
                     "Are you sure you want to delete this Gist?");
         case id.gist_refresh:
             gistFragment.refresh();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -322,9 +321,9 @@ public class FsTranslog extends AbstractIndexShardComponent implements Translog 
     @Override
     public Location add(Operation operation) throws TranslogException {
         CachedStreamOutput.Entry cachedEntry = CachedStreamOutput.popEntry();
-BytesStreamOutput out = cachedEntry.bytes();
+        rwl.readLock().lock();
         try {
-            BytesStreamOutput out = cachedEntry.cachedBytes();
+BytesStreamOutput out = cachedEntry.bytes();
             out.writeInt(0); // marker for the size...
             TranslogStreams.writeTranslogOperation(out, operation);
             out.flush();

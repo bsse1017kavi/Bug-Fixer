@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -813,9 +812,9 @@ public final class CFMetaData
         if (def.isSetColumn_metadata())
         {
             for (org.apache.cassandra.thrift.ColumnDef cdef : def.getColumn_metadata())
-tdef.name = ByteBufferUtil.clone(cdef.bufferForName());
+            {
                 org.apache.cassandra.db.migration.avro.ColumnDef tdef = new org.apache.cassandra.db.migration.avro.ColumnDef();
-                tdef.name = ByteBufferUtil.clone(cdef.BufferForName());
+tdef.name = ByteBufferUtil.clone(cdef.bufferForName());
                 tdef.validation_class = cdef.getValidation_class();
                 tdef.index_name = cdef.getIndex_name();
                 tdef.index_type = cdef.getIndex_type() == null ? null : org.apache.cassandra.db.migration.avro.IndexType.valueOf(cdef.getIndex_type().name());

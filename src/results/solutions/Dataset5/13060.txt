@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -374,9 +373,9 @@ class  XSDComplexTypeTraverser extends XSDAbstractParticleTraverser {
             fFacetData = fi.facetdata;
             attrNode = fi.nodeAfterFacets;
           }
-typeInfo.fDatatypeValidator = createRestrictedValidator(baseValidator, fFacetData, fErrorReporter);
 
-          typeInfo.fDatatypeValidator = createRestrictedValidator(baseValidator, fFacetData); 
+
+typeInfo.fDatatypeValidator = createRestrictedValidator(baseValidator, fFacetData, fErrorReporter);
           if (typeInfo.fDatatypeValidator == null) {
             // REVISIT error msg
             reportGenericSchemaError("Internal error - could not create a new validator");

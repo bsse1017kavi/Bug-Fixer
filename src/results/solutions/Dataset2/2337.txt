@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -5693,9 +5692,9 @@ public void optimizeBranch(int oldPosition, BranchLabel lbl) {
 			label.position = position;
 			if (label instanceof CaseLabel) {
 				int offset = position - ((CaseLabel) label).instructionPosition;
-this.writeSignedWord(forwardPosition, offset);
+				for (int j = 0; j < label.forwardReferenceCount; j++) {
 					int forwardPosition = label.forwardReferences[j];
-					this.writeSignedShort(forwardPosition, offset);
+this.writeSignedWord(forwardPosition, offset);
 				}
 			} else {
 				for (int j = 0; j < label.forwardReferenceCount; j++) {

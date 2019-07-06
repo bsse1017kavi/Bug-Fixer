@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class RandomKeyMutation implements MutationPolicy {
      * 
      * @throws IllegalArgumentException if <code>original</code> is not a 
      * {@link RandomKey} instance
-if (!(original instanceof RandomKey<?>)) {
+     */
     public Chromosome mutate(Chromosome original) {
-        if (!(original instanceof RandomKey)) {
+if (!(original instanceof RandomKey<?>)) {
             throw MathRuntimeException.createIllegalArgumentException(
                     "RandomKeyMutation works only with RandomKeys, got " +
                     original.getClass().getSimpleName());

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -164,9 +163,9 @@ public class ModelBuilder {
 	/** Creates a new MeshPart within the current Node and returns a {@link MeshPartBuilder} which can be used to build the shape of
 	 * the part. If possible a previously used {@link MeshPartBuilder} will be reused, to reduce the number of mesh binds.
 	 * Therefore you can only build one part at a time. The resources the Material might contain are not managed, use
-public MeshPartBuilder part (final String id, int primitiveType, final VertexAttributes attributes, final Material material) {
+	 * {@link #manage(Disposable)} to add those to the model.
 	 * @return The {@link MeshPartBuilder} you can use to build the MeshPart. */
-	private MeshPartBuilder part (final String id, int primitiveType, final VertexAttributes attributes, final Material material) {
+public MeshPartBuilder part (final String id, int primitiveType, final VertexAttributes attributes, final Material material) {
 		final MeshBuilder builder = getBuilder(attributes);
 		part(builder.part(id, primitiveType), material);
 		return builder;

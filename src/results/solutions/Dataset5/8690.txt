@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -123,8 +122,8 @@ public final class FeedbackPanel extends Panel implements IValidationFeedback
 	 */
 	public void updateValidationFeedback(final Form form)
 	{
-messageListView.modelChangedStructure();
+		// Force re-rendering of the list
 		messageListView.setModel(getPage().getFeedbackMessages().model(form));
-		messageListView.invalidateModel();
+messageListView.modelChangedStructure();
 	}
 }

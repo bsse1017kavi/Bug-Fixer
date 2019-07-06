@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -292,9 +291,9 @@ public class StringFieldMapper extends AbstractFieldMapper<String> implements Al
             return null;
         }
         if (context.includeInAll(includeInAll, this)) {
-if (!fieldType().indexed() && !fieldType().stored()) {
+            context.allEntries().addText(names.fullName(), value, boost);
         }
-        if (!indexed() && !stored()) {
+if (!fieldType().indexed() && !fieldType().stored()) {
             context.ignoredValue(names.indexName(), value);
             return null;
         }

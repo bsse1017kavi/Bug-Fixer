@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -31,9 +30,9 @@ public class ClosedOutputStreamTest extends TestCase {
      */
     public void testRead() {
         try {
-} catch (final IOException e) {
+            new ClosedOutputStream().write('x');
             fail("write(b)");
-        } catch (IOException e) {
+} catch (final IOException e) {
             // expected
         }
     }

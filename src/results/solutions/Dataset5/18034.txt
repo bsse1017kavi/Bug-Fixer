@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -943,9 +942,9 @@ int /*long*/ gtk_focus_out_event (int /*long*/ widget, int /*long*/ event) {
 	* fix is to check the current grab handle and see if it is a GTK_MENU
 	* and ignore the focus event when the menu is both shown and hidden.
 	*/
-int /*long*/ grabHandle = OS.gtk_grab_get_current ();
+	Display display = this.display;
 	display.ignoreActivate = false;
-	int grabHandle = OS.gtk_grab_get_current ();
+int /*long*/ grabHandle = OS.gtk_grab_get_current ();
 	if (grabHandle != 0) {
 		if (OS.G_OBJECT_TYPE(grabHandle) == OS.GTK_TYPE_MENU()) display.ignoreActivate = true;
 		return 0;

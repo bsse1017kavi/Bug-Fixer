@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -166,9 +165,9 @@ public class DeploymentAddHandler implements OperationStepHandler, DescriptionPr
         // content is a clone
         subModel.get(CONTENT).set(content);
         subModel.get(ENABLED).set(operation.has(ENABLED) && operation.get(ENABLED).asBoolean()); // TODO consider starting
-if (subModel.get(ENABLED).asBoolean() && context.isNormalServer()) {
+        subModel.get(PERSISTENT).set(!operation.hasDefined(PERSISTENT) || operation.get(PERSISTENT).asBoolean());
 
-        if (subModel.get(ENABLED).asBoolean() && (context.getType() == OperationContext.Type.SERVER)) {
+if (subModel.get(ENABLED).asBoolean() && context.isNormalServer()) {
             DeploymentHandlerUtil.deploy(context, runtimeName, name, contentItem);
         }
 

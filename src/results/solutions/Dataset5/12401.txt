@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1191,9 +1190,9 @@ public abstract class Page extends MarkupContainer implements IRedirectListener,
 		visitChildren(new Component.IVisitor()
 		{
 			public Object component(final Component component)
-if (component.sameInnermostModel(Page.this))
+			{
 				// If form component is using form model
-				if (component.sameRootModel(Page.this))
+if (component.sameInnermostModel(Page.this))
 				{
 					component.modelChanged();
 				}

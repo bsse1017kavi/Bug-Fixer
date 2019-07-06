@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -44,9 +43,9 @@ public abstract class ClassFileStruct {
 			+ (((long) (reference[position++] & 0xFF)) << 40)
 			+ (((long) (reference[position++] & 0xFF)) << 32)
 			+ (((long) (reference[position++] & 0xFF)) << 24)
-+ (reference[position++] & 0xFF);
+			+ (((long) (reference[position++] & 0xFF)) << 16)
 			+ (((long) (reference[position++] & 0xFF)) << 8)
-			+ ((long) (reference[position++] & 0xFF));
++ (reference[position++] & 0xFF);
 	}
 
 	protected int u1At(byte[] reference, int relativeOffset, int structOffset) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -429,9 +428,9 @@ public class GeoDistanceTests extends AbstractIntegrationTest {
         assertThat(resultArcDistance6, equalTo(GeoDistance.ARC.calculate(source_lat, source_long, target_lat, target_long, DistanceUnit.KILOMETERS)));
     }
 
-wipeIndices();
+    @Test
     public void testDistanceSortingNestedFields() throws Exception {
-        client().admin().indices().prepareDelete().execute().actionGet();
+wipeIndices();
         String mapping = XContentFactory.jsonBuilder().startObject().startObject("company")
                 .startObject("properties")
                 .startObject("name").field("type", "string").endObject()

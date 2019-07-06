@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -193,9 +192,9 @@ public abstract class ModelTestModelControllerService extends AbstractController
     protected boolean boot(List<ModelNode> bootOperations, boolean rollbackOnRuntimeFailure) throws ConfigurationPersistenceException {
         try {
             preBoot(bootOperations, rollbackOnRuntimeFailure);
-ModelNode toValidate = validateOpsFilter.adjustForValidation(op);
+            OperationValidator validator = new OperationValidator(rootRegistration);
             for (ModelNode op : bootOperations) {
-                ModelNode toValidate = validateOpsFilter.adjustForValidation(op.clone());
+ModelNode toValidate = validateOpsFilter.adjustForValidation(op);
                 if (toValidate != null) {
                     validator.validateOperation(toValidate);
                 }

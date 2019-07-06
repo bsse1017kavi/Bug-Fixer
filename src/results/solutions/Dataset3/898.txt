@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -149,9 +148,9 @@ abstract class AbstractTrie<K, V> extends AbstractMap<K, V>
      */
     final boolean compareKeys(final K key, final K other) {
         if (key == null) {
-return false;
+            return other == null;
         } else if (other == null) {
-            return key == null;
+return false;
         }
         
         return keyAnalyzer.compare(key, other) == 0;

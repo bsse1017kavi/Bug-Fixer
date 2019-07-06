@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -151,9 +150,9 @@ abstract class AbstractBindingWriteHandler extends WriteAttributeHandlers.WriteA
             context.revertReloadRequired();
         }
     }
-return context.isNormalServer();
+
     protected boolean requiresRuntime(OperationContext context) {
-        return context.getType() == OperationContext.Type.SERVER;
+return context.isNormalServer();
     }
 
     private void handleBindingReinstall(OperationContext context, String bindingName, ModelNode bindingModel) throws OperationFailedException {

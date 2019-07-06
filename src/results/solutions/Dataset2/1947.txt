@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -702,9 +701,9 @@ public abstract class AttributeValue
             String desc = getActivityDescription();
             activity.create(getIssue(), getAttribute(), desc, this.transaction,
                             oldNumericValue, getNumericValue(),
-oldValue , getValue(), dbcon);
+                            oldUserId, getUserId(),
                             oldOptionId, getOptionId(),
-                            oldValue , getValue());
+oldValue , getValue(), dbcon);
         }        
         super.save(dbcon);
         if ( chainedValue != null ) 

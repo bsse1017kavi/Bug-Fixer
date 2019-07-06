@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class BoundedQueueThreadPoolMetricsHandler extends ThreadPoolMetricsHandl
             context.getResult().set(bounded.getLargestThreadCount());
         } else if (attributeName.equals(CommonAttributes.REJECTED_COUNT)) {
             context.getResult().set(bounded.getRejectedCount());
-throw ThreadsMessages.MESSAGES.unsupportedBoundedQueueThreadPoolMetric(attributeName);
+        } else {
             // Programming bug. Throw a RuntimeException, not OFE, as this is not a client error
-            throw new IllegalStateException("Unsupported attribute '" + attributeName + "'");
+throw ThreadsMessages.MESSAGES.unsupportedBoundedQueueThreadPoolMetric(attributeName);
         }
     }
 }

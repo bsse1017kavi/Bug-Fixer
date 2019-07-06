@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -779,9 +778,9 @@ LRESULT wmScrollChild (int /*long*/ wParam, int /*long*/ lParam) {
 	* loop when the user drags a scroll bar.  This means
 	* that selection event must be sent because WM_HSCROLL
 	* and WM_VSCROLL are sent from the modal message loop
-sendSelectionEvent (SWT.Selection, event, true);
+	* so that they are delivered during inside the loop.
 	*/
-	sendEvent (SWT.Selection, event);
+sendSelectionEvent (SWT.Selection, event, true);
 	// the widget could be destroyed at this point
 	return null;
 }

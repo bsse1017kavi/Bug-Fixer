@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -51,9 +50,9 @@ public class QueryWrapperFilter extends Filter {
   @Override
   public DocIdSet getDocIdSet(final AtomicReaderContext context) throws IOException {
     // get a private context that is used to rewrite, createWeight and score eventually
-final Weight weight = new IndexSearcher(privateContext).createNormalizedWeight(query);
+    assert context.reader.getTopReaderContext().isAtomic;
     final AtomicReaderContext privateContext = (AtomicReaderContext) context.reader.getTopReaderContext();
-    final Weight weight = query.weight(new IndexSearcher(privateContext));
+final Weight weight = new IndexSearcher(privateContext).createNormalizedWeight(query);
     return new DocIdSet() {
       @Override
       public DocIdSetIterator iterator() throws IOException {

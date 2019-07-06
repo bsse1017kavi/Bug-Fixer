@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.testelement;
 import java.io.Serializable;
 import java.util.Collection;
@@ -128,9 +127,9 @@ public class TestPlan extends AbstractTestElement implements Serializable
      *@param tg  !ToDo
      ***************************************/
     public void addTestElement(TestElement tg)
-if (tg instanceof ThreadGroup && !isRunningVersion())
+    {
         super.addTestElement(tg);
-        if (tg instanceof ThreadGroup)
+if (tg instanceof ThreadGroup && !isRunningVersion())
         {
             addThreadGroup((ThreadGroup) tg);
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -242,9 +241,9 @@ public class CharSequenceInputStreamTest {
 
     // This test is broken for charsets that don't create a single byte for each char
     private void testMarkReset(final String csName) throws Exception {
-assertEquals(2, r.skip(2));
+        final InputStream r = new CharSequenceInputStream("test", csName);
         try {
-            r.skip(2);
+assertEquals(2, r.skip(2));
             r.mark(0);
             assertEquals(csName, 's', r.read());
             assertEquals(csName, 't', r.read());

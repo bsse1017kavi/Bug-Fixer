@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -201,9 +200,9 @@ public class FieldDeclaration extends AbstractVariableDeclaration {
 
 						if (this.initialization.isConstantValueOfTypeAssignableToType(initializationType, fieldType)
 								|| (fieldType.isBaseType() && BaseTypeBinding.isWidening(fieldType.id, initializationType.id))
-if (initializationType.needsUncheckedConversion(fieldType)) {
+								|| initializationType.isCompatibleWith(fieldType)) {
 							this.initialization.computeConversion(initializationScope, fieldType, initializationType);
-							if (initializationType.isRawType() && (fieldType.isBoundParameterizedType() || fieldType.isGenericType())) {
+if (initializationType.needsUncheckedConversion(fieldType)) {
 								    initializationScope.problemReporter().unsafeRawConversion(this.initialization, initializationType, fieldType);
 							}									
 						} else {

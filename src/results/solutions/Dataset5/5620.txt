@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -206,9 +205,9 @@ public String open () {
 	
 	int filterPathPtr = parent.createDotNetString (filterPath, false);
 	OS.FileDialog_InitialDirectory (dialog, filterPathPtr);
-if ((style & SWT.SAVE) != 0) OS.SaveFileDialog_OverwritePrompt (dialog, overwritePrompt);
+	OS.GCHandle_Free (filterPathPtr);
 	
-	//if ((style && SWT.SAVE) != 0 && overwritePrompt) OS.SaveFileDialog_OverwritePrompt (dialog, true);
+if ((style & SWT.SAVE) != 0) OS.SaveFileDialog_OverwritePrompt (dialog, overwritePrompt);
 	
 	int parentHandle = (parent.style & SWT.ON_TOP) == 0 ? parent.shellHandle : 0;
 	boolean success = OS.CommonDialog_ShowDialog (dialog, parentHandle);

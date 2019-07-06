@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -180,9 +179,9 @@ public class VersionOneProtocolChannelReceiver implements Channel.Receiver, Depl
             // process the message
             messageHandler.processMessage(channelAssociation, messageInputStream);
             // enroll for next message (whenever it's available)
-} catch (Throwable e) {
+            channel.receiveMessage(this);
 
-        } catch (IOException e) {
+} catch (Throwable e) {
             // log it
             EjbLogger.ROOT_LOGGER.exceptionOnChannel(e, channel, messageInputStream);
             // no more messages can be sent or received on this channel

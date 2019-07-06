@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -114,9 +113,9 @@ public class Argument extends LocalDeclaration {
 			scope.problemReporter().variableTypeCannotBeVoidArray(this);
 			return null;
 		}
-// fall thru to create the variable - avoids additional errors because the variable is missing
+		if (exceptionType.findSuperTypeErasingTo(TypeIds.T_JavaLangThrowable, true) == null) {
 			scope.problemReporter().cannotThrowType(this.type, exceptionType);
-			return null;
+// fall thru to create the variable - avoids additional errors because the variable is missing
 		}			
 		
 		Binding existingVariable = scope.getBinding(name, Binding.VARIABLE, this, false /*do not resolve hidden field*/);

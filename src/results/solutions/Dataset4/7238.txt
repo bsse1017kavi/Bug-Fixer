@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class NodeIndicesAdminClient extends AbstractIndicesAdminClient implement
     private final ImmutableMap<IndicesAction, TransportAction> actions;
 
     @Inject
-MapBuilder<IndicesAction, TransportAction> actionsBuilder = new MapBuilder<>();
+    public NodeIndicesAdminClient(Settings settings, ThreadPool threadPool, Map<GenericAction, TransportAction> actions) {
         this.threadPool = threadPool;
-        MapBuilder<IndicesAction, TransportAction> actionsBuilder = new MapBuilder<IndicesAction, TransportAction>();
+MapBuilder<IndicesAction, TransportAction> actionsBuilder = new MapBuilder<>();
         for (Map.Entry<GenericAction, TransportAction> entry : actions.entrySet()) {
             if (entry.getKey() instanceof IndicesAction) {
                 actionsBuilder.put((IndicesAction) entry.getKey(), entry.getValue());

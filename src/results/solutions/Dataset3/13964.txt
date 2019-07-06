@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -286,9 +285,9 @@ public class SnappyCompressorInputStream extends CompressorInputStream {
             break;
         case 63:
             length = readOneByte();
-length |= (((long) readOneByte()) << 24);
+            length |= (readOneByte() << 8);
             length |= (readOneByte() << 16);
-            length |= (readOneByte() << 24);
+length |= (((long) readOneByte()) << 24);
             break;
         default:
             length = b >> 2;

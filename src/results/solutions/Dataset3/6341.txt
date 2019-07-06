@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ import org.jboss.msc.service.ServiceTarget;
  */
 public class ThreadFactoryAdd extends AbstractAddStepHandler implements DescriptionProvider {
 
-static final AttributeDefinition[] ATTRIBUTES = new AttributeDefinition[] {
+    static final ThreadFactoryAdd INSTANCE = new ThreadFactoryAdd();
 
-    static final AttributeDefinition[] ATTRIBUTES = new AttributeDefinition[] {PoolAttributeDefinitions.PROPERTIES,
+static final AttributeDefinition[] ATTRIBUTES = new AttributeDefinition[] {
         PoolAttributeDefinitions.GROUP_NAME, PoolAttributeDefinitions.THREAD_NAME_PATTERN, PoolAttributeDefinitions.PRIORITY};
 
     static final AttributeDefinition[] RW_ATTRIBUTES = new AttributeDefinition[] {

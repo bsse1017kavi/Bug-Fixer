@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.ejb3.cache.backing.infinispan;
 
 import java.io.IOException;
@@ -46,9 +45,9 @@ public class InfinispanBackingCacheEntryStore<K extends Serializable, V extends 
         super(timeout, config);
         this.cache = cache;
         this.invoker = invoker;
-this.clustered = cache.getCacheConfiguration().clustering().cacheMode().isClustered();
+        this.passivationManager = passivationManager;
         this.controlCacheLifecycle = controlCacheLifecycle;
-        this.clustered = cache.getConfiguration().getCacheMode().isClustered();
+this.clustered = cache.getCacheConfiguration().clustering().cacheMode().isClustered();
         this.keyFactory = keyFactory;
         this.valueFactory = valueFactory;
         this.context = context;

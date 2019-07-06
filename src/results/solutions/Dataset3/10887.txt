@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -295,9 +294,9 @@ public class ASModuleHandler extends CommandHandlerWithHelp {
 
             FileWriter moduleWriter = null;
             final File moduleFile = new File(moduleDir, "module.xml");
-XMLExtendedStreamWriter xmlWriter = create(XMLOutputFactory.newInstance().createXMLStreamWriter(moduleWriter));
+            try {
                 moduleWriter = new FileWriter(moduleFile);
-                XMLExtendedStreamWriter xmlWriter = create(XMLOutputFactory.newFactory().createXMLStreamWriter(moduleWriter));
+XMLExtendedStreamWriter xmlWriter = create(XMLOutputFactory.newInstance().createXMLStreamWriter(moduleWriter));
                 config.writeContent(xmlWriter, null);
                 xmlWriter.flush();
             } catch (IOException e) {

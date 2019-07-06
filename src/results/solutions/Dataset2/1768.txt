@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -24,9 +23,9 @@ public class ProblemFactory implements IProblemFactory {
 /**
  * Creates a problem factory for the given locale.
  */
-fCompilerResources = ResourceBundle.getBundle("org.eclipse.jdt.internal.compiler.problem.messages", locale); //$NON-NLS-1$
+private ProblemFactory(Locale locale) {
 	fLocale = locale;
-	fCompilerResources = ResourceBundle.getBundle("org.eclipse.jdt.internal.compiler.problem.Messages", locale); //$NON-NLS-1$
+fCompilerResources = ResourceBundle.getBundle("org.eclipse.jdt.internal.compiler.problem.messages", locale); //$NON-NLS-1$
 	initializeMessageTemplates();
 }
 /**

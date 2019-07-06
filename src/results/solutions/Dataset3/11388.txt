@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -374,9 +373,9 @@ public class ServerInModuleDeploymentTestCase extends AbstractServerInModuleTest
         Assert.assertTrue(deployDir.exists());
         return deployDir;
     }
-final MBeanServerConnectionProvider provider = MBeanServerConnectionProvider.defaultProvider();
+
     private void testDeployments(DeploymentExecutor deploymentExecutor) throws Exception {
-        final MBeanServerConnectionProvider provider = new MBeanServerConnectionProvider(InetAddress.getLocalHost(), 1090);
+final MBeanServerConnectionProvider provider = MBeanServerConnectionProvider.defaultProvider();
         final MBeanServerConnection mbeanServer = provider.getConnection();
         final ObjectName name = new ObjectName("jboss.test:service=testdeployments");
         final TestNotificationListener listener = new TestNotificationListener(name);

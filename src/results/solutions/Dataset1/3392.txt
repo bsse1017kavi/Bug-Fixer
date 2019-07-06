@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1647,9 +1646,9 @@ public class ColumnFamilyStore implements ColumnFamilyStoreMBean
         catch (InterruptedException e)
         {
             throw new AssertionError(e);
-snapshot(Table.getTimestampedSnapshotName(columnFamily));
+        }
         long truncatedAt = System.currentTimeMillis();
-        snapshot(Table.getTimestampedSnapshotName("before-truncate"));
+snapshot(Table.getTimestampedSnapshotName(columnFamily));
 
         return CompactionManager.instance.submitTruncate(this, truncatedAt);
     }

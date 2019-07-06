@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -78,9 +77,9 @@ public class ModelAndViewMethodReturnValueHandlerTests {
 
 	@Test
 	public void handleReturnValueNull() throws Exception {
-assertTrue(mavContainer.isRequestHandled());
+		handler.handleReturnValue(null, getReturnValueParam("modelAndView"), mavContainer, webRequest);
 		
-		assertFalse(mavContainer.isResolveView());
+assertTrue(mavContainer.isRequestHandled());
 	}
 
 	private MethodParameter getReturnValueParam(String methodName) throws Exception {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -149,9 +148,9 @@ public class GeoPolygonFilterParser implements FilterParser {
         FieldMapper<?> mapper = smartMappers.mapper();
         if (!(mapper instanceof GeoPointFieldMapper)) {
             throw new QueryParsingException(parseContext.index(), "field [" + fieldName + "] is not a geo_point field");
-IndexGeoPointFieldData indexFieldData = parseContext.getForField(mapper);
+        }
 
-        IndexGeoPointFieldData<?> indexFieldData = parseContext.getForField(mapper);
+IndexGeoPointFieldData indexFieldData = parseContext.getForField(mapper);
         Filter filter = new GeoPolygonFilter(indexFieldData, shell.toArray(new GeoPoint[shell.size()]));
         if (cache) {
             filter = parseContext.cacheFilter(filter, cacheKey);

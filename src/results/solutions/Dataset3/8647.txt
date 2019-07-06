@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -1078,9 +1077,9 @@ public class ServletHandlerMethodTests {
 	public void mavResolver() throws ServletException, IOException {
 		initDispatcherServlet(ModelAndViewResolverController.class, new BeanDefinitionRegistrar() {
 			public void register(GenericWebApplicationContext wac) {
-adapterDef.getPropertyValues().add("modelAndViewResolvers", mavResolvers);
+				RootBeanDefinition adapterDef = new RootBeanDefinition(RequestMappingHandlerMethodAdapter.class);
 				ModelAndViewResolver[] mavResolvers = new ModelAndViewResolver[] {new MyModelAndViewResolver()};
-				adapterDef.getPropertyValues().add("customModelAndViewResolvers", mavResolvers);
+adapterDef.getPropertyValues().add("modelAndViewResolvers", mavResolvers);
 				wac.registerBeanDefinition("handlerAdapter", adapterDef);
 			}
 		});

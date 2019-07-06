@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,8 +37,8 @@ public interface Gateway extends LifecycleComponent<Gateway> {
     void reset() throws Exception;
 
     interface GatewayStateRecoveredListener {
-void onFailure(String message);
+        void onSuccess(ClusterState recoveredState);
 
-        void onFailure(Throwable t);
+void onFailure(String message);
     }
 }

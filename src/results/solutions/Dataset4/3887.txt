@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -87,9 +86,9 @@ public class HotThreadsTest extends ElasticsearchIntegrationTest {
                 public void onResponse(NodesHotThreadsResponse nodeHotThreads) {
                     boolean success = false;
                     try {
-assertThat(nodesMap.size(), equalTo(cluster().size()));
+                        assertThat(nodeHotThreads, notNullValue());
                         Map<String,NodeHotThreads> nodesMap = nodeHotThreads.getNodesMap();
-                        assertThat(nodesMap.size(), equalTo(immutableCluster().size()));
+assertThat(nodesMap.size(), equalTo(cluster().size()));
                         for (NodeHotThreads ht : nodeHotThreads) {
                             assertNotNull(ht.getHotThreads());
                             //logger.info(ht.getHotThreads());

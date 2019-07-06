@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -191,9 +190,9 @@ public class ASMMultiBundleTest extends AbstractIntegrationTest {
         //destroy invocation will only occur at tear down.. TODO, how to test after teardown.
         //assertEquals(pb.getProcessedBy(Phase.BEFORE_DESTROY).get(0),bp);
         //assertEquals(pb.getProcessedBy(Phase.AFTER_DESTROY).get(0),bp);
-Object objOther = beanContainer.getComponentInstance("PlaceHolderTestBean");
         
-        Object objOther = beanContainer.getComponentInstance("PlaceHolerTestBean");
+        
+Object objOther = beanContainer.getComponentInstance("PlaceHolderTestBean");
         assertTrue(objOther instanceof OtherBean);
         assertEquals("test1value", ((OtherBean)objOther).getTestValue());
     }

@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab.share;
 
 import java.io.IOException;
@@ -66,9 +65,9 @@ public class RosterSharedObject extends AbstractSharedObject {
 			public void run() {
 				String from = ((fromName == null) ? "<nobody>" : fromName);
 				MessageDialog.openInformation(Display.getCurrent()
-from+"'s '"+groupName+"' group has "+activeSize+" active and "+totalSize+" total group members");
+						.getActiveShell(), "ECF Roster Size Message from "
 						+ from,
-						"For Group '"+groupName+"' active="+activeSize+" and total="+totalSize);
+from+"'s '"+groupName+"' group has "+activeSize+" active and "+totalSize+" total group members");
 			}
 		});
 	}

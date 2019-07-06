@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -157,9 +156,9 @@ private IBinaryType getBinaryTypeInfo(IFile file) throws JavaModelException {
 				if (entryName.equals("")) { //$NON-NLS-1$
 					entryName += getElementName();
 				} else {
-info = ClassFileReader.read(zip, entryName, true);
+					entryName += '/' + getElementName();
 				}
-				info = ClassFileReader.read(zip, entryName);
+info = ClassFileReader.read(zip, entryName, true);
 			} finally {
 				if (zip != null && JavaModelManager.getJavaModelManager().zipFiles == null) {
 					try {

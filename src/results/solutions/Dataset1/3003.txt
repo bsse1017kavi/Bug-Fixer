@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class CounterGetter extends Operation
         ByteBuffer key = ByteBuffer.wrap(rawKey);
 
         for (int j = 0; j < session.getSuperColumns(); j++)
-ColumnParent parent = new ColumnParent("SuperCounter1").setSuper_column(superColumn.getBytes());
+        {
             String superColumn = 'S' + Integer.toString(j);
-            ColumnParent parent = new ColumnParent("CounterSuper1").setSuper_column(superColumn.getBytes());
+ColumnParent parent = new ColumnParent("SuperCounter1").setSuper_column(superColumn.getBytes());
 
             long start = System.currentTimeMillis();
 

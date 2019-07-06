@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -374,9 +373,9 @@ public class StandardJMeterEngine implements JMeterEngine, Runnable {
         /*
          * Here's where the test really starts. Run a Full GC now: it's no harm
          * at all (just delays test start by a tiny amount) and hitting one too
-JMeterUtils.helpGC();
+         * early in the test can impair results for short tests.
          */
-        System.gc();
+JMeterUtils.helpGC();
 
         JMeterContextService.getContext().setSamplingStarted(true);
         boolean mainGroups = running; // still running at this point, i.e. setUp was not cancelled

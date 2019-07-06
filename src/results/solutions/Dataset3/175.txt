@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class HostControllerConfigurationPersister implements ExtensibleConfigura
             if (environment.getRunningModeControl().isReloaded()) {
                 configurationFile.resetBootFile(environment.getRunningModeControl().isUseCurrentDomainConfig());
             }
-this.slave = slave;
+            domainPersister = ConfigurationPersisterFactory.createDomainXmlConfigurationPersister(configurationFile, executorService, extensionRegistry);
         }
-        this.slave = Boolean.valueOf(slave);
+this.slave = slave;
     }
 
     public boolean isSlave() {

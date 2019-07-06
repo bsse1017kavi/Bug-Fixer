@@ -1,4 +1,3 @@
-
 package org.eclipse.jst.jsf.facelet.core.internal.registry;
 
 import java.util.Collections;
@@ -92,9 +91,9 @@ public class VeryTemporaryDefaultFaceletResolver extends
         else if (typeInfo instanceof TagHandlerType)
         {
             return new HandlerTag(tagId.getUri(), tagId.getTagName(),
-else if (DefaultTagTypeInfo.isDefaultLib(tagId.getUri()))
+                    (TagHandlerType) typeInfo, null);
         }
-        else if (_coreHtmlTypeInfo.isDefaultLib(tagId.getUri()))
+else if (DefaultTagTypeInfo.isDefaultLib(tagId.getUri()))
         {
             return new NoArchetypeFaceletTag(tagId.getUri(), tagId.getTagName());
         }

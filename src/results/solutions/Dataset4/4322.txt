@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -200,9 +199,9 @@ public class Label extends Widget {
 
 	@Override
 	public void draw (SpriteBatch batch, float parentAlpha) {
-cache.draw(batch, color.a * parentAlpha);
+		validate();
 		cache.setPosition(x, y);
-		cache.draw(batch, parentAlpha);
+cache.draw(batch, color.a * parentAlpha);
 	}
 
 	public float getPrefWidth () {

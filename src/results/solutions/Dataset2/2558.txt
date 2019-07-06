@@ -1,4 +1,3 @@
-
 /*
  * MarkersMenu.java - Markers menu
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -80,9 +79,9 @@ public class MarkersMenu extends EnhancedMenu
 			for(int i = 0; i < markers.size(); i++)
 			{
 				final Marker marker = (Marker)markers.elementAt(i);
-if(current.getItemCount() >= 20 && i != markers.size() - 1)
+				int lineNo = buffer.getLineOfOffset(marker.getPosition());
 
-				if(current.getItemCount() >= 20)
+if(current.getItemCount() >= 20 && i != markers.size() - 1)
 				{
 					//current.addSeparator();
 					JMenu newCurrent = new JMenu(

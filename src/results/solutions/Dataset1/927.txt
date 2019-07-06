@@ -1,4 +1,3 @@
-
 package org.apache.solr.search;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -159,9 +158,9 @@ public class FastLRUCache<K,V> extends SolrCacheBase implements SolrCache<K,V> {
         try {
           boolean continueRegen = regenerator.regenerateItem(searcher,
                   this, old, itemsArr[i].getKey(), itemsArr[i].getValue());
-catch (Exception e) {
+          if (!continueRegen) break;
         }
-        catch (Throwable e) {
+catch (Exception e) {
           SolrException.log(log, "Error during auto-warming of key:" + itemsArr[i].getKey(), e);
         }
       }

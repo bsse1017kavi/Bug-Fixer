@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -235,9 +234,9 @@ class DocHelper {
     IndexWriter writer = new IndexWriter(dir, analyzer);
     writer.setSimilarity(similarity);
     //writer.setUseCompoundFile(false);
-SegmentInfo info = writer.newestSegment();
+    writer.addDocument(doc);
     writer.flush();
-    SegmentInfo info = writer.segmentInfos.info(writer.segmentInfos.size()-1);
+SegmentInfo info = writer.newestSegment();
     writer.close();
     return info;
   }

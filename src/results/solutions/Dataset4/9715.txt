@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -108,9 +107,9 @@ public class SimpleFacetsTests extends ElasticsearchIntegrationTest {
         refresh();
 
         SearchResponse searchResponse = client().prepareSearch()
-"{\"facet1\":{\"terms\":{\"field\":\"tag\"},\"facet_filter\":{ }}}"))
+                .setSearchType(SearchType.COUNT)
                 .setFacets(new BytesArray(
-                        "{\"facet1\":{\"terms\":{\"field\":\"tag\"},\"facet_filter\":{ }}}").array())
+"{\"facet1\":{\"terms\":{\"field\":\"tag\"},\"facet_filter\":{ }}}"))
                 .get();
 
         assertHitCount(searchResponse, 1l);

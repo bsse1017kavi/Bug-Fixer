@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.cloud;
 
 /*
@@ -77,9 +76,9 @@ public class ConnectionManager implements Watcher {
     if (disconnectedTimer != null) {
       disconnectedTimer.cancel();
       disconnectedTimer = null;
-disconnectedTimer = new Timer(true);
+    }
     if (!isClosed) {
-      disconnectedTimer = new Timer();
+disconnectedTimer = new Timer(true);
       disconnectedTimer.schedule(new TimerTask() {
         
         @Override

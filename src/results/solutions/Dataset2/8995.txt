@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -216,9 +215,9 @@ public class JavaModelManager implements ISaveParticipant {
 				return this.registeredParticipants;
 			}
 			ArrayList participants = new ArrayList();
-return this.registeredParticipants = NO_PARTICIPANTS;
+			IExtensionPoint extension = Platform.getExtensionRegistry().getExtensionPoint(JavaCore.PLUGIN_ID, COMPILATION_PARTICIPANT_EXTPOINT_ID);
 			if (extension == null) 
-				return null;
+return this.registeredParticipants = NO_PARTICIPANTS;
 			IExtension[] extensions = extension.getExtensions();
 			for(int i = 0; i < extensions.length; i++) {
 				// for all extensions of this point...

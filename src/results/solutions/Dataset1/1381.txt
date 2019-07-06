@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -300,9 +299,9 @@ public class LukeRequestHandler extends RequestHandlerBase
       SchemaField sfield = schema.getFieldOrNull( fieldName );
       FieldType ftype = (sfield==null)?null:sfield.getType();
 
-if (sfield != null && schema.getDynamicPattern(sfield.getName()) != null) {
+      f.add( "type", (ftype==null)?null:ftype.getTypeName() );
       f.add( "schema", getFieldFlags( sfield ) );
-      if (schema.getDynamicPattern(sfield.getName()) != null) {
+if (sfield != null && schema.getDynamicPattern(sfield.getName()) != null) {
     	  f.add("dynamicBase", schema.getDynamicPattern(sfield.getName()));
       }
 

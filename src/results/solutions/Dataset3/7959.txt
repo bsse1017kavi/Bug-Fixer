@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class StatefulSessionComponent extends SessionBeanComponent {
 
         this.afterBegin = ejbComponentCreateService.getAfterBegin();
         this.afterCompletion = ejbComponentCreateService.getAfterCompletion();
-this.defaultAccessTimeoutProvider = ejbComponentCreateService.getDefaultAccessTimeoutService();
+        this.beforeCompletion = ejbComponentCreateService.getBeforeCompletion();
         this.methodAccessTimeouts = ejbComponentCreateService.getMethodApplicableAccessTimeouts();
-        this.defaultAccessTimeoutProvider = ejbComponentCreateService.getDefaultAccessTimeoutProvider();
+this.defaultAccessTimeoutProvider = ejbComponentCreateService.getDefaultAccessTimeoutService();
 
         final StatefulTimeoutInfo statefulTimeout = ejbComponentCreateService.getStatefulTimeout();
         if (statefulTimeout != null) {

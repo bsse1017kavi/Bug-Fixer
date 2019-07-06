@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -222,9 +221,9 @@ public class GraggBulirschStoerIntegratorTest {
     Assert.assertEquals(functions.length, integ.getEventHandlers().size());
     integ.integrate(pb,
                     pb.getInitialTime(), pb.getInitialState(),
-Assert.assertTrue(handler.getMaximalValueError() < 4.0e-7);
+                    pb.getFinalTime(), new double[pb.getDimension()]);
 
-    Assert.assertTrue(handler.getMaximalValueError() < 5.0e-8);
+Assert.assertTrue(handler.getMaximalValueError() < 4.0e-7);
     Assert.assertEquals(0, handler.getMaximalTimeError(), convergence);
     Assert.assertEquals(12.0, handler.getLastTime(), convergence);
     integ.clearEventHandlers();

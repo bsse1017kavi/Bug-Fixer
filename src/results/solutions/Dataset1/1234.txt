@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -364,9 +363,9 @@ public final class ColumnFamilyStore implements ColumnFamilyStoreMBean
      * format, so incomplete sstables can be recognized and removed on startup.
      */
     synchronized String getTempSSTablePath()
-return new File(DatabaseDescriptor.getNextAvailableDataLocation() + File.separator + table_, fname).getAbsolutePath();
+    {
         String fname = getTempSSTableFileName();
-        return new File(DatabaseDescriptor.getDataFileLocationForTable(table_), fname).getAbsolutePath();
+return new File(DatabaseDescriptor.getNextAvailableDataLocation() + File.separator + table_, fname).getAbsolutePath();
     }
 
     public String getTempSSTableFileName()

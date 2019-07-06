@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public class RestIndicesStatusAction extends BaseRestHandler {
 
                     buildBroadcastShardsHeader(builder, response);
 
-builder.startObject(indexStatus.index(), XContentBuilder.FieldCaseConversion.NONE);
+                    builder.startObject("indices");
                     for (IndexStatus indexStatus : response.indices().values()) {
-                        builder.startObject(indexStatus.index());
+builder.startObject(indexStatus.index(), XContentBuilder.FieldCaseConversion.NONE);
 
                         builder.array("aliases", indexStatus.settings().getAsArray("index.aliases"));
 

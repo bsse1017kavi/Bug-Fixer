@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -102,9 +101,9 @@ public class SimpleConstructorNamespaceHandlerTests {
 		assertEquals("silly name", derivedBean.getName());
 	}
 
-//fact.setParameterNameDiscoverer(new LocalVariableTableParameterNameDiscoverer());
+	private XmlBeanFactory createFactory(String resourceName) {
 		XmlBeanFactory fact = new XmlBeanFactory(new ClassPathResource(resourceName, getClass()));
-		fact.setParameterNameDiscoverer(new LocalVariableTableParameterNameDiscoverer());
+//fact.setParameterNameDiscoverer(new LocalVariableTableParameterNameDiscoverer());
 		return fact;
 	}
 }

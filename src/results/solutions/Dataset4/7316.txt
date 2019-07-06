@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -108,9 +107,9 @@ public class MapperService extends AbstractIndexComponent implements Iterable<Do
     private final InternalObjectMapperListener objectMapperListener = new InternalObjectMapperListener();
 
     private final SmartIndexNameSearchAnalyzer searchAnalyzer;
-private final List<DocumentTypeListener> typeListeners = new CopyOnWriteArrayList<>();
+    private final SmartIndexNameSearchQuoteAnalyzer searchQuoteAnalyzer;
 
-    private final List<DocumentTypeListener> typeListeners = new CopyOnWriteArrayList<DocumentTypeListener>();
+private final List<DocumentTypeListener> typeListeners = new CopyOnWriteArrayList<>();
 
     @Inject
     public MapperService(Index index, @IndexSettings Settings indexSettings, Environment environment, AnalysisService analysisService, IndexFieldDataService fieldDataService,

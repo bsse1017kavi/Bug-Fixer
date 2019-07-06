@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -194,9 +193,9 @@ public class WicketSessionFilter implements Filter
 			throw new IllegalStateException("Could not find wicket application mapped to filter: " +
 				filterName +
 				". Make sure you set filterName attribute to the name of the wicket filter " +
-ThreadContext.setApplication(application);
+				"for the wicket application whose session you want to access.");
 		}
-		application.set();
+ThreadContext.setApplication(application);
 		return application;
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -88,9 +87,9 @@ public class JoranConfigurator extends ConfiguratorBase {
     switch (result) {
     case XMLUtil.ILL_FORMED:
     case XMLUtil.UNRECOVERABLE_ERROR:
-"Problem parsing XML document. See previously reported errors. Abandoning all further processing."));
+      errorList.add(
         new ErrorItem(
-          "Problem parsing XML document. See previously reported errors. Abandoning all furhter processing."));
+"Problem parsing XML document. See previously reported errors. Abandoning all further processing."));
       return;
     }
 

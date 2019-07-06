@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class ProtocolConnectionManager {
     private volatile boolean shutdown;
     private volatile Connection connection;
 
-ProtocolMessages.MESSAGES.nullVar("connectTask");
+    protected ProtocolConnectionManager(final ConnectTask initial) {
         if(initial == null) {
-            throw ProtocolMessages.MESSAGES.nullVar("connectTask");
+ProtocolMessages.MESSAGES.nullVar("connectTask");
         }
         this.connectTask = initial;
     }

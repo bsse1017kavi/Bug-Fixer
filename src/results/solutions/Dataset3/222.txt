@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -357,9 +356,9 @@ public class ServerRootResourceDefinition extends SimpleResourceDefinition {
                                         SocketBindingResourceDefinition.INSTANCE,
                                         RemoteDestinationOutboundSocketBindingResourceDefinition.INSTANCE,
                                         LocalDestinationOutboundSocketBindingResourceDefinition.INSTANCE));
-ManagementResourceRegistration deployments = resourceRegistration.registerSubModel(ServerDeploymentResourceDefinition.create(contentRepository, vaultReader));
+
         // Deployments
-        ManagementResourceRegistration deployments = resourceRegistration.registerSubModel(ServerDeploymentResourceDescription.create(contentRepository, vaultReader));
+ManagementResourceRegistration deployments = resourceRegistration.registerSubModel(ServerDeploymentResourceDefinition.create(contentRepository, vaultReader));
 
         //deployment overlays
         resourceRegistration.registerSubModel(new DeploymentOverlayDefinition(DeploymentOverlayPriority.SERVER, contentRepository, null));

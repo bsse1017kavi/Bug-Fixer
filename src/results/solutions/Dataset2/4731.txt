@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -190,9 +189,9 @@ void computeLocalVariablePositions(int ilocal, int initOffset, CodeStream codeSt
 
 			// consider variable first
 			LocalVariableBinding local = this.locals[ilocal]; // if no local at all, will be locals[ilocal]==null
-boolean generateCurrentLocalVar = (local.useFlag != LocalVariableBinding.UNUSED && local.constant() == Constant.NotAConstant);
+
 			// check if variable is actually used, and may force it to be preserved
-			boolean generateCurrentLocalVar = (local.useFlag > LocalVariableBinding.UNUSED && local.constant() == Constant.NotAConstant);
+boolean generateCurrentLocalVar = (local.useFlag != LocalVariableBinding.UNUSED && local.constant() == Constant.NotAConstant);
 
 			// do not report fake used variable
 			if (local.useFlag == LocalVariableBinding.UNUSED

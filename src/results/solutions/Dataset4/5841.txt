@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class ByteSizeValue implements Serializable, Streamable {
     }
 
     @Override public String toString() {
-String suffix = "b";
+        long bytes = bytes();
         double value = bytes;
-        String suffix = "";
+String suffix = "b";
         if (bytes >= ByteSizeUnit.C3) {
             value = gbFrac();
             suffix = "gb";

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -597,9 +596,9 @@ public class Form extends WebMarkupContainer implements IFormSubmitListener
 		}
 
 		// append the button
-buffer.append("style=\"width: 0px; height: 0px; position: absolute; left:-100px;\"");
+		buffer.append("<input type=\"submit\" value=\"").append(value).append("\" name=\"").append(
 				defaultButton.getInputName()).append("\"");
-		buffer.append("style=\"width: 0px; height: 0px; position: absolute; left;-10px;\"");
+buffer.append("style=\"width: 0px; height: 0px; position: absolute; left:-100px;\"");
 		buffer.append(" />");
 		getResponse().write(buffer);
 	}

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.PreparedStatement
@@ -1366,9 +1365,9 @@ public class PreparedStatement extends Statement
             // by an autocommit chained to a close cursor.
             if (piggybackedAutocommit) {
                 connection_.completeTransactionStart();
-super.markResultSetsClosed(true); // true means remove from list of commit and rollback listeners
+            }
 
-            super.markResultSetsClosed();
+super.markResultSetsClosed(true); // true means remove from list of commit and rollback listeners
 
             switch (sqlMode_) {
             case isUpdate__:

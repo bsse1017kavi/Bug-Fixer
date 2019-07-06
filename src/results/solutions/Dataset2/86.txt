@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -331,9 +330,9 @@ public class SMTPServer {
                 "Server does not support the AUTH command"); }
 
         String mechanism = null;
-if (AuthenticationFactory.getInstance().isSupported(
+
         for (int i = 0; (i < serverSupported.size()) && (mechanism == null); i++) {
-            if (AuthenticationFactory.getInstance().supports(
+if (AuthenticationFactory.getInstance().isSupported(
                     (String) serverSupported.get(i))) {
                 mechanism = (String) serverSupported.get(i);
             }

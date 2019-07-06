@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -411,9 +410,9 @@ public abstract class DirectSearchOptimizer {
      * @param starts number of starts to perform (including the
      * first one), multi-start is disabled if value is less than or
      * equal to 1
-private void setMultiStart(int starts, RandomVectorGenerator generator) {
+     * @param generator random vector generator to use for restarts
      */
-    public void setMultiStart(int starts, RandomVectorGenerator generator) {
+private void setMultiStart(int starts, RandomVectorGenerator generator) {
         if (starts < 2) {
             this.starts    = 1;
             this.generator = null;

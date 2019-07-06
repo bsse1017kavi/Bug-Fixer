@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -256,9 +255,9 @@ public abstract class BlobStoreIndexShardGateway extends AbstractIndexShardCompo
                 }
                 // if everything exists, we can seek forward in case there are new operations, otherwise, we copy over all again...
                 if (allTranslogFilesExists) {
-translogSnapshot.seekForward(snapshot.lastTranslogLength());
+                    translogCommitPointFiles.addAll(commitPoint.translogFiles());
                     if (snapshot.sameTranslogNewOperations()) {
-                        translogSnapshot.seekForward(snapshot.lastTranslogPosition());
+translogSnapshot.seekForward(snapshot.lastTranslogLength());
                         if (translogSnapshot.lengthInBytes() > 0) {
                             snapshotRequired = true;
                             expectedNumberOfOperations = translogSnapshot.totalOperations() - snapshot.lastTotalTranslogOperations();

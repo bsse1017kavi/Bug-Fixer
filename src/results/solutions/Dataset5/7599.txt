@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -75,9 +74,9 @@ public class AspectDeclaration extends MemberTypeDeclaration {
 	public void checkSpec(ClassScope scope) {
 		if (ignoreFurtherInvestigation) return;
 		if (dominatesPattern != null) {
-"dominates has changed for 1.1, use 'declare precedence: " +
+			scope.problemReporter().signalError(
 					dominatesPattern.getStart(), dominatesPattern.getEnd(), 
-					"dominates has changed for 1.1, use 'declare dominates: " +
+"dominates has changed for 1.1, use 'declare precedence: " +
 					new String(this.name) + ", " + dominatesPattern.toString() + ";' " +
 					"in the body of the aspect instead");
 		}

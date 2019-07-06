@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public abstract class AbstractStore extends AbstractIndexShardComponent implemen
 
     @Override public void renameFile(String from, String to) throws IOException {
         doRenameFile(from, to);
-StoreFileMetaData toMetaData = new StoreFileMetaData(to, fromMetaData.length(), fromMetaData.lastModified(), fromMetaData.checksum());
+        synchronized (mutex) {
             StoreFileMetaData fromMetaData = filesMetadata.get(from); // we should always find this one
-            StoreFileMetaData toMetaData = new StoreFileMetaData(fromMetaData.name(), fromMetaData.length(), fromMetaData.lastModified(), fromMetaData.checksum());
+StoreFileMetaData toMetaData = new StoreFileMetaData(to, fromMetaData.length(), fromMetaData.lastModified(), fromMetaData.checksum());
             filesMetadata = MapBuilder.newMapBuilder(filesMetadata).remove(from).put(to, toMetaData).immutableMap();
             files = filesMetadata.keySet().toArray(new String[filesMetadata.size()]);
         }

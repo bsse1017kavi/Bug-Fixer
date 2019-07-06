@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -119,9 +118,9 @@ public class HostControllerService implements Service<AsyncFuture<ServiceContain
         } else {
             this.startTime = -1;
         }
-serviceTarget.addListener(bootstrapListener);
+
         final BootstrapListener bootstrapListener = new BootstrapListener(serviceContainer, startTime, serviceTarget, futureContainer,  prettyVersion + " (Host Controller)");
-        serviceTarget.addListener(ServiceListener.Inheritance.ALL, bootstrapListener);
+serviceTarget.addListener(bootstrapListener);
         myController.addListener(bootstrapListener);
 
         // The first default services are registered before the bootstrap operations are executed.

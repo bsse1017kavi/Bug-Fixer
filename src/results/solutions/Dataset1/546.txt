@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class SortableDoubleField extends FieldType {
   @Override
   public CharsRef indexedToReadable(BytesRef input, CharsRef charsRef) {
     // TODO: this could be more efficient, but the sortable types should be deprecated instead
-charsRef.copyChars(indexedToReadable, 0, indexedToReadable.length);
+    input.utf8ToChars(charsRef);
     final char[] indexedToReadable = indexedToReadable(charsRef.toString()).toCharArray();
-    charsRef.copy(indexedToReadable, 0, indexedToReadable.length);
+charsRef.copyChars(indexedToReadable, 0, indexedToReadable.length);
     return charsRef;
   }
 

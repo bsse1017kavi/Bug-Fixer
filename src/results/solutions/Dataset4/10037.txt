@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class TransportPutIndexTemplateAction extends TransportMasterNodeOperatio
                         listener.onResponse(new PutIndexTemplateResponse(response.acknowledged()));
                     }
 
-logger.debug("failed to put template [{}]", t, request.name());
+                    @Override
                     public void onFailure(Throwable t) {
-                        logger.debug("failed to delete template [{}]", t, request.name());
+logger.debug("failed to put template [{}]", t, request.name());
                         listener.onFailure(t);
                     }
                 });

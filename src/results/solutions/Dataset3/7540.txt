@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class ConnectorAdd extends AbstractAddStepHandler {
     }
 
     protected void performRuntime(OperationContext context, ModelNode operation, ModelNode model, ServiceVerificationHandler verificationHandler, List<ServiceController<?>> newControllers) throws OperationFailedException {
-ServiceName tmpDirPath = ServiceName.JBOSS.append("server", "path", "jboss.home.dir");
+        final PathAddress address = PathAddress.pathAddress(operation.get(OP_ADDR));
         final String connectorName = address.getLastElement().getValue();
-        ServiceName tmpDirPath = ServiceName.JBOSS.append("server", "path", "jboss.server.temp.dir");
+ServiceName tmpDirPath = ServiceName.JBOSS.append("server", "path", "jboss.home.dir");
         RemotingServices.installSecurityServices(context.getServiceTarget(), connectorName, null, null, tmpDirPath, verificationHandler, newControllers);
         launchServices(context, address, connectorName, model, verificationHandler, newControllers);
     }

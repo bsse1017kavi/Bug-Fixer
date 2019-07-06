@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.ColumnReference
@@ -1017,9 +1016,9 @@ public class ColumnReference extends ValueNode
 	 * Get the DataTypeServices from this Node.
 	 *
 	 * @return	The DataTypeServices from this Node.  This
-public DataTypeDescriptor getTypeServices() throws StandardException
+	 *		may be null if the node isn't bound yet.
 	 */
-	public DataTypeDescriptor getTypeServices()
+public DataTypeDescriptor getTypeServices() throws StandardException
 	{
         DataTypeDescriptor dtd = super.getTypeServices();
         if( dtd == null && source != null)

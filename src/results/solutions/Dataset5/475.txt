@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -154,9 +153,9 @@ public class ParserTest extends TestCase {
         assertEquals(11, param.getEnd());
     }
 
-+ " xpand2::Type,\n" + " xpand2::Feature,\n" + " xpand2::Property\n}");
+    public final void testTypeLiterals() {
         final Expression e = parse("{" + "  Object,\n" + " String,\n" + "Collection,\n" + " Set,\n" + " List,\n"
-                + " oaw::Type,\n" + " oaw::Feature,\n" + " oaw::Property\n}");
++ " xpand2::Type,\n" + " xpand2::Feature,\n" + " xpand2::Property\n}");
 
         assertNotNull(e);
     }

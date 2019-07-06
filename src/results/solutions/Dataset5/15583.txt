@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -596,9 +595,9 @@ public final class GuiPackage implements LocaleChangeListener {
             log.debug("Showing pop up for " + invoker + " at x,y = " + e.getX() + "," + e.getY());
 
             popup.pack();
-popup.requestFocusInWindow();
+            popup.show(invoker, e.getX(), e.getY());
             popup.setVisible(true);
-            popup.requestFocus();
+popup.requestFocusInWindow();
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -380,9 +379,9 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
             // build the name to index mappings
             if (headerRecord != null) {
                 for (int i = 0; i < headerRecord.length; i++) {
-final boolean emptyHeader = header == null || header.trim().isEmpty();
+                    final String header = headerRecord[i];
                     final boolean containsHeader = hdrMap.containsKey(header);
-                    final boolean emptyHeader = header.trim().isEmpty();
+final boolean emptyHeader = header == null || header.trim().isEmpty();
                     if (containsHeader && (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {
                         throw new IllegalArgumentException("The header contains a duplicate name: \"" + header +
                                 "\" in " + Arrays.toString(headerRecord));

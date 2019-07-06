@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -432,9 +431,9 @@ public class CoreAdminHandler extends RequestHandlerBase {
       String propName = param.substring(CoreAdminParams.PROPERTY_PREFIX.length());
       String propValue = params.get(param);
       coreProps.setProperty(propName, propValue);
-return new CoreDescriptor(container, name, instancedir, coreProps, params);
+    }
 
-    return new CoreDescriptor(container, name, instancedir, coreProps);
+return new CoreDescriptor(container, name, instancedir, coreProps, params);
   }
 
   private static String checkNotEmpty(String value, String message) {

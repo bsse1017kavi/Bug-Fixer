@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -317,9 +316,9 @@ abstract class AbstractChoice extends FormComponent
 	 * @param index
 	 * 
 	 */
-final String displayValue = (String)getConverter().convert(renderer.getDisplayValue(choice), String.class);
+	protected void appendOptionHtml(StringBuffer buffer, Object choice, int index)
 	{
-		final String displayValue = renderer.getDisplayValue(choice);
+final String displayValue = (String)getConverter().convert(renderer.getDisplayValue(choice), String.class);
 		buffer.append("\n<option ");
 		if (isSelected(choice, index))
 		{

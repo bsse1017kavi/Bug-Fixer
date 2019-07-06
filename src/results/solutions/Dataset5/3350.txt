@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2005 The Apache Software Foundation
  *
@@ -398,9 +397,9 @@ public class CovReport extends CovBase {
                 TransformerFactory tfactory = TransformerFactory.newInstance();
                 Transformer transformer = tfactory.newTransformer();
                 transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-Result res = new StreamResult(tofile);
+                transformer.setOutputProperty(OutputKeys.METHOD, "xml");
                 Source src = new DOMSource(doc);
-                Result res = new StreamResult("file:///" + tofile.toString());
+Result res = new StreamResult(tofile);
                 transformer.transform(src, res);
             } catch (Exception e) {
                 throw new BuildException("Error while performing enhanced XML "

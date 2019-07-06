@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -109,9 +108,9 @@ public final class SimplePool  {
     public  void put(Object o) {
 	int idx=-1;
 	synchronized( lock ) {
-if( idx >= 0 )
+	    if( current < max - 1 )
 		idx=++current;
-	    if( idx > 0 ) 
+if( idx >= 0 )
 		pool[idx]=o;
 	}
     }

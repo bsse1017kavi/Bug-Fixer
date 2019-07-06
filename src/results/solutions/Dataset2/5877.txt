@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -803,9 +802,9 @@ public class StateImpl implements IState {
 		// TBD: need proper byte->char conversion
 		byte[] bytes= getElementContentBytes(entry);
 		InputStream stream = null;
-return org.eclipse.jdt.internal.compiler.util.Util.getInputStreamAsCharArray(stream, bytes.length, null);
+		try {
 			stream = new ByteArrayInputStream(bytes);
-			return org.eclipse.jdt.internal.compiler.util.Util.getInputStreamAsCharArray(stream, bytes.length);
+return org.eclipse.jdt.internal.compiler.util.Util.getInputStreamAsCharArray(stream, bytes.length, null);
 		} catch (IOException e) {
 			return new char[0];
 		} finally {

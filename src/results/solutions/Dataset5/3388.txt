@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public abstract class BaseMarkupFilter extends AbstractMarkupFilter
 	 */
 	public final MarkupElement nextTag() throws ParseException
 	{
-final MarkupElement tag = getNextFilter().nextTag();
+		// Get the next tag from the next MarkupFilter in the chain.
 		// If null, no more tags are available
-		final MarkupElement tag = getParent().nextTag();
+final MarkupElement tag = getNextFilter().nextTag();
 		if (tag == null)
 		{
 			return tag;

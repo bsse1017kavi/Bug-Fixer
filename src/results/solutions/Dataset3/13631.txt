@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -275,9 +274,9 @@ public final class ModelMapTests {
 	@Test
 	public void testRawJdkProxy() throws Exception {
 		ModelMap map = new ModelMap();
-new Class<?>[] {Map.class},
+		Object proxy = Proxy.newProxyInstance(
 				getClass().getClassLoader(),
-				new Class[] {Map.class},
+new Class<?>[] {Map.class},
 				new InvocationHandler() {
 					public Object invoke(Object proxy, Method method, Object[] args) {
 						return "proxy";

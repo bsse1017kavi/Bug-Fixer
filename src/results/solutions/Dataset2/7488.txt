@@ -1,4 +1,3 @@
-
 /*
  * @(#)GraphLayout.java
  *
@@ -158,9 +157,9 @@ public class GraphLayout extends FigureChangeAdapter {
 
 		  Enumeration nodeEnum = nodes.keys();
 		  while (nodeEnum.hasMoreElements()) {
-if (!Boolean.TRUE.equals(node.getAttribute(FigureAttributeConstant.LOCATION))) {
+			  Figure node = (Figure)nodeEnum.nextElement();
 			  GraphNode n = getGraphNode(node);
-			  if (!Boolean.TRUE.equals(node.getAttribute("Location"))) {
+if (!Boolean.TRUE.equals(node.getAttribute(FigureAttributeConstant.LOCATION))) {
 					n.x += Math.max(-5, Math.min(5, n.dx));
 					n.y += Math.max(-5, Math.min(5, n.dy));
 					Point c = node.center();

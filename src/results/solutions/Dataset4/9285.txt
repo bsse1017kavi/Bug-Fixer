@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -261,9 +260,9 @@ public class RecoveryPercolatorTests extends AbstractNodesTests {
         response = client.preparePercolate()
                 .setIndices("test").setDocumentType("type1")
                 .setSource(jsonBuilder().startObject().startObject("doc").field("field1", 100).endObject().endObject())
-assertThat(response.getMatches()[0].getId().string(), equalTo("100"));
+                .execute().actionGet();
         assertThat(response.getMatches(), arrayWithSize(1));
-        assertThat(response.getMatches()[0].id().string(), equalTo("100"));
+assertThat(response.getMatches()[0].getId().string(), equalTo("100"));
     }
 
     @Test

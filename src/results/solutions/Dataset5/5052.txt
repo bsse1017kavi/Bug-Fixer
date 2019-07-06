@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -215,9 +214,9 @@ public class ServletWebResponse extends WebResponse
 			HttpServletRequest httpServletRequest = webRequest.getHttpServletRequest();
 			Charset charset = RequestUtils.getCharset(httpServletRequest);
 
-current = webRequest.getClientUrl();
+			final Url current;
 
-			current = webRequest.getBaseUrl();
+current = webRequest.getClientUrl();
 
 			Url append = Url.parse(url, charset);
 			current.concatSegments(append.getSegments());

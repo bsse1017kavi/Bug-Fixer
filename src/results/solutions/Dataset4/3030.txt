@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -196,9 +195,9 @@ public class IndicesFieldDataCache extends AbstractComponent implements RemovalL
 
     public static class Key {
         public final IndexFieldCache indexCache;
-public final List<IndexFieldDataCache.Listener> listeners = new ArrayList<>();
+        public final Object readerKey;
 
-        public final List<IndexFieldDataCache.Listener> listeners = new ArrayList<>(); // optional stats listener
+public final List<IndexFieldDataCache.Listener> listeners = new ArrayList<>();
         long sizeInBytes = -1; // optional size in bytes (we keep it here in case the values are soft references)
 
 

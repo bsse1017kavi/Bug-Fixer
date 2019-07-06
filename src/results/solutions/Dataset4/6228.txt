@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -224,9 +223,9 @@ public abstract class ElasticsearchIntegrationTest extends ElasticsearchTestCase
             } else {
                 MetaData metaData = client().admin().cluster().prepareState().execute().actionGet().getState().getMetaData();
                 assertThat("test leaves persistent cluster metadata behind: " + metaData.persistentSettings().getAsMap(), metaData
-.transientSettings().getAsMap().size(), equalTo(0));
-                assertThat("test leaves transient cluster metadata behind: " + metaData.transientSettings().getAsMap(), metaData
                         .persistentSettings().getAsMap().size(), equalTo(0));
+                assertThat("test leaves transient cluster metadata behind: " + metaData.transientSettings().getAsMap(), metaData
+.transientSettings().getAsMap().size(), equalTo(0));
             
             }
             wipeIndices(); // wipe after to make sure we fail in the test that

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -402,9 +401,9 @@ public class FilesTest extends GdxTest {
 		if (handle.exists()) fail();
 		if (handle.isDirectory()) fail();
 		if (handle.delete()) fail();
-if (!handle.parent().exists()) fail();
+		if (handle.list().length != 0) fail();
 		if (handle.child("meow").exists()) fail();
-		if (handle.parent().exists()) fail();
+if (!handle.parent().exists()) fail();
 		try {
 			handle.read().close();
 			fail();

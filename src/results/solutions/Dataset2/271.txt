@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -403,9 +402,9 @@ public class SourceMapper
 					String entryName;
 					if (!entry.isDirectory() && org.eclipse.jdt.internal.core.util.Util.isJavaLikeFileName(entryName = entry.getName())) {
 						IPath path = new Path(entryName);
-for (int i = 0, max = path.segmentCount() - 1; i < max; i++) {
+						int segmentCount = path.segmentCount();
 						if (segmentCount > 1) {
-							loop: for (int i = 0, max = path.segmentCount() - 1; i < max; i++) {
+for (int i = 0, max = path.segmentCount() - 1; i < max; i++) {
 								if (firstLevelPackageNames.contains(path.segment(i))) {
 									tempRoots.add(path.uptoSegment(i));
 									// don't break here as this path could contain other first level package names (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=74014)

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.marshal;
 /*
  * 
@@ -81,9 +80,9 @@ public abstract class AbstractType implements Comparator<byte[]>
     public String getColumnsString(Collection<IColumn> columns)
     {
         StringBuilder builder = new StringBuilder();
-builder.append(column.getString(this)).append(",");
+        for (IColumn column : columns)
         {
-            builder.append(getString(column.name())).append(",");
+builder.append(column.getString(this)).append(",");
         }
         return builder.toString();
     }

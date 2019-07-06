@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -100,9 +99,9 @@ public class ConcurrentUpdateSolrServer extends SolrServer {
     shutdownExecutor = true;
   }
   
-this(solrServerUrl, client, queueSize, threadCount, Executors.newCachedThreadPool(
+  public ConcurrentUpdateSolrServer(String solrServerUrl,
       HttpClient client, int queueSize, int threadCount) {
-    this(solrServerUrl, null, queueSize, threadCount, Executors.newCachedThreadPool(
+this(solrServerUrl, client, queueSize, threadCount, Executors.newCachedThreadPool(
         new SolrjNamedThreadFactory("concurrentUpdateScheduler")));
     shutdownExecutor = true;
   }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class ExternalTldParsingDeploymentProcessor implements DeploymentUnitProc
             sharedTldUris.add(shared.getUri());
         }
 
-Iterator<Resource> resources = module.globResources("META-INF/**.tld");
+        Module module = deploymentUnit.getAttachment(Attachments.MODULE);
         try {
-            Iterator<Resource> resources = module.globResources("**.tld");
+Iterator<Resource> resources = module.globResources("META-INF/**.tld");
             while (resources.hasNext()) {
                 final Resource resource = resources.next();
                 //horrible hack

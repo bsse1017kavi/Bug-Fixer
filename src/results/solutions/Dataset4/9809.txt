@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class RestExplainAction extends BaseRestHandler {
             QueryStringQueryBuilder queryStringBuilder = QueryBuilders.queryString(queryString);
             queryStringBuilder.defaultField(request.param("df"));
             queryStringBuilder.analyzer(request.param("analyzer"));
-queryStringBuilder.lenient(request.paramAsBoolean("lenient", null));
+            queryStringBuilder.analyzeWildcard(request.paramAsBoolean("analyze_wildcard", false));
             queryStringBuilder.lowercaseExpandedTerms(request.paramAsBoolean("lowercase_expanded_terms", true));
-            queryStringBuilder.lenient(request.paramAsBooleanOptional("lenient", null));
+queryStringBuilder.lenient(request.paramAsBoolean("lenient", null));
             String defaultOperator = request.param("default_operator");
             if (defaultOperator != null) {
                 if ("OR".equals(defaultOperator)) {

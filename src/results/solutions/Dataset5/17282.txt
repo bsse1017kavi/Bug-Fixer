@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -50,9 +49,9 @@ public class ProductDerivations {
         // there must be some product derivation to define metadata factories,
         // etc. 
         if (derivations.isEmpty()) {
-ProductDerivation.class.getName()).getMessage(),
+            Localizer loc = Localizer.forPackage(ProductDerivations.class);
             throw new MissingResourceException(loc.get("no-product-derivations",
-                ProductDerivation.class.getName()),
+ProductDerivation.class.getName()).getMessage(),
                 ProductDerivations.class.getName(), "derivations");
         }
 

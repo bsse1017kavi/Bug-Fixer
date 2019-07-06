@@ -1,4 +1,3 @@
-
 /*
  * @(#)IIOPReferenceContextWrapper.java	1.0 02/07/15
  *
@@ -53,9 +52,9 @@ public class OpenOrbReferenceContextWrapperFactory extends CNCtxFactory {
      *
      * @throws NamingException if a naming exception is encountered
      */   
-return  IIOPReferenceContextWrapper.getSingleInstance(super.getInitialContext(env));
+    public Context getInitialContext(Hashtable env) throws NamingException {
 	env.put("java.naming.factory.initial","org.openorb.rmi.jndi.CtxFactory");
-	return new IIOPReferenceContextWrapper(super.getInitialContext(env));
+return  IIOPReferenceContextWrapper.getSingleInstance(super.getInitialContext(env));
     }
 
 

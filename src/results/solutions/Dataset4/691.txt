@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -130,9 +129,9 @@ public abstract class Camera {
 		tmpVec.set(point);
 		tmpVec.sub(position);
 		translate(tmpVec);
-translate(tmpVec.mul(-1));
+		rotate(axis, angle);
 		tmpVec.rotate(axis, angle);
-		translate(-tmpVec.x, -tmpVec.y, -tmpVec.z);
+translate(tmpVec.mul(-1));
 	}
 
 	/** Moves the camera by the given amount on each axis.

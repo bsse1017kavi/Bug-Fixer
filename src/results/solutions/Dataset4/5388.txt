@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.ui.user;
 
 import static com.github.mobile.android.util.GitHubIntents.EXTRA_USER;
@@ -44,9 +43,9 @@ public class UserNewsFragment extends ListLoadingFragment<Event> {
                     List<Event> events = new ArrayList<Event>(service.pageUserReceivedEvents(user.getLogin(), false)
                             .next());
                     // Remove any events that can't be rendered
-if (!NewsEventViewHolder.isValid(iter.next()))
+                    Iterator<Event> iter = events.iterator();
                     while (iter.hasNext())
-                        if (!NewsEventViewHolder.isValid(iter.next().getType()))
+if (!NewsEventViewHolder.isValid(iter.next()))
                             iter.remove();
                     return events;
                 } catch (NoSuchPageException e) {

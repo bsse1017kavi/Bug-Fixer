@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -304,9 +303,9 @@ public class EclipseFactory {
 				(ReferenceBinding)makeTypeBinding(member.getDeclaringType()));
 	}
 
-AsmHierarchyBuilder.build(unit, buildManager.getStructureModel(), buildManager.buildConfig);
+	public void finishedCompilationUnit(CompilationUnitDeclaration unit) {
 		if (buildManager.doGenerateModel()) {
-			AsmHierarchyBuilder.build(unit, buildManager.getStructureModel());
+AsmHierarchyBuilder.build(unit, buildManager.getStructureModel(), buildManager.buildConfig);
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class TarRoundTripTest extends TestCase {
     /**
      * test round-tripping long (GNU) entries
      */
-assertTrue("over 100 chars", LONG_NAME.length() > 100);
+    public void testLongRoundTripping() throws IOException {
         TarEntry original = new TarEntry(LONG_NAME);
-        assertEquals("over 100 chars", true, LONG_NAME.length() > 100);
+assertTrue("over 100 chars", LONG_NAME.length() > 100);
         assertEquals("original name", LONG_NAME, original.getName());
 
 

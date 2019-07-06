@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -145,9 +144,9 @@ public IPackage[] getReferencedPackages() throws NotPresentException {
 	 * The resulting packages are in no particular order.
 	 */
 	public IPackage[] getReferencingPackages(IImageContext context) 
-throw new NotPresentException(Util.bind("element.notPresent")); //$NON-NLS-1$
+	  throws NotPresentException {
 		if (!isPresent())
-			throw new NotPresentException(Util.bind("element.notPresent"/*nonNLS*/));
+throw new NotPresentException(Util.bind("element.notPresent")); //$NON-NLS-1$
 
 		IPackage[] pkgs = fState.getReferencingPackages(fHandle, context);
 

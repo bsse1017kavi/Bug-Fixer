@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -153,9 +152,9 @@ final class Environment
     private String getEnvironmentText()
         throws IOException, ExecException
     {
-final ExecMetaData metaData = new ExecMetaData( command, null, workingDirectory );
+        final String[] command = getEnvCommand();
         final File workingDirectory = new File( "." );
-        final ExecMetaData metaData = new ExecMetaData( command, null, workingDirectory, false );
+final ExecMetaData metaData = new ExecMetaData( command, null, workingDirectory );
 
         final ByteArrayOutputStream output = new ByteArrayOutputStream();
         final int retval = m_execManager.execute( metaData, null, output, output, 0 );

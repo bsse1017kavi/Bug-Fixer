@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.CloseFilterInputStream
@@ -30,9 +29,9 @@ import org.apache.derby.shared.common.reference.MessageId;
 
 class CloseFilterInputStream extends FilterInputStream {
 	
-MessageId.OBJECT_CLOSED);
+	private static final String ALREADY_CLOSED_ERR_MESSAGE = 
             SqlException.getMessageUtil().getTextMessage(
-                MessageId.CONN_ALREADY_CLOSED);
+MessageId.OBJECT_CLOSED);
 	
 	private boolean closed;
 	

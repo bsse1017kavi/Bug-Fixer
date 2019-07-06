@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -43,9 +42,9 @@ ARecord(Name _name, short _dclass, int _ttl, int length,
 		return;
 
 	byte [] data = new byte[4];
-String s;
+	in.read(data);
 
-	String s = new String();
+String s;
 	s = (data[0] & 0xFF) + "." + (data[1] & 0xFF) + "." +
 	    (data[2] & 0xFF)  + "." + (data[3] & 0xFF);
 	try {

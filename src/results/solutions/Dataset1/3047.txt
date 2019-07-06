@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -154,9 +153,9 @@ public class FormBasedXmlQueryDemo extends HttpServlet {
         doc.add(new Field("description", st.nextToken(), textNoNorms));
         writer.addDocument(doc);
       }
-writer.shutdown();
+      line = br.readLine();
     }
-    writer.close();
+writer.shutdown();
 
     //open searcher
     // this example never closes it reader!

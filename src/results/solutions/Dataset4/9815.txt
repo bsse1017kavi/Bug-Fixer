@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -96,9 +95,9 @@ public class MultiLineStringBuilder extends ShapeBuilder {
             for (int i = 0; iterator.hasNext(); i++) {
                 lineStrings[i] = FACTORY.createLineString(iterator.next().coordinates(false));
             }
-return jtsGeometry(geometry);
+            geometry = FACTORY.createMultiLineString(lineStrings);
         }
-        return new JtsGeometry(geometry, SPATIAL_CONTEXT, true);
+return jtsGeometry(geometry);
     }
 
     public static class InternalLineStringBuilder extends BaseLineStringBuilder<InternalLineStringBuilder> {

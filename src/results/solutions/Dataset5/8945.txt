@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -422,9 +421,9 @@ public abstract class Session implements Serializable, IConverterLocator
 	 * @param key
 	 *            The key for the data
 	 * @return The metadata
-public final <T extends Serializable> T getMetaData(final MetaDataKey<T> key)
+	 * @see MetaDataKey
 	 */
-	public final Serializable getMetaData(final MetaDataKey key)
+public final <T extends Serializable> T getMetaData(final MetaDataKey<T> key)
 	{
 		return key.get(metaData);
 	}

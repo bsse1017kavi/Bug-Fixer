@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public class TransportDeleteAction extends TransportShardReplicationOperationAct
             if (mappingMd != null && mappingMd.routing().required()) {
                 if (request.routing() == null) {
                     if (request.versionType() != VersionType.INTERNAL) {
-+ "] while using version_type [" + request.versionType() + "]");
+                        // TODO: implement this feature
                         throw new ElasticsearchIllegalArgumentException("routing value is required for deleting documents of type [" + request.type()
-                                + "] while using version_type [" + request.versionType());
++ "] while using version_type [" + request.versionType() + "]");
                     }
                     indexDeleteAction.execute(new IndexDeleteRequest(request), new ActionListener<IndexDeleteResponse>() {
                         @Override

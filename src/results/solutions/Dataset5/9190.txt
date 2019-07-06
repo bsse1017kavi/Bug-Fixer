@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -49,9 +48,9 @@ public abstract class AbstractBeanPanel extends Panel
 	public AbstractBeanPanel(String id, BeanModel beanModel)
 	{
 		super(id, beanModel);
-throw new IllegalArgumentException("Argument beanModel must not be null");
+		if (beanModel == null)
 		{
-			throw new NullPointerException("argument beanModel must not be null");
+throw new IllegalArgumentException("Argument beanModel must not be null");
 		}
 	}
 

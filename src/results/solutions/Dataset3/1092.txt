@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public final class DriverProcessor implements DeploymentUnitProcessor {
                     } else {
                         DEPLOYER_JDBC_LOGGER.deployingNonCompliantJdbcDriver(driverClass, Integer.valueOf(majorVersion),
                                 Integer.valueOf(minorVersion));
-if ((deploymentUnit.getName().contains(".") && ! deploymentUnit.getName().endsWith(".jar")) || driverNames.size() != 1) {
+                    }
                     String driverName = deploymentUnit.getName();
-                    if (! deploymentUnit.getName().endsWith(".jar") || driverNames.size() != 1) {
+if ((deploymentUnit.getName().contains(".") && ! deploymentUnit.getName().endsWith(".jar")) || driverNames.size() != 1) {
                         driverName = deploymentUnit.getName() + "_" + driverClassName + "_" + majorVersion +"_" + minorVersion;
                     }
                     InstalledDriver driverMetadata = new InstalledDriver(driverName, driverClass.getName(), null, null, majorVersion,

@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.presence.collab.ui;
 
 import org.eclipse.ecf.core.IContainer;
@@ -35,9 +34,9 @@ public class URLShareRosterEntryContributionItem extends
 				// If there is an URL share associated with this container
 				if (tmp != null) {
 					final URLShare urlshare = tmp;
-urlshare.sendURL(entry.getRoster().getUser().getName(),entry.getUser().getID());
+					IAction action = new Action() {
 						public void run() {
-							urlshare.sendURL(entry.getUser().getID());
+urlshare.sendURL(entry.getRoster().getUser().getName(),entry.getUser().getID());
 						}
 					};
 					action

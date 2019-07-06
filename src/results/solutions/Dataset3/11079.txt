@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -152,9 +151,9 @@ class TransportConfigOperationHandlers {
      * applied to the runtime directly.
      *
      * @param context the operation context
-if(context.isNormalServer()) {
+     */
     static void reloadRequiredStep(final OperationContext context) {
-        if(context.getType() == OperationContext.Type.SERVER) {
+if(context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 @Override
                 public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {

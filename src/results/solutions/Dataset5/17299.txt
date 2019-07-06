@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -759,9 +758,9 @@ public class HTMLDocumentImpl
         try {
             _elementTypesHTML.put( tagName,
                 ObjectFactory.findProviderClass("org.apache.html.dom." + className,
-throw new RuntimeException( "HTM019 OpenXML Error: Could not find or execute class " + className + " implementing HTML element " + tagName
+                    HTMLDocumentImpl.class.getClassLoader(), true) );
         } catch ( Exception except ) {
-            new RuntimeException( "HTM019 OpenXML Error: Could not find or execute class " + className + " implementing HTML element " + tagName
+throw new RuntimeException( "HTM019 OpenXML Error: Could not find or execute class " + className + " implementing HTML element " + tagName
                                   + "\n" + className + "\t" + tagName);
         }
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -348,9 +347,9 @@ public class JsonDocumentMapper implements DocumentMapper, ToJson {
         }
     }
 
-rootObjectMapper.mergeMapping(this, jsonMergeWith.rootObjectMapper, mergeFlags);
+    @Override public synchronized void merge(DocumentMapper mergeWith, MergeFlags mergeFlags) throws MergeMappingException {
         JsonDocumentMapper jsonMergeWith = (JsonDocumentMapper) mergeWith;
-        rootObjectMapper.mergeMapping(jsonMergeWith.rootObjectMapper, mergeFlags);
+rootObjectMapper.mergeMapping(this, jsonMergeWith.rootObjectMapper, mergeFlags);
         if (!mergeFlags.simulate()) {
             // update the source to the merged one
             mappingSource = buildSource();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -498,9 +497,9 @@ public abstract class StoreCollectionFieldStrategy
             if (field.getOrderColumn() != null) {
                 // we don't allow ordering table per class one-many's, so
                 // we know we don't need a union
-StringBuilder sql = new StringBuilder();
+                Select sel = store.getSQLFactory().newSelect();
                 sel.setAggregate(true);
-                StringBuffer sql = new StringBuffer();
+StringBuilder sql = new StringBuilder();
                 sql.append("MAX(").
                     append(sel.getColumnAlias(field.getOrderColumn())).
                     append(")");

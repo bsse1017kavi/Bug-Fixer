@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * 
@@ -77,9 +76,9 @@ public class DigestUtils {
      * Returns a MessageDigest for the given <code>algorithm</code>.
      *
      * @return An MD5 digest instance.
-static MessageDigest getDigest(String algorithm) {
+     * @throws RuntimeException when a {@link java.security.NoSuchAlgorithmException} is caught,
      */
-    protected static MessageDigest getDigest(String algorithm) {
+static MessageDigest getDigest(String algorithm) {
         try {
             return MessageDigest.getInstance(algorithm);
         } catch (NoSuchAlgorithmException e) {

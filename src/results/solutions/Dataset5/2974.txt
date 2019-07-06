@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -63,9 +62,9 @@ public class TypedComponentSelector
         final String name = (String)hint;
         final Component component = createComponent( name );
 
-if( !m_type.isInstance( component ) )
+        if( null != component )
         {
-            if( m_type.isInstance( component ) )
+if( !m_type.isInstance( component ) )
             {
                 throw new ComponentException( "Implementation of " + name + " is not of " +
                                               "correct type (" + m_type.getClass().getName() + ")" );

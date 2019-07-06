@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -322,9 +321,9 @@ public class PluginsService extends AbstractComponent {
             return Collections.emptyList();
         }
 
-boolean defaultIsolation = settings.getAsBoolean("plugins.isolation", Boolean.FALSE);
+        List<Tuple<PluginInfo, Plugin>> pluginData = Lists.newArrayList();
 
-        boolean defaultIsolation = settings.getAsBoolean("plugins.isolation", Boolean.TRUE);
+boolean defaultIsolation = settings.getAsBoolean("plugins.isolation", Boolean.FALSE);
         ClassLoader esClassLoader = settings.getClassLoader();
         Method addURL = null;
         boolean discoveredAddUrl = false;

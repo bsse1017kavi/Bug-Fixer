@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -362,9 +361,9 @@ public class IndicesClusterStateService extends AbstractLifecycleComponent<Indic
                     logger.warn("[{}][{}] failed to start shard", e, indexService.index().name(), shardRouting.id());
                     if (indexService.hasShard(shardId)) {
                         try {
-logger.warn("[{}][{}] failed to delete shard after failed startup", e1, indexService.index().name(), shardRouting.id());
+                            indexService.cleanShard(shardId);
                         } catch (Exception e1) {
-                            logger.warn("[{}][{}] failed to delete shard after failed startup", e, indexService.index().name(), shardRouting.id());
+logger.warn("[{}][{}] failed to delete shard after failed startup", e1, indexService.index().name(), shardRouting.id());
                         }
                     }
                     try {

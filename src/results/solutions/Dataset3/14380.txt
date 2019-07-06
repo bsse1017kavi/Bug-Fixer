@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public final class MessagingExtension implements Extension {
     * {@inheritDoc}
     */
    public void registerElementHandlers(final XMLMapper mapper) {
-log.infof("Registered messaging subsystem under: %s", messagingNamespace);
+      QName messagingNamespace = new QName(Namespace.MESSAGING_1_0.getUriString(), Element.SUBSYSTEM.getLocalName());
       mapper.registerRootElement(messagingNamespace, MessagingSubsystemParser.getInstance());
-      log.info("Registered messaging subsystem under: "+messagingNamespace);
+log.infof("Registered messaging subsystem under: %s", messagingNamespace);
    }
 
    /**

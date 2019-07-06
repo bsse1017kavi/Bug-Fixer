@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class ManifestAttachmentProcessor implements DeploymentUnitProcessor {
         final DeploymentUnit deploymentUnitContext = phaseContext.getDeploymentUnit();
         Manifest manifest = deploymentUnitContext.getAttachment(Attachments.MANIFEST);
         if (manifest != null)
-final VirtualFile deploymentRoot = deploymentUnitContext.getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
+            return;
 
-        final VirtualFile deploymentRoot = deploymentUnitContext.getAttachment(Attachments.DEPLOYMENT_ROOT);
+final VirtualFile deploymentRoot = deploymentUnitContext.getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
         try {
             manifest = VFSUtils.getManifest(deploymentRoot);
             if (manifest != null) deploymentUnitContext.putAttachment(Attachments.MANIFEST, manifest);

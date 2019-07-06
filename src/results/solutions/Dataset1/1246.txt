@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -126,9 +125,9 @@ public class CassandraDaemon extends org.apache.cassandra.service.AbstractCassan
     {
         if (logger.isDebugEnabled())
             logger.debug(String.format("Binding avro service to %s:%s", listenAddr, listenPort));
-logger.info("Listening for avro clients...");
+        SpecificResponder responder = new SpecificResponder(Cassandra.class, new CassandraServer());
         
-        logger.info("Cassandra starting up...");
+logger.info("Listening for avro clients...");
         Mx4jTool.maybeLoad();
         // FIXME: This isn't actually binding to listenAddr (it should).
         server = new HttpServer(responder, listenPort);

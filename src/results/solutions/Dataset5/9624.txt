@@ -1,4 +1,3 @@
-
 /*
  * $Id: CompoundAuthorizationStrategy.java,v 1.6 2006/01/14 22:45:04
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -41,9 +40,9 @@ public abstract class AbstractPageAuthorizationStrategy implements IAuthorizatio
 	/**
 	 * @see wicket.authorization.IAuthorizationStrategy#authorizeInstantiation(java.lang.Class)
 	 */
-if (Page.class.isAssignableFrom(componentClass))
+	public final boolean authorizeInstantiation(Class/* <Component> */componentClass)
 	{
-		if (componentClass.isAssignableFrom(Page.class))
+if (Page.class.isAssignableFrom(componentClass))
 		{
 			if (!isAuthorized(componentClass))
 			{

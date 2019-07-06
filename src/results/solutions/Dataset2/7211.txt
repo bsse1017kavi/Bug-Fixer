@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -513,9 +512,9 @@ public class OptionConverter {
     URL url, String clazz, LoggerRepository hierarchy) {
     Configurator configurator = null;
     String filename = url.getFile();
-clazz = "org.apache.log4j.joran.JoranConfigurator";
+
     if ((clazz == null) && (filename != null) && filename.endsWith(".xml")) {
-      clazz = "org.apache.log4j.xml.DOMConfigurator";
+clazz = "org.apache.log4j.joran.JoranConfigurator";
     }
 
     if (clazz != null) {

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -42,9 +41,9 @@ public class ComponentRequestTarget implements IComponentRequestTarget
 	 */
 	public ComponentRequestTarget(final Component component)
 	{
-throw new IllegalArgumentException("Argument 'component' must be not null");
+		if (component == null)
 		{
-			throw new NullPointerException("Argument 'component' must be not null");
+throw new IllegalArgumentException("Argument 'component' must be not null");
 		}
 
 		this.component = component;

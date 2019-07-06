@@ -1,4 +1,3 @@
-
 package org.apache.lucene.spatial.prefix;
 
 /*
@@ -47,9 +46,9 @@ public class TermQueryPrefixTreeStrategy extends PrefixTreeStrategy {
     final SpatialOperation op = args.getOperation();
     if (! SpatialOperation.is(op, SpatialOperation.IsWithin, SpatialOperation.Intersects, SpatialOperation.BBoxWithin, SpatialOperation.BBoxIntersects))
       throw new UnsupportedSpatialOperation(op);
-int detailLevel = grid.getLevelForDistance(args.resolveDistErr(ctx, distErrPct));
+
     Shape shape = args.getShape();
-    int detailLevel = grid.getMaxLevelForPrecision(shape, args.getDistPrecision());
+int detailLevel = grid.getLevelForDistance(args.resolveDistErr(ctx, distErrPct));
     List<Node> cells = grid.getNodes(shape, detailLevel, false);
     TermsFilter filter = new TermsFilter();
     for (Node cell : cells) {

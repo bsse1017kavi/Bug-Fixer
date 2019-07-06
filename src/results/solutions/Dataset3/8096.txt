@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -147,9 +146,9 @@ public class WSRefAnnotationProcessor implements DeploymentUnitProcessor {
         classDescription.getBindingConfigurations().add(bindingConfiguration);
         // our injection comes from the local lookup, no matter what.
         final ResourceInjectionConfiguration injectionConfiguration = injectionTarget != null ?
-classDescription.addResourceInjection(injectionConfiguration);
+            new ResourceInjectionConfiguration(injectionTarget, new LookupInjectionSource(bindingName)) : null;
         if (injectionConfiguration != null) {
-            classDescription.getInjectionConfigurations().add(injectionConfiguration);
+classDescription.addResourceInjection(injectionConfiguration);
         }
     }
 

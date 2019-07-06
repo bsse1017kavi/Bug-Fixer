@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -104,9 +103,9 @@ public class MergedContextConfiguration implements Serializable {
 	/**
 	 * Generate a null-safe {@link String} representation of the supplied
 	 * {@link ContextLoader} based solely on the fully qualified name of the
-protected static String nullSafeToString(ContextLoader contextLoader) {
+	 * loader or &quot;null&quot; if the supplied loaded is <code>null</code>.
 	 */
-	private static String nullSafeToString(ContextLoader contextLoader) {
+protected static String nullSafeToString(ContextLoader contextLoader) {
 		return contextLoader == null ? "null" : contextLoader.getClass().getName();
 	}
 

@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import android.app.AlertDialog.Builder;
@@ -79,9 +78,9 @@ public class FilterIssuesActivity extends RoboFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-setTitle(string.filter_issues_title);
+        super.onCreate(savedInstanceState);
         setContentView(layout.issues_filter);
-        setTitle(getString(string.filter_issues_title));
+setTitle(string.filter_issues_title);
 
         final Repository repository = (Repository) getIntent().getSerializableExtra(GitHubIntents.EXTRA_REPOSITORY);
 

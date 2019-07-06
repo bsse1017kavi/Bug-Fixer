@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -75,9 +74,9 @@ class MasterDomainControllerOperationHandlerImpl implements ManagementRequestHan
 
     private class UnregisterOperation extends AbstractHostRequestHandler {
 
-domainController.unregisterRemoteHost(hostId, null);
+        @Override
         void handleRequest(String hostId, DataInput input, ManagementRequestContext<Void> context) throws IOException {
-            domainController.unregisterRemoteHost(hostId, null, true);
+domainController.unregisterRemoteHost(hostId, null);
             final FlushableDataOutput os = writeGenericResponseHeader(context);
             try {
                 os.write(ManagementProtocol.RESPONSE_END);

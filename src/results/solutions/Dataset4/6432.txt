@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -319,9 +318,9 @@ public class IndicesStore extends AbstractComponent implements ClusterStateListe
                     if (indexService == null) {
                         // not physical allocation of the index, delete it from the file system if applicable
                         if (nodeEnv.hasNodeFile()) {
-logger.debug("{} deleting shard that is no longer used", shardId);
+                            File[] shardLocations = nodeEnv.shardLocations(shardId);
                             if (FileSystemUtils.exists(shardLocations)) {
-                                logger.debug("[{}][{}] deleting shard that is no longer used", shardId);
+logger.debug("{} deleting shard that is no longer used", shardId);
                                 FileSystemUtils.deleteRecursively(shardLocations);
                             }
                         }

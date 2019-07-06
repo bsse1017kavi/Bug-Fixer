@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -64,9 +63,9 @@ public class CookieUtilsTest extends WicketTestCase
 		final CookieUtils persister = new CookieUtils();
 
 		// See comment in CookieUtils on how removing a Cookies works. As no cookies in the request,
-assertEquals(0, getRequestCookies().size());
+		// no "delete" cookie will be added to the response.
 		persister.remove(textField);
-		assertNull(getRequestCookies());
+assertEquals(0, getRequestCookies().size());
 		assertEquals(0, getResponseCookies().size());
 
 		// Save the input field's value (add it to the response's cookie list)

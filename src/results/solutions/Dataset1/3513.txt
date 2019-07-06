@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public abstract class UpdateHandler implements SolrInfoMBean {
     schema = core.getSchema();
     idField = schema.getUniqueKeyField();
     idFieldType = idField!=null ? idField.getType() : null;
-if (!core.isReloaded() && !core.getDirectoryFactory().isPersistent()) {
+    parseEventListeners();
     initLog();
-    if (!core.getDirectoryFactory().isPersistent()) {
+if (!core.isReloaded() && !core.getDirectoryFactory().isPersistent()) {
       try {
         clearLog();
       } catch (IOException e) {

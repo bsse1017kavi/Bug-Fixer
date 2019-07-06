@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -865,9 +864,9 @@ public class TimerServiceImpl implements TimerService, Service<TimerService> {
             return null;
         }
 
-throw MESSAGES.timerNotFound(id);
+        final TimerEntity timerEntity = timerPersistence.getValue().loadTimer(id, timedObjectId);
         if (timerEntity == null) {
-            throw EJB3_LOGGER.timerNotFound(id);
+throw MESSAGES.timerNotFound(id);
         }
         if (timerEntity.isCalendarTimer()) {
             return new CalendarTimer((CalendarTimerEntity) timerEntity, this);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -416,9 +415,9 @@ public class RolloutPlanTestCase extends AbstractCliTestBase {
 
         URL url = new URL("http", address, 8080 + portOffset, path);
         boolean failed = false;
-response = HttpRequest.get(url.toString(), 60, TimeUnit.SECONDS);
+        String response = null;
         try {
-            response = HttpRequest.get(url.toString(), 10, TimeUnit.SECONDS);
+response = HttpRequest.get(url.toString(), 60, TimeUnit.SECONDS);
         } catch (Exception e) {
             failed = true;
             if (!shouldFail) throw new Exception("Http request failed.", e);

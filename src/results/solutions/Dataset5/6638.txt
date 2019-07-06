@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -91,9 +90,9 @@ public class PagingResultObjectProvider
         // are there any mappings that require batched selects?
         FieldMapping[] fms = mapping.getDefinedFieldMappings();
         BitSet paged = null;
-&& !fetchState.requiresFetch(fms[i]))
+        for (int i = 0; i < fms.length; i++) {
             if (fetchState != null
-                && !fetchState.requiresSelect(fms[i], false))
+&& !fetchState.requiresFetch(fms[i]))
                 continue;
 
             if (fms[i].supportsSelect(sel, sel.EAGER_PARALLEL, null, store,

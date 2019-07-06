@@ -1,4 +1,3 @@
-
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -102,9 +101,9 @@ public class AccountDataBeanImpl implements AccountDataBean, Serializable {
     
     @OneToMany(mappedBy = "account", fetch=FetchType.LAZY)
     private Collection<HoldingDataBeanImpl> holdings;
-@JoinColumn(name="PROFILE_USERID", columnDefinition="VARCHAR(255)")
+    
     @OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="PROFILE_USERID", columnDefinition="VARCHAR(250)")
+@JoinColumn(name="PROFILE_USERID", columnDefinition="VARCHAR(255)")
     private AccountProfileDataBeanImpl profile;
 
     /* Accessor methods for relationship fields are only included for the AccountProfile profileID */

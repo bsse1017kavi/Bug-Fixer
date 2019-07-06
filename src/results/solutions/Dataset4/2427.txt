@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -314,9 +313,9 @@ public class IndicesClusterStateService extends AbstractLifecycleComponent<Indic
                 // recheck here, since the cluster event can be called
                 if (indexShard.ignoreRecoveryAttempt()) {
                     return;
-RecoveryAction recoveryAction = indexService.shardInjectorSafe(shardId).getInstance(RecoveryAction.class);
+                }
                 try {
-                    RecoveryAction recoveryAction = indexService.shardInjector(shardId).getInstance(RecoveryAction.class);
+RecoveryAction recoveryAction = indexService.shardInjectorSafe(shardId).getInstance(RecoveryAction.class);
                     if (!shardRouting.primary()) {
                         // recovery from primary
                         IndexShardRoutingTable shardRoutingTable = routingTable.index(shardRouting.index()).shard(shardRouting.id());

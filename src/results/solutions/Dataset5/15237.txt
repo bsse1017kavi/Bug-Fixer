@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -331,9 +330,9 @@ public abstract class Shadow {
 		if (sorted == null) {
 			// this means that we have circular dependencies
 			for (Iterator i = mungers.iterator(); i.hasNext(); ) {
-MessageUtil.error("circular advice dependency at " + this, m.getSourceLocation()));
+				ShadowMunger m = (ShadowMunger)i.next();
 				getIWorld().getMessageHandler().handleMessage(
-					MessageUtil.error("circular dependency at " + this, m.getSourceLocation()));
+MessageUtil.error("circular advice dependency at " + this, m.getSourceLocation()));
 			}
 		}
 		mungers = sorted;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -126,9 +125,9 @@ public class LocalGatewayIndicesWarmerTests extends ElasticsearchIntegrationTest
             assertThat(recoveredTemplateWarmers.entries().get(i).source(), equalTo(templateWarmers.entries().get(i).source()));
         }
 
-DeleteWarmerResponse deleteWarmerResponse = client().admin().indices().prepareDeleteWarmer().setIndices("test").setNames("warmer_1").execute().actionGet();
+
         logger.info("--> delete warmer warmer_1");
-        DeleteWarmerResponse deleteWarmerResponse = client().admin().indices().prepareDeleteWarmer().setIndices("test").setName("warmer_1").execute().actionGet();
+DeleteWarmerResponse deleteWarmerResponse = client().admin().indices().prepareDeleteWarmer().setIndices("test").setNames("warmer_1").execute().actionGet();
         assertThat(deleteWarmerResponse.isAcknowledged(), equalTo(true));
 
         logger.info("--> verify warmers (delete) are registered in cluster state");

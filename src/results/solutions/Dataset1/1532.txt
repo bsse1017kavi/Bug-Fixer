@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -289,9 +288,9 @@ public class TestIndexWriterWithThreads extends LuceneTestCase {
       try {
         writer.shutdown(false);
         success = true;
-writer.close();
+      } catch (IOException ioe) {
         failure.clearDoFail();
-        writer.shutdown(false);
+writer.close();
       }
       if (VERBOSE) {
         System.out.println("TEST: success=" + success);

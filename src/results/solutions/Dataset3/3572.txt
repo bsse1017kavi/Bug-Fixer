@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -330,9 +329,9 @@ public class ApplyRemoteMasterDomainModelHandler implements OperationStepHandler
     protected void initializeExtension(String module) {
         try {
             for (final Extension extension : Module.loadServiceFromCallerModuleLoader(ModuleIdentifier.fromString(module), Extension.class)) {
-extension.initialize(extensionContext.createTracking(module));
+                ClassLoader oldTccl = SecurityActions.setThreadContextClassLoader(extension.getClass());
                 try {
-                    extension.initialize(extensionContext.createWrapper(module));
+extension.initialize(extensionContext.createTracking(module));
                 } finally {
                     SecurityActions.setThreadContextClassLoader(oldTccl);
                 }

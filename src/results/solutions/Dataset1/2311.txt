@@ -1,4 +1,3 @@
-
 /* Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -100,9 +99,9 @@ public class MeanShiftCanopyJob {
     SequenceFile.Reader reader = new SequenceFile.Reader(fs, outPart, conf);
     Text key = new Text();
     Text value = new Text();
-converged = value.toString().startsWith("V");
+    boolean converged = true;
     while (converged && reader.next(key, value))
-      converged = converged && value.toString().startsWith("V");
+converged = value.toString().startsWith("V");
     return converged;
   }
 

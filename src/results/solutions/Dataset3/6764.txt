@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -63,9 +62,9 @@ public class InterceptorLifecycleSFSBTestCase {
     @Test
     public void testInterceptorPostConstructWithProceed() throws NamingException {
         InitialContext ctx = new InitialContext();
-Assert.assertTrue(LifecycleInterceptorWithProceed.postConstruct);
+        InterceptedWithProceedSLSB bean = (InterceptedWithProceedSLSB)ctx.lookup("java:module/" + InterceptedWithProceedSLSB.class.getSimpleName());
         bean.doStuff();
-        Assert.assertTrue(LifecycleInterceptorNoProceed.postConstruct);
+Assert.assertTrue(LifecycleInterceptorWithProceed.postConstruct);
         Assert.assertTrue(bean.isPostConstructCalled());
     }
 

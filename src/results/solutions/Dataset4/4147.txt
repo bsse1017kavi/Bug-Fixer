@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -650,9 +649,9 @@ public class UpdateRequest extends InstanceShardOperationRequest<UpdateRequest> 
         out.writeByte(consistencyLevel.id());
         out.writeSharedString(type);
         out.writeString(id);
-if (Strings.hasLength(script) && out.getVersion().onOrAfter(Version.V_1_3_0)) {
+        out.writeOptionalString(routing);
         out.writeOptionalString(script);
-        if (script != null && out.getVersion().onOrAfter(Version.V_1_3_0)) {
+if (Strings.hasLength(script) && out.getVersion().onOrAfter(Version.V_1_3_0)) {
             ScriptService.ScriptType.writeTo(scriptType, out);
         }
         out.writeOptionalString(scriptLang);

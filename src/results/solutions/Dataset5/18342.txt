@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -365,9 +364,9 @@ public class TestCookieManager extends JMeterTestCase {
             assertEquals(0,c.length); // Cookies again ignored
         }
 
-man.addFile(findTestPath("testfiles/cookies.txt"));
+        public void testLoad() throws Exception{
             assertEquals(0,man.getCookieCount());
-            man.addFile("testfiles/cookies.txt");
+man.addFile(findTestPath("testfiles/cookies.txt"));
             assertEquals(3,man.getCookieCount());
 
             int num = 0;

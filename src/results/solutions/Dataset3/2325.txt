@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -183,9 +182,9 @@ public class DefaultPermissionFactoryTestCase {
         DefaultPermissionFactory permissionFactory = new DefaultPermissionFactory(combinationPolicy, roleMapper,
                 Collections.singleton(constraintFactory), null);
 
-TargetAttribute targetAttribute = new TargetAttribute("test", null, new ModelNode(), targetResource);
+        Action action = new Action(null, null, EnumSet.of(Action.ActionEffect.ADDRESS));
         TargetResource targetResource = TargetResource.forStandalone(PathAddress.EMPTY_ADDRESS, ROOT_RR, null);
-        TargetAttribute targetAttribute = new TargetAttribute(null, new ModelNode(), targetResource);
+TargetAttribute targetAttribute = new TargetAttribute("test", null, new ModelNode(), targetResource);
 
         PermissionCollection userPermissions = permissionFactory.getUserPermissions(caller, environment, action, targetAttribute);
         PermissionCollection requiredPermissions = permissionFactory.getRequiredPermissions(action, targetAttribute);

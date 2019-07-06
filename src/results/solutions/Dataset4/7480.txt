@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -179,9 +178,9 @@ public abstract class SharedStorageGateway extends AbstractLifecycleComponent<Ga
                 }
                 currentMetaData = event.state().metaData();
 
-nodeIndexDeletedAction.nodeIndexStoreDeleted(event.state(), indexDeleted, event.state().nodes().localNodeId());
+                for (String indexDeleted : indicesDeleted) {
                     try {
-                        nodeIndexDeletedAction.nodeIndexStoreDeleted(indexDeleted, event.state().nodes().masterNodeId());
+nodeIndexDeletedAction.nodeIndexStoreDeleted(event.state(), indexDeleted, event.state().nodes().localNodeId());
                     } catch (Exception e) {
                         logger.debug("[{}] failed to notify master on local index store deletion", e, indexDeleted);
                     }

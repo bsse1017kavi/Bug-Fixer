@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.grouping.term;
 
 /*
@@ -129,9 +128,9 @@ public abstract class TermAllGroupHeadsCollector<GH extends AbstractAllGroupHead
       final int ord = groupIndex.getOrd(doc);
       final BytesRef groupValue = ord == 0 ? null : groupIndex.lookup(ord, scratchBytesRef);
       GroupHead groupHead = groups.get(groupValue);
-groups.put(groupValue == null ? null : BytesRef.deepCopyOf(groupValue), groupHead);
+      if (groupHead == null) {
         groupHead = new GroupHead(groupValue, sortWithinGroup, doc);
-        groups.put(groupValue == null ? null : new BytesRef(groupValue), groupHead);
+groups.put(groupValue == null ? null : BytesRef.deepCopyOf(groupValue), groupHead);
         temporalResult.stop = true;
       } else {
         temporalResult.stop = false;

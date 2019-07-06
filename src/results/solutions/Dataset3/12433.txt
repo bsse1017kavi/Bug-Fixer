@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class DriverDependenciesProcessor implements DeploymentUnitProcessor {
         if (deploymentUnit.hasAttachment(Attachments.RESOURCE_ROOTS)) {
             final List<ResourceRoot> resourceRoots = deploymentUnit.getAttachmentList(Attachments.RESOURCE_ROOTS);
             for (ResourceRoot root : resourceRoots) {
-moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, JTA, false, false, false, false));
+                VirtualFile child = root.getRoot().getChild(SERVICE_FILE_NAME);
                 if (child.exists()) {
-                    moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, JTA, false, false, false));
+moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, JTA, false, false, false, false));
                     break;
                 }
             }

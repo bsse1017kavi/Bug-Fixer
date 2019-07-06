@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ public class ThreadLocals {
                             if (value instanceof SoftReference) {
                                 actualValue = ((SoftReference) value).get();
                             }
-if (actualValueClassName.startsWith("org.elasticsearch") || actualValueClassName.startsWith("org.apache.lucene")) {
+                            if (actualValue != null) {
                                 String actualValueClassName = actualValue.getClass().getName();
-                                if (actualValueClassName.startsWith("org.elasticsearch") || actualValueClassName.startsWith("org.lucene")) {
+if (actualValueClassName.startsWith("org.elasticsearch") || actualValueClassName.startsWith("org.apache.lucene")) {
                                     remove = true;
                                 }
                             }

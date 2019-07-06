@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -281,9 +280,9 @@ public class Beta {
      * @param p First argument.
      * @param q Second argument.
      * @return the value of {@code Delta(p) + Delta(q) - Delta(p + q)}.
-static final double bcorr(final double p, final double q) {
+     * @throws NumberIsTooSmallException if {@code p < 10.0} or {@code q < 10.0}.
      */
-    public static final double bcorr(final double p, final double q) {
+static final double bcorr(final double p, final double q) {
 
         if (p < 10.0) {
             throw new NumberIsTooSmallException(p, 10.0, true);

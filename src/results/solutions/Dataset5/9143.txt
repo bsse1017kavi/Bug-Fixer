@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -35,9 +34,9 @@ public class Snippet161 {
 		text.setText("var newNode = document.createElement('P'); \r\n"+
 				"var text = document.createTextNode('At least when I am around');\r\n"+
 				"newNode.appendChild(text);\r\n"+
-"document.bgColor='yellow';");
+				"document.getElementById('myid').appendChild(newNode);\r\n"+
 				"\r\n"+
-				"document.bgColor=Math.round(Math.random()*0xffffff);");
+"document.bgColor='yellow';");
 		final Button button = new Button(comp, SWT.PUSH);
 		button.setText("Execute Script");
 		button.addListener(SWT.Selection, new Listener() {

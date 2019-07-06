@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -131,9 +130,9 @@ public class Echo extends Task
                 out = new FileWriter( file.getAbsolutePath(), append );
                 out.write( message, 0, message.length() );
             }
-throw new BuildException( "Error", ioe);
+            catch( IOException ioe )
             {
-                throw new BuildException( ioe);
+throw new BuildException( "Error", ioe);
             }
             finally
             {

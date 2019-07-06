@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -452,9 +451,9 @@ public class UndertowDeploymentInfoService implements Service<DeploymentInfo> {
             HashMap<String, TagLibraryInfo> tldInfo = createTldsInfo(tldsMetaData, sharedTlds);
 
             d.setDefaultServletConfig(new DefaultServletConfig(true, Collections.<String>emptySet()));
-final ServletInfo jspServlet = jspConfig != null ? jspConfig.createJSPServletInfo() : null;
+
             //default JSP servlet
-            final ServletInfo jspServlet = jspConfig != null ? jspConfig.getJSPServletInfo() : null;
+final ServletInfo jspServlet = jspConfig != null ? jspConfig.createJSPServletInfo() : null;
             if (jspServlet != null) { //this would be null if jsp support is disabled
                 HashMap<String, JspPropertyGroup> propertyGroups = createJspConfig(mergedMetaData);
                 JspServletBuilder.setupDeployment(d, propertyGroups, tldInfo, new UndertowJSPInstanceManager(new WebInjectionContainer(module.getClassLoader(), componentRegistryInjectedValue.getValue())));

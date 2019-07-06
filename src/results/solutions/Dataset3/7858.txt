@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class DistributableSessionManagerTestCase {
         Batch batch = mock(Batch.class);
         SessionConfig config = mock(SessionConfig.class);
         Session<LocalSessionContext> session = mock(Session.class);
-when(this.manager.createIdentifier()).thenReturn(sessionId);
+        String sessionId = "session";
         
-        when(this.manager.createSessionId()).thenReturn(sessionId);
+when(this.manager.createIdentifier()).thenReturn(sessionId);
         when(this.manager.containsSession(sessionId)).thenReturn(false);
         when(this.manager.createSession(sessionId)).thenReturn(session);
         when(this.manager.getBatcher()).thenReturn(batcher);

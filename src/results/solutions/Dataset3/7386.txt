@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class RootLoggerAdd extends AbstractLoggingSubsystemUpdate<Void> {
     /** {@inheritDoc} */
     protected <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super Void, P> resultHandler, P param) {
         final RootLoggerService service = new RootLoggerService();
-builder.setInitialMode(ServiceController.Mode.ACTIVE);
+        service.setLevel(level);
         final BatchServiceBuilder<Logger> builder = updateContext.getBatchBuilder().addService(LogServices.ROOT_LOGGER, service);
-        builder.setInitialMode(ServiceController.Mode.IMMEDIATE);
+builder.setInitialMode(ServiceController.Mode.ACTIVE);
     }
 
     /** {@inheritDoc} */

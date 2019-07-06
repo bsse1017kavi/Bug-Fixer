@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -15,8 +14,8 @@ package answers;
 
 import support.Log;
 
-Log.write(thisJoinPoint);
+aspect Answer3a {
     before(): execution(public * *(..)) && within(figures.*) {
-        Log.log(thisJoinPoint.toString());
+Log.write(thisJoinPoint);
     }
 }

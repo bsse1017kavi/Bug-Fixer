@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -67,9 +66,9 @@ public class ApplicationClientStartService implements Service<ApplicationClientS
             public void run() {
                 try {
                     applicationClientDeploymentServiceInjectedValue.getValue().getDeploymentCompleteLatch().await();
-logger.error(e.getTargetException(), e.getTargetException());
+                    mainMethod.invoke(null,new Object[] { parameters});
                 } catch (InvocationTargetException e) {
-                    logger.error(e);
+logger.error(e.getTargetException(), e.getTargetException());
                 } catch (IllegalAccessException e) {
                     logger.error(e);
                 } catch (InterruptedException e) {

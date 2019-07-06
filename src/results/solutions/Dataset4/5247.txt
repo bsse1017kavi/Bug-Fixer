@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -311,9 +310,9 @@ public class MoreLikeThisRequest implements ActionRequest {
         return this.boostTerms;
     }
 
-searchSource = Arrays.copyOfRange(searchSource, searchSourceOffset, searchSourceOffset + searchSourceLength);
+    void beforeLocalFork() {
         if (searchSourceUnsafe) {
-            searchSource = Arrays.copyOfRange(searchSource, searchSourceOffset, searchSourceLength);
+searchSource = Arrays.copyOfRange(searchSource, searchSourceOffset, searchSourceOffset + searchSourceLength);
             searchSourceOffset = 0;
             searchSourceUnsafe = false;
         }

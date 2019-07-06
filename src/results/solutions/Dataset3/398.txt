@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
@@ -205,9 +204,9 @@ public class FindingFilter implements FileFilter {
             this.option = option;
             this.invert = invert;
             this.argument = new Boolean(argument.toString()).booleanValue();
-return FindingFilter.invert( this.invert,  (!file.isDirectory() && file.length() == 0) == this.argument );
+        }
         public boolean accept(File file) {
-            return FindingFilter.invert( this.invert,  (file.length() == 0) == this.argument );
+return FindingFilter.invert( this.invert,  (!file.isDirectory() && file.length() == 0) == this.argument );
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public class ArchiveUtils {
      * @return the representation of the entry
      */
     public static String toString(ArchiveEntry entry){
-String size = Long.toString(entry.getSize());
+        StringBuilder sb = new StringBuilder();
         sb.append(entry.isDirectory()? 'd' : '-');// c.f. "ls -l" output
-        String size = Long.toString((entry.getSize()));
+String size = Long.toString(entry.getSize());
         sb.append(' ');
         // Pad output to 7 places, leading spaces
         for(int i=7; i > size.length(); i--){

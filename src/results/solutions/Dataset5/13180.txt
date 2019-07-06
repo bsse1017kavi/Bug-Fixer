@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -512,9 +511,9 @@ public boolean open () {
 					hwndTransparent,
 					0,
 					OS.GetModuleHandle (null),
-int /*long*/ hwnd = isVista ? hwndOpaque : hwndTransparent;
+					null);
 		}
-		int hwnd = isVista ? hwndOpaque : hwndTransparent;
+int /*long*/ hwnd = isVista ? hwndOpaque : hwndTransparent;
 		oldProc = OS.GetWindowLongPtr (hwnd, OS.GWLP_WNDPROC);
 		newProc = new Callback (this, "transparentProc", 4); //$NON-NLS-1$
 		int /*long*/ newProcAddress = newProc.getAddress ();

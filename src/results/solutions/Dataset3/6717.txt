@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class PropertyResourceDefinition extends SimpleResourceDefinition {
             .setAllowNull(true).setAllowExpression(true).setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES).build();
 
     public PropertyResourceDefinition() {
-new SecurityRealmChildAddHandler(true, false, VALUE),
+        super(PathElement.pathElement(ModelDescriptionConstants.PROPERTY),
                 ControllerResolver.getResolver("core.management.security-realm.property"),
-                new SecurityRealmChildAddHandler(true, VALUE),
+new SecurityRealmChildAddHandler(true, false, VALUE),
                 new SecurityRealmChildRemoveHandler(true),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES,
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES);

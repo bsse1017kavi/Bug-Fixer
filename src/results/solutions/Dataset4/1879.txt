@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public abstract class TransportNodesOperationAction<Request extends NodesOperati
         super(settings, actionName, threadPool, actionFilters);
         this.clusterName = clusterName;
         this.clusterService = clusterService;
-this.transportNodeAction = actionName + "[n]";
+        this.transportService = transportService;
 
-        this.transportNodeAction = actionName + "/n";
+this.transportNodeAction = actionName + "[n]";
         this.executor = executor();
 
         transportService.registerHandler(actionName, new TransportHandler());

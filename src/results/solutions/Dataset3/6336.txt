@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class ArchiveTestCase {
     @ArquillianResource URL url;
 
     @Deployment
-ja.addClass(ArchiveTestCase.class);
+    public static Archive<?> getDeployment() {
         JavaArchive ja = ShrinkWrap.create(JavaArchive.class, "dummy.jar");
-        ja.addClass(DeployTestCase.class);
+ja.addClass(ArchiveTestCase.class);
         return ja;
     }
 

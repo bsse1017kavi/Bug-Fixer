@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public abstract class FsIndexStore extends AbstractIndexComponent implements Ind
 
     public File location() {
         return location;
-public File shardIndexLocation(ShardId shardId) {
+    }
 
-    public File shardLocation(ShardId shardId) {
+public File shardIndexLocation(ShardId shardId) {
         return new File(new File(location, Integer.toString(shardId.id())), "index");
     }
 }

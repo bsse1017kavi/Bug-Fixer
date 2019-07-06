@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -824,9 +823,9 @@ public class JPQLExpressionBuilder
                     val2 = getValue((JPQLNode) inIterator.next());
 
                     // special case for <value> IN (<subquery>) or
-return evalNot(not, factory.contains(val2, val1));
+                    // <value> IN (<single value>)
                     if (!(val2 instanceof Literal) && node.getChildCount() == 2)
-                        return factory.contains(val2, val1); 
+return evalNot(not, factory.contains(val2, val1));
 
                     // this is currently a sequence of OR expressions, since we
                     // do not have support for IN expressions

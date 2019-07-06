@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.repo;
 
 import static com.github.mobile.android.util.GitHubIntents.EXTRA_USER;
@@ -64,9 +63,9 @@ public class RepoBrowseActivity extends RoboFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-setTitle(string.repositories_title);
+        super.onCreate(savedInstanceState);
         setContentView(layout.repo_list);
-        setTitle(getString(string.repositories_title));
+setTitle(string.repositories_title);
 
         ((TextView) findViewById(id.tv_org_name)).setText(user.getLogin());
         avatarHelper.bind(((ImageView) findViewById(id.iv_gravatar)), user);

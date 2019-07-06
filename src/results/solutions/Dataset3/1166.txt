@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -228,9 +227,9 @@ class EJB3SubsystemAdd extends AbstractBoottimeAddStepHandler {
         }
 
     }
-final LocalEjbReceiver localEjbReceiver = new LocalEjbReceiver(false);
+
     private void addRemoteInvocationServices(final OperationContext context, final List<ServiceController<?>> newControllers) {
-        final LocalEjbReceiver localEjbReceiver = new LocalEjbReceiver();
+final LocalEjbReceiver localEjbReceiver = new LocalEjbReceiver(false);
         newControllers.add(context.getServiceTarget().addService(LocalEjbReceiver.SERVICE_NAME, localEjbReceiver)
                 .addDependency(DeploymentRepository.SERVICE_NAME, DeploymentRepository.class, localEjbReceiver.getDeploymentRepository())
                 .install());

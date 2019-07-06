@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
@@ -297,9 +296,9 @@ public final class BundleLifecycleIntegration extends BundleLifecyclePlugin {
                 phaseService.setMode(Mode.ACTIVE);
                 monitor.awaitStability(failed, problems);
             } catch (final InterruptedException ex) {
-monitor.clear();
+                // ignore
             } finally {
-                monitor.removeController(phaseService);
+monitor.clear();
             }
 
             // In case of failure we go back to NEVER

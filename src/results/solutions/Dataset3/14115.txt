@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -126,9 +125,9 @@ public class PerformanceTest {
         long tot = 0;
         if (num > 1) {
             for(int i=1; i < num; i++) { // skip first test
-System.out.printf("%-20s: %5dms%n%n", "Average(not first)", tot/(num-1));
+                tot += elapsedTimes[i];
             }
-            System.out.printf("%-20s: %5dms%n%n", "Average(not first)", (tot/(num-1)));
+System.out.printf("%-20s: %5dms%n%n", "Average(not first)", tot/(num-1));
         }
         num=0; // ready for next set
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -262,9 +261,9 @@ public class TransportMoreLikeThisAction extends TransportAction<MoreLikeThisReq
             }
         });
     }
-if (getResponse.isSourceEmpty()) {
+
     private void parseSource(GetResponse getResponse, final BoolQueryBuilder boolBuilder, DocumentMapper docMapper, final Set<String> fields, final MoreLikeThisRequest request) {
-        if (getResponse.source() == null) {
+if (getResponse.isSourceEmpty()) {
             return;
         }
         docMapper.parse(SourceToParse.source(getResponse.sourceRef()).type(request.type()).id(request.id()), new DocumentMapper.ParseListenerAdapter() {

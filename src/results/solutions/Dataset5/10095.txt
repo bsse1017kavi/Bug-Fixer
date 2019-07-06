@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class TestLoopController extends JMeterTestCase {
 			for (int i = 0; i < 2; i++) {
 				assertEquals(15, counter);
 				counter = 0;
-assertEquals(order[counter++], sampler.getName());
+				TestElement sampler = null;
 				while ((sampler = controller.next()) != null) {
-					assertEquals(order[counter++], sampler.getPropertyAsString(TestElement.NAME));
+assertEquals(order[counter++], sampler.getName());
 				}
 			}
 		}

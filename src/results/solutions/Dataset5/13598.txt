@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1622,9 +1621,9 @@ public class AnnotationPersistenceMetaDataParser
                 vmd.setCascadeDelete(ValueMetaData.CASCADE_IMMEDIATE);
             if (cascade == CascadeType.ALL || cascade == CascadeType.PERSIST)
                 vmd.setCascadePersist(ValueMetaData.CASCADE_IMMEDIATE);
-if (cascade == CascadeType.ALL || cascade == CascadeType.DETACH)
+            if (cascade == CascadeType.ALL || cascade == CascadeType.MERGE)
                 vmd.setCascadeAttach(ValueMetaData.CASCADE_IMMEDIATE);
-            if (cascade == CascadeType.ALL || cascade == CascadeType.CLEAR)
+if (cascade == CascadeType.ALL || cascade == CascadeType.DETACH)
                 vmd.setCascadeDetach(ValueMetaData.CASCADE_IMMEDIATE);
             if (cascade == CascadeType.ALL || cascade == CascadeType.REFRESH)
                 vmd.setCascadeRefresh(ValueMetaData.CASCADE_IMMEDIATE);

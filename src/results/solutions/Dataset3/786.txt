@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public final class DriverProcessor implements DeploymentUnitProcessor {
                     } else {
                         log.infof("Deploying non-JDBC-compliant driver %s (version %d.%d)", driverClass,
                                 Integer.valueOf(majorVersion), Integer.valueOf(minorVersion));
-InstalledDriver driverMetadata = new InstalledDriver(driverName, driverClass.getName(), null, null, majorVersion,
+                    }
                     String driverName = deploymentUnit.getName();
-                    InstalledDriver driverMetadata = new InstalledDriver(driverName, driverClass.getName(), null, majorVersion,
+InstalledDriver driverMetadata = new InstalledDriver(driverName, driverClass.getName(), null, null, majorVersion,
                             minorVersion, compliant);
                     DriverService driverService = new DriverService(driverMetadata, driver);
                     phaseContext

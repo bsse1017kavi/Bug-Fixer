@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class CachedConnectionManagerSetupProcessor implements DeploymentUnitProc
         @Override
         public void setup(final Map<String, Object> properties) {
             try {
-connectionManager.pushMetaAwareObject(this, unsharable);
+                final CachedConnectionManager connectionManager = cachedConnectionManager.getOptionalValue();
                 if (connectionManager != null) {
-                    cachedConnectionManager.getValue().pushMetaAwareObject(this, unsharable);
+connectionManager.pushMetaAwareObject(this, unsharable);
                 }
             } catch (ResourceException e) {
                 throw new RuntimeException(e);

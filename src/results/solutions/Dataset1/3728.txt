@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -441,9 +440,9 @@ public class Table
             boolean obsoleteColumn = newColumn != null && (newColumn.timestamp() <= oldIndexedColumns.getMarkedForDeleteAt()
                                                            || (oldColumn != null && oldColumn.reconcile(newColumn) == oldColumn));
             if (bothDeleted || obsoleteRowTombstone || obsoleteColumn)
-logger.debug("skipping index update for obsolete mutation of " + cf.getComparator().getString(name));
+            {
                 if (logger.isDebugEnabled())
-                    logger.debug("skipping index update for obsolete mutation of " + cf.getComparator().getString(oldColumn.name()));
+logger.debug("skipping index update for obsolete mutation of " + cf.getComparator().getString(name));
                 iter.remove();
                 oldIndexedColumns.remove(name);
             }

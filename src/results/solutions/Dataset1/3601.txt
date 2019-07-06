@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.TableOperatorNode
@@ -776,9 +775,9 @@ public abstract class TableOperatorNode extends FromTable
 													predList,
 													getDataDictionary(),
 													(RequiredRowOrdering) null,
-optimizer.prepForNextRound();
+													getCompilerContext().getNumTables(),
 													  lcc);
-			((OptimizerImpl)optimizer).prepForNextRound();
+optimizer.prepForNextRound();
 
 			if (sourceResultSet == leftResultSet)
 			{

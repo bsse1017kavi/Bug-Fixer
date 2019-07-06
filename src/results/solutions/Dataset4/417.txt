@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -543,9 +542,9 @@ public class IndicesClusterStateService extends AbstractLifecycleComponent<Indic
                     // cancel recovery just in case we are in recovery (its fine if we are not in recovery, it will be a noop).
                     recoveryTarget.cancelRecovery(indexShard);
                     indexService.removeShard(shardRouting.id(), "removing shard (different instance of it allocated on this node)");
-RecoveryStatus recoveryStatus = recoveryTarget.recoveryStatus(indexShard);
+                } else if (isPeerRecovery(shardRouting)) {
                     // check if there is an existing recovery going, and if so, and the source node is not the same, cancel the recovery to restart it
-                    RecoveryStatus recoveryStatus = recoveryTarget.recoveryStatus(indexShard.shardId());
+RecoveryStatus recoveryStatus = recoveryTarget.recoveryStatus(indexShard);
                     if (recoveryStatus != null && recoveryStatus.stage() != RecoveryState.Stage.DONE) {
                         // we have an ongoing recovery, find the source based on current routing and compare them
                         DiscoveryNode sourceNode = findSourceNodeForPeerRecovery(routingTable, nodes, shardRouting);

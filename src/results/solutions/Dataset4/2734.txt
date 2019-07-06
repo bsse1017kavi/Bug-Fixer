@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -129,9 +128,9 @@ public class HistogramFacetBuilder extends AbstractFacetBuilder {
         if (interval < 0) {
             throw new SearchSourceBuilderException("interval must be set on histogram facet for facet [" + name + "]");
         }
-builder.startObject(HistogramFacet.TYPE);
+        builder.startObject(name);
 
-        builder.startObject(HistogramFacetCollectorParser.NAME);
+builder.startObject(HistogramFacet.TYPE);
         if (valueFieldName != null && !keyFieldName.equals(valueFieldName)) {
             builder.field("key_field", keyFieldName);
             builder.field("value_field", valueFieldName);

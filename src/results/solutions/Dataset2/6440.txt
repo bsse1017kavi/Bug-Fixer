@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -249,9 +248,9 @@ public char[] computeConstantPoolName(LocalTypeBinding localType) {
 		} else {
 			// local type
 			if (isCompliant15) {
-localType.enclosingType().constantPoolName(),
+				candidateName = CharOperation.concat(
 					CharOperation.concat(
-						outerMostEnclosingType.constantPoolName(),
+localType.enclosingType().constantPoolName(),
 						String.valueOf(index+1).toCharArray(),
 						'$'),
 					localType.sourceName);

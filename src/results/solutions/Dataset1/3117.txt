@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -99,9 +98,9 @@ public class TestPrefixFilter extends LuceneTestCase {
     filter = new PrefixFilter(new Term("nonexistantfield", "/Computers"));
     query = new ConstantScoreQuery(filter);
     hits = searcher.search(query, null, 1000).scoreDocs;
-writer.shutdown();
+    assertEquals(0, hits.length);
     
-    writer.close();
+writer.shutdown();
     reader.close();
     directory.close();
   }

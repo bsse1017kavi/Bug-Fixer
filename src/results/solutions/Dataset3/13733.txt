@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -971,9 +970,9 @@ public class GenericTypeOperationHandler extends BatchModeCommandHandler {
                 final ArgumentWithValue arg = (ArgumentWithValue) this.args.get(argName);
                 if(arg == null) {
                     if(argName.equals(GenericTypeOperationHandler.this.name.getFullName())) {
-throw new CommandFormatException("Unrecognized argument " + argName + " for command '" + opName + "'.");
+                        continue;
                     }
-                    throw new CommandFormatException("Unrecognized argument " + argName + " for command '" + operation + "'.");
+throw new CommandFormatException("Unrecognized argument " + argName + " for command '" + opName + "'.");
                 }
 
                 final String propName;

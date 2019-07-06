@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -479,9 +478,9 @@ public class MessageBuilder {
 				MailConfig.get("composer_options").getElement("/options");
 			XmlElement htmlElement = optionsElement.getElement("html");
 			if (htmlElement == null)
-model.setHtml(Boolean.valueOf(enableHtml).booleanValue());
+				htmlElement = optionsElement.addSubElement("html");
 			String enableHtml = htmlElement.getAttribute("enable", "false");
-			model.setHtml((new Boolean(enableHtml)).booleanValue());
+model.setHtml(Boolean.valueOf(enableHtml).booleanValue());
 		} else {
 			/* 
 			 * original message is sent "inline" - model is setup according

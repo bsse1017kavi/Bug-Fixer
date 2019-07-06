@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -100,9 +99,9 @@ public class SimpleSingleTransportClientTests extends AbstractServersTests {
         IndicesStatusResponse indicesStatusResponse = client.admin().indices().status(indicesStatus()).actionGet();
         assertThat(indicesStatusResponse.successfulShards(), equalTo(5));
         assertThat(indicesStatusResponse.failedShards(), equalTo(5)); // 5 are not active, since we started just one server
-assertThat(indicesStatusResponse.index("test").docs().numDocs(), equalTo(1l));
+        assertThat(indicesStatusResponse.indices().size(), equalTo(1));
         assertThat(indicesStatusResponse.index("test").shards().size(), equalTo(5)); // 5 index shards (1 with 1 backup)
-        assertThat(indicesStatusResponse.index("test").docs().numDocs(), equalTo(1));
+assertThat(indicesStatusResponse.index("test").docs().numDocs(), equalTo(1l));
 
         GetResponse getResult;
 

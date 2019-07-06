@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -215,9 +214,9 @@ public class HomeActivity extends TabPagerActivity<HomePagerAdapter> implements
     @Override
     public boolean onNavigationItemSelected(int itemPosition, long itemId) {
         if (homeAdapter.isOrgPosition(itemPosition)) {
-} else if (homeAdapter.getOrgCount() > 0) {
+            homeAdapter.setSelected(itemPosition);
             setOrg(orgs.get(itemPosition));
-        } else {
+} else if (homeAdapter.getOrgCount() > 0) {
             switch (homeAdapter.getAction(itemPosition)) {
             case ACTION_GISTS:
                 startActivity(new Intent(this, GistsActivity.class));

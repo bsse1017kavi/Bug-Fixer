@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ abstract class SortedSetDVAtomicFieldData {
 
     public void close() {
         // no-op
-public org.elasticsearch.index.fielddata.BytesValues.WithOrdinals getBytesValues(boolean needsHashes) {
+    }
 
-    public org.elasticsearch.index.fielddata.BytesValues.WithOrdinals getBytesValues() {
+public org.elasticsearch.index.fielddata.BytesValues.WithOrdinals getBytesValues(boolean needsHashes) {
         final SortedSetDocValues values = getValuesNoException(reader, field);
         return new SortedSetValues(reader, field, values);
     }

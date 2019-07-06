@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -529,9 +528,9 @@ public class TestDirectoryReaderReopen extends LuceneTestCase {
   abstract static class TestReopen {
     protected abstract DirectoryReader openReader() throws IOException;
     protected abstract void modifyIndex(int i) throws IOException;
-static class KeepAllCommits extends IndexDeletionPolicy {
+  }
   
-  static class KeepAllCommits implements IndexDeletionPolicy {
+static class KeepAllCommits extends IndexDeletionPolicy {
     @Override
     public void onInit(List<? extends IndexCommit> commits) {
     }

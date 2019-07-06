@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class DistributedCacheTest
             props = Configurations.getProperties(provider);
         else
             fullProvider = Configurations.getPlugin(provider, props);
-("must specify -Dopenjpa.RemoteCommitProvider=?");
+        if (props == null || props.length() == 0)
             throw new IllegalStateException
-                ("must specify -Dkodo.RemoteCommitProvider=?");
+("must specify -Dopenjpa.RemoteCommitProvider=?");
 
         return new String[]{
             // use this property to differentiate factory

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 public class ServerStartupListener extends AbstractServiceListener<Object>{
     private static final Logger log = Logger.getLogger("org.jboss.as.server");
     private volatile int totalServices;
-private volatile int count = 1;
+    private volatile int onDemandServices;
     private volatile int startedServices;
-    private volatile int count;
+private volatile int count = 1;
     private final long start = System.currentTimeMillis();
     private final Map<ServiceName, StartException> serviceFailures = new HashMap<ServiceName, StartException>();
     private final Callback finishCallback;

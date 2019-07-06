@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class FilterFacetParser extends AbstractComponent implements FacetParser 
         return FacetExecutor.Mode.POST;
     }
 
-Filter facetFilter = context.queryParserService().parseInnerFilter(parser).filter();
+    @Override
     public FacetExecutor parse(String facetName, XContentParser parser, SearchContext context) throws IOException {
-        Filter facetFilter = context.queryParserService().parseInnerFilter(parser);
+Filter facetFilter = context.queryParserService().parseInnerFilter(parser).filter();
         return new FilterFacetExecutor(facetFilter);
     }
 }

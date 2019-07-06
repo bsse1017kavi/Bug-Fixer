@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -484,9 +483,9 @@ public class Base64InputStreamTest {
      */
     @Test
     public void testSkipBig() throws Throwable {
-assertEquals(6, b64stream.skip(Integer.MAX_VALUE));
+        InputStream ins = new ByteArrayInputStream(StringUtils.getBytesIso8859_1(ENCODED_B64));
         Base64InputStream b64stream = new Base64InputStream(ins);
-        assertEquals(6, b64stream.skip(1024));
+assertEquals(6, b64stream.skip(Integer.MAX_VALUE));
         // End of stream reached
         assertEquals(-1, b64stream.read());
         assertEquals(-1, b64stream.read());

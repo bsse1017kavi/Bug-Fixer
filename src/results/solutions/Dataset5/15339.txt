@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -6194,9 +6193,9 @@ LRESULT WM_LBUTTONDOWN (int /*long*/ wParam, int /*long*/ lParam) {
 	tvItem.stateMask = OS.TVIS_SELECTED;
 	boolean hittestSelected = false;
 	if ((style & SWT.MULTI) != 0) {
-hittestSelected = (tvItem.state & OS.TVIS_SELECTED) != 0;
+		tvItem.hItem = lpht.hItem;
 		OS.SendMessage (handle, OS.TVM_GETITEM, 0, tvItem);
-		hittestSelected = selected || (tvItem.state & OS.TVIS_SELECTED) != 0;
+hittestSelected = (tvItem.state & OS.TVIS_SELECTED) != 0;
 	}
 	
 	/* Get the selected state of the last selected item */

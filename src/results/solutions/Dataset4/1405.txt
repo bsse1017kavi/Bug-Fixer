@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class LocalIndexShardGateway extends AbstractIndexShardComponent implemen
     @Override public RecoveryStatus recoveryStatus() {
         return recoveryStatus;
     }
-recoveryStatus.index().startTime(System.currentTimeMillis());
+
     @Override public void recover(RecoveryStatus recoveryStatus) throws IndexShardGatewayRecoveryException {
-        recoveryStatus().index().startTime(System.currentTimeMillis());
+recoveryStatus.index().startTime(System.currentTimeMillis());
         long version = -1;
         try {
             if (IndexReader.indexExists(indexShard.store().directory())) {

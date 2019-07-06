@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -150,9 +149,9 @@ public class BcelWeaver implements IWeaver {
 		// For each file, add it either as a real .class file or as a resource
 		for (int i = 0; i < files.length; i++) {
 			
-// String relativePath = files[i].getPath();
+			FileInputStream fis = new FileInputStream(files[i]);
 			byte[] bytes = FileUtil.readAsByteArray(fis);
-			String relativePath = files[i].getPath();
+// String relativePath = files[i].getPath();
 			
 			// ASSERT: files[i].getAbsolutePath().startsWith(inFile.getAbsolutePath()
 			// or we are in trouble...

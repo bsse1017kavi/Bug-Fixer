@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -147,9 +146,9 @@ public abstract class AbstractValidator implements IValidator
 			
 			// Note: It is important that the default value of "" is NOT provided
 			// to getString() throw either MissingResourceException or to to 
-String key = Classes.simpleName(getClass());
+			// return a default string like "[Warning: String ..." in case the
 			// property could not be found.
-			String key = Classes.name(getClass());
+String key = Classes.simpleName(getClass());
 			message = localizer.getString(key, formComponent.getParent(), resourceModel);
 		}
 		formComponent.error(message);

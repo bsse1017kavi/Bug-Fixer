@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.CreateAliasNode
@@ -284,9 +283,9 @@ public class CreateAliasNode extends DDLStatementNode
 						changeTD.isNullable(),
 						changeTD.getMaximumWidth());
 			//Use the collation type and info of the schema in which this
-getSchemaDescriptor().getCollationType());
+			//function is defined for the return value of the function
 			newTDWithCorrectCollation.setCollationType(
-		    	     getSchemaDescriptor(getObjectName().getSchemaName(), false).getCollationType());
+getSchemaDescriptor().getCollationType());
 			newTDWithCorrectCollation.setCollationDerivation(
 	        		StringDataValue.COLLATION_DERIVATION_IMPLICIT);
 			return newTDWithCorrectCollation;

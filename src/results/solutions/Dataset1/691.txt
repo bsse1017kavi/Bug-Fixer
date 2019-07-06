@@ -1,4 +1,3 @@
-
 package org.apache.lucene.benchmark.byTask.tasks;
 
 /**
@@ -49,9 +48,9 @@ public class OpenIndexTask extends PerfTask {
     PerfRunData runData = getRunData();
     Config config = runData.getConfig();
     IndexWriter writer = new IndexWriter(runData.getDirectory(),
-false);
+                                         config.get("autocommit", DEFAULT_AUTO_COMMIT),
                                          runData.getAnalyzer(),
-                                         false, IndexWriter.MaxFieldLength.LIMITED);
+false);
     CreateIndexTask.setIndexWriterConfig(writer, config);
     runData.setIndexWriter(writer);
     return 1;

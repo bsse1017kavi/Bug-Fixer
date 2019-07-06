@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -291,9 +290,9 @@ LRESULT WM_MOUSEWHEEL (int /*long*/ wParam, int /*long*/ lParam) {
 		if (msg == 0) return result;
 		int [] linesToScroll = new int [1];
 		OS.SystemParametersInfo (OS.SPI_GETWHEELSCROLLLINES, 0, linesToScroll, 0);
-if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (5, 1)) {
+		int delta = OS.GET_WHEEL_DELTA_WPARAM (wParam);
 		boolean pageScroll = linesToScroll [0] == OS.WHEEL_PAGESCROLL;
-		if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (6, 0)) {
+if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (5, 1)) {
 			ScrollBar bar = vertical ? verticalBar : horizontalBar;
 			SCROLLINFO info = new SCROLLINFO ();
 			info.cbSize = SCROLLINFO.sizeof;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -146,9 +145,9 @@ public class ApplyRemoteMasterDomainModelHandler implements OperationStepHandler
         final Set<byte[]> requiredContent = new HashSet<byte[]>();
 
         final Resource rootResource = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS);
-authorizerConfiguration.reset();
+        clearDomain(rootResource);
         if (!context.isBooting()) {
-            authorizerConfiguration.domainReconnectReset();
+authorizerConfiguration.reset();
         }
 
         List<ModelNode> addOps = new ArrayList<ModelNode>();

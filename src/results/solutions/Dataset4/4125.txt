@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -195,9 +194,9 @@ public class TransportNodesShutdownAction extends TransportMasterNodeOperationAc
                         latch.await();
                     } catch (InterruptedException e) {
                         // ignore
-logger.info("[partial_cluster_shutdown]: done shutting down [{}]", ((Object) nodesIds));
+                    }
 
-                    logger.info("[partial_cluster_shutdown]: done shutting down [{}]", nodesIds);
+logger.info("[partial_cluster_shutdown]: done shutting down [{}]", ((Object) nodesIds));
                 }
             });
             t.start();

@@ -1,4 +1,3 @@
-
 import org.columba.core.command.DefaultCommandReference;
 import org.columba.core.command.Worker;
 import org.columba.core.gui.frame.AbstractFrameController;
@@ -53,9 +52,9 @@ public class AnalyzeFolderCommand extends FolderCommand {
 		srcFolder = (Folder) adapter.getSourceFolderReferences()[0].getFolder();
 
 		worker.setDisplayText(
-Object[] uids = srcFolder.getUids();
+			"Applying analyzer to" + srcFolder.getName() + "...");
 
-		Object[] uids = srcFolder.getUids(worker);
+Object[] uids = srcFolder.getUids();
 
 		for (int i = 0; i < uids.length; i++) {
 			AnalyzeMessageCommand.addHeader(srcFolder, uids[i], worker);

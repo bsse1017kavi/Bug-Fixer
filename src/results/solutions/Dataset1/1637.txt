@@ -1,4 +1,3 @@
-
  /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class BootstrapMetadataVerbHandler implements IVerbHandler
     private static Logger logger_ = Logger.getLogger(BootstrapMetadataVerbHandler.class);
     
     public void doVerb(Message message)
-byte[] body = message.getMessageBody();
+    {
         logger_.debug("Received a BootstrapMetadataMessage from " + message.getFrom());
-        byte[] body = (byte[])message.getMessageBody()[0];
+byte[] body = message.getMessageBody();
         DataInputBuffer bufIn = new DataInputBuffer();
         bufIn.reset(body, body.length);
         try

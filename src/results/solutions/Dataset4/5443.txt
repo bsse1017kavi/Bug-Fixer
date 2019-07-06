@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -168,9 +167,9 @@ public class UidFieldMapper extends AbstractFieldMapper<Uid> implements Internal
     public Term term(String type, String id) {
         return term(Uid.createUid(type, id));
     }
-return names().createIndexNameTerm(uid);
+
     public Term term(String uid) {
-        return termFactory.createTerm(uid);
+return names().createIndexNameTerm(uid);
     }
 
     @Override public void close() {

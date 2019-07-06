@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class TTLFieldMapper extends LongFieldMapper implements InternalMapper, R
     public static final String CONTENT_TYPE = "_ttl";
 
     public static class Defaults extends LongFieldMapper.Defaults {
-public static final FieldType TTL_FIELD_TYPE = new FieldType(LongFieldMapper.Defaults.FIELD_TYPE);
+        public static final String NAME = TTLFieldMapper.CONTENT_TYPE;
 
-        public static final FieldType TTL_FIELD_TYPE = new FieldType(LongFieldMapper.Defaults.LONG_FIELD_TYPE);
+public static final FieldType TTL_FIELD_TYPE = new FieldType(LongFieldMapper.Defaults.FIELD_TYPE);
 
         static {
             TTL_FIELD_TYPE.setStored(true);

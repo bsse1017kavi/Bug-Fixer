@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -142,9 +141,9 @@ public class MessageDrivenComponent extends EJBComponent implements PooledCompon
             @Override
             public ClassLoader getClassLoader() {
                 return componentClassLoader;
-this.endpointFactory = new JBossMessageEndpointFactory(componentClassLoader, service, (Class<Object>) getComponentClass(), messageListenerInterface);
+            }
         };
-        this.endpointFactory = new JBossMessageEndpointFactory(componentClassLoader, service, (Class<Object>) getComponentClass());
+this.endpointFactory = new JBossMessageEndpointFactory(componentClassLoader, service, (Class<Object>) getComponentClass(), messageListenerInterface);
         this.deliveryActive = deliveryActive;
     }
 

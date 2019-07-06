@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -127,9 +126,9 @@ public class SimpleJdbcCall extends AbstractJdbcCall implements SimpleJdbcCallOp
 		setInParameterNames(new HashSet<String>(Arrays.asList(inParameterNames)));
 		return this;
 	}
-public SimpleJdbcCall returningResultSet(String parameterName, RowMapper<?> rowMapper) {
+
 	@Override
-	public SimpleJdbcCall returningResultSet(String parameterName, RowMapper rowMapper) {
+public SimpleJdbcCall returningResultSet(String parameterName, RowMapper<?> rowMapper) {
 		addDeclaredRowMapper(parameterName, rowMapper);
 		return this;
 	}

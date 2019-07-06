@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -230,9 +229,9 @@ public class TestFlushByRamOrCountsPolicy extends LuceneTestCase {
 
     int[] numThreads = new int[] { 4 + random().nextInt(8), 1 };
     final int numDocumentsToIndex = 50 + random().nextInt(50);
-MockDirectoryWrapper dir = newMockDirectory();
+    for (int i = 0; i < numThreads.length; i++) {
       AtomicInteger numDocs = new AtomicInteger(numDocumentsToIndex);
-      MockDirectoryWrapper dir = newDirectory();
+MockDirectoryWrapper dir = newMockDirectory();
       // mock a very slow harddisk sometimes here so that flushing is very slow
       dir.setThrottling(MockDirectoryWrapper.Throttling.SOMETIMES);
       IndexWriterConfig iwc = newIndexWriterConfig(TEST_VERSION_CURRENT,

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -75,9 +74,9 @@ public class ServerRemoveHandler extends AbstractRemoveStepHandler implements De
                 if(controller != null) {
                     context.getFailureDescription().set(MESSAGES.serverStillRunning(serverName));
                 }
-}, OperationContext.Stage.RUNTIME);
+                context.completeStep();
             }
-        }, OperationContext.Stage.IMMEDIATE);
+}, OperationContext.Stage.RUNTIME);
     }
 
     protected boolean requiresRuntime(OperationContext context) {

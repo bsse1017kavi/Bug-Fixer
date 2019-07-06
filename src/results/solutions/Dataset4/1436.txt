@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public class GermanStemTokenFilterFactory extends AbstractTokenFilterFactory {
 
     private final Set<?> exclusions;
 
-String[] stemExclusion = settings.getAsArray("stem_exclusion");
+    @Inject public GermanStemTokenFilterFactory(Index index, @IndexSettings Settings indexSettings, @Assisted String name, @Assisted Settings settings) {
         super(index, indexSettings, name);
-        String[] stemExclusion = settings.getAsArray("stemExclusion");
+String[] stemExclusion = settings.getAsArray("stem_exclusion");
         if (stemExclusion.length > 0) {
             this.exclusions = ImmutableSet.copyOf(Iterators.forArray(stemExclusion));
         } else {

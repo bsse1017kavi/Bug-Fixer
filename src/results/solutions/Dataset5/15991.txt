@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class TestTimestampVersion extends SingleEMFTestCase {
         em.persist(pc);
         em.getTransaction().commit();
         
-Thread.sleep(1000);
+        try {
             // delay to ensure the new timestamp exceeds the timer's resolution.
-            Thread.sleep(500);
+Thread.sleep(1000);
         } catch (InterruptedException e) {
         }
 

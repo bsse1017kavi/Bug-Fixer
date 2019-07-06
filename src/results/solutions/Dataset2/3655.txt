@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -225,9 +224,9 @@ protected char[][][] collect() throws JavaModelException {
 			this.result = new char[1][][];
 			this.resultIndex = 0;
 			try {
-Openable openable = this.locator.handleFactory.createOpenable(paths[i], this.locator.scope);
+				for (int i = 0, length = paths.length; i < length; i++) {
 					try {
-						Openable openable = this.locator.handleFactory.createOpenable(paths[i]);
+Openable openable = this.locator.handleFactory.createOpenable(paths[i], this.locator.scope);
 						if (openable == null)
 							continue; // outside classpath
 						IJavaProject project = openable.getJavaProject();

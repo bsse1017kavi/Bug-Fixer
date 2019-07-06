@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -263,9 +262,9 @@ final class HandlerAuthority extends ExpressionAuthority {
 		// Cycle over the activations, remembered the current best.
 		while (activationItr.hasNext()) {
 			final IHandlerActivation currentActivation = (IHandlerActivation) activationItr
-if (comparison > 0) {
+					.next();
 			final int comparison = bestActivation.compareTo(currentActivation);
-			if (comparison < 0) {
+if (comparison > 0) {
 				bestActivation = currentActivation;
 				conflict = false;
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 the original author or authors.
  *
@@ -40,9 +39,9 @@ public class ComparatorTests extends TestCase {
 		Object o1 = new Object();
 		Object o2 = new Object();
 		try {
-catch (ClassCastException e) {
+			c.compare(o1, o2);
 		}
-		catch (IllegalArgumentException e) {
+catch (ClassCastException e) {
 			return;
 		}
 		fail("Comparator should have thrown a cce");

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 public class OrderedSet {
@@ -208,9 +207,9 @@ public String toString () {
 	StringBuffer buffer = new StringBuffer ();
 	buffer.append ('{');
 	for (int i=0; i<elementCount; i++) {
-buffer.append("..."/*nonNLS*/);
+		if (i != 0) buffer.append (',');
 		if (buffer.length() > 1000) {
-			buffer.append("...");
+buffer.append("..."/*nonNLS*/);
 			break;
 		}
 		buffer.append (orderedList[i]);

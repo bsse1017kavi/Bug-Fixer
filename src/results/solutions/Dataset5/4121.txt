@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -27,9 +26,9 @@ public class RestartWithMountedPageTest extends WicketTestCase
 	/**
 	 * Tests that a protected page can redirect to a login page from mounted pages.
 	 */
-tester.getApplication().mountPage("/login", LoginPage.class);
+	public void testWithMountedLoginPage()
 	{
-		tester.getApplication().mountBookmarkablePage("/login", LoginPage.class);
+tester.getApplication().mountPage("/login", LoginPage.class);
 		tester.startPage(ProtectedPage.class);
 		tester.assertRenderedPage(LoginPage.class);
 	}

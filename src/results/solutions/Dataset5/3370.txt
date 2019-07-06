@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -107,9 +106,9 @@ public class ObjectsTest extends WicketTestCase
 	public void testComponentClone()
 	{
 		PropertyModel pm = new PropertyModel(new TextField("test", new Model("test")),
-assertTrue(pm.getObject() == pm2.getObject());
+				"modelObject");
 		PropertyModel pm2 = (PropertyModel)Objects.cloneModel(pm);
-		assertTrue(pm.getObject(null) == pm2.getObject(null));
+assertTrue(pm.getObject() == pm2.getObject());
 	}
 
 	/**

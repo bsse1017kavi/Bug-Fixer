@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -836,9 +835,9 @@ void releaseChildren (boolean destroy) {
 			* The fix is to detect this case and destroy the shells.
 			*/
 			if (shell.parent != null && OS.PtWidgetParent (shell.shellHandle) == 0) {
-shell.release (false);
+				shell.dispose ();
 			} else {
-				shell.releaseChildren (false);
+shell.release (false);
 			}
 		}
 	}

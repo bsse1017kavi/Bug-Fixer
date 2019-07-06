@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -104,9 +103,9 @@ public abstract class NamedParameterUtils {
 				String parameter = null;
 				if (j < statement.length && c == ':' && statement[j] == '{') {
 					// :{x} style parameter
-if (':' == statement[j] || '{' == statement[j]) {
+					while (j < statement.length && !('}' == statement[j])) {
 						j++;
-						if (':' == statement[j] || '{' == statement[j] || isParameterSeparator(statement[j])) {
+if (':' == statement[j] || '{' == statement[j]) {
 							throw new InvalidDataAccessApiUsageException("Parameter name contains invalid character '" + statement[j] + "' at position " + i + " in statement " + sql);
 						}
 					}

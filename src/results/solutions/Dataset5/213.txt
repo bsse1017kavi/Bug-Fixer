@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -422,9 +421,9 @@ public class TPCommitEventProcessor implements IEventProcessor {
 		// the transaction. If so, we throw.
 		if (failed.size() > getMinFailedToAbort()) {
 			// Abort!
-throw new SharedObjectAddAbortException("Abort received", participants, failed,
+			trace("isVotingCompleted() aborting: failed > "
 					+ getMinFailedToAbort() + ":failed=" + failed);
-			throw new SharedObjectAddAbortException("Abort received", failed,
+throw new SharedObjectAddAbortException("Abort received", participants, failed,
 					getTimeout());
 			// If no problems, and the number of participants to here from is 0,
 			// then we're done

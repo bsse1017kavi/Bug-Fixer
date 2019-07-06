@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -49,9 +48,9 @@ import org.junit.Before;
  */
 public class TestMultiLevelSkipList extends LuceneTestCase {
   
-super(random, delegate);
+  class CountingRAMDirectory extends MockDirectoryWrapper {
     public CountingRAMDirectory(Directory delegate) {
-      super(delegate);
+super(random, delegate);
     }
 
     public IndexInput openInput(String fileName) throws IOException {

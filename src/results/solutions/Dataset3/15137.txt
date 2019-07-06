@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -41,9 +40,9 @@ public final class TargetPointcutSelectionTests {
 	public TestInterceptor testInterceptor;
 	
 
-ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("targetPointcutSelectionTests_.xml", getClass());
+	@Before
 	public void setUp() {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("targetPointcutSelectionTests.xml", getClass());
+ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("targetPointcutSelectionTests_.xml", getClass());
 		testImpl1 = (TestInterface) ctx.getBean("testImpl1");
 		testImpl2 = (TestInterface) ctx.getBean("testImpl2");
 		testAspectForTestImpl1 = (TestAspect) ctx.getBean("testAspectForTestImpl1");

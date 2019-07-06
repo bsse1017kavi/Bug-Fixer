@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -200,9 +199,9 @@ public class SOWrapper {
             ContainerMessage.CreateResponseMessage resp) {
         send(new RemoteSharedObjectCreateResponseEvent(
                 resp.getSharedObjectID(), fromID, resp.getSequence(), resp
-public void deliverEvent(Event evt) {
+                        .getException()));
     }
-    protected void deliverEvent(Event evt) {
+public void deliverEvent(Event evt) {
         send(evt);
     }
     protected void destroySelf() {

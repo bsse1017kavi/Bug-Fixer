@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public class ConfigAdminExtension implements Extension {
         final ModelVersion version = ModelVersion.create(1, 0, 0);
 
         ResourceTransformationDescriptionBuilder builder = TransformationDescriptionBuilder.Factory.createSubsystemInstance();
-.addRejectCheck(RejectAttributeChecker.SIMPLE_EXPRESSIONS, ConfigurationResource.ENTRIES)
+        builder.addChildResource(PathElement.pathElement(ModelConstants.CONFIGURATION))
             .getAttributeBuilder()
-                .addRejectCheck(RejectAttributeChecker.SIMPLE_LIST_EXPRESSIONS, ConfigurationResource.ENTRIES)
+.addRejectCheck(RejectAttributeChecker.SIMPLE_EXPRESSIONS, ConfigurationResource.ENTRIES)
                 .end()
             .addOperationTransformationOverride(ModelConstants.UPDATE)
                 .setCustomOperationTransformer(new OperationTransformer() {

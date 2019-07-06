@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -319,9 +318,9 @@ public class GetCallerPrincipalTestCase extends SecurityTest {
 
         try {
             QueueConnectionFactory qcf = (QueueConnectionFactory) new InitialContext().lookup("java:/RemoteConnectionFactory");
-conn = qcf.createQueueConnection("guest", "guest");
+            Queue queue = (Queue) new InitialContext().lookup("java:jboss/" + QUEUE_NAME);
 
-            conn = qcf.createQueueConnection();
+conn = qcf.createQueueConnection("guest", "guest");
             conn.start();
             session = conn.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
 

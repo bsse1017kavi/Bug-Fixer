@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -496,9 +495,9 @@ public class TableTest extends CleanupHelper
         final ColumnFamilyStore cfStore = table.getColumnFamilyStore("Super1");
         final DecoratedKey ROW = Util.dk("row2");
 
-SuperColumn sc = new SuperColumn("sc1".getBytes(), LongType.instance, ClockType.Timestamp, null);
+        RowMutation rm = new RowMutation("Keyspace1", ROW.key);
         ColumnFamily cf = ColumnFamily.create("Keyspace1", "Super1");
-        SuperColumn sc = new SuperColumn("sc1".getBytes(), LongType.instance, ClockType.Timestamp);
+SuperColumn sc = new SuperColumn("sc1".getBytes(), LongType.instance, ClockType.Timestamp, null);
         sc.addColumn(new Column(getBytes(1), "val1".getBytes(), new TimestampClock(1L)));
         cf.addColumn(sc);
         rm.add(cf);

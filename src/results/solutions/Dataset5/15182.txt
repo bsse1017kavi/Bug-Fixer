@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -129,9 +128,9 @@ public class ResourceUtils {
                         logTo.log(source[counter].getName() + " added as " 
                                   + atarget.getName()
                                   + " doesn\'t exist.", Project.MSG_VERBOSE);
-} else if (!atarget.isDirectory() && atarget.getLastModified()
+                        vresult.addElement(source[counter]);
                         added = true;
-                    } else if (atarget.getLastModified() 
+} else if (!atarget.isDirectory() && atarget.getLastModified()
                                < source[counter].getLastModified()) {
                         logTo.log(source[counter].getName() + " added as " 
                                   + atarget.getName()

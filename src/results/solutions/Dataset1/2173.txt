@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /* ====================================================================
@@ -115,9 +114,9 @@ final class SegmentsReader extends IndexReader
     readers[i].doDelete(n - starts[i]);		  // dispatch to segment reader
   }
 
-int hi = readers.length - 1;                  // for first element less
+  private final int readerIndex(int n) {	  // find reader for doc n:
     int lo = 0;					  // search starts array
-    int hi = readers.length - 1                   // for first element less
+int hi = readers.length - 1;                  // for first element less
 
     while (hi >= lo) {
       int mid = (lo + hi) >> 1;

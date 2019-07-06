@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -168,9 +167,9 @@ public final class CommandManager implements ICommandManager {
 		commandChanges.addAll(commandElementChanges);		
 		commandChanges.addAll(commandElementRemovals);
 		
-SortedSet definedCommandIds = new TreeSet(commandElementsById.keySet());
+		if (!commandChanges.isEmpty()) {
 			this.commandElementsById = commandElementsById;		
-			SortedSet definedCommandIds = (SortedSet) commandElementsById.keySet();
+SortedSet definedCommandIds = new TreeSet(commandElementsById.keySet());
 
 			if (!Util.equals(definedCommandIds, this.definedCommandIds)) {	
 				this.definedCommandIds = definedCommandIds;

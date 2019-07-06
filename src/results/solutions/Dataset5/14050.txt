@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1013,9 +1012,9 @@ public static boolean launch (String fileName, String workingDir) {
  *  API: When support for multiple displays is added, this method will
  *       become public and the original method above can be deprecated.
  */
-if (workingDir != null && isExecutable(display, fileName)) {
+static boolean launch (Display display, String fileName, String workingDir) {
 	if (fileName == null) SWT.error (SWT.ERROR_NULL_ARGUMENT);
-	if (isExecutable(display, fileName)) {
+if (workingDir != null && isExecutable(display, fileName)) {
 		try {
 			Compatibility.exec (new String [] {fileName}, null, workingDir);
 			return true;

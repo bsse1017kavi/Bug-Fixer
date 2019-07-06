@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -385,9 +384,9 @@ public abstract class RequestCycle
 	 * @return the page or null
 	 */
 	public final Page getResponsePage()
-if (target instanceof IPageRequestTarget)
+	{
 		IRequestTarget target = getRequestTarget();
-		if (target instanceof PageRequestTarget)
+if (target instanceof IPageRequestTarget)
 		{
 			return ((IPageRequestTarget)target).getPage();
 		}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -179,9 +178,9 @@ public class PooledConnectionFactoryService implements Service<Void> {
         ServiceTarget serviceTarget = context.getChildTarget();
         try {
             createService(serviceTarget, context.getController().getServiceContainer());
-throw MESSAGES.failedToCreate(e, "resource adapter");
+        }
         catch (Exception e) {
-            throw new StartException(MESSAGES.failedToCreate("resource adapter"), e);
+throw MESSAGES.failedToCreate(e, "resource adapter");
         }
 
     }

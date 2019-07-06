@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -135,9 +134,9 @@ public void codeComplete(int offset, CompletionRequestor requestor, WorkingCopyO
 			new BasicCompilationUnit(
 				getSource().toCharArray(), 
 				null,
-codeComplete(cu, cu, offset, requestor, owner, null/*extended context isn't computed*/);
+				type.sourceFileName((IBinaryType) type.getElementInfo()),
 				getJavaProject()); // use project to retrieve corresponding .java IFile
-		codeComplete(cu, cu, offset, requestor, owner);
+codeComplete(cu, cu, offset, requestor, owner, null/*extended context isn't computed*/);
 	}
 }
 

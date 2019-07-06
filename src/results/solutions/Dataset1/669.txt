@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1381,9 +1380,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
         {
             if (range.contains(sample.token))
                 keys.add(sample);
-int splits = keys.size() * DatabaseDescriptor.getIndexInterval() / keysPerSplit;
+        }
         FBUtilities.sortSampledKeys(keys, range);
-        int splits = keys.size() * SSTableReader.indexInterval() / keysPerSplit;
+int splits = keys.size() * DatabaseDescriptor.getIndexInterval() / keysPerSplit;
 
         if (keys.size() >= splits)
         {

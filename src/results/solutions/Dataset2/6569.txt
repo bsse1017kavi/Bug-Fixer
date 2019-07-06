@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -525,9 +524,9 @@ public class FieldReference extends Reference implements InvocationSite {
 				binding,
 				receiver == ThisReference.ThisImplicit,
 				this,
-if (receiver != ThisReference.ThisImplicit)
+				scope,
 				0);
-		if (!receiver.isThis())
+if (receiver != ThisReference.ThisImplicit)
 			constant = NotAConstant;
 
 		return binding.type;

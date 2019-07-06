@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1673,9 +1672,9 @@ public class XMLPersistenceMetaDataParser
         meta.setDefiningType(_cls);
         meta.setQueryString(attrs.getValue("query"));
         meta.setLanguage(JPQLParser.LANG_JPQL);
-meta.setLockMode(MixedLockLevelsHelper.toLockLevel(LockModeType.valueOf(lockModeStr)));
+        String lockModeStr = attrs.getValue("lock-mode");
         if (lockModeStr != null) {
-            meta.addHint("openjpa.FetchPlan.ReadLockMode", LockModeType.valueOf(lockModeStr));
+meta.setLockMode(MixedLockLevelsHelper.toLockLevel(LockModeType.valueOf(lockModeStr)));
         }
         Locator locator = getLocation().getLocator();
         if (locator != null) {

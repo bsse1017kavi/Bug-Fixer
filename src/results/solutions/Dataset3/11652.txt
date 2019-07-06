@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,8 +43,8 @@ public class FilePassivationStoreAdd extends PassivationStoreAdd {
 
     @Override
     protected void performRuntime(OperationContext context, ModelNode operation, ModelNode model, ServiceVerificationHandler verificationHandler, List<ServiceController<?>> serviceControllers) throws IllegalArgumentException, OperationFailedException {
-this.install(context, operation, initialMaxSize, containerName, null, verificationHandler, serviceControllers);
+        int initialMaxSize = FilePassivationStoreResourceDefinition.MAX_SIZE.resolveModelAttribute(context, model).asInt();
         String containerName = PassivationStoreResourceDefinition.CACHE_CONTAINER.getDefaultValue().asString();
-        this.install(context, operation, initialMaxSize, containerName, "passivation", verificationHandler, serviceControllers);
+this.install(context, operation, initialMaxSize, containerName, null, verificationHandler, serviceControllers);
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class AsyncBean {
         
         latch.countDown();
         latch2.await(5, TimeUnit.SECONDS);
-result += ctx.wasCancelCalled() ? "true" : "false";
+        
         result += ";";
-        result = ctx.wasCancelCalled() ? "true" : "false";
+result += ctx.wasCancelCalled() ? "true" : "false";
         return new AsyncResult<String>(result);
     }   
     

@@ -1,4 +1,3 @@
-
 /*
  * @(#) DefaultCarolValues.java	1.0 02/07/15
  *
@@ -168,9 +167,9 @@ public class CarolDefaultValues {
      * @return protocol name
      * @param protocol jndi url
      */
-StringTokenizer st = new StringTokenizer(url, "://");
+    public static String getRMIProtocol(String url) {
 	if (url != null) {
-	    StringTokenizer st = new StringTokenizer(url, ":");
+StringTokenizer st = new StringTokenizer(url, "://");
 	    String pref = st.nextToken().trim();
 	    return mapping.getProperty(pref,pref);
 	} else {

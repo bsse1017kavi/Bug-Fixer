@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ public class BundleStartTracker extends AbstractService<BundleStartTracker> {
                         Deployment dep = tuple.deployment;
                         if (dep.isAutoStart()) {
                             try {
-bundle.start(Bundle.START_TRANSIENT);
+                                int bundleType = packageAdmin.getBundleType(bundle);
                                 if (bundleType != BUNDLE_TYPE_FRAGMENT) {
-                                    bundle.start();
+bundle.start(Bundle.START_TRANSIENT);
                                 }
                             } catch (BundleException ex) {
                                 log.errorf(ex, "Cannot start bundle: %s", bundle);

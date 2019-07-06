@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -515,9 +514,9 @@ public class MinpackTest {
                 .build();
 
         try {
-function.checkTheoreticalMinCost(optimum.getRMS());
+            final Optimum optimum = optimizer.optimize(problem);
             Assert.assertFalse(exceptionExpected);
-            function.checkTheoreticalMinCost(optimum.computeRMS());
+function.checkTheoreticalMinCost(optimum.getRMS());
             function.checkTheoreticalMinParams(optimum.getPoint().toArray());
         } catch (TooManyEvaluationsException e) {
             Assert.assertTrue(exceptionExpected);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -200,9 +199,9 @@ final class FieldsReader {
     long startOffset = indexStream.readLong();
     long lastOffset = startOffset;
     int count = 0;
-final int docID = docStoreOffset + startDocID + count + 1;
+    while (count < numDocs) {
       final long offset;
-      final int docID = startDocID + count + 1;
+final int docID = docStoreOffset + startDocID + count + 1;
       assert docID <= numTotalDocs;
       if (docID < numTotalDocs) 
         offset = indexStream.readLong();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -83,9 +82,9 @@ final class FieldInfos {
     List fields = doc.getFields();
     Iterator fieldIterator = fields.iterator();
     while (fieldIterator.hasNext()) {
-field.isStoreOffsetWithTermVector(), field.getOmitNorms(), false, field.getOmitTf());
+      Fieldable field = (Fieldable) fieldIterator.next();
       add(field.name(), field.isIndexed(), field.isTermVectorStored(), field.isStorePositionWithTermVector(),
-              field.isStoreOffsetWithTermVector(), field.getOmitNorms());
+field.isStoreOffsetWithTermVector(), field.getOmitNorms(), false, field.getOmitTf());
     }
   }
 

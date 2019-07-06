@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase.
 All rights reserved. This program and the accompanying materials
@@ -30,9 +29,9 @@ public final class AndExpression extends ExpressionBase {
         _left = left;
         _right = right;
     }
-protected Object evaluateInternal(ExecutionContext ctx) {
+
     @Override
-    public Object evaluateInternal(ExecutionContext ctx) {
+protected Object evaluateInternal(ExecutionContext ctx) {
         final Object left = _left.evaluate(ctx);
         if (left == null) {
             ctx.logNullDeRef (getPos());

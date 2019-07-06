@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2002-2004 The Apache Software Foundation
  *
@@ -560,9 +559,9 @@ public class Concat extends Task {
                 if (destinationFile == null) {
                     // Log using WARN so it displays in 'quiet' mode.
                     os = new LogOutputStream(this, Project.MSG_WARN);
-File parent = destinationFile.getParentFile();
+                } else {
                     // ensure that the parent dir of dest file exists
-                    File parent = fileUtils.getParentFile(destinationFile);
+File parent = destinationFile.getParentFile();
                     if (!parent.exists()) {
                         parent.mkdirs();
                     }

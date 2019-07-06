@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -2156,9 +2155,9 @@ public abstract class Component implements IClusterable, IConverterLocator
 		{
 			// Invoke prepareForRender only if this is the root component to be rendered
 			MarkupContainer parent = getParent();
-prepareForRender(true);
+			if ((parent == null) || (parent.getFlag(FLAG_RENDERING) == false) || isAuto())
 			{
-				prepareForRender();
+prepareForRender(true);
 			}
 
 			// Do the render

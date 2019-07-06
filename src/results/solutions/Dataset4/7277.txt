@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class OrFilter extends Filter {
     @Override
     public DocIdSet getDocIdSet(AtomicReaderContext context, Bits acceptDocs) throws IOException {
         if (filters.size() == 1) {
-List<DocIdSet> sets = new ArrayList<>(filters.size());
+            return filters.get(0).getDocIdSet(context, acceptDocs);
         }
-        List<DocIdSet> sets = new ArrayList<DocIdSet>(filters.size());
+List<DocIdSet> sets = new ArrayList<>(filters.size());
         for (int i = 0; i < filters.size(); i++) {
             DocIdSet set = filters.get(i).getDocIdSet(context, acceptDocs);
             if (DocIdSets.isEmpty(set)) { // none matching for this filter, continue

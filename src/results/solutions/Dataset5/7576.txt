@@ -1,4 +1,3 @@
-
 /*
  * $Id: Component.java 5023 2006-03-18 18:58:40 -0800 (Sat, 18 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-18 18:58:40 -0800 (Sat, 18 Mar
@@ -635,9 +634,9 @@ public abstract class Component<T> implements Serializable, ICoverterLocator
 				}
 			}
 			catch (RuntimeException re)
-+ " in parent " + parent.getPageRelativePath(), re);
+			{
 				throw new WicketRuntimeException("Couldn't find the markup of the component " + id
-						+ " in parent " + parent.getPageRelativePath());
++ " in parent " + parent.getPageRelativePath(), re);
 			}
 			parent.add(this);
 		}

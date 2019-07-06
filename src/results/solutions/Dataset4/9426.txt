@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -561,9 +560,9 @@ public class MapperQueryParser extends QueryParser {
                     actualField = this.field;
                 }
                 if (actualField == null) {
-if ("*".equals(actualField) || "_all".equals(actualField)) {
+                    return newMatchAllDocsQuery();
                 }
-                if ("_all".equals(actualField)) {
+if ("*".equals(actualField) || "_all".equals(actualField)) {
                     return newMatchAllDocsQuery();
                 }
                 // effectively, we check if a field exists or not

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -150,9 +149,9 @@ public class EclipseAdapterUtils {
         IMessage msg = new Message(problem.getMessage(), 
         						   extraDetails,
 								   problem.isError() ? IMessage.ERROR : IMessage.WARNING,
-seeAlsoLocations,declared,problem.getID());
+								   sourceLocation, 
 								   null,
-								   seeAlsoLocations,declared);
+seeAlsoLocations,declared,problem.getID());
         return msg;
     }               
 

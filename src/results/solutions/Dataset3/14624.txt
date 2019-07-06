@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -210,8 +209,8 @@ public class MessageDrivenComponent extends EJBComponent implements PooledCompon
         super.stop();
     }
 
-return isBeanManagedTransaction() ? MessageDrivenAllowedMethodsInformation.INSTANCE_BMT : MessageDrivenAllowedMethodsInformation.INSTANCE_CMT;
+    @Override
     public AllowedMethodsInformation getAllowedMethodsInformation() {
-        return MessageDrivenAllowedMethodsInformation.INSTANCE;
+return isBeanManagedTransaction() ? MessageDrivenAllowedMethodsInformation.INSTANCE_BMT : MessageDrivenAllowedMethodsInformation.INSTANCE_CMT;
     }
 }

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.backends.ios;
 
 import cli.MonoTouch.UIKit.UIApplication;
@@ -39,9 +38,9 @@ public class IOSApplication implements Application {
 		
 		RectangleF bounds = UIScreen.get_MainScreen().get_Bounds();
 		this.graphics = new IOSGraphics(bounds, this);
-this.input = new IOSInput(this.graphics);
+		this.files = new IOSFiles();
 		this.audio = new IOSAudio();
-		this.input = new IOSInput();
+this.input = new IOSInput(this.graphics);
 		
 		Gdx.files = this.files;
 		Gdx.graphics = this.graphics;

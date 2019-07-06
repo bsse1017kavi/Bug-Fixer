@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class HdfsImmutableBlobContainer extends AbstractHdfsBlobContainer implem
     public HdfsImmutableBlobContainer(HdfsBlobStore blobStore, BlobPath blobPath, Path path) {
         super(blobStore, blobPath, path);
     }
-blobStore.executor().execute(new Runnable() {
+
     @Override public void writeBlob(final String blobName, final InputStream is, final long sizeInBytes, final WriterListener listener) {
-        blobStore.executorService().execute(new Runnable() {
+blobStore.executor().execute(new Runnable() {
             @Override public void run() {
                 Path file = new Path(path, blobName);
 

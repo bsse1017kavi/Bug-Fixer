@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public final class OSGiSubsystemAdd extends AbstractSubsystemAdd<OSGiSubsystemEl
         if (!value.equals("org.jboss.osgi.framework"))
             value = value + "|org.jboss.osgi.framework";
         System.setProperty("jboss.protocol.handler.modules", value);
-Mode initialMode = (policy == Activation.LAZY ? Mode.ON_DEMAND : Mode.PASSIVE);
+
         Activation policy = subsystemState.getActivationPolicy();
-        Mode initialMode = (policy == Activation.LAZY ? Mode.ON_DEMAND : Mode.AUTOMATIC);
+Mode initialMode = (policy == Activation.LAZY ? Mode.ON_DEMAND : Mode.PASSIVE);
         BatchBuilder batchBuilder = updateContext.getBatchBuilder();
         Configuration.addService(batchBuilder, subsystemState);
         BundleManagerService.addService(batchBuilder, initialMode);

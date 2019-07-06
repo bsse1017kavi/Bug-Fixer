@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -96,9 +95,9 @@ public class NestedQueryParser implements QueryParser {
                         String sScoreMode = parser.text();
                         if ("avg".equals(sScoreMode)) {
                             scoreMode = ScoreMode.Avg;
-} else if ("total".equals(sScoreMode) || "sum".equals(sScoreMode)) {
+                        } else if ("max".equals(sScoreMode)) {
                             scoreMode = ScoreMode.Max;
-                        } else if ("total".equals(sScoreMode)) {
+} else if ("total".equals(sScoreMode) || "sum".equals(sScoreMode)) {
                             scoreMode = ScoreMode.Total;
                         } else if ("none".equals(sScoreMode)) {
                             scoreMode = ScoreMode.None;

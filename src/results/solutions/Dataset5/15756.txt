@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -74,9 +73,9 @@ public class PointcutEvaluationExpenseComparator implements Comparator {
 		return result;
 	}
 
-if (p.couldMatchKinds()==Shadow.NO_SHADOW_KINDS_BITS) return MATCHES_NOTHING;
+	// a higher score means a more expensive evaluation
 	private int getScore(Pointcut p) {
-		if (p.couldMatchKinds().isEmpty()) return MATCHES_NOTHING;
+if (p.couldMatchKinds()==Shadow.NO_SHADOW_KINDS_BITS) return MATCHES_NOTHING;
 		if (p instanceof WithinPointcut) return WITHIN;
 		if (p instanceof WithinAnnotationPointcut) return ATWITHIN;
 		if (p instanceof KindedPointcut) {

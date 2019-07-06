@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -70,9 +69,9 @@ public class XpandContentAssistProcessor extends AbstractExtXptContentAssistProc
 
 			final IXpandResource tpl = (IXpandResource) Activator.getExtXptModelManager().findExtXptResource(file);
 			if (tpl != null) {
-XpandExecutionContext ctx = (XpandExecutionContext) Activator.getExecutionContext(getJavaProject());
+				defs = tpl.getDefinitions();
 			}
-			XpandExecutionContext ctx = XpandEditorPlugin.getExecutionContext(getJavaProject());
+XpandExecutionContext ctx = (XpandExecutionContext) Activator.getExecutionContext(getJavaProject());
 			final Partition p = FastAnalyzer.computePartition(txt);
 
 			// Shortcut: No proposals within comments

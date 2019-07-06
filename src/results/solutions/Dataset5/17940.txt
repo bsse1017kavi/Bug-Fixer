@@ -1,4 +1,3 @@
-
 // Simple - don't attempt to alter target for proceed, just change the arg
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -7,9 +6,9 @@ import org.aspectj.lang.annotation.*;
 public class A1 {
 
   @Around("call(void M.method(String)) && args(p)")
-pjp.proceed( new Object[] { "faked" } );
+  public void a( ProceedingJoinPoint pjp, String p) throws Throwable {
     System.err.println("advice from ataj aspect");
-    pjp.proceed( new Object[] { pjp.getTarget(),"faked" } );
+pjp.proceed( new Object[] { "faked" } );
   }
 
   public static void main(String []argv) {

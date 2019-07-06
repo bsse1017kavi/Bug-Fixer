@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public class RestReplicationPingAction extends BaseRestHandler {
 
     @Override public void handleRequest(final RestRequest request, final RestChannel channel) {
         ReplicationPingRequest replicationPingRequest = new ReplicationPingRequest(RestActions.splitIndices(request.param("index")));
-client.admin().cluster().ping(replicationPingRequest, new ActionListener<ReplicationPingResponse>() {
+        replicationPingRequest.timeout(request.paramAsTime("timeout", ShardReplicationPingRequest.DEFAULT_TIMEOUT));
         replicationPingRequest.listenerThreaded(false);
-        client.admin().cluster().execPing(replicationPingRequest, new ActionListener<ReplicationPingResponse>() {
+client.admin().cluster().ping(replicationPingRequest, new ActionListener<ReplicationPingResponse>() {
             @Override public void onResponse(ReplicationPingResponse result) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class NamespaceObjectFactory implements ObjectFactory {
      *
      * @param contextIdentifier The context identifier
      * @return The reference
-return ModularReference.create(Context.class, new StringRefAddr("nns", contextIdentifier), NamespaceObjectFactory.class);
+     */
     public static Reference createReference(final String contextIdentifier) {
-        return new Reference(Context.class.getName(), new StringRefAddr("nns", contextIdentifier), NamespaceObjectFactory.class.getName(), null);
+return ModularReference.create(Context.class, new StringRefAddr("nns", contextIdentifier), NamespaceObjectFactory.class);
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -217,9 +216,9 @@ public class HttpServer extends AbstractLifecycleComponent<HttpServer> {
         return mimeType;
     }
 
-Map<String, String> mimeTypes = new HashMap<>();
+    static {
         // This is not an exhaustive list, just the most common types. Call registerMimeType() to add more.
-        Map<String, String> mimeTypes = new HashMap<String, String>();
+Map<String, String> mimeTypes = new HashMap<>();
         mimeTypes.put("txt", "text/plain");
         mimeTypes.put("css", "text/css");
         mimeTypes.put("csv", "text/csv");

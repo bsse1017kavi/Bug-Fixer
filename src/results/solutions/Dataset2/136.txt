@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2002 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -116,9 +115,9 @@ public class UmlModelListener implements MElementListener {
 	// TODO: post an event of some type.
 	//
 	// Should this be a property change event?
-if (mee.getAddedValue() != null || mee.getRemovedValue() != null || mee.getNewValue() == null || !mee.getNewValue().equals(mee.getOldValue())) {
+	//
 
-	if (mee.getAddedValue() != null || mee.getRemovedValue() != null || !mee.getNewValue().equals(mee.getOldValue())) {
+if (mee.getAddedValue() != null || mee.getRemovedValue() != null || mee.getNewValue() == null || !mee.getNewValue().equals(mee.getOldValue())) {
 		ProjectBrowser.TheInstance.getNavPane().forceUpdate();
 		ProjectBrowser.TheInstance.getProject().setNeedsSave(true);
 	}

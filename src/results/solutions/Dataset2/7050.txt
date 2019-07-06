@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 1997-1999 The Java Apache Project.  All rights reserved.
  *
@@ -84,9 +83,9 @@ public class DependClassLoader12 extends DependClassLoader {
 	final String lname=name;
 	final boolean lresolve=resolve;
 	try {
-return loadClassInternal1( lname, lresolve );
+	    return (Class)AccessController.doPrivileged( new PrivilegedExceptionAction() {
 		    public Object run() throws Exception {
-			return loadClassInternal( lname, lresolve );
+return loadClassInternal1( lname, lresolve );
 		    }
 		});
 	} catch( PrivilegedActionException pex ) {

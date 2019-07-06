@@ -1,4 +1,3 @@
-
 package org.apache.struts.upload;
 
 import java.io.File;
@@ -58,9 +57,9 @@ public class DiskMultipartRequestHandler implements MultipartRequestHandler {
         textElements = new Hashtable();
         fileElements = new Hashtable();
         allElements = new Hashtable();
-if ((element.getFileName() == null) && (element.getContentType() == null)) {
+
         while ((element = iterator.getNextElement()) != null) {
-            if (element.getContentType() == null) {
+if ((element.getFileName() == null) && (element.getContentType() == null)) {
                 String textData;
                 try {
                     textData = new String(element.getData(), "ISO-8859-1");

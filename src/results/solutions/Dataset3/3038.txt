@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -89,9 +88,9 @@ public class SingletonService<T extends Serializable> implements Service<T>, Ser
                 new ServiceProviderRegistryService().build(target, container).setInitialMode(ServiceController.Mode.ON_DEMAND).install();
             }
         }
-return AsynchronousService.addService(target, this.singletonServiceName, this)
+        target.addService(this.serviceName, this.service).setInitialMode(ServiceController.Mode.NEVER).install();
         target.addService(this.singletonServiceName.append("singleton"), new ValueService<Singleton>(new ImmediateValue<Singleton>(this))).addDependency(this.singletonServiceName).setInitialMode(ServiceController.Mode.PASSIVE).install();
-        return target.addService(this.singletonServiceName, new AsynchronousService<T>(this))
+return AsynchronousService.addService(target, this.singletonServiceName, this)
             .addDependency(ServiceProviderRegistryService.getServiceName(container), ServiceProviderRegistry.class, this.registryRef)
             .addDependency(ServiceName.JBOSS.append(DEFAULT_CONTAINER, container), GroupRpcDispatcher.class, this.dispatcherRef)
         ;

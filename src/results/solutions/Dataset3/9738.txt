@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 the original author or authors.
  *
@@ -71,9 +70,9 @@ public class MethodExclusionMBeanInfoAssemblerTests extends AbstractJmxAssembler
 		final String beanKey = "myTestBean";
 		MethodExclusionMBeanInfoAssembler assembler = new MethodExclusionMBeanInfoAssembler();
 		Properties ignored = new Properties();
-Method method = JmxTestBean.class.getMethod("dontExposeMe");
+		ignored.setProperty(beanKey, "dontExposeMe,setSuperman");
 		assembler.setIgnoredMethodMappings(ignored);
-		Method method = JmxTestBean.class.getMethod("dontExposeMe", null);
+Method method = JmxTestBean.class.getMethod("dontExposeMe");
 		assertFalse(assembler.isNotIgnored(method, beanKey));
 		// this bean does not have any ignored methods on it, so must obviously not be ignored...
 		assertTrue(assembler.isNotIgnored(method, "someOtherBeanKey"));

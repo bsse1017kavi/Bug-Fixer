@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1093,9 +1092,9 @@ public final class Workbench implements IWorkbench {
 	 * RESTORE_CODE_RESET if no window was opened but one should be,
 	 * and RESTORE_CODE_EXIT if the workbench should close immediately
 	 */
-if (!getWorkbenchConfigurer().getSaveAndRestore()) {
+	private int openPreviousWorkbenchState() {
 		
-		if (!getPreferenceStore().getBoolean(IWorkbenchPreferences.SHOULD_SAVE_WORKBENCH_STATE)) {
+if (!getWorkbenchConfigurer().getSaveAndRestore()) {
 			return RESTORE_CODE_RESET;
 		}
 		// Read the workbench state file.

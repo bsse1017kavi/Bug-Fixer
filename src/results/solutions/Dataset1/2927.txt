@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class BlogAuthorManagerImpl implements BlogAuthorManager
   {
     if(email == null) throw new IllegalArgumentException("Email must not be null");
    
-dateOfBirth = (dob == null || "".equals(dob)) ? null : new SimpleDateFormat("yyyy-MM-dd").parse(dob);
+    Date dateOfBirth;
     
-	dateOfBirth = (dob == null || "".equals(dob)) ? null : new SimpleDateFormat("dd-mm-yyyy").parse(dob);
+dateOfBirth = (dob == null || "".equals(dob)) ? null : new SimpleDateFormat("yyyy-MM-dd").parse(dob);
 	
     persistenceService.createAuthor(email, dateOfBirth, name, displayName, bio);
   }

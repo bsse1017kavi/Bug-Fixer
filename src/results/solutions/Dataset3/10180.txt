@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class CustomCLIExecutor {
         }
 
         final ProcessBuilder builder = new ProcessBuilder();
-command.add("java");
+        builder.redirectErrorStream(true);
         final List<String> command = new ArrayList<String>();
-        command.add(TestSuiteEnvironment.getJavaPath());
+command.add("java");
         TestSuiteEnvironment.getIpv6Args(command);
         if (cliConfigFile != null) {
             command.add("-Djboss.cli.config=" + cliConfigFile.getAbsolutePath());

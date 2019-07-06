@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ class AddressSettingsWriteHandler implements OperationStepHandler {
             context.getFailureDescription().set(new ModelNode().set(MESSAGES.unknownAttribute(attribute)));
         } else {
             def.getValidator().validateParameter(ModelDescriptionConstants.VALUE, operation);
-if(context.isNormalServer()) {
+            resource.getModel().get(attribute).set(operation.get(ModelDescriptionConstants.VALUE));
 
-            if(context.getType() == OperationContext.Type.SERVER) {
+if(context.isNormalServer()) {
                 context.addStep(new OperationStepHandler() {
                     @Override
                     public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {

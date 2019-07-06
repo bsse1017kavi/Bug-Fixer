@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -186,9 +185,9 @@ public class BitFieldTest  {
         assertEquals(0, new BitField(16).setByteBoolean((byte) 16, false));
         assertEquals(0, new BitField(32).setByteBoolean((byte) 32, false));
         assertEquals(0, new BitField(64).setByteBoolean((byte) 64, false));
-final byte clearedBit = new BitField(0x40).setByteBoolean((byte) - 63, false);
+        assertEquals(0, new BitField(128).setByteBoolean((byte) 128, false));
         assertEquals(-2, new BitField(1).setByteBoolean((byte) 255, false));
-        byte clearedBit = new BitField(0x40).setByteBoolean((byte) - 63, false);
+final byte clearedBit = new BitField(0x40).setByteBoolean((byte) - 63, false);
 
         assertFalse(new BitField(0x40).isSet(clearedBit));
     }

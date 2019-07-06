@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public final class InspectorBug extends DevUtilsPanel
 	 */
 	public InspectorBug(final String id, final WebPage page)
 	{
-parameters.add("pageId", page.getId());
+		super(id);
 		PageParameters parameters = new PageParameters();
-		parameters.addNamedParameter("pageId", page.getId());
+parameters.add("pageId", page.getId());
 		Link<?> link = new BookmarkablePageLink<Void>("link", InspectorPage.class, parameters);
 		link.add(new NonCachingImage("bug"));
 		add(link);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -160,9 +159,9 @@ public class Mean extends AbstractStorelessUnivariateStatistic
             double xbar = sum.evaluate(values, begin, length) / sampleSize;
 
             // Compute correction factor in second pass
-correction += values[i] - xbar;
+            double correction = 0;
             for (int i = begin; i < begin + length; i++) {
-                correction += (values[i] - xbar);
+correction += values[i] - xbar;
             }
             return xbar + (correction/sampleSize);
         }

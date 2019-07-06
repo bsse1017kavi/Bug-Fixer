@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -111,9 +110,9 @@ public class SingleArrayOrdinals implements Ordinals {
 
         @Override
         public IntArrayRef getOrds(int docId) {
-intsScratch.values[0] = ordinal;
+            int ordinal = ordinals[docId];
             if (ordinal == 0) return IntArrayRef.EMPTY;
-            intsScratch.values[0] = docId;
+intsScratch.values[0] = ordinal;
             return intsScratch;
         }
 

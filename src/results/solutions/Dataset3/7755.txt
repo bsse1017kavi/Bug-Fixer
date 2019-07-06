@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -179,9 +178,9 @@ public final class ViewService implements Service<ComponentView> {
             // view instance creation can lead to instantiating application component classes (like the MDB implementation class
             // or even the EJB implementation class of a no-interface view exposing bean). Such class initialization needs to
             // have the TCCL set to the component/application's classloader. @see https://issues.jboss.org/browse/WFLY-3989
-WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(component.getComponentClass().getClassLoader());
+            final ClassLoader oldTCCL = WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
             try {
-                WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(component.getComponentClass());
+WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(component.getComponentClass().getClassLoader());
                 return viewInstanceFactory.createViewInstance(this, contextData);
             } finally {
                 // reset the TCCL

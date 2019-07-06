@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -534,9 +533,9 @@ public abstract class AbstractStringFieldDataTests extends AbstractFieldDataImpl
 
     @Test
     public void testGlobalOrdinalsGetRemovedOnceIndexReaderCloses() throws Exception {
-FieldDataType fieldDataType = new FieldDataType("string", ImmutableSettings.builder().put("global_values", "fixed").put("cache", "node"));
+        fillExtendedMvSet();
         refreshReader();
-        FieldDataType fieldDataType = new FieldDataType("string", ImmutableSettings.builder().put("global_values", "fixed"));
+FieldDataType fieldDataType = new FieldDataType("string", ImmutableSettings.builder().put("global_values", "fixed").put("cache", "node"));
         IndexFieldData.WithOrdinals ifd = getForField(fieldDataType, "value");
         IndexFieldData.WithOrdinals globalOrdinals = ifd.loadGlobal(topLevelReader);
         assertThat(ifd.loadGlobal(topLevelReader), sameInstance(globalOrdinals));

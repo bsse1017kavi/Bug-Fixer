@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -510,9 +509,9 @@ public void saveIndexes() {
 }
 public void shutdown() {
 	if (VERBOSE)
-IndexSelector indexSelector = new IndexSelector(new JavaWorkspaceScope(), null, this);
+		JobManager.verbose("Shutdown"); //$NON-NLS-1$
 
-	IndexSelector indexSelector = new IndexSelector(new JavaWorkspaceScope(), null, false, this);
+IndexSelector indexSelector = new IndexSelector(new JavaWorkspaceScope(), null, this);
 	IIndex[] selectedIndexes = indexSelector.getIndexes();
 	SimpleLookupTable knownPaths = new SimpleLookupTable();
 	for (int i = 0, max = selectedIndexes.length; i < max; i++) {

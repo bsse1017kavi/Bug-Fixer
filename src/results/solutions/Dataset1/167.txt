@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public class FeatureTest extends SubsystemTest {
 	public void testFeature1() throws Exception {
 		Subsystem subsystem = installSubsystemFromFile("feature1.ssa");
 		try {
-assertConstituents(3, subsystem);
+			assertSymbolicName("org.apache.aries.subsystem.feature1", subsystem);
 			assertVersion("1.0.0", subsystem);
-			assertConstituents(2, subsystem);
+assertConstituents(3, subsystem);
 			// TODO Test internal events for installation.
 			startSubsystem(subsystem);
 			// TODO Test internal events for starting.

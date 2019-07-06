@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ public class ExampleRunner {
 
    public static void main(String[] args) throws Exception {
       DeploymentUtils utils = null;
-utils.addWarDeployment("jaxrs-example.war", true, HelloWorldResource.class.getPackage());
+      try {
          utils = new DeploymentUtils();
-         utils.addWarDeployment("jaxrs-example.war", HelloWorldResource.class.getPackage(), true);
+utils.addWarDeployment("jaxrs-example.war", true, HelloWorldResource.class.getPackage());
          utils.deploy();
          performCall();
       } finally{

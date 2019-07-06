@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -411,9 +410,9 @@ public class Parser {
 		Mark stop = reader.skipUntil(CLOSE_COMMENT);
 		if (stop == null)
 		    throw new ParseException(Constants.getString("jsp.error.unterminated", 
-parser.flushCharData(parser.tmplStart, parser.tmplStop);
+                                                                 new Object[] { OPEN_COMMENT }));
 		
-		parser.flushCharData(start, stop);
+parser.flushCharData(parser.tmplStart, parser.tmplStop);
 		return true;
 	    }
 	    return false;

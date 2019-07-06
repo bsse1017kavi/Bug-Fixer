@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -254,9 +253,9 @@ public class SequenceMetaData
             PluginValue plugin = newPluginValue("sequence-plugin");
             plugin.setString(_plugin);
             String clsName = plugin.getClassName();
-AccessController.doPrivileged(
+
             Class cls = Class.forName(clsName, true,
-                (ClassLoader) AccessController.doPrivileged(
+AccessController.doPrivileged(
                     J2DoPrivHelper.getClassLoaderAction(Seq.class)));
             StringBuffer props = new StringBuffer();
             if (plugin.getProperties() != null)

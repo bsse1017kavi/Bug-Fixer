@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class JcaCachedConnectionManagerDefinition extends SimpleResourceDefiniti
     public void registerAttributes(ManagementResourceRegistration resourceRegistration) {
         super.registerAttributes(resourceRegistration);
 
-resourceRegistration.registerReadWriteAttribute(parameter.getAttribute(), null, JcaCachedConnectionManagerWriteHandler.INSTANCE);
+        for (final CcmParameters parameter : CcmParameters.values()) {
             if (parameter != CcmParameters.INSTALL) {
-                resourceRegistration.registerReadWriteAttribute(parameter.getAttribute(), null, JcaAttributeWriteHandler.INSTANCE);
+resourceRegistration.registerReadWriteAttribute(parameter.getAttribute(), null, JcaCachedConnectionManagerWriteHandler.INSTANCE);
             } else {
                 AttributeDefinition ad = parameter.getAttribute();
                 resourceRegistration.registerReadWriteAttribute(ad, null, new ReloadRequiredWriteAttributeHandler(ad));

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -90,9 +89,9 @@ public class DeleteByQueryWrappingFilter extends Filter {
         }
 
         return new DocIdSet() {
-return weight.scorer(context, acceptDocs);
+            @Override
             public DocIdSetIterator iterator() throws IOException {
-                return weight.scorer(context, true, false, acceptDocs);
+return weight.scorer(context, acceptDocs);
             }
             @Override
             public boolean isCacheable() { return false; }

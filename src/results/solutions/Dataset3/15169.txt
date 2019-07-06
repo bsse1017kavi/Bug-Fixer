@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -132,9 +131,9 @@ public class LoggingSubsystemParser implements XMLStreamConstants, XMLElementRea
 
         final ModelNode address = new ModelNode();
         address.add(SUBSYSTEM, LoggingExtension.SUBSYSTEM_NAME);
-list.add(LoggingSubsystemAdd.createOperation(address));
+        address.protect();
 
-        list.add(LoggingExtension.NewLoggingSubsystemAdd.createOperation(address));
+list.add(LoggingSubsystemAdd.createOperation(address));
 
         // Elements
         final Set<String> loggerNames = new HashSet<String>();

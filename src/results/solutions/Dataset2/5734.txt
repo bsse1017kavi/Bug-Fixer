@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -97,9 +96,9 @@ public class Hierarchy implements LoggerRepository, RendererSupport {
   public
   void addHierarchyEventListener(HierarchyEventListener listener) {
     if(listeners.contains(listener)) {
-listeners.addElement(listener);
+      LogLog.warn("Ignoring attempt to add an existent listener.");
     } else {
-      listeners.add(listener);
+listeners.addElement(listener);
     }
   }
 

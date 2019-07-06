@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -455,9 +454,9 @@ class TreeTab extends ScrollableTab {
 		if (typeName.equals("org.eclipse.swt.widgets.TreeItem")) {
 			TreeItem item = findItem(value, ((Tree) widget).getItems());
 			if (item != null) return new Object[] {item};
-String[] values = split(value, ',');
+		}
 		if (typeName.equals("[Lorg.eclipse.swt.widgets.TreeItem;")) {
-			String[] values = value.split(",");
+String[] values = split(value, ',');
 			TreeItem[] items = new TreeItem[values.length];
 			for (int i = 0; i < values.length; i++) {
 				TreeItem item = findItem(values[i], ((Tree) widget).getItems());

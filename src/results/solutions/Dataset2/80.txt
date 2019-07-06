@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -39,9 +38,9 @@ public Throwable getThrowable() {
 	 * Prints the exception to System.err.
 	 */
 	public void printStackTrace() {
-System.err.println("Stack trace of embedded throwable:"/*nonNLS*/);
+		if (fThrowable != null) {
 			System.err.println(this);
-			System.err.println("Stack trace of embedded throwable:"); //$NON-NLS-1$
+System.err.println("Stack trace of embedded throwable:"/*nonNLS*/);
 			fThrowable.printStackTrace();
 		} else {
 			super.printStackTrace();

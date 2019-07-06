@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1547,9 +1546,9 @@ public abstract class HTTPSamplerBase extends AbstractSampler
      * @return the response or the MD5 of the response
      * @throws IOException
      */
-byte[] readBuffer = new byte[8192]; // 8kB is the (max) size to have the latency ('the first packet')
+    public byte[] readResponse(SampleResult sampleResult, InputStream in, int length) throws IOException {
 
-        byte[] readBuffer = getThreadContext().getReadBuffer();
+byte[] readBuffer = new byte[8192]; // 8kB is the (max) size to have the latency ('the first packet')
         int bufferSize=32;// Enough for MD5
 
         MessageDigest md=null;

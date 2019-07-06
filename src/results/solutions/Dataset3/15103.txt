@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public final class ServerElement extends AbstractModelElement<ServerElement> {
     private final NavigableMap<String, InterfaceElement> interfaces = new TreeMap<String, InterfaceElement>();
     private boolean start;
     private String bindingGroup;
-private final PropertiesElement systemProperties = new PropertiesElement(Element.PROPERTY, true);
+    private int portOffset = 0;
     private JvmElement jvm;
-    private PropertiesElement systemProperties;
+private final PropertiesElement systemProperties = new PropertiesElement(Element.PROPERTY, true);
 
     /**
      * Construct a new instance.

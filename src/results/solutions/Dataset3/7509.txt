@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public abstract class PassivationStoreRemove extends AbstractRemoveStepHandler {
     }
 
     @Override
-this.add.installRuntimeServices(context, operation, model, null);
+    protected void recoverServices(OperationContext context, ModelNode operation, ModelNode model) throws OperationFailedException {
         if (context.isResourceServiceRestartAllowed()) {
-            this.add.installRuntimeServices(context, model, null);
+this.add.installRuntimeServices(context, operation, model, null);
         } else {
             context.revertReloadRequired();
         }

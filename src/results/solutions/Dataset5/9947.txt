@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1451,9 +1450,9 @@ public abstract class FormComponent<T> extends LabeledWebMarkupContainer
 	@Override
 	protected void onComponentTag(final ComponentTag tag)
 	{
-if (!isEnabledInHierarchy())
+		tag.put("name", getInputName());
 
-		if (!isEnabled() || !isEnableAllowed())
+if (!isEnabledInHierarchy())
 		{
 			onDisabled(tag);
 		}

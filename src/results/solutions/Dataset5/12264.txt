@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -122,9 +121,9 @@ public String open () {
 	OS.GCHandle_Free (messagePtr);
 	//TODO: filter path...
 	String result = null;
-result = Widget.createJavaString (ptr);
+	if (OS.FormsCommonDialog_ShowDialog (dialog) == OS.DialogResult_OK) {
 		int ptr = OS.FolderBrowserDialog_SelectedPath (dialog);
-		result = parent.createJavaString (ptr);
+result = Widget.createJavaString (ptr);
 		OS.GCHandle_Free (ptr);
 	}
 	OS.GCHandle_Free (dialog);

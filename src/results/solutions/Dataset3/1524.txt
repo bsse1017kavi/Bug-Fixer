@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class ModuleRegisterProcessor implements DeploymentUnitProcessor {
         final DeploymentUnit depUnit = phaseContext.getDeploymentUnit();
         if (DeploymentTypeMarker.isType(DeploymentType.EAR, depUnit) || DeploymentTypeMarker.isType(DeploymentType.WAR, depUnit))
             return;
-if (depUnit.hasAttachment(OSGiConstants.BUNDLE_REVISION_KEY))
+
         // Don't register Bundle deployments
-        if (depUnit.hasAttachment(OSGiConstants.BUNDLE_KEY))
+if (depUnit.hasAttachment(OSGiConstants.BUNDLE_REVISION_KEY))
             return;
 
         // Don't register private module deployments

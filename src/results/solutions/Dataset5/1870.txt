@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -509,9 +508,9 @@ public class ExecuteOn extends ExecTask {
             + ((!FileDirBoth.FILE.equals(currentType))
                ? ds.getIncludedDirsCount() : 0);
 
-verbose ? Project.MSG_INFO : Project.MSG_VERBOSE);
+        log("Skipping fileset for directory " + base + ". It is "
             + ((includedCount > 0) ? "up to date." : "empty."),
-            Project.MSG_INFO);
+verbose ? Project.MSG_INFO : Project.MSG_VERBOSE);
     }
 
     /**

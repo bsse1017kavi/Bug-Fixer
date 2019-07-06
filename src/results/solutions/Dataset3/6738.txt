@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ import org.jboss.dmr.ModelNode;
  * @author Brian Stansberry (c) 2011 Red Hat Inc.
  */
 public class MemoryMXBeanGCHandler implements OperationStepHandler {
-static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(PlatformMBeanConstants.GC, PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY))
+
     public static final MemoryMXBeanGCHandler INSTANCE = new MemoryMXBeanGCHandler();
-    static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(PlatformMBeanConstants.GC, PlatformMBeanDescriptions.getResolver(PlatformMBeanConstants.MEMORY))
+static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(PlatformMBeanConstants.GC, PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY))
             .setRuntimeOnly()
             .build();
 

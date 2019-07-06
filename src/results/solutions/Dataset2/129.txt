@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -113,9 +112,9 @@ public IType[] getAllClasses(IImageContext context) {
 	 */
 	public IType[] getBuiltClasses(IPath path) {
 		Vector vResult = new Vector();
-if (extension.equals("java") || extension.equals("class")) { //$NON-NLS-1$ //$NON-NLS-2$
+//		try {
 			String extension = path.getFileExtension().toLowerCase();
-			if (extension.equals("java"/*nonNLS*/) || extension.equals("class"/*nonNLS*/)) {
+if (extension.equals("java") || extension.equals("class")) { //$NON-NLS-1$ //$NON-NLS-2$
 				IPath pkgPath = path.removeLastSegments(1);
 				IPackage pkg = fState.getPathMap().packageHandleFromPath(pkgPath);
 				TypeStructureEntry[] tsEntries = fState.getAllTypesForPackage(pkg);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -216,8 +215,8 @@ public class IndexBufferObject implements IndexData {
 			GL11 gl = Gdx.gl11;
 			gl.glBindBuffer(GL11.GL_ELEMENT_ARRAY_BUFFER, 0);
 			gl.glDeleteBuffers(1, tmpHandle);
-BufferUtils.disposeUnsafeByteBuffer(byteBuffer);
+			bufferHandle = 0;
 		}
-		BufferUtils.freeMemory(byteBuffer);
+BufferUtils.disposeUnsafeByteBuffer(byteBuffer);
 	}
 }

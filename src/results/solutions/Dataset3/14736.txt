@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -525,9 +524,9 @@ public class ModelControllerImplUnitTestCase {
 
             //Atttributes
             model.get("attr1").set(1);
-context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel().set(model);
+            model.get("attr2").set(2);
 
-            context.createResource(PathAddress.EMPTY_ADDRESS).getModel().set(model);
+context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel().set(model);
 
             final ModelNode child1 = new ModelNode();
             child1.get("attribute1").set(1);

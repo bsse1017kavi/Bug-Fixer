@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public abstract class AbstractConcurrentMapFieldDataCache extends AbstractIndexC
         // (assuming clear(...) will not be called)
         this.cache = new MapMaker().weakKeys().makeMap();
     }
-clear();
+
     @Override public void close() throws ElasticSearchException {
-        cache.clear();
+clear();
     }
 
     @Override public void clear() {

@@ -1,4 +1,3 @@
-
 /*
  * $Id: DefaultRequestTargetResolverStrategy.java,v 1.4 2005/12/30 21:47:05
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -217,9 +216,9 @@ public class DefaultRequestTargetResolverStrategy implements IRequestTargetResol
 			if (component == null)
 			{
 				throw new WicketRuntimeException(
-if (!component.isVisibleInHierarchy())
+						"Attempt to call listener method on non-existant component: " + componentPath);
 			}
-			if (!component.isVisible())
+if (!component.isVisibleInHierarchy())
 			{
 				throw new WicketRuntimeException(
 						"Calling listener methods on components that are not visible is not allowed: "

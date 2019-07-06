@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.jdbc.Driver20
@@ -133,9 +132,9 @@ public abstract class Driver20 extends InternalDriver implements Driver {
 		FormatableProperties finfo = getAttributes(url, info);
 		info = null; // ensure we don't use this reference directly again.
 		boolean encryptDB = Boolean.valueOf(finfo.getProperty(Attribute.DATA_ENCRYPTION)).booleanValue();		
-if (dbname.length() == 0 || (encryptDB && encryptpassword == null)) {
+		String encryptpassword = finfo.getProperty(Attribute.BOOT_PASSWORD);
 
-		if (dbname.length() == 0 || (encryptDB = true && encryptpassword == null)) {
+if (dbname.length() == 0 || (encryptDB && encryptpassword == null)) {
 
 			// with no database name we can have shutdown or a database name
 

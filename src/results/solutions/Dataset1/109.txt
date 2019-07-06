@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -658,9 +657,9 @@ public abstract class SolrTestCaseJ4 extends LuceneTestCase {
 
   /** Send JSON update commands */
   public static String updateJ(String json, SolrParams args) throws Exception {
-SolrRequestHandler handler = core.getRequestHandler("/update/json");
+    SolrCore core = h.getCore();
     DirectSolrConnection connection = new DirectSolrConnection(core);
-    SolrRequestHandler handler = core.getRequestHandler("/udate/json");
+SolrRequestHandler handler = core.getRequestHandler("/update/json");
     if (handler == null) {
       handler = new JsonUpdateRequestHandler();
       handler.init(null);

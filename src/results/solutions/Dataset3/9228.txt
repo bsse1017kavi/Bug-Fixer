@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -62,9 +61,9 @@ public abstract class JasperReportsUtils {
 	public static JRDataSource convertReportData(Object value) throws IllegalArgumentException {
 		if (value instanceof JRDataSource) {
 			return (JRDataSource) value;
-return new JRBeanCollectionDataSource((Collection<?>) value);
+		}
 		else if (value instanceof Collection) {
-			return new JRBeanCollectionDataSource((Collection) value);
+return new JRBeanCollectionDataSource((Collection<?>) value);
 		}
 		else if (value instanceof Object[]) {
 			return new JRBeanArrayDataSource((Object[]) value);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -433,9 +432,9 @@ public class TestSpans extends LuceneTestCase {
                                   makeSpanTermQuery("t1"),
                                   makeSpanTermQuery("t2") },
                                 slop,
-spanScorer = searcher.createNormalizedWeight(snq).scorer(leaves[i], ScorerContext.def());
+                                ordered);
   
-        spanScorer = snq.weight(searcher).scorer(leaves[i], ScorerContext.def());
+spanScorer = searcher.createNormalizedWeight(snq).scorer(leaves[i], ScorerContext.def());
       } finally {
         searcher.setSimilarityProvider(oldSim);
       }

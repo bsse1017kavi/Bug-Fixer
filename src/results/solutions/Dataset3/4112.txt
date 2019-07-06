@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -38,9 +37,9 @@ public class RemoveAnnotationInformationFactory extends ClassAnnotationInformati
     protected RemoveAnnotationInformationFactory() {
         super(Remove.class, null);
     }
-protected Boolean fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
+
     @Override
-    protected Boolean fromAnnotation(final AnnotationInstance annotationInstance) {
+protected Boolean fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
         AnnotationValue value = annotationInstance.value("retainIfException");
         if(value == null) {
             return false;

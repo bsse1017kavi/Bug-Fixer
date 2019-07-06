@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -889,9 +888,9 @@ public final class Strings
 		// strip off any jsession id
 		if (ixSemiColon != -1)
 		{
-if (ixEnd <= ixSemiColon)
+			int ixEnd = path.indexOf("?");
 
-			if (ixEnd < ixSemiColon)
+if (ixEnd <= ixSemiColon)
 			{
 				// ? is before ; - no jsessionid in the url
 				return url.toString();

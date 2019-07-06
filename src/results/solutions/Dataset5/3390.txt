@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public final class WicketRemoveTagHandler extends BaseMarkupFilter
 			throw new WicketParseException("Wicket remove tag must not be an open-close tag:", tag);
 		}
 
-while (null != (closeTag = (ComponentTag)getNextFilter().nextTag()))
+		// Find the corresponding close tag and remove all tags in between
 		ComponentTag closeTag;
-		while (null != (closeTag = (ComponentTag)getParent().nextTag()))
+while (null != (closeTag = (ComponentTag)getNextFilter().nextTag()))
 		{
 			// No Wicket component tags are allowed within the preview region.
 			// Wicket components will a component name assigned.

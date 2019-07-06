@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2631,9 +2630,9 @@ public void invalidContinue(ASTNode location) {
 		location.sourceEnd);
 }
 public void invalidEnclosingType(Expression expression, TypeBinding type, ReferenceBinding enclosingType) {
-if (enclosingType.sourceName != null && enclosingType.sourceName.length == 0) return;
+
 	if (enclosingType.isAnonymousType()) enclosingType = enclosingType.superclass();
-	if (enclosingType.sourceName.length == 0) return;
+if (enclosingType.sourceName != null && enclosingType.sourceName.length == 0) return;
 	
 	int flag = IProblem.UndefinedType; // default
 	switch (type.problemId()) {

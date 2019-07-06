@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) OSGi Alliance (2009, 2010). All Rights Reserved.
  *
@@ -268,9 +267,9 @@ public interface FrameworkMBean {
      * @param key The name of the requested property.
      * @return The value of the requested property, or {@code null} if the
      *         property is undefined.
-String getProperty(String key) throws IOException;
+     * @throws IOException if the operation failed
      */
-    String getProperty(String key);
+String getProperty(String key) throws IOException;
 
 	/**
      * Returns the bundles IDs that have non-current, in use bundle wirings. This

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -246,9 +245,9 @@ public abstract class AbstractClusterLockSupport implements GroupMembershipListe
     public void start() throws Exception {
         this.me = this.rpcDispatcher.getClusterNode();
         this.localHandler.setLocalNode(this.me);
-this.rpcDispatcher.registerRPCHandler(this.serviceHAName, this.rpcTarget, rpcDispatcher.getClass().getClassLoader());
+
         this.rpcTarget = new RpcTarget(this);
-        this.rpcDispatcher.registerRPCHandler(this.serviceHAName, this.rpcTarget);
+this.rpcDispatcher.registerRPCHandler(this.serviceHAName, this.rpcTarget, rpcDispatcher.getClass().getClassLoader());
         this.membershipNotifier.registerGroupMembershipListener(this);
 
         List<ClusterNode> allMembers = new ArrayList<ClusterNode>();

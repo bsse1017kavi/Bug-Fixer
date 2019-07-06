@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -726,9 +725,9 @@ class PatchXmlUtils implements XMLStreamConstants {
         writer.writeAttribute(Attribute.NAME.name, item.getName());
         if (!MAIN_SLOT.equals(item.getSlot())) {
             writer.writeAttribute(Attribute.SLOT.name, item.getSlot());
-if (hash.length > 0 && type != ModificationType.REMOVE) {
+        }
         byte[] hash = item.getContentHash();
-        if (hash.length > 0) {
+if (hash.length > 0 && type != ModificationType.REMOVE) {
             writer.writeAttribute(Attribute.HASH.name,  bytesToHexString(hash));
         }
         if(type == ModificationType.REMOVE) {

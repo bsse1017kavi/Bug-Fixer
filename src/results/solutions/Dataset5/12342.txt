@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1240,9 +1239,9 @@ public abstract class Session implements IClusterable, IConverterLocator
 
 	/**
 	 * Removes any rendered feedback messages as well as compacts memory. This
-protected void cleanupRenderedFeedbackMessages()
+	 * method is usually called at the end of the request cycle processing.
 	 */
-	final void cleanupRenderedFeedbackMessages()
+protected void cleanupRenderedFeedbackMessages()
 	{
 		int size = feedbackMessages.size();
 		feedbackMessages.clearRendered();

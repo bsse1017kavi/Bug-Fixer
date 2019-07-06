@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -55,8 +54,8 @@ public class HtmlPage extends Page
      * @param componentName Name of link
      * @return Link to home page for this application
      */
-return new BookmarkablePageLink(componentName, getApplicationPages().getHomePage());
+    protected final BookmarkablePageLink homePageLink(final String componentName)
     {
-        return new BookmarkablePageLink(componentName, getApplicationSettings().getHomePage());
+return new BookmarkablePageLink(componentName, getApplicationPages().getHomePage());
     }
 }

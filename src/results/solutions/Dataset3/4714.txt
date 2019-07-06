@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -76,9 +75,9 @@ public class OSGiDeploymentService implements Service<Deployment> {
     private OSGiDeploymentService(Deployment deployment) {
         this.deployment = deployment;
     }
-final DeploymentUnit deploymentUnitContext = context.getDeploymentUnit();
+
     public static void addService(DeploymentPhaseContext context) {
-        final DeploymentUnit deploymentUnitContext = context.getDeploymentUnitContext();
+final DeploymentUnit deploymentUnitContext = context.getDeploymentUnit();
         addService(context.getServiceTarget(), OSGiDeploymentAttachment.getAttachment(deploymentUnitContext), deploymentUnitContext.getName());
     }
 

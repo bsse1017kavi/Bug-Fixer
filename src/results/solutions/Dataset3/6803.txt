@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -133,9 +132,9 @@ public class InterleavedSubsystemTestCase {
         InterleavedSubsystemModelControllerService() {
             super(InterleavedConfigurationPersister.INSTANCE, new ControlledProcessState(true));
         }
-protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
+
         @Override
-        protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration) {
+protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
             GlobalOperationHandlers.registerGlobalOperations(rootRegistration, processType);
 
             /*ManagementResourceRegistration extensions = rootRegistration.registerSubModel(PathElement.pathElement(EXTENSION), ModelControllerImplUnitTestCase.DESC_PROVIDER);

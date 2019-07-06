@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -236,9 +235,9 @@ public class LoginActivity extends RoboSherlockAccountAuthenticatorActivity {
             public User call() throws Exception {
                 GitHubClient client = new DefaultClient();
                 client.setCredentials(username, password);
-Account account = new Account(user.getLogin(), GITHUB_ACCOUNT_TYPE);
+                User user = new UserService(client).getUser();
 
-                Account account = new Account(username, GITHUB_ACCOUNT_TYPE);
+Account account = new Account(user.getLogin(), GITHUB_ACCOUNT_TYPE);
                 if (requestNewAccount) {
                     accountManager.addAccountExplicitly(account, password, null);
                     configureSyncFor(account);

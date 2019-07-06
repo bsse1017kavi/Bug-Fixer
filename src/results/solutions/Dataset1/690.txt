@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -108,9 +107,9 @@ final class SegmentInfo {
     this.docStoreOffset = docStoreOffset;
     this.docStoreSegment = docStoreSegment;
     this.docStoreIsCompoundFile = docStoreIsCompoundFile;
-assert docStoreOffset == -1 || docStoreSegment != null: "dso=" + docStoreOffset + " dss=" + docStoreSegment + " docCount=" + docCount;
+    this.hasProx = hasProx;
     delCount = 0;
-    assert docStoreOffset == -1 || docStoreSegment != null;
+assert docStoreOffset == -1 || docStoreSegment != null: "dso=" + docStoreOffset + " dss=" + docStoreSegment + " docCount=" + docCount;
   }
 
   /**

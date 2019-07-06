@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -507,9 +506,9 @@ abstract class XSDAbstractTraverser {
     /**
      * Element/Attribute traversers call this method to check whether
      * the type is NOTATION without enumeration facet
-if (typeDecl.getTypeCategory() == XSTypeDefinition.SIMPLE_TYPE &&
+     */
     void checkNotationType(String refName, XSTypeDefinition typeDecl, Element elem) {
-        if (typeDecl.getTypeCategory() == typeDecl.SIMPLE_TYPE &&
+if (typeDecl.getTypeCategory() == XSTypeDefinition.SIMPLE_TYPE &&
             ((XSSimpleType)typeDecl).getVariety() == XSSimpleType.VARIETY_ATOMIC &&
             ((XSSimpleType)typeDecl).getPrimitiveKind() == XSSimpleType.PRIMITIVE_NOTATION) {
             if ((((XSSimpleType)typeDecl).getDefinedFacets() & XSSimpleType.FACET_ENUMERATION) == 0) {

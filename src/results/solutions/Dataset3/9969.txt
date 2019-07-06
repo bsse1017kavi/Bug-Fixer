@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class LineBreakHandler implements CharacterHandler {
                     ctx.advanceLocation(Util.LINE_SEPARATOR.length());
                 }
             } else if(fallbackToEscape){
-doHandle(ctx);
+                ctx.enterState(EscapeCharacterState.INSTANCE);
             } else {
-                ctx.enterState(EscapeCharacterState.KEEP_ESCAPE);
+doHandle(ctx);
             }
         } else {
             doHandle(ctx);

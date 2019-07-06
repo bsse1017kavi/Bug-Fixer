@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -975,9 +974,9 @@ public class Complex implements FieldElement<Complex>, Serializable  {
      * <p>Resolve the transient fields in a deserialized Complex Object.</p>
      * <p>Subclasses will need to override {@link #createComplex} to deserialize properly</p> 
      * @return A Complex instance with all fields resolved.
-protected final Object readResolve() {
+     * @since 2.0
      */
-    private final Object readResolve() {
+protected final Object readResolve() {
         return createComplex(real, imaginary);
     }
     

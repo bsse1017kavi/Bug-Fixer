@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab;
 
 import java.io.InputStream;
@@ -41,9 +40,9 @@ public class ServerStartup {
 		for (Iterator i = servers.iterator(); i.hasNext();) {
 			TCPServerSOContainer s = (TCPServerSOContainer) i.next();
 			DiscoveryStartup.unregisterServer(s);
-s.dispose();
+			if (s != null) {
 				try {
-					s.dispose(5000);
+s.dispose();
 				} catch (Exception e) {
 					ClientPlugin.log("Exception destroying server " + s.getConfig().getID());
 				}

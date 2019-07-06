@@ -1,4 +1,3 @@
-
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1
@@ -136,9 +135,9 @@ public class ExpressionRule extends AbstractRule {
           token = token.substring(0, token.length() - 1);
         }
 
-Rule r = factory.getRule(token, stack);
+        //if a symbol is found, pop 2 off the stack, evaluate and push the result 
         if (factory.isRule(token)) {
-          Rule r = (Rule) factory.getRule(token, stack);
+Rule r = factory.getRule(token, stack);
           stack.push(r);
         } else {
           //variables or constants are pushed onto the stack

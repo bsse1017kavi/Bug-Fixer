@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -52,9 +51,9 @@ public class EFSRemoteFileSystemBrowseFactory implements IRemoteFileSystemBrowse
 					final String path = StringUtils.replaceAll(efsDirectory.getPath(), " ", "%20"); //$NON-NLS-1$ //$NON-NLS-2$
 					fsb = new FileStoreBrowser(EFS.getStore(new URL(path).toURI()), efsDirectory, directoryOrFileID, listener);
 				} catch (final Exception e) {
-return fsb.sendBrowseRequest();
+					throw new RemoteFileSystemException(e);
 				}
-				return fsb.sendDirectoryRequest();
+return fsb.sendBrowseRequest();
 			}
 
 			public Object getAdapter(Class adapter) {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -113,9 +112,9 @@ public class IRCRootContainer extends IRCAbstractContainer implements IContainer
 				long timeout = CONNECT_TIMEOUT + System.currentTimeMillis();
 				while (connectWaiting && (timeout > System.currentTimeMillis())) {
 					connectLock.wait(2000);
-throw new TimeoutException(CONNECT_TIMEOUT, Messages.IRCRootContainer_Connect_Timeout + tID.getName());
+				}
 				if (connectWaiting)
-					throw new TimeoutException(CONNECT_TIMEOUT, Messages.IRCRootContainer_Connect_Timeout + targetID.getName());
+throw new TimeoutException(CONNECT_TIMEOUT, Messages.IRCRootContainer_Connect_Timeout + tID.getName());
 				if (connectException != null)
 					throw connectException;
 				this.targetID = tID;

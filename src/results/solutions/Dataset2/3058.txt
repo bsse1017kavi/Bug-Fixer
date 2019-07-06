@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.classfmt;
 
 /*
@@ -257,9 +256,9 @@ public int[] getConstantPoolOffsets() {
 /*
  * Answer the resolved compoundName of the enclosing type
  * or null if the receiver is a top level type.
-if (this.innerInfo != null && !this.isAnonymous()) {
+ */
 public char[] getEnclosingTypeName() {
-	if (this.innerInfo != null) {
+if (this.innerInfo != null && !this.isAnonymous()) {
 		return this.innerInfo.getEnclosingTypeName();
 	}
 	return null;

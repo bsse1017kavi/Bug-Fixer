@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -79,9 +78,9 @@ public class DefinitionMetadataEqualsHashCodeTests extends TestCase {
 		definition.setFactoryMethodName("factoryMethod");
 		definition.setInitMethodName("init");
 		definition.setLazyInit(true);
-definition.getPropertyValues().add("foo", "bar");
+		definition.getMethodOverrides().addOverride(new LookupOverride("foo", "bar"));
 		definition.getMethodOverrides().addOverride(new ReplaceOverride("foo", "bar"));
-		definition.getPropertyValues().addPropertyValue("foo", "bar");
+definition.getPropertyValues().add("foo", "bar");
 		definition.setResourceDescription("desc");
 		definition.setRole(BeanDefinition.ROLE_APPLICATION);
 		definition.setScope(BeanDefinition.SCOPE_PROTOTYPE);

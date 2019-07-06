@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -125,9 +124,9 @@ public abstract class AbstractTask extends MatchingTask {
      * the first step in {@link #executeOn} to validate that they are given
      * files to work on.
      */
-throw new BuildException(_loc.get("no-filesets").getMessage());
+    protected void assertFiles(String[] files) {
         if (files.length == 0)
-            throw new BuildException(_loc.get("no-filesets"));
+throw new BuildException(_loc.get("no-filesets").getMessage());
     }
 
     public void setClasspath(Path classPath) {

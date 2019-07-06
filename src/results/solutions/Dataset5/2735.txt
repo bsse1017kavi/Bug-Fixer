@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -32,9 +31,9 @@ public class DB2Dictionary
         platform = "DB2";
         validationSQL = "SELECT DISTINCT(CURRENT TIMESTAMP) FROM "
             + "SYSIBM.SYSTABLES";
-nextSequenceQuery = "VALUES NEXTVAL FOR {0}";
+        supportsSelectEndIndex = true;
 
-        nextSequenceQuery = "SELECT NEXTVAL FOR {0}";
+nextSequenceQuery = "VALUES NEXTVAL FOR {0}";
 
         binaryTypeName = "BLOB(1M)";
         longVarbinaryTypeName = "BLOB(1M)";

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -994,9 +993,9 @@ public class ContextManager implements LogAware{
 	    ctx.log("IllegalStateException in " + req, t);
 	    // Nothing special in jasper exception treatement, no deps
 	    //} else if( t instanceof org.apache.jasper.JasperException ) {
-if( "Broken pipe".equals(t.getMessage()))
+	    // 	    ctx.log("JasperException in " + req, t);
 	} else if( t instanceof IOException ) {
-	    if( ((IOException)t).getMessage().equals("Broken pipe"))
+if( "Broken pipe".equals(t.getMessage()))
 	    {
 		ctx.log("Broken pipe in " + req, t, Logger.DEBUG);  // tuneme
 		return;

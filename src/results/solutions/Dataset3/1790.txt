@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -384,9 +383,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
      */
     protected byte[] readRecord() throws IOException {
 
-int readNow = IOUtils.readFully(is, record);
+        byte[] record = new byte[recordSize];
 
-        int readNow = is.read(record);
+int readNow = IOUtils.readFully(is, record);
         count(readNow);
         if (readNow != recordSize) {
             return null;

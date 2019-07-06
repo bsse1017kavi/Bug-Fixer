@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.harness.procedure
@@ -44,9 +43,9 @@ up access to utility routines - see OnlineCompressTest.java as an example.
 **/
 public abstract class BaseTest
 {
-abstract public void testList(Connection conn) throws SQLException;
+    private static boolean debug_system_procedures_created = false;
 
-    abstract void testList(Connection conn) throws SQLException;
+abstract public void testList(Connection conn) throws SQLException;
 
     void runTests(String[] argv)
         throws Throwable

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -143,9 +142,9 @@ main(String argv[]) throws IOException {
 				else
 					ednsStr = argv[++arg];
 				edns = Integer.parseInt(ednsStr);
-"EDNS level: " +
+				if (edns < 0 || edns > 1) {
 					System.out.println("Unsupported " +
-							   "EDNS level " +
+"EDNS level: " +
 							   edns);
 					return;
 				}

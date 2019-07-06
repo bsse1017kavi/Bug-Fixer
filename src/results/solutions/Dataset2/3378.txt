@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -41,9 +40,9 @@ public static final byte Secure = 1;
 private static void
 digestSIG(DataByteOutputStream out, SIGRecord sig) {
 	out.writeShort(sig.getTypeCovered());
-out.writeUnsignedInt(sig.getOrigTTL());
+	out.writeByte(sig.getAlgorithm());
 	out.writeByte(sig.getLabels());
-	out.writeInt(sig.getOrigTTL());
+out.writeUnsignedInt(sig.getOrigTTL());
 	out.writeInt((int) (sig.getExpire().getTime() / 1000));
 	out.writeInt((int) (sig.getTimeSigned().getTime() / 1000));
 	out.writeShort(sig.getFootprint());

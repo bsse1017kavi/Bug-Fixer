@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class CoarseSessionCacheEntryExternalizer extends AbstractSimpleExternali
     public void writeObject(ObjectOutput output, CoarseSessionCacheEntry<Object> entry) throws IOException {
         this.externalizer.writeObject(output, (SimpleSessionMetaData) entry.getMetaData());
     }
-public CoarseSessionCacheEntry<Object> readObject(ObjectInput input) throws IOException {
+
     @Override
-    public CoarseSessionCacheEntry<Object> readObject(ObjectInput input) throws IOException, ClassNotFoundException {
+public CoarseSessionCacheEntry<Object> readObject(ObjectInput input) throws IOException {
         return new CoarseSessionCacheEntry<>(this.externalizer.readObject(input));
     }
 }

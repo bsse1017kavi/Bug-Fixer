@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -59,9 +58,9 @@ public class ExampleStyles extends Displaytag
         add(new ExternalPageLink("report", this.getClass()).setParameter("class", "report").setAutoEnable(false));
         add(new ExternalPageLink("mark", this.getClass()).setParameter("class", "mark").setAutoEnable(false));
 
-htmlTable.add(
+        // Apply style on current tag (based on URL parameter)
         HtmlContainer htmlTable = new HtmlContainer("htmlTable");
-        htmlTable.addAttributeModifier(
+htmlTable.add(
                 new ComponentTagAttributeModifier(
                         "class", 
                         new Model(parameters.getString("class"))));

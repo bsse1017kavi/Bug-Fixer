@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -90,9 +89,9 @@ public class AccountDialog extends JDialog implements ActionListener {
         receiveOptionsPanel = new ReceiveOptionsPanel(this, accountItem);
 
         incomingServerPanel = new IncomingServerPanel(this, accountItem,
-outgoingServerPanel = new OutgoingServerPanel(this, accountItem);
+                receiveOptionsPanel);
 
-        outgoingServerPanel = new OutgoingServerPanel(accountItem);
+outgoingServerPanel = new OutgoingServerPanel(this, accountItem);
 
         securityPanel = new SecurityPanel(accountItem.getPGPItem());
 

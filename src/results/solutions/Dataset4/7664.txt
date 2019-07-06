@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -165,9 +164,9 @@ public class SimpleNestedTests extends ElasticsearchIntegrationTest {
         assertNoFailures(searchResponse);
         assertThat(searchResponse.getHits().totalHits(), equalTo(1l));
 
-assertThat(deleteResponse.isFound(), equalTo(true));
+        // check delete, so all is gone...
         DeleteResponse deleteResponse = client().prepareDelete("test", "type1", "2").execute().actionGet();
-        assertThat(deleteResponse.isNotFound(), equalTo(false));
+assertThat(deleteResponse.isFound(), equalTo(true));
 
         // flush, so we fetch it from the index (as see that we filter nested docs)
         flush();

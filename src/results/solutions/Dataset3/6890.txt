@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class JMSBridgeHandler extends AbstractRuntimeOnlyHandler {
         if (READ_ATTRIBUTE_OPERATION.equals(operationName)) {
             readAttributeValidator.validate(operation);
             final String name = operation.require(NAME).asString();
-} else if (PAUSED.getName().equals(name)) {
+            if (STARTED.equals(name)) {
                 context.getResult().set(bridge.isStarted());
-            } else if (PAUSED.equals(name)) {
+} else if (PAUSED.getName().equals(name)) {
                 context.getResult().set(bridge.isPaused());
             } else {
                 throw MESSAGES.unsupportedAttribute(name);

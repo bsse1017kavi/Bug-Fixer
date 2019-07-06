@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1539,9 +1538,9 @@ public class EntityManagerImpl
         kernelQuery.compile();
         QueryImpl<T> facadeQuery = new QueryImpl<T>(this, _ret, kernelQuery);
         Set<ParameterExpression<?>> params = ((CriteriaQueryImpl<T>)criteriaQuery).getParameters();
-facadeQuery.declareParameter(param, param);
+        
         for (ParameterExpression<?> param : params) {
-            facadeQuery.registerParameter((QueryParameter<?>)param);
+facadeQuery.declareParameter(param, param);
         }
         return facadeQuery;
     }

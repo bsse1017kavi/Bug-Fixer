@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -106,9 +105,9 @@ public abstract class AbstractDistribZkTestBase extends BaseDistributedSearchTes
       File jettyHome = new File(new File(getSolrHome()).getParentFile(), "jetty" + homeCount.incrementAndGet());
       setupJettySolrHome(jettyHome);
       JettySolrRunner j = createJetty(jettyHome, null, "shard" + (i + 2));
-sb.append(buildUrl(j.getLocalPort()));
+      jettys.add(j);
       clients.add(createNewSolrServer(j.getLocalPort()));
-      sb.append("127.0.0.1:").append(j.getLocalPort()).append(context);
+sb.append(buildUrl(j.getLocalPort()));
     }
 
     shards = sb.toString();

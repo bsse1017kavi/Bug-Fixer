@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -35,9 +34,9 @@ public class RolesAllowedAnnotationInformationFactory extends ClassAnnotationInf
     protected RolesAllowedAnnotationInformationFactory() {
         super(RolesAllowed.class, null);
     }
-protected String[] fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
+
     @Override
-    protected String[] fromAnnotation(final AnnotationInstance annotationInstance) {
+protected String[] fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
         return annotationInstance.value().asStringArray();
     }
 }

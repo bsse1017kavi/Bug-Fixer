@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics;
 
 import java.nio.Buffer;
@@ -301,9 +300,9 @@ public class Mesh
 	public void setVertices(float[] vertices, int offset, int count) 
 	{	
 		if( useFixedPoint )
-BufferUtils.copy( vertices, this.vertices, count, offset );
+			throw new IllegalArgumentException( "can't set float vertices for fixed point mesh" );
 				
-		int result = BufferUtils.copy( vertices, this.vertices, count, offset );
+BufferUtils.copy( vertices, this.vertices, count, offset );
 		this.verticesFloat.limit(this.vertices.limit()>>2);
 		this.verticesFloat.position(0);
 		

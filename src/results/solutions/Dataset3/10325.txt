@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ class SizeRotatingFileHandlerAdd extends FlushingHandlerAddProperties<SizeRotati
             service.setMaxBackupIndex(maxBackupIndex.asInt());
         }
 
-service.setRotateSize(ModelParser.parseSize(rotateSizeNode));
+        final ModelNode rotateSizeNode = ROTATE_SIZE.resolveModelAttribute(context, model);
         if (rotateSizeNode.isDefined()) {
-            service.setRotateSize(SizeValidator.parseSize(rotateSizeNode.asString()));
+service.setRotateSize(ModelParser.parseSize(rotateSizeNode));
         }
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public class NodesInfoResponse extends NodesOperationResponse<NodeInfo> implemen
             }
 
 
-Settings settings = settingsFilter != null ? settingsFilter.filterSettings(nodeInfo.getSettings()) : nodeInfo.getSettings();
+            if (nodeInfo.getSettings() != null) {
                 builder.startObject("settings");
-                Settings settings = settingsFilter.filterSettings(nodeInfo.getSettings());
+Settings settings = settingsFilter != null ? settingsFilter.filterSettings(nodeInfo.getSettings()) : nodeInfo.getSettings();
                 for (Map.Entry<String, String> entry : settings.getAsMap().entrySet()) {
                     builder.field(entry.getKey(), entry.getValue(), XContentBuilder.FieldCaseConversion.NONE);
                 }

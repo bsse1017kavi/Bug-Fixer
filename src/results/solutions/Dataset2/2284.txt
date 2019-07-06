@@ -1,4 +1,3 @@
-
 /*
  * @(#) JRMPRegistry.java	1.0 02/07/15
  *
@@ -67,9 +66,9 @@ public class JRMPRegistry implements NameService {
 		    registry = LocateRegistry.createRegistry(port);
 		    // add a shudown hook for this process
 		    Runtime.getRuntime().addShutdownHook(new Thread() {
-JRMPRegistry.this.stop();
+			    public void run() {
 				try {
-				    stop();
+JRMPRegistry.this.stop();
 				} catch (Exception e) {
 				    TraceCarol.error("JRMPRegistry ShutdownHook problem" ,e);
 				}

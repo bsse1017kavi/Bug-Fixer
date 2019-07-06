@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ public class XmlAuthenticationResourceDefinition extends SimpleResourceDefinitio
 
     public XmlAuthenticationResourceDefinition() {
         super(PathElement.pathElement(ModelDescriptionConstants.AUTHENTICATION, ModelDescriptionConstants.USERS),
-new SecurityRealmChildRemoveHandler(true),
+                ControllerResolver.getResolver("core.management.security-realm.authentication.xml"),
                 new SecurityRealmChildAddHandler(true),
-                new SecurityRealmChildRemoveHandler(true, false),
+new SecurityRealmChildRemoveHandler(true),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES,
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES);
     }

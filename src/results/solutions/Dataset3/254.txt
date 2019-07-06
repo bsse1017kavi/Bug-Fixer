@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -209,9 +208,9 @@ public final class ServerGroupDeploymentElement extends AbstractModelElement<Ser
         if (!this.start) streamWriter.writeAttribute(Attribute.START.getLocalName(), "false");
     }
 
-final String deploymentName = key.getName() + ":" + key.getSha1HashAsHexString();
+    @Override
     public void activate(final ServiceActivatorContext context) {
-        final String deploymentName = key.getName().replace('.', '_');
+final String deploymentName = key.getName() + ":" + key.getSha1HashAsHexString();
         log.info("Activating server group deployment: " + deploymentName);
 
         final VirtualFile deploymentRoot = VFS.getChild(getFullyQualifiedDeploymentPath(key.getName()));

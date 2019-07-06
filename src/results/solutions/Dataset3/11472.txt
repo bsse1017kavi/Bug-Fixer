@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -39,8 +38,8 @@ public class SimpleInterceptor {
         this.postConstructInvoked = true;
     }
 
-return getClass().getName() + "#" + ctx.proceed();
+    @AroundInvoke
     public Object onInvoke(InvocationContext ctx) throws Exception {
-        return ctx.proceed();
+return getClass().getName() + "#" + ctx.proceed();
     }
 }

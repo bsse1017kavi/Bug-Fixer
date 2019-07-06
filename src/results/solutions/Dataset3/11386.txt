@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -434,9 +433,9 @@ class RemotingSubsystem11Parser implements XMLStreamConstants, XMLElementReader<
             throw missingRequired(reader, required);
         }
         final PathAddress address = PathAddress.pathAddress(PathAddress.pathAddress(parentAddress), PathElement.pathElement(CommonAttributes.REMOTE_OUTBOUND_CONNECTION, name));
-operations.add(getConnectionAddOperation(name, outboundSocketBindingRef, username, securityRealm, address));
+
         // create add operation add it to the list of operations
-        operations.add(getConnectionAddOperation(name, outboundSocketBindingRef, address));
+operations.add(getConnectionAddOperation(name, outboundSocketBindingRef, username, securityRealm, address));
         // parse the nested elements
         final EnumSet<Element> visited = EnumSet.noneOf(Element.class);
         while (reader.hasNext() && reader.nextTag() != END_ELEMENT) {

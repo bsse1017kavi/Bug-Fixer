@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -82,9 +81,9 @@ public class FacetParseElement implements SearchParseElement {
                             XContentIndexQueryParser indexQueryParser = (XContentIndexQueryParser) context.queryParser();
                             filter = indexQueryParser.parseInnerFilter(parser);
                         } else {
-throw new SearchParseException(context, "No facet type found for [" + facetFieldName + "]");
+                            FacetProcessor facetProcessor = facetProcessors.processor(facetFieldName);
                             if (facetProcessor == null) {
-                                throw new SearchParseException(context, "No facet type for [" + facetFieldName + "]");
+throw new SearchParseException(context, "No facet type found for [" + facetFieldName + "]");
                             }
                             facet = facetProcessor.parse(topLevelFieldName, parser, context);
                         }

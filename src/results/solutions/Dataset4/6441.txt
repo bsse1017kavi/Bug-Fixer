@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -81,9 +80,9 @@ abstract class AbstractBigArray extends AbstractArray {
 
     public abstract void resize(long newSize);
 
-public final long ramBytesUsed() {
+    protected abstract int numBytesPerElement();
 
-    public final long sizeInBytes() {
+public final long ramBytesUsed() {
         // rough approximate, we only take into account the size of the values, not the overhead of the array objects
         return ((long) pageIndex(size - 1) + 1) * pageSize() * numBytesPerElement();
     }

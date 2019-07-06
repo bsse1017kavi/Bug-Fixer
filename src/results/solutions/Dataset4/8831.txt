@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -120,9 +119,9 @@ public class ScriptFilterParser extends AbstractIndexComponent implements XConte
             SearchContext context = SearchContext.current();
             if (context == null) {
                 throw new ElasticSearchIllegalStateException("No search context on going...");
-this.searchScript = new SearchScript(context.lookup(), scriptLang, script, params, scriptService);
+            }
 
-            this.searchScript = new SearchScript(context.scriptSearchLookup(), scriptLang, script, params, scriptService);
+this.searchScript = new SearchScript(context.lookup(), scriptLang, script, params, scriptService);
         }
 
         @Override public String toString() {

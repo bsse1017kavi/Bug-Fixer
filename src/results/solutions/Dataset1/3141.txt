@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -139,9 +138,9 @@ public class TestBagOfPostings extends LuceneTestCase {
       // don't really need to check more than this, as CheckIndex
       // will verify that docFreq == actual number of documents seen
       // from a docsAndPositionsEnum.
-iw.shutdown();
+    }
     ir.close();
-    iw.close();
+iw.shutdown();
     dir.close();
   }
 }

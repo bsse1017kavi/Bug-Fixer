@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -41,9 +40,9 @@ public class SimpleConfigTests {
 		ServiceInvocationCounter serviceInvocationCounter = ctx.getBean("serviceInvocationCounter", ServiceInvocationCounter.class);
 
 		String value = fooService.foo(1);
-Future<?> future = fooService.asyncFoo(1);
+		assertEquals("bar", value);
 
-		Future future = fooService.asyncFoo(1);
+Future<?> future = fooService.asyncFoo(1);
 		assertTrue(future instanceof FutureTask);
 		assertEquals("bar", future.get());
 

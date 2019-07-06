@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -48,9 +47,9 @@ public class TransactionLeakRollbackProcessor implements DeploymentUnitProcessor
         final TransactionRollbackSetupAction service = new TransactionRollbackSetupAction(serviceName);
         phaseContext.getServiceTarget().addService(serviceName, service)
                 .addDependency(TransactionManagerService.SERVICE_NAME, TransactionManager.class, service.getTransactionManager())
-deploymentUnit.addToAttachmentList(org.jboss.as.ee.component.Attachments.WEB_SETUP_ACTIONS, service);
+                .install();
 
-        deploymentUnit.addToAttachmentList(org.jboss.as.ee.component.Attachments.EE_SETUP_ACTIONS, service);
+deploymentUnit.addToAttachmentList(org.jboss.as.ee.component.Attachments.WEB_SETUP_ACTIONS, service);
     }
 
 

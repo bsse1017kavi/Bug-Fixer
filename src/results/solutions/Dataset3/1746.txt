@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -248,9 +247,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
             // read in the name
             StringBuffer longName = new StringBuffer();
             byte[] buf = new byte[SMALL_BUFFER_SIZE];
-longName.append(new String(buf, 0, length)); // TODO default charset?
+            int length = 0;
             while ((length = read(buf)) >= 0) {
-                longName.append(new String(buf, 0, length));
+longName.append(new String(buf, 0, length)); // TODO default charset?
             }
             getNextEntry();
             if (currEntry == null) {

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -467,9 +466,9 @@ public class ModelTestUtils {
                             stack.pop();
                         }
                     }
-if (children.contains(pe.getKey()) && model.hasDefined(pe.getKey()) && model.get(pe.getKey()).hasDefined(pe.getValue())) {
+                }
             } else {
-                if (children.contains(pe.getKeyValuePair())) {
+if (children.contains(pe.getKey()) && model.hasDefined(pe.getKey()) && model.get(pe.getKey()).hasDefined(pe.getValue())) {
                     String name = pe.getValue();
                     ModelNode value = model.get(pe.getKeyValuePair());
                     ManagementResourceRegistration sub = rr.getSubModel(PathAddress.pathAddress(pe));

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -46,9 +45,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream, boolean
 	int pc = codeStream.position;
 	if (valueRequired) {
 		codeStream.aload_0();
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+		codeStream.getfield(delegateThis);
 	}
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 public boolean isSuperAccess(){
 	return false;

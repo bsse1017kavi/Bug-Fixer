@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public abstract class TransportAction<Request extends ActionRequest, Response ex
         return future;
     }
 
-listener = new ThreadedActionListener<>(threadPool, listener, logger);
+    public void execute(Request request, ActionListener<Response> listener) {
         if (request.listenerThreaded()) {
-            listener = new ThreadedActionListener<Response>(threadPool, listener, logger);
+listener = new ThreadedActionListener<>(threadPool, listener, logger);
         }
         ActionRequestValidationException validationException = request.validate();
         if (validationException != null) {

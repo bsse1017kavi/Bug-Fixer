@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -226,9 +225,9 @@ public class TransportMoreLikeThisAction extends BaseAction<MoreLikeThisRequest,
                 .boostTermsFactor(request.boostTermsFactor())
                 .minDocFreq(request.minDocFreq())
                 .maxDocFreq(request.maxDocFreq())
-.minTermFreq(request.minTermFreq())
+                .minWordLen(request.minWordLen())
                 .maxWordLen(request.maxWordLen())
-                .minTermFrequency(request.minTermFrequency())
+.minTermFreq(request.minTermFreq())
                 .maxQueryTerms(request.maxQueryTerms())
                 .stopWords(request.stopWords());
         boolBuilder.should(mlt);

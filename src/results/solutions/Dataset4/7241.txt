@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class InternalTransportIndicesAdminClient extends AbstractIndicesAdminCli
     @Inject
     public InternalTransportIndicesAdminClient(Settings settings, TransportClientNodesService nodesService, TransportService transportService, ThreadPool threadPool,
                                                Map<String, GenericAction> actions) {
-MapBuilder<IndicesAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<>();
+        this.nodesService = nodesService;
         this.threadPool = threadPool;
-        MapBuilder<IndicesAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<IndicesAction, TransportActionNodeProxy>();
+MapBuilder<IndicesAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<>();
         for (GenericAction action : actions.values()) {
             if (action instanceof IndicesAction) {
                 actionsBuilder.put((IndicesAction) action, new TransportActionNodeProxy(settings, action, transportService));

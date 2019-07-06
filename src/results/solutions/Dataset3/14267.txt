@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -244,9 +243,9 @@ public abstract class AttributeDefinition {
      * @param resourceDescription  the overall resource description
      * @return  the attribute description node
      */
-attr.get(ModelDescriptionConstants.TYPE).set(type);
+    public ModelNode addResourceAttributeDescription(final ResourceBundle bundle, final String prefix, final ModelNode resourceDescription) {
         final ModelNode attr = new ModelNode();
-        attr.get(ModelDescriptionConstants.TYPE).set(attr.getType());
+attr.get(ModelDescriptionConstants.TYPE).set(type);
         attr.get(ModelDescriptionConstants.DESCRIPTION).set(getAttributeTextDescription(bundle, prefix));
         attr.get(ModelDescriptionConstants.EXPRESSIONS_ALLOWED).set(isAllowExpression());
         attr.get(ModelDescriptionConstants.NILLABLE).set(isAllowNull());

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -56,9 +55,9 @@ public class LayoutAction extends Action {
       ec.pushObject(layout);
     } catch (Exception oops) {
       inError = true;
-ec.addError(new ErrorItem("Could not create layout of type " + className + "]."));
+      logger.error(
         "Could not create an Layout. Reported error follows.", oops);
-      ec.addError(new ErrorItem("Could not create layout of type " + className + "].", ec.getLocator()));
+ec.addError(new ErrorItem("Could not create layout of type " + className + "]."));
     }
   }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -523,9 +522,9 @@ public class BaseWicketTester extends MockWebApplication
 	public <C extends Component> Result isComponent(String path, Class<C> expectedComponentClass)
 	{
 		Component component = getComponentFromLastRenderedPage(path);
-return Result.fail("Component not found: " + path);
+		if (component == null)
 		{
-			Result.fail("Component not found: " + path);
+return Result.fail("Component not found: " + path);
 		}
 		return isTrue("component '" + Classes.simpleName(component.getClass()) + "' is not type:" +
 			Classes.simpleName(expectedComponentClass),

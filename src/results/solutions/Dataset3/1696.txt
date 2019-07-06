@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -878,9 +877,9 @@ public class DateUtils {
                         //  we want to do this our own way.
                         offset = val.get(Calendar.HOUR_OF_DAY);
                         if (offset >= 12) {
-roundUp = offset >= 6;
+                            offset -= 12;
                         }
-                        roundUp = offset > 6;
+roundUp = offset >= 6;
                         offsetSet = true;
                     }
                     break;

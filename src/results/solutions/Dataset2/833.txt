@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -196,9 +195,9 @@ send(Message query) {
 
 private int
 uniqueID(Message m) {
-(r.getType() << 8) +
+	Record r = m.getQuestion();
 	return (((r.getName().hashCode() & 0xFFFF) << 16) +
-		(r.getType() + hashCode() << 8) +
+(r.getType() << 8) +
 		(hashCode() & 0xFF));
 }
 

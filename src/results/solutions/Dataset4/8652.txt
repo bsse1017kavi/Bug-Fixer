@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class RestTestSectionParser implements RestTestFragmentParser<TestSection
         parseContext.advanceToFieldName();
         TestSection testSection = new TestSection(parser.currentName());
         parser.nextToken();
-boolean skip = testSection.getSkipSection().skip(parseContext.getCurrentVersion());
+        testSection.setSkipSection(parseContext.parseSkipSection());
 
-        boolean skip = testSection.getSkipSection().skipVersion(parseContext.getCurrentVersion());
+boolean skip = testSection.getSkipSection().skip(parseContext.getCurrentVersion());
 
         while ( parser.currentToken() != XContentParser.Token.END_ARRAY) {
             if (skip) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -414,9 +413,9 @@ public final class ExtensionContextImpl implements ExtensionContext {
         }
 
         @Override
-return ExtensionContextImpl.this.doRegisterSubsystem(name);
+        public SubsystemRegistration registerSubsystem(String name) throws IllegalArgumentException {
             trackSubsystem(moduleName, name);
-            return ExtensionContextImpl.this.registerSubsystem(name);
+return ExtensionContextImpl.this.doRegisterSubsystem(name);
         }
 
         @Override

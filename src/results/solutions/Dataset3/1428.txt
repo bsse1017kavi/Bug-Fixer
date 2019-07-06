@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -129,9 +128,9 @@ public class PatchBuilder extends ModificationBuilderTarget<PatchBuilder> implem
                         ((PatchElementProviderImpl)element.getProvider()).upgrade();
                     } else {
                         ((PatchElementProviderImpl)element.getProvider()).oneOffPatch();
-throw PatchMessages.MESSAGES.patchTypesDontMatch();
+                    }
                 } else if (patchType != PatchBuilder.this.patchType) {
-                    throw new RuntimeException("patch types don't match");
+throw PatchMessages.MESSAGES.patchTypesDontMatch();
                 }
                 return element;
             }

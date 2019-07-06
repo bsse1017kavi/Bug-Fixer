@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -34,9 +33,9 @@ import java.io.IOException;
  */
 public class GeoPointFieldDataType implements FieldDataType<GeoPointFieldData> {
 
-@Override public FieldComparatorSource newFieldComparatorSource(final FieldDataCache cache, final String missing) {
+    public static final GeoPointFieldDataType TYPE = new GeoPointFieldDataType();
 
-    @Override public FieldComparatorSource newFieldComparatorSource(final FieldDataCache cache) {
+@Override public FieldComparatorSource newFieldComparatorSource(final FieldDataCache cache, final String missing) {
         return new FieldComparatorSource() {
             @Override public FieldComparator newComparator(String fieldname, int numHits, int sortPos, boolean reversed) throws IOException {
                 return new StringOrdValFieldDataComparator(numHits, fieldname, sortPos, reversed, cache);

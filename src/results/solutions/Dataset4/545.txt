@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -46,9 +45,9 @@ public class TransportMultiTermVectorsAction extends TransportAction<MultiTermVe
     private final TransportSingleShardMultiTermsVectorAction shardAction;
 
     @Inject
-super(settings, MultiTermVectorsAction.NAME, threadPool);
+    public TransportMultiTermVectorsAction(Settings settings, ThreadPool threadPool, TransportService transportService,
                                            ClusterService clusterService, TransportSingleShardMultiTermsVectorAction shardAction) {
-        super(settings, threadPool);
+super(settings, MultiTermVectorsAction.NAME, threadPool);
         this.clusterService = clusterService;
         this.shardAction = shardAction;
 

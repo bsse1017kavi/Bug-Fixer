@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -309,9 +308,9 @@ public class MetaDataMappingService extends AbstractComponent {
                 listener.onResponse(new ClusterStateUpdateResponse(true));
             }
 
-listener.onResponse(new ClusterStateUpdateResponse(false));
+            @Override
             public void onAckTimeout() {
-                listener.onResponse(new ClusterStateUpdateResponse(true));
+listener.onResponse(new ClusterStateUpdateResponse(false));
             }
 
             @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -660,9 +659,9 @@ public class MoreLikeThisRequest implements ActionRequest {
             out.writeBoolean(false);
         } else {
             out.writeBoolean(true);
-out.writeBytesReference(searchSource);
+            searchScroll.writeTo(out);
         }
-        out.writeBytesReference(searchSource, true);
+out.writeBytesReference(searchSource);
 
         out.writeVInt(searchSize);
         out.writeVInt(searchFrom);

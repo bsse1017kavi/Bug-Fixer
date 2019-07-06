@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -316,9 +315,9 @@ public class BalanceConfigurationTests extends ElasticsearchAllocationTestCase {
         final NodeSettingsService.Listener[] listeners = new NodeSettingsService.Listener[1];
         NodeSettingsService service = new NodeSettingsService(settingsBuilder().build()) {
 
-assertNull("addListener was called twice while only one time was expected", listeners[0]);
+            @Override
             public void addListener(Listener listener) {
-                assert listeners[0] == null;
+assertNull("addListener was called twice while only one time was expected", listeners[0]);
                 listeners[0] = listener;
             }
 

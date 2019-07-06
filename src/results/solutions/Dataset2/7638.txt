@@ -1,4 +1,3 @@
-
 package org.argouml.ocl;
 
 import java.util.*;
@@ -77,9 +76,9 @@ class ArgoAny implements Any {
       Iterator asciter = associationEnds.iterator();
       while (asciter.hasNext() && foundAssocType == null) {
         MAssociationEnd ae = (MAssociationEnd)asciter.next();
-} else if (ae.getName()==null || ae.getName().equals("")) {
+        if (ae.getName()!=null && name.equals(ae.getName())) {
           foundAssocType = ae.getType();
-        } else if (ae.getName()==null) {
+} else if (ae.getName()==null || ae.getName().equals("")) {
           String oppositeName = ae.getType().getName();
           if (oppositeName != null) {
             String lowerOppositeName = oppositeName.substring(0,1).toLowerCase();

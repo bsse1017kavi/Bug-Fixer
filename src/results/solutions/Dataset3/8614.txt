@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -108,9 +107,9 @@ public class DeploymentScannerService implements Service<DeploymentScanner> {
     DeploymentScannerService(final Integer interval, final TimeUnit unit, final Boolean autoDeployZipped,
             final Boolean autoDeployExploded, final Boolean enabled, final Long deploymentTimeout) {
         this.interval = interval == null ? DEFAULT_INTERVAL : interval.longValue();
-this.autoDeployExploded = autoDeployExploded == null ? false : autoDeployExploded.booleanValue();
+        this.unit = unit;
         this.autoDeployZipped = autoDeployZipped == null ? true : autoDeployZipped.booleanValue();
-        this.autoDeployExploded = autoDeployExploded == null ? true : autoDeployExploded.booleanValue();
+this.autoDeployExploded = autoDeployExploded == null ? false : autoDeployExploded.booleanValue();
         this.enabled = enabled == null ? true : enabled.booleanValue();
         this.deploymentTimeout = deploymentTimeout;
     }

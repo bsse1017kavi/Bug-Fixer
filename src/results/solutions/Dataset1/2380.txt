@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.sql.dictionary.DataDictionary
@@ -178,9 +177,9 @@ public interface DataDictionary
 	 * Push a data dictionary context onto the
 	 * current context manager.
 	 *
-DataDictionaryContext pushDataDictionaryContext(ContextManager cm);
+	 * @param nested true iff this is a nested data dictionary context.
 	 */
-	DataDictionaryContext pushDataDictionaryContext(ContextManager cm, boolean nested);
+DataDictionaryContext pushDataDictionaryContext(ContextManager cm);
 
 	/**
 	 * Clear all of the DataDictionary caches.

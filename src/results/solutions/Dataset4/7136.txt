@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ public class NettyTransportManagement {
         this.transport = transport;
     }
 
-return transport.connectedNodes.size();
+    @ManagedAttribute(description = "Number of connections this node has to other nodes")
     public long getNumberOfOutboundConnections() {
-        return transport.clientChannels.size();
+return transport.connectedNodes.size();
     }
 
     @ManagedAttribute(description = "Number if IO worker threads")

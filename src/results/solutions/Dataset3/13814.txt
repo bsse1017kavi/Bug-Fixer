@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -303,9 +302,9 @@ class AnnotationDrivenBeanDefinitionParser implements BeanDefinitionParser {
 		if (element.hasAttribute("validator")) {
 			return new RuntimeBeanReference(element.getAttribute("validator"));
 		}
-"org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean");
+		else if (javaxValidationPresent) {
 			RootBeanDefinition validatorDef = new RootBeanDefinition(
-					"org.springframework.validation.beanvalidation.LocalValidatorFactoryBean");
+"org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean");
 			validatorDef.setSource(source);
 			validatorDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
 			String validatorName = parserContext.getReaderContext().registerWithGeneratedName(validatorDef);

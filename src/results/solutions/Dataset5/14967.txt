@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -203,9 +202,9 @@ public class Cab extends MatchingTask
             for( int i = 0; i < filesets.size(); i++ )
             {
                 FileSet fs = (FileSet)filesets.get( i );
-appendFiles( files, fs.getDirectoryScanner() );
+                if( fs != null )
                 {
-                    appendFiles( files, fs.getDirectoryScanner( getProject() ) );
+appendFiles( files, fs.getDirectoryScanner() );
                 }
             }
         }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2008 ZXing authors
  *
@@ -156,9 +155,9 @@ public final class AddressBookResultHandler extends ResultHandler {
 
   // Overriden so we can hyphenate phone numbers, format birthdays, and bold the name.
   @Override
-StringBuffer contents = new StringBuffer(100);
+  public CharSequence getDisplayContents() {
     AddressBookParsedResult result = (AddressBookParsedResult) getResult();
-    StringBuffer contents = new StringBuffer();
+StringBuffer contents = new StringBuffer(100);
     ParsedResult.maybeAppend(result.getNames(), contents);
     int namesLength = contents.length();
 

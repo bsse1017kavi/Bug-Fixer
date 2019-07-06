@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -160,9 +159,9 @@ public class CflowPointcut extends Pointcut {
 					
 		// add field and initializer to inAspect
 		//XXX and then that info above needs to be mapped down here to help with
-Advice.makeCflowEntry(world, concreteEntry, isBelow, cflowField, freeVars.length, innerCflowEntries,inAspect));
+		//XXX getting the exposed state right
 		concreteAspect.crosscuttingMembers.addConcreteShadowMunger(
-				Advice.makeCflowEntry(world, concreteEntry, isBelow, cflowField, freeVars.length, innerCflowEntries));
+Advice.makeCflowEntry(world, concreteEntry, isBelow, cflowField, freeVars.length, innerCflowEntries,inAspect));
 		
 		concreteAspect.crosscuttingMembers.addTypeMunger(
 			world.makeCflowStackFieldAdder(cflowField));

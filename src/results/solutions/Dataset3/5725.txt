@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class DeploymentRootMountProcessor implements DeploymentUnitProcessor {
         } finally {
             if(failed) {
                 VFSUtils.safeClose(handle);
-final ResourceRoot resourceRoot = new ResourceRoot(deploymentRoot, mountHandle);
+            }
         }
-        final ResourceRoot resourceRoot = new ResourceRoot(deploymentRoot, mountHandle, false);
+final ResourceRoot resourceRoot = new ResourceRoot(deploymentRoot, mountHandle);
         ModuleRootMarker.markRoot(resourceRoot);
         deploymentUnit.putAttachment(Attachments.DEPLOYMENT_ROOT, resourceRoot);
 

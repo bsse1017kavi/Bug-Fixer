@@ -1,4 +1,3 @@
-
 /*
  * ManagePanel.java - Manages plugins
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -377,9 +376,9 @@ public class ManagePanel extends JPanel
 		{
 			Entry entry = pluginModel.getEntry(row);
 			if (entry.status.equals(Entry.ERROR))
-tcr.setForeground(UIManager.getColor("Table.foreground"));
+				tcr.setForeground(Color.red);
 			else
-				tcr.setForeground(Color.black);
+tcr.setForeground(UIManager.getColor("Table.foreground"));
 			return tcr.getTableCellRendererComponent(table,value,isSelected,false,row,column);
 		}
 	} //}}}

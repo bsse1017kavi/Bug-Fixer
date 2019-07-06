@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -636,9 +635,9 @@ public static char[] createCharArrayTypeSignature(char[] typeName, boolean isRes
 	return result;
 }
 private static int consumeWhitespace(char[] typeName, int pos, int length) {
-if (currentChar != ' ' && !ScannerHelper.isWhitespace(currentChar)) {
+    while (pos < length) {
         char currentChar = typeName[pos];
-        if (currentChar != ' ' && !CharOperation.isWhitespace(currentChar)) {
+if (currentChar != ' ' && !ScannerHelper.isWhitespace(currentChar)) {
             break;
         }
         pos++;

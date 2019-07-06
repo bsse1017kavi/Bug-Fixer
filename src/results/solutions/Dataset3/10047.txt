@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -82,9 +81,9 @@ class ArquillianConfig implements Service<ArquillianConfig> {
         return builder;
     }
 
-builder.addDependency(Services.FRAMEWORK_ACTIVE);
+    void addFrameworkDependency(ServiceBuilder<ArquillianConfig> builder) {
         builder.addDependency(Services.SYSTEM_CONTEXT, BundleContext.class, injectedBundleContext);
-        builder.addDependency(Services.FRAMEWORK_ACTIVATOR);
+builder.addDependency(Services.FRAMEWORK_ACTIVE);
     }
 
     ServiceName getServiceName() {

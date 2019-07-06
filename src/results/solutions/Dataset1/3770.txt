@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.hi;
 
 /**
@@ -31,9 +30,9 @@ import org.apache.lucene.analysis.tokenattributes.TermAttribute;
 public final class HindiStemFilter extends TokenFilter {
   private final TermAttribute termAtt = addAttribute(TermAttribute.class);
   private final KeywordAttribute keywordAtt = addAttribute(KeywordAttribute.class);
-public HindiStemFilter(TokenStream input) {
+  private final HindiStemmer stemmer = new HindiStemmer();
   
-  protected HindiStemFilter(TokenStream input) {
+public HindiStemFilter(TokenStream input) {
     super(input);
   }
   

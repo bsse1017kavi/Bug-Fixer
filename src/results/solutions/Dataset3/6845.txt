@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -88,9 +87,9 @@ class JcaListenerContainerParser extends AbstractListenerContainerParser {
 					new RuntimeBeanReference(transactionManagerBeanName));
 		}
 
-configDef.getPropertyValues().addPropertyValue("maxConcurrency", concurrency[1]);
+		int[] concurrency = parseConcurrency(containerEle, parserContext);
 		if (concurrency != null) {
-			configDef.getPropertyValues().addPropertyValue("maxConcurrency", new Integer(concurrency[1]));
+configDef.getPropertyValues().addPropertyValue("maxConcurrency", concurrency[1]);
 		}
 
 		String prefetch = containerEle.getAttribute(PREFETCH_ATTRIBUTE);

@@ -1,4 +1,3 @@
-
 package org.jboss.as.messaging;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.ADD;
@@ -300,9 +299,9 @@ public class Messaging12SubsystemParser extends MessagingSubsystemParser {
                 case MAX_HOPS:
                 case MIN_LARGE_MESSAGE_SIZE:
                     handleElementText(reader, element, clusterConnectionAdd);
-handleElementText(reader, element, ClusterConnectionDefinition.ADDRESS.getName(), clusterConnectionAdd);
+                    break;
                 case ADDRESS:  {
-                    handleElementText(reader, element, CommonAttributes.CLUSTER_CONNECTION_ADDRESS.getName(), clusterConnectionAdd);
+handleElementText(reader, element, ClusterConnectionDefinition.ADDRESS.getName(), clusterConnectionAdd);
                     break;
                 }
                 case CONNECTOR_REF:  {

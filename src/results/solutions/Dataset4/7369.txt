@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class GeoHashGridParser implements Aggregator.Parser {
 
         if (shardSize < requiredSize) {
             shardSize = requiredSize;
-ValuesSourceConfig<GeoPointValuesSource> config = new ValuesSourceConfig<>(GeoPointValuesSource.class);
+        }
 
-        ValuesSourceConfig<GeoPointValuesSource> config = new ValuesSourceConfig<GeoPointValuesSource>(GeoPointValuesSource.class);
+ValuesSourceConfig<GeoPointValuesSource> config = new ValuesSourceConfig<>(GeoPointValuesSource.class);
         if (field == null) {
             return new GeoGridFactory(aggregationName, config, precision, requiredSize, shardSize);
         }

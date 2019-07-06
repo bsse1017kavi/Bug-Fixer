@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -265,9 +264,9 @@ public class Proxy extends Thread {
 	 * 
 	 * @return updated headers to be sent to client
 	 */
-String [] headerLines=headers.split(NEW_LINE, 0); // drop empty trailing content
+	private String massageResponseHeaders(SampleResult res) {
 		String headers = res.getResponseHeaders();
-		String [] headerLines=headers.split(NEW_LINE,-1); // keep empty trailing content
+String [] headerLines=headers.split(NEW_LINE, 0); // drop empty trailing content
 		int contentLengthIndex=-1;
 		boolean fixContentLength = false;
 		for (int i=0;i<headerLines.length;i++){

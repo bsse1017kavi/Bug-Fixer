@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class JMSTopicAdd extends AbstractJMSSubsystemUpdate<Void> {
         final JMSTopicService service = new JMSTopicService(name, jndiBindings());
         final ServiceName serviceName = JMSSubsystemElement.JMS_TOPIC_BASE.append(name);
         context.getBatchBuilder().addService(serviceName, service)
-.setInitialMode(Mode.ACTIVE);
+                .addDependency(JMSSubsystemElement.JMS_MANAGER, JMSServerManager.class, service.getJmsServer())
                 .addListener(new UpdateResultHandler.ServiceStartListener<P>(handler, param))
-                .setInitialMode(Mode.IMMEDIATE);
+.setInitialMode(Mode.ACTIVE);
     }
 
     /** {@inheritDoc} */

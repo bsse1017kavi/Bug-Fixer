@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -118,9 +117,9 @@ public class VersionsTests extends ElasticsearchLuceneTestCase {
     @Test
     public void testNestedDocuments() throws IOException {
         Directory dir = newDirectory();
-List<Document> docs = new ArrayList<>();
+        IndexWriter writer = new IndexWriter(dir, new IndexWriterConfig(Lucene.VERSION, Lucene.STANDARD_ANALYZER));
 
-        List<Document> docs = new ArrayList<Document>();
+List<Document> docs = new ArrayList<>();
         for (int i = 0; i < 4; ++i) {
             // Nested
             Document doc = new Document();

@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -37,9 +36,9 @@ public class CompoundCriteriaElement extends AbstractInterfaceCriteriaElement<Co
      * @param isAny true if this type {@link Element#ANY}, false if it is {@link Element#NOT}.
      *
      * @throws XMLStreamException if an error occurs
-super(isAny ? Element.ANY : Element.NOT);
+     */
     public CompoundCriteriaElement(XMLExtendedStreamReader reader, boolean isAny) throws XMLStreamException {
-        super(reader, isAny ? Element.ANY : Element.NOT);
+super(isAny ? Element.ANY : Element.NOT);
 
         Set<InterfaceCriteria> criteria = new HashSet<InterfaceCriteria>(interfaceCriteria.size());
         for (AbstractInterfaceCriteriaElement<?> element : interfaceCriteria.values()) {

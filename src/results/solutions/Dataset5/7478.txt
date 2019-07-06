@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -827,9 +826,9 @@ public abstract class RequestCycle
 	{
 		// Get Page holding component and mark it as stateful.
 		final Page page = component.getPage();
-page.isBookmarkable() && page.getStatelessHint())
+		final IRequestTarget target;
 		if (listener != IRedirectListener.INTERFACE && component.isStateless() &&
-			page.isBookmarkable())
+page.isBookmarkable() && page.getStatelessHint())
 		{
 			PageParameters pageParameters = page.getPageParameters();
 			if (pageParameters == null)

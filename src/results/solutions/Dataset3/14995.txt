@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ final class InitialModuleLoaderFactory {
                 for (String packageName : systemPackages)
                     packages.append("," + packageName);
             }
-ModuleLoader moduleLoader = Module.getBootModuleLoader();
+            SecurityActions.setSystemProperty("jboss.modules.system.pkgs", packages.toString());
 
-            ModuleLoader moduleLoader = Module.getSystemModuleLoader();
+ModuleLoader moduleLoader = Module.getBootModuleLoader();
 
             // Sanity check that the SYSTEM module ClassLoader cannot see this class
             try {

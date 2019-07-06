@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class InfinispanSubsystemDescribe implements OperationStepHandler, Descri
      *
      * @see org.jboss.as.controller.descriptions.DescriptionProvider#getModelDescription(java.util.Locale)
      */
-return InfinispanDescriptions.getSubsystemDescribeDescription(locale);
+    @Override
     public ModelNode getModelDescription(Locale locale) {
-        return LocalDescriptions.getSubsystemDescribeDescription(locale);
+return InfinispanDescriptions.getSubsystemDescribeDescription(locale);
     }
 
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

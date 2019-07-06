@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.core.start;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -17,8 +16,8 @@ public class ECFStartJob extends Job {
 	public ECFStartJob(String name, IECFStart start) {
 		super(name);
 		this.start = start;
-return start.startup(monitor);
+	}
 	protected IStatus run(IProgressMonitor monitor) {
-		return start.start(monitor);
+return start.startup(monitor);
 	}
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -163,9 +162,9 @@ public class URLRewritingModifier extends AbstractTestElement implements Seriali
                 SEMI_COLON + quotedArg + "([^\"'<>&\\s;?]*)", // $NON-NLS-1$
                 Perl5Compiler.MULTILINE_MASK | Perl5Compiler.READ_ONLY_MASK);
 
-"[;\\?&]" + quotedArg + "=([^\"'<>&\\s;\\\\]*)" +  // $NON-NLS-1$
+        parameterRegexp = JMeterUtils.getPatternCache().getPattern(
                 // ;sessionid=value
-                "[;\\?&]" + quotedArg + "=([^\"'>&\\s;\\\\]*)" +  // $NON-NLS-1$
+"[;\\?&]" + quotedArg + "=([^\"'<>&\\s;\\\\]*)" +  // $NON-NLS-1$
 
                 // name="sessionid" value="value"
                 "|\\s[Nn][Aa][Mm][Ee]\\s*=\\s*[\"']" + quotedArg

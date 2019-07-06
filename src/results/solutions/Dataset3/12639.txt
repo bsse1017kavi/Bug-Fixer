@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ class MailSessionDefinition extends SimpleResourceDefinition {
     private static final AttributeDefinition[] ATTRIBUTES = {DEBUG, JNDI_NAME, FROM};
 
     @Override
-rootResourceRegistration.registerReadWriteAttribute(attr, null, SessionAttributeWriteHandler.INSTANCE);
+    public void registerAttributes(final ManagementResourceRegistration rootResourceRegistration) {
         for (AttributeDefinition attr : ATTRIBUTES) {
-            rootResourceRegistration.registerReadWriteAttribute(attr, null, ReloadRequiredRemoveStepHandler.INSTANCE);
+rootResourceRegistration.registerReadWriteAttribute(attr, null, SessionAttributeWriteHandler.INSTANCE);
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class BatchHoldbackHandler extends CommandHandlerWithHelp {
             return;
         }
 
-name = ctx.getOtherArguments().get(0);
+        String name = null;
         if(ctx.hasArguments()) {
-            name = ctx.getArguments().get(0);
+name = ctx.getOtherArguments().get(0);
         }
 
         if(batchManager.isHeldback(name)) {

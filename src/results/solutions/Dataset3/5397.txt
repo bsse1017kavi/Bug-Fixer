@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public final class TransformerPredicate<T> implements Predicate<T>, Serializable
      *
      * @param transformer  the transformer to decorate
      * @return the predicate
-public static <T> Predicate<T> transformerPredicate(Transformer<? super T, Boolean> transformer) {
+     * @throws IllegalArgumentException if the transformer is null
      */
-    public static <T> Predicate<T> getInstance(Transformer<? super T, Boolean> transformer) {
+public static <T> Predicate<T> transformerPredicate(Transformer<? super T, Boolean> transformer) {
         if (transformer == null) {
             throw new IllegalArgumentException("The transformer to call must not be null");
         }

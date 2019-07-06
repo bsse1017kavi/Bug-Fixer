@@ -1,4 +1,3 @@
-
 package org.apache.solr.store.blockcache;
 
 /*
@@ -24,9 +23,9 @@ import java.io.IOException;
 import org.apache.lucene.store.IndexInput;
 import org.apache.lucene.store.IndexOutput;
 
-public static final int BUFFER_SIZE = 32768;
+public abstract class CustomBufferedIndexInput extends IndexInput {
   
-  public static final int BUFFER_SIZE = 1024;
+public static final int BUFFER_SIZE = 32768;
   
   private int bufferSize = BUFFER_SIZE;
   

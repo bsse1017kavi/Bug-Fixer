@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -54,9 +53,9 @@ Name(String s, Name origin) {
 	try {
 		MyStringTokenizer st = new MyStringTokenizer(s, ".");
 
-if (token.charAt(0) == '[')
+		while (st.hasMoreTokens()) {
 			String token = st.nextToken();
-			if (token.charAt(0) == '\\')
+if (token.charAt(0) == '[')
 				name[labels++] = new BitString(token);
 			else
 				name[labels++] = token;

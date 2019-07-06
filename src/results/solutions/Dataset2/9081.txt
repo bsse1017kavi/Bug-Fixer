@@ -1,4 +1,3 @@
-
 /*
  * jBoss, the OpenSource EJB server
  *
@@ -59,9 +58,9 @@ public class EJBSecurityManagerDatabaseImpl implements EJBSecurityManager
 
     Connection con = null;
     try
-DataSource ds = (DataSource) initial.lookup( "java:/SecurityDS" );
+    {
       InitialContext initial = new InitialContext();
-      DataSource ds = (DataSource) initial.lookup( "SecurityDS" );
+DataSource ds = (DataSource) initial.lookup( "java:/SecurityDS" );
       con = ds.getConnection();
       PreparedStatement statement = con.prepareStatement(
         "select pass from sec_access where name=?");

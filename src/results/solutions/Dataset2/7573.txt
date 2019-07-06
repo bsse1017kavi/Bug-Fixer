@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -42,9 +41,9 @@ public abstract class SubRoutineStatement extends Statement {
 	public void exitAnyExceptionHandler() {
 		if (this.anyExceptionLabelsCount == 0) return;
 		ExceptionLabel currentLabel = this.anyExceptionLabels[this.anyExceptionLabelsCount-1];
-this.anyExceptionLabels[--this.anyExceptionLabelsCount] = null;
+		if (currentLabel.start == currentLabel.codeStream.position) {
 			// discard empty exception handler
-			this.anyExceptionLabels[this.anyExceptionLabelsCount--] = null;
+this.anyExceptionLabels[--this.anyExceptionLabelsCount] = null;
 		}
 		currentLabel.placeEnd();
 	}

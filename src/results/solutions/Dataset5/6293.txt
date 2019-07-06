@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public final class Classes
 	 *            Class to resolve
 	 * @return Resolved class
 	 */
-if (Application.exists())
+	public static Class resolveClass(final String className)
 	{
-		if (Application.isAttached())
+if (Application.exists())
 		{
 			return Application.get().getApplicationSettings().getClassResolver().resolveClass(
 					className);

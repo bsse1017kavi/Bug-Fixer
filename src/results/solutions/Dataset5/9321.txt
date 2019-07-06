@@ -1,4 +1,3 @@
-
 package wicket.model;
 
 import java.util.Properties;
@@ -219,9 +218,9 @@ public class ModelToStringTest extends WicketTestCase
 		LoadableDetachableModel model = new MyLoadableDetachableModel();
 		String expected = "Model:classname=[" + model.getClass().getName() + "]"
 				+ ":attached=false" + ":tempModelObject=[null]";
-model.getObject(null);
+		assertEquals(expected, model.toString());
 
-		model.attach();
+model.getObject(null);
 		expected = "Model:classname=[" + model.getClass().getName() + "]" + ":attached=true"
 				+ ":tempModelObject=[foo]";
 		assertEquals(expected, model.toString());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ public final class ComponentInstallProcessor implements DeploymentUnitProcessor 
         final Set<ServiceName> dependencies = deploymentUnit.getAttachment(org.jboss.as.server.deployment.Attachments.JNDI_DEPENDENCIES);
 
         final ServiceName bindingDependencyService = JndiNamingDependencyProcessor.serviceName(deploymentUnit);
-for (final ComponentConfiguration configuration : moduleDescription.getComponentConfigurations()) {
+
         // Iterate through each component, installing it into the container
-        for (ComponentConfiguration configuration : moduleDescription.getComponentConfigurations()) {
+for (final ComponentConfiguration configuration : moduleDescription.getComponentConfigurations()) {
             try {
                 logger.tracef("Installing component %s", configuration.getComponentClass().getName());
                 deployComponent(phaseContext, configuration, dependencies, bindingDependencyService);

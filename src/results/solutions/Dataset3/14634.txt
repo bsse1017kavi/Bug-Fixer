@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public final class ServerStartTask implements ServerTask, Serializable, ObjectIn
         this.updates = updates;
         final Properties properties = new Properties(System.getProperties());
         properties.setProperty("jboss.server.name", serverName);
-providedEnvironment = new ServerEnvironment(properties, System.getenv(), null, ServerEnvironment.LaunchType.DOMAIN);
+        properties.setProperty("jboss.server.deploy.dir", properties.getProperty("jboss.domain.deployment.dir"));
         properties.setProperty("jboss.server.base.dir", properties.getProperty("jboss.domain.servers.dir") + File.separatorChar + serverName);
-        providedEnvironment = new ServerEnvironment(properties, System.getenv(), null, false);
+providedEnvironment = new ServerEnvironment(properties, System.getenv(), null, ServerEnvironment.LaunchType.DOMAIN);
     }
 
     @Override

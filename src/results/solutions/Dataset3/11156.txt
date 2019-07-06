@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -143,9 +142,9 @@ public class ConnectorTestCase extends AbstractMgmtTestBase {
 
     @Test
     public void testHttpsConnector() throws Exception {
-FileUtils.copyURLToFile(ConnectorTestCase.class.getResource("test.keystore"), keyStoreFile);
+        
                
-        FileUtils.copyURLToFile(ConnectorTestCase.class.getResource("/management/api/test.keystore"), keyStoreFile);        
+FileUtils.copyURLToFile(ConnectorTestCase.class.getResource("test.keystore"), keyStoreFile);
         
         addConnector(Connector.HTTPS);
 

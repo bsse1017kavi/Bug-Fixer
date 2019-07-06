@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -97,9 +96,9 @@ public class TransactionInterceptor extends TransactionAspectSupport implements 
 
 		// If the transaction attribute is null, the method is non-transactional.
 		final TransactionAttribute txAttr =
-final String joinpointIdentification = methodIdentification(invocation.getMethod(), targetClass);
+				getTransactionAttributeSource().getTransactionAttribute(invocation.getMethod(), targetClass);
 		final PlatformTransactionManager tm = determineTransactionManager(txAttr);
-		final String joinpointIdentification = methodIdentification(invocation.getMethod());
+final String joinpointIdentification = methodIdentification(invocation.getMethod(), targetClass);
 
 		if (txAttr == null || !(tm instanceof CallbackPreferringPlatformTransactionManager)) {
 			// Standard transaction demarcation with getTransaction and commit/rollback calls.

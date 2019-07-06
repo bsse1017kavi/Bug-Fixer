@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -1740,9 +1739,9 @@ public class SpelReproTests extends ExpressionTestCase {
 
 	@Test
 	public void SPR_10210() throws Exception {
-Expression parseExpression = parser.parseExpression("#bridgeExample.bridgeMethod()");
+		StandardEvaluationContext context = new StandardEvaluationContext();
 		context.setVariable("bridgeExample", new org.springframework.expression.spel.spr10210.D());
-		Expression parseExpression = parser.parseExpression("#bridgeExample.bridgetMethod()");
+Expression parseExpression = parser.parseExpression("#bridgeExample.bridgeMethod()");
 		parseExpression.getValue(context);
 	}
 

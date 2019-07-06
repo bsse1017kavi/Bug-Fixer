@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class MessagingTestCase {
     @Deployment
     public static JavaArchive createDeployment() throws Exception {
 
-"Dependencies: org.hornetq, org.jboss.dmr\n"), "MANIFEST.MF");
+        JavaArchive jar = ShrinkWrap.create(JavaArchive.class, "messaging-example.jar");
         jar.addAsManifestResource(new StringAsset("Manifest-Version: 1.0\n" +
-                "Dependencies: org.hornetq\n"), "MANIFEST.MF");
+"Dependencies: org.hornetq, org.jboss.dmr\n"), "MANIFEST.MF");
         jar.addClass(MessagingTestCase.class);
         return jar;
     }

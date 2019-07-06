@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public interface IndexStore extends IndexComponent {
     boolean persistent();
 
     /**
-Class<? extends DirectoryService> shardDirectory();
+     * The shard store class that should be used for each shard.
      */
-    Class<? extends Store> shardStoreClass();
+Class<? extends DirectoryService> shardDirectory();
 
     /**
      * Returns the backing store total space. Return <tt>-1</tt> if not available.

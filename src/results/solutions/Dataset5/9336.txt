@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -32,9 +31,9 @@ public static void main(String[] args) {
 	final ToolTip tip = new ToolTip(shell, SWT.BALLOON | SWT.ICON_INFORMATION);
 	tip.setMessage("Here is a message for the user. When the message is too long it wraps. I should say something cool but nothing comes to my mind.");
 	Tray tray = display.getSystemTray();
-image = display.getSystemImage(SWT.ICON_INFORMATION);
+	if (tray != null) {
 		TrayItem item = new TrayItem(tray, SWT.NONE);
-		image = new Image(display, Snippet225.class.getResourceAsStream("eclipse.png"));
+image = display.getSystemImage(SWT.ICON_INFORMATION);
 		item.setImage(image);
 		tip.setText("Notification from a tray item");
 		item.setToolTip(tip);

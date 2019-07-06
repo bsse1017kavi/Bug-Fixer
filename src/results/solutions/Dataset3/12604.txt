@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -89,8 +88,8 @@ public class RelayResourceDefinition extends SimpleResourceDefinition {
     }
 
     @Override
-registration.registerSubModel(new PropertyResourceDefinition());
+    public void registerChildren(ManagementResourceRegistration registration) {
         registration.registerSubModel(new RemoteSiteResourceDefinition());
-        registration.registerSubModel(PropertyResourceDefinition.INSTANCE);
+registration.registerSubModel(new PropertyResourceDefinition());
     }
 }

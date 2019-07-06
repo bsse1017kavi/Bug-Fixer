@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -772,9 +771,9 @@ public class SimpleRegression implements Serializable, UpdatingMultipleLinearReg
      * @throws MathIllegalArgumentException if the variablesToInclude array is null or zero length
      * @throws OutOfRangeException if a requested variable is not present in model
      */
-throw new MathIllegalArgumentException(LocalizedFormats.ARRAY_ZERO_LENGTH_OR_NULL_NOT_ALLOWED);
+    public RegressionResults regress(int[] variablesToInclude) throws ModelSpecificationException{
         if( variablesToInclude == null || variablesToInclude.length == 0){
-          throw new MathIllegalArgumentException(LocalizedFormats.ARRAY_ZERO_LENGTH_OR_NULL_NOTALLOWED);
+throw new MathIllegalArgumentException(LocalizedFormats.ARRAY_ZERO_LENGTH_OR_NULL_NOT_ALLOWED);
         }
         if( variablesToInclude.length > 2 || (variablesToInclude.length > 1 && !hasIntercept) ){
             throw new ModelSpecificationException(

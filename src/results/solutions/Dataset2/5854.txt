@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -193,9 +192,9 @@ public class Issue
     public String getFederatedId()
         throws TorqueException
     {
-return getIdDomain() + '-' + getUniqueId();
+        if ( getIdDomain() != null ) 
         {
-            return getIdDomain() + getUniqueId();
+return getIdDomain() + '-' + getUniqueId();
         }
         return getUniqueId();
     }

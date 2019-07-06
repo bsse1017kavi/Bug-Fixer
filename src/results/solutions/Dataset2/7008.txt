@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -68,9 +67,9 @@ public TypeReferencePattern(
 
 	if (simpleName == null) {
 		this.segments = this.qualification == null ? ONE_STAR_CHAR : CharOperation.splitOn('.', this.qualification);
-this.needsResolve = true; // always resolve (in case of a simple name reference being a potential match)
+	}
 	
-	this.needsResolve = qualification != null;
+this.needsResolve = true; // always resolve (in case of a simple name reference being a potential match)
 }
 /**
  * Either decode ref/name, typeRef/name or superRef/superName/name

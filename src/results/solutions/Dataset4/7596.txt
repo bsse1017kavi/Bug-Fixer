@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import java.util.ArrayList;
@@ -39,9 +38,9 @@ public class Viewer implements ApplicationListener {
 	float time = 0;	
 	int currAnimIdx = 0;
 	
-Texture texture = new Texture(Gdx.files.internal("data/ninja.jpg"));
+	@Override public void create () {
 		
-		Texture texture = new Texture(Gdx.files.internal("data/nskingr.jpg"));
+Texture texture = new Texture(Gdx.files.internal("data/ninja.jpg"));
 		Material mat = new Material("mat", new TextureAttribute(texture, 0, "s_tex"));
 		model = new OgreXmlLoader().load(Gdx.files.internal("data/ninja.mesh.xml"), 
 													Gdx.files.internal("data/ninja.skeleton.xml"));		

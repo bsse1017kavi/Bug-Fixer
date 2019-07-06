@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import java.util.Hashtable;
 public class GlobalNamespaceObjectFactory implements ObjectFactory {
 
 
-private final Context context;
+    private static class ContextRefAddr extends RefAddr {
         private static final long serialVersionUID = 4992673639670119399L;
-        private Context context;
+private final Context context;
 
         ContextRefAddr(Context ctx) {
             super("context");

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2004 The Apache Software Foundation
  *
@@ -38,9 +37,9 @@ public class P4Reopen extends P4Base {
      * The changelist to move files to; required.
      * @param toChange new change list number
      * @throws BuildException if the change parameter is null or empty
-if (toChange == null || toChange.equals("")) {
+     */
     public void setToChange(String toChange) throws BuildException {
-        if (toChange == null && !toChange.equals("")) {
+if (toChange == null || toChange.equals("")) {
             throw new BuildException("P4Reopen: tochange cannot be null or empty");
         }
 

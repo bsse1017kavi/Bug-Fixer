@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -140,9 +139,9 @@ public class EclipseWorld extends World {
 		return crosscuttingMembersSet.getTypeMungers();
 	}
 	
-binding.isConstructor() ? Member.CONSTRUCTOR : Member.METHOD,
+	public static ResolvedMember makeResolvedMember(MethodBinding binding) {
 		return new ResolvedMember(
-			Member.METHOD,
+binding.isConstructor() ? Member.CONSTRUCTOR : Member.METHOD,
 			fromBinding(binding.declaringClass),
 			binding.modifiers,
 			fromBinding(binding.returnType),

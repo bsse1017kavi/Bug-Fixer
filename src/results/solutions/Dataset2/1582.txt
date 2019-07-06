@@ -1,4 +1,3 @@
-
 package junit.framework;
 
 /**
@@ -276,9 +275,9 @@ public class Assert {
 
 	static private void failNotSame(String message, Object expected, Object actual) {
 		String formatted= "";
-fail(formatted+"expected same:<"+expected+"> was not:<"+actual+">");
+		if (message != null)
 			formatted= message+" ";
-		fail(formatted+"expected same");
+fail(formatted+"expected same:<"+expected+"> was not:<"+actual+">");
 	}
 
 	static private void failNotEquals(String message, Object expected, Object actual) {

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.MethodCallNode
@@ -229,9 +228,9 @@ abstract class MethodCallNode extends JavaValueNode
 	 */
 	void getCorrelationTables(JBitSet correlationMap)
 		throws StandardException
-accept(getCRs);
+	{
 		CollectNodesVisitor getCRs = new CollectNodesVisitor(ColumnReference.class);
-		super.accept(getCRs);
+accept(getCRs);
 		Vector colRefs = getCRs.getList();
 		for (Enumeration e = colRefs.elements(); e.hasMoreElements(); )
 		{

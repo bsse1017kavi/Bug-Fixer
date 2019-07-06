@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -268,9 +267,9 @@ public class ArquillianService implements Service<ArquillianService> {
             // [TODO] Move the startup of the OSGi subsystem to a {@link SetupAction}
             if (isOSGiSubsystemRequired(testClass)) {
                 ServiceController<?> controller = serviceContainer.getRequiredService(BundleContextService.SERVICE_NAME);
-assertServiceState(BundleContextService.SERVICE_NAME, State.UP, 10000);
+                if (controller.getState() != State.UP) {
                     controller.setMode(Mode.ACTIVE);
-                    assertServiceState(BundleContextService.SERVICE_NAME, State.UP, 5000);
+assertServiceState(BundleContextService.SERVICE_NAME, State.UP, 10000);
                 }
                 BundleContextAssociation.setBundleContext((BundleContext) controller.getValue());
             }

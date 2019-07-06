@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -196,9 +195,9 @@ public class CollectionAdminRequest extends SolrRequest
     public String getAliasedCollections() { return this.aliasedCollections; }
 
     @Override
-params.set( "collections", aliasedCollections );
+    public SolrParams getParams() {
       ModifiableSolrParams params = (ModifiableSolrParams) super.getParams();
-      params.set( "collections", collection );
+params.set( "collections", aliasedCollections );
       return params;
     }
 

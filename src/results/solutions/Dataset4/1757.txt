@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -28,9 +27,9 @@ public class IOSRobovmTests extends IOSApplication.Delegate {
 	
 	@Override
 	protected IOSApplication createApplication() {
-return new IOSApplication(new Box2DTestCollection(), config);
+		IOSApplicationConfiguration config = new IOSApplicationConfiguration();
 		config.useAccelerometer = false;
-		return new IOSApplication(new BulletTestCollection(), config);
+return new IOSApplication(new Box2DTestCollection(), config);
 	}
 
 	public static void main(String[] argv) {

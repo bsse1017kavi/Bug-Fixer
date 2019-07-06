@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -36,9 +35,9 @@ public class RelativeTimePatternConverter extends PatternConverter {
     this.buf = new StringBuffer(9);
   }
 
-buf.append(Long.toString(event.getTimeStamp() - LoggingEvent.getStartTime()));
+  public StringBuffer convert(LoggingEvent event) {
     buf.setLength(0);
-    buf.append(Long.toString(event.timeStamp - LoggingEvent.getStartTime()));
+buf.append(Long.toString(event.getTimeStamp() - LoggingEvent.getStartTime()));
     return buf;
   }
 }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -280,9 +279,9 @@ public class AntiEntropyService
             else
             {
                 List<DecoratedKey> keys = new ArrayList<DecoratedKey>();
-assert request.range.contains(sample.token): "Token " + sample.token + " is not within range " + request.range;
+                for (DecoratedKey sample : cfs.keySamples(request.range))
                 {
-                    assert request.range.contains(sample.token);
+assert request.range.contains(sample.token): "Token " + sample.token + " is not within range " + request.range;
                     keys.add(sample);
                 }
 

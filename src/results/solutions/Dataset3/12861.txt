@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP_ADDR;
@@ -487,9 +486,9 @@ public abstract class CacheAdd extends AbstractAddStepHandler {
 
         ModelNode resolvedValue = null ;
         if (storeKey.equals(ModelKeys.FILE_STORE)) {
-final String path = ((resolvedValue = CommonAttributes.PATH.resolveModelAttribute(context, store)).isDefined()) ? resolvedValue.asString() : InfinispanExtension.SUBSYSTEM_NAME + File.separatorChar + containerName;
+            builder.cacheLoader(new FileCacheStore());
 
-            final String path = ((resolvedValue = CommonAttributes.PATH.resolveModelAttribute(context, store)).isDefined()) ? resolvedValue.asString() : containerName ;
+final String path = ((resolvedValue = CommonAttributes.PATH.resolveModelAttribute(context, store)).isDefined()) ? resolvedValue.asString() : InfinispanExtension.SUBSYSTEM_NAME + File.separatorChar + containerName;
 
             Injector<String> injector = new SimpleInjector<String>() {
                 @Override

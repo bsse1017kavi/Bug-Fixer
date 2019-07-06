@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -551,9 +550,9 @@ public void testAddDocument() throws IOException {
         this.indexer.addIndexableDocumentTask(future);
         this.indexer.destroy();
         latch.countDown();
-while(this.indexer.getWriter() != null){}
+        documentLatch.await(5000,TimeUnit.MILLISECONDS);
         // wait active for the commit
-        while(this.indexer.writer != null){}
+while(this.indexer.getWriter() != null){}
         
         IndexSearcher s = new IndexSearcher(this.dir);
         Hits h = s.search(new TermQuery(delTerm));

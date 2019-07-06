@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class WebSubsystemAdd extends AbstractSubsystemAdd<WebSubsystemElement> {
             .addDependency(AbstractPathService.pathNameOf(BASE_DIR), String.class, service.getPathInjector())
             .addOptionalDependency(ServiceName.JBOSS.append("mbean", "server"), MBeanServer.class, service.getMbeanServer())
             .addListener(new UpdateResultHandler.ServiceStartListener<P>(resultHandler, param))
-WebDeploymentActivator.activate(defaultHost, new SharedWebMetaDataBuilder(config), new SharedTldsMetaDataBuilder(config), context.getBatchBuilder());
+            .setInitialMode(Mode.ON_DEMAND);
 
-        WebDeploymentActivator.activate(defaultHost, new SharedWebMetaDataBuilder(config), context.getBatchBuilder());
+WebDeploymentActivator.activate(defaultHost, new SharedWebMetaDataBuilder(config), new SharedTldsMetaDataBuilder(config), context.getBatchBuilder());
     }
 
     /** {@inheritDoc} */

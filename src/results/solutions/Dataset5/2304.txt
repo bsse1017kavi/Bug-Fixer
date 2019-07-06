@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -236,9 +235,9 @@ public class Zip extends MatchingTask
         doUpdate = doUpdate && zipFile.exists();
         if( doUpdate )
         {
-zipFile.getParentFile() );
+            FileUtils fileUtils = FileUtils.newFileUtils();
             renamedFile = fileUtils.createTempFile( "zip", ".tmp",
-                                                    fileUtils.getParentFile( zipFile ) );
+zipFile.getParentFile() );
 
             try
             {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -93,9 +92,9 @@ public class ConnectionFactoryManagementTestCase extends ContainerResourceMgmtTe
             executeOperation(writeAttribute);
             fail("it is not possible to define a discovery group when the connector attribute is already defined");
         } catch (MgmtOperationException e) {
-assertTrue(e.getResult().get(FAILURE_DESCRIPTION).asString().contains("JBAS011630"));
+            assertEquals(FAILED, e.getResult().get(OUTCOME).asString());
             assertEquals(true, e.getResult().get(ROLLED_BACK).asBoolean());
-            assertTrue(e.getResult().get(FAILURE_DESCRIPTION).asString().contains("WFLYMSG0019"));
+assertTrue(e.getResult().get(FAILURE_DESCRIPTION).asString().contains("JBAS011630"));
         }
 
         final ModelNode remove = new ModelNode();

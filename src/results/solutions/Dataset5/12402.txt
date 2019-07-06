@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -721,9 +720,9 @@ public class Form extends WebMarkupContainer implements IFormSubmitListener
 		visitFormComponents(new FormComponent.AbstractVisitor()
 		{
 			public void onFormComponent(final FormComponent formComponent)
-if (formComponent.sameInnermostModel(Form.this))
+			{
 				// If form component is using form model
-				if (formComponent.sameRootModel(Form.this))
+if (formComponent.sameInnermostModel(Form.this))
 				{
 					formComponent.modelChanged();
 				}

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -106,9 +105,9 @@ public class QueryPeer
                 .add(QueryPeer.MODULE_ID, me.getModuleId())
                 .add(QueryPeer.ISSUE_TYPE_ID, issueType.getIssueTypeId())
                 .add(QueryPeer.DELETED, 0);
-QueryPeer.SCOPE_ID, Scope.MODULE__PK,
+
             Criteria.Criterion cGlob = crit.getNewCriterion(
-                QueryPeer.SCOPE_ID, Scope.GLOBAL__PK, 
+QueryPeer.SCOPE_ID, Scope.MODULE__PK,
                 Criteria.EQUAL);
             Criteria.Criterion cPriv1 = crit.getNewCriterion(
                 QueryPeer.USER_ID, user.getUserId(), Criteria.EQUAL);

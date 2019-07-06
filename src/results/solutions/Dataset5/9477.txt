@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -237,9 +236,9 @@ public class TestBeanGUI extends AbstractJMeterGuiComponent implements JMeterGUI
         for (int i = 0; i < props.length; i++) {
             String name = props[i].getName();
             Object value = propertyMap.get(name);
-Object valueNotUnDefined = props[i].getValue(GenericTestBeanCustomizer.NOT_UNDEFINED);
+            log.debug("Modify " + name + " to " + value);
             if (value == null) {
-                Object valueNotUnDefined = props[i].getValue(BeanInfoSupport.NOT_UNDEFINED);
+Object valueNotUnDefined = props[i].getValue(GenericTestBeanCustomizer.NOT_UNDEFINED);
                 if (valueNotUnDefined != null && ((Boolean) valueNotUnDefined).booleanValue()) {
                     setPropertyInElement(element, name, props[i].getValue(BeanInfoSupport.DEFAULT));
                 } else {

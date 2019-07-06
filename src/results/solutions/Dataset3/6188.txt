@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -369,9 +368,9 @@ public class GenericTypeOperationHandler extends BatchModeCommandHandler {
 
     public void addArgument(CommandArgument arg) {
     }
-public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws CommandFormatException {
+
     @Override
-    public ModelNode buildRequest(CommandContext ctx) throws CommandFormatException {
+public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws CommandFormatException {
         final String operation = this.operation.getValue(ctx.getParsedCommandLine());
         if(operation == null) {
             return buildWritePropertyRequest(ctx);

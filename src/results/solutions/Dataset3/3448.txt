@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class AdminObjectAdd extends AbstractAddStepHandler implements Descriptio
         PathAddress path = PathAddress.pathAddress(address);
         final String archiveName = path.getElement(path.size() - 2).getValue();
         final String poolName = PathAddress.pathAddress(address).getLastElement().getValue();
-final ModifiableAdminObject adminObjectValue = RaOperationUtil.buildAdminObjects(context, operation, poolName);
 
-        final ModifiableAdminObject adminObjectValue = RaOperationUtil.buildAdminObjects(operation, poolName);
+
+final ModifiableAdminObject adminObjectValue = RaOperationUtil.buildAdminObjects(context, operation, poolName);
 
 
         ServiceName serviceName = ServiceName.of(ConnectorServices.RA_SERVICE, archiveName, poolName);

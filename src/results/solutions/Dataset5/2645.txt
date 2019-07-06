@@ -1,4 +1,3 @@
-
 package ${packageName};
 
 import org.mortbay.jetty.Connector;
@@ -14,9 +13,9 @@ public class Start {
 		connector.setPort(8080);
 		server.setConnectors(new Connector[] { connector });
 
-bb.setContextPath("/");
+		WebAppContext bb = new WebAppContext();
 		bb.setServer(server);
-		bb.setContextPath("/${artifactId}");
+bb.setContextPath("/");
 		bb.setWar("src/main/webapp");
 
 		

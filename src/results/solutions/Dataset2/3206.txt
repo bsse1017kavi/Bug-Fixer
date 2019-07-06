@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -89,9 +88,9 @@ public class CreateVFolderOnMessageCommand extends FolderCommand {
     public void updateGUI() throws Exception {
         MailInterface.treeModel.nodeStructureChanged(parentFolder);
 
-new ConfigFrame(getFrameMediator(), vfolder);
+        if (vfolder != null) {
             //vfolder.showFilterDialog((AbstractMailFrameController) getFrameMediator());
-            new ConfigFrame(getFrameMediator().getView().getFrame(), vfolder);
+new ConfigFrame(getFrameMediator(), vfolder);
         }
     }
 

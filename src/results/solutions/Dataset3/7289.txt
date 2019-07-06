@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public abstract class AbstractBatchTestCase {
                     }
                 });
     }
-return HttpRequest.get(url, 10, TimeUnit.MINUTES); // TODO (jrp) way to long only set for debugging
+
     protected static String performCall(final String url) throws ExecutionException, IOException, TimeoutException {
-        return HttpRequest.get(url, 10, TimeUnit.SECONDS);
+return HttpRequest.get(url, 10, TimeUnit.MINUTES); // TODO (jrp) way to long only set for debugging
     }
 
     public static class UrlBuilder {

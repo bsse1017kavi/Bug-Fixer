@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -253,9 +252,9 @@ public class GlobalOperationHandlers {
                 final Locale locale = getLocale(operation);
                 final ModelNode result = descriptionProvider.getModelDescription(getLocale(operation));
 
-resultHandler.handleResultFragment(NO_LOCATION, result);
+                addDescription(result, recursive, operations, registry, address, locale);
 
-                resultHandler.handleResultFragment(new String[0], result);
+resultHandler.handleResultFragment(NO_LOCATION, result);
                 resultHandler.handleResultComplete(null);
             } catch (final Exception e) {
                 resultHandler.handleFailed(new ModelNode().set(e.getMessage()));

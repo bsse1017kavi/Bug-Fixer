@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -188,9 +187,9 @@ public class TestAtomicUpdate extends LuceneTestCase {
   public void testAtomicUpdates() throws Exception {
     MockIndexWriter.RANDOM = random;
     Directory directory;
-directory = new MockDirectoryWrapper(random, new RAMDirectory());
+
     // First in a RAM directory:
-    directory = new MockDirectoryWrapper(new RAMDirectory());
+directory = new MockDirectoryWrapper(random, new RAMDirectory());
     runTest(directory);
     directory.close();
 

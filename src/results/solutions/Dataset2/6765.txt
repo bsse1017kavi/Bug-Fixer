@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -405,9 +404,9 @@ public abstract class Scope
 		if (currentType.isInterface()) {
 			MethodBinding[] currentMethods = currentType.getMethods(selector);
 			int currentLength = currentMethods.length;
-} else if (currentLength > 1) {
+			if (currentLength == 1) {
 				matchingMethod = currentMethods[0];
-			} else if (currentLength > 0) {
+} else if (currentLength > 1) {
 				found.addAll(currentMethods);
 			}
 			matchingMethod = findMethodInSuperInterfaces(currentType, selector, found, matchingMethod);

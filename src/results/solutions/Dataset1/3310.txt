@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.cloud;
 
 /**
@@ -128,9 +127,9 @@ public class ZkCmdExecutor {
    *          the number of the attempts performed so far
    */
   protected void retryDelay(int attemptCount) {
-Thread.sleep(Math.max(10000, attemptCount * retryDelay));
+    if (attemptCount > 0) {
       try {
-        Thread.sleep(Math.min(10000, attemptCount * retryDelay));
+Thread.sleep(Math.max(10000, attemptCount * retryDelay));
       } catch (InterruptedException e) {
         LOG.debug("Failed to sleep: " + e, e);
       }

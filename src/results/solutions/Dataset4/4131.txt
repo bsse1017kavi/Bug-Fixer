@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public abstract class AbstractSimpleEngineTests {
         engine.close();
         store.close();
     }
-return new RamStore(shardId, EMPTY_SETTINGS, null);
+
     protected Store createStore() throws IOException {
-        return new RamStore(shardId, EMPTY_SETTINGS);
+return new RamStore(shardId, EMPTY_SETTINGS, null);
     }
 
     protected Translog createTranslog() {

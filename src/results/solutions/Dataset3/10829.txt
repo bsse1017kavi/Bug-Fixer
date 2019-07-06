@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -354,9 +353,9 @@ public abstract class AbstractMessageBrokerConfiguration implements ApplicationC
 	public Validator getValidator() {
 		return null;
 	}
-private static final AbstractBrokerMessageHandler noopBroker = new AbstractBrokerMessageHandler() {
 
-	private static final AbstractBrokerMessageHandler noopBroker = new AbstractBrokerMessageHandler(null) {
+
+private static final AbstractBrokerMessageHandler noopBroker = new AbstractBrokerMessageHandler() {
 
 		@Override
 		protected void startInternal() {

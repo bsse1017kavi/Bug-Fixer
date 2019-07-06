@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011-2012, Red Hat, Inc., and individual contributors
@@ -280,9 +279,9 @@ public class PersistenceUnitParseProcessor implements DeploymentUnitProcessor {
 
     private URL getPersistenceUnitURL(VirtualFile persistence_xml, boolean convertVFS) {
         try {
-metaData.getPhysicalFile().getParentFile().getParentFile().toURI().toURL() :
+            VirtualFile metaData = persistence_xml;// di.getMetaDataFile("persistence.xml");
             return convertVFS ?
-                    metaData.getParent().getParent().getPhysicalFile().toURI().toURL() :
+metaData.getPhysicalFile().getParentFile().getParentFile().toURI().toURL() :
                     metaData.getParent().getParent().toURL();
 
         } catch (Exception e) {

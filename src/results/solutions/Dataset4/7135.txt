@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1017,9 +1016,9 @@ public class RobinEngine extends AbstractIndexShardComponent implements Engine {
                 }
                 if (indexWriter.getConfig().getMergePolicy() instanceof EnableMergePolicy) {
                     ((EnableMergePolicy) indexWriter.getConfig().getMergePolicy()).enableMerge();
-indexWriter.forceMergeDeletes(false);
+                }
                 if (optimize.onlyExpungeDeletes()) {
-                    indexWriter.expungeDeletes(false);
+indexWriter.forceMergeDeletes(false);
                 } else if (optimize.maxNumSegments() <= 0) {
                     indexWriter.maybeMerge();
                     possibleMergeNeeded = false;

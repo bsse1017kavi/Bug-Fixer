@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -385,9 +384,9 @@ public abstract class NumericFieldDataTests extends AbstractStringFieldDataTests
     public void testMissingValueForAll() throws Exception {
         fillAllMissing();
         IndexNumericFieldData indexFieldData = getForField("value");
-assertThat(fieldData.getNumDocs(), equalTo(3));
+        AtomicNumericFieldData fieldData = indexFieldData.load(refreshReader());
 
-        assertThat(fieldData.getNumDocs(), equalTo(0));
+assertThat(fieldData.getNumDocs(), equalTo(3));
 
         // long values
 

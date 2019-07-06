@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ class ConsistencyManager implements Runnable
               logger_.debug("Performing read repair for " + readCommand_.key + " to " + message.getMessageId() + "@[" + StringUtils.join(replicas_, ", ") + "]");
 			MessagingService.getMessagingInstance().sendRR(message, replicas_.toArray(new EndPoint[replicas_.size()]), responseHandler);
 		}
-static class DataRepairHandler implements IAsyncCallback, ICacheExpungeHook<String, String>
+	}
 	
-	class DataRepairHandler implements IAsyncCallback, ICacheExpungeHook<String, String>
+static class DataRepairHandler implements IAsyncCallback, ICacheExpungeHook<String, String>
 	{
 		private List<Message> responses_ = new ArrayList<Message>();
 		private IResponseResolver<Row> readResponseResolver_;

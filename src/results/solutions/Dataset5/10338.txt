@@ -1,4 +1,3 @@
-
 /*
  * $Id: org.eclipse.jdt.ui.prefs 5004 2006-03-17 20:47:08 -0800 (Fri, 17 Mar 2006) eelco12 $
  * $Revision: 5004 $
@@ -83,9 +82,9 @@ public class PortletHeaderContainer extends HeaderContainer
 		}
 
 		// must be a Page
-renderHeaderSections((Page)parent);
+		if (parent instanceof Page)
 		{
-			renderHeaderSections((Page)parent, this);
+renderHeaderSections((Page)parent);
 		}
 		else
 		{

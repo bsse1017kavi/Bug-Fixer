@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -108,9 +107,9 @@ public final class RecommenderJob extends AbstractJob {
 
     addInputOption();
     addOutputOption();
-addOption("usersFile", "u", "File of users to recommend for", null);
+    addOption("recommenderClassName", "r", "Name of recommender class to instantiate");
     addOption("numRecommendations", "n", "Number of recommendations per user", "10");
-    addOption("usersFile", "u", "Number of recommendations per user", null);
+addOption("usersFile", "u", "File of users to recommend for", null);
     
     Map<String,String> parsedArgs = parseArguments(args);
     if (parsedArgs == null) {

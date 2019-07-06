@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -708,9 +707,9 @@ public class TestFieldCache extends LuceneTestCase {
   // Make sure that the use of GrowableWriter doesn't prevent from using the full long range
   public void testLongFieldCache() throws IOException {
     Directory dir = newDirectory();
-RandomIndexWriter iw = new RandomIndexWriter(random(), dir, cfg);
+    IndexWriterConfig cfg = newIndexWriterConfig(TEST_VERSION_CURRENT, new MockAnalyzer(random()));
     cfg.setMergePolicy(newLogMergePolicy());
-    RandomIndexWriter iw = new RandomIndexWriter(random(), dir);
+RandomIndexWriter iw = new RandomIndexWriter(random(), dir, cfg);
     Document doc = new Document();
     LongField field = new LongField("f", 0L, Store.YES);
     doc.add(field);

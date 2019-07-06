@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public abstract class AbstractSimpleIndexGatewayTests extends AbstractNodesTests
         logger.info("Creating index [{}]", "test");
         client("server1").admin().indices().create(createIndexRequest("test")).actionGet();
 
-.source(mappingSource())).actionGet();
+        // create a mapping
         PutMappingResponse putMappingResponse = client("server1").admin().indices().putMapping(putMappingRequest("test").type("type1")
-                .mappingSource(mappingSource())).actionGet();
+.source(mappingSource())).actionGet();
         assertThat(putMappingResponse.acknowledged(), equalTo(true));
 
         // verify that mapping is there

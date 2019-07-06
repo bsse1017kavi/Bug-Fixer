@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -176,9 +175,9 @@ class DeploymentScannerAdd implements OperationStepHandler {
                         final PathAddress opPath = PathAddress.pathAddress(op.get(OP_ADDR));
                         final OperationStepHandler handler = context.getRootResourceRegistration().getOperationHandler(opPath, op.get(OP).asString());
                         context.addStep(result, op, handler, OperationContext.Stage.MODEL);
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+                        try {
                             stepCompleted = true;
-                            context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
                         } finally {
                             deploymentResults.set(result);
                             deploymentDoneLatch.countDown();

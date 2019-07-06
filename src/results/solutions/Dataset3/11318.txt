@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -30,9 +29,9 @@ import org.springframework.http.HttpHeaders;
  * @author Arjen Poutsma
  * @since 3.0.6
  */
-private ByteArrayOutputStream bufferedOutput = new ByteArrayOutputStream(1024);
+abstract class AbstractBufferingClientHttpRequest extends AbstractClientHttpRequest {
 
-	private ByteArrayOutputStream bufferedOutput = new ByteArrayOutputStream();
+private ByteArrayOutputStream bufferedOutput = new ByteArrayOutputStream(1024);
 
 
 	@Override

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ public class SingletonComponent extends SessionBeanComponent implements Lockable
         this.initOnStartup = singletonComponentCreateService.isInitOnStartup();
 
         this.beanLevelLockType = singletonComponentCreateService.getBeanLockType();
-this.defaultAccessTimeoutProvider = singletonComponentCreateService.getDefaultAccessTimeoutService();
+        this.methodLockTypes = singletonComponentCreateService.getMethodApplicableLockTypes();
         this.methodAccessTimeouts = singletonComponentCreateService.getMethodApplicableAccessTimeouts();
-        this.defaultAccessTimeoutProvider = singletonComponentCreateService.getDefaultAccessTimeoutProvider();
+this.defaultAccessTimeoutProvider = singletonComponentCreateService.getDefaultAccessTimeoutService();
     }
 
     @Override

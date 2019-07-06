@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -61,9 +60,9 @@ public class TestDocValuesScoring extends LuceneTestCase {
     field.setStringValue("jumps over lazy brown dog");
     field2.setStringValue("jumps over lazy brown dog");
     dvField.setFloatValue(4f); // boost x4
-iw.shutdown();
+    iw.addDocument(doc);
     IndexReader ir = iw.getReader();
-    iw.close();
+iw.shutdown();
     
     // no boosting
     IndexSearcher searcher1 = newSearcher(ir, false);

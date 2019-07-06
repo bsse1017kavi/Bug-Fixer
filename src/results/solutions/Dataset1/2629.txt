@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class BinaryVerbHandler implements IVerbHandler
         byte[] bytes = message.getMessageBody();
         ByteArrayInputStream buffer = new ByteArrayInputStream(bytes);
 
-RowMutation rm = RowMutation.serializer().deserialize(new DataInputStream(buffer), message.getVersion());
+        try
         {
-            RowMutation rm = RowMutation.serializer().deserialize(new DataInputStream(buffer));
+RowMutation rm = RowMutation.serializer().deserialize(new DataInputStream(buffer), message.getVersion());
             rm.applyBinary();
 
             WriteResponse response = new WriteResponse(rm.getTable(), rm.key(), true);

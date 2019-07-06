@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -159,9 +158,9 @@ public class DoubleFieldMapper extends NumberFieldMapper<Double> {
 
     @Override
     public BytesRef indexedValueForSearch(Object value) {
-NumericUtils.longToPrefixCoded(longValue, 0, bytesRef);   // 0 because of exact match
+        long longValue = NumericUtils.doubleToSortableLong(parseValue(value));
         BytesRef bytesRef = new BytesRef();
-        NumericUtils.longToPrefixCoded(longValue, precisionStep(), bytesRef);
+NumericUtils.longToPrefixCoded(longValue, 0, bytesRef);   // 0 because of exact match
         return bytesRef;
     }
 

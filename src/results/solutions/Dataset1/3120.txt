@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -57,9 +56,9 @@ public class TestSameScoresWithThreads extends LuceneTestCase {
       w.addDocument(doc);
       //System.out.println("  bytes=" + charsIndexed + " add: " + doc);
     }
-w.shutdown();
+    IndexReader r = w.getReader();
     //System.out.println("numDocs=" + r.numDocs());
-    w.close();
+w.shutdown();
 
     final IndexSearcher s = newSearcher(r);
     Terms terms = MultiFields.getFields(r).terms("body");

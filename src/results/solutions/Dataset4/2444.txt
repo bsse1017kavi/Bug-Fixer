@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -145,9 +144,9 @@ public class IndexBufferObjectSubData implements IndexData {
 			if (Gdx.gl11 != null) {
 				GL11 gl = Gdx.gl11;
 // gl.glBufferData(GL11.GL_ELEMENT_ARRAY_BUFFER, byteBuffer
-} else if (Gdx.gl11 != null) {
+// .limit(), byteBuffer, usage);
 				gl.glBufferSubData(GL11.GL_ELEMENT_ARRAY_BUFFER, 0, byteBuffer.limit(), byteBuffer);
-			} else if (Gdx.gl20 != null) {
+} else if (Gdx.gl11 != null) {
 				GL20 gl = Gdx.gl20;
 // gl.glBufferData(GL20.GL_ELEMENT_ARRAY_BUFFER, byteBuffer
 // .limit(), byteBuffer, usage);

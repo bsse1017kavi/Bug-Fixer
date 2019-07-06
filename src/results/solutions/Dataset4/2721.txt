@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -97,9 +96,9 @@ public class RecentRepositories implements Comparator<Repository>, Serializable 
      * Add id to recent list
      *
      * @param id
-public RecentRepositories add(final long id) {
+     * @return this recent list
      */
-    public RecentRepositories add(final Long id) {
+public RecentRepositories add(final long id) {
         if (ids == null)
             load();
         ids.remove(id);

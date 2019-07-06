@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -121,9 +120,9 @@ public class FuzzyTermsEnum extends TermsEnum {
     //The prefix could be longer than the word.
     //It's kind of silly though.  It means we must match the entire word.
     this.realPrefixLength = prefixLength > termLength ? termLength : prefixLength;
-this.minSimilarity = 0; // just driven by number of edits
+    // if minSimilarity >= 1, we treat it as number of edits
     if (minSimilarity >= 1f) {
-      this.minSimilarity = 1 - (minSimilarity+1) / this.termLength;
+this.minSimilarity = 0; // just driven by number of edits
       maxEdits = (int) minSimilarity;
       raw = true;
     } else {

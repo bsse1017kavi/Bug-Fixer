@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -23,9 +22,9 @@ import org.eclipse.jdt.internal.core.util.MementoTokenizer;
 /**
  * @see IImportContainer
  */
-super(parent);
+public class ImportContainer extends SourceRefElement implements IImportContainer {
 protected ImportContainer(CompilationUnit parent) {
-	super(parent, ""); //$NON-NLS-1$
+super(parent);
 }
 public boolean equals(Object o) {
 	if (!(o instanceof ImportContainer)) return false;

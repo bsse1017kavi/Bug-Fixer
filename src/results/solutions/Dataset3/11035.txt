@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -146,9 +145,9 @@ public class Krb5ConfServerSetupTask implements ServerSetupTask {
         final KerberosTime timeStamp = new KerberosTime();
 
         DataOutputStream dos = null;
-dos.write(Keytab.VERSION_52);
+        try {
             dos = new DataOutputStream(new FileOutputStream(keytabFile));
-            dos.write(Keytab.VERSION_0X502_BYTES);
+dos.write(Keytab.VERSION_52);
 
             for (Map.Entry<EncryptionType, EncryptionKey> keyEntry : KerberosKeyFactory.getKerberosKeys(principalName,
                     passPhrase).entrySet()) {

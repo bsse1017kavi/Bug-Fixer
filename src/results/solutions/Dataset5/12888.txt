@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -643,9 +642,9 @@ public Rectangle getBounds() {
 		NSRect rect = layoutManager.usedRectForTextContainer(textContainer);
 		if (wrapWidth != -1) rect.width = wrapWidth;
 		if (text.length() == 0) {
-rect.height = layoutManager.defaultLineHeightForFont(nsFont);
+			Font font = this.font != null ? this.font : device.systemFont;
 			NSFont nsFont = font.handle;
-			rect.height = Math.max(rect.height, layoutManager.defaultLineHeightForFont(nsFont));
+rect.height = layoutManager.defaultLineHeightForFont(nsFont);
 		}
 		rect.height = Math.max(rect.height, ascent + descent) + spacing;
 		return new Rectangle(0, 0, (int)rect.width, (int)rect.height);

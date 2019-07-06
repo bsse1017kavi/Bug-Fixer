@@ -1,4 +1,3 @@
-
 /*
  * $Id: AjaxFormComponentUpdatingBehavior.java,v 1.4 2006/02/02 18:49:46
  * ivaynberg Exp $ $Revision$ $Date$
@@ -86,9 +85,9 @@ public abstract class AjaxFormComponentUpdatingBehavior extends AjaxEventBehavio
 	 * @see wicket.ajax.AjaxEventBehavior#onEvent(wicket.ajax.AjaxRequestTarget)
 	 */
 	protected final void onEvent(final AjaxRequestTarget target)
-formComponent.inputChanged();
+	{
 		final FormComponent formComponent = getFormComponent();
-		formComponent.registerNewUserInput();
+formComponent.inputChanged();
 		formComponent.validate();
 		if (formComponent.hasErrorMessage())
 		{

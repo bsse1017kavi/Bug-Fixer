@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.util.xml;
 
 import org.apache.tomcat.util.*;
@@ -688,9 +687,9 @@ class  MethodSetter extends 	    XmlAction {
 		paramT[i]=STRING_CLASS;
 	    } else {
 		// XXX Add more types
-paramT[i]=int.class;
+		if( "int".equals( paramTypes[i] ) ) {
 		    realParam[i]=new Integer( params[i] );
-		    paramT[i]=realParam[i].getClass();
+paramT[i]=int.class;
 		} else {
 		    realParam[i]=params[i];
 		    paramT[i]=STRING_CLASS;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -207,9 +206,9 @@ public class RemoteDomainConnectionService implements MasterDomainControllerClie
 
             ManagementChannel channel = client.openChannel(RemotingServices.DOMAIN_CHANNEL);
             this.channel = channel;
-public void handleClose(final Channel closed, final IOException exception) {
+
             channel.addCloseHandler(new CloseHandler<Channel>() {
-                public void handleClose(Channel closed) {
+public void handleClose(final Channel closed, final IOException exception) {
                     connectionClosed();
                 }
             });

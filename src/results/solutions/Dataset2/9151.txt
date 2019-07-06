@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -105,9 +104,9 @@ public void close() throws JavaModelException {
 /**
  * This element is being closed.  Do any necessary cleanup.
  */
-System.out.println("CLOSING Element ("+ Thread.currentThread()+"): " + this.getHandleIdentifier());  //$NON-NLS-1$//$NON-NLS-2$
+protected void closing(Object info) throws JavaModelException {
 	if (JavaModelManager.VERBOSE){
-		System.out.println("CLOSING Element ("+ Thread.currentThread()+"): " + this.getHandleIdentifier()); 
+System.out.println("CLOSING Element ("+ Thread.currentThread()+"): " + this.getHandleIdentifier());  //$NON-NLS-1$//$NON-NLS-2$
 	}
 }
 /**

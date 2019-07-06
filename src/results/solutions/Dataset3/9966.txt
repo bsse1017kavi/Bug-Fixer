@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ import org.jboss.msc.value.InjectedValue;
  * @author Thomas.Diesler@jboss.com
  * @since 21-Oct-2010
  */
-public static final ObjectName OBJECT_NAME = ObjectNameFactory.create("jboss.internal", "mbean", "ServiceContainer");
+public class ManagedServiceContainerService implements Service<Void> {
     public static final ServiceName SERVICE_NAME = ServiceName.JBOSS.append("mbean", "service", "container");
-    public static final ObjectName OBJECT_NAME = ObjectNameFactory.create("jboss", "mbean", "ServiceContainer");
+public static final ObjectName OBJECT_NAME = ObjectNameFactory.create("jboss.internal", "mbean", "ServiceContainer");
 
     private final Logger log = Logger.getLogger(ManagedServiceContainerService.class);
     private final InjectedValue<MBeanServer> injectedMBeanServer = new InjectedValue<MBeanServer>();

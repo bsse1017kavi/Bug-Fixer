@@ -1,4 +1,3 @@
-
 /*
  * Created on 07.08.2003
  *
@@ -71,9 +70,9 @@ public class EnabledEditor
 
 	// This method is called when editing is completed.
 	// It must return the new value to be stored in the cell.
-Boolean b = Boolean.valueOf(((JCheckBox) component).isSelected());
+	public Object getCellEditorValue() {
 		
-		Boolean b = new Boolean(((JCheckBox) component).isSelected());
+Boolean b = Boolean.valueOf(((JCheckBox) component).isSelected());
 		
 		// enable/disable tree node
 		currentNode.setEnabled(b.booleanValue());

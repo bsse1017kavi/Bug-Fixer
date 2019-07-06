@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class AnnotationIndexUtils {
         if (resourceRoots != null) {
             allResourceRoots.addAll(resourceRoots);
         }
-for (ResourceRoot resourceRoot : allResourceRoots) {
+        allResourceRoots.add(deploymentUnit.getAttachment(Attachments.DEPLOYMENT_ROOT));
         Map<ResourceRoot, Index> indexes = new HashMap<ResourceRoot, Index>();
-        if(resourceRoots != null )for (ResourceRoot resourceRoot : resourceRoots) {
+for (ResourceRoot resourceRoot : allResourceRoots) {
             Index index = resourceRoot.getAttachment(Attachments.ANNOTATION_INDEX);
             if (index != null) {
                 indexes.put(resourceRoot, index);

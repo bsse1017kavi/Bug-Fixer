@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -253,9 +252,9 @@ public class ResponseAssertion extends AbstractTestElement implements Serializab
 	 * @return an instance of AssertionResult
 	 */
 	AssertionResult evaluateResponse(SampleResult response) {
-AssertionResult result = new AssertionResult(getName());
+		boolean pass = true;
 		boolean not = (NOT & getTestType()) > 0;
-		AssertionResult result = new AssertionResult();
+AssertionResult result = new AssertionResult(getName());
 		String toCheck = ""; // The string to check (Url or data)
 
 		if (getAssumeSuccess()) {

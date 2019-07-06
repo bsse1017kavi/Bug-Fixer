@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -103,9 +102,9 @@ public class TestWildcard
     IndexSearcher searcher = new IndexSearcher(indexStore, true);
 
     MultiTermQuery wq = new WildcardQuery(new Term("field", ""));
-BooleanQuery expected = new BooleanQuery(true);
+    wq.setRewriteMethod(MultiTermQuery.SCORING_BOOLEAN_QUERY_REWRITE);
     assertMatches(searcher, wq, 0);
-    BooleanQuery expected = new BooleanQuery();
+BooleanQuery expected = new BooleanQuery(true);
     assertEquals(searcher.rewrite(expected), searcher.rewrite(wq));
   }
   

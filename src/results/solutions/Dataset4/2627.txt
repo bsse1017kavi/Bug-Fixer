@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -46,9 +45,9 @@ public class IsoCamTest extends GdxTest {
 		texture = new Texture(Gdx.files.internal("data/badlogicsmall.jpg"));
 		float unitsOnX = (float)Math.sqrt(2) * TARGET_WIDTH / (UNIT_TO_PIXEL);
 		float pixelsOnX = Gdx.graphics.getWidth() / unitsOnX;
-cam.position.scl(30);
+		float unitsOnY = Gdx.graphics.getHeight() / pixelsOnX;
 		cam = new OrthographicCamera(unitsOnX, unitsOnY, 25);
-		cam.position.mul(30);
+cam.position.scl(30);
 		cam.near = 1;
 		cam.far = 1000;
 		matrix.setToRotation(new Vector3(1, 0, 0), 90);

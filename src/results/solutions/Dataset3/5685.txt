@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -83,9 +82,9 @@ public class ModuleJndiBindingProcessor implements DeploymentUnitProcessor {
             bindingDescription.getReferenceSourceDescription().getResourceValue(bindingDescription, sourceServiceBuilder, phaseContext, service.getManagedObjectInjector());
             resourceValue = sourceServiceBuilder
                     .addDependency(bindingServiceName.getParent(), NamingStore.class, service.getNamingStoreInjector())
-injectionPointStore.addInjectedValue(injectionTarget, resourceValue, bindingServiceName);
+                    .install();
             for(final InjectionTargetDescription injectionTarget : bindingDescription.getInjectionTargetDescriptions()) {
-                injectionPointStore.addInjectedValue(new JndiInjectedValue(injectionTarget,resourceValue,bindingServiceName));
+injectionPointStore.addInjectedValue(injectionTarget, resourceValue, bindingServiceName);
             }
         } else {
             throw new DeploymentUnitProcessingException("Binding name must not be null: " + bindingDescription);

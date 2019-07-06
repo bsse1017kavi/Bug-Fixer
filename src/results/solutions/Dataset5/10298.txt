@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.internal.examples.remoteservices.hello.consumer;
 
 import org.eclipse.ecf.core.IContainerManager;
@@ -69,9 +68,9 @@ public class Activator implements BundleActivator, IDistributionConstants, Servi
 		IFuture future = RemoteServiceHelper.futureExec(remoteService, "hello", null);
 		
 		try {
-System.out.println("Called future.get() successfully");
+			// This method blocks until a return 
 			future.get();
-			System.out.println("Called futureExec successfully");
+System.out.println("Called future.get() successfully");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

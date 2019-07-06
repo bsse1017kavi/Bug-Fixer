@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.shingle;
 
 /*
@@ -53,9 +52,9 @@ public class ShingleFilterTest extends BaseTokenStreamTestCase {
       this.posIncrAtt = addAttribute(PositionIncrementAttribute.class);
       this.typeAtt = addAttribute(TypeAttribute.class);
     }
-public final boolean incrementToken() {
+
     @Override
-    public final boolean incrementToken() throws IOException {
+public final boolean incrementToken() {
       clearAttributes();
       if (index < testToken.length) {
         Token t = testToken[index++];

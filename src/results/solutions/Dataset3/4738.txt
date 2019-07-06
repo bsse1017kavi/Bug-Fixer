@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -112,9 +111,9 @@ public class InitialContext extends InitialDirContext {
                 final ClassLoader classLoader = WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
                 try {
                     final Class<?> factoryClass = Class.forName(factoryClassName, true, classLoader);
-throw MESSAGES.failedToInstantiate(e, "InitialContextFactory", factoryClassName, classLoader);
+                    defaultInitCtx = ((javax.naming.spi.InitialContextFactory)factoryClass.newInstance()).getInitialContext(myProps);
                 } catch (Exception e) {
-                    throw MESSAGES.failedToInstantiate("InitialContextFactory", factoryClassName, classLoader);
+throw MESSAGES.failedToInstantiate(e, "InitialContextFactory", factoryClassName, classLoader);
                 }
             }
             gotDefault = true;

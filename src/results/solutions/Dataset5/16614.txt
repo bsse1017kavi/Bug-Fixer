@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -35,9 +34,9 @@ public class FeedbackFormPage extends WebPage
 	 */
 	public FeedbackFormPage()
 	{
-feedback.addToBorderBody(tf);
+		final TextField<String> tf = new TextField<String>("input", new Model<String>());
 		final FormComponentFeedbackBorder feedback = new FormComponentFeedbackBorder("feedback");
-		feedback.add(tf);
+feedback.addToBorderBody(tf);
 
 		Form<Void> form = new Form<Void>("form")
 		{

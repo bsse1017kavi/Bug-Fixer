@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -99,9 +98,9 @@ public abstract class AggregationBuilder<B extends AggregationBuilder<B>> extend
         }
     }
 
-builder.startObject(getName());
+    @Override
     public final XContentBuilder toXContent(XContentBuilder builder, Params params) throws IOException {
-        builder.startObject(name);
+builder.startObject(getName());
 
         builder.field(type);
         internalXContent(builder, params);

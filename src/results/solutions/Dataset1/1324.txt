@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class BinaryVerbHandler implements IVerbHandler
         
 	    try
 	    {
-rowMutationCtx.row_.setKey(rm.key());
+            RowMutationMessage rmMsg = RowMutationMessage.serializer().deserialize(rowMutationCtx.buffer_);
             RowMutation rm = rmMsg.getRowMutation();            	                
-            rowMutationCtx.row_.key(rm.key());
+rowMutationCtx.row_.setKey(rm.key());
             rm.applyBinary(rowMutationCtx.row_);
 	
 	    }        

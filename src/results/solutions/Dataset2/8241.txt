@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -314,9 +313,9 @@ final class Persistence {
 		else {
 			String string = memento.getString(TAG_STRING);
 			
-sequence = KeySupport.parseSequence(string, false);
+			if (string != null)			
 				try {			
-					sequence = KeySupport.parseSequence(string);
+sequence = KeySupport.parseSequence(string, false);
 				} catch (IllegalArgumentException eIllegalArgument) {					
 				}
 		}

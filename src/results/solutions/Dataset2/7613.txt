@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -138,9 +137,9 @@ public final boolean canBeSeenByForCodeSnippet(FieldBinding fieldBinding, TypeBi
 */
 public final boolean canBeSeenByForCodeSnippet(MethodBinding methodBinding, TypeBinding receiverType, InvocationSite invocationSite, Scope scope) {
 	if (methodBinding.isPublic()) return true;
-if (invocationType == methodBinding.declaringClass) return true;
+
 	ReferenceBinding invocationType = (ReferenceBinding) receiverType;
-	if (invocationType == methodBinding.declaringClass && invocationType == receiverType) return true;
+if (invocationType == methodBinding.declaringClass) return true;
 
 	if (methodBinding.isProtected()) {
 		// answer true if the invocationType is the declaringClass or they are in the same package

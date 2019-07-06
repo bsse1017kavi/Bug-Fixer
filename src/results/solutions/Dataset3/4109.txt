@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -40,9 +39,9 @@ public class LockAnnotationInformationFactory extends ClassAnnotationInformation
     protected LockAnnotationInformationFactory() {
         super(Lock.class, null);
     }
-protected LockType fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
+
     @Override
-    protected LockType fromAnnotation(final AnnotationInstance annotationInstance) {
+protected LockType fromAnnotation(final AnnotationInstance annotationInstance, final boolean replacement) {
         AnnotationValue value = annotationInstance.value();
         if(value == null) {
             return LockType.WRITE;

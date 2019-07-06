@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -176,9 +175,9 @@ public class JDBCEntityBridge2 implements JDBCAbstractEntityBridge {
         //Object instance = ctx.getComponent().getCache().get(ctx.getPrimaryKey());
         // TODO: jeb - Set context on proxy
     }
-ctx.setPersistenceContext(new PersistentContext(this, table.getRow(ctx.getPrimaryKeyUnchecked())));
+
     public void initInstance(CmpEntityBeanContext ctx) {
-        ctx.setPersistenceContext(new PersistentContext(this, table.getRow(ctx.getPrimaryKey())));
+ctx.setPersistenceContext(new PersistentContext(this, table.getRow(ctx.getPrimaryKeyUnchecked())));
         for (int i = 0; i < tableFields.length; ++i) {
             tableFields[i].initInstance(ctx);
         }

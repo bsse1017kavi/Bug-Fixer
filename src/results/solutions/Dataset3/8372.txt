@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -223,9 +222,9 @@ public class StatefulComponentDescription extends SessionBeanComponentDescriptio
     public void setBeforeCompletion(String className, String methodName) {
         this.beforeCompletion = new MethodDescription(className, methodName);
     }
-protected void setupViewInterceptors(EJBViewDescription view) {
+
     @Override
-    protected void setupViewInterceptors(ViewDescription view) {
+protected void setupViewInterceptors(EJBViewDescription view) {
         // let super do its job
         super.setupViewInterceptors(view);
         // add the @Remove method interceptor

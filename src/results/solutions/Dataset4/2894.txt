@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -251,9 +250,9 @@ public class OpenCloseIndexTests extends AbstractSharedClusterTest {
         OpenIndexResponse openIndexResponse = client.admin().indices().prepareOpen("test1-alias").execute().actionGet();
         assertThat(openIndexResponse.isAcknowledged(), equalTo(true));
         assertIndexIsOpened("test1");
-@Test @TestLogging("cluster.metadata:TRACE")
+    }
 
-    @Test @TestLogging("org.elasticsearch.cluster.metadata:TRACE")
+@Test @TestLogging("cluster.metadata:TRACE")
     public void testCloseOpenAliasMultipleIndices() {
         Client client = client();
         createIndex("test1", "test2");

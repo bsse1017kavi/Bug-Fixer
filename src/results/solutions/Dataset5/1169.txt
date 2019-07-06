@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -852,9 +851,9 @@ void drawInteriorWithFrame_inView (int /*long*/ id, int /*long*/ sel, int /*long
 		nsColumnIndex = (int)outlineView.columnAtPoint (pt);
 		NSArray nsColumns = outlineView.tableColumns ();
 		id nsColumn = nsColumns.objectAtIndex (nsColumnIndex);
-columnIndex = i;
+		for (int i = 0; i < columnCount; i++) {
 			if (columns[i].nsColumn.id == nsColumn.id) {
-				columnIndex = indexOf (columns[i]);
+columnIndex = i;
 				break;
 			}
 		}

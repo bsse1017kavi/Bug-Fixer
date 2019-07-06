@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -90,9 +89,9 @@ public abstract class TypePattern extends PatternNode {
 		if (matchesExactly(type)) {
 			//System.out.println("    true");
 			return true;
-// FuzzyBoolean ret = FuzzyBoolean.NO; // ??? -eh
+		}
 		
-		FuzzyBoolean ret = FuzzyBoolean.NO; // ??? -eh
+// FuzzyBoolean ret = FuzzyBoolean.NO; // ??? -eh
 		for (Iterator i = type.getDirectSupertypes(); i.hasNext(); ) {
 			ResolvedTypeX superType = (ResolvedTypeX)i.next();
 			if (matchesSubtypes(superType)) return true;

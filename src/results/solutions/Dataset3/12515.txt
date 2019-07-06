@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -130,9 +129,9 @@ public class DeploymentReplaceHandler implements OperationStepHandler {
         replaceNode.get(ENABLED.getName()).set(false);
 
         final DeploymentHandlerUtil.ContentItem[] contents = getContents(deployNode.require(CONTENT));
-context.stepCompleted();
+        DeploymentHandlerUtil.replace(context, replaceNode, runtimeName, name, replacedName, vaultReader, contents);
 
-        context.completeStep();
+context.stepCompleted();
     }
 
     protected void addFromHash(byte[] hash) throws OperationFailedException {

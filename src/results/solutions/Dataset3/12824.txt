@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -165,9 +164,9 @@ public interface Bootstrap {
                         @Override
                         public ExtensibleConfigurationPersister createConfigurationPersister(ServerEnvironment serverEnvironment, ExecutorService executorService) {
                             QName rootElement = new QName(Namespace.CURRENT.getUriString(), "server");
-for (Namespace namespace : Namespace.domainValues()) {
+                            StandaloneXml parser = new StandaloneXml(Module.getBootModuleLoader(), executorService, extensionRegistry);
                             BackupXmlConfigurationPersister persister = new BackupXmlConfigurationPersister(serverEnvironment.getServerConfigurationFile(), rootElement, parser, parser);
-                            for (Namespace namespace : Namespace.values()) {
+for (Namespace namespace : Namespace.domainValues()) {
                                 if (!namespace.equals(Namespace.CURRENT)) {
                                     persister.registerAdditionalRootElement(new QName(namespace.getUriString(), "server"), parser);
                                 }

@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.Config;
@@ -163,9 +162,9 @@ public class TransactionalSpoutCoordinator implements IRichSpout {
     }
     
     private class StateInitializer implements RotatingTransactionalState.StateInitializer {
-return _coordinator.initializeTransaction(txid, lastState);
+        @Override
         public Object init(BigInteger txid, Object lastState) {
-            return _coordinator.initialize(txid, lastState);
+return _coordinator.initializeTransaction(txid, lastState);
         }
     }
 }

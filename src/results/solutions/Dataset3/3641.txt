@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public class UserTransactionService extends AbstractService<UserTransaction> {
     private InjectedValue<com.arjuna.ats.jbossatx.jta.TransactionManagerService> injectedArjunaTM = new InjectedValue<com.arjuna.ats.jbossatx.jta.TransactionManagerService>();
 
     public static void addService(final ServiceTarget target) {
-serviceBuilder.addAliases(ServiceName.of("jbosgi", "xservice", UserTransaction.class.getName()));
+        UserTransactionService service = new UserTransactionService();
         ServiceBuilder<?> serviceBuilder = target.addService(SERVICE_NAME, service);
-        serviceBuilder.addAliases(ServiceName.of("jbosgi", UserTransaction.class.getName()));
+serviceBuilder.addAliases(ServiceName.of("jbosgi", "xservice", UserTransaction.class.getName()));
         serviceBuilder.addDependency(ArjunaTransactionManagerService.SERVICE_NAME, com.arjuna.ats.jbossatx.jta.TransactionManagerService.class, service.injectedArjunaTM);
         serviceBuilder.install();
     }

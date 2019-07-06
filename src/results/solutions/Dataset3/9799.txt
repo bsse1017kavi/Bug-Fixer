@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class FileCleaningTrackerTestCase extends FileBasedTestCase {
          * deprecated {@link FileCleaner} is gone. The question is, whether
          * we want to support reuse of {@link FileCleaningTracker} instances,
          * which we should, IMO, not.
-theInstance.q = new ReferenceQueue<Object>();
+         */
         {
-            theInstance.q = new ReferenceQueue();
+theInstance.q = new ReferenceQueue<Object>();
             theInstance.trackers.clear();
             theInstance.exitWhenFinished = false;
             theInstance.reaper = null;

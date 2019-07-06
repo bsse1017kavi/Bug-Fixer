@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -60,9 +59,9 @@ public class ServerInModuleStartupTestCase {
         ServerEnvironment serverEnvironment = Main.determineEnvironment(new String[0], new Properties(System.getProperties()), System.getenv());
         Assert.assertNotNull(serverEnvironment);
         final Bootstrap bootstrap = Bootstrap.Factory.newInstance();
-configuration.setModuleLoader(Module.getBootModuleLoader());
+        final Bootstrap.Configuration configuration = new Bootstrap.Configuration();
         configuration.setServerEnvironment(serverEnvironment);
-        configuration.setModuleLoader(Module.getSystemModuleLoader());
+configuration.setModuleLoader(Module.getBootModuleLoader());
         configuration.setPortOffset(0);
 
         container = bootstrap.startup(configuration, Collections.<ServiceActivator>emptyList()).get();

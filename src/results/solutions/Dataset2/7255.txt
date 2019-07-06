@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -121,9 +120,9 @@ public void acceptResult(CompilationResult result) {
 							duplicateTypeNames = new ArrayList();
 						duplicateTypeNames.add(compoundName);
 						createErrorFor(resourceForLocation(sourceLocation), Util.bind("build.duplicateClassFile", new String(typeName))); //$NON-NLS-1$
-newState.recordLocationForType(qualifiedTypeName, sourceLocation);
+						continue;
 					}
-					newState.locationForType(qualifiedTypeName, sourceLocation);
+newState.recordLocationForType(qualifiedTypeName, sourceLocation);
 				}
 				definedTypeNames.add(writeClassFile(classFile, !isNestedType));
 			}

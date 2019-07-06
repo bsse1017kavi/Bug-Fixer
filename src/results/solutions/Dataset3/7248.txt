@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -292,9 +291,9 @@ public final class CSVFormat implements Serializable {
     // package protected to give access without needing a synthetic accessor
     CSVFormat(final char delimiter, final Character quoteChar,
             final Quote quotePolicy, final Character commentStart,
-final String nullString, final String[] header, final boolean skipHeaderRecord) {
+            final Character escape, final boolean ignoreSurroundingSpaces,
             final boolean ignoreEmptyLines, final String recordSeparator,
-            final String nullString, final String[] header, boolean skipHeaderRecord) {
+final String nullString, final String[] header, final boolean skipHeaderRecord) {
         if (isLineBreak(delimiter)) {
             throw new IllegalArgumentException("The delimiter cannot be a line break");
         }

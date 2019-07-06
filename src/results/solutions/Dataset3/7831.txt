@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class ReadMasterDomainModelHandler implements OperationStepHandler, Descr
     public ReadMasterDomainModelHandler(final Transformers transformers) {
         this.transformers = transformers;
     }
-return transformers.transformResource(Transformers.Factory.getTransformationContext(transformers, context), root);
+
     private Resource transformResource(final OperationContext context, Resource root) {
-        return transformers.transformResource(Transformers.Factory.getTransformationContext(context), root);
+return transformers.transformResource(Transformers.Factory.getTransformationContext(transformers, context), root);
     }
 
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

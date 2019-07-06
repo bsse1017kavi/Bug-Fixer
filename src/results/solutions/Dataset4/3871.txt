@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -88,9 +87,9 @@ public class RestXContentBuilder {
         } else {
             XContentType contentType = XContentFactory.xContentType(source, offset, length);
             if (contentType == builder.contentType()) {
-XContentParser parser = XContentFactory.xContent(contentType).createParser(source, offset, length);
+                builder.rawField("_source", source, offset, length);
             } else {
-                XContentParser parser = XContentFactory.xContent(contentType).createParser(source);
+XContentParser parser = XContentFactory.xContent(contentType).createParser(source, offset, length);
                 try {
                     parser.nextToken();
                     builder.field("_source");

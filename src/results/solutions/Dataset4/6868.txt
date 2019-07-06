@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class HasChildFilter extends Filter implements ScopePhase.CollectorPhase 
     @Override public void clear() {
         parentDocs = null;
     }
-DocIdSet docIdSet = parentDocs.get(reader.getCoreCacheKey());
+
     @Override public DocIdSet getDocIdSet(IndexReader reader) throws IOException {
-        DocIdSet docIdSet = parentDocs.get(reader.getFieldCacheKey());
+DocIdSet docIdSet = parentDocs.get(reader.getCoreCacheKey());
         if (docIdSet == null) {
             return DocIdSet.EMPTY_DOCIDSET;
         }

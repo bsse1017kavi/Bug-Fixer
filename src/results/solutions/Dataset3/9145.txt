@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class BoundedQueueThreadPoolService implements Service<ManagedQueueExecut
     }
 
     public synchronized ManagedQueueExecutorService getValue() throws IllegalStateException {
-throw ThreadsMessages.MESSAGES.boundedQueueThreadPoolExecutorUninitialized();
+        final ManagedQueueExecutorService value = this.executor;
         if (value == null) {
-            throw ThreadsLogger.ROOT_LOGGER.boundedQueueThreadPoolExecutorUninitialized();
+throw ThreadsMessages.MESSAGES.boundedQueueThreadPoolExecutorUninitialized();
         }
         return value;
     }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -330,9 +329,9 @@ public class Array<T> implements Iterable<T> {
 	public void sort () {
 		Sort.instance().sort(items, 0, size);
 	}
-public void sort (Comparator<? super T> comparator) {
+
 	/** Sorts the array. This method is not thread safe (uses {@link Sort#instance()}). */
-	public void sort (Comparator<T> comparator) {
+public void sort (Comparator<? super T> comparator) {
 		Sort.instance().sort(items, comparator, 0, size);
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -140,9 +139,9 @@ public class DeploymentAddHandler implements OperationStepHandler {
         } else {
         }
 
-context.stepCompleted();
+        newModel.get(CONTENT_ALL.getName()).set(content);
 
-        context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
     }
 
     private static OperationFailedException createFailureException(String msg) {

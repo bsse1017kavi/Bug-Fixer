@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -36,8 +35,8 @@ public class ReleaseChannelFutureListener implements ChannelFutureListener {
         this.releasable = releasable;
     }
 
-releasable.close();
+    @Override
     public void operationComplete(ChannelFuture future) throws Exception {
-        releasable.release();
+releasable.close();
     }
 }

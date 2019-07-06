@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -397,9 +396,9 @@ public class TestFieldsReader extends LuceneTestCase {
       for(int i=0;i<2;i++)
         writer.addDocument(testDoc);
       writer.optimize();
-IndexReader reader = IndexReader.open(dir, true);
+      writer.close();
 
-      IndexReader reader = IndexReader.open(dir);
+IndexReader reader = IndexReader.open(dir, true);
 
       FaultyIndexInput.doFail = true;
 

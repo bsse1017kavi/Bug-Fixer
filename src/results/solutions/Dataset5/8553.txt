@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -861,9 +860,9 @@ public abstract class MarkupContainer extends Component
 			// The Page requires at least on complete render cycle in order
 			// to assign markup streams to all components. Only than
 			// a per-component re-render is possible.
-getPage().setAllowReRender(false);
+			if (getPage() != null)
 			{
-				getPage().setRequiresFullRender(true);
+getPage().setAllowReRender(false);
 			}
 		}
 

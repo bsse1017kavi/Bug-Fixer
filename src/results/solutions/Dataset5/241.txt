@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -205,9 +204,9 @@ public class WebSession extends Session
 					Request request = requestCycle.getRequest();
 
 					IRequestHandler activeRequestHandler = requestCycle.getActiveRequestHandler();
-.renderContextPathRelativeUrl(url);
+					String url = requestCycle.urlFor(activeRequestHandler).toString();
 					String relativeUrl = requestCycle.getUrlRenderer()
-						.renderContextPathRelativeUrl(url, request);
+.renderContextPathRelativeUrl(url);
 					Page browserInfoPage = newBrowserInfoPage(relativeUrl);
 					throw new RestartResponseException(browserInfoPage);
 				}

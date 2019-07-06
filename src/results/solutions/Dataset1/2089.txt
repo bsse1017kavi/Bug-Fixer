@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -603,9 +602,9 @@ public class TestPayloads extends LuceneTestCase {
     ts = new MockTokenizer(new StringReader("another"), MockTokenizer.WHITESPACE, true);
     assertFalse(ts.hasAttribute(PayloadAttribute.class));
     field.setTokenStream(ts);
-AtomicReader sr = SlowCompositeReaderWrapper.wrap(reader);
+    writer.addDocument(doc);
     DirectoryReader reader = writer.getReader();
-    AtomicReader sr = reader.getSequentialSubReaders().get(0);
+AtomicReader sr = SlowCompositeReaderWrapper.wrap(reader);
     DocsAndPositionsEnum de = sr.termPositionsEnum(null, "field", new BytesRef("withPayload"));
     de.nextDoc();
     de.nextPosition();

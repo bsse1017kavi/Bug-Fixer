@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -351,9 +350,9 @@ public class CCUpdate extends ClearCase
 
         result = run( commandLine );
         if( result != 0 )
-throw new BuildException( msg );
+        {
             String msg = "Failed executing: " + commandLine.toString();
-            throw new BuildException( msg, location );
+throw new BuildException( msg );
         }
     }
 

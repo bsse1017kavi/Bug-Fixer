@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -184,9 +183,9 @@ public class OverseerCollectionProcessor implements Runnable, ClosableThread {
         }
       } while (srsp != null);
     } catch (SolrException ex) {
-results.add("Operation " + operation + " caused exception:", ex);
+      SolrException.log(log, "Collection " + operation + " of " + operation
           + " failed");
-      results.add("Operation " + operation + " cause exception:", ex);
+results.add("Operation " + operation + " caused exception:", ex);
     } finally {
       return new OverseerSolrResponse(results);
     }

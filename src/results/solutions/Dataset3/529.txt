@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -293,9 +292,9 @@ public final class ConnectorServices {
      * The returned service names can be used by other services to add dependency on the resource adapter activations.
      *
      * @param raName The resource adapter name
-public static synchronized Set<ServiceName> getResourceAdapterServiceNames(final String raName) {
+     * @return
      */
-    public static synchronized Set<ServiceName> getResourceAdapterDependencies(final String raName) {
+public static synchronized Set<ServiceName> getResourceAdapterServiceNames(final String raName) {
         if (raName == null || raName.trim().isEmpty()) {
             throw MESSAGES.stringParamCannotBeNullOrEmpty("resource adapter name");
         }

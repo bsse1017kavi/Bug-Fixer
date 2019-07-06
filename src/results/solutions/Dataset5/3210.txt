@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -429,9 +428,9 @@ public final class TestUtil {
                 MessageUtil.error(handler, "not readable file: " + basedir + " - " + file);
                 return null;
             }
-/*String path = */FileUtil.normalizedPath(file, basedir);
+            // capture file as FileLine[]
             InputStream in = null;
-            String path = FileUtil.normalizedPath(file, basedir);
+/*String path = */FileUtil.normalizedPath(file, basedir);
             LineStream capture = new LineStream();
             try { 
                 lineate(capture, handler, basedir, file);

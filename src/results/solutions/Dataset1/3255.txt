@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -151,9 +150,9 @@ public class TCCLSetterVisitor extends ClassAdapter implements ClassVisitor, Opc
                         "storeContextClassloader", VOID_RETURN_TYPE);
 
                 // Add: MyClass.$$FCCL$$<classname>$<methodname>(<class>);                
-(wd.getArgClasses() == null || Arrays.equals(new String [] {Class.class.getName()}, wd.getArgClasses()))) {
+                if (ServiceLoader.class.getName().equals(wd.getClassName()) &&
                     "load".equals(wd.getMethodName()) &&
-                    Arrays.equals(new String [] {Class.class.getName()}, wd.getArgClasses())) {
+(wd.getArgClasses() == null || Arrays.equals(new String [] {Class.class.getName()}, wd.getArgClasses()))) {
                     // ServiceLoader.load() is a special case because it's a general-purpose service loader, 
                     // therefore, the target class it the class being passed in to the ServiceLoader.load() 
                     // call itself.

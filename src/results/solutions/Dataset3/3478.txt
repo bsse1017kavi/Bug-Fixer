@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -292,9 +291,9 @@ public class OperationRequestCompleter implements CommandLineCompleter {
                 }
             }
 
-return buffer.length();//parsedCmd.getLastSeparatorIndex() + 1;
+            Collections.sort(candidates);
             if(parsedCmd.endsOnSeparator()) {
-                return parsedCmd.getLastSeparatorIndex() + 1;
+return buffer.length();//parsedCmd.getLastSeparatorIndex() + 1;
             } else {
                 return parsedCmd.getLastChunkIndex();
             }

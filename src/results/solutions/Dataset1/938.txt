@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -59,9 +58,9 @@ class RunUpdateProcessor extends UpdateRequestProcessor
     changesSinceCommit = true;
   }
 
-if( cmd.isDeleteById()) {
+  @Override
   public void processDelete(DeleteUpdateCommand cmd) throws IOException {
-    if( cmd.id != null ) {
+if( cmd.isDeleteById()) {
       updateHandler.delete(cmd);
     }
     else {

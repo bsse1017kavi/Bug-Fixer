@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -30,9 +29,9 @@ public class StringLiteral extends Literal {
 
 	public StringLiteral(String payload, int pos, String value) {
 		super(payload,pos);
-this.value = new TypedValue(value.replaceAll("''", "'"));
+		// TODO should these have been skipped being created by the parser rules? or not?
 		value = value.substring(1, value.length() - 1);
-		this.value = new TypedValue(value.replaceAll("''", "'"),STRING_TYPE_DESCRIPTOR);
+this.value = new TypedValue(value.replaceAll("''", "'"));
 	}
 
 	@Override

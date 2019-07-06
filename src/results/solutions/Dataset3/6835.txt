@@ -1,4 +1,3 @@
-
 package org.jboss.as.platform.mbean;
 
 import java.lang.management.ManagementFactory;
@@ -12,9 +11,9 @@ import org.jboss.as.controller.registry.ManagementResourceRegistration;
 public class PlatformMBeanResourceDefinition extends SimpleResourceDefinition {
     static final PlatformMBeanResourceDefinition INSTANCE = new PlatformMBeanResourceDefinition();
 
-PlatformMBeanUtil.getResolver("platform-mbeans"));
+    private PlatformMBeanResourceDefinition() {
         super(PlatformMBeanConstants.PLATFORM_MBEAN_PATH,
-                PlatformMBeanDescriptions.getResolver("platform-mbeans"));
+PlatformMBeanUtil.getResolver("platform-mbeans"));
     }
 
     @Override

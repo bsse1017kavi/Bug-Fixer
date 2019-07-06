@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class RestCreateIndexAction extends BaseRestHandler {
                 }
             }
         }
-client.admin().indices().create(createIndexRequest, new ActionListener<CreateIndexResponse>() {
+        CreateIndexRequest createIndexRequest = new CreateIndexRequest(request.param("index"), indexSettings);
         createIndexRequest.timeout(request.paramAsTime("timeout", timeValueSeconds(10)));
-        client.admin().indices().execCreate(createIndexRequest, new ActionListener<CreateIndexResponse>() {
+client.admin().indices().create(createIndexRequest, new ActionListener<CreateIndexResponse>() {
             @Override public void onResponse(CreateIndexResponse response) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

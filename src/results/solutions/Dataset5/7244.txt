@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -194,9 +193,9 @@ public class XMLJUnitResultFormatter implements JUnitResultFormatter, XMLConstan
     public void startTest(Test t) {
         testStarts.put(t, new Long(System.currentTimeMillis()));
 
-JUnitVersionHelper.getTestCaseName(t));
+        Element currentTest = doc.createElement(TESTCASE);
         currentTest.setAttribute(ATTR_NAME, 
-                                 JUnitVersionHelper.getTestCaseName((TestCase) t));
+JUnitVersionHelper.getTestCaseName(t));
         rootElement.appendChild(currentTest);
         testElements.put(t, currentTest);
     }

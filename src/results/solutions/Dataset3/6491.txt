@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ public class SFSBCallStack {
 
     /**
      * Each thread will have its own list of SFSB invocations in progress.
-protected ArrayList<SFSBContextHandle> initialValue() {
+     */
     private static ThreadLocal<ArrayList<SFSBContextHandle>> SFSBInvocationStack = new ThreadLocal<ArrayList<SFSBContextHandle>>() {
-        protected synchronized ArrayList<SFSBContextHandle> initialValue() {
+protected ArrayList<SFSBContextHandle> initialValue() {
             return new ArrayList<SFSBContextHandle>();
         }
     };

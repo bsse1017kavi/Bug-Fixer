@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -351,9 +350,9 @@ public class QualifiedAllocationExpression extends AllocationExpression {
 			if (this.typeArguments != null) {
 				for (int i = 0, typeArgumentsLength = this.typeArguments.length; i < typeArgumentsLength; i++) {
 					this.typeArguments[i].traverse(visitor, scope);
-if (this.type != null) type.traverse(visitor, scope);
+				}					
 			}
-			type.traverse(visitor, scope);
+if (this.type != null) type.traverse(visitor, scope);
 			if (arguments != null) {
 				int argumentsLength = arguments.length;
 				for (int i = 0; i < argumentsLength; i++)

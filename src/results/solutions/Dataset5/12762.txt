@@ -1,5 +1,4 @@
 
-
 import java.io.*;
 
 class Point { 
@@ -54,9 +53,9 @@ aspect AdvisesRelationshipCoverage {
 	before(): callConstructorP() { }
 
 	pointcut getP(): get(int *.*);
-pointcut setP(): set(int *.*) && !set(int *.xxx);
+	before(): getP() { }
 
-	pointcut setP(): set(int *.*);
+pointcut setP(): set(int *.*) && !set(int *.xxx);
 	before(): setP() { }
 
 	pointcut initializationP(): initialization(Point.new(..));

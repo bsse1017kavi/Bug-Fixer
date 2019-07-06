@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -150,9 +149,9 @@ public class LongFieldDataBenchmark {
             final LongFieldMapper mapper = new LongFieldMapper.Builder(fieldName).build(new BuilderContext(null, new ContentPath(1)));
             final IndexNumericFieldData<AtomicNumericFieldData> fd = fds.getForField(mapper);
             final long start = System.nanoTime();
-System.out.println(data + "\t" + loadingTimeMs + "\t" + afd.getClass().getSimpleName() + "\t" + RamUsageEstimator.humanReadableUnits(afd.ramBytesUsed()));
+            final AtomicNumericFieldData afd = fd.loadDirect(SlowCompositeReaderWrapper.wrap(dr).getContext());
             final long loadingTimeMs = (System.nanoTime() - start) / 1000 / 1000;
-            System.out.println(data + "\t" + loadingTimeMs + "\t" + afd.getClass().getSimpleName() + "\t" + RamUsageEstimator.humanSizeOf(afd.getLongValues()) + "\t" + RamUsageEstimator.humanReadableUnits(afd.getMemorySizeInBytes()));
+System.out.println(data + "\t" + loadingTimeMs + "\t" + afd.getClass().getSimpleName() + "\t" + RamUsageEstimator.humanReadableUnits(afd.ramBytesUsed()));
             dr.close();
         }
     }

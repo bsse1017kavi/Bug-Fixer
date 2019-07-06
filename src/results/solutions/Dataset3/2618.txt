@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class ResourceInjectionAnnotationParsingProcessor extends AbstractCompone
         if(classInfo == null) {
             return; // We can't continue without the annotation index info.
         }
-final List<MethodInterceptorConfiguration> interceptorConfigurations = componentConfiguration.getClassInterceptorConfigs();
+        componentConfiguration.addResourceInjectionConfigs(getResourceConfigurations(classInfo));
 
-        final List<MethodInterceptorConfiguration> interceptorConfigurations = componentConfiguration.getMethodInterceptorConfigs();
+final List<MethodInterceptorConfiguration> interceptorConfigurations = componentConfiguration.getClassInterceptorConfigs();
         for (MethodInterceptorConfiguration interceptorConfiguration : interceptorConfigurations) {
             final ClassInfo interceptorClassInfo = index.getClassByName(DotName.createSimple(interceptorConfiguration.getInterceptorClassName()));
             if(interceptorClassInfo == null) {

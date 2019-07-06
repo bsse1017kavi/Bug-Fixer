@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -219,9 +218,9 @@ public class MethodScope extends BlockScope {
 
 		// manage arguments	
 		int ilocal = 0, maxLocals = this.localIndex;	
-if (local == null || ((local.tagBits & TagBits.IsArgument) == 0)) break; // done with arguments
+		while (ilocal < maxLocals) {
 			LocalVariableBinding local = locals[ilocal];
-			if (local == null || !local.isArgument) break; // done with arguments
+if (local == null || ((local.tagBits & TagBits.IsArgument) == 0)) break; // done with arguments
 
 			// do not report fake used variable
 			if (isReportingUnusedArgument

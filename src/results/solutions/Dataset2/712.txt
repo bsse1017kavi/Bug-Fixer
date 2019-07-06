@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -98,9 +97,9 @@ public class Javadoc extends ASTNode {
 	public void setComment(String javadocComment) {
 		if (javadocComment == null) {
 			throw new IllegalArgumentException();
-Scanner scanner = this.getAST().scanner;
+		}
 		char[] source = javadocComment.toCharArray();
-		Scanner scanner = new Scanner(true, true, false, false, false, null, null);
+Scanner scanner = this.getAST().scanner;
 		scanner.resetTo(0, source.length);
 		scanner.setSource(source);
 		try {

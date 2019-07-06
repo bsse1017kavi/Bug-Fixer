@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -52,8 +51,8 @@ public class MemoryMXBeanGCHandler implements OperationStepHandler, DescriptionP
         context.completeStep();
     }
 
-return PlatformMBeanDescriptions.getDescriptionOnlyOperation(locale, "gc", PlatformMBeanConstants.MEMORY);
+    @Override
     public ModelNode getModelDescription(Locale locale) {
-        return PlatformMBeanDescriptions.getDescriptionOnlyOperation(locale, PlatformMBeanConstants.MEMORY + ".gc");
+return PlatformMBeanDescriptions.getDescriptionOnlyOperation(locale, "gc", PlatformMBeanConstants.MEMORY);
     }
 }

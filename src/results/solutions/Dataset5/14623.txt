@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -283,9 +282,9 @@ int /*long*/ callWindowProc (int /*long*/ hwnd, int msg, int /*long*/ wParam, in
 		switch (msg) {
 			case OS.WM_SIZE: {
 				ignoreResize = true;
-return result;
+				int result = OS.CallWindowProc (ComboProc, hwnd, msg, wParam, lParam);
 				ignoreResize = false;
-				break;
+return result;
 			}
 		}
 		return OS.CallWindowProc (ComboProc, hwnd, msg, wParam, lParam);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.benchmark.byTask.tasks;
 
 /**
@@ -111,9 +110,9 @@ public abstract class ReadTask extends PerfTask {
       TopDocs hits = null;
       final int numHits = numHits();
       if (numHits > 0) {
-Weight w = searcher.createNormalizedWeight(q);
+        if (withCollector() == false) {
           if (sort != null) {
-            Weight w = q.weight(searcher);
+Weight w = searcher.createNormalizedWeight(q);
             TopFieldCollector collector = TopFieldCollector.create(sort, numHits,
                                                                    true, withScore(),
                                                                    withMaxScore(),

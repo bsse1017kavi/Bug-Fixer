@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 the original author or authors.
  *
@@ -106,9 +105,9 @@ public class AnnotationCacheDefinitionSource extends AbstractFallbackCacheDefini
 	 * @return CacheOperationDefinition the configured caching operation,
 	 * or <code>null</code> if none was found
 	 */
-CacheDefinition attr = annotationParser.parseCacheAnnotation(ae);
+	protected CacheDefinition determineCacheDefinition(AnnotatedElement ae) {
 		for (CacheAnnotationParser annotationParser : this.annotationParsers) {
-			CacheDefinition attr = annotationParser.parseTransactionAnnotation(ae);
+CacheDefinition attr = annotationParser.parseCacheAnnotation(ae);
 			if (attr != null) {
 				return attr;
 			}

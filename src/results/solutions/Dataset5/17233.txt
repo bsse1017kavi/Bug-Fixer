@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2003 Contributors.
  * All rights reserved. 
@@ -112,9 +111,9 @@ public class AspectJElementHierarchy implements IHierarchy {
 		for (Iterator it = parent.getChildren().iterator(); it.hasNext(); ) {
 			IProgramElement node = (IProgramElement)it.next();
 			if (node.getKind() == kind && label.equals(node.toLabelString())) {
-IProgramElement childSearch = findElementForLabel(node, kind, label);
+				return node;
 			} else {
-				IProgramElement childSearch = findElementForSignature(node, kind, label);
+IProgramElement childSearch = findElementForLabel(node, kind, label);
 				if (childSearch != null) return childSearch;
 			}
 		}

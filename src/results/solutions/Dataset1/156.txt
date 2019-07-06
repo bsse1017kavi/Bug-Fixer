@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.suggest.fst;
 
 /*
@@ -236,9 +235,9 @@ public class FSTCompletionBuilder {
     // Build the automaton.
     final Outputs<Object> outputs = NoOutputs.getSingleton();
     final Object empty = outputs.getNoOutput();
-shareMaxTailLength, outputs, null, false, true);
+    final Builder<Object> builder = new Builder<Object>(
         FST.INPUT_TYPE.BYTE1, 0, 0, true, true, 
-        shareMaxTailLength, outputs, null, false);
+shareMaxTailLength, outputs, null, false, true);
     
     BytesRef scratch = new BytesRef();
     BytesRef entry;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -223,9 +222,9 @@ public class VAJImport extends VAJTask
      *
      * @param fileset Description of Parameter
      */
-DirectoryScanner ds = fileset.getDirectoryScanner( this.getProject() );
+    protected void importFileset( FileSet fileset )
     {
-        DirectoryScanner ds = fileset.getDirectoryScanner( this.project );
+DirectoryScanner ds = fileset.getDirectoryScanner( this.getProject() );
         if( ds.getIncludedFiles().length == 0 )
         {
             return;

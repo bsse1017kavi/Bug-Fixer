@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -52,9 +51,9 @@ public class RestSinglePingAction extends BaseRestHandler {
         // if we have a local operation, execute it on a thread since we don't spawn
         singlePingRequest.threadedOperation(true);
         client.admin().cluster().execPing(singlePingRequest, new ActionListener<SinglePingResponse>() {
-JsonBuilder generator = RestJsonBuilder.restJsonBuilder(request);
+            @Override public void onResponse(SinglePingResponse result) {
                 try {
-                    JsonBuilder generator = RestJsonBuilder.cached(request);
+JsonBuilder generator = RestJsonBuilder.restJsonBuilder(request);
                     generator.startObject().field("ok", true).endObject();
                     channel.sendResponse(new JsonRestResponse(request, OK, generator));
                 } catch (Exception e) {

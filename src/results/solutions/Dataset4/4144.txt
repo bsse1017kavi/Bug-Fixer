@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class StemmerTokenFilterFactory extends AbstractTokenFilterFactory {
         this.language = Strings.capitalize(settings.get("language", settings.get("name", "porter")));
     }
 
-final Version indexVersion = Version.indexCreated(indexSettings);
+    @Override
     public TokenStream create(TokenStream tokenStream) {
-        final Version indexVersion = indexSettings.getAsVersion(IndexMetaData.SETTING_VERSION_CREATED, Version.CURRENT);
+final Version indexVersion = Version.indexCreated(indexSettings);
 
         if ("arabic".equalsIgnoreCase(language)) {
             return new ArabicStemFilter(tokenStream);

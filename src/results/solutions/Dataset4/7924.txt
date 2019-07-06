@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class ShardStats extends BroadcastShardOperationResponse implements ToXCo
 
     ShardStats() {
     }
-super(indexShard.routingEntry().shardId());
+
     public ShardStats(IndexShard indexShard, CommonStatsFlags flags) {
-        super(indexShard.routingEntry().index(), indexShard.routingEntry().id());
+super(indexShard.routingEntry().shardId());
         this.shardRouting = indexShard.routingEntry();
         this.stats = new CommonStats(indexShard, flags);
     }

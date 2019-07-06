@@ -1,5 +1,4 @@
 
-
 package com.mojang.metagun.screen;
 
 import java.util.Random;
@@ -35,9 +34,9 @@ public abstract class Screen {
 	}
 
 	public void draw (TextureRegion region, int x, int y) {
-spriteBatch.draw(region, x, y, width, region.getRegionHeight());
+		int width = region.getRegionWidth();
 		if (width < 0) width = -width;
-		spriteBatch.draw(region, x, y, width, -region.getRegionHeight());
+spriteBatch.draw(region, x, y, width, region.getRegionHeight());
 	}
 
 	public void drawString (String string, int x, int y) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public abstract class SessionBeanComponentCreateService extends EJBComponentCrea
             this.methodApplicableAccessTimeouts = Collections.unmodifiableMap(accessTimeouts);
         }
 
-processTxAttr(sessionBeanComponentDescription, MethodIntf.TIMER, method);
+        if (sessionBeanComponentDescription.getScheduleMethods() != null) {
             for (Method method : sessionBeanComponentDescription.getScheduleMethods().keySet()) {
-                processTxAttr(sessionBeanComponentDescription, MethodIntf.BEAN, method);
+processTxAttr(sessionBeanComponentDescription, MethodIntf.TIMER, method);
             }
         }
         final EJBViewDescription local = sessionBeanComponentDescription.getEjbLocalView();

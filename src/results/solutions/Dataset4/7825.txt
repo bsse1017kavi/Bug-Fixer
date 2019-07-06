@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -137,9 +136,9 @@ public class HasParentQueryParser implements QueryParser {
         Set<String> parentTypes = new HashSet<>(5);
         parentTypes.add(parentType);
         for (DocumentMapper documentMapper : parseContext.mapperService()) {
-parentChildIndexFieldData = parseContext.getForField(parentFieldMapper);
+            ParentFieldMapper parentFieldMapper = documentMapper.parentFieldMapper();
             if (parentFieldMapper.active()) {
-                parentChildIndexFieldData = parseContext.fieldData().getForField(parentFieldMapper);
+parentChildIndexFieldData = parseContext.getForField(parentFieldMapper);
                 DocumentMapper parentTypeDocumentMapper = parseContext.mapperService().documentMapper(parentFieldMapper.type());
                 if (parentTypeDocumentMapper == null) {
                     // Only add this, if this parentFieldMapper (also a parent)  isn't a child of another parent.

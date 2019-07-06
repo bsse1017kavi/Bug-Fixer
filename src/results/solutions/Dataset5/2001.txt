@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -119,9 +118,9 @@ public class Draw extends TransformOperation
             {
                 PlanarImage op = ((TransformOperation)instr).executeTransformOperation(null);
                 BufferedImage child = op.getAsBufferedImage();
-PlanarImage.wrapRenderedImage(bi);
+                log("\tDrawing to x=" + xloc + " y=" + yloc);
                 graphics.drawImage(child, null, xloc, yloc);
-                PlanarImage test = PlanarImage.wrapRenderedImage(bi);
+PlanarImage.wrapRenderedImage(bi);
             }
         }
         image = PlanarImage.wrapRenderedImage(bi);

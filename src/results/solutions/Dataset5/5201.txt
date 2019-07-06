@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public class StatGraphVisualizer extends AbstractVisualizer implements Clearable
     private transient ObjectTableModel model;
 
     /**
-private final transient Object lock = new Object();
+     * Lock used to protect tableRows update + model update
      */
-    private transient Object lock = new Object();
+private final transient Object lock = new Object();
     
     private final Map<String, SamplingStatCalculator> tableRows =
         new ConcurrentHashMap<String, SamplingStatCalculator>();

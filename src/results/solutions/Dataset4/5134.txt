@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -524,9 +523,9 @@ class LwjglGL10 implements GL10 {
 	public final void glMultMatrixf (float[] m, int offset) {
 		GL11.glMultMatrix(toBuffer(m, offset));
 	}
-GL11.glTexEnv(target, pname, toBuffer(params, offset));
+
 	public final void glTexEnvfv (int target, int pname, float[] params, int offset) {
-		glTexEnvf(target, pname, params[offset]);
+GL11.glTexEnv(target, pname, toBuffer(params, offset));
 	}
 
 	public void glPolygonMode (int face, int mode) {

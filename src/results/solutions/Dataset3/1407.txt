@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -301,9 +300,9 @@ final class WebMetaDataCreator {
         final boolean hasAuthMethod = authMethod != null;
 
         if (hasAuthMethod) {
-final boolean hasSecurityRolesMD = securityRolesMD != null && !securityRolesMD.isEmpty();
+            final SecurityMetaDataAccessorEJB ejbMDAccessor = getEjbSecurityMetaDataAccessor(dep);
             final SecurityRolesMetaData securityRolesMD = ejbMDAccessor.getSecurityRoles(dep);
-            final boolean hasSecurityRolesMD = securityRolesMD != null;
+final boolean hasSecurityRolesMD = securityRolesMD != null && !securityRolesMD.isEmpty();
 
             if (hasSecurityRolesMD) {
                 ROOT_LOGGER.creatingSecurityRoles();

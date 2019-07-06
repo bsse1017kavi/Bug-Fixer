@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -138,9 +137,9 @@ public final class ResourceAdapterActivatorService extends AbstractResourceAdapt
 
         private final IronJacamar ijmd;
 
-super(serviceTarget, url, deploymentName, root, cl, cmd, null);
+        public ResourceAdapterActivator(ServiceTarget serviceTarget, URL url, String deploymentName, File root,
                 ClassLoader cl, Connector cmd, IronJacamar ijmd) {
-            super(serviceTarget, url, deploymentName, root, cl, cmd);
+super(serviceTarget, url, deploymentName, root, cl, cmd, null);
             this.ijmd = ijmd;
         }
 

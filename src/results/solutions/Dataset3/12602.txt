@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class NewHostControllerBootstrap {
         // The first default services are registered before the bootstrap operations are executed.
         final ServiceTarget serviceTarget = serviceContainer;
 
-serviceTarget.addService(NewProcessControllerConnectionService.SERVICE_NAME, processControllerClient).install();
+        // Install the process controller client
         final NewProcessControllerConnectionService processControllerClient = new NewProcessControllerConnectionService(environment, authCode);
-        serviceTarget.addService(ProcessControllerConnectionService.SERVICE_NAME, processControllerClient).install();
+serviceTarget.addService(NewProcessControllerConnectionService.SERVICE_NAME, processControllerClient).install();
 
         // Thread Factory and Executor Services
         final ServiceName threadFactoryServiceName = SERVICE_NAME_BASE.append("thread-factory");

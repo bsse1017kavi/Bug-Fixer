@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -40,9 +39,9 @@ import org.jboss.security.SecurityContextFactory;
  * @author alessio.soldano@jboss.com
  * @since 13-May-2011
  */
-private final SecurityDomainContext context;
+public final class SecurityDomainContextAdaptor implements org.jboss.wsf.spi.security.SecurityDomainContext {
 
-    private SecurityDomainContext context;
+private final SecurityDomainContext context;
 
     public SecurityDomainContextAdaptor(SecurityDomainContext context) {
         this.context = context;

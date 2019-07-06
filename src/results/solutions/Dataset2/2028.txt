@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -37,9 +36,9 @@ public class CodeSnippetThisReference extends ThisReference implements Evaluatio
 public CodeSnippetThisReference(int s, int sourceEnd, EvaluationContext evaluationContext, boolean isImplicit) {
 	super(s, sourceEnd);
 	this.evaluationContext = evaluationContext;
-public boolean checkAccess(MethodScope methodScope) {
+	this.isImplicit = isImplicit;
 }
-protected boolean checkAccess(MethodScope methodScope) {
+public boolean checkAccess(MethodScope methodScope) {
 	// this/super cannot be used in constructor call
 	if (evaluationContext.isConstructorCall) {
 		methodScope.problemReporter().fieldsOrThisBeforeConstructorInvocation(this);

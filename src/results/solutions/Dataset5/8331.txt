@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
@@ -79,9 +78,9 @@ public class AnchorModifier extends AbstractTestElement implements PreProcessor,
 			result = (HTTPSampleResult) res;
 		}
 		List potentialLinks = new ArrayList();
-responseText = new String(result.getResponseData(), result.getDataEncoding());
+		String responseText = "";
 		try {
-			responseText = new String(result.getResponseData(), "8859_1");
+responseText = new String(result.getResponseData(), result.getDataEncoding());
 		} catch (UnsupportedEncodingException e) {
 		}
 		Document html;

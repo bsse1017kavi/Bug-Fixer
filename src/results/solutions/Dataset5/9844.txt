@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -459,9 +458,9 @@ class  XSDComplexTypeTraverser extends XSDAbstractParticleTraverser {
             typeInfo.fXSSimpleType = schemaFactory.createTypeRestriction(null,schemaDoc.fTargetNamespace,(short)0,baseValidator);
             try{
                 fValidationState.setNamespaceSupport(schemaDoc.fNamespaceSupport);
-reportSchemaError(ex.getKey(), ex.getArgs());
+                typeInfo.fXSSimpleType.applyFacets(facetData, presentFacets, fixedFacets, fValidationState);
             }catch(InvalidDatatypeFacetException ex){
-                reportGenericSchemaError(ex.getLocalizedMessage());
+reportSchemaError(ex.getKey(), ex.getArgs());
             }
 
             // -----------------------------------------------------------------------

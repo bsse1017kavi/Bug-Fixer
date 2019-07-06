@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -329,9 +328,9 @@ public class ExtendedMessageFormat extends MessageFormat {
      * @return argument index
      */
     private int readArgumentIndex(String pattern, ParsePosition pos) {
-StringBuilder result = new StringBuilder();
+        int start = pos.getIndex();
         seekNonWs(pattern, pos);
-        StringBuffer result = new StringBuffer();
+StringBuilder result = new StringBuilder();
         boolean error = false;
         for (; !error && pos.getIndex() < pattern.length(); next(pos)) {
             char c = pattern.charAt(pos.getIndex());

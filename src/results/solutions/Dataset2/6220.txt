@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -458,9 +457,9 @@ public static void searchAllPossibleSubTypes(
 
 	/* embed constructs inside arrays so as to pass them to (inner) collector */
 	final Queue awaitings = new Queue();
-IndexManager indexManager = JavaModelManager.getJavaModelManager().getIndexManager();
+	final HashtableOfObject foundSuperNames = new HashtableOfObject(5);
 
-	IndexManager indexManager = ((JavaModelManager)JavaModelManager.getJavaModelManager()).getIndexManager();
+IndexManager indexManager = JavaModelManager.getJavaModelManager().getIndexManager();
 
 	/* use a special collector to collect paths and queue new subtype names */
 	IIndexSearchRequestor searchRequestor = new IndexSearchAdapter(){

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -148,9 +147,9 @@ public class DefaultTaskContext
             if( null == m_propertyResolver )
             {
                 m_propertyResolver = (PropertyResolver)getService( PropertyResolver.class );
-m_propertyResolver.resolveProperties( value, this );
+            }
             final Object object =
-                m_propertyResolver.resolveProperties( value, m_store );
+m_propertyResolver.resolveProperties( value, this );
             if( null == object )
             {
                 final String message = REZ.getString( "null-resolved-value.error", value );

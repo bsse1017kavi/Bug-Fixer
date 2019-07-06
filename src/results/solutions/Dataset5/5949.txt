@@ -1,4 +1,3 @@
-
 /*
  * $Id: Session.java 5063 2006-03-21 11:21:19 -0800 (Tue, 21 Mar 2006)
  * jonathanlocke $ $Revision$ $Date: 2006-03-21 11:21:19 -0800 (Tue, 21
@@ -451,9 +450,9 @@ public abstract class Session implements Serializable, IConverterLocator
 		{
 			log.debug("Getting page [path = " + path + ", versionNumber = " + versionNumber + "]");
 		}
-PageMap pageMap = pageMapForName(pageMapName, pageMapName.equals(PageMap.DEFAULT_NAME));
+
 		// Get page map by name, creating the default page map automatically
-		PageMap pageMap = pageMapForName(pageMapName, pageMapName == PageMap.DEFAULT_NAME);
+PageMap pageMap = pageMapForName(pageMapName, pageMapName.equals(PageMap.DEFAULT_NAME));
 		if (pageMap != null)
 		{
 			long startTime = System.currentTimeMillis();

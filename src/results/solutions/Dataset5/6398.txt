@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -139,9 +138,9 @@ public class UnknownElement extends Task {
         Class parentClass = parent.getClass();
         IntrospectionHelper ih = IntrospectionHelper.getHelper(parentClass);
 
-Object realChild = ih.createElement(project, parent, child.getTag());
+        for (int i=0; i<children.size(); i++) {
             UnknownElement child = (UnknownElement) children.elementAt(i);
-            Object realChild = ih.createElement(parent, child.getTag());
+Object realChild = ih.createElement(project, parent, child.getTag());
             RuntimeConfigurable childWrapper = parentWrapper.getChild(i);
             childWrapper.setProxy(realChild);
             child.handleChildren(realChild, childWrapper);

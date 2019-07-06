@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -54,9 +53,9 @@ public class CompactionsTest extends CleanupHelper
             store.forceBlockingFlush();
             assertEquals(table.getColumnFamilyStore("Standard1").getKeyRange("", "", 10000).keys.size(), inserted.size());
         }
-Future<Integer> ft = CompactionManager.instance().submit(store);
+        while (true)
         {
-            Future<Integer> ft = MinorCompactionManager.instance().submit(store);
+Future<Integer> ft = CompactionManager.instance().submit(store);
             if (ft.get() == 0)
                 break;
         }

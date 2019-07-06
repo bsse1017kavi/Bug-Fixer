@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public class HdfsImmutableBlobContainer extends AbstractHdfsBlobContainer implem
                     listener.onFailure(e);
                     return;
                 }
-byte[] buffer = new byte[blobStore.bufferSizeInBytes()];
+                try {
                     try {
-                        byte[] buffer = new byte[16 * 1024];
+byte[] buffer = new byte[blobStore.bufferSizeInBytes()];
                         int bytesRead;
                         while ((bytesRead = is.read(buffer)) != -1) {
                             fileStream.write(buffer, 0, bytesRead);

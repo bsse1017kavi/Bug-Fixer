@@ -1,4 +1,3 @@
-
 /*
  * JBoss, a division of Red Hat
  * Copyright 2006, Red Hat Middleware, LLC, and individual contributors as indicated
@@ -63,9 +62,9 @@ import org.junit.runner.RunWith;
  * @author lbarreiro@redhat.com
  */
 @RunWith(Arquillian.class)
-//@Ignore(value="ARQ-791 Arquillian is unable to reconnect to JMX server if the connection is lost")
+@RunAsClient
 @ServerSetup(SingleSignOnUnitTestCase.SingleSignOnUnitTestCaseSetup.class)
-@Ignore(value="ARQ-791 Arquillian is unable to reconnect to JMX server if the connection is lost")
+//@Ignore(value="ARQ-791 Arquillian is unable to reconnect to JMX server if the connection is lost")
 public class SingleSignOnUnitTestCase {
 
     private static Logger log = Logger.getLogger(SingleSignOnUnitTestCase.class);

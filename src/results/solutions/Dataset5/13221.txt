@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public class Test extends TestCase
 			{
 				return false;
 			}
-tester.getApplication().getSecuritySettings().setAuthorizationStrategy(authorizationStrategy);
+		};
 
-		tester.getSecuritySettings().setAuthorizationStrategy(authorizationStrategy);
+tester.getApplication().getSecuritySettings().setAuthorizationStrategy(authorizationStrategy);
 
 		tester.startPage(RedirectPage.class);
 		tester.assertRenderedPage(LoginPage.class);

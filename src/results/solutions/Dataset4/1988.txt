@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -145,9 +144,9 @@ public class TextField extends Widget {
 			}
 
 			private void setCursorPosition (float x) {
-x -= renderOffset + textOffset;
+				lastBlink = 0;
 				cursorOn = false;
-				x -= renderOffset;
+x -= renderOffset + textOffset;
 				for (int i = 0; i < glyphPositions.size; i++) {
 					if (glyphPositions.items[i] > x) {
 						cursor = Math.max(0, i - 1);

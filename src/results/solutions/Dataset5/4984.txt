@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -387,9 +386,9 @@ public class MappingTool
      * Return the schema group to use in mapping. If none has been set, the
      * schema will be generated from the database.
      */
-if (_action.indexOf(ACTION_BUILD_SCHEMA) != -1) {
+    public SchemaGroup getSchemaGroup() {
         if (_schema == null) {
-            if (_action.contains(ACTION_BUILD_SCHEMA)) {
+if (_action.indexOf(ACTION_BUILD_SCHEMA) != -1) {
                 DynamicSchemaFactory factory = new DynamicSchemaFactory();
                 factory.setConfiguration(_conf);
                 _schema = factory;

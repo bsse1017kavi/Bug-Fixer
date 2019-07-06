@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -831,9 +830,9 @@ public abstract class MarkupContainer extends Component
 		{
 			visitChildren(new IVisitor()
 					{
-component.setRequiresFullRender(true);
+						public Object component(Component component)
 						{
-							component.invalidateMarkupStreamPosition();
+component.setRequiresFullRender(true);
 							return IVisitor.CONTINUE_TRAVERSAL;
 						}
 					});

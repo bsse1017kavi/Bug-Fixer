@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class SecurityExtension implements Extension {
 
     public static final ServiceName JBOSS_SECURITY = ServiceName.JBOSS.append("security");
 
-private static final SecuritySubsystemParser PARSER = SecuritySubsystemParser.getInstance();
+    public static final String SUBSYSTEM_NAME = "security";
 
-    private static final SecuritySubsystemParser PARSER = new SecuritySubsystemParser();
+private static final SecuritySubsystemParser PARSER = SecuritySubsystemParser.getInstance();
 
     @Override
     public void initialize(ExtensionContext context) {

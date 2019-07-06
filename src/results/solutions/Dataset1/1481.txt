@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ public class TestRingCache
         for (int nRows = minRow; nRows < maxRow; nRows++)
         {
             String row = rowPrefix + nRows;
-List<InetAddress> endPoints = tester.ringCache.getEndPoint(row.getBytes());
+            ColumnPath col = new ColumnPath("Standard1").setSuper_column(null).setColumn("col1".getBytes());
 
-            List<InetAddress> endPoints = tester.ringCache.getEndPoint(row);
+List<InetAddress> endPoints = tester.ringCache.getEndPoint(row.getBytes());
             String hosts="";
             for (int i = 0; i < endPoints.size(); i++)
                 hosts = hosts + ((i > 0) ? "," : "") + endPoints.get(i);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -196,9 +195,9 @@ public class CustomEditorConfigurer implements BeanFactoryPostProcessor, BeanCla
 						beanFactory.registerCustomEditor(requiredType, (Class) value);
 					}
 					else if (value instanceof String) {
-beanFactory.registerCustomEditor(requiredType, editorClass);
+						Class editorClass = ClassUtils.forName((String) value, this.beanClassLoader);
 						Assert.isAssignable(PropertyEditor.class, editorClass);
-						beanFactory.registerCustomEditor(requiredType, (Class<? extends PropertyEditor>) editorClass);
+beanFactory.registerCustomEditor(requiredType, editorClass);
 					}
 					else {
 						throw new IllegalArgumentException("Mapped value [" + value + "] for custom editor key [" +

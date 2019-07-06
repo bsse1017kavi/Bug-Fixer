@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.5 $ $Date$
@@ -153,9 +152,9 @@ public final class PageMap implements Serializable
 	 *            The sign in page
 	 */
 	public final void redirectToInterceptPage(final Page page)
-page.redirectTo(page);
+	{
 		interceptContinuationURL = page.getResponse().encodeURL(page.getRequest().getURL());
-		page.getRequestCycle().redirectToPage(page);
+page.redirectTo(page);
 		session.dirty();
 	}
 

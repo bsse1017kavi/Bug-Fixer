@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -152,9 +151,9 @@ public class IndicesTTLService extends AbstractLifecycleComponent<IndicesTTLServ
                         break;
                     }
                 }
-if (indexShard.state() == IndexShardState.STARTED && indexShard.routingEntry().primary() && indexShard.routingEntry().started()) {
+                if (hasTTLEnabled) {
                     for (IndexShard indexShard : indexService) {
-                        if (indexShard.routingEntry().primary() && indexShard.state() == IndexShardState.STARTED && indexShard.routingEntry().started()) {
+if (indexShard.state() == IndexShardState.STARTED && indexShard.routingEntry().primary() && indexShard.routingEntry().started()) {
                             shardsToPurge.add(indexShard);
                         }
                     }

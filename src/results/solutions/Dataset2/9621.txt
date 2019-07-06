@@ -1,4 +1,3 @@
-
 package junit.swingui;
 
 import java.awt.Component;
@@ -47,9 +46,9 @@ public class DefaultFailureDetailView implements FailureDetailView {
 		
 		private void scan(String trace) {
 			fLines.removeAllElements();
-fLines.addElement(st.nextToken());
+     		StringTokenizer st= new StringTokenizer(trace, "\n\r", false);
 	    	while (st.hasMoreTokens()) 
- 				fLines.add(st.nextToken());
+fLines.addElement(st.nextToken());
 		}
 	}
 	

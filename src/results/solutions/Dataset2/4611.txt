@@ -1,4 +1,3 @@
-
 package tadm;
 import java.util.*;
 import java.io.*;
@@ -20,9 +19,9 @@ public class AntTag extends TagSupport {
     public AntTag() {}
 
     public int doStartTag() throws JspException {
-targets.removeAllElements();
+	try {
             args.clear();
-            targets.clear();
+targets.removeAllElements();
 	    pageContext.setAttribute("antProperties",
 				     args);
 	} catch (Exception ex ) {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -324,9 +323,9 @@ public char[] computeUniqueKey(boolean isLeaf) {
 	boolean isGeneric = sig != null;
 	if (!isGeneric) sig = signature();
 	int signatureLength = sig.length;
-int thrownExceptionsLength = this.thrownExceptions == null ? 0 : this.thrownExceptions.length;
+	
 	// thrown exceptions
-	int thrownExceptionsLength = this.thrownExceptions.length;
+int thrownExceptionsLength = this.thrownExceptions == null ? 0 : this.thrownExceptions.length;
 	int thrownExceptionsSignatureLength = 0;
 	char[][] thrownExceptionsSignatures = null;
 	boolean addThrownExceptions = thrownExceptionsLength > 0 && (!isGeneric || CharOperation.lastIndexOf('^', sig) < 0);

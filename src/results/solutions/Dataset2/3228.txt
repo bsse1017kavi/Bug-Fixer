@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -329,9 +328,9 @@ public abstract class ASTNode implements BaseTypes, CompilerModifiers, TypeConst
 		}
 		
 		if (refType.hasRestrictedAccess()) {
-scope.problemReporter().forbiddenReference(type, this, restriction.getMessageTemplate(), restriction.getSeverity());
+			AccessRestriction restriction = scope.environment().getAccessRestriction(type);
 			if (restriction != null) {
-				scope.problemReporter().forbiddenReference(type, this, restriction.getMessageTemplate());
+scope.problemReporter().forbiddenReference(type, this, restriction.getMessageTemplate(), restriction.getSeverity());
 			}
 		}
 		if (!refType.isViewedAsDeprecated()) return false;

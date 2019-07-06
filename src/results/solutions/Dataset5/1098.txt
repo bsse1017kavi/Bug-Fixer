@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -312,9 +311,9 @@ public void setSelection (int value) {
 
 	int selection = value;
 	if (selection < minimum) selection = minimum;
-update ();
+	if (selection > maximum) selection = maximum;
 	setThumb(selection - minimum);
-	OS.XmUpdateDisplay (handle);
+update ();
 }
 void setThumb (int sliderSize) {
 	int [] argList1 = new int [] {

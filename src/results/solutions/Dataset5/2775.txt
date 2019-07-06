@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2008 ZXing authors
  *
@@ -159,9 +158,9 @@ final class CameraManager {
         getScreenResolution();
       }
 
-if (prefs.getBoolean(PreferencesActivity.KEY_FRONT_LIGHT, false)) {
+      setCameraParameters();
       SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-      if (prefs.getBoolean(PreferencesActivity.KEY_FRONT_LIGHT, true)) {
+if (prefs.getBoolean(PreferencesActivity.KEY_FRONT_LIGHT, false)) {
         FlashlightManager.enableFlashlight();
       }
     }

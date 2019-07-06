@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class MessageDrivenComponentConfiguration extends EJBComponentConfigurati
         description.addDependency(raServiceName, ServiceBuilder.DependencyType.REQUIRED);
         //TODO: interceptors
         /*
-//setComponentCreateServiceFactory(MessageDrivenComponentCreateService.FACTORY);
+        addComponentSystemInterceptorFactory(pooled());
         */
-        setComponentCreateServiceFactory(MessageDrivenComponentCreateService.FACTORY);
+//setComponentCreateServiceFactory(MessageDrivenComponentCreateService.FACTORY);
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -28,9 +27,9 @@ public class CloseAllAction extends PageEventAction {
         super(WorkbenchMessages.getString("CloseAllAction.text"), window); //$NON-NLS-1$
         setToolTipText(WorkbenchMessages.getString("CloseAllAction.toolTip")); //$NON-NLS-1$
         setEnabled(false);
-WorkbenchHelp.setHelp(this, IWorkbenchHelpContextIds.CLOSE_ALL_ACTION);
+        setId("closeAll"); //$NON-NLS-1$
         updateState();
-        WorkbenchHelp.setHelp(this, IHelpContextIds.CLOSE_ALL_ACTION);
+WorkbenchHelp.setHelp(this, IWorkbenchHelpContextIds.CLOSE_ALL_ACTION);
         setActionDefinitionId("org.eclipse.ui.file.closeAll"); //$NON-NLS-1$
     }
 

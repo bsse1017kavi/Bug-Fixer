@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder;
 
 /*
@@ -358,9 +357,9 @@ protected void storeProblemsFor(IResource resource, IProblem[] problems) throws 
 		if (element instanceof JavaElement)
 			location = ((JavaElement) element).readableName();
 		if (location != null)
-throw new IncompleteClassPathException(missingClassFile);
+			marker.setAttribute(IMarker.LOCATION, location);
 		if (missingClassFile != null)
-			throw new AbortCompilation(true, new IncompleteClassPathException(missingClassFile));
+throw new IncompleteClassPathException(missingClassFile);
 	}
 }
 

@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.provider.remoteservice.generic;
 
 import java.io.IOException;
@@ -24,9 +23,9 @@ public class RemoteServiceImpl implements IRemoteService, InvocationHandler {
 		this.sharedObject = sharedObject;
 		this.registration = registration;
 	}
-sharedObject.sendCallRequestWithListener(registration, call, listener);
+
 	public void callAsynch(IRemoteCall call, IRemoteCallListener listener) {
-		// TODO Auto-generated method stub
+sharedObject.sendCallRequestWithListener(registration, call, listener);
 	}
 
 	public Object callSynch(IRemoteCall call) throws ECFException {

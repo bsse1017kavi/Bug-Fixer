@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class NonPooledEJBComponentInstanceAssociatingInterceptor extends Abstrac
         //as we are not allowed to invoke pre-destroy callbacks
         boolean discard = false;
         try {
-final EJBComponent ejbComponent = component;
+            return context.proceed();
         } catch (Exception ex) {
-            final EJBComponent ejbComponent = (EJBComponent) component;
+final EJBComponent ejbComponent = component;
             // Detect app exception
             if (ejbComponent.getApplicationException(ex.getClass(), context.getMethod()) != null) {
                 // it's an application exception, just throw it back.

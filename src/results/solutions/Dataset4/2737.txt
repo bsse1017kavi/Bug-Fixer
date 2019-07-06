@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -159,9 +158,9 @@ public class RangeFacetBuilder extends AbstractFacetBuilder {
             throw new SearchSourceBuilderException("at least one range must be defined for range facet [" + name + "]");
         }
 
-builder.startObject(RangeFacet.TYPE);
+        builder.startObject(name);
 
-        builder.startObject(RangeFacetCollectorParser.NAME);
+builder.startObject(RangeFacet.TYPE);
         if (valueFieldName != null && !keyFieldName.equals(valueFieldName)) {
             builder.field("key_field", keyFieldName);
             builder.field("value_field", valueFieldName);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -207,9 +206,9 @@ public class GlobalOperationHandlers {
             if (attributeAccess == null) {
                 throw new OperationFailedException(new ModelNode().set("No known attribute called " + attributeName)); // TODO i18n
             } else if (attributeAccess.getAccessType() != AccessType.READ_WRITE) {
-attributeAccess.getWriteHandler().execute(context, operation);
+                throw new OperationFailedException(new ModelNode().set("Attribute " + attributeName + " is not writeable")); // TODO i18n
             } else {
-                attributeAccess.getReadHandler().execute(context, operation);
+attributeAccess.getWriteHandler().execute(context, operation);
             }
         }
     };

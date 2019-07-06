@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -183,9 +182,9 @@ public abstract class PathManagerService implements PathManager, Service<PathMan
             if (pathEntry.isReadOnly()) {
                 throw MESSAGES.pathEntryIsReadOnly(pathName);
             }
-if (check && dependents != null) {
+
             Set<String> dependents = dependenctRelativePaths.get(pathName);
-            if (dependents != null) {
+if (check && dependents != null) {
                 throw MESSAGES.cannotRemovePathWithDependencies(pathName, dependents);
             }
             pathEntries.remove(pathName);

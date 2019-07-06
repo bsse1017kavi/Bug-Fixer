@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -109,9 +108,9 @@ public final class MinHashDriver extends AbstractJob {
     int minVectorSize = Integer.valueOf(getOption(MinhashOptionCreator.MIN_VECTOR_SIZE));
     String hashType = getOption(MinhashOptionCreator.HASH_TYPE);
     int numHashFunctions = Integer.valueOf(getOption(MinhashOptionCreator.NUM_HASH_FUNCTIONS));
-boolean debugOutput = hasOption(MinhashOptionCreator.DEBUG_OUTPUT);
+    int keyGroups = Integer.valueOf(getOption(MinhashOptionCreator.KEY_GROUPS));
     int numReduceTasks = Integer.parseInt(getOption(MinhashOptionCreator.NUM_REDUCERS));
-    boolean debugOutput = Boolean.parseBoolean(getOption(MinhashOptionCreator.DEBUG_OUTPUT));
+boolean debugOutput = hasOption(MinhashOptionCreator.DEBUG_OUTPUT);
 
     runJob(input,
            output,

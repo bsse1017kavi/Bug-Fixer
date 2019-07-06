@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -214,9 +213,9 @@ public class ResourceUrlProvider implements ApplicationListener<ContextRefreshed
 			String pathMapping = lookupPath.substring(0, lookupPath.indexOf(pathWithinMapping));
 			if (logger.isTraceEnabled()) {
 				logger.trace("Invoking ResourceResolverChain for URL pattern=\"" + pattern + "\"");
-ResourceResolverChain chain = new DefaultResourceResolverChain(handler.getResourceResolvers());
+			}
 			ResourceHttpRequestHandler handler = this.handlerMap.get(pattern);
-			ResourceResolverChain chain = handler.createResourceResolverChain();
+ResourceResolverChain chain = new DefaultResourceResolverChain(handler.getResourceResolvers());
 			String resolved = chain.resolveUrlPath(pathWithinMapping, handler.getLocations());
 			if (resolved == null) {
 				throw new IllegalStateException("Failed to get public resource URL path for " + pathWithinMapping);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -119,8 +118,8 @@ public class AjStateTest extends TestCase {
         ij.add(new File("aLib.jar"));
         ij.add(new File("anotherLib.jar"));
         oldConfig.setInJars(ij);
-aRightState.successfulCompile(oldConfig,true);
+        newConfig.setInJars(new ArrayList(ij));
         aRightState.prepareForNextBuild(oldConfig);
-        aRightState.successfulCompile(oldConfig);
+aRightState.successfulCompile(oldConfig,true);
     }
 }

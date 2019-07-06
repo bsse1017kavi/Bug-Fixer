@@ -1,4 +1,3 @@
-
 package org.apache.solr.search.grouping.endresulttransformer;
 
 /*
@@ -49,9 +48,9 @@ public class GroupedEndResultTransformer implements EndResultTransformer {
   /**
    * {@inheritDoc}
    */
-NamedList<Object> commands = new SimpleOrderedMap<Object>();
+  @Override
   public void transform(Map<String, ?> result, ResponseBuilder rb, SolrDocumentSource solrDocumentSource) {
-    NamedList<Object> commands = new NamedList<Object>();
+NamedList<Object> commands = new SimpleOrderedMap<Object>();
     for (Map.Entry<String, ?> entry : result.entrySet()) {
       Object value = entry.getValue();
       if (TopGroups.class.isInstance(value)) {

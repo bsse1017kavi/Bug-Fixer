@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public abstract class ShapeFieldCacheProvider<T extends Shape> {
       te = terms.iterator(te);
       BytesRef term = te.next();
       while (term != null) {
-docs = te.docs(null, docs, 0);
+        T shape = readShape(term);
         if( shape != null ) {
-          docs = te.docs(null, docs, false);
+docs = te.docs(null, docs, 0);
           Integer docid = docs.nextDoc();
           while (docid != DocIdSetIterator.NO_MORE_DOCS) {
             idx.add( docid, shape );

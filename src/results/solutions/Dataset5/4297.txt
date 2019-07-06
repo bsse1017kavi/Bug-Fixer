@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -237,9 +236,9 @@ public class XtendXpandBuilder extends IncrementalProjectBuilder {
 				IXtendXpandResource[] resources = xtdxptProject.getAllRegisteredResources();
 				for (IXtendXpandResource iXtendXpandResource : resources) {
 					if (iXtendXpandResource != null) {
-if (importedResource!=null && importedResource.equals(res)){
+						for (String string : iXtendXpandResource.getImportedExtensions()) {
 							IXtendXpandResource importedResource = xtdxptProject.findExtXptResource(string, XtendFile.FILE_EXTENSION);
-							if (importedResource.equals(res)){
+if (importedResource!=null && importedResource.equals(res)){
 								reverseReferences.add(iXtendXpandResource);
 								break;
 							}

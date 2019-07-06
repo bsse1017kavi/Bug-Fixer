@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -76,9 +75,9 @@ public class TestFileSwitchDirectory extends LuceneTestCase {
     for (int x=0; x < files.length; x++) {
       String ext = FileSwitchDirectory.getExtension(files[x]);
       assertFalse(fileExtensions.contains(ext));
-writer.shutdown();
+    }
     reader.close();
-    writer.close();
+writer.shutdown();
 
     files = fsd.listAll();
     for(int i=0;i<files.length;i++) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -124,9 +123,9 @@ public class MultiOrdinalsTests extends ElasticsearchTestCase {
                         array[i] = docOrds.get(i);
                     }
                     assertIter(docs, docId, array);
-assertThat(docs.getOrd(i), equalTo(Ordinals.MISSING_ORDINAL));
+                }
                 for (int i = docId + 1; i < ordAndId.id; i++) {
-                    assertThat(docs.getOrd(i), equalTo(0L));
+assertThat(docs.getOrd(i), equalTo(Ordinals.MISSING_ORDINAL));
                 }
                 docId = ordAndId.id;
                 docOrds.clear();

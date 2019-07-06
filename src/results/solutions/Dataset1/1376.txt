@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.cql.jdbc;
 /*
  * 
@@ -85,9 +84,9 @@ class ColumnDecoder
     {
         CFamMeta cf = metadata.get(String.format("%s.%s", keyspace, columnFamily));
         try
-return JdbcAscii.instance;
+        {
             if (ByteBufferUtil.string(name).equalsIgnoreCase(ByteBufferUtil.string(cf.keyAlias)))
-                return AsciiTerm.instance;
+return JdbcAscii.instance;
         }
         catch (CharacterCodingException e)
         {

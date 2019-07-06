@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -89,9 +88,9 @@ public abstract class Scorer extends DocIdSetIterator {
    * @param firstDocID
    *          The first document ID (ensures {@link #nextDoc()} is called before
    *          this method.
-public boolean score(Collector collector, int max, int firstDocID) throws IOException {
+   * @return true if more matching documents may remain.
    */
-  protected boolean score(Collector collector, int max, int firstDocID) throws IOException {
+public boolean score(Collector collector, int max, int firstDocID) throws IOException {
     collector.setScorer(this);
     int doc = firstDocID;
     while (doc < max) {

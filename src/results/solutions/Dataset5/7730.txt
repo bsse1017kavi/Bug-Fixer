@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -504,9 +503,9 @@ public abstract class AbstractDOMParser
      *
      * @throws XNIException Thrown by application to signal an error.
      */
-if (!fIncludeComments || fInDTD) {
+    public void comment(XMLString text, Augmentations augs) throws XNIException {
         
-        if (!fIncludeComments) {
+if (!fIncludeComments || fInDTD) {
               return;
         }
         if (!fDeferNodeExpansion) {

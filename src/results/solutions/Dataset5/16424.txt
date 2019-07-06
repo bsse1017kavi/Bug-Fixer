@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -181,9 +180,9 @@ public Rectangle computeTrim (int x, int y, int width, int height) {
 	}
 	Rect client = new Rect ();
 	OS.GetTabContentRect (handle, client);
-OS.HIViewSetDrawingEnabled (handle, getDrawing ());
+	if (oldBounds.width < MIN_SIZE || oldBounds.height < MIN_SIZE) {
 		OS.HIViewSetFrame (handle, oldBounds);
-		OS.HIViewSetDrawingEnabled (handle, drawCount == 0);
+OS.HIViewSetDrawingEnabled (handle, getDrawing ());
 	}
 	x -= client.left;
 	y -= client.top;

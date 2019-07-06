@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -119,9 +118,9 @@ public class RandomDataImpl implements RandomData, Serializable {
      * thus q_i -> 1 as i -> infty,
      * so the higher i, the closer to one we get (the series is not alternating).
      *
-private static final double[] EXPONENTIAL_SA_QI;
+     * By trying, n = 16 in Java is enough to reach 1.0.
      */
-    private static double[] EXPONENTIAL_SA_QI = null;
+private static final double[] EXPONENTIAL_SA_QI;
 
     /** underlying random number generator */
     private RandomGenerator rand = null;

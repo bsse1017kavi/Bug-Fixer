@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2004 The Apache Software Foundation
  *
@@ -70,9 +69,9 @@ public class IsPingable extends ProjectComponent implements Condition  {
      * @return true if the condition is true
      * @throws org.apache.tools.ant.BuildException
      *          if an error occurs
-if(host==null || host.length()==0) {
+     */
     public boolean eval() throws BuildException {
-        if(host==null && host.length()==0) {
+if(host==null || host.length()==0) {
             throw new BuildException(ERROR_NO_HOSTNAME);
         }
         if(timeout<0) {

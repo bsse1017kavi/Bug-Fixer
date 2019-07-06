@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.conn.GenericLanguageConnectionFactory
@@ -411,9 +410,9 @@ public class GenericLanguageConnectionFactory
 
 			/** Parse the new userIdList to verify its syntax. */
 			String[] newList_a;
-throw StandardException.newException(SQLState.AUTH_INVALID_AUTHORIZATION_PROPERTY, se, key,value_s);
+			try {newList_a = IdUtil.parseIdList(value_s);}
 			catch (StandardException se) {
-				throw StandardException.newException(SQLState.AUTH_INVALID_AUTHORIZATION_PROPERTY, key,value_s,se);
+throw StandardException.newException(SQLState.AUTH_INVALID_AUTHORIZATION_PROPERTY, se, key,value_s);
 			}
 
 			/** Check the new list userIdList for duplicates. */

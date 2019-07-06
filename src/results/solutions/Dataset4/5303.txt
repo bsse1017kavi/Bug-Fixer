@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -392,9 +391,9 @@ public class Skin implements Disposable {
 					Object object = json.readValue(type, valueEntry);
 					if (object == null) continue;
 					try {
-throw new SerializationException("Error reading " + type.getName() + ": " + valueEntry.name(), ex);
+						add(valueEntry.name(), object, addType);
 					} catch (Exception ex) {
-						throw new SerializationException("Error reading " + type.getSimpleName() + ": " + valueEntry.name(), ex);
+throw new SerializationException("Error reading " + type.getName() + ": " + valueEntry.name(), ex);
 					}
 				}
 			}

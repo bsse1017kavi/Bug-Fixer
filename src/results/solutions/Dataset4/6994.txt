@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -84,9 +83,9 @@ abstract class SortedSetDVAtomicFieldData {
         final SortedSetDocValues values = getValuesNoException(reader, field);
         if (hashes == null) {
             synchronized (this) {
-final IntArray hashes = BigArrays.NON_RECYCLING_INSTANCE.newIntArray(1L + valueCount);
+                if (hashes == null) {
                     final long valueCount = values.getValueCount();
-                    final IntArray hashes = BigArrays.newIntArray(1L + valueCount);
+final IntArray hashes = BigArrays.NON_RECYCLING_INSTANCE.newIntArray(1L + valueCount);
                     BytesRef scratch = new BytesRef(16);
                     hashes.set(0, scratch.hashCode());
                     for (long i = 0; i < valueCount; ++i) {

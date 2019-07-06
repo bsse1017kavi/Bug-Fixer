@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -24,9 +23,9 @@ import backtype.storm.tuple.Tuple;
  * File rotation policy that will never rotate...
  * Just one big file. Intended for testing purposes.
  */
-public boolean mark(Tuple tuple, long offset) {
+public class NoRotationPolicy implements FileRotationPolicy {
     @Override
-    public boolean mark(Tuple tuple, byte[] data) {
+public boolean mark(Tuple tuple, long offset) {
         return false;
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -234,9 +233,9 @@ public class NonLinearConjugateGradientOptimizerTest {
                 {  8.0, 6.0, 10.0,  9.0 },
                 {  7.0, 5.0,  9.0, 10.0 }
         }, new double[] { 32, 23, 33, 31 });
-optimizer.setMaxEvaluations(200);
+        NonLinearConjugateGradientOptimizer optimizer =
             new NonLinearConjugateGradientOptimizer(ConjugateGradientFormula.POLAK_RIBIERE);
-        optimizer.setMaxEvaluations(100);
+optimizer.setMaxEvaluations(200);
         optimizer.setConvergenceChecker(new SimpleScalarValueChecker(1.0e-13, 1.0e-13));
         BrentSolver solver = new BrentSolver(1e-15, 1e-15);
         optimizer.setLineSearchSolver(solver);

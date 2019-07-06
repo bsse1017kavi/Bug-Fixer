@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -153,9 +152,9 @@ public class CollationController
             filter.collateColumns(returnCF, Collections.singletonList(toCollate), cfs.metadata.comparator, gcBefore);
 
             // "hoist up" the requested data into a more recent sstable
-RowMutation rm = new RowMutation(cfs.table.name, new Row(filter.key, returnCF.cloneMe()));
+            if (sstablesIterated >= cfs.getMinimumCompactionThreshold() && cfs.getCompactionStrategy() instanceof SizeTieredCompactionStrategy)
             {
-                RowMutation rm = new RowMutation(cfs.table.name, new Row(filter.key, returnCF));
+RowMutation rm = new RowMutation(cfs.table.name, new Row(filter.key, returnCF.cloneMe()));
                 try
                 {
                     rm.applyUnsafe(); // skipping commitlog is fine since we're just de-fragmenting existing data

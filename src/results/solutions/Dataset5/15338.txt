@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -96,9 +95,9 @@ public class ResourceLink extends Link implements IResourceListener
 			resourceReference.setLocale(getLocale());
 			resourceReference.setStyle(getStyle());
 			resourceReference.bind(getApplication());
-return urlFor(IResourceListener.INTERFACE);
+			return getRequestCycle().urlFor(resourceReference);
 		}
-		return urlFor(Resource.RESOURCE_LISTENER_INTERFACE);
+return urlFor(IResourceListener.INTERFACE);
 	}
 
 	/**

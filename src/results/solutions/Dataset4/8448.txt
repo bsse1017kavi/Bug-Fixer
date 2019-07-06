@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -75,9 +74,9 @@ public class GeoPolygonFilter extends Filter {
             // 1. It is only relevant when _cache is set to true, and then, we really want to create in mem bitset
             // 2. Its already fast without in mem bitset, since it works with field data
             return false;
-@Override public boolean get(int doc) {
+        }
 
-        @Override public boolean get(int doc) throws IOException {
+@Override public boolean get(int doc) {
             if (!fieldData.hasValue(doc)) {
                 return false;
             }

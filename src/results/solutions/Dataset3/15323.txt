@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -47,9 +46,9 @@ public abstract class AbstractStandardUpgradeStrategy implements RequestUpgradeS
 	@Override
 	public void upgrade(ServerHttpRequest request, ServerHttpResponse response,
 			String protocol, WebSocketHandler handler) throws IOException, HandshakeFailureException {
-this.wsSessionInitializer.initialize(request, response, protocol, session);
+
 		StandardWebSocketSessionAdapter session = new StandardWebSocketSessionAdapter();
-		this.wsSessionInitializer.initialize(request, response, session);
+this.wsSessionInitializer.initialize(request, response, protocol, session);
 		StandardEndpointAdapter endpoint = new StandardEndpointAdapter(handler, session);
 		upgradeInternal(request, response, protocol, endpoint);
 	}

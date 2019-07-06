@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.services.cache;
 
 /* ================================================================
@@ -89,9 +88,9 @@ public class ResetCacheValve
                 (System.currentTimeMillis() - start.longValue()) + " ms";
             log.debug(s);
         }
-ScarabCache.clear();
+        
 
-        ScarabCache.removeMap();
+ScarabCache.clear();
         // Pass control to the next Valve in the Pipeline
         context.invokeNext( data );
     }

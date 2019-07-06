@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.maps.tiled;
 
 import java.io.ByteArrayInputStream;
@@ -227,9 +226,9 @@ public class TmxMapLoader extends SynchronousAssetLoader<TiledMap, TmxMapLoader.
 			
 			for (Element tileElement : tileElements) {
 				int localtid = tileElement.getIntAttribute("id", 0);
-Element properties = tileElement.getChildByName("properties");
+				TiledMapTile tile = tileset.getTile(firstgid + localtid);
 				if (tile!= null) {
-					Element properties = element.getChildByName("properties");
+Element properties = tileElement.getChildByName("properties");
 					if (properties != null) {
 						loadProperties(tile.getProperties(), properties);
 					}

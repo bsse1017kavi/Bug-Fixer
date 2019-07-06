@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ class ServerInventoryService implements Service<ServerInventory> {
                 @Override
                 public void run() {
                     try {
-// client.getValue().setServerInventory(null);
+                        serverInventory.stopServers(-1, true); // TODO graceful shutdown // TODO async
                         serverInventory = null;
-                        client.getValue().setServerInventory(null);
+// client.getValue().setServerInventory(null);
                     } finally {
                         context.complete();
                     }

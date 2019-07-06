@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -179,9 +178,9 @@ public class FiltersFunctionScoreQuery extends Query {
             for (FilterFunction filterFunction : filterFunctions) {
                 Bits docSet = DocIdSets.toSafeBits(context.reader(),
                         filterFunction.filter.getDocIdSet(context, context.reader().getLiveDocs()));
-Explanation functionExplanation = filterFunction.function.explainScore(doc, subQueryExpl.getValue());
+                if (docSet.get(doc)) {
                     filterFunction.function.setNextReader(context);
-                    Explanation functionExplanation = filterFunction.function.explainScore(doc, subQueryExpl);
+Explanation functionExplanation = filterFunction.function.explainScore(doc, subQueryExpl.getValue());
                     double factor = functionExplanation.getValue();
                     float sc = CombineFunction.toFloat(factor);
                     ComplexExplanation filterExplanation = new ComplexExplanation(true, sc, "function score, product of:");

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -374,9 +373,9 @@ public class DurationFormatUtilsTest extends TestCase {
         assertFalse("Token equal to non-Token class. ", token.equals(new Object()));
         assertFalse("Token equal to Token with wrong value class. ", token.equals(new DurationFormatUtils.Token(
                 new Object())));
-DurationFormatUtils.Token numToken = new DurationFormatUtils.Token(Integer.valueOf(1), 4);
+        assertFalse("Token equal to Token with different count. ", token.equals(new DurationFormatUtils.Token(
                 DurationFormatUtils.y, 1)));
-        DurationFormatUtils.Token numToken = new DurationFormatUtils.Token(new Integer(1), 4);
+DurationFormatUtils.Token numToken = new DurationFormatUtils.Token(Integer.valueOf(1), 4);
         assertTrue("Token with Number value not equal to itself. ", numToken.equals(numToken));
     }
 

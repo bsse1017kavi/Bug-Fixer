@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -145,9 +144,9 @@ public class NetJavaImpl {
 			// should be enabled to upload data.
 			final boolean doingOutPut = method.equalsIgnoreCase(HttpMethods.POST) || method.equalsIgnoreCase(HttpMethods.PUT);
 			connection.setDoOutput(doingOutPut);
-connection.setFollowRedirects(httpRequest.getFollowRedirects());
+			connection.setDoInput(true);
 			connection.setRequestMethod(method);
-			HttpURLConnection.setFollowRedirects(httpRequest.getFollowRedirects());
+connection.setFollowRedirects(httpRequest.getFollowRedirects());
 
 			lock.lock();
 			connections.put(httpRequest, connection);

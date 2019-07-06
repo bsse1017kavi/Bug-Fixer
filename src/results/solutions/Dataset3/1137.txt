@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class ModClusterAddCustomMetric implements OperationStepHandler {
         PathAddress parent = opAddress.append(ModClusterExtension.DYNAMIC_LOAD_PROVIDER);
         String name = CustomLoadMetricDefinition.CLASS.resolveModelAttribute(context, operation).asString();
 
-for (AttributeDefinition def : CustomLoadMetricDefinition.ATTRIBUTES) {
+        ModelNode targetOperation = Util.createAddOperation(parent.append(PathElement.pathElement(ModClusterExtension.CUSTOM_LOAD_METRIC.getKey(), name)));
 
-        for (AttributeDefinition def : LoadMetricDefinition.ATTRIBUTES) {
+for (AttributeDefinition def : CustomLoadMetricDefinition.ATTRIBUTES) {
             def.validateAndSet(operation, targetOperation);
         }
         context.addStep(targetOperation, CustomLoadMetricAdd.INSTANCE, OperationContext.Stage.IMMEDIATE);

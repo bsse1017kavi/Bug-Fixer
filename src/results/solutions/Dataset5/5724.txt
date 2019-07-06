@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$ $Date:
  * 2006-05-26 00:46:21 +0200 (vr, 26 mei 2006) $
@@ -52,9 +51,9 @@ public class NavigationToolbar extends AbstractToolbar
 	public NavigationToolbar(MarkupContainer parent, String id, final DataTable table)
 	{
 		super(parent, id, table);
-WebMarkupContainer span = new WebMarkupContainer(this, "span");
+		this.table = table;
 
-		WebMarkupContainer span = new WebMarkupContainer<Object>(this, "span");
+WebMarkupContainer span = new WebMarkupContainer(this, "span");
 		span.add(new AttributeModifier("colspan", true, new Model<String>(String.valueOf(table
 				.getColumns().length))));
 

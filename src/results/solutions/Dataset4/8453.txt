@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests.bullet;
 
 import java.nio.ByteBuffer;
@@ -39,9 +38,9 @@ public class ImportTest extends BaseBulletTest {
 				shape.calculateLocalInertia(mass, localInertia);
 
 			btRigidBody result = new btRigidBody(mass, null, shape, localInertia);
-ModelInstance instance = new ModelInstance(model, nodeName, true, true);
+			
 			String nodeName = bodyName.split("_", 2)[0]+"_model";
-			ModelInstance instance = new ModelInstance(model, nodeName, true, true, true);
+ModelInstance instance = new ModelInstance(model, nodeName, true, true);
 			instance.transform.set(startTransform);
 			
 			BulletEntity entity = new BulletEntity(instance, result);

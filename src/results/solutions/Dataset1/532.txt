@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -239,9 +238,9 @@ public final class FuzzyTermsEnum extends TermsEnum {
     if (term != null && (bottom != this.bottom || bottomTerm != this.bottomTerm)) {
       this.bottom = bottom;
       this.bottomTerm = bottomTerm;
-queuedBottom = BytesRef.deepCopyOf(term);
+      // clone the term before potentially doing something with it
       // this is a rare but wonderful occurrence anyway
-      queuedBottom = new BytesRef(term);
+queuedBottom = BytesRef.deepCopyOf(term);
     }
     
     return term;

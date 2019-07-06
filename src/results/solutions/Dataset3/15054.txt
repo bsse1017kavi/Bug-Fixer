@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -108,9 +107,9 @@ public class WebBindAndValidateLifecycle {
 			for (PropertyDescriptor prop : beanInfo.getPropertyDescriptors()) {
 				Method getter = prop.getReadMethod();
 				Bound b = AnnotationUtils.getAnnotation(getter, Bound.class);
-binder.configureBinding(new BindingConfiguration(prop.getName(), null));
+				if (b != null) {
 					// TODO should we wire formatter here if using a format annotation - an optimization?
-					binder.add(new BindingConfiguration(prop.getName(), null));
+binder.configureBinding(new BindingConfiguration(prop.getName(), null));
 				}
 			}
 			// TODO @Bound fields

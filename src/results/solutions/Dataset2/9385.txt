@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -205,9 +204,9 @@ public class IMAPFolder extends AbstractRemoteFolder {
 	}
 
 	/**
-public synchronized IHeaderList getHeaderList() throws Exception {
+	 * @see org.columba.mail.folder.Folder#getHeaderList(org.columba.api.command.IWorkerStatusController)
 	 */
-	public IHeaderList getHeaderList() throws Exception {
+public synchronized IHeaderList getHeaderList() throws Exception {
 		if (mailboxSyncEnabled  && ConnectionStateImpl.getInstance().isOnline() && !getServer().isSelected(this)) {
 			// Trigger Synchronization
 			CommandProcessor.getInstance().addOp(

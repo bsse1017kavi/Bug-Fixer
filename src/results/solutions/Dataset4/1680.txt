@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -236,9 +235,9 @@ public class SpriteBatch implements Batch {
 	}
 
 	@Override
-Color color = this.tempColor;
+	public Color getColor () {
 		int intBits = NumberUtils.floatToIntColor(color);
-		Color color = tempColor;
+Color color = this.tempColor;
 		color.r = (intBits & 0xff) / 255f;
 		color.g = ((intBits >>> 8) & 0xff) / 255f;
 		color.b = ((intBits >>> 16) & 0xff) / 255f;

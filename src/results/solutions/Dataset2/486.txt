@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -453,9 +452,9 @@ private int matchLevel(FieldBinding binding) {
 	int level;
 	
 	// receiver type
-if (binding == ArrayBinding.ArrayLength) {
+	ReferenceBinding receiverBinding = binding.declaringClass;
 	if (receiverBinding == null) {
-		if (binding == ArrayBinding.LengthField) {
+if (binding == ArrayBinding.ArrayLength) {
 			// optimized case for length field of an array
 			if (this.declaringQualification == null && this.declaringSimpleName == null) {
 				return ACCURATE_MATCH;

@@ -1,4 +1,3 @@
-
 /*
  * XModeHandler.java - XML handler for mode files
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -197,9 +196,9 @@ public class XModeHandler extends HandlerBase
 		{
 			keywords = new KeywordMap(true);
 		}
-rules = new ParserRuleSet(lastSetName,mode);
+		else if (tag == "RULES")
 		{
-			rules = new ParserRuleSet(mode);
+rules = new ParserRuleSet(lastSetName,mode);
 			rules.setIgnoreCase(lastIgnoreCase);
 			rules.setHighlightDigits(lastHighlightDigits);
 			rules.setEscape(lastEscape);

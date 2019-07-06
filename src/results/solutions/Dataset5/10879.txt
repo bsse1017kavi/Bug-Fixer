@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2008 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -35,9 +34,9 @@ public abstract class DiscoveryTestHelper {
 	public final static String SERVICE_TYPE = "_" + SERVICES[0] + "._" + SERVICES[1] + "._" + SERVICES[2] + "._" + PROTOCOL + "." + SCOPE + "._" + NAMINGAUTHORITY;
 	
 	public static URI createDefaultURI() {
-return URI.create(PROTOCOLS[0] + "://"/* + USERNAME + "@" */+ getHost() + ":" + PORT + PATH);
+//TODO-mkuppe https://bugs.eclipse.org/216944
 //		return URI.create(PROTOCOL + "://" + USERNAME + ":" + PASSWORD + "@" + getHost() + ":" + PORT + "/" + PATH + "?" + QUERY + "#" + FRAGMENT);
-		return URI.create(PROTOCOLS[0] + "://" + USERNAME + "@" + getHost() + ":" + PORT + PATH);
+return URI.create(PROTOCOLS[0] + "://"/* + USERNAME + "@" */+ getHost() + ":" + PORT + PATH);
 	}
 	
 	public static String getHost() {

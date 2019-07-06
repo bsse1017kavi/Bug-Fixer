@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -99,9 +98,9 @@ public final class RoleManager implements IRoleManager {
 
 	private void fireRoleManagerChanged() {
 		if (roleManagerListeners != null)
-roleManagerEvent = new RoleManagerEvent(this, false);
+			for (int i = 0; i < roleManagerListeners.size(); i++) {
 				if (roleManagerEvent == null)
-					roleManagerEvent = new RoleManagerEvent(this);
+roleManagerEvent = new RoleManagerEvent(this, false);
 								
 				((IRoleManagerListener) roleManagerListeners.get(i)).roleManagerChanged(roleManagerEvent);
 			}				

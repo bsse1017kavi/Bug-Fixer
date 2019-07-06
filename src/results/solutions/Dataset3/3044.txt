@@ -1,5 +1,4 @@
 
-
 package org.springframework.samples.petclinic.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,9 +37,9 @@ public class AddOwnerForm {
 		this.clinic = clinic;
 	}
 
-dataBinder.setDisallowedFields(new String[] {"id"});
+	@InitBinder
 	public void setAllowedFields(WebDataBinder dataBinder) {
-		dataBinder.setDisallowedFields("id");
+dataBinder.setDisallowedFields(new String[] {"id"});
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

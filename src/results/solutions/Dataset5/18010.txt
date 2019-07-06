@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -89,9 +88,9 @@ public class JavaxScriptRunner extends ScriptRunnerBase {
                     + getLanguage());
             }
             for (Iterator i = getBeans().keySet().iterator(); i.hasNext();) {
-if ("FX".equalsIgnoreCase(getLanguage())) {
+                String key = (String) i.next();
                 Object value = getBeans().get(key);
-                if ("FX".equals(getLanguage())) {
+if ("FX".equalsIgnoreCase(getLanguage())) {
                     engine.invoke(
                         "put", String.class, key
                         + ":" + value.getClass().getName(),

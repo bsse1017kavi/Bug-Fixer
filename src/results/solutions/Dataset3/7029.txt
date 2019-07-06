@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -598,9 +597,9 @@ public interface HibernateOperations {
 	 * @param queryString a query expressed in Hibernate's query language
 	 * @return a {@link List} containing the results of the query execution
 	 * @throws org.springframework.dao.DataAccessException in case of Hibernate errors
-List<Object> find(String queryString) throws DataAccessException;
+	 * @see org.hibernate.Session#createQuery
 	 */
-	List<?> find(String queryString) throws DataAccessException;
+List<Object> find(String queryString) throws DataAccessException;
 
 	/**
 	 * Execute an HQL query, binding one value to a "?" parameter in the

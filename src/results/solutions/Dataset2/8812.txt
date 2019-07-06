@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -537,9 +536,9 @@ public abstract class Expression extends Statement {
 			if (compileTimeType != NullBinding && compileTimeType.isBaseType()) {
 				TypeBinding boxedType = scope.environment().computeBoxingType(runtimeTimeType);
 				if (boxedType == runtimeTimeType) // Object o = 12;
-scope.problemReporter().autoboxing(this, compileTimeType, scope.environment().computeBoxingType(boxedType));
+					boxedType = compileTimeType; 
 				this.implicitConversion = BOXING | (boxedType.id << 4) + compileTimeType.id;
-				scope.problemReporter().autoboxing(this, compileTimeType, runtimeTimeType);
+scope.problemReporter().autoboxing(this, compileTimeType, scope.environment().computeBoxingType(boxedType));
 				return;
 			}
 		}

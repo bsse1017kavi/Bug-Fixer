@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class TestCacheModeNone extends AbstractCacheModeTestCase {
     private static Class<?>[] expectedNotInCache = persistentTypes;
 
     @Override
-emf = createEntityManagerFactory("cache-mode-none",null);
+    public OpenJPAEntityManagerFactorySPI getEntityManagerFactory() {
         if (emf == null) {
-            emf = createEntityManagerFactory("cache-mode-none");
+emf = createEntityManagerFactory("cache-mode-none",null);
             assertNotNull(emf);
             cache = emf.getCache();
             assertNotNull(cache);

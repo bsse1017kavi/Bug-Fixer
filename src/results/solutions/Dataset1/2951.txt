@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -47,9 +46,9 @@ public class TestPrefixFilter extends LuceneTestCase {
     writer.close();
 
     // PrefixFilter combined with ConstantScoreQuery
-IndexSearcher searcher = new IndexSearcher(directory, true);
+    PrefixFilter filter = new PrefixFilter(new Term("category", "/Computers"));
     Query query = new ConstantScoreQuery(filter);
-    IndexSearcher searcher = new IndexSearcher(directory);
+IndexSearcher searcher = new IndexSearcher(directory, true);
     ScoreDoc[] hits = searcher.search(query, null, 1000).scoreDocs;
     assertEquals(4, hits.length);
 

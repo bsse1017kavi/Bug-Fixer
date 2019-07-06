@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -3349,9 +3348,9 @@ protected void consumeToken(int token) {
 				break;
 			case TokenNameinstanceof:
 				pushOnElementStack(K_BINARY_OPERATOR, INSTANCEOF);
-if(previous != TokenNameLESS && previous != TokenNameCOMMA) {
+				break;
 			case TokenNameQUESTION:
-				if(previous != TokenNameLESS) {
+if(previous != TokenNameLESS && previous != TokenNameCOMMA) {
 					pushOnElementStack(K_CONDITIONAL_OPERATOR, QUESTION);
 				}
 				break;

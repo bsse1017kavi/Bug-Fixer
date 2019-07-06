@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -217,9 +216,9 @@ public class ByteBufferUtilTest
 
     @Test(expected=CharacterCodingException.class)
     public void testDecode() throws IOException
-ByteBufferUtil.string(bytes);
+    {
         ByteBuffer bytes = ByteBuffer.wrap(new byte[]{(byte)0xff, (byte)0xfe});
-        ByteBufferUtil.string(bytes, Charsets.UTF_8);
+ByteBufferUtil.string(bytes);
     }
 
     @Test

@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -539,9 +538,9 @@ public class OverseerCollectionProcessor implements Runnable, ClosableThread {
       boolean removed = false;
       while (System.currentTimeMillis() < timeout) {
         Thread.sleep(100);
-Thread.sleep(300); // just a bit of time so it's more likely other
+        removed = !zkStateReader.getClusterState().hasCollection(message.getStr(collection));
         if (removed) {
-          Thread.sleep(100); // just a bit of time so it's more likely other
+Thread.sleep(300); // just a bit of time so it's more likely other
                              // readers see on return
           break;
         }

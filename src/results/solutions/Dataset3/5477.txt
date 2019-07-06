@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -172,9 +171,9 @@ public abstract class AbstractTestObject extends BulkTest {
      */
     public void testSimpleSerialization() throws Exception {
         Object o = makeObject();
-readExternalFormFromBytes(objekt);
+        if (o instanceof Serializable && isTestSerialization()) {
             byte[] objekt = writeExternalFormToBytes((Serializable) o);
-            Object p = readExternalFormFromBytes(objekt);
+readExternalFormFromBytes(objekt);
         }
     }
 

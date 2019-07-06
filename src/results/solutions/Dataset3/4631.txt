@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class SelectorAttribute extends SimpleAttributeDefinition {
     private SelectorAttribute() {
         super(CommonAttributes.SELECTOR_STRING, ModelType.STRING, true);
     }
-public void marshallAsElement(ModelNode resourceModel,final boolean marshalDefault, XMLStreamWriter writer) throws XMLStreamException {
+
     @Override
-    public void marshallAsElement(ModelNode resourceModel, XMLStreamWriter writer) throws XMLStreamException {
+public void marshallAsElement(ModelNode resourceModel,final boolean marshalDefault, XMLStreamWriter writer) throws XMLStreamException {
         if (resourceModel.hasDefined(getName())) {
             String selector = resourceModel.get(getName()).asString();
             writer.writeEmptyElement(Element.SELECTOR.getLocalName());

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -152,9 +151,9 @@ public class MultipartUrlConfig implements Serializable
 	{
 		Arguments args = getArguments();
 		HTTPArgument arg = new HTTPArgument(name,value,true);
-arg.setAlwaysEncoded(false);
+		if(arg.getName().equals(arg.getEncodedName()) && arg.getValue().equals(arg.getEncodedValue()))
 		{
-			arg.setAlwaysEncode(false);
+arg.setAlwaysEncoded(false);
 		}
 		args.addArgument(new HTTPArgument(name,value,true));
 	}

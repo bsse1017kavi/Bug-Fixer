@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.services.monitor.BaseMonitor
@@ -1264,9 +1263,9 @@ nextModule:
                         Properties otherList = new Properties();
                         otherList.load( is);
                         for( Enumeration newKeys = otherList.keys(); newKeys.hasMoreElements() ;)
-if (moduleList.containsKey(key))
+                        {
                             String key = (String) newKeys.nextElement();
-                            if( moduleList.contains( key))
+if (moduleList.containsKey(key))
                                 // RESOLVE how do we localize messages before we have finished initialization?
                                 report( "Ignored duplicate property " + key + " in " + modulesPropertiesURL.toString());
                             else

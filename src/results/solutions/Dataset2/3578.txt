@@ -1,4 +1,3 @@
-
 /*
  * GeneralOptionPane.java - General options panel
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -59,9 +58,9 @@ public class GeneralOptionPane extends AbstractOptionPane
 			lineSeparator.setSelectedIndex(2);
 		addComponent(jEdit.getProperty("options.general.lineSeparator"),
 			lineSeparator);
-String[] encodings = MiscUtilities.getEncodings(true);
+
 		/* Default file encoding */
-		String[] encodings = MiscUtilities.getEncodings();
+String[] encodings = MiscUtilities.getEncodings(true);
 		Arrays.sort(encodings,new MiscUtilities.StringICaseCompare());
 		encoding = new JComboBox(encodings);
 		encoding.setEditable(true);

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -513,9 +512,9 @@ public class WebRequestCycle extends RequestCycle
 	 */
 	private void invokeInterface(final Page page, final String path, final String interfaceName)
 	{
-final Component component = page.get(Strings.afterFirstPathComponent(path, ':'));
+		setInvokePage(page);
 		// Invoke interface on the component at the given path on the page
-		final Component component = page.get(Strings.afterFirstPathComponent(path, '.'));
+final Component component = page.get(Strings.afterFirstPathComponent(path, ':'));
 		if (component != null)
 		{
 			Method method = getRequestInterfaceMethod(interfaceName);

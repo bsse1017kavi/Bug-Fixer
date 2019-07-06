@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -392,9 +391,9 @@ public class PreparedQueryImpl implements PreparedQuery {
     
     private void setCollectionValuedParameter(Map<Integer,Object> result, 
         Collection values, Integer[] indices, Object param, Broker broker) {
-if (n == 0 || n > indices.length || indices.length%n != 0) {
+        int n = values.size();
         Object[] array = values.toArray();
-        if (n > indices.length || indices.length%n != 0) {
+if (n == 0 || n > indices.length || indices.length%n != 0) {
             throw new UserException(_loc.get("uparam-coll-size", param, values, 
                 Arrays.toString(indices)));
         }

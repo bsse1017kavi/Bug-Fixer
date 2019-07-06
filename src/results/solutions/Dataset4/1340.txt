@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -191,9 +190,9 @@ public class CreateIndexRequest extends MasterNodeOperationRequest {
      * @param type   The mapping type
      * @param source The mapping source
      */
-if (source.size() != 1 || !source.containsKey(type)) {
+    public CreateIndexRequest mapping(String type, Map source) {
         // wrap it in a type map if its not
-        if (source.size() != 1 || source.containsKey(type)) {
+if (source.size() != 1 || !source.containsKey(type)) {
             source = MapBuilder.<String, Object>newMapBuilder().put(type, source).map();
         }
         try {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class GetAliasesResponse extends ActionResponse {
         int size = in.readVInt();
         ImmutableOpenMap.Builder<String, List<AliasMetaData>> aliasesBuilder = ImmutableOpenMap.builder();
         for (int i = 0; i < size; i++) {
-List<AliasMetaData> value = new ArrayList<>(valueSize);
+            String key = in.readString();
             int valueSize = in.readVInt();
-            List<AliasMetaData> value = new ArrayList<AliasMetaData>(valueSize);
+List<AliasMetaData> value = new ArrayList<>(valueSize);
             for (int j = 0; j < valueSize; j++) {
                 value.add(AliasMetaData.Builder.readFrom(in));
             }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class SimpleWebserviceEndpointTestCase {
     @Deployment
     public static WebArchive createDeployment() {
         final WebArchive war = ShrinkWrap.create(WebArchive.class, "ws-endpoint-example.war");
-war.addAsWebInfResource(WebXml.get("<servlet>" +
+        war.addPackage(SimpleWebserviceEndpointImpl.class.getPackage());
         war.addClass(SimpleWebserviceEndpointImpl.class);
-        war.addAsWebResource(WebXml.get("<servlet>" +
+war.addAsWebInfResource(WebXml.get("<servlet>" +
             "    <servlet-name>TestService</servlet-name>" +
             "    <servlet-class>org.jboss.as.testsuite.integration.ws.SimpleWebserviceEndpointImpl</servlet-class>" +
             "  </servlet>" +

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -59,9 +58,9 @@ public class ServerRemoveHandler implements ModelRemoveOperationHandler, Descrip
      * {@inheritDoc}
      */
     @Override
-ModelNode compensating = ServerAddHandler.getAddServerOperation(operation.get(OP_ADDR), context.getSubModel());
+    public OperationResult execute(final OperationContext context, final ModelNode operation, final ResultHandler resultHandler) throws OperationFailedException {
         try {
-            ModelNode compensating = ServerAddHandler.getAddServerOperation(operation.get(OP_ADDR), operation.get(NAME), operation.get(GROUP));
+ModelNode compensating = ServerAddHandler.getAddServerOperation(operation.get(OP_ADDR), context.getSubModel());
             resultHandler.handleResultComplete();
             return new BasicOperationResult(compensating);
         }

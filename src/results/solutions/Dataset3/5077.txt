@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -315,9 +314,9 @@ public class HibernateStatisticsResource extends PlaceholderResource.Placeholder
 
                     // example regionName = "jpa_SecondLevelCacheTestCase.jar#mypc.org.jboss.as.test.integration.jpa.hibernate.Employee"
                     // remove the scoped PU name plus one for '.' the separator character added to it.
-if (stripUpTo > 0 && stripUpTo < region.length()) {
+                    // and replace period with underscore.  Filtered region name will be "org_jboss_as_testsuite_integration_jpa_hibernate_Employee"
                     int stripUpTo = puName.length() + 1;
-                    if (stripUpTo > 0) {
+if (stripUpTo > 0 && stripUpTo < region.length()) {
                         result.add(region.substring(stripUpTo));
                     }
                     else { // if puName is missing, just use the region as is (AS7-3858)

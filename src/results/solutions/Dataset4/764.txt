@@ -1,4 +1,3 @@
-
 package de.swagner.paxbritannica;
 
 import java.util.ArrayList;
@@ -67,9 +66,9 @@ public class Ship extends Sprite {
 		collisionPoints.get(0).set( this.getVertices()[0], this.getVertices()[1]);
 		collisionPoints.get(1).set( this.getVertices()[5], this.getVertices()[6]);
 		collisionPoints.get(2).set( this.getVertices()[10], this.getVertices()[11]);
-collisionCenter.set(collisionPoints.get(2)).scl(0.5f).add(collisionPoints.get(0));
+		collisionPoints.get(3).set( this.getVertices()[15], this.getVertices()[16]);
 		
-		collisionCenter.set(collisionPoints.get(0)).add(collisionPoints.get(2)).scl(0.5f);
+collisionCenter.set(collisionPoints.get(2)).scl(0.5f).add(collisionPoints.get(0));
 
 		velocity.scl( (float) Math.pow(0.97f, delta * 30.f));
 		position.add(velocity.x * delta, velocity.y * delta);

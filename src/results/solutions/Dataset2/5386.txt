@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -345,9 +344,9 @@ private int matchLevel(NameReference nameRef, boolean resolve) {
 			} else { // QualifiedNameReference
 				TypeBinding typeBinding = null;
 				QualifiedNameReference qNameRef = (QualifiedNameReference)nameRef;
-switch (qNameRef.bits & AstNode.RestrictiveFlagMASK) {
+				char[][] tokens = qNameRef.tokens;
 				int lastIndex = tokens.length-1;
-				switch (qNameRef.bits & Statement.RestrictiveFlagMASK) {
+switch (qNameRef.bits & AstNode.RestrictiveFlagMASK) {
 					case BindingIds.FIELD : // reading a field
 						typeBinding = ((FieldBinding)binding).declaringClass;
 						// no valid match amongst fields

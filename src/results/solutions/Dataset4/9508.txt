@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class AcknowledgedRestResponseActionListener<T extends AcknowledgedRespon
             XContentBuilder builder = RestXContentBuilder.restContentBuilder(request);
             builder.startObject()
                     .field(Fields.ACKNOWLEDGED, response.isAcknowledged());
-channel.sendResponse(new BytesRestResponse(OK, builder));
+            addCustomFields(builder, response);
             builder.endObject();
-            channel.sendResponse(new XContentRestResponse(request, OK, builder));
+channel.sendResponse(new BytesRestResponse(OK, builder));
         } catch (IOException e) {
             onFailure(e);
         }

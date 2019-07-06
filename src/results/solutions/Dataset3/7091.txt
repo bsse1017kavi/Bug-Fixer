@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -132,9 +131,9 @@ public class DeploymentReplaceHandler implements NewStepHandler, DescriptionProv
         deployNode.get(ENABLED).set(true);
         replaceNode.get(ENABLED).set(false);
 
-DeploymentHandlerUtil.replace(context, replaceNode, runtimeName, name, replacedName, contents);
+        final String runtimeName = deployNode.require(RUNTIME_NAME).asString();
         final DeploymentHandlerUtil.ContentItem[] contents = getContents(deployNode.require(CONTENT));
-        DeploymentHandlerUtil.replace(context, runtimeName, name, replacedName, contents);
+DeploymentHandlerUtil.replace(context, replaceNode, runtimeName, name, replacedName, contents);
 
         context.completeStep();
     }

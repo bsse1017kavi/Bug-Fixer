@@ -1,4 +1,3 @@
-
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -115,9 +114,9 @@ public abstract class AbstractCompendiumHandler extends ServiceTracker implement
             logger.log(LogService.LOG_INFO, "Unregistering MBean with ObjectName [" + getName() + "] for service with "
                     + Constants.SERVICE_ID + " [" + serviceID + "]"); 
             ExecutorService executor = agentContext.getRegistrationExecutor();
-agentContext.unregisterMBean(AbstractCompendiumHandler.this);
+            executor.submit(new Runnable() {
                 public void run() {
-                    agentContext.unregisterMBean(getName());
+agentContext.unregisterMBean(AbstractCompendiumHandler.this);
                 }
             });
             trackedId = null;

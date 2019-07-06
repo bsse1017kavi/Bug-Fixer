@@ -1,4 +1,3 @@
-
 package backtype.storm.contrib.jms;
 
 import java.util.ArrayList;
@@ -365,9 +364,9 @@ public class TridentJmsSpout implements ITridentSpout<JmsBatch> {
             this.name = name;
             LOG.info("Created batch coordinator for "+name);
         }
-public JmsBatch initializeTransaction(long txid, JmsBatch prevMetadata, JmsBatch curMetadata) {
+        
         @Override
-        public JmsBatch initializeTransaction(long txid, JmsBatch prevMetadata) {
+public JmsBatch initializeTransaction(long txid, JmsBatch prevMetadata, JmsBatch curMetadata) {
             LOG.debug("Initialise transaction "+txid+" for "+name);
             return null;
         }

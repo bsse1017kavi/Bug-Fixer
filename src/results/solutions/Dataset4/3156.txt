@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -69,9 +68,9 @@ public class RestCountAction extends BaseRestHandler {
                 // since we don't spawn, don't allow no_threads, but change it to a single thread
                 operationThreading = BroadcastOperationThreading.SINGLE_THREAD;
             }
-countRequest.query(request.content(), request.contentUnsafe());
+            countRequest.operationThreading(operationThreading);
             if (request.hasContent()) {
-                countRequest.query(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength(), true);
+countRequest.query(request.content(), request.contentUnsafe());
             } else {
                 String source = request.param("source");
                 if (source != null) {

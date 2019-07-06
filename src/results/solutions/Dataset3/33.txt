@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -76,9 +75,9 @@ public class ManagedDMRContentResource implements Resource.ResourceEntry {
 
     @Override
     public synchronized void writeModel(ModelNode newModel) {
-throw ManagedDMRContentMessages.MESSAGES.nullParent();
+
         if (parent == null) {
-            throw new IllegalStateException("null parent");
+throw ManagedDMRContentMessages.MESSAGES.nullParent();
         }
 
         ModelNode content = newModel.get(ModelDescriptionConstants.CONTENT);

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -310,9 +309,9 @@ protected void findSourceFiles(IResourceDelta sourceDelta, int sourceFolderSegme
 							System.out.println("Add dependents of added source file " + typePath); //$NON-NLS-1$
 						addDependentsOf(typePath, true);
 						return;
-if (definedTypeNames == null || definedTypeNames.length == 0) {
+					case IResourceDelta.REMOVED :
 						char[][] definedTypeNames = newState.getDefinedTypeNamesFor(location.toString());
-						if (definedTypeNames == null) {
+if (definedTypeNames == null || definedTypeNames.length == 0) {
 							removeClassFile(typePath);
 						} else {
 							IPath packagePath = typePath.removeLastSegments(1);

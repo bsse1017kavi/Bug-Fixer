@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -22,9 +21,9 @@ import org.apache.myrmidon.api.TaskException;
  * @ant.task name="bzip2"
  */
 public class BZip2
-private static final byte[] HEADER = new byte[]{(byte)'B', (byte)'Z'};
+    extends Pack
 {
-    private final static byte[] HEADER = new byte[]{(byte)'B', (byte)'Z'};
+private static final byte[] HEADER = new byte[]{(byte)'B', (byte)'Z'};
 
     protected OutputStream getPackingStream( OutputStream output )
         throws TaskException, IOException

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public class ScatterZipOutputStream implements Closeable {
      * @throws IOException    If writing fails
      */
     public void addArchiveEntry(ZipArchiveEntry zipArchiveEntry, InputStream payload, int method) throws IOException {
-streamCompressor.getBytesWrittenForLastEntry(), method,
+        streamCompressor.deflate(payload, method);
         items.add(new CompressedEntry(zipArchiveEntry, streamCompressor.getCrc32(),
-                                      streamCompressor.getBytesWritten(), method,
+streamCompressor.getBytesWrittenForLastEntry(), method,
                                       streamCompressor.getBytesRead()));
     }
 

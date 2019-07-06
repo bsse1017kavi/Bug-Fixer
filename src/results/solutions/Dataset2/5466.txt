@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -230,9 +229,9 @@ public class RequestDispatcherImpl implements RequestDispatcher {
     }
 
     void setName(String name) {
-context.lookupServletByName(this.name);
+        this.name = name;
 	this.lookupResult =
-	    context.getContainer().lookupServletByName(this.name);
+context.lookupServletByName(this.name);
     }
 
     void setPath(String urlPath) {

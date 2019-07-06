@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.clustering.infinispan.InfinispanLogger.ROOT_LOGGER;
@@ -132,9 +131,9 @@ public class InfinispanSubsystemXMLReader_1_0 implements XMLElementReader<List<M
 
         while (reader.hasNext() && (reader.nextTag() != XMLStreamConstants.END_ELEMENT)) {
             Element element = Element.forName(reader.getLocalName());
-container.get(ModelKeys.ALIASES).add(reader.getElementText());
+            switch (element) {
                 case ALIAS: {
-                    container.get(ModelKeys.ALIAS).add(reader.getElementText());
+container.get(ModelKeys.ALIASES).add(reader.getElementText());
                     break;
                 }
                 case TRANSPORT: {

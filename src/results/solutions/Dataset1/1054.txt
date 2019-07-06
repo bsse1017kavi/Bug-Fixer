@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -242,9 +241,9 @@ public class SegmentReader extends IndexReader implements Cloneable {
         // Verify two sources of "maxDoc" agree:
         if (si.getDocStoreOffset() == -1 && fieldsReaderOrig.size() != si.docCount) {
           throw new CorruptIndexException("doc counts differ for segment " + segment + ": fieldsReader shows " + fieldsReaderOrig.size() + " but segmentInfo shows " + si.docCount);
-if (si.getHasVectors()) { // open term vector files only as needed
+        }
 
-        if (fieldInfos.hasVectors()) { // open term vector files only as needed
+if (si.getHasVectors()) { // open term vector files only as needed
           termVectorsReaderOrig = new TermVectorsReader(storeDir, storesSegment, fieldInfos, readBufferSize, si.getDocStoreOffset(), si.docCount);
         }
       }

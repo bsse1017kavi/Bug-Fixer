@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2000-2002,2004 The Apache Software Foundation.
  * 
@@ -1920,9 +1919,9 @@ public class XPath {
                 }
                 ch = data.charAt(currentOffset);
             }
-/** int start = currentOffset; **/
+            if (ch == '.') {
                 if (++currentOffset < endOffset) {
-                    int start = currentOffset;
+/** int start = currentOffset; **/
                     ch = data.charAt(currentOffset);
                     while (ch >= '0' && ch <= '9') {
                         part = (part * 10) + (ch - '0');

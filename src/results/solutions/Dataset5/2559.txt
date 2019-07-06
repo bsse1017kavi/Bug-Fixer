@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1989,9 +1988,9 @@ public class SelectImpl
         Integer i = null;
         Object key = table.getFullIdentifier().getName();
         if (pj != null && pj.path() != null)
-if (_ctx != null && (_parent != null || _subsels != null))
+            key = new Key(pj.path().toString(), key);
 
-        if (_ctx != null)
+if (_ctx != null && (_parent != null || _subsels != null))
             i = findAliasForQuery(table, pj, key, create);
 
         if (i != null)

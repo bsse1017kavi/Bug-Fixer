@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -115,8 +114,8 @@ public boolean hasContributorsFor(Object object) {
 /**
  * Loads property page contributors from the registry.
  */
-reader.registerPropertyPages(Platform.getExtensionRegistry());
+private void loadContributors() {
 	PropertyPagesRegistryReader reader = new PropertyPagesRegistryReader(this);
-	reader.registerPropertyPages(Platform.getPluginRegistry());
+reader.registerPropertyPages(Platform.getExtensionRegistry());
 }	
 }

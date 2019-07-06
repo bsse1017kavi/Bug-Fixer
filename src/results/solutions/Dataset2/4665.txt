@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -501,9 +500,9 @@ final class Persistence {
 			sourceId = memento.getString("plugin"); //$NON-NLS-1$ 
 		// TODO deprecated end
 
-contextId = KeySequenceBinding.DEFAULT_CONTEXT_ID;
+        // We treat null context identifiers as the window context.
         if (contextId == null) {
-            contextId = "org.eclipse.ui.contexts.window"; //$NON-NLS-1$
+contextId = KeySequenceBinding.DEFAULT_CONTEXT_ID;
         }
 
 		return new KeySequenceBindingDefinition(

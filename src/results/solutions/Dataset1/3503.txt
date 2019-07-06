@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.TestProto
@@ -188,9 +187,9 @@ public class TestProto {
 		} catch (FileNotFoundException fnfe) {
 			// if useprocess=false & we're running in a suite, 
 			// the location is different, try it
-fr = new BufferedReader (new InputStreamReader(new FileInputStream(userdir + sep + filename),"UTF-8"));
+			String userdir =  System.getProperty("user.dir");
 			String sep =  System.getProperty("file.separator");
-			fr = new BufferedReader (new InputStreamReader(new FileInputStream(userdir + sep + "extin" + sep + filename),"UTF-8"));
+fr = new BufferedReader (new InputStreamReader(new FileInputStream(userdir + sep + filename),"UTF-8"));
 		}
 		tkn = new StreamTokenizer(fr);
 		int val;

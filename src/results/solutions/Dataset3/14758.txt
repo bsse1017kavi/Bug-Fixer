@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class UnboundedQueueThreadPoolMetricsHandler extends ThreadPoolMetricsHan
             context.getResult().set(pool.getRejectedCount());
         } else if (attributeName.equals(CommonAttributes.TASK_COUNT)) {
             context.getResult().set(pool.getTaskCount());
-throw ThreadsMessages.MESSAGES.unsupportedUnboundedQueueThreadPoolMetric(attributeName);
+        } else {
             // Programming bug. Throw a RuntimeException, not OFE, as this is not a client error
-            throw new IllegalStateException("Unsupported attribute '" + attributeName + "'");
+throw ThreadsMessages.MESSAGES.unsupportedUnboundedQueueThreadPoolMetric(attributeName);
         }
     }
 }

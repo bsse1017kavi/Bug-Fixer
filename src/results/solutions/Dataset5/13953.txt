@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -3260,9 +3259,9 @@ System.out.println("+++++ currentElement : " + fStringPool.toString(elementType)
                 } catch (InvalidDatatypeValueException idve) {
                     fErrorReporter.reportError(fErrorReporter.getLocator(),
                                                SchemaMessageProvider.SCHEMA_DOMAIN,
-new Object [] { "In element '"+fStringPool.toString(elementType)+"' : "+idve.getMessage()},
+                                               SchemaMessageProvider.DatatypeError,
                                                SchemaMessageProvider.MSG_NONE,
-                                               new Object [] { idve.getMessage()},
+new Object [] { "In element '"+fStringPool.toString(elementType)+"' : "+idve.getMessage()},
                                                XMLErrorReporter.ERRORTYPE_RECOVERABLE_ERROR);
                 }
             }

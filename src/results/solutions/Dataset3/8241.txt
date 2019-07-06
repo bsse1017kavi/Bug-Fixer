@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ public class JBossAllXMLParsingProcessor implements DeploymentUnitProcessor {
         //we use this map to detect the presence of two different but functionally equivalent namespaces
         final Map<AttachmentKey<?>, QName> usedNamespaces = new HashMap<AttachmentKey<?>, QName>();
         for(Map.Entry<QName, Object> entry : context.getParseResults().entrySet()) {
-ServerMessages.MESSAGES.equivilentNamespacesInJBossXml(entry.getKey(), usedNamespaces.get(attachmentKey));
+            final AttachmentKey attachmentKey = namespaceAttachments.get(entry.getKey());
             if(usedNamespaces.containsKey(attachmentKey)) {
-                throw ServerMessages.MESSAGES.equivalentNamespacesInJBossXml(entry.getKey(), usedNamespaces.get(attachmentKey));
+ServerMessages.MESSAGES.equivilentNamespacesInJBossXml(entry.getKey(), usedNamespaces.get(attachmentKey));
             }
             usedNamespaces.put(attachmentKey, entry.getKey());
             deploymentUnit.putAttachment(attachmentKey, entry.getValue());

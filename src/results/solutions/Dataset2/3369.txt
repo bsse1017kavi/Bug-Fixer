@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -194,9 +193,9 @@ public abstract class PoolTcpConnector extends BaseInterceptor
  		// The SSL setup code has been moved into
  		// SSLImplementation since SocketFactory doesn't
  		// provide a wide enough interface
-socketFactory =
+ 		sslImplementation=SSLImplementation.getInstance
  		    (sslImplementationName);
-                ServerSocketFactory socketFactory = 
+socketFactory =
                         sslImplementation.getServerSocketFactory();
                 if( socketFactory!=null ) {
                     Enumeration attE=attributes.keys();

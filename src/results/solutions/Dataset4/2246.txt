@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -46,9 +45,9 @@ public class RestCreateSnapshotAction extends BaseRestHandler {
         controller.registerHandler(PUT, "/_snapshot/{repository}/{snapshot}", this);
         controller.registerHandler(POST, "/_snapshot/{repository}/{snapshot}/_create", this);
     }
-public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void handleRequest(final RestRequest request, final RestChannel channel) {
+public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
         CreateSnapshotRequest createSnapshotRequest = createSnapshotRequest(request.param("repository"), request.param("snapshot"));
         createSnapshotRequest.listenerThreaded(false);
         createSnapshotRequest.source(request.content().toUtf8());

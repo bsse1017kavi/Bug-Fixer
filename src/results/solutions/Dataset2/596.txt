@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -120,9 +119,9 @@ protected void copyExtraResourcesBack() throws CoreException {
 							if (JavaBuilder.CLASS_EXTENSION.equalsIgnoreCase(extension)) return false;
 
 							IPath partialPath = resource.getFullPath().removeFirstSegments(segmentCount);
-createErrorFor(resource, Util.bind("build.duplicateResource")); //$NON-NLS-1$
+							IResource copiedResource = outputFolder.getFile(partialPath);
 							if (copiedResource.exists())
-								createErrorFor(resource, Util.bind("build.duplicateResource"));
+createErrorFor(resource, Util.bind("build.duplicateResource")); //$NON-NLS-1$
 							else
 								resource.copy(copiedResource.getFullPath(), true, null);
 							return false;

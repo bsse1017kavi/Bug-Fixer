@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -517,9 +516,9 @@ public abstract class ShardSearchingTestBase extends LuceneTestCase {
   // concurrency
   private final class ChangeIndices extends Thread {
     @Override
-final LineFileDocs docs = new LineFileDocs(random, defaultCodecSupportsDocValues());
+    public void run() {
       try {
-        final LineFileDocs docs = new LineFileDocs(random);
+final LineFileDocs docs = new LineFileDocs(random, defaultCodecSupportsDocValues());
         int numDocs = 0;
         while (System.nanoTime() < endTimeNanos) {
           final int what = random.nextInt(3);

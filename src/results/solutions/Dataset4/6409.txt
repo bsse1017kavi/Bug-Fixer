@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -155,9 +154,9 @@ public class LocalGatewayAllocator extends AbstractComponent implements GatewayA
 
             // check if the counts meets the minimum set
             int requiredAllocation = 1;
-String initialShards = indexMetaData.settings().get("index.recovery.initial_shards", settings.get("index.recovery.initial_shards", this.initialShards));
+            try {
                 IndexMetaData indexMetaData = routingNodes.metaData().index(shard.index());
-                String initialShards = indexMetaData.settings().get("index.recovery.initial_shards", this.initialShards);
+String initialShards = indexMetaData.settings().get("index.recovery.initial_shards", settings.get("index.recovery.initial_shards", this.initialShards));
                 if ("quorum".equals(initialShards)) {
                     if (indexMetaData.numberOfReplicas() > 1) {
                         requiredAllocation = ((1 + indexMetaData.numberOfReplicas()) / 2) + 1;

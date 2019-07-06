@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.InsertNode
@@ -421,9 +420,9 @@ public final class InsertNode extends DMLModStatementNode
 		 * and target column types and lengths do not match.
  		 */
 		if (! resultColumnList.columnTypesAndLengthsMatch(
-resultSet = resultSet.genNormalizeResultSetNode(false);
+												resultSet.getResultColumns()))
 		{
-			resultSet = resultSet.genNormalizeResultSetNode(resultSet, false);
+resultSet = resultSet.genNormalizeResultSetNode(false);
 			resultColumnList.copyTypesAndLengthsToSource(resultSet.getResultColumns());
 		}
 

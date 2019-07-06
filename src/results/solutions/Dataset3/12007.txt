@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public class RaAdd extends AbstractAddStepHandler {
         ModifiableResourceAdapter resourceAdapter = RaOperationUtil.buildResourceAdaptersObject(context, operation, archiveOrModuleName);
 
         if (model.get(ARCHIVE.getName()).isDefined()) {
-RaOperationUtil.installRaServicesAndDeployFromModule(context, verificationHandler, name, resourceAdapter, archiveOrModuleName);
+            RaOperationUtil.installRaServices(context, verificationHandler, name, resourceAdapter);
         } else {
-            RaOperationUtil.installRaServicesAndDeployFromModule(context, verificationHandler, archiveOrModuleName, resourceAdapter, archiveOrModuleName);
+RaOperationUtil.installRaServicesAndDeployFromModule(context, verificationHandler, name, resourceAdapter, archiveOrModuleName);
         }
 
 

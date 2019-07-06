@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class ModuleDependencyProcessor implements DeploymentUnitProcessor {
                 boolean optional = parseOptionalExportParams(dependencyParts, "optional");
                 final ModuleLoader dependencyLoader;
                 if (dependencyId.getName().startsWith("deployment.")) {
-dependencyLoader = Module.getBootModuleLoader();
+                    dependencyLoader = deploymentModuleLoader;
                 } else {
-                    dependencyLoader = Module.getSystemModuleLoader();
+dependencyLoader = Module.getBootModuleLoader();
                 }
                 ModuleDependency dependency = new ModuleDependency(dependencyLoader, dependencyId, optional, export, false);
                 moduleSpecification.addDependency(dependency);

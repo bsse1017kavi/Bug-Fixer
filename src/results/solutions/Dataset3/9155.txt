@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class UnboundedQueueThreadPoolService implements Service<ManagedJBossThre
     }
 
     public synchronized ManagedJBossThreadPoolExecutorService getValue() throws IllegalStateException {
-throw ThreadsMessages.MESSAGES.unboundedQueueThreadPoolExecutorUninitialized();
+        final ManagedJBossThreadPoolExecutorService value = this.executor;
         if (value == null) {
-            throw ThreadsLogger.ROOT_LOGGER.unboundedQueueThreadPoolExecutorUninitialized();
+throw ThreadsMessages.MESSAGES.unboundedQueueThreadPoolExecutorUninitialized();
         }
         return value;
     }

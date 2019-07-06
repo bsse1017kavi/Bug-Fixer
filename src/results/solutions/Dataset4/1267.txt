@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class FilterCacheGcStress {
 
         Thread searchThread = new Thread() {
             @Override public void run() {
-.setQuery(filteredQuery(matchAllQuery(), rangeFilter("field").from(System.currentTimeMillis() - 1000000)))
+                while (!stop.get()) {
                     client.prepareSearch()
-                            .setQuery(filteredQuery(matchAllQuery(), rangeFilter("field").from(System.currentTimeMillis())))
+.setQuery(filteredQuery(matchAllQuery(), rangeFilter("field").from(System.currentTimeMillis() - 1000000)))
                             .execute().actionGet();
                 }
             }

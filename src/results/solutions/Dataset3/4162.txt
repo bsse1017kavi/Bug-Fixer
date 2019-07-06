@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -576,9 +575,9 @@ public class PersistenceUnitDeploymentProcessor implements DeploymentUnitProcess
         boolean result = false;
         // invoke org.hibernate.Version.getVersionString()
         try {
-Object version = m.invoke(null);
+            Class targetCls = provider.getClass().getClassLoader().loadClass("org.hibernate.Version");
             Method m = targetCls.getMethod("getVersionString");
-            Object version = m.invoke(null, null);
+Object version = m.invoke(null);
             JPA_LOGGER.tracef("lookup provider checking provider version (%s)", version);
             if (version instanceof String &&
                 ((String) version).startsWith("3.")) {

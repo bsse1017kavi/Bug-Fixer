@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -182,9 +181,9 @@ public class ParallelBootOperationStepHandler implements OperationStepHandler {
         for (Map.Entry<String, ParallelBootTransactionControl> entry : transactionControls.entrySet()) {
             ParallelBootTransactionControl txControl = entry.getValue();
             if (txControl.transaction == null) {
-failureDesc = txControl.response.get(ModelDescriptionConstants.FAILURE_DESCRIPTION).toString();
+                String failureDesc;
                 if (txControl.response.hasDefined(ModelDescriptionConstants.FAILURE_DESCRIPTION)) {
-                    failureDesc = txControl.response.get(ModelDescriptionConstants.FAILURE_DESCRIPTION).asString();
+failureDesc = txControl.response.get(ModelDescriptionConstants.FAILURE_DESCRIPTION).toString();
                 } else {
                     failureDesc = MESSAGES.subsystemBootOperationFailed(entry.getKey());
                 }

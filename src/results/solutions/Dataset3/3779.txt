@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -141,9 +140,9 @@ class SessionOpenRequestHandler extends EJBIdentifierBasedMessageHandler {
         @Override
         public void run() {
             final SessionID sessionID;
-sessionID = statefulSessionComponent.createSession();
+            try {
                 try {
-                    sessionID = statefulSessionComponent.createSessionRemote();
+sessionID = statefulSessionComponent.createSession();
                 } catch (Throwable t) {
                     EjbLogger.ROOT_LOGGER.exceptionGeneratingSessionId(t, statefulSessionComponent.getComponentName(), invocationId, channelAssociation.getChannel());
                     SessionOpenRequestHandler.this.writeException(channelAssociation, SessionOpenRequestHandler.this.marshallerFactory, invocationId, t, null);

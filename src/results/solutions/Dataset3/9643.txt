@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -32,9 +31,9 @@ public final class OperationNameState extends DefaultParsingState {
     public static final String ID = "OP_NAME";
     public static final OperationNameState INSTANCE = new OperationNameState();
 
-setEnterHandler(GlobalCharacterHandlers.CONTENT_CHARACTER_HANDLER);
+    public OperationNameState() {
         super(ID);
-        //setEnterHandler(GlobalCharacterHandlers.CONTENT_CHARACTER_HANDLER);
+setEnterHandler(GlobalCharacterHandlers.CONTENT_CHARACTER_HANDLER);
         setDefaultHandler(GlobalCharacterHandlers.CONTENT_CHARACTER_HANDLER);
         putHandler('(', GlobalCharacterHandlers.LEAVE_STATE_HANDLER);
         putHandler(OutputTargetState.OUTPUT_REDIRECT_CHAR, GlobalCharacterHandlers.LEAVE_STATE_HANDLER);

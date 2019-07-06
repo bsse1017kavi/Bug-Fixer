@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class UpdateSettingsTests extends ElasticsearchIntegrationTest {
                     .setSettings(ImmutableSettings.settingsBuilder()
                             .put("index.refresh_interval", -1) // this one can change
                             .put("index.cache.filter.type", "none") // this one can't
-fail();
+                    )
                     .execute().actionGet();
-            assert false;
+fail();
         } catch (ElasticsearchIllegalArgumentException e) {
             // all is well
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -161,9 +160,9 @@ public class MultiPhrasePrefixQuery extends Query {
                         && term.field().equals(field)) {
                     terms.add(term);
                 } else {
-if (terms.size() >= maxExpansions) {
+                    break;
                 }
-                if (terms.size() > maxExpansions) {
+if (terms.size() >= maxExpansions) {
                     break;
                 }
             } while (enumerator.next());

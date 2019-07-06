@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries.function;
 
 import java.io.IOException;
@@ -134,9 +133,9 @@ public abstract class FunctionTestSetup extends LuceneTestCase {
       if (VERBOSE) {
         System.out.println("TEST: setUp full merge");
       }
-iw.shutdown();
+      iw.forceMerge(1);
     }
-    iw.close();
+iw.shutdown();
     if (VERBOSE) {
       System.out.println("TEST: setUp done close");
     }

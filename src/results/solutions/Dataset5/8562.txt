@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.testelement;
 import java.io.Serializable;
 import java.util.Collections;
@@ -48,9 +47,9 @@ public abstract class AbstractTestElement implements TestElement,Serializable
         catch(Exception e){}
         
         PropertyIterator iter = propertyIterator();
-clonedElement.setProperty((JMeterProperty)iter.next().clone());
+        while(iter.hasNext())
         {
-            clonedElement.addProperty((JMeterProperty)iter.next().clone());
+clonedElement.setProperty((JMeterProperty)iter.next().clone());
         }
         return clonedElement;
     }

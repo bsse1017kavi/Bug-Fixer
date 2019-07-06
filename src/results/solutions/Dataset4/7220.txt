@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -127,9 +126,9 @@ public class TransportShardDeleteByQueryAction extends TransportShardReplication
         } finally {
             SearchContext searchContext = SearchContext.current();
             searchContext.clearAndRelease();
-return new PrimaryResponse<>(shardRequest.request, new ShardDeleteByQueryResponse(), null);
+            SearchContext.removeCurrent();
         }
-        return new PrimaryResponse<ShardDeleteByQueryResponse, ShardDeleteByQueryRequest>(shardRequest.request, new ShardDeleteByQueryResponse(), null);
+return new PrimaryResponse<>(shardRequest.request, new ShardDeleteByQueryResponse(), null);
     }
 
 

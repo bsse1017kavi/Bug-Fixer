@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -456,9 +455,9 @@ public class UrlPathHelper {
 		}
 		return requestUri;
 	}
-int startIndex = requestUri.toLowerCase().indexOf(";jsessionid=");
+
 	private String removeJsessionid(String requestUri) {
-		int startIndex = requestUri.indexOf(";jsessionid=");
+int startIndex = requestUri.toLowerCase().indexOf(";jsessionid=");
 		if (startIndex != -1) {
 			int endIndex = requestUri.indexOf(';', startIndex + 12);
 			String start = requestUri.substring(0, startIndex);

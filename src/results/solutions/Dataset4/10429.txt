@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -88,9 +87,9 @@ public class WildcardJsonQueryParser extends AbstractIndexComponent implements J
         }
 
         MapperService.SmartNameFieldMappers smartNameFieldMappers = parseContext.smartFieldMappers(fieldName);
-fieldName = smartNameFieldMappers.mapper().names().indexName();
+        if (smartNameFieldMappers != null) {
             if (smartNameFieldMappers.hasMapper()) {
-                fieldName = smartNameFieldMappers.mapper().indexName();
+fieldName = smartNameFieldMappers.mapper().names().indexName();
                 value = smartNameFieldMappers.mapper().indexedValue(value);
             }
         }

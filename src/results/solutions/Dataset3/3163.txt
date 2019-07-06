@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public class ServiceDeploymentParsingProcessor implements DeploymentUnitProcesso
             return;
 
         VirtualFile serviceXmlFile = null;
-} else if(deploymentRoot.getName().toLowerCase().endsWith(SERVICE_DESCRIPTOR_SUFFIX)) {
+        if(deploymentRoot.isDirectory()) {
             serviceXmlFile = deploymentRoot.getChild(SERVICE_DESCRIPTOR_PATH);
-        } else if(deploymentRoot.getLowerCaseName().endsWith(SERVICE_DESCRIPTOR_SUFFIX)) {
+} else if(deploymentRoot.getName().toLowerCase().endsWith(SERVICE_DESCRIPTOR_SUFFIX)) {
             serviceXmlFile = deploymentRoot;
         }
         if(serviceXmlFile == null || !serviceXmlFile.exists())

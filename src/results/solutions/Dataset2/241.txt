@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -213,9 +212,9 @@ public String toString () {
 	StringBuffer buffer = new StringBuffer ();
 	buffer.append ('{');
 	for (int i=0; i<elementCount; i++) {
-buffer.append("..."); //$NON-NLS-1$
+		if (i != 0) buffer.append (',');
 		if (buffer.length() > 1000) {
-			buffer.append("..."/*nonNLS*/);
+buffer.append("..."); //$NON-NLS-1$
 			break;
 		}
 		buffer.append (orderedList[i]);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -346,9 +345,9 @@ public class TestIndexWriterCommit extends LuceneTestCase {
               int count = 0;
               do {
                 if (failed.get()) break;
-f.setStringValue(s);
+                for(int j=0;j<10;j++) {
                   final String s = finalI + "_" + String.valueOf(count++);
-                  f.setValue(s);
+f.setStringValue(s);
                   w.addDocument(doc);
                   w.commit();
                   DirectoryReader r2 = DirectoryReader.openIfChanged(r);

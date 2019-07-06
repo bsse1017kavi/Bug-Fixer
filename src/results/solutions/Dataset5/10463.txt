@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -840,9 +839,9 @@ public abstract class Session implements IClusterable, IEventSink
 	 * 
 	 * @return {@link IPageManager} instance.
 	 */
-IPageManager pageManager = Application.get().internalGetPageManager();
+	public final IPageManager getPageManager()
 	{
-		IPageManager pageManager = Application.get().getPageManager();
+IPageManager pageManager = Application.get().internalGetPageManager();
 		return pageAccessSynchronizer.get().adapt(pageManager);
 	}
 

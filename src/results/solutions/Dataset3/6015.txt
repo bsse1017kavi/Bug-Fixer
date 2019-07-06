@@ -1,4 +1,3 @@
-
 package org.jboss.as.connector.util;
 
 import org.jboss.as.connector.deployers.ra.processors.AbstractResourceAdapterDeploymentServiceListener;
@@ -25,9 +24,9 @@ import org.jboss.msc.service.ServiceTarget;
 import org.jboss.security.SubjectFactory;
 
 public class RaServicesFactory {
-ServiceName serviceName = ConnectorServices.registerDeployment(deploymentUnitName);
+    public static void createDeploymentService(final ManagementResourceRegistration registration, ConnectorXmlDescriptor connectorXmlDescriptor, Module module, ServiceTarget serviceTarget, final String deploymentUnitName, String deployment, ResourceAdapter raxml, final Resource deploymentResource) {
         // Create the service
-        ServiceName serviceName = ConnectorServices.registerDeployment(raxml.getArchive());
+ServiceName serviceName = ConnectorServices.registerDeployment(deploymentUnitName);
 
         ResourceAdapterXmlDeploymentService service = new ResourceAdapterXmlDeploymentService(connectorXmlDescriptor,
                 raxml, module, deployment, serviceName);

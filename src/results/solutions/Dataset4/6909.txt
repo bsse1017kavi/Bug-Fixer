@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public abstract class JsonBuilder<T extends JsonBuilder> {
         CAMELCASE
     }
 
-protected static FieldCaseConversion globalFieldCaseConversion = FieldCaseConversion.NONE;
+    private final static DateTimeFormatter defaultDatePrinter = ISODateTimeFormat.dateTime().withZone(DateTimeZone.UTC);
 
-    protected static FieldCaseConversion globalFieldCaseConversion = FieldCaseConversion.CAMELCASE;
+protected static FieldCaseConversion globalFieldCaseConversion = FieldCaseConversion.NONE;
 
     public static void globalFieldCaseConversion(FieldCaseConversion globalFieldCaseConversion) {
         JsonBuilder.globalFieldCaseConversion = globalFieldCaseConversion;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -225,9 +224,9 @@ public class UrlTag extends HtmlEscapingAwareTag implements ParamAware {
 			// (Do not embed the session identifier in a remote link!)
 			urlStr = response.encodeURL(urlStr);
 		}
-urlStr = htmlEscape(urlStr);
+
 		// HTML and/or JavaScript escape, if demanded.
-		urlStr = isHtmlEscape() ? HtmlUtils.htmlEscape(urlStr) : urlStr;
+urlStr = htmlEscape(urlStr);
 		urlStr = this.javaScriptEscape ? JavaScriptUtils.javaScriptEscape(urlStr) : urlStr;
 
 		return urlStr;

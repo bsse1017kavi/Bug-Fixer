@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -650,9 +649,9 @@ public IJavaElement rootedAt(IJavaProject project) {
 	 *  <li>ELEMENT_NOT_PRESENT - the jar supplied to the operation
 	 *      does not exist
 	 * </ul>
-if (!exists()) {
+	 */
 	protected void verifyAttachSource(IPath zipPath) throws JavaModelException {
-		if (!exists0()) {
+if (!exists()) {
 			throw newNotPresentException();
 		} else if (zipPath != null && !zipPath.isAbsolute()) {
 			throw new JavaModelException(new JavaModelStatus(IJavaModelStatusConstants.RELATIVE_PATH, zipPath));

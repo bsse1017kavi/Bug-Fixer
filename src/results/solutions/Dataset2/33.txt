@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -79,9 +78,9 @@ public  class AttributeGroup
             .add(RAttributeAttributeGroupPeer.GROUP_ID, getAttributeGroupId())
             .addJoin(RAttributeAttributeGroupPeer.ATTRIBUTE_ID, 
                                                   AttributePeer.ATTRIBUTE_ID)
-return AttributePeer.doSelect(crit);
+            .addAscendingOrderByColumn(RAttributeAttributeGroupPeer
                                        .PREFERRED_ORDER);
-        return (List) AttributePeer.doSelect(crit);
+return AttributePeer.doSelect(crit);
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ class ProxyTask implements Callable<ModelNode> {
         }
 
         return finalResultRef.get();
-ModelNode getUncommittedResult() throws InterruptedException {
+    }
 
-    ModelNode getResult() throws InterruptedException {
+ModelNode getUncommittedResult() throws InterruptedException {
         synchronized (proxyResultRef) {
 
             while (proxyResultRef.get() == null) {

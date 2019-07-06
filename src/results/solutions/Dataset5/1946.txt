@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -27,9 +26,9 @@ public class VersionDebugContributor implements IDebugBarContributor {
 
 	private static final long serialVersionUID = 1L;
 
-public Component createComponent(String id, DebugBar debugBar) {
+	public static final IDebugBarContributor DEBUG_BAR_CONTRIB = new VersionDebugContributor();
 
-	public Component createComponent(String id, WicketDebugBar debugBar) {
+public Component createComponent(String id, DebugBar debugBar) {
 		Label label = new Label(id, new AbstractReadOnlyModel<String>() {
 			private static final long serialVersionUID = 1L;
 

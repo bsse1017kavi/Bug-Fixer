@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, JBoss Inc., and individual contributors as indicated
@@ -53,9 +52,9 @@ public abstract class AbstractSSOKey<V> implements SSOKey, Serializable {
         return this.id.equals(key.id);
     }
 
-return this.id.hashCode() ^ this.getClass().getName().hashCode();
+    @Override
     public int hashCode() {
-        return this.id.hashCode() ^ this.getClass().hashCode();
+return this.id.hashCode() ^ this.getClass().getName().hashCode();
     }
 
     @Override

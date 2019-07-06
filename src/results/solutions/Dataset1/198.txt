@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -443,9 +442,9 @@ public class BlueprintURLContext implements Context
       }
       result = bpcRef.get();
       st.close();
-throw new ServiceUnavailableException ("The BlueprintContainer service for bundle: " + b.getSymbolicName() + '_' + b.getVersion() + " not be located");
+    }
     if (result == null) { 
-      throw new ServiceUnavailableException ("The BlueprintContainer service could not be located");
+throw new ServiceUnavailableException ("The BlueprintContainer service for bundle: " + b.getSymbolicName() + '_' + b.getVersion() + " not be located");
     }
     return result;
   }

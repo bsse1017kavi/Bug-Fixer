@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -44,9 +43,9 @@ public abstract class JDBCInsertPKCreateCommand extends JDBCAbstractCreateComman
 
    protected void initExistsSQL()
    {
-.append(entity.getQualifiedTableName())
+      StringBuffer sql = new StringBuffer(300);
       sql.append(SQLUtil.SELECT).append("COUNT(*)").append(SQLUtil.FROM)
-         .append(entity.getTableName())
+.append(entity.getQualifiedTableName())
          .append(SQLUtil.WHERE);
       SQLUtil.getWhereClause(entity.getPrimaryKeyFields(), sql);
       existsSQL = sql.toString();

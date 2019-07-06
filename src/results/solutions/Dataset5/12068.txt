@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class WebResponseExceptionsTest extends WicketTestCase
 
 		// Clear the session to remove the pages
 		tester.getWicketSession().invalidateNow();
-String callbackUrl = ((AjaxEventBehavior)link.getBehaviors().get(0)).getCallbackUrl(true)
+
 		// Invoke the call back URL of the ajax event behavior
-		String callbackUrl = ((AjaxEventBehavior)link.getBehaviors().get(0)).getCallbackUrl()
+String callbackUrl = ((AjaxEventBehavior)link.getBehaviors().get(0)).getCallbackUrl(true)
 			.toString();
 		tester.getServletRequest().setURL(callbackUrl);
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -285,9 +284,9 @@ public class TransportService extends AbstractLifecycleComponent<TransportServic
                             if (holderToNotify != null) {
                                 // callback that an exception happened, but on a different thread since we don't
                                 // want handlers to worry about stack overflows
-holderToNotify.handler().handleException(new NodeDisconnectedException(node, holderToNotify.action()));
+                                threadPool.execute(new Runnable() {
                                     @Override public void run() {
-                                        holderToNotify.handler().handleException(new NodeDisconnectedTransportException(node, holderToNotify.action()));
+holderToNotify.handler().handleException(new NodeDisconnectedException(node, holderToNotify.action()));
                                     }
                                 });
                             }

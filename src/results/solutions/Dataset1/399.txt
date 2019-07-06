@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.clustering.carrot2;
 
 /*
@@ -179,9 +178,9 @@ public class LuceneCarrot2StemmerFactory implements IStemmerFactory {
       private final org.apache.lucene.analysis.ar.ArabicStemmer delegate;
       private final org.apache.lucene.analysis.ar.ArabicNormalizer normalizer;
 
-private LuceneStemmerAdapter() {
+      private char[] buffer = new char[0];
 
-      private LuceneStemmerAdapter() throws Exception {
+private LuceneStemmerAdapter() {
         delegate = new org.apache.lucene.analysis.ar.ArabicStemmer();
         normalizer = new org.apache.lucene.analysis.ar.ArabicNormalizer();
       }

@@ -1,4 +1,3 @@
-
 package backtype.storm.task;
 
 import backtype.storm.generated.Bolt;
@@ -261,9 +260,9 @@ public class TopologyContext {
     public Map<String, Map<String, Grouping>> getTargets(String componentId) {
         Map<String, Map<String, Grouping>> ret = new HashMap<String, Map<String, Grouping>>();
         for(String otherComponentId: _topology.get_bolts().keySet()) {
-if(id.get_componentId().equals(componentId)) {
+            Bolt bolt = _topology.get_bolts().get(otherComponentId);
             for(GlobalStreamId id: bolt.get_inputs().keySet()) {
-                if(id.get_componentId()==componentId) {
+if(id.get_componentId().equals(componentId)) {
                     Map<String, Grouping> curr = ret.get(id.get_streamId());
                     if(curr==null) curr = new HashMap<String, Grouping>();
                     curr.put(otherComponentId, bolt.get_inputs().get(id));

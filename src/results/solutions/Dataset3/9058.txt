@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -85,9 +84,9 @@ public class FileFilterTestCase extends FileBasedTestCase {
         assertFiltering(filter, new File("fred.tes"), true);
         assertFiltering(filter, new File("fred.est"), true);
         assertFiltering(filter, new File("fred.EST"), false); //case-sensitive
-filter = FileFilterUtils.or(
+        assertFiltering(filter, new File("fred.exe"), false);
 
-        filter = FileFilterUtils.orFileFilter( 
+filter = FileFilterUtils.or(
                     FileFilterUtils.suffixFileFilter( "tes" ),
                     FileFilterUtils.suffixFileFilter( "est" ) );
         assertFiltering(filter, new File("fred"), false);

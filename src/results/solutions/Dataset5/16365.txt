@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements. See the NOTICE file distributed with this
@@ -290,9 +289,9 @@ public class SQLServerDictionary extends AbstractSQLServerDictionary {
     
     @Override
     public boolean isFatalException(int subtype,  SQLException ex) {
-&&("1222".equals(errorState) || "HY008".equals(errorState) || "HYT00".equals(errorState)))
+        String errorState = ex.getSQLState();
         if ((subtype == StoreException.LOCK  || subtype == StoreException.QUERY)
-          &&("1222".equals(errorState) || "HY008".equals(errorState)))
+&&("1222".equals(errorState) || "HY008".equals(errorState) || "HYT00".equals(errorState)))
          return false;
         return super.isFatalException(subtype, ex);
     }

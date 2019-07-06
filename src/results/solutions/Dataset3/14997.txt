@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import org.jboss.msc.service.ServiceActivator;
  *
  * @author John Bailey
  */
-private static final ModuleDependency MSC_DEP = new ModuleDependency(Module.getBootModuleLoader(), ModuleIdentifier.create("org.jboss.msc"), false, false, false);
+public class ServiceActivatorDependencyProcessor implements DeploymentUnitProcessor {
 
-    private static final ModuleDependency MSC_DEP = new ModuleDependency(Module.getSystemModuleLoader(), ModuleIdentifier.create("org.jboss.msc"), false, false, false);
+private static final ModuleDependency MSC_DEP = new ModuleDependency(Module.getBootModuleLoader(), ModuleIdentifier.create("org.jboss.msc"), false, false, false);
 
     /**
      * Add the dependencies if the deployment contains a service activator loader entry.

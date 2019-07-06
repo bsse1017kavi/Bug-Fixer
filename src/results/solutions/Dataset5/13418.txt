@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -307,9 +306,9 @@ public class ProjectHelper {
         }
 
         IntrospectionHelper ih =
-for (int i = 0, length = attrs.getLength(); i < length; i++) {
+            IntrospectionHelper.getHelper(project, target.getClass());
 
-        for (int i = 0; i < attrs.getLength(); i++) {
+for (int i = 0, length = attrs.getLength(); i < length; i++) {
             // reflect these into the target
             String value = replaceProperties(project, attrs.getValue(i),
                                              project.getProperties());

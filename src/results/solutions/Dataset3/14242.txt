@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -197,9 +196,9 @@ public class JmxManagementInterface implements ManagementInterface {
                 }
             } catch (JMException e) {
                 // see RbacUtil.checkOperationResult for error codes
-if (message.contains("14807") || message.contains("14883") || message.contains("11340")) {
+                // TODO could possibly use MBeanAttributeInfo#isReadable instead of error codes, but it's currently broken
                 String message = e.getMessage();
-                if (message.contains("14807") || message.contains("14883")) {
+if (message.contains("14807") || message.contains("14883") || message.contains("11340")) {
                     throw e;
                 } else if (message.contains("13456")) {
                     filtered.add(JmxInterfaceStringUtils.toDashCase(attributeName));

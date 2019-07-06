@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -110,9 +109,9 @@ public class CoarseSessionFactory<L> implements SessionFactory<CoarseSessionEntr
         boolean pessimistic = transaction.transactionMode().isTransactional() && (transaction.lockingMode() == LockingMode.PESSIMISTIC);
         Cache<String, CoarseSessionCacheEntry<L>> cache = pessimistic ? this.sessionCache.getAdvancedCache().withFlags(Flag.FORCE_WRITE_LOCK) : this.sessionCache;
         CoarseSessionCacheEntry<L> entry = cache.get(id);
-return (value != null) ? new CoarseSessionEntry<>(entry, value) : null;
+        if (entry == null) return null;
         MarshalledValue<Map<String, Object>, MarshallingContext> value = this.attributesCache.get(new SessionAttributesCacheKey(id));
-        return new CoarseSessionEntry<>(entry, value);
+return (value != null) ? new CoarseSessionEntry<>(entry, value) : null;
     }
 
     @Override

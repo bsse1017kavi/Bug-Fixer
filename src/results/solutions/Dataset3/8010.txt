@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -124,9 +123,9 @@ public class MessageDrivenComponentCreateService extends EJBComponentCreateServi
         return getDeploymentUnitInjector().getValue().getServiceRegistry();
     }
 
-return ServiceName.JBOSS.append("ra").append(this.resourceAdapterName);
+    ServiceName getResourceAdapterServiceName() {
         // See ResourceAdapterDeploymentService
-        return ServiceName.of(this.resourceAdapterName);
+return ServiceName.JBOSS.append("ra").append(this.resourceAdapterName);
     }
 
     private String stripDotRarSuffix(final String raName) {

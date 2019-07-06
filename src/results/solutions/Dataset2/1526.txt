@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -135,9 +134,9 @@ public class DBAppender
         PreparedStatement insertPropertiesStatement = connection.prepareStatement(insertPropertiesSQL);
 
         for (Iterator i = propertiesKeys.iterator(); i.hasNext();) {
-LogLog.info("id " + eventId + ", key " + key + ", value " + value);
+          String key = (String)i.next();
           String value = (String)event.getProperty(key);
-          LogLog.debug("id " + eventId + ", key " + key + ", value " + value);
+LogLog.info("id " + eventId + ", key " + key + ", value " + value);
           insertPropertiesStatement.setInt(1, eventId);
           insertPropertiesStatement.setString(2, key);
           insertPropertiesStatement.setString(3, value);

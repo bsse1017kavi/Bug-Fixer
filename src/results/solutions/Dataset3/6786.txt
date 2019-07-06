@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -100,9 +99,9 @@ class DomainModelUtil {
         rootModel.get(SERVER_GROUP);
         rootModel.get(HOST);
         return rootModel;
-static ExtensionContext initializeDomainLevel(final ModelNodeRegistration root, final ExtensibleConfigurationPersister configurationPersister, final DeploymentRepository deploymentRepo, final FileRepository fileRepository) {
+    }
 
-    static ExtensionContext initialize(final ModelNodeRegistration root, final ExtensibleConfigurationPersister configurationPersister, final DeploymentRepository deploymentRepo, final FileRepository fileRepository) {
+static ExtensionContext initializeDomainLevel(final ModelNodeRegistration root, final ExtensibleConfigurationPersister configurationPersister, final DeploymentRepository deploymentRepo, final FileRepository fileRepository) {
         // Global operations
 
         root.registerOperationHandler(GlobalOperationHandlers.ResolveAddressOperationHandler.OPERATION_NAME, GlobalOperationHandlers.RESOLVE, GlobalOperationHandlers.RESOLVE, false, OperationEntry.EntryType.PRIVATE);

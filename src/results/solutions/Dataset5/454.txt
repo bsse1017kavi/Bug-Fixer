@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -439,9 +438,9 @@ public final class JavaEnvUtils {
      * @return the file containing the command.
      * @throws IOException if there is an error writing to the file.
      */
-File script = FILE_UTILS.createTempFile("ANT", ".JAVA_OPTS", null, false, true);
+    public static File createVmsJavaOptionFile(String[] cmd)
             throws IOException {
-        File script = FILE_UTILS.createTempFile("ANT", ".JAVA_OPTS", null);
+File script = FILE_UTILS.createTempFile("ANT", ".JAVA_OPTS", null, false, true);
         PrintWriter out = null;
         try {
             out = new PrintWriter(new BufferedWriter(new FileWriter(script)));

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -197,9 +196,9 @@ public class PCClassFileTransformer
         for (int i = 0; i < ifaces; i++) {
             idx += 2;
             clsEntry = table.readUnsignedShort(idx);
-if ("org/apache/openjpa/enhance/PersistenceCapable".equals(name))
+            utfEntry = table.readUnsignedShort(table.get(clsEntry));
             name = table.readString(table.get(utfEntry));
-            if ("openjpa/enhance/PersistenceCapable".equals(name))
+if ("org/apache/openjpa/enhance/PersistenceCapable".equals(name))
                 return true;
         }
         return false;

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -1608,9 +1607,9 @@ e.printStackTrace();
     public String getEditLink(String link, Query query)
     {
         // query.getValue() begins with a &
-+ "&action=Search&eventSubmit_doPreparequery=foo"
+        link = link + "?queryId=" + query.getQueryId()
             + "&refine=true"
-            + "&action=Search&eventSubmit_doGotoEditQuery=foo" 
++ "&action=Search&eventSubmit_doPreparequery=foo"
             + query.getValue();
 
         Long listId = query.getListId();

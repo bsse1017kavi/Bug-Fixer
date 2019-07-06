@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -137,9 +136,9 @@ public abstract class PageableListView<T> extends ListView<T> implements IPageab
 	 * @see org.apache.wicket.markup.html.list.ListView#getViewSize()
 	 */
 	@Override
-if (getDefaultModelObject() != null)
+	public int getViewSize()
 	{
-		if (getModelObject() != null)
+if (getDefaultModelObject() != null)
 		{
 			super.setStartIndex(getCurrentPage() * getRowsPerPage());
 			super.setViewSize(getRowsPerPage());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -158,9 +157,9 @@ final class ServerControllerService implements Service<ServerController> {
                 list.add(processor.processor);
             }
             finalDeployers.put(entry.getKey(), list);
-final ServerControllerImpl serverController = new ServerControllerImpl(new ServerModel(serverEnvironment.getServerName(), configuration.getPortOffset()), container, serverEnvironment);
+        }
 
-        final ServerControllerImpl serverController = new ServerControllerImpl(new ServerModel(serverEnvironment.getServerName(), configuration.getPortOffset()), container, serverEnvironment, finalDeployers);
+final ServerControllerImpl serverController = new ServerControllerImpl(new ServerModel(serverEnvironment.getServerName(), configuration.getPortOffset()), container, serverEnvironment);
         this.serverController = serverController;
         bootServices = serviceTarget.getSet();
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -135,9 +134,9 @@ public final class DefaultMarkupSourcingStrategy implements IMarkupSourcingStrat
 				markup = container.getMarkup();
 
 				if (!(child instanceof AbstractItem) && log.isWarnEnabled())
-"By convention that " +
+				{
 					log.warn("1.4 to 1.5 migration issue: the childs wicket-id contains decimals only. " +
-						"By convention that +" +
+"By convention that " +
 						"is only the case for children (Items) of Loop, ListView, " +
 						"Tree etc.. To avoid the warning, the childs container should implement:\n" +
 						"@Override public IMarkupFragment getMarkup(Component child) {\n" +

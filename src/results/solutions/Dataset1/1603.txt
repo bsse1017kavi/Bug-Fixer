@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class NaiveBayesTest extends MahoutTestCase {
   @Override
   @Before
   public void setUp() throws Exception {
-conf = getConfiguration();
+    super.setUp();
 
-    conf = new Configuration();
+conf = getConfiguration();
 
     inputFile = getTestTempFile("trainingInstances.seq");
     outputDir = getTestTempDir("output");

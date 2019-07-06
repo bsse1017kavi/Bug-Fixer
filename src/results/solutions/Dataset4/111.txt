@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -69,9 +68,9 @@ public class RestDeleteByQueryAction extends BaseRestHandler {
             } catch (IOException e1) {
                 logger.error("Failed to send failure response", e1);
             }
-client.deleteByQuery(deleteByQueryRequest, new ActionListener<DeleteByQueryResponse>() {
+            return;
         }
-        client.execDeleteByQuery(deleteByQueryRequest, new ActionListener<DeleteByQueryResponse>() {
+client.deleteByQuery(deleteByQueryRequest, new ActionListener<DeleteByQueryResponse>() {
             @Override public void onResponse(DeleteByQueryResponse result) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

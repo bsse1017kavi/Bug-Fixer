@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -181,9 +180,9 @@ public class HighlightPhase implements FetchSubPhase {
                     }
                 } else {
                     SearchLookup lookup = context.lookup();
-textsToHighlight = lookup.source().extractRawValues(mapper.names().sourcePath());
+                    lookup.setNextReader(hitContext.reader());
                     lookup.setNextDocId(hitContext.docId());
-                    textsToHighlight = lookup.source().extractRawValues(mapper.names().fullName());
+textsToHighlight = lookup.source().extractRawValues(mapper.names().sourcePath());
                 }
 
                 // a HACK to make highlighter do highlighting, even though its using the single frag list builder

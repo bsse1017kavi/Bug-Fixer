@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -111,9 +110,9 @@ public class WeldBootstrapService implements Service<WeldBootstrapService> {
                 deployment.getSubDeploymentClassLoaders());
 
         ClassLoader oldTccl = WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
-bootstrap.startContainer(deploymentName, environment, deployment);
+        try {
             WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(deployment.getModule().getClassLoader());
-            bootstrap.startContainer(environment, deployment);
+bootstrap.startContainer(deploymentName, environment, deployment);
         } finally {
             WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(oldTccl);
         }

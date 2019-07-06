@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -48,9 +47,9 @@ public class SearchRepositoryListAdapter extends RepositoryListAdapter<SearchRep
     public SearchRepositoryListAdapter(LayoutInflater inflater) {
         this(inflater, null);
     }
-protected void update(final int position, final RepositoryItemView view, final SearchRepository repository) {
+
     @Override
-    protected void update(final RepositoryItemView view, final SearchRepository repository) {
+protected void update(final int position, final RepositoryItemView view, final SearchRepository repository) {
         view.repoName.setText(repository.generateId());
 
         updateDetails(view, repository.getDescription(), repository.getLanguage(), repository.getWatchers(),

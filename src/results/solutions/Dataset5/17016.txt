@@ -1,4 +1,3 @@
-
 import org.aspectj.testing.Tester; 
 
 public class ArgsAlone {
@@ -21,9 +20,9 @@ aspect Aspect {
     pointcut pc () 
         : (call(void TargetClass.callInt(int))
            || execution(void TargetClass.callInt(int)));
-: !target(Aspect) && args(i)  && !target(StringBuffer)
+
     before(int i) 
-        : !target(Aspect) && args(i)  
+: !target(Aspect) && args(i)  && !target(StringBuffer)
         //&& pc() // uncomment to avoid InternalCompilerError
         {
             Tester.event("within " + i 

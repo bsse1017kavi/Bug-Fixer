@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -111,9 +110,9 @@ class XSDSimpleTypeTraverser extends XSDAbstractTraverser {
             type = null;
         }
         
-grammar.addGlobalSimpleTypeDecl(type);
+        // don't add global components without name to the grammar
         if (type != null) {
-            grammar.addGlobalTypeDecl(type);
+grammar.addGlobalSimpleTypeDecl(type);
         }
         
         return type;

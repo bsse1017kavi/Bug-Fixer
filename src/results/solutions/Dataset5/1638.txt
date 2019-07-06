@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -47,9 +46,9 @@ public class CustomControlExample extends ControlExample {
 		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setLayout(new FillLayout());
-setShellSize(instance, shell);
+		CustomControlExample instance = new CustomControlExample(shell);
 		shell.setText(getResourceString("custom.window.title"));
-		setShellSize(shell);
+setShellSize(instance, shell);
 		shell.open();
 		while (! shell.isDisposed()) {
 			if (! display.readAndDispatch()) display.sleep();

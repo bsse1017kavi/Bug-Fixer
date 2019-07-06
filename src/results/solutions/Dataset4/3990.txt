@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -59,9 +58,9 @@ public class FacetsPhase implements SearchPhase {
             return;
         }
 
-Query query = new DeletionAwareConstantScoreQuery(Queries.MATCH_ALL_FILTER, true); // no need to cache a MATCH ALL FILTER
+        // run global facets ...
         if (context.searcher().globalCollectors() != null) {
-            Query query = new DeletionAwareConstantScoreQuery(Queries.MATCH_ALL_FILTER); // no need to cache a MATCH ALL FILTER
+Query query = new DeletionAwareConstantScoreQuery(Queries.MATCH_ALL_FILTER, true); // no need to cache a MATCH ALL FILTER
             if (context.types().length > 0) {
                 if (context.types().length == 1) {
                     String type = context.types()[0];

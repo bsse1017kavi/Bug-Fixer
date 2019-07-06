@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -261,9 +260,9 @@ public class PostWriter {
                     // Just append all the parameter values, and use that as the post body
                     StringBuffer postBodyBuffer = new StringBuffer();
                     PropertyIterator args = sampler.getArguments().iterator();
-postBodyBuffer.append(arg.getEncodedValue(contentEncoding));
+                    while (args.hasNext()) {
                         HTTPArgument arg = (HTTPArgument) args.next().getObjectValue();
-                        postBodyBuffer.append(arg.getValue());
+postBodyBuffer.append(arg.getEncodedValue(contentEncoding));
                     }
                     postBody = postBodyBuffer.toString();
                 }

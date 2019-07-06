@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -89,9 +88,9 @@ public class ServerGroupDeploymentReplaceHandler implements OperationStepHandler
         final PathElement replacePath = PathElement.pathElement(DEPLOYMENT, toReplace);
 
         Resource domainDeployment;
-domainDeployment = context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS.append(deploymentPath));
+        try {
             // check if the domain deployment exists
-            domainDeployment = context.getRootResource().requireChild(deploymentPath);
+domainDeployment = context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS.append(deploymentPath));
         } catch (NoSuchElementException e) {
             throw operationFailed(MESSAGES.noDeploymentContentWithName(name));
         }

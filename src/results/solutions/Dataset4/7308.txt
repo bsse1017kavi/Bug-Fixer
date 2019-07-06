@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -71,9 +70,9 @@ public class FSTBytesIndexFieldData extends AbstractBytesIndexFieldData<FSTBytes
             data = FSTBytesAtomicFieldData.empty(reader.maxDoc());
             estimator.afterLoad(null, data.getMemorySizeInBytes());
             return data;
-org.apache.lucene.util.fst.Builder<Long> fstBuilder = new org.apache.lucene.util.fst.Builder<>(INPUT_TYPE.BYTE1, outputs);
+        }
         PositiveIntOutputs outputs = PositiveIntOutputs.getSingleton();
-        org.apache.lucene.util.fst.Builder<Long> fstBuilder = new org.apache.lucene.util.fst.Builder<Long>(INPUT_TYPE.BYTE1, outputs);
+org.apache.lucene.util.fst.Builder<Long> fstBuilder = new org.apache.lucene.util.fst.Builder<>(INPUT_TYPE.BYTE1, outputs);
         final IntsRef scratch = new IntsRef();
 
         final long numTerms;

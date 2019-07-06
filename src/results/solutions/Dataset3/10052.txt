@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -29,9 +28,9 @@ import org.wildfly.clustering.ejb.Batcher;
  * Encapsulates the context for session eviction.
  * @author Paul Ferraro
  */
-Batcher<TransactionBatch> getBatcher();
+public interface BeanEvictionContext<I> {
 
-    Batcher getBatcher();
+Batcher<TransactionBatch> getBatcher();
 
     Evictor<I> getEvictor();
 }

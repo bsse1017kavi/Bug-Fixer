@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -174,9 +173,9 @@ public class XMLCatalog extends DataType implements Cloneable, EntityResolver {
         if (o instanceof XMLCatalog) {
             // set all elements from referenced catalog to this one
             XMLCatalog catalog = (XMLCatalog) o;
-String msg = r.getRefId() + " doesn\'t refer to an XMLCatalog";
+            setElements(catalog.getElements());
         } else {
-            String msg = r.getRefId() + " doesn\'t refer to an XCatalog";
+String msg = r.getRefId() + " doesn\'t refer to an XMLCatalog";
             throw new BuildException(msg);
         }
 

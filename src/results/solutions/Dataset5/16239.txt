@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class MixedLockManager extends PessimisticLockManager {
             super.lockInternal(sm, level, timeout, sdata, postLockVersionCheck);
         } else if (level >= MixedLockLevels.LOCK_PESSIMISTIC_READ) {
             setVersionCheckOnReadLock(true);
-} else if (level >= MixedLockLevels.LOCK_READ) {
+            setVersionUpdateOnWriteLock(false);
             super.lockInternal(sm, level, timeout, sdata, postLockVersionCheck);
-        } else if (level >= MixedLockLevels.LOCK_OPTIMISTIC) {
+} else if (level >= MixedLockLevels.LOCK_READ) {
             setVersionCheckOnReadLock(true);
             setVersionUpdateOnWriteLock(true);
             optimisticLockInternal(sm, level, timeout, sdata,

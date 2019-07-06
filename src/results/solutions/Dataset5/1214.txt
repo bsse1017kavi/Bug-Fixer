@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -140,9 +139,9 @@ public abstract class AbstractRetrieveTestCase extends TestCase {
 		synchronized (lock) {
 			while (!done && ((System.currentTimeMillis() - start) < timeout)) {
 				lock.wait(timeout / 20);
-throw new TimeoutException(timeout);
+			}
 			if (!done)
-				throw new TimeoutException(new Status(IStatus.ERROR,Activator.PLUGIN_ID,IStatus.ERROR,"timeout",null),(long) timeout);
+throw new TimeoutException(timeout);
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -65,9 +64,9 @@ public class JaxrsCdiIntegrationProcessor implements DeploymentUnitProcessor {
         final JBossWebMetaData webdata = warMetaData.getMergedJBossWebMetaData();
 
         try {
-if (WeldDeploymentMarker.isWeldDeployment(deploymentUnit)) {
+            module.getClassLoader().loadClass(CDI_INJECTOR_FACTORY_CLASS);
             // don't set this param if CDI is not in classpath
-            if (WeldDeploymentMarker.isPartOfWeldDeployment(deploymentUnit)) {
+if (WeldDeploymentMarker.isWeldDeployment(deploymentUnit)) {
                 JAXRS_LOGGER.debug("Found CDI, adding injector factory class");
                 setContextParameter(webdata, "resteasy.injector.factory", CDI_INJECTOR_FACTORY_CLASS);
             }

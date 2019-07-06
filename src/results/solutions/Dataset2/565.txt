@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -55,9 +54,9 @@ public FlowInfo analyseCode(BlockScope currentScope, FlowContext flowContext, Fl
 	FlowInfo conditionFlowInfo = this.assertExpression.analyseCode(currentScope, flowContext, flowInfo.copy());
 	flowContext.tagBits &= ~FlowContext.HIDE_NULL_COMPARISON_WARNING;
 	UnconditionalFlowInfo assertWhenTrueInfo = conditionFlowInfo.initsWhenTrue().unconditionalInits();
-assertInfo.setReachMode(FlowInfo.UNREACHABLE_OR_DEAD);
+	FlowInfo assertInfo = conditionFlowInfo.initsWhenFalse();
 	if (isOptimizedTrueAssertion) {
-		assertInfo.setReachMode(FlowInfo.UNREACHABLE);
+assertInfo.setReachMode(FlowInfo.UNREACHABLE_OR_DEAD);
 	}
 
 	if (this.exceptionArgument != null) {

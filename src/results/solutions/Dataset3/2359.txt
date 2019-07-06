@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class SecretServerIdentityResourceDefinition extends SimpleResourceDefini
             .setValidator(new StringLengthValidator(1, Integer.MAX_VALUE, false, true)).setAllowExpression(true).build();
 
     public SecretServerIdentityResourceDefinition() {
-new SecurityRealmChildAddHandler(false, VALUE), new SecurityRealmChildRemoveHandler(false, false),
+        super(PathElement.pathElement(ModelDescriptionConstants.SERVER_IDENTITY, ModelDescriptionConstants.SECRET),
                 ControllerResolver.getResolver("core", "management", "security-realm", "server-identity", "secret"),
-                new SecurityRealmChildAddHandler(false, VALUE), new SecurityRealmChildRemoveHandler(false),
+new SecurityRealmChildAddHandler(false, VALUE), new SecurityRealmChildRemoveHandler(false, false),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES, OperationEntry.Flag.RESTART_RESOURCE_SERVICES);
     }
 

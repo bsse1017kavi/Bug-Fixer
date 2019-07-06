@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public class PathHierarchyTokenizerFactory extends AbstractTokenizerFactory {
             this.delimiter = delimiter.charAt(0);
         }
 
-this.replacement = this.delimiter;
+        String replacement = settings.get("replacement");
         if (replacement == null) {
-            this.replacement = PathHierarchyTokenizer.DEFAULT_DELIMITER;
+this.replacement = this.delimiter;
         } else if (replacement.length() > 1) {
             throw new ElasticSearchIllegalArgumentException("replacement can only be a one char value");
         } else {

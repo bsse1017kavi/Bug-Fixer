@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -22,9 +21,9 @@ import org.eclipse.ecf.internal.example.collab.ClientPlugin;
 import org.eclipse.ecf.internal.example.collab.CollabClient;
 
 public class CollabStart implements IECFStart {
-public IStatus run(IProgressMonitor monitor) {
+	Discovery discovery = null;
 
-	public IStatus startup(IProgressMonitor monitor) {
+public IStatus run(IProgressMonitor monitor) {
 		try {
 			AccountStart as = new AccountStart();
 			as.loadConnectionDetailsFromPreferenceStore();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -262,9 +261,9 @@ public class UnicastZenPing extends AbstractLifecycleComponent<ZenPing> implemen
                             logger.debug("[{}] filtering out response from {}, not same cluster_name [{}]", pingResponse.target(), pingResponse.clusterName().value());
                             return;
                         }
-logger.warn("received ping response {} with no matching id [{}]", pingResponse, response.id);
+                        ConcurrentMap<DiscoveryNode, PingResponse> responses = receivedResponses.get(response.id);
                         if (responses == null) {
-                            logger.warn("received ping response with no matching id [{}]", response.id);
+logger.warn("received ping response {} with no matching id [{}]", pingResponse, response.id);
                         } else {
                             responses.put(pingResponse.target(), pingResponse);
                         }

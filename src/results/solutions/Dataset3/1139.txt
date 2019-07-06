@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class ComponentConfiguratorProcessor implements DeploymentUnitProcessor {
         if(moduleConfiguration == null) {
             throw new DeploymentUnitProcessingException("EE module description found, but no module configuration attached to the deployment.");
         }
-final ComponentConfiguration componentConfiguration = componentDescription.createConfiguration(moduleConfiguration);
+        final Collection<ComponentDescription> componentDescriptions = moduleDescription.getComponentDescriptions();
         if(componentDescriptions != null) for(ComponentDescription componentDescription : componentDescriptions) {
-            final ComponentConfiguration componentConfiguration = new ComponentConfiguration(componentDescription, moduleConfiguration.getClassConfiguration(componentDescription.getComponentClassName()));
+final ComponentConfiguration componentConfiguration = componentDescription.createConfiguration(moduleConfiguration);
             for(ComponentConfigurator componentConfigurator : componentDescription.getConfigurators()) {
                 componentConfigurator.configure(phaseContext, componentDescription, componentConfiguration);
             }

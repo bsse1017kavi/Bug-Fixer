@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -167,9 +166,9 @@ public class NewRemoteDomainConnectionService implements NewMasterDomainControll
             client = ProtocolChannelClient.create(configuration);
         } catch (Exception e) {
             throw new RuntimeException(e);
-client.connect(null);
+        }
         try {
-            client.connect();
+client.connect(null);
             this.channelClient = client;
 
             if (connected.get()) {

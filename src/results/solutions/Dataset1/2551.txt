@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 import java.io.File;
@@ -189,9 +188,9 @@ public class ZkCLI {
 
           try {
             if (isXml) {
-cfg = new SolrProperties(null, loader, is, null);
+              cfg = new ConfigSolrXmlBackCompat(loader, null, is, null, false);
             } else {
-              cfg = new SolrProperties(null, is, null);
+cfg = new SolrProperties(null, loader, is, null);
             }
           } finally {
             IOUtils.closeQuietly(is);

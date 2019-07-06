@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ public class IdsFilterParser implements FilterParser {
             types = parseContext.queryTypes();
         } else if (types.size() == 1 && Iterables.getFirst(types, null).equals("_all")) {
             types = parseContext.mapperService().types();
-UidFilter filter = new UidFilter(types, ids);
+        }
 
-        UidFilter filter = new UidFilter(types, ids, parseContext.indexCache().bloomCache());
+UidFilter filter = new UidFilter(types, ids);
         if (filterName != null) {
             parseContext.addNamedFilter(filterName, filter);
         }

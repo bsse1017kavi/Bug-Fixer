@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1269,9 +1268,9 @@ void decideDestinationWithSuggestedFilename (int download, int filename) {
 	dialog.setText(SWT.getMessage ("SWT_FileDownload")); //$NON-NLS-1$
 	dialog.setFileName(name);
 	String path = dialog.open();
-Cocoa.objc_msgSend(download, Cocoa.S_cancel);
+	if (path == null) {
 		/* cancel pressed */
-		Cocoa.objc_msgSend(download, Cocoa.S_release);
+Cocoa.objc_msgSend(download, Cocoa.S_cancel);
 		return;
 	}
 	length = path.length();

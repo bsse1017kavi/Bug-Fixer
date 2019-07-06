@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -326,9 +325,9 @@ public class ColumnFamilyStore implements ColumnFamilyStoreMBean
                                         ? BytesType.instance
                                         : new LocalByPartionerType(StorageService.getPartitioner());
         final CFMetaData indexedCfMetadata = CFMetaData.newIndexMetadata(metadata, info, columnComparator);
-new LocalPartitioner(metadata.getColumn_metadata().get(info.name).getValidator()),
+        ColumnFamilyStore indexedCfs = ColumnFamilyStore.createColumnFamilyStore(table,
                                                                                  indexedCfMetadata.cfName,
-                                                                                 new LocalPartitioner(metadata.getColumn_metadata().get(info.name).validator),
+new LocalPartitioner(metadata.getColumn_metadata().get(info.name).getValidator()),
                                                                                  indexedCfMetadata);
 
         // link in indexedColumns.  this means that writes will add new data to the index immediately,

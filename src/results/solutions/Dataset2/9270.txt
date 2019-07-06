@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -210,9 +209,9 @@ public final class MutableActivityManager
 			Map.Entry entry = (Map.Entry) iterator.next();
 			String identifierId = (String) entry.getKey();
 			IdentifierEvent identifierEvent =
-(Identifier) identifiersById.get(identifierId);
+				(IdentifierEvent) entry.getValue();
 			Identifier identifier =
-				(Identifier) categoriesById.get(identifierId);
+(Identifier) identifiersById.get(identifierId);
 
 			if (identifier != null)
 				identifier.fireIdentifierChanged(identifierEvent);

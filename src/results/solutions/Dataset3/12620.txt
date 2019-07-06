@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -168,9 +167,9 @@ public abstract class AbstractTestComparator<T> extends AbstractTestObject {
         assertTrue("This comparator should be Serializable.",
                    comparator instanceof Serializable);
     }
-StringBuilder retval = new StringBuilder();
+
     public String getCanonicalComparatorName(Object object) {
-        StringBuffer retval = new StringBuffer();
+StringBuilder retval = new StringBuilder();
         retval.append("data/test/");
         String colName = object.getClass().getName();
         colName = colName.substring(colName.lastIndexOf(".")+1,colName.length());

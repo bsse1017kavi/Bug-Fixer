@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -176,9 +175,9 @@ public class PersistenceBundleManager implements BundleTrackerCustomizer, Servic
     
       Iterator<EntityManagerFactoryManager> it = managersAwaitingProviders.iterator();
       while(it.hasNext()) {
-if(reference != null) {
+        EntityManagerFactoryManager mgr = it.next();
         ServiceReference reference = getProviderServiceReference(mgr.getParsedPersistenceUnits());
-        if(ref != null) {
+if(reference != null) {
           managersToManage.put(mgr, reference);
           it.remove();
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public final class UnmodifiableIterator<E> implements Iterator<E>, Unmodifiable 
      * If the iterator is already unmodifiable it is returned directly.
      *
      * @param iterator  the iterator to decorate
-public static <E> Iterator<E> unmodifiableIterator(Iterator<E> iterator) {
+     * @throws IllegalArgumentException if the iterator is null
      */
-    public static <E> Iterator<E> decorate(Iterator<E> iterator) {
+public static <E> Iterator<E> unmodifiableIterator(Iterator<E> iterator) {
         if (iterator == null) {
             throw new IllegalArgumentException("Iterator must not be null");
         }

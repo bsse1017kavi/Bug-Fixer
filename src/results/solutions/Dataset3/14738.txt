@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class ZipArchiveInputStream extends ArchiveInputStream {
     public ArchiveEntry getNextEntry() throws IOException {
         java.util.zip.ZipEntry entry = input.getNextEntry();
         if(entry == null) {
-return (ArchiveEntry)new ZipArchiveEntry(entry);
+            return null;
         }
-        return (ArchiveEntry)new ZipEntry(entry);
+return (ArchiveEntry)new ZipArchiveEntry(entry);
     }
 
     public int read(byte[] b, int off, int len) throws IOException {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -83,9 +82,9 @@ public class TypeDescriptor {
 	 * <p>Use this constructor when a target conversion point originates from a method parameter,
 	 * such as a setter method argument.
 	 * @param methodParameter the MethodParameter to wrap
-protected TypeDescriptor(MethodParameter methodParameter, Class<?> type) {
+	 * @param type the specific type to expose (may be an array/collection element)
 	 */
-	protected TypeDescriptor(MethodParameter methodParameter, Class type) {
+protected TypeDescriptor(MethodParameter methodParameter, Class<?> type) {
 		Assert.notNull(methodParameter, "MethodParameter must not be null");
 		this.methodParameter = methodParameter;
 		this.type = type;

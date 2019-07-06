@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.ADD;
@@ -20,9 +19,9 @@ public class LocalCacheAdd extends CacheAdd {
     private LocalCacheAdd() {
         super(CacheMode.LOCAL);
     }
-static ModelNode createOperation(ModelNode address, ModelNode model) throws OperationFailedException {
+
     // used to create subsystem description
-    static ModelNode createOperation(ModelNode address, ModelNode model) {
+static ModelNode createOperation(ModelNode address, ModelNode model) throws OperationFailedException {
         ModelNode operation = Util.getEmptyOperation(ADD, address);
         INSTANCE.populate(model, operation);
         return operation;

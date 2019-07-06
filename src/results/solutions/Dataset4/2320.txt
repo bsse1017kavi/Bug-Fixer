@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -130,9 +129,9 @@ public class ConcreteBytesRefAtomicFieldData implements AtomicOrdinalFieldData<S
             if (value == null) {
                 ret.length = 0;
             } else {
-ret.length = value.length;
+                ret.bytes = value.bytes;
                 ret.offset = value.offset;
-                ret.length = value.offset;
+ret.length = value.length;
             }
             return ret;
         }

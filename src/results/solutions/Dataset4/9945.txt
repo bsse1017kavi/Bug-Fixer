@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -99,9 +98,9 @@ public class TransportRefreshAction extends TransportBroadcastOperationAction<Re
     protected ShardRefreshRequest newShardRequest() {
         return new ShardRefreshRequest();
     }
-protected ShardRefreshRequest newShardRequest(int numShards, ShardRouting shard, RefreshRequest request) {
+
     @Override
-    protected ShardRefreshRequest newShardRequest(ShardRouting shard, RefreshRequest request) {
+protected ShardRefreshRequest newShardRequest(int numShards, ShardRouting shard, RefreshRequest request) {
         return new ShardRefreshRequest(shard.index(), shard.id(), request);
     }
 

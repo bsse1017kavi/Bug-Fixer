@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -203,9 +202,9 @@ public class RegistryProxyControllerTestCase {
         assertTrue(addresses.contains(PathAddress.pathAddress(profileB, proxyA)));
         assertTrue(addresses.contains(PathAddress.pathAddress(profileB, proxyB)));
     }
-public void testRemoveNonExistentProxyController() {
+
     @Test
-    public void testRemoveNonExistantProxyController() {
+public void testRemoveNonExistentProxyController() {
         PathElement element = PathElement.pathElement("profile", "profileA");
         root.unregisterProxyController(element);
         Set<PathAddress> addresses = getProxyAddresses(PathAddress.EMPTY_ADDRESS);

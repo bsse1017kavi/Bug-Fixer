@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class IndonesianAnalyzerProvider extends AbstractIndexAnalyzerProvider<In
     private final IndonesianAnalyzer analyzer;
 
     @Inject public IndonesianAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
-Analysis.parseStopWords(env, settings, IndonesianAnalyzer.getDefaultStopSet(), version),
+        super(index, indexSettings, name, settings);
         analyzer = new IndonesianAnalyzer(version,
-                Analysis.parseStopWords(env, settings, IndonesianAnalyzer.getDefaultStopSet()),
+Analysis.parseStopWords(env, settings, IndonesianAnalyzer.getDefaultStopSet(), version),
                 Analysis.parseStemExclusion(settings, CharArraySet.EMPTY_SET));
     }
 

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -79,9 +78,9 @@ public class Test2BPostings extends LuceneTestCase {
       if (VERBOSE && i % 100000 == 0) {
         System.out.println(i + " of " + numDocs + "...");
       }
-w.shutdown();
+    }
     w.forceMerge(1);
-    w.close();
+w.shutdown();
     dir.close();
   }
   

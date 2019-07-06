@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -113,9 +112,9 @@ public final class QRDecompositionTest extends MahoutTestCase {
 
   @Test
   public void fullRankWide() {
-assertTrue(qr.hasFullRank());
+    Matrix x = matrix().transpose();
     QRDecomposition qr = new QRDecomposition(x);
-    assertFalse(qr.hasFullRank());
+assertTrue(qr.hasFullRank());
     Matrix rActual = qr.getR();
 
     Matrix rRef = reshape(new double[]{

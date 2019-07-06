@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -42,9 +41,9 @@ public ExtendedStringLiteral extendWith(StringLiteral lit){
  */ 
 public void generateCode(BlockScope currentScope, CodeStream codeStream, boolean valueRequired) {
 	int pc = codeStream.position;
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+	if (valueRequired)
 		codeStream.ldc(constant.stringValue());
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 public TypeBinding literalType(BlockScope scope) {
 	return scope.getJavaLangString();

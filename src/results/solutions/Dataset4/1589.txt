@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -223,9 +222,9 @@ public class CommitCompareListFragment extends DialogFragment implements
         Object item = parent.getItemAtPosition(position);
         if (item instanceof RepositoryCommit)
             startActivity(CommitViewActivity.createIntent(repository,
-startActivity(CommitFileViewActivity.createIntent(repository, head,
+                    ((RepositoryCommit) item).getSha()));
         else if (item instanceof CommitFile)
-            startActivity(CommitFileViewActivity.createIntent(repository, base,
+startActivity(CommitFileViewActivity.createIntent(repository, head,
                     (CommitFile) item));
     }
 }

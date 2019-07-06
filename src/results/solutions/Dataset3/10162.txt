@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -142,9 +141,9 @@ public class ParsedRaDeploymentProcessor implements DeploymentUnitProcessor {
                 // Merge metadata
                 cmd = (new Merger()).mergeConnectorWithCommonIronJacamar(ijmd, cmd);
             }
-final ResourceAdapterDeploymentService raDeploymentService = new ResourceAdapterDeploymentService(connectorXmlDescriptor, cmd, ijmd, module, deployerServiceName, deploymentUnit.getServiceName());
+
             final ServiceName deployerServiceName = ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SERVICE_PREFIX.append(connectorXmlDescriptor.getDeploymentName());
-            final ResourceAdapterDeploymentService raDeploymentService = new ResourceAdapterDeploymentService(connectorXmlDescriptor, cmd, ijmd, module, deployerServiceName);
+final ResourceAdapterDeploymentService raDeploymentService = new ResourceAdapterDeploymentService(connectorXmlDescriptor, cmd, ijmd, module, deployerServiceName, deploymentUnit.getServiceName());
 
             final ServiceTarget serviceTarget = phaseContext.getServiceTarget();
 

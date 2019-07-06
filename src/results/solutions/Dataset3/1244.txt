@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class RaAdd extends AbstractAddStepHandler {
                         //in case there is 2 different resource-adapter config using same module deployed rar
                         // a Deployment sercivice could be already present and need a restart to consider also this
                         //newly added configuration
-RaOperationUtil.activate(context, name, svh);
+                        ServiceName restartedServiceName = RaOperationUtil.restartIfPresent(context, archiveOrModuleName, name, svh);
                         if (restartedServiceName == null) {
-                            RaOperationUtil.activate(context, name, archiveOrModuleName,  svh);
+RaOperationUtil.activate(context, name, svh);
                         }
                         context.addStep(svh, OperationContext.Stage.VERIFY);
                         context.completeStep(new OperationContext.RollbackHandler() {

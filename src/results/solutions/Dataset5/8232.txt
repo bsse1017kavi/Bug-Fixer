@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -553,9 +552,9 @@ public void draw (GC gc, int x, int y, int selectionStart, int selectionEnd, Col
 							int strikeoutY = drawRunY + run.leading + run.ascent / 2;
 							OS.MoveToEx(hdc, drawX, strikeoutY, 0);
 							OS.LineTo(hdc, drawX + run.width, strikeoutY);	
-if (!hasSelection || fg != selectionForeground.handle) OS.DeleteObject(newPen);
+						}
 						OS.SelectObject(hdc, oldPen);
-						if (hasSelection && fg != selectionForeground.handle) OS.DeleteObject(newPen);
+if (!hasSelection || fg != selectionForeground.handle) OS.DeleteObject(newPen);
 					}
 					boolean partialSelection = hasSelection && !(selectionStart > end || run.start > selectionEnd);
 					if (!fullSelection && partialSelection && fg != selectionForeground.handle) {

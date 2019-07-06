@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.tests.sync;
 
 import org.eclipse.ecf.sync.IModelChange;
@@ -27,9 +26,9 @@ public class Initiator extends Thread {
 			String text = fDocument.get();
 			String newText = ">";
 			text = text.concat(newText);
-IModelChange change = new DocumentChangeMessage(i + 150, newText.length(),	newText);
+
 			fDocument.set(text);
-			IModelChange change = new DocumentChangeMessage(i + 150, 1,	newText);
+IModelChange change = new DocumentChangeMessage(i + 150, newText.length(),	newText);
 
 			IModelChangeMessage[] changes = initiator.registerLocalChange(change);
 

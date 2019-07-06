@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -40,9 +39,9 @@ protected boolean checkAccess(MethodScope methodScope) {
 }
 public void generateCode(BlockScope currentScope, CodeStream codeStream, boolean valueRequired) {
 	int pc = codeStream.position;
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+	if (valueRequired)
 		codeStream.aload_0();
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 public boolean isThis() {
 	

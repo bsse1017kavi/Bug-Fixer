@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -60,9 +59,9 @@ public final class TestEigenSeedGenerator extends MahoutTestCase {
 
   @Override
   @Before
-Configuration conf = getConfiguration();
+  public void setUp() throws Exception {
     super.setUp();
-    Configuration conf = new Configuration();
+Configuration conf = getConfiguration();
     fs = FileSystem.get(conf);
   }
 

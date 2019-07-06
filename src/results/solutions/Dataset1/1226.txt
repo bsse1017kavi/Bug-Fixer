@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.DRDAStatement
@@ -677,9 +676,9 @@ class DRDAStatement
 		// stream only the last parameter with an EXTDTA. This is stored when the
 		// parameter is set and drained now after statement execution if needed.
 		try {
-throw Util.javaException(e);
+			drdaParamState_.drainStreamedParameter();
 		} catch (IOException e) { 
-			Util.javaException(e);
+throw Util.javaException(e);
 		}
 		// java.sql.Statement says any result sets that are opened
 		// when the statement is re-executed must be closed; this

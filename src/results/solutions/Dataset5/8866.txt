@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -115,9 +114,9 @@ public class MongoSourceElement
         else {
             if(mongoSource instanceof MongoDB) {
                 return (MongoDB)mongoSource;
-throw new IllegalStateException("Variable:"+ source +" is not a MongoDB instance, class:"+mongoSource.getClass());
+            }
             else {
-                throw new IllegalStateException("Variable:"+ source +" is not a MongoDB instance, class:"+(mongoSource != null ? mongoSource.getClass():"null"));
+throw new IllegalStateException("Variable:"+ source +" is not a MongoDB instance, class:"+mongoSource.getClass());
             }
         }
     }

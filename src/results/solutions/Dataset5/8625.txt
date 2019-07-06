@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -406,9 +405,9 @@ void releaseChild () {
 	parent.destroyItem (this);
 }
 
-if (parent != null && parent.sortColumn == this) {
+void releaseWidget () {
 	super.releaseWidget ();
-	if (parent.sortColumn == this) {
+if (parent != null && parent.sortColumn == this) {
 		parent.sortColumn = null;
 	}
 	parent = null;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -930,9 +929,9 @@ boolean setTabGroupFocus () {
 
 String toolTipText (NMTTDISPINFO hdr) {
 	Shell shell = getShell ();
-ToolTip toolTip = shell.findToolTip ((int)/*64*/hdr.idFrom);
+	if ((hdr.uFlags & OS.TTF_IDISHWND) == 0) {
 		String string = null;
-		ToolTip toolTip = shell.findToolTip (hdr.idFrom);
+ToolTip toolTip = shell.findToolTip ((int)/*64*/hdr.idFrom);
 		if (toolTip != null) {
 			string = toolTip.message;
 			if (string == null || string.length () == 0) string = " ";

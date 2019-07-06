@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -108,9 +107,9 @@ public class RbacUtil {
         switch (expectedOutcome) {
             case SUCCESS:
                 if (!SUCCESS.equals(outcome)) {
-fail(result.asString());
+                    System.out.println("Failed: " + operation);
                     System.out.print("Result: " + result);
-                    fail(result.get(FAILURE_DESCRIPTION).asString());
+fail(result.asString());
                 }
                 break;
             case UNAUTHORIZED: {

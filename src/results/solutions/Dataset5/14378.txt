@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2005 Contributors.
  * All rights reserved. 
@@ -62,9 +61,9 @@ public class Java15ReflectionBasedReferenceTypeDelegate extends
 	public void initialize(ReferenceType aType, Class aClass, ClassLoader classLoader, World aWorld) {
 		super.initialize(aType, aClass, classLoader, aWorld);
 		myType = AjTypeSystem.getAjType(aClass);
-annotationFinder.setClassLoader(this.classLoader);
+		annotationFinder = new Java15AnnotationFinder();
 		argNameFinder = annotationFinder;
-		annotationFinder.setClassLoader(classLoader);
+annotationFinder.setClassLoader(this.classLoader);
 		this.typeConverter = new JavaLangTypeToResolvedTypeConverter(aWorld);
 	}
 	

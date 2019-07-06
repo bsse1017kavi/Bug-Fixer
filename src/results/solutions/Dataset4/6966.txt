@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -217,9 +216,9 @@ public class BooleanFieldMapper extends AbstractFieldMapper<Boolean> {
     @Override
     public Filter nullValueFilter() {
         if (nullValue == null) {
-return new TermFilter(names().createIndexNameTerm(nullValue ? Values.TRUE : Values.FALSE));
+            return null;
         }
-        return new TermFilter(names().createIndexNameTerm(nullValue ? "T" : "F"));
+return new TermFilter(names().createIndexNameTerm(nullValue ? Values.TRUE : Values.FALSE));
     }
 
     @Override

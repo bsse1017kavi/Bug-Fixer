@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -183,9 +182,9 @@ public class Json {
 	/** @param knownType May be null if the type is unknown.
 	 * @param elementType May be null if the type is unknown. */
 	public void toJson (Object object, Class knownType, Class elementType, FileHandle file) {
-writer = file.writer(false);
+		Writer writer = null;
 		try {
-			writer = file.writer(false, "UTF-8");
+writer = file.writer(false);
 			toJson(object, knownType, elementType, writer);
 		} catch (Exception ex) {
 			throw new SerializationException("Error writing file: " + file, ex);

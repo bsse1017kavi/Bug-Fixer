@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class FileStoreResource extends BaseStoreResource {
 
     // attributes
     static final SimpleAttributeDefinition PATH =
-.setAllowExpression(true)
+            new SimpleAttributeDefinitionBuilder(ModelKeys.PATH, ModelType.STRING, true)
                     .setXmlName(Attribute.PATH.getLocalName())
-                    .setAllowExpression(false)
+.setAllowExpression(true)
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
                     .build();
 

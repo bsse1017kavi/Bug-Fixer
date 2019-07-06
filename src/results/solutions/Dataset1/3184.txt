@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.miscellaneous;
 
 /*
@@ -77,9 +76,9 @@ public class TestLimitTokenCountAnalyzer extends BaseTokenStreamTestCase {
         b.append(" a");
       b.append(" x");
       b.append(" z");
-writer.shutdown();
+      doc.add(newTextField("field", b.toString(), Field.Store.NO));
       writer.addDocument(doc);
-      writer.close();
+writer.shutdown();
       
       IndexReader reader = DirectoryReader.open(dir);
       Term t = new Term("field", "x");

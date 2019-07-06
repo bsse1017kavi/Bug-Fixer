@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -76,9 +75,9 @@ public class IndicesStore extends AbstractComponent implements ClusterStateListe
         this.nodeEnv = nodeEnv;
         this.indicesService = indicesService;
         this.clusterService = clusterService;
-this.danglingTimeout = componentSettings.getAsTime("dangling_timeout", TimeValue.timeValueHours(2));
+        this.threadPool = threadPool;
 
-        this.danglingTimeout = componentSettings.getAsTime("dangling_timeout", TimeValue.timeValueMinutes(2));
+this.danglingTimeout = componentSettings.getAsTime("dangling_timeout", TimeValue.timeValueHours(2));
 
         clusterService.addLast(this);
     }

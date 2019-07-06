@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -271,9 +270,9 @@ public class Nysiis implements StringEncoder {
         // EE -> Y, IE -> Y, DT | RT | RD | NT | ND -> D
         str = PAT_EE_IE.matcher(str).replaceFirst("Y");
         str = PAT_DT_ETC.matcher(str).replaceFirst("D");
-StringBuilder key = new StringBuilder(str.length());
+
         // First character of key = first character of name.
-        StringBuffer key = new StringBuffer(str.length());
+StringBuilder key = new StringBuilder(str.length());
         key.append(str.charAt(0));
 
         // Transcode remaining characters, incrementing by one character each time

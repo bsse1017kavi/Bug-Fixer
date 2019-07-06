@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -1062,9 +1061,9 @@ public class BcelWeaver implements IWeaver {
 					// Sometimes.. if the Bcel Delegate couldn't be found then a problem occurred at compile time - on
 					// a previous compiler run.  In this case I assert the delegate will still be an EclipseSourceType
 					// and we can ignore the problem here (the original compile error will be reported again from
-if (theDelegate.getClass().getName().endsWith("EclipseSourceType")) continue;
+					// the eclipse source type) - pr113531
 					ReferenceTypeDelegate theDelegate = ((ReferenceType)theType).getDelegate();
-					if (theDelegate.getClass().getSimpleName().equals("EclipseSourceType")) continue;
+if (theDelegate.getClass().getName().endsWith("EclipseSourceType")) continue;
 
 					throw new BCException("Can't find bcel delegate for "+className+" type="+theType.getClass());
 				}

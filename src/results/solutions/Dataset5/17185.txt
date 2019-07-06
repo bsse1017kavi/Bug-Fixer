@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -112,9 +111,9 @@ public final class Locator {
      * @return the file or jar with the class or null if we cannot
      *         determine the location.
      *
-public static File getClassSource(Class<?> c) {
+     * @since Ant 1.6
      */
-    public static File getClassSource(Class c) {
+public static File getClassSource(Class<?> c) {
         String classResource = c.getName().replace('.', '/') + ".class";
         return getResourceSource(c.getClassLoader(), classResource);
     }

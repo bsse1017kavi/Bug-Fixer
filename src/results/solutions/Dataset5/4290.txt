@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -791,9 +790,9 @@ public class StyledText extends Canvas {
 	 * @param end end offset of segment
 	 */
 	void write(String string, int start, int end) {
-if (ch > 0x7F && WriteUnicode) {
+		for (int index = start; index < end; index++) {
 			char ch = string.charAt(index);
-			if (ch > 0xFF && WriteUnicode) {
+if (ch > 0x7F && WriteUnicode) {
 				// write the sub string from the last escaped character 
 				// to the current one. Fixes bug 21698.
 				if (index > start) {

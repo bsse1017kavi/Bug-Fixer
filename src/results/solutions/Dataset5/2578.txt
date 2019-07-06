@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -880,9 +879,9 @@ Image createImage (String name) {
 static int /*long*/ createPixbuf(Image image) {
 	int [] w = new int [1], h = new int [1];
  	OS.gdk_drawable_get_size (image.pixmap, w, h);
-boolean hasMask = image.mask != 0 && OS.gdk_drawable_get_depth (image.mask) == 1;
+	int /*long*/ colormap = OS.gdk_colormap_get_system ();
 	int /*long*/ pixbuf;
-	boolean hasMask = image.mask != 0;
+boolean hasMask = image.mask != 0 && OS.gdk_drawable_get_depth (image.mask) == 1;
 	if (hasMask) {
 		pixbuf = OS.gdk_pixbuf_new (OS.GDK_COLORSPACE_RGB, true, 8, w [0], h [0]);
 		if (pixbuf == 0) SWT.error (SWT.ERROR_NO_HANDLES);

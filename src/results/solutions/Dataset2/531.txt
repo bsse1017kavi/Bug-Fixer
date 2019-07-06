@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -1354,9 +1353,9 @@ try{
                 char firstChar = id.charAt(0);
                 if ('0' <= firstChar && firstChar <= '9') 
                 {
-issue = IssueManager.getIssueById(id);
+                    id = getCurrentModule().getCode() + id;
                 }
-                issue = Issue.getIssueById(id);
+issue = IssueManager.getIssueById(id);
 
                 if (issue.getDeleted())
                 {

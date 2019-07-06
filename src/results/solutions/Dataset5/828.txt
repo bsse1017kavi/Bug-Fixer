@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -114,9 +113,9 @@ public class DefaultExecManager
         throws IOException, ExecException
     {
         final CommandLauncher launcher = getLauncher( command );
-new ProcessMonitor( process, input, output, error, timeout, false );
+        final Process process = launcher.exec( command );
         final ProcessMonitor monitor =
-            new ProcessMonitor( process, input, output, error, timeout );
+new ProcessMonitor( process, input, output, error, timeout, false );
 
         final Thread thread = new Thread( monitor, "ProcessMonitor" );
         thread.start();

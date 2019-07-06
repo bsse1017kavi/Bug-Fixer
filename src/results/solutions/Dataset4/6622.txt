@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public abstract class BaseRestHandler extends AbstractComponent implements RestH
         this.client = client;
     }
 
-handleRequest(request, channel, new HeadersAndContextCopyClient(client, request, usefulHeaders));
+    @Override
     public final void handleRequest(RestRequest request, RestChannel channel) throws Exception {
-        handleRequest(request, channel, usefulHeaders.size() == 0 ? client : new HeadersAndContextCopyClient(client, request, usefulHeaders));
+handleRequest(request, channel, new HeadersAndContextCopyClient(client, request, usefulHeaders));
     }
 
     protected abstract void handleRequest(RestRequest request, RestChannel channel, Client client) throws Exception;

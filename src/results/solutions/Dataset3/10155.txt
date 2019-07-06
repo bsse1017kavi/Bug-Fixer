@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ public class CliArgumentsTestCase extends CliScriptTestBase {
         assertTrue(result.contains("extension"));
     }
 
-int exitCode = execute(TestSuiteEnvironment.getServerAddress(), TestSuiteEnvironment.getServerPort() - 1, true, "quit", true);
+    @Test
     public void testWrongControler() throws Exception {
-        int exitCode = execute(TestSuiteEnvironment.getServerAddress(), TestSuiteEnvironment.getServerPort() - 1, true, "quit", false);
+int exitCode = execute(TestSuiteEnvironment.getServerAddress(), TestSuiteEnvironment.getServerPort() - 1, true, "quit", true);
         assertTrue(exitCode != 0);
     }
 }

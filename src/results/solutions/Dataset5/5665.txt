@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1199,9 +1198,9 @@ public void setImage (int index, Image image) {
 					* There is no direct way to clear the cell renderer width so we
 					* are relying on the fact that it is done as part of modifying
 					* the style.
-parent.modifyStyle (parentHandle, style);
+					*/
 					int /*long*/ style = OS.gtk_widget_get_modifier_style (parentHandle);
-					OS.gtk_widget_modify_style (parentHandle, style);
+parent.modifyStyle (parentHandle, style);
 				}
 			} 
 		}

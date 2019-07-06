@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -154,9 +153,9 @@ public class DOMImplementationImpl
      */
     public DocumentType       createDocumentType(String qualifiedName, 
                                                  String publicID, 
-if (!CoreDocumentImpl.isXMLName(qualifiedName)) {
+                                                 String systemID)
     {
-    	if (!DocumentImpl.isXMLName(qualifiedName)) {
+if (!CoreDocumentImpl.isXMLName(qualifiedName)) {
     		throw new DOMException(DOMException.INVALID_CHARACTER_ERR, 
     		                           "DOM002 Illegal character");
         }

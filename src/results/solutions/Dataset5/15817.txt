@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -2827,9 +2826,9 @@ public abstract class Component
 
 		Object metaData = null;
 		MetaDataEntry<?>[] metaDataArray = key.set(getMetaData(), object);
-metaData = (metaDataArray.length > 1) ? metaDataArray : metaDataArray[0];
+		if (metaDataArray != null && metaDataArray.length > 0)
 		{
-			metaData = (metaDataArray.length > 1) ? (Object)metaDataArray : metaDataArray[0];
+metaData = (metaDataArray.length > 1) ? metaDataArray : metaDataArray[0];
 		}
 
 		int index = getFlag(FLAG_MODEL_SET) ? 1 : 0;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -69,9 +68,9 @@ public class Scale extends Control {
 		int byteCount = TrackBarClass.length () * TCHAR.sizeof;
 		int lpszClassName = OS.HeapAlloc (hHeap, OS.HEAP_ZERO_MEMORY, byteCount);
 		OS.MoveMemory (lpszClassName, TrackBarClass, byteCount);
-OS.HeapFree (hHeap, 0, lpszClassName);
+		lpWndClass.lpszClassName = lpszClassName;
 		OS.RegisterClass (lpWndClass);
-//		OS.HeapFree (hHeap, 0, lpszClassName);	
+OS.HeapFree (hHeap, 0, lpszClassName);
 	}
 
 /**

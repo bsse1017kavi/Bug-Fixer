@@ -1,4 +1,3 @@
-
 package org.jboss.as.appclient.subsystem;
 
 import static org.jboss.as.appclient.logging.AppClientMessages.MESSAGES;
@@ -33,8 +32,8 @@ public class CommandLineArgumentUsageImpl extends CommandLineArgumentUsage {
         instructions.add(MESSAGES.argVersion());
     }
 
-out.print(usage("appclient"));
+    public static void printUsage(final PrintStream out) {
         init();
-        out.print(usage());
+out.print(usage("appclient"));
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -184,9 +183,9 @@ public class DfpField implements Field<Dfp> {
      * </p>
      * @param decimalDigits minimal number of decimal digits
      * @param computeConstants if true, the transcendental constants for the given precision
-private DfpField(final int decimalDigits, final boolean computeConstants) {
+     * must be computed (setting this flag to false is RESERVED for the internal recursive call)
      */
-    public DfpField(final int decimalDigits, final boolean computeConstants) {
+private DfpField(final int decimalDigits, final boolean computeConstants) {
 
         this.radixDigits = (decimalDigits < 13) ? 4 : (decimalDigits + 3) / 4;
         this.rMode       = RoundingMode.ROUND_HALF_EVEN;

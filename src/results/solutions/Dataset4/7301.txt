@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -32,9 +31,9 @@ import java.io.Reader;
 public class NumericDoubleAnalyzer extends NumericAnalyzer<NumericDoubleTokenizer> {
 
     private final static IntObjectOpenHashMap<NamedAnalyzer> builtIn;
-builtIn = new IntObjectOpenHashMap<>();
+
     static {
-        builtIn = new IntObjectOpenHashMap<NamedAnalyzer>();
+builtIn = new IntObjectOpenHashMap<>();
         builtIn.put(Integer.MAX_VALUE, new NamedAnalyzer("_double/max", AnalyzerScope.GLOBAL, new NumericDoubleAnalyzer(Integer.MAX_VALUE)));
         for (int i = 0; i <= 64; i += 4) {
             builtIn.put(i, new NamedAnalyzer("_double/" + i, AnalyzerScope.GLOBAL, new NumericDoubleAnalyzer(i)));

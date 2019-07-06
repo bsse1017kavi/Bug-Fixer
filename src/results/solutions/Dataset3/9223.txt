@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -100,9 +99,9 @@ public class JCacheCacheManager extends AbstractTransactionSupportingCacheManage
 
 	@Override
 	protected Collection<Cache> loadCaches() {
-javax.cache.Cache<Object, Object> jcache = this.cacheManager.getCache(cacheName);
+		Collection<Cache> caches = new LinkedHashSet<Cache>();
 		for (String cacheName : this.cacheManager.getCacheNames()) {
-			javax.cache.Cache jcache = this.cacheManager.getCache(cacheName);
+javax.cache.Cache<Object, Object> jcache = this.cacheManager.getCache(cacheName);
 			caches.add(new JCacheCache(jcache, this.allowNullValues));
 		}
 		return caches;

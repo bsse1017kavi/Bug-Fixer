@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UnaryArithmeticOperatorNode
@@ -153,9 +152,9 @@ public class UnaryArithmeticOperatorNode extends UnaryOperatorNode
 		//Return with no binding, if the type of unary minus/plus parameter is not set yet.
 		if (operand.requiresTypeFromContext() && ((operatorType == UNARY_PLUS || operatorType == UNARY_MINUS))
 				&& operand.getTypeServices() == null)
-bindOperand(fromList, subqueryList,
+				return this;
 
-		super.bindExpression(fromList, subqueryList,
+bindOperand(fromList, subqueryList,
 				aggregateVector);
 
 		if (operatorType == SQRT || operatorType == ABSOLUTE)

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class PrefixHandler extends CommandHandlerWithHelp {
     }
 
     @Override
-final String nodePath = this.nodePath.getValue(ctx.getParsedCommandLine());
+    protected void doHandle(CommandContext ctx) {
 
-        final String nodePath = this.nodePath.getValue(ctx.getParsedArguments());
+final String nodePath = this.nodePath.getValue(ctx.getParsedCommandLine());
 
         OperationRequestAddress prefix = ctx.getPrefix();
 

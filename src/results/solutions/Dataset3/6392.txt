@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public class XaDataSourcePropertyAdd extends AbstractAddStepHandler implements D
     @Override
     protected void performRuntime(OperationContext context, ModelNode operation, ModelNode recoveryEnvModel,
                                   ServiceVerificationHandler verificationHandler,
-final String configPropertyValue = XADATASOURCE_PROPERTY_VALUE.resolveModelAttribute(context, recoveryEnvModel).asString();
+                                  List<ServiceController<?>> serviceControllers) throws OperationFailedException {
 
-        final String configPropertyValue = XADATASOURCE_PROPERTY_VALUE.validateResolvedOperation(recoveryEnvModel).asString();
+final String configPropertyValue = XADATASOURCE_PROPERTY_VALUE.resolveModelAttribute(context, recoveryEnvModel).asString();
         final ModelNode address = operation.require(OP_ADDR);
         PathAddress path = PathAddress.pathAddress(address);
         final String jndiName = path.getElement(path.size() - 2).getValue();

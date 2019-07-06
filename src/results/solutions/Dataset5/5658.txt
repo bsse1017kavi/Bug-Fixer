@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -372,9 +371,9 @@ public class PatternParser {
 		String kind = parseIdentifier();
 		eat("(");
 		if (maybeEat(")")) {
-ExactAnnotationTypePattern type = parseAnnotationNameOrVarTypePattern();
+			throw new ParserException("expecting @AnnotationName or parameter, but found ')'", tokenSource.peek());
 		}
-		AnnotationTypePattern type = parseAnnotationNameOrVarTypePattern(); 
+ExactAnnotationTypePattern type = parseAnnotationNameOrVarTypePattern();
 		eat(")");
 		return new WithinCodeAnnotationPointcut(type);		
 	}

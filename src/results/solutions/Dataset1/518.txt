@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryparser.xml.builders;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -58,9 +57,9 @@ public class SpanOrTermsBuilder extends SpanBuilderBase {
       TermToBytesRefAttribute termAtt = ts.addAttribute(TermToBytesRefAttribute.class);
       BytesRef bytes = termAtt.getBytesRef();
       ts.reset();
-SpanTermQuery stq = new SpanTermQuery(new Term(fieldName, BytesRef.deepCopyOf(bytes)));
+      while (ts.incrementToken()) {
         termAtt.fillBytesRef();
-        SpanTermQuery stq = new SpanTermQuery(new Term(fieldName, new BytesRef(bytes)));
+SpanTermQuery stq = new SpanTermQuery(new Term(fieldName, BytesRef.deepCopyOf(bytes)));
         clausesList.add(stq);
       }
       ts.end();

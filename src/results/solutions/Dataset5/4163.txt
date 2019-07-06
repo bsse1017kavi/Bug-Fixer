@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -83,9 +82,9 @@ public final class Classes
 		// attribute
 		final Class paramClass = parameterClasses[0];
 		try
-.getConverterLocatorFactory().newConverterLocator().getConverter(paramClass);
+		{
 			final IConverter converter = Application.get().getApplicationSettings()
-					.getConverterSupplierFactory().newConverterSupplier().getConverter(paramClass);
+.getConverterLocatorFactory().newConverterLocator().getConverter(paramClass);
 			final Object param = converter.convertToObject(value, locale);
 			if (param == null)
 			{

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -46,9 +45,9 @@ public abstract class FilteredDocIdSetIterator extends DocIdSetIterator {
    * Validation method to determine whether a docid should be in the result set.
    * @param doc docid to be tested
    * @return true if input docid should be in the result set, false otherwise.
-protected abstract boolean match(int doc);
+   * @see #FilteredDocIdSetIterator(DocIdSetIterator)
    */
-  abstract protected boolean match(int doc) throws IOException;
+protected abstract boolean match(int doc);
 	
   @Override
   public int docID() {

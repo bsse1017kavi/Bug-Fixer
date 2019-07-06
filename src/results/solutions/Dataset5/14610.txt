@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -141,9 +140,9 @@ public class ZipResourceStream extends AbstractResourceStream
 					zipDir(f, out, path + f.getName() + "/", recursive);
 				}
 			}
-out.putNextEntry(new ZipEntry(path + f.getName()));
+			else
 			{
-				out.putNextEntry(new ZipEntry(path.toString() + f.getName()));
+out.putNextEntry(new ZipEntry(path + f.getName()));
 
 				FileInputStream fi = new FileInputStream(f);
 				origin = new BufferedInputStream(fi, BUFFER);

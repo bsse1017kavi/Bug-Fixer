@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /*
@@ -58,9 +57,9 @@ public class TestSpanFirstQuery extends LuceneTestCase {
     // user queries on "starts-with the quick"
     SpanQuery include = new SpanFirstQuery(new SpanTermQuery(new Term("field", "quick")), 2);
     sfq = new SpanNotQuery(include, sfq);
-writer.shutdown();
+    assertEquals(1, searcher.search(sfq, 10).totalHits);
     
-    writer.close();
+writer.shutdown();
     reader.close();
     dir.close();
   }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2104,9 +2103,9 @@ int /*long*/ gtk_visibility_notify_event (int /*long*/ widget, int /*long*/ even
 				int [] width = new int [1], height = new int [1];
 				OS.gdk_drawable_get_size (window, width, height);
 				GdkRectangle rect = new GdkRectangle ();
-OS.gdk_window_invalidate_rect (window, rect, false);
+				rect.width = width [0];
 				rect.height = height [0];
-				OS.gdk_window_invalidate_rect (window, rect, true);
+OS.gdk_window_invalidate_rect (window, rect, false);
 			}
 			state &= ~OBSCURED;
 		}

@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /**
@@ -505,9 +504,9 @@ public class OverseerTest extends SolrTestCaseJ4 {
   private SolrZkClient electNewOverseer(String address) throws InterruptedException,
       TimeoutException, IOException, KeeperException {
     SolrZkClient zkClient  = new SolrZkClient(address, TIMEOUT);
-ElectionContext ec = new OverseerElectionContext(address.replaceAll("/", "_"), zkClient, reader);
+    ZkStateReader reader = new ZkStateReader(zkClient);
     LeaderElector overseerElector = new LeaderElector(zkClient);
-    ElectionContext ec = new OverseerElectionContext(address, zkClient, reader);
+ElectionContext ec = new OverseerElectionContext(address.replaceAll("/", "_"), zkClient, reader);
     overseerElector.setup(ec);
     overseerElector.joinElection(ec);
     return zkClient;

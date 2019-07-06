@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class Random extends AbstractFunction implements Serializable {
 		JMeterVariables vars = getVariables();
 
 		long min = Long.parseLong(minimum.execute().trim());
-long rand = min + (long) (Math.random() * (max - min + 1));
+		long max = Long.parseLong(maximum.execute().trim());
 
-		long rand = min + (long) Math.random() * (max - min + 1);
+long rand = min + (long) (Math.random() * (max - min + 1));
 
 		String randString = Long.toString(rand);
 		vars.put(varName.execute(), randString);

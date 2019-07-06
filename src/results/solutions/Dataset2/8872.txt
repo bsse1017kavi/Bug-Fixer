@@ -1,5 +1,4 @@
 
-
 package org.apache.log4j.jmx;
 
 import java.lang.reflect.Constructor;
@@ -217,9 +216,9 @@ public class LoggerDynamicMBean extends AbstractDynamicMBean
 	if(s.equalsIgnoreCase("NULL")) {
 	  p = null;
 	} else {
-logger.setLevel(p);
+	  p = OptionConverter.toLevel(s, p);
 	}
-	logger.setPriority(p);
+logger.setLevel(p);
       }
     } else {
       throw(new AttributeNotFoundException("Attribute " + name +

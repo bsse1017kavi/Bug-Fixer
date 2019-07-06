@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -211,9 +210,9 @@ public class Memtable implements Comparable<Memtable>
                 ColumnFamily.serializer().serializeWithIndexes(columnFamily, buffer);
                 /* Now write the key and value to disk */
                 writer.append(partitioner.decorateKey(key), buffer);
-SSTableReader ssTable = writer.closeAndOpenReader();
+            }
         }
-        SSTableReader ssTable = writer.closeAndOpenReader(DatabaseDescriptor.getKeysCachedFraction(table_));
+SSTableReader ssTable = writer.closeAndOpenReader();
         cfStore.onMemtableFlush(cLogCtx);
         cfStore.storeLocation(ssTable);
         buffer.close();

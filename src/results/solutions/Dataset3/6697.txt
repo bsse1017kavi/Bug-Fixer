@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -280,9 +279,9 @@ public class HornetQServerControlHandler extends AbstractRuntimeOnlyHandler {
 
         registry.registerOperationHandler(LIST_REMOTE_ADDRESSES, this, new DescriptionProvider() {
             @Override
-HQ_SERVER, IP_ADDRESS, ModelType.STRING, true, ModelType.STRING, true);
+            public ModelNode getModelDescription(Locale locale) {
                 return MessagingDescriptions.getSingleParamSimpleListReplyOperation(locale,  LIST_REMOTE_ADDRESSES,
-                        HQ_SERVER, ADDRESS_MATCH, ModelType.STRING, true, ModelType.STRING, true);
+HQ_SERVER, IP_ADDRESS, ModelType.STRING, true, ModelType.STRING, true);
             }
         });
 

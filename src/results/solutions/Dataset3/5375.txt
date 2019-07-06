@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class ClosureTransformer<T> implements Transformer<T, T>, Serializable {
      * 
      * @param closure  the closure to call, not null
      * @return the <code>closure</code> transformer
-public static <T> Transformer<T, T> closureTransformer(Closure<? super T> closure) {
+     * @throws IllegalArgumentException if the closure is null
      */
-    public static <T> Transformer<T, T> getInstance(Closure<? super T> closure) {
+public static <T> Transformer<T, T> closureTransformer(Closure<? super T> closure) {
         if (closure == null) {
             throw new IllegalArgumentException("Closure must not be null");
         }

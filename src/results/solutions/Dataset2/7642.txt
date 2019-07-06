@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -30,9 +29,9 @@ protected PackageReferencePattern pattern;
 // check that referenced type is actually defined in this package fragment
 public static boolean isDeclaringPackageFragment(IPackageFragment packageFragment, ReferenceBinding typeBinding) {
 	char[] fileName = typeBinding.getFileName();
-fileName = CharOperation.replaceOnCopy(fileName, '/', '\\'); // ensure to not do any side effect on file name (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=136016)
+	if (fileName != null) {
 		// retrieve the actual file name from the full path (sources are generally only containing it already)
-		CharOperation.replace(fileName, '/', '\\');
+fileName = CharOperation.replaceOnCopy(fileName, '/', '\\'); // ensure to not do any side effect on file name (see https://bugs.eclipse.org/bugs/show_bug.cgi?id=136016)
 		fileName = CharOperation.lastSegment(fileName, '\\');
 		
 		try { 

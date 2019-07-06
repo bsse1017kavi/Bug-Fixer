@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -32,9 +31,9 @@ import java.util.concurrent.TimeUnit;
  * stateful session bean
  *
  */
-public class AnnotatedBean {
+@Stateful
 @StatefulTimeout(value = 100, unit = TimeUnit.MILLISECONDS)
-public class SFSB1 {
+public class AnnotatedBean {
 
     public static volatile boolean preDestroy = false;
 

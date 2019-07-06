@@ -1,4 +1,3 @@
-
 package org.junit.internal.runners;
 
 import java.lang.annotation.Annotation;
@@ -76,9 +75,9 @@ public class JUnit4ClassRunner extends Runner implements Filterable, Sortable {
 	protected void invokeTestMethod(Method method, RunNotifier notifier) {
 		Description description= methodDescription(method);
 		Object test;
-} catch (InvocationTargetException e) { //TODO looks like this could use ExplosiveMethod
+		try {
 			test= createTest();
-		} catch (InvocationTargetException e) {
+} catch (InvocationTargetException e) { //TODO looks like this could use ExplosiveMethod
 			notifier.testAborted(description, e.getCause());
 			return;			
 		} catch (Exception e) {

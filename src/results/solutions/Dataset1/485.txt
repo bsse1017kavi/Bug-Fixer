@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -81,9 +80,9 @@ public abstract class FilteredTermsEnum extends TermsEnum {
    * If the initial seek term is {@code null} (default),
    * the enum is empty.
    * <P>You can only use this method, if you keep the default
-protected final void setInitialSeekTerm(BytesRef term) {
+   * implementation of {@link #nextSeekTerm}.
    */
-  protected final void setInitialSeekTerm(BytesRef term) throws IOException {
+protected final void setInitialSeekTerm(BytesRef term) {
     this.initialSeekTerm = term;
   }
   

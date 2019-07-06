@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public abstract class AbstractLogHandlerAssignmentHandler extends AbstractModelU
      *
      * @param description the description for the exception.
      *
-static OperationFailedException createFailureMessage(final String description) {
+     * @return the exception.
      */
-    protected OperationFailedException createFailureMessage(final String description) {
+static OperationFailedException createFailureMessage(final String description) {
         ModelNode failure = new ModelNode().set(description);
         return new OperationFailedException(failure);
     }

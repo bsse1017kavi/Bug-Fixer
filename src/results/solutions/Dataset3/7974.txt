@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 the original author or authors.
  *
@@ -38,9 +37,9 @@ public class TimerSupportTests extends TestCase {
 		TestMethodInvokingTask task1 = new TestMethodInvokingTask();
 		MethodInvokingTimerTaskFactoryBean mittfb = new MethodInvokingTimerTaskFactoryBean();
 		mittfb.setTargetObject(task1);
-final TimerTask timerTask1 = mittfb.getObject();
+		mittfb.setTargetMethod("doSomething");
 		mittfb.afterPropertiesSet();
-		final TimerTask timerTask1 = (TimerTask) mittfb.getObject();
+final TimerTask timerTask1 = mittfb.getObject();
 
 		final TestRunnable timerTask2 = new TestRunnable();
 

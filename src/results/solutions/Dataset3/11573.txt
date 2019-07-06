@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -102,9 +101,9 @@ public abstract class ToStringStyle implements Serializable {
      * A registry of objects used by <code>reflectionToString</code> methods
      * to detect cyclical object references and avoid infinite loops.
      * </p>
-protected Object initialValue() {
+     */
     private static ThreadLocal registry = new ThreadLocal() {
-        protected synchronized Object initialValue() {
+protected Object initialValue() {
             // The HashSet implementation is not synchronized,
             // which is just what we need here.
             return new HashSet();

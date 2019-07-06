@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1276,9 +1275,9 @@ private MethodBinding resolveTypesFor(MethodBinding method) {
 	AbstractMethodDeclaration methodDecl = method.sourceMethod();
 	if (methodDecl == null) return null; // method could not be resolved in previous iteration
 
-methodDecl.scope.connectTypeVariables(typeParameters, true);
+	TypeParameter[] typeParameters = methodDecl.typeParameters();
 	if (typeParameters != null) {
-		methodDecl.scope.connectTypeVariables(typeParameters);
+methodDecl.scope.connectTypeVariables(typeParameters, true);
 		// Perform deferred bound checks for type variables (only done after type variable hierarchy is connected)
 		for (int i = 0, paramLength = typeParameters.length; i < paramLength; i++)
 			typeParameters[i].checkBounds(methodDecl.scope);

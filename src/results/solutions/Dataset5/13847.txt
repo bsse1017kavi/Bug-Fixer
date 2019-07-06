@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab;
 
 import java.io.IOException;
@@ -67,9 +66,9 @@ public class DiscoveryStartup {
 	
 	protected void setupDiscovery() {
 		if (discovery == null && ClientPlugin.getDefault().getPreferenceStore().getBoolean(ClientPlugin.PREF_REGISTER_SERVER)) {
-.getDefault().makeSharedObjectContainer(DISCOVERY_CONTAINER);
+			try {
 				socontainer = SharedObjectContainerFactory
-						.makeSharedObjectContainer(DISCOVERY_CONTAINER);
+.getDefault().makeSharedObjectContainer(DISCOVERY_CONTAINER);
 				discovery = (IDiscoveryContainer) socontainer
 						.getAdapter(IDiscoveryContainer.class);
 				if (discovery != null) {

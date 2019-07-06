@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,7 +73,7 @@ public interface Transport extends LifecycleComponent<Transport> {
     /**
      * Sends the request to the node.
      */
-long serverOpen();
+    <T extends Streamable> void sendRequest(DiscoveryNode node, long requestId, String action, Streamable message, TransportRequestOptions options) throws IOException, TransportException;
 
-    TransportStats stats();
+long serverOpen();
 }

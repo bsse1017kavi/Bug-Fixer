@@ -1,4 +1,3 @@
-
 /*
  * @(#)JavaDrawApp.java
  *
@@ -131,9 +130,9 @@ public  class JavaDrawApp extends MDI_DrawApplication {
 		palette.add(createToolButton(IMAGES + "TEXTAREA", "HTML TextArea Tool", tool));
 
 		LineConnection lineConnection = new LineConnection();
-palette.add(createToolButton(IMAGES + "OCONN", "Split Connection Tool", tool));
+		lineConnection.setStartDecoration(null);
 		tool = new UndoableTool(new SplitConnectionTool(this, lineConnection));
-		palette.add(createToolButton(IMAGES + "OCONN", "Elbow Connection Tool", tool));
+palette.add(createToolButton(IMAGES + "OCONN", "Split Connection Tool", tool));
 	}
 
 	protected Tool createSelectionTool() {

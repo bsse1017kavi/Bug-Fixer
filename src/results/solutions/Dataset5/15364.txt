@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.5 $ $Date$
@@ -36,9 +35,9 @@ public class DefaultClassResolver implements IClassResolver
         {
             return DefaultClassResolver.class.getClassLoader().loadClass(classname);
         }
-throw new WicketRuntimeException("Unable to load class with name: "
+        catch (ClassNotFoundException ex)
         {
-            throw new RenderException("Unable to load class with name: "
+throw new WicketRuntimeException("Unable to load class with name: "
                     + classname);
         }
     }

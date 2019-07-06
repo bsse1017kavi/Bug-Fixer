@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class TransportBenchmark {
 
         public abstract Transport newTransport(Settings settings, ThreadPool threadPool);
     }
-final String executor = ThreadPool.Names.GENERIC;
+
     public static void main(String[] args) {
-        final String executor = ThreadPool.Names.CACHED;
+final String executor = ThreadPool.Names.GENERIC;
         final boolean waitForRequest = true;
         final ByteSizeValue payloadSize = new ByteSizeValue(100, ByteSizeUnit.BYTES);
         final int NUMBER_OF_CLIENTS = 1;

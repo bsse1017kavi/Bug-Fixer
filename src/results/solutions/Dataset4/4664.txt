@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -377,9 +376,9 @@ public class TestCluster {
     }
 
     public Client nodeClient() {
-String name = "client_" + buildNodeName();
+        ensureOpen();
         if (clientNode == null) {
-            String name = buildNodeName();
+String name = "client_" + buildNodeName();
             String settingsSource = getClass().getName().replace('.', '/') + ".yml";
             Settings finalSettings = settingsBuilder().loadFromClasspath(settingsSource).put(defaultSettings).put("node.client", true).put("name", name)
                     .build();

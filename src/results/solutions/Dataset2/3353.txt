@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -138,9 +137,9 @@ public class Jdk11Compat {
             while( cl instanceof DependClassLoader && cl!=null)
 	      cl=((DependClassLoader)cl).getParentLoader();
             if (depth==c) return ((SimpleClassLoader)cl).getURLs();
-}while((cl!=null) && ( depth >= c ));
+            c++;
             cl=((SimpleClassLoader)cl).getParentLoader();
-        }while((cl!=null) && ( depth < c ));
+}while((cl!=null) && ( depth >= c ));
         return null;
     }
 

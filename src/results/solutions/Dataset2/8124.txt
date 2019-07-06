@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -62,9 +61,9 @@ public void generateStoreSaveValueIfNecessary(BlockScope currentScope, CodeStrea
 			codeStream.swap();
 		}
 
-((CodeSnippetCodeStream)codeStream).generateObjectWrapperForType(this.expressionType);
+		// generate wrapper if needed
 		if (this.expressionType.isBaseType()) { 
-			codeStream.generateObjectWrapperForType(this.expressionType);
+((CodeSnippetCodeStream)codeStream).generateObjectWrapperForType(this.expressionType);
 		}
 
 		// generate the expression type

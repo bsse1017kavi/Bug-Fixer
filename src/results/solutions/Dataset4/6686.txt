@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public class ScriptHistogramFacetCollector extends AbstractFacetCollector {
         keyScript.setNextReader(reader);
         valueScript.setNextReader(reader);
     }
-return new InternalCountAndTotalHistogramFacet(facetName, "_na", "_na", -1, comparatorType, counts, totals);
+
     @Override public Facet facet() {
-        return new InternalHistogramFacet(facetName, "_na", "_na", -1, comparatorType, counts, totals);
+return new InternalCountAndTotalHistogramFacet(facetName, "_na", "_na", -1, comparatorType, counts, totals);
     }
 
     public static long bucket(double value, long interval) {

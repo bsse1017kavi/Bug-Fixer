@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.SqlException
@@ -258,9 +257,9 @@ public class SqlException extends Exception implements Diagnosable {
      */
     public SqlException(LogWriter logWriter, Sqlca sqlca) {
         this(sqlca, 0, true);
-errorcode_ = sqlca.getErrorCode();
+        // only set the error code for the first exception in the chain (we
         // don't know the error code for the rest)
-        errorcode_ = sqlca.getSqlCode();
+errorcode_ = sqlca.getErrorCode();
         if ( logWriter != null )
         {
             logWriter.traceDiagnosable(this);

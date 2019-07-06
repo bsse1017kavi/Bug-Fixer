@@ -1,5 +1,4 @@
 
-
 import org.aspectj.testing.Tester;
 import java.util.*;
 
@@ -38,9 +37,9 @@ class U {
 }
 
 aspect A {
-//U.ee("after handler");
+    static {
         U.ee("before handler");
-        U.ee("after handler");
+//U.ee("after handler");
     }
 
     before() : handler(*) {

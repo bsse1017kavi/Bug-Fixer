@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class WebComponentProcessor implements DeploymentUnitProcessor {
         final Map<String, ComponentDescription> componentByClass = new HashMap<String, ComponentDescription>();
         final EEModuleDescription moduleDescription = deploymentUnit.getAttachment(Attachments.EE_MODULE_DESCRIPTION);
         final EEApplicationClasses applicationClassesDescription = deploymentUnit.getAttachment(Attachments.EE_APPLICATION_CLASSES_DESCRIPTION);
-return; //not an ee deployment
+        final CompositeIndex compositeIndex = deploymentUnit.getAttachment(org.jboss.as.server.deployment.Attachments.COMPOSITE_ANNOTATION_INDEX);
         if (moduleDescription == null) {
-            return; //not an EE deployment
+return; //not an ee deployment
         }
         for (ComponentDescription component : moduleDescription.getComponentDescriptions()) {
             componentByClass.put(component.getComponentClassName(), component);

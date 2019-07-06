@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -302,9 +301,9 @@ public class GetCallerPrincipalTestCase {
         MessageConsumer consumer = null;
         QueueConnection conn = null;
         Session session = null;
-QueueConnectionFactory qcf = (QueueConnectionFactory) new InitialContext().lookup("java:/ConnectionFactory");
+
         try {
-            QueueConnectionFactory qcf = (QueueConnectionFactory) new InitialContext().lookup("java:/RemoteConnectionFactory");
+QueueConnectionFactory qcf = (QueueConnectionFactory) new InitialContext().lookup("java:/ConnectionFactory");
             Queue queue = (Queue) new InitialContext().lookup("java:jboss/" + QUEUE_NAME);
 
             conn = qcf.createQueueConnection("guest", "guest");

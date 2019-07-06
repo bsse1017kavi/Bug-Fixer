@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -242,9 +241,9 @@ public abstract class AbstractResourceAdapterDeploymentService {
                     .addService(bindInfo.getBinderServiceName(), binderService)
                     .addDependency(referenceFactoryServiceName, ManagedReferenceFactory.class,
                             binderService.getManagedObjectInjector())
-.addDependency(ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SERVICE_PREFIX.append(deploymentName))
+                    .addDependency(bindInfo.getParentContextServiceName(), ServiceBasedNamingStore.class,
                             binderService.getNamingStoreInjector())
-                    .addDependency(ConnectorServices.RESOURCE_ADAPTER_SERVICE_PREFIX.append(deploymentName))
+.addDependency(ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SERVICE_PREFIX.append(deploymentName))
                     .addListener(new AbstractServiceListener<Object>() {
                          public void transition(final ServiceController<? extends Object> controller, final ServiceController.Transition transition) {
                             switch (transition) {

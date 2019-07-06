@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -78,9 +77,9 @@ public class ReverseOrdFieldSource extends ValueSource {
     final int end = sindex.numOrd();
 
     return new IntDocValues(this) {
-return (end - sindex.getOrd(doc+off) - 1);
+     @Override
       public int intVal(int doc) {
-        return (end - sindex.getOrd(doc+off));
+return (end - sindex.getOrd(doc+off) - 1);
       }
     };
   }

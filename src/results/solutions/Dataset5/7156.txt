@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -58,9 +57,9 @@ public class AccessForInlineVisitor extends AbstractSyntaxTreeVisitorAdapter {
 	AspectDeclaration inAspect;
 	EclipseFactory world; // alias for inAspect.world
 	
-this.world = inAspect.factory;
+	public AccessForInlineVisitor(AspectDeclaration inAspect, PrivilegedHandler handler) {
 		this.inAspect = inAspect;
-		this.world = inAspect.world;
+this.world = inAspect.factory;
 		this.handler = handler;
 	}
 	

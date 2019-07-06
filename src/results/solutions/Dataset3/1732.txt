@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -33,9 +32,9 @@ import java.lang.annotation.Target;
  */
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Caching {
+@Inherited
 @Documented
-public @interface CacheDefinitions {
+public @interface Caching {
 
 	Cacheable[] cacheable() default {};
 

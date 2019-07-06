@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -64,9 +63,9 @@ public class NoBracketingException extends MathIllegalArgumentException {
      */
     public NoBracketingException(Localizable specific,
                                  double lo, double hi,
-super(specific, Double.valueOf(lo), Double.valueOf(hi), Double.valueOf(fLo), Double.valueOf(fHi), args);
+                                 double fLo, double fHi,
                                  Object ... args) {
-        super(specific, lo, hi, fLo, fHi, args);
+super(specific, Double.valueOf(lo), Double.valueOf(hi), Double.valueOf(fLo), Double.valueOf(fHi), args);
         this.lo = lo;
         this.hi = hi;
         this.fLo = fLo;

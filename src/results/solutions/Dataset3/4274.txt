@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ import org.wildfly.clustering.web.session.SessionManager;
 
 public class SessionManagerAdapterTestCase {
     private final SessionManager<LocalSessionContext> manager = mock(SessionManager.class);
-private SessionManagerAdapter adapter = new SessionManagerAdapter(this.manager);
+    private final SessionListener listener = mock(SessionListener.class);
 
-    private SessionManagerAdapter adapter = new SessionManagerAdapter("mydeployment.war", this.manager);
+private SessionManagerAdapter adapter = new SessionManagerAdapter(this.manager);
 
     @Before
     public void init() {

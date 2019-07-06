@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -41,9 +40,9 @@ public class BloomFilterPostingsFormatProvider extends AbstractPostingsFormatPro
     public BloomFilterPostingsFormatProvider(@IndexSettings Settings indexSettings, @Nullable Map<String, Factory> postingFormatFactories, @Assisted String name, @Assisted Settings postingsFormatSettings) {
         super(name);
         this.delegate = Helper.lookup(indexSettings, postingsFormatSettings.get("delegate"), postingFormatFactories);
-BloomFilter.Factory.buildFromString(postingsFormatSettings.get("fpp"))
+        this.postingsFormat = new BloomFilterPostingsFormat(
                 delegate.get(),
-                BloomFilter.Factory.buildFromString(indexSettings.get("fpp"))
+BloomFilter.Factory.buildFromString(postingsFormatSettings.get("fpp"))
         );
     }
 

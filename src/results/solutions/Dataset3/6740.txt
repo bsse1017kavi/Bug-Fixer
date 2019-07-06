@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ import org.jboss.dmr.ModelNode;
  * @author Brian Stansberry (c) 2011 Red Hat Inc.
  */
 public class MemoryPoolMXBeanResetPeakUsageHandler implements OperationStepHandler{
-static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder("reset-peak-usage", PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY_POOL))
+
     static final MemoryPoolMXBeanResetPeakUsageHandler INSTANCE = new MemoryPoolMXBeanResetPeakUsageHandler();
-    static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder("reset-peak-usage", PlatformMBeanDescriptions.getResolver(PlatformMBeanConstants.MEMORY_POOL))
+static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder("reset-peak-usage", PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY_POOL))
             .setRuntimeOnly()
             .build();
 

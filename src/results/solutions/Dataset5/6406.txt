@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class ModuleController extends GenericController implements ReplaceableCo
     public Object clone() {
         ModuleController clone = (ModuleController) super.clone();
         if (selectedNode == null) {
-clone.selectedNode = selectedNode; // TODO ?? (JMeterTreeNode) selectedNode.clone();
+            this.restoreSelected();
         }
-        clone.selectedNode = selectedNode;
+clone.selectedNode = selectedNode; // TODO ?? (JMeterTreeNode) selectedNode.clone();
         return clone;
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -101,9 +100,9 @@ public class HTTPSampler extends HTTPSamplerBase implements Interruptible {
         if (method == null){
             log.warn("Connect/Read Timeout is not supported on this JVM");
             return;
-method.invoke(conn, new Object[]{new Integer(timeout)});
+        }
         try {
-            method.invoke(conn, new Integer[]{new Integer(timeout)});
+method.invoke(conn, new Object[]{new Integer(timeout)});
         } catch (IllegalArgumentException e1) {
             log.warn("Failed to set timeout: "+e1);
         } catch (IllegalAccessException e1) {

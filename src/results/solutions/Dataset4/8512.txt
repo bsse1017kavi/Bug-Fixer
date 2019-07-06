@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -280,9 +279,9 @@ public class CorruptedFileTest extends ElasticsearchIntegrationTest {
     /**
      * Tests corruption that happens on the network layer and that the primary does not get affected by corruption that happens on the way
      * to the replica. The file on disk stays uncorrupted
-public void testCorruptionOnNetworkLayer() throws ExecutionException, InterruptedException {
+     */
     @Test
-    public void testCorrupteOnNetworkLayer() throws ExecutionException, InterruptedException {
+public void testCorruptionOnNetworkLayer() throws ExecutionException, InterruptedException {
         int numDocs = scaledRandomIntBetween(100, 1000);
         assertThat(cluster().numDataNodes(), greaterThanOrEqualTo(2));
         if (cluster().numDataNodes() < 3) {

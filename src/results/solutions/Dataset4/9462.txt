@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -157,9 +156,9 @@ public class BulkRequest implements ActionRequest {
                         opType = parser.text();
                     } else if ("_version".equals(currentFieldName) || "version".equals(currentFieldName)) {
                         version = parser.longValue();
-} else if ("percolate".equals(currentFieldName) || "_percolate".equals(currentFieldName)) {
+                    } else if ("_version_type".equals(currentFieldName) || "_versionType".equals(currentFieldName) || "version_type".equals(currentFieldName) || "versionType".equals(currentFieldName)) {
                         versionType = VersionType.fromString(parser.text());
-                    } else if ("percolate".equals(currentFieldName)) {
+} else if ("percolate".equals(currentFieldName) || "_percolate".equals(currentFieldName)) {
                         percolate = parser.textOrNull();
                     }
                 }

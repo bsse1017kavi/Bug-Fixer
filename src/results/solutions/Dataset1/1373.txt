@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.TernaryOperatorNode
@@ -289,9 +288,9 @@ public class TernaryOperatorNode extends ValueNode
 		receiver.generateExpression(acb, mb);
 		if (operatorType == TRIM)
 		{
-mb.cast(leftInterfaceType);
+			mb.push(trimType);
 			leftOperand.generateExpression(acb, mb);
-			mb.upCast(leftInterfaceType);
+mb.cast(leftInterfaceType);
 
 			mb.getField(field);
 			nargs = 3;

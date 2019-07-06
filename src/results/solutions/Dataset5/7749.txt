@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -593,9 +592,9 @@ public abstract class HTTPSamplerBase extends AbstractSampler implements TestLis
         }
     }
 
-private static final Pattern pattern;
+	protected abstract HTTPSampleResult sample(URL u, String s, boolean b, int i);
 
-	protected static Pattern pattern;
+private static final Pattern pattern;
 	private static ThreadLocal localMatcher = new ThreadLocal()
 	    {
 	        protected synchronized Object initialValue()

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -50,9 +49,9 @@ public class Filter extends Task
         boolean isFiltersFromFile = filtersFile != null && token == null && value == null;
         boolean isSingleFilter = filtersFile == null && token != null && value != null;
 
-throw new BuildException( "both token and value parameters, or only a filtersFile parameter is required" );
+        if( !isFiltersFromFile && !isSingleFilter )
         {
-            throw new BuildException( "both token and value parameters, or only a filtersFile parameter is required", location );
+throw new BuildException( "both token and value parameters, or only a filtersFile parameter is required" );
         }
 
         if( isSingleFilter )

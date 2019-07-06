@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -38,9 +37,9 @@ class ChatLayout extends Layout {
             tExtent = children[1].computeSize(SWT.DEFAULT, SWT.DEFAULT,
                     false);
         }
-return new Point(width + 2, height + 200);
+        int width = iExtent.x + 5 + tExtent.x;
         int height = Math.max(iExtent.y, tExtent.y);
-        return new Point(width + 2, height + 2);
+return new Point(width + 2, height + 200);
     }
     protected void layout(Composite composite, boolean changed) {
         Control[] children = composite.getChildren();

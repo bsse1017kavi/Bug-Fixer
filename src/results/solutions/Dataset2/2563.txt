@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.hierarchy;
 
 /*
@@ -300,9 +299,9 @@ protected void destroy() {
  * Determines if the change effects this hierarchy, and fires
  * change notification if required.
  */
-if (fExists && this.isActivated()) {
+public void elementChanged(ElementChangedEvent event) {
 	// fix for 1FW67PA
-	if (fExists) {
+if (fExists && this.isActivated()) {
 		if (exists()) {
 			if (isAffected(event.getDelta())) {
 				fireChange();

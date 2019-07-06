@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class SocketBindingRemove extends AbstractSocketBindingUpdate {
     protected void applyUpdate(SocketBindingGroupElement element) throws UpdateFailedException {
         element.removeSocketBinding(name);
     }
-final ServiceController<?> controller = updateContext.getServiceRegistry().getService(SocketBinding.JBOSS_BINDING_NAME.append(name));
+
     protected <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super Void,P> resultHandler, P param) {
-        final ServiceController<?> controller = updateContext.getServiceContainer().getService(SocketBinding.JBOSS_BINDING_NAME.append(name));
+final ServiceController<?> controller = updateContext.getServiceRegistry().getService(SocketBinding.JBOSS_BINDING_NAME.append(name));
         if(controller == null) {
             resultHandler.handleSuccess(null, param);
             return;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class ReproduceInfoPrinter extends RunListener {
         }
 
         final Description d = failure.getDescription();
-b.append("REPRODUCE WITH  : mvn clean test");
+        final StringBuilder b = new StringBuilder();
         b.append("FAILURE  : ").append(d.getDisplayName()).append("\n");
-        b.append("REPRODUCE WITH  : mvn test");
+b.append("REPRODUCE WITH  : mvn clean test");
         MavenMessageBuilder mavenMessageBuilder = new MavenMessageBuilder(b);
         mavenMessageBuilder.appendAllOpts(failure.getDescription());
 

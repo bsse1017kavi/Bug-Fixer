@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -434,9 +433,9 @@ protected IBuffer openBuffer(IProgressMonitor pm, Object info) throws JavaModelE
 		PackageFragmentRoot root = getPackageFragmentRoot();
 		if (root.isArchive()) {
 			// root is a jar file or a zip file
-sourceFileName.append(SuffixConstants.SUFFIX_java);
+			String elementName = getElementName();
 			StringBuffer sourceFileName = new StringBuffer(elementName.substring(0, elementName.lastIndexOf('.')));
-			sourceFileName.append(Util.SUFFIX_java);
+sourceFileName.append(SuffixConstants.SUFFIX_java);
 			JarPackageFragmentRoot jarPackageFragmentRoot = (JarPackageFragmentRoot) root;
 			ZipFile jar = null;
 			try {

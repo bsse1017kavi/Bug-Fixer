@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -115,9 +114,9 @@ public class OperationSlaveStepHandler {
             this.context = context;
         }
 
-domainModel = Resource.Tools.readModel(context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS, true));
+        public ModelNode getDomainModel() {
             if (domainModel == null) {
-                domainModel = Resource.Tools.readModel(context.getRootResource());
+domainModel = Resource.Tools.readModel(context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS, true));
             }
             return domainModel;
         }

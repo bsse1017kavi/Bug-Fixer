@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class ErrorState implements State {
         printf(errorMessage, direct);
         printf(NEW_LINE, direct);
         printf(NEW_LINE, direct);
-throw new RuntimeException(errorMessage);
+        // Throw an exception if the mode is non-interactive and there's no next state.
         if ((stateValues != null && !stateValues.isInteractive()) && nextState == null) {
-            throw new AddUserFailedException(errorMessage);
+throw new RuntimeException(errorMessage);
         }
         return nextState;
     }

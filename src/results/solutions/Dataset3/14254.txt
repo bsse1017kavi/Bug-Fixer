@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -194,9 +193,9 @@ public class ParsedRaDeploymentProcessor implements DeploymentUnitProcessor {
                                     ManagementResourceRegistration subRegistration = overrideRegistration.getSubModel(PathAddress.pathAddress(pe));
                                     if (subRegistration == null) {
                                         subRegistration = overrideRegistration.registerSubModel(pe, new SubSystemExtensionDescriptionProvider(ResourceAdaptersSubsystemProviders.RESOURCE_NAME, "statistics"));
-ManagementResourceRegistration cdSubRegistration = subRegistration.registerSubModel(peCD, statsResourceDescriptionProvider);
+                                    }
                                     if (subRegistration.getSubModel(PathAddress.pathAddress(peCD)) == null) {
-                                        ManagementResourceRegistration cdSubRegistration = subRegistration.registerSubModel(pe, statsResourceDescriptionProvider);
+ManagementResourceRegistration cdSubRegistration = subRegistration.registerSubModel(peCD, statsResourceDescriptionProvider);
                                         for (String statName : poolStats.getNames()) {
                                             cdSubRegistration.registerMetric(statName, new PoolMetrics.ParametrizedPoolMetricsHandler(poolStats));
                                         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -31,9 +30,9 @@ import javax.ejb.Stateful;
 public class DescribedSynchedStatefulBean {
     public static boolean afterBeginCalled = false;
     public static boolean afterCompletionCalled = false;
-private void afterBegin() {
+    public static boolean beforeCompletionCalled = false;
 
-    public void afterBegin() {
+private void afterBegin() {
         afterBeginCalled = true;
     }
 

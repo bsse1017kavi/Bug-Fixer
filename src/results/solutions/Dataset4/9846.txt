@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -135,9 +134,9 @@ public class TokenCountFieldMapper extends IntegerFieldMapper {
             if (valueAndBoost.value() == null) {
                 count = nullValue();
             } else {
-addIntegerFields(context, fields, count, valueAndBoost.boost());
+                count = countPositions(analyzer.analyzer().tokenStream(name(), valueAndBoost.value()));
             }
-            addIntegerFields(fields, count, valueAndBoost.boost());
+addIntegerFields(context, fields, count, valueAndBoost.boost());
         }
         if (fields.isEmpty()) {
             context.ignoredValue(names.indexName(), valueAndBoost.value());

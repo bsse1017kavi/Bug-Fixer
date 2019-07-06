@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -184,9 +183,9 @@ public abstract class JDBCAbstractCreateCommand implements JDBCCreateCommand
    protected void generateFields(EntityEnterpriseContext ctx) throws CreateException
    {
       // Audit principal fields
-String principalName = ctx.getCallerPrincipal().getName();
+      if(securityManager != null)
       {
-         String principalName = ctx.getEJBContext().getCallerPrincipal().getName();
+String principalName = ctx.getCallerPrincipal().getName();
          if(createdPrincipal != null && createdPrincipal.getInstanceValue(ctx) == null)
          {
             createdPrincipal.setInstanceValue(ctx, principalName);

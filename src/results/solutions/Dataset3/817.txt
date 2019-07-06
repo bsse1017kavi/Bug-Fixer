@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -139,9 +138,9 @@ public class NewHostControllerBootstrap {
             public void serviceFailed(final ServiceController<?> serviceController, final StartException reason) {
                 log.errorf(reason, "Service [%s] failed.", serviceController.getName());
             }
-final ModelNode rawModel = hostModel.getHostModel();
+        });
         // Get the raw model
-        final ModelNode rawModel = hostModel.getModel();
+final ModelNode rawModel = hostModel.getHostModel();
         final String mgmtNetwork = rawModel.get(MANAGEMENT, NATIVE_API, INTERFACE).asString();
         final int mgmtPort = rawModel.get(MANAGEMENT, NATIVE_API, PORT).asInt();
         // Install the process controller client

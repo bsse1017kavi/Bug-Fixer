@@ -1,4 +1,3 @@
-
 package org.eclipse.emf.editor.provider;
 
 /**
@@ -121,9 +120,9 @@ public class ExtendedLabelProvider implements IItemLabelProvider {
 				URI classpathURI = URI.createURI(ClasspathUriResolver.CLASSPATH_SCHEME + ":" + iconURI.path());
 				URI iconNormalizedURI = new ClasspathUriResolver().resolve(facade.getProject(), classpathURI);
 				// return URI. Image will be stored in
-if (!ClasspathUriResolver.isClasspathUri(iconNormalizedURI) && checkAccessable(iconNormalizedURI))
+				// ExtendedImageRegistry
 				// which is not refreshable
-				if (!ClasspathUriResolver.isClassapthUri(iconNormalizedURI) && checkAccessable(iconNormalizedURI))
+if (!ClasspathUriResolver.isClasspathUri(iconNormalizedURI) && checkAccessable(iconNormalizedURI))
 					retVal = iconNormalizedURI;
 			}
 		}

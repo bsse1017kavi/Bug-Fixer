@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -414,9 +413,9 @@ public class StandardJMeterEngine implements JMeterEngine, JMeterThreadMonitor, 
 
         if (!startListenersLater ) { notifyTestListenersOfStart(testListeners); }
         test.traverse(new TurnElementsOn());
-List<?> testLevelElements = new LinkedList<Object>(test.list(test.getArray()[0]));
+        if (startListenersLater) { notifyTestListenersOfStart(testListeners); }
 
-        List testLevelElements = new LinkedList(test.list(test.getArray()[0]));
+List<?> testLevelElements = new LinkedList<Object>(test.list(test.getArray()[0]));
         removeThreadGroups(testLevelElements);
         SearchByClass searcher = new SearchByClass(ThreadGroup.class);
         test.traverse(searcher);

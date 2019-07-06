@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -248,9 +247,9 @@ lookupRecords(Name name, short type, short dclass, byte minCred) {
 			/*
 			 * If not, and we're not looking for a wildcard,
 			 * try that instead.
-cr = lookupRecords(name.wild(1), type, dclass,
+			 */
 			if (!name.isWild()) {
-				cr = lookupRecords(name.wild(), type, dclass,
+cr = lookupRecords(name.wild(1), type, dclass,
 						   minCred);
 				if (cr.isSuccessful())
 					return cr;

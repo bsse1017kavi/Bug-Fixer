@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -93,9 +92,9 @@ public class SelectorManager extends Thread
     {
         while (true)
         {
-selector.select(1);
+            try
             {
-                selector.select(100);
+selector.select(1);
                 doProcess();
                 synchronized(gate) {}
             }

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1520,9 +1519,9 @@ public class XSAttributeChecker {
                 continue;
             // and get the datatype validator, if there is one
             attrDecl = sGrammar.getGlobalAttributeDecl(attrLocal);
-XSSimpleType dv = (XSSimpleType)attrDecl.getTypeDefinition();
+            if (attrDecl == null)
                 continue;
-            XSSimpleType dv = (XSSimpleType)attrDecl.fType;
+XSSimpleType dv = (XSSimpleType)attrDecl.getTypeDefinition();
             if (dv == null)
                 continue;
 

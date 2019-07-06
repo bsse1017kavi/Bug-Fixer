@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -93,9 +92,9 @@ public class JavaScript extends AbstractFunction {
                 vars.put(varName, resultStr);
             }
 
-throw new InvalidVariableException("Error processing Javascript: [" + script + "]", e);
+        } catch (RhinoException e) {
             log.error("Error processing Javascript: [" + script + "]\n", e);
-            throw new InvalidVariableException();
+throw new InvalidVariableException("Error processing Javascript: [" + script + "]", e);
         } finally {
             Context.exit();
         }

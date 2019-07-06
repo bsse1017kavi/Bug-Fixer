@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public abstract class AbstractBatchTestCase {
     public static WebArchive createDefaultWar(final String warName, final Package pkg, final String jobXml) {
         return ShrinkWrap.create(WebArchive.class, warName)
                 .addPackage(AbstractBatchTestCase.class.getPackage())
-.addAsWebInfResource(pkg, jobXml, "classes/META-INF/batch-jobs/" + jobXml)
+                .addClasses(TimeoutUtil.class)
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
-                .addAsManifestResource(pkg, jobXml, "batch-jobs/" + jobXml)
+.addAsWebInfResource(pkg, jobXml, "classes/META-INF/batch-jobs/" + jobXml)
                         // Needed for the DebugLoggingSetup
                 .setManifest(new Asset() {
                     public InputStream openStream() {

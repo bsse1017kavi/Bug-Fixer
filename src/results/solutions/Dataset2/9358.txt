@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.actions;
 
 /*
@@ -77,9 +76,9 @@ boolean performMove(
 				IProjectDescription newDescription =
 					createDescription(project, projectName, newLocation);
 
-project.move(newDescription, IResource.FORCE | IResource.SHALLOW, monitor);
+				monitor.worked(50);
 
-				project.move(newDescription, true, monitor);
+project.move(newDescription, IResource.FORCE | IResource.SHALLOW, monitor);
 
 				monitor.worked(50);
 

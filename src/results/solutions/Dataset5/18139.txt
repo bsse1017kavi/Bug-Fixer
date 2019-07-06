@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements. See the NOTICE file distributed with this
@@ -779,9 +778,9 @@ public class TestQueryTimeout extends SQLListenerTestCase {
             fail("Expected testQueryTimeout5() to throw a " + 
                 "IllegalArgumentException");
         } catch (Exception e) {
-IllegalArgumentException.class, "invalid timeout of -2,000");
+            // expected - setHint(-2000) should cause an IllegalArgumentException
             checkException("testQueryTimeout5()", e, 
-                IllegalArgumentException.class, "Invalid value" );
+IllegalArgumentException.class, "invalid timeout of -2,000");
         } finally {
             if ((em != null) && em.isOpen()) {
                 em.close();

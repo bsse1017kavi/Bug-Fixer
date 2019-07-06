@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -407,9 +406,9 @@ abstract class AbstractOperationContext implements OperationContext {
     /**
      * Record an operation added before execution began (i.e. added by the controller and not by a step)
      * @param operation the operation
-controllerOperations.add(operation.clone()); // clone so we don't log op nodes mutated during execution
+     */
     private void recordControllerOperation(ModelNode operation) {
-        controllerOperations.add(operation);
+controllerOperations.add(operation.clone()); // clone so we don't log op nodes mutated during execution
     }
 
     abstract Resource getModel();

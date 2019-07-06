@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -195,9 +194,9 @@ public class BundleResourceHandler extends AbstractRuntimeOnlyHandler {
         ServiceController<?> controller = context.getServiceRegistry(false).getService(Services.BUNDLE_MANAGER);
         return controller != null ? (BundleManager)controller.getValue() : null;
     }
-ServiceController<?> controller = context.getServiceRegistry(false).getService(Services.FRAMEWORK_CREATE);
+
     private BundleContext getSystemContext(OperationContext context) {
-        ServiceController<?> controller = context.getServiceRegistry(false).getService(Services.SYSTEM_CONTEXT);
+ServiceController<?> controller = context.getServiceRegistry(false).getService(Services.FRAMEWORK_CREATE);
         return controller != null ? (BundleContext)controller.getValue() : null;
     }
 

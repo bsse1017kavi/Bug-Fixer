@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -33,9 +32,9 @@ public class GistsActivity extends RoboSherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.pager_with_title);
         setTitle(getString(string.gists_title));
-pager.setAdapter(new GistQueriesPagerAdapter(getResources(), getSupportFragmentManager()));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        pager.setAdapter(new GistsPagerAdapter(getResources(), getSupportFragmentManager()));
+pager.setAdapter(new GistQueriesPagerAdapter(getResources(), getSupportFragmentManager()));
         indicator.setViewPager(pager);
     }
 

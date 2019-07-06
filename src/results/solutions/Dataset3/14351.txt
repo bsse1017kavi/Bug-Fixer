@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.clustering.infinispan.subsystem.CommonAttributes.*;
@@ -256,9 +255,9 @@ public class CacheConfigOperationHandlers {
      * applied to the runtime directly.
      *
      * @param context the operation context
-if (context.getProcessType().isServer() && !context.isBooting()) {
+     */
     static void reloadRequiredStep(final OperationContext context) {
-        if (context.getProcessType().isServer() || !context.isBooting()) {
+if (context.getProcessType().isServer() && !context.isBooting()) {
             context.addStep(new OperationStepHandler() {
                 @Override
                 public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {

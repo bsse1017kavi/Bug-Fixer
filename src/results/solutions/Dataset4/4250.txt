@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -82,9 +81,9 @@ public class ConstraintsTest extends BaseBulletTest {
 	
 	@Override
 	public void dispose () {
-constraints.get(i).delete();
+		for (int i = 0; i < constraints.size; i++) {
 			((btDynamicsWorld)world.collisionWorld).removeConstraint(constraints.get(i));
-			constraints.get(i).dispose();
+constraints.get(i).delete();
 		}
 		constraints.clear();
 		super.dispose();

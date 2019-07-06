@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -81,9 +80,9 @@ public class EditorRegistryReader extends RegistryReader {
             return true;
         }
 
-if (getClassValue(element, EditorDescriptor.ATT_CLASS) != null) {
+        // Get editor icon (required field for internal editors)
         if (element.getAttribute(EditorDescriptor.ATT_ICON) == null) {
-            if (element.getAttribute(EditorDescriptor.ATT_CLASS) != null) {
+if (getClassValue(element, EditorDescriptor.ATT_CLASS) != null) {
                 logMissingAttribute(element, EditorDescriptor.ATT_ICON);
                 return true;
             }

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -579,9 +578,9 @@ public class DOMNormalizer implements XMLGrammarPool {
                     } else {
                         prefix = attr.getPrefix();
                         prefix = (prefix == null || 
-if (prefix == XMLSymbols.PREFIX_XMLNS) { //xmlns:prefix
+                                  prefix.length() == 0) ? XMLSymbols.EMPTY_STRING :fSymbolTable.addSymbol(prefix);
                         String localpart = fSymbolTable.addSymbol( attr.getLocalName());
-                        if (prefix == XMLSymbols.EMPTY_STRING) { //xmlns:prefix
+if (prefix == XMLSymbols.PREFIX_XMLNS) { //xmlns:prefix
 
                             value = fSymbolTable.addSymbol(value);
                             if (value.length() != 0) {

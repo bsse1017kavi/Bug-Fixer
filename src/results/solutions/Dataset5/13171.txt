@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.functions;
 
 import java.util.HashMap;
@@ -35,9 +34,9 @@ public class UnknownFunction implements Function {
 	 * @see org.apache.jmeter.functions.Function#execute(SampleResult, Sampler)
 	 */
 	public String execute(SampleResult previousResult, Sampler currentSampler)
-if(ret == null  || ret.length() == 0)
+		throws InvalidVariableException {
 		String ret = getVariables().get(name);
-		if(ret == null)
+if(ret == null  || ret.length() == 0)
 		{
 			return "${"+name+"}";
 		}

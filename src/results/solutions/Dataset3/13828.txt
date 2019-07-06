@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -144,9 +143,9 @@ public class CacheContainerAdd extends AbstractAddStepHandler {
         BinderService binder = new BinderService(bindInfo.getBindName());
         ServiceBuilder<ManagedReferenceFactory> binderBuilder = target.addService(bindInfo.getBinderServiceName(), binder)
                 .addAliases(ContextNames.JAVA_CONTEXT_SERVICE_NAME.append(jndiName))
-.setInitialMode(ServiceController.Mode.PASSIVE)
+                .addDependency(serviceName, CacheContainer.class, new ManagedReferenceInjector<CacheContainer>(binder.getManagedObjectInjector()))
                 .addDependency(bindInfo.getParentContextServiceName(), ServiceBasedNamingStore.class, binder.getNamingStoreInjector())
-                .setInitialMode(initialMode)
+.setInitialMode(ServiceController.Mode.PASSIVE)
         ;
         newControllers.add(binderBuilder.install());
 

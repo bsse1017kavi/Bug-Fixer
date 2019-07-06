@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -109,9 +108,9 @@ protected void codeComplete(org.eclipse.jdt.internal.compiler.env.ICompilationUn
 	SearchableEnvironment environment = (SearchableEnvironment) ((JavaProject) getJavaProject()).getSearchableNameEnvironment();
 	NameLookup nameLookup = ((JavaProject) getJavaProject()).getNameLookup();
 	environment.unitToSkip = unitToSkip;
-engine.complete(cu, position, 0);
+
 	CompletionEngine engine = new CompletionEngine(environment, new CompletionRequestorWrapper(requestor,nameLookup), JavaCore.getOptions());
-	engine.complete(cu, position);
+engine.complete(cu, position, 0);
 	environment.unitToSkip = null;
 }
 /**

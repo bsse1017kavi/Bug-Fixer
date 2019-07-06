@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class UdpConnection extends SelectionKeyHandler
         DataOutputStream dos = new DataOutputStream(bos);
         Message.serializer().serialize(message, dos);        
         byte[] data = bos.toByteArray();
-logger_.trace("Size of Gossip packet " + data.length);
+        if ( data.length > 0 )
         {  
-            logger_.debug("Size of Gossip packet " + data.length);
+logger_.trace("Size of Gossip packet " + data.length);
             byte[] protocol = BasicUtilities.intToByteArray(protocol_);
             ByteBuffer buffer = ByteBuffer.allocate(data.length + protocol.length);
             buffer.put( protocol );

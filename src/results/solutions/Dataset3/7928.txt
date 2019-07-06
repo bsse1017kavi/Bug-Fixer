@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -90,9 +89,9 @@ class GenericOutboundConnectionAdd extends AbstractOutboundConnectionAddHandler 
     ServiceController installRuntimeService(final OperationContext context, final ModelNode operation, final ModelNode fullModel,
                                             ServiceVerificationHandler verificationHandler) throws OperationFailedException {
 
-final OptionMap connectionCreationOptions = ConnectorResource.getOptions(context, fullModel.get(CommonAttributes.PROPERTY));
+        final PathAddress pathAddress = PathAddress.pathAddress(operation.require(OP_ADDR));
         final String connectionName = pathAddress.getLastElement().getValue();
-        final OptionMap connectionCreationOptions = ConnectorResource.getOptions(fullModel.get(CommonAttributes.PROPERTY));
+final OptionMap connectionCreationOptions = ConnectorResource.getOptions(context, fullModel.get(CommonAttributes.PROPERTY));
 
 
         //final OptionMap connectionCreationOptions = getConnectionCreationOptions(outboundConnection);

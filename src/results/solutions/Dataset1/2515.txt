@@ -1,4 +1,3 @@
-
 package org.apache.solr.core;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -88,9 +87,9 @@ public class StandardDirectoryFactory extends CachingDirectoryFactory {
   @Override
   public void move(Directory fromDir, Directory toDir, String fileName, IOContext ioContext)
       throws IOException {
-Directory baseToDir = getBaseDir(toDir);
+    
     Directory baseFromDir = getBaseDir(fromDir);
-    Directory baseToDir = getBaseDir(fromDir);
+Directory baseToDir = getBaseDir(toDir);
     
     if (baseFromDir instanceof FSDirectory && baseToDir instanceof FSDirectory) {
       File dir1 = ((FSDirectory) baseFromDir).getDirectory();

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -189,9 +188,9 @@ public boolean equals(Object object) {
  */
 public FontData[] getFontData() {
 	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
-return new FontData[] {FontData.win32_new(logFont, device.computePoints(logFont, handle))};
+	LOGFONT logFont = OS.IsUnicode ? (LOGFONT)new LOGFONTW() : new LOGFONTA();
 	OS.GetObject(handle, LOGFONT.sizeof, logFont);
-	return new FontData[] {FontData.win32_new(logFont, device.computePoints(logFont))};
+return new FontData[] {FontData.win32_new(logFont, device.computePoints(logFont, handle))};
 }
 
 /**

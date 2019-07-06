@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -83,9 +82,9 @@ public abstract class AbstractWebSocketMessage<T> implements WebSocketMessage<T>
 			return true;
 		}
 		if (!(other instanceof AbstractWebSocketMessage)) {
-AbstractWebSocketMessage<?> otherMessage = (AbstractWebSocketMessage<?>) other;
+			return false;
 		}
-		AbstractWebSocketMessage otherMessage = (AbstractWebSocketMessage) other;
+AbstractWebSocketMessage<?> otherMessage = (AbstractWebSocketMessage<?>) other;
 		return ObjectUtils.nullSafeEquals(this.payload, otherMessage.payload);
 	}
 

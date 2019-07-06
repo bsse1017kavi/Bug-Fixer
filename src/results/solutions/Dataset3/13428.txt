@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class SecurityRealmMapGroupsAttributeWriteHandler extends ReloadRequiredW
     @Override
     protected void finishModelStage(OperationContext context, ModelNode operation, String attributeName, ModelNode newValue,
             ModelNode oldValue, Resource model) throws OperationFailedException {
-RbacSanityCheckOperation.addOperation(context);
+        if ((oldValue.equals(newValue) == false) && newValue.isDefined() &&
                 (newValue.getType() == ModelType.EXPRESSION || newValue.asBoolean() == false)) {
-            RbacSanityCheckOperation.registerOperation(context);
+RbacSanityCheckOperation.addOperation(context);
         }
         super.finishModelStage(context, operation, attributeName, newValue, oldValue, model);
     }

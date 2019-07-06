@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ public class StatelessBeanTestCase {
     public void testSLSB() throws Exception {
         Context ctx = new InitialContext();
         SimpleStatelessSessionLocal localBean = (SimpleStatelessSessionLocal) ctx.lookup("java:global/ejb3-slsb-example/" + SimpleStatelessSessionBean.class.getSimpleName() + "!" + SimpleStatelessSessionLocal.class.getName());
-String expectedEcho = SimpleStatelessSessionBean.class.getSimpleName() + "#" + "Echo " + message + " -- (1:Other, 2:Other, 3:Other)" ;
+        String message = "Zzzzzzzz.....!";
         String echo = localBean.echo(message);
-        String expectedEcho = SimpleStatelessSessionBean.class.getSimpleName() + "#" + "Echo " + message;
+String expectedEcho = SimpleStatelessSessionBean.class.getSimpleName() + "#" + "Echo " + message + " -- (1:Other, 2:Other, 3:Other)" ;
 
         Assert.assertEquals("Unexpected echo message received from stateless bean", expectedEcho, echo);
 

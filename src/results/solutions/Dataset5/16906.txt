@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class SchemaTool {
         if (action != null && !Arrays.asList(ACTIONS).contains(action))
             throw new IllegalArgumentException("action == " + action);
 
-_ds = ACTION_BUILD.equals(action) ? null : conf.getDataSource2(null);
+        _conf = conf;
         _action = action;
-        _ds = conf.getDataSource2(null);
+_ds = ACTION_BUILD.equals(action) ? null : conf.getDataSource2(null);
         _log = conf.getLog(JDBCConfiguration.LOG_SCHEMA);
 
         // initialize this up-front; otherwise the dbdictionaryfactory might

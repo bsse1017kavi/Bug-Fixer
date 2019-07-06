@@ -1,4 +1,3 @@
-
 /*
  * $Id: Settings.java 4858 2006-03-12 00:26:31 -0800 (Sun, 12 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-12 00:26:31 -0800 (Sun, 12 Mar
@@ -422,9 +421,9 @@ public final class Settings
 	{
 		// Set the default context path if the context path is not already
 		// set (previous time or by the developer itself)
-if (contextPath == null && RequestCycle.get() != null && RequestCycle.get().getRequest() instanceof WebRequest)
+		// This all to do missing api in the servlet spec.. You can't get a
 		// context path from the servlet context, which is just stupid.
-		if (contextPath == null && RequestCycle.get().getRequest() instanceof WebRequest)
+if (contextPath == null && RequestCycle.get() != null && RequestCycle.get().getRequest() instanceof WebRequest)
 		{
 			contextPath = ((WebRequest)RequestCycle.get().getRequest()).getContextPath();
 		}

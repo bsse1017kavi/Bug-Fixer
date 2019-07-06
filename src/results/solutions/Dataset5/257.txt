@@ -1,5 +1,4 @@
 
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -267,9 +266,9 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
         /* A bad CRC is considered a fatal error. */
         if (storedBlockCRC != computedBlockCRC)
             crcError();
-| (computedCombinedCRC >>> 31);
+
         computedCombinedCRC = (computedCombinedCRC << 1)
-            | (computedCombinedCRC >> 31);
+| (computedCombinedCRC >>> 31);
         computedCombinedCRC ^= computedBlockCRC;
     }
 

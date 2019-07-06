@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -330,9 +329,9 @@ public class FsIndexShardGateway extends AbstractIndexShardComponent implements 
                 }
             }
         }
-private long findLatestTranslogId(File location) {
+    }
 
-    private static long findLatestTranslogId(File location) {
+private long findLatestTranslogId(File location) {
         File[] files = location.listFiles(new FilenameFilter() {
             @Override public boolean accept(File dir, String name) {
                 return name.startsWith("translog-");

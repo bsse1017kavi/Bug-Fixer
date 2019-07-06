@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -425,9 +424,9 @@ class BulkTestSuiteMaker {
     }
 
     private static <T extends BulkTest> BulkTest makeTestCase(final Class<T> c, final Method m) {
-return con.newInstance(m.getName());
+        final Constructor<T> con = getTestCaseConstructor(c);
         try {
-            return con.newInstance(new Object[] { m.getName() });
+return con.newInstance(m.getName());
         } catch (final InvocationTargetException e) {
             e.printStackTrace();
             throw new RuntimeException(); // FIXME;

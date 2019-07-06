@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class QueryFacetCollectorParser implements FacetCollectorParser {
         return new String[]{"query"};
     }
 
-Query facetQuery = indexQueryParser.parse(parser).query();
+    @Override public FacetCollector parse(String facetName, XContentParser parser, SearchContext context) {
         XContentIndexQueryParser indexQueryParser = (XContentIndexQueryParser) context.queryParser();
-        Query facetQuery = indexQueryParser.parse(parser);
+Query facetQuery = indexQueryParser.parse(parser).query();
         return new QueryFacetCollector(facetName, facetQuery, context.filterCache());
     }
 }

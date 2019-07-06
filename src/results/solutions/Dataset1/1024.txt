@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ public class JdkProxyFactory implements ProxyFactory {
                               final List<Class<?>> classes,
                               final Callable<Object> dispatcher) {
       
-if (!!!it.next().isInterface()) it.remove();
+        Iterator<Class<?>> it = classes.iterator();
         while (it.hasNext()) {
-            if (it.next().isInterface()) it.remove();
+if (!!!it.next().isInterface()) it.remove();
         }
         
         return Proxy.newProxyInstance(new BundleToClassLoaderAdapter(bundle), classes.toArray(new Class[classes.size()]),

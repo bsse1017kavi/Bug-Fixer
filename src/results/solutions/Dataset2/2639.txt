@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.processing;
 
 /*
@@ -262,9 +261,9 @@ public abstract class JobManager implements Runnable {
 					System.out.println("-> executing ("+ Thread.currentThread()+"): " + job); //$NON-NLS-1$//$NON-NLS-2$
 					System.out.println("\t" + awaitingJobsCount() + " awaiting jobs.");	//$NON-NLS-1$ //$NON-NLS-2$
 				}
-/*boolean status = */job.execute(null);
+				try {
 					executing = true;
-					boolean status = job.execute(null);
+/*boolean status = */job.execute(null);
 					//if (status == FAILED) request(job);
 					moveToNextJob();
 				} finally {

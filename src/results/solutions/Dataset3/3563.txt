@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -87,9 +86,9 @@ public abstract class PathManagerService implements PathManager, Service<PathMan
         } else {
             PathEntry pathEntry;
             synchronized (pathEntries) {
-throw MESSAGES.pathEntryNotFound(relativeTo);
+                pathEntry = pathEntries.get(relativeTo);
                 if (pathEntry == null) {
-                    throw MESSAGES.pathEntryNotFound(path);
+throw MESSAGES.pathEntryNotFound(relativeTo);
                 }
                 return RelativePathService.doResolve(pathEntry.resolvePath(), path);
             }

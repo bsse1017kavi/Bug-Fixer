@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -216,9 +215,9 @@ public abstract class MSVSS extends Task
                 env.setProperty( "SSDIR", m_serverPath );
                 exe.setEnvironment( env );
             }
-exe.setCommandline( cmd );
+
             exe.setWorkingDirectory( getBaseDirectory() );
-            exe.setCommandline( cmd.getCommandline() );
+exe.setCommandline( cmd );
             return exe.execute();
         }
         catch( IOException e )

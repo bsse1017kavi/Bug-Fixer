@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.clustering.carrot2;
 
 /*
@@ -146,9 +145,9 @@ public class CarrotClusteringEngine extends SearchClusteringEngine {
 
       log.info("Loaded Solr resource: " + resourceName);
 
-public InputStream open() {
+      final IResource foundResource = new IResource() {
         @Override
-        public InputStream open() throws IOException {
+public InputStream open() {
           return new ByteArrayInputStream(asBytes);
         }
 

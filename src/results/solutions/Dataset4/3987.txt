@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -244,9 +243,9 @@ public class InternalTermsStatsStringFacet extends InternalTermsStatsFacet {
     public long getMissingCount() {
         return missingCount();
     }
-public Facet reduce(List<Facet> facets) {
+
     @Override
-    public Facet reduce(String name, List<Facet> facets) {
+public Facet reduce(List<Facet> facets) {
         if (facets.size() == 1) {
             if (requiredSize == 0) {
                 // we need to sort it here!

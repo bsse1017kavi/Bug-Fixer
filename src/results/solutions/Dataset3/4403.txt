@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -220,9 +219,9 @@ public class MessagingSubsystemAdd extends AbstractSubsystemAdd<MessagingSubsyst
                 addressEl.setSendToDLAOnNoRoute(addressSpec.isSendToDLAOnNoRoute());
             }
         }
-TransportElement connectorEl = element.addConnector(connectorSpec.getName());
+
         for (TransportSpecification connectorSpec : connectors) {
-            TransportElement connectorEl = element.addAcceptor(connectorSpec.getName());
+TransportElement connectorEl = element.addConnector(connectorSpec.getName());
             connectorEl.setFactoryClassName(connectorSpec.getFactoryClassName());
             connectorEl.setParams(connectorSpec.getParams());
         }

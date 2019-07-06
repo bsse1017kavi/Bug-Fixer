@@ -1,4 +1,3 @@
-
 /**
  * IIOPCosNaming.java 1.0 02/07/15 Copyright (C) 2002 - INRIA
  * * Copyright (C) 2003-2006 - Simon Nieuviarts
@@ -115,9 +114,9 @@ public class CmiRegistry extends AbsRegistry implements NameService {
                 if (registryInetAddress != null) {
                     TraceCarol.infoCarol("Using Specific address to bind registry '" + registryInetAddress + "'.");
                 }
-RMIManageableSocketFactory.register(getPort(), objectPort, registryInetAddress, "cmi");
+
                 if (getPort() >= 0) {
-                    RMIManageableSocketFactory.register(objectPort, registryInetAddress, "cmi");
+RMIManageableSocketFactory.register(getPort(), objectPort, registryInetAddress, "cmi");
                     de = DistributedEquiv.start();
                     cregk = RegistryImpl.start(getPort());
                     // add a shudown hook for this process

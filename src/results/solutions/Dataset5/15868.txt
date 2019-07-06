@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.85 $ $Date$
@@ -158,9 +157,9 @@ public class WebRequestCycle extends RequestCycle
 					// close it so that the reponse is fixed and encoded from
 					// here on.
 					redirectResponse.close();
-((WebApplication)application).addBufferedResponse(getWebRequest()
+
 					redirectUrl = page.urlFor(page, IRedirectListener.class);
-					((WebApplication)application).addRedirect(getWebRequest()
+((WebApplication)application).addBufferedResponse(getWebRequest()
 							.getHttpServletRequest(), redirectUrl, redirectResponse);
 				}
 			}

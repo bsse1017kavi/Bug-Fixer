@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -329,9 +328,9 @@ public class CpioArchiveOutputStream extends ArchiveOutputStream implements
      *             occurred
      */
     public void close() throws IOException {
-out.close();
+        if (!this.closed) {
             this.finish();
-            super.close();
+out.close();
             this.closed = true;
         }
     }

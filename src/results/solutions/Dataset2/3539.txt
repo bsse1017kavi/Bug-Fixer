@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -88,9 +87,9 @@ throws TextParseException
 	rec.alg = (byte) Integer.parseInt(nextString(st));
 	rec.digestid = (byte) Integer.parseInt(nextString(st));
 
-rec.digest = base16.fromString(remainingStrings(st));
+	// note that the draft says that the digest is presented as hex,
 	// not base64.
-	rec.digest = base16.fromString(st.remainingTokens());
+rec.digest = base16.fromString(remainingStrings(st));
 	return rec;
 }
 

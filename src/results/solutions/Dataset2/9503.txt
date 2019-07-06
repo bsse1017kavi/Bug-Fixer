@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -157,9 +156,9 @@ public final class ServletHandler extends Handler {
 
     public void setServletClassName( String servletClassName) {
 	servlet=null; // reset the servlet, if it was set
-if( debug>0 && sw!=null && sw.getJspFile()!=null)
+	servletClass=null;
 	this.servletClassName=servletClassName;
-	if( debug>0 && sw.getJspFile()!=null)
+if( debug>0 && sw!=null && sw.getJspFile()!=null)
 	    log( context, "setServletClassName for " + sw.getJspFile() +
 		 ": " + servletClassName);
     }

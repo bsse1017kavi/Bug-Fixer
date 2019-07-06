@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -41,9 +40,9 @@ public class TrivialCrypt extends AbstractCrypt
 	protected byte[] crypt(byte[] input, int mode) throws GeneralSecurityException
 	{
 		final byte[] result = new byte[input.length];
-result[i] = (byte)(input[i] ^ 0xff);
+		for (int i = 0; i < input.length; i++)
 		{
-			result[i] = (byte)((int)input[i] ^ 0xff);
+result[i] = (byte)(input[i] ^ 0xff);
 		}
 		return result;
 	}

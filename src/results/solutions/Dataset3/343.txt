@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -116,9 +115,9 @@ public class DefaultFlashMapManager implements FlashMapManager {
 	 * The default implementation uses the target request path and query params 
 	 * saved in the FlashMap.
 	 */
-String requestUri = this.urlPathHelper.getOriginatingRequestUri(request);
+	protected boolean isFlashMapForRequest(FlashMap flashMap, HttpServletRequest request) {
 		if (flashMap.getTargetRequestPath() != null) {
-			String requestUri = this.urlPathHelper.getRequestUri(request);
+String requestUri = this.urlPathHelper.getOriginatingRequestUri(request);
 			if (!requestUri.equals(flashMap.getTargetRequestPath())
 					&& !requestUri.equals(flashMap.getTargetRequestPath() + "/")) {
 				return false;

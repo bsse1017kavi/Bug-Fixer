@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -144,9 +143,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 	if (this.expression != null && !alreadyGeneratedExpression) {
 		this.expression.generateCode(currentScope, codeStream, true);
 		generateStoreSaveValueIfNecessary(codeStream);
-generateReturnBytecode(codeStream);
+	}
 	// output the suitable return bytecode or wrap the value inside a descriptor for doits
-	this.generateReturnBytecode(codeStream);
+generateReturnBytecode(codeStream);
 	if (this.saveValueVariable != null) {
 		codeStream.removeVariable(this.saveValueVariable);
 	}	

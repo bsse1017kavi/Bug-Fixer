@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -514,9 +513,9 @@ class RedirectHandler extends Handler {
     {
 	String location	= (String)
 	    req.getAttribute("javax.servlet.error.message");
-location = makeAbsolute(req, location);
+	Context ctx=req.getContext();
 	
-	//location = makeAbsolute(req, location);
+location = makeAbsolute(req, location);
 
 	if( debug>0) ctx.log("Redirect " + location + " " + req );
 

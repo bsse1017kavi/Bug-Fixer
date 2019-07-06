@@ -1,4 +1,3 @@
-
 package org.apache.lucene.expressions;
 
 import org.apache.lucene.document.Document;
@@ -74,9 +73,9 @@ public class  TestDemoExpressions extends LuceneTestCase {
     doc.add(new DoubleField("longitude", -74.0088305, Field.Store.NO));
     iw.addDocument(doc);
     
-iw.shutdown();
+    reader = iw.getReader();
     searcher = new IndexSearcher(reader);
-    iw.close();
+iw.shutdown();
   }
   
   @Override

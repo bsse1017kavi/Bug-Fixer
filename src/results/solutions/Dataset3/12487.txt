@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -44,9 +43,9 @@ public class HttpsListenerAdd extends AbstractListenerAdd {
         super(def);
     }
 
-return UndertowService.LISTENER.append(name);
+    @Override
     protected ServiceName constructServiceName(String name) {
-        return UndertowService.HTTPS_LISTENER.append(name);
+return UndertowService.LISTENER.append(name);
     }
 
     @Override

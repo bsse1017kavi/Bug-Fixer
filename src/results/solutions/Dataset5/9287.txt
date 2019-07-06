@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -275,9 +274,9 @@ public class Zip extends MatchingTask
             return;
         }
 
-getLogger().info( action + archiveType + ": " + zipFile.getAbsolutePath() );
+        String action = doUpdate ? "Updating " : "Building ";
 
-        log( action + archiveType + ": " + zipFile.getAbsolutePath() );
+getLogger().info( action + archiveType + ": " + zipFile.getAbsolutePath() );
 
         boolean success = false;
         try

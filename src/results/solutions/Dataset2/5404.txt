@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2002 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -217,9 +216,9 @@ abstract public class PropPanelClassifier extends PropPanelNamespace {
         if(target instanceof MClassifier) {
             MClassifier cls = (MClassifier) target;
 
-cls.remove();
+            Object newTarget = cls.getNamespace();
 
-            UmlFactory.getFactory().getCore().removeClassifier(cls);
+cls.remove();
 
             if(newTarget != null) {
                 navigateTo(newTarget);

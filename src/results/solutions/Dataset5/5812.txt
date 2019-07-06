@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -333,9 +332,9 @@ public final class MarkupParserTest extends WicketTestCase
 		assertEquals(1, markup.size());
 
 		markup = parser.parse("<span wicket:id=\"test\"/>");
-WicketTagIdentifier.registerWellKnownTagName("xxx");
+		assertEquals(1, markup.size());
 
-		WicketTagIdentifier.registerWellKownTagName("xxx");
+WicketTagIdentifier.registerWellKnownTagName("xxx");
 		markup = parser.parse("<wcn:xxx>  </wcn:xxx>");
 		assertEquals(3, markup.size());
 	}

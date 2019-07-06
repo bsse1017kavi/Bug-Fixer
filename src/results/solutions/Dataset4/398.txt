@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class PublishIndexerClusterStateAction extends AbstractComponent {
         private PublishClusterStateRequest(IndexerClusterState clusterState) {
             this.clusterState = clusterState;
         }
-clusterState = IndexerClusterState.Builder.readFrom(in);
+
         @Override public void readFrom(StreamInput in) throws IOException {
-            clusterState = IndexerClusterState.Builder.readFrom(in, settings);
+clusterState = IndexerClusterState.Builder.readFrom(in);
         }
 
         @Override public void writeTo(StreamOutput out) throws IOException {

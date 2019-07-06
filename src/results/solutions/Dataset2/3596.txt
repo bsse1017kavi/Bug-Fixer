@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -45,9 +44,9 @@ public PotentialMatch(MatchLocator locator, IResource resource, Openable openabl
 				TypeDeclaration[] types = this.parsedUnit.types;
 				if (types != null && types.length > 0) {
 					String simpleTypeName = new String(types[0].name);
-parent.getClassFile(simpleTypeName + ".class"); //$NON-NLS-1$
+					IPackageFragment parent = (IPackageFragment)openable.getParent();
 					org.eclipse.jdt.core.IClassFile classFile = 
-						parent.getClassFile(simpleTypeName + ".class");
+parent.getClassFile(simpleTypeName + ".class"); //$NON-NLS-1$
 					if (classFile.exists()) {
 						this.openable = (Openable)classFile;
 					} 

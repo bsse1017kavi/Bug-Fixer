@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -94,9 +93,9 @@ public class ShardSegments extends BroadcastShardOperationResponse implements It
         shardRouting = readShardRoutingEntry(in);
         int size = in.readVInt();
         if (size == 0) {
-segments = new ArrayList<>(size);
+            segments = ImmutableList.of();
         } else {
-            segments = new ArrayList<Segment>(size);
+segments = new ArrayList<>(size);
             for (int i = 0; i < size; i++) {
                 segments.add(Segment.readSegment(in));
             }

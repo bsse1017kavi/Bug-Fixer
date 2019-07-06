@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests;
 
 import com.badlogic.gdx.Files.FileType;
@@ -88,9 +87,9 @@ public class StageTest implements RenderListener, InputListener
 			Actor actor = stage.hit( Gdx.input.getX(), Gdx.input.getY() );
 			if( actor != null )
 			{
-((Image)actor).color.b = (float)Math.random();
+				if( actor instanceof Image )
 				{
-					((Image)actor).color.a = (float)Math.random();
+((Image)actor).color.b = (float)Math.random();
 				}
 			}
 		}

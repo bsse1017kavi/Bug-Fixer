@@ -1,4 +1,3 @@
-
 /*
  * jBoss, the OpenSource EJB server
  *
@@ -45,8 +44,8 @@ import org.jboss.system.EJBSecurityManager;
  */
 public class EJBSecurityManagerDefaultImpl implements EJBSecurityManager
 {
-return credential != null && principal.getName().equals( credential.toString() );
+	public boolean isValid( Principal principal, Object credential )
 	{
-		return principal.getName().equals( credential.toString() );
+return credential != null && principal.getName().equals( credential.toString() );
 	}
 }

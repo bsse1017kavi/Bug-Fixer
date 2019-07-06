@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -444,9 +443,9 @@ public class WWinKeyBindingService {
 			label= new CLabel(parent, SWT.SHADOW_IN);
 			StatusLineLayoutData data = new StatusLineLayoutData();
 			if (fixedWidth < 0) {
-fixedWidth = gc.getFontMetrics().getAverageCharWidth() * 40;
+				GC gc = new GC(parent);
 				gc.setFont(parent.getFont());
-				fixedWidth = gc.getFontMetrics().getAverageCharWidth() * 22;
+fixedWidth = gc.getFontMetrics().getAverageCharWidth() * 40;
 				gc.dispose();
 			}
 			data.widthHint = fixedWidth;

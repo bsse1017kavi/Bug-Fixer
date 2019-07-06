@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -213,9 +212,9 @@ public class UnmappedFieldsTermsFacetsTests extends ElasticsearchIntegrationTest
         assertThat(facet.getOtherCount(), is(0l));
         assertThat(facet.getMissingCount(), is(10l));
 
-ArrayList<String> terms = new ArrayList<>();
+        facet = searchResponse.getFacets().facet("partially_mapped_bool");
         assertThat(facet.getName(), equalTo("partially_mapped_bool"));
-        ArrayList<String> terms = new ArrayList<String>();
+ArrayList<String> terms = new ArrayList<>();
         for (TermsFacet.Entry entry : facet.getEntries()) {
             terms.add(entry.getTerm().toString());
         }

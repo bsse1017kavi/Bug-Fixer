@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ public class RestSearchAction extends BaseRestHandler {
             } catch (IOException e1) {
                 logger.error("Failed to send failure response", e1);
             }
-client.search(searchRequest, new ActionListener<SearchResponse>() {
+            return;
         }
-        client.execSearch(searchRequest, new ActionListener<SearchResponse>() {
+client.search(searchRequest, new ActionListener<SearchResponse>() {
             @Override public void onResponse(SearchResponse response) {
                 try {
                     JsonBuilder builder = restJsonBuilder(request);

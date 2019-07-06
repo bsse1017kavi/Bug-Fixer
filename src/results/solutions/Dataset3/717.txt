@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -78,9 +77,9 @@ public class DataSourceDisable implements OperationStepHandler {
                     final ServiceController<?> referenceController = registry.getService(referenceServiceName);
                     if (referenceController != null && ServiceController.State.UP.equals(referenceController.getState())) {
                         referenceController.setMode(ServiceController.Mode.NEVER);
-final ServiceName binderServiceName = ContextNames.bindInfoFor(jndiName).getBinderServiceName();
+                    }
 
-                    final ServiceName binderServiceName = Util.getBinderServiceName(jndiName);
+final ServiceName binderServiceName = ContextNames.bindInfoFor(jndiName).getBinderServiceName();
                     final ServiceController<?> binderController = registry.getService(binderServiceName);
                     if (binderController != null && ServiceController.State.UP.equals(binderController.getState())) {
                         binderController.setMode(ServiceController.Mode.NEVER);

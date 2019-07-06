@@ -1,5 +1,4 @@
 
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1869,9 +1868,9 @@ public class TraverseSchema implements
                     right = index;
                 }
             } //end looping through the children
-&&  (base.length() == 0 || ( base.length() > 0 && derivedByRestriction && !baseIsComplexSimple))  ) {
+
             if ( ! ( seeOtherParticle || seeAll ) && (elementContent || mixedContent)
-                 &&  (base.length() == 0 || ( base.length() > 0 && derivedByRestriction))  ) {
+&&  (base.length() == 0 || ( base.length() > 0 && derivedByRestriction && !baseIsComplexSimple))  ) {
                 contentSpecType = XMLElementDecl.TYPE_SIMPLE;
                 simpleTypeValidator = getDatatypeValidator("", SchemaSymbols.ATTVAL_STRING);
                 // REVISIT: Localize

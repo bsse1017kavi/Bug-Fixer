@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class ListState extends DefaultParsingState {
             @Override
             public void handle(ParsingContext ctx) throws CommandFormatException {
                 if(ctx.isEndOfContent()) {
-if(ctx.getCharacter() == ',' || ctx.getCharacter() == '}') {
+                    return;
                 }
-                if(ctx.getCharacter() == ',') {
+if(ctx.getCharacter() == ',' || ctx.getCharacter() == '}') {
                     return;
                 }
                 getHandler(ctx.getCharacter()).handle(ctx);

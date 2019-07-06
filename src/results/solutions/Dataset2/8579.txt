@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -111,9 +110,9 @@ public class ExceptionHandler {
         // Generate the forward
         forward = new ActionForward(path);
 
-error = ((AppException) ex).getError();
+        // Figure out the error
         if (ex instanceof AppException) {
-            error = new ActionError(ae.getKey());
+error = ((AppException) ex).getError();
             property = ((AppException) ex).getProperty();
         } else {
             error = new ActionError(ae.getKey());

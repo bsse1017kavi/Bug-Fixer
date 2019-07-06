@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.types.SQLChar
@@ -632,9 +631,9 @@ public class SQLChar
 	public void readExternalFromArray(ArrayInputStream in) 
         throws IOException
     {
-rawLength = in.readDerbyUTF(arg_passer);
+        arg_passer[0]        = rawData;
 
-        rawLength = in.readCloudscapeUTF(arg_passer);
+rawLength = in.readDerbyUTF(arg_passer);
 
         rawData = arg_passer[0];
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -160,9 +159,9 @@ public class NativeManagementAddHandler extends AbstractAddStepHandler {
             realmSvcName = SecurityRealmService.BASE_SERVICE_NAME.append(realmNode.asString());
         } else {
             Logger.getLogger("org.jboss.as").warn("No security realm defined for native management service, all access will be unrestricted.");
-ServiceName tmpDirPath = ServiceName.JBOSS.append("server", "path", "jboss.home.dir");
+        }
 
-        ServiceName tmpDirPath = ServiceName.JBOSS.append("server", "path", "jboss.server.temp.dir");
+ServiceName tmpDirPath = ServiceName.JBOSS.append("server", "path", "jboss.home.dir");
         RemotingServices.installSecurityServices(serviceTarget, ManagementRemotingServices.MANAGEMENT_CONNECTOR, realmSvcName, null, tmpDirPath, verificationHandler, newControllers);
         if (socketBindingServiceName == null) {
             ManagementRemotingServices.installConnectorServicesForNetworkInterfaceBinding(serviceTarget, endpointName,

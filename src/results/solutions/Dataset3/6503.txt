@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ public class WorkManagerAdd extends AbstractBoottimeAddStepHandler {
 
     @Override
     protected void performBoottime(final OperationContext context, final ModelNode operation, final ModelNode model,
-String name = WmParameters.NAME.getAttribute().resolveModelAttribute(context, model).asString();
+                                   final ServiceVerificationHandler verificationHandler, final List<ServiceController<?>> newControllers) throws OperationFailedException {
 
-        String name = WmParameters.NAME.getAttribute().validateResolvedOperation(model).asString();
+String name = WmParameters.NAME.getAttribute().resolveModelAttribute(context, model).asString();
 
         ServiceTarget serviceTarget = context.getServiceTarget();
 

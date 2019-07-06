@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public final class AnyPredicate<T> extends AbstractQuantifierPredicate<T> {
      * @return the <code>all</code> predicate
      * @throws IllegalArgumentException if the predicates array is null
      * @throws IllegalArgumentException if any predicate in the array is null
-public static <T> Predicate<T> anyPredicate(final Collection<? extends Predicate<? super T>> predicates) {
+     */
     @SuppressWarnings("unchecked")
-    public static <T> Predicate<T> anyPredicate(final Collection<? extends Predicate<T>> predicates) {
+public static <T> Predicate<T> anyPredicate(final Collection<? extends Predicate<? super T>> predicates) {
         final Predicate<? super T>[] preds = FunctorUtils.validate(predicates);
         if (preds.length == 0) {
             return FalsePredicate.<T>falsePredicate();

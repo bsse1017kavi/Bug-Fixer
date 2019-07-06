@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -734,9 +733,9 @@ public abstract class SessionFactoryUtils {
 		Set<Session> sessions = holderMap.remove(sessionFactory);
 		for (Session session : sessions) {
 			closeSession(session);
-deferredCloseHolder.remove();
+		}
 		if (holderMap.isEmpty()) {
-			deferredCloseHolder.set(null);
+deferredCloseHolder.remove();
 		}
 	}
 

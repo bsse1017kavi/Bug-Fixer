@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public class AbsolutePathService extends AbstractPathService {
         addService(pathNameOf(name), abstractPath, target);
     }
 
-target.addService(sname, service).install();
+    public static void addService(final ServiceName sname, final String abstractPath, final ServiceTarget target) {
         AbsolutePathService service = new AbsolutePathService(abstractPath);
-        target.addService(sname, service);
+target.addService(sname, service).install();
     }
 
     public AbsolutePathService(final String abstractPath) {

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1081,9 +1080,9 @@ public class DatabaseDescriptor
     public static AbstractType getComparator(String tableName, String cfName)
     {
         assert tableName != null;
-throw new IllegalArgumentException("Unknown ColumnFamily " + cfName + " in keyspace " + tableName);
+        CFMetaData cfmd = getCFMetaData(tableName, cfName);
         if (cfmd == null)
-            throw new NullPointerException("Unknown ColumnFamily " + cfName + " in keyspace " + tableName);
+throw new IllegalArgumentException("Unknown ColumnFamily " + cfName + " in keyspace " + tableName);
         return cfmd.comparator;
     }
 

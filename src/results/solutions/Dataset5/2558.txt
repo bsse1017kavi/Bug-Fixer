@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -361,9 +360,9 @@ public class HTTPHC3Impl extends HTTPHCAbstractImpl {
      */
     private static int calculateHeadersSize(HttpMethodBase httpMethod) {
         int headerSize = httpMethod.getStatusLine().toString().length()+2; // add a \r\n
-headerSize += rh[i].toString().length(); // already include the \r\n
+        Header[] rh = httpMethod.getResponseHeaders();
         for (int i = 0; i < rh.length; i++) {
-            headerSize += (rh[i]).toString().length(); // already include the \r\n
+headerSize += rh[i].toString().length(); // already include the \r\n
         }
         headerSize += 2; // last \r\n before response data
         return headerSize;

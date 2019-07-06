@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ public final class ServerFactory {
         if (bindingRef == null) {
             bindingRef = serverGroup.getSocketBindingGroup();
         }
-domainBindings = new SocketBindingGroupElement("domainBindings");
+        SocketBindingGroupElement domainBindings = domainModel.getSocketBindingGroup(bindingRef.getRef());
         if (domainBindings == null) {
-            domainBindings = new SocketBindingGroupElement(domainBindings);
+domainBindings = new SocketBindingGroupElement("domainBindings");
         }
         int portOffset = bindingRef.getPortOffset();
         // TODO: add each socket binding

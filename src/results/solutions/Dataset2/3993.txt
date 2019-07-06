@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -205,9 +204,9 @@ public class BasicStackList extends AbstractTableInformationControl {
         TableViewer tableViewer = new TableViewer(table) {
         	/* (non-Javadoc)
 			 * @see org.eclipse.jface.viewers.TableViewer#internalRefresh(java.lang.Object)
-boolean usingMotif = "motif".equals(SWT.getPlatform()); //$NON-NLS-1$
+			 */
 			protected void internalRefresh(Object element) {
-				boolean usingMotif = "motif".equals(SWT.getPlatform());
+boolean usingMotif = "motif".equals(SWT.getPlatform()); //$NON-NLS-1$
 				try {
 					// This avoids a "graphic is disposed" error on Motif by not letting
 					// it redraw while we remove entries.  Some items in this table are

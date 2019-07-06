@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class WebExternalResourceStream extends AbstractResourceStream
 				.getServletContext();
 
 		in = context.getResourceAsStream(url);
-throw new WicketRuntimeException("The requested resource was not found: " + url);
+		if (in == null)
 		{
-			throw new WicketRuntimeException("the requested resource was not found");
+throw new WicketRuntimeException("The requested resource was not found: " + url);
 		}
 		return in;
 	}

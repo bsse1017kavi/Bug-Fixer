@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 /*
  * (c) Copyright IBM Corp. 2002.
@@ -257,9 +256,9 @@ public class WorkingSetManager implements IWorkingSetManager {
 		File stateFile = getWorkingSetStateFile();
 
 		if (stateFile.exists()) {
-BufferedReader reader = new BufferedReader(new InputStreamReader(input, "utf-8")); //$NON-NLS-1$
+			try {
 				FileInputStream input = new FileInputStream(stateFile);
-				InputStreamReader reader = new InputStreamReader(input, "utf-8"); //$NON-NLS-1$
+BufferedReader reader = new BufferedReader(new InputStreamReader(input, "utf-8")); //$NON-NLS-1$
 
 				IMemento memento = XMLMemento.createReadRoot(reader);
 				restoreWorkingSetState(memento);

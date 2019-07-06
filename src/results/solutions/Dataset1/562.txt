@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -115,9 +114,9 @@ public final class RecommenderJob extends AbstractJob {
         String.valueOf(DEFAULT_MAX_SIMILARITIES_PER_ITEM));
     addOption("maxPrefsPerUserInItemSimilarity", "mppuiis", "max number of preferences to consider per user in the " +
         "item similarity computation phase, users with more preferences will be sampled down (default: " +
-"alternatively use one of the predefined similarities (" + VectorSimilarityMeasures.list() + ')', true);
+        DEFAULT_MAX_PREFS_PER_USER + ')', String.valueOf(DEFAULT_MAX_PREFS_PER_USER));
     addOption("similarityClassname", "s", "Name of distributed similarity measures class to instantiate, " +
-        "alternatively use one of the predefined similarities (" + VectorSimilarityMeasures.list() + ')');
+"alternatively use one of the predefined similarities (" + VectorSimilarityMeasures.list() + ')', true);
     addOption("threshold", "tr", "discard item pairs with a similarity value below this", false);
 
     Map<String,String> parsedArgs = parseArguments(args);

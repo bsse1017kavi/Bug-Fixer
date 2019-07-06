@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ public class DomainSlaveHandler implements OperationStepHandler {
                     task.cancel();
                     futures.get(entry.getKey()).cancel(true);
                 }
-HOST_CONTROLLER_LOGGER.tracef("ParsedResult for remote host %s is %s", entry.getKey(), result);
+
                 if (HOST_CONTROLLER_LOGGER.isTraceEnabled()) {
-                    HOST_CONTROLLER_LOGGER.tracef("Result for remote host %s is %s", entry.getKey(), result);
+HOST_CONTROLLER_LOGGER.tracef("ParsedResult for remote host %s is %s", entry.getKey(), result);
                 }
                 domainOperationContext.addHostControllerResult(entry.getKey(), result);
             }

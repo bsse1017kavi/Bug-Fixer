@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -109,9 +108,9 @@ public class Depend extends MatchingTask {
     /**
      * indicates that the dependency relationships should be extended
      * beyond direct dependencies to include all classes. So if A directly
-private boolean closure = false;
+     * affects B abd B directly affects C, then A indirectly affects C.
      */
-    private boolean closure;
+private boolean closure = false;
 
     private void writeDependencyList(File depFile, Vector dependencyList) throws IOException {
         // new dependencies so need to write them out to the cache

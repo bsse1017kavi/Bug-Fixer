@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -929,9 +928,9 @@ public abstract class HTTPSamplerBase extends AbstractSampler implements TestLis
 				responseData = IOUtils.toByteArray(reader,contentEncoding);				
 			}
 			res.sampleEnd();			
-res.setResponseMessageOK();
+			res.setResponseData(responseData);
 		    res.setResponseCodeOK();
-			res.setResponseMessage(""); // TODO - what should this be?
+res.setResponseMessageOK();
 			res.setSuccessful(true);
 			String ct = ctb.toString();
 			res.setContentType(ct);

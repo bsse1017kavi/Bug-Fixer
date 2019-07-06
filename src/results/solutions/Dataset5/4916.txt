@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -79,9 +78,9 @@ public void javaToNative (Object object, TransferData transferData) {
 		int /*long*/ pValue = OS.g_malloc(buffer.length);
 		if (pValue ==  0) return;
 		OS.memmove(pValue, buffer, buffer.length);
-transferData.length = buffer.length - 1;
+		transferData.type = STRING_ID;
 		transferData.format = 8;
-		transferData.length = buffer.length;
+transferData.length = buffer.length - 1;
 		transferData.pValue = pValue;
 		transferData.result = 1;
 	}

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -161,9 +160,9 @@ public class AspectJBuilder extends JavaBuilder implements ICompilerAdapterFacto
 		myBcelWorld.setXlazyTjp(options.xLazyThisJoinPoint);
 		myBcelWorld.setXHasMemberSupportEnabled(options.xHasMember);
 		myBcelWorld.setPinpointMode(options.xdevPinpoint);
-myWeaver.setReweavableMode(options.xNotReweavable);
+		setLintProperties(myBcelWorld,options);
 		myWeaver = new BcelWeaver(myBcelWorld);
-		myWeaver.setReweavableMode(options.xReweavable,options.xReweavableCompress);
+myWeaver.setReweavableMode(options.xNotReweavable);
 		// TODO deal with injars, inpath, and aspectpath here...
 	}
 	

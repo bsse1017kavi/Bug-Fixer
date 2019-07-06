@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -160,9 +159,9 @@ public class ShardStateAction extends AbstractComponent {
                             return currentState;
                         }
                     }
-logger.debug("applying started shard {}, reason [{}]", shardRouting, reason);
+                }
                 if (logger.isDebugEnabled()) {
-                    logger.debug("Applying started shard {}, reason [{}]", shardRouting, reason);
+logger.debug("applying started shard {}, reason [{}]", shardRouting, reason);
                 }
                 RoutingTable newRoutingTable = shardsAllocation.applyStartedShards(currentState, newArrayList(shardRouting));
                 if (routingTable == newRoutingTable) {

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -434,9 +433,9 @@ public class SpellCheckComponent extends SearchComponent implements SolrCoreAwar
         suggestions[k] = sugQueue.pop();
       }
 
-if (o != null) result.addFrequency(token, o);
+      if (extendedResults) {
         Integer o = origVsFreq.get(original);
-        if (o != null) result.add(token, o);
+if (o != null) result.addFrequency(token, o);
         for (SuggestWord word : suggestions)
           result.add(token, word.string, word.freq);
       } else {

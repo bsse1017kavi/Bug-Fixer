@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -178,9 +177,9 @@ public class IMAPRootFolder extends AbstractFolder implements RootFolder,
 		} else {
 			// no delimiter found
 			//  -> this is already the final folder
-.findChildWithName(name, false, IMAPFolder.class );
+			// if folder doesn't exist already
 			AbstractFolder subFolder = (AbstractFolder) parent
-					.findChildWithName(name, false);
+.findChildWithName(name, false, IMAPFolder.class );
 
 			if (subFolder == null) {
 				subFolder = new IMAPFolder(name, "IMAPFolder", getParentPath());

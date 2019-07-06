@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -208,9 +207,9 @@ private void initializeIndexLocations() {
 		if (values[i] != null)
 			this.indexLocations[count++] = (IPath) values[i];
 }
-initializeIndexLocations();
+public IPath[] getIndexLocations() {
 	if (this.indexLocations == null) {
-		this.initializeIndexLocations(); 
+initializeIndexLocations();
 	}
 	return this.indexLocations;
 }

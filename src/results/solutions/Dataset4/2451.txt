@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -461,9 +460,9 @@ public abstract class BlobStoreIndexShardGateway extends AbstractIndexShardCompo
                     bos.write(data, offset, size);
                     // if we don't have enough to read the header size of the first translog, bail and wait for the next one
                     if (bos.size() < 4) {
-BytesStreamInput si = new BytesStreamInput(bos.underlyingBytes(), 0, bos.size(), false);
+                        return;
                     }
-                    BytesStreamInput si = new BytesStreamInput(bos.underlyingBytes(), 0, bos.size());
+BytesStreamInput si = new BytesStreamInput(bos.underlyingBytes(), 0, bos.size(), false);
                     int position;
                     while (true) {
                         try {

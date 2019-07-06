@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -76,9 +75,9 @@ public class ECFConnection implements ISynchAsynchConnection {
 		}
 	};
 
-handleConnectionClosed(new IOException("Connection reset by peer"));
+	private final ConnectionListener connectionListener = new ConnectionListener() {
 		public void connectionClosed() {
-			handleConnectionClosed(null);
+handleConnectionClosed(new IOException("Connection reset by peer"));
 		}
 
 		public void connectionClosedOnError(Exception e) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class ClearStatisticsHandler implements OperationStepHandler {
     }
 
     @Override
-if (context.isNormalServer()) {
+    public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
 
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
                     for (StatisticsPlugin statsPlugin : stats) {

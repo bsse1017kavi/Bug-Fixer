@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -440,9 +439,9 @@ public class UndertowDeploymentInfoService implements Service<DeploymentInfo> {
     private ConfidentialPortManager getConfidentialPortManager() {
         return new ConfidentialPortManager() {
 
-int port = exchange.getDestinationAddress().getPort();
+            @Override
             public int getConfidentialPort(HttpServerExchange exchange) {
-                int port = exchange.getHostPort();
+int port = exchange.getDestinationAddress().getPort();
                 return host.getValue().getServer().getValue().lookupSecurePort(port);
             }
         };

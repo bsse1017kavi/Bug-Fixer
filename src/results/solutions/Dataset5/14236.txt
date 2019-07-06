@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -175,9 +174,9 @@ public class Exec
         setupLogger( exe );
         exe.setTimeout( m_timeout );
         exe.setWorkingDirectory( m_dir );
-exe.setCommandline( m_command );
+        exe.setNewenvironment( m_newEnvironment );
         exe.setEnvironment( environment );
-        exe.setCommandline( m_command.getCommandline() );
+exe.setCommandline( m_command );
         return exe;
     }
 

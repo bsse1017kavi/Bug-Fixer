@@ -1,4 +1,3 @@
-
 /*
 * JBoss, the OpenSource J2EE webOS
 *
@@ -46,9 +45,9 @@ public class RMIClientNotificationListener
       // Export the RMI object to become a callback object
       UnicastRemoteObject.exportObject( this );
       // Register the listener as MBean on the remote JMX server
-"org.jboss.management.mejb.RMINotificationListener",
+      createListener(
          pConnector,
-         "org.jboss.jmx.connector.notification.RMINotificationListener",
+"org.jboss.management.mejb.RMINotificationListener",
          new Object[] { this },
          new String[] { RMIClientNotificationListenerInterface.class.getName() }
       );

@@ -1,4 +1,3 @@
-
 import java.net.*;
 import java.io.*;
 import java.util.*;
@@ -88,9 +87,9 @@ String rrToString() {
 	sb.append (" (\n\t");
 	sb.append (formatDate(expire));
         sb.append (" ");
-sb.append ((int)footprint & 0xFFFF);
+	sb.append (formatDate(timeSigned));
 	sb.append (" ");
-	sb.append (footprint);
+sb.append ((int)footprint & 0xFFFF);
 	sb.append (" ");
 	sb.append (signer);
 	String s = base64.toString(signature);

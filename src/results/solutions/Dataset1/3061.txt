@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util.junitcompat;
 
 /*
@@ -47,9 +46,9 @@ public class TestFailOnFieldCacheInsanity extends WithNestedTests {
       Document doc = new Document();
       doc.add(newField("ints", "1", StringField.TYPE_NOT_STORED));
       w.addDocument(doc);
-w.shutdown();
+      w.forceMerge(1);
       r = w.getReader();
-      w.close();
+w.shutdown();
 
       subR = r.leaves().get(0).reader();
     }

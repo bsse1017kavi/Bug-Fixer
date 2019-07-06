@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -31,9 +30,9 @@ public void build() {
 	if (JavaBuilder.DEBUG)
 		System.out.println("FULL build"); //$NON-NLS-1$
 
-JavaModelManager.getJavaModelManager().getDeltaProcessor().addForRefresh(javaBuilder.javaProject);
+	try {
 		notifier.subTask(Util.bind("build.cleaningOutput")); //$NON-NLS-1$
-		JavaModelManager.getJavaModelManager().deltaProcessor.addForRefresh(javaBuilder.javaProject);
+JavaModelManager.getJavaModelManager().getDeltaProcessor().addForRefresh(javaBuilder.javaProject);
 		JavaBuilder.removeProblemsAndTasksFor(javaBuilder.currentProject);
 		cleanOutputFolders();
 		notifier.updateProgressDelta(0.1f);

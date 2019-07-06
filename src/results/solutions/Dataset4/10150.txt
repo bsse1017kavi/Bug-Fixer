@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -104,9 +103,9 @@ public class BytesStreamInput extends StreamInput {
     @Override public void close() throws IOException {
         // nothing to do here...
     }
-int utflen = readInt();
+
     public String readUTF() throws IOException {
-        int utflen = readUnsignedShort();
+int utflen = readInt();
         if (utflen == 0) {
             return "";
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -54,9 +53,9 @@ public class TestDupNamedQuery extends SingleEMFTestCase {
     private void simpleQuery(boolean simple2, String findOneQName,
         String findAllQName, String nameOne, String ValueOne, String nameTwo,
         String ValueTwo) {
-List list = em.createNamedQuery(findOneQName).setParameter("fname", nameOne)
+        EntityManager em = emf.createEntityManager();
 
-        List list = em.createNamedQuery(findOneQName).setParameter(1, nameOne)
+List list = em.createNamedQuery(findOneQName).setParameter("fname", nameOne)
             .getResultList();
         assertNotNull(list);
         assertEquals(list.size(), 1);

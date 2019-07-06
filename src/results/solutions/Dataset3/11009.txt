@@ -1,4 +1,3 @@
-
 package org.jboss.as.test.integration.ejb.mdb.resourceadapter;
 
 import javax.annotation.Resource;
@@ -68,9 +67,9 @@ public class ConfiguredResourceAdapterNameTestCase {
         final JavaArchive ejbJar = ShrinkWrap.create(JavaArchive.class, "configured-resource-adapter-name-mdb-test.jar")
                 .addClasses(ConfiguredResourceAdapterNameMDB.class, JMSMessagingUtil.class, ConfiguredResourceAdapterNameTestCase.class,
                         JmsQueueSetup.class)
-.addAsManifestResource(ConfiguredResourceAdapterNameTestCase.class.getPackage(), "jboss-ejb3.xml", "jboss-ejb3.xml");
+                .addPackage(JMSOperations.class.getPackage())
                 .addAsManifestResource(new StringAsset("Dependencies: org.jboss.as.controller-client, org.jboss.dmr \n"), "MANIFEST.MF")
-                .addAsManifestResource("ejb/mdb/configuredresourceadapter/jboss-ejb3.xml", "jboss-ejb3.xml");
+.addAsManifestResource(ConfiguredResourceAdapterNameTestCase.class.getPackage(), "jboss-ejb3.xml", "jboss-ejb3.xml");
         logger.info(ejbJar.toString(true));
         return ejbJar;
     }

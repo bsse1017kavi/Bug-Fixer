@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2000 Peter Antman Tim <peter.antman@tim.se>
  *
@@ -80,9 +79,9 @@ public class StdServerSessionPool implements ServerSessionPool {
 	    this.transacted= transacted;
 	    this.poolSize= maxSession;
 
-executor = new PooledExecutor(poolSize);
+
 		threadGroup = new ThreadGroup("ASF Session Pool Threads");
-		executor = new PooledExecutor(new BoundedBuffer(10), poolSize);
+executor = new PooledExecutor(poolSize);
 		executor.setMinimumPoolSize(0);
 		executor.setKeepAliveTime(1000*30);
 		executor.waitWhenBlocked();

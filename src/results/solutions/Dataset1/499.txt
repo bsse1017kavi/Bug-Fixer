@@ -1,4 +1,3 @@
-
 package org.apache.solr.schema;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -254,9 +253,9 @@ public class CurrencyField extends FieldType implements SchemaAware, ResourceLoa
     xmlWriter.writeStr(name, field.stringValue(), false);
   }
 
-writer.writeStr(name, field.stringValue(), true);
+  @Override
   public void write(TextResponseWriter writer, String name, IndexableField field) throws IOException {
-    writer.writeStr(name, field.stringValue(), false);
+writer.writeStr(name, field.stringValue(), true);
   }
 
   public ExchangeRateProvider getProvider() {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 Contributors.
  * All rights reserved. 
@@ -36,9 +35,9 @@ public class ConcreteAtAspectTest extends TestCase {
     // this aspect is illegal as is in aop.xml
     // ones must use a concrete-aspect
     @Aspect
-@Pointcut
+    abstract static class ConcreteAtAspect {
 
-        @Pointcut()
+@Pointcut
         abstract void pc();
         // must be abstract
         // for concrete-aspect, must further be no-arg, void

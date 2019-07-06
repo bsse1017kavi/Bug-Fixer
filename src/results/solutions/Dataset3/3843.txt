@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -113,9 +112,9 @@ public class HostProcessReloadHandler extends ProcessReloadHandler<HostRunningMo
             this.hostControllerInfo = hostControllerInfo;
         }
 
-return new SimpleOperationDefinition(name, resolver, attributeResolver, entryType, flags, replyType, replyValueType, false, deprecationData, replyParameters, parameters) {
+        @Override
         public SimpleOperationDefinition internalBuild(final ResourceDescriptionResolver resolver, final ResourceDescriptionResolver attributeResolver) {
-            return new SimpleOperationDefinition(name, resolver, attributeResolver, entryType, flags, replyType, replyValueType, deprecationData, replyParameters, parameters) {
+return new SimpleOperationDefinition(name, resolver, attributeResolver, entryType, flags, replyType, replyValueType, false, deprecationData, replyParameters, parameters) {
                 @Override
                 public DescriptionProvider getDescriptionProvider() {
                     return new DescriptionProvider() {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -158,9 +157,9 @@ public class BatchTestCase extends AbstractCliTestBase {
 
         // this should fail
         cli.sendLine("run-batch", true);
-assertTrue("Batch did not fail.", line.contains("Composite operation failed and was rolled back"));
+
         String line = cli.readOutput();
-        assertTrue("Batch did not fail.", line.contains("Failed to execute batch"));
+assertTrue("Batch did not fail.", line.contains("Composite operation failed and was rolled back"));
 
         // check that still none of the archives are deployed
         assertTrue(checkUndeployed(getBaseURL(url) + "deployment0/SimpleServlet"));

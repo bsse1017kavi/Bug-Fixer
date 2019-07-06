@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.engine.util;
 
 import java.util.ArrayList;
@@ -309,9 +308,9 @@ public class ValueReplacer
     public void undoReverseReplace(CollectionProperty prop)
     {
         Collection newColl = null;
-newColl = (Collection) prop.getObjectValue().getClass().newInstance();
+        try
         {
-            newColl = (Collection) prop.getClass().newInstance();
+newColl = (Collection) prop.getObjectValue().getClass().newInstance();
         }
         catch (Exception e)
         {

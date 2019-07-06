@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -494,9 +493,9 @@ public class SampleResult implements Serializable {
 		if (subResults == null) {
 			subResults = new ArrayList();
 		}
-setEndTime(Math.max(getEndTime(), subResult.getEndTime()));
+		subResults.add(subResult);
 		// Extend the time to the end of the added sample
-		setEndTime(subResult.getEndTime());
+setEndTime(Math.max(getEndTime(), subResult.getEndTime()));
 		// Include the byte count for the added sample
 		setBytes(getBytes() + subResult.getBytes());
 		subResult.setParent(this);

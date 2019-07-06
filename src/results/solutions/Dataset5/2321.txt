@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -115,9 +114,9 @@ public class ExitCommand implements Command
             {
                 System.exit(0);
             }
-ActionRouter.getInstance().doActionNow(new ActionEvent(e.getSource(), e.getID(), Save.SAVE_ALL));
+            else if (chosenOption == JOptionPane.YES_OPTION)
             {
-                ActionRouter.getInstance().actionPerformed(new ActionEvent(e.getSource(), e.getID(), Save.SAVE_ALL));
+ActionRouter.getInstance().doActionNow(new ActionEvent(e.getSource(), e.getID(), Save.SAVE_ALL));
                 if (!GuiPackage.getInstance().isDirty())
                 {
                     System.exit(0);

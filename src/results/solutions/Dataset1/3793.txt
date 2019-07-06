@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public class BootStrapperTest
         TokenMetadata tmd = ss.getTokenMetadata();
         InetAddress source = BootStrapper.getBootstrapSource(tmd, load);
         assert three.equals(source);
-Range range3 = ss.getPrimaryRangeForEndpoint(three);
+
         InetAddress myEndpoint = InetAddress.getByName("127.0.0.1");
-        Range range3 = ss.getPrimaryRangeForEndPoint(three);
+Range range3 = ss.getPrimaryRangeForEndpoint(three);
         Token fakeToken = ((IPartitioner)StorageService.getPartitioner()).midpoint(range3.left, range3.right);
         assert range3.contains(fakeToken);
         ss.onChange(myEndpoint, StorageService.MOVE_STATE, new ApplicationState(StorageService.STATE_BOOTSTRAPPING + StorageService.Delimiter + ss.getPartitioner().getTokenFactory().toString(fakeToken)));

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class RestNodesShutdownAction extends BaseRestHandler {
         controller.registerHandler(RestRequest.Method.POST, "/_cluster/nodes/_shutdown", this);
         controller.registerHandler(RestRequest.Method.POST, "/_cluster/nodes/{nodeId}/_shutdown", this);
     }
-public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void handleRequest(final RestRequest request, final RestChannel channel) {
+public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) {
         String[] nodesIds = Strings.splitStringByCommaToArray(request.param("nodeId"));
         NodesShutdownRequest nodesShutdownRequest = new NodesShutdownRequest(nodesIds);
         nodesShutdownRequest.listenerThreaded(false);

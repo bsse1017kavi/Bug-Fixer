@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -113,9 +112,9 @@ public class PropertyFileFinder implements State {
         Set<String> foundUsers = new HashSet<String>();
         for (File current : stateValues.getUserFiles()) {
             UserPropertiesFileLoader pfl = null;
-foundUsers.addAll(pfl.getUserNames());
+            try {
                 pfl = loadUsersFile(current);
-                foundUsers.addAll(pfl.getProperties().stringPropertyNames());
+foundUsers.addAll(pfl.getUserNames());
                 if (realmName == null) {
                     realmName = pfl.getRealmName();
                 } else {

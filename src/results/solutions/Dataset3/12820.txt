@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -218,9 +217,9 @@ public class RemotingExtension implements Extension {
             }
             assert name != null;
             assert socketBinding != null;
-connector.get(OP).set(ADD);
+
             final ModelNode connector = new ModelNode();
-            connector.get(OP).set(ADD_CONNECTOR);
+connector.get(OP).set(ADD);
             connector.get(OP_ADDR).set(address).add(CONNECTOR, name);
             // requestProperties.get(NAME).set(name); // Name is part of the address
             connector.get(SOCKET_BINDING).set(socketBinding);

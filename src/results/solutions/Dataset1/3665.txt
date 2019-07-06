@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -305,9 +304,9 @@ public class StorageProxy implements StorageProxyMBean
                 Message message = messages.getKey();
                 // a single message object is used for unhinted writes, so clean out any forwards
                 // from previous loop iterations
-if (dataCenter.equals(localDataCenter))
+                message.removeHeader(RowMutation.FORWARD_HEADER);
 
-                if (dataCenter.equals(localDataCenter) || StorageService.instance.useEfficientCrossDCWrites())
+if (dataCenter.equals(localDataCenter))
                 {
                     // direct writes to local DC or old Cassadra versions
                     for (InetAddress destination : messages.getValue())

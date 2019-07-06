@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -198,9 +197,9 @@ public TypeBinding resolveType(BlockScope scope) {
 		for (int i = 0; i < arguments.length; i++) {
 		    TypeBinding parameterType = binding.parameters[i];
 		    TypeBinding argumentType = argumentTypes[i];
-scope.problemReporter().unsafeTypeConversion(arguments[i], argumentType, parameterType);
+			arguments[i].computeConversion(scope, parameterType, argumentType);
 			if (argumentType.needsUncheckedConversion(parameterType)) {
-				scope.problemReporter().unsafeRawConversion(arguments[i], argumentType, parameterType);
+scope.problemReporter().unsafeTypeConversion(arguments[i], argumentType, parameterType);
 			}
 		}
 		if (argsContainCast) {

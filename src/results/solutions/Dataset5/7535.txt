@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -59,9 +58,9 @@ public class StringResourceModelTest extends TestCase
 
 	protected void setUp() throws Exception
 	{
-application.getResourceSettings().addStringResourceLoader(
+		super.setUp();
 		application = new MockWebApplication(null);
-		application.getSettings().addStringResourceLoader(
+application.getResourceSettings().addStringResourceLoader(
 				new BundleStringResourceLoader("wicket.model.StringResourceModelTest"));
 		page = new MockPage(null);
 		ws = new WeatherStation();

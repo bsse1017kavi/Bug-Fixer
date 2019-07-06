@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class ConnectionFactoryAdd extends AbstractJMSSubsystemUpdate<Void> {
         final ConnectionFactoryService service = new ConnectionFactoryService(transform());
         final ServiceName serviceName = JMSSubsystemElement.JMS_CF_BASE.append(cf.getName());
         context.getBatchBuilder().addService(serviceName, service)
-.setInitialMode(Mode.ACTIVE);
+                .addDependency(JMSSubsystemElement.JMS_MANAGER, JMSServerManager.class, service.getJmsServer())
                 .addListener(new UpdateResultHandler.ServiceStartListener<P>(handler, param))
-                .setInitialMode(Mode.IMMEDIATE);
+.setInitialMode(Mode.ACTIVE);
     }
 
     /** {@inheritDoc} */

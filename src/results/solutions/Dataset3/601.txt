@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -114,9 +113,9 @@ public class StatelessBeanIntegrationTestCase {
         final JavaArchive archive = ShrinkWrap.create(JavaArchive.class, EJB3_DEPLOYMENT_NAME);
         archive.addClass(SimpleStatelessSessionBean.class);
         archive.setManifest(new Asset() {
-builder.addManifestHeader("Dependencies", "org.osgi.core,deployment.ejb3-osgi-target");
+            public InputStream openStream() {
                 ManifestBuilder builder = ManifestBuilder.newInstance();
-                builder.addManifestHeader("Dependencies", "org.osgi.core,deployment.ejb3-osgi-target:0.0.0");
+builder.addManifestHeader("Dependencies", "org.osgi.core,deployment.ejb3-osgi-target");
                 return builder.openStream();
             }
         });

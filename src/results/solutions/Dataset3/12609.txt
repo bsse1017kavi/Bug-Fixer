@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -997,9 +996,9 @@ public class ExampleRunner implements Runnable {
         address.add("queue", queueName);
 
         final ModelNode queueAddOperation = new ModelNode();
-queueAddOperation.get("entries").add(queueName);
+        queueAddOperation.get(ModelDescriptionConstants.OP).set(ModelDescriptionConstants.ADD);
         queueAddOperation.get(ModelDescriptionConstants.OP_ADDR).set(address);
-        queueAddOperation.add("entries", queueName);
+queueAddOperation.get("entries").add(queueName);
 
         DomainDeploymentUtils utils = null;
         boolean deployed = false;

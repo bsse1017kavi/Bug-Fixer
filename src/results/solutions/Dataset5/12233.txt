@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -5810,9 +5809,9 @@ throws Exception {
                     reportGenericSchemaError("au-props-correct.2: If the {attribute declaration} has a fixed {value constraint}, then if the attribute use itself has a {value constraint}, it must also be fixed and its value must match that of the {attribute declaration}'s {value constraint}" + errorContext);
                 }
 
-if((typeInfo != null) && (!isOptional || fixedStr.length() > 0)) {
+                // this nasty hack needed to ``override'' the
                 // global attribute with "use" and "fixed" on the ref'ing attribute
-                if(!isOptional || fixedStr.length() > 0) {
+if((typeInfo != null) && (!isOptional || fixedStr.length() > 0)) {
 					int referredAttName = fStringPool.addSymbol(referredAttribute.getAttribute(SchemaSymbols.ATT_NAME));
                     uriIndex = StringPool.EMPTY_STRING;
         			if ( fTargetNSURIString.length() > 0) {

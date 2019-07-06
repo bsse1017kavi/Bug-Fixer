@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2002-2007 the original author or authors.
  *
@@ -42,9 +41,9 @@ public final class ProceedTests {
 	private ProceedTestingAspect secondTestAspect;
 
 
-ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("proceedTests_.xml", getClass());
+	@Before
 	public void setUp() {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("proceedTests.xml", getClass());
+ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("proceedTests_.xml", getClass());
 		testBean = (SimpleBean) ctx.getBean("testBean");
 		firstTestAspect = (ProceedTestingAspect) ctx.getBean("firstTestAspect");
 		secondTestAspect = (ProceedTestingAspect) ctx.getBean("secondTestAspect");

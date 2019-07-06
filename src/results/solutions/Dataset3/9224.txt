@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -73,9 +72,9 @@ public class AdaptableJobFactory implements JobFactory {
 	protected Object createJobInstance(TriggerFiredBundle bundle) throws Exception {
 		// Reflectively adapting to differences between Quartz 1.x and Quartz 2.0...
 		Method getJobDetail = bundle.getClass().getMethod("getJobDetail");
-Class<?> jobClass = (Class<?>) ReflectionUtils.invokeMethod(getJobClass, jobDetail);
+		Object jobDetail = ReflectionUtils.invokeMethod(getJobDetail, bundle);
 		Method getJobClass = jobDetail.getClass().getMethod("getJobClass");
-		Class jobClass = (Class) ReflectionUtils.invokeMethod(getJobClass, jobDetail);
+Class<?> jobClass = (Class<?>) ReflectionUtils.invokeMethod(getJobClass, jobDetail);
 		return jobClass.newInstance();
 	}
 

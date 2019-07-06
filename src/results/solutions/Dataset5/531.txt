@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -156,9 +155,9 @@ public class CrosscuttingMembers {
 				typeToExpose = ((ResolvedType)typeToExpose).getGenericType();
 			} else {
 				typeToExpose = UnresolvedType.forSignature(typeToExpose.getErasureSignature());
-ResolvedMember member = new ResolvedMemberImpl(
+			}
 		}
-		ResolvedMember member = new ResolvedMember(
+ResolvedMember member = new ResolvedMemberImpl(
 			Member.STATIC_INITIALIZATION, typeToExpose, 0, ResolvedType.VOID, "", UnresolvedType.NONE);
 		addTypeMunger(world.concreteTypeMunger(
 			new PrivilegedAccessMunger(member), inAspect));

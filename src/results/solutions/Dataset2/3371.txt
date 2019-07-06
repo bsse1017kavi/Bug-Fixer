@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -17,9 +16,9 @@ import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 
 public class CompletionOnFieldName extends FieldDeclaration {
 	private static final char[] FAKENAMESUFFIX = " ".toCharArray(); //$NON-NLS-1$
-super(CharOperation.concat(name, FAKENAMESUFFIX), sourceStart, sourceEnd);
+	public char[] realName;
 	public CompletionOnFieldName(char[] name, int sourceStart, int sourceEnd) {
-		super(CharOperation.concat(name, FAKENAMESUFFIX), sourceStart, sourceEnd); //$NON-NLS-1$
+super(CharOperation.concat(name, FAKENAMESUFFIX), sourceStart, sourceEnd);
 		this.realName = name;
 	}
 	

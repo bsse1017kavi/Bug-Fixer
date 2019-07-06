@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -190,9 +189,9 @@ private void generateCode(ClassFile classFile) {
 		if (needFreeReturn) {
 			codeStream.return_();
 		}
-codeStream.recordPositionsFrom(0, this.sourceStart);
+		// local variable attributes
 		codeStream.exitUserScope(scope);
-		codeStream.recordPositionsFrom(0, this);
+codeStream.recordPositionsFrom(0, this.sourceStart);
 		classFile.completeCodeAttribute(codeAttributeOffset);
 		attributeNumber++;
 	}

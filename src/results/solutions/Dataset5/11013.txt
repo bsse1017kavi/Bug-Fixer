@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -121,9 +120,9 @@ public class ZipTest extends BuildFileTest {
     // Bugzilla Report 19449
     public void testFilesOnlyDoesntCauseRecreate()
         throws InterruptedException {
-Thread.sleep(3000);
+        executeTarget("testFilesOnlyDoesntCauseRecreateSetup");
         long l = getProject().resolveFile("test3.zip").lastModified();
-        Thread.currentThread().sleep(3000);
+Thread.sleep(3000);
         executeTarget("testFilesOnlyDoesntCauseRecreate");
         assertEquals(l, getProject().resolveFile("test3.zip").lastModified());
     }

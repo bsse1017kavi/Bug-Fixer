@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -117,9 +116,9 @@ public abstract class Statement extends ASTNode {
 	 * @exception IllegalArgumentException if the comment string is invalid
 	 */
 	public void setLeadingComment(String comment) {
-Scanner scanner = this.getAST().scanner;
+		if (comment != null) {
 			char[] source = comment.toCharArray();
-			Scanner scanner = new Scanner(true, true, false, false, false, null, null);
+Scanner scanner = this.getAST().scanner;
 			scanner.resetTo(0, source.length);
 			scanner.setSource(source);
 			try {

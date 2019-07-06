@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -56,9 +55,9 @@ public class RemoteChannelProxyControllerTestCase extends AbstractProxyControlle
     protected ProxyController createProxyController(final ModelController proxiedController, final PathAddress proxyNodeAddress) {
         TransactionalModelControllerOperationHandler operationHandler = new TransactionalModelControllerOperationHandler(proxiedController, Executors.newCachedThreadPool());
         try {
-channels.startClientConnetion();
+            channels = new RemoteChannelPairSetup();
             channels.setupRemoting(operationHandler);
-            channels.startChannels();
+channels.startClientConnetion();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

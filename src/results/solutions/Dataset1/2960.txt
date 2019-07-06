@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -64,9 +63,9 @@ public class TestBasics extends LuceneTestCase {
       writer.addDocument(doc);
     }
 
-searcher = new IndexSearcher(directory, true);
+    writer.close();
 
-    searcher = new IndexSearcher(directory);
+searcher = new IndexSearcher(directory, true);
   }
   
   public void testTerm() throws Exception {

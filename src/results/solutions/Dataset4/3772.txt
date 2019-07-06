@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -124,9 +123,9 @@ public class FieldQueryParser extends AbstractIndexComponent implements XContent
 
         if (queryString == null) {
             throw new QueryParsingException(index, "No value specified for term query");
-MapperQueryParser queryParser = new MapperQueryParser(fieldName, analyzer, parseContext);
+        }
 
-        MapperQueryParser queryParser = new MapperQueryParser(fieldName, analyzer, parseContext.mapperService(), parseContext.indexCache());
+MapperQueryParser queryParser = new MapperQueryParser(fieldName, analyzer, parseContext);
         queryParser.setEnablePositionIncrements(enablePositionIncrements);
         queryParser.setLowercaseExpandedTerms(lowercaseExpandedTerms);
         queryParser.setPhraseSlop(phraseSlop);

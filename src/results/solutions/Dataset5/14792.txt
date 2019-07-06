@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class QueryCacheStoreQuery
      */
     private List checkCache(QueryKey qk) {
         if (qk == null)
-if (!fetch.getEnlistInQueryCache())
+            return null;
         FetchConfiguration fetch = getContext().getFetchConfiguration();
-        if (!fetch.getQueryCache())
+if (!fetch.getEnlistInQueryCache())
             return null;
         if (fetch.getReadLockLevel() > LockLevels.LOCK_NONE)
             return null;

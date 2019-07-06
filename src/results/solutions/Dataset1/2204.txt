@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public interface IColumn
     public long timestamp(String key);
     public byte[] value();
     public byte[] value(String key);
-public void addColumn(IColumn column);
+    public Collection<IColumn> getSubColumns();
     public IColumn getSubColumn(String columnName);
-    public void addColumn(String name, IColumn column);
+public void addColumn(IColumn column);
     public IColumn diff(IColumn column);
     public int getObjectCount();
     public byte[] digest();

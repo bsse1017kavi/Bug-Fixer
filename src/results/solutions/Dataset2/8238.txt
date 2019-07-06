@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -41,9 +40,9 @@ public ProjectResourceCopier(IJavaProject project, JavaDevelopmentContextImpl de
 	this.projectRsc = this.project.getProject();
 	this.workspace = this.projectRsc.getWorkspace();
 	this.root = this.workspace.getRoot();
-IClasspathEntry[] entries = this.project.getExpandedClasspath(true);
+	try {
 		this.outputLocation = this.project.getOutputLocation();
-		IClasspathEntry[] entries = this.project.getResolvedClasspath(true);
+IClasspathEntry[] entries = this.project.getExpandedClasspath(true);
 		this.sourceFolders = new IResource[entries.length];
 		for (int i = 0, length = entries.length; i < length; i++) {
 			IClasspathEntry entry = entries[i];

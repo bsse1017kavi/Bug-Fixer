@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -276,9 +275,9 @@ public class StompBrokerRelayMessageHandlerIntegrationTests {
 				this.eventQueue.add((BrokerAvailabilityEvent) event);
 			}
 		}
-BrokerAvailabilityEvent event = this.eventQueue.poll(20000, TimeUnit.MILLISECONDS);
+
 		public void expectBrokerAvailabilityEvent(boolean isBrokerAvailable) throws InterruptedException {
-			BrokerAvailabilityEvent event = this.eventQueue.poll(10000, TimeUnit.MILLISECONDS);
+BrokerAvailabilityEvent event = this.eventQueue.poll(20000, TimeUnit.MILLISECONDS);
 			assertNotNull("Times out waiting for BrokerAvailabilityEvent[" + isBrokerAvailable + "]", event);
 			assertEquals(isBrokerAvailable, event.isBrokerAvailable());
 		}

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1250,9 +1249,9 @@ public abstract class ResolvedType extends UnresolvedType implements AnnotatedEl
      */
     public ResolvedType getDeclaringType() {
     	if (isArray()) return null;
-while (lastDollar >0) { // allow for classes starting '$' (pr120474)
+		String name = getName();
 		int lastDollar = name.lastIndexOf('$');
-		while (lastDollar != -1) {
+while (lastDollar >0) { // allow for classes starting '$' (pr120474)
 			ResolvedType ret = world.resolve(UnresolvedType.forName(name.substring(0, lastDollar)), true);
 			if (!ResolvedType.isMissing(ret)) return ret;
 			lastDollar = name.lastIndexOf('$', lastDollar-1);

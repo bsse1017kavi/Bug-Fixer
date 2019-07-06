@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -272,9 +271,9 @@ public class RecoveryAction extends AbstractIndexShardComponent implements Close
                             totalSize += indexInput.length();
                             indexInput.close();
                         }
-logger.trace("Recovery [phase1] to {}: recovering [{}] files with total size of [{}]", node, snapshot.getFiles().length, new SizeValue(totalSize));
+                        recoveryStatus.phase1TotalSize = totalSize;
 
-                        logger.trace("Recovery [phase1] to {}: recovering [{}] files with total size of [{}]", new Object[]{node, snapshot.getFiles().length, new SizeValue(totalSize)});
+logger.trace("Recovery [phase1] to {}: recovering [{}] files with total size of [{}]", node, snapshot.getFiles().length, new SizeValue(totalSize));
 
                         final CountDownLatch latch = new CountDownLatch(snapshot.getFiles().length);
                         final AtomicReference<Exception> lastException = new AtomicReference<Exception>();

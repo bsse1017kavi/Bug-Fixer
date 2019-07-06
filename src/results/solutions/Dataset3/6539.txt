@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ public class ChannelProvider implements JGroupsChannelLookup {
 
     public static void init(GlobalConfiguration global, ChannelFactory factory) {
         Properties properties = global.getTransportProperties();
-properties.put(ID, global.getTransportNodeName() + "-" + global.getClusterName());
+        properties.setProperty(JGroupsTransport.CHANNEL_LOOKUP, ChannelProvider.class.getName());
         properties.put(CHANNEL_FACTORY, factory);
-        properties.put(ID, global.getClusterName());
+properties.put(ID, global.getTransportNodeName() + "-" + global.getClusterName());
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -76,9 +75,9 @@ public class Server implements Service<Server> {
             servletContainer.getValue().registerSecurePort(listener.getName(), binding.getSocketAddress().getPort());
         }
     }
-listeners.remove(listener);
+
     protected void unregisterListener(AbstractListenerService<?> listener) {
-        listeners.add(listener);
+listeners.remove(listener);
         if (listener.isSecure()) {
             servletContainer.getValue().unregisterSecurePort(listener.getName());
         }

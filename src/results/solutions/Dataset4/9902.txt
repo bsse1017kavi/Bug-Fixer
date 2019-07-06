@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class FsGateway extends BlobStoreGateway {
             logger.warn("using local fs location for gateway, should be changed to be a shared location across nodes");
             gatewayFile = new File(environment.workFile(), "gateway");
         } else {
-initialize(new FsBlobStore(componentSettings, gatewayFile), clusterName, null);
+            gatewayFile = new File(location);
         }
-        initialize(new FsBlobStore(componentSettings, gatewayFile), clusterName);
+initialize(new FsBlobStore(componentSettings, gatewayFile), clusterName, null);
     }
 
     @Override public String type() {

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.CreateAliasConstantAction
@@ -210,9 +209,9 @@ class CreateAliasConstantAction extends DDLConstantAction
 			try
 			{
 				// Does the class exist?
-catch (ClassNotFoundException t)
+				realClass = cf.loadApplicationClass(checkClassName);
 			}
-			catch (Throwable t)
+catch (ClassNotFoundException t)
 			{
 				throw StandardException.newException(SQLState.LANG_TYPE_DOESNT_EXIST2, t, checkClassName);
 			}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -145,9 +144,9 @@ public class AccessAuthorizationResourceDefinition extends SimpleResourceDefinit
 
     @Override
     public void registerChildren(ManagementResourceRegistration resourceRegistration) {
-resourceRegistration.registerSubModel(RoleMappingResourceDefinition.create(configurableAuthorizer, isDomain));
+        if (!isHostController) {
             // Role Mapping
-            resourceRegistration.registerSubModel(RoleMappingResourceDefinition.create(configurableAuthorizer));
+resourceRegistration.registerSubModel(RoleMappingResourceDefinition.create(configurableAuthorizer, isDomain));
         }
 
         // Scoped roles

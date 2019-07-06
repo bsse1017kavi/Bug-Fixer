@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class ConnectionFactoryDefinition extends SimpleResourceDefinition {
         arraycopy(common, 0, result, 0, common.length);
         arraycopy(specific, 0, result, common.length, specific.length);
         return result;
-public static final AttributeDefinition[] ATTRIBUTES = concat(Regular.ATTRIBUTES, getDefinitions(Common.ATTRIBUTES));
+    }
 
-    public static final AttributeDefinition[] ATTRIBUTES = concat(getDefinitions(Common.ATTRIBUTES), Regular.ATTRIBUTES);
+public static final AttributeDefinition[] ATTRIBUTES = concat(Regular.ATTRIBUTES, getDefinitions(Common.ATTRIBUTES));
 
     static final AttributeDefinition[] READONLY_ATTRIBUTES = { Regular.INITIAL_MESSAGE_PACKET_SIZE };
 

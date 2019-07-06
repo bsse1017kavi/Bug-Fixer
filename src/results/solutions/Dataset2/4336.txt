@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -911,9 +910,9 @@ protected void popUntilElement(int kind){
 	if(elementPtr < 0) return;
 	int i = elementPtr;
 	while (i >= 0 && elementKindStack[i] != kind) {
-if(i >= 0) {
+		i--;
 	}
-	if(i > 0) {
+if(i >= 0) {
 		if(i < elementPtr) {
 			previousKind = elementKindStack[i+1];
 			previousInfo = elementInfoStack[i+1];

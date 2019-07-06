@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -173,9 +172,9 @@ public class InterceptorsAnnotationParsingProcessor implements DeploymentUnitPro
      * @return
      */
     private Collection<ComponentDescription> getApplicableComponents(final CompositeIndex index, final ClassInfo klass, final EEModuleDescription eeModuleDescription) {
-if (!descriptions.isEmpty()) {
+        Set<ComponentDescription> componentDescriptions = new HashSet<ComponentDescription>();
         final List<ComponentDescription> descriptions = eeModuleDescription.getComponentsByClassName(klass.name().toString());
-        if (componentDescriptions.isEmpty()) {
+if (!descriptions.isEmpty()) {
             componentDescriptions.addAll(descriptions);
         } else {
             componentDescriptions.addAll(this.getKnownSubClassComponents(index, klass, eeModuleDescription));

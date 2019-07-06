@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -418,9 +417,9 @@ public class TransportClientNodesService extends AbstractComponent {
                 latch.await();
             } catch (InterruptedException e) {
                 return;
-HashSet<DiscoveryNode> newNodes = new HashSet<DiscoveryNode>(listedNodes);
+            }
 
-            HashSet<DiscoveryNode> newNodes = new HashSet<DiscoveryNode>();
+HashSet<DiscoveryNode> newNodes = new HashSet<DiscoveryNode>(listedNodes);
             for (ClusterStateResponse clusterStateResponse : clusterStateResponses) {
                 if (!ignoreClusterName && !clusterName.equals(clusterStateResponse.getClusterName())) {
                     logger.warn("node {} not part of the cluster {}, ignoring...", clusterStateResponse.getState().nodes().localNode(), clusterName);

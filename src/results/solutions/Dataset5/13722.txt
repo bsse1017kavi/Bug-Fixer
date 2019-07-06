@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -403,9 +402,9 @@ public class WebRequestCycle extends RequestCycle
 	{
 		final String pathInfo = getWebRequest().getPathInfo();
 		if (pathInfo.startsWith(resourceReferencePrefix))
-final Resource resource = getApplication().getSharedResources().get(resourceReferenceKey);
+		{
 			final String resourceReferenceKey = pathInfo.substring(resourceReferencePrefix.length());
-			final Resource resource = getApplication().getResource(resourceReferenceKey);
+final Resource resource = getApplication().getSharedResources().get(resourceReferenceKey);
 			if (resource == null)
 			{
 				throw new WicketRuntimeException("Could not find resource referenced by key " + resourceReferenceKey);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.taxonomy.directory;
 
 import java.io.IOException;
@@ -195,9 +194,9 @@ public class DirectoryTaxonomyReader implements TaxonomyReader {
     int ret = TaxonomyReader.INVALID_ORDINAL;
     try {
       indexReaderLock.readLock().lock();
-DocsEnum docs = MultiFields.getTermDocsEnum(indexReader, liveDocs, Consts.FULL, new BytesRef(path), false);
+      // TODO (Facet): avoid Multi*?
       Bits liveDocs = MultiFields.getLiveDocs(indexReader);
-      DocsEnum docs = MultiFields.getTermDocsEnum(indexReader, liveDocs, Consts.FULL, new BytesRef(path), 0);
+DocsEnum docs = MultiFields.getTermDocsEnum(indexReader, liveDocs, Consts.FULL, new BytesRef(path), false);
       if (docs != null && docs.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
         ret = docs.docID();
       }

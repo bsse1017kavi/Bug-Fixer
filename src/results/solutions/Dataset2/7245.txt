@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -295,9 +294,9 @@ public abstract class Engine implements ITypeRequestor {
 		AbstractMethodDeclaration[] methods = type.methods;
 		if (methods != null) {
 			int length = methods.length;
-if (method.bodyStart > position + 1)
+			for (int i = 0; i < length; i++) {
 				AbstractMethodDeclaration method = methods[i];
-				if (method.bodyStart > position)
+if (method.bodyStart > position + 1)
 					continue;
 
 				if(method.isDefaultConstructor())

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -63,9 +62,9 @@ public abstract class ShadowMunger implements PartialOrder.PartialComparable, IH
 	 */
     public boolean match(Shadow shadow, World world) {
     	return pointcut.match(shadow).maybeTrue();
-public abstract ShadowMunger parameterizeWith(ResolvedType declaringType,Map typeVariableMap);
+    }
     
-    public abstract ShadowMunger parameterizeWith(Map typeVariableMap); 
+public abstract ShadowMunger parameterizeWith(ResolvedType declaringType,Map typeVariableMap);
     
 	public int fallbackCompareTo(Object other) {
 		return toString().compareTo(toString());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -392,9 +391,9 @@ public class GeoFilterTests extends ElasticsearchIntegrationTest {
     }
 
     @Test
-byte[] bulkAction = unZipData("/org/elasticsearch/search/geo/gzippedmap.gz");
+    @Slow
     public void bulktest() throws Exception {
-        byte[] bulkAction = unZipData("/org/elasticsearch/search/geo/gzippedmap.json");
+byte[] bulkAction = unZipData("/org/elasticsearch/search/geo/gzippedmap.gz");
 
         String mapping = XContentFactory.jsonBuilder()
                 .startObject()

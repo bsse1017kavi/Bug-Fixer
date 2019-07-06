@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004, 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -73,9 +72,9 @@ public class MultiProtocolFileSystemBrowserAdapter implements IRemoteFileSystemB
 		} catch (final MalformedURLException e) {
 			throw new RemoteFileSystemException(Messages.AbstractRetrieveFileTransfer_MalformedURLException);
 		}
-fileSystemBrowser = Activator.getDefault().getBrowseFileTransfer(url.getProtocol());
+
 		IRemoteFileSystemBrowserContainerAdapter fileSystemBrowser = null;
-		//fileSystemBrowser = Activator.getDefault().getFileSystemBrowser(protocol);
+fileSystemBrowser = Activator.getDefault().getBrowseFileTransfer(url.getProtocol());
 
 		if (fileSystemBrowser == null) {
 			if (url.getProtocol().equalsIgnoreCase("file")) { //$NON-NLS-1$

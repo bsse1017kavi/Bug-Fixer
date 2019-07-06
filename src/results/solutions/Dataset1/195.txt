@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -157,9 +156,9 @@ class ExtendedDismaxQParser extends QParser {
 
     /* * * Main User Query * * */
     parsedUserQuery = null;
-if( userQuery == null || userQuery.trim().length() == 0 ) {
+    String userQuery = getString();
     altUserQuery = null;
-    if( userQuery == null || userQuery.length() < 1 ) {
+if( userQuery == null || userQuery.trim().length() == 0 ) {
       // If no query is specified, we may have an alternate
       String altQ = solrParams.get( DisMaxParams.ALTQ );
       if (altQ != null) {

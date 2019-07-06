@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ class EESubsystemXmlPersister implements XMLStreamConstants, XMLElementWriter<Su
         ModelNode eeSubSystem = context.getModelNode();
         GlobalModulesDefinition.INSTANCE.marshallAsElement(eeSubSystem, writer);
         EeSubsystemRootResource.EAR_SUBDEPLOYMENTS_ISOLATED.marshallAsElement(eeSubSystem, writer);
-EeSubsystemRootResource.EJB_ANNOTATION_PROPERTY_REPLACEMENT.marshallAsElement(eeSubSystem, writer);
+        EeSubsystemRootResource.SPEC_DESCRIPTOR_PROPERTY_REPLACEMENT.marshallAsElement(eeSubSystem, writer);
         EeSubsystemRootResource.JBOSS_DESCRIPTOR_PROPERTY_REPLACEMENT.marshallAsElement(eeSubSystem, writer);
-        EeSubsystemRootResource.ANNOTATION_PROPERTY_REPLACEMENT.marshallAsElement(eeSubSystem, writer);
+EeSubsystemRootResource.EJB_ANNOTATION_PROPERTY_REPLACEMENT.marshallAsElement(eeSubSystem, writer);
         writeConcurrentElement(writer,eeSubSystem);
         writeDefaultBindingsElement(writer,eeSubSystem);
         writer.writeEndElement();

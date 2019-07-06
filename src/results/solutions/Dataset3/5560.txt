@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ import org.jboss.as.controller.access.TargetResource;
  *
  * @author <a href="mailto:darran.lofthouse@jboss.com">Darran Lofthouse</a>
  */
-private static final String IN_VM_ROLE = StandardRole.SUPERUSER.getOfficialForm();
+public class StandardRoleMapper implements RoleMapper {
 
-    private static final String IN_VM_ROLE = StandardRole.SUPERUSER.toString();
+private static final String IN_VM_ROLE = StandardRole.SUPERUSER.getOfficialForm();
     private static final RunAsRolePermission RUN_AS_IN_VM_ROLE = new RunAsRolePermission(IN_VM_ROLE);
     private final AuthorizerConfiguration authorizerConfiguration;
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ public class TransactionExtension implements Extension {
                     .build();
             registration.registerOperationHandler(resolvePathHandler.getOperationDefinition(), resolvePathHandler);
         }
-ManagementResourceRegistration logStoreChild = registration.registerSubModel(new LogStoreDefinition(resource));
 
-        ManagementResourceRegistration logStoreChild = registration.registerSubModel(new LogStoreDefinition(resource, registerRuntimeOnly));
+
+ManagementResourceRegistration logStoreChild = registration.registerSubModel(new LogStoreDefinition(resource));
         if (registerRuntimeOnly) {
             ManagementResourceRegistration transactionChild = logStoreChild.registerSubModel(new LogStoreTransactionDefinition(resource));
             transactionChild.registerSubModel(LogStoreTransactionParticipantDefinition.INSTANCE);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -274,9 +273,9 @@ public class SendMailCommand {
             tr.connect();
         }
 
-if (listener != null /*synchronousMode==true*/) {
+        tr.sendMessage(message, message.getAllRecipients());
 
-        if (synchronousMode) {
+if (listener != null /*synchronousMode==true*/) {
             listener.attend(); // listener cannot be null here
         }
 

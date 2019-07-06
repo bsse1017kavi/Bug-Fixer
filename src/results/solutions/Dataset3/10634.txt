@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -747,9 +746,9 @@ public class AnnotationMethodHandlerAdapter extends WebContentGenerator
 			Cookie cookieValue = WebUtils.getCookie(servletRequest, cookieName);
 			if (Cookie.class.isAssignableFrom(paramType)) {
 				return cookieValue;
-return urlPathHelper.decodeRequestString(servletRequest, cookieValue.getValue());
+			}
 			else if (cookieValue != null) {
-				return cookieValue.getValue();
+return urlPathHelper.decodeRequestString(servletRequest, cookieValue.getValue());
 			}
 			else {
 				return null;

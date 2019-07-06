@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class RestActions {
         if (!response.shardFailures().isEmpty()) {
             builder.startArray("failures");
             for (ShardOperationFailedException shardFailure : response.shardFailures()) {
-builder.field("index", shardFailure.index(), XContentBuilder.FieldCaseConversion.NONE);
+                builder.startObject();
                 if (shardFailure.index() != null) {
-                    builder.field("index", shardFailure.index());
+builder.field("index", shardFailure.index(), XContentBuilder.FieldCaseConversion.NONE);
                 }
                 if (shardFailure.shardId() != -1) {
                     builder.field("shard", shardFailure.shardId());

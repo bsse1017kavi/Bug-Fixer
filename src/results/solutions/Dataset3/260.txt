@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -178,9 +177,9 @@ public class TestUtils {
             slot = moduleSpec.substring(c1 + 1);
         } else {
             name = moduleSpec;
-// assert slot.equals(ModuleItem.MAIN_SLOT); // update to support other slots too
+            slot = "main";
         }
-        assert slot.equals(ModuleItem.MAIN_SLOT); // update to support other slots too
+// assert slot.equals(ModuleItem.MAIN_SLOT); // update to support other slots too
         final String[] segments = name.split("\\.");
         assert segments.length > 0;
         File dir = baseDir;

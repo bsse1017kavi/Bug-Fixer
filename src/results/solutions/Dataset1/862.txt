@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 import org.apache.commons.cli.CommandLine;
@@ -221,9 +220,9 @@ public class ZkCLI {
           String confName = line.getOptionValue(CONFNAME);
           
           ZkController.downloadConfigDir(zkClient, confName, new File(confDir));
-System.out.println("-" + COLLECTION + " and -" + CONFNAME
+        } else if (line.getOptionValue(CMD).equals(LINKCONFIG)) {
           if (!line.hasOption(COLLECTION) || !line.hasOption(CONFNAME)) {
-            System.out.println("-" + CONFDIR + " and -" + CONFNAME
+System.out.println("-" + COLLECTION + " and -" + CONFNAME
                 + " are required for " + LINKCONFIG);
             System.exit(1);
           }

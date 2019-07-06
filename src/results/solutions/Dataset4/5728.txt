@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -33,9 +32,9 @@ import org.junit.Test;
 
 import java.util.List;
 
-@ClusterScope(scope=Scope.TEST, numDataNodes =0)
+import static org.hamcrest.Matchers.equalTo;
 
-@ClusterScope(scope=Scope.TEST, numNodes=0)
+@ClusterScope(scope=Scope.TEST, numDataNodes =0)
 public class ZenUnicastDiscoveryTestsMinimumMasterNodes extends ElasticsearchIntegrationTest {
 
     @Test

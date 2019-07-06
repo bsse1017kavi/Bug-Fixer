@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -299,9 +298,9 @@ public class NRTCachingDirectory extends Directory {
       final IOContext context = IOContext.DEFAULT;
       final IndexOutput out = delegate.createOutput(fileName, context);
       IndexInput in = null;
-out.copyBytes(in, in.length());
+      try {
         in = cache.openInput(fileName, context);
-        in.copyBytes(out, in.length());
+out.copyBytes(in, in.length());
       } finally {
         IOUtils.close(in, out);
       }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -78,8 +77,8 @@ public class TermJsonFilterParser extends AbstractIndexComponent implements Json
         }
         if (filter == null) {
             filter = new TermFilter(new Term(fieldName, value));
-return wrapSmartNameFilter(filter, smartNameFieldMappers, parseContext.indexCache());
+        }
         filter = parseContext.cacheFilterIfPossible(filter);
-        return wrapSmartNameFilter(filter, smartNameFieldMappers, parseContext.filterCache());
+return wrapSmartNameFilter(filter, smartNameFieldMappers, parseContext.indexCache());
     }
 }

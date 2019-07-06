@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -290,9 +289,9 @@ public class ContextAndHandlerManager implements IContextResolver {
 		try {
 			// TODO: get rid of this
 			if (contexts.size() == 0)
-keyMachine.setContexts((String[]) contexts.toArray(new String[contexts.size()]));
+				contexts.add(IWorkbenchConstants.DEFAULT_ACCELERATOR_SCOPE_ID);
 			
-			keyMachine.setScopes((String[]) contexts.toArray(new String[contexts.size()]));
+keyMachine.setContexts((String[]) contexts.toArray(new String[contexts.size()]));
 		} catch (IllegalArgumentException eIllegalArgument) {
 			System.err.println(eIllegalArgument);
 		}

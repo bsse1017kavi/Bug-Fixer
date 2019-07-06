@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -397,9 +396,9 @@ public class ListUtils {
      * @param <E>  the element type
      * @param list  the list to make unmodifiable, must not be null
      * @return an unmodifiable list backed by the given list
-public static <E> List<E> unmodifiableList(final List<? extends E> list) {
+     * @throws IllegalArgumentException  if the list is null
      */
-    public static <E> List<E> unmodifiableList(final List<E> list) {
+public static <E> List<E> unmodifiableList(final List<? extends E> list) {
         return UnmodifiableList.unmodifiableList(list);
     }
 

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -79,9 +78,9 @@ public class TestNoDeletionPolicy extends LuceneTestCase {
       doc.add(newTextField("c", "a" + i, Field.Store.YES));
       writer.addDocument(doc);
       writer.commit();
-writer.shutdown();
+      assertEquals("wrong number of commits !", i + 1, DirectoryReader.listCommits(dir).size());
     }
-    writer.close();
+writer.shutdown();
     dir.close();
   }
   

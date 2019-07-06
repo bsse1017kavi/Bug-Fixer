@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -203,9 +202,9 @@ public class RangeQuery extends MultiTermQuery {
     RangeQuery other = (RangeQuery) o;
 
     if (this.field != other.field  // interned comparison
-|| (this.collator != null && ! this.collator.equals(other.collator) || (this.collator == null && other.collator != null))
+        || this.includeLower != other.includeLower
         || this.includeUpper != other.includeUpper
-        || (this.collator != null && ! this.collator.equals(other.collator))
+|| (this.collator != null && ! this.collator.equals(other.collator) || (this.collator == null && other.collator != null))
        ) { return false; }
     String lowerVal = this.lowerTerm == null ? null : lowerTerm.text();
     String upperVal = this.upperTerm == null ? null : upperTerm.text();

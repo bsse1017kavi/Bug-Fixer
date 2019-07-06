@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -434,9 +433,9 @@ public void copy () {
 	OS.SendMessage (handle, OS.WM_COPY, 0, 0);
 }
 
-state &= ~(CANVAS | TRANSPARENT);
+void createHandle () {
 	super.createHandle ();
-	state &= ~CANVAS;
+state &= ~(CANVAS | TRANSPARENT);
 
 	/* Get the text and list window procs */
 	int hwndText = OS.GetDlgItem (handle, CBID_EDIT);

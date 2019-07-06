@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -156,9 +155,9 @@ public class RegistryService<K, V> implements Service<Registry<K, V>>, Registry<
         cache.removeListener(this);
         cache.getCacheManager().removeListener(this);
         Operation<Void> operation = new Operation<Void>() {
-cache.remove(getLocalAddress(cache));
+            @Override
             public Void invoke(Cache<Address, Map.Entry<K, V>> cache) {
-                cache.removeAsync(getLocalAddress(cache));
+cache.remove(getLocalAddress(cache));
                 return null;
             }
         };

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -232,9 +231,9 @@ public class RecoveryTarget extends AbstractComponent {
                 listener.onIgnoreRecovery(true, "source node disconnected");
                 return;
             }
-listener.onIgnoreRecovery(true, "source shard is closed");
+
             if (cause instanceof IndexShardClosedException) {
-                listener.onIgnoreRecovery(true, "source node disconnected");
+listener.onIgnoreRecovery(true, "source shard is closed");
                 return;
             }
 

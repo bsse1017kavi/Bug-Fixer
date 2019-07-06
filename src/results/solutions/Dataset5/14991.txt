@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2003 Contributors.
  * All rights reserved. 
@@ -91,9 +90,9 @@ public class AjcTaskCompileCommand implements ICommand {
                 && (curTime < (numMessagesTime + targetQuietTime))) {
             // delay until next check
             long nextCheck = curTime + checkInterval;
-Thread.sleep(nextCheck - curTime);
+            while (nextCheck > curTime) {
                 try {
-                    thread.sleep(nextCheck - curTime);
+Thread.sleep(nextCheck - curTime);
                 } catch (InterruptedException e) {
                     // ignore
                 }

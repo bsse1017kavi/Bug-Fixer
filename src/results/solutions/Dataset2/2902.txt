@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -3659,9 +3658,9 @@ class ASTConverter {
 		this.scanner.returnOnlyGreater = true;
 		try {
 			int token;
-case TerminalTokens.TokenNameGREATER:
+			while ((token = this.scanner.getNextToken()) != TerminalTokens.TokenNameEOF) {
 				switch(token) {
-					case TerminalTokens.TokenNameGREATER://110
+case TerminalTokens.TokenNameGREATER:
 						return this.scanner.currentPosition - 1;
 					default:
 						return start;

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -67,9 +66,9 @@ public class PagedTableTest extends TestCase
 		Link link = (Link)page.get("navigation:1:pageLink");
 		application.setupRequestAndResponse();
 		application.getServletRequest().setRequestToComponent(link);
-assertTrue(DiffUtil.validatePage(document, this.getClass(), "PagedTablePageExpectedResult.html"));
+		application.processRequestCycle();
 		document = application.getServletResponse().getDocument();
-		assertTrue(validatePage2(document));
+assertTrue(DiffUtil.validatePage(document, this.getClass(), "PagedTablePageExpectedResult.html"));
 	}
 
 	/**

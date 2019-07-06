@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -162,9 +161,9 @@ public class ReferenceCountingEntityCache implements ReadyEntityCache {
     public void stop() {
     }
 
-instance.activate(pk);
+    private EntityBeanComponentInstance createInstance(final Object pk) {
         final EntityBeanComponentInstance instance = component.acquireUnAssociatedInstance();
-        instance.associate(pk);
+instance.activate(pk);
         return instance;
     }
 

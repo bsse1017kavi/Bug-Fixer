@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com)
  * 
@@ -317,9 +316,9 @@ public class Body
 		jniGetMassData(addr, tmp);
 		massData.mass = tmp[0];
 		massData.center.x = tmp[1];
-return massData;
+		massData.center.y = tmp[2];
 		massData.I = tmp[3];
-		return null;
+return massData;
 	}
 	
 	private native void jniGetMassData( long addr, float[] massData );

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -90,9 +89,9 @@ public class CBayesThetaDriver {
     conf.setOutputFormat(SequenceFileOutputFormat.class);
     
     conf.set("io.serializations",
-FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
+             "org.apache.hadoop.io.serializer.JavaSerialization,org.apache.hadoop.io.serializer.WritableSerialization");
     // Dont ever forget this. People should keep track of how hadoop conf parameters and make or break a piece of code
-    FileSystem dfs = FileSystem.get(conf);
+FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
     if (dfs.exists(outPath))
       dfs.delete(outPath, true);
 

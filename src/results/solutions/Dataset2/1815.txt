@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -762,9 +761,9 @@ public class TypeDeclaration
 				for (int i = 0, count = fields.length; i < count; i++) {
 					FieldDeclaration field = fields[i];
 					if (field.isField()) {
-if (field.initialization != null) field.initialization.resolve(field.isStatic() ? staticInitializerScope : initializerScope);
+						if (field.binding == null) {
 							// still discover secondary errors
-							// if (field.initialization != null) field.initialization.resolve(field.isStatic() ? staticInitializerScope : initializerScope);
+if (field.initialization != null) field.initialization.resolve(field.isStatic() ? staticInitializerScope : initializerScope);
 							ignoreFurtherInvestigation = true;
 							continue;
 						}

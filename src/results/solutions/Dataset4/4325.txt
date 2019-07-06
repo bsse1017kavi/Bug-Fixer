@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class MapperService extends AbstractIndexComponent implements Iterable<Do
 
     private final SmartIndexNameSearchAnalyzer searchAnalyzer;
 
-this.documentParser = new XContentDocumentMapperParser(index, indexSettings, analysisService);
+    @Inject public MapperService(Index index, @IndexSettings Settings indexSettings, Environment environment, AnalysisService analysisService) {
         super(index, indexSettings);
-        this.documentParser = new XContentDocumentMapperParser(analysisService);
+this.documentParser = new XContentDocumentMapperParser(index, indexSettings, analysisService);
         this.searchAnalyzer = new SmartIndexNameSearchAnalyzer(analysisService.defaultSearchAnalyzer());
 
         this.dynamic = componentSettings.getAsBoolean("dynamic", true);

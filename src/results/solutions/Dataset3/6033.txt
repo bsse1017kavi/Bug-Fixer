@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class EeWriteAttributeHandler extends AbstractWriteAttributeHandler<Void>
         applyUpdateToDeploymentUnitProcessor(context, valueToRestore, attributeName);
     }
 
-moduleDependencyProcessor.setGlobalModules(GlobalModulesDefinition.createModuleList(context, newValue));
+    private void applyUpdateToDeploymentUnitProcessor(final OperationContext context, ModelNode newValue, String attributeName) throws OperationFailedException {
         if (GlobalModulesDefinition.INSTANCE.getName().equals(attributeName)) {
-            moduleDependencyProcessor.setGlobalModules(newValue);
+moduleDependencyProcessor.setGlobalModules(GlobalModulesDefinition.createModuleList(context, newValue));
         } else if (EeSubsystemRootResource.EAR_SUBDEPLOYMENTS_ISOLATED.getName().equals(attributeName)) {
             boolean isolate = newValue.asBoolean();
             isolationProcessor.setEarSubDeploymentsIsolated(isolate);

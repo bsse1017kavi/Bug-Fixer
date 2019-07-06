@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -36,9 +35,9 @@ public static void main(String[] args) {
 public void test_ConstructorLorg_eclipse_swt_graphics_ImageLoaderLorg_eclipse_swt_graphics_ImageDataIZ() {
 	final int COUNT = 30000000;
 	
-PerformanceMeter meter = createMeter("ImageLoaderEvent constr.");
+	ImageLoader loader = new ImageLoader();
 	
-	PerformanceMeter meter = createMeter();
+PerformanceMeter meter = createMeter("ImageLoaderEvent constr.");
 	meter.start();
 	for (int i = 0; i < COUNT; i++) {
 		new ImageLoaderEvent(loader, null, 0, true);

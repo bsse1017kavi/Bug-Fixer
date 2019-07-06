@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -199,9 +198,9 @@ public class VaultTool {
                 System.out.println("Password doesn't exist.");
                 return 5;
             }
-String password = cmdLine.getOptionValue(SEC_ATTR_VALUE_PARAM, "password");
+        } else {
             // add password
-            String password = cmdLine.getOptionValue(ATTRIBUTE_PARAM, "password");
+String password = cmdLine.getOptionValue(SEC_ATTR_VALUE_PARAM, "password");
             nonInteractiveSession.addSecuredAttributeWithDisplay(vaultBlock, attributeName, password.toCharArray());
             return 0;
         }

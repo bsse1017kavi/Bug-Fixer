@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -135,9 +134,9 @@ public class SortParseElement implements SearchParseElement {
                             if (token == XContentParser.Token.FIELD_NAME) {
                                 innerJsonName = parser.currentName();
                             } else if (token.isValue()) {
-} else if ("order".equals(innerJsonName) || "sort_order".equals(innerJsonName) || "sortOrder".equals(innerJsonName)) {
+                                if ("reverse".equals(innerJsonName)) {
                                     reverse = parser.booleanValue();
-                                } else if ("order".equals(innerJsonName)) {
+} else if ("order".equals(innerJsonName) || "sort_order".equals(innerJsonName) || "sortOrder".equals(innerJsonName)) {
                                     if ("asc".equals(parser.text())) {
                                         reverse = SCORE_FIELD_NAME.equals(fieldName);
                                     } else if ("desc".equals(parser.text())) {

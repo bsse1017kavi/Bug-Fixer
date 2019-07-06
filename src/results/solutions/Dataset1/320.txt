@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -182,9 +181,9 @@ public final class LDADriver extends AbstractJob {
     writeInitialState(stateIn, numTopics, numWords);
     double oldLL = Double.NEGATIVE_INFINITY;
     boolean converged = false;
-log.info("LDA Iteration {}", iteration);
+
     for (int iteration = 1; ((maxIterations < 1) || (iteration <= maxIterations)) && !converged; iteration++) {
-      log.info("Iteration {}", iteration);
+log.info("LDA Iteration {}", iteration);
       // point the output to a new directory per iteration
       Path stateOut = new Path(output, "state-" + iteration);
       double ll = runIteration(conf, input, stateIn, stateOut, numTopics, numWords, topicSmoothing);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -237,9 +236,9 @@ class LRSProxyMap
         final JDBCFetchConfiguration fetch = store.getFetchConfiguration();
         final ClassMapping[] clss = _strat.getIndependentValueMappings(true);
         final Joins[] resJoins = new Joins[Math.max(1, clss.length)];
-union.setExpectedResultCount(1,true);
+        Union union = store.getSQLFactory().newUnion
             (Math.max(1, clss.length));
-        union.setSingleResult(true);
+union.setExpectedResultCount(1,true);
         if (fetch.getSubclassFetchMode(_strat.getFieldMapping().
             getElementMapping().getTypeMapping())
             != JDBCFetchConfiguration.EAGER_JOIN)

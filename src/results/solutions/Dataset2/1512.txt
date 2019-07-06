@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -317,9 +316,9 @@ public static Object getTarget(IPath path, boolean checkResourceExistence) {
 	Object target = getWorkspaceTarget(path); // Implicitly checks resource existence
 	if (target != null)
 		return target;
-public static IResource getWorkspaceTarget(IPath path) {
+	return getExternalTarget(path, checkResourceExistence);
 }
-public static Object getWorkspaceTarget(IPath path) {
+public static IResource getWorkspaceTarget(IPath path) {
 	if (path == null || path.getDevice() != null)
 		return null;
 	IWorkspace workspace = ResourcesPlugin.getWorkspace();

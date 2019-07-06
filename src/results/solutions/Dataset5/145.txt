@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class FormTesterTest extends WicketTestCase
 		assertNotNull(domainObject);
 		assertNull(domainObject.getText());
 
-formTester.setFile("file", new File(getBasedir() + "src/test/java/org/apache/wicket/util/tester/bg.jpg"), "image/jpeg");
+
 		FormTester formTester = tester.newFormTester("form");
-		formTester.setFile("file", new File("src/test/java/org/apache/wicket/util/tester/bg.jpg"), "image/jpeg");
+formTester.setFile("file", new File(getBasedir() + "src/test/java/org/apache/wicket/util/tester/bg.jpg"), "image/jpeg");
 		formTester.setValue("text", "Mock value");
 		formTester.submit();
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2013, Red Hat Inc., and individual contributors as indicated
@@ -32,9 +31,9 @@ import javax.validation.constraints.NotNull;
 public class Reservation {
 
     @CustomMin
-@NotNull(message = "may not be null")
+    private int numberOfPeople;
 
-    @NotNull
+@NotNull(message = "may not be null")
     private String lastName;
 
     public Reservation(int numberOfPeople, String lastName) {

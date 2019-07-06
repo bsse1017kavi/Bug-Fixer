@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP_ADDR;
@@ -27,9 +26,9 @@ public class CacheRemove extends AbstractRemoveStepHandler {
 
         // what about the cache configuration?
 
-log.debugf("cache %s removed for container %s", cacheName, containerName);
+        // remove the CacheService instance
         context.removeService(EmbeddedCacheManagerService.getServiceName(containerName).append(cacheName));
-        log.debug("cache " + cacheName + " removed for container " + containerName);
+log.debugf("cache %s removed for container %s", cacheName, containerName);
     }
 
     protected void recoverServices(OperationContext context, ModelNode operation, ModelNode model) {

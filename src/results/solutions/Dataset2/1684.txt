@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -458,9 +457,9 @@ public static void searchAllPossibleSubTypes(
 		public boolean acceptIndexMatch(String documentPath, SearchPattern indexRecord, SearchParticipant participant, AccessRuleSet access) {
 			SuperTypeReferencePattern record = (SuperTypeReferencePattern)indexRecord;
 			boolean isLocalOrAnonymous = record.enclosingTypeName == IIndexConstants.ONE_ZERO;
-int suffix = documentPath.toLowerCase().lastIndexOf(SUFFIX_STRING_class);
+			pathRequestor.acceptPath(documentPath, isLocalOrAnonymous);
 			char[] typeName = record.simpleName;
-			int suffix = documentPath.toLowerCase().indexOf(SUFFIX_STRING_class);
+int suffix = documentPath.toLowerCase().lastIndexOf(SUFFIX_STRING_class);
 			if (suffix != -1){ 
 				HierarchyBinaryType binaryType = (HierarchyBinaryType)binariesFromIndexMatches.get(documentPath);
 				if (binaryType == null){

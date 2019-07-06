@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -554,9 +553,9 @@ public class CSVFormat implements Serializable {
             sb.append(' ');
             sb.append("Escape=<").append(escape).append('>');
         }
-sb.append("QuoteChar=<").append(quoteChar).append('>');
+        if (isQuoting()) {
             sb.append(' ');
-            sb.append("Encapsulator=<").append(quoteChar).append('>');
+sb.append("QuoteChar=<").append(quoteChar).append('>');
         }
         if (isCommentingEnabled()) {
             sb.append(' ');

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -176,9 +175,9 @@ public class HTTPBasicServerAuthModule extends WebServerAuthModule {
             authenticateCC.append('\"');
             authenticate.toChars();
 
-// Ignore IOException here (client disconnect)
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         } catch (IOException e) {
-            log.errorf("Caught Exception: %s", e.getLocalizedMessage());
+// Ignore IOException here (client disconnect)
         }
 
         return AuthStatus.FAILURE;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -273,9 +272,9 @@ public class MarkupResourceStream implements IResourceStream, IFixedLocationReso
 		this.wicketNamespace = wicketNamespace;
 		wicketId = wicketNamespace + ":id";
 
-log.debug("You are using a non-standard namespace name: '{}'", wicketNamespace);
+		if (!MarkupParser.WICKET.equals(wicketNamespace))
 		{
-			log.info("You are using a non-standard component name: " + wicketNamespace);
+log.debug("You are using a non-standard namespace name: '{}'", wicketNamespace);
 		}
 	}
 

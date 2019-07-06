@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -41,9 +40,9 @@ public class ComponentInstantiationAuthorizer implements IComponentInstantiation
 	/**
 	 * @see wicket.application.IComponentInstantiationListener#onInstantiation(wicket.Component)
 	 */
-if (!Session.get().getAuthorizationStrategy().isInstantiationAuthorized(component.getClass()))
+	public void onInstantiation(Component component)
 	{
-		if (!Session.get().getAuthorizationStrategy().authorizeInstantiation(component.getClass()))
+if (!Session.get().getAuthorizationStrategy().isInstantiationAuthorized(component.getClass()))
 		{
 			throw new UnauthorizedInstantiationException(component.getClass());
 		}

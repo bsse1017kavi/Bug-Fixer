@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class TransportSearchQueryAndFetchAction extends TransportSearchTypeActio
                 listener.onFailure(failure);
             }
         }
-sortedShardList = searchPhaseController.sortDocs(request, useSlowScroll, firstResults);
+
         private void innerFinishHim() throws IOException {
-            sortedShardList = searchPhaseController.sortDocs(firstResults);
+sortedShardList = searchPhaseController.sortDocs(request, useSlowScroll, firstResults);
             final InternalSearchResponse internalResponse = searchPhaseController.merge(sortedShardList, firstResults, firstResults);
             String scrollId = null;
             if (request.scroll() != null) {

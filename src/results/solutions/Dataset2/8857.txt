@@ -1,4 +1,3 @@
-
 /*
  * BoyerMooreSearchMatcher.java - Literal pattern String matcher utilizing the
  *         Boyer-Moore algorithm
@@ -121,9 +120,9 @@ public class BoyerMooreSearchMatcher implements SearchMatcher
 		{
 			replaceNS.setVariable("_0",text);
 			Object obj = BeanShell.runCachedBlock(replaceMethod,
-return "";
+				null,replaceNS);
 			if(obj == null)
-				return null;
+return "";
 			else
 				return obj.toString();
 		}

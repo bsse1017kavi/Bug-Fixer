@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -906,9 +905,9 @@ public class BlockScope extends Scope {
 		InvocationSite invocationSite) {
 
 // is this needed? Or when the type is resolved, is it recorded?
-compilationUnitScope().recordTypeReferences(argumentTypes);
+		compilationUnitScope().recordTypeReference(receiverType);
 // replaces call to addTypeReferences
-		compilationUnitScope().recordReferences(argumentTypes);
+compilationUnitScope().recordTypeReferences(argumentTypes);
 		compilationUnitScope().addTypeReferences(argumentTypes);
 		MethodBinding methodBinding = receiverType.getExactConstructor(argumentTypes);
 		if (methodBinding != null)

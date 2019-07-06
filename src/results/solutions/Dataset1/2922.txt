@@ -1,4 +1,3 @@
-
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +28,9 @@ public class UninstallAction extends AbstractAction {
 		checkRoot();
 		State state = target.getState();
 		if (EnumSet.of(State.UNINSTALLED).contains(state))
-waitForStateChange(state);
+			return null;
 		else if (EnumSet.of(State.INSTALL_FAILED, State.INSTALLING, State.RESOLVING, State.STARTING, State.STOPPING, State.UNINSTALLING).contains(state)) {
-			waitForStateChange();
+waitForStateChange(state);
 			target.uninstall();
 		}
 		else if (state.equals(State.ACTIVE)) {

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.example.merge;
 
 import java.io.IOException;
@@ -80,9 +79,9 @@ public class TaxonomyMergeUtils {
    */
   public static void merge(Directory srcIndexDir, Directory srcTaxDir,
                             OrdinalMap map, IndexWriter destIndexWriter,
-destTaxWriter.addTaxonomy(srcTaxDir, map);
+                            DirectoryTaxonomyWriter destTaxWriter) throws IOException {
     // merge the taxonomies
-    destTaxWriter.addTaxonomies(new Directory[] { srcTaxDir }, new OrdinalMap[] { map });
+destTaxWriter.addTaxonomy(srcTaxDir, map);
 
     PayloadProcessorProvider payloadProcessor = new FacetsPayloadProcessorProvider(
         srcIndexDir, map.getMap(), new DefaultFacetIndexingParams());

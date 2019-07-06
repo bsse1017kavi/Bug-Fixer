@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.dialogs;
 
 /*
@@ -113,9 +112,9 @@ private final void createProjectLocationGroup(Composite parent) {
 	GridLayout layout = new GridLayout();
 	layout.numColumns = 3;
 	projectGroup.setLayout(layout);
-projectGroup.setText(WorkbenchMessages.getString("WizardNewProjectCreationPage.projectContentsGroupLabel")); //$NON-NLS-1$
+	projectGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 	projectGroup.setFont(font);
-	projectGroup.setText(WorkbenchMessages.getString("WizardNewProjectCreationPage.projectContentsLabel")); //$NON-NLS-1$
+projectGroup.setText(WorkbenchMessages.getString("WizardNewProjectCreationPage.projectContentsGroupLabel")); //$NON-NLS-1$
 
 	final Button useDefaultsButton = new Button(projectGroup, SWT.CHECK | SWT.RIGHT);
 	useDefaultsButton.setText(WorkbenchMessages.getString("WizardNewProjectCreationPage.useDefaultLabel")); //$NON-NLS-1$

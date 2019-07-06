@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -245,9 +244,9 @@ public class AllocationService extends AbstractComponent {
      * @param liveNodes currently live nodes.
      */
     private void applyNewNodes(RoutingNodes routingNodes, Iterable<DiscoveryNode> liveNodes) {
-RoutingNode routingNode = new RoutingNode(node.id(), node);
+        for (DiscoveryNode node : liveNodes) {
             if (!routingNodes.nodesToShards().containsKey(node.id())) {
-                RoutingNode routingNode = new RoutingNode(node);
+RoutingNode routingNode = new RoutingNode(node.id(), node);
                 routingNodes.nodesToShards().put(node.id(), routingNode);
             }
         }

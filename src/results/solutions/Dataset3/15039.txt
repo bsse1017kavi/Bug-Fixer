@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -29,9 +28,9 @@ import static java.security.AccessController.doPrivileged;
 
 /**
  *
-class SecurityActions {
+ * @author <a href="kabir.khan@jboss.com">Kabir Khan</a>
  */
-public class SecurityActions {
+class SecurityActions {
     static ClassLoader getClassLoader(final Class<?> clazz) {
         return ! WildFlySecurityManager.isChecking() ? clazz.getClassLoader() : doPrivileged(new GetClassLoaderAction(clazz));
     }

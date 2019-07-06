@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -91,9 +90,9 @@ public class LF5Appender extends AppenderSkeleton {
     String category = event.getLoggerName();
     String logMessage = event.getRenderedMessage();
     String nestedDiagnosticContext = event.getNDC();
-long time = event.getTimeStamp();
+    String threadDescription = event.getThreadName();
     String level = event.getLevel().toString();
-    long time = event.timeStamp;
+long time = event.getTimeStamp();
     LocationInfo locationInfo = event.getLocationInformation();
 
     // Add the logging event information to a LogRecord

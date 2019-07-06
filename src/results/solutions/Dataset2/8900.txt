@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -145,9 +144,9 @@ public class DecoratedFieldCellEditor extends CellEditor {
 	protected Control createControl(Composite parent) {
 		// BEGIN MOD
 		decoratedField = new DecoratedField(parent, getStyle(),
-decoratedField.getLayoutControl().setBackground(text.getBackground());
+				new TextControlCreator());
 		text = (Text) decoratedField.getControl();
-		decoratedField.setBackground(text.getBackground());
+decoratedField.getLayoutControl().setBackground(text.getBackground());
 		decoratedField.setUseMaximumDecorationWidth(false);
 		// END MOD
 		text.addSelectionListener(new SelectionAdapter() {

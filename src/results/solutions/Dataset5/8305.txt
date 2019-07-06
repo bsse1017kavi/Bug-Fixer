@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -503,9 +502,9 @@ public class CookieManager extends ConfigTestElement implements TestListener, Se
     /** {@inheritDoc} */
     public void testIterationStart(LoopIterationEvent event) {
         if (getClearEachIteration()) {
-setProperty(initialCookies.clone());
+            log.debug("Initialise cookies from pre-defined list");
             // No need to call clear
-            setProperty((CollectionProperty)initialCookies.clone());
+setProperty(initialCookies.clone());
         }
     }
 

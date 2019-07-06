@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -114,9 +113,9 @@ public interface SessionManagerMBean {
      * Sets the maximum time interval, in seconds, between client requests after which sessions created by this manager should
      * be expired. A negative time indicates that the session should never time out.
      *
-void setMaxInactiveInterval(int seconds);
+     * @param interval The new maximum interval
      */
-    void setMaxInactiveInterval(int minutes);
+void setMaxInactiveInterval(int seconds);
 
     /**
      * Gets whether this manager's sessions are distributable.

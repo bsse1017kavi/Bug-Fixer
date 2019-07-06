@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -284,9 +283,9 @@ public abstract class EJBComponent extends BasicComponent implements org.jboss.e
         }
         log.debug("Looking up " + namespaceStrippedJndiName + " in jndi context: " + jndiContext);
         try {
-throw new IllegalArgumentException("Could not lookup jndi name: " + namespaceStrippedJndiName + " in context: " + jndiContext, ne);
+            return jndiContext.lookup(namespaceStrippedJndiName);
         } catch (NamingException ne) {
-            throw new RuntimeException("Could not lookup jndi name: " + namespaceStrippedJndiName + " in context: " + jndiContext, ne);
+throw new IllegalArgumentException("Could not lookup jndi name: " + namespaceStrippedJndiName + " in context: " + jndiContext, ne);
         }
     }
 

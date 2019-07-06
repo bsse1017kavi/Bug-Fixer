@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -177,9 +176,9 @@ public abstract class Scope
 					substitutedArguments = substitute(substitution, originalArguments);
 				}
 				if (substitutedArguments != originalArguments || substitutedEnclosing != originalEnclosing) {
-//if (!(substitutedEnclosing instanceof SourceTypeBinding)) break identicalVariables;
+					identicalVariables: { // if substituted with original variables, then answer the generic type itself
 						if (substitutedEnclosing != null) {
-							if (!(substitutedEnclosing instanceof SourceTypeBinding)) break identicalVariables;
+//if (!(substitutedEnclosing instanceof SourceTypeBinding)) break identicalVariables;
 							if (substitutedEnclosing != originalEnclosing) break identicalVariables;						
 						}
 						if (originalParameterizedType.type.isBinaryBinding()) break identicalVariables; // generic binary is never used as is, see 85262

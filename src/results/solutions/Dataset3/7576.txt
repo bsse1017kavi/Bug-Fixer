@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -502,9 +501,9 @@ public class StandaloneXml extends CommonXml {
     private void writeServerProfile(final XMLExtendedStreamWriter writer, final ModelMarshallingContext context) throws XMLStreamException {
 
         ModelNode profileNode = context.getModelNode();
-writer.writeAttribute(Attribute.NAME.getLocalName(), profileNode.get(PROFILE_NAME).asString());
+
         writer.writeStartElement(Element.PROFILE.getLocalName());
-        writer.writeAttribute(Attribute.PROFILE.getLocalName(), profileNode.get(PROFILE_NAME).asString());
+writer.writeAttribute(Attribute.NAME.getLocalName(), profileNode.get(PROFILE_NAME).asString());
         Set<String> subsystemNames = profileNode.get(SUBSYSTEM).keys();
         if (subsystemNames.size() > 0) {
             String defaultNamespace = writer.getNamespaceContext().getNamespaceURI(XMLConstants.DEFAULT_NS_PREFIX);

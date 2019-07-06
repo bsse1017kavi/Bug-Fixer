@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -128,9 +127,9 @@ public class ContextNames extends org.jboss.as.naming.deployment.ContextNames{
             } else if (namespace.equals("module")) {
                 return contextServiceNameOfModule(app, module).append(context.substring(12));
             } else if (namespace.equals("comp")) {
-return JAVA_CONTEXT_SERVICE_NAME.append(context);
+                return contextServiceNameOfComponent(app, module, comp).append(context.substring(10));
             } else {
-                return null;
+return JAVA_CONTEXT_SERVICE_NAME.append(context);
             }
         } else {
             return null;

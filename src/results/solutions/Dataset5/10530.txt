@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -163,9 +162,9 @@ static int checkStyle (int style) {
 	* widget's client area.  The fix is to clear
 	* the SWT style.
 	*/
-return checkBits (style, SWT.MEDIUM, SWT.SHORT, SWT.LONG, 0, 0, 0);
+	style &= ~(SWT.H_SCROLL | SWT.V_SCROLL);
 	style = checkBits (style, SWT.DATE, SWT.TIME, SWT.CALENDAR, 0, 0, 0);
-	return checkBits (style, SWT.MEDIUM, SWT.SHORT, SWT.LONG, 0/*SWT.FULL*/, 0, 0);
+return checkBits (style, SWT.MEDIUM, SWT.SHORT, SWT.LONG, 0, 0, 0);
 }
 
 protected void checkSubclass () {

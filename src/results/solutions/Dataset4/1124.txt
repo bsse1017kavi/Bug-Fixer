@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -205,9 +204,9 @@ public class NodesFaultDetection extends AbstractComponent {
                                 NodeFD nodeFD = nodesFD.get(node);
                                 if (nodeFD != null) {
                                     int retryCount = ++nodeFD.retryCount;
-logger.debug("Node [{}] failed on ping, tried [{}] times, each with [{}] timeout", node, pingRetryCount, pingRetryTimeout);
+                                    logger.trace("Node [{}] failed to ping, retry [{}] out of [{}]", exp, node, retryCount, pingRetryCount);
                                     if (retryCount >= pingRetryCount) {
-                                        logger.trace("Node [{}] failed on ping", node);
+logger.debug("Node [{}] failed on ping, tried [{}] times, each with [{}] timeout", node, pingRetryCount, pingRetryTimeout);
                                         // not good, failure
                                         if (nodesFD.remove(node) != null) {
                                             notifyNodeFailure(node);

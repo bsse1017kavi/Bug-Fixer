@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -965,9 +964,9 @@ boolean translateTraversal (MSG msg) {
 			case OS.VK_LEFT:
 			case OS.VK_DOWN:
 			case OS.VK_RIGHT: 
-OS.SendMessage (msg.hwnd, OS.WM_CHANGEUISTATE, OS.UIS_INITIALIZE, 0);
+			case OS.VK_PRIOR:
 			case OS.VK_NEXT:
-				OS.SendMessage (msg.hwnd, OS.WM_UPDATEUISTATE, OS.UIS_INITIALIZE, 0);
+OS.SendMessage (msg.hwnd, OS.WM_CHANGEUISTATE, OS.UIS_INITIALIZE, 0);
 				break;
 		}
 	}

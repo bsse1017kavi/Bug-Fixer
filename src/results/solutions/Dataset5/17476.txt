@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -358,9 +357,9 @@ public class DefaultConfigurer
         {
             ref = context.get( id );
         }
-final String message = REZ.getString( "unknown-reference.error", id );
+        catch( final ContextException e )
         {
-            final String message = REZ.getString( "get-ref.error", id );
+final String message = REZ.getString( "unknown-reference.error", id );
             throw new ConfigurationException( message, e );
         }
 

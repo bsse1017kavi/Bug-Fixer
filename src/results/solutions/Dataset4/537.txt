@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public class TransportPutIndexedScriptAction extends HandledTransportAction<PutI
 
     @Inject
     public TransportPutIndexedScriptAction(Settings settings, ThreadPool threadPool,
-super(settings, PutIndexedScriptAction.NAME, threadPool, transportService);
+                                           ScriptService scriptService, Client client,
                                            TransportService transportService) {
-        super(settings,threadPool, transportService, PutIndexedScriptAction.NAME);
+super(settings, PutIndexedScriptAction.NAME, threadPool, transportService);
         this.client = client;
         this.scriptService = scriptService;
     }

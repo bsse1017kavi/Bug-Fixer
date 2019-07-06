@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -139,8 +138,8 @@ public class InstantiatingServiceManagerTest
         final RoleManager roleManager = (RoleManager)getServiceManager().lookup( RoleManager.ROLE );
         roleManager.addRole( new RoleInfo( serviceRoleName, null, serviceType ) );
         final DefaultTypeFactory typeFactory = new DefaultTypeFactory( getClass().getClassLoader() );
-typeManager.registerType( ServiceFactory.ROLE, serviceRoleName, typeFactory );
+        typeFactory.addNameClassMapping( serviceRoleName, factoryClass.getName() );
         final TypeManager typeManager = (TypeManager)getServiceManager().lookup( TypeManager.ROLE );
-        typeManager.registerType( ServiceFactory.class, serviceRoleName, typeFactory );
+typeManager.registerType( ServiceFactory.ROLE, serviceRoleName, typeFactory );
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -71,9 +70,9 @@ public class AsyncAnnotationBeanPostProcessorTests {
 		StaticApplicationContext context = new StaticApplicationContext();
 		BeanDefinition processorDefinition = new RootBeanDefinition(AsyncAnnotationBeanPostProcessor.class);
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-processorDefinition.getPropertyValues().add("executor", executor);
+		executor.setThreadNamePrefix("testExecutor");
 		executor.afterPropertiesSet();
-		processorDefinition.getPropertyValues().addPropertyValue("executor", executor);
+processorDefinition.getPropertyValues().add("executor", executor);
 		BeanDefinition targetDefinition = new RootBeanDefinition(AsyncAnnotationBeanPostProcessorTests.TestBean.class);
 		context.registerBeanDefinition("postProcessor", processorDefinition);
 		context.registerBeanDefinition("target", targetDefinition);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 - 2009 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
@@ -60,9 +59,9 @@ public class XMLBeautifier implements PostProcessor {
 
 	public void afterClose(FileHandle impl) {
 	}
-String fn = impl.getAbsolutePath();
+
 	public void beforeWriteAndClose(FileHandle impl) {
-		String fn = impl.getTargetFile().getAbsolutePath();
+String fn = impl.getAbsolutePath();
 		boolean isXML = isXmlFile(fn);
 		URI u = URI.createFileURI(fn);
 

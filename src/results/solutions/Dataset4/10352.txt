@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -155,9 +154,9 @@ public class IndexAliasesServiceTests extends ElasticsearchTestCase {
         indexAliasesService.add("cats", filter(termFilter("animal", "cat")));
         indexAliasesService.add("dogs", filter(termFilter("animal", "dog")));
 
-fail();
+        try {
             indexAliasesService.aliasFilter("unknown");
-            assert false;
+fail();
         } catch (InvalidAliasNameException e) {
             // all is well
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -96,9 +95,9 @@ public class UpdateSettingsTests extends ElasticsearchIntegrationTest {
         assertThat(getSettingsResponse.getSetting("test", "index.refresh_interval"), equalTo("1s"));
         assertThat(getSettingsResponse.getSetting("test", "index.cache.filter.type"), equalTo("none"));
     }
-public void testEngineGCDeletesSetting() throws InterruptedException {
+
     @Test
-    public void testRobinEngineGCDeletesSetting() throws InterruptedException {
+public void testEngineGCDeletesSetting() throws InterruptedException {
         createIndex("test");
         client().prepareIndex("test", "type", "1").setSource("f", 1).get(); // set version to 1
         client().prepareDelete("test", "type", "1").get(); // sets version to 2

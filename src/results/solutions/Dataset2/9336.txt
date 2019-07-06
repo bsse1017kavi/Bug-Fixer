@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -148,9 +147,9 @@ protected void attachOrphanCompletionNode(){
 				if (orphan instanceof TypeReference){
 					TypeReference fieldType;
 					
-if(kind == K_BINARY_OPERATOR && info == LESS && this.identifierPtr > -1) {
+					int kind = topKnownElementKind(COMPLETION_OR_ASSIST_PARSER);
 					int info = topKnownElementInfo(COMPLETION_OR_ASSIST_PARSER);
-					if(kind == K_BINARY_OPERATOR && info == LESS) {
+if(kind == K_BINARY_OPERATOR && info == LESS && this.identifierPtr > -1) {
 						if(this.genericsLengthStack[this.genericsLengthPtr] > 0) {
 							this.consumeTypeArguments();
 						}

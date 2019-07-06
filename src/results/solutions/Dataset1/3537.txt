@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -92,9 +91,9 @@ public class SequenceFilesFromDirectory extends AbstractJob {
                                            String.class,
                                            Map.class,
                                            ChunkedWriter.class,
-pathFilter = constructor.newInstance(conf, keyPrefix, options, writer, charset, fs);
+                                           Charset.class,
                                            FileSystem.class);
-        pathFilter = constructor.newInstance(conf, keyPrefix, options, writer, fs);
+pathFilter = constructor.newInstance(conf, keyPrefix, options, writer, charset, fs);
       }
       fs.listStatus(input, pathFilter);
     } finally {

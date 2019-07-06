@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public class MultiValueDoubleFieldData extends DoubleFieldData {
         boolean found = false;
         for (int[] ordinal : ordinals) {
             int loc = ordinal[docId];
-proc.onOrdinal(docId, loc);
+            if (loc != 0) {
                 found = true;
-                proc.onOrdinal(docId, ordinal[docId]);
+proc.onOrdinal(docId, loc);
             }
         }
         if (!found) {

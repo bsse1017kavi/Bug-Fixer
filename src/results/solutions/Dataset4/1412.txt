@@ -1,4 +1,3 @@
-
 /**
  *  This file is part of Libgdx by Mario Zechner (badlogicgames@gmail.com)
  *
@@ -923,9 +922,9 @@ public final class JoglApplication implements Application, RenderListener
 	}
 
 	@Override
-gl = new JoglGL11(GLContext.getCurrent().getGL());
+	public GL10 getGL() {
 		if( gl == null )
-			gl = new JoglGL10(GLContext.getCurrent().getGL());			
+gl = new JoglGL11(GLContext.getCurrent().getGL());
 		return gl;
 	}
 }

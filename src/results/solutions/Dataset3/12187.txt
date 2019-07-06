@@ -1,13 +1,12 @@
-
 package org.wildfly.clustering.spi;
 
 import org.jboss.msc.service.ServiceName;
 
 /**
  * Set of {@link ServiceName} factories for group-based services.
-public enum GroupServiceNames implements GroupServiceNameFactory {
+ * @author Paul Ferraro
  */
-public enum GroupServiceName implements GroupServiceNameFactory {
+public enum GroupServiceNames implements GroupServiceNameFactory {
     COMMAND_DISPATCHER() {
         @Override
         public ServiceName getServiceName(String group) {

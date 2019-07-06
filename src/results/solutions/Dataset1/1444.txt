@@ -1,4 +1,3 @@
-
 /*
     Derby - Class org.apache.derby.impl.drda.DRDAConnThread
 
@@ -291,9 +290,9 @@ class DRDAConnThread extends Thread {
 				}
 			}
 		}
-server.removeThread(this);
+		if (SanityManager.DEBUG)
 			trace("Ending connection thread");
-		server.getThreadList().removeElement(this);
+server.removeThread(this);
 
 	}
 	/**

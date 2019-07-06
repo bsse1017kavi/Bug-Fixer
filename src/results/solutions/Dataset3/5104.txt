@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -122,9 +121,9 @@ public class ServletInvocableHandlerMethod extends InvocableHandlerMethod {
 		if (this.responseStatus != null) {
 			if (StringUtils.hasText(this.responseReason)) {
 				webRequest.getResponse().sendError(this.responseStatus.value(), this.responseReason);
-webRequest.getResponse().setStatus(this.responseStatus.value());
+			}
 			else {
-				webRequest.getResponse().sendError(this.responseStatus.value());
+webRequest.getResponse().setStatus(this.responseStatus.value());
 			}
 
 			// to be picked up by the RedirectView

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -145,9 +144,9 @@ public class BorlandGenerateClient extends Task {
     /**
      * Adds path to the classpath.
      */
-this.classpath = new Path(getProject());
+    public Path createClasspath() {
         if (this.classpath == null) {
-            this.classpath = new Path(project);
+this.classpath = new Path(getProject());
         }
         return this.classpath.createPath();
     }

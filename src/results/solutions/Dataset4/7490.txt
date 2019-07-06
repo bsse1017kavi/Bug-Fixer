@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -123,9 +122,9 @@ public class DefaultRepositoryListAdapter extends
             view.separator.setVisibility(VISIBLE);
 
         StyledText name = new StyledText();
-color.text_description);
+        if (!account.get().getLogin().equals(repository.getOwner().getLogin())) {
             int descriptionColor = view.repoName.getResources().getColor(
-                    color.repo_description);
+color.text_description);
             name.foreground(repository.getOwner().getLogin(), descriptionColor)
                     .foreground('/', descriptionColor);
         }

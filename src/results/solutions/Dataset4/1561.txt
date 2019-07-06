@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class RestTable {
         builder.endArray();
         return new XContentRestResponse(request, RestStatus.OK, builder);
     }
-boolean verbose = request.paramAsBoolean("v", false);
+
     public static RestResponse buildTextPlainResponse(Table table, RestRequest request, RestChannel channel) {
-        boolean verbose = request.paramAsBoolean("v", true);
+boolean verbose = request.paramAsBoolean("v", false);
         int[] width = buildWidths(table, request, verbose);
         Set<String> displayHeaders = buildDisplayHeaders(table, request);
 

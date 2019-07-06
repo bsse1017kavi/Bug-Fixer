@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -142,9 +141,9 @@ abstract class NewAbstractModelControllerClient implements NewModelControllerCli
             executeRequestContext = new ExecuteRequestContext(messageHandler, attachments);
         }
 
-return NewModelControllerProtocol.EXECUTE_CLIENT_REQUEST;
+        @Override
         protected byte getRequestCode() {
-            return NewModelControllerProtocol.EXECUTE_REQUEST;
+return NewModelControllerProtocol.EXECUTE_CLIENT_REQUEST;
         }
 
         @Override

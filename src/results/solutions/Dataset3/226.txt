@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ public abstract class AbstractDataSourceService implements Service<DataSource> {
         } catch (Throwable t) {
             throw MESSAGES.deploymentError(t, jndiName);
         }
-protected abstract AS7DataSourceDeployer getDeployer() throws ValidateException ;
+    }
 
-    protected abstract AS7DataSourceDeployer getDeployer();
+protected abstract AS7DataSourceDeployer getDeployer() throws ValidateException ;
 
     public synchronized void stop(StopContext stopContext) {
         if (deploymentMD != null && deploymentMD.getConnectionManagers() != null) {

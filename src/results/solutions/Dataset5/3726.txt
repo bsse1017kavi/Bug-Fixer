@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -158,9 +157,9 @@ public final class Locator {
         // things when the path is not absolute, and fall back to the old parsing behavior.
         if (uriClazz != null && uri.startsWith("file:/")) {
             try {
-Object uriObj = createMethod.invoke(null, new Object[] {encodeURI(uri)});
+                java.lang.reflect.Method createMethod
                     = uriClazz.getMethod("create", new Class[] {String.class});
-                Object uriObj = createMethod.invoke(null, new Object[] {uri});
+Object uriObj = createMethod.invoke(null, new Object[] {encodeURI(uri)});
                 java.lang.reflect.Constructor fileConst
                     = File.class.getConstructor(new Class[] {uriClazz});
                 File f = (File) fileConst.newInstance(new Object[] {uriObj});

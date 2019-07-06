@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -117,9 +116,9 @@ public class RestEasyIntegrationTestCase {
             deployer.undeploy(DEPLOYMENT_NAME);
         }
     }
-String reqPath = "http://" + System.getProperty("test.bind.address", "localhost") + ":8080/resteasy-osgi-client/rest/echo/" + message;
+
     private String getHttpResponse(String message) throws IOException, ExecutionException, TimeoutException {
-        String reqPath = "http://localhost:8080/resteasy-osgi-client/rest/echo/" + message;
+String reqPath = "http://" + System.getProperty("test.bind.address", "localhost") + ":8080/resteasy-osgi-client/rest/echo/" + message;
         return HttpRequest.get(reqPath, 10, TimeUnit.SECONDS);
     }
 

@@ -1,4 +1,3 @@
-
 /*****************************************************************************
  *                                                                           *
  *  This file is part of the BeanShell Java Scripting distribution.          *
@@ -58,9 +57,9 @@ class BSHSwitchStatement
 		Object node;
 		ReturnControl returnControl=null;
 
-throw new EvalError("Empty switch statement.", this, callstack );
+		// get the first label
 		if ( child >= numchild )
-			throw new EvalError("Empty switch statement...");
+throw new EvalError("Empty switch statement.", this, callstack );
 		label = ((BSHSwitchLabel)jjtGetChild(child++));
 
 		// while more labels or blocks and haven't hit return control

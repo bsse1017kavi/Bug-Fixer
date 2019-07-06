@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -87,9 +86,9 @@ public class TrackingSerialMergeScheduler extends MergeScheduler {
             // different from serial merge, call mergeInit here so we get the correct stats
             // mergeInit can be called several times without side affects (checks on merge.info not being null)
             writer.mergeInit(merge);
-long totalSizeInBytes = merge.estimatedMergeBytes;
+
             int totalNumDocs = merge.totalNumDocs();
-            long totalSizeInBytes = merge.totalBytesSize();
+long totalSizeInBytes = merge.estimatedMergeBytes;
             long time = System.currentTimeMillis();
             currentMerges.inc();
             currentMergesNumDocs.inc(totalNumDocs);

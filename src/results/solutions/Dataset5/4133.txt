@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -77,8 +76,8 @@ public class GuestbookTest extends TestCase
 		formTester.setValue("text", "test-3");
 		formTester.setValue("comment", "test-3");
 		formTester.submit();
-tester.assertErrorMessages("Caught a spammer!!!");
+		tester.assertModelValue("comments:0:text", "test-2");
 		tester.assertModelValue("comments:1:text", "test-1");
-		tester.assertErrorMessages(new String[] { "Caught a spammer!!!" });
+tester.assertErrorMessages("Caught a spammer!!!");
 	}
 }

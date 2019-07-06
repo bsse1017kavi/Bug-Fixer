@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -116,9 +115,9 @@ public class ThreadLocals {
                                 args[0] = key.getClass().getCanonicalName();
                                 args[1] = key.toString();
                             }
-if (logger.isTraceEnabled()) {
+                            args[2] = value.getClass().getCanonicalName();
                             args[3] = value.toString();
-                            if (logger.isDebugEnabled()) {
+if (logger.isTraceEnabled()) {
                                 logger.trace("ThreadLocal with key of type [{0}] (value [{1}]) and a value of type [{2}] (value [{3}]):  The ThreadLocal has been forcibly removed.", args);
                             }
                             if (key == null) {

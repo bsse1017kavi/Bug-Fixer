@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db;
 
 import org.slf4j.Logger;
@@ -33,9 +32,9 @@ public class SchemaCheckVerbHandler implements IVerbHandler
     private final Logger logger = LoggerFactory.getLogger(SchemaCheckVerbHandler.class);
     
     public void doVerb(Message message)
-Message response = message.getInternalReply(DatabaseDescriptor.getDefsVersion().toString().getBytes(), message.getVersion());
+    {
         logger.debug("Received schema check request.");
-        Message response = message.getInternalReply(DatabaseDescriptor.getDefsVersion().toString().getBytes());
+Message response = message.getInternalReply(DatabaseDescriptor.getDefsVersion().toString().getBytes(), message.getVersion());
         MessagingService.instance().sendOneWay(response, message.getFrom());
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -547,9 +546,9 @@ public class Manifest extends Task {
             } catch (UnsupportedEncodingException e) {
                 return new Manifest(new InputStreamReader(in));
             }
-throw new BuildException("Default manifest is invalid !!", e);
+        }
         catch (ManifestException e) {
-            throw new BuildException("Default manifest is invalid !!");
+throw new BuildException("Default manifest is invalid !!", e);
         }
         catch (IOException e) {
             throw new BuildException("Unable to read default manifest", e);

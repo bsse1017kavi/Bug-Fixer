@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -498,9 +497,9 @@ public class UndertowDeploymentInfoService implements Service<DeploymentInfo> {
                 List<String> welcomeFiles = mergedMetaData.getWelcomeFileList().getWelcomeFiles();
                 for(String file : welcomeFiles) {
                     if(file.startsWith("/")) {
-d.addWelcomePages(file);
+                        d.addWelcomePages(file.substring(1));
                     } else {
-                        d.addWelcomePages(welcomeFiles);
+d.addWelcomePages(file);
                     }
                 }
             } else {

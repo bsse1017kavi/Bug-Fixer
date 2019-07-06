@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -109,9 +108,9 @@ public class SimpleACLAuthorizer implements IAuthorizer {
             if (topoUsers.contains(principal) || topoUsers.contains(user)) {
                 return true;
             }
-if (topology_conf.containsKey(Config.TOPOLOGY_GROUPS) && topology_conf.get(Config.TOPOLOGY_GROUPS) != null) {
+
             Set<String> topoGroups = new HashSet<String>();
-            if (topology_conf.containsKey(Config.TOPOLOGY_GROUPS)) {
+if (topology_conf.containsKey(Config.TOPOLOGY_GROUPS) && topology_conf.get(Config.TOPOLOGY_GROUPS) != null) {
                 topoGroups.addAll((Collection<String>)topology_conf.get(Config.TOPOLOGY_GROUPS));
             }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -83,9 +82,9 @@ public class SimpleIdCacheTests extends ElasticsearchTestCase {
         writer.addDocument(childDoc("child", "2", "parent", "1"));
         writer.addDocument(childDoc("child", "3", "parent", "1"));
         writer.commit();
-assertNotNull(parentUid);
+
         final String parentUid = parent.get("_uid");
-        assert parentUid != null;
+assertNotNull(parentUid);
         writer.deleteDocuments(new Term("_uid", parentUid));
 
         writer.close();

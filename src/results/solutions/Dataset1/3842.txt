@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.tools.ij.mtTestCase
@@ -242,9 +241,9 @@ public class mtTestCase
 	
 		out.println("--------------"+file+"-----------------");
 		utilInstance = new utilMain(1, out, ignoreErrors);
-utilInstance.go(in, out);
+		utilInstance.initFromEnvironment();
 		utilInstance.setMtUse(true);
-		utilInstance.go(in, out, (java.util.Properties) null);
+utilInstance.go(in, out);
 		log.flush();
 		out.flush();
 	}

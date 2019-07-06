@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -310,9 +309,9 @@ public class ModuleSpecProcessor implements DeploymentUnitProcessor {
                 final MultiplePathFilterBuilder filterBuilder = PathFilters.multiplePathFilterBuilder(true);
                 for (final FilterSpecification filter : resource.getExportFilters()) {
                     filterBuilder.addFilter(filter.getPathFilter(), filter.isInclude());
-.getRootName(), resource.getRoot(), resource.isUsePhysicalCodeSource()), filterBuilder.create()));
+                }
                 specBuilder.addResourceRoot(ResourceLoaderSpec.createResourceLoaderSpec(new VFSResourceLoader(resource
-                        .getRootName(), resource.getRoot()), filterBuilder.create()));
+.getRootName(), resource.getRoot(), resource.isUsePhysicalCodeSource()), filterBuilder.create()));
             }
         } catch (IOException e) {
             throw new DeploymentUnitProcessingException("Failed to create VFSResourceLoader for root ["

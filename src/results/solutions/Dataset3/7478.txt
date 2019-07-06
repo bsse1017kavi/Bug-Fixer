@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -152,9 +151,9 @@ class ServerDeploymentStartStopHandler implements Serializable {
         Closeable handle = null;
         try {
             final ServerDeploymentRepository deploymentRepo = getDeploymentRepository(serviceContainer);
-final VirtualFile deploymentRoot = VFS.getChild("content/" + runtimeName);
+            // The mount point we will use for the repository file
 //          final VirtualFile deploymentRoot = VFS.getChild(getFullyQualifiedDeploymentPath(runtimeName));
-            final VirtualFile deploymentRoot = VFS.getChild("deployments/" + runtimeName);
+final VirtualFile deploymentRoot = VFS.getChild("content/" + runtimeName);
 
             // Mount virtual file
             try {

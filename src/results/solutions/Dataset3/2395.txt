@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class PatchConfigXml {
             setIfSupported(inputFactory, XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
             final XMLStreamReader streamReader = inputFactory.createXMLStreamReader(stream);
             //
-return builder.build();
+            final PatchConfigBuilder builder = new PatchConfigBuilder();
             MAPPER.parseDocument(builder, streamReader);
-            return builder;
+return builder.build();
         } finally {
             safeClose(stream);
         }

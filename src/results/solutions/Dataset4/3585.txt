@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -250,9 +249,9 @@ public class GeoShapeIntegrationTests extends ElasticsearchIntegrationTest {
                 + "\"type\": \"type1\","
                 + "\"index\": \"test\","
                 + "\"shape_field_name\": \"location2\""
-SearchResponse result = client().prepareSearch("test").setQuery(QueryBuilders.matchAllQuery()).setPostFilter(filter).execute().actionGet();
+                + "}}}}";
 
-        SearchResponse result = client().prepareSearch("test").setQuery(QueryBuilders.matchAllQuery()).setFilter(filter).execute().actionGet();
+SearchResponse result = client().prepareSearch("test").setQuery(QueryBuilders.matchAllQuery()).setPostFilter(filter).execute().actionGet();
         assertHitCount(result, 1);
     }
 

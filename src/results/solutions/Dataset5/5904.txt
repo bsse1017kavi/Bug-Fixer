@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -114,9 +113,9 @@ public void javaToNative(Object object, TransferData transferData) {
 	if (type == null) return;
 	OS.gdk_pixbuf_save_to_buffer(pixbuf, buffer, len, type , null, null);		
 	OS.g_object_unref(pixbuf);
-transferData.length = (len[0] + 3) / 4 * 4;
+	image.dispose();
 	transferData.pValue = buffer[0];
-	transferData.length = len[0];
+transferData.length = (len[0] + 3) / 4 * 4;
 	transferData.result = 1;
 	transferData.format = 32;
 }

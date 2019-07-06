@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -181,9 +180,9 @@ public class ModuleSpecProcessor implements DeploymentUnitProcessor {
         }
         try {
             ModuleSpecification specification = controller.getValue();
-if (deps.contains(dependency.getIdentifier())) {
+            final List<ModuleDependency> allDeps = specification.getAllDependencies();
             for (ModuleDependency dependency : allDeps) {
-                if (deps.contains(dependency)) {
+if (deps.contains(dependency.getIdentifier())) {
                     continue;
                 }
                 deps.add(dependency.getIdentifier());

@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.util;
 
 /*
@@ -50,9 +49,9 @@ public class ExecutorUtil {
     pool.shutdown(); // Disable new tasks from being submitted
     boolean shutdown = false;
     while (!shutdown) {
-shutdown = pool.awaitTermination(60, TimeUnit.SECONDS);
+      try {
         // Wait a while for existing tasks to terminate
-        shutdown = pool.awaitTermination(30, TimeUnit.SECONDS);
+shutdown = pool.awaitTermination(60, TimeUnit.SECONDS);
       } catch (InterruptedException ie) {
         // Preserve interrupt status
         Thread.currentThread().interrupt();

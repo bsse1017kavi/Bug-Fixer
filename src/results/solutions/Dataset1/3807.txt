@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spell;
 
 
@@ -171,9 +170,9 @@ public class SpellChecker {
         SuggestWord sugword=new SuggestWord();
         for (int i=0; i<stop; i++) {
 
-if (sugword.string.equals(word)) {
+            sugword.string=hits.doc(i).get(F_WORD); // get orig word)
 
-            if (sugword.string==word) {
+if (sugword.string.equals(word)) {
                 continue; // don't suggest a word for itself, that would be silly
             }
 

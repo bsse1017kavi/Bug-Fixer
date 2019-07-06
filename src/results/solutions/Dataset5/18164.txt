@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -168,9 +167,9 @@ public class DocShare extends AbstractShare {
 
 	public void startShare(final ID our, final String fromName, final ID toID, final String fileName, final ITextEditor editorPart) {
 		Assert.isNotNull(our);
-Assert.isNotNull(fName);
+		final String fName = (fromName == null) ? our.getName() : fromName;
 		Assert.isNotNull(toID);
-		Assert.isNotNull(fileName);
+Assert.isNotNull(fName);
 		Assert.isNotNull(editorPart);
 		Display.getDefault().syncExec(new Runnable() {
 			public void run() {

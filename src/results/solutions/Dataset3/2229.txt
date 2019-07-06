@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -332,9 +331,9 @@ public class JPAAnnotationParseProcessor implements DeploymentUnitProcessor {
         if (puName != null) {
             searchName = puName.asString();
         }
-classDescription.setInvalid("Can't find a " + (puName!=null?"persistence unit named" + puName:"default persistence unit") + " at " + deploymentUnit);
+        scopedPuName = PersistenceUnitSearch.resolvePersistenceUnitSupplier(deploymentUnit, searchName);
         if (null == scopedPuName) {
-            classDescription.setInvalid("Can't find a deployment unit named " + puName.asString() + " at " + deploymentUnit);
+classDescription.setInvalid("Can't find a " + (puName!=null?"persistence unit named" + puName:"default persistence unit") + " at " + deploymentUnit);
             return null;
         }
         return scopedPuName;

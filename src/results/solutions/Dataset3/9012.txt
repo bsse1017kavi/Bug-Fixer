@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -57,9 +56,9 @@ final class MetaDataBuilderJAXWS_EJB extends AbstractMetaDataBuilderEJB {
         final JAXWSDeployment jaxwsDeployment = WSHelper.getRequiredAttachment(dep, JAXWSDeployment.class);
         final List<EJBMetaData> wsEjbsMD = new LinkedList<EJBMetaData>();
         final JBossWebservicesMetaData jbossWebservicesMD = WSHelper.getOptionalAttachment(dep, JBossWebservicesMetaData.class);
-buildEnterpriseBeanMetaData(wsEjbsMD, jbossEjbMD, jbossWebservicesMD);
+
         for (final EJBEndpoint jbossEjbMD : jaxwsDeployment.getEjbEndpoints()) {
-            this.buildEnterpriseBeanMetaData(wsEjbsMD, jbossEjbMD, jbossWebservicesMD);
+buildEnterpriseBeanMetaData(wsEjbsMD, jbossEjbMD, jbossWebservicesMD);
         }
 
         ejbArchiveMD.setEnterpriseBeans(wsEjbsMD);

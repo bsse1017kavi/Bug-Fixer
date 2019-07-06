@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -65,9 +64,9 @@ public class NonBlockingClient extends AbstractClient
       socket.socket().setTcpNoDelay(serverAddress.enableTcpNoDelay);
 
       trunk = new NonBlockingSocketTrunk(socket, selectorManager.getSelector());
-ramp.setTrunkListener(this);
+      CommTrunkRamp ramp = new CommTrunkRamp(trunk, workManager);
       trunk.setCommTrunkRamp(ramp);
-      ramp.setTrunkListner(this);
+ramp.setTrunkListener(this);
       
       if (tracing)
          log.trace("Connection established.");

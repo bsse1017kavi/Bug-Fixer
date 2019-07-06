@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  * 
@@ -36,9 +35,9 @@ import org.springframework.util.NumberUtils;
  * 
  * @author Keith Donald
  */
-public <RT extends Number> RT convert(Number source, Class<RT> targetClass) {
+public class NumberToNumber implements SuperConverter<Number, Number> {
 
-	public <RT extends Number> RT convert(Number source, Class<RT> targetClass) throws Exception {
+public <RT extends Number> RT convert(Number source, Class<RT> targetClass) {
 		return NumberUtils.convertNumberToTargetClass(source, targetClass);
 	}
 

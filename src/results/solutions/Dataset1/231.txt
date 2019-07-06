@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.jdbc.UpdateableBlobStream
@@ -211,9 +210,9 @@ class UpdateableBlobStream extends InputStream {
         else {
             //maxPos has not been set. Make
             //maxPos the length requested.
-int retValue = stream.read(b, off, actualLength);
+            actualLength = len;
         }
-        int retValue = super.read(b, off, actualLength);
+int retValue = stream.read(b, off, actualLength);
         if (retValue > 0)
             pos += retValue;
         return retValue;

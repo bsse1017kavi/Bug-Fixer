@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -83,9 +82,9 @@ throws IOException
 		Tokenizer.Token t = st.get();
 		if (!t.isString())
 			break;
-throw st.exception("Invalid type " + t.value);
+		short type = Type.value(t.value);
 		if (type <= 0 || type > 128)
-			throw new TextParseException("Invalid type " + t.value);
+throw st.exception("Invalid type " + t.value);
 		rec.bitmap.set(type);
 	}
 	st.unget();

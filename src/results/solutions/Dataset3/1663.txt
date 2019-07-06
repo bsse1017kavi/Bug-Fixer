@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class ServerGroupAddHandler implements OperationStepHandler {
             } catch (NoSuchElementException e) {
                 throw new OperationFailedException(new ModelNode().set(MESSAGES.unknown(SOCKET_BINDING_GROUP.getName(), socketBindingGroup)));
             }
-context.stepCompleted();
+        }
 
-        context.completeStep();
+context.stepCompleted();
     }
 
     protected boolean requiresRuntime(OperationContext context) {

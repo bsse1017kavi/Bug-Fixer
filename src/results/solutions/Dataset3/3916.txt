@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public abstract class AnnSBTest {
            .addClass(AnnOnlyCheckSLSBForInjection.class)
            .addClass(AnnOnlyCheckSFSBForInjection.class)
               //.addClass(Util.class)
-jar.addAsManifestResource(AnnSBTest.class.getPackage(), "jboss-ejb3.xml", "jboss-ejb3.xml");
+              //.addClass(SecurityTest.class)
            .addAsManifestResource("ejb3/security/EMPTY_MANIFEST.MF", "MANIFEST.MF");
-        jar.addAsManifestResource(SB_TO_TEST.getPackage(), "jboss-ejb3.xml", "jboss-ejb3.xml");
+jar.addAsManifestResource(AnnSBTest.class.getPackage(), "jboss-ejb3.xml", "jboss-ejb3.xml");
         jar.addPackage(CommonCriteria.class.getPackage());
         LOG.info(jar.toString(true));
         return jar;

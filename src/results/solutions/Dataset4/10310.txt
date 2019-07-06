@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public interface AzureStorageService {
 
     void deleteBlob(String container, String blob) throws URISyntaxException, StorageException;
 
-ImmutableMap<String,BlobMetaData> listBlobsByPrefix(String container, String keyPath, String prefix) throws URISyntaxException, StorageException, ServiceException;
+    InputStream getInputStream(String container, String blob) throws ServiceException;
 
-    ImmutableMap<String,BlobMetaData> listBlobsByPrefix(String container, String prefix) throws URISyntaxException, StorageException, ServiceException;
+ImmutableMap<String,BlobMetaData> listBlobsByPrefix(String container, String keyPath, String prefix) throws URISyntaxException, StorageException, ServiceException;
 
     void putObject(String container, String blob, InputStream is, long length) throws URISyntaxException, StorageException, IOException;
 

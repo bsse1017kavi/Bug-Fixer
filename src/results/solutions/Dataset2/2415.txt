@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -142,9 +141,9 @@ public MethodPattern(
 
 	// Get unique key for parameterized constructors
 	String genericDeclaringTypeSignature = null;
-if (method.isResolved() && (new BindingKey(key = method.getKey())).isParameterizedMethod()) {
+//	String genericSignature = null;
 	String key;
-	if (method.isResolved() && (new BindingKey(key = method.getKey())).isParameterizedType()) {
+if (method.isResolved() && (new BindingKey(key = method.getKey())).isParameterizedMethod()) {
 		genericDeclaringTypeSignature = Util.getDeclaringTypeSignature(key);
 	} else {
 		methodParameters = true;

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.xact.Xact
@@ -2467,9 +2466,9 @@ public class Xact extends RawTransaction implements Limit, LockOwner {
                     didEscalate = true;
                 }
             }
-if (!se.isLockTimeout())
+            catch (StandardException se)
             {
-                if (!se.getMessageId().equals(SQLState.LOCK_TIMEOUT))
+if (!se.isLockTimeout())
                 {
                     // if it is a timeout then escalate did not happen and
                     // just fall through.

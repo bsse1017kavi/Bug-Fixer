@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -355,9 +354,9 @@ public class ModelTestUtils {
                     }
                     stack.push(key + "/");
                     compare(child1, child2, ignoreUndefined, ignoreType, stack);
-Assert.assertFalse("key=" + key + "\n with child1 undefined has child2 \n" + child2.asString(), child2.isDefined());
+                    stack.pop();
                 } else if (!ignoreUndefined) {
-                    Assert.assertFalse(child2.asString(), child2.isDefined());
+Assert.assertFalse("key=" + key + "\n with child1 undefined has child2 \n" + child2.asString(), child2.isDefined());
                 }
             }
         } else if (node1.getType() == ModelType.LIST) {

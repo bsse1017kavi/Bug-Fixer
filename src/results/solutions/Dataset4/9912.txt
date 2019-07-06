@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -366,9 +365,9 @@ public class ParentChildIndexFieldData extends AbstractIndexFieldData<ParentChil
                 ParentChildAtomicFieldData parentChildAtomicFieldData = ParentChildIndexFieldData.this.load(context);
                 AtomicFieldData.WithOrdinals typeAfd = parentChildAtomicFieldData.getAtomicFieldData(type);
                 if(typeAfd != null) {
-return AtomicFieldData.WithOrdinals.EMPTY;
+                    return typeAfd;
                 } else {
-                    return PagedBytesAtomicFieldData.empty();
+return AtomicFieldData.WithOrdinals.EMPTY;
                 }
             }
 

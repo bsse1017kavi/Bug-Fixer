@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -195,9 +194,9 @@ class FileSystemDeploymentService implements DeploymentScanner {
             String relDir = relativeToDir.getAbsolutePath();
             String sub = fullDir.substring(relDir.length());
             if (sub.startsWith(File.separator)) {
-this.relativePath = sub.length() > 0 ? sub + File.separator : sub;
+                sub = sub.length() == 1 ? "" : sub.substring(1);
             }
-            this.relativePath = sub.length() > 0 ? sub + "/" : sub;
+this.relativePath = sub.length() > 0 ? sub + File.separator : sub;
         } else {
             relativePath = null;
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class StringEncoderComparatorTest {
 
         String[] controlArray = { "Jordan", "Prior", "Pryor", "Sosa" };
 
-String[] resultArray = testList.toArray(new String[0]);
+        Collections.sort(testList, sCompare);
 
-        String[] resultArray = (String[]) testList.toArray(new String[0]);
+String[] resultArray = testList.toArray(new String[0]);
 
         for (int i = 0; i < resultArray.length; i++) {
             assertEquals("Result Array not Equal to Control Array at index: " + i, controlArray[i], resultArray[i]);

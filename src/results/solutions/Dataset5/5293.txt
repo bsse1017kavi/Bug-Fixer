@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -220,9 +219,9 @@ public class MockWebApplication extends WebApplication
     public void processRequestCycle() throws ServletException
     {
         WebRequestCycle cycle = new WebRequestCycle(this, wicketSession, wicketRequest,
-lastRenderedPage = cycle.getResponsePage();
+                wicketResponse);
         cycle.request();
-        lastRenderedPage = cycle.getPage();
+lastRenderedPage = cycle.getResponsePage();
     }
 
     /**

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.migration;
 
 import org.apache.cassandra.config.CFMetaData;
@@ -46,9 +45,9 @@ public class RenameColumnFamily extends Migration
     private static final Serializer serializer = new Serializer();
     
     private String tableName;
-private Integer cfId;
+    private String oldName;
     private String newName;
-    private int cfId;
+private Integer cfId;
     
     RenameColumnFamily(DataInputStream din) throws IOException
     {

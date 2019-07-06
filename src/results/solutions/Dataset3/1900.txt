@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class CoarseSessionsKeyExternalizer extends AbstractSimpleExternalizer<Co
     public void writeObject(ObjectOutput output, CoarseSessionsKey key) throws IOException {
         output.writeUTF(key.toString());
     }
-public CoarseSessionsKey readObject(ObjectInput input) throws IOException, ClassNotFoundException {
+
     @Override
-    public CoarseSessionsKey readObject(ObjectInput input) throws IOException {
+public CoarseSessionsKey readObject(ObjectInput input) throws IOException, ClassNotFoundException {
         return new CoarseSessionsKey(input.readUTF());
     }
 }

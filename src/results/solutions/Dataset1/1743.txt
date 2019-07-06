@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -362,9 +361,9 @@ public class BooleanQuery extends Query {
   protected Weight createWeight(Searcher searcher) throws IOException {
     return new BooleanWeight(searcher);
   }
-if (minNrShouldMatch == 0 && clauses.size() == 1) {                    // optimize 1-clause queries
+
   public Query rewrite(IndexReader reader) throws IOException {
-    if (clauses.size() == 1) {                    // optimize 1-clause queries
+if (minNrShouldMatch == 0 && clauses.size() == 1) {                    // optimize 1-clause queries
       BooleanClause c = (BooleanClause)clauses.get(0);
       if (!c.isProhibited()) {			  // just return clause
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -51,9 +50,9 @@ public final class PresentationRegistryPopulator {
     private static void installFont(FontDefinition definition, FontRegistry registry, IPreferenceStore store) {
 		String id = definition.getId();
 		FontData [] prefFont = store != null ? PreferenceConverter.getFontDataArray(store, id) : null;
-defaultFont = new FontData [] {StringConverter.asFontData(definition.getValue(), PreferenceConverter.FONTDATA_DEFAULT_DEFAULT)};
+		FontData [] defaultFont = null;
 		if (definition.getValue() != null)
-		    defaultFont = new FontData [] {StringConverter.asFontData(definition.getValue(), null)};
+defaultFont = new FontData [] {StringConverter.asFontData(definition.getValue(), PreferenceConverter.FONTDATA_DEFAULT_DEFAULT)};
 		else if (definition.getDefaultsTo() != null)
 		    defaultFont = registry.getFontData(definition.getDefaultsTo());
 		else

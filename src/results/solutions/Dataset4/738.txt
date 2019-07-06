@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -93,9 +92,9 @@ public class ShortArray {
 		addAll(array, 0, array.length);
 	}
 
-int sizeNeeded = size + length;
+	public void addAll (short[] array, int offset, int length) {
 		short[] items = this.items;
-		int sizeNeeded = size + length - offset;
+int sizeNeeded = size + length;
 		if (sizeNeeded >= items.length) items = resize(Math.max(8, (int)(sizeNeeded * 1.75f)));
 		System.arraycopy(array, offset, items, size, length);
 		size += length;

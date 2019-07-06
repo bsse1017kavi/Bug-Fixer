@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -116,9 +115,9 @@ public int hashCode() {
 				if (this.isCancelled) return FAILED;
 				
 				String name = (String) names.nextElement();
-manager.addBinary((IFile) value, this.folder.getFullPath());
+				Object value = indexedFileNames.get(name);
 				if (value instanceof IFile) {
-					manager.add((IFile) value, this.folder.getFullPath());
+manager.addBinary((IFile) value, this.folder.getFullPath());
 				} else if (value == DELETED) {
 					manager.remove(name, this.project.getFullPath());
 				}

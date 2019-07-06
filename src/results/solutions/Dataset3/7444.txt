@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -194,9 +193,9 @@ public class BigFractionFormat extends AbstractFormat implements Serializable {
         final ParsePosition parsePosition = new ParsePosition(0);
         final BigFraction result = parse(source, parsePosition);
         if (parsePosition.getIndex() == 0) {
-LocalizedFormats.UNPARSEABLE_FRACTION_NUMBER, source);
+            throw MathRuntimeException.createParseException(
                     parsePosition.getErrorIndex(),
-                    "unparseable fraction number: \"{0}\"", source);
+LocalizedFormats.UNPARSEABLE_FRACTION_NUMBER, source);
         }
         return result;
     }

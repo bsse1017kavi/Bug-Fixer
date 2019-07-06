@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public final class EEModuleConfiguration {
     private final List<ComponentConfiguration> componentConfigurations;
 
     // Module Bindings
-public EEModuleConfiguration(EEModuleDescription description, DeploymentPhaseContext context, final Module module) throws DeploymentUnitProcessingException {
+    private final List<BindingConfiguration> bindingConfigurations = new ArrayList<BindingConfiguration>();
 
-    EEModuleConfiguration(EEModuleDescription description, DeploymentPhaseContext context, final Module module) throws DeploymentUnitProcessingException {
+public EEModuleConfiguration(EEModuleDescription description, DeploymentPhaseContext context, final Module module) throws DeploymentUnitProcessingException {
         DeploymentUnit deploymentUnit = context.getDeploymentUnit();
         ModuleClassLoader classLoader = module.getClassLoader();
         applicationName = description.getApplicationName();

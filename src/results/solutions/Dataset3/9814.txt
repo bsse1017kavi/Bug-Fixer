@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -110,9 +109,9 @@ public final class JDBCCustomFinderQuery implements JDBCQueryCommand {
                     result = new ArrayList((Collection) value);
                 cacheResults(result);
                 return EntityProxyFactory.Util.getEntityCollection(factory, result);
-return Collections.singleton(value != null ? factory.getEntityObject(value) : null);
+            } else {
                 // Don't bother trying to cache this
-                return Collections.singleton(factory.getEntityObject(value));
+return Collections.singleton(value != null ? factory.getEntityObject(value) : null);
             }
         } catch (IllegalAccessException e) {
             log.error("Error invoking custom finder " + finderMethod.getName(), e);

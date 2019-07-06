@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class OrderByQueryTestCase extends AbstractCmpTest {
     @Deployment
     public static Archive<?> deploy() {
         JavaArchive jar = ShrinkWrap.create(JavaArchive.class, "cmp-commerce.jar");
-jar.addAsManifestResource(OrderByQueryTestCase.class.getPackage(), "jbosscmp-jdbc-"+OrderByQueryTestCase.class.getSimpleName()+".xml", "jbosscmp-jdbc.xml");
+        jar.addPackage(OrderByQueryTestCase.class.getPackage());
         jar.addAsManifestResource(OrderByQueryTestCase.class.getPackage(), "ejb-jar.xml", "ejb-jar.xml");
-        jar.addAsManifestResource(OrderByQueryTestCase.class.getPackage(), "jbosscmp-jdbc.xml", "jbosscmp-jdbc.xml");
+jar.addAsManifestResource(OrderByQueryTestCase.class.getPackage(), "jbosscmp-jdbc-"+OrderByQueryTestCase.class.getSimpleName()+".xml", "jbosscmp-jdbc.xml");
         AbstractCmpTest.addDeploymentAssets(jar);
         return jar;
     }

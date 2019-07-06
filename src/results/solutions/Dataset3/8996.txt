@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -156,9 +155,9 @@ public class PatchToolImpl implements PatchTool {
             return execute(workDir, contentPolicy);
         } catch (Exception e) {
             throw rethrowException(e);
-PatchLogger.ROOT_LOGGER.cannotDeleteFile(workDir.getAbsolutePath());
+        } finally {
             if (workDir != null && !IoUtils.recursiveDelete(workDir)) {
-                PatchLogger.ROOT_LOGGER.debugf("failed to remove work directory (%s)", workDir);
+PatchLogger.ROOT_LOGGER.cannotDeleteFile(workDir.getAbsolutePath());
             }
         }
     }

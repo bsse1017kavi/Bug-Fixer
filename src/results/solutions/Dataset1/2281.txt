@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.FromBaseTable
@@ -1238,9 +1237,9 @@ public class FromBaseTable extends FromTable
 					{
 						ValueNode leftOpnd = ((Predicate) pred).getAndNode().getLeftOperand();
 						if (firstColumn != null && leftOpnd instanceof LikeEscapeOperatorNode)
-if (likeNode.getLeftOperand().requiresTypeFromContext())
+						{
 							LikeEscapeOperatorNode likeNode = (LikeEscapeOperatorNode) leftOpnd;
-							if (likeNode.getLeftOperand().isParameterNode())
+if (likeNode.getLeftOperand().requiresTypeFromContext())
 							{
 								ValueNode receiver = ((TernaryOperatorNode) likeNode).getReceiver();
 								if (receiver instanceof ColumnReference)

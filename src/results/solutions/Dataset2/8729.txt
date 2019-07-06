@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -74,9 +73,9 @@ public class WhileStatement extends Statement {
 					flowContext,
 					this,
 					breakLabel,
-FlowInfo actionInfo = // TODO: shouldn't it use optimized constant here?
+					continueLabel,
 					currentScope);
-			FlowInfo actionInfo =
+FlowInfo actionInfo = // TODO: shouldn't it use optimized constant here?
 				((condConstant != Constant.NotAConstant) && (condConstant.booleanValue() == false))
 					? FlowInfo.DeadEnd
 					: postCondInfo.initsWhenTrue().copy();

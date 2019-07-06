@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class DuplicateUserCheckStateTestCase extends PropertyTestHelper {
         AssertConsoleBuilder consoleBuilder = new AssertConsoleBuilder().
                 expectedDisplayText(MESSAGES.aboutToAddUser(values.getUserName(), values.getRealm())).
                 expectedDisplayText(AddUser.NEW_LINE).
-expectedInput(MESSAGES.yes()).
+                expectedDisplayText(MESSAGES.isCorrectPrompt() + " " + MESSAGES.yes() + "/" + MESSAGES.no() + "?").
                 expectedDisplayText(" ").
-                expectedInput("yes").
+expectedInput(MESSAGES.yes()).
                 expectedDisplayText(MESSAGES.addedUser(values.getUserName(), values.getUserFiles().get(0).getCanonicalPath())).
                 expectedDisplayText(AddUser.NEW_LINE).
                 expectedDisplayText(MESSAGES.addedGroups(values.getUserName(), values.getGroups(),values.getGroupFiles().get(0).getCanonicalPath())).

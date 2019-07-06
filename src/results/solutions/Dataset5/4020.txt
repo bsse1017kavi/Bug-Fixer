@@ -1,4 +1,3 @@
-
 /*
  * $Id: WebRequestCodingStrategy.java,v 1.24 2006/02/15 02:00:30 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -165,9 +164,9 @@ public class WebRequestCodingStrategy implements IRequestCodingStrategy
 		// first check whether the target was mounted
 		IRequestTargetUrlCodingStrategy encoder = getMountEncoder(requestTarget);
 		if (encoder != null)
-return requestCycle.getResponse().encodeURL(prefix.append(pathForTarget(requestTarget)).toString());
+		{
 			final StringBuffer prefix = new StringBuffer(urlPrefix(requestCycle));
-			return prefix.append(pathForTarget(requestTarget)).toString();
+return requestCycle.getResponse().encodeURL(prefix.append(pathForTarget(requestTarget)).toString());
 		}
 
 		// no mount found; go on with default processing

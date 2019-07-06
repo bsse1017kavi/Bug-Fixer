@@ -1,4 +1,3 @@
-
 package org.jboss.as.server.deploymentoverlay;
 
 import java.util.Arrays;
@@ -65,9 +64,9 @@ public class ContentAdd extends AbstractAddStepHandler {
     static void installServices(final OperationContext context, final ServiceVerificationHandler verificationHandler, final List<ServiceController<?>> newControllers, final String name, final String path, final byte[] content) {
         final ServiceName serviceName = ContentService.SERVICE_NAME.append(name).append(path);
         final ContentService service = new ContentService(path, content);
-.addDependency(DeploymentOverlayService.SERVICE_NAME.append(name), DeploymentOverlayService.class, service.getDeploymentOverlayServiceInjectedValue())
+
         ServiceBuilder<ContentService> builder = context.getServiceTarget().addService(serviceName, service)
-                .addDependency(DeploymentOverlayService.SERVICE_NAME.append(name), DeploymentOverlayService.class, service.getContentServiceInjectedValue())
+.addDependency(DeploymentOverlayService.SERVICE_NAME.append(name), DeploymentOverlayService.class, service.getDeploymentOverlayServiceInjectedValue())
                 .addDependency(ContentRepository.SERVICE_NAME, ContentRepository.class, service.getContentRepositoryInjectedValue());
         if(verificationHandler != null) {
             builder.addListener(verificationHandler);

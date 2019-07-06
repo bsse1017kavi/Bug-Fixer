@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,8 +66,8 @@ public class ScriptStatisticalFacetCollector extends AbstractFacetCollector {
     @Override protected void doSetNextReader(IndexReader reader, int docBase) throws IOException {
         script.setNextReader(reader);
     }
-return new InternalStatisticalFacet(facetName, min, max, total, sumOfSquares, count);
+
     @Override public Facet facet() {
-        return new InternalStatisticalFacet(facetName, "_na", min, max, total, sumOfSquares, count);
+return new InternalStatisticalFacet(facetName, min, max, total, sumOfSquares, count);
     }
 }

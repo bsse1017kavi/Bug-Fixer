@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class TermsStatsLongFacetExecutor extends FacetExecutor {
             entries.release();
             return new InternalTermsStatsLongFacet(facetName, comparatorType, size, ImmutableList.<InternalTermsStatsLongFacet.LongEntry>of(), missing);
         }
-List<InternalTermsStatsLongFacet.LongEntry> longEntries = new ArrayList<>(entries.v().size());
+        if (size == 0) { // all terms
             // all terms, just return the collection, we will sort it on the way back
-            List<InternalTermsStatsLongFacet.LongEntry> longEntries = new ArrayList<InternalTermsStatsLongFacet.LongEntry>(entries.v().size());
+List<InternalTermsStatsLongFacet.LongEntry> longEntries = new ArrayList<>(entries.v().size());
             boolean[] states = entries.v().allocated;
             Object[] values = entries.v().values;
             for (int i = 0; i < states.length; i++) {

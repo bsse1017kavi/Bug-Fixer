@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -28,9 +27,9 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
  * it uses a macro to set the result of the code snippet instead
  * of returning it.
  */
-public CodeSnippetReturnStatement(Expression expr, int s, int e) {
+public class CodeSnippetReturnStatement extends ReturnStatement implements InvocationSite, EvaluationConstants {
 	MethodBinding setResultMethod;
-public CodeSnippetReturnStatement(Expression expr, int s, int e, EvaluationContext evaluationContext) {
+public CodeSnippetReturnStatement(Expression expr, int s, int e) {
 	super(expr, s, e);
 }
 

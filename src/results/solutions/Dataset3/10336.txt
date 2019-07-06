@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class OctalUnescaper extends CharSequenceTranslator {
 
     /**
      * {@inheritDoc}
-public int translate(final CharSequence input, final int index, final Writer out) throws IOException {
+     */
     @Override
-    public int translate(CharSequence input, int index, Writer out) throws IOException {
+public int translate(final CharSequence input, final int index, final Writer out) throws IOException {
         if(input.charAt(index) == '\\' && index < (input.length() - 1) && Character.isDigit(input.charAt(index + 1)) ) {
             int start = index + 1;
 

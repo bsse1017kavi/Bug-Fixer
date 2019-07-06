@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -233,9 +232,9 @@ public class TransportBulkAction extends TransportAction<BulkRequest, BulkRespon
                     String message = ExceptionsHelper.detailedMessage(e);
                     synchronized (responses) {
                         for (BulkItemRequest request : requests) {
-responses[request.id()] = new BulkItemResponse(request.id(), indexRequest.opType().toString().toLowerCase(Locale.ENGLISH),
+                            if (request.request() instanceof IndexRequest) {
                                 IndexRequest indexRequest = (IndexRequest) request.request();
-                                responses[request.id()] = new BulkItemResponse(request.id(), indexRequest.opType().toString().toLowerCase(),
+responses[request.id()] = new BulkItemResponse(request.id(), indexRequest.opType().toString().toLowerCase(Locale.ENGLISH),
                                         new BulkItemResponse.Failure(indexRequest.index(), indexRequest.type(), indexRequest.id(), message));
                             } else if (request.request() instanceof DeleteRequest) {
                                 DeleteRequest deleteRequest = (DeleteRequest) request.request();

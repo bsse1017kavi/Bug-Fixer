@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class InternalTransportClient extends AbstractClient implements InternalC
         this.settings = settings;
         this.threadPool = threadPool;
         this.nodesService = nodesService;
-MapBuilder<Action, TransportActionNodeProxy> actionsBuilder = new MapBuilder<>();
+        this.adminClient = adminClient;
 
-        MapBuilder<Action, TransportActionNodeProxy> actionsBuilder = new MapBuilder<Action, TransportActionNodeProxy>();
+MapBuilder<Action, TransportActionNodeProxy> actionsBuilder = new MapBuilder<>();
         for (GenericAction action : actions.values()) {
             if (action instanceof Action) {
                 actionsBuilder.put((Action) action, new TransportActionNodeProxy(settings, action, transportService));

@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.hiero.unicodefont;
 
 import java.io.BufferedReader;
@@ -36,9 +35,9 @@ public class HieroSettings {
 	/**
 	 * @param hieroFileRef The file system or classpath location of the Hiero settings file.
 	 */
-BufferedReader reader = new BufferedReader(new InputStreamReader(Gdx.files.absolute(hieroFileRef).read()));
+	public HieroSettings (String hieroFileRef) {
 		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(Gdx.files.readFile(hieroFileRef, FileType.Absolute)));
+BufferedReader reader = new BufferedReader(new InputStreamReader(Gdx.files.absolute(hieroFileRef).read()));
 			while (true) {
 				String line = reader.readLine();
 				if (line == null) break;

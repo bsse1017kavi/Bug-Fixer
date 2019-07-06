@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -100,9 +99,9 @@ public class ValidateOperationHandler implements OperationStepHandler, Descripti
             if( context.completeStep() == ResultAction.ROLLBACK) {
                 context.getFailureDescription().set(result.get(FAILURE_DESCRIPTION));
             }
-new OperationValidator(context.getResourceRegistration(), false, false).validateOperation(op);
+        } else {
             try {
-                new OperationValidator(context.getResourceRegistration()).validateOperation(op);
+new OperationValidator(context.getResourceRegistration(), false, false).validateOperation(op);
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
                 context.getFailureDescription().set(e.getMessage());

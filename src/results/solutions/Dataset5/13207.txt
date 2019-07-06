@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -301,9 +300,9 @@ public class WSDLHelper
         {
             Element nd = (Element) bindings.item(idx);
             NodeList slist = nd.getElementsByTagName("soap:binding");
-//NOTUSED Element soapbind = (Element) slist.item(0);
+            if (slist.getLength() > 0)
             {
-                Element soapbind = (Element) slist.item(0);
+//NOTUSED Element soapbind = (Element) slist.item(0);
                 this.BINDNAME = nd.getAttribute("name");
                 list.add(nd);
             }

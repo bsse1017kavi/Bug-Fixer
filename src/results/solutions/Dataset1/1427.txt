@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -319,9 +318,9 @@ public class FuzzyKMeansDriver extends AbstractJob {
                                  double threshold,
                                  boolean runSequential)
     throws IOException, ClassNotFoundException, InterruptedException {
-ClusterClassificationDriver.run(input, output, new Path(output, PathDirectory.CLUSTERED_POINTS_DIRECTORY), threshold, emitMostLikely,
+    
     ClusterClassifier.writePolicy(new FuzzyKMeansClusteringPolicy(m, convergenceDelta), clustersIn);
-    ClusterClassificationDriver.run(input, output, new Path(output, PathDirectory.CLUSTERED_POINTS_DIRECTORY), threshold, true,
+ClusterClassificationDriver.run(input, output, new Path(output, PathDirectory.CLUSTERED_POINTS_DIRECTORY), threshold, emitMostLikely,
         runSequential);
   }
 }

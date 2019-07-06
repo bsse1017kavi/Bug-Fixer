@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1322,9 +1321,9 @@ public class MockHttpServletRequest implements HttpServletRequest
 	public void setRequestToFormComponent(final Form<?> form, final Map<String, Object> values)
 	{
 		setRequestToComponent(form);
-form.visitChildren(FormComponent.class, new IVisitor<FormComponent<?>>()
+
 		final Map<String, Object> valuesApplied = new HashMap<String, Object>();
-		form.visitChildren(FormComponent.class, new Component.IVisitor<FormComponent<?>>()
+form.visitChildren(FormComponent.class, new IVisitor<FormComponent<?>>()
 		{
 			public Object component(final FormComponent<?> component)
 			{

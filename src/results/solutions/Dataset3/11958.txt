@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class OSGiFrameworkPropertyRemove extends AbstractRemoveStepHandler {
             context.setRollbackOnly();
             context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
             return;
-final String oldVal = subsystemState.setProperty(propName, null);
+        }
 
-        final Object oldVal = subsystemState.setProperty(propName, null);
+final String oldVal = subsystemState.setProperty(propName, null);
         context.completeStep(new OperationContext.RollbackHandler() {
             @Override
             public void handleRollback(OperationContext context, ModelNode operation) {

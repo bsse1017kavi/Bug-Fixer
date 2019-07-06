@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class WebVirtualHostDefinition extends ModelOnlyResourceDefinition {
                     .build();
     protected static final ListAttributeDefinition ALIAS =
             new StringListAttributeDefinition.Builder(Constants.ALIAS)
-.setElementValidator(new StringLengthValidator(1, false))
+                    .setXmlName(Constants.ALIAS)
                     .setAllowNull(true)
-                    .setValidator(new StringLengthValidator(1, false))
+.setElementValidator(new StringLengthValidator(1, false))
                     .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES)
                     .build();
     protected static final SimpleAttributeDefinition DEFAULT_WEB_MODULE =

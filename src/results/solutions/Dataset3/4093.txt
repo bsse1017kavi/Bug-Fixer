@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -122,9 +121,9 @@ public class SockJsServiceTests extends AbstractHttpRequestTests {
 		when(mockResponse.getOutputStream()).thenReturn(ous);
 		this.response = new ServletServerHttpResponse(mockResponse);
 
-verify(mockResponse, times(1)).getOutputStream();
+		handleRequest("GET", "/echo/info", HttpStatus.OK);
 
-		verify(mockResponse.getOutputStream(), times(1));
+verify(mockResponse, times(1)).getOutputStream();
 	}
 
 	@Test

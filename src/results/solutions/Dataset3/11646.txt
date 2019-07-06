@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -190,9 +189,9 @@ public class PolynomialsUtilsTest extends TestCase {
               +26876802183334044115405.0
         };
         for (int i = 0; i < l40.length; ++i) {
-assertEquals(ci, l40[i], Math.abs(ci) * 1.0e-15);
+            if (i % 2 == 0) {
                 double ci = numerators[i / 2] / denominator;
-                assertEquals(ci, l40[i], ci * 1.0e-15);
+assertEquals(ci, l40[i], Math.abs(ci) * 1.0e-15);
             } else {
                 assertEquals(0.0, l40[i], 0.0);
             }

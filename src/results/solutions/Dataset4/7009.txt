@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class CloudImmutableBlobContainer extends AbstractCloudBlobContainer impl
                     listener.onFailure(e.getCause());
                 } catch (Throwable t) {
                     listener.onFailure(t);
-}, cloudBlobStore.executor());
+                }
             }
-        }, cloudBlobStore.executorService());
+}, cloudBlobStore.executor());
     }
 
     @Override public void writeBlob(String blobName, InputStream is, long sizeInBytes) throws IOException {

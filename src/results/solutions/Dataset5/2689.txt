@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1626,9 +1625,9 @@ void hookDOMListeners (nsIDOMEventTarget target, boolean isTop) {
 
 	/*
 	* Only hook mouseover and mouseout if the target is a top-level frame, so that mouse moves
-if (isTop && delegate.hookEnterExit ()) {
+	* between frames will not generate events.
 	*/
-	if (isTop) {
+if (isTop && delegate.hookEnterExit ()) {
 		string = new nsEmbedString (XPCOM.DOMEVENT_MOUSEOVER);
 		rc = target.AddEventListener (string.getAddress (), domEventListener.getAddress (), false);
 		if (rc != XPCOM.NS_OK) error (rc);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -47,9 +46,9 @@ public class SwitchFlowContext extends FlowContext {
 	public void recordBreakFrom(FlowInfo flowInfo) {
 
 		if (initsOnBreak == FlowInfo.DEAD_END) {
-initsOnBreak = initsOnBreak.mergedWith(flowInfo.unconditionalInits());
+			initsOnBreak = flowInfo.copy().unconditionalInits();
 		} else {
-			initsOnBreak.mergedWith(flowInfo.unconditionalInits());
+initsOnBreak = initsOnBreak.mergedWith(flowInfo.unconditionalInits());
 		};
 	}
 }

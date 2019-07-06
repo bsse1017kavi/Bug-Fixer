@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -93,9 +92,9 @@ public class RestIndicesStatsAction extends BaseRestHandler {
             indicesStatsRequest.groups(Strings.splitStringByCommaToArray(request.param("groups")));
         }
         indicesStatsRequest.docs(request.paramAsBoolean("docs", indicesStatsRequest.docs()));
-indicesStatsRequest.get(request.paramAsBoolean("get", indicesStatsRequest.get()));
+        indicesStatsRequest.store(request.paramAsBoolean("store", indicesStatsRequest.store()));
         indicesStatsRequest.indexing(request.paramAsBoolean("indexing", indicesStatsRequest.indexing()));
-        indicesStatsRequest.indexing(request.paramAsBoolean("get", indicesStatsRequest.get()));
+indicesStatsRequest.get(request.paramAsBoolean("get", indicesStatsRequest.get()));
         indicesStatsRequest.merge(request.paramAsBoolean("merge", indicesStatsRequest.merge()));
         indicesStatsRequest.refresh(request.paramAsBoolean("refresh", indicesStatsRequest.refresh()));
         indicesStatsRequest.flush(request.paramAsBoolean("flush", indicesStatsRequest.flush()));

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -450,9 +449,9 @@ class ModelCombiner implements ManagedServerBootConfiguration {
 
     private void addDeployments(List<ModelNode> updates) {
         if (serverGroup.hasDefined(DEPLOYMENT)) {
-if (! domainController.getLocalHostInfo().isMasterDomainController()) {
+
             FileRepository remoteRepository = null;
-            if (domainController.getLocalHostInfo().isMasterDomainController()) {
+if (! domainController.getLocalHostInfo().isMasterDomainController()) {
                 remoteRepository = domainController.getRemoteFileRepository();
             }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -265,9 +264,9 @@ public class IDFactory {
         return makeID(n, null, args);
     }
     public static final ID makeID(String namespacename, Object[] args)
-if (n == null) throw new IDInstantiationException("Namespace "+namespacename+" not found");
+            throws IDInstantiationException {
     	Namespace n = getNamespaceByName(namespacename);
-    	if (n == null) throw new IDInstantiationException("Namespace named "+namespacename+" not found");
+if (n == null) throw new IDInstantiationException("Namespace "+namespacename+" not found");
         return makeID(n, args);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -54,9 +53,9 @@ public abstract class AbstractStore extends AbstractIndexShardComponent implemen
     private final boolean sync;
 
     protected AbstractStore(ShardId shardId, @IndexSettings Settings indexSettings, IndexStore indexStore) {
-this.sync = componentSettings.getAsBoolean("sync", true); // TODO we don't really need to fsync when using shared gateway...
+        super(shardId, indexSettings);
         this.indexStore = indexStore;
-        this.sync = componentSettings.getAsBoolean("sync", false);
+this.sync = componentSettings.getAsBoolean("sync", true); // TODO we don't really need to fsync when using shared gateway...
     }
 
     protected Directory wrapDirectory(Directory dir) throws IOException {

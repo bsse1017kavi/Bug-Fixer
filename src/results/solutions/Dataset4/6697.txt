@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -163,9 +162,9 @@ public class IndicesStats extends BroadcastOperationResponse implements ToXConte
         primaries().toXContent(builder, params);
         builder.endObject();
 
-builder.startObject(indexStats.index(), XContentBuilder.FieldCaseConversion.NONE);
+        builder.startObject(Fields.INDICES);
         for (IndexStats indexStats : indices().values()) {
-            builder.startObject(indexStats.index());
+builder.startObject(indexStats.index(), XContentBuilder.FieldCaseConversion.NONE);
 
             builder.startObject("primaries");
             indexStats.primaries().toXContent(builder, params);

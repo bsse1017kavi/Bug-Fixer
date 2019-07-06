@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -127,9 +126,9 @@ public final class ActionHandler extends AbstractHandler {
                 public void propertyChange(
                         PropertyChangeEvent propertyChangeEvent) {
                     String property = propertyChangeEvent.getProperty();
-|| IHandlerAttributes.ATTRIBUTE_HANDLED
+                    if (IAction.ENABLED.equals(property)
                             || IAction.CHECKED.equals(property)
-                            || RetargetAction.HANDLER
+|| IHandlerAttributes.ATTRIBUTE_HANDLED
                                     .equals(property)) {
 
                         Map previousAttributeValuesByName = attributeValuesByName;

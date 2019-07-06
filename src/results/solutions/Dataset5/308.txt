@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -211,9 +210,9 @@ public abstract class BaseTree extends AbstractTree
 			TreeNode parent = node.getParent();
 
 			CharSequence classes[] = new CharSequence[level];
-if (parent == null || isNodeLast(parent))
+			for (int i = 0; i < level; ++i)
 			{
-				if (isNodeLast(parent))
+if (parent == null || isNodeLast(parent))
 				{
 					classes[i] = "spacer";
 				}

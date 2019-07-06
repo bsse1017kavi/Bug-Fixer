@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -94,9 +93,9 @@ public class MemoryTranslog extends AbstractIndexShardComponent implements Trans
             MemorySnapshot memorySnapshot = (MemorySnapshot) snapshot;
             if (currentId() != snapshot.translogId()) {
                 return snapshot();
-newSnapshot.seekForward(memorySnapshot.position());
+            }
             MemorySnapshot newSnapshot = new MemorySnapshot(currentId(), operations, operationCounter.get());
-            newSnapshot.seekForward(memorySnapshot.length());
+newSnapshot.seekForward(memorySnapshot.position());
             return newSnapshot;
         }
     }

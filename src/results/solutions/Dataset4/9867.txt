@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests;
 
 import java.util.List;
@@ -53,9 +52,9 @@ public class Box2DCharacterControllerTest extends GdxTest implements Application
 		renderer = new Box2DDebugRenderer();
 		cam = new OrthographicCamera(28, 20);
 		createWorld();
-font = new BitmapFont(Gdx.files.internal("data/arial-15.fnt"), false);
+		Gdx.input.setInputProcessor(this);
 		batch = new SpriteBatch();
-		font = new BitmapFont();
+font = new BitmapFont(Gdx.files.internal("data/arial-15.fnt"), false);
 	}
  
 	private void createWorld() {

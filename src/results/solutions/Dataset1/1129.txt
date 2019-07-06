@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.compound;
 
 /*
@@ -325,9 +324,9 @@ public class TestCompoundWordTokenFilter extends BaseTokenStreamTestCase {
         TokenFilter filter = new DictionaryCompoundWordTokenFilter(TEST_VERSION_CURRENT, tokenizer, dict);
         return new TokenStreamComponents(tokenizer, filter);
       }
-protected Reader initReader(String fieldName, Reader reader) {
+
       @Override
-      protected Reader initReader(Reader reader) {
+protected Reader initReader(String fieldName, Reader reader) {
         return new MappingCharFilter(normMap, CharReader.get(reader));
       }
     };

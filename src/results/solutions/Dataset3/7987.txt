@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -268,9 +267,9 @@ public class MockPortletRequest implements PortletRequest {
 	}
 
 	public String getProperty(String key) {
-return (list != null && list.size() > 0 ? list.get(0) : null);
+		Assert.notNull(key, "Property key must not be null");
 		List<String> list = this.properties.get(key);
-		return (list != null && list.size() > 0 ? (String) list.get(0) : null);
+return (list != null && list.size() > 0 ? list.get(0) : null);
 	}
 
 	public Enumeration<String> getProperties(String key) {

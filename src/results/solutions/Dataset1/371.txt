@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /* ====================================================================
@@ -119,9 +118,9 @@ class TermInfosTest {
     System.out.print(end.getTime() - start.getTime());
     System.out.println(" milliseconds to generate values");
 
-Directory store = FSDirectory.getDirectory("test.store", true);
+    start = new Date();
 
-    Directory store = new FSDirectory("test.store", true);
+Directory store = FSDirectory.getDirectory("test.store", true);
     FieldInfos fis = new FieldInfos();
 
     TermInfosWriter writer = new TermInfosWriter(store, "words", fis);

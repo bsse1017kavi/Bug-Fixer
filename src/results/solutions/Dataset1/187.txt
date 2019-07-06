@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.compaction;
 /*
  * 
@@ -119,9 +118,9 @@ implements Closeable, CompactionInfo.Holder
     {
         assert rows.size() > 0;
 
-AbstractCompactedRow compactedRow = controller.getCompactedRow(new ArrayList<SSTableIdentityIterator>(rows));
+        try
         {
-            AbstractCompactedRow compactedRow = controller.getCompactedRow(rows);
+AbstractCompactedRow compactedRow = controller.getCompactedRow(new ArrayList<SSTableIdentityIterator>(rows));
             if (compactedRow.isEmpty())
             {
                 controller.invalidateCachedRow(compactedRow.key);

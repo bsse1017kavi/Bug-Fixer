@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -61,8 +60,8 @@ public class DeploymentDeployHandler implements OperationStepHandler {
         final String name = address.getLastElement().getValue();
         final String runtimeName = RUNTIME_NAME.resolveModelAttribute(context, model).asString();
         final DeploymentHandlerUtil.ContentItem[] contents = getContents(CONTENT_ALL.resolveModelAttribute(context, model));
-context.stepCompleted();
+        DeploymentHandlerUtil.deploy(context, runtimeName, name, vaultReader, contents);
 
-        context.completeStep();
+context.stepCompleted();
     }
 }

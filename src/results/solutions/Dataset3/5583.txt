@@ -1,4 +1,3 @@
-
 package backtype.storm.messaging.netty;
 
 import java.net.InetSocketAddress;
@@ -126,9 +125,9 @@ class Client implements IConnection {
         ArrayList<Object> requests = new ArrayList<Object>();
         requests.add(message_queue.take());
         for (Object msg = message_queue.poll(); msg!=null;  msg = message_queue.poll()) {
-if (msg==ControlMessage.closeMessage()) break;
+            requests.add(msg); 
             //we will discard any message after CLOSE
-            if (msg.equals(ControlMessage.closeMessage())) break;
+if (msg==ControlMessage.closeMessage()) break;
             //we limit the batch per buffer size
             TaskMessage taskMsg = (TaskMessage) msg; 
             size += (taskMsg.message()!=null? taskMsg.message().length : 0) + 6; //INT + SHORT + payload

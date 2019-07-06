@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -29,9 +28,9 @@ package org.jboss.as.cli;
  */
 public interface CommandHandler {
 
-CommandLineCompleter getArgumentCompleter();
+    boolean isAvailable(CommandContext ctx);
 
-    CommandArgumentCompleter getArgumentCompleter();
+CommandLineCompleter getArgumentCompleter();
 
     /**
      * Whether the command supports batch mode or not.

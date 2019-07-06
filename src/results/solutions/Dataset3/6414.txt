@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class UnboundedQueueThreadPoolAdd extends AbstractAddStepHandler implemen
     @Override
     protected void performRuntime(final OperationContext context, final ModelNode operation, final ModelNode model,
             final ServiceVerificationHandler verificationHandler, final List<ServiceController<?>> newControllers) throws OperationFailedException {
-attribute.resolveModelAttribute(context, model);
+
         for(final AttributeDefinition attribute : ATTRIBUTES) {
-            attribute.validateResolvedOperation(model);
+attribute.resolveModelAttribute(context, model);
         }
 
         final BaseOperationParameters params = ThreadsSubsystemThreadPoolOperationUtils.parseUnboundedQueueThreadPoolOperationParameters(operation);

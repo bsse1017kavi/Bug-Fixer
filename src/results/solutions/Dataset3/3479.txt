@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -89,9 +88,9 @@ public abstract class BaseArgumentTabCompleter implements CommandLineCompleter {
         CommandLineCompleter valueCompleter = null;
         if (!parsedCmd.endsOnPropertySeparator()) {
             final String argName = parsedCmd.getLastParsedPropertyName();
-result = parsedCmd.getLastChunkIndex();
+            final String argValue = parsedCmd.getLastParsedPropertyValue();
             if (argValue != null || parsedCmd.endsOnPropertyValueSeparator()) {
-                result = parsedCmd.getLastChunkIndex();//.getLastSeparatorIndex() + 1;
+result = parsedCmd.getLastChunkIndex();
                 if(parsedCmd.endsOnPropertyValueSeparator()) {
                     ++result;// it enters on '='
                 }

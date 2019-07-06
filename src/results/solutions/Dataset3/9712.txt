@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public class WebComponentProcessor implements DeploymentUnitProcessor {
                     throw new RuntimeException(clazz + " has the wrong component type, is cannot be used as a web component");
                 }
                 ManagedBeanComponentInstantiator instantiator  = new ManagedBeanComponentInstantiator(deploymentUnit,description);
-description = new WebComponentDescription(clazz,clazz,moduleDescription.getModuleName(),moduleDescription.getAppName());
+                webComponents.put(clazz,instantiator);
             } else {
-                description = new WebComponentDescription(clazz,clazz,deploymentUnit.getName(),applicationName);
+description = new WebComponentDescription(clazz,clazz,moduleDescription.getModuleName(),moduleDescription.getAppName());
                 moduleDescription.addComponent(description);
                 webComponents.put(clazz,new WebComponentInstantiator(deploymentUnit, description));
             }

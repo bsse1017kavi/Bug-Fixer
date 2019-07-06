@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -91,9 +90,9 @@ public class TestPositionIncrement extends BaseTokenStreamTestCase {
     writer.addDocument(d);
     writer.optimize();
     writer.close();
-IndexSearcher searcher = new IndexSearcher(store, true);
+    
 
-    IndexSearcher searcher = new IndexSearcher(store);
+IndexSearcher searcher = new IndexSearcher(store, true);
     
     TermPositions pos = searcher.getIndexReader().termPositions(new Term("field", "1"));
     pos.next();

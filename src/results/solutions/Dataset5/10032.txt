@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -114,9 +113,9 @@ public class Authorization extends AbstractTestElement implements Serializable {
     public Mechanism getMechanism() {
         return Mechanism.valueOf(getPropertyAsString(MECHANISM, Mechanism.BASIC_DIGEST.name()));
     }
-setProperty(MECHANISM, mechanism.name(), Mechanism.BASIC_DIGEST.name());
+
     public void setMechanism(Mechanism mechanism) {
-        setProperty(MECHANISM, mechanism.toString());
+setProperty(MECHANISM, mechanism.name(), Mechanism.BASIC_DIGEST.name());
     }
 
     // Used for saving entries to a file

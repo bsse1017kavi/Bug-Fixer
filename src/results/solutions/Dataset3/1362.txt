@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class TransactionEntityMap implements Service<TransactionEntityMap> {
      * <li>associated with the tx and needs to be synchronized</li>
      * <li>associated with the tx but does not need to be synchronized</li>
      * </ul>
-public interface TxAssociation {
+     * Implementations of TxAssociation implement these states.
      */
-    public static interface TxAssociation {
+public interface TxAssociation {
         /**
          * Schedules the instance for synchronization. The instance might or might not be associated with the tx.
          *

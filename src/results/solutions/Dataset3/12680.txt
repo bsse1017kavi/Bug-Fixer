@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class StorePropertyResource extends SimpleResourceDefinition {
 
     // attributes
     static final SimpleAttributeDefinition VALUE =
-.setAllowExpression(true)
+            new SimpleAttributeDefinitionBuilder("value", ModelType.STRING, false)
                     .setXmlName("value")
-                    .setAllowExpression(false)
+.setAllowExpression(true)
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
                     .build();
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class NoMasterNodeTests extends AbstractNodesTests {
         node.client().admin().indices().prepareCreate("test").execute().actionGet();
         node2.close();
 
-ClusterState state = node.client().admin().cluster().prepareState().setLocal(true).execute().actionGet().getState();
+        Thread.sleep(200);
 
-        ClusterState state = node.client().admin().cluster().prepareState().setLocal(true).execute().actionGet().state();
+ClusterState state = node.client().admin().cluster().prepareState().setLocal(true).execute().actionGet().getState();
         assertThat(state.blocks().hasGlobalBlock(Discovery.NO_MASTER_BLOCK), equalTo(true));
 
         try {

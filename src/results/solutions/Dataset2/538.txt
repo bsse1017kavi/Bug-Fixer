@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -178,9 +177,9 @@ public class SimpleMapper1 extends  BaseInterceptor  {
 	Context ctx=ct.getContext();
 	String vhost=ctx.getHost();
 	String path=ct.getPath();
-if(ct.getRoles() != null || ct.getTransport() != null ) {
+	String ctxP=ctx.getPath();
 
-	if(ct.getHandler() == null ) {
+if(ct.getRoles() != null || ct.getTransport() != null ) {
 	    // it was only a security map, no handler defined
 	    return;
 	}

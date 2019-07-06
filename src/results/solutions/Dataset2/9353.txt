@@ -1,4 +1,3 @@
-
 /*
  * @(#)FontSizeHandle.java
  *
@@ -102,9 +101,9 @@ public class FontSizeHandle extends LocatorHandle {
 		}
 
 		protected void swapFont() {
-while (fe.hasNextFigure()) {
+			setOldFontSize(replaceFontSize());
 			FigureEnumeration fe = getAffectedFigures();
-			while (fe.hasMoreElements()) {
+while (fe.hasNextFigure()) {
 				((TextFigure)fe.nextFigure()).setFont(getFont());
 			}
 		}

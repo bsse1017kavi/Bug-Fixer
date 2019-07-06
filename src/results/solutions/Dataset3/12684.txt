@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -137,9 +136,9 @@ public abstract class AnnotationUtils {
 			if (annotation != null) {
 				return annotation;
 			}
-if (superClass == null || superClass.equals(Object.class)) {
+		}
 		Class<?> superClass = clazz.getSuperclass();
-		if (superClass == null || superClass == Object.class) {
+if (superClass == null || superClass.equals(Object.class)) {
 			return null;
 		}
 		return findAnnotation(superClass, annotationType);

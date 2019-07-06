@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class PrincipalPrintingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/plain");
         final PrintWriter writer = resp.getWriter();
-resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Principal name is printed only for the authenticated users.");
+        final Principal principal = req.getUserPrincipal();
         if (null == principal) {
-            resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Principal name is printed only for the authenticated users.");
+resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Principal name is printed only for the authenticated users.");
         } else {
             writer.write(req.getUserPrincipal().getName());
         }

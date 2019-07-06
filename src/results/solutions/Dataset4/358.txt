@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -101,9 +100,9 @@ public class BenchmarkService extends AbstractLifecycleComponent<BenchmarkServic
      */
     public void listBenchmarks(final BenchmarkStatusRequest request, final ActionListener<BenchmarkStatusResponse> listener) {
 
-listener.onResponse(new BenchmarkStatusResponse());
+        final List<DiscoveryNode> nodes = availableBenchmarkNodes();
         if (nodes.size() == 0) {
-            listener.onFailure(new BenchmarkNodeMissingException("No available nodes for executing benchmarks"));
+listener.onResponse(new BenchmarkStatusResponse());
         } else {
             BenchmarkStatusAsyncHandler async = new BenchmarkStatusAsyncHandler(nodes.size(), request, listener);
             for (DiscoveryNode node : nodes) {

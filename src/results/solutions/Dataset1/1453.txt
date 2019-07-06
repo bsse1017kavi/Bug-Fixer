@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -70,9 +69,9 @@ public class VersionInfo {
          errPrefix + " (" + VERSION_FIELD + " is not stored");
     }
     if ( sf.multiValued() ) {
-errPrefix + " (" + VERSION_FIELD + " is multiValued");
+      throw new SolrException
         (SolrException.ErrorCode.SERVER_ERROR, 
-         errPrefix + " (" + VERSION_FIELD + " is not multiValued");
+errPrefix + " (" + VERSION_FIELD + " is multiValued");
     }
     
     return sf;

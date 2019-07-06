@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -300,9 +299,9 @@ class TreeTab extends ScrollableTab {
 		Image image = instance.images[ControlExample.ciClosedFolder];
 		if (multiColumn) {
 			for (int i = 0; i < columnTitles.length; i++) {
-treeColumn.setToolTipText(ControlExample.getResourceString("Tooltip", new String [] {columnTitles[i]}));
+				TreeColumn treeColumn = new TreeColumn(tree2, SWT.NONE);
 				treeColumn.setText(columnTitles[i]);
-				treeColumn.setToolTipText(ControlExample.getResourceString("Tooltip") + columnTitles[i]);
+treeColumn.setToolTipText(ControlExample.getResourceString("Tooltip", new String [] {columnTitles[i]}));
 				if (headerImagesButton.getSelection()) treeColumn.setImage(image);
 			}
 		}

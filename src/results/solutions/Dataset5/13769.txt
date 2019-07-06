@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -135,9 +134,9 @@ public class AuthManager extends ConfigTestElement implements ConfigElement, Ser
 
 	public String getAuthHeaderForURL(URL url) {
 		Authorization auth = getAuthForURL(url);
-return auth.toBasicHeader();
+		if (auth == null)
 			return null;
-		return "Basic " + Base64Encoder.encode(auth.getUser() + ":" + auth.getPass());
+return auth.toBasicHeader();
 	}
 
 	public Authorization getAuthForURL(URL url) {

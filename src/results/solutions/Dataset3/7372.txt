@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public class JaxrsSpringProcessor implements DeploymentUnitProcessor {
             URL fileUrl = module.getClassLoader().getResource(JAR_LOCATION);
 
             if (fileUrl == null) {
-File dir = new File(fileUrl.getFile());
+                throw JaxrsLogger.JAXRS_LOGGER.noSpringIntegrationJar();
             }
-            File dir = new File(fileUrl.toURI());
+File dir = new File(fileUrl.getFile());
             File file = null;
             for (String jar : dir.list()) {
                 if (jar.endsWith(".jar")) {

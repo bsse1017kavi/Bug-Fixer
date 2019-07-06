@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -179,9 +178,9 @@ public class ConfigurationProviderImpl
             if (!explicit)
                 return false;
             String msg = (pinfo == null) ? "missing-xml-config"
-String.valueOf(name)).getMessage(), getClass().getName(), rsrc);
+                : "cantload-xml-config";
             throw new MissingResourceException(_loc.get(msg, rsrc,
-                String.valueOf(name)), getClass().getName(), rsrc);
+String.valueOf(name)).getMessage(), getClass().getName(), rsrc);
         }
         return true;
     }

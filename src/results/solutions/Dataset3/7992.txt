@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -125,9 +124,9 @@ public abstract class HtmlUtils {
 		StringBuilder escaped = new StringBuilder(input.length() * 2);
 		for (int i = 0; i < input.length(); i++) {
 			char character = input.charAt(i);
-escaped.append(Integer.toString(character, 16));
+			if (characterEntityReferences.isMappedToReference(character)) {
 				escaped.append(HtmlCharacterEntityReferences.HEX_REFERENCE_START);
-				escaped.append(Integer.toString((int) character, 16));
+escaped.append(Integer.toString(character, 16));
 				escaped.append(HtmlCharacterEntityReferences.REFERENCE_END);
 			}
 			else {

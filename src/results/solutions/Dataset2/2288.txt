@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -63,9 +62,9 @@ public abstract class ChangeClasspathOperation extends JavaModelOperation {
 			new ExternalFolderChange(project, change.oldResolvedClasspath).updateExternalFoldersIfNecessary(true/*refresh if external linked folder already exists*/, null);
 
 		} else {
-int result = change.generateDelta(delta, true/*add classpath change*/);
+			DeltaProcessingState state = JavaModelManager.getDeltaState();
 			JavaElementDelta delta = new JavaElementDelta(getJavaModel());
-			int result = change.generateDelta(delta);
+int result = change.generateDelta(delta, true/*add classpath change*/);
 			if ((result & ClasspathChange.HAS_DELTA) != 0) {
 				// create delta
 				addDelta(delta);

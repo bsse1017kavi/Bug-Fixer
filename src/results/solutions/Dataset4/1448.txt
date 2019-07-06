@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class MatchAllJsonQueryBuilder extends BaseJsonQueryBuilder {
         builder.startObject(MatchAllJsonQueryParser.NAME);
         if (boost != -1) {
             builder.field("boost", boost);
-builder.field("norms_field", normsField);
+        }
         if (normsField != null) {
-            builder.field("normsField", normsField);
+builder.field("norms_field", normsField);
         }
         builder.endObject();
     }

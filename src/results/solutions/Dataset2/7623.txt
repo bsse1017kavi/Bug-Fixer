@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 //1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -150,9 +149,9 @@ public class ToggleMarkCommand extends FolderCommand {
                 c.execute(worker);
 
                 // train bayesian filter
-processSpamFilter(uids, srcFolder, -markVariant);
+                if ((markVariant == MarkMessageCommand.MARK_AS_SPAM)
                         || (markVariant == MarkMessageCommand.MARK_AS_NOTSPAM)) {
-                    processSpamFilter(uids, srcFolder, markVariant);
+processSpamFilter(uids, srcFolder, -markVariant);
                 }
             }
 

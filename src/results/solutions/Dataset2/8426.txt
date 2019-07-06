@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -473,9 +472,9 @@ public abstract class ActionFactory {
                 throw new IllegalArgumentException();
             }
 
-action.setText(WorkbenchMessages.ExportResourcesAction_fileMenuText);
+            WorkbenchCommandAction action = new WorkbenchCommandAction("org.eclipse.ui.file.export", window); //$NON-NLS-1$
             action.setId(getId());
-            action.setText(WorkbenchMessages.ExportResourcesAction_text);
+action.setText(WorkbenchMessages.ExportResourcesAction_fileMenuText);
             action.setToolTipText(WorkbenchMessages.ExportResourcesAction_toolTip);
             window.getWorkbench().getHelpSystem().setHelp(action,
     				IWorkbenchHelpContextIds.EXPORT_ACTION);

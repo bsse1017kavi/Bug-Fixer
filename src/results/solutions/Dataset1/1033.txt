@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -40,9 +39,9 @@ final class JustCompileSearch {
   private static final String UNSUPPORTED_MSG = "unsupported: used for back-compat testing only !";
 
   static final class JustCompileSearcher extends Searcher {
-public Weight createNormalizedWeight(Query query) throws IOException {
+
     @Override
-    protected Weight createWeight(Query query) throws IOException {
+public Weight createNormalizedWeight(Query query) throws IOException {
       throw new UnsupportedOperationException(UNSUPPORTED_MSG);
     }
     

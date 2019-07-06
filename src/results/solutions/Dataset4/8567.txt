@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -60,9 +59,9 @@ public abstract class AbstractSimpleTransportTests extends ElasticsearchTestCase
     protected abstract MockTransportService build(Settings settings, Version version);
 
     @Before
-threadPool = new ThreadPool(getClass().getName());
+    public void setUp() throws Exception {
         super.setUp();
-        threadPool = new ThreadPool();
+threadPool = new ThreadPool(getClass().getName());
         serviceA = build(ImmutableSettings.builder().put("name", "TS_A").build(), version0);
         nodeA = new DiscoveryNode("TS_A", "TS_A", serviceA.boundAddress().publishAddress(), ImmutableMap.<String, String>of(), version0);
         serviceB = build(ImmutableSettings.builder().put("name", "TS_B").build(), version1);

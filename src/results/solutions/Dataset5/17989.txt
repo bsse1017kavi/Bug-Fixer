@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -144,9 +143,9 @@ public class DataCachePCDataImpl
 
         super.storeField(sm, fmd);
 
-if ((sm.getPCState() == PCState.PDIRTY) && fmd.isUsedInOrderBy()) {
+        // If this field is used in "order by", we need to invalidate cache
         // for the collection that refer to this field.
-        if (sm.getPCState() == PCState.PDIRTY) {
+if ((sm.getPCState() == PCState.PDIRTY) && fmd.isUsedInOrderBy()) {
             clearInverseRelationCache(sm, fmd);
         }
     }

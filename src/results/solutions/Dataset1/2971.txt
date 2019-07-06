@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -109,9 +108,9 @@ public class TestFilterIndexReader extends LuceneTestCase {
     d3.add(new Field("default","two four", Field.Store.YES, Field.Index.ANALYZED));
     writer.addDocument(d3);
 
-IndexReader reader = new TestReader(IndexReader.open(directory, true));
+    writer.close();
 
-    IndexReader reader = new TestReader(IndexReader.open(directory));
+IndexReader reader = new TestReader(IndexReader.open(directory, true));
 
     assertTrue(reader.isOptimized());
     

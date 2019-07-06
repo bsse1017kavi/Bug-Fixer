@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import static android.view.View.GONE;
@@ -104,9 +103,9 @@ public class IssueHeaderViewHolder implements ViewHolder<Issue> {
             assigneeText.setText(assigneeText.getContext().getString(string.unassigned));
         }
 
-LabelsDrawable drawable = new LabelsDrawable(createdText.getTextSize(), ServiceHelper.getDisplayWidth(labelsArea),
+        if (!issue.getLabels().isEmpty()) {
             labelsArea.setVisibility(VISIBLE);
-            LabelsDrawable drawable = new LabelsDrawable(createdText.getTextSize(), ServiceHelper.getWidth(labelsArea),
+LabelsDrawable drawable = new LabelsDrawable(createdText.getTextSize(), ServiceHelper.getDisplayWidth(labelsArea),
                     issue.getLabels());
             drawable.getPaint().setColor(resources.getColor(android.R.color.transparent));
             labelsArea.setBackgroundDrawable(drawable);

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.dht;
 /*
  * 
@@ -64,9 +63,9 @@ public abstract class AbstractBounds implements Serializable
      * The original AbstractBounds must contain the token T.
      * If the split would cause one of the left or right side to be empty, it will be null in the result pair.
      */
-assert left.equals(token) || contains(token);
+    public Pair<AbstractBounds,AbstractBounds> split(Token token)
     {
-        assert contains(token);
+assert left.equals(token) || contains(token);
         AbstractBounds lb = createFrom(token);
         // we contain this token, so only one of the left or right can be empty
         AbstractBounds rb = lb != null && token.equals(right) ? null : new Range(token, right);

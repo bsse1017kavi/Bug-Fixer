@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -1638,9 +1637,9 @@ public class Javadoc extends Task {
      * Execute the task.
      * @throws BuildException on error
      */
-log("Warning: the task name <javadoc2> is deprecated. Use <javadoc> instead.", Project.MSG_WARN);
+    public void execute() throws BuildException {
         if ("javadoc2".equals(getTaskType())) {
-            log("!! javadoc2 is deprecated. Use javadoc instead. !!");
+log("Warning: the task name <javadoc2> is deprecated. Use <javadoc> instead.", Project.MSG_WARN);
         }
 
         Vector packagesToDoc = new Vector();

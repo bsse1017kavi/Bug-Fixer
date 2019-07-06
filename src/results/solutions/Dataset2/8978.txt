@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -79,9 +78,9 @@ public class HeaderTableMouseListener extends MouseAdapter {
     }
 
     protected void processDoubleClick() {
-.getHeaderTableModel().getMessageNodeAtRow(selectedRow);
+        int selectedRow = headerTableViewer.getView().getSelectedRow();
         MessageNode node = (MessageNode) headerTableViewer
-                .getHeaderTableModel().getValueAt(selectedRow, 0);
+.getHeaderTableModel().getMessageNodeAtRow(selectedRow);
         boolean markedAsDraft = node.getHeader().getFlags().getDraft();
 
         if (markedAsDraft) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ public class InterceptorBean {
     private final Logger log = Logger.getLogger(InterceptorBean.class);
 
     @AroundInvoke
-return "#InterceptorBean#" + context.proceed();
+    public Object intercept(InvocationContext context) throws Exception {
         log.info("-----> Intercepting call to " + context.getMethod().getDeclaringClass() + "." +  context.getMethod().getName() + "()");
-        return context.proceed();
+return "#InterceptorBean#" + context.proceed();
     }
 
 }

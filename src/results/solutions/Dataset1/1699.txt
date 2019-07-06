@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ class FileStatusHandler
             String fileName = file.getName();
             String [] temp = fileName.split("-");
 
-SSTableReader sstable = SSTableWriter.renameAndOpen(pendingFile.getDescriptor());
+            try
             {
-                SSTableReader sstable = SSTableWriter.renameAndOpen(pendingFile.getFilename());
+SSTableReader sstable = SSTableWriter.renameAndOpen(pendingFile.getDescriptor());
                 Table.open(tableName).getColumnFamilyStore(temp[0]).addSSTable(sstable);
                 logger.info("Streaming added " + sstable.getFilename());
             }

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -158,9 +157,9 @@ public class TreeWalkerView
             Errors errors = new Errors();
             parser.setErrorHandler(errors);
             parser.parse(filename);
-if (!document.isSupported("Traversal", "2.0")) {
+            document = parser.getDocument();
             
-            if (!document.supports("Traversal", "2.0")) {
+if (!document.isSupported("Traversal", "2.0")) {
                 // This cannot happen with the DOMParser...
                 throw new RuntimeException("This DOM Document does not support Traversal");
             

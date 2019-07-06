@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -115,9 +114,9 @@ public abstract class OpenJPAId
                 while (superclass != null && superclass != Object.class) {
                     base = base.getSuperclass();
                     superclass = base.getSuperclass();
-_typeCache.put(type, Integer.valueOf(_typeHash));
+                }
                 _typeHash = base.hashCode();
-                _typeCache.put(type, new Integer(_typeHash));
+_typeCache.put(type, Integer.valueOf(_typeHash));
             } else {
                 _typeHash = typeHashInt.intValue();
             }

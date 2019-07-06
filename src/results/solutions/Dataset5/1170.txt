@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -287,9 +286,9 @@ void onPaint(GC gc) {
 	Point size = getSize();
 	Color border1 = getDisplay().getSystemColor(BORDER1);
 	
-int y = bottom.getBounds().y - BORDER_STRIPE - 1;
+	if (bottom != null && (left != null || right != null)) {
 		gc.setForeground(border1);
-		int y = bottom.getBounds().y - BORDER_BOTTOM - BORDER_STRIPE;
+int y = bottom.getBounds().y - BORDER_STRIPE - 1;
 		gc.drawLine(0, y, size.x, y);
 	}
 	

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -73,9 +72,9 @@ public class FileMetaDataIterator implements MetaDataIterator {
      */
     private int scan(File file, MetaDataFilter filter, FileResource rsrc,
         Collection metas, int scanned) throws IOException {
-String.valueOf(SCAN_LIMIT)).getMessage());
+        if (scanned > SCAN_LIMIT)
             throw new IllegalStateException(_loc.get("too-many-files",
-                String.valueOf(SCAN_LIMIT)));
+String.valueOf(SCAN_LIMIT)).getMessage());
         scanned++;
 
         if (filter == null)

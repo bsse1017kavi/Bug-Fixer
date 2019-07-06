@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -40,9 +39,9 @@ import static org.elasticsearch.common.unit.TimeValue.timeValueSeconds;
  * registered watcher periodically. The frequency of checks can be specified using {@code watcher.interval} setting, which
  * defaults to {@code 60s}. The service can be disabled by setting {@code watcher.enabled} setting to {@code false}.
  */
-private final List<ResourceWatcher> watchers = new CopyOnWriteArrayList<>();
+public class ResourceWatcherService extends AbstractLifecycleComponent<ResourceWatcherService> {
 
-    private final List<ResourceWatcher> watchers = new CopyOnWriteArrayList<ResourceWatcher>();
+private final List<ResourceWatcher> watchers = new CopyOnWriteArrayList<>();
 
     private volatile ScheduledFuture scheduledFuture;
 

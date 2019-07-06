@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -272,9 +271,9 @@ public class WebRequestCodingStrategy implements IRequestCodingStrategy, IReques
 				(ISharedResourceRequestTarget)requestTarget) : url);
 			sharedResourceURL = true;
 		}
-url = encode(requestCycle, (PageReferenceRequestTarget)requestTarget);
+		else if (requestTarget instanceof PageIdRequestTarget)
 		{
-			url = encode(requestCycle, requestTarget);
+url = encode(requestCycle, (PageReferenceRequestTarget)requestTarget);
 		}
 		else if (requestTarget instanceof IListenerInterfaceRequestTarget)
 		{

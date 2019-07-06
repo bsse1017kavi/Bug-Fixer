@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.jdbcapi.DMDBugsTest
@@ -77,9 +76,9 @@ public class DMDBugsTest extends BaseJDBCTestCase {
 		rs = dmd.getTables("%", "%", "%", new String[] {"SYNONYM"});
 		JDBC.assertUnorderedResultSet(rs, new String[][]
 	                  {{"","APP","TSYN","SYNONYM","",null,null,null,null,null}});
-assertEquals(20, JDBC.assertDrainResults(rs));
+
 		rs = dmd.getTables( "%", "%", "%", new String[] {"SYSTEM TABLE"});
-		assertEquals(19, JDBC.assertDrainResults(rs));
+assertEquals(20, JDBC.assertDrainResults(rs));
 		s.executeUpdate("DROP VIEW APP.V");
 		s.executeUpdate("DROP TABLE APP.TAB");
 		s.executeUpdate("DROP SYNONYM APP.TSYN");

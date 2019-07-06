@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -86,9 +85,9 @@ public class P4Counter extends P4Base
                     {
                         log( "P4Counter retrieved line \"" + line + "\"", Project.MSG_VERBOSE );
                         try
-setProperty( property, "" + value );
+                        {
                             value = Integer.parseInt( line );
-                            myProj.setProperty( property, "" + value );
+setProperty( property, "" + value );
                         }
                         catch( NumberFormatException nfe )
                         {

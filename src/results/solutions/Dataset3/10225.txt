@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ class PatchingHistoryDirArtifact extends AbstractArtifact<PatchingArtifacts.Patc
         super(PatchingArtifacts.PATCH_XML, PatchingArtifacts.ROLLBACK_XML);
     }
 
-final InstalledIdentity identity = processor.getValidationContext().getOriginalIdentity();
+    @Override
     public boolean process(PatchingArtifacts.PatchID parent, PatchingArtifactProcessor processor) {
-        final InstalledIdentity identity = processor.getInstalledIdentity();
+final InstalledIdentity identity = processor.getValidationContext().getOriginalIdentity();
         final File history = identity.getInstalledImage().getPatchHistoryDir(parent.getPatchID());
         final PatchingFileArtifact.DirectoryArtifactState state = new PatchingFileArtifact.DirectoryArtifactState(history, this);
         return processor.process(this, state);

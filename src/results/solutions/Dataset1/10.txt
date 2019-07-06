@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util;
 
 /**
@@ -1366,9 +1365,9 @@ public abstract class LuceneTestCase extends Assert {
         // just wrap as MultiReader/ParallelXReader with one subreader
         if (random.nextBoolean()) {
           r = (r instanceof AtomicReader) ?
-} else if (r instanceof CompositeReader) { // only wrap if not already atomic (some tests may fail)
+            new ParallelAtomicReader((AtomicReader) r) :
             new ParallelCompositeReader((CompositeReader) r);
-        } else {
+} else if (r instanceof CompositeReader) { // only wrap if not already atomic (some tests may fail)
           r = new MultiReader(r);
         }
       }

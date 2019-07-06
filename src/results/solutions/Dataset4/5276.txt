@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -498,9 +497,9 @@ public class Json {
 				writeObjectEnd();
 				return;
 			}
-if (knownType == null) knownType = OrderedMap.class;
+
 			if (value instanceof ObjectMap) {
-				if (knownType == null) knownType = ObjectMap.class;
+if (knownType == null) knownType = OrderedMap.class;
 				writeObjectStart(actualType, knownType);
 				for (Entry entry : ((ObjectMap<?, ?>)value).entries()) {
 					writer.name(convertToString(entry.key));

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -93,9 +92,9 @@ public class BindingGroupAddHandler extends AbstractSocketBindingGroupAddHandler
                                     PathAddress.pathAddress(PathElement.pathElement(SOCKET_BINDING_GROUP, entry.getName())));
                         }
                     }
-context.stepCompleted();
+                }
 
-                context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
             }
         },OperationContext.Stage.MODEL);
 

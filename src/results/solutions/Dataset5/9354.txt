@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -195,9 +194,9 @@ public class FTPSampler extends AbstractSampler implements Interruptible {
                     ftp.enterLocalPassiveMode();// should probably come from the setup dialog
                     boolean ftpOK=false;
                     if (isUpload()) {
-byte bytes[] = contents.getBytes(); // TODO - charset?
+                        String contents=getLocalFileContents();
                         if (contents.length() > 0){
-                            byte bytes[] = contents.getBytes();// TODO this assumes local encoding
+byte bytes[] = contents.getBytes(); // TODO - charset?
                             input = new ByteArrayInputStream(bytes);
                             res.setBytes(bytes.length);
                         } else {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -384,9 +383,9 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 	 */
 	protected Resource resolveRootDirResource(Resource original) throws IOException {
 		if (equinoxResolveMethod != null) {
-return new UrlResource((URL) ReflectionUtils.invokeMethod(equinoxResolveMethod, null, url));
+			URL url = original.getURL();
 			if (url.getProtocol().startsWith("bundle")) {
-				return new UrlResource((URL) ReflectionUtils.invokeMethod(equinoxResolveMethod, null, new Object[] {url}));
+return new UrlResource((URL) ReflectionUtils.invokeMethod(equinoxResolveMethod, null, url));
 			}
 		}
 		return original;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -66,9 +65,9 @@ public class SpellCheckerRequestHandler extends RequestHandlerBase {
     private static final int DEFAULT_NUM_SUGGESTIONS = 1;
     
     public void init(NamedList args) {
-termSourceField = p.get("termSourceField");
+        super.init(args);
         SolrParams p = SolrParams.toSolrParams(args);
-        restrictToField = p.get("termSourceField");
+termSourceField = p.get("termSourceField");
         spellcheckerIndexDir = p.get("spellcheckerIndexDir");
         try {
             spellChecker = new SpellChecker(FSDirectory.getDirectory(spellcheckerIndexDir));

@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -56,9 +55,9 @@ public class ViewGistFilesActivity extends RoboSherlockFragmentActivity {
     @Inject
     private GistStore store;
 
-setContentView(layout.pager_with_title);
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.gist_files);
+setContentView(layout.pager_with_title);
         setTitle(getString(string.gist) + " " + gistId);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

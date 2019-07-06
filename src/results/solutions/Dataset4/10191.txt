@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import static com.github.mobile.android.util.GitHubIntents.EXTRA_COMMENTS;
@@ -211,9 +210,9 @@ public class ViewIssueActivity extends RoboFragmentActivity {
 
         TextView creation = (TextView) findViewById(id.tv_issue_creation);
         creation.setText(Html.encode(reported));
-body = new IssueBodyViewHolder(imageGetter, view);
+        Avatar.bind(ViewIssueActivity.this, (ImageView) findViewById(id.iv_gravatar), issue.getUser());
         View view = getLayoutInflater().inflate(layout.issue_view_body, null);
-        body = new IssueBodyViewHolder(ViewIssueActivity.this, imageGetter, view);
+body = new IssueBodyViewHolder(imageGetter, view);
         body.updateViewFor(issue);
 
         LinearLayout labels = (LinearLayout) findViewById(id.ll_labels);

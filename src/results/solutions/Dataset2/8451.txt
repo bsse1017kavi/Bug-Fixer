@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist;
 
 /*
@@ -297,9 +296,9 @@ public final class SelectionEngine extends Engine implements ISearchRequestor {
 					token == TerminalSymbols.TokenNamesuper ||
 					token == TerminalSymbols.TokenNameIdentifier) &&
 					scanner.startPosition <= selectionStart &&
-lastIdentifierEnd = scanner.currentPosition - 1;
+					selectionStart <= scanner.currentPosition) {
 					lastIdentifierStart = scanner.startPosition;
-					lastIdentifierEnd = scanner.currentPosition;
+lastIdentifierEnd = scanner.currentPosition - 1;
 					lastIdentifier = scanner.getCurrentTokenSource();
 				}
 			} while (token != TerminalSymbols.TokenNameEOF);

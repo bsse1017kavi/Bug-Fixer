@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -214,9 +213,9 @@ public class FastAnalyzer {
 
 	public final static ExecutionContext computeExecutionContext(
 			final String str, ExecutionContext ctx,
-if (p == Partition.EXPRESSION || p == Partition.TYPE_DECLARATION || p == Partition.DEFAULT) {
+			final List<Extension> extensions) {
 		final Partition p = computePartition(str);
-		if (p == Partition.EXPRESSION || p == Partition.TYPE_DECLARATION) {
+if (p == Partition.EXPRESSION || p == Partition.TYPE_DECLARATION || p == Partition.DEFAULT) {
 
 			final List<String> imports = findImports(str);
 			final List<String> extensionImports = findExtensions(str);

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -311,9 +310,9 @@ implements ItemListener, TreeSelectionListener {
 	  me.getModifiers() == InputEvent.BUTTON3_MASK) {
         //TreeCellEditor tce = _tree.getCellEditor();
         JPopupMenu popup = new JPopupMenu("test");
-Vector actions = ((PopupGenerator)obj).getPopUpActions(me);
+	Object obj = getSelectedObject();
 	if (obj instanceof PopupGenerator) {
-	  Vector actions = ((PopupGenerator)obj).getPopUpActions();
+Vector actions = ((PopupGenerator)obj).getPopUpActions(me);
 	  int size = actions.size();
 	  for (int i = 0; i < size; ++i) {
 	    AbstractAction a = (AbstractAction) actions.elementAt(i);

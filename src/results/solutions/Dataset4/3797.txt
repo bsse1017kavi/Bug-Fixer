@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -75,9 +74,9 @@ public class RepoListFragment extends ItemListFragment<Repository> implements Or
         Activity activity = getActivity();
         if (activity != null && previousOrgId != organization.getId())
             recentRepos.set(new RecentRepositories(activity, organization));
-if (previousOrgId != organization.getId())
+
         // Only hard refresh if view already created and org is changing
-        if (getView() != null && previousOrgId != organization.getId())
+if (previousOrgId != organization.getId())
             refreshWithProgress();
     }
 

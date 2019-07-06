@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -83,9 +82,9 @@ public class ChannelOpenListenerService implements Service<Void>, OpenListener {
 
     @Override
     public void start(StartContext context) throws StartException {
-registration = endpointValue.getValue().registerService(channelName, this, optionMap);
+        try {
             log.debugf("Registering channel listener for %s", channelName);
-            endpointValue.getValue().registerService(channelName, this, optionMap);
+registration = endpointValue.getValue().registerService(channelName, this, optionMap);
         } catch (Exception e) {
             throw new StartException(e);
         }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -162,9 +161,9 @@ public class TestRemoveDuplicatesTokenFilter extends BaseTokenStreamTestCase {
           TokenStream stream = new SynonymFilter(tokenizer, map, ignoreCase);
           return new TokenStreamComponents(tokenizer, new RemoveDuplicatesTokenFilter(stream));
         }
-checkRandomData(random(), analyzer, 200);
+      };
 
-      checkRandomData(random(), analyzer, 1000*RANDOM_MULTIPLIER);
+checkRandomData(random(), analyzer, 200);
     }
   }
   

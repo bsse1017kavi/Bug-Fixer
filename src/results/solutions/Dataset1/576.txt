@@ -1,4 +1,3 @@
-
 /*
     Derby - Class org.apache.derby.impl.drda.DRDAConnThread
 
@@ -1230,9 +1229,9 @@ class DRDAConnThread extends Thread {
         // a password defined as part of the connection URL attributes cannot
         // be substituted (single-hashed) as it is not recoverable.
         if ((database.securityMechanism == CodePoint.SECMEC_USRSSBPWD) &&
-p.put(Attribute.DRDA_SECMEC,
+            (database.dbName.indexOf(Attribute.PASSWORD_ATTR) == -1))
         {
-            p.put(Attribute.CLIENT_SECURITY_MECHANISM,
+p.put(Attribute.DRDA_SECMEC,
                   String.valueOf(database.securityMechanism));
             p.put(Attribute.DRDA_SECTKN_IN,
                   DecryptionManager.toHexString(database.secTokenIn, 0,

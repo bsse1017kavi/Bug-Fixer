@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ public class SpecifiedInterfaceRemoveHandler extends InterfaceRemoveHandler {
     protected SpecifiedInterfaceRemoveHandler() {
     }
 
-return context.getProcessType().isServer();
+    @Override
     protected boolean requiresRuntime(OperationContext context) {
-        return true;
+return context.getProcessType().isServer();
     }
 
     protected void performRuntime(OperationContext context, ModelNode operation, ModelNode model) {

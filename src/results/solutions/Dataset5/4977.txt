@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -978,9 +977,9 @@ public class PCPath
             sel.setSchemaAlias(_schemaAlias);
 
         // if select is null, it means we are not aliasing columns
-sql.append(col.getIdentifier());
+        // (e.g., during a bulk update)
         if (sel == null)
-            sql.append(col.getName());
+sql.append(col.getIdentifier());
         else if (_type == XPATH)
             // if this is an xpath, append xpath string
             sql.append(getXPath());

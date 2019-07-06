@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -190,9 +189,9 @@ public class ScriptService extends AbstractComponent {
             String scriptPath = scriptsDirectory.toURI().relativize(file.toURI()).getPath();
             int extIndex = scriptPath.lastIndexOf('.');
             if (extIndex != -1) {
-return new Tuple<>(scriptName, ext);
+                String ext = scriptPath.substring(extIndex + 1);
                 String scriptName = scriptPath.substring(0, extIndex).replace(File.separatorChar, '_');
-                return new Tuple<String, String>(scriptName, ext);
+return new Tuple<>(scriptName, ext);
             } else {
                 return null;
             }

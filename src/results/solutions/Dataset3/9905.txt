@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -672,9 +671,9 @@ public class DeploymentOverlayHandler extends CommandHandlerWithHelp {
                 throw new CommandFormatException("The filesystem paths is missing for the content '" + pair + "'");
             }
             path = pathCompleter.translatePath(path);
-throw new CommandFormatException("Content file doesn't exist " + f.getAbsolutePath() + ", " + pathCompleter + ", windows=" + Util.isWindows());
+            final File f = new File(path);
             if(!f.exists()) {
-                throw new CommandFormatException("Content file doesn't exist " + f.getAbsolutePath());
+throw new CommandFormatException("Content file doesn't exist " + f.getAbsolutePath() + ", " + pathCompleter + ", windows=" + Util.isWindows());
             }
             contentPaths[i] = f;
         }

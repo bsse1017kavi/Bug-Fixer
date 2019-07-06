@@ -1,4 +1,3 @@
-
 package org.elasticsearch.index.percolator;
 
 import org.apache.lucene.index.Term;
@@ -225,9 +224,9 @@ public class PercolatorQueriesRegistry extends AbstractIndexShardComponent {
             return shardId.equals(otherShardId) && mapperService.hasMapping(PercolatorService.Constants.TYPE_NAME);
         }
 
-shard.refresh(new Engine.Refresh().force(true));
+        private void loadQueries(IndexShard shard) {
             try {
-                shard.refresh(new Engine.Refresh(true));
+shard.refresh(new Engine.Refresh().force(true));
                 Engine.Searcher searcher = shard.searcher();
                 try {
                     Query query = new XConstantScoreQuery(

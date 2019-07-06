@@ -1,4 +1,3 @@
-
 /*
  *
  * ====================================================================
@@ -326,9 +325,9 @@ public class JspParseEventListener extends BaseJspListener {
 			   writer.quoteString(servletContentType)
 			   + ");");
 	else
-";charset=ISO-8859-1\");");
+	    writer.println("response.setContentType(\"" +
 			   servletContentType +
-			   ";charset=8859_1\");");
+";charset=ISO-8859-1\");");
 	writer.println("pageContext = _jspxFactory.getPageContext(this, request, response,\n"
 					+ "\t\t\t"
 					+ writer.quoteString(error) + ", "

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -55,9 +54,9 @@ public class ConvertingPropertyEditorAdapter extends PropertyEditorSupport {
 	}
 
 
-setValue(this.conversionService.convert(text, this.targetDescriptor));
+	@Override
 	public void setAsText(String text) throws IllegalArgumentException {
-		setValue(this.conversionService.convert(text, TypeDescriptor.valueOf(String.class), this.targetDescriptor));
+setValue(this.conversionService.convert(text, this.targetDescriptor));
 	}
 
 	@Override

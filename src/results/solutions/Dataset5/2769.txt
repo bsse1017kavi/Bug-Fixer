@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2005 The Apache Software Foundation
  *
@@ -70,9 +69,9 @@ public class Clone extends UnknownElement {
         try {
             log("Attempting to clone " + ob.toString() + " \""
                 + cloneref + "\"", Project.MSG_VERBOSE);
-Object bo = m.invoke(ob, (Object[])NO_ARGS);
+            Method m = ob.getClass().getMethod("clone", NO_ARGS);
             try {
-                Object bo = m.invoke(ob, NO_ARGS);
+Object bo = m.invoke(ob, (Object[])NO_ARGS);
                 if (bo == null) {
                     throw new BuildException(m.toString() + " returned null");
                 }

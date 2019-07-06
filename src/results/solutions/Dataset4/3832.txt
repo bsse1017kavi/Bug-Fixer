@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -69,9 +68,9 @@ public class NoneIndexShardGateway extends AbstractIndexShardComponent implement
             logger.debug("cleaning shard content before creation");
             indexShard.store().deleteContent();
         } catch (IOException e) {
-indexShard.postRecovery("post recovery from gateway");
+            logger.warn("failed to clean store before starting shard", e);
         }
-        indexShard.start("post recovery from gateway");
+indexShard.postRecovery("post recovery from gateway");
         recoveryStatus.index().time(System.currentTimeMillis() - recoveryStatus.index().startTime());
         recoveryStatus.translog().startTime(System.currentTimeMillis());
         recoveryStatus.translog().time(System.currentTimeMillis() - recoveryStatus.index().startTime());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -413,9 +412,9 @@ public class DomainModelControllerService extends AbstractControllerService impl
         super.start(context);
     }
 
-HostModelUtil.createRootRegistry(rootRegistration, environment, ignoredRegistry, this, processType, authorizer);
+    @Override
     protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration) {
-        HostModelUtil.createRootRegistry(rootRegistration, environment, ignoredRegistry, this, processType);
+HostModelUtil.createRootRegistry(rootRegistration, environment, ignoredRegistry, this, processType, authorizer);
         VersionModelInitializer.registerRootResource(rootResource, environment != null ? environment.getProductConfig() : null);
         CoreManagementResourceDefinition.registerDomainResource(rootResource);
         this.modelNodeRegistration = rootRegistration;

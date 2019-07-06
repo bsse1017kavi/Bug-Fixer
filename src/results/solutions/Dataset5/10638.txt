@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -149,9 +148,9 @@ public class SharedResourceRequestTarget implements ISharedResourceRequestTarget
 					String path = resourceKey.substring(ix + 1);
 
 					PackageResource packageResource = PackageResource.get(scope, path);
-sharedResources.add(scope, path, null, null, packageResource);
+					if (sharedResources.get(resourceKey) == null)
 					{
-						sharedResources.add(resourceKey, packageResource);
+sharedResources.add(scope, path, null, null, packageResource);
 					}
 					resource = packageResource;
 				}

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -58,9 +57,9 @@ public class Node {
 	 * Calculates the local transform based on the translation, scale and rotation
 	 * @return the local transform
 	 */
-localTransform.set(translation, rotation, scale);
+	public Matrix4 calculateLocalTransform() {
 		if (!isAnimated)
-			localTransform.idt().translate(translation).rotate(rotation).scale(scale.x, scale.y, scale.z);
+localTransform.set(translation, rotation, scale);
 		return localTransform;
 	}
 

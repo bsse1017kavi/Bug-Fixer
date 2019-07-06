@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -95,9 +94,9 @@ public abstract class AbstractNamedValueMethodArgumentResolver implements Handle
 			else if (namedValueInfo.required) {
 				handleMissingValue(namedValueInfo.name, parameter);
 			}
-else if ("".equals(arg) && namedValueInfo.defaultValue != null) {
+			arg = handleNullValue(namedValueInfo.name, arg, paramType);
 		}
-		else if ("".equals(arg) && (namedValueInfo.defaultValue != null)) {
+else if ("".equals(arg) && namedValueInfo.defaultValue != null) {
 			arg = resolveDefaultValue(namedValueInfo.defaultValue);
 		}
 

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene40.values;
 
 /**
@@ -56,9 +55,9 @@ class VarDerefBytesImpl {
    * order and merge them in a streamed fashion. 
    */
   static class Writer extends DerefBytesWriterBase {
-super(dir, id, CODEC_NAME, VERSION_CURRENT, bytesUsed, context, Type.BYTES_VAR_DEREF);
+    public Writer(Directory dir, String id, Counter bytesUsed, IOContext context)
         throws IOException {
-      super(dir, id, CODEC_NAME, VERSION_CURRENT, bytesUsed, context);
+super(dir, id, CODEC_NAME, VERSION_CURRENT, bytesUsed, context, Type.BYTES_VAR_DEREF);
       size = 0;
     }
     

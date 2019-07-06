@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -122,9 +121,9 @@ public class TextureAttribute extends Attribute {
 		return new TextureAttribute(this);
 	}
 
-int result = super.hashCode();
+	@Override
 	public int hashCode () {
-		int result = (int)type;
+int result = super.hashCode();
 		result = 991 * result + textureDescription.hashCode();
 		result = 991 * result + NumberUtils.floatToRawIntBits(offsetU);
 		result = 991 * result + NumberUtils.floatToRawIntBits(offsetV);

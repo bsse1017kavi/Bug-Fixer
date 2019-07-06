@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class Example2 extends AbstractSampler implements TestBean {
         SampleResult res = new SampleResult();
         res.setSampleLabel(getName());
         res.setSamplerData(myStringProperty);
-res.setResponseData(myStringProperty.toLowerCase(), null);
+        res.sampleStart();
         // Do something ...
-        res.setResponseData(myStringProperty.toLowerCase().getBytes());
+res.setResponseData(myStringProperty.toLowerCase(), null);
         res.setDataType(SampleResult.TEXT);
         res.sampleEnd();
         res.setSuccessful(true);

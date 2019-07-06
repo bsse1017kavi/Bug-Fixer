@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -143,9 +142,9 @@ public abstract class JsonNumberFieldMapper<T extends Number> extends JsonFieldM
         return text == null;
     }
 
-builder.field("precision_step", precisionStep);
+    @Override protected void doJsonBody(JsonBuilder builder) throws IOException {
         super.doJsonBody(builder);
-        builder.field("precisionStep", precisionStep);
+builder.field("precision_step", precisionStep);
     }
 
     @Override public abstract int sortType();

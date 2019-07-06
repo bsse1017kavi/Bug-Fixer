@@ -1,4 +1,3 @@
-
 package org.apache.lucene.sandbox.queries;
 
 /**
@@ -223,9 +222,9 @@ public class FuzzyLikeThisQuery extends Query
                   while ((possibleMatch = fe.next()) != null) {
                       numVariants++;
                       totalVariantDocFreqs+=fe.docFreq();
-ScoreTerm st=new ScoreTerm(new Term(startTerm.field(), BytesRef.deepCopyOf(possibleMatch)),score,startTerm);
+                      float score=boostAtt.getBoost();
                       if (variantsQ.size() < MAX_VARIANTS_PER_TERM || score > minScore){
-                        ScoreTerm st=new ScoreTerm(new Term(startTerm.field(), new BytesRef(possibleMatch)),score,startTerm);                    
+ScoreTerm st=new ScoreTerm(new Term(startTerm.field(), BytesRef.deepCopyOf(possibleMatch)),score,startTerm);
                         variantsQ.insertWithOverflow(st);
                         minScore = variantsQ.top().score; // maintain minScore
                       }

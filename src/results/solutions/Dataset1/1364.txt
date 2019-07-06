@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.catalog.DD_Version
@@ -554,9 +553,9 @@ public	class DD_Version implements	Formatable
 			// For a readonly database where we need some kind of upgrade
 			// (either minor release or soft upgrade) then since we cannot
 			// invalidate all the procedures we need to indicate that
-bootingDictionary.setReadOnlyUpgrade();
+			// any procedure we read off disk is automatically invalid,
 			// so we do not try to load the generated class.
-			bootingDictionary.readOnlyUpgrade = true;
+bootingDictionary.setReadOnlyUpgrade();
 		}
 
 		bootingDictionary.clearCaches();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -633,9 +632,9 @@ public class DOMConfigurator implements Configurator {
       // me why.
       dbf.setValidating(true);
       //dbf.setNamespaceAware(true);
-docBuilder.setErrorHandler(new SAXErrorHandler());
+
       DocumentBuilder docBuilder = dbf.newDocumentBuilder();
-      //docBuilder.setErrorHandler(new ReportParserError());
+docBuilder.setErrorHandler(new SAXErrorHandler());
 
       Class clazz = this.getClass();
       URL dtdURL = clazz.getResource("/org/apache/log4j/xml/log4j.dtd");

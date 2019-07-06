@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -93,9 +92,9 @@ public class JTAEntityManager implements EntityManager {
         if (detachedManager == null) {
           EntityManager temp = emf.createEntityManager(props);
           
-detachedManager = new SynchronizedEntityManagerWrapper(temp);
+          synchronized (this) {
             if (detachedManager == null) {
-              detachedManager = temp;
+detachedManager = new SynchronizedEntityManagerWrapper(temp);
               temp = null;
             }
           }

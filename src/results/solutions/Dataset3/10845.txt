@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
@@ -66,9 +65,9 @@ public class PublisherInterceptor extends AbstractLifecycleInterceptor {
 
                 ClassLoader ctxLoader = Thread.currentThread().getContextClassLoader();
                 try {
-httpService.registerServlet("/example-interceptor/servlet", servlet, null, null);
+                    // Register the servlet with the HttpService
                     HttpService httpService = getHttpService(context, true);
-                    httpService.registerServlet("/servlet", servlet, null, null);
+httpService.registerServlet("/example-interceptor/servlet", servlet, null, null);
                 } finally {
                     // [AS7-903] 3rd party code may leak TCCL
                     Thread.currentThread().setContextClassLoader(ctxLoader);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright Teachscape
  */
@@ -97,9 +96,9 @@ public class ClientPageSavingSessionStore extends HttpSessionStore
 	 * @see wicket.protocol.http.AbstractHttpSessionStore#onEndRequest(wicket.Request)
 	 */
 	@Override
-pages.remove();
+	public void onEndRequest(Request request)
 	{
-		pages.set(null);
+pages.remove();
 	}
 
 	/**

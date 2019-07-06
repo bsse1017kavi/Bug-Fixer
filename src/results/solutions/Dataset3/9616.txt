@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class ActivationAttributeHandler implements OperationStepHandler {
     @Override
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
         Activation val = Activation.valueOf(operation.require(ModelDescriptionConstants.VALUE).asString().toUpperCase(Locale.ENGLISH));
-node.get(ModelConstants.ACTIVATION).set(val.toString().toLowerCase(Locale.ENGLISH));
+
         ModelNode node = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel();
-        node.get(ModelConstants.ACTIVATION).set(val.toString().toLowerCase());
+node.get(ModelConstants.ACTIVATION).set(val.toString().toLowerCase(Locale.ENGLISH));
 
         context.completeStep();
     }

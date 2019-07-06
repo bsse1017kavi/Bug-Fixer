@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2011, Nathan Sweet <nathan.sweet@gmail.com>
  * All rights reserved.
@@ -138,9 +137,9 @@ public class TableLayout extends BaseTableLayout<Actor, Table, TableLayout, Libg
 		Actor parent = table.parent;
 		float x = table.x, y = 0;
 		while (parent != null) {
-y = parent.y + parent.height - y;
+			if (parent instanceof Group) {
 				x += parent.x;
-				y += parent.y;
+y = parent.y + parent.height - y;
 			}
 			parent = parent.parent;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -111,9 +110,9 @@ public enum ORBInitializer {
      *
      * @param initializerName a {@code String} representing the initializer group name.
      * @return the {@code ORBInitializer} identified by the name. If no implementation can be found, the
-static ORBInitializer fromName(final String initializerName) {
+     *         {@code ORBInitializer.UNKNOWN} type is returned.
      */
-    static ORBInitializer forName(final String initializerName) {
+static ORBInitializer fromName(final String initializerName) {
         final ORBInitializer element = MAP.get(initializerName);
         return element == null ? UNKNOWN : element;
     }

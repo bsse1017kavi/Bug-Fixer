@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.log.LogAccessFile
@@ -655,9 +654,9 @@ public class LogAccessFile
                 {   //does not matter weather I get interrupted or not
                 }
 
-SQLState.LOG_FULL, sfe);
+                if( i > 20 )
                     throw StandardException.newException(
-                        SQLState.LOG_FULL, sfe, null);
+SQLState.LOG_FULL, sfe);
             }
         }
     }

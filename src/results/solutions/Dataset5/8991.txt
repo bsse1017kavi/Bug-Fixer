@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -179,9 +178,9 @@ public class ClassMapping
 
             // could have already set value with previous multi-column joinable
             if (vals[pkIdx] == null) {
-fk, store, joins);
+                res.startDataRequest(fm);
                 vals[pkIdx] = join.getPrimaryKeyValue(res, join.getColumns(),
-                    fk, joins);
+fk, store, joins);
                 res.endDataRequest();
                 if (vals[pkIdx] == null)
                     return null;

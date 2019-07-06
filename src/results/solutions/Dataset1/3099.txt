@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -64,9 +63,9 @@ public class TestRegexpRandom extends LuceneTestCase {
       field.setStringValue(df.format(i));
       writer.addDocument(doc);
     }
-writer.shutdown();
+    
     reader = writer.getReader();
-    writer.close();
+writer.shutdown();
     searcher = newSearcher(reader);
   }
   

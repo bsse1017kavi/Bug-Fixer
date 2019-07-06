@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public final class PageMapView extends DevUtilsPanel
 				if (entry instanceof Page)
 				{
 					Page page = (Page)entry;
-versions = 0; // WICKET-NG
+					page.detachModels();
 					size = page.getSizeInBytes();
-					versions = page.getVersions();
+versions = 0; // WICKET-NG
 				}
 				else
 				{

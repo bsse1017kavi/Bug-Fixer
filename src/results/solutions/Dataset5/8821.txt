@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -165,9 +164,9 @@ public class JJTree extends Task
         String targetName = target.getName();
         final File javaFile = new File( outputDirectory,
                                         targetName.substring( 0, targetName.indexOf( ".jjt" ) ) + ".jj" );
-log( "Target is already built - skipping (" + target + ")" );
+        if( javaFile.exists() && target.lastModified() < javaFile.lastModified() )
         {
-            project.log( "Target is already built - skipping (" + target + ")" );
+log( "Target is already built - skipping (" + target + ")" );
             return;
         }
         cmdl.createArgument().setValue( target.getAbsolutePath() );

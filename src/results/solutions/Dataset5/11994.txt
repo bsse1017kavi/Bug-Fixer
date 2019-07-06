@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -647,9 +646,9 @@ public class AjBuildManager implements IOutputClassFileNameProvider,IBinarySourc
 							} else {
 								writeZipEntry(classFile,filename);
 							}
-new String(unitResult.fileName),
+						} catch (IOException ex) {
 							IMessage message = EclipseAdapterUtils.makeErrorMessage(
-									unitResult.compilationUnit,
+new String(unitResult.fileName),
 									CANT_WRITE_RESULT,
 									ex);
 							handler.handleMessage(message);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -139,9 +138,9 @@ public class LocalAllocateDangledIndices extends AbstractComponent {
                             continue;
                         }
                         importNeeded = true;
-routingTableBuilder.addAsRecovery(indexMetaData);
+                        metaData.put(indexMetaData, false);
                         blocks.addBlocks(indexMetaData);
-                        routingTableBuilder.add(indexMetaData, false);
+routingTableBuilder.addAsRecovery(indexMetaData);
                         sb.append("[").append(indexMetaData.index()).append("/").append(indexMetaData.state()).append("]");
                     }
                     if (!importNeeded) {

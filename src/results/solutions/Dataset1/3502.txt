@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public abstract class AbstractSSTableSimpleWriter
         return new SSTableWriter(
             makeFilename(directory, metadata.ksName, metadata.cfName),
             0, // We don't care about the bloom filter
-SSTableMetadata.createCollector());
+            metadata,
             StorageService.getPartitioner(),
-            ReplayPosition.NONE);
+SSTableMetadata.createCollector());
     }
 
     // find available generation and pick up filename from that

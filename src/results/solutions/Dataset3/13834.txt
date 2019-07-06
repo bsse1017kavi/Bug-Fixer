@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -285,9 +284,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
      * @return The byte read, or -1 at EOF.
      * @throws IOException on error
      */
-return num == -1 ? -1 : oneBuf[0] & BYTE_MASK;
+    public int read() throws IOException {
         int num = read(oneBuf, 0, 1);
-        return num == -1 ? -1 : ((int) oneBuf[0]) & BYTE_MASK;
+return num == -1 ? -1 : oneBuf[0] & BYTE_MASK;
     }
 
     /**

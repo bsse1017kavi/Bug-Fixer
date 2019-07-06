@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -184,9 +183,9 @@ public class SearchFieldsTests extends ElasticsearchIntegrationTest {
         assertThat((Double) response.getHits().getAt(2).fields().get("sNum1").values().get(0), equalTo(6.0));
     }
 
-prepareCreate("test").addMapping("type1", "num1", "type=long").execute().actionGet();
+    @Test
     public void testUidBasedScriptFields() throws Exception {
-        createIndex("test");
+prepareCreate("test").addMapping("type1", "num1", "type=long").execute().actionGet();
         ensureYellow();
 
         int numDocs = randomIntBetween(1, 30);

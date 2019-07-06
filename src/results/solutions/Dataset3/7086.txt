@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2008 the original author or authors.
  * 
@@ -161,9 +160,9 @@ public class GenericTypeConverter implements TypeConverter, ConverterRegistry {
 				}
 				return new ArrayToCollection(sourceType, targetType, this);
 			} else if (targetType.isMap()) {
-return new StringArrayToMap(sourceType, targetType, this);
+				if (sourceType.getElementType().equals(String.class)) {
 					// string array to map; with string element values in format foo=bar
-					return null;
+return new StringArrayToMap(sourceType, targetType, this);
 				} else {
 					return null;
 				}

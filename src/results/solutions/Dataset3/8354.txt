@@ -1,4 +1,3 @@
-
 package org.jboss.as.test.integration.respawn;
 
 import org.jboss.as.protocol.ProtocolConnectionConfiguration;
@@ -26,9 +25,9 @@ import static org.jboss.as.network.NetworkUtils.formatPossibleIpv6Address;
 /**
  * @author Emanuel Muckenhuber
  */
-private static final String ENDPOINT_NAME = "respawn-client-mgmt-endpoint";
+class TestControllerUtils implements Closeable {
 
-    private static final String ENDPOINT_NAME = "mgmt-endpoint";
+private static final String ENDPOINT_NAME = "respawn-client-mgmt-endpoint";
 
     private static final AtomicInteger executorCount = new AtomicInteger();
     static ExecutorService createDefaultExecutor() {

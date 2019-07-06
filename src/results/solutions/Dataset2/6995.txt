@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -274,9 +273,9 @@ public boolean hasUnsavedChanges() throws JavaModelException{
 	// for package fragments, package fragment roots, and projects must check open buffers
 	// to see if they have an child with unsaved changes
 	if (fLEType == PACKAGE_FRAGMENT ||
-fLEType == JAVA_MODEL) { // fix for 1FWNMHH
+		fLEType == PACKAGE_FRAGMENT_ROOT ||
 		fLEType == JAVA_PROJECT ||
-		fLEType == JAVA_MODEL) { // fix for 1FWNMHH, part (2)
+fLEType == JAVA_MODEL) { // fix for 1FWNMHH
 		Enumeration openBuffers= getBufferManager().getOpenBuffers();
 		while (openBuffers.hasMoreElements()) {
 			IBuffer buffer= (IBuffer)openBuffers.nextElement();

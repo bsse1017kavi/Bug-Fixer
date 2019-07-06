@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -176,9 +175,9 @@ public class BlobStoreSnapshot implements Snapshot {
      *         a value less than {@code 0} if this snapshot was created before snapshot {@code o}; and
      *         a value greater than {@code 0} if this snapshot was created after snapshot {@code o};
      */
-return Long.compare(startTime, ((BlobStoreSnapshot) o).startTime);
+    @Override
     public int compareTo(Snapshot o) {
-        return Longs.compare(startTime, ((BlobStoreSnapshot) o).startTime);
+return Long.compare(startTime, ((BlobStoreSnapshot) o).startTime);
     }
 
     /**

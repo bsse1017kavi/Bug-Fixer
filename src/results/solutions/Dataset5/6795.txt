@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -129,9 +128,9 @@ public final class AllTests {
      *            the command line arguments
      */
     public static void main(String[] args) {
-return;
+        if (args.length < 1) {
             System.out.println("You must specify a comma-delimited list of paths to search " + "for unit tests");
-            System.exit(1);
+return;
         }
         String home=new File(System.getProperty("user.dir")).getParent();
         System.out.println("Setting JMeterHome: "+home);

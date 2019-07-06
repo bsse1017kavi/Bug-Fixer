@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -41,9 +40,9 @@ public class StreamThread extends Thread {
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);
             String line = null;
-ColumbaLogger.log.info(type + ">" + line);
+
             while ((line = br.readLine()) != null) {
-                ColumbaLogger.log.debug(type + ">" + line);
+ColumbaLogger.log.info(type + ">" + line);
                 buf.append(line + "\n");
             }
         } catch (IOException ioe) {

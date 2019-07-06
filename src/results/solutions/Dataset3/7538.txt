@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class JMSQueueReadAttributeHandler extends AbstractRuntimeOnlyHandler {
         validator.validate(operation);
         final String attributeName = operation.require(ModelDescriptionConstants.NAME).asString();
 
-ManagementUtil.rollbackOperationWithResourceNotFound(context, operation);
+        JMSQueueControl control = getControl(context, operation);
         if (control == null) {
-            ManagementUtil.rollbackOperationWithNoHandler(context, operation);
+ManagementUtil.rollbackOperationWithResourceNotFound(context, operation);
             return;
         }
 

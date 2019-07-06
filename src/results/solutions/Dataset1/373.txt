@@ -1,4 +1,3 @@
-
 package org.apache.lucene.benchmark.byTask.tasks;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -49,9 +48,9 @@ public class SearchWithSortTask extends ReadTask {
       int index = field.lastIndexOf(":");
       String fieldName;
       String typeString;
-typeString = field.substring(1+index, field.length());
+      if (index != -1) {
         fieldName = field.substring(0, index);
-        typeString = field.substring(index, field.length());
+typeString = field.substring(1+index, field.length());
       } else {
         typeString = "auto";
         fieldName = field;

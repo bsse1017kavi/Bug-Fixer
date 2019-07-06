@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class KerberosManager implements Serializable {
     private static final long serialVersionUID = 2L;
 
     private static final Logger log = LoggingManager.getLoggerForClass();
-private final ConcurrentMap<String, Future<Subject>> subjects
+
     private static final String JAAS_APPLICATION = JMeterUtils.getPropDefault("kerberos_jaas_application", "JMeter"); //$NON-NLS-1$ $NON-NLS-2$
-    private ConcurrentMap<String, Future<Subject>> subjects
+private final ConcurrentMap<String, Future<Subject>> subjects
         = new ConcurrentHashMap<String, Future<Subject>>();
 
     public KerberosManager() {

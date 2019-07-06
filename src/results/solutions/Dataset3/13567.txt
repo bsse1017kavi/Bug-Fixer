@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -589,9 +588,9 @@ public class Percentile extends AbstractUnivariateStatistic implements Serializa
      * </p>
      * @param newEstimationType estimation type for the new instance
      * @return a new instance, with changed pivoting strategy
-public Percentile withEstimationType(final EstimationType newEstimationType) {
+     * @throws NullArgumentException when pivotingStrategy is null
      */
-    public Percentile withEstimationtype(final EstimationType newEstimationType) {
+public Percentile withEstimationType(final EstimationType newEstimationType) {
         return new Percentile(quantile, newEstimationType, nanStrategy, pivotingStrategy);
     }
 

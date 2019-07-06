@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -981,9 +980,9 @@ public class SharedClusterSnapshotRestoreTests extends AbstractSnapshotTests {
         ensureGreen();
         assertThat(client.prepareCount("test-idx").get().getCount(), equalTo(100L));
 
-for (RepositoriesService repositoriesService : cluster().getDataNodeInstances(RepositoriesService.class)) {
+        long snapshotPause = 0L;
         long restorePause = 0L;
-        for (RepositoriesService repositoriesService : cluster().getInstances(RepositoriesService.class)) {
+for (RepositoriesService repositoriesService : cluster().getDataNodeInstances(RepositoriesService.class)) {
             snapshotPause += repositoriesService.repository("test-repo").snapshotThrottleTimeInNanos();
             restorePause += repositoriesService.repository("test-repo").restoreThrottleTimeInNanos();
         }

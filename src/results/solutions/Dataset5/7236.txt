@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class LocalizedErrorMessageTest extends WicketTestCase
 		tester.getServletRequest().setRequestToComponent(page.form);
 		tester.getServletRequest().setParameter(page.integerField.getInputName(), "foo");
 
-tester.assertErrorMessages(new String[] { "'foo' in veld 'integer' moet een geheel getal zijn. " });
+		page.form.onFormSubmitted();
 
-		tester.assertErrorMessages(new String[] { "'foo' is geen valide type van Integer." });
+tester.assertErrorMessages(new String[] { "'foo' in veld 'integer' moet een geheel getal zijn. " });
 		tester.getWicketSession().setLocale(new Locale("us"));
 
 		tester.getWicketSession().cleanupFeedbackMessages();

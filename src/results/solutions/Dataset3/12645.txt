@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.Config;
@@ -73,9 +72,9 @@ public class TransactionalSpoutCoordinator implements IRichSpout {
         }
         if(status.status==AttemptStatus.PROCESSING) {
             status.status = AttemptStatus.PROCESSED;
-_coordinatorState.cleanupBefore(tx.getTransactionId());
+        } else if(status.status==AttemptStatus.COMMITTING) {
             _activeTx.remove(tx.getTransactionId());
-            _coordinatorState.commit(tx.getTransactionId());
+_coordinatorState.cleanupBefore(tx.getTransactionId());
             _currTransaction = nextTransactionId(tx.getTransactionId());
             _state.setData(CURRENT_TX, _currTransaction);
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -189,9 +188,9 @@ public class PersistenceRefProcessor extends AbstractDeploymentDescriptorBinding
         final String unitName)
         throws DeploymentUnitProcessingException {
 
-return new PersistenceUnitInjectionSource(puServiceName, deploymentUnit, EntityManagerFactory.class.getName());
+        String scopedPuName = getScopedPuName(deploymentUnit, unitName);
         ServiceName puServiceName = getPuServiceName(scopedPuName);
-        return new PersistenceUnitInjectionSource(puServiceName, deploymentUnit, scopedPuName, EntityManagerFactory.class.getName());
+return new PersistenceUnitInjectionSource(puServiceName, deploymentUnit, EntityManagerFactory.class.getName());
     }
 
     private InjectionSource getPersistenceContextBindingSource(

@@ -1,4 +1,3 @@
-
 package junit.runner;
 
 import java.util.*;
@@ -120,9 +119,9 @@ public class TestCaseClassLoader extends ClassLoader {
 				data= loadFileData(path, fileName);
 			}
 			if (data != null)
-throw new ClassNotFoundException(className);
+				return data;
 		}
-		throw new ClassNotFoundException();
+throw new ClassNotFoundException(className);
 	}
 		
 	boolean isJar(String pathEntry) {

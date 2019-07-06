@@ -1,4 +1,3 @@
-
 /*
  * InstallThread.java
  *
@@ -53,9 +52,9 @@ public class InstallThread extends Thread
 			// scripts, installing man pages, etc.)
 			for(int i = 0; i < osTasks.length; i++)
 			{
-osTasks[i].perform(installDir,components);
+				System.err.println("Performing task " +
 					osTasks[i].getName());
-				osTasks[i].perform(installDir);
+osTasks[i].perform(installDir,components);
 			}
 		}
 		catch(FileNotFoundException fnf)

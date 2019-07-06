@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries.function;
 
 
@@ -59,9 +58,9 @@ public class TestBoostedQuery extends LuceneTestCase {
     Field idField = new StringField("id", "", Field.Store.NO);
     document.add(idField);
     iw.addDocument(document);
-iw.shutdown();
+    ir = iw.getReader();
     is = newSearcher(ir);
-    iw.close();
+iw.shutdown();
   }
   
   @AfterClass

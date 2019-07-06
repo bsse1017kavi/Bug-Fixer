@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -4551,9 +4550,9 @@ public void ireturn() {
 }
 public boolean isDefinitelyAssigned(Scope scope, int initStateIndex, LocalVariableBinding local) {
 	// Mirror of UnconditionalFlowInfo.isDefinitelyAssigned(..)
-if ((local.tagBits & TagBits.IsArgument) != 0) {
+	if (initStateIndex == -1)
 		return false;
-	if (local.isArgument) {
+if ((local.tagBits & TagBits.IsArgument) != 0) {
 		return true;
 	}
 	int localPosition = local.id + maxFieldCount;

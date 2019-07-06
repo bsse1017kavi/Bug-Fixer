@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -53,9 +52,9 @@ public class BrowserManager {
     
     private static TopFrame topFrame = null;
     
-UserPreferencesAdapter preferencesAdapter = new UserPreferencesStore(true);
+	public void init(String[] configFilesArgs, boolean visible) {
 		try {
-			UserPreferencesAdapter preferencesAdapter = new UserPreferencesStore();
+UserPreferencesAdapter preferencesAdapter = new UserPreferencesStore(true);
 			browserProjectProperties = new BrowserProperties(preferencesAdapter);
 			TaskListManager taskListManager = new CompilerMessagesPanel();
 			BasicEditor ajdeEditor = new BasicEditor();

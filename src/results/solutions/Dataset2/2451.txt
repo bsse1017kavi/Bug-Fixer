@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.misc;
 
 /*
@@ -88,9 +87,9 @@ public void openWithUserDefinedProgram() throws CoreException {
 	
 	// ShellCommand was removed in response to PR 23888.  If an exception was 
 	// thrown, it was not caught in time, and no feedback was given to user
-Runtime.getRuntime().exec(new String[]{programFileName, path});
+	
 	try {
-		Process p = Runtime.getRuntime().exec(new String[]{programFileName, path});
+Runtime.getRuntime().exec(new String[]{programFileName, path});
 	} catch (Exception e) {
 		throw new CoreException(new Status(
 			Status.ERROR, 

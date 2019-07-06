@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1983,9 +1982,9 @@ public class ImageAnalyzer {
 		if (image == null) return "";
 		boolean truncated = false;
 		char[] dump = null;
-int length = imageData.height * (6 + 3 * imageData.bytesPerLine + lineDelimiter.length());
+		byte[] alphas = imageData.alphaData;
 		try {
-			int length = imageData.height * (6 + 4 * imageData.bytesPerLine + lineDelimiter.length());
+int length = imageData.height * (6 + 3 * imageData.bytesPerLine + lineDelimiter.length());
 			if (alphas != null && alphas.length > 0) {
 				length += imageData.height * (6 + 3 * imageData.width + lineDelimiter.length()) + 6 + lineDelimiter.length();
 			}

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -186,9 +185,9 @@ public abstract class DefaultRmicAdapter
     protected Path getCompileClasspath()
         throws TaskException
     {
-Path classpath = new Path();
+        // add dest dir to classpath so that previously compiled and
         // untouched classes are on classpath
-        Path classpath = new Path( attributes.getProject() );
+Path classpath = new Path();
         classpath.setLocation( attributes.getBase() );
 
         // Combine the build classpath with the system classpath, in an

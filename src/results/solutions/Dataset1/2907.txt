@@ -1,4 +1,3 @@
-
 /*
 
 Copyright (c) 2001, Dr Martin Porter
@@ -434,9 +433,9 @@ public abstract class SnowballProgram {
     {
 	if (bra < 0 ||
 	    bra > ket ||
-throw new IllegalArgumentException("faulty slice operation: bra=" + bra + ",ket=" + ket + ",limit=" + limit);
+	    ket > limit)
 	{
-	    System.err.println("faulty slice operation");
+throw new IllegalArgumentException("faulty slice operation: bra=" + bra + ",ket=" + ket + ",limit=" + limit);
 	// FIXME: report error somehow.
 	/*
 	    fprintf(stderr, "faulty slice operation:\n");

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ import org.junit.runner.RunWith;
 @RunAsClient
 @Ignore("This test has never been run, awaiting fix either remote jndi or multiple @Deployment methods supported by " +
 		"Arquillian AND the same issues as org.jboss.as.test.embedded.demos.ds.DsTestCase")
-@Deployment(testable = false)
+public class WebAppTestCase {
 
-    @Deployment
+@Deployment(testable = false)
     public static Archive<?> getDeployment(){
         //TODO - either deploy this separately once Arquillian (post Alpha4) supports multiple deployments
         //or wait until we have real remote jndi

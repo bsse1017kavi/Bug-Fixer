@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -42,9 +41,9 @@ public class ExampleRunner {
 
     public static void main(String[] args) throws Exception {
         DeploymentUtils utils = null;
-utils.addWarDeployment("ws-example.war", true, EndpointImpl.class.getPackage());
+        try {
             utils = new DeploymentUtils();
-            utils.addWarDeployment("ws-example.war", EndpointImpl.class.getPackage(), true);
+utils.addWarDeployment("ws-example.war", true, EndpointImpl.class.getPackage());
             utils.deploy();
             testWSDL();
             testSOAPCall();

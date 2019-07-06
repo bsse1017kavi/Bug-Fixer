@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.component;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -163,9 +162,9 @@ public class HttpShardHandlerFactory extends ShardHandlerFactory implements Plug
       loadbalancer.shutdown();
     } catch (Throwable e) {
       SolrException.log(log, e);
-ExecutorUtil.shutdownNowAndAwaitTermination(commExecutor);
+    }
     try {
-      ExecutorUtil.shutdownAndAwaitTermination(commExecutor);
+ExecutorUtil.shutdownNowAndAwaitTermination(commExecutor);
     } catch (Throwable e) {
       SolrException.log(log, e);
     }

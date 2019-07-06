@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -130,9 +129,9 @@ public class TransportCountAction extends TransportBroadcastOperationAction<Coun
     }
 
     @Override
-long count = indexShard.count(request.minScore(), request.querySource(),
+    protected ShardCountResponse shardOperation(ShardCountRequest request) throws ElasticSearchException {
         IndexShard indexShard = indicesService.indexServiceSafe(request.index()).shardSafe(request.shardId());
-        long count = indexShard.count(request.minScore(), request.querySource(), request.querySourceOffset(), request.querySourceLength(),
+long count = indexShard.count(request.minScore(), request.querySource(),
                 request.filteringAliases(), request.types());
         return new ShardCountResponse(request.index(), request.shardId(), count);
     }

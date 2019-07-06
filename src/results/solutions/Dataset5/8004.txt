@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -348,9 +347,9 @@ public class ZipOutputStream extends FilterOutputStream {
      * @since 1.3
      */
     public void setEncoding(final String encoding) {
-useUTF8Flag = useUTF8Flag && ZipEncodingHelper.isUTF8(encoding);
+        this.encoding = encoding;
         this.zipEncoding = ZipEncodingHelper.getZipEncoding(encoding);
-        useUTF8Flag &= ZipEncodingHelper.isUTF8(encoding);
+useUTF8Flag = useUTF8Flag && ZipEncodingHelper.isUTF8(encoding);
     }
 
     /**

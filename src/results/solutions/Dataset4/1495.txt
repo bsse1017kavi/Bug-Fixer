@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests;
 
 import com.badlogic.gdx.Application;
@@ -37,9 +36,9 @@ public class MD5Test implements RenderListener
 			model = MD5Loader.loadModel( app.getFiles().readFile( "data/zfat.md5mesh", FileType.Internal) );
 			anim = MD5Loader.loadAnimation( app.getFiles().readFile( "data/walk1.md5anim", FileType.Internal ) );											
 			skeleton = new MD5Joints();
-renderer = new MD5Renderer( app.getGraphics(), model, false, true );
+			skeleton.joints = new float[anim.frames[0].joints.length];
 			animInfo = new MD5AnimationInfo( anim.frames.length, anim.secondsPerFrame );			
-			renderer = new MD5Renderer( app.getGraphics(), model, true, true );
+renderer = new MD5Renderer( app.getGraphics(), model, false, true );
 			
 			
 //			long start = System.nanoTime();

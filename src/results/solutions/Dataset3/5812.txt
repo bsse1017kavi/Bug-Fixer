@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -157,9 +156,9 @@ public class EntityBeanSynchronizationInterceptor extends AbstractEJBInterceptor
         @Override
         public void beforeCompletion() {
             synchronized (threadLock) {
-if(!componentInstance.isRemoved() && !componentInstance.isDiscarded()) {
+                //invoke the EJB store method within the transaction
                 try {
-                    if(!componentInstance.isRemoved()) {
+if(!componentInstance.isRemoved() && !componentInstance.isDiscarded()) {
                         componentInstance.store();
                     }
                 } catch (Throwable t) {

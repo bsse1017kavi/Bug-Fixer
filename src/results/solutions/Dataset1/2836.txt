@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -430,9 +429,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
 
     private void startBootstrap(Token token) throws IOException
     {
-Gossiper.instance.addLocalApplicationState(ApplicationState.STATUS, valueFactory.bootstrapping(token));
+        isBootstrapMode = true;
         SystemTable.updateToken(token); // DON'T use setToken, that makes us part of the ring locally which is incorrect until we are done bootstrapping
-        Gossiper.instance.addLocalApplicationState(ApplicationState.STATUS, valueFactory.normal(token));
+Gossiper.instance.addLocalApplicationState(ApplicationState.STATUS, valueFactory.bootstrapping(token));
         setMode("Joining: sleeping " + RING_DELAY + " ms for pending range setup", true);
         try
         {

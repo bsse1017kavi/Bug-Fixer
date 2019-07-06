@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -394,9 +393,9 @@ public class DateFieldMapper extends NumberFieldMapper<Long> {
                 upperVal = parseToMilliseconds(value, context, includeUpper);
             }
         }
-(IndexNumericFieldData) parseContext.getForField(this), lowerVal,upperVal, includeLower, includeUpper
+
         Filter filter =  NumericRangeFieldDataFilter.newLongRange(
-            (IndexNumericFieldData<?>) parseContext.getForField(this), lowerVal,upperVal, includeLower, includeUpper
+(IndexNumericFieldData) parseContext.getForField(this), lowerVal,upperVal, includeLower, includeUpper
         );
         if (!cache) {
             // We don't cache range filter if `now` date expression is used and also when a compound filter wraps

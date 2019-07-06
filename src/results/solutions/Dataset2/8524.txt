@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.startup;
 
 import java.beans.*;
@@ -154,9 +153,9 @@ public class Tomcat {
 	if (tchome == null) {
 	    System.out.println(sm.getString("tomcat.nohome"));
 	    tchome = ".";	// Assume current working directory
-cm.setInstallDir(tchome);
+	}
 	// Home will be identical to tomcat home if default config is used.
-	cm.setTomcatHome(tchome);
+cm.setInstallDir(tchome);
 	return (new File(tchome, DEFAULT_CONFIG));
 
     }

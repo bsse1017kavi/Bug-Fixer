@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class CoreDescriptor {
     this.name = name;
     
     if(coreContainer.getZkController() != null) {
-cloudDesc.setCollectionName(name.isEmpty() ? coreContainer.getDefaultCoreName() : name);
+      this.cloudDesc = new CloudDescriptor();
       // cloud collection defaults to core name
-      cloudDesc.setCollectionName(name == "" ? coreContainer.getDefaultCoreName() : name);
+cloudDesc.setCollectionName(name.isEmpty() ? coreContainer.getDefaultCoreName() : name);
       this.cloudDesc.setShardId(coreContainer.getZkController().getNodeName() + "_" + name);
     }
     

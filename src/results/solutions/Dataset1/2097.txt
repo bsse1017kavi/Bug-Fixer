@@ -1,4 +1,3 @@
-
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public class CompendiumHandlerTest {
         executor.awaitTermination(2, TimeUnit.SECONDS);
 
         //service unget
-verify(agentContext).unregisterMBean(target);
+        verify(bundleContext).ungetService(reference);
         //unregister is invoked on context
-        verify(agentContext).unregisterMBean(name);
+verify(agentContext).unregisterMBean(target);
 
     }
 

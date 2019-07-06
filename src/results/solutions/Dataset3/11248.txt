@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -49,9 +48,9 @@ public class NamingDependencyProcessor implements DeploymentUnitProcessor {
     public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
         final ModuleLoader moduleLoader = Module.getBootModuleLoader();
-moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, NAMING_ID, false, false, false));
+        final ModuleSpecification moduleSpecification = deploymentUnit.getAttachment(Attachments.MODULE_SPECIFICATION);
 
-        moduleSpecification.addDependency(new ModuleDependency(moduleLoader, NAMING_ID, false, false, false));
+moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, NAMING_ID, false, false, false));
     }
 
     @Override

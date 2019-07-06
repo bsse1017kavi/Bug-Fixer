@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011, Red Hat Inc., and individual contributors as indicated
@@ -35,9 +34,9 @@ public class CacheAnnotationInformationFactory extends ClassAnnotationInformatio
     protected CacheAnnotationInformationFactory() {
         super(Cache.class, null);
     }
-protected CacheInfo fromAnnotation(AnnotationInstance annotationInstance, boolean replacement) {
+
     @Override
-    protected CacheInfo fromAnnotation(AnnotationInstance annotationInstance) {
+protected CacheInfo fromAnnotation(AnnotationInstance annotationInstance, boolean replacement) {
         String value = annotationInstance.value().asString();
         return new CacheInfo(value);
     }

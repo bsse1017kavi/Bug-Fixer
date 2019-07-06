@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1185,9 +1184,9 @@ protected void consumeAnnotationTypeMemberDeclaration() {
 	int length = this.expressionLengthStack[this.expressionLengthPtr--];
 	if (length == 1) {
 		intPtr--; // we get rid of the position of the default keyword
-annotationTypeMemberDeclaration.modifiers |=  AccAnnotationDefault;
+		intPtr--; // we get rid of the position of the default keyword
 		annotationTypeMemberDeclaration.defaultValue = this.expressionStack[this.expressionPtr--];
-		annotationTypeMemberDeclaration.modifiers |=  AccAnnotationMethodWithDefault;
+annotationTypeMemberDeclaration.modifiers |=  AccAnnotationDefault;
 	}
 
 	// store the this.endPosition (position just before the '}') in case there is

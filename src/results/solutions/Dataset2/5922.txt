@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -356,8 +355,8 @@ public TypeBinding resolveType(BlockScope scope) {
 	// check for this.x in static is done in the resolution of the receiver
 	constant = FieldReference.getConstantFor(binding, receiver == ThisReference.ThisImplicit, this, scope, 0);
 	if (!receiver.isThis())
-return this.resolvedType = binding.type;
+		constant = NotAConstant;
 
-	return this.expressionType = binding.type;
+return this.resolvedType = binding.type;
 }
 }

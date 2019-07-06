@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -261,9 +260,9 @@ public class DataConfig {
         if (func == null || clz == null)
           throw new DataImportHandlerException(
                   DataImportHandlerException.SEVERE,
-evaluators.put(func, (Evaluator) DocBuilder.loadClass(clz, null)
+                  "<function> must have a 'name' and 'class' attributes");
         try {
-          evaluators.put(func, (Evaluator) DocBuilder.loadClass(clz)
+evaluators.put(func, (Evaluator) DocBuilder.loadClass(clz, null)
                   .newInstance());
         } catch (Exception exp) {
           throw new DataImportHandlerException(

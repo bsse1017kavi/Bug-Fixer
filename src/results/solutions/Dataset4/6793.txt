@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.g3d.md2;
 
 import java.io.ByteArrayInputStream;
@@ -101,9 +100,9 @@ public class MD2Loader {
 
 		header.numVertices = vertCombos.size();
 
-animation.totalDuration = frames.length * 0.2f;
+		KeyframedSubMesh subMesh = new KeyframedSubMesh();
 		KeyframedAnimation animation = new KeyframedAnimation();
-		animation.duration = frames.length * 0.2f;
+animation.totalDuration = frames.length * 0.2f;
 		animation.keyframes = new Keyframe[frames.length];
 
 		for (int frameNum = 0; frameNum < frames.length; frameNum++) {

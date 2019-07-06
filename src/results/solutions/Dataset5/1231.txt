@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -94,9 +93,9 @@ public class StructureModelRegressionTest extends AjdeTestCase {
 	  return equal;		
 	}
 
-Ajde.getDefault().getBuildManager().build(); // was buildStructure...
+	private StructureModel getModelForFile(String lstFile) {
 		Ajde.getDefault().getConfigurationManager().setActiveConfigFile(lstFile);
-		Ajde.getDefault().getBuildManager().buildStructure();
+Ajde.getDefault().getBuildManager().build(); // was buildStructure...
 		while(!testerBuildListener.getBuildFinished()) {
 			try {
 				Thread.sleep(300);

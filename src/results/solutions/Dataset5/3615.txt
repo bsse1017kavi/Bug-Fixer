@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -42,9 +41,9 @@ import org.apache.openjpa.lib.conf.ConfigurationProvider;
 public class JDBCProductDerivation extends AbstractProductDerivation
     implements OpenJPAProductDerivation {
 
-public void putBrokerFactoryAliases(Map<String,String> m) {
+    public static final String PREFIX = "openjpa.jdbc"; 
     
-    public void putBrokerFactoryAliases(Map m) {
+public void putBrokerFactoryAliases(Map<String,String> m) {
         m.put("jdbc", JDBCBrokerFactory.class.getName());
     }
 

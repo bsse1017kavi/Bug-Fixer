@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.g3d.lights;
 
 import com.badlogic.gdx.graphics.Color;
@@ -67,9 +66,9 @@ public class LightManager {
 		// solve what are lights that influence most
 		if (maxSize > maxLightsPerModel) {
 
-light.priority = (int)(PointLight.PRIORITY_DISCRETE_STEPS * (light.intensity / light.position.dst(x, y, z)));
+			for (int i = 0; i < maxSize; i++) {
 				final PointLight light = pointLights.get(i);
-				light.priority = light.intensity / light.position.dst(x, y, z);
+light.priority = (int)(PointLight.PRIORITY_DISCRETE_STEPS * (light.intensity / light.position.dst(x, y, z)));
 				// if just linear fallof
 			}
 			pointLights.sort();

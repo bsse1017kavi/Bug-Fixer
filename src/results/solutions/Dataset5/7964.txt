@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM
  * All rights reserved. 
@@ -311,9 +310,9 @@ public class RuntimeVisibleAnnotationAttributeTest extends BcelTestCase {
 				nvp.getNameString().equals("enumval"));
 		ElementValue ev = nvp.getValue();
 		assertTrue("Should be of type EnumElementValue but is "+ev,ev instanceof EnumElementValue);
-assertTrue("Enum type for annotation should be 'SimpleEnum' but is "+Utility.signatureToString(eev.getEnumTypeString()),Utility.signatureToString(eev.getEnumTypeString()).equals("SimpleEnum"));
+		EnumElementValue eev = (EnumElementValue)ev;
 		assertTrue("Should be an enum type value but is "+eev.getElementValueType(),eev.getElementValueType()==SimpleElementValue.ENUM_CONSTANT);
-		assertTrue("Enum type for annotation should be 'SimpleEnum' but is "+eev.getEnumTypeString(),eev.getEnumTypeString().equals("SimpleEnum"));
+assertTrue("Enum type for annotation should be 'SimpleEnum' but is "+Utility.signatureToString(eev.getEnumTypeString()),Utility.signatureToString(eev.getEnumTypeString()).equals("SimpleEnum"));
 		assertTrue("String value should be 'Red' but was '"+eev.getEnumValueString()+"'",
 				eev.getEnumValueString().equals("Red"));
 	}

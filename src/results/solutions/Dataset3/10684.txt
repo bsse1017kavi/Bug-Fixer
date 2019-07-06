@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.clustering.infinispan.InfinispanLogger.ROOT_LOGGER;
@@ -204,9 +203,9 @@ public class InfinispanSubsystemXMLReader_1_0 implements XMLElementReader<List<M
         }
         ParseUtils.requireNoContent(reader);
 
-transportAddress.add(ModelKeys.TRANSPORT, ModelKeys.TRANSPORT_NAME);
+        // setup the transport address
         ModelNode transportAddress = containerAddress.clone() ;
-        transportAddress.add(ModelKeys.SINGLETON, ModelKeys.TRANSPORT);
+transportAddress.add(ModelKeys.TRANSPORT, ModelKeys.TRANSPORT_NAME);
         transportAddress.protect() ;
         transport.get(ModelDescriptionConstants.OP_ADDR).set(transportAddress);
 

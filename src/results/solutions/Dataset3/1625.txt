@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -207,9 +206,9 @@ public class ServerEnvironment {
         this.serverDataDir = tmp;
         System.setProperty(SERVER_DATA_DIR, this.serverDataDir.getAbsolutePath());
 
-tmp = new File(this.serverDataDir, "deployments");
+        tmp = getFileFromProperty(SERVER_DEPLOY_DIR);
         if (tmp == null) {
-            tmp = new File(this.serverBaseDir, "deployments");
+tmp = new File(this.serverDataDir, "deployments");
         }
         this.serverDeployDir = tmp;
         System.setProperty(SERVER_DEPLOY_DIR, this.serverDeployDir.getAbsolutePath());

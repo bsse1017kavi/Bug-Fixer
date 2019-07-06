@@ -1,4 +1,3 @@
-
 /*
  * $Id: WicketTagComponentResolver.java,v 1.4 2005/01/18 08:04:29 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -116,9 +115,9 @@ public class ScopedComponentResolver implements IComponentResolver
 			if ((component != null) && (component instanceof IScopedComponent))
 			{
 				IScopedComponent sc = (IScopedComponent)component;
-component.render(markupStream);
+				if (sc.isRenderableInSubContainers())
 				{
-					component.render();
+component.render(markupStream);
 					return true;
 				}
 			}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -52,9 +51,9 @@ public class DeploymentItemProcessor implements Service<Void> {
     public static final ServiceName SERVICE_NAME = DeploymentService.SERVICE_NAME.append("item", "processor");
 
     static final Method DEPLOYMENT_MODULE_SETTER;
-DEPLOYMENT_MODULE_SETTER = DeploymentItemProcessor.class.getMethod("setModule", Module.class);
+    static {
         try {
-            DEPLOYMENT_MODULE_SETTER = DeploymentService.class.getMethod("setModule", Module.class);
+DEPLOYMENT_MODULE_SETTER = DeploymentItemProcessor.class.getMethod("setModule", Module.class);
         } catch(NoSuchMethodException e) {
             throw new RuntimeException(e);  // Gross....
         }

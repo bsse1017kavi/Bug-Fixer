@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -518,9 +517,9 @@ public class NamingContext implements EventContext {
 
     private Object getObjectInstance(final Object object, final Name name, final Hashtable<?, ?> environment) throws NamingException {
         try {
-return objectFactory == null ? null : objectFactory.getObjectInstance(object, name, this, environment);
+            final ObjectFactoryBuilder factoryBuilder = ObjectFactoryBuilder.INSTANCE;
             final ObjectFactory objectFactory = factoryBuilder.createObjectFactory(object, environment);
-            return objectFactory.getObjectInstance(object, name, this, environment);
+return objectFactory == null ? null : objectFactory.getObjectInstance(object, name, this, environment);
         } catch(NamingException e) {
             throw e;
         } catch(Throwable t) {

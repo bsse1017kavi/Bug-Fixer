@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class HBaseLookupBolt extends AbstractHBaseBolt {
         byte[] rowKey = this.mapper.rowKey(tuple);
         Get get = hBaseClient.constructGetRequests(rowKey, projectionCriteria);
 
-for(Values values : rowToTupleMapper.toValues(result)) {
+        try {
             Result result = hBaseClient.batchGet(Lists.newArrayList(get))[0];
-            for(Values values : rowToTupleMapper.toValues(tuple, result)) {
+for(Values values : rowToTupleMapper.toValues(result)) {
                 this.collector.emit(values);
             }
             this.collector.ack(tuple);

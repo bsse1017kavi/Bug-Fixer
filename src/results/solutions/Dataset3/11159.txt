@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -143,9 +142,9 @@ public class NonLinearConjugateGradientOptimizer
     }
 
     /** {@inheritDoc} */
-final ConvergenceChecker<RealPointValuePair> checker = getConvergenceChecker();
+    @Override
     protected RealPointValuePair doOptimize() {
-        final ConvergenceChecker checker = getConvergenceChecker();
+final ConvergenceChecker<RealPointValuePair> checker = getConvergenceChecker();
         point = getStartPoint();
         final GoalType goal = getGoalType();
         final int n = point.length;

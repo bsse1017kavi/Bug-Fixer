@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -55,9 +54,9 @@ public TypeBinding resolveType(BlockScope scope) {
 		if (!(this.resolvedType instanceof ReferenceBinding))
 			throw new CompletionNodeFound(); // no need to continue if its an array or base type
 		if (this.resolvedType.isInterface()) // handle the anonymous class definition case
-this.resolvedType = type.resolveType(scope, true /* check bounds*/);
+			this.resolvedType = scope.getJavaLangObject();
 	} else {
-		this.resolvedType = type.resolveType(scope);
+this.resolvedType = type.resolveType(scope, true /* check bounds*/);
 		if (!(this.resolvedType instanceof ReferenceBinding))
 			throw new CompletionNodeFound(); // no need to continue if its an array or base type
 	}

@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -180,9 +179,9 @@ public class VirtualFolder extends AbstractMessageFolder {
 		// we only want 10 subfolders
 		// -> if more children exist remove them
 		if (searchFolder.getChildCount() >= 10) {
-child.removeFolder();
+			AbstractMessageFolder child = (AbstractMessageFolder) searchFolder
 					.getChildAt(0);
-			child.removeFromParent();
+child.removeFolder();
 		}
 
 		// create new subfolder

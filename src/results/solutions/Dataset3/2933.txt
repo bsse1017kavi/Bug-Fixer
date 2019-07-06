@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -95,9 +94,9 @@ public class JndiViewOperation implements OperationStepHandler {
                     }
                     context.completeStep();
                 }
-throw new OperationFailedException(new ModelNode().set("Jndi view is only available in runtime mode."));
+            }, OperationContext.Stage.RUNTIME);
         } else {
-            resultNode.set("Jndi view is only available in runtime mode.");
+throw new OperationFailedException(new ModelNode().set("Jndi view is only available in runtime mode."));
         }
         context.completeStep();
     }

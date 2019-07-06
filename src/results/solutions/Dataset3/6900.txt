@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class AbstractRandomGeneratorTest extends RandomDataTest {
     public void testNextInt() {
         try {
             testGenerator.nextInt(-1);
-// ignored
+            fail("IllegalArgumentException expected");
         } catch (IllegalArgumentException ex) {
-            ;
+// ignored
         }
         Frequency freq = new Frequency();
         int value = 0;

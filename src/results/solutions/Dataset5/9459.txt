@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -102,9 +101,9 @@ public class BcelTypeMunger extends ConcreteTypeMunger {
 			throw new RuntimeException("unimplemented");
 		}
 		
-weaver.getLazyClassGen().getOrCreateWeaverStateInfo(BcelClassWeaver.getReweavableMode());
+		if (changed && munger.changesPublicSignature()) {
 			WeaverStateInfo info = 
-				weaver.getLazyClassGen().getOrCreateWeaverStateInfo(weaver.getReweavableMode());
+weaver.getLazyClassGen().getOrCreateWeaverStateInfo(BcelClassWeaver.getReweavableMode());
 			info.addConcreteMunger(this);
 		}
 

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1355,9 +1354,9 @@ public final class LazyMethodGen {
     }
     
 	public String getSignature() {
-BcelWorld.fromBcel(getArgumentTypes()),false);
+		if (memberView!=null) return memberView.getSignature();
 		return Member.typesToSignature(BcelWorld.fromBcel(getReturnType()), 
-										BcelWorld.fromBcel(getArgumentTypes()));
+BcelWorld.fromBcel(getArgumentTypes()),false);
 	}
     
     public String getParameterSignature() {

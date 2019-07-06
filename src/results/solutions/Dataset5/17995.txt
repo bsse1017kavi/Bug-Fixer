@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -433,9 +432,9 @@ public abstract class AbstractFileSet extends DataType
                     throw new BuildException("No directory specified for "
                                              + getDataTypeName() + ".");
                 }
-+ " does not exist.");
+                if (!dir.exists() && errorOnMissingDir) {
                     throw new BuildException(dir.getAbsolutePath()
-                                             + " not found.");
++ " does not exist.");
                 }
                 if (!dir.isDirectory() && dir.exists()) {
                     throw new BuildException(dir.getAbsolutePath()

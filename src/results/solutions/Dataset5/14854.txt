@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -42,9 +41,9 @@ public abstract class Pack
     public void execute()
         throws TaskException
     {
-getContext().verbose( message );
+        validate();
         final String message = "Building: " + m_zipFile.getAbsolutePath();
-        getContext().info( message );
+getContext().verbose( message );
         pack();
     }
 

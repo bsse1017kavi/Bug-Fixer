@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class FuzzyKMeansMapper extends Mapper<WritableComparable<?>,VectorWritab
     if ((clusterPath != null) && (clusterPath.length() > 0)) {
       FuzzyKMeansUtil.configureWithClusterInfo(new Path(clusterPath), clusters);
     }
-throw new IllegalStateException("No clusters found. Check your -c path.");
+    
     if (clusters.isEmpty()) {
-      throw new IllegalStateException("Cluster is empty!!!");
+throw new IllegalStateException("No clusters found. Check your -c path.");
     }
   }
 

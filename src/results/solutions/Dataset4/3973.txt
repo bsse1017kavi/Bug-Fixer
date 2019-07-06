@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -157,9 +156,9 @@ public class GatewayService extends AbstractLifecycleComponent<GatewayService> i
             logger.error("Failed to read from gateway", e);
             return false;
         }
-return true;
+        if (metaData == null) {
             logger.debug("No state read from gateway");
-            return false;
+return true;
         }
         final MetaData fMetaData = metaData;
         final CountDownLatch latch = new CountDownLatch(fMetaData.indices().size());

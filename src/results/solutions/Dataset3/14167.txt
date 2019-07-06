@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class DefaultOperationCandidatesProvider implements OperationCandidatesPr
         @Override
         public int complete(CommandContext ctx, String buffer, int cursor, List<String> candidates) {
             try {
-//e.printStackTrace();
+                ParserUtil.parseHeaders(buffer, parsedOp);
             } catch (CommandFormatException e) {
-                e.printStackTrace();
+//e.printStackTrace();
                 return -1;
             }
             if(parsedOp.endsOnSeparator()) {

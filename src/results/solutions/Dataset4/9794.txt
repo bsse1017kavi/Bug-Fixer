@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class JsonQueryParserRegistry {
         add(queryParsersMap, new TermJsonQueryParser(index, indexSettings));
         add(queryParsersMap, new FieldJsonQueryParser(index, indexSettings, analysisService));
         add(queryParsersMap, new RangeJsonQueryParser(index, indexSettings));
-add(queryParsersMap, new FilteredJsonQueryParser(index, indexSettings));
+        add(queryParsersMap, new PrefixJsonQueryParser(index, indexSettings));
         add(queryParsersMap, new WildcardJsonQueryParser(index, indexSettings));
-        add(queryParsersMap, new FilteredQueryJsonQueryParser(index, indexSettings));
+add(queryParsersMap, new FilteredJsonQueryParser(index, indexSettings));
         add(queryParsersMap, new ConstantScoreQueryJsonQueryParser(index, indexSettings));
         add(queryParsersMap, new SpanTermJsonQueryParser(index, indexSettings));
         add(queryParsersMap, new SpanNotJsonQueryParser(index, indexSettings));

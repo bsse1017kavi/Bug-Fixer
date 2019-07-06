@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.mockintblock;
 
 /*
@@ -84,9 +83,9 @@ public class MockVariableIntBlockPostingsFormat extends PostingsFormat {
       final IndexInput in = dir.openInput(fileName, context);
       final int baseBlockSize = in.readInt();
       return new VariableIntBlockIndexInput(in) {
-protected BlockReader getBlockReader(final IndexInput in, final int[] buffer) {
+
         @Override
-        protected BlockReader getBlockReader(final IndexInput in, final int[] buffer) throws IOException {
+protected BlockReader getBlockReader(final IndexInput in, final int[] buffer) {
           return new BlockReader() {
             public void seek(long pos) {}
             public int readBlock() throws IOException {

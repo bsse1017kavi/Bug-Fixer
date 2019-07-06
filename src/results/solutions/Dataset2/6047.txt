@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-98 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation for educational, research and non-profit
@@ -64,9 +63,9 @@ public class CrMergeClasses extends CrUML {
 
   public boolean predicate(Object dm, Designer dsgr) {
     if (!(dm instanceof MMClass)) return NO_PROBLEM;
-if (ends == null || ends.size() != 1) return NO_PROBLEM;
+    MMClass cls = (MMClass) dm;
     Vector ends = cls.getAssociationEnd();
-    if (ends == null || ends.size() > 1) return NO_PROBLEM;
+if (ends == null || ends.size() != 1) return NO_PROBLEM;
     AssociationEnd myEnd = (AssociationEnd) ends.elementAt(0);
     IAssociation asc = myEnd.getAssociation();
     Vector conns = asc.getConnection();

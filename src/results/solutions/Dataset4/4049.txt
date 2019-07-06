@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -39,9 +38,9 @@ public class BitmapFontLoader extends AsynchronousAssetLoader<BitmapFont, Bitmap
 
 	BitmapFontData data;
 
-Array<AssetDescriptor> deps = Array.of(AssetDescriptor.class);
+	@Override
 	public Array<AssetDescriptor> getDependencies (String fileName, FileHandle file, BitmapFontParameter parameter) {
-		Array<AssetDescriptor> deps = new Array<AssetDescriptor>();
+Array<AssetDescriptor> deps = Array.of(AssetDescriptor.class);
 		if (parameter != null && parameter.bitmapFontData != null) {
 			data = parameter.bitmapFontData;
 			return deps;

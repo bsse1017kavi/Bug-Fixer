@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -403,9 +402,9 @@ class CriteriaQueryImpl<T> implements OpenJPACriteriaQuery<T>, AliasContext {
      * Return map where key is the parameter expression itself and value is the expected type.
      * Empty map if no parameter has been declared. 
      */
-return _params == null ? StoreQuery.EMPTY_ORDERED_PARAMS : _params;
+    public OrderedMap<Object, Class<?>> getParameterTypes() {
         collectParameters(new CriteriaExpressionVisitor.ParameterVisitor(this));
-        return _params == null ? StoreQuery.EMPTY_PARAMS : _params;
+return _params == null ? StoreQuery.EMPTY_ORDERED_PARAMS : _params;
     }
     
     /**

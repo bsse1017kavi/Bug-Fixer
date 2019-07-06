@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -88,9 +87,9 @@ public interface LegacyKernelServicesInitializer {
      * @throws ClassNotFoundException if something went wrong with the caching of the url
      * @throws IllegalArgumentException if the {@code artifactGav} is null
      * @throws IllegalArgumentException if the resolved {@code artifactGav} does not exist
-LegacyKernelServicesInitializer addMavenResourceURL(String...artifactGav) throws ClassNotFoundException, IOException;
+     * @throws IllegalArgumentException if the resolved {@code artifactGav} does not contain a version
      */
-    LegacyKernelServicesInitializer addMavenResourceURL(String artifactGav) throws ClassNotFoundException, IOException;
+LegacyKernelServicesInitializer addMavenResourceURL(String...artifactGav) throws ClassNotFoundException, IOException;
 
     /**
      * Add a class name pattern that should be loaded from the parent classloader

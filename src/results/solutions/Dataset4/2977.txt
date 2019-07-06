@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class SerialMergeSchedulerProvider extends MergeSchedulerProvider {
         super(shardId, indexSettings, threadPool);
         logger.trace("using [serial] merge scheduler");
     }
-public MergeScheduler buildMergeScheduler() {
+
     @Override
-    public MergeScheduler newMergeScheduler() {
+public MergeScheduler buildMergeScheduler() {
         CustomSerialMergeScheduler scheduler = new CustomSerialMergeScheduler(logger, this);
         schedulers.add(scheduler);
         return scheduler;

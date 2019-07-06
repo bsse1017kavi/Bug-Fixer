@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -115,9 +114,9 @@ public class DatabaseDescriptor
 
     static
     {
-configFileName_ = System.getProperty("storage-config") + File.separator + "storage-conf.xml";
+        try
         {
-            configFileName_ = System.getProperty("storage-config") + System.getProperty("file.separator") + "storage-conf.xml";
+configFileName_ = System.getProperty("storage-config") + File.separator + "storage-conf.xml";
             if (logger_.isDebugEnabled())
               logger_.debug("Loading settings from " + configFileName_);
             XMLUtils xmlUtils = new XMLUtils(configFileName_);

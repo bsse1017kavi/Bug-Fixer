@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -132,9 +131,9 @@ public class IssuesFragment extends PagedItemFragment<Issue> {
         else
             state.setText(string.closed_issues);
 
-LabelDrawableSpan.setText(labels, filterLabels);
+        Collection<Label> filterLabels = filter.getLabels();
         if (filterLabels != null && !filterLabels.isEmpty()) {
-            labels.setText(LabelDrawableSpan.create(labels, filterLabels));
+LabelDrawableSpan.setText(labels, filterLabels);
             labels.setVisibility(VISIBLE);
         } else
             labels.setVisibility(GONE);

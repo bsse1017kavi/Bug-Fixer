@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import javax.annotation.ManagedBean;
  * 
  * @author John E. Bailey
  */
-private static ModuleIdentifier JAVAX_ANNOTATION_API_ID = ModuleIdentifier.create("javax.annotation.api");
+public class ManagedBeanDependencyProcessor implements DeploymentUnitProcessor {
     public static final long PRIORITY = DeploymentPhases.MODULE_DEPENDENCIES.plus(200L);
-    private static ModuleIdentifier JAVAX_ANNOTATION_API_ID = new ModuleIdentifier("javax.annotation", "api", null);
+private static ModuleIdentifier JAVAX_ANNOTATION_API_ID = ModuleIdentifier.create("javax.annotation.api");
     private static final DotName MANAGED_BEAN_ANNOTATION_NAME = DotName.createSimple(ManagedBean.class.getName());
 
     /**

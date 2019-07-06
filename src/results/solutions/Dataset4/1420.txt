@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -120,9 +119,9 @@ public class TransportShardMultiGetAction extends TransportShardSingleOperationA
                 versionType = VersionType.INTERNAL;
             }
 
-GetResult getResult = indexShard.getService().get(type, id, fields, request.realtime(), version, versionType, fetchSourceContext, request.ignoreErrorsOnGeneratedFields());
+            FetchSourceContext fetchSourceContext = request.fetchSourceContexts.get(i);
             try {
-                GetResult getResult = indexShard.getService().get(type, id, fields, request.realtime(), version, versionType, fetchSourceContext);
+GetResult getResult = indexShard.getService().get(type, id, fields, request.realtime(), version, versionType, fetchSourceContext, request.ignoreErrorsOnGeneratedFields());
                 response.add(request.locations.get(i), new GetResponse(getResult));
             } catch (Throwable t) {
                 if (TransportActions.isShardNotAvailableException(t)) {

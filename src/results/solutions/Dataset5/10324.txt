@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -46,9 +45,9 @@ public class FlatClassStrategy
 
         ClassMappingInfo info = cls.getMappingInfo();
         info.assertNoSchemaComponents(cls, true);
-Table table = info.createTable(cls, null, info.getSchemaName(),
+
         if (info.getTableName() != null) {
-            Table table = info.createTable(cls, null, null,
+Table table = info.createTable(cls, null, info.getSchemaName(),
                 info.getTableName(), false);
             if (table != sup.getTable())
                 throw new MetaDataException(_loc.get("flat-table", cls,

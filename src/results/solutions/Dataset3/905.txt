@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class SSLServerIdentityResourceDefinition extends SimpleResourceDefinitio
     public static final SimpleAttributeDefinition PROTOCOL = new SimpleAttributeDefinitionBuilder(ModelDescriptionConstants.PROTOCOL, ModelType.STRING, true)
             .setDefaultValue(new ModelNode("TLS")).setValidator(new StringLengthValidator(1, Integer.MAX_VALUE, true, false))
             .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES).build();
-PROTOCOL, KeystoreAttributes.KEYSTORE_PASSWORD, KeystoreAttributes.KEYSTORE_PATH, KeystoreAttributes.KEYSTORE_RELATIVE_TO, KeystoreAttributes.ALIAS, KeystoreAttributes.KEY_PASSWORD
+
     public static final AttributeDefinition[] ATTRIBUTE_DEFINITIONS = {
-            PROTOCOL, KeystoreAttributes.KEYSTORE_PASSWORD, KeystoreAttributes.KEYSTORE_PATH, KeystoreAttributes.KEYSTORE_RELATIVE_TO
+PROTOCOL, KeystoreAttributes.KEYSTORE_PASSWORD, KeystoreAttributes.KEYSTORE_PATH, KeystoreAttributes.KEYSTORE_RELATIVE_TO, KeystoreAttributes.ALIAS, KeystoreAttributes.KEY_PASSWORD
     };
 
     public SSLServerIdentityResourceDefinition() {

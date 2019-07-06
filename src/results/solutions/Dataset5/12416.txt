@@ -1,4 +1,3 @@
-
 package org.eclipse.swt.widgets;
 
 import org.eclipse.swt.SWT;
@@ -870,9 +869,9 @@ void paint (GC gc, TreeColumn column, boolean paintCellContent) {
 	/* Draw column 0 decorations */
 	if (columnIndex == 0) {
 		/* Draw hierarchy connector lines */
-gc.setForeground (parent.getConnectorColor ());
+		Rectangle expanderBounds = getExpanderBounds ();
 		Color oldForeground = gc.getForeground ();
-		gc.setForeground (parent.connectorLineColor);
+gc.setForeground (parent.getConnectorColor ());
 
 		/* Draw vertical line above expander */
 		int lineX = expanderBounds.x + expanderBounds.width / 2;

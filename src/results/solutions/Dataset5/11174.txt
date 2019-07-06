@@ -1,4 +1,3 @@
-
 /*
  * $Id: MarkupParserTest.java 5662 2006-05-05 18:12:51 +0000 (Fri, 05 May 2006)
  * jannehietamaki $ $Revision$ $Date: 2006-05-05 18:12:51 +0000 (Fri, 05
@@ -514,9 +513,9 @@ public final class MarkupParserTest extends WicketTestCase
 	public final void testBalancing() throws IOException, ResourceStreamNotFoundException
 	{
 		// Note: <img> is one of these none-balanced HTML tags
-ComponentTag t = markup.getTag();
+		MarkupFragment markup = parse("<span wicket:id=\"span\"><img wicket:id=\"img\"><span wicket:id=\"span2\"></span></span>");
 		
-		ComponentTag t = markup.getTag(0);
+ComponentTag t = markup.getTag();
 		assertEquals(t.getId(), "span");
 		assertNotNull(markup.getChildFragment("span", false));
 

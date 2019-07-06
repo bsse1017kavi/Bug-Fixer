@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -65,9 +64,9 @@ public class LogManager {
   static private Object guard = null;
   static private RepositorySelector repositorySelector;
 
-Hierarchy h = new Hierarchy(new RootCategory(Level.DEBUG));
+  static {
     // By default we use a DefaultRepositorySelector which always returns 'h'.
-    Hierarchy h = new Hierarchy(new RootCategory((Level) Level.DEBUG));
+Hierarchy h = new Hierarchy(new RootCategory(Level.DEBUG));
     repositorySelector = new DefaultRepositorySelector(h);
 
 

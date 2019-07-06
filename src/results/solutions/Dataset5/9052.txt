@@ -1,4 +1,3 @@
-
 /*
  * $Id: AbstractDefaultAjaxBehavior.java 4858 2006-03-12 00:26:31 -0800 (Sun, 12
  * Mar 2006) ivaynberg $ $Revision$ $Date: 2006-03-12 00:26:31 -0800
@@ -91,9 +90,9 @@ public abstract class AbstractDefaultAjaxBehavior extends AbstractAjaxBehavior
 
 		writeJsReference(response, JAVASCRIPT);
 
-JavascriptUtils.writeJavascript(response, "wicketAjaxDebugEnable=true;", "wicket-ajax-debug-enable");
+		if (settings.isAjaxDebugModeEnabled())
 		{
-			JavascriptUtils.writeJavascript(response, "wicketAjaxDebugEnable=true;");
+JavascriptUtils.writeJavascript(response, "wicketAjaxDebugEnable=true;", "wicket-ajax-debug-enable");
 			writeJsReference(response, JAVASCRIPT_DEBUG_DRAG);
 			writeJsReference(response, JAVASCRIPT_DEBUG);
 		}

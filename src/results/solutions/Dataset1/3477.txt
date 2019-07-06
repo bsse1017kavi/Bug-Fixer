@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -144,9 +143,9 @@ public class TestThreadSafe extends LuceneTestCase {
 
     // do many small tests so the thread locals go away inbetween
     int num = 100 * RANDOM_MULTIPLIER;
-doTest(10,10);
+    for (int i = 0; i < num; i++) {
       ir1 = IndexReader.open(dir1, false);
-      doTest(10,100);
+doTest(10,10);
       ir1.close();
     }
     dir1.close();

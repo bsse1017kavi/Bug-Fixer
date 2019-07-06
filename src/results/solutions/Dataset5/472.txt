@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc., Peter Nehrer, Boris Bokowski. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -116,9 +115,9 @@ public class DatashareContainer extends TCPClientSOContainer implements
 		SharedObjectTypeDescription sotypedesc = sodesc.getTypeDescription();
 		IChannelListener listener = newChannelConfig.getListener();
 		ISharedObjectTransactionConfig transactionConfig = newChannelConfig
-if (sotypedesc.getName() != null) {
+				.getTransactionConfig();
 		ISharedObject so = null;
-		if (sotypedesc.getDescription() != null) {
+if (sotypedesc.getName() != null) {
 			so = SharedObjectFactory
 					.getDefault()
 					.createSharedObject(

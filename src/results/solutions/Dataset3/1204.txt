@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -60,8 +59,8 @@ public class ManagedDMRContentTypeAddHandler implements OperationStepHandler {
 
         // Create and add the specialized resource type we use for this resource tree
         ManagedDMRContentTypeResource resource = new ManagedDMRContentTypeResource(pe, childType, hash, contentRepository);
-context.stepCompleted();
+        context.addResource(PathAddress.EMPTY_ADDRESS, resource);
 
-        context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
     }
 }

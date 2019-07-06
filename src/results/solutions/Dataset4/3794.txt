@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -145,9 +144,9 @@ public class RoutingNodes implements Iterable<RoutingNode> {
             count += routingNode.numberOfShardsWithState(state);
         }
         return count;
-public List<MutableShardRouting> shardsWithState(ShardRoutingState... state) {
+    }
 
-    public List<MutableShardRouting> shardsOfType(ShardRoutingState state) {
+public List<MutableShardRouting> shardsWithState(ShardRoutingState... state) {
         List<MutableShardRouting> shards = newArrayList();
         for (RoutingNode routingNode : this) {
             shards.addAll(routingNode.shardsWithState(state));

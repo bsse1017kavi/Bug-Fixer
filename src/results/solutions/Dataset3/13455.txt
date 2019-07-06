@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -102,9 +101,9 @@ public class HandlerMethodMappingTests {
 
 			return pathMatcher.match(pattern, lookupPath) ? pattern : null;
 		}
-protected String getKeyForMethod(String beanName, Method method) {
+
 		@Override
-		protected String getKeyForMethod(Method method) {
+protected String getKeyForMethod(String beanName, Method method) {
 			String methodName = method.getName();
 			return methodName.startsWith("handler") ? methodName : null;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -318,9 +317,9 @@ class TransactionSubsystem10Parser implements XMLStreamConstants, XMLElementRead
                     break;
                 case RECOVERY_LISTENER:
                     TransactionSubsystemRootResourceDefinition.RECOVERY_LISTENER.parseAndSetParameter(value, operation, reader);
-unexpectedAttribute(reader, i);
+                    break;
                 default:
-                    throw unexpectedAttribute(reader, i);
+unexpectedAttribute(reader, i);
             }
         }
 

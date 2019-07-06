@@ -1,4 +1,3 @@
-
 package org.columba.core.shutdown;
 
 import java.util.Vector;
@@ -29,9 +28,9 @@ public class ShutdownManager {
 	{
 		for ( int i=0; i<list.size(); i++ )
 		{
-plugin.shutdown();
+			ShutdownPluginInterface plugin = (ShutdownPluginInterface) list.get(i);
 			
-			plugin.run();
+plugin.shutdown();
 		}
 		
 		System.exit(1);

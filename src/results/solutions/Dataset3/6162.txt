@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -608,9 +607,9 @@ public class CommonAnnotationBeanPostProcessor extends InitDestroyAnnotationBean
 						if (clientAnn == null) {
 							throw new IllegalStateException("JAX-WS Service class [" + this.lookupType.getName() +
 									"] does not carry a WebServiceClient annotation");
-new URL(this.wsdlLocation), new QName(clientAnn.targetNamespace(), clientAnn.name()));
+						}
 						service = (Service) BeanUtils.instantiateClass(ctor,
-								new Object[] {new URL(this.wsdlLocation), new QName(clientAnn.targetNamespace(), clientAnn.name())});
+new URL(this.wsdlLocation), new QName(clientAnn.targetNamespace(), clientAnn.name()));
 					}
 					catch (NoSuchMethodException ex) {
 						throw new IllegalStateException("JAX-WS Service class [" + this.lookupType.getName() +

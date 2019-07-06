@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -689,9 +688,9 @@ public class RobinEngine extends AbstractIndexShardComponent implements Engine {
             throw new EngineClosedException(shardId);
         }
         try {
-} catch (Throwable ex) {
+            IndexSearcher searcher = manager.acquire();
             return newSearcher(source, searcher, manager);
-        } catch (IOException ex) {
+} catch (Throwable ex) {
             logger.error("failed to acquire searcher, source {}", ex, source);
             throw new EngineException(shardId, ex.getMessage());
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public class TransportGetFieldMappingsAction extends TransportAction<GetFieldMap
         String[] concreteIndices = clusterState.metaData().concreteIndices(request.indicesOptions(), request.indices());
         final AtomicInteger indexCounter = new AtomicInteger();
         final AtomicInteger completionCounter = new AtomicInteger(concreteIndices.length);
-if (concreteIndices == null || concreteIndices.length == 0) {
+        final AtomicReferenceArray<Object> indexResponses = new AtomicReferenceArray<>(concreteIndices.length);
 
-        if (concreteIndices.length == 0) {
+if (concreteIndices == null || concreteIndices.length == 0) {
             listener.onResponse(new GetFieldMappingsResponse());
         } else {
             boolean probablySingleFieldRequest = concreteIndices.length == 1 && request.types().length == 1 && request.fields().length == 1;

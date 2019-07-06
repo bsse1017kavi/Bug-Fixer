@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class LocalDataSourceService extends AbstractDataSourceService {
         super(jndiName);
     }
 
-return new AS7DataSourceDeployer(dataSourceConfig.getValue());
+    public AS7DataSourceDeployer getDeployer() {
         // this.dataSourceConfig = dataSourceConfig;
-        return new AS7DataSourceDeployer(log, dataSourceConfig.getValue());
+return new AS7DataSourceDeployer(dataSourceConfig.getValue());
 
     }
 

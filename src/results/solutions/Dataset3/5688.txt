@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -372,9 +371,9 @@ public class ServerEnvironment extends ProcessEnvironment implements Serializabl
 
         configureServerTempDir(props.getProperty(SERVER_TEMP_DIR), props);
 
-tmp = new File(serverBaseDir, "tmp");
+        tmp = getFileFromProperty(CONTROLLER_TEMP_DIR, props);
         if (tmp == null) {
-            tmp = serverTempDir;
+tmp = new File(serverBaseDir, "tmp");
         }
         controllerTempDir = tmp;
 

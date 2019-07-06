@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -94,9 +93,9 @@ public class AnyURIDV extends TypeValidator {
                 // According to Java 1.1: URLs may also be specified with a
                 // String and the URL object that it is related to.
                 new URI(BASE_URI, content );
-throw new InvalidDatatypeValueException("cvc-datatype-valid.1.2.1", new Object[]{content, "anyURI"});
+            }
         } catch (URI.MalformedURIException ex) {
-            throw new InvalidDatatypeValueException("Value '"+content+"' is a Malformed URI");
+throw new InvalidDatatypeValueException("cvc-datatype-valid.1.2.1", new Object[]{content, "anyURI"});
         }
 
         // REVISIT: do we need to return the new URI object?

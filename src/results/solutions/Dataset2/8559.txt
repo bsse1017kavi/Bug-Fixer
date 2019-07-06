@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.actions;
 
 /*
@@ -115,9 +114,9 @@ public class NewWizardMenu extends ContributionItem {
 		IAction action = (IAction) actions.get(id);
 		if (action == null) {
 			WorkbenchWizardElement element = reader.findWizard(id);
-new NewWizardShortcutAction(window, element);
+			if (element != null) {
 				action =
-					new NewWizardShortcutAction(window.getWorkbench(), element);
+new NewWizardShortcutAction(window, element);
 				actions.put(id, action);
 			}
 		}

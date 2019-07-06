@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class SimpleFsStore extends AbstractFsStore<Directory> {
     private final boolean suggestUseCompoundFile;
 
     @Inject public SimpleFsStore(ShardId shardId, @IndexSettings Settings indexSettings, Environment environment, @LocalNodeId String localNodeId) throws IOException {
-this.syncToDisk = componentSettings.getAsBoolean("sync_to_disk", false);
+        super(shardId, indexSettings);
         // by default, we don't need to sync to disk, since we use the gateway
-        this.syncToDisk = componentSettings.getAsBoolean("syncToDisk", false);
+this.syncToDisk = componentSettings.getAsBoolean("sync_to_disk", false);
         this.fsDirectory = new CustomSimpleFSDirectory(createStoreFilePath(environment.workWithClusterFile(), localNodeId, shardId, MAIN_INDEX_SUFFIX), syncToDisk);
 
         SwitchDirectory switchDirectory = buildSwitchDirectoryIfNeeded(fsDirectory);

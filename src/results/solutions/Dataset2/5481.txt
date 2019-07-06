@@ -1,4 +1,3 @@
-
 /*****************************************************************************
  *                                                                           *
  *  This file is part of the BeanShell Java Scripting distribution.          *
@@ -136,9 +135,9 @@ class BSHLHSPrimarySuffix extends SimpleNode
 			callstack, interpreter);
 
 		if(!(value instanceof String))
-if ( Interpreter.DEBUG ) Interpreter.debug("LHS property access: ");
+			throw new EvalError("Property expression must be a String or identifier.", this);
 
-		Interpreter.debug("LHS property access: ");
+if ( Interpreter.DEBUG ) Interpreter.debug("LHS property access: ");
 		return new LHS(obj, (String)value);
 	}
 }

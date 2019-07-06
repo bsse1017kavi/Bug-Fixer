@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,9 +102,9 @@ public class RestSearchAction extends BaseRestHandler {
                 try {
                     XContentBuilder builder = restContentBuilder(request);
                     builder.startObject();
-channel.sendResponse(new XContentRestResponse(request, response.status(), builder));
+                    response.toXContent(builder, request);
                     builder.endObject();
-                    channel.sendResponse(new XContentRestResponse(request, OK, builder));
+channel.sendResponse(new XContentRestResponse(request, response.status(), builder));
                 } catch (Exception e) {
                     if (logger.isDebugEnabled()) {
                         logger.debug("failed to execute search (building response)", e);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class ShutdownHandlerImpl implements ShutdownHandler, Service<ShutdownHan
      * @param batchBuilder service batch builder to use to install the service.  Cannot be {@code null}
      */
     public static void addService(BatchBuilder batchBuilder) {
-batchBuilder.addService(SERVICE_NAME, service).install();
+
         ShutdownHandlerImpl service = new ShutdownHandlerImpl();
-        batchBuilder.addService(SERVICE_NAME, service);
+batchBuilder.addService(SERVICE_NAME, service).install();
     }
 
     // ShutdownHandler

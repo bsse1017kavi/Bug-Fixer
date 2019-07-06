@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -178,9 +177,9 @@ public abstract class ClientSOContainer extends SOContainer {
 		debug("We've been ejected from group " + remoteServerID);
 		synchronized (getGroupMembershipLock()) {
 			memberLeave(fromID, connection);
-fireContainerEvent(new ContainerEjectedEvent(getID(), fromID, lgm
+		}
 		// Now notify that we've been ejected
-		fireContainerEvent(new ContainerEjectedEvent(fromID, getID(), lgm
+fireContainerEvent(new ContainerEjectedEvent(getID(), fromID, lgm
 				.getData()));
 	}
 	protected void handleViewChangeMessage(ContainerMessage mess)

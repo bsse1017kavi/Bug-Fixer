@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public final class HostSystemPropertyUpdate extends AbstractHostModelUpdate<Void
     protected void applyUpdate(final HostModel element) throws UpdateFailedException {
         propertyUpdate.applyUpdate(element.getSystemProperties());
     }
-public HostSystemPropertyUpdate getCompensatingUpdate(final HostModel original) {
+
     /** {@inheritDoc} */
-    protected HostSystemPropertyUpdate getCompensatingUpdate(final HostModel original) {
+public HostSystemPropertyUpdate getCompensatingUpdate(final HostModel original) {
         return new HostSystemPropertyUpdate(propertyUpdate.getCompensatingUpdate(original.getSystemProperties()));
     }
 

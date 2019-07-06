@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -98,9 +97,9 @@ public class DefaultCMSetter extends BaseInterceptor {
 	ctx.addServlet( errorWrapper );
 
 	// Validation for error  servlet
-errorWrapper1.init();
+ 	try {
 	    ServletWrapper errorWrapper1=ctx.getServletByName( "tomcat.errorPage");
-	    errorWrapper1.initServlet();
+errorWrapper1.init();
 	} catch( Exception ex ) {
 	    System.out.println("Error loading default servlet ");
             ex.printStackTrace();

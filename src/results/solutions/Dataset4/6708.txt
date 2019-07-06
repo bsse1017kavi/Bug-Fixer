@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import com.badlogic.gdx.Gdx;
@@ -69,9 +68,9 @@ public class TestShader implements Shader {
 	
 	public TestShader(final String vertexShader, final String fragmentShader, final long mask, int maxLightsCount) {
 		if (!Gdx.graphics.isGL20Available())
-currentLights = maxLightsCount < 0 ? null : new Light[maxLightsCount];
+			throw new GdxRuntimeException("This shader requires OpenGL ES 2.0");
 		
-		currentLights = maxLightsCount > 0 ? new Light[maxLightsCount] : null;
+currentLights = maxLightsCount < 0 ? null : new Light[maxLightsCount];
 		
 		String prefix = "";
 		this.mask = mask;

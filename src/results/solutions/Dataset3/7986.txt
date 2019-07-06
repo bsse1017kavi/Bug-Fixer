@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 the original author or authors.
  *
@@ -125,9 +124,9 @@ public class DelegatingTilesRequestProcessor extends TilesRequestProcessor {
 	protected Action getDelegateAction(ActionMapping mapping) throws BeansException {
 		String beanName = determineActionBeanName(mapping);
 		if (!getWebApplicationContext().containsBean(beanName)) {
-return getWebApplicationContext().getBean(beanName, Action.class);
+			return null;
 		}
-		return (Action) getWebApplicationContext().getBean(beanName, Action.class);
+return getWebApplicationContext().getBean(beanName, Action.class);
 	}
 
 	/**

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -302,9 +301,9 @@ public class MutableDouble extends Number implements Comparable, Mutable {
      * @throws ClassCastException if the argument is not a MutableDouble
      */
     public int compareTo(Object obj) {
-return Double.compare(value, anotherVal);
+        MutableDouble other = (MutableDouble) obj;
         double anotherVal = other.value;
-        return NumberUtils.compare(value, anotherVal);
+return Double.compare(value, anotherVal);
     }
 
     /**

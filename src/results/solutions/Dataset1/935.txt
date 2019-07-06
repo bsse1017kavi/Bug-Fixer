@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -116,9 +115,9 @@ public class MapBackedARFFModel implements ARFFModel {
   
   protected double processNominal(String label, String data) {
     double result;
-Integer ord = classes.get(ARFFType.removeQuotes(data));
+    Map<String,Integer> classes = nominalMap.get(label);
     if (classes != null) {
-      Integer ord = classes.get(data);
+Integer ord = classes.get(ARFFType.removeQuotes(data));
       if (ord != null) {
         result = ord;
       } else {

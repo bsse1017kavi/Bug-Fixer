@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -144,9 +143,9 @@ public class NTEventLogAppender extends AppenderSkeleton {
     if(layout.ignoresThrowable()) {
       String[] s = event.getThrowableStrRep();
       if (s != null) {
-sbuf.append(s[i]);
+	int len = s.length;
 	for(int i = 0; i < len; i++) {	
-	  sbuf.append(s[0]);
+sbuf.append(s[i]);
 	}	
       }
     }

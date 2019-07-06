@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -130,9 +129,9 @@ public class WebRequestCycle extends RequestCycle
 		String redirectUrl = null;
 
 		// Check if use serverside response for client side redirects
-(application instanceof WebApplication) && !(getWebRequest().isAjax()))
+		IRequestCycleSettings settings = application.getRequestCycleSettings();
 		if ((settings.getRenderStrategy() == IRequestCycleSettings.REDIRECT_TO_BUFFER) &&
-				(application instanceof WebApplication))
+(application instanceof WebApplication) && !(getWebRequest().isAjax()))
 		{
 			// remember the current response
 			final WebResponse currentResponse = getWebResponse();

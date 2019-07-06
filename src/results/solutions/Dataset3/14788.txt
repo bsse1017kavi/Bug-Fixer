@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -110,9 +109,9 @@ public interface SingularValueDecomposition {
      * (a 0 or negative value implies all singular value will be used)
      * @return covariance matrix
      * @exception IllegalArgumentException if minSingularValue is larger than
-RealMatrix getCovariance(double minSingularValue);
+     * the largest singular value, meaning all singular values are ignored
      */
-    RealMatrix getCovariance(double minSingularValue) throws IllegalArgumentException;
+RealMatrix getCovariance(double minSingularValue);
 
     /**
      * Returns the L<sub>2</sub> norm of the matrix.

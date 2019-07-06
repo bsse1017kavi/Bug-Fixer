@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -487,9 +486,9 @@ public class WicketTesterTest extends TestCase
 		TextField<?> name = (TextField<?>)tester.getComponentFromLastRenderedPage("form:name");
 		assertEquals("Mock name", name.getValue());
 
-tester.getRequest().getPostParameters().setParameterValue(name.getInputName(),
+		assertFalse(page.isExecuted());
 
-		tester.getRequest().getPostRequestParameters().setParameterValue(name.getInputName(),
+tester.getRequest().getPostParameters().setParameterValue(name.getInputName(),
 			"Mock name");
 
 		// Execute the ajax event

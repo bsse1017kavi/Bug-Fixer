@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -2723,9 +2722,9 @@ public class TestIndexWriter extends LuceneTestCase {
 
     // Creating over empty dir should not create any files,
     // or, at most the write.lock file
-assertTrue(files[0].endsWith("write.lock"));
+    final int extraFileCount;
     if (files.length == 1) {
-      assertEquals("write.lock", files[0]);
+assertTrue(files[0].endsWith("write.lock"));
       extraFileCount = 1;
     } else {
       assertEquals(0, files.length);

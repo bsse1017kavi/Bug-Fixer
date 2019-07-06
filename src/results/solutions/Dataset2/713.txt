@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -58,9 +57,9 @@ public int getFlags() throws JavaModelException {
  * @see JavaElement#getHandleMemento()
  * For import declarations, the handle delimiter is associated to the import container already
  */
-escapeMementoName(buff, getElementName());
+public String getHandleMemento(){
 	StringBuffer buff= new StringBuffer(((JavaElement)getParent()).getHandleMemento());
-	buff.append(getElementName());
+escapeMementoName(buff, getElementName());
 	if (this.occurrenceCount > 1) {
 		buff.append(JEM_COUNT);
 		buff.append(this.occurrenceCount);

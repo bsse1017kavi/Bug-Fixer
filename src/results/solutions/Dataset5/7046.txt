@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class TestJPQLMultiSelectTypedResults extends SingleEMFTestCase {
     DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.US);
 
     public void setUp() throws Exception {
-"openjpa.DynamicEnhancementAgent", "false");
+        setUp(CLEAR_TABLES, Order.class, Item.class, Shop.class, Producer.class,
               Person.class, Foo.class, Bar.class,
-             "openjpa.DynamicEnhancerAgent", "false");
+"openjpa.DynamicEnhancementAgent", "false");
         populate();
     }
 

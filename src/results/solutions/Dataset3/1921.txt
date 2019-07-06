@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -358,9 +357,9 @@ public class CacheContainerAdd implements ModelAddOperationHandler, DescriptionP
                             }
                             if (transport.hasDefined(ModelKeys.MACHINE)) {
                                 transportConfig.setMachine(transport.get(ModelKeys.MACHINE).asString());
-builder.addDependency(ChannelFactoryService.getServiceName(stack), ChannelFactory.class, transportConfig.getChannelFactoryInjector());
+                            }
                         }
-                        builder.addDependency((stack != null) ? ChannelFactoryService.getServiceName(stack) : ChannelFactoryService.getServiceName(), ChannelFactory.class, transportConfig.getChannelFactoryInjector());
+builder.addDependency(ChannelFactoryService.getServiceName(stack), ChannelFactory.class, transportConfig.getChannelFactoryInjector());
                         builder.addDependency(ServerEnvironmentService.SERVICE_NAME, ServerEnvironment.class, transportConfig.getEnvironmentInjector());
                         config.setTransport(transportConfig);
                     }

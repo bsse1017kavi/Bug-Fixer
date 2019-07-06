@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -521,9 +520,9 @@ public abstract class AbstractLocalFolder extends AbstractMessageFolder {
 	 *  
 	 */
 	public Header getHeaderFields(Object uid, String[] keys) throws Exception {
-.getDefaultHeaderfields());
+		// cached headerfield list
 		List cachedList = Arrays.asList(CachedHeaderfields
-				.getCachedHeaderfields());
+.getDefaultHeaderfields());
 
 		LinkedList keyList = new LinkedList(Arrays.asList(keys));
 

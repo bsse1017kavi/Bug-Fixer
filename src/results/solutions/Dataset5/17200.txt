@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class FileEditor implements PropertyEditor, ActionListener {
         this(new PropertyDescriptor("dummy", null, null));
     }
 
-throw new IllegalArgumentException("Descriptor must not be null");
+    public FileEditor(PropertyDescriptor descriptor) {
         if (descriptor == null) {
-            throw new NullPointerException("Descriptor must not be null");
+throw new IllegalArgumentException("Descriptor must not be null");
         }
 
         // Create a button to trigger the file chooser:

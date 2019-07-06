@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -109,9 +108,9 @@ public class MessagingTransformers {
         rejectDefinedAttribute(hornetqServer, BACKUP_GROUP_NAME, REPLICATION_CLUSTERNAME, REMOTING_INCOMING_INTERCEPTORS, REMOTING_OUTGOING_INTERCEPTORS);
         rejectDefinedAttributeWithDefaultValue(hornetqServer, CHECK_FOR_LIVE_SERVER, MAX_SAVED_REPLICATED_JOURNAL_SIZE);
         convertUndefinedAttribute(hornetqServer, ID_CACHE_SIZE);
-for (String path : PathDefinition.PATHS.keySet()) {
+        renameAttribute(hornetqServer, STATISTICS_ENABLED, MESSAGE_COUNTER_ENABLED);
 
-        for (String path : MessagingPathHandlers.PATHS.keySet()) {
+for (String path : PathDefinition.PATHS.keySet()) {
             ResourceTransformationDescriptionBuilder serverPaths = hornetqServer.addChildResource(pathElement(PATH, path));
             rejectAttributesWithExpression(serverPaths, PATH);
         }

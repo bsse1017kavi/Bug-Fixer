@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -738,9 +737,9 @@ public final class CompletionEngine
 				case Scope.CLASS_SCOPE :
 					guessedType = ref.resolveType((ClassScope)scope);
 					break;
-if (guessedType == null || !guessedType.isValidBinding()) return;
+			}
 			
-			if (!guessedType.isValidBinding()) return;
+if (guessedType == null || !guessedType.isValidBinding()) return;
 			
 			if (!hasPossibleAnnotationTarget(guessedType, scope)) return;
 		}

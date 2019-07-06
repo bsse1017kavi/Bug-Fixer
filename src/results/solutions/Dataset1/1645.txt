@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -45,9 +44,9 @@ public class CalloutDeployMessage
     public static Message getCalloutDeployMessage(CalloutDeployMessage cdMessage) throws IOException
     {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
-Message message = new Message(StorageService.getLocalStorageEndPoint(), "", StorageService.calloutDeployVerbHandler_, bos.toByteArray());
+        DataOutputStream dos = new DataOutputStream(bos);
         serializer_.serialize(cdMessage, dos);
-        Message message = new Message(StorageService.getLocalStorageEndPoint(), "", StorageService.calloutDeployVerbHandler_, new Object[]{bos.toByteArray()});
+Message message = new Message(StorageService.getLocalStorageEndPoint(), "", StorageService.calloutDeployVerbHandler_, bos.toByteArray());
         return message;
     }
     

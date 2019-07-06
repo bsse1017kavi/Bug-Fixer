@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -200,9 +199,9 @@ public class BlockedJobsDialog extends IconAndMessageDialog {
 				 * @see org.eclipse.ui.progress.UIJob#runInUIThread(org.eclipse.core.runtime.IProgressMonitor)
 				 */
 				public IStatus runInUIThread(IProgressMonitor monitor) {
-if (ProgressManagerUtil.rescheduleIfModalShellOpen(this))
+					if (singleton == null)
 						return Status.CANCEL_STATUS;
-					if (ProgressManagerUtil.rescheduleIfModalShellOpen(this,null))
+if (ProgressManagerUtil.rescheduleIfModalShellOpen(this))
 						return Status.CANCEL_STATUS;
 					singleton.open();
 					return Status.OK_STATUS;

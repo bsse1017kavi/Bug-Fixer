@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -314,9 +313,9 @@ public class CpioArchiveOutputStream extends ArchiveOutputStream implements
 
         if (this.finished) {
             return;
-throw new IOException("This archives contains unclosed entries.");
+        }
         if (this.entry != null) {
-            closeArchiveEntry();
+throw new IOException("This archives contains unclosed entries.");
         }
         this.entry = new CpioArchiveEntry(this.entryFormat);
         this.entry.setName(CPIO_TRAILER);

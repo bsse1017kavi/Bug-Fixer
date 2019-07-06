@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.jdbc.authentication.LDAPAuthenticationSchemeImpl
@@ -224,9 +223,9 @@ extends JNDIAuthenticationSchemeBase
 
 				this.providerURL = dfltLDAPURL + "/";
 
-if (ldapServer.startsWith(dfltLDAPURL) || ldapServer.startsWith("ldaps://") )
+			} else {
 
-				if (ldapServer.startsWith(dfltLDAPURL))
+if (ldapServer.startsWith(dfltLDAPURL) || ldapServer.startsWith("ldaps://") )
 					this.providerURL = ldapServer;
 				else if (ldapServer.startsWith("//"))
 					this.providerURL = "ldap:" + ldapServer;

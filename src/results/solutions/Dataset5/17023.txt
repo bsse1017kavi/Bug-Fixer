@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -3019,9 +3018,9 @@ public class BcelShadow extends Shadow {
 		} else {
 		    // For staticinitialization, if we have a nice offset, don't build a new source loc
 			if (getKind()==Shadow.StaticInitialization && getEnclosingClass().getType().getSourceLocation().getOffset()!=0)
-return getEnclosingClass().getType().getSourceContext().makeSourceLocation(sourceLine, 0);
+				return getEnclosingClass().getType().getSourceLocation();
 			else 
-			    return getEnclosingClass().getType().getSourceContext().makeSourceLocation(sourceLine);
+return getEnclosingClass().getType().getSourceContext().makeSourceLocation(sourceLine, 0);
 		}
 	}
 

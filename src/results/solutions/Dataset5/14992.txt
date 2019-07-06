@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2003 Contributors.
  * All rights reserved. 
@@ -238,9 +237,9 @@ class MessageAdder implements Runnable {
             && (numAdded < numToAdd)) {
             long targetTime = curTime + waitBetweenAdds;
             while (!stop && (curTime < timeout)
-Thread.sleep(targetTime - curTime);
+                && (curTime < targetTime)) {
                 try {
-                    thread.sleep(targetTime - curTime);
+Thread.sleep(targetTime - curTime);
                 } catch (InterruptedException e) {
                     // ignore
                 }

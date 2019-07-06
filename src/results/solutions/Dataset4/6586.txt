@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -152,9 +151,9 @@ public class InternalClusterService extends AbstractLifecycleComponent<ClusterSe
                     return;
                 }
                 if (previousClusterState != clusterState) {
-clusterState = new ClusterState(clusterState.version() + 1, clusterState);
+                    if (clusterState.nodes().localNodeMaster()) {
                         // only the master controls the version numbers
-                        clusterState = new ClusterState(clusterState.version() + 1, clusterState.metaData(), clusterState.routingTable(), clusterState.nodes());
+clusterState = new ClusterState(clusterState.version() + 1, clusterState);
                     } else {
                         // we got this cluster state from the master, filter out based on versions (don't call listeners)
                         if (clusterState.version() < previousClusterState.version()) {

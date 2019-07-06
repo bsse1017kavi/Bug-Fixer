@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab;
 
 import org.eclipse.ecf.core.ContainerInstantiationException;
@@ -37,9 +36,9 @@ public class ChatRoomManagerUI {
 		// Get the chat message sender callback so that we can send
 		// messages to chat room
         Display.getDefault().syncExec(new Runnable() {
-IRoomInfo roomInfo = manager.getChatRoomInfo(targetID.getName());
+            public void run() {
 				try {
-					IRoomInfo roomInfo = manager.getChatRoomInfo(targetID);
+IRoomInfo roomInfo = manager.getChatRoomInfo(targetID.getName());
 					IChatRoomContainer chatRoom = null;
 					try {
 						chatRoom = roomInfo.createChatRoomContainer();

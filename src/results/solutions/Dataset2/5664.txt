@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.xml;
 
 /* ================================================================
@@ -74,9 +73,9 @@ public class ActivityAttributeTypeRule extends BaseRule
      * @param text The text of the body of this element
      */
     public void body(String text) throws Exception
-AttributeType issueType = AttributeType.getInstance(text);
+    {
         log().debug("(" + getState() + ") activity attribute type body: " + text);
-        AttributeType issueType = AttributeType.getInstance(attributeTypeName);
+AttributeType issueType = AttributeType.getInstance(text);
         ActivityInfo activityInfo = (ActivityInfo)digester.pop();
         activityInfo.setType(issueType);
         digester.push(activityInfo);

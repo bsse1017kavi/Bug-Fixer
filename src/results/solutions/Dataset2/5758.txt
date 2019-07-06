@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -387,9 +386,9 @@ doQuery(MyStringTokenizer st) throws IOException {
 	Record rec;
 
 	Name name = null;
-name = new Name(st.nextToken(), origin);
+	short type = Type.A, dclass = defaultClass;
 
-	name = new Name(st.nextToken());
+name = new Name(st.nextToken(), origin);
 	if (st.hasMoreTokens()) {
 		type = Type.value(st.nextToken());
 		if (type < 0)

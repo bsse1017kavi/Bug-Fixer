@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -348,9 +347,9 @@ public class ChildrenConstantScoreQueryTests extends ElasticsearchLuceneTestCase
     }
 
     static SearchContext createSearchContext(String indexName, String parentType, String childType) throws IOException {
-ThreadPool threadPool = new ThreadPool("ChildrenConstantScoreQueryTests");
+        final Index index = new Index(indexName);
         final CacheRecycler cacheRecycler = new CacheRecycler(ImmutableSettings.EMPTY);
-        ThreadPool threadPool = new ThreadPool();
+ThreadPool threadPool = new ThreadPool("ChildrenConstantScoreQueryTests");
         final PageCacheRecycler pageCacheRecycler = new PageCacheRecycler(ImmutableSettings.EMPTY, threadPool);
         final BigArrays bigArrays = new BigArrays(ImmutableSettings.EMPTY, pageCacheRecycler);
         Settings settings = ImmutableSettings.EMPTY;

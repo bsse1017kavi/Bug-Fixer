@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -140,9 +139,9 @@ public abstract class AbstractRecyclerTests extends ElasticsearchTestCase {
         Recycler.V<byte[]> o = r.obtain();
         byte[] data = o.v();
         assertFresh(data);
-List<V<byte[]>> vals = new ArrayList<>(limit);
+
         // now exhaust the recycler
-        List<V<byte[]>> vals = new ArrayList<V<byte[]>>(limit);
+List<V<byte[]>> vals = new ArrayList<>(limit);
         for (int i = 0; i < limit ; ++i) {
             vals.add(r.obtain());
         }

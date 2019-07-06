@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -133,9 +132,9 @@ public class GistsViewActivity extends DialogFragmentActivity implements OnPageC
         case android.R.id.home:
             Intent intent = new Intent(this, GistsActivity.class);
             intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP);
-case id.m_delete:
+            startActivity(intent);
             return true;
-        case id.gist_delete:
+case id.m_delete:
             String gistId = gists[pager.getCurrentItem()];
             Bundle args = new Bundle();
             args.putString(EXTRA_GIST_ID, gistId);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class ConstantFactory<T> implements Factory<T>, Serializable {
      *
      * @param <T>  the type of the constant
      * @param constantToReturn  the constant object to return each time in the factory
-@SuppressWarnings("unchecked") // The null factory works for all object types
+     * @return the <code>constant</code> factory.
      */
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked") // The null factory works for all object types
     public static <T> Factory<T> constantFactory(final T constantToReturn) {
         if (constantToReturn == null) {
             return (Factory<T>) NULL_INSTANCE;

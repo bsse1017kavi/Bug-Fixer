@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class JdkORBExtension implements Extension {
     private static final int MANAGEMENT_API_MICRO_VERSION = 0;
 
     static ResourceDescriptionResolver getResourceDescriptionResolver(final String... keyPrefix) {
-prefix.append(".").append(kp);
+        StringBuilder prefix = new StringBuilder(JdkORBExtension.SUBSYSTEM_NAME);
         for (String kp : keyPrefix) {
-            prefix.append(kp);
+prefix.append(".").append(kp);
         }
         return new StandardResourceDescriptionResolver(prefix.toString(), RESOURCE_NAME,
                 JdkORBExtension.class.getClassLoader(), true, false);

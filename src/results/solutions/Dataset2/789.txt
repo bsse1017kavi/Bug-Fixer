@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -277,9 +276,9 @@ class TypeBinding implements ITypeBinding {
 					 */
 				}
 			}
-Binding declaringElement = typeVariableBinding.isCapture() ? ((CaptureBinding) typeVariableBinding).sourceType : typeVariableBinding.declaringElement;
+		} else if (this.binding.isTypeVariable()) {
 			TypeVariableBinding typeVariableBinding = (TypeVariableBinding) this.binding;
-			Binding declaringElement = typeVariableBinding.declaringElement;
+Binding declaringElement = typeVariableBinding.isCapture() ? ((CaptureBinding) typeVariableBinding).sourceType : typeVariableBinding.declaringElement;
 			if (declaringElement instanceof ReferenceBinding) {
 				try {
 					return this.resolver.getTypeBinding((ReferenceBinding)declaringElement);

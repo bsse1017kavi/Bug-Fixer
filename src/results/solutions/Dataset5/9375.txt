@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2006 The Apache Software Foundation
  *
@@ -132,9 +131,9 @@ public class TempFile extends Task {
     public void execute() throws BuildException {
         if (property == null || property.length() == 0) {
             throw new BuildException("no property specified");
-destDir = getProject().resolveFile(".");
+        }
         if (destDir == null) {
-            destDir = FILE_UTILS.resolveFile(getProject().getBaseDir(),".");
+destDir = getProject().resolveFile(".");
         }
         File tfile = FILE_UTILS.createTempFile(
                 prefix, suffix, destDir, deleteOnExit);

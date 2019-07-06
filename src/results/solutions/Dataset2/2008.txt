@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -124,9 +123,9 @@ public class POP3HeaderCache extends AbstractHeaderCache {
 		ColumbaHeader h;
 
 		for (Enumeration e = headerList.keys(); e.hasMoreElements();) {
-h = (ColumbaHeader) headerList.get(str);
+			String str = (String) e.nextElement();
 
-			h = (ColumbaHeader) headerList.getHeader(str);
+h = (ColumbaHeader) headerList.get(str);
 
 			saveHeader(h);
 		}

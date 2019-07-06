@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -333,9 +332,9 @@ public abstract class AbstractProperty implements JMeterProperty {
             Map.Entry entry = (Map.Entry) iter.next();
             Object item = entry.getKey();
             Object prop = entry.getValue();
-newColl = coll.getClass().newInstance();
+            if (newColl == null) {
                 try {
-                    newColl = (Map) coll.getClass().newInstance();
+newColl = coll.getClass().newInstance();
                 } catch (Exception e) {
                     log.error("Bad collection", e);
                     return coll;

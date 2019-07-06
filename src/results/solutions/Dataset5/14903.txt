@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2002,2004 The Apache Software Foundation
  *
@@ -48,9 +47,9 @@ public class AptCompilerAdapter extends DefaultCompilerAdapter {
         return (Apt) getJavac();
     }
 
-if (!apt.isCompile()) {
+    static void setAptCommandlineSwitches(Apt apt, Commandline cmd) {
 
-        if (apt.isNoCompile()) {
+if (!apt.isCompile()) {
             cmd.createArgument().setValue("-nocompile");
         }
 

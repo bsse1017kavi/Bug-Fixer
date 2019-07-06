@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -312,9 +311,9 @@ public abstract class ListView extends WebMarkupContainer
 				item.modelChanging();
 
 				// Remove item and invalidate listView
-ListView.this.modelChanged();
+				getList().remove(item.getModelObject());
 
-				item.modelChanged();
+ListView.this.modelChanged();
 			}
 		};
 	}

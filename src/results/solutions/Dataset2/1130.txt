@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -534,9 +533,9 @@ public abstract class JavaElement extends PlatformObject implements IJavaElement
 	 */
 	public abstract IJavaElement rootedAt(IJavaProject project);
 	/**
-public static void runOperation(JavaModelOperation operation, IProgressMonitor monitor) throws JavaModelException {
+	 * Runs a Java Model Operation
 	 */
-	protected void runOperation(JavaModelOperation operation, IProgressMonitor monitor) throws JavaModelException {
+public static void runOperation(JavaModelOperation operation, IProgressMonitor monitor) throws JavaModelException {
 		try {
 			if (operation.isReadOnly() || ResourcesPlugin.getWorkspace().isTreeLocked()) {
 				operation.run(monitor);

@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.testelement.property;
 
 import java.util.Iterator;
@@ -86,9 +85,9 @@ public class MapProperty extends AbstractProperty
      */
     public Object clone()
     {
-return prop;
+        MapProperty prop = (MapProperty) super.clone();
         prop.value = cloneMap();
-        return value;
+return prop;
     }
 
     private Map cloneMap()

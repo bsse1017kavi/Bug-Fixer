@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -460,9 +459,9 @@ public class XMLDTDScannerImpl
         if (dtdEntity) {
             // call handler
             if (fDTDHandler != null && !fStartDTDCalled ) {
-fDTDHandler.startExternalSubset(fEntityScanner,null);
+                fDTDHandler.startDTD(fEntityScanner, null);
             }
-            fDTDHandler.startExternalSubset(null);
+fDTDHandler.startExternalSubset(fEntityScanner,null);
             fExtEntityDepth++;
         }
         else if (name.charAt(0) == '%') {

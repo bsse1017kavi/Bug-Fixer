@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -573,9 +572,9 @@ public class ParameterizedTypeBinding extends ReferenceBinding implements Substi
 		// should not be set yet
 		// this.superclass = null;
 		// this.superInterfaces = null;
-this.modifiers = someType.modifiers & ~ExtraCompilerModifiers.AccGenericSignature; // discard generic signature, will compute later
+		// this.fields = null;
 		// this.methods = null;		
-		this.modifiers = someType.modifiers;
+this.modifiers = someType.modifiers & ~ExtraCompilerModifiers.AccGenericSignature; // discard generic signature, will compute later
 		// only set AccGenericSignature if parameterized or have enclosing type required signature
 		if (someArguments != null) {
 			this.modifiers |= ExtraCompilerModifiers.AccGenericSignature;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -23,9 +22,9 @@ public class RepeatAction extends DelegateAction {
 	static public final int FOREVER = -1;
 
 	private int repeatCount, executedCount;
-protected boolean delegate (float delta) {
+	private boolean finished;
 
-	public boolean act (float delta) {
+protected boolean delegate (float delta) {
 		if (executedCount == repeatCount) return true;
 		if (action.act(delta)) {
 			if (finished) return true;

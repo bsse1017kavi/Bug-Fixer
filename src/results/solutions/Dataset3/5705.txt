@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public interface SecondOrderIntegrator extends ODEIntegrator {
    * the state vector at time t, can be the same object as yDot0
    * @throws IntegratorException if the integrator cannot perform integration
    * @throws DerivativeException this exception is propagated to the caller if the
-void integrate(SecondOrderDifferentialEquations equations,
+   * underlying user function triggers one
    */
-  public void integrate(SecondOrderDifferentialEquations equations,
+void integrate(SecondOrderDifferentialEquations equations,
                         double t0, double[] y0, double[] yDot0,
                         double t, double[] y, double[] yDot)
   throws DerivativeException, IntegratorException;

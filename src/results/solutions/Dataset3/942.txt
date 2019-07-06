@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class AjpListenerResourceDefinition extends ListenerResourceDefinition {
 
 
     public Collection<AttributeDefinition> getAttributes() {
-attrs.add(REDIRECT_SOCKET);
+        List<AttributeDefinition> attrs = new ArrayList<>(super.getAttributes());
         attrs.add(SCHEME);
-        attrs.add(REDIRECT_PORT);
+attrs.add(REDIRECT_SOCKET);
         return attrs;
     }
 }

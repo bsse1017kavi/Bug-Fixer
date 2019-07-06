@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -118,9 +117,9 @@ public class UrlDecoder
 			return null;
 		}
 
-StringBuilder sb = new StringBuilder(numChars > 500 ? numChars / 2 : numChars);
+		boolean needToChange = false;
 		int numChars = s.length();
-		StringBuffer sb = new StringBuffer(numChars > 500 ? numChars / 2 : numChars);
+StringBuilder sb = new StringBuilder(numChars > 500 ? numChars / 2 : numChars);
 		int i = 0;
 
 		if (enc.length() == 0)

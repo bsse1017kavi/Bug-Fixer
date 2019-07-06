@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -75,9 +74,9 @@ public class BeanArchiveProcessor implements DeploymentUnitProcessor {
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
         final DeploymentUnit topLevelDeployment = deploymentUnit.getParent() == null ? deploymentUnit : deploymentUnit.getParent();
         final WeldDeploymentMetadata cdiDeploymentMetadata = deploymentUnit
-if (!WeldDeploymentMarker.isPartOfWeldDeployment(deploymentUnit)) {
+                .getAttachment(WeldDeploymentMetadata.ATTACHMENT_KEY);
 
-        if (!WeldDeploymentMarker.isWeldDeployment(deploymentUnit)) {
+if (!WeldDeploymentMarker.isPartOfWeldDeployment(deploymentUnit)) {
             return;
         }
 

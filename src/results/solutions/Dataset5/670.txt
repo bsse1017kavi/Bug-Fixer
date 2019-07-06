@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -153,9 +152,9 @@ public class TreeStructureViewBuilder {
 	private boolean acceptGranularity(ProgramElementNode.Kind kind, StructureViewProperties.Granularity granularity) {
 		
 		if (granularity == StructureViewProperties.Granularity.DECLARED_ELEMENTS) {
-(kind != ProgramElementNode.Kind.CODE)) {
+			return true;
 		} else if (granularity == StructureViewProperties.Granularity.MEMBER && 
-			(kind == ProgramElementNode.Kind.CODE)) {
+(kind != ProgramElementNode.Kind.CODE)) {
 			return true;
 		} else if (granularity == StructureViewProperties.Granularity.TYPE
 			&& (kind == ProgramElementNode.Kind.PROJECT

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -101,9 +100,9 @@ public class RemoteChannelPairSetup implements RemotingChannelPairSetup {
         configuration.setUri(new URI("" + URI_SCHEME + "://127.0.0.1:" + PORT + ""));
         configuration.setExecutor(executorService);
         configuration.setChannelFactory(new ManagementChannelFactory());
-client.connect(null);
+
         ProtocolChannelClient<ManagementChannel> client = ProtocolChannelClient.create(configuration);
-        client.connect();
+client.connect(null);
         clientChannel = client.openChannel(TEST_CHANNEL);
         try {
             clientConnectedLatch.await();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class ValueSourceRangeFilter extends SolrFilter {
        @Override
        public DocIdSetIterator iterator() throws IOException {
          return valueSource.getValues(context, readerContext).getRangeScorer(readerContext.reader(), lowerVal, upperVal, includeLower, includeUpper);
-public Bits bits() {
+       }
        @Override
-       public Bits bits() throws IOException {
+public Bits bits() {
          return null;  // don't use random access
        }
      }, acceptDocs);

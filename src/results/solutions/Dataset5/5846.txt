@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -130,9 +129,9 @@ public class CrosscuttingMembers {
 			declareSofts.add(new DeclareSoft(d.getException(), concretePointcut));
 			addConcreteShadowMunger(m);
 		} else if (declare instanceof DeclareAnnotation) {
-if (da.getAspect() == null) da.setAspect(this.inAspect);
+		    // FIXME asc perf Possible Improvement. Investigate why this is called twice in a weave ?
 			DeclareAnnotation da = (DeclareAnnotation)declare;
-			da.setAspect(this.inAspect);
+if (da.getAspect() == null) da.setAspect(this.inAspect);
 			if (da.isDeclareAtType()) {
 				declareAnnotationsOnType.add(da);	
 			} else if (da.isDeclareAtField()) {

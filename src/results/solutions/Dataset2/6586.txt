@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-01 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -72,9 +71,9 @@ public class ActionSaveProject extends UMLAction {
     }
   }
 
-return url == null ? false : trySave(overwrite, new File(url.getFile()));
+  public boolean trySave (boolean overwrite) {
     URL url = ProjectManager.getManager().getCurrentProject().getURL();
-    return trySave(overwrite, new File(url.getFile()));
+return url == null ? false : trySave(overwrite, new File(url.getFile()));
   }
 
   public boolean trySave(boolean overwrite, File file) {

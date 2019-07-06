@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -270,9 +269,9 @@ public class CovReport extends CovBase {
             throw new BuildException("'snapshot' attribute must be set.");
         }
         if (getHome() == null) {
-File jar = findCoverageJar();
+            throw new BuildException("'home' attribute must be set to JProbe home directory");
         }
-        File jar = findJar("coverage/coverage.jar");
+File jar = findCoverageJar();
         if (!jar.exists()) {
             throw new BuildException("Cannot find Coverage directory: " + getHome());
         }

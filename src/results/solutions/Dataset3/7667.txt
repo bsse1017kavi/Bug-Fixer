@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import org.jboss.invocation.InterceptorFactory;
  */
 public class CmpEntityBeanComponentConfiguration extends ComponentConfiguration {
     final OrderedItemContainer<InterceptorFactory> relationInterceptors = new OrderedItemContainer<InterceptorFactory>();
-super(componentDescription, classIndex, moduleClassLoder);
+
     public CmpEntityBeanComponentConfiguration(final ComponentDescription componentDescription, final ClassIndex classIndex) {
-        super(componentDescription, classIndex);
+super(componentDescription, classIndex, moduleClassLoder);
     }
 
     public void addRelationInterceptor(final InterceptorFactory factory, final int priority) {

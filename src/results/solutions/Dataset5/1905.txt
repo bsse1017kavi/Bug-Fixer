@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -41,9 +40,9 @@ public abstract class ContactsDisplayPage extends BasePage {
 		cols[1] = new PropertyColumn(new Model("last name"), "lastName",
 				"lastName");
 		cols[2] = new PropertyColumn(new Model("home phone"), "homePhone");
-add(new DefaultDataTable("contacts", Arrays.asList(cols), getDataProvider(), 5));
+		cols[3] = new PropertyColumn(new Model("cell phone"), "cellPhone");
 
-		add(new DefaultDataTable(this,"contacts", Arrays.asList(cols), getDataProvider(), 5));
+add(new DefaultDataTable("contacts", Arrays.asList(cols), getDataProvider(), 5));
 	}
 
 	protected abstract SortableDataProvider getDataProvider();

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -509,9 +508,9 @@ public class Sandbox {
         for (int i = 0; i < src.length; i++) {
             File[] paths = src[i];
             int len = (null == paths ? 0 : paths.length);
-if (FileUtil.isZipFile(f) && (!readable || f.canRead())) {
+            for (int j = 0; j < len; j++) {
                 File f = paths[j];
-                if (FileUtil.hasZipSuffix(f) && (!readable || f.canRead())) {
+if (FileUtil.isZipFile(f) && (!readable || f.canRead())) {
                     result.add(f);
                 }
 			}

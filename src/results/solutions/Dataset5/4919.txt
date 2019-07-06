@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1239,9 +1238,9 @@ private boolean saveToStorageFile(File file) {
 			result = persistFile.Save(0, false);
 		} else {
 			int length = newFile.length();
-int /*long*/ lpszNewFile = COM.CoTaskMemAlloc(buffer.length * 2);
+			char[] buffer = new char[length + 1];
 			newFile.getChars(0, length, buffer, 0);
-			int lpszNewFile = COM.CoTaskMemAlloc(buffer.length * 2);
+int /*long*/ lpszNewFile = COM.CoTaskMemAlloc(buffer.length * 2);
 			COM.MoveMemory(lpszNewFile, buffer, buffer.length * 2);
 			result = persistFile.Save(lpszNewFile, false);
 			COM.CoTaskMemFree(lpszNewFile);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -389,9 +388,9 @@ public class ValidatorImpl extends AbstractValidator {
     
     // Get the default validator factory
     private ValidatorFactory getDefaultValidatorFactory() {
-factory = AccessController.doPrivileged(J2DoPrivHelper.buildDefaultValidatorFactoryAction());
+        ValidatorFactory factory = null;
         try {
-            factory = Validation.buildDefaultValidatorFactory();
+factory = AccessController.doPrivileged(J2DoPrivHelper.buildDefaultValidatorFactoryAction());
         } catch (javax.validation.ValidationException e) {
             // no validation providers found
         }

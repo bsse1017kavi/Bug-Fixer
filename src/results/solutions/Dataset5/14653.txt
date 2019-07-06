@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public class SimpleGetCommand extends AbstractGetCommand {
 				log.error(Streams.readString(method.getResponseBodyAsStream()));
 				// TODO rather than failing, just gather statistics
 				// throw new Exception(new String(method.getResponseBody()));
-log.info("\n" + Streams.readString(method.getResponseBodyAsStream()));
+			}
 			if (getPrintResponse()) {
-				log.info("\n" + new String(method.getResponseBody()));
+log.info("\n" + Streams.readString(method.getResponseBodyAsStream()));
 			}
 		} finally {
 			method.releaseConnection();

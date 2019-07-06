@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -99,9 +98,9 @@ public class DeploymentFullReplaceHandler implements OperationStepHandler {
         // clone it, so we can modify it to our own content
         final ModelNode content = operation.require(CONTENT).clone();
         // TODO: JBAS-9020: for the moment overlays are not supported, so there is a single content item
-byte[] originalHash = replaceNode.get(CONTENT).get(0).hasDefined(CONTENT_HASH.getName()) ? CONTENT_HASH.resolveModelAttribute(context, replaceNode.get(CONTENT).get(0)).asBytes() : null;
+        final DeploymentHandlerUtil.ContentItem contentItem;
         ModelNode contentItemNode = content.require(0);
-        byte[] originalHash = contentItemNode.hasDefined(CONTENT_HASH.getName()) ? CONTENT_HASH.resolveModelAttribute(context, contentItemNode).asBytes() : null;
+byte[] originalHash = replaceNode.get(CONTENT).get(0).hasDefined(CONTENT_HASH.getName()) ? CONTENT_HASH.resolveModelAttribute(context, replaceNode.get(CONTENT).get(0)).asBytes() : null;
         if (contentItemNode.hasDefined(CONTENT_HASH.getName())) {
             byte[] hash = CONTENT_HASH.resolveModelAttribute(context, contentItemNode).asBytes();
 

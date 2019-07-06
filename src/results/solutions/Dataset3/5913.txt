@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.ADD;
@@ -28,8 +27,8 @@ public class LocalCacheAdd extends CacheAdd {
         return operation;
     }
 
-toModel.get(ModelKeys.MODE).set(CacheMode.LOCAL.name());
+    @Override
     void populateCacheMode(ModelNode fromModel, ModelNode toModel) throws OperationFailedException {
-        toModel.get(ModelKeys.CACHE_MODE).set(CacheMode.LOCAL.name());
+toModel.get(ModelKeys.MODE).set(CacheMode.LOCAL.name());
     }
 }

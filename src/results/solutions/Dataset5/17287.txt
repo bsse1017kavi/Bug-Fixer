@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -319,9 +318,9 @@ public abstract class Extensions {
         // this is where we store things like "jdbc-" for a
         // prefix for an extension name that we won't validate; that
         // way a new vendor could theoretically add in their
-String prefixes = _loc.get("extension-datastore-prefix").getMessage();
+        // own prefix into the localizer.properties file and
         // not have to issue warnings for their extensions
-        String prefixes = _loc.get("extension-datastore-prefix");
+String prefixes = _loc.get("extension-datastore-prefix").getMessage();
         String[] allowedPrefixes = null;
         if (prefixes != null)
             allowedPrefixes = Strings.split(prefixes, ",", 0);

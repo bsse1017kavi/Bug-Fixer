@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -68,9 +67,9 @@ public class CookieManager
     public static final String COOKIES = "CookieManager.cookies";
 
     // SimpleDateFormat isn't thread-safe
-private transient SimpleDateFormat dateFormat =
+    // TestElements are cloned for each thread, so
     // we use an instance variable.
-    private SimpleDateFormat dateFormat =
+private transient SimpleDateFormat dateFormat =
         new SimpleDateFormat("EEEE, dd-MMM-yy HH:mm:ss zzz");
 
     public CookieManager()

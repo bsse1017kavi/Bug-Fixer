@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -24,9 +23,9 @@ import com.badlogic.gdx.physics.box2d.World;
 /** The pulley joint is connected to two bodies and two fixed ground points. The pulley supports a ratio such that: length1 + ratio
  * * length2 <= constant Yes, the force transmitted is scaled by the ratio. The pulley also enforces a maximum length limit on
  * both sides. This is useful to prevent one side of the pulley hitting the top. */
-#include <Box2D/Box2D.h>
+public class PulleyJoint extends Joint {
 	/*JNI
-#include <Box2d/Box2D.h> 
+#include <Box2D/Box2D.h>
 	 */
 	
 	public PulleyJoint (World world, long addr) {

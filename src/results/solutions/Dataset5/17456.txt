@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1184,9 +1183,9 @@ public final class Strings
 			}
 
 			if (!(traceString.startsWith("sun.reflect.") && i > 1))
-if (traceString.indexOf("java.lang.reflect") < 0)
+			{
 				// filter out reflection API calls from the stack trace
-				if (traceString.indexOf("java.lang.reflect") >= 0)
+if (traceString.indexOf("java.lang.reflect") < 0)
 				{
 					sb.append("     at ");
 					sb.append(traceString);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -208,9 +207,9 @@ public class ManagementHttpServer {
             ROOT_LOGGER.error(consoleSlot == null ? "main" : consoleSlot);
         }
 
-pathHandler.addPath("/", rootConsoleRedirectHandler);
+        ManagementRootConsoleRedirectHandler rootConsoleRedirectHandler = new ManagementRootConsoleRedirectHandler(consoleHandler);
         DomainApiCheckHandler domainApiHandler = new DomainApiCheckHandler(modelControllerClient, controlledProcessStateService);
-        pathHandler.setDefaultHandler(rootConsoleRedirectHandler);
+pathHandler.addPath("/", rootConsoleRedirectHandler);
         if (consoleHandler != null) {
             HttpHandler readinessHandler = new RedirectReadinessHandler(securityRealm, consoleHandler.getHandler(),
                     ErrorContextHandler.ERROR_CONTEXT);

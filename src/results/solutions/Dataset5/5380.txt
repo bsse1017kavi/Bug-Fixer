@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1045,9 +1044,9 @@ public class ComponentHelper  {
 
         public boolean contains(Object clazz) {
             boolean found = false;
-found = (((AntTypeDefinition) (i.next())).getExposedClass(
+            if (clazz instanceof Class) {
                 for (Iterator i = values().iterator(); i.hasNext() && !found;) {
-                    found |= (((AntTypeDefinition) (i.next())).getExposedClass(
+found = (((AntTypeDefinition) (i.next())).getExposedClass(
                         project) == clazz);
                 }
             }

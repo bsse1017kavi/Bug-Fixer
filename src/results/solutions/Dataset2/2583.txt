@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -65,9 +64,9 @@ public class NewWizardShortcutAction extends Action implements
 
         INewWizard wizard;
         try {
-ErrorDialog.openError(window.getShell(), WorkbenchMessages.NewWizardShortcutAction_errorTitle,
+            wizard = (INewWizard) wizardElement.createWizard();
         } catch (CoreException e) {
-            ErrorDialog.openError(window.getShell(), WorkbenchMessages.NewWizardShortcutAction_errorTitle, //$NON-NLS-1$
+ErrorDialog.openError(window.getShell(), WorkbenchMessages.NewWizardShortcutAction_errorTitle,
                     WorkbenchMessages.NewWizardShortcutAction_errorMessage,
                     e.getStatus());
             return;

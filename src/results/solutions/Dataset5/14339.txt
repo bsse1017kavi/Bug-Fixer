@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -683,9 +682,9 @@ public abstract class ResolvedType extends UnresolvedType implements AnnotatedEl
 		for (int i=0, len = methods.length; i < len; i++) {
 			ShadowMunger munger = methods[i].getAssociatedShadowMunger();
 			if (munger != null) {
-munger = munger.parameterizeWith(this,typeVariableMap);
+				if (this.isParameterizedType()) {
 					//munger.setPointcut(munger.getPointcut().parameterizeWith(typeVariableMap));
-					munger = munger.parameterizeWith(typeVariableMap);
+munger = munger.parameterizeWith(this,typeVariableMap);
 					if (munger instanceof Advice) {
 						Advice advice = (Advice) munger;
 						// update to use the parameterized signature...

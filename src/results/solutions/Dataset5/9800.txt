@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.161 $ $Date$
@@ -769,9 +768,9 @@ public abstract class Page extends MarkupContainer implements IRedirectListener,
 	 * @return A URL that encodes a page, component and interface to call
 	 */
 	public final String urlFor(final Component component, final Class listenerInterface)
-//if (!IRedirectListener.class.isAssignableFrom(listenerInterface))
+	{
 		// The page is not stateless if it is not an IRedirectListener
-		if (!IRedirectListener.class.isAssignableFrom(listenerInterface))
+//if (!IRedirectListener.class.isAssignableFrom(listenerInterface))
 		{
 			stateless = false;
 		}

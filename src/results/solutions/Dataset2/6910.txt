@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1522,9 +1521,9 @@ public class WorkbenchPage extends CompatibleWorkbenchPage implements
         // Get rid of perspective.
         perspList.remove(persp);
         window.firePerspectiveClosed(this, persp.getDesc());
-stickyPerspectives.remove(persp.getDesc().getId());
+        persp.dispose();
 
-        stickyPerspectives.remove(persp.getDesc());
+stickyPerspectives.remove(persp.getDesc().getId());
     }
 
     /**

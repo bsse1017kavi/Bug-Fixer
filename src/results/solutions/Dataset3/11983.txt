@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -305,9 +304,9 @@ public abstract class AbstractProxyControllerTest {
         checkReadAttributeOperationDescription(result.get(RESULT));
 
         read = createOperation(READ_OPERATION_DESCRIPTION_OPERATION, HOST, "hostA", "hostchild", "hcA");
-checkReadAttributeOperationDescription(result.get(RESULT));
+        read.getOperation().get(NAME).set(READ_ATTRIBUTE_OPERATION);
         result = mainControllerClient.execute(read);
-        assertFalse(result.get(RESULT).isDefined());
+checkReadAttributeOperationDescription(result.get(RESULT));
     }
 
     @Test

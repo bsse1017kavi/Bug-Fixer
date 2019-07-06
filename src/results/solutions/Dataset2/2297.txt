@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1077,9 +1076,9 @@ public abstract class Scope
 							if (foundType == null || (foundType.problemId() == NotVisible && memberType.problemId() != NotVisible))
 								// only remember the memberType if its the first one found or the previous one was not visible & memberType is...
 								foundType = memberType;
-if (foundType != null && foundType != sourceType && foundType.problemId() != NotVisible)
+						}
 						if (CharOperation.equals(sourceType.sourceName, name)) {
-							if (foundType != null && foundType != sourceType)
+if (foundType != null && foundType != sourceType && foundType.problemId() != NotVisible)
 								return new ProblemReferenceBinding(name, InheritedNameHidesEnclosingName);
 							return sourceType;
 						}

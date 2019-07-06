@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -156,9 +155,9 @@ public abstract class AbstractJDBCSeq
     protected void closeConnection(Connection conn) {
         if (conn == null)
             return;
-if (type != TYPE_TRANSACTIONAL && type != TYPE_CONTIGUOUS)
+
         try {
-            if (type == TYPE_TRANSACTIONAL || type == TYPE_CONTIGUOUS)
+if (type != TYPE_TRANSACTIONAL && type != TYPE_CONTIGUOUS)
                 conn.commit();
         } catch (SQLException se) {
             throw SQLExceptions.getStore(se);

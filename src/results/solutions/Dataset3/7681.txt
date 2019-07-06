@@ -1,4 +1,3 @@
-
 /*
  *
  *  * JBoss, Home of Professional Open Source.
@@ -273,9 +272,9 @@ public class ManagedAuditLoggerImpl implements ManagedAuditLogger, ManagedAuditL
     @Override
     public void updateHandler(AuditLogHandler handler) {
         config.lock();
-if (!handler.isDifferent(existing)){
+        try {
             AuditLogHandler existing = config.getConfiguredHandler(handler.getName());
-            if (!handler.compare(existing)){
+if (!handler.isDifferent(existing)){
                 if (handlerUpdateTask == null){
                     handlerUpdateTask = new HandlerUpdateTask();
                 }

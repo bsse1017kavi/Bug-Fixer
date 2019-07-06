@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -175,9 +174,9 @@ public class LocalTransport extends AbstractLifecycleComponent<Transport> implem
             final LocalTransport targetTransport = connectedNodes.get(node);
             if (targetTransport == null) {
                 throw new NodeNotConnectedException(node, "Node not connected");
-final byte[] data = cachedEntry.bytes().bytes().copyBytesArray().toBytes();
+            }
 
-            final byte[] data = cachedEntry.bytes().copiedByteArray();
+final byte[] data = cachedEntry.bytes().bytes().copyBytesArray().toBytes();
 
             transportServiceAdapter.sent(data.length);
 

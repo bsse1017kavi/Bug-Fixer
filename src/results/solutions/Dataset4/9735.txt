@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class MultiSearchRequest extends ActionRequest<MultiSearchRequest> {
                                     searchRequest.ignoreIndices(IgnoreIndices.fromString(parser.text()));
                                 }
                             } else if (token == XContentParser.Token.START_ARRAY) {
-} else if ("type".equals(currentFieldName) || "types".equals(currentFieldName)) {
+                                if ("index".equals(currentFieldName) || "indices".equals(currentFieldName)) {
                                     searchRequest.indices(parseArray(parser));
-                                } else if ("type".equals(currentFieldName) || "type".equals(currentFieldName)) {
+} else if ("type".equals(currentFieldName) || "types".equals(currentFieldName)) {
                                     searchRequest.types(parseArray(parser));
                                 } else {
                                     throw new ElasticSearchParseException(currentFieldName + " doesn't support arrays");

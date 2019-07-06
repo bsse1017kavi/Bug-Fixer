@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1655,9 +1654,9 @@ class BcelClassWeaver implements IClassWeaver {
 			} else if (rm.getKind()==Member.METHOD && !rm.isAbstract()) {
 				if (methodName.startsWith("ajc$inlineAccessMethod") || methodName.startsWith("ajc$superDispatch")) {
 					ResolvedMember resolvedDooberry = world.resolve(declaredSig);
-ResolvedMember realthing = AjcMemberMaker.interMethodDispatcher(rm.resolve(world),memberHostType);
+					annotations = resolvedDooberry.getAnnotationTypes();
 				} else {
-					ResolvedMember realthing = AjcMemberMaker.interMethodDispatcher(rm,memberHostType);
+ResolvedMember realthing = AjcMemberMaker.interMethodDispatcher(rm.resolve(world),memberHostType);
 					ResolvedMember resolvedDooberry = world.resolve(realthing);
 					// AMC temp guard for M4
 					if (resolvedDooberry == null) {

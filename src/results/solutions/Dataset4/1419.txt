@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -102,9 +101,9 @@ public class TransportGetAction extends TransportShardSingleOperationAction<GetR
         if (request.refresh() && !request.realtime()) {
             indexShard.refresh(new Engine.Refresh("refresh_flag_get").force(REFRESH_FORCE));
         }
-request.realtime(), request.version(), request.versionType(), request.fetchSourceContext(), request.ignoreErrorsOnGeneratedFields());
+
         GetResult result = indexShard.getService().get(request.type(), request.id(), request.fields(),
-                request.realtime(), request.version(), request.versionType(), request.fetchSourceContext());
+request.realtime(), request.version(), request.versionType(), request.fetchSourceContext(), request.ignoreErrorsOnGeneratedFields());
         return new GetResponse(result);
     }
 

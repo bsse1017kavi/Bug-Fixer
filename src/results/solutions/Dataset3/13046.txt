@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -205,9 +204,9 @@ public final class ServerModel extends AbstractModel<ServerModel> {
         // TODO move service binding manager to somewhere else?
         batchBuilder.addService(SocketBindingManager.SOCKET_BINDING_MANAGER,
                 new SocketBindingManagerService(portOffset)).setInitialMode(Mode.ON_DEMAND);
-// socketBindings.activate(context);
+
         // Activate socket bindings
-        socketBindings.activate(context);
+// socketBindings.activate(context);
 
         // Activate deployment module loader
         batchBuilder.addService(ClassifyingModuleLoaderService.SERVICE_NAME, new ClassifyingModuleLoaderService());

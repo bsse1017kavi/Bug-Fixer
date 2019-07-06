@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class MembershipCleanerVerbHandler implements IVerbHandler
             
             for ( String node : nodes )
             {            
-headers.remove(node);
+                if (logger_.isDebugEnabled())
                   logger_.debug("Processing node " + node);
-                byte[] bytes = headers.remove(node);
+headers.remove(node);
                 /* Send a message to this node to alter its membership state. */
                 EndPoint targetNode = new EndPoint(node, DatabaseDescriptor.getStoragePort());                
                 

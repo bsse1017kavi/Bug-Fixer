@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,9 +73,9 @@ public class HttpIndicesStatusAction extends BaseHttpServerHandler {
                     for (IndexStatus indexStatus : response.indices().values()) {
                         builder.startObject(indexStatus.index());
 
-builder.field(entry.getKey(), entry.getValue());
+                        builder.startObject("settings");
                         for (Map.Entry<String, String> entry : indexStatus.settings().getAsMap().entrySet()) {
-                            builder.startObject("setting").field("name", entry.getKey()).field("value", entry.getValue()).endObject();
+builder.field(entry.getKey(), entry.getValue());
                         }
                         builder.endObject();
 

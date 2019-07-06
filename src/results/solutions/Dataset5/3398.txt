@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class EntityA_Coll_String implements Serializable {
     String name;
     
     @Basic(fetch=FetchType.LAZY)
-@ElementCollection(fetch=FetchType.EAGER)
+    int age;
 
-    @ElementCollection // use default table (BasicA_NICKNAMES)
+@ElementCollection(fetch=FetchType.EAGER)
     @CollectionTable(name="NickNames_Tbl")
     @Column(name="nicknames1", length=20)
     protected Set<String> nickNames = new HashSet<String>();

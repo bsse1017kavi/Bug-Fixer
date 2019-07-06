@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -334,9 +333,9 @@ public class LoggerTestCase extends TestCase {
     t = LogManager.exists("a.b.c");
     assertSame(a_b_c, t);
   }
-Hierarchy h = new Hierarchy(new RootLogger((Level) Level.ERROR));
+
   public void testHierarchy1() {
-    Hierarchy h = new Hierarchy(new RootCategory((Level) Level.ERROR));
+Hierarchy h = new Hierarchy(new RootLogger((Level) Level.ERROR));
     Logger a0 = h.getLogger("a");
     assertEquals("a", a0.getName());
     assertNull(a0.getLevel());

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -171,9 +170,9 @@ public class SecurityTools {
     public static void formCredentials( Request req, Hashtable credentials ) {
 	Context ctx=req.getContext();
 	String authMethod=ctx.getAuthMethod();
-HttpSession session=(HttpSession)req.getSession( false );
+
 	if( "FORM".equals( authMethod ) ) {
-	    HttpSession session=req.getSession( false );
+HttpSession session=(HttpSession)req.getSession( false );
 
 	    if( session == null )
 		return; // not authenticated

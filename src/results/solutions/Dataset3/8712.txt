@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -124,9 +123,9 @@ public class MasterDomainControllerOperationHandlerImpl extends ManagementChanne
         void handleRequest(final String hostId, final DataInput input, final ManagementRequestContext<Void> context) throws IOException {
             context.executeAsync(new ManagementRequestContext.AsyncTask<Void>() {
                 @Override
-final Channel mgmtChannel = context.getChannel();
+                public void execute(final ManagementRequestContext<Void> context) throws Exception {
                     try {
-                        final ManagementChannel mgmtChannel = new ManagementChannel(hostId, context.getChannel());
+final Channel mgmtChannel = context.getChannel();
                         registry.registerChannel(hostId, mgmtChannel, new ProxyCreatedCallback() {
                             @Override
                             public void proxyCreated(final ManagementMessageHandler handler) {

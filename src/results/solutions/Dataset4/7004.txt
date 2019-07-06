@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class FsImmutableBlobContainer extends AbstractFsBlobContainer implements
     public FsImmutableBlobContainer(FsBlobStore blobStore, BlobPath blobPath, File path) {
         super(blobStore, blobPath, path);
     }
-blobStore.executor().execute(new Runnable() {
+
     @Override public void writeBlob(final String blobName, final InputStream is, final long sizeInBytes, final WriterListener listener) {
-        blobStore.executorService().execute(new Runnable() {
+blobStore.executor().execute(new Runnable() {
             @Override public void run() {
                 File file = new File(path, blobName);
                 RandomAccessFile raf;

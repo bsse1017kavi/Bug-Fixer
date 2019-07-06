@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ public class SimpleImmutableSessionAttributes implements ImmutableSessionAttribu
     private final Map<String, Object> attributes;
 
     public SimpleImmutableSessionAttributes(ImmutableSessionAttributes attributes) {
-map.put(name, attributes.getAttribute(name));
+        Map<String, Object> map = new HashMap<>();
         for (String name: attributes.getAttributeNames()) {
-            this.attributes.put(name, attributes.getAttribute(name));
+map.put(name, attributes.getAttribute(name));
         }
         this.attributes = Collections.unmodifiableMap(map);
     }

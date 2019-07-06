@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ public class WSSubsystemAdd extends AbstractBoottimeAddStepHandler {
             newControllers.add(PortComponentLinkService.install(serviceTarget, verificationHandler));
         }
     }
-final ServerConfigImpl config = ServerConfigImpl.newInstance();
+
     private static ServerConfigImpl createServerConfig(ModelNode configuration, boolean appclient) {
-        final ServerConfigImpl config = ServerConfigImpl.getInstance();
+final ServerConfigImpl config = ServerConfigImpl.newInstance();
         try {
             ModelNode wsdlHost = configuration.require(WSDL_HOST).resolve();
             config.setWebServiceHost(wsdlHost.asString());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -161,9 +160,9 @@ class XSDAbstractIDConstraintTraverser extends XSDAbstractTraverser {
             String fText = ((String)attrValues[XSAttributeChecker.ATTIDX_XPATH]);
             if(fText == null) {
                 reportSchemaError("s4s-att-must-appear", new Object [] {SchemaSymbols.ELT_FIELD, SchemaSymbols.ATT_XPATH}, fElem);
-fText = XMLChar.trim(fText);
+                return;
             }
-            fText = fText.trim();
+fText = XMLChar.trim(fText);
             try {
                 Field.XPath fXpath = new Field.XPath(fText, fSymbolTable,
                         schemaDoc.fNamespaceSupport);

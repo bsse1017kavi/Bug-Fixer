@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  *
@@ -134,9 +133,9 @@ public class GenericBinder implements Binder {
 		Object value = sourceValue.getValue();
 		if (!binding.isEditable()) {
 			return new PropertyNotEditableResult(property, value, messageSource);
-if (binding.getBindingStatus() == BindingStatus.DIRTY) {
+		} else {
 			binding.applySourceValue(value);
-			if (binding.getStatus() == BindingStatus.DIRTY) {
+if (binding.getBindingStatus() == BindingStatus.DIRTY) {
 				binding.commit();
 			}
 			return new BindingStatusResult(property, value, binding.getStatusAlert());

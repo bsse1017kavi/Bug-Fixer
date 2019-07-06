@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -75,9 +74,9 @@ public class DeflateCompressor implements ICompressor
 
         int offs = outputOffset;
         while (true)
-if (def.finished())
+        {
             offs += def.deflate(output.buffer, offs, output.buffer.length - offs);
-            if (def.needsInput())
+if (def.finished())
             {
                 return offs - outputOffset;
             }

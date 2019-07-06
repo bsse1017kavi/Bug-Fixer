@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class ArArchiveEntry implements ArchiveEntry {
 		this.lastModified = lastModified;
 	}
 
-this(entryName, inputFile.isFile() ? inputFile.length() : 0, 0, 0, 0, inputFile.lastModified());
+	public ArArchiveEntry(File inputFile, String entryName) {
 	    // TODO sort out mode
-        this(entryName, inputFile.length(), 0, 0, 0, inputFile.lastModified());
+this(entryName, inputFile.isFile() ? inputFile.length() : 0, 0, 0, 0, inputFile.lastModified());
     }
 
     public long getSize() {

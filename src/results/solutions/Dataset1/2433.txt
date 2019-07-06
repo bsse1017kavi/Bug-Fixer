@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db;
 /*
  * 
@@ -36,9 +35,9 @@ import static org.apache.cassandra.Util.column;
 public class RecoveryManager2Test extends CleanupHelper
 {
     @Test
-CompactionManager.instance.disableAutoCompaction();
+    public void testWithFlush() throws IOException, ExecutionException, InterruptedException
     {
-        CompactionManager.instance.disableCompactions();
+CompactionManager.instance.disableAutoCompaction();
 
         for (int i = 0; i < 100; i++)
         {

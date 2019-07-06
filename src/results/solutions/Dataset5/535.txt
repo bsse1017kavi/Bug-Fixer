@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -126,9 +125,9 @@ public abstract class ResolvedTypeMunger {
 	protected static Set readSuperMethodsCalled(VersionedDataInputStream s) throws IOException {
 		
 		Set ret = new HashSet();
-ret.add(ResolvedMemberImpl.readResolvedMember(s, null));
+		int n = s.readInt();
 		for (int i=0; i < n; i++) {
-			ret.add(ResolvedMember.readResolvedMember(s, null));
+ret.add(ResolvedMemberImpl.readResolvedMember(s, null));
 		}
 		return ret;
 	}

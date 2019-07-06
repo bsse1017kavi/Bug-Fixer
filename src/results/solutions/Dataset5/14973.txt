@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -306,9 +305,9 @@ public class MimeMail extends Task
         for( int i = 0; i < filesets.size(); i++ )
         {
             FileSet fs = (FileSet)filesets.get( i );
-DirectoryScanner ds = fs.getDirectoryScanner();
+            if( fs != null )
             {
-                DirectoryScanner ds = fs.getDirectoryScanner( getProject() );
+DirectoryScanner ds = fs.getDirectoryScanner();
                 String[] dsfiles = ds.getIncludedFiles();
                 File baseDir = ds.getBasedir();
 

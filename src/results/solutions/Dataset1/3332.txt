@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.tools.ij.utilMain
@@ -540,9 +539,9 @@ public class utilMain implements java.security.PrivilegedAction {
 	void newResourceInput(String resourceName) {
 		InputStream is = util.getResourceAsStream(resourceName);
 		if (is==null) throw ijException.resourceNotFound();
-new StatementFinder(langUtil.getNewEncodedInput(new BufferedInputStream(is, BUFFEREDFILESIZE), "UTF8"));
+		oldGrabbers.push(commandGrabber[currCE]);
 	    commandGrabber[currCE] = 
-                new StatementFinder(langUtil.getNewInput(new BufferedInputStream(is, BUFFEREDFILESIZE)));
+new StatementFinder(langUtil.getNewEncodedInput(new BufferedInputStream(is, BUFFEREDFILESIZE), "UTF8"));
 		fileInput = true;
 	}
 

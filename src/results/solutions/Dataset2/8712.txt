@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -242,9 +241,9 @@ public abstract class JDBCAbstractCreateCommand implements JDBCCreateCommand
 
    protected void initInsertSQL()
    {
-.append(entity.getQualifiedTableName())
+      StringBuffer sql = new StringBuffer(250);
       sql.append(SQLUtil.INSERT_INTO)
-         .append(entity.getTableName())
+.append(entity.getQualifiedTableName())
          .append(" (");
 
       SQLUtil.getColumnNamesClause(insertFields, sql);

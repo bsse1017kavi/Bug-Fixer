@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -46,9 +45,9 @@ public class EqualExpression extends BinaryExpression {
 					flowContext.recordUsingNullReference(scope, local, reference,
 							FlowContext.CAN_ONLY_NULL_NON_NULL | FlowContext.IN_COMPARISON_NON_NULL, flowInfo);
 					initsWhenTrue.markAsComparedEqualToNonNull(local); // from thereon it is set
-if ((flowContext.tagBits & FlowContext.HIDE_NULL_COMPARISON_WARNING) != 0) {
+					initsWhenFalse.markAsComparedEqualToNull(local); // from thereon it is set
 				}
-				if (flowContext.hideNullComparisonWarnings) {
+if ((flowContext.tagBits & FlowContext.HIDE_NULL_COMPARISON_WARNING) != 0) {
 					flowInfo.markedAsNullOrNonNullInAssertExpression(local);
 				}
 				break;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -386,9 +385,9 @@ public class DualTreeBidiMap<K, V> extends AbstractDualBidiMap<K, V> implements
 
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-reverseMap = new TreeMap(valueComparator);
+        in.defaultReadObject();
         normalMap = new TreeMap(comparator);
-        reverseMap = new TreeMap(comparator);
+reverseMap = new TreeMap(valueComparator);
         Map map = (Map) in.readObject();
         putAll(map);
     }

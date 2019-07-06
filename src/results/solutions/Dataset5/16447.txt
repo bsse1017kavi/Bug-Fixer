@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2010 ZXing authors
  *
@@ -185,9 +184,9 @@ final class ExpandedProductResultParser extends ResultParser {
       char c = rawTextAux.charAt(index);
       if (c == '(') {
         // We look for a new AI. If it doesn't exist (ERROR), we coninue
-buf.append('(');
+        // with the iteration
         if ("ERROR".equals(findAIvalue(index, rawTextAux))) {
-          buf.append(c);
+buf.append('(');
         } else {
           break;
         }

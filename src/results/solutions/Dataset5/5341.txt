@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public class PackageNameMapper extends GlobPatternMapper {
      */
     protected String extractVariablePart(String name) {
         String var = name.substring(prefixLength,
-var = var.replace('/', '.').replace('\\', '.');
+                name.length() - postfixLength);
         if (getHandleDirSep()) {
-            var = name.replace('/', '.').replace('\\', '.');
+var = var.replace('/', '.').replace('\\', '.');
         }
         return var.replace(File.separatorChar, '.');
     }

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -67,9 +66,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 	}
 	// May loose some local variable initializations : affecting the local variable attributes
 	if (mergedInitStateIndex != -1) {
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+		codeStream.removeNotDefinitelyAssignedVariables(currentScope, mergedInitStateIndex);
 	}
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 public void resolve(BlockScope scope) {
 	statement.resolve(scope);

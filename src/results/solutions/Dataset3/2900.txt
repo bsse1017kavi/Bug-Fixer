@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class MathConfigurationExceptionTest extends TestCase {
     public void testConstructorPatternArgumentsCause(){
         String pattern = "a {0}x{1} matrix cannot be a rotation matrix";
         Object[] arguments = { Integer.valueOf(6), Integer.valueOf(4) };
-MathConfigurationException ex = new MathConfigurationException(cause, pattern, arguments);
+        String inMsg = "inner message";
         Exception cause = new Exception(inMsg);
-        MathConfigurationException ex = new MathConfigurationException(pattern, arguments, cause);
+MathConfigurationException ex = new MathConfigurationException(cause, pattern, arguments);
         assertEquals(cause, ex.getCause());
         assertEquals(pattern, ex.getPattern());
         assertEquals(arguments.length, ex.getArguments().length);

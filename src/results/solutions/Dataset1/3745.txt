@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /**
@@ -59,9 +58,9 @@ public class TestKeywordAnalyzer extends BaseTokenStreamTestCase {
 
   public void testPerFieldAnalyzer() throws Exception {
     PerFieldAnalyzerWrapper analyzer = new PerFieldAnalyzerWrapper(new SimpleAnalyzer());
-QueryParser queryParser = new QueryParser(TEST_VERSION_CURRENT, "description", analyzer);
+    analyzer.addAnalyzer("partnum", new KeywordAnalyzer());
 
-    QueryParser queryParser = new QueryParser(Version.LUCENE_CURRENT, "description", analyzer);
+QueryParser queryParser = new QueryParser(TEST_VERSION_CURRENT, "description", analyzer);
     Query query = queryParser.parse("partnum:Q36 AND SPACE");
 
     ScoreDoc[] hits = searcher.search(query, null, 1000).scoreDocs;

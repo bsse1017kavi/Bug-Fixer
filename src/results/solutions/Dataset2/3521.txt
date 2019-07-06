@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -38,9 +37,9 @@ public class MarkMessageAsReadAction extends AbstractFilterAction {
 	public Command getCommand(FilterAction filterAction,
 			IFolder srcFolder, Object[] uids) throws Exception {
 		MailFolderCommandReference r = new MailFolderCommandReference(
-String variant = filterAction.get("markvariant");
+				srcFolder, uids);
 
-		String variant = ((MailFilterAction) filterAction).getMarkVariant();
+String variant = filterAction.get("markvariant");
 
 		if (variant.equals("read")) {
 			r.setMarkVariant(MarkMessageCommand.MARK_AS_READ);

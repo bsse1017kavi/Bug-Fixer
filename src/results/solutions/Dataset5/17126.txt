@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -129,9 +128,9 @@ public class DatePicker extends AbstractBehavior implements IHeaderContributor
 		String javascriptWidgetId = "YAHOO.wicket." + getCalendarJavascriptId();
 
 		StringBuffer buffer = new StringBuffer();
-buffer.append("YAHOO.namespace(\"wicket\");\nfunction init");
+		// initialize org.apache.wicket namespace and register the init function
 		// for the YUI widget
-		buffer.append("YAHOO.namespace(\"org.apache.wicket\");\nfunction init");
+buffer.append("YAHOO.namespace(\"wicket\");\nfunction init");
 		buffer.append(javascriptId);
 		buffer.append("() {\n");
 

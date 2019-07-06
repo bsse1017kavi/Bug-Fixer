@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public class TransportSuggestAction extends TransportBroadcastOperationAction<Su
 
     @Override
     protected ShardSuggestResponse shardOperation(ShardSuggestRequest request) throws ElasticSearchException {
-final Engine.Searcher searcher = indexShard.acquireSearcher("suggest");
+        IndexService indexService = indicesService.indexServiceSafe(request.index());
         IndexShard indexShard = indexService.shardSafe(request.shardId());
-        final Engine.Searcher searcher = indexShard.acquireSearcher();
+final Engine.Searcher searcher = indexShard.acquireSearcher("suggest");
         XContentParser parser = null;
         try {
             BytesReference suggest = request.suggest();

@@ -1,4 +1,3 @@
-
 package org.jboss.as.server.deployment.scanner;
 
 import java.io.Closeable;
@@ -17,9 +16,9 @@ public interface DeploymentOperations extends Closeable {
 
     Future<ModelNode> deploy(final ModelNode operation, final ScheduledExecutorService scheduledExecutor);
 
-interface Factory {
+    Map<String, Boolean> getDeploymentsStatus();
 
-    static interface Factory {
+interface Factory {
         DeploymentOperations create();
     }
 

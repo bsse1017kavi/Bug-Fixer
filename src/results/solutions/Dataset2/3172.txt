@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -64,9 +63,9 @@ throws IOException
 {
 	super(_name, Type.SIG, _dclass, _ttl);
 	covered = Type.value(st.nextToken());
-origttl = TTL.parseTTL(st.nextToken());
+	alg = Byte.parseByte(st.nextToken());
 	labels = name.labels();
-	origttl = Integer.parseInt(st.nextToken());
+origttl = TTL.parseTTL(st.nextToken());
 	expire = parseDate(st.nextToken());
 	timeSigned = parseDate(st.nextToken());
 	footprint = (short) Integer.parseInt(st.nextToken());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -233,9 +232,9 @@ public class SchemaGrammar implements XSGrammar, XSNamespaceItem {
         fRGCount = grammar.fRGCount;
         if (fRGCount > 0) {
             fRedefinedGroupDecls = new XSGroupDecl[grammar.fRedefinedGroupDecls.length];
-System.arraycopy(grammar.fRGLocators, 0, fRGLocators, 0, fRGCount/2);
+            fRGLocators = new SimpleLocator[grammar.fRGLocators.length];
             System.arraycopy(grammar.fRedefinedGroupDecls, 0, fRedefinedGroupDecls, 0, fRGCount);
-            System.arraycopy(grammar.fRGLocators, 0, fRGLocators, 0, fRGCount);
+System.arraycopy(grammar.fRGLocators, 0, fRGLocators, 0, fRGCount/2);
         }
 
         // List of imported grammars

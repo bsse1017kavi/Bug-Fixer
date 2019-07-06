@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ class PatchingTestStepBuilder extends AbstractPatchTestBuilder<PatchingTestStepB
         final PatchElementBuilder elementBuilder = builder.oneOffPatchElement(patchId, layerName, isAddon);
         return new PatchElementTestStepBuilder(patchId, elementBuilder, this);
     }
-protected PatchingTestStepBuilder internalAddModification(ContentModification modification) {
+
     @Override
-    public PatchingTestStepBuilder addContentModification(ContentModification modification) {
+protected PatchingTestStepBuilder internalAddModification(ContentModification modification) {
         builder.addContentModification(modification);
         return returnThis();
     }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.demo.facet;
 
 /*
@@ -81,9 +80,9 @@ public class SimpleSortedSetFacetsExample {
     doc = new Document();
     doc.add(new SortedSetDocValuesFacetField("Author", "Frank"));
     doc.add(new SortedSetDocValuesFacetField("Publish Year", "1999"));
-indexWriter.shutdown();
+    indexWriter.addDocument(config.build(doc));
     
-    indexWriter.close();
+indexWriter.shutdown();
   }
 
   /** User runs a query and counts facets. */

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -83,9 +82,9 @@ public final class WSIntegrationProcessorJAXRPC_POJO implements DeploymentUnitPr
         final String endpointName = portComponentMD.getServletLink();
         final ServletMetaData servletMD = getServletForName(jbossWebMD, endpointName);
         final String endpointClassName = getEndpointClassName(servletMD);
-return new POJOEndpoint(endpointName, endpointClassName, null, urlPattern);
+        final String urlPattern = getUrlPattern(endpointName, jbossWebMD);
 
-        return new POJOEndpoint(endpointName, endpointClassName, urlPattern);
+return new POJOEndpoint(endpointName, endpointClassName, null, urlPattern);
     }
 
     private static String getUrlPattern(final String servletName, final JBossWebMetaData jbossWebMD) {

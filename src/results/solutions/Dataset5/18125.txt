@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -744,9 +743,9 @@ final class UCSReader extends XMLEntityReader implements StringPool.StringProduc
         }//end while loop
         int length = fCurrentOffset - offset;
         qname.prefix = prefixend == -1 ? -1 : addSymbol(offset, prefixend - offset);
-qname.uri = StringPool.EMPTY_STRING;
+        qname.rawname = addSymbol(offset, length);
         qname.localpart = prefixend == -1 ? qname.rawname : addSymbol(prefixend + fBytesPerChar, fCurrentOffset - (prefixend + fBytesPerChar));
-        qname.uri = -1;
+qname.uri = StringPool.EMPTY_STRING;
 
 
 

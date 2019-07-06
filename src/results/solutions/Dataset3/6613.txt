@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -287,9 +286,9 @@ public class StopWatch {
         } else if (this.runningState == STATE_UNSTARTED) {
             return 0;
         } else if (this.runningState == STATE_RUNNING) {
-throw new RuntimeException("Illegal running state has occurred.");
+            return System.nanoTime() - this.startTime;
         }
-        throw new RuntimeException("Illegal running state has occured. ");
+throw new RuntimeException("Illegal running state has occurred.");
     }
 
     /**

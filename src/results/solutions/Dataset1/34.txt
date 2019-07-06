@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene41;
 
 /*
@@ -142,9 +141,9 @@ public class Lucene41Codec extends Codec {
     return simpleDocValuesFormat;
   }
 
-private final SimpleDocValuesFormat defaultDVFormat = SimpleDocValuesFormat.forName("Lucene41");
+  private final PostingsFormat defaultFormat = PostingsFormat.forName("Lucene41");
   // nocommit
-  private final SimpleDocValuesFormat defaultDVFormat = SimpleDocValuesFormat.forName("Memory");
+private final SimpleDocValuesFormat defaultDVFormat = SimpleDocValuesFormat.forName("Lucene41");
 
   // nocommit need simpleNormsFormat
 }

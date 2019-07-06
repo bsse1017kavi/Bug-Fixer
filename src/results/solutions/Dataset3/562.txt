@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -419,9 +418,9 @@ public class ZipArchiveInputStream extends ArchiveInputStream {
         } else {
             skip(Long.MAX_VALUE);
 
-inB = ZipUtil.adjustToLong(inf.getTotalIn());
+            long inB;
             if (current.getMethod() == ZipArchiveOutputStream.DEFLATED) {
-                inB = inf.getTotalIn();
+inB = ZipUtil.adjustToLong(inf.getTotalIn());
             } else {
                 inB = readBytesOfEntry;
             }

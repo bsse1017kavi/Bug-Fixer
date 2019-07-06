@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist.complete;
 
 /*
@@ -25,9 +24,9 @@ import org.eclipse.jdt.internal.compiler.lookup.*;
 public class CompletionOnSingleTypeReference extends SingleTypeReference {
 public CompletionOnSingleTypeReference(char[] source, long pos) {
 	super(source, pos);
-getTypeBinding(scope);
+}
 public void aboutToResolve(Scope scope) {
-	getTypeBinding(scope.parent); // step up from the ClassScope
+getTypeBinding(scope);
 }
 /*
  * No expansion of the completion reference into an array one

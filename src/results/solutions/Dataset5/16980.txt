@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -134,9 +133,9 @@ public class WhichResource extends Task {
             classpath = new Path(getProject());
             classpath = classpath.concatSystemClasspath("only");
             getProject().log("using system classpath: " + classpath, Project.MSG_DEBUG);
-loader = AntClassLoader.newAntClassLoader(getProject().getCoreLoader(),
+        }
         AntClassLoader loader;
-        loader = new AntClassLoader(getProject().getCoreLoader(),
+loader = AntClassLoader.newAntClassLoader(getProject().getCoreLoader(),
                     getProject(),
                     classpath, false);
         String loc = null;

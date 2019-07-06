@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -24,9 +23,9 @@ package org.jboss.as.undertow.session;
 
 public class OwnedSessionUpdate {
     private final String owner;
-private volatile boolean passivated;
+    private final long updateTime;
     private final int maxInactive;
-    private boolean passivated;
+private volatile boolean passivated;
 
     public OwnedSessionUpdate(String owner, long updateTime, int maxInactive, boolean passivated) {
         this.owner = owner;

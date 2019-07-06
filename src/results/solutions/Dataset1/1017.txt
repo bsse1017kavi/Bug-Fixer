@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UnaryComparisonOperatorNode
@@ -73,9 +72,9 @@ public class UnaryComparisonOperatorNode extends UnaryOperatorNode
 	public ValueNode bindExpression(
 		FromList fromList, SubqueryList subqueryList,
 		Vector	aggregateVector)
-bindOperand(fromList, subqueryList,
+			throws StandardException
 	{
-		super.bindExpression(fromList, subqueryList, 
+bindOperand(fromList, subqueryList,
 							 aggregateVector);
 
 		/* Set type info for this node */

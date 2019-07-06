@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public class TimerServiceAdd extends AbstractBoottimeAddStepHandler {
                     ModelNode timerServiceModel = model;
 
                     //install the ejb timer service data store path service
-RelativePathService.addService(TimerServiceFactoryService.PATH_SERVICE_NAME, path, false, relativeTo,
+                    if (path != null) {
                         if (relativeTo != null) {
-                            RelativePathService.addService(TimerServiceFactoryService.PATH_SERVICE_NAME, path, relativeTo,
+RelativePathService.addService(TimerServiceFactoryService.PATH_SERVICE_NAME, path, false, relativeTo,
                                     context.getServiceTarget(), newControllers, verificationHandler);
                         } else {
                             AbsolutePathService.addService(TimerServiceFactoryService.PATH_SERVICE_NAME, path,

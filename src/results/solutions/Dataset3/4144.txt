@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -95,9 +94,9 @@ public final class EndpointPublisherImpl implements EndpointPublisher {
         List<DeploymentAspect> aspects = DeploymentAspectsProvider.getSortedDeploymentAspects();
         ClassLoader origClassLoader = SecurityActions.getContextClassLoader();
         Deployment dep = null;
-WSDeploymentBuilder.getInstance().build(unit);
+        try {
             SecurityActions.setContextClassLoader(ClassLoaderProvider.getDefaultProvider().getServerIntegrationClassLoader());
-            WSDeploymentBuilder.getInstance().build(unit, EndpointType.JAXWS_JSE);
+WSDeploymentBuilder.getInstance().build(unit);
             dep = unit.getAttachment(WSAttachmentKeys.DEPLOYMENT_KEY);
             dep.addAttachment(ServiceTarget.class, target);
             DeploymentAspectManager dam = new DeploymentAspectManagerImpl();

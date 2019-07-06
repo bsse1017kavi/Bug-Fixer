@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -131,9 +130,9 @@ public class StartServersHandler implements OperationStepHandler, DescriptionPro
                 } catch (Exception e) {
                     ROOT_LOGGER.failedToStartServer(e, serverName);
                 }
-serverInventory.reconnectServer(serverName, domainModel, info.isRunning(), info.isStopping());
+            } else if (info != null){
                 //Reconnect the server
-                serverInventory.reconnectServer(serverName, domainModel, info.isRunning());
+serverInventory.reconnectServer(serverName, domainModel, info.isRunning(), info.isStopping());
             }
         }
     }

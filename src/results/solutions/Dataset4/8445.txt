@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class LimitFilter extends NoCacheFilter {
         public LimitDocSet(int maxDoc, int limit) {
             super(maxDoc);
             this.limit = limit;
-@Override public boolean get(int doc) {
+        }
 
-        @Override public boolean get(int doc) throws IOException {
+@Override public boolean get(int doc) {
             if (++counter > limit) {
                 return false;
             }

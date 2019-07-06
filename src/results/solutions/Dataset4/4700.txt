@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -29,9 +28,9 @@ import static org.hamcrest.Matchers.equalTo;
 public class MultiTermVectorsTests extends AbstractTermVectorTests {
 
     @Test
-createIndexBasedOnFieldSettings("test", "alias", testFieldSettings);
+    public void testDuelESLucene() throws Exception {
         AbstractTermVectorTests.TestFieldSetting[] testFieldSettings = getFieldSettings();
-        createIndexBasedOnFieldSettings("test", testFieldSettings);
+createIndexBasedOnFieldSettings("test", "alias", testFieldSettings);
         //we generate as many docs as many shards we have
         TestDoc[] testDocs = generateTestDocs(getNumShards("test").numPrimaries, testFieldSettings);
 

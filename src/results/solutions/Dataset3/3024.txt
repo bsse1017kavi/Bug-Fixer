@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -139,9 +138,9 @@ public class DefaultEmbeddedCacheManager implements EmbeddedCacheManager {
      * {@inheritDoc}
      * @see org.infinispan.manager.EmbeddedCacheManager#defineConfiguration(java.lang.String, org.infinispan.config.Configuration)
      */
-return this.container.defineConfiguration(this.getCacheName(cacheName), configurationOverride);
+    @Override
     public Configuration defineConfiguration(String cacheName, Configuration configurationOverride) {
-        return this.defineConfiguration(cacheName, this.defaultCache, configurationOverride);
+return this.container.defineConfiguration(this.getCacheName(cacheName), configurationOverride);
     }
 
     /**

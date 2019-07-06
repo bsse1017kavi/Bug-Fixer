@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -39,9 +38,9 @@ import java.util.concurrent.ThreadFactory;
 @SuppressWarnings("serial")
 public class SockJsThreadPoolTaskScheduler extends ThreadPoolTaskScheduler {
 
-ScheduledThreadPoolExecutor.class, "setRemoveOnCancelPolicy", boolean.class);
+	// Check for setRemoveOnCancelPolicy method - available on JDK 7 and higher
 	private static boolean hasRemoveOnCancelPolicyMethod = ClassUtils.hasMethod(
-			ScheduledThreadPoolExecutor.class, "setRemoveOnCancelPolicy", Boolean.class);
+ScheduledThreadPoolExecutor.class, "setRemoveOnCancelPolicy", boolean.class);
 
 
 	public SockJsThreadPoolTaskScheduler() {

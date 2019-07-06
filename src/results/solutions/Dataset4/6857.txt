@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.particles;
 
 import java.awt.FileDialog;
@@ -107,9 +106,9 @@ class EffectPanel extends JPanel {
 		final String dir = dialog.getDirectory();
 		if (dir == null || file == null || file.trim().length() == 0) return;
 		lastDir = dir;
-effect.loadEmitters(Gdx.files.absolute(new File(dir, file).getAbsolutePath()));
+		ParticleEffect effect = new ParticleEffect();
 		try {
-			effect.loadEmitters(Gdx.files.getFileHandle(new File(dir, file).getAbsolutePath(), FileType.Absolute));
+effect.loadEmitters(Gdx.files.absolute(new File(dir, file).getAbsolutePath()));
 			editor.effect = effect;
 			emitterTableModel.getDataVector().removeAllElements();
 			editor.particleData.clear();

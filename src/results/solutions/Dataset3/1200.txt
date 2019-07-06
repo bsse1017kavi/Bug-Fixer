@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public abstract class QueryMetricsHandler extends AbstractRuntimeOnlyHandler {
     }
 
     @Override
-context.stepCompleted();
+    protected void executeRuntimeStep(OperationContext context, ModelNode operation) throws OperationFailedException {
         handleQueryStatistics(context, operation);
-        context.completeStep();
+context.stepCompleted();
     }
 
     protected abstract void handle(QueryStatistics statistics, OperationContext context, String attributeName, String originalQueryName);

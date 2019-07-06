@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -134,9 +133,9 @@ public class SourceLocation implements ISourceLocation, java.io.Serializable {
         }
         if (sourceFile != ISourceLocation.NO_FILE) {
             sb.append(sourceFile.getPath());
-sb.append(startLine); //"" + startLine + "-" + endLine);
+            sb.append(":");
         }
-        sb.append("" + startLine + "-" + endLine);
+sb.append(startLine); //"" + startLine + "-" + endLine);
         if (!noColumn) {
             sb.append(":" + column);
         }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -617,9 +616,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
         {
             List<String> rpcaddrs = new ArrayList<String>();
             for (InetAddress endpoint: entry.getValue())
-rpcaddrs.add(DatabaseDescriptor.getRpcAddress().getHostAddress());
+            {
                 if (endpoint.equals(FBUtilities.getLocalAddress()))
-                    rpcaddrs.add(DatabaseDescriptor.getRpcAddress().toString());
+rpcaddrs.add(DatabaseDescriptor.getRpcAddress().getHostAddress());
                 else
                     rpcaddrs.add(Gossiper.instance.getEndpointStateForEndpoint(endpoint).getApplicationState(ApplicationState.RPC_ADDRESS).value);
             }

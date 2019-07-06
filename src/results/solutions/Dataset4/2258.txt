@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public class RestIndexPutAliasAction extends BaseRestHandler {
         controller.registerHandler(PUT, "/{index}/_aliases", this);
         //we cannot add POST for "/_aliases" because this is the _aliases api already defined in RestIndicesAliasesAction
     }
-public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) throws Exception {
+
     @Override
-    public void handleRequest(final RestRequest request, final RestChannel channel) throws Exception {
+public void handleRequest(final RestRequest request, final RestChannel channel, final Client client) throws Exception {
         String[] indices = Strings.splitStringByCommaToArray(request.param("index"));
         String alias = request.param("name");
         Map<String, Object> filter = null;

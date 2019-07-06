@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -977,9 +976,9 @@ public class WildTypePattern extends TypePattern {
 					// ok... (see pr112105)  Want to break this? Run GenericAspectK test.
 					if (ut.isTypeVariableReference()) {
 						continueCheck = false;
-//System.err.println("Verifying "+ut.getName()+" meets bounds for "+tvs[i]);
+					}
 					
-					System.err.println("Verifying "+ut.getName()+" meets bounds for "+tvs[i]);
+//System.err.println("Verifying "+ut.getName()+" meets bounds for "+tvs[i]);
 					if (continueCheck &&	
 							!tvs[i].canBeBoundTo(ut.resolve(scope.getWorld()))) {
 						// issue message that type parameter does not meet specification

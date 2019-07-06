@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class ConcurrentDynamicTemplateTests extends ElasticsearchIntegrationTest
         // The 'fieldNames' array is used to help with retrieval of index terms
         // after testing
 
-wipeIndices("test");
+        int iters = atLeast(5);
         for (int i = 0; i < iters; i++) {
-            wipeIndex("test");
+wipeIndices("test");
             client().admin().indices().prepareCreate("test")
                     .setSettings(
                             ImmutableSettings.settingsBuilder()

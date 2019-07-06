@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -130,9 +129,9 @@ public class ExternalMapper extends AbstractFieldMapper<Object> {
             parseField(builder, name, node, parserContext);
             for (Map.Entry<String, Object> entry : node.entrySet()) {
                 String propName = Strings.toUnderscoreCase(entry.getKey());
-parseMultiField(builder, name, parserContext, propName, propNode);
+                Object propNode = entry.getValue();
 
-                parseMultiField(builder, name, node, parserContext, propName, propNode);
+parseMultiField(builder, name, parserContext, propName, propNode);
             }
 
             return builder;

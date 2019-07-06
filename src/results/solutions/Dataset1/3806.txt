@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.vectorhighlight;
 
 /*
@@ -84,9 +83,9 @@ public class SimpleFragmentsBuilderTest extends AbstractTestCase {
   public void testTagsAndEncoder() throws Exception {
     FieldFragList ffl = ffl(new TermQuery(new Term(F, "a")), "<h1> a </h1>" );
     SimpleFragmentsBuilder sfb = new SimpleFragmentsBuilder();
-assertEquals( "&lt;h1&gt; [a] &lt;&#x2F;h1&gt;",
+    String[] preTags = { "[" };
     String[] postTags = { "]" };
-    assertEquals( "&lt;h1&gt; [a] &lt;/h1&gt;",
+assertEquals( "&lt;h1&gt; [a] &lt;&#x2F;h1&gt;",
         sfb.createFragment( reader, 0, F, ffl, preTags, postTags, new SimpleHTMLEncoder() ) );
   }
 

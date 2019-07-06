@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -186,9 +185,9 @@ public class SubsystemParserTestCase {
         return subsystemParser;
     }
 
-XMLOutputFactory factory = XMLOutputFactory.newInstance();
+    private String marshall(SubsystemParser subsystemParser) throws Exception {
         StringWriter stringWriter = new StringWriter();
-        XMLOutputFactory factory = XMLOutputFactory.newFactory();
+XMLOutputFactory factory = XMLOutputFactory.newInstance();
         FormattingXMLStreamWriter writer = new FormattingXMLStreamWriter(factory.createXMLStreamWriter(stringWriter));
         try {
             Assert.assertNotNull(subsystemParser.getSubsystem());

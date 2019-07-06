@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public final class BytesRefValComparator extends NestedWrappableComparator<Bytes
         }
     }
 
-docTerms = indexFieldData.load(context).getBytesValues();
+    @Override
     public FieldComparator<BytesRef> setNextReader(AtomicReaderContext context) throws IOException {
-        docTerms = indexFieldData.load(context).getBytesValues(false);
+docTerms = indexFieldData.load(context).getBytesValues();
         return this;
     }
 

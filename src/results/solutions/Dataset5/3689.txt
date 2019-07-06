@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public class CharacterConverter extends AbstractConverter<Character>
 		{
 			return null;
 		}
-return value.charAt(0);
+		else if (length == 1)
 		{
-			return new Character(value.charAt(0));
+return value.charAt(0);
 		}
 		throw newConversionException("Cannot convert '" + value + "' to Character", value, locale);
 	}

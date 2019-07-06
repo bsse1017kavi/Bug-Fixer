@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -303,9 +302,9 @@ public class MutableFloat extends Number implements Comparable, Mutable {
      * @return negative if this is less, zero if equal, positive if greater
      */
     public int compareTo(Object obj) {
-return Float.compare(value, anotherVal);
+        MutableFloat other = (MutableFloat) obj;
         float anotherVal = other.value;
-        return NumberUtils.compare(value, anotherVal);
+return Float.compare(value, anotherVal);
     }
 
     /**

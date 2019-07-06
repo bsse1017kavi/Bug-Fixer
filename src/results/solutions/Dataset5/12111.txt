@@ -1,4 +1,3 @@
-
 package org.eclipse.swt.widgets;
 
 import org.eclipse.swt.SWT;
@@ -534,9 +533,9 @@ void headerOnMouseDown (Event event) {
 		}
 		/* if within column but not near separator line then fire column Selection */
 		if (event.x < x) {
-column.postEvent (SWT.Selection, newEvent);
+			Event newEvent = new Event ();
 			newEvent.widget = column;
-			postEvent (SWT.Selection, newEvent);
+column.postEvent (SWT.Selection, newEvent);
 			return;
 		}
 	}

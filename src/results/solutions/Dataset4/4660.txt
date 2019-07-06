@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -202,9 +201,9 @@ public class MeshBuilder implements MeshPartBuilder {
 	public Mesh end() {
 		if (this.attributes == null)
 			throw new RuntimeException("Call begin() first");
-final Mesh mesh = new Mesh(true, vertices.size, indices.size, attributes);
+		endpart();
 		
-		final Mesh mesh = new Mesh(true, vertices.size / stride, indices.size, attributes);
+final Mesh mesh = new Mesh(true, vertices.size, indices.size, attributes);
 		mesh.setVertices(vertices.items, 0, vertices.size);
 		mesh.setIndices(indices.items, 0, indices.size);
 		

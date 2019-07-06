@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -115,9 +114,9 @@ public class ClusterSearchShardsTests extends ElasticsearchIntegrationTest {
                 assertThat(group.getShards().length, equalTo(2));
             } else if (group.getIndex().equals("test2")) {
                 seenTest2 = true;
-fail();
+                assertThat(group.getShards().length, equalTo(2));
             } else {
-                assert false;
+fail();
             }
         }
         assertThat(seenTest1, equalTo(true));

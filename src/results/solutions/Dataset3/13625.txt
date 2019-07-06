@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -237,9 +236,9 @@ public final class MBeanExporterTests extends AbstractMBeanServerTests {
 		bean.setName("Rob Harrop");
 
 		ProxyFactory factory = new ProxyFactory();
-factory.setInterfaces(new Class<?>[] { IJmxTestBean.class });
+		factory.setTarget(bean);
 		factory.addAdvice(new NopInterceptor());
-		factory.setInterfaces(new Class[] { IJmxTestBean.class });
+factory.setInterfaces(new Class<?>[] { IJmxTestBean.class });
 
 		IJmxTestBean proxy = (IJmxTestBean) factory.getProxy();
 		String name = "bean:mmm=whatever";

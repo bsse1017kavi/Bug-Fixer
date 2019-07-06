@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class PasswordCheckUtil {
 
     public static final PasswordCheckUtil INSTANCE = new PasswordCheckUtil();
 
-public List<PasswordRestriction> passwordValuesRestrictions = new ArrayList<PasswordRestriction>();
+    private PasswordStrengthChecker passwordStrengthChecker;
     private PasswordStrength acceptable = PasswordStrength.MODERATE;
-    private List<PasswordRestriction> passwordValuesRestrictions = new ArrayList<PasswordRestriction>();
+public List<PasswordRestriction> passwordValuesRestrictions = new ArrayList<PasswordRestriction>();
 
     private PasswordCheckUtil() {
         InputStream is = Keyboard.class.getResourceAsStream("utility.properties");

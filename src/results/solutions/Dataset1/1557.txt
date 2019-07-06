@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.jdbc.XATransactionState
@@ -152,9 +151,9 @@ final class XATransactionState extends ContextImpl {
 					conn.setApplicationConnection(null);
 					notifyAll();
 					associationState = TRO_FAIL;
-else if (se.isLockTimeout())
+					if (SQLState.DEADLOCK.equals(se.getMessageId()))
 						rollbackOnlyCode = XAException.XA_RBDEADLOCK;
-					else if (SQLState.LOCK_TIMEOUT.equals(se.getMessageId()))
+else if (se.isLockTimeout())
 						rollbackOnlyCode = XAException.XA_RBTIMEOUT;					
 					else
 						rollbackOnlyCode = XAException.XA_RBOTHER;

@@ -1,4 +1,3 @@
-
 /*
  * @(#) JUnicastServerRef.java	1.0 02/07/15
  *
@@ -64,9 +63,9 @@ public class JeremiePRODelegate implements PortableRemoteObjectDelegate {
     /**
      * Empty constructor for instanciate this class
      */
-unicastClass = Thread.currentThread().getContextClassLoader().loadClass(className);
+    public JeremiePRODelegate() throws Exception {
 	// class for name
-	unicastClass = Class.forName(className);
+unicastClass = Thread.currentThread().getContextClassLoader().loadClass(className);
 	this.port=new Integer(System.getProperty(CarolDefaultValues.PORT_NUMBER_PROPERTY, "0")).intValue();
     }
 

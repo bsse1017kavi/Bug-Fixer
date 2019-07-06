@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -182,9 +181,9 @@ public class SyslogAuditLogHandler extends AuditLogHandler {
 
                 if (transport == Transport.TLS && (tlsClientCertStorePath != null || tlsTrustStorePath != null)){
                     final SSLContext context = SSLContext.getInstance("TLS");
-final KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+                    KeyManager[] keyManagers = null;
                     if (tlsClientCertStorePath != null){
-                        final KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+final KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
                         final FileInputStream in = new FileInputStream(pathManager.resolveRelativePathEntry(tlsClientCertStorePath, tlsClientCertStoreRelativeTo));
                         try {
                             final KeyStore ks = KeyStore.getInstance("JKS");

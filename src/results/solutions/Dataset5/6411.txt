@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2009 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -71,9 +70,9 @@ public abstract class AbstractCoreModelTransformerAction implements IObjectActio
 
 	public abstract void transform(Resource r);
 
-MessageDialog.openError(shell, Messages.AbstractCoreModelTransformerAction_PluginName, e.getMessage());
+	public void throwE(final IOException e) {
 		final Shell shell = new Shell();
-		MessageDialog.openError(shell, "Xtend EMF Eclipse Plug-in", e.getMessage());
+MessageDialog.openError(shell, Messages.AbstractCoreModelTransformerAction_PluginName, e.getMessage());
 		throw new RuntimeException(e);
 	}
 

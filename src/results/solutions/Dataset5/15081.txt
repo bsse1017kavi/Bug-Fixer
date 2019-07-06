@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -166,9 +165,9 @@ public class SQLStoreQuery
             if (resultMapping == null)
                 _resultMapping = null;
             else {
-getMappingRepositoryInstance();
+                ClassLoader envLoader = ctx.getStoreContext().getClassLoader();
                 MappingRepository repos = q.getStore().getConfiguration().
-                    getMappingRepository();
+getMappingRepositoryInstance();
                 _resultMapping = repos.getQueryResultMapping
                     (ctx.getResultMappingScope(), resultMapping, envLoader,
                         true);

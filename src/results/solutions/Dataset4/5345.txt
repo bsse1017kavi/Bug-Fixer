@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -193,9 +192,9 @@ public class IssuesFragment extends PagedItemFragment<Issue> {
         case id.create_issue:
             startActivityForResult(EditIssueActivity.createIntent(repository),
                     ISSUE_CREATE);
-startActivityForResult(EditIssuesFilterActivity.createIntent(filter),
+            return true;
         case id.m_filter:
-            startActivityForResult(FilterIssuesActivity.createIntent(filter),
+startActivityForResult(EditIssuesFilterActivity.createIntent(filter),
                     ISSUE_FILTER_EDIT);
             return true;
         case id.m_bookmark:

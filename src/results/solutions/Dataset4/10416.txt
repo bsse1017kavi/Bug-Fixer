@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class SimpleIpMappingTests {
                 .field("ip2", "0.1")
                 .field("ip3", "127.0.0.1.2")
                 .endObject()
-assertThat(doc.doc().getFieldable("ip1"), notNullValue());
+                .copiedBytes());
 
-        assertThat(doc.doc().getField("ip1"), notNullValue());
+assertThat(doc.doc().getFieldable("ip1"), notNullValue());
         assertThat(doc.doc().get("ip1"), nullValue()); // its numeric
         assertThat(doc.doc().get("ip2"), equalTo("0.1"));
         assertThat(doc.doc().get("ip3"), equalTo("127.0.0.1.2"));

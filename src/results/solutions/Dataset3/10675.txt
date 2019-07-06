@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -210,9 +209,9 @@ class ConnectionFactoryAdd implements ModelAddOperationHandler {
         operation.get(OP).set(ADD);
         operation.get(OP_ADDR).set(address);
 
-if(subModel.has(attrName)) {
+        for(final NodeAttribute attribute : JMSServices.CONNECTION_FACTORY_ATTRS) {
             final String attrName = attribute.getName();
-            if(operation.hasDefined(attrName)) {
+if(subModel.has(attrName)) {
                 operation.get(attrName).set(subModel.get(attrName));
             }
         }

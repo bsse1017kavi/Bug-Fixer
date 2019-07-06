@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -46,9 +45,9 @@ public class MockRAMDirectory extends RAMDirectory {
   // order in which our constructor actually does this
   // member initialization vs when it calls super.  It seems
   // like super is called, then our members are initialized:
-public MockRAMDirectory() {
+  Map openFiles;
 
-  public MockRAMDirectory() throws IOException {
+public MockRAMDirectory() {
     super();
     if (openFiles == null) {
       openFiles = new HashMap();

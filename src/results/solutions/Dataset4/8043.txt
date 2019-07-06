@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -294,9 +293,9 @@ public class RecoverySource extends AbstractComponent {
                         RecoveryResponse response = recover(request);
                         channel.sendResponse(response);
                     } catch (Exception e) {
-} catch (Exception e1) {
+                        try {
                             channel.sendResponse(e);
-                        } catch (IOException e1) {
+} catch (Exception e1) {
                             // ignore
                         }
                     }

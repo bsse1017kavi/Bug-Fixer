@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.utils;
 
 import java.util.Comparator;
@@ -24,9 +23,9 @@ public class QuickSelect<T> {
 	private int partition(int left, int right, int pivot) {
 		T pivotValue = array[pivot];
 		swap(right, pivot);
-if (comp.compare(array[i], pivotValue) == -1) {
+		int storage = left;
 		for (int i = left; i < right; i++) {
-			if (comp.compare(array[i], pivotValue) < 0) {
+if (comp.compare(array[i], pivotValue) == -1) {
 				swap(storage, i);
 				storage++;
 			}

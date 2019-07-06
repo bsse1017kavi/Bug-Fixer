@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat Middleware LLC, and individual contributors
@@ -193,9 +192,9 @@ public final class ServerConfigImpl extends AbstractServerConfig implements Abst
     public Integer getVirtualHostPort(String hostname, boolean securePort) {
         ServerHostInfo hostInfo = new ServerHostInfo(hostname);
         Host undertowHost = getUndertowHost(hostInfo);
-return undertowHost.getServer().getListeners().get(0).getBinding().getValue().getPort();
+        if (undertowHost != null && !undertowHost.getServer().getListeners().isEmpty()) {
             if (!securePort) {
-                return undertowHost.getServer().getListeners().get(0).getBinding().getValue().getAbsolutePort();
+return undertowHost.getServer().getListeners().get(0).getBinding().getValue().getPort();
             } else {
                 for(ListenerService<?> listener : undertowHost.getServer().getListeners()) {
                     if (listener.isSecure()) {

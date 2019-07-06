@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -53,9 +52,9 @@ public class KMeansClusterMapper extends Mapper<WritableComparable<?>,VectorWrit
       
       String clusterPath = conf.get(KMeansConfigKeys.CLUSTER_PATH_KEY);
       if ((clusterPath != null) && (clusterPath.length() > 0)) {
-throw new IllegalStateException("No clusters found. Check your -c path.");
+        KMeansUtil.configureWithClusterInfo(new Path(clusterPath), clusters);
         if (clusters.isEmpty()) {
-          throw new IllegalStateException("Cluster is empty!");
+throw new IllegalStateException("No clusters found. Check your -c path.");
         }
       }  
       this.clusterer = new KMeansClusterer(measure);

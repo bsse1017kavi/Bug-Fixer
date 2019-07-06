@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -444,9 +443,9 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
     }
 
     private void registerExtraHandlers() {
-cmdRegistry.registerHandler(provider.createCommandHandler(this), provider.isTabComplete(), provider.getNames());
+        ServiceLoader<CommandHandlerProvider> loader = ServiceLoader.load(CommandHandlerProvider.class);
         for (CommandHandlerProvider provider : loader) {
-            cmdRegistry.registerHandler(provider.createCommandHandler(this), provider.getNames());
+cmdRegistry.registerHandler(provider.createCommandHandler(this), provider.isTabComplete(), provider.getNames());
         }
     }
 

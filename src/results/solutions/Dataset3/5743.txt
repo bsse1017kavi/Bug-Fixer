@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class LsHandler extends CommandHandlerWithHelp {
         l = new ArgumentWithoutValue(this, "-l");
         nodePath = new ArgumentWithValue(this, OperationRequestCompleter.INSTANCE, 0, "--node-path");
     }
-protected void doHandle(CommandContext ctx) throws CommandFormatException {
+
     @Override
-    protected void doHandle(CommandContext ctx) {
+protected void doHandle(CommandContext ctx) throws CommandFormatException {
 
         final String nodePath = this.nodePath.getValue(ctx.getParsedArguments());
 

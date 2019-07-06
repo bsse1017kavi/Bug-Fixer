@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -195,9 +194,9 @@ public class PointcutResidueTestCase extends WeaveTestCase {
                         ResolvedType.VOID,
                         UnresolvedType.forNames(formalTypes),false)),
             	0, -1, -1, null, null);
-CrosscuttingMembers xcut = new CrosscuttingMembers(inAspect,true);
+
 		ResolvedType inAspect = world.resolve("Aspect");
-		CrosscuttingMembers xcut = new CrosscuttingMembers(inAspect);
+CrosscuttingMembers xcut = new CrosscuttingMembers(inAspect,true);
 		inAspect.crosscuttingMembers = xcut;
 		
         ShadowMunger cp = pp.concretize(inAspect, world, null);

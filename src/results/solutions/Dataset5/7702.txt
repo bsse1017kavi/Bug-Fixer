@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -97,9 +96,9 @@ public class AnnotationPatternTestCase extends TestCase {
 		PatternParser p = new PatternParser("@@Foo");
 		try {
 			AnnotationTypePattern bad = p.maybeParseAnnotationPattern();
-assertEquals("name pattern",pEx.getMessage());
+			fail("ParserException expected");
 		} catch(ParserException pEx) {
-			assertEquals("expected name pattern",pEx.getMessage());
+assertEquals("name pattern",pEx.getMessage());
 		}
 	}
 	

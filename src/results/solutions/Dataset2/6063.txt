@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -81,9 +80,9 @@ public class ExpungeFolderAction extends AbstractColumbaAction
     public void selectionChanged(SelectionChangedEvent e) {
         if (((TreeSelectionChangedEvent) e).getSelected().length > 0) {
             AbstractFolder folder = ((TreeSelectionChangedEvent) e).getSelected()[0];
-FolderItem item = folder.getConfiguration();
+
             if (folder != null) {
-                FolderItem item = folder.getFolderItem();
+FolderItem item = folder.getConfiguration();
 
                 if (folder instanceof VirtualFolder) {
                     setEnabled(false);

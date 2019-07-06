@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -144,9 +143,9 @@ class RegexpHTMLParser extends HTMLParser {
         Perl5Matcher matcher = JMeterUtils.getMatcher();
         PatternMatcherInput input = (PatternMatcherInput) localInput.get();
         // TODO: find a way to avoid the cost of creating a String here --
-input.setInput(new String(html)); // TODO - charset?
+        // probably a new PatternMatcherInput working on a byte[] would do
         // better.
-        input.setInput(new String(html));
+input.setInput(new String(html)); // TODO - charset?
         Pattern pattern=JMeterUtils.getPatternCache().getPattern(
                 REGEXP,
                 Perl5Compiler.CASE_INSENSITIVE_MASK

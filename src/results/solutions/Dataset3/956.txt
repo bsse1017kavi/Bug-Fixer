@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class PathAddress implements Iterable<PathElement> {
             // when bug is fixed
             final List<Property> props = new ArrayList<Property>();
             String key = null;
-if (element.getType() == ModelType.PROPERTY || element.getType() == ModelType.OBJECT) {
+            for (ModelNode element : node.asList()) {
                 Property prop = null;
-                if (element.getType() == ModelType.PROPERTY) {
+if (element.getType() == ModelType.PROPERTY || element.getType() == ModelType.OBJECT) {
                     prop = element.asProperty();
                 }
                 else if (key == null) {

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search;
 
 import java.io.IOException;
@@ -118,9 +117,9 @@ public class TopKInEachNodeHandler extends FacetResultsHandler {
     int K = Math.min(facetRequest.getNumResults(),taxonomyReader.getSize()); // number of best results in each node
 
     // this will grow into the returned IntermediateFacetResult
-int partitionSize = arrays.arrayLength; // all partitions, except, possibly, the last,
+    IntToObjectMap<AACO> AACOsOfOnePartition = new IntToObjectMap<AACO>();
 
-    int partitionSize = arrays.getArraysLength(); // all partitions, except, possibly, the last,
+int partitionSize = arrays.arrayLength; // all partitions, except, possibly, the last,
     // have the same length. Hence modulo is OK.
 
     int depth = facetRequest.getDepth();

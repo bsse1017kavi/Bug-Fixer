@@ -1,4 +1,3 @@
-
  /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -253,9 +252,9 @@ public class BootStrapper
     {
         public void doVerb(Message message)
         {
-Message response = message.getInternalReply(tokenString.getBytes(Charsets.UTF_8));
+            StorageService ss = StorageService.instance;
             String tokenString = StorageService.getPartitioner().getTokenFactory().toString(ss.getBootstrapToken());
-            Message response = message.getReply(FBUtilities.getLocalAddress(), tokenString.getBytes(Charsets.UTF_8));
+Message response = message.getInternalReply(tokenString.getBytes(Charsets.UTF_8));
             MessagingService.instance.sendOneWay(response, message.getFrom());
         }
     }

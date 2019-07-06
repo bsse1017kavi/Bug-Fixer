@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class CLIAccessControl {
             return false;
         }
 
-log.warn("access-control/default is missing operations: " + accessControl);
+        final ModelNode defaults = accessControl.get(Util.DEFAULT);
         if(!defaults.has(Util.OPERATIONS)) {
-            log.warn("access-control/default is missing operations: " + defaults);
+log.warn("access-control/default is missing operations: " + accessControl);
             return false;
         }
 

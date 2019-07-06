@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.physics.bullet;
 
 import com.badlogic.gdx.jnigen.AntScriptGenerator;
@@ -9,9 +8,9 @@ import com.badlogic.gdx.jnigen.NativeCodeGenerator;
 import com.badlogic.gdx.jnigen.BuildTarget.TargetOs;
 
 public class BulletBuild {
-new NativeCodeGenerator().generate("src", "bin", "jni");
+	public static void main(String[] args) throws Exception {
 		// generate C/C++ code
-		new NativeCodeGenerator().generate("src", "bin", "jni", null, new String[] { "**/BulletBuild.java" });
+new NativeCodeGenerator().generate("src", "bin", "jni");
 
 		// generate build scripts, for win32 only
 		// custom target for testing purposes

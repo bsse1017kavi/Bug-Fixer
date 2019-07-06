@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -128,9 +127,9 @@ protected void copyExtraResourcesBack() throws CoreException {
 								resource.copy(copiedResource.getFullPath(), true, null);
 							return false;
 						case IResource.FOLDER :
-if (resource.getName().equalsIgnoreCase("CVS")) return false; // TEMPORARY //$NON-NLS-1$
+							if (resource.getFullPath().equals(outputPath)) return false;
 							if (resource.getFullPath().equals(sourcePath)) return true;
-							if (resource.getName().equalsIgnoreCase("CVS")) return false; // TEMPORARY
+if (resource.getName().equalsIgnoreCase("CVS")) return false; // TEMPORARY //$NON-NLS-1$
 
 							getOutputFolder(resource.getFullPath().removeFirstSegments(segmentCount));
 					}

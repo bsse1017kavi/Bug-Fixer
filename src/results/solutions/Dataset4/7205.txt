@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -114,9 +113,9 @@ public class PendingClusterTasksResponse extends ActionResponse implements Itera
 
     @Override
     public void readFrom(StreamInput in) throws IOException {
-pendingTasks = new ArrayList<>(size);
+        super.readFrom(in);
         int size = in.readVInt();
-        pendingTasks = new ArrayList<PendingClusterTask>(size);
+pendingTasks = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             PendingClusterTask task = new PendingClusterTask();
             task.readFrom(in);

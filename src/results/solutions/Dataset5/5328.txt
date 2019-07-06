@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.6 $ $Date$
@@ -105,9 +104,9 @@ public abstract class SignInPanel extends Panel
 				// logged in, than continue to the original destination,
 				// otherwise to the Home page
 				if (!getPage().continueToOriginalDestination())
-getApplication().getHomePage(), (PageParameters)null));
+				{
 					setResponsePage(getApplication().getSessionSettings().getPageFactory().newPage(
-							getApplicationPages().getHomePage(), (PageParameters)null));
+getApplication().getHomePage(), (PageParameters)null));
 				}
 			}
 			else

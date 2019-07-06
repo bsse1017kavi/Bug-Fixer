@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 Markus Alexander Kuppe.
  * All rights reserved. This program and the accompanying materials
@@ -38,9 +37,9 @@ public class DnsSdNamespace extends Namespace {
 		} else if (parameters != null && parameters.length == 2 && parameters[0] instanceof IServiceTypeID && parameters[1] instanceof URI) {
 			IServiceTypeID serviceTypeID = (IServiceTypeID) parameters[0];
 			URI uri = (URI) parameters[1];
-throw new IDCreateException(Messages.DnsSdNamespace_Wrong_Parameters);
+			return new DnsSdServiceID(this, new DnsSdServiceTypeID(this, serviceTypeID), uri);
 		} else {
-			throw new IDCreateException("Wrong parameters");
+throw new IDCreateException(Messages.DnsSdNamespace_Wrong_Parameters);
 		}
 	}
 

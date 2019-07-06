@@ -1,4 +1,3 @@
-
 package org.eclipse.xpand3.parser;
 
 import org.antlr.runtime.ANTLRStringStream;
@@ -191,9 +190,9 @@ public class Xpand3MigratedNodeParserTest extends AbstractXpand3NodeParserTest {
 	private CompositeNode parse(String s) throws Exception {
 		ANTLRStringStream stream = new ANTLRStringStream(s);
 		Xpand3NodeLexer lexer = new Xpand3NodeLexer(stream);
-Node rootNode = xpand3NodeParser.r_test_expression();
+		CommonTokenStream tokenStream = new CommonTokenStream(lexer);
 		Xpand3NodeParser xpand3NodeParser = new Xpand3NodeParser(tokenStream);
-		Node rootNode = xpand3NodeParser.test_expression();
+Node rootNode = xpand3NodeParser.r_test_expression();
 		System.out.println(NodeUtil.toString(rootNode));
 		return (CompositeNode) rootNode;
 	}

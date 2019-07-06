@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -39,9 +38,9 @@ public class TestAuthManager extends JMeterTestCase {
 
         public void testFile() throws Exception {
             AuthManager am = new AuthManager();
-am.addFile(findTestPath("testfiles/TestAuth.txt"));
+            CollectionProperty ao = am.getAuthObjects();
             assertEquals(0, ao.size());
-            am.addFile("testfiles/TestAuth.txt");
+am.addFile(findTestPath("testfiles/TestAuth.txt"));
             assertEquals(9, ao.size());
             Authorization at;
             at = am.getAuthForURL(new URL("http://a.b.c/"));

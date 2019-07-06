@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -77,9 +76,9 @@ public class CallTargetTest extends BuildFileTest {
         expectLogContaining("testinheritreffileset", "calltarget.xml");
     }
 
-project.executeTarget("testinheritreffilterset");
+    // see bugrep 21724 (references not passing through with antcall)
     public void testInheritFilterset() {
-        project.executeTarget("testinheritfilterset");
+project.executeTarget("testinheritreffilterset");
     }
 
     public void tearDown() {

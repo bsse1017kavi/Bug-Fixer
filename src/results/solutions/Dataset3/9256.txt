@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -131,9 +130,9 @@ public class BshScriptFactory implements ScriptFactory, BeanClassLoaderAware {
 					Object result = BshScriptUtils.evaluateBshScript(
 							scriptSource.getScriptAsString(), actualInterfaces, this.beanClassLoader);
 					if (result instanceof Class) {
-this.scriptClass = (Class<?>) result;
+						// A Class: We'll cache the Class here and create an instance
 						// outside of the synchronized block.
-						this.scriptClass = (Class) result;
+this.scriptClass = (Class<?>) result;
 					}
 					else {
 						// Not a Class: OK, we'll simply create BeanShell objects

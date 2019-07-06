@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -75,9 +74,9 @@ public class RestClusterHealthAction extends BaseRestHandler {
                 logger.error("Failed to send failure response", e1);
             }
             return;
-client.admin().cluster().health(clusterHealthRequest, new ActionListener<ClusterHealthResponse>() {
+        }
         final int fLevel = level;
-        client.admin().cluster().execHealth(clusterHealthRequest, new ActionListener<ClusterHealthResponse>() {
+client.admin().cluster().health(clusterHealthRequest, new ActionListener<ClusterHealthResponse>() {
             @Override public void onResponse(ClusterHealthResponse response) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

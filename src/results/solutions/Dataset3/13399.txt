@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -330,9 +329,9 @@ final class ManagedProcess {
                                 break;
                             }
                         }
-log.error("Received unknown command", e);
+                    } catch (IllegalArgumentException e) {
                         // unknown command...
-                        log.error("Received unknown command: " + b.toString());
+log.error("Received unknown command", e);
                     }
                     if (status == Status.MORE) StreamUtils.readToEol(inputStream);
 

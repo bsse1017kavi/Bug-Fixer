@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1211,9 +1210,9 @@ public class DefaultCodeFormatterOptions {
 		}
 		final Object newLineControl = settings.get(JavaCore.FORMATTER_NEWLINE_CONTROL);
 		if (newLineControl != null) {
-final Object newLineElseIf  = settings.get(JavaCore.FORMATTER_NEWLINE_ELSE_IF);
+			this.insert_new_line_in_control_statements = JavaCore.INSERT.equals(newLineControl);
 		}
-		final Object newLineElseIf  = settings.get(JavaCore.FORMATTER_NEWLINE_CONTROL);
+final Object newLineElseIf  = settings.get(JavaCore.FORMATTER_NEWLINE_ELSE_IF);
 		if (newLineElseIf != null) {
 			this.compact_else_if = JavaCore.DO_NOT_INSERT.equals(newLineElseIf);
 		}

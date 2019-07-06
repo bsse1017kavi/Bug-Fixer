@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -105,9 +104,9 @@ public class UndertowSubsystemTestCase extends AbstractSubsystemBaseTest {
         final ServiceName jspServiceName = UndertowService.SERVLET_CONTAINER.append("myContainer");
         ServiceController<ServletContainerService> jspServiceServiceController = (ServiceController<ServletContainerService>) mainServices.getContainer().getService(jspServiceName);
         Assert.assertNotNull(jspServiceServiceController);
-Assert.assertNotNull(jspConfig.createJSPServletInfo());
+        JSPConfig jspConfig = jspServiceServiceController.getService().getValue().getJspConfig();
         Assert.assertNotNull(jspConfig);
-        Assert.assertNotNull(jspConfig.getJSPServletInfo());
+Assert.assertNotNull(jspConfig.createJSPServletInfo());
 
 
     }

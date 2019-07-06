@@ -1,4 +1,3 @@
-
 import java.util.*;
 import org.xbill.DNS.*;
 
@@ -37,9 +36,9 @@ main(String [] args) throws Exception {
 		if (type < 0)
 			throw new IllegalArgumentException("invalid type");
 		start = 2;
-Lookup l = new Lookup(args[i], type);
+	}
 	for (int i = start; i < args.length; i++) {
-		Lookup l = new Lookup(args[i], (short) type);
+Lookup l = new Lookup(args[i], type);
 		l.run();
 		printAnswer(args[i], l);
 	}

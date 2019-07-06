@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -214,9 +213,9 @@ public class CliLauncher {
                 exitCode = 1;
                 return;
             }
-cmdCtx = initCommandContext(defaultControllerHost, defaultControllerPort, username, password, false, connect);
+
             if(version) {
-                cmdCtx = new CommandContextImpl();
+cmdCtx = initCommandContext(defaultControllerHost, defaultControllerPort, username, password, false, connect);
                 VersionHandler.INSTANCE.handle(cmdCtx);
                 return;
             }

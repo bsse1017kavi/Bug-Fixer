@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.BaseDataFileFactory
@@ -2222,9 +2221,9 @@ public final class BaseDataFileFactory
                 sb.append(".dat");
             }
             else
-sb.append(Long.toHexString(containerId.getContainerId()));
+            {
                 sb.append(stub ? 'D' : 'C');
-                sb.append(containerId.getContainerId());
+sb.append(Long.toHexString(containerId.getContainerId()));
                 sb.append(".DAT");
             }
             return storageFactory.newStorageFile( sb.toString());

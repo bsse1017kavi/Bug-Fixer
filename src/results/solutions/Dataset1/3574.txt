@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.jdbc.EmbedBlob
@@ -592,9 +591,9 @@ final class EmbedBlob extends ConnectionChild implements Blob
 
                 setPosition(start-1);
                 // look for first character
-{ // pattern is not necessarily a Derby Blob
+                byte[] b;
                 try
-                { // pattern is not necessarily a cloudscape Blob
+{ // pattern is not necessarily a Derby Blob
                     b = pattern.getBytes(1,1);
                 }
                 catch (SQLException e)

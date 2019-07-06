@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -108,9 +107,9 @@ public final class ServiceVerificationHandler extends AbstractServiceListener<Ob
             }
         }
         for (ServiceController<?> controller : set) {
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+            controller.removeListener(this);
         }
-        context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
     }
 
     public synchronized void listenerAdded(final ServiceController<?> controller) {

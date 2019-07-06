@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -726,9 +725,9 @@ public class BaseWicketTester
 		parser.parse(getLastResponseAsString());
 		XmlTag tag;
 		while ((tag = (XmlTag)parser.nextTag()) != null)
-"wicket-ajax-base-url".equals(tag.getAttribute("id")))
+		{
 			if (tag.isOpen() && tag.getName().equals("script") &&
-				"wicket-ajax-base-url".equals(tag.getString("id")))
+"wicket-ajax-base-url".equals(tag.getAttribute("id")))
 			{
 				parser.next();
 				return parser.getString().toString().split("\\\"")[1];

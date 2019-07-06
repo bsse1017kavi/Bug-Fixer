@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -122,9 +121,9 @@ class ScaledNumericPanel extends EditorPanel {
 				GridBagLayout layout = (GridBagLayout)getContentPanel().getLayout();
 				GridBagConstraints chartConstraints = layout.getConstraints(chart);
 				GridBagConstraints expandButtonConstraints = layout.getConstraints(expandButton);
-expandButton.setText("-");
+				if (expanded) {
 					chart.setPreferredSize(new Dimension(150, 200));
-					expandButton.setText("�");
+expandButton.setText("-");
 					chartConstraints.weightx = 1;
 					expandButtonConstraints.weightx = 0;
 				} else {

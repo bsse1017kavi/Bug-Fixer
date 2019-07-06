@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -381,9 +380,9 @@ public final class AST {
 	public static CompilationUnit parseCompilationUnit(char[] source) {
 		if (source == null) {
 			throw new IllegalArgumentException();
-CompilationUnitResolver.parse(source, JavaCore.getOptions()); // no better custom options
+		}
 		CompilationUnitDeclaration compilationUnitDeclaration = 
-			CompilationUnitResolver.parse(source);
+CompilationUnitResolver.parse(source, JavaCore.getOptions()); // no better custom options
 
 		ASTConverter converter = new ASTConverter(false);
 		AST ast = new AST();

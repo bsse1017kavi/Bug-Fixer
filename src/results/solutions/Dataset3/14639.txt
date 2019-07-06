@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -301,9 +300,9 @@ public class DomainRootDefinition extends SimpleResourceDefinition {
         resourceRegistration.registerSubModel(
                 new ManagedDMRContentTypeResourceDefinition(contentRepo, ROLLOUT_PLAN,
                 PathElement.pathElement(MANAGEMENT_CLIENT_CONTENT, ROLLOUT_PLANS), new RolloutPlanValidator(), DomainResolver.getResolver(ROLLOUT_PLANS), DomainResolver.getResolver(ROLLOUT_PLAN)));
-resourceRegistration.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, true, false, !isMaster));
+
         // Extensions
-        resourceRegistration.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, true, !isMaster));
+resourceRegistration.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, true, false, !isMaster));
 
 
         // Initialize the domain transformers

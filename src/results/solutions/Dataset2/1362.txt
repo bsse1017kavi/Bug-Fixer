@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -22,9 +21,9 @@ public AnonymousLocalTypeDeclaration(){
 									//without checking systematically if the naem is null .... 
 public MethodBinding createsInternalConstructorWithBinding(MethodBinding inheritedConstructorBinding) {
 	//Add to method'set, the default constuctor that just recall the
-String baseName = "$anonymous"/*nonNLS*/;
+	//super constructor with the same arguments
 
-	String baseName = "$anonymous"; //$NON-NLS-1$
+String baseName = "$anonymous"/*nonNLS*/;
 	TypeBinding[] argumentTypes = inheritedConstructorBinding.parameters;
 	int argumentsLength = argumentTypes.length;
 	//the constructor

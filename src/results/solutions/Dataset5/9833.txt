@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -73,9 +72,9 @@ public class DateDV extends DateTimeDV {
 
     public Object getActualValue(String content) throws InvalidDatatypeValueException {
         try{
-throw new InvalidDatatypeValueException("cvc-datatype-valid.1.2.1", new Object[]{content, "date"});
+            return parse(content, null);
         } catch(Exception ex){
-            throw new InvalidDatatypeValueException("not a valid date");
+throw new InvalidDatatypeValueException("cvc-datatype-valid.1.2.1", new Object[]{content, "date"});
         }
     }
 

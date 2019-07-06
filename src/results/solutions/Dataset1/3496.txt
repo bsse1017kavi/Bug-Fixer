@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.locator;
 /*
  * 
@@ -67,9 +66,9 @@ public class DatacenterShardStategy extends AbstractReplicationStrategy
      * This Method will get the required information of the EndPoint from the
      * DataCenterEndPointSnitch and poopulates this singleton class.
      */
-this.tokens = new ArrayList<Token>(metadata.sortedTokens());
+    private synchronized void loadEndPoints(TokenMetadata metadata) throws IOException
     {
-        this.tokens = new ArrayList<Token>(tokens);
+this.tokens = new ArrayList<Token>(metadata.sortedTokens());
         String localDC = ((DatacenterEndPointSnitch)snitch_).getLocation(InetAddress.getLocalHost());
         dcMap = new HashMap<String, List<Token>>();
         for (Token token : this.tokens)

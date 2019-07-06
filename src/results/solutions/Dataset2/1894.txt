@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -151,9 +150,9 @@ protected void addAffectedSourceFiles() {
 	}
 }
 
-newState.tagAsStructurallyChanged();
+protected void addDependentsOf(IPath path, boolean hasStructuralChanges) {
 	if (hasStructuralChanges)
-		newState.hasStructuralChanges();
+newState.tagAsStructurallyChanged();
 	// the qualifiedStrings are of the form 'p1/p1' & the simpleStrings are just 'X'
 	path = path.setDevice(null);
 	String packageName = path.uptoSegment(path.segmentCount() - 1).toString();

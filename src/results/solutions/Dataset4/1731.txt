@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -111,9 +110,9 @@ public class ImageProcessor {
 		if (settings.alias) {
 			String crc = hash(rect.image);
 			Rect existing = crcs.get(crc);
-existing.aliases.add(rect);
+			if (existing != null) {
 				System.out.println(rect.name + " (alias of " + existing.name + ")");
-				existing.aliases.add(rect.name);
+existing.aliases.add(rect);
 				return;
 			}
 			crcs.put(crc, rect);

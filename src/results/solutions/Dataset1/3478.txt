@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.catalog.types.RoutineAliasInfo
@@ -321,9 +320,9 @@ public class RoutineAliasInfo extends MethodAliasInfo
      * we extract the catalog type and use that.
      * 
      * @param onDiskType The object read that represents the type.
-public static TypeDescriptor getStoredType(Object onDiskType)
+     * @return A type descriptor.
      */
-    private static TypeDescriptor getStoredType(Object onDiskType)
+public static TypeDescriptor getStoredType(Object onDiskType)
     {
         if (onDiskType instanceof OldRoutineType)
             return ((OldRoutineType) onDiskType).getCatalogType();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -229,9 +228,9 @@ class ModClusterConfigResourceDefinition extends SimpleResourceDefinition {
     static final SimpleAttributeDefinition SIMPLE_LOAD_PROVIDER = SimpleAttributeDefinitionBuilder.create(CommonAttributes.SIMPLE_LOAD_PROVIDER_FACTOR, ModelType.INT, true)
             .setRestartAllServices()
             .setXmlName(CommonAttributes.FACTOR)
-.setValidator(new IntRangeValidator(0, true, true))
+                    //.setDefaultValue(new ModelNode(1))
             .setAllowExpression(true)
-            .setValidator(new IntRangeValidator(1, true, true))
+.setValidator(new IntRangeValidator(0, true, true))
             .build();
 
     // order here controls the order of writing into xml, should follow xsd schema

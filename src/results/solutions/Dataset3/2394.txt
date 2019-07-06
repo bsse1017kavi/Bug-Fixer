@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -192,9 +191,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
      * @throws IOException on error
      */
     @Override
-long available = entrySize - entryOffset;
+    public long skip(long numToSkip) throws IOException {
 
-        long available = (entrySize - entryOffset);
+long available = entrySize - entryOffset;
         numToSkip = Math.min(numToSkip, available);
 
         long skipped = IOUtils.skip(is, numToSkip); 

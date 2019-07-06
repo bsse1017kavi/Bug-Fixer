@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -173,9 +172,9 @@ public class DeploymentDescriptorMethodProcessor implements DeploymentUnitProces
                     component.addInterceptorMethodOverride(preDestroy.getClassName(), builder.build());
                 }
             }
-if (component.isStateful()) {
+        }
 
-        if (metaData instanceof SessionBeanMetaData) {
+if (component.isStateful()) {
 
             final SessionBeanMetaData sessionBeanMetadata = (SessionBeanMetaData) metaData;
             // pre-passivate(s) of the interceptor configured (if any) in the deployment descriptor

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -113,9 +112,9 @@ public abstract class AjaxFormSubmitBehavior extends AjaxEventBehavior
 	 */
 	@Override
 	protected CharSequence getEventHandler()
-final CharSequence url = getCallbackUrl(true);
+	{
 		final String formId = getForm().getMarkupId();
-		final CharSequence url = getCallbackUrl();
+final CharSequence url = getCallbackUrl(true);
 
 		AppendingStringBuffer call = new AppendingStringBuffer("wicketSubmitFormById('").append(
 			formId).append("', '").append(url).append("', ");

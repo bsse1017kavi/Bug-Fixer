@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -81,9 +80,9 @@ public class DefaultSockJsService extends AbstractSockJsService {
 
 	private final List<HandshakeInterceptor> interceptors = new ArrayList<HandshakeInterceptor>();
 
-private ScheduledFuture<?> sessionCleanupTask;
+	private final Map<String, AbstractSockJsSession> sessions = new ConcurrentHashMap<String, AbstractSockJsSession>();
 
-	private ScheduledFuture sessionCleanupTask;
+private ScheduledFuture<?> sessionCleanupTask;
 
 
 	/**

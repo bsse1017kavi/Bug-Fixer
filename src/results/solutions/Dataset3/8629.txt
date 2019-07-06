@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ public final class ServerMaker {
         command.add(getJavaCommand(jvm));
         
         Map<String, String> sysProps = appendJavaOptions(jvm, command);
-command.add("-Dorg.jboss.boot.log.file=logs/" + serverConfig.getServerName() + "/boot.log");
+        
         command.add("-Djava.util.logging.manager=org.jboss.logmanager.LogManager");
-        command.add("-Dorg.jboss.boot.log.file=" + serverConfig.getServerName() + "/boot.log");
+command.add("-Dorg.jboss.boot.log.file=logs/" + serverConfig.getServerName() + "/boot.log");
         command.add("-jar");
         command.add("jboss-modules.jar");
         command.add("-mp");

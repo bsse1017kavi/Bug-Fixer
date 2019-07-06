@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.word;
 
 /* ================================================================
@@ -986,9 +985,9 @@ public class IssueSearch
                     prevCrit.or(c2);
                 }
                 else
-AV_ISSUE_ID, "av" + index + '.' + AV_ISSUE_ID + '=' +
+                {
                     Criteria.Criterion c1 = crit.getNewCriterion("av"+index,
-                        AV_ISSUE_ID, "av" + index + "." + AV_ISSUE_ID + "=" + 
+AV_ISSUE_ID, "av" + index + '.' + AV_ISSUE_ID + '=' +
                         IssuePeer.ISSUE_ID, Criteria.CUSTOM); 
                     crit.addAlias("av"+index, AttributeValuePeer.TABLE_NAME);
                     c2 = buildOptionCriterion(aval);

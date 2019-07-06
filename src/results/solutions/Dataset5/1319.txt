@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public class SizeAssertionTest extends JMeterTestCase{
           assertion.setThreadContext(jmctx);
           vars = new JMeterVariables();
           jmctx.setVariables(vars);
-sample1.setResponseData(data1, null);
+          sample0 = new SampleResult();
           sample1 = new SampleResult();
-          sample1.setResponseData(data1.getBytes());
+sample1.setResponseData(data1, null);
       }
 
       public void testSizeAssertionEquals() throws Exception{

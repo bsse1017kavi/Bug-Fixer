@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -515,9 +514,9 @@ public class RelocationTests extends ElasticsearchIntegrationTest {
                                     assertThat("found a temporary recovery file: " + file, file.getFileName().toString(), not(startsWith("recovery.")));
                                     return FileVisitResult.CONTINUE;
                                 }
-throw new AssertionError("failed to walk file tree starting at [" + shardLoc.toPath() + "]", e);
+                            });
                         } catch (IOException e) {
-                            throw new ElasticsearchException("failed to walk tree", e);
+throw new AssertionError("failed to walk file tree starting at [" + shardLoc.toPath() + "]", e);
                         }
                     }
                 });

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -409,9 +408,9 @@ public class Issue
     public List getEligibleAssignees()
         throws Exception
     {
-security.getUsers(ScarabSecurity.ISSUE__EDIT, getScarabModule());
+        ScarabSecurity security = SecurityFactory.getInstance();
         ScarabUser[] users = 
-            security.getUsers(ScarabSecurity.EDIT_ISSUE, getScarabModule());
+security.getUsers(ScarabSecurity.ISSUE__EDIT, getScarabModule());
         // remove those already assigned
         List assigneeAVs = getAssigneeAttributeValues();
         if ( users != null && assigneeAVs != null ) 

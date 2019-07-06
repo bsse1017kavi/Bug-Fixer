@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -1362,9 +1361,9 @@ public class BeanDefinitionParserDelegate {
 		if (!isDefaultNamespace(namespaceUri)) {
 			NamespaceHandler handler = this.readerContext.getNamespaceHandlerResolver().resolve(namespaceUri);
 			if (handler != null) {
-else if (namespaceUri != null && namespaceUri.startsWith("http://www.springframework.org/")) {
+				return handler.decorate(node, originalDef, new ParserContext(this.readerContext, this, containingBd));
 			}
-			else if (namespaceUri.startsWith("http://www.springframework.org/")) {
+else if (namespaceUri != null && namespaceUri.startsWith("http://www.springframework.org/")) {
 				error("Unable to locate Spring NamespaceHandler for XML schema namespace [" + namespaceUri + "]", node);
 			}
 			else {

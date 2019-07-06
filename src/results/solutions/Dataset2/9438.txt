@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -73,9 +72,9 @@ public class Assignment extends Expression {
 
 		// Compile-time conversion of base-types : implicit narrowing integer into byte/short/character
 		// may require to widen the rhs expression at runtime
-|| (Scope.areTypesCompatible(expressionTb, this.lhsType))) {
+		if ((expression.isConstantValueOfTypeAssignableToType(expressionTb, this.lhsType)
 			|| (this.lhsType.isBaseType() && BaseTypeBinding.isWidening(this.lhsType.id, expressionTb.id)))
-			|| (scope.areTypesCompatible(expressionTb, this.lhsType))) {
+|| (Scope.areTypesCompatible(expressionTb, this.lhsType))) {
 			expression.implicitWidening(this.lhsType, expressionTb);
 			return this.lhsType;
 		}

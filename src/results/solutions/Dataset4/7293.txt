@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -132,9 +131,9 @@ public class LocalGateway extends AbstractLifecycleComponent<Gateway> implements
             for (FailedNodeException failedNodeException : nodesState.failures()) {
                 logger.warn("failed to fetch state from node", failedNodeException);
             }
-ObjectFloatOpenHashMap<String> indices = new ObjectFloatOpenHashMap<>();
+        }
 
-        ObjectFloatOpenHashMap<String> indices = new ObjectFloatOpenHashMap<String>();
+ObjectFloatOpenHashMap<String> indices = new ObjectFloatOpenHashMap<>();
         MetaData electedGlobalState = null;
         int found = 0;
         for (TransportNodesListGatewayMetaState.NodeLocalGatewayMetaState nodeState : nodesState) {

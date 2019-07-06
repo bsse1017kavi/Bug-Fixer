@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -227,9 +226,9 @@ public abstract class NumberFieldMapper<T extends Number> extends AbstractFieldM
             fieldsData = value;
 
             isIndexed = mapper.indexed();
-omitNorms = mapper.omitNorms();
+            isTokenized = mapper.indexed();
             omitTermFreqAndPositions = true;
-            omitNorms = true;
+omitNorms = mapper.omitNorms();
 
             if (value != null) {
                 isStored = true;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -892,9 +891,9 @@ public class KeysPreferencePage
 		// Set the defaults on the advanced tab.
 		IPreferenceStore store = getPreferenceStore();
 		checkBoxMultiKeyAssist.setSelection(
-Integer.toString(store.getDefaultInt(IPreferenceConstants.MULTI_KEY_ASSIST_TIME)));
+			store.getDefaultBoolean(IPreferenceConstants.MULTI_KEY_ASSIST));
 		textMultiKeyAssistTime.setStringValue(
-			Float.toString(store.getDefaultFloat(IPreferenceConstants.MULTI_KEY_ASSIST_TIME)));
+Integer.toString(store.getDefaultInt(IPreferenceConstants.MULTI_KEY_ASSIST_TIME)));
 		checkBoxMultiKeyRocker.setSelection(
 			store.getDefaultBoolean(IPreferenceConstants.MULTI_KEY_ROCKER));
 

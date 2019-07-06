@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -583,9 +582,9 @@ public class Tar extends MatchingTask {
             }
         } else { // non-file resources
             Iterator iter = rc.iterator();
-upToDate = archiveIsUpToDate(r);
+            while (upToDate && iter.hasNext()) {
                 Resource r = (Resource) iter.next();
-                upToDate &= archiveIsUpToDate(r);
+upToDate = archiveIsUpToDate(r);
             }
         }
         return upToDate;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -85,9 +84,9 @@ public class MathException extends Exception {
                 // caching the resource bundle
                 cachedResources =
                     ResourceBundle.getBundle("org.apache.commons.math.MessagesResources", locale);
-if (cachedResources.getLocale().getLanguage().equals(locale.getLanguage())) {
+            }
 
-            if (cachedResources.getLocale().equals(locale)) {
+if (cachedResources.getLocale().getLanguage().equals(locale.getLanguage())) {
                 // the value of the resource is the translated string
                 return cachedResources.getString(s);
             }

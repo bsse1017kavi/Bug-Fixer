@@ -1,4 +1,3 @@
-
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1
@@ -472,9 +471,9 @@ public class LogPanel extends DockablePanel implements SettingsListener,
         public void propertyChange(PropertyChangeEvent evt) {
           LogPanelPreferenceModel model =
             (LogPanelPreferenceModel) evt.getSource();
-simpleTimeButton.setSelected(!model.isUseISO8601Format() && !model.isCustomDateFormat());
+
           isoButton.setSelected(model.isUseISO8601Format());
-          simpleTimeButton.setSelected(!model.isUseISO8601Format());
+simpleTimeButton.setSelected(!model.isUseISO8601Format() && !model.isCustomDateFormat());
 
           if (model.isUseISO8601Format()) {
             renderer.setDateFormatter(new ISO8601DateFormat());

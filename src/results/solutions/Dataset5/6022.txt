@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2005 The Apache Software Foundation
  *
@@ -86,9 +85,9 @@ public abstract class BaseResourceCollectionWrapper
     public synchronized final Iterator iterator() {
         if (isReference()) {
             return ((BaseResourceCollectionWrapper) getCheckedRef()).iterator();
-return new FailFast(this, cacheCollection().iterator());
+        }
         dieOnCircularReference();
-        return cacheCollection().iterator();
+return new FailFast(this, cacheCollection().iterator());
     }
 
     /**

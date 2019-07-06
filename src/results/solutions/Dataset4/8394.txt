@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -154,9 +153,9 @@ public class HighlightPhase implements SearchHitPhase {
 
                     String[] fragments;
                     try {
-fragments = highlighter.getBestFragments(fieldQuery, reader, docId, mapper.names().indexName(), field.fragmentCharSize(), numberOfFragments);
+                        // a HACK to make highlighter do highlighting, even though its using the single frag list builder
                         int numberOfFragments = field.numberOfFragments() == 0 ? 1 : field.numberOfFragments();
-                        fragments = highlighter.getBestFragments(fieldQuery, context.searcher().getIndexReader(), docId, mapper.names().indexName(), field.fragmentCharSize(), numberOfFragments);
+fragments = highlighter.getBestFragments(fieldQuery, reader, docId, mapper.names().indexName(), field.fragmentCharSize(), numberOfFragments);
                     } catch (IOException e) {
                         throw new FetchPhaseExecutionException(context, "Failed to highlight field [" + field.field() + "]", e);
                     }

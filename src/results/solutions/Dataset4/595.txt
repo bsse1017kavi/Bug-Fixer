@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -63,9 +62,9 @@ public class ScissorStack {
 			scissor.y = minY;
 			scissor.width = maxX - minX;
 			scissor.height = Math.max(1, maxY - minY);
-Gdx.gl.glScissor(Math.round(scissor.x), Math.round(scissor.y), Math.round(scissor.width), Math.round(scissor.height));
+		}
 		scissors.add(scissor);
-		Gdx.gl.glScissor((int)scissor.x, (int)scissor.y, (int)scissor.width, (int)scissor.height);
+Gdx.gl.glScissor(Math.round(scissor.x), Math.round(scissor.y), Math.round(scissor.width), Math.round(scissor.height));
 		return true;
 	}
 

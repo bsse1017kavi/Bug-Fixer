@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -87,9 +86,9 @@ public class WebResponseWithCryptedUrl extends WebResponse
 			        // make the querystring shorter first without loosing
 			        // information.
 				    queryString = shortenUrl(queryString).toString();
-final String encryptedQueryString = urlCrypt.encryptUrlSafe(queryString);
+
 				    // encrypt the query string
-					final String encryptedQueryString = urlCrypt.encrypt(queryString);
+final String encryptedQueryString = urlCrypt.encryptUrlSafe(queryString);
 
 					// build the new complete url
 					return new AppendingStringBuffer(urlPrefix).append("?x=").append(escapeUrl(encryptedQueryString));

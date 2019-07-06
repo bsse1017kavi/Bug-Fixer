@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -870,9 +869,9 @@ public abstract class SolrTestCaseJ4 extends LuceneTestCase {
    * @param fieldsAndValues 0th and Even numbered args are fields names, Odds are field values.
    * @see TestHarness#makeSimpleDoc
    */
-d.xml = TestHarness.makeSimpleDoc(fieldsAndValues);
+  public static XmlDoc doc(String... fieldsAndValues) {
     XmlDoc d = new XmlDoc();
-    d.xml = TestHarness.makeSimpleDoc(fieldsAndValues).toString();
+d.xml = TestHarness.makeSimpleDoc(fieldsAndValues);
     return d;
   }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class IndexParamWithStatelessIFrameTest extends WicketTestCase
 		tester.assertRenderedPage(TestPageWithIFrame.class);
 		tester.assertNoErrorMessage();
 		String doc = tester.getServletResponse().getDocument();
-tester.assertContains("src=\"test/wicket:interface/default:0:frame::IResourceListener::\"");
+		if (stateless == true)
 		{
-			tester.assertContains("src=\"test/wicket:interface/:0:frame::IResourceListener::\"");
+tester.assertContains("src=\"test/wicket:interface/default:0:frame::IResourceListener::\"");
 		}
 		else
 		{

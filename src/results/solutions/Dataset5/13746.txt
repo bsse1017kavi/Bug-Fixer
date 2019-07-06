@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -59,9 +58,9 @@ class MethodSignatureImpl extends CodeSignatureImpl implements MethodSignature {
 	 * @see org.aspectj.lang.reflect.MemberSignature#getAccessibleObject()
 	 */
 	public Method getMethod() {
-method = getDeclaringType().getDeclaredMethod(getName(),getParameterTypes());
+		if (method == null) {
 			try {
-				method = declaringType.getDeclaredMethod(getName(),getParameterTypes());
+method = getDeclaringType().getDeclaredMethod(getName(),getParameterTypes());
 			} catch (NoSuchMethodException nsmEx) {
 				; // nothing we can do, user will see null return
 			}

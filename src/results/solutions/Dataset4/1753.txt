@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -52,9 +51,9 @@ public class FloatAttribute extends Attribute {
 		return new FloatAttribute(type, value);
 	}
 
-int result = (int)type;
+	@Override
 	public int hashCode () {
-		int result = super.hashCode();
+int result = (int)type;
 		result = 977 * result + NumberUtils.floatToRawIntBits(value);
 		return result; 
 	}

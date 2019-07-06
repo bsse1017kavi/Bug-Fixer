@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -424,9 +423,9 @@ public class ColumnFamilyStore implements ColumnFamilyStoreMBean
     {
         binaryMemtable_.set( new BinaryMemtable(table_, columnFamily_) );
         binaryMemtable_.get().put(key, buffer);
-public void forceFlush()
+    }
 
-    void forceFlush() throws IOException
+public void forceFlush()
     {
         memtable_.get().forceflush();
     }

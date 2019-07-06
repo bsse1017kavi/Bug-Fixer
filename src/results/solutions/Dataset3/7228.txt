@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -105,9 +104,9 @@ public class JMSQueueReadAttributeHandler extends AbstractRuntimeOnlyHandler {
         } else if (CommonAttributes.TEMPORARY.getName().equals(attributeName)) {
             context.getResult().set(control.isTemporary());
         } else {
-context.stepCompleted();
+            throw MESSAGES.unsupportedAttribute(attributeName);
         }
-        context.completeStep();
+context.stepCompleted();
     }
 
     private JMSQueueControl getControl(OperationContext context, ModelNode operation) {

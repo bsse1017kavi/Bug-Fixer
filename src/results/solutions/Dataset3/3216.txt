@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -45,9 +44,9 @@ class ResponseBodyInterceptorChain {
 	public ResponseBodyInterceptorChain(List<Object> interceptors) {
 		this.interceptors = interceptors;
 	}
-public <T> T invoke(T body, MediaType contentType, Class<? extends HttpMessageConverter<T>> converterType,
 
-	public <T> T invoke(T body, MediaType contentType, Class<HttpMessageConverter<T>> converterType,
+
+public <T> T invoke(T body, MediaType contentType, Class<? extends HttpMessageConverter<T>> converterType,
 			MethodParameter returnType, ServerHttpRequest request, ServerHttpResponse response) {
 
 		if (this.interceptors != null) {

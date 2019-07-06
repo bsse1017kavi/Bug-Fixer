@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public abstract class AbstractAjaxTimerBehavior extends AbstractDefaultAjaxBehav
 	 * @return JS script
 	 */
 	protected final String getJsTimeoutCall(final Duration updateInterval)
-return "setTimeout(\"" + getCallbackScript(true) + "\", "
+	{
 		// this might look strange, but it is necessary for IE not to leak :(
-		return "setTimeout(\"" + getCallbackScript(false, true) + "\", "
+return "setTimeout(\"" + getCallbackScript(true) + "\", "
 				+ updateInterval.getMilliseconds() + ");";
 	}
 

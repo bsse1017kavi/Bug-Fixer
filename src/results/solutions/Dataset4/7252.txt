@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -224,9 +223,9 @@ public class EvenShardsCountAllocator extends AbstractComponent implements Shard
         return changed;
     }
 
-final ObjectIntOpenHashMap<String> nodeCounts = new ObjectIntOpenHashMap<>();
+    private RoutingNode[] sortedNodesLeastToHigh(RoutingAllocation allocation) {
         // create count per node id, taking into account relocations
-        final ObjectIntOpenHashMap<String> nodeCounts = new ObjectIntOpenHashMap<String>();
+final ObjectIntOpenHashMap<String> nodeCounts = new ObjectIntOpenHashMap<>();
         for (RoutingNode node : allocation.routingNodes()) {
             for (int i = 0; i < node.size(); i++) {
                 ShardRouting shardRouting = node.get(i);

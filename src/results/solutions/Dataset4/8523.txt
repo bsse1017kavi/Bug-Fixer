@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class RandomScoreFunctionTests extends AbstractSharedClusterTest {
         ensureGreen();
 
         int docCount = atLeast(100);
-index("test", "type", "" + i, jsonBuilder().startObject().endObject());
+
         for (int i = 0; i < docCount; i++) {
-            index("test", "type", "" + docCount, jsonBuilder().startObject().endObject());
+index("test", "type", "" + i, jsonBuilder().startObject().endObject());
         }
 
         flush();

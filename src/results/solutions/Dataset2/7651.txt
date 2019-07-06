@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -193,9 +192,9 @@ private void initializeKnownFileNames(String[] initialFileNames) {
 		final int lastIndexOf = CharOperation.lastIndexOf('.', fileName);
 		if (lastIndexOf != -1) {
 			fileName = CharOperation.subarray(fileName, 0, lastIndexOf);
-for (int j = 0; j < this.classpaths.length; j++){
+		}
 		CharOperation.replace(fileName, '\\', '/');
-		for (int j = 0; j < classpaths.length; j++){
+for (int j = 0; j < this.classpaths.length; j++){
 			char[] matchCandidate = this.classpaths[j].normalizedPath();
 			if (this.classpaths[j] instanceof  ClasspathDirectory &&
 					CharOperation.prefixEquals(matchCandidate, fileName) &&

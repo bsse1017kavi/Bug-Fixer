@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -191,9 +190,9 @@ public class RaOperationUtil {
         String securityDomain = ModelNodeUtil.getResolvedStringIfSetOrGetDefault(context, recoveryEnvModel, SECURITY_DOMAIN);
         String securityDomainAndApplication = ModelNodeUtil.getResolvedStringIfSetOrGetDefault(context, recoveryEnvModel, SECURITY_DOMAIN_AND_APPLICATION);
 
-if (securityDomain != null || securityDomainAndApplication != null || application) {
+        boolean application = ModelNodeUtil.getBooleanIfSetOrGetDefault(context, recoveryEnvModel, APPLICATION);
         CommonSecurity security = null;
-        if (securityDomain != null || securityDomainAndApplication != null) {
+if (securityDomain != null || securityDomainAndApplication != null || application) {
             security = new CommonSecurityImpl(securityDomain, securityDomainAndApplication, application);
         }
         Long backgroundValidationMillis = ModelNodeUtil.getLongIfSetOrGetDefault(context, recoveryEnvModel, BACKGROUNDVALIDATIONMILLIS);

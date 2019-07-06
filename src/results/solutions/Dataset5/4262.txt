@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -32,9 +31,9 @@ public class AuthenticatedHtmlPage extends HtmlPage
      * @see com.voicetribe.wicket.Page#checkAccess(com.voicetribe.wicket.RequestCycle)
      */
     protected boolean checkAccess(RequestCycle cycle)
-boolean signedIn = cycle.getSession().getProperty("signin.user") != null;
+    {
         // Is a user signed into this cycle's session?
-        boolean signedIn = cycle.getSession().getProperty("user") != null;
+boolean signedIn = cycle.getSession().getProperty("signin.user") != null;
 
         // If nobody is signed in
         if (!signedIn)

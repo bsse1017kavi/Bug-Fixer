@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-98 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation for educational, research and non-profit
@@ -60,9 +59,9 @@ public class Trash {
       ModelElement me = (ModelElement) obj;
       try {
 	TrashItem ti = new TrashItem(obj, places);
-//System.out.println("added " + obj + " to trash");
+	_contents.addElement(ti);
 	me.setNamespace(Trash_Model);
-	System.out.println("added " + obj + " to trash");
+//System.out.println("added " + obj + " to trash");
       }
       catch (PropertyVetoException pve) {
 	System.out.println("Trash add had a PropertyVetoException");

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -219,9 +218,9 @@ public class BlockScope extends Scope {
 				if (!local.used
 					&& (local.declaration != null) // unused (and non secret) local
 					&& ((local.declaration.bits & AstNode.IsLocalDeclarationReachableMASK) != 0)) { // declaration is reachable
-else if (!(local.declaration instanceof Argument))  // do not report unused catch arguments
+					if (local.isArgument) // method argument
 						this.problemReporter().unusedArgument(local.declaration);
-					else if (!(local.declaration instanceof Argument)) // catch variable
+else if (!(local.declaration instanceof Argument))  // do not report unused catch arguments
 						this.problemReporter().unusedLocalVariable(local.declaration);
 				}
 				if (!generatesLocal) {

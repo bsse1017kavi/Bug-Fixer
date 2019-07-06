@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1076,9 +1075,9 @@ public class AjaxRequestTarget implements IPageRequestHandler
 		{
 			((MarkupContainer)component).visitChildren(new Component.IVisitor<Component>()
 			{
-if (component.isVisibleInHierarchy())
+				public Object component(Component component)
 				{
-					if (component.isVisible())
+if (component.isVisibleInHierarchy())
 					{
 						component.renderHead(header);
 						return CONTINUE_TRAVERSAL;

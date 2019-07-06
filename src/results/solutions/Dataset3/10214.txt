@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class TopologyChangeListenerBean implements TopologyChangeListener {
     @Override
     public void establishTopology(String containerName, String cacheName, String... nodes) throws InterruptedException {
         Set<String> expectedMembers = new TreeSet<>();
-expectedMembers.add(name + "/ee");
+        if (nodes != null) {
             for (String name: nodes) {
-                expectedMembers.add(name + "/" + containerName);
+expectedMembers.add(name + "/ee");
             }
         }
         ServiceRegistry registry = CurrentServiceContainer.getServiceContainer();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryparser.xml.builders;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -63,9 +62,9 @@ public class TermsFilterBuilder implements FilterBuilder {
       Term term = null;
       BytesRef bytes = termAtt.getBytesRef();
       ts.reset();
-term = new Term(fieldName, BytesRef.deepCopyOf(bytes));
+      while (ts.incrementToken()) {
         termAtt.fillBytesRef();
-        term = new Term(fieldName, new BytesRef(bytes));
+term = new Term(fieldName, BytesRef.deepCopyOf(bytes));
         tf.addTerm(term);
       }
       ts.end();

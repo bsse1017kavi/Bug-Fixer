@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public class ParseField {
         camelCaseName = Strings.toCamelCase(value);
         underscoreName = Strings.toUnderscoreCase(value);
         if (deprecatedNames == null || deprecatedNames.length == 0) {
-final HashSet<String> set = new HashSet<>();
+            this.deprecatedNames = Strings.EMPTY_ARRAY;
         } else {
-            final HashSet<String> set = new HashSet<String>();
+final HashSet<String> set = new HashSet<>();
             for (String depName : deprecatedNames) {
                 set.add(Strings.toCamelCase(depName));
                 set.add(Strings.toUnderscoreCase(depName));

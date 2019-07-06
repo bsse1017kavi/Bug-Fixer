@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -59,9 +58,9 @@ public PackageFragmentRootInfo() {
  */
 static Object[] computeFolderNonJavaResources(JavaProject project, IContainer folder, char[][] inclusionPatterns, char[][] exclusionPatterns) throws JavaModelException {
 	Object[] nonJavaResources = new IResource[5];
-IClasspathEntry[] classpath = project.getResolvedClasspath(true/*ignoreUnresolvedEntry*/, false/*don't generateMarkerOnError*/, false/*don't returnResolutionInProgress*/);
+	int nonJavaResourcesCounter = 0;
 	try {
-		IClasspathEntry[] classpath = project.getResolvedClasspath(true/*ignore unresolved variable*/);
+IClasspathEntry[] classpath = project.getResolvedClasspath(true/*ignoreUnresolvedEntry*/, false/*don't generateMarkerOnError*/, false/*don't returnResolutionInProgress*/);
 		IResource[] members = folder.members();
 		nextResource: for (int i = 0, max = members.length; i < max; i++) {
 			IResource member = members[i];

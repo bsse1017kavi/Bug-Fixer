@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -162,9 +161,9 @@ public class TreeMergeOutputFormat extends FileOutputFormat<Text, NullWritable> 
         secs = (System.nanoTime() - start) / (float)(10^9);
         LOG.info("Optimizing Solr: done forcing tree merge down to {} segments in {} secs", maxSegments, secs);
         
-writer.shutdown();
+        start = System.nanoTime();
         LOG.info("Optimizing Solr: Closing index writer");
-        writer.close();
+writer.shutdown();
         secs = (System.nanoTime() - start) / (float)(10^9);
         LOG.info("Optimizing Solr: Done closing index writer in {} secs", secs);
         context.setStatus("Done");

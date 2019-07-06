@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -193,9 +192,9 @@ public abstract class ReferenceManager<G> implements Closeable {
     // Ensure only 1 thread does reopen at once
     refreshLock.lock();
     try {
-refreshLock.unlock();
+      doMaybeRefresh();
     } finally {
-      refreshLock.lock();
+refreshLock.unlock();
     }
   }
 

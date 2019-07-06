@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class BasicIfElseTestCase {
             ctx.terminateSession();
             cliOut.reset();
         }
-ctx.handle("if result.value==\"true\" of " + this.getReadPropertyReq());
+    }
     protected String runIf(CommandContext ctx) throws Exception {
-        ctx.handle("if result.value==true of " + this.getReadPropertyReq());
+ctx.handle("if result.value==\"true\" of " + this.getReadPropertyReq());
         ctx.handle(this.getWritePropertyReq("\"false\""));
         ctx.handle("else");
         ctx.handle(this.getWritePropertyReq("\"true\""));

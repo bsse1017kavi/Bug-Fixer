@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -82,9 +81,9 @@ public class BoundedInputStream extends InputStream {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
-if (max >= 0 && pos >= max) {
+    @Override
     public int read() throws IOException {
-        if (max>=0 && pos==max) {
+if (max >= 0 && pos >= max) {
             return -1;
         }
         int result = in.read();

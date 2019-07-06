@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -145,9 +144,9 @@ public class SubsystemStateTestCase {
 
         state.setActivation(SubsystemState.Activation.EAGER);
         Assert.assertEquals(1, arguments.size());
-assertEventEquals(SubsystemState.Activation.EAGER.name(), false, SubsystemState.ChangeType.ACTIVATION, event);
+
         SubsystemState.ChangeEvent event = (SubsystemState.ChangeEvent) arguments.get(0);
-        assertEventEquals(SubsystemState.Activation.EAGER.toString(), false, SubsystemState.ChangeType.ACTIVATION, event);
+assertEventEquals(SubsystemState.Activation.EAGER.name(), false, SubsystemState.ChangeType.ACTIVATION, event);
     }
 
     private void assertEventEquals(String id, boolean isRemoved, SubsystemState.ChangeType type, SubsystemState.ChangeEvent event) {

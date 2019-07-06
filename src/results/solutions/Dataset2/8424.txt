@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.actions;
 
 /* ================================================================
@@ -149,9 +148,9 @@ public class ForgotPassword extends ScarabTemplateAction
                     .getString("scarab.email.forgotpassword.subject",
                                "Account Password"));
             te.setTemplate(
-"email/ForgotPassword.vm"));
+                Turbine.getConfiguration()
                     .getString("scarab.email.forgotpassword.template",
-                               "ForgotPassword.vm"));
+"email/ForgotPassword.vm"));
             te.send();
         }
         catch (TurbineSecurityException e)

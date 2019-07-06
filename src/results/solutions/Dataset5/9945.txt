@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -105,9 +104,9 @@ public abstract class AjaxEventBehavior extends AbstractDefaultAjaxBehavior
 	{
 		super.onComponentTag(tag);
 
-if (myComponent.isEnabledInHierarchy())
+		// only add the event handler when the component is enabled.
 		Component myComponent = getComponent();
-		if (myComponent.isEnabled() && myComponent.isEnableAllowed())
+if (myComponent.isEnabledInHierarchy())
 		{
 			tag.put(event, getEventHandler());
 		}

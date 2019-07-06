@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -45,9 +44,9 @@ class StubFileGenerator {
         	String path = StructureUtil.translateAjPathName(signatureFile.getCanonicalPath());
             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(path)));
              
-if (packageName != null && packageName != "") {
+            String packageName = StructureUtil.getPackageDeclarationFromFile(inputFile);
             
-            if (packageName != null ) {
+if (packageName != null && packageName != "") {
                 writer.println( "package " + packageName + ";" );
             }
 

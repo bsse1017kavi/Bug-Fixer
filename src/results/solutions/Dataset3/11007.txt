@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -31,9 +30,9 @@ import java.io.IOException;
  * <p/>
  * User: jpai
  */
-void start(DataInput input, ClassLoaderProvider classLoaderProvider) throws IOException;
+interface UnMarshaller {
 
-    void start(DataInput input, ClassLoader classLoader) throws IOException;
+void start(DataInput input, ClassLoaderProvider classLoaderProvider) throws IOException;
 
     Object readObject() throws ClassNotFoundException, IOException;
 

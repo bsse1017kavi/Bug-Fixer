@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -45,9 +44,9 @@ public class FieldDataLoader {
 
         int t = 1;  // current term number
 
-return  loader.buildSingleValue(field, ordinals.get(0)); // Return empty field data if field doesn't exists.
+        Terms terms = reader.terms(field);
         if (terms == null) {
-            return  loader.buildSingleValue(field, new int[0]); // Return empty field data if field doesn't exists.
+return  loader.buildSingleValue(field, ordinals.get(0)); // Return empty field data if field doesn't exists.
         }
 
         TermsEnum termsEnum = terms.iterator(null);

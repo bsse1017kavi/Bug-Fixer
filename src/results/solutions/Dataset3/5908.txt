@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -292,9 +291,9 @@ public abstract class EJBComponent extends BasicComponent {
     private boolean isBeanManagedTransaction() {
         return isBeanManagedTransaction;
     }
-return utilities.getSecurityManager().isCallerInRole(securityMetaData.getSecurityRoles(), roleName);
+
     public boolean isCallerInRole(final String roleName) throws IllegalStateException {
-        return utilities.getSecurityManager().isCallerInRole(roleName);
+return utilities.getSecurityManager().isCallerInRole(securityMetaData.getSecurityRoles(), roleName);
     }
 
     public Object lookup(String name) throws IllegalArgumentException {

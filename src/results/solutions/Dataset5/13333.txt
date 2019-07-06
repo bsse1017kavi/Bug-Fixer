@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -259,9 +258,9 @@ public class TableJDBCSeq
             
             Table copy = schema.importTable(_pkColumn.getTable());
             // importTable() does not import unique constraints
-copy.importUnique(u, _conf.getDBDictionaryInstance());
+            Unique[] uniques = _pkColumn.getTable().getUniques();
             for (Unique u : uniques) {
-            	copy.importUnique(u);
+copy.importUnique(u, _conf.getDBDictionaryInstance());
             }
             // we need to reset the table name in the column with the
             // fully qualified name for matching the table name from the

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -318,9 +317,9 @@ public class MultiPhraseQuery extends Query {
 
   /** Prints a user-readable version of this query. */
   @Override
-if (field == null || !field.equals(f)) {
+  public final String toString(String f) {
     StringBuilder buffer = new StringBuilder();
-    if (!field.equals(f)) {
+if (field == null || !field.equals(f)) {
       buffer.append(field);
       buffer.append(":");
     }

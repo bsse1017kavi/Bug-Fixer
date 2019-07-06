@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public class CharSequenceReader extends Reader implements Serializable {
             return -1;
         }
         if (array == null) {
-if (length < 0 || offset < 0 || (offset + length) > array.length) {
+            throw new NullPointerException("Character array is missing");
         }
-        if (length < 0 || (offset + length) > array.length) {
+if (length < 0 || offset < 0 || (offset + length) > array.length) {
             throw new IndexOutOfBoundsException("Array Size=" + array.length +
                     ", offset=" + offset + ", length=" + length);
         }

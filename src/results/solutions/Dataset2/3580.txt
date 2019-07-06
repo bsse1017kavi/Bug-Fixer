@@ -1,4 +1,3 @@
-
 // Copyright (c) 2000 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -72,9 +71,9 @@ throws IOException
 	order = Short.parseShort(st.nextToken());
 	preference = Short.parseShort(st.nextToken());
 	flags = st.nextToken();
-replacement = Name.fromString(st.nextToken(), origin);
+	service = st.nextToken();
 	regexp = st.nextToken();
-	replacement = new Name(st.nextToken(), origin);
+replacement = Name.fromString(st.nextToken(), origin);
 	if (Options.check("verbose"))
 		System.err.println(" NAPTR MyStringTokenizer Constructor: " +
 				   this.toString());

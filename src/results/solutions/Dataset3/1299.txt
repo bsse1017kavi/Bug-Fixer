@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ class EJB3SubsystemProviders {
 
             final ModelNode subsystem = new ModelNode();
             subsystem.get(DESCRIPTION).set(bundle.getString("ejb3"));
-subsystem.get(NAMESPACE).set(EJB3Extension.NAMESPACE_1_0);
+            subsystem.get(HEAD_COMMENT_ALLOWED).set(true);
             subsystem.get(TAIL_COMMENT_ALLOWED).set(true);
-            subsystem.get(NAMESPACE).set(EJB3Extension.NAMESPACE);
+subsystem.get(NAMESPACE).set(EJB3Extension.NAMESPACE_1_0);
 
             return subsystem;
         }

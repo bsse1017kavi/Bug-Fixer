@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -64,9 +63,9 @@ public class WebSocketHttpRequestHandler implements HttpRequestHandler {
 
 	public WebSocketHttpRequestHandler(	WebSocketHandler webSocketHandler, HandshakeHandler handshakeHandler) {
 		Assert.notNull(webSocketHandler, "webSocketHandler must not be null");
-this.handshakeHandler = handshakeHandler;
+		Assert.notNull(handshakeHandler, "handshakeHandler must not be null");
 		this.webSocketHandler = decorateWebSocketHandler(webSocketHandler);
-		this.handshakeHandler = new DefaultHandshakeHandler();
+this.handshakeHandler = handshakeHandler;
 	}
 
 

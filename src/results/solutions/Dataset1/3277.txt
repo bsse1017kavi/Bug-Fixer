@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public final class LLRReducerTest extends MahoutTestCase {
     super.setUp();
     context   = EasyMock.createMock(Reducer.Context.class);
     ll        = EasyMock.createMock(LLCallback.class);
-public double logLikelihoodRatio(long k11, long k12, long k21, long k22) {
+    cl        = new LLCallback() {
       @Override
-      public double logLikelihoodRatio(int k11, int k12, int k21, int k22) {
+public double logLikelihoodRatio(long k11, long k12, long k21, long k22) {
         log.info("k11:{} k12:{} k21:{} k22:{}", new Object[] {k11, k12, k21, k22});
         return LogLikelihood.logLikelihoodRatio(k11, k12, k21, k22);
       }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
@@ -123,9 +122,9 @@ public class JNDITestCase {
         ObjectFactory of = new TestObjectFactory();
 
         BundleContext context = bundle.getBundleContext();
-ServiceRegistration<ObjectFactory> reg = context.registerService(ObjectFactory.class, of, props);
+        Dictionary<String, Object> props = new Hashtable<String, Object>();
         props.put("osgi.jndi.url.scheme", new String [] {"testscheme"});
-        ServiceRegistration reg = context.registerService(ObjectFactory.class.getName(), of, props);
+ServiceRegistration<ObjectFactory> reg = context.registerService(ObjectFactory.class, of, props);
 
         boolean found = false;
         int i=0;

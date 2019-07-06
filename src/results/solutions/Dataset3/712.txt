@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -58,9 +57,9 @@ public class JBossASEmbeddedInContainerTestCase {
         ObjectName objectName = new ObjectName("jboss:name=test,type=config");
 
         //FIXME should have some notification happening when the deployment has been installed for client
-mbeanServer.getAttribute(objectName, "IntervalSeconds");
+        waitForMbean(mbeanServer, objectName);
 
-        Object o = mbeanServer.getAttribute(objectName, "IntervalSeconds");
+mbeanServer.getAttribute(objectName, "IntervalSeconds");
         mbeanServer.setAttribute(objectName, new Attribute("IntervalSeconds", 2));
     }
 

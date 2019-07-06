@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -118,9 +117,9 @@ public class ZipFileTest extends TestCase {
     }
 
     private static void assertEntryName(ArrayList<ZipArchiveEntry> entries,
-ZipArchiveEntry ze = entries.get(index);
+                                        int index,
                                         String expectedName) {
-        ZipArchiveEntry ze = (ZipArchiveEntry) entries.get(index);
+ZipArchiveEntry ze = entries.get(index);
         assertEquals("src/main/java/org/apache/commons/compress/archivers/zip/"
                      + expectedName + ".java",
                      ze.getName());

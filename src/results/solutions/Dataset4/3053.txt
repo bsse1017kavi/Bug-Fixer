@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  *
@@ -79,9 +78,9 @@ public final class EarClippingTriangulator {
 			cutEarTip(earTipIndex);
 
 			// Only the type of the two vertices adjacent to the clipped vertex can have changed,
-classifyVertex(earTipIndex == vertexCount ? 0 : earTipIndex);
+			// so no need to reclassify all of them.
 			classifyVertex(computePreviousIndex(earTipIndex));
-			classifyVertex(earTipIndex);
+classifyVertex(earTipIndex == vertexCount ? 0 : earTipIndex);
 		}
 
 		/*

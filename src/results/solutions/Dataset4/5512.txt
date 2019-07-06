@@ -1,4 +1,3 @@
-
 package org.elasticsearch.test;/*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class BackgroundIndexer implements AutoCloseable {
     final AtomicLong idGenerator = new AtomicLong();
     final AtomicLong indexCounter = new AtomicLong();
     final CountDownLatch startLatch = new CountDownLatch(1);
-this(index, type, client, RandomizedTest.scaledRandomIntBetween(2, 5));
+
     public BackgroundIndexer(String index, String type, Client client) {
-        this(index, type, client, RandomizedTest.scaledRandomIntBetween(3, 10));
+this(index, type, client, RandomizedTest.scaledRandomIntBetween(2, 5));
     }
 
     public BackgroundIndexer(String index, String type, Client client, int writerCount) {

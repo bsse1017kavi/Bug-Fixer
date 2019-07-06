@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -202,9 +201,9 @@ public abstract class CompressedIndexInput<T extends CompressorContext> extends 
      * Uncompress the data into the out array, returning the size uncompressed
      */
     protected abstract int uncompress(IndexInput in, byte[] out) throws IOException;
-public IndexInput clone() {
+
     @Override
-    public Object clone() {
+public IndexInput clone() {
         // we clone and we need to make sure we keep the same positions!
         CompressedIndexInput cloned = (CompressedIndexInput) super.clone();
         cloned.uncompressed = new byte[uncompressedLength];

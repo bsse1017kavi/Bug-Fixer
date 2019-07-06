@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -329,9 +328,9 @@ public boolean checkUnsafeCast(Scope scope, TypeBinding castType, TypeBinding ex
 							// if I2<T,U> extends I1<T>, then cast from I1<T> to I2<T,U> is unchecked
 							ParameterizedTypeBinding paramCastType = (ParameterizedTypeBinding) castType;
 							ParameterizedTypeBinding paramMatch = (ParameterizedTypeBinding) match;
-int length = castArguments == null ? 0 : castArguments.length;
+							// easy case if less parameters on match
 							TypeBinding[] castArguments = paramCastType.arguments;
-							int length = castArguments.length;
+int length = castArguments == null ? 0 : castArguments.length;
 							if (paramMatch.arguments == null || length > paramMatch.arguments.length) {
 								this.bits |= ASTNode.UnsafeCast;
 							} else if ((paramCastType.tagBits & (TagBits.HasDirectWildcard|TagBits.HasTypeVariable)) != 0) {

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -113,9 +112,9 @@ class ReadRepairManager
 	public void schedule(InetAddress target, RowMutationMessage rowMutationMessage)
 	{
         try
-String key = target.getHostAddress() + ":" + message.getMessageId();
+        {
             Message message = rowMutationMessage.makeRowMutationMessage(StorageService.readRepairVerbHandler_);
-    		String key = target + ":" + message.getMessageId();
+String key = target.getHostAddress() + ":" + message.getMessageId();
     		readRepairTable_.put(key, message);
         }
         catch ( IOException ex )

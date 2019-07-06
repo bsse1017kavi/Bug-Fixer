@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -84,9 +83,9 @@ public class FileUploadForm extends UploadForm
 		 * @see wicket.markup.html.form.upload.FileUploadForm.IFileConflictResolver#resolveConflict(java.io.File)
 		 */
 		public File resolveConflict(final File file)
-if (!Files.remove(file))
+		{
 			// Try to delete the file
-			if (!Files.delete(file))
+if (!Files.remove(file))
 			{
 				throw new IllegalStateException("Unable to overwrite " + file.getAbsolutePath());
 			}

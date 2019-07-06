@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1708,9 +1707,9 @@ public class XMLSchemaValidator
     void parseSchemas(String sLocation, String nsLocation) {
         if (sLocation != null) {
             StringTokenizer t = new StringTokenizer(sLocation, " \n\t\r");
-namespace = fSymbolTable.addSymbol(t.nextToken ());
+            String namespace, location;
             while (t.hasMoreTokens()) {
-                namespace = t.nextToken ();
+namespace = fSymbolTable.addSymbol(t.nextToken ());
                 if (!t.hasMoreTokens()) {
                     fXSIErrorReporter.reportError(XSMessageFormatter.SCHEMA_DOMAIN,
                                                   "SchemaLocation",

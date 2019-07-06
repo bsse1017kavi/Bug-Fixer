@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import org.jboss.dmr.ModelType;
 /**
  * {@link ResourceDefinition} for a management security realm's LDAP-based Authentication / Authorization resource.
  *
-public abstract class LdapResourceDefinition extends SimpleResourceDefinition {
+ *  @author <a href="mailto:Flemming.Harms@gmail.com">Flemming Harms</a>
  */
-public class LdapResourceDefinition extends SimpleResourceDefinition {
+public abstract class LdapResourceDefinition extends SimpleResourceDefinition {
     public static final SimpleAttributeDefinition CONNECTION = new SimpleAttributeDefinitionBuilder(ModelDescriptionConstants.CONNECTION, ModelType.STRING, false)
         .setValidator(new StringLengthValidator(1, Integer.MAX_VALUE, false, false)).setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES).build();
 

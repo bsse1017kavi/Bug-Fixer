@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class CjkAnalyzerProvider extends AbstractIndexAnalyzerProvider<CJKAnalyz
 
     private final CJKAnalyzer analyzer;
 
-Set<?> stopWords = Analysis.parseStopWords(env, settings, CJKAnalyzer.getDefaultStopSet(), version);
+    @Inject public CjkAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
         super(index, indexSettings, name, settings);
-        Set<?> stopWords = Analysis.parseStopWords(env, settings, CJKAnalyzer.getDefaultStopSet());
+Set<?> stopWords = Analysis.parseStopWords(env, settings, CJKAnalyzer.getDefaultStopSet(), version);
 
         analyzer = new CJKAnalyzer(version, stopWords);
     }

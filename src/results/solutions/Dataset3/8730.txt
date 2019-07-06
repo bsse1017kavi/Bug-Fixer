@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -128,8 +127,8 @@ public class SecurityRealmService implements Service<SecurityRealmService>, Secu
         SSLIdentityService service;
         return ((service = sslIdentity.getOptionalValue()) != null && service.hasTrustStore());
     }
-return secretCallbackFactory.getOptionalValue();
+
     public CallbackHandlerFactory getSecretCallbackHandlerFactory() {
-        return secretCallbackFactory.getValue();
+return secretCallbackFactory.getOptionalValue();
     }
 }

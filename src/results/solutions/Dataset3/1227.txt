@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -128,9 +127,9 @@ public class TxStatsHandler extends AbstractRuntimeOnlyHandler {
                     throw new IllegalStateException(MESSAGES.unknownMetric(stat));
             }
             context.getResult().set(result);
-context.stepCompleted();
+        }
 
-        context.completeStep();
+context.stepCompleted();
     }
 
     void registerMetrics(final ManagementResourceRegistration resourceRegistration) {

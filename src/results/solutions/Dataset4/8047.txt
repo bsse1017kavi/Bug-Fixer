@@ -1,4 +1,3 @@
-
 package org.elasticsearch.index.fielddata.fieldcomparator;
 /*
  * Licensed to ElasticSearch and Shay Banon under one
@@ -71,9 +70,9 @@ abstract class LongValuesComparatorBase<T extends Number> extends NumberComparat
             readerValues = new MultiValueWrapper(readerValues, sortMode);
         }
         return this;
-private static final class MultiValueWrapper extends LongValues.Filtered {
+    }
 
-    private static final class MultiValueWrapper extends LongValues.FilteredLongValues {
+private static final class MultiValueWrapper extends LongValues.Filtered {
 
         private final SortMode sortMode;
 

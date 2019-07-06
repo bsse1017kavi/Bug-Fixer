@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -102,9 +101,9 @@ public class SearchService extends AbstractLifecycleComponent<SearchService> {
         this.timerService = timerService;
         this.dfsPhase = dfsPhase;
         this.queryPhase = queryPhase;
-this.defaultKeepAlive = componentSettings.getAsTime("default_keep_alive", timeValueMinutes(2));
+        this.fetchPhase = fetchPhase;
 
-        this.defaultKeepAlive = componentSettings.getAsTime("defaultKeepAlive", timeValueMinutes(2));
+this.defaultKeepAlive = componentSettings.getAsTime("default_keep_alive", timeValueMinutes(2));
 
         Map<String, SearchParseElement> elementParsers = new HashMap<String, SearchParseElement>();
         elementParsers.putAll(dfsPhase.parseElements());

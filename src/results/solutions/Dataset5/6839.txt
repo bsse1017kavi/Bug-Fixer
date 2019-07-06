@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -181,9 +180,9 @@ public class TCPConfigGui extends AbstractConfigGui {
     }
 
     private JPanel createCloseConnectionPanel() {
-closeConnection = new JCheckBox("", TCPSampler.CLOSE_CONNECTION_DEFAULT);
+        JLabel label = new JLabel(JMeterUtils.getResString("closeconnection")); // $NON-NLS-1$
 
-        closeConnection = new JCheckBox("", false);
+closeConnection = new JCheckBox("", TCPSampler.CLOSE_CONNECTION_DEFAULT);
         label.setLabelFor(closeConnection);
 
         JPanel closeConnectionPanel = new JPanel(new FlowLayout());

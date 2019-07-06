@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -51,9 +50,9 @@ public class TestElevationComparator extends LuceneTestCase {
     writer.addDocument(adoc(new String[] {"id", "x", "title", "boosted", "str_s", "x"}));
     writer.addDocument(adoc(new String[] {"id", "y", "title", "boosted boosted", "str_s","y"}));
     writer.addDocument(adoc(new String[] {"id", "z", "title", "boosted boosted boosted","str_s", "z"}));
-writer.shutdown();
+
     IndexReader r = DirectoryReader.open(writer, true);
-    writer.close();
+writer.shutdown();
 
     IndexSearcher searcher = newSearcher(r);
     searcher.setSimilarity(new DefaultSimilarity());

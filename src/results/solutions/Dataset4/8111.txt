@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -407,9 +406,9 @@ public class SearchSourceBuilder implements ToXContent {
         return this;
     }
 
-suggestBuilder = new SuggestBuilder("suggest");
+    public SuggestBuilder suggest() {
         if (suggestBuilder == null) {
-            suggestBuilder = new SuggestBuilder();
+suggestBuilder = new SuggestBuilder("suggest");
         }
         return suggestBuilder;
     }

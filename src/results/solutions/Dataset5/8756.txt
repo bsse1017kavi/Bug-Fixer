@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -146,9 +145,9 @@ public class CookieTest extends TestCase
 		for (Cookie cooky : cookies)
 		{
 			String pathOfStoredComponent = cooky.getName().replaceAll("\\.", ":");
-if (!page.get(pathOfStoredComponent).getDefaultModelObjectAsString().equals(""))
+			Assert.assertNotNull(page.get(pathOfStoredComponent));
 			// Skip "deleted" cookies
-			if (page.get(pathOfStoredComponent).getDefaultModelObjectAsString() != "")
+if (!page.get(pathOfStoredComponent).getDefaultModelObjectAsString().equals(""))
 			{
 				Assert.assertEquals(cooky.getValue(), page.get(pathOfStoredComponent)
 						.getDefaultModelObjectAsString());

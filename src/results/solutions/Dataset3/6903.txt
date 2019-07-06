@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public final class ServerFactory {
             final AbstractSubsystemAdd<?> subsystemAdd = subsystemElement.getAdd();
             list.add(new ServerSubsystemAdd(subsystemAdd));
             final List<AbstractSubsystemUpdate<? extends AbstractSubsystemElement<?>, ?>> subsystemList = new ArrayList<AbstractSubsystemUpdate<? extends AbstractSubsystemElement<?>,?>>();
-list.add(ServerSubsystemUpdate.create(update));
+            subsystemElement.getUpdates(subsystemList);
             for (AbstractSubsystemUpdate<? extends AbstractSubsystemElement<?>, ?> update : subsystemList) {
-                list.add(ServerProfileUpdate.create(update));
+list.add(ServerSubsystemUpdate.create(update));
             }
         }
 

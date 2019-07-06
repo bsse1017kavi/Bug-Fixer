@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -151,9 +150,9 @@ public abstract class Node implements Comparable<Node> {
     if (shapeFilter == null) {
       return cells;
     }
-SpatialRelation rel = cell.getShape().relate(shapeFilter);
+    List<Node> copy = new ArrayList<Node>(cells.size());//copy since cells contractually isn't modifiable
     for (Node cell : cells) {
-      SpatialRelation rel = cell.getShape().relate(shapeFilter, spatialPrefixTree.ctx);
+SpatialRelation rel = cell.getShape().relate(shapeFilter);
       if (rel == SpatialRelation.DISJOINT)
         continue;
       cell.shapeRel = rel;

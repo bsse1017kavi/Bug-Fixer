@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -106,9 +105,9 @@ public class TestBoolean2 extends LuceneTestCase {
     "w1 xx w2 yy w3",
     "w1 w3 xx w2 yy w3"
   };
-Query q = (new QueryParser(TEST_VERSION_CURRENT, field, new WhitespaceAnalyzer())).parse(queryText);
+
   public Query makeQuery(String queryText) throws ParseException {
-    Query q = (new QueryParser(Version.LUCENE_CURRENT, field, new WhitespaceAnalyzer())).parse(queryText);
+Query q = (new QueryParser(TEST_VERSION_CURRENT, field, new WhitespaceAnalyzer())).parse(queryText);
     return q;
   }
 

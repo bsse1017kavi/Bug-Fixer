@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ class CSVLexer extends Lexer {
                 }
             }
         }
-if (isEndOfFile(lastChar) || (!isDelimiter(lastChar) && isEndOfFile(c))) {
+
         // did we reach eof during the last iteration already ? EOF
-        if (isEndOfFile(lastChar) || (isDelimiter(lastChar) && isEndOfFile(c))) {
+if (isEndOfFile(lastChar) || (!isDelimiter(lastChar) && isEndOfFile(c))) {
             tkn.type = EOF;
             return tkn;
         }

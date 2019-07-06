@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -103,9 +102,9 @@ public class ToolFactory {
 	
 		Object newFormatterActivation = JavaCore.getOption(NEW_CODE_FORMATTER_ACTIVATION);
 		
-codeFormatter = new DefaultCodeFormatter(options);
+		ICodeFormatter codeFormatter;
 		if (JavaCore.ENABLED.equals(newFormatterActivation)) {
-			codeFormatter = new DefaultCodeFormatter();
+codeFormatter = new DefaultCodeFormatter(options);
 		} else {
 			if (options == null) options = JavaCore.getOptions();
 			codeFormatter = new CodeFormatter(options);

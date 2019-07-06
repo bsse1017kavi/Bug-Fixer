@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public class OSGiAttachmentsDeploymentProcessor implements DeploymentUnitProcess
 
         // Create the {@link OSGiDeploymentService}
         if (deployment != null) {
-MountHandle mount = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT).getMountHandle();
+
             // Prevent garbage collection of the MountHandle which will close the file
-            MountHandle mount = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT_MOUNT_HANDLE);
+MountHandle mount = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT).getMountHandle();
             deployment.addAttachment(MountHandle.class, mount);
 
             // Mark the bundle to start automatically

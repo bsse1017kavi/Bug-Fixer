@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ public class JmsClientTestCase {
             actionsApplied = true;
 
             QueueConnectionFactory qcf = lookup(client, "RemoteConnectionFactory", QueueConnectionFactory.class);
-conn = qcf.createQueueConnection("guest", "guest");
+            Queue queue = lookup(client, QUEUE_NAME, Queue.class);
 
-            conn = qcf.createQueueConnection();
+conn = qcf.createQueueConnection("guest", "guest");
             conn.start();
             session = conn.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
 

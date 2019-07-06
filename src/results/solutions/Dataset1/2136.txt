@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.catalog.SystemProcedures
@@ -191,9 +190,9 @@ public class SystemProcedures  {
 	 */
 	private static Connection getDefaultConn()throws SQLException
 	{
-Connection conn = id.connect( "jdbc:default:connection", null, 0 );
+		InternalDriver id = InternalDriver.activeDriver();
 		if (id != null) { 
-			Connection conn = id.connect("jdbc:default:connection", null);
+Connection conn = id.connect( "jdbc:default:connection", null, 0 );
 			if (conn != null)
 				return conn;
 		}

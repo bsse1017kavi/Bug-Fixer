@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -179,9 +178,9 @@ public abstract class AbstractWeightedFilterCache extends AbstractIndexComponent
                 DocSet docSet = FilterCacheValue.cacheable(reader, longsLAB, docIdSet);
                 cacheValue = new FilterCacheValue<DocSet>(docSet, longsLAB);
                 innerCache.putIfAbsent(cacheKey, cacheValue);
-return cacheValue.value() == DocSet.EMPTY_DOC_SET ? null : cacheValue.value();
+            }
 
-            return cacheValue.value();
+return cacheValue.value() == DocSet.EMPTY_DOC_SET ? null : cacheValue.value();
         }
 
         public String toString() {

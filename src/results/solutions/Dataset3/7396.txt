@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -188,9 +187,9 @@ public class BundleAccessesModuleServiceTestCase extends AbstractOSGiSubsystemTe
             public void execute(BatchBuilder batchBuilder) throws Exception {
                 Object service = loadClass(moduleId, EchoTargetService.class.getName()).newInstance();
                 BatchServiceBuilder<?> serviceBuilder = batchBuilder.addService(EchoTargetService.SERVICE_NAME, (Service<?>) service);
-serviceBuilder.setInitialMode(Mode.ACTIVE);
+                // Add the alias that the OSGi layer can use to lookup the service
                 serviceBuilder.addAliases(ServiceName.of(Constants.JBOSGI_PREFIX, Echo.class.getName()));
-                serviceBuilder.setInitialMode(Mode.IMMEDIATE);
+serviceBuilder.setInitialMode(Mode.ACTIVE);
             }
         };
         runWithLatchedBatch(work);

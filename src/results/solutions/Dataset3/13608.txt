@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ class PojoSubsystemAdd extends AbstractBoottimeAddStepHandler {
     protected void performBoottime(OperationContext context, ModelNode operation, ModelNode model, ServiceVerificationHandler verificationHandler, List<ServiceController<?>> newControllers) {
 
         context.addStep(new AbstractDeploymentChainStep() {
-processorTarget.addDeploymentProcessor(Phase.DEPENDENCIES, Phase.POST_MODULE_POJO, new KernelDeploymentModuleProcessor());
+            public void execute(DeploymentProcessorTarget processorTarget) {
                 processorTarget.addDeploymentProcessor(Phase.PARSE, Phase.PARSE_POJO_DEPLOYMENT, new KernelDeploymentParsingProcessor());
-                processorTarget.addDeploymentProcessor(Phase.POST_MODULE, Phase.POST_MODULE_POJO, new KernelDeploymentModuleProcessor());
+processorTarget.addDeploymentProcessor(Phase.DEPENDENCIES, Phase.POST_MODULE_POJO, new KernelDeploymentModuleProcessor());
                 processorTarget.addDeploymentProcessor(Phase.INSTALL, Phase.INSTALL_POJO_DEPLOYMENT, new ParsedKernelDeploymentProcessor());
             }
         }, OperationContext.Stage.RUNTIME);

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.utils;
 
 import com.badlogic.gdx.Gdx;
@@ -14,9 +13,9 @@ public class DefaultShaderProvider extends BaseShaderProvider {
 	
 	@Override
 	protected Shader createShader(final Renderable renderable) {
-return new DefaultShader(renderable.material, renderable.mesh.getVertexAttributes(), renderable.lights == null ? -1 : maxLightsCount);
+		Gdx.app.log("DefaultShaderProvider", "Creating new shader");
 		if (Gdx.graphics.isGL20Available())
-			return new DefaultShader(renderable.material, renderable.lights == null ? -1 : maxLightsCount);
+return new DefaultShader(renderable.material, renderable.mesh.getVertexAttributes(), renderable.lights == null ? -1 : maxLightsCount);
 		return new GLES10Shader(maxLightsCount);
 	}
 }

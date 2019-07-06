@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -124,9 +123,9 @@ public class TransportIndicesStatsAction extends TransportBroadcastOperationActi
     protected IndexShardStatsRequest newShardRequest() {
         return new IndexShardStatsRequest();
     }
-protected IndexShardStatsRequest newShardRequest(int numShards, ShardRouting shard, IndicesStatsRequest request) {
+
     @Override
-    protected IndexShardStatsRequest newShardRequest(ShardRouting shard, IndicesStatsRequest request) {
+protected IndexShardStatsRequest newShardRequest(int numShards, ShardRouting shard, IndicesStatsRequest request) {
         return new IndexShardStatsRequest(shard.index(), shard.id(), request);
     }
 

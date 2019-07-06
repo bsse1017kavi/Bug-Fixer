@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -70,9 +69,9 @@ public class LogConfigurator {
         if (loaded) {
             return;
         }
-ImmutableSettings.Builder settingsBuilder = settingsBuilder().put(settings);
+        loaded = true;
         Environment environment = new Environment(settings);
-        ImmutableSettings.Builder settingsBuilder = settingsBuilder().putAll(settings);
+ImmutableSettings.Builder settingsBuilder = settingsBuilder().put(settings);
         try {
             settingsBuilder.loadFromUrl(environment.resolveConfig("logging.yml"));
         } catch (FailedToResolveConfigException e) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class DisableRequiredWriteAttributeHandler extends AbstractWriteAttribute
 
     @Override
     protected boolean applyUpdateToRuntime(OperationContext context, ModelNode operation, String attributeName, ModelNode resolvedValue, ModelNode currentValue, HandbackHolder<Void> voidHandback) {
-Constants.JNDI_NAME.getName().equals(attributeName)) {
+        ModelNode submodel = context.readResource(PathAddress.EMPTY_ADDRESS).getModel();
         if ((submodel.hasDefined(Constants.ENABLED.getName()) && submodel.get(Constants.ENABLED.getName()).asBoolean()) ||
-                Constants.JNDINAME.getName().equals(attributeName)) {
+Constants.JNDI_NAME.getName().equals(attributeName)) {
            return true;
         } else {
             //do the job

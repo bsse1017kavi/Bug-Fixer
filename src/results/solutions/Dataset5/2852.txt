@@ -1,4 +1,3 @@
-
 /*
  * $Id: DefaultRequestTargetResolverStrategy.java,v 1.4 2005/12/30 21:47:05
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -230,9 +229,9 @@ public class DefaultRequestTargetResolverStrategy implements IRequestTargetResol
 			{
 				throw new WicketRuntimeException(
 						"Calling listener methods on components that are not enabled is not allowed: "
-if (!component.isEnableAllowed())
+								+ componentPath);
 			}
-			if (!component.isActionAuthorized(Component.ENABLE))
+if (!component.isEnableAllowed())
 			{
 				throw new UnauthorizedActionException(component,Component.ENABLE);
 			}

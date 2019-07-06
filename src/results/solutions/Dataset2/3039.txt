@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -75,9 +74,9 @@ getAddress() {
 
 void
 rrToWire(DataByteOutputStream out, Compression c) throws IOException {
-out.write(address.toBytes());
+	if (address == null)
 		return;
-	byte [] data = address.toBytes();
+out.write(address.toBytes());
 }
 
 }

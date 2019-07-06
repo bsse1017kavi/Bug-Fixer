@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -324,9 +323,9 @@ public class MoreLikeThisRequest implements ActionRequest {
     /**
      * An optional search source request allowing to control the search request for the
      * more like this documents.
-BytesStream bos = sourceBuilder.buildAsBytesStream(Requests.CONTENT_TYPE);
+     */
     public MoreLikeThisRequest searchSource(SearchSourceBuilder sourceBuilder) {
-        BytesStream bos = sourceBuilder.buildAsUnsafeBytes(Requests.CONTENT_TYPE);
+BytesStream bos = sourceBuilder.buildAsBytesStream(Requests.CONTENT_TYPE);
         this.searchSource = bos.underlyingBytes();
         this.searchSourceOffset = 0;
         this.searchSourceLength = bos.size();

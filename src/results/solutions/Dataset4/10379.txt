@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -146,9 +145,9 @@ public class MetaDataMappingService extends AbstractComponent {
                     if (mappingType == null) {
                         mappingType = newMappers.values().iterator().next().type();
                     } else if (!mappingType.equals(newMappers.values().iterator().next().type())) {
-if (!MapperService.DEFAULT_MAPPING.equals(mappingType) && mappingType.charAt(0) == '_') {
+                        throw new InvalidTypeNameException("Type name provided does not match type name within mapping definition");
                     }
-                    if (mappingType.charAt(0) == '_') {
+if (!MapperService.DEFAULT_MAPPING.equals(mappingType) && mappingType.charAt(0) == '_') {
                         throw new InvalidTypeNameException("Document mapping type name can't start with '_'");
                     }
 

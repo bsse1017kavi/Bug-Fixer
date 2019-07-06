@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class SocketBindingAdd extends AbstractSocketBindingUpdate {
         return new SocketBindingRemove(name);
     }
 
-final SocketBindingElement socketBinding = new SocketBindingElement(name, group.getDefaultInterface());
+    /** {@inheritDoc} */
     protected void applyUpdate(SocketBindingGroupElement group) throws UpdateFailedException {
-        final SocketBindingElement socketBinding = new SocketBindingElement(name, group.getInterfaceResolver(), group.getDefaultInterface());
+final SocketBindingElement socketBinding = new SocketBindingElement(name, group.getDefaultInterface());
         socketBinding.setConfiguredInterfaceName(interfaceName);
         socketBinding.setFixedPort(fixedPort);
         socketBinding.setPort(port);

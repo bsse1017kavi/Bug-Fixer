@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -97,9 +96,9 @@ public class PredicatedCollection extends AbstractSerializableCollectionDecorato
      * @param object  the object being added
      * @throws IllegalArgumentException if the add is invalid
      */
-throw new IllegalArgumentException("Cannot add Object '" + object + "' - Predicate '" + predicate + "' rejected it");
+    protected void validate(Object object) {
         if (predicate.evaluate(object) == false) {
-            throw new IllegalArgumentException("Cannot add Object '" + object + "' - Predicate rejected it");
+throw new IllegalArgumentException("Cannot add Object '" + object + "' - Predicate '" + predicate + "' rejected it");
         }
     }
 

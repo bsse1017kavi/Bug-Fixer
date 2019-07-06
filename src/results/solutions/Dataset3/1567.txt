@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public class CustomHandlerOperationsTestCase extends AbstractLoggingOperationsTe
         executeOperation(Operations.createRemoveOperation(profileAddress));
         verifyRemoved(profileAddress);
     }
-final ModelNode address = createCustomHandlerAddress(profileName, "CONSOLE").toModelNode();
+
     private void testCustomHandler(final String profileName) throws Exception {
-        final ModelNode address = createCustomHandlerAddress(profileName, "CONSOLE2").toModelNode();
+final ModelNode address = createCustomHandlerAddress(profileName, "CONSOLE").toModelNode();
 
         // Add the handler
         final ModelNode addOp = Operations.createAddOperation(address);

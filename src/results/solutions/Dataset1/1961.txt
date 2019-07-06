@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -180,9 +179,9 @@ public class ArrayBackedSortedColumns extends ArrayList<IColumn> implements ISor
         int high = mid - 1;
         int result = -1;
         while (low <= high)
-if ((result = compare(name, get(mid).name())) > 0)
+        {
             mid = (low + high) >> 1;
-            if ((result = -compare(get(mid).name(), name)) > 0)
+if ((result = compare(name, get(mid).name())) > 0)
             {
                 low = mid + 1;
             }

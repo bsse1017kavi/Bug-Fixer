@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -92,9 +91,9 @@ public class NotDeletedFilter extends Filter {
             this.liveDocs = liveDocs;
         }
 
-return liveDocs == null || liveDocs.get(doc);
+        @Override
         protected boolean match(int doc) {
-            return liveDocs.get(doc);
+return liveDocs == null || liveDocs.get(doc);
         }
     }
 }

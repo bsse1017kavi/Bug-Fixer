@@ -1,4 +1,3 @@
-
 /*
 
 Derby - Class org.apache.dertbyTesting.functionTests.tests.upgradeTests.BasicSetup
@@ -804,9 +803,9 @@ public class BasicSetup extends UpgradeChange {
     //In 10.8 and prior releases, the trigger defined in this test can
     // run into OOM errors depending on how much heap is available to
     // the upgrade test. But in 10.9 and higher, that won't happen
-public void atestTriggersWithLOBcolumns() throws Exception
+    // because LOB is never read into memory for the trigger being
     // used by this test.
-    public void testTriggersWithLOBcolumns() throws Exception
+public void atestTriggersWithLOBcolumns() throws Exception
     {
         Statement s = createStatement();
         ResultSet rs;

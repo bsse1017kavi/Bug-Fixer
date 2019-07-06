@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -379,9 +378,9 @@ verifyAXFR(Message m, byte [] b, TSIGRecord old,
 		return Rcode.BADSIG;
 	}
 
-dbs.writeShort((short)tsig.getSignature().length);
+	h.clear();
 	DataByteOutputStream dbs = new DataByteOutputStream();
-	dbs.writeShort((short)old.getSignature().length);
+dbs.writeShort((short)tsig.getSignature().length);
 	h.addData(dbs.toByteArray());
 	h.addData(tsig.getSignature());
 

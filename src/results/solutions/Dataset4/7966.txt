@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -90,9 +89,9 @@ public class RecoverySource extends AbstractComponent {
 
         this.fileChunkSize = componentSettings.getAsBytesSize("file_chunk_size", new ByteSizeValue(500, ByteSizeUnit.KB));
         this.translogBatchSize = componentSettings.getAsInt("translog_batch_size", 100);
-logger.debug("using concurrent_streams [{}], file_chunk_size [{}], translog_batch_size [{}], and compress [{}]", concurrentStreams, fileChunkSize, translogBatchSize, compress);
+        this.compress = componentSettings.getAsBoolean("compress", true);
 
-        logger.debug("using file_chunk_size [{}], translog_batch_size [{}], and compress [{}]", fileChunkSize, translogBatchSize, compress);
+logger.debug("using concurrent_streams [{}], file_chunk_size [{}], translog_batch_size [{}], and compress [{}]", concurrentStreams, fileChunkSize, translogBatchSize, compress);
 
         transportService.registerHandler(Actions.START_RECOVERY, new StartRecoveryTransportRequestHandler());
     }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -154,9 +153,9 @@ public class EmbeddedStandAloneServerFactory {
                         @Override
                         public ExtensibleConfigurationPersister createConfigurationPersister(ServerEnvironment serverEnvironment, ExecutorService executorService) {
                             final QName rootElement = new QName(Namespace.CURRENT.getUriString(), "server");
-for (Namespace namespace : Namespace.domainValues()) {
+                            final StandaloneXml parser = new StandaloneXml(Module.getBootModuleLoader(), executorService, extensionRegistry);
                             TransientConfigurationPersister persister = new TransientConfigurationPersister(serverEnvironment.getServerConfigurationFile(), rootElement, parser, parser);
-                            for (Namespace namespace : Namespace.values()) {
+for (Namespace namespace : Namespace.domainValues()) {
                                 if (!namespace.equals(Namespace.CURRENT)) {
                                     persister.registerAdditionalRootElement(new QName(namespace.getUriString(), "server"), parser);
                                 }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -59,9 +58,9 @@ public class RowMutationVerbHandler implements IVerbHandler
                 {
                     bb.get(addressBytes);
                     InetAddress hint = InetAddress.getByAddress(addressBytes);
-RowMutation hintedMutation = new RowMutation(Table.SYSTEM_TABLE, rm.getTable().getBytes(FBUtilities.UTF8));
+                    if (logger_.isDebugEnabled())
                         logger_.debug("Adding hint for " + hint);
-                    RowMutation hintedMutation = new RowMutation(Table.SYSTEM_TABLE, rm.getTable());
+RowMutation hintedMutation = new RowMutation(Table.SYSTEM_TABLE, rm.getTable().getBytes(FBUtilities.UTF8));
                     hintedMutation.addHints(rm.key(), addressBytes);
                     hintedMutation.apply();
                 }

@@ -1,4 +1,3 @@
-
 package org.columba.mail.folder.command;
 
 import java.awt.Color;
@@ -138,9 +137,9 @@ public class PrintMessageCommand extends FolderCommand {
 		MailFrameController mailFrameController =
 			(MailFrameController) frameController;
 
-Object[] uids = r[0].getUids();
+		FolderCommandReference[] r = (FolderCommandReference[]) getReferences();
 
-		Object[] uids = MessageNode.toUidArray( (MessageNode[]) r[0].getUids());
+Object[] uids = r[0].getUids();
 
 		Folder srcFolder = (Folder) r[0].getFolder();
 

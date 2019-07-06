@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class AddressControlManagementTestCase {
 
         TransportConfiguration transportConfiguration =
                      new TransportConfiguration(NettyConnectorFactory.class.getName());
-session = factory.createSession("guest", "guest", false, true, true, false, 1);
+        ServerLocator locator = HornetQClient.createServerLocatorWithoutHA(transportConfiguration);
         ClientSessionFactory factory =  locator.createSessionFactory();
-        session = factory.createSession();
+session = factory.createSession("guest", "guest", false, true, true, false, 1);
         session.createQueue(getAddress(), getQueueName(), false);
         session.createQueue(getAddress(), getOtherQueueName(), false);
     }

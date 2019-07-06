@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -366,9 +365,9 @@ public class ShortFieldMapper extends NumberFieldMapper<Short> {
         private final short number;
 
         private final NumberFieldMapper mapper;
-super(mapper, mapper.fieldType().stored() ? number : null, fieldType);
+
         public CustomShortNumericField(NumberFieldMapper mapper, short number, FieldType fieldType) {
-            super(mapper, mapper.fieldType().stored() ? Numbers.shortToBytes(number) : null, fieldType);
+super(mapper, mapper.fieldType().stored() ? number : null, fieldType);
             this.mapper = mapper;
             this.number = number;
         }

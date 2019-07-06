@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -27,9 +26,9 @@ public class RegisterTasklet
                                      final URL url )
         throws AntException, RegistryException 
     {
-try { m_tskDeployer.deployTask( name, url.toString(), url ); }
+        if( null == classname )
         {
-            try { m_tskDeployer.deployTasklet( name, url.toString(), url ); }
+try { m_tskDeployer.deployTask( name, url.toString(), url ); }
             catch( final DeploymentException de )
             {
                 throw new AntException( "Failed deploying " + name + " from " + url, de );

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /*
@@ -334,9 +333,9 @@ public class TestMockAnalyzer extends BaseTokenStreamTestCase {
     final int endOffset = dpe.endOffset();
     assertEquals(1 + positionGap, dpe.nextPosition());
     assertEquals(1 + endOffset + offsetGap, dpe.endOffset());
-writer.shutdown();
+    assertEquals(null, te.next());
     reader.close();
-    writer.close();
+writer.shutdown();
     writer.w.getDirectory().close();
   }
 

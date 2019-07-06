@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -215,9 +214,9 @@ public class DocumentMapperParser extends AbstractIndexComponent {
     private Tuple<String, Map<String, Object>> extractMapping(String type, String source) throws MapperParsingException {
         Map<String, Object> root;
         XContentParser xContentParser = null;
-root = xContentParser.mapOrdered();
+        try {
             xContentParser = XContentFactory.xContent(source).createParser(source);
-            root = xContentParser.map();
+root = xContentParser.mapOrdered();
         } catch (IOException e) {
             throw new MapperParsingException("Failed to parse mapping definition", e);
         } finally {

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.concurrent;
 /*
  * 
@@ -90,9 +89,9 @@ public class DebuggableThreadPoolExecutor extends ThreadPoolExecutor
             {
                 throw new AssertionError(e);
             }
-Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+            catch (ExecutionException e)
             {
-                logger.error("Error in executor futuretask", e);
+Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
             }
         }
 

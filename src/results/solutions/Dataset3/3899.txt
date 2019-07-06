@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class TLSSyslogServer extends TCPSyslogServer {
             trustManagerFactory.init(truststore);
 
             sslContext = SSLContext.getInstance("TLS");
-LOGGER.error("Exception occured during SSLContext for TLS syslog server initialization", e);
+            sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
         } catch (Exception e) {
-            LOGGER.error("Exception occurred during SSLContext for TLS syslog server initialization", e);
+LOGGER.error("Exception occured during SSLContext for TLS syslog server initialization", e);
             throw new SyslogRuntimeException(e);
         }
     }

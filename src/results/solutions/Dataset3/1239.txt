@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -214,9 +213,9 @@ public class Rule {
         boolean find();
     }
 
-private static TrueRMatcher INSTANCE = new TrueRMatcher();
+    private static class TrueRMatcher implements RMatcher {
 
-        static TrueRMatcher INSTANCE = new TrueRMatcher();
+private static TrueRMatcher INSTANCE = new TrueRMatcher();
 
         public boolean find() {
             return true;

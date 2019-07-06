@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011, Red Hat Inc., and individual contributors as indicated
@@ -237,9 +236,9 @@ public class WarAnnotationDeploymentProcessor implements DeploymentUnitProcessor
                 if (!(target instanceof ClassInfo)) {
                     throw new DeploymentUnitProcessingException("@WebFilter is only allowed at class level " + target);
                 }
-AnnotationValue nameValue = annotation.value("filterName");
+                ClassInfo classInfo = ClassInfo.class.cast(target);
                 filter.setFilterClass(classInfo.toString());
-                AnnotationValue nameValue = annotation.value("name");
+AnnotationValue nameValue = annotation.value("filterName");
                 if (nameValue == null || nameValue.asString().isEmpty()) {
                     filter.setName(classInfo.toString());
                 } else {

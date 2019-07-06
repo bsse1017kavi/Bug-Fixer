@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -206,9 +205,9 @@ public class Label extends Widget {
 		Color color = getColor();
 		if (style.background != null) {
 			batch.setColor(color.r, color.g, color.b, color.a * parentAlpha);
-cache.setColors(style.fontColor == null ? color : Color.tmp.set(color).mul(style.fontColor));
+			style.background.draw(batch, getX(), getY(), getWidth(), getHeight());
 		}
-		cache.setColor(style.fontColor == null ? color : Color.tmp.set(color).mul(style.fontColor));
+cache.setColors(style.fontColor == null ? color : Color.tmp.set(color).mul(style.fontColor));
 		cache.setPosition(getX(), getY());
 		cache.draw(batch, parentAlpha);
 	}

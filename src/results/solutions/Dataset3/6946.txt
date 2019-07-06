@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -148,9 +147,9 @@ public class DeploymentFullReplaceHandler implements ModelUpdateOperationHandler
         if (operation.hasDefined(INPUT_STREAM_INDEX)) {
             operation.remove(INPUT_STREAM_INDEX);
         }
-DeploymentHandlerUtil.replace(context, name, runtimeName, hash, resultHandler);
+
         if (start) {
-            DeploymentHandlerUtil.replace(deployNode, name, context, resultHandler);
+DeploymentHandlerUtil.replace(context, name, runtimeName, hash, resultHandler);
         } else {
             resultHandler.handleResultComplete();
         }

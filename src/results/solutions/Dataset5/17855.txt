@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -60,9 +59,9 @@ public class SimpleStructureViewToolPanel extends JPanel {
     BorderLayout borderLayout2 = new BorderLayout();
     BorderLayout borderLayout3 = new BorderLayout();
     BorderLayout borderLayout4 = new BorderLayout();
-public void containmentHierarchyUpdated(StructureModel model) {
+
     public final IStructureModelListener MODEL_LISTENER = new IStructureModelListener() {
-        public void modelUpdated(StructureModel model) {
+public void containmentHierarchyUpdated(StructureModel model) {
 			String path = Ajde.getDefault().getConfigurationManager().getActiveConfigFile();
 			String fileName = "<no active config>";
 			if (path != null) fileName = new File(path).getName();

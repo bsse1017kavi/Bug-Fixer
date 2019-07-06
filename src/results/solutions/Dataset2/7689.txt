@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -150,9 +149,9 @@ public void manageSyntheticAccessIfNecessary(BlockScope currentScope) {
 public TypeBinding resolveType(BlockScope scope) {
 	// Answer the signature return type
 	// Base type promotion
-this.actualReceiverType = this.receiverType = receiver.resolveType(scope);
+
 	constant = NotAConstant;
-	receiverType = receiver.resolveType(scope); 
+this.actualReceiverType = this.receiverType = receiver.resolveType(scope);
 	// will check for null after args are resolved
 	TypeBinding[] argumentTypes = NoParameters;
 	if (arguments != null) {

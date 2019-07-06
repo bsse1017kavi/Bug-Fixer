@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -80,9 +79,9 @@ public class GistFilesViewActivity extends RoboSherlockFragmentActivity {
 
         gist = store.getGist(gistId);
 
-actionBar.setTitle(getString(string.gist) + ' ' + gistId);
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(getString(string.gist) + " " + gistId);
+actionBar.setTitle(getString(string.gist) + ' ' + gistId);
         User author = gist.getUser();
         if (author != null) {
             actionBar.setSubtitle(author.getLogin());

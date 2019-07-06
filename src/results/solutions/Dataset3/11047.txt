@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010-2011 the original author or authors.
  *
@@ -59,9 +58,9 @@ public class EhCacheCache implements Cache {
 		cache.removeAll();
 	}
 
-return (element != null ? new DefaultValueWrapper(element.getObjectValue()) : null);
+	public ValueWrapper get(Object key) {
 		Element element = cache.get(key);
-		return (element != null ? new DefaultValueWrapper<Object>(element.getObjectValue()) : null);
+return (element != null ? new DefaultValueWrapper(element.getObjectValue()) : null);
 	}
 
 	public void put(Object key, Object value) {

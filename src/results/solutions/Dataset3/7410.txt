@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -138,9 +137,9 @@ public abstract class AbstractSockJsSession implements WebSocketSession {
 		for (String message : messages) {
 			this.handler.handleTextMessage(new TextMessage(message), this);
 		}
-public void delegateError(Throwable ex) throws Exception {
+	}
 
-	public void delegateError(Throwable ex) {
+public void delegateError(Throwable ex) throws Exception {
 		this.handler.handleError(ex, this);
 	}
 

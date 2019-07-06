@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -124,9 +123,9 @@ public class IntegerValidator extends AbstractValidator
             if (error)
             {
                 final Map map = messageModel(component, value);
-error(component, resourceKey(component), map);
+                map.put("min", new Long(min));
                 map.put("max", new Long(max));
-                error(component, resourceKey(component), map, value); 
+error(component, resourceKey(component), map);
             }
 		}
 	}

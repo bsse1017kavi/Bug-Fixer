@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -363,9 +362,9 @@ public class SelectImpl
                     timeout = 1000; 
                     Log log = _conf.getLog(JDBCConfiguration.LOG_JDBC);
                     if (log.isWarnEnabled())
-stmnt.setQueryTimeout(timeout / 1000);
+                        log.warn(_loc.get("millis-query-timeout"));
                 }
-                stmnt.setQueryTimeout(fetch.getLockTimeout() / 1000);
+stmnt.setQueryTimeout(timeout / 1000);
             }
             rs = stmnt.executeQuery();
         } catch (SQLException se) {

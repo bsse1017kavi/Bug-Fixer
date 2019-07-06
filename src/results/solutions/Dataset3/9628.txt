@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -153,9 +152,9 @@ public class ExampleRunner {
 
     ModelNode createWebConnector(final ModelControllerClient client) throws Exception {
         final ModelNode operation = new ModelNode();
-operation.get("protocol").set("HTTP/1.1");
+        operation.get(OP).set(ADD);
         operation.get(OP_ADDR).set(WC_ADDR);
-        operation.get("protocol").set("http");
+operation.get("protocol").set("HTTP/1.1");
         operation.get("socket-binding").set("new-http-binding");
         operation.get("scheme").set("http");
 

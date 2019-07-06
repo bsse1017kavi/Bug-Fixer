@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.xnio.IoUtils;
 
 public class ModuleUtils {
-File testModuleRoot = new File(getModulePath(), "test" + File.separatorChar + moduleName);
+
     public static void createTestModule(String moduleName, String moduleXml, Class<?>... classes) throws IOException {
-        File testModuleRoot = new File(getModulePath(), "test/" + moduleName);
+File testModuleRoot = new File(getModulePath(), "test" + File.separatorChar + moduleName);
         if (testModuleRoot.exists()) {
             throw new IllegalArgumentException(testModuleRoot + " already exists");
         }

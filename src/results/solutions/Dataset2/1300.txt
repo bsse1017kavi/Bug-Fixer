@@ -1,4 +1,3 @@
-
 /*
  * AppearanceOptionPane.java - Appearance options panel
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -99,9 +98,9 @@ public class AppearanceOptionPane extends AbstractOptionPane
 		/* Decorate dialogs with look and feel (JDK 1.4 only) */
 		decorateDialogs = new JCheckBox(jEdit.getProperty(
 			"options.appearance.decorateDialogs"));
-if(OperatingSystem.hasJava14())
+		decorateDialogs.setSelected(jEdit.getBooleanProperty("decorate.dialogs"));
 
-		if(System.getProperty("java.version").compareTo("1.4") >= 0)
+if(OperatingSystem.hasJava14())
 		{
 			addComponent(decorateFrames);
 			addComponent(decorateDialogs);

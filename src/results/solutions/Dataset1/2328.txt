@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.cloud;
 
 /*
@@ -41,9 +40,9 @@ public abstract class HashBasedRouter extends DocRouter {
     int hash = sliceHash(id, sdoc, params);
     Range range = collection.getSlice(shardId).getRange();
     return range != null && range.includes(hash);
-public int sliceHash(String id, SolrInputDocument sdoc, SolrParams params) {
+  }
 
-  protected int sliceHash(String id, SolrInputDocument sdoc, SolrParams params) {
+public int sliceHash(String id, SolrInputDocument sdoc, SolrParams params) {
     return Hash.murmurhash3_x86_32(id, 0, id.length(), 0);
   }
 

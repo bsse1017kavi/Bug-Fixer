@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -417,9 +416,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
                         read++;
                         if (ch == '='){ // end of keyword
                             String keyword = coll.toString(CharsetNames.UTF_8);
-int got = IOUtils.readFully(i, rest);
+                            // Get rest of entry
                             byte[] rest = new byte[len - read];
-                            int got = i.read(rest);
+int got = IOUtils.readFully(i, rest);
                             if (got != len - read){
                                 throw new IOException("Failed to read "
                                                       + "Paxheader. Expected "

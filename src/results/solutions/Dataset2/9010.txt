@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -430,9 +429,9 @@ public class EditorSashContainer extends PartSashContainer {
         if (dropTarget == null) {
             WorkbenchWindowConfigurer winConfigurer = ((WorkbenchWindow) page
                     .getWorkbenchWindow()).getWindowConfigurer();
-| DND.DROP_COPY | DND.DROP_LINK);
+
             dropTarget = new DropTarget(getControl(), DND.DROP_DEFAULT
-                    | DND.DROP_COPY);
+| DND.DROP_COPY | DND.DROP_LINK);
             dropTarget.setTransfer(winConfigurer.getTransfers());
             if (winConfigurer.getDropTargetListener() != null) {
                 dropTarget.addDropListener(winConfigurer

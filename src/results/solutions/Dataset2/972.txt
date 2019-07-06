@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -176,9 +175,9 @@ public final class SessionIdGenerator  extends BaseInterceptor {
 	    return newId;
 	}
 	// We're in a sandbox...
-newId= (String)jdk11Compat.doPrivileged(di, jdk11Compat.getAccessControlContext());
+	PriviledgedIdGenerator di = new PriviledgedIdGenerator(this, jsIdent);
 	try {
-	    newId= (String)jdk11Compat.doPrivileged(di);
+newId= (String)jdk11Compat.doPrivileged(di, jdk11Compat.getAccessControlContext());
 	} catch( Exception ex ) {
 	    newId=null;
 	}

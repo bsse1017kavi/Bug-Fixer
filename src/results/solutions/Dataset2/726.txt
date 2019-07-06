@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -163,9 +162,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 	// May loose some local variable initializations : affecting the local variable attributes
 	if (this.mergedInitStateIndex != -1) {
 		codeStream.removeNotDefinitelyAssignedVariables(currentScope, this.mergedInitStateIndex);
-if (this.breakLabel.forwardReferenceCount() > 0) {
+		codeStream.addDefinitelyAssignedVariables(currentScope, this.mergedInitStateIndex);
 	}
-	if (this.breakLabel.forwardReferenceCount > 0) {
+if (this.breakLabel.forwardReferenceCount() > 0) {
 		this.breakLabel.place();
 	}
 

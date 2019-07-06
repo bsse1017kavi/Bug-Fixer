@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -776,9 +775,9 @@ abstract class XSDAbstractTraverser {
         // reference a <group> whose model group is an all model group,
         // minOccurs and maxOccurs must be one.
         if (processingAllEl) {
-(max == SchemaSymbols.OCCURRENCE_UNBOUNDED) ? SchemaSymbols.ATTVAL_UNBOUNDED : Integer.toString(max),
+            if (max != 1) {
                 reportSchemaError("cos-all-limited.2", new Object[]{
-                        (max == -1) ? SchemaSymbols.ATTVAL_UNBOUNDED : Integer.toString(max),
+(max == SchemaSymbols.OCCURRENCE_UNBOUNDED) ? SchemaSymbols.ATTVAL_UNBOUNDED : Integer.toString(max),
                         ((XSElementDecl)particle.fValue).getName()}, parent);
                 max = 1;
                 if (min > 1)

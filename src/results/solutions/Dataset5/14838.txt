@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -20,9 +19,9 @@ import javax.persistence.*;
 import org.apache.openjpa.persistence.models.company.*;
 
 @Entity(name="JI_FullTimeEmployee")
-public class FullTimeEmployee extends Employee
+@Table(name="JI_FullTimeEmployee") // OPENJPA-121
 @Inheritance(strategy=InheritanceType.JOINED)
-public final class FullTimeEmployee extends Employee
+public class FullTimeEmployee extends Employee
     implements IFullTimeEmployee {
     @Basic
     private float salary;

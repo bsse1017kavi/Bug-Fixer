@@ -1,4 +1,3 @@
-
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class HoldingDataBeanImpl implements HoldingDataBean, Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ACCOUNT_ACCOUNTID")
 	private AccountDataBeanImpl account;
-@JoinColumn(name = "QUOTE_SYMBOL", columnDefinition="VARCHAR(255)")
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "QUOTE_SYMBOL", columnDefinition="VARCHAR(250)")
+@JoinColumn(name = "QUOTE_SYMBOL", columnDefinition="VARCHAR(255)")
 	private QuoteDataBeanImpl quote;
 
 	public HoldingDataBeanImpl() {

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -878,9 +877,9 @@ public class FileUtil {
      */
     public static URL getFileURL(File file) { 
 		LangUtil.throwIaxIfNull(file, "file");
-result = file.toURL();//TODO AV - was toURI.toURL that does not works on Java 1.3
+        URL result = null;
         try {
-            result = file.toURI().toURL();
+result = file.toURL();//TODO AV - was toURI.toURL that does not works on Java 1.3
             if (null != result) {
                 return result;
             }

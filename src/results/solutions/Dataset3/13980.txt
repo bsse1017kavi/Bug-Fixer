@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -29,9 +28,9 @@ public class UnicodeUnpairedSurrogateRemover extends CodePointTranslator {
     /**
      * Implementation of translate that throws out unpaired surrogates. 
      * {@inheritDoc}
-public boolean translate(final int codepoint, final Writer out) throws IOException {
+     */
     @Override
-    public boolean translate(int codepoint, Writer out) throws IOException {
+public boolean translate(final int codepoint, final Writer out) throws IOException {
         if (codepoint >= Character.MIN_SURROGATE && codepoint <= Character.MAX_SURROGATE) {
             // It's a surrogate. Write nothing and say we've translated.
             return true;

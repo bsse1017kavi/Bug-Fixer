@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1048,9 +1047,9 @@ public class PCPath
         if (disc != null)
             cols = disc.getColumns();
         else
-if (cols == null || cols.length == 0) {
+            cols = getColumns(state);
 
-        if (cols == null) {
+if (cols == null || cols.length == 0) {
             sql.append("1");
             return;
         }

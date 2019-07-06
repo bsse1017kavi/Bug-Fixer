@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ public class JPAExtension implements Extension {
         registration.registerXMLElementWriter(parser);
 
         try {
-final ManagementAdaptor managementAdaptor = provider.getManagementAdaptor();
+            // load the default persistence provider adaptor
             PersistenceProviderAdaptor provider = PersistenceProviderAdaptorLoader.loadPersistenceAdapterModule(null);
-            final ManagementAdaptor managementAdaptor = (ManagementAdaptor)provider.getManagementAdaptor();
+final ManagementAdaptor managementAdaptor = provider.getManagementAdaptor();
             if (managementAdaptor != null) {
                 DescriptionProvider JPA_SUBSYSTEM = new DescriptionProvider() {
                     @Override

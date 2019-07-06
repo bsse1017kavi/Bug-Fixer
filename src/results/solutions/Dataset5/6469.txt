@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase.
 All rights reserved. This program and the accompanying materials
@@ -22,9 +21,9 @@ import org.eclipse.xtend.backend.types.AbstractType;
  * @author Arno Haase (http://www.haase-consulting.com)
  */
 public final class VoidType extends AbstractType {
-private VoidType () {super ("Void", "{builtin}Void"); }
+    public static final VoidType INSTANCE = new VoidType();
 
-    private VoidType () {super ("Void"); }
+private VoidType () {super ("Void", "{builtin}Void"); }
 
     @Override
     public boolean isAssignableFrom (BackendType other) {

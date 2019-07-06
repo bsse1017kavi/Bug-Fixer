@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,9 +73,9 @@ public class MinimumMasterNodesTests extends AbstractIntegrationTest {
 
         state = client().admin().cluster().prepareState().execute().actionGet().getState();
         assertThat(state.nodes().size(), equalTo(2));
-createIndex("test");
+        assertThat(state.metaData().indices().containsKey("test"), equalTo(false));
 
-        client().admin().indices().prepareCreate("test").execute().actionGet();
+createIndex("test");
         logger.info("--> indexing some data");
         for (int i = 0; i < 100; i++) {
             client().prepareIndex("test", "type1", Integer.toString(i)).setSource("field", "value").execute().actionGet();

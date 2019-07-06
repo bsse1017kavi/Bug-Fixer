@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -36,9 +35,9 @@ public abstract class AbstractRosterManager implements IRosterManager {
 
 	protected void fireRosterUpdate(IRosterItem changedItem) {
 		synchronized (this) {
-l.handleRosterUpdate(roster, changedItem);
+			for(Iterator i=rosterUpdateListeners.iterator(); i.hasNext(); ) {
 				IRosterUpdateListener l = (IRosterUpdateListener) i.next();
-				l.handleRosterUpdate(changedItem);
+l.handleRosterUpdate(roster, changedItem);
 			}
 		}
 	}

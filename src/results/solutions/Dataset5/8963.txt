@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -95,9 +94,9 @@ public class EclipseCollabSharedObject extends GenericSharedObject implements
 
 	public void activated(ID[] others) {
 		super.activated(others);
-if (!getContext().isGroupManager())
+		if (localGUI == null) {
 			try {
-				if (!getContext().isGroupServer())
+if (!getContext().isGroupManager())
 					destroySelfLocal();
 			} catch (Exception e) {
 				debugdump(e, "Unable to check whether we are server instance");

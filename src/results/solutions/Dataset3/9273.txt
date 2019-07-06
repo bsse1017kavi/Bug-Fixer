@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -65,9 +64,9 @@ public class FormatHelper {
 			return "null";
 		}
 		StringBuilder fmtd = new StringBuilder();
-Class<?> baseClass = clazz.getComponentType();
+		if (clazz.isArray()) {
 			int dims = 1;
-			Class baseClass = clazz.getComponentType();
+Class<?> baseClass = clazz.getComponentType();
 			while (baseClass.isArray()) {
 				baseClass = baseClass.getComponentType();
 				dims++;

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.drda.NetworkServerControl
@@ -327,9 +326,9 @@ public class NetworkServerControl{
 				!e.getMessage().equals(NetworkServerControlImpl.UNEXPECTED_ERR) ||
 				printErrors
 			)
-server.consoleExceptionPrint(e);
+			{
 				if (server != null)
-					server.consoleExceptionPrintTrace(e);
+server.consoleExceptionPrint(e);
 				else
 					e.printStackTrace();  // default output stream is System.out
 			}

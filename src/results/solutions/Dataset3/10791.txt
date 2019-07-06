@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  * 
@@ -190,9 +189,9 @@ public class TypeDescriptor<T> {
 			}
 			return cachedFieldAnnotations;
 		} else if (methodParameter != null) {
-return new Annotation[0];
+			return methodParameter.getMethod().getAnnotations();
 		} else {
-			return null;
+return new Annotation[0];
 		}
 	}
 

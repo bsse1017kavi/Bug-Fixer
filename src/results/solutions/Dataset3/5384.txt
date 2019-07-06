@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public final class InstanceofPredicate implements Predicate<Object>, Serializabl
      *
      * @param type  the type to check for, may not be null
      * @return the predicate
-public static Predicate<Object> instanceOfPredicate(Class<?> type) {
+     * @throws IllegalArgumentException if the class is null
      */
-    public static Predicate<Object> getInstance(Class<?> type) {
+public static Predicate<Object> instanceOfPredicate(Class<?> type) {
         if (type == null) {
             throw new IllegalArgumentException("The type to check instanceof must not be null");
         }

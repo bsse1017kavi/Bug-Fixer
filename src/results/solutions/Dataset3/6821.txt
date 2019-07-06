@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class DatasourceTestCase {
         MAIN_RUNNING_SERVER_DS_ADDRESS.protect();
     }
 
-testSupport = DomainTestSuite.createSupport(DatasourceTestCase.class.getSimpleName());
+    @BeforeClass
     public static void setupDomain() throws Exception {
-        testSupport = DomainTestSuite.createSupport(ManagementAccessTestCase.class.getSimpleName());
+testSupport = DomainTestSuite.createSupport(DatasourceTestCase.class.getSimpleName());
         domainMasterLifecycleUtil = testSupport.getDomainMasterLifecycleUtil();
         domainSlaveLifecycleUtil = testSupport.getDomainSlaveLifecycleUtil();
     }

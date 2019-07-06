@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -359,9 +358,9 @@ public class ServerRootResourceDefinition extends SimpleResourceDefinition {
         @Override
         public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
             String attr = operation.get(ModelDescriptionConstants.NAME).asString();
-if (env != null && env.getProductConfig() != null) {
+
             //These are undefined for the community version
-            if (env != null) {
+if (env != null && env.getProductConfig() != null) {
                 if (attr.equals(ModelDescriptionConstants.PRODUCT_VERSION)) {
                     String productVersion = env.getProductConfig().getProductVersion();
                     if (productVersion != null) {

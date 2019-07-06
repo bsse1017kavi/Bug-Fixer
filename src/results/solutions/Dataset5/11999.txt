@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -112,9 +111,9 @@ public abstract class AjaxSubmitLink extends AbstractSubmitLink
 	{
 		super.onComponentTag(tag);
 		
-if (tag.getName().toLowerCase().equals("a"))
+		if (isLinkEnabled()) 
 		{
-			checkComponentTag(tag, "a");
+if (tag.getName().toLowerCase().equals("a"))
 			tag.put("href", "#");
 		}
 		else

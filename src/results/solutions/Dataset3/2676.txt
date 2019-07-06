@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -207,9 +206,9 @@ public class LinkedMap<K, V> extends AbstractLinkedMap<K, V> implements Serializ
     /**
      * List view of map.
      */
-private final LinkedMap<K, ?> parent;
+    static class LinkedMapList<K> extends AbstractList<K> {
 
-        final LinkedMap<K, ?> parent;
+private final LinkedMap<K, ?> parent;
 
         LinkedMapList(final LinkedMap<K, ?> parent) {
             this.parent = parent;

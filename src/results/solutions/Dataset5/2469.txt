@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -114,9 +113,9 @@ public class PortletRequestTargetResolverStrategy extends  AbstractRequestTarget
 		Session session = requestCycle.getSession();
 		Application application = session.getApplication();
 		Class<? extends Page> pageClass;
-pageClass = session.getClassResolver().resolveClass(bookmarkablePageClass);
+		try
 		{
-			pageClass = (Class<? extends Page>)session.getClassResolver().resolveClass(bookmarkablePageClass);
+pageClass = session.getClassResolver().resolveClass(bookmarkablePageClass);
 		}
 		catch (RuntimeException e)
 		{

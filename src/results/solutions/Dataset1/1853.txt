@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -42,9 +41,9 @@ public class ScoreCachingWrappingScorer extends Scorer {
     super(scorer.getSimilarity());
     this.scorer = scorer;
   }
-public boolean score(Collector collector, int max, int firstDocID) throws IOException {
+
   @Override
-  protected boolean score(Collector collector, int max, int firstDocID) throws IOException {
+public boolean score(Collector collector, int max, int firstDocID) throws IOException {
     return scorer.score(collector, max, firstDocID);
   }
 

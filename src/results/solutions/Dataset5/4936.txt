@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -229,9 +228,9 @@ final class BalancedDTDGrammar extends DTDGrammar {
      */
     private int addContentSpecNodes(int begin, int end) {
         if (begin == end) {
-final int middle = (begin + end) >>> 1;
+            return fGroupIndexStack[fDepth][begin];
         }
-        int middle = (begin + end) / 2;
+final int middle = (begin + end) >>> 1;
         return addContentSpecNode(fOpStack[fDepth], 
                 addContentSpecNodes(begin, middle), 
                 addContentSpecNodes(middle + 1, end));

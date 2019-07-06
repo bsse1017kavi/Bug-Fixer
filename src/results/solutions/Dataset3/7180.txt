@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import org.jboss.dmr.ModelNode;
 /**
  * The undefine-attribute handler, writing an undefined value for a single attribute.
  */
-static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(ModelDescriptionConstants.UNDEFINE_ATTRIBUTE_OPERATION, ControllerResolver.getResolver("global"))
+public class UndefineAttributeHandler extends WriteAttributeHandler {
 
-    static final OperationDefinition UNDEFINE_ATTRIBUTE_DEFINITION = new SimpleOperationDefinitionBuilder(ModelDescriptionConstants.UNDEFINE_ATTRIBUTE_OPERATION, ControllerResolver.getResolver("global"))
+static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(ModelDescriptionConstants.UNDEFINE_ATTRIBUTE_OPERATION, ControllerResolver.getResolver("global"))
             .setParameters(GlobalOperationHandlers.NAME)
             .setRuntimeOnly()
             .build();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -142,9 +141,9 @@ public class ServerStartBatchBuilder implements BatchBuilder {
         @Override
         public BatchServiceBuilder setInitialMode(ServiceController.Mode mode) {
             if(mode.equals(ServiceController.Mode.ON_DEMAND)) {
-ServerStartBatchBuilder.this.serverStartupListener.unexpectOnDemand(serviceName);
-            } else {
                 ServerStartBatchBuilder.this.serverStartupListener.expectOnDemand(serviceName);
+            } else {
+ServerStartBatchBuilder.this.serverStartupListener.unexpectOnDemand(serviceName);
             }
             delegate.setInitialMode(mode);
             return this;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -380,9 +379,9 @@ public class FloatFieldMapper extends NumberFieldMapper<Float> {
             this.mapper = mapper;
             this.number = number;
         }
-public TokenStream tokenStream(Analyzer analyzer, TokenStream previous) throws IOException {
+
         @Override
-        public TokenStream tokenStream(Analyzer analyzer) throws IOException {
+public TokenStream tokenStream(Analyzer analyzer, TokenStream previous) throws IOException {
             if (fieldType().indexed()) {
                 return mapper.popCachedStream().setFloatValue(number);
             }

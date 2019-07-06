@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -225,9 +224,9 @@ public class BcelTypeMunger extends ConcreteTypeMunger {
 		BcelClassWeaver weaver,
 		PerObjectInterfaceTypeMunger munger)
 	{
-if (couldMatch(gen.getBcelObjectType(), munger.getTestPointcut())) {
+		LazyClassGen gen = weaver.getLazyClassGen();
 		
-		if (couldMatch(gen.getType(), munger.getTestPointcut())) {
+if (couldMatch(gen.getBcelObjectType(), munger.getTestPointcut())) {
 			FieldGen fg = makeFieldGen(gen, 
 				AjcMemberMaker.perObjectField(gen.getType(), aspectType));
 

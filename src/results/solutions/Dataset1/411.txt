@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search;
 
 import java.io.IOException;
@@ -56,9 +55,9 @@ public class CategoryListIteratorTest extends LuceneTestCase {
     UnsafeByteArrayOutputStream ubaos = new UnsafeByteArrayOutputStream(buf);
     IntEncoder encoder;
     private boolean exhausted = false;
-public DataTokenStream(String text, IntEncoder encoder) {
+    private CharTermAttribute term = addAttribute(CharTermAttribute.class);
 
-    public DataTokenStream(String text, IntEncoder encoder) throws IOException {
+public DataTokenStream(String text, IntEncoder encoder) {
       this.encoder = encoder;
       term.setEmpty().append(text);
     }

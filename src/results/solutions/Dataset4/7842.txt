@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -179,9 +178,9 @@ public class LocalGateway extends AbstractLifecycleComponent<Gateway> implements
                 // the meta data per index, since we create the index and it will be added automatically
                 for (final IndexMetaData indexMetaData : state.metaData()) {
                     try {
-.mappingsMetaData(indexMetaData.mappings())
+                        createIndexService.createIndex(new MetaDataCreateIndexService.Request("gateway", indexMetaData.index())
                                 .settings(indexMetaData.settings())
-                                .mappingsCompressed(indexMetaData.mappings())
+.mappingsMetaData(indexMetaData.mappings())
                                 .state(indexMetaData.state())
                                 .blocks(ImmutableSet.of(GatewayService.INDEX_NOT_RECOVERED_BLOCK))
                                 .timeout(timeValueSeconds(30)),

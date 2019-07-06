@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -4018,9 +4017,9 @@ public void setClipping (Path path) {
 	setClipping(0);
 	if (path != null) {
 		initGdip();
-Gdip.Graphics_SetClipPath(data.gdipGraphics, path.handle);
+		int mode = OS.GetPolyFillMode(handle) == OS.WINDING ? Gdip.FillModeWinding : Gdip.FillModeAlternate;
 		Gdip.GraphicsPath_SetFillMode(path.handle, mode);
-		Gdip.Graphics_SetClip(data.gdipGraphics, path.handle);
+Gdip.Graphics_SetClipPath(data.gdipGraphics, path.handle);
 	}
 }
 

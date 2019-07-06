@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -24,9 +23,9 @@ public class NonVoidMethodRequestor extends SearchableEnvironmentRequestor {
 public NonVoidMethodRequestor(ISearchRequestor requestor) {
 	super(requestor);
 }
-if (!Signature.getReturnType(method.getSignature()).equals("V"/*nonNLS*/)) {
+public void acceptMethod(IMethod method) {
 	try {
-		if (!Signature.getReturnType(method.getSignature()).equals("V")) { //$NON-NLS-1$
+if (!Signature.getReturnType(method.getSignature()).equals("V"/*nonNLS*/)) {
 			super.acceptMethod(method);
 		}
 	} catch (JavaModelException npe) {

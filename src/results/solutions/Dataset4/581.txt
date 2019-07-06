@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -31,9 +30,9 @@ import org.elasticsearch.search.internal.SearchContext;
  */
 public class QueryParseElement implements SearchParseElement {
 
-Query query = indexQueryParser.parse(jp);
+    @Override public void parse(JsonParser jp, SearchContext context) throws Exception {
         JsonIndexQueryParser indexQueryParser = (JsonIndexQueryParser) context.queryParser();
-        Query query = indexQueryParser.parse(jp, context.source());
+Query query = indexQueryParser.parse(jp);
         query.setBoost(query.getBoost() * context.queryBoost());
         context.query(query);
     }

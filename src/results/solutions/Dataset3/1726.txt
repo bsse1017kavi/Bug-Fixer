@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public class ArjunaObjectStoreEnvironmentService implements Service<Void> {
     public void start(StartContext context) throws StartException {
         callbackHandle = pathManagerInjector.getValue().registerCallback(pathRef, PathManager.ReloadServerCallback.create(), PathManager.Event.UPDATED, PathManager.Event.REMOVED);
         String objectStoreDir = pathManagerInjector.getValue().resolveRelativePathEntry(path, pathRef);
-BeanPopulator.getNamedInstance(ObjectStoreEnvironmentBean.class, null);
+
          final ObjectStoreEnvironmentBean defaultActionStoreObjectStoreEnvironmentBean =
-           BeanPopulator.getNamedInstance(ObjectStoreEnvironmentBean.class, "default");
+BeanPopulator.getNamedInstance(ObjectStoreEnvironmentBean.class, null);
 
 
         if(useHornetqJournalStore) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -43,9 +42,9 @@ import org.jboss.dmr.ModelNode;
  */
 public class DeploymentDeployHandler implements ModelUpdateOperationHandler, DescriptionProvider {
 
-static ModelNode getOperation(ModelNode address) {
+    public static final String OPERATION_NAME = DEPLOY;
 
-    static final ModelNode getOperation(ModelNode address) {
+static ModelNode getOperation(ModelNode address) {
         return Util.getEmptyOperation(OPERATION_NAME, address);
     }
 

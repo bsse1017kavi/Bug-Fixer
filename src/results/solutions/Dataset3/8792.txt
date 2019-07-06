@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public class TDistributionTest extends ContinuousDistributionAbstractTest {
         assertEquals(5d, dist.getDegreesOfFreedom(), Double.MIN_VALUE);
     }
 
-new TDistributionImpl(0);
+    public void testPreconditions() {
         try {
-            TDistribution dist = new TDistributionImpl(0);
+new TDistributionImpl(0);
             fail("Expecting NotStrictlyPositiveException for df = 0");
         } catch (NotStrictlyPositiveException ex) {
             // expected

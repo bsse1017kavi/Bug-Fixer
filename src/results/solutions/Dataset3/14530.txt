@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -913,9 +912,9 @@ public class CollectionUtilsTest extends MockTestCase {
         ints.add(2);
         ints.add(3);
         ints.add(3);
-assertEquals(1, ints.size());
+        Iterable<Integer> iterable = ints;
         assertTrue(CollectionUtils.filter(iterable, EQUALS_TWO));
-        assertEquals(1, (int) ints.size());
+assertEquals(1, ints.size());
         assertEquals(2, (int) ints.get(0));
     }
 

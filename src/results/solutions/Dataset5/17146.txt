@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 Shane Clarke.
  * All rights reserved. This program and the accompanying materials
@@ -737,9 +736,9 @@ public class AnnotationsValuesEditingSupport extends EditingSupport {
                 manager.aboutToPerformChange(change);
                 undoChange = change.perform(monitor);
                 successful = true;
-JAXWSUIPlugin.log(ce.getStatus());
+            }
         } catch (CoreException ce) {
-            ce.printStackTrace();
+JAXWSUIPlugin.log(ce.getStatus());
         } finally {
             manager.changePerformed(change, successful);
         }

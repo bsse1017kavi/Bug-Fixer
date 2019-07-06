@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.marshal;
 /*
  * 
@@ -98,9 +97,9 @@ public abstract class AbstractType<T> implements Comparator<ByteBuffer>
     /** get a string representation of the bytes suitable for log messages */
     public abstract String getString(ByteBuffer bytes);
 
-public ByteBuffer fromString(String source) throws MarshalException
+    /** get a byte representation of the given string.
      *  defaults to unsupportedoperation so people deploying custom Types can update at their leisure. */
-    public ByteBuffer fromString(String source)
+public ByteBuffer fromString(String source) throws MarshalException
     {
         throw new UnsupportedOperationException();
     }

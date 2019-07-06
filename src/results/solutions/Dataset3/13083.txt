@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -111,9 +110,9 @@ public final class ProcessControllerClient implements Closeable {
                             final String processName = readUTFZBytes(dataStream);
                             final byte[] processAuthCode = new byte[16];
                             readFully(dataStream, processAuthCode);
-inventory.put(processName, new ProcessInfo(processName, processAuthCode, processRunning, processStopping));
+                            final boolean processRunning = StreamUtils.readBoolean(dataStream);
                             final boolean processStopping = StreamUtils.readBoolean(dataStream);
-                            inventory.put(processName, new ProcessInfo(processName, authCode, processRunning, processStopping));
+inventory.put(processName, new ProcessInfo(processName, processAuthCode, processRunning, processStopping));
                         }
                         dataStream.close();
                         CLIENT_LOGGER.tracef("Received process_inventory");

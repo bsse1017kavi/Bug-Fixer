@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -655,9 +654,9 @@ public class TestReplicationHandler extends SolrTestCaseJ4 {
         URL url;
         InputStream stream = null;
         try {
-response = IOUtils.toString(stream, "UTF-8");
+          url = new URL(masterUrl);
           stream = url.openStream();
-          response = IOUtils.toString(stream);
+response = IOUtils.toString(stream, "UTF-8");
           if(response.contains("<str name=\"status\">success</str>")) {
             success = true;
           }

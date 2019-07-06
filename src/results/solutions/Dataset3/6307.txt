@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public class SocketBindingAdd extends AbstractSocketBindingUpdate {
             throw new UpdateFailedException(String.format("duplicate socket-binding (%s) in binding-group (%s)", name, group.getName()));
         }
     }
-final ServiceTarget target = updateContext.getServiceTarget().subTarget();
+
     protected <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super Void,P> resultHandler, P param) {
-        final ServiceTarget target = updateContext.getBatchBuilder().subTarget();
+final ServiceTarget target = updateContext.getServiceTarget().subTarget();
         final UpdateResultHandler.ServiceStartListener<P> listener = new UpdateResultHandler.ServiceStartListener<P>(resultHandler, param);
         target.addListener(listener);
         SocketBindingService.addService(target, this);

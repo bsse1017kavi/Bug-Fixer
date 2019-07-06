@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -242,9 +241,9 @@ public final class Client implements ISynchAsynchConnection {
         if (socket != null)
             throw new ConnectException("Already connected to "+getAddressPort());
         // parse URI
-anURI = new URI(remote.getName());
+        URI anURI = null;
         try {
-            anURI = remote.toURI();
+anURI = new URI(remote.getName());
         } catch (URISyntaxException e) {
             IOException except = new IOException("Invalid URI for remote "+remote);
             except.setStackTrace(e.getStackTrace());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -350,9 +349,9 @@ public class TransportTwoNodesSearchTests extends ElasticsearchIntegrationTest {
         try {
             SearchResponse searchResponse = client().search(searchRequest("test").source("{ xxx }".getBytes(Charsets.UTF_8))).actionGet();
             assertThat(searchResponse.getTotalShards(), equalTo(3));
-fail("search should fail");
+            assertThat(searchResponse.getSuccessfulShards(), equalTo(0));
             assertThat(searchResponse.getFailedShards(), equalTo(3));
-            assert false : "search should fail";
+fail("search should fail");
         } catch (ElasticsearchException e) {
             assertThat(e.unwrapCause(), instanceOf(SearchPhaseExecutionException.class));
             // all is well

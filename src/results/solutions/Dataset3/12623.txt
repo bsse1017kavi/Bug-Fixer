@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public final class DoubleRangeTest extends AbstractRangeTest {
     public void testConstructor1b() {
         DoubleRange nr = new DoubleRange(double8);
         assertSame(double8, nr.getMinimumNumber());
-new DoubleRange(nonComparableNumber);
+        assertSame(double8, nr.getMaximumNumber());
         
-        Range r = new DoubleRange(nonComparableNumber);
+new DoubleRange(nonComparableNumber);
         
         try {
             new DoubleRange(null);

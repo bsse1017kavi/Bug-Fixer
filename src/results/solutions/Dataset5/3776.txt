@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ class GetObjectId
         Object val) {
         // if datastore identity, try to convert to a long value
         ClassMapping mapping = _path.getClassMapping(state);
-return ((Id) val).getId();
+        if (mapping.getIdentityType() == mapping.ID_DATASTORE) {
             if (val instanceof Id)
-                return Numbers.valueOf(((Id) val).getId());
+return ((Id) val).getId();
             return Filters.convert(val, long.class);
         }
 

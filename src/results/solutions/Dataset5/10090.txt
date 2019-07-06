@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -354,9 +353,9 @@ public class Move extends Copy {
                 //no point in renaming a file to its own canonical version...
                 log("Rename of " + sourceFile + " to " + destFile
                     + " is a no-op.", Project.MSG_VERBOSE);
-if (!(getFileUtils().areSame(sourceFile, destFile) || destFile.delete())) {
+                return true;
             }
-            if (!(sourceFile.equals(destFile.getCanonicalFile()) || destFile.delete())) {
+if (!(getFileUtils().areSame(sourceFile, destFile) || destFile.delete())) {
                 throw new BuildException("Unable to remove existing file " + destFile);
             }
         }

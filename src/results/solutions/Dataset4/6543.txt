@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class TransportDeleteIndexAction extends TransportMasterNodeOperationActi
     @Override
     protected void doExecute(DeleteIndexRequest request, ActionListener<DeleteIndexResponse> listener) {
         ClusterState state = clusterService.state();
-request.indices(state.metaData().concreteIndices(request.indices(), request.indicesOptions()));
+        String[] indicesOrAliases = request.indices();
 
-        request.indices(state.metaData().concreteIndices(request.indices()));
+request.indices(state.metaData().concreteIndices(request.indices(), request.indicesOptions()));
 
         if (disableDeleteAllIndices) {
             if (state.metaData().isAllIndices(indicesOrAliases) ||

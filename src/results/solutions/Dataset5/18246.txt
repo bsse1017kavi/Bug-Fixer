@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -935,9 +934,9 @@ public class DocumentImpl
                 // avoid creating the child nodes if possible
                 if (source instanceof AttrImpl) {
                     AttrImpl attr = (AttrImpl) source;
-newattr.setValue(attr.getValue());
+                    if (attr.hasStringValue()) {
                         AttrImpl newattr = (AttrImpl) newnode;
-                        newattr.setValue((String) attr.value);
+newattr.setValue(attr.getValue());
                         deep = false;
                     }
                     else {

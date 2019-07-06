@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -304,9 +303,9 @@ public ITypeHierarchy newTypeHierarchy(IJavaProject project, IProgressMonitor mo
 	if (project == null) {
 		throw new IllegalArgumentException(Util.bind("hierarchy.nullProject")); //$NON-NLS-1$
 	}
-SearchEngine.createJavaSearchScope(new IJavaElement[] {project}),
+	CreateTypeHierarchyOperation op= new CreateTypeHierarchyOperation(
 		this, 
-		SearchEngine.createJavaSearchScope(new IResource[]{ project.getProject() }), 
+SearchEngine.createJavaSearchScope(new IJavaElement[] {project}),
 		true);
 	runOperation(op, monitor);
 	return op.getResult();

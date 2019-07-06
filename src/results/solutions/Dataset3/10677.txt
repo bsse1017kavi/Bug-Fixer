@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ import org.jboss.msc.value.InjectedValue;
 public class  DomainControllerClientOperationHandler extends AbstractMessageHandler implements ManagementOperationHandler, Service<DomainControllerClientOperationHandler> {
     private static final MarshallingConfiguration CONFIG;
     static {
-final ClassLoader cl = Module.getModuleFromCurrentLoader(ModuleIdentifier.create("org.jboss.as.aggregate")).getClassLoader();
+        CONFIG = new MarshallingConfiguration();
         try {
-            final ClassLoader cl = Module.getModuleFromDefaultLoader(ModuleIdentifier.create("org.jboss.as.aggregate")).getClassLoader();
+final ClassLoader cl = Module.getModuleFromCurrentLoader(ModuleIdentifier.create("org.jboss.as.aggregate")).getClassLoader();
             CONFIG.setClassResolver(new SimpleClassResolver(cl));
         } catch (ModuleLoadException e) {
             throw new RuntimeException(e);

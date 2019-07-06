@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTargetUrlCodingStrategy.java,v 1.1 2005/12/10
  * 21:28:56 eelco12 Exp $ $Revision$ $Date$
@@ -127,9 +126,9 @@ public abstract class AbstractRequestTargetUrlCodingStrategy
 		{
 			Iterator entries = parameters.entrySet().iterator();
 			while (entries.hasNext())
-String escapedValue=(String)entry.getValue().toString();
+			{
 				Map.Entry entry = (Entry)entries.next();
-				String escapedValue=(String)entry.getValue();
+String escapedValue=(String)entry.getValue().toString();
 				try
 				{
 					escapedValue=URLEncoder.encode(escapedValue, Application.get()

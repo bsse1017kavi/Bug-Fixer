@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1301,9 +1300,9 @@ class AccessibleObject {
 			Accessible accessible = object.accessible;
 			Vector listeners = accessible.accessibleTableListeners;
 			int length = listeners.size();
-event.row = (int)/*64*/row;
+			if (length > 0) {
 				AccessibleTableEvent event = new AccessibleTableEvent(accessible);
-				event.column = (int)/*64*/row;
+event.row = (int)/*64*/row;
 				for (int i = 0; i < length; i++) {
 					AccessibleTableListener listener = (AccessibleTableListener) listeners.elementAt(i);
 					listener.selectRow(event);

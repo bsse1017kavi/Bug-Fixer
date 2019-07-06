@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -177,9 +176,9 @@ public class TransportNodesListShardStoreMetaData extends TransportNodesOperatio
             for (File file : indexFile.listFiles()) {
                 // BACKWARD CKS SUPPORT
                 if (file.getName().endsWith(".cks")) {
-if (AbstractStore.isChecksum(file.getName())) {
+                    continue;
                 }
-                if (file.getName().startsWith("_checksums")) {
+if (AbstractStore.isChecksum(file.getName())) {
                     continue;
                 }
                 files.put(file.getName(), new StoreFileMetaData(file.getName(), file.length(), file.lastModified(), checksums.get(file.getName())));

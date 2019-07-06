@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class MetaDataIndexAliasesService extends AbstractComponent {
                                     try {
                                         indexQueryParser.parseInnerFilter(parser);
                                     } finally {
-} catch (Throwable e) {
+                                        parser.close();
                                     }
-                                } catch (Exception e) {
+} catch (Throwable e) {
                                     listener.onFailure(new ElasticSearchIllegalArgumentException("failed to parse filter for [" + aliasAction.alias() + "]", e));
                                     return currentState;
                                 }

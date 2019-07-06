@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -139,9 +138,9 @@ public class GatewayService extends AbstractLifecycleComponent<GatewayService> i
                         // the meta data per index, since we create the index and it will be added automatically
                         for (final IndexMetaData indexMetaData : fMetaData) {
                             threadPool.execute(new Runnable() {
-metaDataService.createIndex("gateway", indexMetaData.index(), indexMetaData.settings(), indexMetaData.mappings(), timeValueMillis(10));
+                                @Override public void run() {
                                     try {
-                                        metaDataService.createIndex(indexMetaData.index(), indexMetaData.settings(), indexMetaData.mappings(), timeValueMillis(10));
+metaDataService.createIndex("gateway", indexMetaData.index(), indexMetaData.settings(), indexMetaData.mappings(), timeValueMillis(10));
                                     } catch (Exception e) {
                                         logger.error("Failed to create index [" + indexMetaData.index() + "]", e);
                                     }

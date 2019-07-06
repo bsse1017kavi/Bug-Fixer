@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -285,9 +284,9 @@ public class AnimationController extends BaseAnimationController {
 		if (updating) // FIXME Remove this? Just intended for debugging
 			throw new GdxRuntimeException("Cannot change animation during update");
 		if (current == null)
-if (anim != null && current.animation == anim.animation)
+			current = anim;
 		else {
-			if (!allowSameAnimation && anim != null && current.animation == anim.animation)
+if (anim != null && current.animation == anim.animation)
 				anim.time = current.time;
 			else
 				removeAnimation(current.animation);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -248,9 +247,9 @@ public class HelperTests extends ExpressionTestCase {
 		args = new Object[]{3,false,3.0f};
 		try {
 			ReflectionHelper.convertAllArguments(new Class[]{String.class,String[].class}, true, null, args);
-Assert.assertEquals(SpelMessage.TYPE_CONVERSION_ERROR,se.getMessageCode());
+			Assert.fail("Should have failed because no converter supplied");
 		} catch (SpelEvaluationException se) {
-			Assert.assertEquals(SpelMessages.TYPE_CONVERSION_ERROR,se.getMessageUnformatted());
+Assert.assertEquals(SpelMessage.TYPE_CONVERSION_ERROR,se.getMessageCode());
 		}
 		
 		// null value

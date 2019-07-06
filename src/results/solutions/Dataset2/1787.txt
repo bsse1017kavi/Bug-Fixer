@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -92,9 +91,9 @@ public void addBinary(IFile resource, IPath containerPath) {
  */
 public void addSource(IFile resource, IPath containerPath, SourceElementParser parser) {
 	if (JavaCore.getPlugin() == null) return;	
-((InternalSearchDocument) document).parser = parser;
+	SearchParticipant participant = SearchEngine.getDefaultSearchParticipant();
 	SearchDocument document = participant.getDocument(resource.getFullPath().toString());
-	document.parser = parser;
+((InternalSearchDocument) document).parser = parser;
 	String indexLocation = computeIndexLocation(containerPath);
 	scheduleDocumentIndexing(document, containerPath, indexLocation, participant);
 }

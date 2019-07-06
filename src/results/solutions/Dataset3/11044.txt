@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -535,9 +534,9 @@ public class PersistenceUnitDeploymentProcessor implements DeploymentUnitProcess
             component.addDependency(puServiceName, ServiceBuilder.DependencyType.REQUIRED);
         }
     }
-ManagementAdaptor managementAdaptor = adaptor.getManagementAdaptor();
+
     private void addManagementConsole(final DeploymentUnit deploymentUnit, final PersistenceUnitMetadata pu, final PersistenceProviderAdaptor adaptor) {
-        ManagementAdaptor managementAdaptor = (ManagementAdaptor)adaptor.getManagementAdaptor();
+ManagementAdaptor managementAdaptor = adaptor.getManagementAdaptor();
         if (managementAdaptor != null) {
             final String providerLabel = managementAdaptor.getIdentificationLabel();
             final String scopedPersistenceUnitName = pu.getScopedPersistenceUnitName();

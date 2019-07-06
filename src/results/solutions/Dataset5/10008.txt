@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class HeaderSectionMyLabel extends WebMarkupContainer
 		return new PanelMarkupSourcingStrategy()
 		{
 			@Override
-MarkupStream markup = new MarkupStream(parent.getAssociatedMarkup());
+			public IMarkupFragment getMarkup(final MarkupContainer parent, final Component child)
 			{
-				MarkupStream markup = parent.getAssociatedMarkupStream(true);
+MarkupStream markup = new MarkupStream(parent.getAssociatedMarkup());
 				markup.skipRawMarkup();
 				return markup.getMarkupFragment();
 			}

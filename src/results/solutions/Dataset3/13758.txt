@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public final class Main {
             ServerEnvironment config = determineEnvironment(args, props);
             if (config == null) {
                 abort(null);
-server = StandaloneServerFactory.create(config);
+            } else {
                 if(config.isStandalone()) {
-                    server = new StandaloneServer(config);
+server = StandaloneServerFactory.create(config);
                 } else {
                     throw new IllegalStateException();
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class HomePage2 extends WebPage
 				_message = "ajax link clicked";
 
 				// Adding the entire page to the ajax request target
-tgt.add(getPage());
+				// should force the entire page to be re-requested by the
 				// browser, thereby reverting the _message value.
-				tgt.addComponent(getPage());
+tgt.add(getPage());
 
 				// And it works. However the when testing this behavior
 				// with WicketTester, the _message value does not revert.

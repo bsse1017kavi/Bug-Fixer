@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,9 +25,9 @@ import org.elasticsearch.common.logging.ESLoggerFactory;
 /**
  * @author kimchy (shay.banon)
  */
-@Override protected ESLogger newInstance(String prefix, String name) {
+public class Log4jESLoggerFactory extends ESLoggerFactory {
 
-    @Override public ESLogger newInstance(String prefix, String name) {
+@Override protected ESLogger newInstance(String prefix, String name) {
         final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(name);
         return new Log4jESLogger(prefix, logger);
     }

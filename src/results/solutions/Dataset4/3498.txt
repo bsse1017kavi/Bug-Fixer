@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public abstract class TransportClusterInfoAction<Request extends ClusterInfoRequ
         return ThreadPool.Names.SAME;
     }
 
-String[] concreteIndices = state.metaData().concreteIndices(request.indicesOptions(), request.indices());
+    @Override
     protected final void masterOperation(final Request request, final ClusterState state, final ActionListener<Response> listener) throws ElasticsearchException {
-        String[] concreteIndices = state.metaData().concreteIndices(request.indices(), request.indicesOptions());
+String[] concreteIndices = state.metaData().concreteIndices(request.indicesOptions(), request.indices());
         request.indices(concreteIndices);
         doMasterOperation(request, state, listener);
     }

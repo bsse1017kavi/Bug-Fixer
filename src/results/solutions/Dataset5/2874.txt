@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1220,9 +1219,9 @@ public TreeItem[] getSelection () {
 	/*
 	* Bug in GTK.  gtk_tree_selection_get_selected_rows() segmentation faults
 	* in versions smaller than 2.2.4 if the model is NULL.  The fix is
-int /*long*/ [] model = OS.GTK_VERSION < OS.VERSION (2, 2, 4) ? new int /*long*/ [1] : null;
+	* to give a valid pointer instead.
 	*/
-	int /*long*/ [] model = OS.GTK_VERSION < OS.VERSION (2, 2, 4) ? new int [1] : null;
+int /*long*/ [] model = OS.GTK_VERSION < OS.VERSION (2, 2, 4) ? new int /*long*/ [1] : null;
 	int /*long*/ list = OS.gtk_tree_selection_get_selected_rows (selection, model);
 	if (list != 0) {
 		int count = OS.g_list_length (list);

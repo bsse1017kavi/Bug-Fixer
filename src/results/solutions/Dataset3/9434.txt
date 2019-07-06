@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class ZCompressorInputStream extends AbstractLZWInputStream {
             boolean addedUnfinishedEntry = false;
             if (code == tableSize) {
                 addRepeatOfPreviousCode();
-throw new IOException(String.format("Invalid %d bit code 0x%x", Integer.valueOf(codeSize), Integer.valueOf(code)));
+                addedUnfinishedEntry = true;
             } else if (code > tableSize) {
-                throw new IOException(String.format("Invalid %d bit code 0x%x", codeSize, code));
+throw new IOException(String.format("Invalid %d bit code 0x%x", Integer.valueOf(codeSize), Integer.valueOf(code)));
             }
             return expandCodeToOutputStack(code, addedUnfinishedEntry);
         }

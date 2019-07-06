@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -159,9 +158,9 @@ public class TestDataGenerator {
 		ImmutableDateRange dr = new ImmutableDateRange(startMillis, endMillis,
 				false, null, null);
 
-15 * 60000, 4 * 60 * 60000, 10000);
+		ArrayList acts = ActivityHelper.createActivities(dr, TITLES, null,
 				CATEGORIES, null, 15 * 60000, 60 * 60000, 24 * 60 * 60000,
-				15 * 60000, 4 * 60 * 60000);
+15 * 60000, 4 * 60 * 60000, 10000);
 		ActivityDepository.getInstance().addBrokedActivities(acts,
 				TestDataGenerator.class);
 

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -110,9 +109,9 @@ class PrefixCodedTerms implements Iterable<Term> {
           output.writeVInt(prefix << 1 | 1);
           output.writeString(term.field);
         }
-lastTerm.bytes.copyBytes(term.bytes);
+        output.writeVInt(suffix);
         output.writeBytes(term.bytes.bytes, term.bytes.offset + prefix, suffix);
-        lastTerm.bytes.copy(term.bytes);
+lastTerm.bytes.copyBytes(term.bytes);
         lastTerm.field = term.field;
       } catch (IOException e) {
         throw new RuntimeException(e);

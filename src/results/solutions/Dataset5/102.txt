@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -246,9 +245,9 @@ public final class LocalizedImageResource implements IClusterable, IResourceList
 	{
 		// If locale has changed from the initial locale used to attach image
 		// resource, then we need to reload the resource in the new locale
-if (resourceKind == null ||
+		Locale l = component.getLocale();
 		String s = component.getStyle();
-		if (resourceKind == null &&
+if (resourceKind == null ||
 				(!Objects.equal(locale, component.getLocale()) || !Objects.equal(style, component
 						.getStyle())))
 		{

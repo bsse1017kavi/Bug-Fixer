@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -377,9 +376,9 @@ public Color getBackground (int columnIndex) {
 	int validColumnCount = Math.max (1, parent.columns.length);
 	if (!(0 <= columnIndex && columnIndex < validColumnCount)) return getBackground ();
 	if (cellBackgrounds == null || cellBackgrounds [columnIndex] == null) return getBackground ();
-/*public*/ Rectangle getBounds () {
+	return cellBackgrounds [columnIndex];
 }
-public Rectangle getBounds () {
+/*public*/ Rectangle getBounds () {
 	checkWidget ();
 	int textPaintWidth = textWidths [0] + 2 * MARGIN_TEXT;
 	return new Rectangle (getTextX (0), parent.getItemY (this), textPaintWidth, parent.itemHeight - 1);

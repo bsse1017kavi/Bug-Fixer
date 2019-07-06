@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class SingleSignOnManagerService implements Service<io.undertow.security.
         DistributableSingleSignOnManagerFactoryBuilder builder = new DistributableSingleSignOnManagerFactoryBuilderValue().getValue();
         if (builder != null) {
             builder.build(target, factoryName, hostName).setInitialMode(ServiceController.Mode.ON_DEMAND).install();
-target.addService(factoryName, new ValueService<>(new ImmediateValue<>(factory))).install();
+        } else {
             SingleSignOnManagerFactory factory = new InMemorySingleSignOnManagerFactory();
-            target.addService(factoryName, new ValueService<>(new ImmediateValue<>(factory)));
+target.addService(factoryName, new ValueService<>(new ImmediateValue<>(factory))).install();
         }
         SingleSignOnManagerService service = new SingleSignOnManagerService();
         return target.addService(name, service)

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -32,9 +31,9 @@ import org.jboss.msc.value.Value;
 /**
  * Interface for building a session manager factory.
  * @author Paul Ferraro
-ServiceBuilder<SessionManagerFactory> buildDeploymentDependency(ServiceTarget target, ServiceName name, ServiceName deploymentServiceName, Module module, JBossWebMetaData metaData);
+ */
 public interface SessionManagerFactoryBuilder {
-    ServiceBuilder<SessionManagerFactory> build(ServiceTarget target, ServiceName name, ServiceName deploymentServiceName, Module module, JBossWebMetaData metaData);
+ServiceBuilder<SessionManagerFactory> buildDeploymentDependency(ServiceTarget target, ServiceName name, ServiceName deploymentServiceName, Module module, JBossWebMetaData metaData);
 
     ServiceBuilder<?> buildServerDependency(ServiceTarget target, Value<String> instanceId);
 }

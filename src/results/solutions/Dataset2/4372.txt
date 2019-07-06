@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -516,9 +515,9 @@ private void buildMoreCompletionContext(Expression expression) {
 					
 					// find arguments
 					int length = expressionLengthStack[expressionLengthPtr];
-if(this.expressionPtr > 0 && this.expressionLengthPtr > 0 && length == 1) {
+					
 					// search previous arguments if missing
-					if(expressionLengthPtr > 0 && length == 1) {
+if(this.expressionPtr > 0 && this.expressionLengthPtr > 0 && length == 1) {
 						int start = (int) (identifierPositionStack[selector] >>> 32);
 						if(this.expressionStack[expressionPtr-1] != null && this.expressionStack[expressionPtr-1].sourceStart > start) {
 							length += expressionLengthStack[expressionLengthPtr-1];

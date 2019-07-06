@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -111,9 +110,9 @@ class ConsistencyChecker implements Runnable
                 ReadResponse result = ReadResponse.serializer().deserialize(new DataInputStream(bufIn));
                 byte[] digest = result.digest();
 
-IResponseResolver<Row> readResponseResolver = new ReadResponseResolver(table_, replicas_.size());
+                if (!Arrays.equals(ColumnFamily.digest(row_.cf), digest))
                 {
-                    IResponseResolver<Row> readResponseResolver = new ReadResponseResolver(table_);
+IResponseResolver<Row> readResponseResolver = new ReadResponseResolver(table_, replicas_.size());
                     IAsyncCallback responseHandler;
                     if (replicas_.contains(FBUtilities.getLocalAddress()))
                         responseHandler = new DataRepairHandler(row_, replicas_.size(), readResponseResolver);

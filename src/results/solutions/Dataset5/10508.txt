@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ class ZipResourceBundleProvider implements ResourceBundleProvider {
 
     public ResourceBundle findResource(String name, Locale locale,
         ClassLoader loader) {
-loader = AccessController.doPrivileged(
+        String rsrc = name.replace('.', '/') + ".properties";
         if (loader == null)
-            loader = (ClassLoader) AccessController.doPrivileged(
+loader = AccessController.doPrivileged(
                 J2DoPrivHelper.getContextClassLoaderAction());
 
         InputStream in = loader.getResourceAsStream(rsrc);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -1387,9 +1386,9 @@ class FieldCacheImpl implements FieldCache {
     } else if (!info.isIndexed()) {
       return SortedSetDocValues.EMPTY;
     }
-return dto.iterator(reader);
+    
     DocTermOrds dto = (DocTermOrds) caches.get(DocTermOrds.class).get(reader, new CacheKey(field, null), false);
-    return dto.iterator(dto.getOrdTermsEnum(reader));
+return dto.iterator(reader);
   }
 
   static final class DocTermOrdsCache extends Cache {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -208,9 +207,9 @@ public class LdapGroupSearcherFactory {
             Attributes groups = dirContext.getAttributes(entry.getDistinguishedName(), new String[] { groupAttribute });
             Attribute groupRef = groups.get(groupAttribute);
             if (groupRef != null && groupRef.size() > 0) {
-String distingushedName = groupRefValues.next();
+                NamingEnumeration<String> groupRefValues = (NamingEnumeration<String>) groupRef.getAll();
                 while (groupRefValues.hasMore()) {
-                    String distingushedName = groupRefValues.next().replace("\\", "\\\\").replace("/", "\\/");
+String distingushedName = groupRefValues.next();
                     SECURITY_LOGGER.tracef("Group found with distinguishedName=%s", distingushedName);
                     String simpleName = null;
                     if (groupNameAttribute != null) {

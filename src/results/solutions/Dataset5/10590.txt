@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -87,9 +86,9 @@ public void javaToNative (Object object, TransferData transferData){
 public Object nativeToJava(TransferData transferData){
 	if (!isSupportedType(transferData) ||  transferData.pValue == 0) return null;
 	/* Ensure byteCount is a multiple of 2 bytes */
-char[] chars = new char [size/2];
+	int size = (transferData.format * transferData.length / 8) / 2 * 2;
 	if (size <= 0) return null;			
-	byte[] chars = new byte [size];
+char[] chars = new char [size/2];
 	OS.memmove (chars, transferData.pValue, size);
 	String string = new String (chars);
 	int end = string.indexOf('\0');

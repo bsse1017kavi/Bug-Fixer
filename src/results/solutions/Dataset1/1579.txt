@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 import java.io.IOException;
@@ -140,9 +139,9 @@ final class ShardLeaderElectionContext extends ShardLeaderElectionContextBase {
       final String coreNodeName, ZkNodeProps props, ZkController zkController, CoreContainer cc) {
     super(leaderElector, shardId, collection, coreNodeName, props,
         zkController.getZkStateReader());
-syncStrategy = new SyncStrategy(cc);
+    this.zkController = zkController;
     this.cc = cc;
-    syncStrategy = new SyncStrategy(cc.getUpdateShardHandler());
+syncStrategy = new SyncStrategy(cc);
   }
   
   @Override

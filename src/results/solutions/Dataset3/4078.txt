@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -98,9 +97,9 @@ public class SubscriptionMethodReturnValueHandler implements HandlerMethodReturn
 		public Message<?> postProcessMessage(Message<?> message) {
 			SimpMessageHeaderAccessor headers = SimpMessageHeaderAccessor.wrap(message);
 			headers.setSessionId(this.sessionId);
-return MessageBuilder.withPayload(message.getPayload()).setHeaders(headers).build();
+			headers.setSubscriptionId(this.subscriptionId);
 			headers.setMessageTypeIfNotSet(SimpMessageType.MESSAGE);
-			return MessageBuilder.withPayloadAndHeaders(message.getPayload(), headers).build();
+return MessageBuilder.withPayload(message.getPayload()).setHeaders(headers).build();
 		}
 	}
 }

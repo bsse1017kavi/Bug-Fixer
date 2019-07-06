@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -1271,9 +1270,9 @@ public final class XContentBuilder implements BytesStream, Releasable {
                 generator.writeNumber(v);
             }
             generator.writeEndArray();
-for (short v : (short[]) value) {
+        } else if (value instanceof short[]) {
             generator.writeStartArray();
-            for (float v : (short[]) value) {
+for (short v : (short[]) value) {
                 generator.writeNumber(v);
             }
             generator.writeEndArray();

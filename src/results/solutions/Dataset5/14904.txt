@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -227,9 +226,9 @@ public class JsseSSLManager extends SSLManager {
             context = SSLContext.getInstance(DEFAULT_SSL_PROTOCOL); // $NON-NLS-1$
         }
         KeyManagerFactory managerFactory = 
-managerFactory.init(null, defaultpw == null ? new char[]{} : defaultpw.toCharArray());
+            KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());             
         JmeterKeyStore keys = this.getKeyStore();
-        managerFactory.init(null, this.defaultpw.toCharArray());
+managerFactory.init(null, defaultpw == null ? new char[]{} : defaultpw.toCharArray());
         KeyManager[] managers = managerFactory.getKeyManagers();
         log.debug(keys.getClass().toString());
         

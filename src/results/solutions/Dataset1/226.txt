@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.icu.segmentation;
 
 /*
@@ -248,9 +247,9 @@ public class TestICUTokenizer extends BaseTokenStreamTestCase {
     Random random = random();
     checkRandomData(random, a, 100*RANDOM_MULTIPLIER, 8192);
   }
-TokenStream ts = a.tokenStream("dummy", "This is a test");
+  
   public void testTokenAttributes() throws Exception {
-    TokenStream ts = a.tokenStream("dummy", new StringReader("This is a test"));
+TokenStream ts = a.tokenStream("dummy", "This is a test");
     ScriptAttribute scriptAtt = ts.addAttribute(ScriptAttribute.class);
     ts.reset();
     while (ts.incrementToken()) {

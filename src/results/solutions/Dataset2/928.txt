@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.word;
 
 /* ================================================================
@@ -261,9 +260,9 @@ public class IssueSearch
         if ( textAttributes != null ) 
         {
             textScope = new NumberKey[textAttributes.size()];
-textScope[j] = ((AttributeValue)
+            for ( int j=textAttributes.size()-1; j>=0; j-- ) 
             {
-                textScope[j] = ((Attribute)
+textScope[j] = ((AttributeValue)
                                 textAttributes.get(j)).getAttributeId();
             }
         }

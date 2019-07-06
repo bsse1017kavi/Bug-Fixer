@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -322,9 +321,9 @@ public class TransportMoreLikeThisAction extends HandledTransportAction<MoreLike
     }
 
     private void addMoreLikeThis(MoreLikeThisRequest request, BoolQueryBuilder boolBuilder, String fieldName, String likeText, boolean failOnUnsupportedField) {
-.minimumShouldMatch(request.minimumShouldMatch())
+        MoreLikeThisFieldQueryBuilder mlt = moreLikeThisFieldQuery(fieldName)
                 .likeText(likeText)
-                .percentTermsToMatch(request.percentTermsToMatch())
+.minimumShouldMatch(request.minimumShouldMatch())
                 .boostTerms(request.boostTerms())
                 .minDocFreq(request.minDocFreq())
                 .maxDocFreq(request.maxDocFreq())

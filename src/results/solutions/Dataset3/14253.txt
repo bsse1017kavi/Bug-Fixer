@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ public interface Bootstrap {
         private ModuleLoader moduleLoader = Module.getBootModuleLoader();
         private ConfigurationPersisterFactory configurationPersisterFactory;
         private long startTime = Module.getStartTime();
-assert serverEnvironment != null : "serverEnvironment is null";
+
         public Configuration(final ServerEnvironment serverEnvironment) {
-            assert serverEnvironment == null : "serverEnvironment is null";
+assert serverEnvironment != null : "serverEnvironment is null";
             this.serverEnvironment = serverEnvironment;
             this.extensionRegistry = new ExtensionRegistry(serverEnvironment.getLaunchType().getProcessType());
         }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -71,9 +70,9 @@ public class CountersTest extends TestBase
 
         public void tryPerformAction(ConsistencyLevel cl) throws Exception
         {
-CounterColumn col = client.get(key, cpath, cl).counter_column;
+            ByteBuffer bname = ByteBuffer.wrap(name.getBytes());
             ColumnPath cpath = new ColumnPath(cf).setColumn(bname);
-            CounterColumn col = client.get_counter(key, cpath, cl).column;
+CounterColumn col = client.get(key, cpath, cl).counter_column;
             assertEquals(bname, col.name);
             assertEquals(value.longValue(), col.value);
         }

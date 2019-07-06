@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -123,9 +122,9 @@ public class WicketFilter implements Filter
 			{
 				// No redirect; process the request
 				application.set();
-WebResponse webResponse = application.newWebResponse(webRequest,
+
 				WebRequest webRequest = application.newWebRequest(httpServletRequest, filterPath);
-				WebResponse webResponse = application.newWebResponse(httpServletRequest,
+WebResponse webResponse = application.newWebResponse(webRequest,
 					httpServletResponse);
 
 				RequestCycle requestCycle = application.createRequestCycle(webRequest, webResponse);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -493,9 +492,9 @@ public abstract class GwtApplication implements EntryPoint, Application {
 		synchronized(lifecycleListeners) {
 			lifecycleListeners.removeValue(listener, true);
 		}		
-native static public void consoleLog(String message) /*-{
+	}
 	
-	native static void consoleLog(String message) /*-{
+native static public void consoleLog(String message) /*-{
 		console.log( "GWT: " + message );
 	}-*/;
 }

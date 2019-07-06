@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -244,9 +243,9 @@ public TypeBinding resolveType(BlockScope scope) {
 	return type;
 }
 public String toStringExpressionNoParenthesis(){
-return	operatorToString() + " " + expression.toStringExpression() ; } //$NON-NLS-1$
+	/* slow code*/
 
-	return	operatorToString() + " "/*nonNLS*/ + expression.toStringExpression() ; }
+return	operatorToString() + " " + expression.toStringExpression() ; } //$NON-NLS-1$
 public void traverse(IAbstractSyntaxTreeVisitor visitor, BlockScope blockScope) {
 	if (visitor.visit(this, blockScope)) {
 		expression.traverse(visitor, blockScope);

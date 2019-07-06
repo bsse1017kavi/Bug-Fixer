@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -236,9 +235,9 @@ public class MenuBorder extends Border
 	        pageLink.add(new Label("label", label));
 	        add(pageLink);
 	        // TODO this works for one level, but what about nesting?
-public Object getObject(final Component component)
+			add(new AttributeModifier("class", true, new Model()
 			{
-				public Object getObject()
+public Object getObject(final Component component)
 				{
 					return (pageLink.linksTo(getPage())) ? "selectedTab" : null;
 				}

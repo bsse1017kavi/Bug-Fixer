@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class FallbackRepository implements FileRepository {
 
     /** {@inheritDoc} */
     @Override
-return file != null ? file : secondary.getConfigurationFile(relativePath);
+    public File getConfigurationFile(String relativePath) {
         File file = primary.getConfigurationFile(relativePath);
-        return file != null ? file : secondary.getFile(relativePath);
+return file != null ? file : secondary.getConfigurationFile(relativePath);
     }
 
     /** {@inheritDoc} */

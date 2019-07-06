@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -86,9 +85,9 @@ public abstract class AbstractValidator implements IValidator
             final String input, final FormComponent component)
     {
         // Return formatted error message
-return new ValidationErrorMessage(component, message);
+        Localizer localizer = component.getLocalizer();
 		String message = localizer.getString(resourceKey, component, resourceModel);
-        return new ValidationErrorMessage(input, component, message);
+return new ValidationErrorMessage(component, message);
     }
 
     /**

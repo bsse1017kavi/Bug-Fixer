@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -174,9 +173,9 @@ public class InternalStatisticalFacet implements StatisticalFacet, InternalFacet
         return new InternalStatisticalFacet(name, fieldName, min, max, total, sumOfSquares, count);
     }
 
-builder.field("_type", StatisticalFacetCollectorParser.NAME);
+    @Override public void toXContent(XContentBuilder builder, Params params) throws IOException {
         builder.startObject(name);
-        builder.field("_type", "statistical");
+builder.field("_type", StatisticalFacetCollectorParser.NAME);
         builder.field("_field", fieldName);
         builder.field("count", count());
         builder.field("total", total());

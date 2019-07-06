@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -166,9 +165,9 @@ public abstract class BaseOperationCommand extends CommandHandlerWithHelp implem
         }
     }
 
-arg.set(ctx.getParsedCommandLine(), request);
+    protected void setParams(CommandContext ctx, ModelNode request) throws CommandFormatException {
         for(RequestParameterArgument arg : params) {
-            arg.set(ctx.getParsedArguments(), request);
+arg.set(ctx.getParsedCommandLine(), request);
         }
     }
 }

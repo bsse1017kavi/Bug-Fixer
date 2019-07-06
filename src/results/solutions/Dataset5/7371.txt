@@ -1,4 +1,3 @@
-
 import org.aspectj.testing.Tester;
 
 public class EachJVMOnSelf {
@@ -10,9 +9,9 @@ public class EachJVMOnSelf {
 }
 
 aspect A issingleton() {
-after () returning (): this(*) && execution(new(..)) && !this(A) {
+    String advisedNewClass = null;
 
-    after () returning (): this(*) && execution(new(..)) {
+after () returning (): this(*) && execution(new(..)) && !this(A) {
 	advisedNewClass = thisJoinPoint.getSourceLocation().getWithinType().getName();
     }
 }

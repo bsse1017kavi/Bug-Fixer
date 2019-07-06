@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -570,9 +569,9 @@ public class PropertyConfigurator extends BasicConfigurator
       // root category.
       if(priorityStr.equalsIgnoreCase(BasicConfigurator.INHERITED) &&
                                 	 !catName.equals(INTERNAL_ROOT_NAME)) {
-cat.setLevel(OptionConverter.toLevel(priorityStr,
+	cat.setPriority(null);
       } else {
-	cat.setPriority(OptionConverter.toPriority(priorityStr, 
+cat.setLevel(OptionConverter.toLevel(priorityStr,
 						   Priority.DEBUG));
       }
       LogLog.debug("Category " + catName + " set to " + cat.getPriority());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -569,9 +568,9 @@ final class OperationContextImpl implements OperationContext {
         assert Thread.currentThread() == initiatingThread;
         Stage currentStage = this.currentStage;
         if (currentStage == null) {
-if (! (currentStage == Stage.RUNTIME || currentStage == Stage.MODEL || currentStage == Stage.VERIFY || isRollingBack() && ! modify)) {
+            throw new IllegalStateException("Operation already complete");
         }
-        if (! (currentStage == Stage.RUNTIME || currentStage == Stage.VERIFY || isRollingBack() && ! modify)) {
+if (! (currentStage == Stage.RUNTIME || currentStage == Stage.MODEL || currentStage == Stage.VERIFY || isRollingBack() && ! modify)) {
             throw new IllegalStateException("Get service registry only supported in runtime operations");
         }
         if (modify && !affectsRuntime) {

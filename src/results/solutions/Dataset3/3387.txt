@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -177,9 +176,9 @@ public class TilesConfigurer implements ServletContextAware, InitializingBean, D
 				Class clazz = getClass().getClassLoader().loadClass(
 						"org.apache.tiles.extras.complete.CompleteAutoloadTilesInitializer");
 				this.tilesInitializer = (TilesInitializer) clazz.newInstance();
-throw new IllegalStateException("Tiles-Extras 2.2 not available", ex);
+			}
 			catch (Exception ex) {
-				throw new IllegalStateException("Tiles 2.2 not available", ex);
+throw new IllegalStateException("Tiles-Extras 2.2 not available", ex);
 			}
 		}
 		else {

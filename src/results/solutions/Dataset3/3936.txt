@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class ExampleRunner {
             request.get("operations").set(true);
             request.get("recursive").set(true);
             r = client.execute(OperationBuilder.Factory.create(request).build());
-// wildcards(client);
+            System.out.println(r);
 
-            wildcards(client);
+// wildcards(client);
 
         } finally {
             StreamUtils.safeClose(client);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -278,9 +277,9 @@ public class PropertiesFactory implements IPropertiesFactory
 				{
 					try
 					{
-catch (Exception ex)
+						listener.propertiesChanged(path);
 					}
-					catch (Throwable ex)
+catch (Exception ex)
 					{
 						PropertiesFactory.log.error("PropertiesReloadListener has thrown an exception: " +
 							ex.getMessage());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -162,9 +161,9 @@ public class RecoveryTarget extends AbstractComponent {
             // that's fine, since we might be called concurrently, just ignore this, we are already recovering
             listener.onIgnoreRecovery(false, "already in recovering process, " + e.getMessage());
             return;
-final RecoveryStatus recoveryStatus = new RecoveryStatus(request.recoveryId(), indexShard, request.sourceNode());
+        }
         // create a new recovery status, and process...
-        final RecoveryStatus recoveryStatus = new RecoveryStatus(request.recoveryId(), indexShard);
+final RecoveryStatus recoveryStatus = new RecoveryStatus(request.recoveryId(), indexShard, request.sourceNode());
         recoveryStatus.recoveryState.setType(request.recoveryType());
         recoveryStatus.recoveryState.setSourceNode(request.sourceNode());
         recoveryStatus.recoveryState.setTargetNode(request.targetNode());

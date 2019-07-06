@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -40,9 +39,9 @@ public class MergeSchedulerModule extends AbstractModule {
         this.settings = settings;
     }
 
-.to(settings.getAsClass(TYPE, ConcurrentMergeSchedulerProvider.class, "org.elasticsearch.index.scheduler.", "MergeSchedulerProvider"))
+    @Override protected void configure() {
         bind(MergeSchedulerProvider.class)
-                .to(settings.getAsClass(TYPE, ConcurrentMergeSchedulerProvider.class, "org.elasticsearch.index.scheduler", "MergeSchedulerProvider"))
+.to(settings.getAsClass(TYPE, ConcurrentMergeSchedulerProvider.class, "org.elasticsearch.index.scheduler.", "MergeSchedulerProvider"))
                 .asEagerSingleton();
     }
 }

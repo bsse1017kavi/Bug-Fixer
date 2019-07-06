@@ -1,4 +1,3 @@
-
 /**
  *  Derby - Class org.apache.derbyTesting.functionTests.tests.lang.ErrorCodeTest
  *  
@@ -240,9 +239,9 @@ public final class ErrorCodeTest extends BaseJDBCTestCase {
              {"XSTB3","Cannot abort transaction because the log manager is null, probably due to an earlier error.","50000"},
              {"XSTB5","Creating database with logging disabled encountered unexpected problem.","50000"},
              {"XSTB6","Cannot substitute a transaction table with another while one is already in use.","50000"},
-JDBC.assertUnorderedResultSet(rs, expectedRows);
+             {"XXXXX","Normal database session close.","40000"}};
 
-        JDBC.assertFullResultSet(rs, expectedRows);
+JDBC.assertUnorderedResultSet(rs, expectedRows);
         conn.rollback();
         s.close();
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -192,9 +191,9 @@ public class AllocateAllocationCommand implements AllocationCommand {
         for (Iterator<MutableShardRouting> it = allocation.routingNodes().unassigned().iterator(); it.hasNext(); ) {
             if (it.next() != shardRouting) {
                 continue;
-allocation.routingNodes().assign(shardRouting, routingNode.nodeId());
+            }
             it.remove();
-            allocation.routingNodes().assignShardToNode( shardRouting, routingNode.nodeId() );
+allocation.routingNodes().assign(shardRouting, routingNode.nodeId());
             if (shardRouting.primary()) {
                 // we need to clear the post allocation flag, since its an explicit allocation of the primary shard
                 // and we want to force allocate it (and create a new index for it)

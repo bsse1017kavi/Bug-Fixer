@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -224,9 +223,9 @@ public class DefaultOperationRequestBuilder extends ValidatingOperationCallbackH
     public void addProperty(String name, String value) {
 
         if(name == null || name.trim().isEmpty())
-throw new IllegalArgumentException("The argument value is not specified for " + name + ": '" + value + "'");
+            throw new IllegalArgumentException("The argument name is not specified: '" + name + "'");
         if(value == null || value.trim().isEmpty())
-            throw new IllegalArgumentException("The argument value is not specified: '" + value + "'");
+throw new IllegalArgumentException("The argument value is not specified for " + name + ": '" + value + "'");
         ModelNode toSet = null;
         try {
             toSet = ModelNode.fromString(value);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class NetworkInterfaceRuntimeHandler implements OperationStepHandler {
         final String attributeName = operation.require(ModelDescriptionConstants.NAME).asString();
         context.addStep(new OperationStepHandler() {
             @Override
-if(controller != null && controller.getState() == ServiceController.State.UP) {
+            public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {
                 final ServiceController<?> controller = context.getServiceRegistry(false).getService(NetworkInterfaceService.JBOSS_NETWORK_INTERFACE.append(interfaceName));
-                if(controller != null) {
+if(controller != null && controller.getState() == ServiceController.State.UP) {
                     final NetworkInterfaceBinding binding = NetworkInterfaceBinding.class.cast(controller.getValue());
                     final InetAddress address = binding.getAddress();
                     final ModelNode result = new ModelNode();

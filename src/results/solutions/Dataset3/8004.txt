@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ import org.jboss.dmr.ModelNode;
 public class JdkORBSubsystemResource extends SimpleResourceDefinition {
     public static final JdkORBSubsystemResource INSTANCE = new JdkORBSubsystemResource();
 
-JdkORBExtension.getResourceDescriptionResolver(),
+    private JdkORBSubsystemResource() {
         super(PathElement.pathElement(ModelDescriptionConstants.SUBSYSTEM, JdkORBExtension.SUBSYSTEM_NAME),
-                JdkORBExtension.getResourceDescriptionResolver(JdkORBExtension.SUBSYSTEM_NAME),
+JdkORBExtension.getResourceDescriptionResolver(),
                 JdkORBSubsystemAdd.INSTANCE,
                 ReloadRequiredRemoveStepHandler.INSTANCE);
     }

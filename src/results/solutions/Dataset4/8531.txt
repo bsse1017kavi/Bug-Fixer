@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -44,9 +43,9 @@ public class GwtGraphics implements Graphics {
 	int frames;
 	GwtApplicationConfiguration config;
 
-if(canvasWidget == null) throw new GdxRuntimeException("Canvas not supported");
+	public GwtGraphics (Panel root, GwtApplicationConfiguration config) {
 		Canvas canvasWidget = Canvas.createIfSupported();
-		if(canvasWidget == null) return;
+if(canvasWidget == null) throw new GdxRuntimeException("Canvas not supported");
 		canvas = canvasWidget.getCanvasElement();
 		root.add(canvasWidget);
 		canvas.setWidth(config.width);

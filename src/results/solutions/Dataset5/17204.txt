@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.provider.generic;
 
 import org.eclipse.ecf.core.ISharedObjectContainerConfig;
@@ -9,9 +8,9 @@ import org.eclipse.ecf.core.identity.ID;
 import org.eclipse.ecf.core.identity.IDFactory;
 
 public class TCPClientSOContainer extends ClientSOContainer {
-public static final String DEFAULT_COMM_NAME = org.eclipse.ecf.provider.comm.tcp.Client.class.getName();
+    int keepAlive = 0;
 
-    public static final String DEFAULT_COMM_NAME = "tcpclient";
+public static final String DEFAULT_COMM_NAME = org.eclipse.ecf.provider.comm.tcp.Client.class.getName();
     
     public TCPClientSOContainer(ISharedObjectContainerConfig config) {
         super(config);

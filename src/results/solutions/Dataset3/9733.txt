@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public abstract class UpdatePropertiesHandler {
             entry[1] = hash;
         } catch (NoSuchAlgorithmException e) {
             return new ErrorState(theConsole, e.getMessage(), null, stateValues);
-for (File current : stateValues.getUserFiles()) {
+        }
 
-        for (File current : stateValues.getPropertiesFiles()) {
+for (File current : stateValues.getUserFiles()) {
             try {
                 persist(entry, current);
                 if (stateValues.isSilent() == false) {

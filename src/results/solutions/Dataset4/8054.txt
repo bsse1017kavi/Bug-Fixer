@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class TransportNodesShutdownAction extends TransportMasterNodeOperationAc
         this.transportService.registerHandler(NodeShutdownRequestHandler.ACTION, new NodeShutdownRequestHandler());
     }
 
-return ThreadPool.Names.GENERIC;
+    @Override
     protected String executor() {
-        return ThreadPool.Names.CACHED;
+return ThreadPool.Names.GENERIC;
     }
 
     @Override

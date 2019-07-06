@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -113,9 +112,9 @@ public class InternalIndicesService extends AbstractLifecycleComponent<IndicesSe
             // LUCENE MONITOR - This is a hack to eagerly clean caches based on index reader
             FieldCache.DEFAULT.setIndexReaderPurgedListener(new CacheReaderPurgeListener(this));
             logger.trace("eager reader based cache eviction enabled");
-logger.warn("lucene default FieldCache is used, not enabling eager reader based cache eviction");
+        } catch (NoSuchMethodException e) {
             // no method
-            logger.debug("lucene default FieldCache is used, not enabling eager reader based cache eviction");
+logger.warn("lucene default FieldCache is used, not enabling eager reader based cache eviction");
         }
     }
 

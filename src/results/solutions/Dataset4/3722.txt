@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -371,9 +370,9 @@ public class InternalClusterService extends AbstractLifecycleComponent<ClusterSe
                     logger.debug("Publishing cluster state version {}", newClusterState.version());
                     discoveryService.publish(newClusterState);
                 }
-logger.debug("Updating cluster state version {}", newClusterState.version());
+
                 // update the current cluster state
-                logger.debug("Updating cluster state version {}: {}", newClusterState.version(), newClusterState);
+logger.debug("Updating cluster state version {}", newClusterState.version());
                 clusterState = newClusterState;
 
                 for (ClusterStateListener listener : priorityClusterStateListeners) {

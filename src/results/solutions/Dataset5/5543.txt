@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -31,9 +30,9 @@ public class Checker extends ShadowMunger {
 		this.msg = deow.getMessage();
 		this.isError = deow.isError();
 	}		 
-pointcut = pointcut.concretize(fromType, getDeclaringType(), 0, this);
+
     public ShadowMunger concretize(ResolvedType fromType, World world, PerClause clause) {
-        pointcut = pointcut.concretize(fromType, 0, this);
+pointcut = pointcut.concretize(fromType, getDeclaringType(), 0, this);
         return this;
     }
 

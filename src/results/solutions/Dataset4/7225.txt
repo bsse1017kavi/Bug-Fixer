@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class TransportMultiSearchAction extends TransportAction<MultiSearchReque
     @Override
     protected void doExecute(final MultiSearchRequest request, final ActionListener<MultiSearchResponse> listener) {
         ClusterState clusterState = clusterService.state();
-final AtomicArray<MultiSearchResponse.Item> responses = new AtomicArray<>(request.requests().size());
+        clusterState.blocks().globalBlockedRaiseException(ClusterBlockLevel.READ);
 
-        final AtomicArray<MultiSearchResponse.Item> responses = new AtomicArray<MultiSearchResponse.Item>(request.requests().size());
+final AtomicArray<MultiSearchResponse.Item> responses = new AtomicArray<>(request.requests().size());
         final AtomicInteger counter = new AtomicInteger(responses.length());
         for (int i = 0; i < responses.length(); i++) {
             final int index = i;

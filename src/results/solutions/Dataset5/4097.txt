@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -19,8 +18,8 @@ import org.apache.avalon.framework.component.ComponentManager;
 public interface TypeManager
     extends Component, ComponentManager
 {
-void registerType( String role, String shorthandName, TypeFactory factory )
+    String ROLE = "org.apache.myrmidon.components.type.TypeManager";
 
-    void registerType( String role, String shorthandName, ComponentFactory factory )
+void registerType( String role, String shorthandName, TypeFactory factory )
         throws Exception;
 }

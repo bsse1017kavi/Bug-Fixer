@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -310,9 +309,9 @@ public Point computeSize (int wHint, int hHint, boolean changed) {
 			OS.ReleaseDC (handle, hDC);
 			int upDownWidth = OS.GetSystemMetrics (OS.SM_CXVSCROLL);
 			width += upDownWidth + MARGIN;
-if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (6, 0)) upDownHeight += 7;
+			int upDownHeight = OS.GetSystemMetrics (OS.SM_CYVSCROLL);
 			// TODO: On Vista, can send DTM_GETDATETIMEPICKERINFO to ask the Edit control what its margins are
-			if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (6, 0)) upDownHeight++;
+if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (6, 0)) upDownHeight += 7;
 			height = Math.max (height, upDownHeight);
 		}
 	}

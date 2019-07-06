@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -4044,9 +4043,9 @@ public class IndexWriter implements Closeable {
       }
 
       final int termsIndexDivisor;
-if (mergedSegmentWarmer != null) {
+      final boolean loadDocStores;
 
-      if (poolReaders && mergedSegmentWarmer != null) {
+if (mergedSegmentWarmer != null) {
         // Load terms index & doc stores so the segment
         // warmer can run searches, load documents/term
         // vectors

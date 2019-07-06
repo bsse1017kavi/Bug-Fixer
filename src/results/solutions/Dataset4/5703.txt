@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -41,9 +40,9 @@ public class FilterFacetCollector extends AbstractFacetCollector {
 
     private int count = 0;
 
-this.filter = filter;
+    public FilterFacetCollector(String facetName, Filter filter, FilterCache filterCache) {
         super(facetName);
-        this.filter = filterCache.cache(filter);
+this.filter = filter;
     }
 
     @Override protected void doSetNextReader(IndexReader reader, int docBase) throws IOException {

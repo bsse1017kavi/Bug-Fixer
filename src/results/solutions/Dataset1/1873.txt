@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.admin;
 
 /*
@@ -175,9 +174,9 @@ public class CollectionsHandler extends RequestHandlerBase {
   // we might also want to think about error handling (add the request to a zk queue and involve overseer?)
   // as well as specific replicas= options
   private void handleCreateAction(SolrQueryRequest req,
-Integer numReplicas = req.getParams().getInt(OverseerCollectionProcessor.REPLICATION_FACTOR, 1);
+      SolrQueryResponse rsp) throws InterruptedException, KeeperException {
     log.info("Creating Collection : " + req.getParamString());
-    Integer numReplicas = req.getParams().getInt(OverseerCollectionProcessor.REPLICATION_FACTOR, 0);
+Integer numReplicas = req.getParams().getInt(OverseerCollectionProcessor.REPLICATION_FACTOR, 1);
     String name = req.getParams().required().get("name");
     String configName = req.getParams().get("collection.configName");
     String numShards = req.getParams().get(OverseerCollectionProcessor.NUM_SLICES);

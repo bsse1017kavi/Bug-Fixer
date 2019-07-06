@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -50,9 +49,9 @@ abstract class ReadOnlySystemAttributesMap implements Map<String, String> {
 	 * @throws IllegalArgumentException if given key is non-String
 	 */
 	@Override
-String.format("Expected key [%s] to be of type String, got %s", key, key.getClass().getName()));
+	public String get(Object key) {
 		Assert.isInstanceOf(String.class, key,
-			String.format("expected key [%s] to be of type String, got %s", key, key.getClass().getName()));
+String.format("Expected key [%s] to be of type String, got %s", key, key.getClass().getName()));
 		return this.getSystemAttribute((String) key);
 	}
 

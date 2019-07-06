@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -93,9 +92,9 @@ public class ArchiveReadTests extends AbstractTestCase {
     protected String getExpectedString(ArchiveEntry entry) {
         return entry.getSize() + " " + entry.getName();
     }
-@SuppressWarnings("unchecked") // fileList is correct type already
+
     public void testArchive() throws Exception{
-        @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked") // fileList is correct type already
         ArrayList<String> expected= (ArrayList<String>) fileList.clone();
         try {
            checkArchiveContent(file, expected);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public class DomainDeploymentUtils implements Closeable {
         deployments.add(new Deployment(archiveName, pkg, show));
     }
 
-OperationBuilder builder = new OperationBuilder(op, true);
+    public synchronized void deploy()  throws DuplicateDeploymentNameException, IOException, ExecutionException, InterruptedException  {
         ModelNode op = new ModelNode();
-        OperationBuilder builder = new OperationBuilder(op);
+OperationBuilder builder = new OperationBuilder(op, true);
         op.get(ClientConstants.OP).set("composite");
         op.get(ClientConstants.OP_ADDR).setEmptyList();
         ModelNode steps = op.get("steps");

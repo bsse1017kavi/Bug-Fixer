@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -127,9 +126,9 @@ public class RestartResponseAtInterceptPageException extends ResetResponseExcept
 		InterceptData data = InterceptData.get();
 		if (data != null)
 		{
-RequestCycle.get().replaceCurrentRequestHandler(new RedirectRequestHandler(url));
+			data.continueOk = true;
 			String url = RequestCycle.get().getUrlRenderer().renderUrl(data.originalUrl);
-			RequestCycle.get().scheduleRequestHandlerAfterCurrent(new RedirectRequestHandler(url));
+RequestCycle.get().replaceCurrentRequestHandler(new RedirectRequestHandler(url));
 			return true;
 		}
 		return false;

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -211,9 +210,9 @@ public class ReferencePointcut extends Pointcut {
 
 	//??? This is not thread safe, but this class is not designed for multi-threading
 	private boolean concretizing = false;
-//Thread.currentThread().dumpStack();
+	public Pointcut concretize1(ResolvedTypeX searchStart, IntMap bindings) {
 		if (concretizing) {
-			Thread.currentThread().dumpStack();
+//Thread.currentThread().dumpStack();
 			searchStart.getWorld().getMessageHandler().handleMessage(
 				MessageUtil.error("circular pointcut declaration involving: " + this,
 									getSourceLocation()));

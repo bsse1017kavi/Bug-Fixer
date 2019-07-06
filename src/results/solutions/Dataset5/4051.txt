@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class FileEditor implements PropertyEditor, ActionListener {
 		editor = new WrapperEditor(this, new SimpleFileEditor(), new ComboStringEditor(), true, true, true, null);
 
 		// Create a panel containing the combo and the button:
-panel.add(button, BorderLayout.EAST);
+		panel = new JPanel(new BorderLayout(5, 0));
 		panel.add(editor.getCustomEditor(), BorderLayout.CENTER);
-		panel.add(button, BorderLayout.EAST);// JDK1.4: was LINE_END
+panel.add(button, BorderLayout.EAST);
 	}
 
 	/*

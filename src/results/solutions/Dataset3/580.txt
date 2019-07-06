@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -98,9 +97,9 @@ public class VersionHandler implements CommandHandler {
                 } else {
                     buf.append(Util.getFailureDescription(response));
                 }
-ctx.error("Failed to get the AS release info: " + e.getLocalizedMessage());
+                buf.append('\n');
             } catch (IOException e) {
-                ctx.printLine("Failed to get the AS release info: " + e.getLocalizedMessage());
+ctx.error("Failed to get the AS release info: " + e.getLocalizedMessage());
                 e.printStackTrace();
             }
         }

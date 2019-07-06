@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -605,9 +604,9 @@ public class JUnitTask extends AbstractTask
         Properties props = new Properties();
         props.putAll( getContext().getProperties() );
         try
-props.store( outstream, "Ant JUnitTask generated properties file" );
+        {
             final FileOutputStream outstream = new FileOutputStream( propsFile );
-            props.save( outstream, "Ant JUnitTask generated properties file" );
+props.store( outstream, "Ant JUnitTask generated properties file" );
             outstream.close();
         }
         catch( IOException ioe )

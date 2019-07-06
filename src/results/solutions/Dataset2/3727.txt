@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -218,9 +217,9 @@ public ICompilationUnit[] getCompilationUnits() throws JavaModelException {
 /**
  * @see IPackageFragment#getCompilationUnits(WorkingCopyOwner)
  */
-if (workingCopies == null) return JavaModelManager.NO_WORKING_COPY;
+public ICompilationUnit[] getCompilationUnits(WorkingCopyOwner owner) {
 	ICompilationUnit[] workingCopies = JavaModelManager.getJavaModelManager().getWorkingCopies(owner, false/*don't add primary*/);
-	if (workingCopies == null) return JavaModelManager.NoWorkingCopy;
+if (workingCopies == null) return JavaModelManager.NO_WORKING_COPY;
 	int length = workingCopies.length;
 	ICompilationUnit[] result = new ICompilationUnit[length];
 	int index = 0;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -235,9 +234,9 @@ public class ParamModifierGui extends AbstractPreProcessorGui implements FocusLi
             longVal = Long.parseLong(temp.getText());
         } catch (NumberFormatException err) {
             JOptionPane.showMessageDialog(this, "This field must have a long value!", "Value Required",
-temp.requestFocusInWindow();
+                    JOptionPane.ERROR_MESSAGE);
             temp.setText(defaultValue);
-            temp.requestFocus();
+temp.requestFocusInWindow();
         }
         return longVal;
     }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class TruncateResponse
             throws IOException
     {
     	ByteArrayOutputStream bos = new ByteArrayOutputStream();
-return original.getReply(FBUtilities.getLocalAddress(), bos.toByteArray(), original.getVersion());
+        DataOutputStream dos = new DataOutputStream(bos);
         TruncateResponse.serializer().serialize(truncateResponseMessage, dos);
-        return original.getReply(FBUtilities.getLocalAddress(), bos.toByteArray());
+return original.getReply(FBUtilities.getLocalAddress(), bos.toByteArray(), original.getVersion());
     }
 
     public TruncateResponse(String keyspace, String columnFamily, boolean success) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -577,9 +576,9 @@ public class CoreAdminHandler extends RequestHandlerBase {
         }
       }
 
-core.getDirectoryFactory().remove(core.getDataDir(), true);
+      if (params.getBool(CoreAdminParams.DELETE_DATA_DIR, false)) {
         try {
-          core.getDirectoryFactory().remove(core.getDataDir());
+core.getDirectoryFactory().remove(core.getDataDir(), true);
         } catch (Exception e) {
           SolrException.log(log, "Failed to flag data dir for removal for core:"
                   + core.getName() + " dir:" + core.getDataDir());

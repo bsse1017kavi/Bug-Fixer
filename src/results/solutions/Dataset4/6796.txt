@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import java.util.ArrayList;
@@ -114,9 +113,9 @@ public class Viewer implements ApplicationListener {
 			animation = animNames.get(currAnimIdx);
 			time = 0;
 		}
-if(time > model.skeleton.animations.get(animation).totalDuration) {
+		
 		time += Gdx.graphics.getDeltaTime() / 10;
-		if(time > model.skeleton.animations.get(animation).duration) {
+if(time > model.skeleton.animations.get(animation).totalDuration) {
 			time = 0;
 		}					
 	}

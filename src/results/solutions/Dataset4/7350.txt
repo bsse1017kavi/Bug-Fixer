@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -46,9 +45,9 @@ public class InternalIndicesWarmer extends AbstractComponent implements IndicesW
 
     private final ClusterService clusterService;
 
-private final CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<>();
+    private final IndicesService indicesService;
 
-    private final CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<Listener>();
+private final CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<>();
 
     @Inject
     public InternalIndicesWarmer(Settings settings, ThreadPool threadPool, ClusterService clusterService, IndicesService indicesService) {

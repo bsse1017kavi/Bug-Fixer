@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -171,9 +170,9 @@ public class AjState {
 		
 		// note - this deliberately ignores resources in jars as we don't yet handle jar changes
 		// with incremental compilation
-if (inPathElement.isDirectory() && AjBuildManager.COPY_INPATH_DIR_RESOURCES) {
+		for (Iterator i = buildConfig.getInpath().iterator(); i.hasNext(); ) {
 			File inPathElement = (File)i.next();
-			if (inPathElement.isDirectory()) {
+if (inPathElement.isDirectory() && AjBuildManager.COPY_INPATH_DIR_RESOURCES) {
 				deleteResourcesFromDirectory(inPathElement,oldResources);
 			}			
 		}	

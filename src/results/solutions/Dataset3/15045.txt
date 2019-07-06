@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -94,9 +93,9 @@ public class EJBSelectBridge implements SelectorBridge {
         JDBCStoreManager2 manager = command.getStoreManager();
         final CmpEntityBeanComponent selectedComponent = manager.getComponent();
         JDBCQueryCommand.EntityProxyFactory factory = new JDBCQueryCommand.EntityProxyFactory() {
-selectedComponent.getEJBLocalObject(primaryKey) : selectedComponent.getEJBObject(primaryKey);
+            public Object getEntityObject(Object primaryKey) {
                 return metadata.isResultTypeMappingLocal() && selectedComponent.getLocalHomeClass() != null ?
-                        selectedComponent.getEjbLocalObject(primaryKey) : selectedComponent.getEJBObject(primaryKey);
+selectedComponent.getEJBLocalObject(primaryKey) : selectedComponent.getEJBObject(primaryKey);
             }
         };
         Object result;

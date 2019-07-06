@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -113,9 +112,9 @@ public class IndexWarmersMetaData implements IndexMetaData.Custom {
                 out.writeStringArray(entry.types());
                 if (entry.source() == null) {
                     out.writeBoolean(false);
-out.writeBytesReference(entry.source());
+                } else {
                     out.writeBoolean(true);
-                    out.writeBytesReference(entry.source(), true);
+out.writeBytesReference(entry.source());
                 }
             }
         }

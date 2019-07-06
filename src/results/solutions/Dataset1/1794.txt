@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -398,9 +397,9 @@ public class TestHarness {
    */
   public void close() {
     if (container != null) {
-throw new RuntimeException("SolrCore.getOpenCount()=="+c.getOpenCount());
+      for (SolrCore c : container.getCores()) {
         if (c.getOpenCount() > 1)
-          throw new RuntimeException("SolrCore.getOpenCount()=="+core.getOpenCount());
+throw new RuntimeException("SolrCore.getOpenCount()=="+c.getOpenCount());
       }      
     }
 

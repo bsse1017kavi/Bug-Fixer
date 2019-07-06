@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -206,9 +205,9 @@ class ServerInventory implements ManagedServerLifecycleCallback {
         return determineServerStatus(serverName);
     }
 
-public void serverRegistered(String serverName, ManagementChannel channel, ProxyCreatedCallback callback) {
+    /** {@inheritDoc} */
     @Override
-    public void serverRegistered(String serverName, ManagementChannel channel) {
+public void serverRegistered(String serverName, ManagementChannel channel, ProxyCreatedCallback callback) {
         try {
             final ManagedServer server = servers.get(serverName);
             if (server == null) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -133,9 +132,9 @@ public class ZenFaultDetectionTests extends ElasticsearchTestCase {
         boolean shouldRetry = randomBoolean();
         // make sure we don't ping
         settings.put("discovery.zen.fd.connect_on_network_disconnect", shouldRetry).put("discovery.zen.fd.ping_interval", "5m");
-nodesFD.updateNodes(buildNodesForA(true), -1);
+        NodesFaultDetection nodesFD = new NodesFaultDetection(settings.build(), threadPool, serviceA, new ClusterName("test"));
         nodesFD.start();
-        nodesFD.updateNodes(buildNodesForA(true));
+nodesFD.updateNodes(buildNodesForA(true), -1);
         final String[] failureReason = new String[1];
         final DiscoveryNode[] failureNode = new DiscoveryNode[1];
         final CountDownLatch notified = new CountDownLatch(1);

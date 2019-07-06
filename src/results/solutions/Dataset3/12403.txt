@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public class RemoteProxyController extends AbstractMessageHandler<Void, RemotePr
         ManagementRequestHeader request = super.validateRequest(header);
         return request;
     }
-protected ManagementRequestHandler<Void, ExecuteRequestContext> getRequestHandler(byte operationType) {
+
     @Override
-    public ManagementRequestHandler<Void, ExecuteRequestContext> getRequestHandler(byte operationType) {
+protected ManagementRequestHandler<Void, ExecuteRequestContext> getRequestHandler(byte operationType) {
         if (operationType == ModelControllerProtocol.HANDLE_REPORT_REQUEST) {
             return new HandleReportRequestHandler();
         } else if (operationType == ModelControllerProtocol.OPERATION_FAILED_REQUEST) {

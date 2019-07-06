@@ -1,4 +1,3 @@
-
 package org.apache.lucene.benchmark.byTask.tasks;
 
 /*
@@ -50,9 +49,9 @@ public class AddIndexesTaskTest extends BenchmarkTestCase {
     try {
       IndexWriter writer = new IndexWriter(tmpDir, new IndexWriterConfig(TEST_VERSION_CURRENT, null));
       for (int i = 0; i < 10; i++) {
-writer.shutdown();
+        writer.addDocument(new Document());
       }
-      writer.close();
+writer.shutdown();
     } finally {
       tmpDir.close();
     }

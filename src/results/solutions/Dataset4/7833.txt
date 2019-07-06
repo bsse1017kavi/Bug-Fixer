@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -44,9 +43,9 @@ public class EditIssueActivityTest extends ActivityTest<EditIssueActivity> {
         super.setUp();
 
         Repository repo = new Repository();
-setActivityIntent(EditIssueActivity.createIntent(repo));
+        repo.setName("repo");
         repo.setOwner(new User().setLogin("owner"));
-        setActivityIntent(EditIssueActivity.createIntent(repo, "an issue"));
+setActivityIntent(EditIssueActivity.createIntent(repo));
     }
 
     /**

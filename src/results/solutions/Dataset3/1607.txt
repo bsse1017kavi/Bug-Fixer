@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ public abstract class AttributeDefinition {
             Boolean nullCheck = validateNull ? allowNull : null;
             this.validator = new NillableOrExpressionParameterValidator(validator, nullCheck, allowExpression);
         }
-} else if (flags.length == 1) {
+        if (flags == null || flags.length == 0) {
             this.flags = EnumSet.noneOf(AttributeAccess.Flag.class);
-        } else if (flags.length == 0) {
+} else if (flags.length == 1) {
             this.flags = EnumSet.of(flags[0]);
         } else {
             this.flags = EnumSet.of(flags[0], flags);

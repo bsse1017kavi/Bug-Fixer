@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public final class DomainDeploymentRemove extends AbstractDomainModelUpdate<Void
         DeploymentUnitElement due = original.getDeployment(uniqueName);
         return due == null ? null : new DomainDeploymentAdd(uniqueName, due.getRuntimeName(), due.getSha1Hash(), due.isStart());
     }
-public AbstractServerModelUpdate<Void> getServerModelUpdate() {
+
     @Override
-    protected AbstractServerModelUpdate<Void> getServerModelUpdate() {
+public AbstractServerModelUpdate<Void> getServerModelUpdate() {
         return null;
     }
 }

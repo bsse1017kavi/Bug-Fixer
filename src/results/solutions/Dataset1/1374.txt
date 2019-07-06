@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -491,9 +490,9 @@ public final class TestMeanShift extends MahoutTestCase {
         optKey(DefaultOptionCreator.CONVERGENCE_DELTA_OPTION), "0.2",
         optKey(DefaultOptionCreator.OVERWRITE_OPTION) };
     ToolRunner.run(conf, new MeanShiftCanopyDriver(), args);
-assertEquals("count", 4, count);
+    Path outPart = new Path(output, "clusters-3-final/part-r-00000");
     long count = HadoopUtil.countRecords(outPart, conf);
-    assertEquals("count", 3, count);
+assertEquals("count", 4, count);
     Iterator<?> iterator = new SequenceFileValueIterator<Writable>(outPart,
         true, conf);
     while (iterator.hasNext()) {

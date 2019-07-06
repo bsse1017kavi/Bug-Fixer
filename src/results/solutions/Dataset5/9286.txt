@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -444,9 +443,9 @@ public class XSLTProcess extends MatchingTask implements XSLTLogger
             if( force ||
                 inFile.lastModified() > outFile.lastModified() ||
                 styleSheetLastModified > outFile.lastModified() )
-getLogger().info( "Processing " + inFile + " to " + outFile );
+            {
                 ensureDirectoryFor( outFile );
-                log( "Processing " + inFile + " to " + outFile );
+getLogger().info( "Processing " + inFile + " to " + outFile );
 
                 configureLiaison( stylesheet );
                 liaison.transform( inFile, outFile );

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -845,9 +844,9 @@ public class DOMConfigurationImpl extends ParserConfigurationSettings
                             new Object[] { name });
                     throw new DOMException(DOMException.TYPE_MISMATCH_ERR, msg);
                 }
-if (value instanceof XMLGrammarPool || value == null) {
+            }
             else if (name.equalsIgnoreCase (GRAMMAR_POOL)){
-                if (value instanceof XMLGrammarPool){
+if (value instanceof XMLGrammarPool || value == null) {
                     setProperty(GRAMMAR_POOL, value);
                 }
                 else {

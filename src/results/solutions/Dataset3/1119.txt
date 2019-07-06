@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -147,9 +146,9 @@ public class ComponentDescription implements ResourceInjectionTarget {
             throw MESSAGES.nullVar("moduleDescription");
         }
         if (deploymentUnitServiceName == null) {
-serviceName = BasicComponent.serviceNameOf(deploymentUnitServiceName, componentName);
+            throw MESSAGES.nullVar("deploymentUnitServiceName");
         }
-        serviceName = deploymentUnitServiceName.append("component").append(componentName);
+serviceName = BasicComponent.serviceNameOf(deploymentUnitServiceName, componentName);
         this.componentName = componentName;
         this.componentClassName = componentClassName;
         configurators.addLast(FIRST_CONFIGURATOR);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -82,9 +81,9 @@ public class JettyWebSocketClientTests {
 	public void doHandshake() throws Exception {
 
 		HttpHeaders headers = new HttpHeaders();
-this.wsSession = this.client.doHandshake(new TextWebSocketHandlerAdapter(), headers, new URI(this.wsUrl)).get();
+		headers.setSecWebSocketProtocol(Arrays.asList("echo"));
 
-		this.wsSession = this.client.doHandshake(new TextWebSocketHandlerAdapter(), headers, new URI(this.wsUrl));
+this.wsSession = this.client.doHandshake(new TextWebSocketHandlerAdapter(), headers, new URI(this.wsUrl)).get();
 
 		assertEquals(this.wsUrl, this.wsSession.getUri().toString());
 		assertEquals("echo", this.wsSession.getAcceptedProtocol());

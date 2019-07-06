@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -150,9 +149,9 @@ public void generateCode(ClassScope classScope, ClassFile classFile) {
 	} catch (AbortMethod e) {
 		// a fatal error was detected during code generation, need to restart code gen if possible
 		if (e.compilationResult == CodeStream.RESTART_IN_WIDE_MODE) {
-this.traverse(new ResetStateForCodeGenerationVisitor(), classScope);
+			// a branch target required a goto_w, restart code gen in wide mode.
 			try {
-				this.traverse(new ResetSateForCodeGenerationVisitor(), classScope);
+this.traverse(new ResetStateForCodeGenerationVisitor(), classScope);
 				classFile.contentsOffset = problemResetPC;
 				classFile.methodCount--;
 				classFile.codeStream.wideMode = true; // request wide mode 

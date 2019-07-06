@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class ErrorState implements State {
         this.stateValues = stateValues;
         this.theConsole = theConsole;
     }
-boolean direct = theConsole.hasConsole();
+
     public State execute() {
-        boolean direct = theConsole.getConsole() == null;
+boolean direct = theConsole.hasConsole();
         // Errors should be output in all modes.
         printf(NEW_LINE, direct);
         printf(" * ", direct);

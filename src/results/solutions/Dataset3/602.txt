@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -95,9 +94,9 @@ public class RestEasyIntegrationTestCase {
         archive.setWebXML(RestEasyIntegrationTestCase.class.getPackage(), "web.xml");
         // [SHRINKWRAP-278] WebArchive.setManifest() results in WEB-INF/classes/META-INF/MANIFEST.MF
         archive.add(new Asset() {
-builder.addManifestHeader("Dependencies", "org.osgi.core,deployment.jaxrs-osgi-target");
+            public InputStream openStream() {
                 ManifestBuilder builder = ManifestBuilder.newInstance();
-                builder.addManifestHeader("Dependencies", "org.osgi.core,deployment.jaxrs-osgi-target:0.0.0");
+builder.addManifestHeader("Dependencies", "org.osgi.core,deployment.jaxrs-osgi-target");
                 return builder.openStream();
             }
         }, JarFile.MANIFEST_NAME);

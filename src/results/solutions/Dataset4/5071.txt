@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.maps.tiled;
 
 import java.io.ByteArrayInputStream;
@@ -112,9 +111,9 @@ public class TmxMapLoader extends AsynchronousAssetLoader<TiledMap, TmxMapLoader
 			root = xml.parse(tmxFile);
 			ObjectMap<String, Texture> textures = new ObjectMap<String, Texture>();
 			for(FileHandle textureFile: loadTilesets(root, tmxFile)) {
-textures.put(textureFile.path(), texture);
+				Texture texture = new Texture(textureFile, parameters.generateMipMaps);
 				texture.setFilter(parameters.textureMinFilter, parameters.textureMagFilter);
-				textures.put(textureFile.path(), new Texture(textureFile, parameters.generateMipMaps));				
+textures.put(textureFile.path(), texture);
 			}
 			DirectImageResolver imageResolver = new DirectImageResolver(textures);
 			TiledMap map = loadTilemap(root, tmxFile, imageResolver);

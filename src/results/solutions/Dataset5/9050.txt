@@ -1,4 +1,3 @@
-
 /*
  * ==============================================================================
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -210,9 +209,9 @@ public class PortletSessionStore implements ISessionStore
 	public void setAttribute(Request request, String name, Object value)
 	{
 		// Do some extra profiling/ debugging. This can be a great help
-if (Application.get().getDebugSettings().getSerializeSessionAttributes())
+		// just for testing whether your webbapp will behave when using
 		// session replication
-		if (log.isDebugEnabled())
+if (Application.get().getDebugSettings().getSerializeSessionAttributes())
 		{
 			String valueTypeName = (value != null ? value.getClass().getName() : "null");
 			try

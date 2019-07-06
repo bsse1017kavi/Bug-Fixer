@@ -1,4 +1,3 @@
-
 package org.apache.lucene.sandbox.queries.regex;
 
 /*
@@ -65,9 +64,9 @@ public class TestSpanRegexQuery extends LuceneTestCase {
     writer.addDocument(doc);
     doc = new Document();
     doc.add(newTextField("field", "first auto update", Field.Store.NO));
-writer.shutdown();
+    writer.addDocument(doc);
     writer.forceMerge(1);
-    writer.close();
+writer.shutdown();
 
     IndexReader reader = DirectoryReader.open(directory);
     IndexSearcher searcher = newSearcher(reader);

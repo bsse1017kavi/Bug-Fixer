@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2011 Rod Hyde (rod@badlydrawngames.com)
  * 
@@ -432,9 +431,9 @@ public class WorldView {
 			}
 		} else if (Gdx.input.isTouched()) {
 			worldCam.unproject(dragPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
-joystick.set(dx, dy).mul(JOYSTICK_DISTANCE_MULTIPLIER);
+			float dx = dragPoint.x - touchPoint.x;
 			float dy = dragPoint.y - touchPoint.y;
-			joystick.set(dx, dy).scl(JOYSTICK_DISTANCE_MULTIPLIER);
+joystick.set(dx, dy).mul(JOYSTICK_DISTANCE_MULTIPLIER);
 			float len = joystick.len();
 			if (len > 1) {
 				joystick.nor();

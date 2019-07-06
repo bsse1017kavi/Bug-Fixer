@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public abstract class AbstractFsBlobContainer extends AbstractBlobContainer {
     @Override public boolean blobExists(String blobName) {
         return new File(path, blobName).exists();
     }
-blobStore.executor().execute(new Runnable() {
+
     @Override public void readBlob(final String blobName, final ReadBlobListener listener) {
-        blobStore.executorService().execute(new Runnable() {
+blobStore.executor().execute(new Runnable() {
             @Override public void run() {
                 byte[] buffer = new byte[blobStore.bufferSizeInBytes()];
                 FileInputStream is;

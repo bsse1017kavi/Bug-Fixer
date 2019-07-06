@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -997,9 +996,9 @@ public class ConvertedLegacyTest extends SolrTestCaseJ4 {
             ,"*[count(//doc)=1]"
             );
     assertQ(req("id:42 AND subword:IBM's")
-assertQ(req("id:42 AND subword:\"IBM'sx\"")
+            ,"*[count(//doc)=1]"
             );
-    assertQ(req("id:42 AND subword:IBM'sx")
+assertQ(req("id:42 AND subword:\"IBM'sx\"")
             ,"*[count(//doc)=0]"
             );
 

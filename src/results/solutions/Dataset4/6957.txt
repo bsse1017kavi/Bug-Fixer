@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -481,9 +480,9 @@ public class NettyTransport extends AbstractLifecycleComponent<Transport> implem
                     throw new ConnectTransportException(node, "connectTimeout[" + connectTimeout + "], connectRetries[" + connectRetries + "]", lastConnectException);
                 }
                 throw new ConnectTransportException(node, "connectTimeout[" + connectTimeout + "], connectRetries[" + connectRetries + "], reason unknown");
-logger.debug("Connected to node[{}], number_of_connections[{}]", node, channels.size());
+            }
             if (logger.isDebugEnabled()) {
-                logger.debug("Connected to node [{}], numberOfConnections [{}]", node, channels.size());
+logger.debug("Connected to node[{}], number_of_connections[{}]", node, channels.size());
             }
             clientChannels.put(node.id(), new NodeConnections(channels.toArray(new Channel[channels.size()])));
         }

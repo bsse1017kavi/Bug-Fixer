@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -180,9 +179,9 @@ public class ParsedServiceDeploymentProcessor implements DeploymentUnitProcessor
         }
 
         // Add service to register the bean in the mbean server
-.addDependency(MBeanServerService.SERVICE_NAME, MBeanServer.class, mbeanRegistrationService.getMBeanServerInjector())
+        final MBeanRegistrationService<Object> mbeanRegistrationService = new MBeanRegistrationService(serviceName);
         batchBuilder.addService(MBeanRegistrationService.SERVICE_NAME.append(serviceName), mbeanRegistrationService)
-            .addDependency(MBeanServerService.MBEAN_SERVER_SERVICE_NAME, MBeanServer.class, mbeanRegistrationService.getMBeanServerInjector())
+.addDependency(MBeanServerService.SERVICE_NAME, MBeanServer.class, mbeanRegistrationService.getMBeanServerInjector())
             .addDependency(startStopServiceName, Object.class, mbeanRegistrationService.getValueInjector());
     }
 

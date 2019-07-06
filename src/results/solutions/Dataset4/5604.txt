@@ -1,4 +1,3 @@
-
 package com.mojang.metagun.screen;
 
 import com.badlogic.gdx.Gdx;
@@ -192,9 +191,9 @@ public class SignReadScreen extends Screen {
         drawString("PRESS X", xp+(xs-8)*6, yp+(signs[id].length+2)*6);
         spriteBatch.end();
     }
-if (!input.oldButtons[Input.ESCAPE] && input.buttons[Input.ESCAPE]) {
+    
     public void tick(Input input) {
-        if (!input.oldButtons[Input.ESCAPE] && input.buttons[Input.ESCAPE] || Gdx.input.isTouched()) {
+if (!input.oldButtons[Input.ESCAPE] && input.buttons[Input.ESCAPE]) {
             setScreen(parent);
             return;
         }

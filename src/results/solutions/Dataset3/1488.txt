@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -359,9 +358,9 @@ class RemoteDomainConnection extends ManagementClientChannelStrategy {
         final List<ModelNode> bootOperations= result.get(ModelDescriptionConstants.RESULT).asList();
         return callback.applyDomainModel(bootOperations);
     }
-//        schedule(new PingTask());
+
     void registered() {
-        schedule(new PingTask());
+//        schedule(new PingTask());
         callback.registrationComplete(channelHandler);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  *
  * Derby - Class BaseTestCase
@@ -513,9 +512,9 @@ public abstract class BaseTestCase
 	            " actual output:" + output,
 	            expectedExitValue, exitValue);
 	    if (expectedString != null) {
-expectedString[i] + " in output:" + output,
+	        for (int i = 0; i < expectedString.length; i++) {
 	            assertTrue("Could not find expectedString:" +
-	                    expectedString + " in output:" + output,
+expectedString[i] + " in output:" + output,
 	                    output.indexOf(expectedString[i]) >= 0);
 	        }
 	    }

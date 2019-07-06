@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -56,9 +55,9 @@ public class SaveAllFoldersPlugin implements TaskInterface {
             child = (FolderTreeNode) e.nextElement();
 
             FolderCommandReference[] r = new FolderCommandReference[1];
-ColumbaLogger.log.info("saving folder: " + child.getName());
+            r[0] = new FolderCommandReference(child);
 
-            ColumbaLogger.log.debug("saving folder: " + child.getName());
+ColumbaLogger.log.info("saving folder: " + child.getName());
 
             MainInterface.processor.addOp(new SaveFolderConfigurationCommand(r));
 

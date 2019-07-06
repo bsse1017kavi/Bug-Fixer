@@ -1,4 +1,3 @@
-
 /*
  * $Id: DiffUtil.java 6044 2006-06-04 20:00:30 +0000 (Sun, 04 Jun 2006) jannehietamaki $ $Revision: 6044 $
  * $Date: 2006-06-04 20:00:30 +0000 (Sun, 04 Jun 2006) $
@@ -152,9 +151,9 @@ public final class DiffUtil
 		filename = filename.replace('.', '/');
 		filename += "/" + file;
 
-filename = filename.replaceAll("/target/test-classes/", "/src/test/java/");
+		final URL url = clazz.getClassLoader().getResource(filename);
 		filename = url.getFile();
-		filename = filename.replaceAll("/target/test-classes/", "/src/test/");
+filename = filename.replaceAll("/target/test-classes/", "/src/test/java/");
 		PrintWriter out = new PrintWriter(new FileOutputStream(filename));
 		out.print(document);
 		out.close();

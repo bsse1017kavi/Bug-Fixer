@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class TransportPutMappingAction extends TransportMasterNodeOperationActio
 
         // update to concrete indices
         request.indices(clusterState.metaData().concreteIndices(request.indices()));
-MetaDataService.PutMappingResult result = metaDataService.putMapping(indices, request.type(), request.source(), request.ignoreConflicts(), request.timeout());
+        final String[] indices = request.indices();
 
-        MetaDataService.PutMappingResult result = metaDataService.putMapping(indices, request.type(), request.mappingSource(), request.ignoreConflicts(), request.timeout());
+MetaDataService.PutMappingResult result = metaDataService.putMapping(indices, request.type(), request.source(), request.ignoreConflicts(), request.timeout());
         return new PutMappingResponse(result.acknowledged());
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -236,9 +235,9 @@ public class MulticastZenPing extends AbstractLifecycleComponent<ZenPing> implem
                 if (logger.isTraceEnabled()) {
                     logger.trace("[{}] sending ping request", id);
                 }
-throw new ZenPingException("Failed to send ping request over multicast on " + multicastSocket, e);
+            } catch (IOException e) {
                 receivedResponses.remove(id);
-                throw new ZenPingException("Failed to send ping request over multicast", e);
+throw new ZenPingException("Failed to send ping request over multicast on " + multicastSocket, e);
             }
         }
     }

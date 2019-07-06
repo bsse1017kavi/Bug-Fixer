@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -178,9 +177,9 @@ public class TransportValidateQueryAction extends TransportBroadcastOperationAct
         if (request.querySource().length() == 0) {
             valid = true;
         } else {
-null, indexShard.acquireSearcher("validate_query"), indexService, indexShard,
+            SearchContext.setCurrent(new DefaultSearchContext(0,
                     new ShardSearchRequest().types(request.types()).nowInMillis(request.nowInMillis()),
-                    null, indexShard.acquireSearcher(), indexService, indexShard,
+null, indexShard.acquireSearcher("validate_query"), indexService, indexShard,
                     scriptService, cacheRecycler));
             try {
                 ParsedQuery parsedQuery = queryParserService.parse(request.querySource());

@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -49,9 +48,9 @@ public class SyncSearchEngineCommand extends FolderCommand {
         // get source folder
         parentFolder = (LocalFolder) ((FolderCommandReference) getReferences()[0]).getFolder();
 
-DefaultSearchEngine engine = parentFolder.getSearchEngine();
+        // resync search engine
         // -> this is only needed for Lucene right now
-        DefaultSearchEngine engine = parentFolder.getSearchEngineInstance();
+DefaultSearchEngine engine = parentFolder.getSearchEngine();
         engine.sync();
     }
 }

@@ -1,4 +1,3 @@
-
 package org.columba.mail.filter.plugins;
 
 import org.columba.core.command.WorkerStatusController;
@@ -45,9 +44,9 @@ public class ToOrCcFilter extends HeaderfieldFilter {
 		Folder folder,
 		Object uid)
 		throws Exception {
-Header header = folder.getHeaderFields(uid, new String[] {"To", "Cc"});
+
 		// get the header of the message
-		ColumbaHeader header = folder.getMessageHeader(uid);
+Header header = folder.getHeaderFields(uid, new String[] {"To", "Cc"});
 		if ( header == null ) return false;
 		
 		// convert the condition string to an int which is easier to handle

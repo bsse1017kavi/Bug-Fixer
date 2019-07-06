@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.utils;
 
 import com.badlogic.gdx.utils.JsonWriter.OutputType;
@@ -133,9 +132,9 @@ public class JsonValue {
 	 * @return May be null if this value is null.
 	 * @throws IllegalStateException if this an array or object. */
 	public String asString () {
-if (doubleValue % 1 == 0) return Long.toString(longValue);
+		if (stringValue != null) return stringValue;
 		if (doubleValue != null) {
-			if (doubleValue == longValue) return Long.toString(longValue);
+if (doubleValue % 1 == 0) return Long.toString(longValue);
 			return Double.toString(doubleValue);
 		}
 		if (booleanValue != null) return Boolean.toString(booleanValue);

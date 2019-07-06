@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public final class ChunkedWriter implements Closeable {
     this.conf = conf;
     if (chunkSizeInMB > 1984) {
       chunkSizeInMB = 1984;
-fs = FileSystem.get(output.toUri(), conf);
+    }
     maxChunkSizeInBytes = chunkSizeInMB * 1024 * 1024;
-    fs = FileSystem.get(conf);
+fs = FileSystem.get(output.toUri(), conf);
     currentChunkID = 0;
     writer = new SequenceFile.Writer(fs, conf, getPath(currentChunkID), Text.class, Text.class);
   }

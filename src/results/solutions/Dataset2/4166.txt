@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000-2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -350,9 +349,9 @@ public class ParameterizedTypeBinding extends ReferenceBinding implements Substi
 		this.modifiers = someType.modifiers | AccGenericSignature | AccUnresolved; // until methods() is sent
 		if (someArguments != null) {
 			this.arguments = someArguments;
-if (!someArgument.isWildcard() || ((WildcardBinding) someArgument).isEquivalentToUnboundWildcard()) {
+			for (int i = 0, length = someArguments.length; i < length; i++) {
 				TypeBinding someArgument = someArguments[i];
-				if (!someArgument.isWildcard() || ((WildcardBinding) someArgument).kind != Wildcard.UNBOUND) {
+if (!someArgument.isWildcard() || ((WildcardBinding) someArgument).isEquivalentToUnboundWildcard()) {
 					this.tagBits |= IsBoundParameterizedType;
 				}
 			    this.tagBits |= someArgument.tagBits & (HasTypeVariable | HasWildcard);

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.word;
 
 /* ================================================================
@@ -718,9 +717,9 @@ public class IssueSearch
                 minFid = new Issue.FederatedId(minId);
                 maxFid = new Issue.FederatedId(maxId);
                 // give reasonable defaults if module code was not specified
-minFid.setPrefix(getModule().getCode());
+                if ( minFid.getPrefix() == null ) 
                 {
-                    minFid.setPrefix(getScarabModule().getCode());
+minFid.setPrefix(getModule().getCode());
                 }
                 if ( maxFid.getPrefix() == null ) 
                 {

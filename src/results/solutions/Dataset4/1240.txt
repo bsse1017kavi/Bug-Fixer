@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store.bytebuffer;
 
 /**
@@ -38,9 +37,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * <p>Each "file" is segmented into one or more byte buffers.
  * <p/>
  * <p>If constructed with {@link ByteBufferAllocator}, it allows to control the allocation and release of
-public class ByteBufferDirectory extends BaseDirectory {
+ * byte buffer. For example, custom implementations can include caching of byte buffers.
  */
-public class ByteBufferDirectory extends Directory {
+public class ByteBufferDirectory extends BaseDirectory {
 
     protected final Map<String, ByteBufferFile> files = new ConcurrentHashMap<String, ByteBufferFile>();
 

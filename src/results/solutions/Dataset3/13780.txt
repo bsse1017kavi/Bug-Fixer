@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public static final ConnectionPropertyRemove INSTANCE = new ConnectionPropertyRe
         final ModelNode address = operation.require(OP_ADDR);
         PathAddress path = PathAddress.pathAddress(address);
         final String jndiName = path.getElement(path.size() - 2).getValue();
-ServiceName serviceName = DataSourceConfigService.SERVICE_NAME_BASE.append(jndiName).append("connetion-properties").append(configPropertyName);
+        final String configPropertyName = PathAddress.pathAddress(address).getLastElement().getValue();
 
-        ServiceName serviceName = DataSourceConfigService.SERVICE_NAME_BASE.append(jndiName).append(configPropertyName);
+ServiceName serviceName = DataSourceConfigService.SERVICE_NAME_BASE.append(jndiName).append("connetion-properties").append(configPropertyName);
 
         final ServiceController<?> dataSourceConfigController = registry.getService(serviceName);
         if (dataSourceConfigController != null) {

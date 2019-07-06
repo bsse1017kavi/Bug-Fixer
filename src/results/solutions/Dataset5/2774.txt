@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -2142,9 +2141,9 @@ public class Project implements ResourceFactory {
         System.err.flush();
         BuildEvent event = new BuildEvent(task);
         event.setException(exception);
-currListeners[i].taskFinished(event);
+        BuildListener[] currListeners = listeners;
         for (int i = 0; i < currListeners.length; i++) {
-            currListeners[i].targetFinished(event);
+currListeners[i].taskFinished(event);
         }
 
     }

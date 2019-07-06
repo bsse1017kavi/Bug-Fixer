@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util.packed;
 
 /*
@@ -44,9 +43,9 @@ public final class BlockPackedReader {
     checkBlockSize(blockSize);
     this.valueCount = valueCount;
     blockShift = Integer.numberOfTrailingZeros(blockSize);
-if ((long) numBlocks * blockSize < valueCount) {
+    blockMask = blockSize - 1;
     final int numBlocks = (int) (valueCount / blockSize) + (valueCount % blockSize == 0 ? 0 : 1);
-    if (numBlocks * blockSize < valueCount) {
+if ((long) numBlocks * blockSize < valueCount) {
       throw new IllegalArgumentException("valueCount is too large for this block size");
     }
     long[] minValues = null;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class PagedTableTest extends WicketTestCase
 	public void testPagedTable() throws Exception
 	{
 		tester.startPage(PagedTablePage.class);
-assertTrue(document, validatePage1(document));
+		PagedTablePage page = (PagedTablePage)tester.getLastRenderedPage();
 		String document = tester.getLastResponseAsString();
-		assertTrue(validatePage1(document));
+assertTrue(document, validatePage1(document));
 
 		Link<?> link = (Link<?>)page.get("navigation:1:pageLink");
 		tester.clickLink(link.getPageRelativePath());

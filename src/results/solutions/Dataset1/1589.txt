@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.DDLStatementNode
@@ -145,9 +144,9 @@ abstract class DDLStatementNode extends StatementNode
 
 	public String toString()
 	{
-return ((objectName==null)?"":objectName.toString()) + super.toString();
+		if (SanityManager.DEBUG)
 		{
-			return objectName.toString() + super.toString();
+return ((objectName==null)?"":objectName.toString()) + super.toString();
 		}
 		else
 		{

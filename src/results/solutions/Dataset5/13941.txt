@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTargetUrlCodingStrategy.java,v 1.1 2005/12/10
  * 21:28:56 eelco12 Exp $ $Revision$ $Date: 2006-05-24 20:53:56 +0000
@@ -79,9 +78,9 @@ public class PackageRequestTargetUrlCodingStrategy extends AbstractRequestTarget
 			remainder = remainder.substring(1);
 			ix--;
 		}
-Class<? extends Page> bookmarkablePageClass = Session.get().getClassResolver()
+
 		final String bookmarkablePageClassName = packageName + "." + remainder.substring(0, ix);
-		Class<? extends Page> bookmarkablePageClass = (Class<? extends Page>)Session.get().getClassResolver()
+Class<? extends Page> bookmarkablePageClass = Session.get().getClassResolver()
 				.resolveClass(bookmarkablePageClassName);
 		PageParameters parameters = new PageParameters(decodeParameters(parametersFragment,
 				requestParameters.getParameters()));

@@ -1,4 +1,3 @@
-
 /* 
 
    Derby - Class org.apache.derby.impl.jdbc.ClobAsciiStream
@@ -93,9 +92,9 @@ final class ClobAsciiStream extends OutputStream {
         
         while (len > 0)
         {
-buffer[i] = (char)(b[off + i] & 0xff);
+            int clen = Math.min(len, buffer.length);
             for (int i = 0; i < clen; i++) {
-                buffer[i] = (char) b[off + i];
+buffer[i] = (char)(b[off + i] & 0xff);
             }
             writer.write(buffer, 0, clen);
             off += clen;

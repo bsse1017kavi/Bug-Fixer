@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2008 Arno Haase.
 All rights reserved. This program and the accompanying materials
@@ -28,9 +27,9 @@ import org.eclipse.xtend.backend.util.ReflectionHelper;
  */
 public final class StringType extends AbstractType {
     public static final StringType INSTANCE = new StringType();
-super ("String", "{builtin}String");
+    
     private StringType () {
-        super ("String");
+super ("String", "{builtin}String");
         
         register (new BuiltinProperty (this, this, "length", ReflectionHelper.getKnownMethod (CharSequence.class, "length"), null));
     }

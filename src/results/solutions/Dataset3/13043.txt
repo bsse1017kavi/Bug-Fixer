@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -173,9 +172,9 @@ public abstract class AbstractControllerService implements Service<ModelControll
         final ServiceTarget target = context.getChildTarget();
         final ExecutorService executorService = injectedExecutorService.getOptionalValue();
         ManagementResourceRegistration rootResourceRegistration = rootDescriptionProvider != null ? ManagementResourceRegistration.Factory.create(rootDescriptionProvider) : ManagementResourceRegistration.Factory.create(rootResourceDefinition);
-new ContainerStateMonitor(container),
+        final ModelControllerImpl controller = new ModelControllerImpl(container, target,
                 rootResourceRegistration,
-                new ContainerStateMonitor(container, serviceController),
+new ContainerStateMonitor(container),
                 configurationPersister, processType, runningModeControl, prepareStep,
                 processState, executorService, expressionResolver);
         initModel(controller.getRootResource(), controller.getRootRegistration());

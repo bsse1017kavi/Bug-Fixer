@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2010 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -274,9 +273,9 @@ public class RemoteServiceAdmin extends AbstractRemoteServiceAdmin implements
 
 		Dictionary proxyProperties = getProxyProperties(rsContainer,
 				endpointDescription, rsReference);
-(String[]) interfaces.toArray(), proxy, (Dictionary) proxyProperties);
+
 		ServiceRegistration proxyRegistration = getContext().registerService(
-				(String[]) interfaces.toArray(), proxy, proxyProperties);
+(String[]) interfaces.toArray(), proxy, (Dictionary) proxyProperties);
 		// Now create import registration for newly registered proxy
 		return new ImportRegistration(rsContainer, rsReference,
 				endpointDescription, proxyRegistration);

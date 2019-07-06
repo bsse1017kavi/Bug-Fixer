@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -144,9 +143,9 @@ public class SoftBodyTest extends BaseBulletTest {
 		softBody.getVertices(mesh.getVerticesBuffer(), softBody.getNodeCount(), mesh.getVertexSize(), 0);
 		softBody.getWorldTransform(instance.transform);
 		
-modelBatch.render(lights, instance);
+		modelBatch.begin(camera);
 		world.render(modelBatch, lights);
-		modelBatch.render(instance, lights);
+modelBatch.render(lights, instance);
 		modelBatch.end();
 	}
 	

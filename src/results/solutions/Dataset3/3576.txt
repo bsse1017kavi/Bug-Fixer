@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -101,9 +100,9 @@ public class HashCodeBuilder {
      * A registry of objects used by reflection methods to detect cyclical object references and avoid infinite loops.
      * </p>
      * 
-private static final ThreadLocal registry = new ThreadLocal() {
+     * @since 2.3
      */
-    private static ThreadLocal registry = new ThreadLocal() {
+private static final ThreadLocal registry = new ThreadLocal() {
         @Override
         protected Object initialValue() {
             // The HashSet implementation is not synchronized,

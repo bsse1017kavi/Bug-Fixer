@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -146,9 +145,9 @@ public class WebConnectorDefinition extends ModelOnlyResourceDefinition {
                     .setAllowExpression(true)
                     .build();
     protected static final StringListAttributeDefinition VIRTUAL_SERVER = new StringListAttributeDefinition.Builder(Constants.VIRTUAL_SERVER)
-.setValidator(new StringLengthValidator(1, false))
+            .setAllowNull(true)
             .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES)
-            .setElementValidator(new StringLengthValidator(1, false))
+.setValidator(new StringLengthValidator(1, false))
             .build();
     protected static final AttributeDefinition[] CONNECTOR_ATTRIBUTES = {
             //NAME, // name is read-only

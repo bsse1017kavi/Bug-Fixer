@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ import org.junit.runner.RunWith;
  * @author <a href="kabir.khan@jboss.com">Kabir Khan</a>
  * @version $Revision: 1.1 $
  */
-private static final String JNDI_NAME = "java:jboss/datasources/ExampleDS";
+@RunWith(Arquillian.class)
 public class DsTestCase {
-    private static final String JNDI_NAME = "java:/H2DS";
+private static final String JNDI_NAME = "java:jboss/datasources/ExampleDS";
 
     @Deployment
     public static Archive<?> getDeployment() {

@@ -1,4 +1,3 @@
-
 package org.apache.solr.client.solrj.response;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -142,9 +141,9 @@ public class TestSpellCheckResponse extends SolrJettyTestBase {
     response = request.process(server).getSpellCheckResponse();
     assertTrue("name:(+faith +homer +loaves)".equals(response.getCollatedResult()));
     
-query.set(SpellingParams.SPELLCHECK_MAX_COLLATION_TRIES, 10);
+    //Test Expanded Collation Results
     query.set(SpellingParams.SPELLCHECK_COLLATE_EXTENDED_RESULTS, true);
-    query.set(SpellingParams.SPELLCHECK_MAX_COLLATION_TRIES, 5);
+query.set(SpellingParams.SPELLCHECK_MAX_COLLATION_TRIES, 10);
     query.set(SpellingParams.SPELLCHECK_MAX_COLLATIONS, 2); 
     request = new QueryRequest(query);
     response = request.process(server).getSpellCheckResponse();

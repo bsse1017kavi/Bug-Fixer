@@ -1,4 +1,3 @@
-
 package backtype.storm.metric;
 
 import backtype.storm.Config;
@@ -56,9 +55,9 @@ public class SystemBolt implements IBolt {
             _gcBean = gcBean;
         }
         @Override
-Long collectionTimeP = _gcBean.getCollectionCount();
+        public Object getValueAndReset() {
             Long collectionCountP = _gcBean.getCollectionCount();
-            Long collectionTimeP = _gcBean.getCollectionTime();
+Long collectionTimeP = _gcBean.getCollectionCount();
 
             Map ret = null;
             if(_collectionCount!=null && _collectionTime!=null) {

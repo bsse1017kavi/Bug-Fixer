@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -65,9 +64,9 @@ class MemoryManagerResourceDefinition extends SimpleResourceDefinition {
 
     static final MemoryManagerResourceDefinition INSTANCE = new MemoryManagerResourceDefinition();
 
-PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY_MANAGER));
+    private MemoryManagerResourceDefinition() {
         super(PathElement.pathElement(NAME.getName()),
-                PlatformMBeanDescriptions.getResolver(PlatformMBeanConstants.MEMORY_MANAGER));
+PlatformMBeanUtil.getResolver(PlatformMBeanConstants.MEMORY_MANAGER));
     }
 
     @Override

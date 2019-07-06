@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -25,9 +24,9 @@ public EntryResult(char[] word, HashtableOfObject table) {
 	if (table != null)
 		this.documentTables = new HashtableOfObject[] {table};
 }
-this.documentNames = new SimpleSet(3);
+public void addDocumentName(String documentName) {
 	if (this.documentNames == null)
-		this.documentNames = new SimpleSet();
+this.documentNames = new SimpleSet(3);
 	this.documentNames.add(documentName);
 }
 public void addDocumentTable(HashtableOfObject table) {

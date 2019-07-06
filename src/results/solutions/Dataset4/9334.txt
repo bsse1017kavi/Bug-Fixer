@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,9 +73,9 @@ public class TransportSearchQueryAndFetchAction extends TransportSearchTypeActio
 
         @Override protected void processFirstPhaseResult(ShardRouting shard, QueryFetchSearchResult result) {
             queryFetchResults.put(result.shardTarget(), result);
-@Override protected void moveToSecondPhase() throws Exception {
+        }
 
-        @Override protected void moveToSecondPhase() {
+@Override protected void moveToSecondPhase() throws Exception {
             sortedShardList = searchPhaseController.sortDocs(queryFetchResults.values());
             final InternalSearchResponse internalResponse = searchPhaseController.merge(sortedShardList, queryFetchResults, queryFetchResults);
             String scrollId = null;

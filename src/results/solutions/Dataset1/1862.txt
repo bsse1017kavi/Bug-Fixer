@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -89,9 +88,9 @@ public class CDFitness implements Writable {
     if (obj == null || !(obj instanceof CDFitness))
       return false;
 
-return tp == f.getTp() && fp == f.getFp() && tn == f.getTn() && fn == f.getFn();
+    CDFitness f = (CDFitness) obj;
 
-    return tp == f.getFp() && fp == f.getFp() && tn == f.getTn() && fn == f.getTn();
+return tp == f.getTp() && fp == f.getFp() && tn == f.getTn() && fn == f.getFn();
   }
 
   @Override

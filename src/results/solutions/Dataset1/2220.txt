@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.join;
 
 /*
@@ -452,9 +451,9 @@ public class ToParentBlockJoinQuery extends Query {
 
   @Override
   public Query rewrite(IndexReader reader) throws IOException {
-Query rewritten = new ToParentBlockJoinQuery(origChildQuery,
+    final Query childRewrite = childQuery.rewrite(reader);
     if (childRewrite != childQuery) {
-      Query rewritten = new ToParentBlockJoinQuery(childQuery,
+Query rewritten = new ToParentBlockJoinQuery(origChildQuery,
                                 childRewrite,
                                 parentsFilter,
                                 scoreMode);

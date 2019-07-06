@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ class DefaultSingletonBeanAccessTimeoutWriteHandler extends AbstractWriteAttribu
         restored.get(attributeName).set(valueToRestore);
         updateOrCreateDefaultSingletonBeanAccessTimeoutService(context, restored, null);
     }
-final long defaultAccessTimeout = EJB3SubsystemRootResourceDefinition.DEFAULT_SINGLETON_BEAN_ACCESS_TIMEOUT.resolveModelAttribute(context, model).asLong();
+
     void updateOrCreateDefaultSingletonBeanAccessTimeoutService(final OperationContext context, final ModelNode model, List<ServiceController<?>> newControllers) throws OperationFailedException {
-        final long defaultAccessTimeout = EJB3SubsystemRootResourceDefinition.DEFAULT_SINGLETON_BEAN_ACCESS_TIMEOUT.validateResolvedOperation(model).asLong();
+final long defaultAccessTimeout = EJB3SubsystemRootResourceDefinition.DEFAULT_SINGLETON_BEAN_ACCESS_TIMEOUT.resolveModelAttribute(context, model).asLong();
         final ServiceName serviceName = DefaultAccessTimeoutService.SINGLETON_SERVICE_NAME;
         final ServiceRegistry registry = context.getServiceRegistry(true);
         final ServiceController sc = registry.getService(serviceName);

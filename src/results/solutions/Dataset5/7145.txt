@@ -1,4 +1,3 @@
-
 import java.util.*;
 import org.aspectj.testing.Tester;
 
@@ -153,9 +152,9 @@ aspect A {
         log("C.new(9)");
         proceed(s+"1");
     }
-if(test()) && !within(A) && !call(* A.*(..)) && !preinitialization(new(..)) {
+
     Object around(): //initialization(C.new(String)) { 
-                    if(test()) && !within(A) && !call(* A.*(..)) {
+if(test()) && !within(A) && !call(* A.*(..)) && !preinitialization(new(..)) {
        A.log("enter " + thisJoinPoint);
        Object ret = proceed();
        A.log("exit " + thisJoinPoint);

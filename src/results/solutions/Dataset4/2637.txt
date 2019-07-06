@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -255,9 +254,9 @@ public class IOSInput implements Input {
 					case UITouchPhase.Ended:
 						inputProcessor.touchUp(event.x, event.y, event.pointer, Buttons.LEFT);
 						break;
-inputProcessor.touchDragged(event.x, event.y, event.pointer);
+					case UITouchPhase.Moved:
 					case UITouchPhase.Stationary:
-						inputProcessor.touchDown(event.x, event.y, event.pointer, Buttons.LEFT);
+inputProcessor.touchDragged(event.x, event.y, event.pointer);
 						break;
 					}
 				}

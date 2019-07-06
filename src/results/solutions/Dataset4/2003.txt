@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -289,9 +288,9 @@ public class QueryParseContext {
         SearchContext current = SearchContext.current();
         if (current != null) {
             return current.lookup();
-lookup = new SearchLookup(mapperService(), indexCache().fieldData(), null);
+        }
         if (lookup == null) {
-            lookup = new SearchLookup(mapperService(), indexCache().fieldData());
+lookup = new SearchLookup(mapperService(), indexCache().fieldData(), null);
         }
         return lookup;
     }

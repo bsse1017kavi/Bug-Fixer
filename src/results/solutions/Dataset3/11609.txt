@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public class CommandResponseMarshaller implements RpcDispatcher.Marshaller {
     }
 
     @Override
-output.write(this.currentVersion);
+    public Buffer objectToBuffer(Object object) throws Exception {
         try (ByteArrayOutputStream output = new ByteArrayOutputStream()) {
-            output.write(currentVersion);
+output.write(this.currentVersion);
             try (Marshaller marshaller = this.context.createMarshaller(this.currentVersion)) {
                 marshaller.start(Marshalling.createByteOutput(output));
                 marshaller.writeObject(object);

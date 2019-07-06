@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -90,9 +89,9 @@ public class EventUtils {
          *
          * @param target the target object for method invocations
          * @param methodName the name of the method to be invoked
-EventBindingInvocationHandler(final Object target, final String methodName, String[] eventTypes) {
+         * @param eventTypes the names of the supported event types
          */
-        public EventBindingInvocationHandler(final Object target, final String methodName, String[] eventTypes) {
+EventBindingInvocationHandler(final Object target, final String methodName, String[] eventTypes) {
             this.target = target;
             this.methodName = methodName;
             this.eventTypes = new HashSet<String>(Arrays.asList(eventTypes));

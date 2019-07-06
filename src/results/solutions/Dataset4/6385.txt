@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -186,9 +185,9 @@ public class BoundingBox implements Serializable {
 
 	/** Returns wheter this bounding box is valid. This means that min != max and min < max.
 	 * 
-return (min.x < max.x && min.y < max.y && min.z < max.z);
+	 * @return True in case the bounding box is valid, false otherwise */
 	public boolean isValid () {
-		return !(min.x == max.x && min.y == max.y && min.z == max.z);
+return (min.x < max.x && min.y < max.y && min.z < max.z);
 	}
 
 	/** Extends this bounding box by the given bounding box.

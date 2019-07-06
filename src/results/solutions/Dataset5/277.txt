@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -34,7 +33,7 @@ import java.lang.annotation.Target;
  */
 @Target({ METHOD, FIELD })
 @Retention(RUNTIME)
-FetchMode value() default FetchMode.NONE;
+public @interface EagerFetchMode {
 
-    EagerFetchType value() default EagerFetchType.NONE;
+FetchMode value() default FetchMode.NONE;
 }

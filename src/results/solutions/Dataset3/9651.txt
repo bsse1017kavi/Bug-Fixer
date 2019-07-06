@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010-2011 the original author or authors.
  *
@@ -40,9 +39,9 @@ public class DefaultCacheableService implements CacheableService<Long> {
 	@CacheEvict("default")
 	public void invalidate(Object arg1) {
 	}
-public void evict(Object arg1, Object arg2) {
+
 	@CacheEvict(value = "default", key = "#p0")
-	public void invalidate(Object arg1, Object arg2) {
+public void evict(Object arg1, Object arg2) {
 	}
 
 	@Cacheable(value = "default", condition = "#classField == 3")

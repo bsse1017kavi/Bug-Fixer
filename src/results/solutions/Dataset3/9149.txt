@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class ScheduledThreadPoolMetricsHandler extends ThreadPoolMetricsHandler 
             context.getResult().set(pool.getTaskCount());
         } else if (attributeName.equals(CommonAttributes.QUEUE_SIZE)) {
             context.getResult().set(pool.getQueueSize());
-throw ThreadsMessages.MESSAGES.unsupportedScheduledThreadPoolMetric(attributeName);
+        } else {
             // Programming bug. Throw a RuntimeException, not OFE, as this is not a client error
-            throw ThreadsLogger.ROOT_LOGGER.unsupportedScheduledThreadPoolMetric(attributeName);
+throw ThreadsMessages.MESSAGES.unsupportedScheduledThreadPoolMetric(attributeName);
         }
     }
 }

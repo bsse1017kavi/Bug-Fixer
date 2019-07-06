@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -182,9 +181,9 @@ public class IndexShardGatewayService extends AbstractIndexShardComponent implem
                     // start the shard if the gateway has not started it already
                     if (indexShard.state() != IndexShardState.STARTED) {
                         indexShard.start("post recovery from gateway");
-indexShard.refresh(new Engine.Refresh().force(true).source("post_gateway"));
+                    }
                     // refresh the shard
-                    indexShard.refresh(new Engine.Refresh().force(true));
+indexShard.refresh(new Engine.Refresh().force(true).source("post_gateway"));
 
                     recoveryStatus.time(System.currentTimeMillis() - recoveryStatus.startTime());
                     recoveryStatus.updateStage(RecoveryStatus.Stage.DONE);

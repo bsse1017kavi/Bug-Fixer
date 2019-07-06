@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -30,9 +29,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * @ThreadSafe
  */
 public class CountingOutputStream extends FilterOutputStream {
-public CountingOutputStream(final OutputStream out) {
+    private final AtomicLong bytesWritten = new AtomicLong();
 
-    private CountingOutputStream(final OutputStream out) {
+public CountingOutputStream(final OutputStream out) {
         super(out);
     }
 

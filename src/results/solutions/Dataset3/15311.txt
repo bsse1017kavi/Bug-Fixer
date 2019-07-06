@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -114,9 +113,9 @@ public class ApplyRemoteMasterDomainModelHandler implements OperationStepHandler
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
 
         // We get the model as a list of resources descriptions
-final ModelNode startRoot = Resource.Tools.readModel(context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS));
+        final ModelNode domainModel = operation.get(DOMAIN_MODEL);
 
-        final ModelNode startRoot = Resource.Tools.readModel(context.getRootResource());
+final ModelNode startRoot = Resource.Tools.readModel(context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS));
 
         final Set<String> ourServerGroups = getOurServerGroups(context);
         final Map<String, Set<byte[]>> deploymentHashes = new HashMap<String, Set<byte[]>>();

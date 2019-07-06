@@ -1,4 +1,3 @@
-
 /*
  *
  * ====================================================================
@@ -300,9 +299,9 @@ public class JspEngineContext implements JspCompilationContext {
             try {
                 javac = (JavaCompiler) jspCompilerPlugin.newInstance();
             } catch (Exception ex) {
-Log.FATAL);
+		Constants.message("jsp.warning.compiler.class.cantcreate",
 				  new Object[] { jspCompilerPlugin, ex }, 
-				  Logger.FATAL);
+Log.FATAL);
                 javac = new SunJavaCompiler();
 	    }
 	} else {

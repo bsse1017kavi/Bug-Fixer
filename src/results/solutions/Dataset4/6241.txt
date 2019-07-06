@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -128,9 +127,9 @@ public class SimpleNodesInfoTests extends ElasticsearchIntegrationTest {
         String server4NodeId = startNodeWithPlugins(4,TestNoVersionPlugin.class.getName());
 
         ClusterHealthResponse clusterHealth = client().admin().cluster().health(clusterHealthRequest().waitForGreenStatus()).actionGet();
-NodesInfoResponse response = client().admin().cluster().prepareNodesInfo().execute().actionGet();
+        logger.info("--> done cluster_health, status " + clusterHealth.getStatus());
 
-        NodesInfoResponse response = client().admin().cluster().prepareNodesInfo().setPlugin(true).execute().actionGet();
+NodesInfoResponse response = client().admin().cluster().prepareNodesInfo().execute().actionGet();
         logger.info("--> full json answer, status " + response.toString());
 
         assertNodeContainsPlugins(response, server1NodeId, Collections.EMPTY_LIST, Collections.EMPTY_LIST,

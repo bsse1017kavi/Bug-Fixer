@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -404,9 +403,9 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
 				result.setSaveConfig(config);
 				try {
 					if (config.saveAsXml()) {
-String savee = OldSaveService.resultToDelimitedString(e);
+						recordResult(result);
 					} else {
-						String savee = OldSaveService.resultToDelimitedString(result);
+String savee = OldSaveService.resultToDelimitedString(e);
 						out.println(savee);
 					}
 				} catch (Exception err) {

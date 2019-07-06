@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public final class LookupBindingSourceDescription extends BindingSourceDescripti
     }
 
     public void getResourceValue(final AbstractComponentDescription componentDescription, final BindingDescription bindingDescription, final ServiceBuilder<?> serviceBuilder, final DeploymentPhaseContext phaseContext, final Injector<JndiInjectable> injector) {
-final String compName = componentDescription.getNamingMode() == ComponentNamingMode.CREATE ? componentDescription.getComponentName() : componentDescription.getModuleName();
+        if (lookupName.startsWith("java:")) {
             // Comes from a scoped dependency item
-            final String compName = componentDescription.getComponentName();
+final String compName = componentDescription.getNamingMode() == ComponentNamingMode.CREATE ? componentDescription.getComponentName() : componentDescription.getModuleName();
             final String moduleName = componentDescription.getModuleName();
             final String appName = componentDescription.getApplicationName();
             final ServiceName sourceServiceName = ContextNames.serviceNameOfContext(appName, moduleName, compName, lookupName);

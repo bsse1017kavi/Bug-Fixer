@@ -1,4 +1,3 @@
-
 package org.apache.solr.update;
 
 /*
@@ -45,9 +44,9 @@ public class UpdateShardHandler {
   private final HttpClient client;
 
   public UpdateShardHandler(ConfigSolr cfg) {
-clientConnectionManager.setMaxTotal(cfg.getMaxUpdateConnections());
+    
     clientConnectionManager = new PoolingClientConnectionManager();
-    clientConnectionManager.setDefaultMaxPerRoute(cfg.getMaxUpdateConnections());
+clientConnectionManager.setMaxTotal(cfg.getMaxUpdateConnections());
     clientConnectionManager.setDefaultMaxPerRoute(cfg.getMaxUpdateConnectionsPerHost());
     
     

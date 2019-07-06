@@ -1,4 +1,3 @@
-
 package org.apache.lucene.benchmark.byTask.tasks;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -56,9 +55,9 @@ public class SearchWithSortTask extends ReadTask {
     for (int i = 0; i < fields.length; i++) {
       String field = fields[i];
       SortField sortField0;
-} else if (field.equals("score")) {
+      if (field.equals("doc")) {
         sortField0 = SortField.FIELD_DOC;
-      } if (field.equals("score")) {
+} else if (field.equals("score")) {
         sortField0 = SortField.FIELD_SCORE;
       } else if (field.equals("noscore")) {
         doScore = false;

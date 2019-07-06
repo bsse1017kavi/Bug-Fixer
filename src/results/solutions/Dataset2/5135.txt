@@ -1,6 +1,5 @@
 
 
-
 package org.apache.log4j.test;
 
 import java.net.Socket;
@@ -43,9 +42,9 @@ public class ShortSocketServer  {
       ServerSocket serverSocket = new ServerSocket(port);
       LogLog.debug("Waiting to accept a new client.");
       Socket socket = serverSocket.accept();
-SocketNode sn = new SocketNode(socket, Category.getDefaultHierarchy());
+      LogLog.debug("Connected to client at " + socket.getInetAddress());
       LogLog.debug("Starting new socket node.");	
-      SocketNode sn = new SocketNode(socket);
+SocketNode sn = new SocketNode(socket, Category.getDefaultHierarchy());
       Thread t = new Thread(sn);
       t.start(); 
       t.join();

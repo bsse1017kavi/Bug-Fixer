@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright (c) 2011, Red Hat Middleware LLC, and individual contributors
@@ -109,9 +108,9 @@ public class SendMessagesTestCase {
             createQueue(QUEUE_SEND);
             createQueue(QUEUE_REPLY);
         }
-public void tearDown(final ManagementClient managementClient, final String containerId) throws Exception {
+
         @Override
-        public void tearDown(final ManagementClient managementClient) throws Exception {
+public void tearDown(final ManagementClient managementClient, final String containerId) throws Exception {
             destroyQueue(QUEUE_SEND);
             destroyQueue(QUEUE_REPLY);
         }

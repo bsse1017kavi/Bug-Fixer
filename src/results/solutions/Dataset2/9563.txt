@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -139,9 +138,9 @@ public class Scanner implements TerminalTokens {
 	static final int TableSize = 30, InternalTableSize = 6; //30*6 = 180 entries
 	public static final int OptimizedLength = 6;
 	public /*static*/ final char[][][][] charArray_length = 
-public NLSLine currentLine= null;
+		new char[OptimizedLength][TableSize][InternalTableSize][]; 
 	// support for detecting non-externalized string literals
-	NLSLine currentLine= null;
+public NLSLine currentLine= null;
 	public static final String TAG_PREFIX= "//$NON-NLS-"; //$NON-NLS-1$
 	public static final int TAG_PREFIX_LENGTH= TAG_PREFIX.length();
 	public static final String TAG_POSTFIX= "$"; //$NON-NLS-1$

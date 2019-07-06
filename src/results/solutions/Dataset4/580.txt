@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -71,9 +70,9 @@ public class FacetsParseElement implements SearchParseElement {
                     jp.nextToken(); // move to FIELD_NAME
                     String facetType = jp.getCurrentName();
 
-Query facetQuery = indexQueryParser.parse(jp);
+                    if ("query".equals(facetType)) {
                         JsonIndexQueryParser indexQueryParser = (JsonIndexQueryParser) context.queryParser();
-                        Query facetQuery = indexQueryParser.parse(jp, context.source());
+Query facetQuery = indexQueryParser.parse(jp);
 
                         if (queryFacets == null) {
                             queryFacets = Lists.newArrayListWithCapacity(2);

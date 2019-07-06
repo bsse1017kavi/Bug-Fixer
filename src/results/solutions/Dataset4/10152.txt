@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class ShapeFetchService extends AbstractComponent {
      * @param shapeField Name of the field in the Shape Document where the Shape itself is located
      * @return Shape with the given ID
      * @throws IOException Can be thrown while parsing the Shape Document and extracting the Shape
-GetResponse response = client.get(new GetRequest(index, type, id).preference("_local").operationThreaded(false)).actionGet();
+     */
     public Shape fetch(String id, String type, String index, String shapeField) throws IOException {
-        GetResponse response = client.get(new GetRequest(index, type, id).preference("_local")).actionGet();
+GetResponse response = client.get(new GetRequest(index, type, id).preference("_local").operationThreaded(false)).actionGet();
         if (!response.exists()) {
             throw new ElasticSearchIllegalArgumentException("Shape with ID [" + id + "] in type [" + type + "] not found");
         }

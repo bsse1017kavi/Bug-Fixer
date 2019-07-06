@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -133,9 +132,9 @@ public class XsltTransformer implements ITransformer
 			filePath = component.findParentWithAssociatedMarkup().getClass().getPackage().getName()
 					.replace('.', '/')
 					+ "/" + component.getId();
-resourceStream = Application.get().getResourceSettings().getResourceStreamFactory().locate(
+		}
 
-		resourceStream = Application.get().getResourceSettings().getResourceStreamLocator().locate(
+resourceStream = Application.get().getResourceSettings().getResourceStreamFactory().locate(
 				getClass(), filePath, component.getStyle(), component.getLocale(),
 				XsltTransformer.extension);
 

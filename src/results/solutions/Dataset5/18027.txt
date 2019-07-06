@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -105,9 +104,9 @@ public class BookmarkablePageRequestTargetUrlCodingStrategy
 			{
 				throw new WicketRuntimeException("Internal error parsing "
 						+ WebRequestCodingStrategy.INTERFACE_PARAMETER_NAME + " = "
-final String interfaceName = pathComponents[pathComponents.length - 2];
+						+ bookmarkableInterfaceListener);
 			}
-			final String interfaceName = pathComponents[pathComponents.length - 1];
+final String interfaceName = pathComponents[pathComponents.length - 2];
 			int start = (pageMapName != null) ? pageMapName.length() + 1 : 1;
 			final String componentPath = bookmarkableInterfaceListener.substring(start,
 					bookmarkableInterfaceListener.length() - interfaceName.length() - 2);

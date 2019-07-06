@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -516,9 +515,9 @@ final class FileHandler extends Handler  {
 	res.setContentType("message/http");
 	StringBuffer resp = new StringBuffer();
 	Enumeration headers = req.getHeaderNames();
-String hValue = req.getHeader(hName);
+	while( headers.hasMoreElements() ) {
 	    String hName = (String)headers.nextElement();
-	    String hValue = req.getMimeHeaders().getHeader(name);
+String hValue = req.getHeader(hName);
 	    resp.append(CRLF).append(hName).append(": ").append(hValue);
 	}
 	resp.append(CRLF);

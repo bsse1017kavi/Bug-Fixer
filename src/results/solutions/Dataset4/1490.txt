@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -92,9 +91,9 @@ public class GeoPolygonFilterParser implements FilterParser {
                     if (token == XContentParser.Token.FIELD_NAME) {
                         currentFieldName = parser.currentName();
                     } else if (token == XContentParser.Token.START_ARRAY) {
-shell.add(GeoUtils.parseGeoPoint(parser));
+                        if (POINTS.equals(currentFieldName)) {
                             while ((token = parser.nextToken()) != Token.END_ARRAY) {
-                                shell.add(GeoPoint.parse(parser));
+shell.add(GeoUtils.parseGeoPoint(parser));
                             }
                         } else {
                             throw new QueryParsingException(parseContext.index(), "[geo_polygon] filter does not support [" + currentFieldName + "]");

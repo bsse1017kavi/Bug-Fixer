@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -71,9 +70,9 @@ public class SpringApplicationController extends AbstractController
     protected ModelAndView handleRequestInternal(HttpServletRequest servletRequest,
             HttpServletResponse servletResponse) throws Exception
     {
-application.getWicketServlet().doGet(servletRequest, servletResponse);
+        if (application != null)
         {
-            application.doService(servletRequest, servletResponse);
+application.getWicketServlet().doGet(servletRequest, servletResponse);
         }
         else
         {

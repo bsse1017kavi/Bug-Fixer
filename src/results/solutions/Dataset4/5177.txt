@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class GlobalOrdinalsStringTermsAggregator extends AbstractStringTermsAggr
             final long globalOrd = globalOrdinals.nextOrd();
             collectExistingBucket(doc, globalOrd);
         }
-protected static void copy(BytesRef from, BytesRef to) {
+    }
 
-    private static void copy(BytesRef from, BytesRef to) {
+protected static void copy(BytesRef from, BytesRef to) {
         if (to.bytes.length < from.length) {
             to.bytes = new byte[ArrayUtil.oversize(from.length, RamUsageEstimator.NUM_BYTES_BYTE)];
         }

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -386,9 +385,9 @@ public class Project {
      * will no longer be notified of build events for this project.
      *
      * @param listener The listener to remove from the list.
-public synchronized void removeBuildListener(BuildListener listener) {
+     *                 Should not be <code>null</code>.
      */
-    public void removeBuildListener(BuildListener listener) {
+public synchronized void removeBuildListener(BuildListener listener) {
         // create a new Vector to avoid ConcurrentModificationExc when
         // the listeners get added/removed while we are in fire
         Vector newListeners = getBuildListeners();

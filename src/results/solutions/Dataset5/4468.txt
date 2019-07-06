@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -161,9 +160,9 @@ public class XMLJUnitResultFormatter implements JUnitResultFormatter, XMLConstan
         rootElement.setAttribute(ATTR_TIME,
                                  nf.format(suite.getRunTime()/1000.0));
         if (out != null) {
-wri = new OutputStreamWriter(out, "UTF8");
+            Writer wri = null;
             try {
-                wri = new OutputStreamWriter(out);
+wri = new OutputStreamWriter(out, "UTF8");
                 wri.write("<?xml version=\"1.0\"?>\n");
                 (new DOMElementWriter()).write(rootElement, wri, 0, "  ");
                 wri.flush();

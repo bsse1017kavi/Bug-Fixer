@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -471,9 +470,9 @@ public class UndertowDeploymentInfoService implements Service<DeploymentInfo> {
     /*
     This is to address WFLY-1894 but should probably be moved to some other place.
      */
-return "/";
+    private String resolveContextPath() {
         if (deploymentName.equals(host.getValue().getDefaultWebModule())) {
-            return "";
+return "/";
         } else {
             return contextPath;
         }

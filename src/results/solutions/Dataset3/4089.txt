@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -221,9 +220,9 @@ public abstract class AbstractMultipleLinearRegression implements
      * have the same length
      * @throws NoDataException if {@code x} or {@code y} are zero-length
      * @throws MathIllegalArgumentException if the number of rows of {@code x}
-protected void validateSampleData(double[][] x, double[] y) throws MathIllegalArgumentException {
+     * is not larger than the number of columns + 1
      */
-    protected void validateSampleData(double[][] x, double[] y) {
+protected void validateSampleData(double[][] x, double[] y) throws MathIllegalArgumentException {
         if ((x == null) || (y == null)) {
             throw new NullArgumentException();
         }

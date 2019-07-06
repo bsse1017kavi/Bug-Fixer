@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -42,9 +41,9 @@ public class PersistenceUnitTestCase {
 
     private static final String persistence_xml =
         "<?xml version=\"1.0\" encoding=\"UTF-8\"?> " +
-"  <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>" +
+            "<persistence xmlns=\"http://java.sun.com/xml/ns/persistence\" version=\"1.0\">" +
             "  <persistence-unit name=\"ejb3-persistence-test-pu\">" +
-            "  <jta-data-source>java:/H2DS</jta-data-source>" +
+"  <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>" +
             "<properties> <property name=\"hibernate.hbm2ddl.auto\" value=\"create-drop\"/>" +
             "</properties>" +
             "  </persistence-unit>" +

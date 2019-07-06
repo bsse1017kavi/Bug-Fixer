@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -33,9 +32,9 @@ public class CompilationUnit extends Openable implements ICompilationUnit, org.e
  * does not end with ".java"
  */
 protected CompilationUnit(IPackageFragment parent, String name) {
-throw new IllegalArgumentException(Util.bind("convention.unit.notJavaName"/*nonNLS*/));
+	super(COMPILATION_UNIT, parent, name);
 	if (!Util.isJavaFileName(name)) {
-		throw new IllegalArgumentException(Util.bind("element.invalidUnitName"/*nonNLS*/));
+throw new IllegalArgumentException(Util.bind("convention.unit.notJavaName"/*nonNLS*/));
 	}
 }
 /**

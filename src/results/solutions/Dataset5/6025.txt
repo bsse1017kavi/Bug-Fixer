@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -186,9 +185,9 @@ public abstract class AbstractUpdateManager
         RowManager rowMgr, JDBCStore store, Collection customs)
         throws SQLException {
         Boolean custom = mapping.isCustomInsert(sm, store);
-if (Boolean.TRUE.equals(custom))
+        if (!Boolean.FALSE.equals(custom))
             mapping.customInsert(sm, store);
-        if (custom.equals(Boolean.TRUE))
+if (Boolean.TRUE.equals(custom))
             return;
 
         ClassMapping sup = mapping.getJoinablePCSuperclassMapping();

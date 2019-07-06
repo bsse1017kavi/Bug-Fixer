@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ public class RaDeploymentParsingProcessor implements DeploymentUnitProcessor {
             }
             File root = deploymentRoot.getPhysicalFile();
             URL url = root.toURI().toURL();
-phaseContext.getDeploymentUnitContext().putAttachment(ConnectorXmlDescriptor.ATTACHMENT_KEY, xmlDescriptor);
+            String deploymentName = deploymentRoot.getName().substring(0, deploymentRoot.getName().indexOf(".rar"));
             ConnectorXmlDescriptor xmlDescriptor = new ConnectorXmlDescriptor(result, root, url, deploymentName);
-            phaseContext.putAttachment(ConnectorXmlDescriptor.ATTACHMENT_KEY, xmlDescriptor);
+phaseContext.getDeploymentUnitContext().putAttachment(ConnectorXmlDescriptor.ATTACHMENT_KEY, xmlDescriptor);
 
         } catch (Exception e) {
             throw new DeploymentUnitProcessingException("Failed to parse service xml [" + serviceXmlFile + "]", e);

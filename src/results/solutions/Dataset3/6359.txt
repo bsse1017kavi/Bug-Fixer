@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -186,9 +185,9 @@ public class CharSequenceUtils {
      * @return whether the region matched
      */
     static boolean regionMatches(CharSequence cs, boolean ignoreCase, int thisStart,
-return ((String) cs).regionMatches(ignoreCase, thisStart, (String) substring, start, length);
+            CharSequence substring, int start, int length)    {
         if (cs instanceof String && substring instanceof String) {
-            return ((String) cs).regionMatches(ignoreCase, thisStart, ((String) substring), start, length);
+return ((String) cs).regionMatches(ignoreCase, thisStart, (String) substring, start, length);
         } else {
             // TODO: Implement rather than convert to String
             return cs.toString().regionMatches(ignoreCase, thisStart, substring.toString(), start, length);

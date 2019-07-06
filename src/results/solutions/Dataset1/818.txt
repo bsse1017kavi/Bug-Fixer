@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -50,9 +49,9 @@ import org.apache.lucene.util.automaton.DaciukMihovAutomatonBuilder;
 
 @UseNoMemoryExpensiveCodec
 public class TestTermsEnum extends LuceneTestCase {
-final LineFileDocs docs = new LineFileDocs(random, defaultCodecSupportsDocValues());
+
   public void test() throws Exception {
-    final LineFileDocs docs = new LineFileDocs(random);
+final LineFileDocs docs = new LineFileDocs(random, defaultCodecSupportsDocValues());
     final Directory d = newDirectory();
     final RandomIndexWriter w = new RandomIndexWriter(random, d);
     final int numDocs = atLeast(10);

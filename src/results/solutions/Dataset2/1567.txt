@@ -1,4 +1,3 @@
-
 package org.junit.tests;
 
 import static org.junit.Assert.assertEquals;
@@ -58,9 +57,9 @@ public class TimeoutTest {
 		assertEquals(0, result.getFailureCount());
 	}
 
-Thread.sleep(40000);
+	static public class TimeoutFailureTest {
 		@Test(timeout= 100) public void success() throws InterruptedException {			
-			Thread.sleep(200);
+Thread.sleep(40000);
 		}
 	}
 	

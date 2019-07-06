@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -80,9 +79,9 @@ public class InstanceOfExpression extends OperatorExpression {
 		TypeBinding expressionType = expression.resolveType(scope);
 		TypeBinding checkedType = type.resolveType(scope);
 		if (expressionType == null || checkedType == null)
-if (checkedType.isTypeVariable() || checkedType.isBoundParameterizedType() || checkedType.isGenericType()) {
+			return null;
 
-		if (checkedType.isTypeVariable() || checkedType.isParameterizedType() || checkedType.isGenericType()) {
+if (checkedType.isTypeVariable() || checkedType.isBoundParameterizedType() || checkedType.isGenericType()) {
 			scope.problemReporter().illegalInstanceOfGenericType(checkedType, this);
 		} else {
 			checkCastTypesCompatibility(scope, checkedType, expressionType, null);

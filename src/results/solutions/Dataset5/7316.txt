@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 IONA Technologies PLC
  * All rights reserved. This program and the accompanying materials
@@ -590,9 +589,9 @@ public final class AnnotationUtils {
         Map<IMethod, Map<String, Boolean>> methodMap = new HashMap<IMethod, Map<String, Boolean>>();
 
         try {
-if (JDTUtils.isPublicMethod(method)) {
+            IMethod[] methods = type.getMethods();
             for (IMethod method : methods) {
-                if (JDTUtils.isPublicSMethod(method)) {
+if (JDTUtils.isPublicMethod(method)) {
                     methodMap.put(method, getAnnotationMap(model));
                 }
             }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -37,9 +36,9 @@ public class PreBuiltAnalyzerProviderFactory implements AnalyzerProviderFactory 
         analyzerProvider = new PreBuiltAnalyzerProvider(name, scope, analyzer);
     }
 
-Version indexVersion = Version.indexCreated(settings);
+    @Override
     public AnalyzerProvider create(String name, Settings settings) {
-        Version indexVersion = settings.getAsVersion(IndexMetaData.SETTING_VERSION_CREATED, Version.CURRENT);
+Version indexVersion = Version.indexCreated(settings);
         if (!Version.CURRENT.equals(indexVersion)) {
             PreBuiltAnalyzers preBuiltAnalyzers = PreBuiltAnalyzers.getOrDefault(name, null);
             if (preBuiltAnalyzers != null) {

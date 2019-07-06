@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -44,8 +43,8 @@ public final class ThreadsExtension implements Extension {
     public void activate(final ServiceActivatorContext context) {
         log.info("Activating Threading Extension");
     }
-context.registerSubsystem(Namespace.CURRENT.getUriString(), ThreadsParser.getInstance());
+
     public void initialize(final ExtensionContext context) {
-        context.registerSubsystem(Namespace.CURRENT.getUriString(), FACTORY, ThreadsParser.getInstance());
+context.registerSubsystem(Namespace.CURRENT.getUriString(), ThreadsParser.getInstance());
     }
 }

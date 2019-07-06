@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -202,9 +201,9 @@ public class BooleanFieldMapper extends AbstractFieldMapper<Boolean> {
         return new TermFilter(names().createIndexNameTerm(nullValue ? "T" : "F"));
     }
 
-if (!fieldType().indexed() && !fieldType().stored()) {
+    @Override
     protected Field parseCreateField(ParseContext context) throws IOException {
-        if (!indexed() && !stored()) {
+if (!fieldType().indexed() && !fieldType().stored()) {
             return null;
         }
         XContentParser.Token token = context.parser().currentToken();

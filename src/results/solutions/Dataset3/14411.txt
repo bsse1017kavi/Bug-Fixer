@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ public class AS7BindingRegistry implements BindingRegistry {
         final JndiBinding jndiBinding = JndiBinding.parse(name);
         if (jndiBinding == null) {
             throw new IllegalArgumentException("Binding to " + name + " isn't allowed, since it belongs to a unknown/unsupported jndi name context");
-final BinderService binderService = new BinderService(jndiBinding.relativeJndiName);
+        }
         // create the binding service
-        final BinderService binderService = new BinderService(name);
+final BinderService binderService = new BinderService(jndiBinding.relativeJndiName);
         container.addService(jndiBinding.jndiContextServiceName.append(jndiBinding.relativeJndiName), binderService)
                 .addDependency(jndiBinding.jndiContextServiceName, NamingStore.class, binderService.getNamingStoreInjector())
                 .addInjection(binderService.getManagedObjectInjector(), new ValueManagedReferenceFactory(Values.immediateValue(obj)))

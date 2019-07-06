@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class NameFileComparatorTest extends ComparatorAbstractTestCase {
 
     /** @see junit.framework.TestCase#setUp() */
     @Override
-comparator = NameFileComparator.NAME_INSENSITIVE_COMPARATOR;
+    protected void setUp() throws Exception {
         super.setUp();
-        comparator = (AbstractFileComparator)NameFileComparator.NAME_INSENSITIVE_COMPARATOR;
+comparator = NameFileComparator.NAME_INSENSITIVE_COMPARATOR;
         reverse = NameFileComparator.NAME_REVERSE;
         equalFile1 = new File("a/foo.txt");
         equalFile2 = new File("b/foo.txt");

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -447,9 +446,9 @@ public class TestFieldCacheRangeFilter extends BaseTestRangeFilter {
     
     writer.forceMerge(1);
     BytesRef term0 = new BytesRef();
-writer.shutdown();
+    NumericUtils.intToPrefixCoded(0, 0, term0);
     writer.deleteDocuments(new Term("id_int", term0));
-    writer.close();
+writer.shutdown();
 
     IndexReader reader = DirectoryReader.open(dir);
     IndexSearcher search = newSearcher(reader);

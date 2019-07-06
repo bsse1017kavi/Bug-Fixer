@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class NodeMappingRefreshAction extends AbstractComponent {
     }
 
     public void nodeMappingRefresh(final NodeMappingRefreshRequest request) throws ElasticSearchException {
-threadPool.generic().execute(new Runnable() {
+        DiscoveryNodes nodes = clusterService.state().nodes();
         if (nodes.localNodeMaster()) {
-            threadPool.cached().execute(new Runnable() {
+threadPool.generic().execute(new Runnable() {
                 @Override
                 public void run() {
                     innerMappingRefresh(request);

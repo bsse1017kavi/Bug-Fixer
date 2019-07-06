@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -30,9 +29,9 @@ public class ContactModelFactory {
 		if (group == null)
 			throw new IllegalArgumentException("group == null");
 		if (folder == null)
-IGroupModelPartial groupPartial = new GroupModelPartial(folder.getId(), group
+			throw new IllegalArgumentException("folder == null");
 
-		IGroupModelPartial groupPartial = new GroupPartial(folder.getId(), group
+IGroupModelPartial groupPartial = new GroupModelPartial(folder.getId(), group
 				.getName(), group.getDescription());
 
 		// retrieve list of all group members

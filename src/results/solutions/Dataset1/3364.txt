@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.cache;
 
 /**
@@ -118,9 +117,9 @@ public class ShortValuesCreator extends CachedArrayCreator<ShortValues>
         while(true) {
           final BytesRef term = termsEnum.next();
           if (term == null) {
-final short termval = parser.parseShort(term);
+            break;
           }
-          final Short termval = parser.parseShort(term);
+final short termval = parser.parseShort(term);
           docs = termsEnum.docs(null, docs);
           while (true) {
             final int docID = docs.nextDoc();

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2001 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -462,9 +461,9 @@ class ASTConverter {
 			typeDecl.setFlags(ASTNode.MALFORMED);
 		}
 		typeDecl.setInterface(typeDeclaration.isInterface());
-typeDecl.setName(typeName);
+		SimpleName typeName = this.ast.newSimpleName(new String(typeDeclaration.name));
 		typeName.setSourceRange(typeDeclaration.sourceStart, typeDeclaration.sourceEnd - typeDeclaration.sourceStart + 1);
-		typeDecl.setName(this.ast.newSimpleName(new String(typeDeclaration.name)));
+typeDecl.setName(typeName);
 		typeDecl.setSourceRange(typeDeclaration.declarationSourceStart, typeDeclaration.bodyEnd - typeDeclaration.declarationSourceStart + 1);
 		
 		// need to set the superclass and super interfaces here since we cannot distinguish them at

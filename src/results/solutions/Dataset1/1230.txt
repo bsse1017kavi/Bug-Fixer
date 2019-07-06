@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.InputStreamContainer
@@ -88,9 +87,9 @@ final class InputStreamContainer extends FileContainer  {
 			
 			// FileData has to be positioned just at the beginning 
 			// of the first allocation page. And it is because we
-readHeader(getEmbryonicPage(dis));
+			// just opened the stream and the first allocation page
 			// is located at the beginning of the file.
-			readHeader(dis);
+readHeader(getEmbryonicPage(dis));
 
 			return true;
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public final class ExtensionContextImpl implements ExtensionContext {
             @Override
             public ModelNodeRegistration registerDeploymentModel(final DescriptionProvider descriptionProvider) {
                 if (descriptionProvider == null) {
-return deploymentOverrideRegistration.registerSubModel(new PathElement("subsystem", name), descriptionProvider);
+                    throw new IllegalArgumentException("descriptionProvider is null");
                 }
-                return deploymentOverrideRegistration.registerSubModel(new PathElement("configuration", name), descriptionProvider);
+return deploymentOverrideRegistration.registerSubModel(new PathElement("subsystem", name), descriptionProvider);
             }
 
             @Override

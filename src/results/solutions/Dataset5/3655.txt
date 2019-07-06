@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.protocol.http.proxy;
 /****************************************
  * File HttpRequestHdr.java
@@ -141,9 +140,9 @@ public class HttpRequestHdr
 		HeaderManager manager = new HeaderManager();
 		Iterator keys = headers.keySet().iterator();
 		while (keys.hasNext())
-if (!key.equals("proxy-connection") && !key.equals("content-length") /*&& !key.equals("accept-encoding")*/)
+		{
 			String key = (String) keys.next();
-			if (!key.equals("proxy-connection") && !key.equals("content-length") && !key.equals("accept-encoding"))
+if (!key.equals("proxy-connection") && !key.equals("content-length") /*&& !key.equals("accept-encoding")*/)
 			{
 				manager.add((Header) headers.get(key));
 			}

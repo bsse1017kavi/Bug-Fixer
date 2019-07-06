@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.compaction;
 /*
  * 
@@ -36,9 +35,9 @@ import org.apache.cassandra.service.StorageService;
 import org.apache.cassandra.utils.CloseableIterator;
 import org.apache.cassandra.utils.Throttle;
 
-private static Logger logger = LoggerFactory.getLogger(AbstractCompactionIterable.class);
+public abstract class AbstractCompactionIterable implements Iterable<AbstractCompactedRow>, CompactionInfo.Holder
 {
-    private static Logger logger = LoggerFactory.getLogger(CompactionIterable.class);
+private static Logger logger = LoggerFactory.getLogger(AbstractCompactionIterable.class);
 
     protected final OperationType type;
     protected final CompactionController controller;

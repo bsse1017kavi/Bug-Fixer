@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ public class BrokerFactoryEventManager
     }
 
     protected void fireEvent(Object event, Object listener) {
-((BrokerFactoryListener) listener).eventFired(e);
+        try {
             BrokerFactoryEvent e = (BrokerFactoryEvent) event;
-            ((BrokerFactoryListener) listener).afterBrokerFactoryCreate(e);
+((BrokerFactoryListener) listener).eventFired(e);
         } catch (Exception e) {
             _conf.getLog(OpenJPAConfiguration.LOG_RUNTIME).warn(
                 _loc.get("broker-factory-listener-exception"), e);

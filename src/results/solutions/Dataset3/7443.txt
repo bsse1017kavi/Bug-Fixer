@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -255,9 +254,9 @@ public class ComplexFormat extends CompositeFormat {
         ParsePosition parsePosition = new ParsePosition(0);
         Complex result = parse(source, parsePosition);
         if (parsePosition.getIndex() == 0) {
-LocalizedFormats.UNPARSEABLE_COMPLEX_NUMBER, source);
+            throw MathRuntimeException.createParseException(
                     parsePosition.getErrorIndex(),
-                    "unparseable complex number: \"{0}\"", source);
+LocalizedFormats.UNPARSEABLE_COMPLEX_NUMBER, source);
         }
         return result;
     }

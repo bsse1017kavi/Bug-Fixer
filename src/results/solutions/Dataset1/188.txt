@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.compaction;
 /*
  * 
@@ -192,9 +191,9 @@ public class LazilyCompactedRow extends AbstractCompactedRow implements IIterabl
         protected IColumn getReduced()
         {
             assert container != null;
-if (shouldPurge && purged != null && purged.metadata().getDefaultValidator().isCommutative())
+            IColumn reduced = container.iterator().next();
             ColumnFamily purged = shouldPurge ? ColumnFamilyStore.removeDeleted(container, controller.gcBefore) : container;
-            if (purged != null && purged.metadata().getDefaultValidator().isCommutative())
+if (shouldPurge && purged != null && purged.metadata().getDefaultValidator().isCommutative())
             {
                 CounterColumn.removeOldShards(purged, controller.gcBefore);
             }

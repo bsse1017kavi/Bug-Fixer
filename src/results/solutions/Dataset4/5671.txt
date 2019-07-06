@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -81,9 +80,9 @@ public class TransportMultiGetAction extends TransportAction<MultiGetRequest, Mu
                 shardRequest.realtime(request.realtime);
                 shardRequest.refresh(request.refresh);
 
-shardRequest.add(i, item.type(), item.id(), item.fields(), item.version(), item.versionType(), item.fetchSourceContext());
+                shardRequests.put(shardId, shardRequest);
             }
-            shardRequest.add(i, item.type(), item.id(), item.fields(), item.version(), item.versionType());
+shardRequest.add(i, item.type(), item.id(), item.fields(), item.version(), item.versionType(), item.fetchSourceContext());
         }
 
         if (shardRequests.size() == 0) {

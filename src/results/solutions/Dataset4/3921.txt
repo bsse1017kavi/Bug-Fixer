@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -162,9 +161,9 @@ public abstract class BlobStoreGateway extends SharedStorageGateway {
             XContentBuilder builder = XContentFactory.contentBuilder(XContentType.JSON, os);
             builder.startObject();
             MetaData.Builder.toXContent(metaData, builder, ToXContent.EMPTY_PARAMS);
-metaDataBlobContainer.writeBlob(newMetaData, new ByteArrayInputStream(out.underlyingBytes(), 0, out.size()), out.size());
+            builder.endObject();
             builder.close();
-            metaDataBlobContainer.writeBlob(newMetaData, new ByteArrayInputStream(out.unsafeByteArray(), 0, out.size()), out.size());
+metaDataBlobContainer.writeBlob(newMetaData, new ByteArrayInputStream(out.underlyingBytes(), 0, out.size()), out.size());
         } catch (IOException e) {
             throw new GatewayException("Failed to write metadata [" + newMetaData + "]", e);
         }

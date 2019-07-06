@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class WarDeploymentInitializingProcessor implements DeploymentUnitProcess
         DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
         if(deploymentUnit.hasAttachment(Attachments.OSGI_MANIFEST)) {
             return;
-if(virtualFile.getLowerCaseName().endsWith(WAR_EXTENSION)) {
+        }
         VirtualFile virtualFile = deploymentUnit.getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
-        if(virtualFile.getName().toLowerCase().endsWith(WAR_EXTENSION)) {
+if(virtualFile.getLowerCaseName().endsWith(WAR_EXTENSION)) {
             DeploymentTypeMarker.setType(DeploymentType.WAR, deploymentUnit);
         }
     }

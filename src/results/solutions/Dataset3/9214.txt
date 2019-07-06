@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -99,9 +98,9 @@ public class PropertyOverrideConfigurer extends PropertyResourceConfigurer {
 
 	@Override
 	protected void processProperties(ConfigurableListableBeanFactory beanFactory, Properties props)
-for (Enumeration<?> names = props.propertyNames(); names.hasMoreElements();) {
+			throws BeansException {
 
-		for (Enumeration names = props.propertyNames(); names.hasMoreElements();) {
+for (Enumeration<?> names = props.propertyNames(); names.hasMoreElements();) {
 			String key = (String) names.nextElement();
 			try {
 				processKey(beanFactory, key, props.getProperty(key));

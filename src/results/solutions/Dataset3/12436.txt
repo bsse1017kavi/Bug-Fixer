@@ -1,4 +1,3 @@
-
 package org.jboss.as.server.deployment.module.descriptor;
 
 import org.jboss.as.server.deployment.Attachments;
@@ -590,9 +589,9 @@ public class JBossDeploymentStructureParser11 implements XMLElementReader<ParseR
         if (!required.isEmpty()) {
             throw missingAttributes(reader.getLocation(), required);
         }
-services == Disposition.IMPORT, true);
+        final ModuleIdentifier identifier = ModuleIdentifier.create(name, slot);
         final ModuleDependency dependency = new ModuleDependency(moduleLoader, identifier, optional, export,
-                services == Disposition.IMPORT);
+services == Disposition.IMPORT, true);
         if(annotations) {
             specBuilder.addAnnotationModule(identifier);
         }

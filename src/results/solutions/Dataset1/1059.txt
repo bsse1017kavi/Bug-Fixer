@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -377,9 +376,9 @@ public class ReplicationHandler extends RequestHandlerBase implements SolrCoreAw
       //get all the files in the commit
       //use a set to workaround possible Lucene bug which returns same file name multiple times
       Collection<String> files = new HashSet<String>(commit.getFileNames());
-File file = new File(core.getNewIndexDir(), fileName);
+      for (String fileName : files) {
         if(fileName.endsWith(".lock")) continue;
-        File file = new File(core.getIndexDir(), fileName);
+File file = new File(core.getNewIndexDir(), fileName);
         Map<String, Object> fileMeta = getFileInfo(file);
         result.add(fileMeta);
       }

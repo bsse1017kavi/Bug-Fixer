@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -93,9 +92,9 @@ public abstract class AbstractComponentTest
             component = createComponent( Executor.ROLE, DefaultExecutor.class );
             m_serviceManager.put( Executor.ROLE, component );
             components.add( component );
-classLoaderMgr.setCommonClassLoader( getClass().getClassLoader() );
+
             final DefaultClassLoaderManager classLoaderMgr = new DefaultClassLoaderManager();
-            classLoaderMgr.setBaseClassLoader( getClass().getClassLoader() );
+classLoaderMgr.setCommonClassLoader( getClass().getClassLoader() );
             m_serviceManager.put( ClassLoaderManager.ROLE, classLoaderMgr );
             components.add( classLoaderMgr );
 

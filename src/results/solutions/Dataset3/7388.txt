@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class QueueAdd extends AbstractMessagingSubsystemUpdate<Void> {
     protected <P> void applyUpdate(UpdateContext context, UpdateResultHandler<? super Void, P> resultHandler, P param) {
         final QueueService service = new QueueService(address, name, filter, durable != null ? true : durable, false);
         context.getBatchBuilder().addService(MessagingSubsystemElement.CORE_QUEUE_BASE.append(name), service)
-.setInitialMode(Mode.ACTIVE);
+            .addDependency(MessagingSubsystemElement.JBOSS_MESSAGING, HornetQServer.class, service.getHornetQService())
             .addListener(new UpdateResultHandler.ServiceStartListener<P>(resultHandler, param))
-            .setInitialMode(Mode.IMMEDIATE);
+.setInitialMode(Mode.ACTIVE);
     }
 
     /** {@inheritDoc} */

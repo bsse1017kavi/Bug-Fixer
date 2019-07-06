@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -330,9 +329,9 @@ public class ShardGetService extends AbstractIndexShardComponent {
             }
             source = fieldVisitor.source();
 
-fields = new HashMap<>(fieldVisitor.fields().size());
+            if (!fieldVisitor.fields().isEmpty()) {
                 fieldVisitor.postProcess(docMapper);
-                fields = new HashMap<String, GetField>(fieldVisitor.fields().size());
+fields = new HashMap<>(fieldVisitor.fields().size());
                 for (Map.Entry<String, List<Object>> entry : fieldVisitor.fields().entrySet()) {
                     fields.put(entry.getKey(), new GetField(entry.getKey(), entry.getValue()));
                 }

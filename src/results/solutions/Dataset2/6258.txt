@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.dialogs;
 
 /*
@@ -159,9 +158,9 @@ protected Control createDialogArea(Composite parent) {
 	//Add in a label for status messages if required
 	statusMessageLabel = new Label(composite, SWT.WRAP);
 	statusMessageLabel.setLayoutData(new GridData(GridData.FILL_BOTH));
-statusMessageLabel.setText(" \n "); //$NON-NLS-1$
+	statusMessageLabel.setFont(parent.getFont());
 	//Make it two lines.
-	statusMessageLabel.setText(" \n ");
+statusMessageLabel.setText(" \n "); //$NON-NLS-1$
 
 	return composite;
 }

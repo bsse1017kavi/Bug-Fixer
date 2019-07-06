@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -56,9 +55,9 @@ public class TestFieldCache extends LuceneTestCase {
       doc.add(new Field("theInt", String.valueOf(theInt--), Field.Store.NO, Field.Index.NOT_ANALYZED));
       doc.add(new Field("theFloat", String.valueOf(theFloat--), Field.Store.NO, Field.Index.NOT_ANALYZED));
       writer.addDocument(doc);
-reader = IndexReader.open(directory, true);
+    }
     writer.close();
-    reader = IndexReader.open(directory);
+reader = IndexReader.open(directory, true);
   }
 
   public void testInfoStream() throws Exception {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class ServerModelDeploymentFullReplaceUpdate extends AbstractServerModelU
     @Override
     public <P> void applyUpdate(UpdateContext updateContext,
             UpdateResultHandler<? super Void, P> resultHandler, P param) {
-startStopHandler.redeploy(deploymentUniqueName, deploymentRuntimeName, hash, updateContext.getServiceRegistry(), resultHandler, param);
+        if (redeploy) {
             ServerDeploymentStartStopHandler startStopHandler = new ServerDeploymentStartStopHandler();
-            startStopHandler.redeploy(deploymentUniqueName, deploymentRuntimeName, hash, updateContext.getServiceContainer(), resultHandler, param);
+startStopHandler.redeploy(deploymentUniqueName, deploymentRuntimeName, hash, updateContext.getServiceRegistry(), resultHandler, param);
         }
         else if (resultHandler != null) {
             resultHandler.handleSuccess(null, param);

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -59,9 +58,9 @@ final class RequestHandlers {
    * to map to the same handler 
    * 
    */
-if( p != null && p.endsWith( "/" ) && p.length() > 1 )
+  private static String normalize( String p )
   {
-    if( p != null && p.endsWith( "/" ) )
+if( p != null && p.endsWith( "/" ) && p.length() > 1 )
       return p.substring( 0, p.length()-1 );
     
     return p;

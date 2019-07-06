@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -506,9 +505,9 @@ public class CMBuilder {
             //  Create a new leaf node, and pass it the current leaf count,
             //  which is its DFA state position. Bump the leaf count after
             //  storing it. This makes the positions zero based since we
-nodeRet = new XSCMLeaf(XSParticleDecl.PARTICLE_ELEMENT, (XSElementDecl)(startNode.fValue), fLeafCount++);
+            //  store first and then increment.
             //
-            nodeRet = new XSCMLeaf((XSElementDecl)(startNode.fValue), fLeafCount++);
+nodeRet = new XSCMLeaf(XSParticleDecl.PARTICLE_ELEMENT, (XSElementDecl)(startNode.fValue), fLeafCount++);
         } 
         else {
             //

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -428,9 +427,9 @@ public abstract class TransportShardReplicationOperationAction<Request extends S
                     return;
                 }
                 if (logger.isDebugEnabled()) {
-listener.onFailure(e);
+                    logger.debug(shard.shortSummary() + ": Failed to execute [" + request + "]", e);
                 }
-                listener.onFailure(new ReplicationShardOperationFailedException(shardIt.shardId(), e));
+listener.onFailure(e);
             }
         }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -31,9 +30,9 @@ public static void main (String [] args) {
 		item.setText ("TabItem " + i);
 		Button button = new Button (tabFolder, SWT.PUSH);
 		button.setText ("Page " + i);
-tabFolder.pack ();
+		item.setControl (button);
 	}
-	tabFolder.setSize (400, 200);
+tabFolder.pack ();
 	shell.pack ();
 	shell.open ();
 	while (!shell.isDisposed ()) {

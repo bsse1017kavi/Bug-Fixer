@@ -1,4 +1,3 @@
-
 package org.apache.openjpa.persistence.detachment;
 
 import java.util.ArrayList;
@@ -45,9 +44,9 @@ public class TestDetach extends SingleEMFTestCase {
     
     public void testDetachCascadeIsSet() {
         MetaDataRepository repos = emf.getConfiguration()
-assertEquals(ValueMetaData.CASCADE_NONE, meta.getField("firstName").getCascadeDetach());
+                                      .getMetaDataRepositoryInstance();
         ClassMetaData meta = repos.getCachedMetaData(DMCustomer.class);
-        assertEquals(ValueMetaData.CASCADE_IMMEDIATE, meta.getField("firstName").getCascadeDetach());
+assertEquals(ValueMetaData.CASCADE_NONE, meta.getField("firstName").getCascadeDetach());
         assertEquals(ValueMetaData.CASCADE_IMMEDIATE, meta.getField("customerInventories").getElement().getCascadeDetach());
         
         meta = repos.getCachedMetaData(DMCustomerInventory.class);

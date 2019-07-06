@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -261,9 +260,9 @@ public class TransportSearchDfsQueryThenFetchAction extends TransportSearchTypeA
 
         private void innerFinishHim() throws Exception {
             final InternalSearchResponse internalResponse = searchPhaseController.merge(sortedShardList, queryResults, fetchResults);
-scrollId = TransportSearchHelper.buildScrollId(request.searchType(), dfsResults, null);
+            String scrollId = null;
             if (request.scroll() != null) {
-                scrollId = TransportSearchHelper.buildScrollId(request.searchType(), dfsResults);
+scrollId = TransportSearchHelper.buildScrollId(request.searchType(), dfsResults, null);
             }
             listener.onResponse(new SearchResponse(internalResponse, scrollId, expectedSuccessfulOps, successulOps.get(), buildTookInMillis(), buildShardFailures()));
         }

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -166,9 +165,9 @@ public final class SequenceFilesFromDirectory extends AbstractJob {
                 ? current.getName()
                 : current.getName() + Path.SEPARATOR + fst.getPath().getName();
             writer.write(prefix + Path.SEPARATOR + name, file.toString());
-} catch (IOException e) {
+          }
         }
-      } catch (Exception e) {
+} catch (IOException e) {
         throw new IllegalStateException(e);
       }
       return false;

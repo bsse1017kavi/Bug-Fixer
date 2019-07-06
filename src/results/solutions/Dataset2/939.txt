@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2002-2003, Simon Nieuviarts
  */
@@ -172,9 +171,9 @@ public class ClusterStubCompiler {
                 case ClusterMethodInfo.REDO_CHOICE_RETRY :
                     writeStubMethodRedoChoiceRetry(mthctx, cmi);
                     break;
-"Cluster stub compiler error: cluster configuration not supported for method : "
+                default :
                     System.err.println(
-                        "Cluster stub compiler error: type not supported for method :\n"
+"Cluster stub compiler error: cluster configuration not supported for method : "
                             + mthctx.mth.toString());
                     System.exit(1);
             }

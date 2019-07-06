@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -391,9 +390,9 @@ public abstract class AbstractSharedClusterTest extends ElasticsearchTestCase {
                     client().admin().indices().prepareOptimize(index).setMaxNumSegments(between(1, 10)).setFlush(random.nextBoolean()).execute().get();                  
                 }
             }
-assertNoFailures(client().admin().indices().prepareRefresh(index).execute().get());
+        }
         if (forceRefresh) {
-            client().admin().indices().prepareRefresh(index).execute().get();
+assertNoFailures(client().admin().indices().prepareRefresh(index).execute().get());
         }
     }
     

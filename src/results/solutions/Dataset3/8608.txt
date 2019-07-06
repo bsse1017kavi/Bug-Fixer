@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class Frequency implements Serializable {
      * @return a string representation.
      */
     @Override
-StringBuilder outBuffer = new StringBuilder();
+    public String toString() {
         NumberFormat nf = NumberFormat.getPercentInstance();
-        StringBuffer outBuffer = new StringBuffer();
+StringBuilder outBuffer = new StringBuilder();
         outBuffer.append("Value \t Freq. \t Pct. \t Cum Pct. \n");
         Iterator<Comparable<?>> iter = freqTable.keySet().iterator();
         while (iter.hasNext()) {

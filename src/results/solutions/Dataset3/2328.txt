@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class PropertyValueState extends DefaultParsingState {
         enterState('"', QuotesState.QUOTES_INCLUDED_KEEP_ESCAPES);
         enterState('[', new DefaultStateWithEndCharacter("BRACKETS", ']', true, true, enterStateHandlers));
         enterState('(', new DefaultStateWithEndCharacter("PARENTHESIS", ')', true, true, enterStateHandlers));
-setDefaultHandler(WordCharacterHandler.IGNORE_LB_ESCAPE_OFF);
+        enterState('{', new DefaultStateWithEndCharacter("BRACES", '}', true, true, enterStateHandlers));
         setIgnoreWhitespaces(true);
-        setDefaultHandler(WordCharacterHandler.IGNORE_LB_ESCAPE_ON);
+setDefaultHandler(WordCharacterHandler.IGNORE_LB_ESCAPE_OFF);
     }
 
     @Override

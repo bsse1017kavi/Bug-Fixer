@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -1948,9 +1947,9 @@ public IJavaElement rootedAt(IJavaProject project) {
 	public void setSharedProperty(QualifiedName key, String value)
 		throws CoreException {
 
-InputStream input = new ByteArrayInputStream(value.getBytes());
+		String propertyName = computeSharedPropertyFileName(key);
 		IFile rscFile = getProject().getFile(propertyName);
-		InputStream input = new BufferedInputStream(new ByteArrayInputStream(value.getBytes()));
+InputStream input = new ByteArrayInputStream(value.getBytes());
 		// update the resource content
 		if (rscFile.exists()) {
 			rscFile.setContents(input, true, false, null);

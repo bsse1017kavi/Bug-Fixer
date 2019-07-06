@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -209,9 +208,9 @@ void updateImage () {
 	boolean drawIntermidiate = progressState == SWT.INDETERMINATE;
 	NSApplication app = NSApplication.sharedApplication ();
 	NSDockTile dock = app.dockTile ();
-app.setApplicationIconImage (defaultImage);
+	boolean drawImage = overlayImage != null && dock.badgeLabel () == null;
 	if (!drawImage && !drawProgress && !drawIntermidiate) {
-		app.setApplicationIconImage (null);
+app.setApplicationIconImage (defaultImage);
 		return;
 	}
 	

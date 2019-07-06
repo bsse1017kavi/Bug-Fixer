@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -3917,9 +3916,9 @@ public class JavaModelManager implements ISaveParticipant, IContentTypeChangeLis
 			this.indexManager.shutdown();
 		}
 		
-Job.getJobManager().join(JavaCore.PLUGIN_ID, null);
+		// wait for the initialization job to finish
 		try {
-			Platform.getJobManager().join(JavaCore.PLUGIN_ID, null);
+Job.getJobManager().join(JavaCore.PLUGIN_ID, null);
 		} catch (InterruptedException e) {
 			// ignore
 		}

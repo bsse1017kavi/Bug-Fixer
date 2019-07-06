@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -79,9 +78,9 @@ public class CookieTest extends TestCase
 		application.setupRequestAndResponse();
 
 		final ISecuritySettings settings = application.getSecuritySettings();
-this.panel = new SignInPanel("panel")
+		settings.setCryptFactory(new NoCryptFactory());
 
-		this.panel = new SignInPanel(page,"panel")
+this.panel = new SignInPanel("panel")
 		{
 			public boolean signIn(final String username, final String password)
 			{

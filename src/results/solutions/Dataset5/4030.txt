@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -159,9 +158,9 @@ public class JavaSampler extends AbstractSampler implements TestListener {
         Arguments args = getArguments();
         args.addArgument(TestElement.NAME, getName()); // Allow Sampler access
                                                         // to test element name
-log.debug(whoAmI() + "\tCreating Java Client");
+        context = new JavaSamplerContext(args);
         if (javaClient == null) {
-            log.debug(whoAmI() + "Creating Java Client");
+log.debug(whoAmI() + "\tCreating Java Client");
             createJavaClient();
             javaClient.setupTest(context);
         }

@@ -1,4 +1,3 @@
-
 /* Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -277,9 +276,9 @@ public class Canopy {
    * @param point
    *            a point to emit.
    */
-collector.collect(new Text(this.getIdentifier()), new Text(point
+  public void emitPoint(Vector point, OutputCollector<Text, Text> collector)
       throws IOException {
-    collector.collect(new Text(formatCanopy(this)), new Text(point
+collector.collect(new Text(this.getIdentifier()), new Text(point
         .asFormatString()));
   }
 

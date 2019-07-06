@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -915,9 +914,9 @@ public class ConfigurationImpl
      * be handled by a proper parser generator or regular expressions.
      */
     public static String toXMLName(String propName) {
-StringBuilder buf = new StringBuilder();
+        if (propName == null)
             return null;
-        StringBuffer buf = new StringBuffer();
+StringBuilder buf = new StringBuilder();
         char c;
         for (int i = 0; i < propName.length(); i++) {
             c = propName.charAt(i);

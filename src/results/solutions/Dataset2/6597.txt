@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -126,9 +125,9 @@ public class MultiEditorPane
         for (int i = 0; i < tabCount; i++) {
             Component tab = _tabs.getComponentAt(i);
             if (tab instanceof TabModelTarget) {
-boolean shouldEnable = tabMT.shouldBeEnabled(_target);
+                TabModelTarget tabMT = (TabModelTarget) tab;
                 tabMT.setTarget(_target);
-                boolean shouldEnable = tabMT.shouldBeEnabled();
+boolean shouldEnable = tabMT.shouldBeEnabled(_target);
                 _tabs.setEnabledAt(i, shouldEnable);
                 if (shouldEnable && (nextTab == -1 || i == currentTab))
                     nextTab = i;

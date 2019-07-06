@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -312,9 +311,9 @@ public abstract class HeaderResponse implements IHeaderResponse
 					javascript });
 			if (wasRendered(token) == false)
 			{
-", \"" + event + "\", function(event) { " + javascript + ";});");
+				renderJavascriptReference(WicketEventReference.INSTANCE);
 				JavascriptUtils.writeJavascript(getResponse(), "Wicket.Event.add(" + target +
-					", \"" + event + "\", function() { " + javascript + ";});");
+", \"" + event + "\", function(event) { " + javascript + ";});");
 				markRendered(token);
 			}
 		}

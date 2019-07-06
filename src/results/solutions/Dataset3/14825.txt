@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class CacheFactoryResourceDefinition extends SimpleResourceDefinition {
 
     @Override
     public void registerAttributes(ManagementResourceRegistration resourceRegistration) {
-resourceRegistration.registerReadWriteAttribute(attribute,  null, handler);
+        ReloadRequiredWriteAttributeHandler handler = new ReloadRequiredWriteAttributeHandler(ATTRIBUTES);
         for (AttributeDefinition attribute: ATTRIBUTES) {
-            resourceRegistration.registerReadOnlyAttribute(attribute,  handler);
+resourceRegistration.registerReadWriteAttribute(attribute,  null, handler);
         }
     }
 

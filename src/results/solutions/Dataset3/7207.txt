@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ import org.jboss.dmr.ModelType;
  */
 public class ExtensionSubsystemResourceDefinition extends SimpleResourceDefinition {
     public static final ListAttributeDefinition XML_NAMESPACES = new StringListAttributeDefinition.Builder(ModelDescriptionConstants.XML_NAMESPACES)
-.setElementValidator(new StringLengthValidator(1, Integer.MAX_VALUE, false, false))
+            .setAllowNull(false)
             .setStorageRuntime()
-            .setValidator(new StringLengthValidator(1, Integer.MAX_VALUE, false, false))
+.setElementValidator(new StringLengthValidator(1, Integer.MAX_VALUE, false, false))
             .build();
 
     public static final SimpleAttributeDefinition MAJOR_VERSION = new SimpleAttributeDefinitionBuilder(MANAGEMENT_MAJOR_VERSION, ModelType.INT, true)

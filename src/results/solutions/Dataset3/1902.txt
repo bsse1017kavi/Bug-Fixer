@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,8 +58,8 @@ public class SubsystemParsingUnitTestCase extends AbstractSubsystemTest {
         ModelNode modelB = servicesB.readWholeModel();
 
         //Make sure the models from the two controllers are identical
-assertRemoveSubsystemResources(servicesB);
+        super.compare(modelA, modelB);
 
-        assertRemoveSubsystemResources(servicesA);
+assertRemoveSubsystemResources(servicesB);
     }
 }

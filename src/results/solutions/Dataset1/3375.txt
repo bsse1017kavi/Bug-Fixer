@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -116,9 +115,9 @@ public abstract class AbstractProxyManager implements ProxyManager
   protected abstract InvocationHandler getInvocationHandler(Object proxy);
   protected abstract boolean isProxyClass(Class<?> clazz);
 
-if (clientBundle != null && clientBundle.getState() == Bundle.UNINSTALLED) {
+  protected synchronized ClassLoader getClassLoader(final Bundle clientBundle, Collection<Class<?>> classes) 
   {
-    if (clientBundle.getState() == Bundle.UNINSTALLED) {
+if (clientBundle != null && clientBundle.getState() == Bundle.UNINSTALLED) {
       throw new IllegalStateException(NLS.MESSAGES.getMessage("bundle.uninstalled", clientBundle.getSymbolicName(), clientBundle.getVersion(), clientBundle.getBundleId()));
     }
     

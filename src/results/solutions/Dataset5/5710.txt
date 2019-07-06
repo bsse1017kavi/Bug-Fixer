@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -322,9 +321,9 @@ abstract class Tab {
 	 * @param tabFolder org.eclipse.swt.widgets.TabFolder
 	 * @return the new page for the tab folder
 	 */
-tabFolderPage = new Composite (tabFolder, SWT.NONE);
+	Composite createTabFolderPage (TabFolder tabFolder) {
 		/* Create a two column page with a SashForm*/
-		tabFolderPage = new Composite (tabFolder, SWT.NULL);
+tabFolderPage = new Composite (tabFolder, SWT.NONE);
 		tabFolderPage.setLayout (new FillLayout ());
 		sash = new SashForm (tabFolderPage, SWT.HORIZONTAL);
 	

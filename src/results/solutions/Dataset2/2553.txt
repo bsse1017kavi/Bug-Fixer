@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -745,9 +744,9 @@ private JavaModelException newInvalidElementType() {
 	 */
 	public IJavaElementDelta[] processResourceDelta(IResourceDelta changes, int eventType) {
 
-IJavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
+		try {
 			this.currentEventType = eventType;
-			IJavaModel model = JavaModelManager.getJavaModel(ResourcesPlugin.getWorkspace());
+IJavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
 			if (!model.isOpen()) {
 				// force opening of java model so that java element delta are reported
 				try {

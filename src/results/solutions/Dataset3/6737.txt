@@ -1,4 +1,3 @@
-
 package org.jboss.as.platform.mbean;
 
 import org.jboss.as.controller.SimpleResourceDefinition;
@@ -9,9 +8,9 @@ import org.jboss.as.controller.registry.ManagementResourceRegistration;
  */
 class GarbageCollectorRootResourceDefinition extends SimpleResourceDefinition {
     static final GarbageCollectorRootResourceDefinition INSTANCE = new GarbageCollectorRootResourceDefinition();
-PlatformMBeanUtil.getResolver("garbage-collectors"));
+    private GarbageCollectorRootResourceDefinition() {
         super(PlatformMBeanConstants.GARBAGE_COLLECTOR_PATH,
-                PlatformMBeanDescriptions.getResolver("garbage-collectors"));
+PlatformMBeanUtil.getResolver("garbage-collectors"));
     }
 
     @Override

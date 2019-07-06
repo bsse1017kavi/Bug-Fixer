@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -86,9 +85,9 @@ public class InternalFacets implements Facets, Streamable, ToXContent, Iterable<
         if (facetsAsMap != null) {
             return facetsAsMap;
         }
-facetsAsMap.put(facet.getName(), facet);
+        Map<String, Facet> facetsAsMap = newHashMap();
         for (Facet facet : facets) {
-            facetsAsMap.put(facet.name(), facet);
+facetsAsMap.put(facet.getName(), facet);
         }
         this.facetsAsMap = facetsAsMap;
         return facetsAsMap;

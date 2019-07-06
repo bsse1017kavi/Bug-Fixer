@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -83,9 +82,9 @@ public abstract class TestCluster implements Iterable<Client>, Closeable {
     }
 
     /**
-public abstract void afterTest() throws IOException;
+     * This method should be executed during tear down, after each test (but after assertAfterTest)
      */
-    public abstract void afterTest();
+public abstract void afterTest() throws IOException;
 
     /**
      * Returns a client connected to any node in the cluster

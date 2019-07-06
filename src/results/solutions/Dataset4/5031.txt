@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -574,9 +573,9 @@ public class GeolocationContextMapping extends ContextMapping {
 
         @Override
         protected TokenStream wrapTokenStream(Document doc, TokenStream stream) {
-if (locations == null || locations.size() == 0) {
+            Collection<String> geohashes;
 
-            if(locations == null | locations.size() == 0) {
+if (locations == null || locations.size() == 0) {
                 if(mapping.fieldName != null) {
                     IndexableField[] fields = doc.getFields(mapping.fieldName);
                     if(fields.length > 0) {

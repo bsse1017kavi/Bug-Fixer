@@ -1,4 +1,3 @@
-
 /*
  * EnhancedCheckBoxMenuItem.java - Check box menu item
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -178,9 +177,9 @@ public class EnhancedCheckBoxMenuItem extends JCheckBoxMenuItem
 	} //}}}
 
 	//{{{ MouseHandler class
-public void mouseReleased(MouseEvent evt)
+	class MouseHandler extends MouseAdapter
 	{
-		public void mouseClicked(MouseEvent evt)
+public void mouseReleased(MouseEvent evt)
 		{
 			GUIUtilities.getView((Component)evt.getSource())
 				.getStatus().setMessage(null);

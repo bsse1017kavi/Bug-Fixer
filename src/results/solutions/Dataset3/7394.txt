@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class Configuration implements Service<Configuration> {
 
     public static void addService(final BatchBuilder batchBuilder, final OSGiSubsystemState state) {
         Configuration config = new Configuration(state);
-serviceBuilder.setInitialMode(Mode.ACTIVE);
+        BatchServiceBuilder<?> serviceBuilder = batchBuilder.addService(SERVICE_NAME, config);
         serviceBuilder.addDependency(ServerEnvironmentService.SERVICE_NAME, ServerEnvironment.class, config.injectedEnvironment);
-        serviceBuilder.setInitialMode(Mode.IMMEDIATE);
+serviceBuilder.setInitialMode(Mode.ACTIVE);
     }
 
     public static Configuration getServiceValue(ServiceContainer container) {

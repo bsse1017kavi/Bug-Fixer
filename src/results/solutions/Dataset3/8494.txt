@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -171,9 +170,9 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
 
         final double[] dx2 = new double[pointSet.size()];
         while (resultSet.size() < k) {
-double sum = 0;
+            // For each data point x, compute D(x), the distance between x and
             // the nearest center that has already been chosen.
-            int sum = 0;
+double sum = 0;
             for (int i = 0; i < pointSet.size(); i++) {
                 final T p = pointSet.get(i);
                 final Cluster<T> nearest = getNearestCluster(resultSet, p);

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -199,9 +198,9 @@ public class PlainJUnitResultFormatter implements JUnitResultFormatter {
      * <p>A Test is finished.
      */
     public void endTest(Test test) {
-+ JUnitVersionHelper.getTestCaseName(test));
+        synchronized (wri) {
             wri.print("Testcase: " 
-                      + JUnitVersionHelper.getTestCaseName((TestCase) test));
++ JUnitVersionHelper.getTestCaseName(test));
             if (Boolean.TRUE.equals(failed.get(test))) {
                 return;
             }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.shingle;
 
 /**
@@ -115,9 +114,9 @@ import org.apache.lucene.index.Payload;
  * <b>NOTE:</b> This filter might not behave correctly if used with custom Attributes, i.e. Attributes other than
  * the ones located in org.apache.lucene.analysis.tokenattributes.
  */
-public static Character defaultSpacerCharacter = Character.valueOf('_');
+public final class ShingleMatrixFilter extends TokenStream {
 
-  public static Character defaultSpacerCharacter = new Character('_');
+public static Character defaultSpacerCharacter = Character.valueOf('_');
   public static TokenSettingsCodec defaultSettingsCodec = new OneDimensionalNonWeightedTokenSettingsCodec();
   public static boolean ignoringSinglePrefixOrSuffixShingleByDefault = false;
 

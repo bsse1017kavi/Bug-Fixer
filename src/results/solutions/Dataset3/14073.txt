@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -68,8 +67,8 @@ public class RegistryFactoryServiceInstaller implements CacheServiceInstaller {
 
         this.builder.build(target, name, container, cache).setInitialMode(ServiceController.Mode.ON_DEMAND).install();
 
-new BinderServiceBuilder<>(bindInfo, name, RegistryFactory.class).build(target).install();
+        RegistryService.build(target, container, cache).setInitialMode(ServiceController.Mode.ON_DEMAND).install();
 
-        new BinderServiceBuilder(target).build(bindInfo, name, RegistryFactory.class).install();
+new BinderServiceBuilder<>(bindInfo, name, RegistryFactory.class).build(target).install();
     }
 }

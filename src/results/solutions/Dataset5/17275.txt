@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -723,9 +722,9 @@ void resized () {
 void scrollWheel (int /*long*/ id, int /*long*/ sel, int /*long*/ theEvent) {
 	if ((state & CANVAS) != 0) {
 		NSView view = scrollView != null ? scrollView : this.view;
-float /*double*/ delta = nsEvent.deltaY();
+		if (id == view.id) {
 			NSEvent nsEvent = new NSEvent(theEvent);
-			double /*float*/ delta = nsEvent.deltaY();
+float /*double*/ delta = nsEvent.deltaY();
 			if (delta != 0) {
 				if (hooks (SWT.MouseWheel) || filters (SWT.MouseWheel)) {
 					if (!sendMouseEvent(nsEvent, SWT.MouseWheel, true)) {

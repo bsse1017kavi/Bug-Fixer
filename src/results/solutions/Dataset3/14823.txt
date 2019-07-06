@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class LocalDataSourceService extends AbstractDataSourceService {
         super(dsName, jndiName, null);
     }
 
-return new AS7DataSourceDeployer(dataSourceConfig.getValue().getUnModifiableInstance());
+    @Override
     public AS7DataSourceDeployer getDeployer() throws ValidateException {
-        return new AS7DataSourceDeployer(dataSourceConfig.getValue().getUnModifiableInstance(), dataSourceConfig.getValue().getProfile());
+return new AS7DataSourceDeployer(dataSourceConfig.getValue().getUnModifiableInstance());
     }
 
     public Injector<ModifiableDataSource> getDataSourceConfigInjector() {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -554,9 +553,9 @@ public class HistogramTests extends ElasticsearchIntegrationTest {
 
     @Test
     public void multiValuedField_WithValueScript_WithInheritedSubAggregator() throws Exception {
-.subAggregation(terms("values").order(Terms.Order.term(true))))
+        SearchResponse response = client().prepareSearch("idx")
                 .addAggregation(histogram("histo").field("values").script("_value + 1").interval(interval)
-                    .subAggregation(terms("values").order(Terms.Order.TERM_ASC)))
+.subAggregation(terms("values").order(Terms.Order.term(true))))
                 .execute().actionGet();
 
         assertSearchResponse(response);

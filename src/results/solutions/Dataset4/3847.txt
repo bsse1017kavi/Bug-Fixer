@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public abstract class TransportIndexReplicationOperationAction<Request extends I
         ClusterBlockException blockException = checkGlobalBlock(clusterState, request);
         if (blockException != null) {
             throw blockException;
-request.index(clusterState.metaData().concreteSingleIndex(request.index(), request.indicesOptions()));
+        }
         // update to concrete index
-        request.index(clusterState.metaData().concreteSingleIndex(request.index()));
+request.index(clusterState.metaData().concreteSingleIndex(request.index(), request.indicesOptions()));
         blockException = checkRequestBlock(clusterState, request);
         if (blockException != null) {
             throw blockException;

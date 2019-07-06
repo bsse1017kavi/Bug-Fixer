@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1078,9 +1077,9 @@ public class WorkbenchWindow extends ApplicationWindow implements IWorkbenchWind
 					String id = contributionMem.getString(IWorkbenchConstants.TAG_ID);
 					
 					// Prevent duplicate items from being read back in.
-System.out.println("Not loading duplicate cool bar item: " + id); //$NON-NLS-1$
+					if ((id != null) && (coolBarMgr.find(id) != null)) {
 					    if (Policy.DEBUG_TOOLBAR_DISPOSAL) {
-					        System.out.println("Not loading duplicate cool bar item."); //$NON-NLS-1$
+System.out.println("Not loading duplicate cool bar item: " + id); //$NON-NLS-1$
 					    }
 					    continue;
 					}

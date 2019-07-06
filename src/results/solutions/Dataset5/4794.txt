@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -259,9 +258,9 @@ public abstract class Link<T> extends WebMarkupContainer<T> implements ILinkList
 		// set the popup page map in the request parameters, so that pages that
 		// are created in the onClick are made in the wanted pagemap
 		if (popupSettings != null)
-popupSettings.getPageMap(this).getName());
+		{
 			RequestCycle.get().getRequest().getRequestParameters().setPageMapName(
-					popupSettings.getPageMap().getName());
+popupSettings.getPageMap(this).getName());
 		}
 		// Invoke subclass handler
 		onClick();

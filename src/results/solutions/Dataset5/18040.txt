@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -186,9 +185,9 @@ public class Rpm extends Task
                 errorstream = new LogOutputStream( this, Project.MSG_WARN );
             }
             streamhandler = new PumpStreamHandler( outputstream, errorstream );
-Execute exe = new Execute( streamhandler );
+        }
 
-        Execute exe = new Execute( streamhandler, null );
+Execute exe = new Execute( streamhandler );
 
         if( topDir == null ) topDir = getBaseDirectory();
         exe.setWorkingDirectory( topDir );

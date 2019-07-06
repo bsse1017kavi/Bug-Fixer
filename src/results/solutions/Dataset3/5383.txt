@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public final class IdentityPredicate<T> implements Predicate<T>, Serializable {
      *
      * @param object  the object to compare to
      * @return the predicate
-public static <T> Predicate<T> identityPredicate(T object) {
+     * @throws IllegalArgumentException if the predicate is null
      */
-    public static <T> Predicate<T> getInstance(T object) {
+public static <T> Predicate<T> identityPredicate(T object) {
         if (object == null) {
             return NullPredicate.<T>nullPredicate();
         }

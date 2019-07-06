@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -240,9 +239,9 @@ final class WSRefUtils {
         }
 
         return handlerChainsUMDM;
-static void processType(final UnifiedServiceRefMetaData serviceRefUMDM) {
+    }
 
-    private static void processType(final UnifiedServiceRefMetaData serviceRefUMDM) {
+static void processType(final UnifiedServiceRefMetaData serviceRefUMDM) {
         final boolean isJAXRPC = serviceRefUMDM.getMappingFile() != null || "javax.xml.rpc.Service".equals(serviceRefUMDM.getServiceInterface());
         serviceRefUMDM.setType(isJAXRPC ? Type.JAXRPC : Type.JAXWS);
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -77,9 +76,9 @@ public class FilterForm extends Form<Object>
 
 			@Override
 			protected void onComponentTagBody(MarkupStream markupStream, ComponentTag openTag)
-"<script type=\"text/javascript\">_filter_focus_restore('").append(
+			{
 				AppendingStringBuffer script = new AppendingStringBuffer(
-					"<script type='text/javascript'>_filter_focus_restore('").append(
+"<script type=\"text/javascript\">_filter_focus_restore('").append(
 					getFocusTrackerFieldCssId()).append("');</script>");
 				replaceComponentTagBody(markupStream, openTag, script);
 			}

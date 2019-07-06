@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ class TransactionSubsystem12Parser implements XMLStreamConstants, XMLElementRead
         // elements
         final EnumSet<Element> required = EnumSet.of(Element.RECOVERY_ENVIRONMENT, Element.CORE_ENVIRONMENT);
         final EnumSet<Element> encountered = EnumSet.noneOf(Element.class);
-case TRANSACTIONS_1_2: {
+        while (reader.hasNext() && reader.nextTag() != END_ELEMENT) {
             switch (Namespace.forUri(reader.getNamespaceURI())) {
-                case TRANSACTIONS_1_1: {
+case TRANSACTIONS_1_2: {
                     final Element element = Element.forName(reader.getLocalName());
                     required.remove(element);
                     if (!encountered.add(element)) {

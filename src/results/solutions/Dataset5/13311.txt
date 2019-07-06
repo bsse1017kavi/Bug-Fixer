@@ -1,5 +1,4 @@
 
-
 import org.aspectj.lang.*;
 import org.aspectj.lang.reflect.*;
 
@@ -213,9 +212,9 @@ aspect A {
     declare parents : TargetClass implements Runnable;
     declare soft : Exception : execution(void TargetClass.run());
     
-public void TargetClass.run() {
+    /** unused - enable to throw exception from run() */
     public boolean TargetClass.throwException;
-    public void TargetClass.run() throws Exception {
+public void TargetClass.run() {
         if (throwException) throwsException();
     }
 

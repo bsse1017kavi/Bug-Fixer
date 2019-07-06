@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -54,9 +53,9 @@ public class GenericStoredProcedureTests extends AbstractJdbcTests {
 	@Before
 	protected void setUp() throws Exception {
 		super.setUp();
-new ClassPathResource("org/springframework/jdbc/object/GenericStoredProcedureTests-context.xml"));
+		mockCallable = createMock(CallableStatement.class);
 		bf = new XmlBeanFactory(
-				new ClassPathResource("org/springframework/jdbc/support/GenericStoredProcedureTests-context.xml"));
+new ClassPathResource("org/springframework/jdbc/object/GenericStoredProcedureTests-context.xml"));
 		TestDataSourceWrapper testDataSource = (TestDataSourceWrapper) bf.getBean("dataSource");
 		testDataSource.setTarget(mockDataSource);
 	}

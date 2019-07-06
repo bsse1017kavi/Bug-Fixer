@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.ui.views;
 
 import java.net.InetAddress;
@@ -137,9 +136,9 @@ public class DiscoveryView extends ViewPart {
 				return ((TreeParent)parent).hasChildren();
 			return false;
 		}
-root = new TreeParent(null,"Services",null);
+		private void initialize() {
 			invisibleRoot = new TreeParent(null,"",null);
-			root = new TreeParent(null,"Discovered Service Types",null);
+root = new TreeParent(null,"Services",null);
 			invisibleRoot.addChild(root);
 		}
 		void replaceOrAdd(TreeParent top, TreeParent newEntry) {

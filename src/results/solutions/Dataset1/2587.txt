@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -52,9 +51,9 @@ public class NearSpansUnordered extends Spans {
   private boolean more = true;                    // true iff not done
   private boolean firstTime = true;               // true before first next()
 
-super(size);
+  private class CellQueue extends PriorityQueue<SpansCell> {
     public CellQueue(int size) {
-      initialize(size);
+super(size);
     }
     
     @Override

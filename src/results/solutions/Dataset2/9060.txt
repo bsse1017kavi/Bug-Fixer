@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -480,9 +479,9 @@ public final class JavaConventions {
 			return JavaModelStatus.VERIFIED_OK;
 		
 		// retrieve resolved classpath
-classpath = ((JavaProject)javaProject).getResolvedClasspath(rawClasspath, null /*output*/, true/*ignore pb*/, false/*no marker*/);
+		IClasspathEntry[] classpath; 
 		try {
-			classpath = ((JavaProject)javaProject).getResolvedClasspath(rawClasspath, true/*ignore pb*/, false/*no marker*/);
+classpath = ((JavaProject)javaProject).getResolvedClasspath(rawClasspath, null /*output*/, true/*ignore pb*/, false/*no marker*/);
 		} catch(JavaModelException e){
 			return e.getJavaModelStatus();
 		}

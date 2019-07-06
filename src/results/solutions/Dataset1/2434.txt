@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -358,9 +357,9 @@ public class TableTest extends CleanupHelper
 
         validateSliceLarge(cfStore);
         // compact so we have a big row with more than the minimum index count
-CompactionManager.instance.submitMajor(cfStore).get();
+        if (cfStore.getSSTables().size() > 1)
         {
-            cfStore.doCompaction(2, cfStore.getSSTables().size());
+CompactionManager.instance.submitMajor(cfStore).get();
         }
         SSTableReader sstable = cfStore.getSSTables().iterator().next();
         DecoratedKey decKey = sstable.getPartitioner().decorateKey(key);

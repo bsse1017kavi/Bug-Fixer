@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -214,9 +213,9 @@ public class OSGiSubsystemSupport {
     }
 
     public void setupFrameworkServices(final BatchBuilder batchBuilder) {
-FrameworkService.addService(batchBuilder, null);
+        batchBuilder.addService(MBeanServerService.SERVICE_NAME, new MBeanServerService());
         TestBundleManagerService.addService(batchBuilder);
-        FrameworkService.addService(batchBuilder);
+FrameworkService.addService(batchBuilder, null);
         PackageAdminService.addService(batchBuilder);
     }
 

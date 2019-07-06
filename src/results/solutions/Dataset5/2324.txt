@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.ide.examples.markers.markerSupport;
 
 import org.eclipse.core.resources.IMarker;
@@ -33,9 +32,9 @@ public class ExampleMarkerField extends MarkerField {
 		return prefix.concat(message);
 	}
 
-if (item.getMarker() == null)
+	private String getFixablePrefix(MarkerItem item) {
 
-		if (!item.isConcrete())
+if (item.getMarker() == null)
 			return null;
 
 		IMarker marker = item.getMarker();

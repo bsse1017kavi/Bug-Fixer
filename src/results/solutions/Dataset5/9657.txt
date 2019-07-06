@@ -1,4 +1,3 @@
-
 package org.aspectj.apache.bcel.classfile.annotation;
 
 import java.io.DataInputStream;
@@ -20,9 +19,9 @@ public class RuntimeInvisibleParameterAnnotations extends RuntimeParameterAnnota
 	    this(nameIdx, len, cpool);
 	    readParameterAnnotations(dis,cpool);
 	  }
-super(Constants.ATTR_RUNTIME_INVISIBLE_PARAMETER_ANNOTATIONS,false,nameIndex,len,rvaData,cpool);
+	  
 	  public RuntimeInvisibleParameterAnnotations(int nameIndex, int len, byte[] rvaData,ConstantPool cpool) {
-		super(Constants.ATTR_RUNTIME_INVISIBLE_PARAMETER_ANNOTATIONS,true,nameIndex,len,rvaData,cpool);
+super(Constants.ATTR_RUNTIME_INVISIBLE_PARAMETER_ANNOTATIONS,false,nameIndex,len,rvaData,cpool);
 	  }
 
 	  public void accept(Visitor v) {

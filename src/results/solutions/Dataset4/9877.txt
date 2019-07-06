@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -593,9 +592,9 @@ public class LongTermsTests extends ElasticsearchIntegrationTest {
         }
         indexRandom(true, builders.toArray(new IndexRequestBuilder[builders.size()]));
 
-.addAggregation(histogram("histo").field("value").interval(1l).minDocCount(0)
+        SearchResponse searchResponse = client().prepareSearch("empty_bucket_idx")
                 .setQuery(matchAllQuery())
-                .addAggregation(histogram("histo").field("value").interval(1l).emptyBuckets(true)
+.addAggregation(histogram("histo").field("value").interval(1l).minDocCount(0)
                         .subAggregation(terms("terms")))
                 .execute().actionGet();
 

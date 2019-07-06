@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -189,9 +188,9 @@ public class MapUtils {
                 }
                 if (answer instanceof String) {
                     try {
-} catch (final ParseException e) { // NOPMD
+                        final String text = (String) answer;
                         return NumberFormat.getInstance().parse(text);
-                    } catch (final ParseException e) {
+} catch (final ParseException e) { // NOPMD
                         // failure means null is returned
                     }
                 }

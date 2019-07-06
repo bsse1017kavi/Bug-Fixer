@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -142,9 +141,9 @@ public class ManagementClient {
 
             ModelNode rsp = client.execute(op);
             return SUCCESS.equals(rsp.get(OUTCOME).asString())
-} catch (Throwable ignored) {
+                    && !ControlledProcessState.State.STARTING.toString().equals(rsp.get(RESULT).asString())
                     && !ControlledProcessState.State.STOPPING.toString().equals(rsp.get(RESULT).asString());
-        } catch (Exception ignored) {
+} catch (Throwable ignored) {
             return false;
         }
     }

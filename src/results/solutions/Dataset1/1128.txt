@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.charfilter;
 
 /*
@@ -44,9 +43,9 @@ public class HTMLStripCharFilterTest extends BaseTokenStreamTestCase {
         Tokenizer tokenizer = new MockTokenizer(reader, MockTokenizer.WHITESPACE, false);
         return new TokenStreamComponents(tokenizer, tokenizer);
       }
-protected Reader initReader(String fieldName, Reader reader) {
+
       @Override
-      protected Reader initReader(Reader reader) {
+protected Reader initReader(String fieldName, Reader reader) {
         return new HTMLStripCharFilter(CharReader.get(reader));
       }
     };

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -240,9 +239,9 @@ public final class WorkbenchWindowConfigurer implements IWorkbenchWindowConfigur
 	public void setTitle(String title) {
 		if (title == null) {
 			throw new IllegalArgumentException();
-if (shell != null && !shell.isDisposed()) {
+		}
 		Shell shell =  window.getShell();
-		if (shell != null) {
+if (shell != null && !shell.isDisposed()) {
 			shell.setText(title);
 		} else {
 			// @issue need to be able to configure title before window's controls created

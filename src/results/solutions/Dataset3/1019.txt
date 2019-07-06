@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2013 Red Hat, Inc., and individual contributors
  * as indicated by the @author tags. See the copyright.txt file
@@ -38,9 +37,9 @@ public class SingleClassFilter implements ClassFilter {
     @Override
     public boolean accept(String className) {
         return className != null && className.startsWith(this.filteredClassName);
-public static ClassFilter createFilter(Class<?> filteredClass) {
+    }
 
-    public static ClassFilter createFilter(Class filteredClass) {
+public static ClassFilter createFilter(Class<?> filteredClass) {
         return new SingleClassFilter(filteredClass.getName());
     }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -294,9 +293,9 @@ public class SourceTypeConverter implements CompilerModifiers {
 			if (methodInfo.isAnnotationMethod()) {
 				AnnotationMethodDeclaration annotationMethodDeclaration = new AnnotationMethodDeclaration(compilationResult);
 
-char[] defaultValueSource = ((SourceAnnotationMethodInfo) methodInfo).getDefaultValueSource(this.source.getContents());
+				/* conversion of default value */
 				if ((this.flags & FIELD_INITIALIZATION) != 0) {
-					char[] defaultValueSource = methodInfo.getDefaultValueSource(this.source.getContents());
+char[] defaultValueSource = ((SourceAnnotationMethodInfo) methodInfo).getDefaultValueSource(this.source.getContents());
 					if (defaultValueSource != null) {
 						if (this.parser == null) {
 							this.parser = new Parser(this.problemReporter, true);

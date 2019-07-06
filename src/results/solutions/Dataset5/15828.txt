@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -985,9 +984,9 @@ public void remove (int start, int end) {
 	int [] argList = {OS.XmNitemCount, 0};
 	OS.XtGetValues (handle, argList, argList.length / 2);
 	if (!(0 <= start && start <= end && end < argList [1])) {
-if (argList [1] == (end - start + 1)) {
+		error (SWT.ERROR_INVALID_RANGE);
 	}
-	if (argList [1] == 1) {
+if (argList [1] == (end - start + 1)) {
 		removeAll ();
 	} else {
 		for (int i = start; i <= end; i++) {

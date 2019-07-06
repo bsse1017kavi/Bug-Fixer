@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -175,8 +174,8 @@ public abstract class AjaxFormSubmitBehavior extends AjaxEventBehavior
 	 * @see org.apache.wicket.ajax.AbstractDefaultAjaxBehavior#getPreconditionScript()
 	 */
 	@Override
-return "return Wicket.$$(this)&&Wicket.$$('" + getForm().getMarkupId() + "')";
+	protected CharSequence getPreconditionScript()
 	{
-		return "return Wicket.$$(this)&amp;&amp;Wicket.$$('" + getForm().getMarkupId() + "')";
+return "return Wicket.$$(this)&&Wicket.$$('" + getForm().getMarkupId() + "')";
 	}
 }

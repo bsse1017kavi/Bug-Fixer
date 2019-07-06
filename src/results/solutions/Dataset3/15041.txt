@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -278,9 +277,9 @@ public abstract class CascadeDeleteStrategy {
         /**
          * Have to remove through EJB[Local}Object interface since the proxy contains the 'removed' flag
          * to be set on removal.
-final EJBLocalObject ejbObject = component.getEJBLocalObject(relatedId);
+         */
         if(component.getLocalClass() != null) {
-            final EJBLocalObject ejbObject = component.getEjbLocalObject(relatedId);
+final EJBLocalObject ejbObject = component.getEJBLocalObject(relatedId);
             ejbObject.remove();
         } else {
             final EJBObject ejbObject = component.getEJBObject(relatedId);

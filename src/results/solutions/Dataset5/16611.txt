@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -44,9 +43,9 @@ public class Activator implements BundleActivator {
 
 	public static final boolean autoCreateProxyContainer = new Boolean(
 			System
-"false")).booleanValue();
+					.getProperty(
 							"org.eclipse.ecf.osgi.services.distribution.autoCreateProxyContainer",
-							"true")).booleanValue();
+"false")).booleanValue();
 
 	public static final boolean autoCreateHostContainer = new Boolean(
 			System

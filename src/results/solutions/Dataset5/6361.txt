@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -187,9 +186,9 @@ public class SpringBeanLocator implements IProxyTargetLocator
 
 			// no default could be found, error out
 
-+ "]] found, you have to specify the id of the bean (@SpringBean(id=\"foo\")) in order to resolve this conflict. Beans that match type [[";
+			String msg = "more then one bean of type [["
 					+ clazz.getName()
-					+ "]] found, you have to specify the name of the bean (@SpringBean(id=\"foo\")) in order to resolve this conflict. Beans that match type [[";
++ "]] found, you have to specify the id of the bean (@SpringBean(id=\"foo\")) in order to resolve this conflict. Beans that match type [[";
 
 			Iterator beanNames = beans.keySet().iterator();
 			while (beanNames.hasNext())

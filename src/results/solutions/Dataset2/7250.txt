@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -43,9 +42,9 @@ public class JDBCInformixCreateCommand extends JDBCIdentityColumnCreateCommand
    public void init(JDBCStoreManager manager) throws DeploymentException
    {
       super.init(manager);
-Class psClass = GetTCLAction.getContextClassLoader().loadClass(className);
+      try
       {
-         Class psClass = Thread.currentThread().getContextClassLoader().loadClass(className);
+Class psClass = GetTCLAction.getContextClassLoader().loadClass(className);
          method = psClass.getMethod(methodName, null);
       }
       catch(ClassNotFoundException e)

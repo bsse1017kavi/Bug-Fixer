@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -216,9 +215,9 @@ public class InternalIndexShard extends AbstractIndexShardComponent implements I
         if (!shardRouting.shardId().equals(shardId())) {
             throw new ElasticSearchIllegalArgumentException("Trying to set a routing entry with shardId [" + shardRouting.shardId() + "] on a shard with shardId [" + shardId() + "]");
         }
-logger.warn("suspect illegal state: trying to move shard from primary mode to replica mode");
+        if (currentRouting != null) {
             if (!shardRouting.primary() && currentRouting.primary()) {
-                logger.warn("suspect illegal state: trying to move shard from primary mode to backup mode");
+logger.warn("suspect illegal state: trying to move shard from primary mode to replica mode");
             }
             // if its the same routing, return
             if (currentRouting.equals(shardRouting)) {

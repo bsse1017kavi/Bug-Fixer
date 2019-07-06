@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -117,9 +116,9 @@ public class ExactAnnotationTypePattern extends AnnotationTypePattern {
 				return this;
 			}
 		} else {
-String cleanname = annotationType.getName();
+			// Non binding case
 
-			String cleanname = annotationType.getClassName();
+String cleanname = annotationType.getName();
 			annotationType = scope.getWorld().resolve(annotationType,true);
 			
 			// We may not have found it if it is in a package, lets look it up...

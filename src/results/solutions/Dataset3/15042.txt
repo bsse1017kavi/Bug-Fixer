@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -144,9 +143,9 @@ public final class JDBCDynamicQLQuery extends JDBCAbstractQueryCommand {
 
         final CmpEntityBeanComponent component = ((JDBCStoreManager) compiler.getStoreManager()).getComponent();
         EntityProxyFactory factoryToUse = new EntityProxyFactory() {
-component.getEJBLocalObject(primaryKey) : component.getEJBObject(primaryKey);
+            public Object getEntityObject(Object primaryKey) {
                 return metadata.isResultTypeMappingLocal() && component.getLocalHomeClass() != null ?
-                        component.getEjbLocalObject(primaryKey) : component.getEJBObject(primaryKey);
+component.getEJBLocalObject(primaryKey) : component.getEJBObject(primaryKey);
             }
         };
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -108,9 +107,9 @@ public class Vector1DFormat extends VectorFormat<Euclidean1D> {
         return format(toAppendTo, pos, p1.getX());
     }
 
-public Vector1D parse(final String source) throws MathParseException {
+    /** {@inheritDoc} */
     @Override
-    public Vector1D parse(final String source) {
+public Vector1D parse(final String source) throws MathParseException {
         ParsePosition parsePosition = new ParsePosition(0);
         Vector1D result = parse(source, parsePosition);
         if (parsePosition.getIndex() == 0) {

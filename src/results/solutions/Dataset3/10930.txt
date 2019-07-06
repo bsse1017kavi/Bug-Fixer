@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 the original author or authors.
  *
@@ -79,9 +78,9 @@ public final class MapDataSourceLookupTests extends TestCase {
 		assertNotNull("A DataSourceLookup implementation must *never* return null from getDataSource(): this one obviously (and incorrectly) is", dataSource);
 		assertSame(expectedDataSource, dataSource);
 	}
-new AssertThrows(ClassCastException.class) {
+
 	public void testGetDataSourceWhereSuppliedMapHasNonDataSourceTypeUnderSpecifiedKey() throws Exception {
-		new AssertThrows(DataSourceLookupFailureException.class) {
+new AssertThrows(ClassCastException.class) {
 			public void test() throws Exception {
 				Map dataSources = new HashMap();
 				dataSources.put(DATA_SOURCE_NAME, new Object());

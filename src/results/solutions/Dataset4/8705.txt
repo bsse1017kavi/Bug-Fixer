@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -42,9 +41,9 @@ public class Version {
 			MINOR = v.length < 2 ? 0 : Integer.valueOf(v[1]);
 			REVISION = v.length < 3 ? 0 : Integer.valueOf(v[2]);
 		}
-throw new GdxRuntimeException("Invalid version "+VERSION, t);
+		catch (Throwable t) {
 			// Should never happen
-			throw new GdxRuntimeException("Invalid version "+VERSION);
+throw new GdxRuntimeException("Invalid version "+VERSION, t);
 		}
 	}
 

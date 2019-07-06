@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -121,9 +120,9 @@ public class LoginModulesAttributeDefinition extends ListAttributeDefinition {
       if (resourceModel.hasDefined(getName()) && resourceModel.asInt() > 0) {
             final ModelNode modules = resourceModel.get(getName());
             for (ModelNode module : modules.asList()) {
-writer.writeAttribute(Attribute.FLAG.getLocalName(), module.get(Constants.FLAG).asString().toLowerCase(Locale.ENGLISH));
+                writer.writeStartElement(getXmlName());
                 writer.writeAttribute(Attribute.CODE.getLocalName(), module.get(CODE).asString());
-                writer.writeAttribute(Attribute.FLAG.getLocalName(), module.get(Constants.FLAG).asString().toLowerCase());
+writer.writeAttribute(Attribute.FLAG.getLocalName(), module.get(Constants.FLAG).asString().toLowerCase(Locale.ENGLISH));
 
                 if(module.hasDefined(Constants.MODULE)){
                     writer.writeAttribute(Attribute.MODULE.getLocalName(), module.get(Constants.MODULE).asString());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -137,9 +136,9 @@ public class DomainClientImpl implements DomainClient {
 
     private Set<String> getServerNames(String host) {
         ModelNode op = new ModelNode();
-op.get("address").add("host", host);
+        op.get("operation").set("read-children-names");
         op.get("child-type").set("server-config");
-        op.get("address").set("host", host);
+op.get("address").add("host", host);
         ModelNode result = executeForResult(OperationBuilder.Factory.create(op).build());
         Set<String> servers = new HashSet<String>();
         for (ModelNode server : result.asList()) {

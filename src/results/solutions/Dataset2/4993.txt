@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.parser;
 
 /*
@@ -208,9 +207,9 @@ public int previousAvailableLineEnd(int position){
 	if (parser == null) return position;
 	
 	Scanner scanner = parser.scanner;
-int index = scanner.getLineNumber(position);
+	if (scanner.lineEnds == null) return position;
 	
-	int index = scanner.searchLineNumber(position);
+int index = scanner.getLineNumber(position);
 	if (index < 2) return position;
 	int previousLineEnd = scanner.lineEnds[index-2];
 

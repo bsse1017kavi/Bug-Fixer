@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1110,9 +1109,9 @@ public class OracleDictionary
     public int getBatchUpdateCount(PreparedStatement ps) throws SQLException {
         int updateSuccessCnt = 0;
         if (batchLimit > 0 && ps != null) {
-log.trace(_loc.get("batch-update-success-count",
+            updateSuccessCnt = ps.getUpdateCount();
             if (log.isTraceEnabled())
-                log.trace(_loc.get("batch_update_success_count",
+log.trace(_loc.get("batch-update-success-count",
                     updateSuccessCnt));
         }
         return updateSuccessCnt;

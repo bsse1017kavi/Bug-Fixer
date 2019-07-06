@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class SingletonLifecycleCMTTxInterceptor extends CMTTxInterceptor impleme
             case NOT_SUPPORTED:
                 return notSupported(invocation, component);
             //singleton beans lifecyle methods must treat REQUIRED as REQUIRES_NEW
-return requiresNew(invocation, component, getMethodIntf(invocation));
+            case REQUIRED:
             case REQUIRES_NEW:
-                return requiresNew(invocation, component);
+return requiresNew(invocation, component, getMethodIntf(invocation));
             case SUPPORTS:
                 return supports(invocation, component);
             default:

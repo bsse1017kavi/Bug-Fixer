@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -206,9 +205,9 @@ public class AttrImpl
         if (needsSyncChildren()) {
             synchronizeChildren();
         }
-for (ChildNode child = (ChildNode) value;
+        super.setOwnerDocument(doc);
         if (!hasStringValue()) {
-            for (ChildNode child = firstChild;
+for (ChildNode child = (ChildNode) value;
                  child != null; child = child.nextSibling) {
                 child.setOwnerDocument(doc);
             }

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -122,9 +121,9 @@ public final class PageView<T> extends Panel<T>
 	 */
 	private List<ComponentData> getComponentData(final Page<?> page)
 	{
-page.visitChildren(new IVisitor()
+		final List<ComponentData> data = new ArrayList<ComponentData>();
 
-		page.visitChildren(new IVisitor<Component>()
+page.visitChildren(new IVisitor()
 		{
 			public Object component(final Component component)
 			{

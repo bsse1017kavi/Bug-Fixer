@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public class SevenZMethodConfiguration {
      * @throws IllegalArgumentException if the method doesn't understand the options specified.
      */
     public SevenZMethodConfiguration(SevenZMethod method, Object options) {
-if (options != null && !Coders.findByMethod(method).canAcceptOptions(options)) {
+        this.method = method;
         this.options = options;
-        if (options != null && !method.canAcceptOptions(options)) {
+if (options != null && !Coders.findByMethod(method).canAcceptOptions(options)) {
             throw new IllegalArgumentException("The " + method + " method doesn't support options of type "
                                                + options.getClass());
         }

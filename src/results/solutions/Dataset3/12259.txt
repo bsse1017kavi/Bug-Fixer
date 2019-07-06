@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -55,9 +54,9 @@ public class SnapshotListHandler implements OperationStepHandler, DescriptionPro
             result.get(ModelDescriptionConstants.DIRECTORY).set(info.getSnapshotDirectory());
             result.get(ModelDescriptionConstants.NAMES).setEmptyList();
             for (String name : info.names()) {
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+                result.get(ModelDescriptionConstants.NAMES).add(name);
             }
-            context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
         } catch (Exception e) {
             throw new OperationFailedException(e.getMessage(), new ModelNode().set(e.getMessage()));
         }

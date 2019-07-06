@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class AnalysisModuleTests {
                 new IndexNameModule(index),
                 new AnalysisModule(settings));
 
-Analyzer analyzer = analysisService.analyzer("custom1").analyzer();
+        AnalysisService analysisService = injector.getInstance(AnalysisService.class);
 
-        Analyzer analyzer = analysisService.analyzer("custom1");
+Analyzer analyzer = analysisService.analyzer("custom1").analyzer();
 
         assertThat(analyzer, instanceOf(CustomAnalyzer.class));
         CustomAnalyzer custom1 = (CustomAnalyzer) analyzer;

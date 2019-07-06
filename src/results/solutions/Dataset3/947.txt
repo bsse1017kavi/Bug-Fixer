@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ public class ConnectHandler extends CommandHandlerWithHelp {
     }
 
     @Override
-String args = ctx.getArgumentsString();
+    protected void doHandle(CommandContext ctx) {
 
-        String args = ctx.getCommandArguments();
+String args = ctx.getArgumentsString();
         int port = -1;
         String host = null;
         if(args != null) {

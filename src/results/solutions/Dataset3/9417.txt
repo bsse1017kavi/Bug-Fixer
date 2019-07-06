@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -34,9 +33,9 @@ public class JdkORBDeploymentMarker {
 
     public static void mark(final DeploymentUnit deployment) {
         deployment.putAttachment(ATTACHMENT_KEY, true);
-public static boolean isJdkORBDeployment(final DeploymentUnit deploymentUnit) {
+    }
 
-    public static boolean isJacORBDeployment(final DeploymentUnit deploymentUnit) {
+public static boolean isJdkORBDeployment(final DeploymentUnit deploymentUnit) {
         final Boolean val = deploymentUnit.getAttachment(ATTACHMENT_KEY);
         return val != null && val;
     }

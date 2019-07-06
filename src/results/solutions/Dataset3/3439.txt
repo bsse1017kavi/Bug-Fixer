@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ import org.jboss.dmr.ModelNode;
  *
  * @author Emanuel Muckenhuber
  */
-public static final OperationStepHandler INSTANCE = new NativeManagementWriteAttributeHandler();
+public class NativeManagementWriteAttributeHandler extends ReloadRequiredWriteAttributeHandler {
 
-    public static OperationStepHandler INSTANCE = new NativeManagementWriteAttributeHandler();
+public static final OperationStepHandler INSTANCE = new NativeManagementWriteAttributeHandler();
 
     private NativeManagementWriteAttributeHandler() {
         super(NativeManagementResourceDefinition.ATTRIBUTE_DEFINITIONS);

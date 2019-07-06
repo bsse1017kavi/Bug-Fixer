@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -113,9 +112,9 @@ public abstract class CacheOperation {
 	 * Return an identifying description for this caching operation.
 	 * <p>Available to subclasses, for inclusion in their {@code toString()} result.
 	 */
-result.append("CacheOperation[");
+	protected StringBuilder getOperationDescription() {
 		StringBuilder result = new StringBuilder();
-		result.append("CacheDefinition[");
+result.append("CacheOperation[");
 		result.append(this.name);
 		result.append("] caches=");
 		result.append(this.cacheNames);

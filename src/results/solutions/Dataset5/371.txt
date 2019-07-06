@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -107,9 +106,9 @@ public final class MarkupParserTest extends WicketTestCase
 	 * @return MarkupResourceStream
 	 */
 	private MarkupResourceStream newMarkupResourceStream(final IResourceStreamFactory locator,
-IResourceStream resource = locator.newResourceStream(c, c.getName().replace('.', '/'), style, locale,
+			final Class c, final String style, final Locale locale, final String extension)
 	{
-		IResourceStream resource = locator.locate(c, c.getName().replace('.', '/'), style, locale,
+IResourceStream resource = locator.newResourceStream(c, c.getName().replace('.', '/'), style, locale,
 				extension);
 		MarkupResourceStream res = new MarkupResourceStream(resource, null, null);
 		return res;

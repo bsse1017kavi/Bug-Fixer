@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -231,9 +230,9 @@ public class EjbCorbaServant extends Servant implements InvokeHandler, LocalIIOP
             logger.trace("EJBObject invocation: " + opName);
         }
 
-logger.debugf("Unable to find opname '%s' valid operations:%s", opName, methodInvokerMap.keySet());
+        SkeletonStrategy op = methodInvokerMap.get(opName);
         if (op == null) {
-            logger.debug("Unable to find opname '" + opName + "' valid operations:" + methodInvokerMap.keySet());
+logger.debugf("Unable to find opname '%s' valid operations:%s", opName, methodInvokerMap.keySet());
             throw new BAD_OPERATION(opName);
         }
         final NamespaceContextSelector selector = componentView.getComponent().getNamespaceContextSelector();

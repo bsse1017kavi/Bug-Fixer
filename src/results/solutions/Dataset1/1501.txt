@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -85,9 +84,9 @@ public class BayesFeatureDriver {
 
     conf.set("io.serializations",
              "org.apache.hadoop.io.serializer.JavaSerialization,org.apache.hadoop.io.serializer.WritableSerialization"); 
-FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
+    // Dont ever forget this. People should keep track of how hadoop conf parameters and make or break a piece of code
 
-    FileSystem dfs = FileSystem.get(conf);
+FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
     if (dfs.exists(outPath))
       dfs.delete(outPath, true);
 

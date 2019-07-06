@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -222,9 +221,9 @@ public void resolve(BlockScope scope) {
 	}
 	if (expressionType == VoidBinding) {
 		scope.problemReporter().attemptToReturnVoidValue(this);
-if (methodType != null && expressionType.isCompatibleWith(methodType)) {
+		return;
 	}
-	if (methodType != null && Scope.areTypesCompatible(expressionType, methodType)) {
+if (methodType != null && expressionType.isCompatibleWith(methodType)) {
 		expression.implicitWidening(methodType, expressionType);
 		return;
 	}

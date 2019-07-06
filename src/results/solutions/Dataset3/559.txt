@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -53,9 +52,9 @@ public class DeploymentUndeployHandler implements OperationStepHandler, Descript
     public ModelNode getModelDescription(Locale locale) {
         return DeploymentDescription.getUndeployDeploymentOperation(locale);
     }
-ModelNode model = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel();
+
     public void execute(OperationContext context, ModelNode operation) {
-        ModelNode model = context.readModelForUpdate(PathAddress.EMPTY_ADDRESS);
+ModelNode model = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel();
         final String deploymentUnitName = model.require(RUNTIME_NAME).asString();
         model.get(ENABLED).set(false);
 

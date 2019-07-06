@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
@@ -236,9 +235,9 @@ public final class ClassFinder {
         if (path == null ) return null;
         if (path.equals(".")) { // $NON-NLS-1$
             return System.getProperty("user.dir"); // $NON-NLS-1$
-path = JOrphanUtils.substitute(path, "//", "/"); // $NON-NLS-1$// $NON-NLS-2$
+        }
         path = path.trim().replace('\\', '/'); // $NON-NLS-1$ // $NON-NLS-2$
-        path = JOrphanUtils.replaceAllString(path, "//", "/"); // $NON-NLS-1$// $NON-NLS-2$
+path = JOrphanUtils.substitute(path, "//", "/"); // $NON-NLS-1$// $NON-NLS-2$
 
         while (path.endsWith("/")) { // $NON-NLS-1$
             path = path.substring(0, path.length() - 1);

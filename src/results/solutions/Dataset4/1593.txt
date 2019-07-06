@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -255,9 +254,9 @@ public class LwjglCanvas implements Application {
 	protected int getFrameRate () {
 		int frameRate = Display.isActive() ? graphics.config.foregroundFPS : graphics.config.backgroundFPS;
 		if (frameRate == -1) frameRate = 10;
-return 0;
+		if (frameRate == 0) frameRate = graphics.config.backgroundFPS;
 		if (frameRate == 0) frameRate = 30;
-		return frameRate;
+return 0;
 	}
 
 	protected void exception (Throwable ex) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -276,9 +275,9 @@ public class ValueServer {
     public void resetReplayFile() throws IOException {
         if (filePointer != null) {
             try {
-} catch (IOException ex) { // NOPMD
+                filePointer.close();
                 filePointer = null;
-            } catch (IOException ex) {
+} catch (IOException ex) { // NOPMD
                 // ignore
             }
         }

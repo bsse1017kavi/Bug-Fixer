@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ public interface DistributableSessionIdentifierCodecBuilder {
      * @param target a service target
      * @param name a service name
      * @param deploymentServiceName the service name of the deployment
-ServiceBuilder<SessionIdentifierCodec> build(ServiceTarget target, ServiceName name, ServiceName deploymentServiceName);
+     * @return a service builder
      */
-    ServiceBuilder<SessionIdentifierCodec> build(ServiceTarget target, ServiceName name, String deploymentName);
+ServiceBuilder<SessionIdentifierCodec> build(ServiceTarget target, ServiceName name, ServiceName deploymentServiceName);
 
     /**
      * Builds cross-deployment dependencies needed for route handling

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ class MethodInvocationMessageHandler extends AbstractMessageHandler {
         } else {
             methodParamTypes = signature.split(String.valueOf(METHOD_PARAM_TYPE_SEPARATOR));
         }
-this.writeNoSuchEJBMethodFailureMessage(channel, invocationId, appName, moduleName, distinctName, beanName, viewClassName, methodName, methodParamTypes);
+        final Method invokedMethod = this.findMethod(componentView, methodName, methodParamTypes);
         if (invokedMethod == null) {
-            // TODO: Write out NoSuchMethod invocation failure to channel outstream
+this.writeNoSuchEJBMethodFailureMessage(channel, invocationId, appName, moduleName, distinctName, beanName, viewClassName, methodName, methodParamTypes);
             return;
         }
         // read the attachments

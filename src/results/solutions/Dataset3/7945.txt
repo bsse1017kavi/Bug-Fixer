@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class WarAnnotationIndexProcessor implements DeploymentUnitProcessor {
             return; // Skip non web deployments
         }
         if(phaseContext.getAttachment(ATTACHMENT_KEY) != null) {
-final VirtualFile deploymentRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
+            return;
         }
-        final VirtualFile deploymentRoot = phaseContext.getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
+final VirtualFile deploymentRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
         // Create the web annotation index
         final WarAnnotationIndex index = WarAnnotationIndex.create(deploymentRoot);
         phaseContext.putAttachment(ATTACHMENT_KEY, index);

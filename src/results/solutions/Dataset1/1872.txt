@@ -1,4 +1,3 @@
-
 package org.apache.solr;
 
 /*
@@ -68,9 +67,9 @@ public abstract class BaseDistributedSearchTestCase extends SolrTestCaseJ4 {
   public static void initialize() {
     assumeFalse("SOLR-4147: ibm 64bit has jvm bugs!", Constants.JRE_IS_64BIT && Constants.JAVA_VENDOR.startsWith("IBM"));
     r = new Random(random().nextLong());
-protected int shardCount = 4;      // the actual number of solr cores that will be created in the cluster
+  }
 
-  protected int shardCount = 4;
+protected int shardCount = 4;      // the actual number of solr cores that will be created in the cluster
 
   /**
    * Sub classes can set this flag in their constructor to true if they

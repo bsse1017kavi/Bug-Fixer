@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class ProperFractionFormat extends FractionFormat {
         pos.setEndIndex(0);
 
         int num = fraction.getNumerator();
-num %= den;
+        int den = fraction.getDenominator();
         int whole = num / den;
-        num = num % den;
+num %= den;
 
         if (whole != 0) {
             getWholeFormat().format(whole, toAppendTo, pos);

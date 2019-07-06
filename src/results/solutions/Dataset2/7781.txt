@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.registry;
 
 /**********************************************************************
@@ -58,9 +57,9 @@ public PerspectiveExtensionReader() {
 public void extendLayout(String id, PageLayout out)
 {
 	targetID = id;
-PlatformUI.PLUGIN_ID,
+	pageLayout = out;
 	readRegistry(Platform.getPluginRegistry(), 
-		IWorkbenchConstants.PLUGIN_ID, 
+PlatformUI.PLUGIN_ID,
 		IWorkbenchConstants.PL_PERSPECTIVE_EXTENSIONS);
 }
 /**

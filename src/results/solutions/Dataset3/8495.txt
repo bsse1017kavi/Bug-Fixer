@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -551,9 +550,9 @@ public abstract class AttributeDefinition {
      *         conversion was performed. Will not return {@code null}
      *
      * @throws IllegalStateException if expressions are supported, but the {@link #getType() attribute type} is {@link #COMPLEX_TYPES complex}
-if (isAllowExpression() && COMPLEX_TYPES.contains(type) && ParseUtils.containExpression(parameter.asString())) {
+     */
     protected ModelNode convertParameterExpressions(final ModelNode parameter) {
-        if (isAllowExpression() && COMPLEX_TYPES.contains(type)) {
+if (isAllowExpression() && COMPLEX_TYPES.contains(type) && ParseUtils.containExpression(parameter.asString())) {
             // They need to subclass and override
             throw new IllegalStateException();
         }

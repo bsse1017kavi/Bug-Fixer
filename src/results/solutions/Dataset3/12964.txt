@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -37,9 +36,9 @@ public interface WebSocketClient {
 
 
 	WebSocketSession doHandshake(WebSocketHandler webSocketHandler,
-WebSocketSession doHandshake(WebSocketHandler webSocketHandler, HttpHeaders headers, URI uri)
+			String uriTemplate, Object... uriVariables) throws WebSocketConnectFailureException;
 
-	WebSocketSession doHandshake(WebSocketHandler<?> webSocketHandler, HttpHeaders headers, URI uri)
+WebSocketSession doHandshake(WebSocketHandler webSocketHandler, HttpHeaders headers, URI uri)
 			throws WebSocketConnectFailureException;
 
 }

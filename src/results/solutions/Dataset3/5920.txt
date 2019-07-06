@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import org.infinispan.eviction.EvictionStrategy;
@@ -258,9 +257,9 @@ public interface CommonAttributes {
     SimpleAttributeDefinition MODE =
             new SimpleAttributeDefinitionBuilder(ModelKeys.MODE, ModelType.STRING, true)
                     .setXmlName(Attribute.MODE.getLocalName())
-.setValidator(new EnumValidator<TransactionMode>(TransactionMode.class, true, true))
+                    .setAllowExpression(true)
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
-                    .setValidator(new EnumValidator<TransactionMode>(TransactionMode.class, true, false))
+.setValidator(new EnumValidator<TransactionMode>(TransactionMode.class, true, true))
                     .setDefaultValue(new ModelNode().set(TransactionMode.NONE.name()))
                     .build();
     SimpleAttributeDefinition MODIFICATION_QUEUE_SIZE =

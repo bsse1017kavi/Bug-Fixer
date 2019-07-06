@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.filter;
 /*
  * 
@@ -31,9 +30,9 @@ public class IdentityQueryFilter extends SliceQueryFilter
     /**
      * Only for use in testing; will read entire CF into memory.
      */
-super(ArrayUtils.EMPTY_BYTE_ARRAY, ArrayUtils.EMPTY_BYTE_ARRAY, false, Integer.MAX_VALUE);
+    public IdentityQueryFilter()
     {
-        super(ArrayUtils.EMPTY_BYTE_ARRAY, ArrayUtils.EMPTY_BYTE_ARRAY, null, false, Integer.MAX_VALUE);
+super(ArrayUtils.EMPTY_BYTE_ARRAY, ArrayUtils.EMPTY_BYTE_ARRAY, false, Integer.MAX_VALUE);
     }
 
     public SuperColumn filterSuperColumn(SuperColumn superColumn, int gcBefore)

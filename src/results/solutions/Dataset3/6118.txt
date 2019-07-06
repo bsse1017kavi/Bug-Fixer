@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -410,9 +409,9 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
         this.expansionMode = expansionMode;
         internalArray = new double[initialCapacity];
         numElements = 0;
-if (data != null && data.length > 1) {
+        startIndex = 0;
 
-        if (data != null) {
+if (data != null && data.length > 1) {
             addElements(data);
         }
     }

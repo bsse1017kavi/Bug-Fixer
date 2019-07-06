@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1876,9 +1875,9 @@ protected void init () {
 	lpWndClass.hCursor = OS.LoadCursor (0, OS.IDC_ARROW);
 	int byteCount = windowClass.length () * TCHAR.sizeof;
 	lpWndClass.lpszClassName = OS.HeapAlloc (hHeap, OS.HEAP_ZERO_MEMORY, byteCount);
-if (OS.COMCTL32_MAJOR >= 6) lpWndClass.style |= OS.CS_DROPSHADOW;
+	OS.MoveMemory (lpWndClass.lpszClassName, windowClass, byteCount);
 	OS.RegisterClass (lpWndClass);
-	lpWndClass.style |= OS.CS_DROPSHADOW;
+if (OS.COMCTL32_MAJOR >= 6) lpWndClass.style |= OS.CS_DROPSHADOW;
 	byteCount = windowShadowClass.length () * TCHAR.sizeof;
 	lpWndClass.lpszClassName = OS.HeapAlloc (hHeap, OS.HEAP_ZERO_MEMORY, byteCount);
 	OS.MoveMemory (lpWndClass.lpszClassName, windowShadowClass, byteCount);

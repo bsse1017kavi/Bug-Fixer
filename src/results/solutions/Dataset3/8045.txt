@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ import org.jboss.logging.Logger;
 @Remote(SingletonBeanRemoteView.class)
 public class SingletonB implements SingletonBeanRemoteView {
 
-@EJB(beanName = "SLSBTwo")
+    private static Logger logger = Logger.getLogger(SingletonB.class);
 
-    @EJB(name = "SLSBTwo")
+@EJB(beanName = "SLSBTwo")
     private DoSomethingView slsbTwo;
 
     @PostConstruct

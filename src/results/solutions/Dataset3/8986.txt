@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -50,9 +49,9 @@ public class StringHttpMessageConverter extends AbstractHttpMessageConverter<Str
 		super(new MediaType("text", "plain", DEFAULT_CHARSET), MediaType.ALL);
 		this.availableCharsets = new ArrayList<Charset>(Charset.availableCharsets().values());
 	}
-public boolean supports(Class<?> clazz) {
+
 	@Override
-	public boolean supports(Class<? extends String> clazz) {
+public boolean supports(Class<?> clazz) {
 		return String.class.equals(clazz);
 	}
 

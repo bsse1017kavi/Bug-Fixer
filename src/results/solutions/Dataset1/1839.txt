@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -167,9 +166,9 @@ public class TieredMergePolicy extends MergePolicy {
     return this;
   }
 
-return floorSegmentBytes/(1024*1024.);
+  /** @see #setFloorSegmentMB */
   public double getFloorSegmentMB() {
-    return floorSegmentBytes/1024*1024.;
+return floorSegmentBytes/(1024*1024.);
   }
 
   /** When forceMergeDeletes is called, we only merge away a

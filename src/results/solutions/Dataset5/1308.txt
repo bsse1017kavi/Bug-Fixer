@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public class DebugSampler extends AbstractSampler implements TestBean {
             sb.append("SystemProperties:\n");
             formatSet(sb, System.getProperties().entrySet());
             sb.append("\n");
-res.setResponseData(sb.toString(), null);
+        }
 
-        res.setResponseData(sb.toString().getBytes());
+res.setResponseData(sb.toString(), null);
         res.setDataType(SampleResult.TEXT);
         res.setSamplerData(rd.toString());
         res.setSuccessful(true);

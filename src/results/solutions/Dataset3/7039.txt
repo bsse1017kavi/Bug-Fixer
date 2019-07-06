@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -188,9 +187,9 @@ public class ManagementChannel extends ProtocolChannel {
         private void handleResponse(ManagementResponseHeader header, DataInput input) throws IOException {
             ManagementResponseHandler<?> responseHandler = responseHandlers.get(header.getResponseId());
             if (responseHandler == null) {
-responseHandler.setContext(new ManagementResponseContext(header, ManagementChannel.this));
+                throw new IOException("No response handler for request " + header.getResponseId());
             }
-            responseHandler.setContext(new ManagementResponseContext(header));
+responseHandler.setContext(new ManagementResponseContext(header, ManagementChannel.this));
 
             try {
                 responseHandler.readResponse(input);

@@ -1,4 +1,3 @@
-
 import java.lang.reflect.*;
 import java.io.*;
 import java.net.*;
@@ -359,9 +358,9 @@ doAXFR(Name name, Message query, TSIG tsig, TSIGRecord qtsig, Socket s) {
 			header.setFlag(Flags.QR);
 			header.setFlag(Flags.AA);
 			addRRset(rrset.getName(), response, rrset,
-tsig.applyStream(response, qtsig, first);
+				 Section.ANSWER, FLAG_DNSSECOK);
 			if (tsig != null) {
-				tsig.applyAXFR(response, qtsig, first);
+tsig.applyStream(response, qtsig, first);
 				qtsig = response.getTSIG();
 			}
 			first = false;

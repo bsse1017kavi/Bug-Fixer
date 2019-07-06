@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -121,9 +120,9 @@ public class TopChildrenQueryParser implements QueryParser {
         // wrap the query with type query
         query = new XFilteredQuery(query, parseContext.cacheFilter(childDocMapper.typeFilter(), null));
 
-searchContext.addRewrite(childQuery);
+        SearchContext searchContext = SearchContext.current();
         TopChildrenQuery childQuery = new TopChildrenQuery(query, null, childType, parentType, scoreType, factor, incrementalFactor);
-        searchContext.addScopePhase(childQuery);
+searchContext.addRewrite(childQuery);
         return childQuery;
     }
 }

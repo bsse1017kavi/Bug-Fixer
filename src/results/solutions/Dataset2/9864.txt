@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -85,9 +84,9 @@ public class UMLEnumerationBooleanProperty extends UMLBooleanProperty {
     public boolean getProperty(Object element) {
         boolean state = false;
         if(_getMethod != null && element != null) {
-if(retval != null &&
+            try {
                 Object retval = _getMethod.invoke(element,_noArg);
-                if(_enumClass.isInstance(retval) && 
+if(retval != null &&
                     (retval == _trueArg[0] || retval.equals(_trueArg[0]))) {
                     state = true;
                 }

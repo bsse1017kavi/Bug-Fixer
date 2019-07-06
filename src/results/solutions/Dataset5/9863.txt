@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -248,9 +247,9 @@ public class FailureRecorder extends ProjectComponent implements JUnitResultForm
     private void writeJavaClass() {
         try {
             File sourceFile = new File((getLocationName() + ".java"));
-if (sourceFile.exists() && !sourceFile.delete()) {
+            verbose("Write collector class to '" + sourceFile.getAbsolutePath() + "'");
 
-            if (!sourceFile.delete()) {
+if (sourceFile.exists() && !sourceFile.delete()) {
                 throw new IOException("could not delete " + sourceFile);
             }
             writer = new BufferedWriter(new FileWriter(sourceFile));

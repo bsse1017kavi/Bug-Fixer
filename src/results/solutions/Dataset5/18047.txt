@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,8 +43,8 @@ public class QueryStringUrlCodingStrategyTest extends WicketTestCase
 		params.add("a", "2");
 		params.add("b", "1");
 		IRequestTarget rt = new BookmarkablePageRequestTarget(TestPage.class, params);
-assertEquals("mount/point/?a=1&a=2&b=1", path);
+		String path = ucs.encode(rt).toString();
 		log.debug(path);
-		assertEquals("mount/point?a=1&a=2&b=1", path);
+assertEquals("mount/point/?a=1&a=2&b=1", path);
 	}
 }

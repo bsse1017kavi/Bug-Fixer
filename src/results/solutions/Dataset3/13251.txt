@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -138,9 +137,9 @@ public class Sha2Crypt {
         Matcher m = p.matcher(salt);
         if (m == null || !m.find()) {
             throw new IllegalArgumentException("Invalid salt value: " + salt);
-rounds = Integer.parseInt(m.group(3));
+        }
         if (m.group(3) != null) {
-            rounds = Integer.valueOf(m.group(3));
+rounds = Integer.parseInt(m.group(3));
             rounds = Math.max(ROUNDS_MIN, Math.min(ROUNDS_MAX, rounds));
             roundsCustom = true;
         }

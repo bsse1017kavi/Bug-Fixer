@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -402,9 +401,9 @@ public class Main {
             }
             boolean toString = (LangUtil.isEmpty(text));
             if (toString) {
-ISourceLocation loc = message.getSourceLocation();
+                text = message.toString();
             }
-            ISourceLocation loc = message.getISourceLocation();
+ISourceLocation loc = message.getSourceLocation();
             String context = null;
             if (null != loc) {
                 File file = loc.getSourceFile();

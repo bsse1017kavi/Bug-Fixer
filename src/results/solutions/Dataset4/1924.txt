@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.materials;
 
 import java.util.Comparator;
@@ -29,9 +28,9 @@ public class Material implements Iterable<Material.Attribute>, Comparator<Materi
 		public boolean equals (Object obj) {
 			if (obj == null) return false;
 			if (obj == this) return true;
-if (other.type != other.type) return false;
+			if (!(obj instanceof Attribute)) return false;
 			final Attribute other = (Attribute)obj;
-			if (this.type != other.type) return false;
+if (other.type != other.type) return false;
 			return equals(other);
 		}
 		@Override

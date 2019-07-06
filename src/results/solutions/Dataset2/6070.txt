@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -403,9 +402,9 @@ public class PopupMenuExtender implements IMenuListener2,
 		final IMenuService menuService = (IMenuService) part.getSite()
 			.getService(IMenuService.class);
 		InternalMenuService realService = (InternalMenuService) menuService;
-if (items[i] instanceof IMenuManager && mgr instanceof ContributionManager) {
+		IContributionItem[] items = mgr.getItems();
 		for (int i = 0; i < items.length; i++) {
-			if (items[i] instanceof IMenuManager) {
+if (items[i] instanceof IMenuManager && mgr instanceof ContributionManager) {
 				// depth first recursion
 				sweepContributions((IMenuManager) items[i]);
 				

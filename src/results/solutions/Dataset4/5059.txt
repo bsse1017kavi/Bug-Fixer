@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ public class RefreshRequest extends BroadcastOperationRequest {
 
     RefreshRequest() {
     }
-super(indices);
+
     public RefreshRequest(String... indices) {
-        super(indices, null);
+super(indices);
         // we want to do the refresh in parallel on local shards...
         operationThreading(BroadcastOperationThreading.THREAD_PER_SHARD);
     }

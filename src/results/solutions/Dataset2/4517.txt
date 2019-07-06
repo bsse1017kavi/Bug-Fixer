@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -53,9 +52,9 @@ public MatchingNodeSet(boolean mustResolvePattern) {
 	super();
 	mustResolve = mustResolvePattern;
 }
-switch (matchLevel & PatternLocator.NODE_SET_MASK) {
+
 public int addMatch(ASTNode node, int matchLevel) {
-	switch (matchLevel) {
+switch (matchLevel & PatternLocator.NODE_SET_MASK) {
 		case PatternLocator.INACCURATE_MATCH:
 			addTrustedMatch(node, POTENTIAL_MATCH);
 			break;

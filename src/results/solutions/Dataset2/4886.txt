@@ -1,4 +1,3 @@
-
 /**********************************************************************
 Copyright (c) 2000, 2003 IBM Corp. and others.
 All rights reserved. This program and the accompanying materials
@@ -375,9 +374,9 @@ public class BuildOrderPreferencePage
 		Composite maxItersComposite = new Composite(composite, SWT.NONE);
 		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 		maxItersComposite.setLayoutData(gd);
-maxItersField = new IntegerFieldEditor("", WorkbenchMessages.getString("BuildOrderPreference.maxIterationsLabel"), maxItersComposite) { //$NON-NLS-1$ //$NON-NLS-2$
+		maxItersComposite.setFont(composite.getFont());
 
-		maxItersField = new IntegerFieldEditor("", WorkbenchMessages.getString("BuildOrderPreference.maxIterationsLabel"), maxItersComposite) {
+maxItersField = new IntegerFieldEditor("", WorkbenchMessages.getString("BuildOrderPreference.maxIterationsLabel"), maxItersComposite) { //$NON-NLS-1$ //$NON-NLS-2$
 			protected void doLoad() {
 				Text text = getTextControl();
 				if (text != null) {

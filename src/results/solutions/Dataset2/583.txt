@@ -1,4 +1,3 @@
-
 /*
  * HyperSearchRequest.java - HyperSearch request, run in I/O thread
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -45,9 +44,9 @@ class HyperSearchRequest extends WorkRequest
 		this.view = view;
 		this.matcher = matcher;
 
-this.rootSearchNode = new DefaultMutableTreeNode(new HyperSearchOperationNode(searchString));
+		this.results = results;
 		this.searchString = SearchAndReplace.getSearchString();
-		this.rootSearchNode = new DefaultMutableTreeNode(searchString);
+this.rootSearchNode = new DefaultMutableTreeNode(new HyperSearchOperationNode(searchString));
 
 		this.selection = selection;
 	} //}}}

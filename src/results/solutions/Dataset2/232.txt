@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -310,9 +309,9 @@ public List collectMissingTypes(List missingTypes) {
 		for (int i = 0, max = this.typeVariables.length; i < max; i++) {
 			TypeVariableBinding variable = this.typeVariables[i];
 			missingTypes = variable.superclass().collectMissingTypes(missingTypes);
-missingTypes = interfaces[j].collectMissingTypes(missingTypes);
+			ReferenceBinding[] interfaces = variable.superInterfaces();
 			for (int j = 0, length = interfaces.length; j < length; j++) {
-				missingTypes = interfaces[i].collectMissingTypes(missingTypes);
+missingTypes = interfaces[j].collectMissingTypes(missingTypes);
 			}
 		}
 	}

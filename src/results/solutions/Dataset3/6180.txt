@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -465,9 +464,9 @@ public class StringUtilsEqualsIndexOfTest  {
     // The purpose of this class is to test StringUtils#equals(CharSequence, CharSequence)
     // with a CharSequence implementation whose equals(Object) override requires that the
     // other object be an instance of CustomCharSequence, even though, as char sequences,
-private final CharSequence seq;
+    // `seq` may equal the other object.
     private static class CustomCharSequence implements CharSequence {
-        private CharSequence seq;
+private final CharSequence seq;
 
         public CustomCharSequence(CharSequence seq) {
             this.seq = seq;

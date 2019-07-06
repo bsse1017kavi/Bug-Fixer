@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import java.util.List;
@@ -24,9 +23,9 @@ public abstract class ClusteredCacheAdd extends CacheAdd {
     public static SimpleAttributeDefinition MODE =
             new SimpleAttributeDefinitionBuilder(ModelKeys.MODE, ModelType.STRING, false)
                     .setXmlName(Attribute.MODE.getLocalName())
-.setValidator(new EnumValidator<Mode>(Mode.class, true, false))
+                    .setAllowExpression(true)
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
-                    .setValidator(new EnumValidator<CacheMode>(CacheMode.class, true, false))
+.setValidator(new EnumValidator<Mode>(Mode.class, true, false))
                     .build();
 
     ClusteredCacheAdd(CacheMode mode) {

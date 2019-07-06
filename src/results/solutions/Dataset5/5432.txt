@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 Dominik Schadow - http://www.xml-sicherheit.de
  * All rights reserved. This program and the accompanying materials
@@ -92,9 +91,9 @@ public class CreateEncryption {
         monitor.worked(1);
 
         loadSettings(encryption, selection);
-Key secretKey = keyStore.getPrivateKey(encryption.getKeyName(), encryption.getKeyPassword());
+        keyStore.load();
 
-        Key secretKey = keyStore.getSecretKey(encryption.getKeyName(), encryption.getKeyPassword());
+Key secretKey = keyStore.getPrivateKey(encryption.getKeyName(), encryption.getKeyPassword());
 
         monitor.worked(1);
 

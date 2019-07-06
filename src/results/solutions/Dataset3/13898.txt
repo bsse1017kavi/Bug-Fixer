@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public final class StandardRBACAuthorizer extends ManagementPermissionAuthorizer
     private static final Set<String> STANDARD_ROLES;
     static {
 
-stdRoles.add(stdRole.getFormalName());
+        Set<String> stdRoles = new LinkedHashSet<String>();
         for (StandardRole stdRole : StandardRole.values()) {
-            stdRoles.add(stdRole.toString());
+stdRoles.add(stdRole.getFormalName());
         }
         STANDARD_ROLES = stdRoles;
     }

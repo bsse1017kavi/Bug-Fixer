@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -137,9 +136,9 @@ public class ShowViewDialog extends Dialog implements
         Composite composite = (Composite) super.createDialogArea(parent);
         composite.setFont(parent.getFont());
 
-layoutTopControl(filteredTree);
+        createFilteredTreeViewer(composite);
 
-        layoutTopControl(filteredTree.getViewer().getControl());
+layoutTopControl(filteredTree);
 
         // Restore the last state
         restoreWidgetValues();

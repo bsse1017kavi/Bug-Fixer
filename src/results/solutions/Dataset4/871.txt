@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -40,9 +39,9 @@ import static org.elasticsearch.common.collect.Maps.*;
 /**
  * @author kimchy (Shay Banon)
  */
-public static final DiscoveryNodes EMPTY_NODES = newNodesBuilder().build();
+public class DiscoveryNodes implements Iterable<DiscoveryNode> {
 
-    public static DiscoveryNodes EMPTY_NODES = newNodesBuilder().build();
+public static final DiscoveryNodes EMPTY_NODES = newNodesBuilder().build();
 
     private final ImmutableMap<String, DiscoveryNode> nodes;
 

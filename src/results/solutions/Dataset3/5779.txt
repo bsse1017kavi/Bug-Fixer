@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class ApplicationClassificationParentResourceDefinition extends SimpleRes
                 .getResolver("core.access-control.constraint.application-classification"));
     }
 
-resourceRegistration.registerSubModel(ApplicationClassificationTypeResourceDefinition.INSTANCE);
+    @Override
     public void registerChildren(ManagementResourceRegistration resourceRegistration) {
-        resourceRegistration.registerSubModel(ApplicationClassificationResourceDefinition.INSTANCE);
+resourceRegistration.registerSubModel(ApplicationClassificationTypeResourceDefinition.INSTANCE);
     }
 
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -233,9 +232,9 @@ public class GeoShapeFieldMapper extends AbstractFieldMapper<String> {
             if (fields == null || fields.length == 0) {
                 return;
             }
-field.setBoost(boost);
+            for (Field field : fields) {
                 if (!customBoost()) {
-                    field.setBoost(context.fieldBoost(this));
+field.setBoost(boost);
                 }
                 if (context.listener().beforeFieldAdded(this, field, context)) {
                     context.doc().add(field);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -96,9 +95,9 @@ public class DefaultExecutor
     protected final Task doCreateTask( final String name, final ExecutionFrame frame )
         throws TaskException
     {
-final TypeFactory factory = frame.getTypeManager().getFactory( Task.ROLE );
+        try
         {
-            final TypeFactory factory = frame.getTypeManager().getFactory( Task.class );
+final TypeFactory factory = frame.getTypeManager().getFactory( Task.ROLE );
             return (Task)factory.create( name );
         }
         catch( final TypeException te )

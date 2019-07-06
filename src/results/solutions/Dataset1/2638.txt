@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.streaming;
 
 /*
@@ -42,9 +41,9 @@ public class StreamReplyVerbHandler implements IVerbHandler
         byte[] body = message.getMessageBody();
         ByteArrayInputStream bufIn = new ByteArrayInputStream(body);
 
-StreamReply reply = StreamReply.serializer.deserialize(new DataInputStream(bufIn), message.getVersion());
+        try
         {
-            StreamReply reply = StreamReply.serializer.deserialize(new DataInputStream(bufIn));
+StreamReply reply = StreamReply.serializer.deserialize(new DataInputStream(bufIn), message.getVersion());
             logger.debug("Received StreamReply {}", reply);
             StreamOutSession session = StreamOutSession.get(message.getFrom(), reply.sessionId);
 

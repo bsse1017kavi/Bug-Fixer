@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene45;
 
 /*
@@ -79,9 +78,9 @@ public class Lucene45DocValuesProducer extends DocValuesProducer implements Clos
     IndexInput in = state.directory.openInput(metaName, state.context);
     this.maxDoc = state.segmentInfo.getDocCount();
     boolean success = false;
-Lucene45DocValuesFormat.VERSION_START,
+    try {
       version = CodecUtil.checkHeader(in, metaCodec, 
-                                      Lucene45DocValuesFormat.VERSION_CURRENT,
+Lucene45DocValuesFormat.VERSION_START,
                                       Lucene45DocValuesFormat.VERSION_CURRENT);
       numerics = new HashMap<Integer,NumericEntry>();
       ords = new HashMap<Integer,NumericEntry>();

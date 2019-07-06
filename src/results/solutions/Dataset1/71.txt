@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -126,9 +125,9 @@ public final class RecommenderMapper
     Iterator<Vector.Element> recommendationVectorIterator = recommendationVector.iterateNonZero();
     LongWritable itemID = new LongWritable();
     while (recommendationVectorIterator.hasNext()) {
-if (userVector.get(index) == 0.0) {
+      Vector.Element element = recommendationVectorIterator.next();
       int index = element.index();
-      if (userVector.get(index) != 0.0) {
+if (userVector.get(index) == 0.0) {
         if (topItems.size() < recommendationsPerUser) {
           indexItemIDMap.get(new IntWritable(index), itemID);
           topItems.add(new GenericRecommendedItem(itemID.get(), (float) element.get()));

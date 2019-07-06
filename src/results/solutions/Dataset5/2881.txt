@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class MonitorAccumModel implements Clearable, Serializable {
 			surl = ((HTTPSampleResult) sample).getURL();
     		// String rescontent = new String(sample.getResponseData());
     		if (sample.isResponseCodeOK() && ((HTTPSampleResult) sample).isMonitor()) {
-if (st != null && surl != null) {// surl can be null if read from a file
+    			ObjectFactory of = ObjectFactory.getInstance();
     			Status st = of.parseBytes(sample.getResponseData());
-    			if (st != null) {
+if (st != null && surl != null) {// surl can be null if read from a file
     				MonitorStats stat = new MonitorStats(Stats.calculateStatus(st), Stats.calculateLoad(st), 0, Stats
     						.calculateMemoryLoad(st), Stats.calculateThreadLoad(st), surl.getHost(), String.valueOf(surl
     						.getPort()), surl.getProtocol(), System.currentTimeMillis());

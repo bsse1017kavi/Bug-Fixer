@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.taxonomy;
 
 import java.io.IOException;
@@ -1012,9 +1011,9 @@ public class CategoryPath implements Serializable, Cloneable, Comparable<Categor
     OutputStreamWriter osw = new OutputStreamWriter(out, "UTF-8");
     this.serializeToStreamWriter(osw);
     osw.flush();
-private void readObject(java.io.ObjectInputStream in) throws IOException {
+  }
   
-  private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+private void readObject(java.io.ObjectInputStream in) throws IOException {
     InputStreamReader isr = new InputStreamReader(in, "UTF-8");
     this.deserializeFromStreamReader(isr);
   }

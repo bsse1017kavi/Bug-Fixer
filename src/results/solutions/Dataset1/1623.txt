@@ -1,4 +1,3 @@
-
 package org.apache.solr.schema;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -131,9 +130,9 @@ public class CurrencyField extends FieldType implements SchemaAware, ResourceLoa
     try {
       Class<? extends ExchangeRateProvider> c = schema.getResourceLoader().findClass(exchangeRateProviderClass, ExchangeRateProvider.class);
       provider = c.newInstance();
-throw new SolrException(ErrorCode.BAD_REQUEST, "Error instantiating exhange rate provider "+exchangeRateProviderClass+": " + e.getMessage(), e);
+      provider.init(args);
     } catch (Exception e) {
-      throw new SolrException(ErrorCode.BAD_REQUEST, "Error instansiating exhange rate provider "+exchangeRateProviderClass+". Please check your FieldType configuration", e);
+throw new SolrException(ErrorCode.BAD_REQUEST, "Error instantiating exhange rate provider "+exchangeRateProviderClass+": " + e.getMessage(), e);
     }
   }
 

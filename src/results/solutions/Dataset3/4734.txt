@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public abstract class PoolOperations implements OperationStepHandler {
                             for (Pool pool : pools) {
                                 operationResult = invokeCommandOn(pool, parameters);
                             }
-throw new OperationFailedException(new ModelNode().set(ConnectorLogger.ROOT_LOGGER.failedToInvokeOperation(e.getLocalizedMessage())));
+
                         } catch (Exception e) {
-                            throw new OperationFailedException(ConnectorLogger.ROOT_LOGGER.failedToInvokeOperation(e.getLocalizedMessage()));
+throw new OperationFailedException(new ModelNode().set(ConnectorLogger.ROOT_LOGGER.failedToInvokeOperation(e.getLocalizedMessage())));
                         }
                         if (operationResult != null) {
                             context.getResult().set(operationResult);

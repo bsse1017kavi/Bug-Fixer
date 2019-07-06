@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2005 The Apache Software Foundation.
  * 
@@ -154,9 +153,9 @@ public class StrBuilder implements Cloneable {
         if (length < 0) {
             throw new StringIndexOutOfBoundsException(length);
         }
-} else if (length > size) {
+        if (length < size) {
             size = length;
-        } else {
+} else if (length > size) {
             ensureCapacity(length);
             int oldEnd = size;
             int newEnd = length;

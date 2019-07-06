@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -442,9 +441,9 @@ public class AntiEntropyService
 
         private MerkleTree.RowHash rowHash(CompactedRow row)
         {
-byte[] rowhash = FBUtilities.hash("SHA-256", row.key.key, row.buffer.getData());
+            validated++;
             // MerkleTree uses XOR internally, so we want lots of output bits here
-            byte[] rowhash = FBUtilities.hash("SHA-256", row.key.key.getBytes(), row.buffer.getData());
+byte[] rowhash = FBUtilities.hash("SHA-256", row.key.key, row.buffer.getData());
             return new MerkleTree.RowHash(row.key.token, rowhash);
         }
 

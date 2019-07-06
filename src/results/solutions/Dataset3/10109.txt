@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -291,9 +290,9 @@ public class ProtocolStackAdd extends AbstractAddStepHandler implements Descript
         private static Field getField(Class<?> targetClass, String property) {
             try {
                 return targetClass.getDeclaredField(property);
-return (superClass != null) && org.jgroups.stack.Protocol.class.isAssignableFrom(superClass) ? getField(superClass, property) : null;
+            } catch (NoSuchFieldException e) {
                 Class<?> superClass = targetClass.getSuperclass();
-                return (superClass != null) && (superClass.isAssignableFrom(org.jgroups.stack.Protocol.class)) ? getField(superClass, property) : null;
+return (superClass != null) && org.jgroups.stack.Protocol.class.isAssignableFrom(superClass) ? getField(superClass, property) : null;
             }
         }
 

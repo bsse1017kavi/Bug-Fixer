@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2011, Nathan Sweet <nathan.sweet@gmail.com>
  * All rights reserved.
@@ -779,9 +778,9 @@ abstract public class BaseTableLayout<C, T extends C, L extends BaseTableLayout,
 			if (c.colspan == 1) continue;
 
 			float extraWidth = 0;
-extraWidth -= Math.max(0, c.computedPadLeft + c.computedPadRight);
+			for (int column = c.column, nn = column + c.colspan; column < nn; column++)
 				extraWidth += columnWeightedWidth[column] - columnWidth[column];
-			extraWidth -= c.computedPadLeft + c.computedPadRight;
+extraWidth -= Math.max(0, c.computedPadLeft + c.computedPadRight);
 
 			extraWidth /= c.colspan;
 			if (extraWidth > 0) {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -40,9 +39,9 @@ public class WinNTCommandLauncher
         prefix[ 3 ] = "/d";
         prefix[ 4 ] = metaData.getWorkingDirectory().getCanonicalPath();
         prefix[ 5 ] = "&&";
-final String[] env = ExecUtil.getEnvironmentSpec( metaData );
+
         final ExecMetaData newMetaData = ExecUtil.prepend( metaData, prefix );
-        final String[] env = ExecUtil.toNativeEnvironment( metaData.getEnvironment() );
+final String[] env = ExecUtil.getEnvironmentSpec( metaData );
         return Runtime.getRuntime().exec( newMetaData.getCommand(), env );
     }
 }

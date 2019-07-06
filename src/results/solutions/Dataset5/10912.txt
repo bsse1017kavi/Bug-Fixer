@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -380,9 +379,9 @@ public abstract class WebApplication extends Application implements ISessionFact
 	/**
 	 * @see org.apache.wicket.ISessionFactory#newSession(org.apache.wicket.Request, org.apache.wicket.Response)
 	 */
-return new WebSession(WebApplication.this, request, response);
+	public Session newSession(Request request, Response response)
 	{
-		return new WebSession(WebApplication.this, request);
+return new WebSession(WebApplication.this, request, response);
 	}
 
 	/**

@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -156,9 +155,9 @@ public abstract class AbstractPluginHandler implements PluginHandlerInterface {
                 XmlElement.printNode(parentNode, " ");
             }
 
-dialog.showDialog("Error while trying to instantiate plugin " +
+            // if className isn't specified show error dialog
             NotifyDialog dialog = new NotifyDialog();
-            dialog.showDialog("Error while trying to instanciate plugin " +
+dialog.showDialog("Error while trying to instantiate plugin " +
                 name +
                 ".\n Classname wasn't found. This probably means that plugin.xml is broken or incomplete.");
 

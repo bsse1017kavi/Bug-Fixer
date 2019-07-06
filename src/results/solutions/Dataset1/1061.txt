@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -403,9 +402,9 @@ public final class FieldInfos implements Iterable<FieldInfo> {
     return false;
   }
 
-if (fi.normsPresent()) {
+  public boolean hasNorms() {
     for (FieldInfo fi : this) {
-      if (fi.isIndexed && !fi.omitNorms) {
+if (fi.normsPresent()) {
         return true;
       }
     }

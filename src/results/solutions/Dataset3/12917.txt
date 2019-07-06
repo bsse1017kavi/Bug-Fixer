@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -278,9 +277,9 @@ public class MultiValueMap<K, V> extends AbstractMapDecorator<K, Object> impleme
             for (Map.Entry<? extends K, Object> entry : ((MultiMap<? extends K, V>) map).entrySet()) {
                 putAll(entry.getKey(), (Collection<V>) entry.getValue());
             }
-put(entry.getKey(), entry.getValue());
+        } else {
             for (Map.Entry<? extends K, ?> entry : map.entrySet()) {
-                put(entry.getKey(), (V) entry.getValue());
+put(entry.getKey(), entry.getValue());
             }
         }
     }

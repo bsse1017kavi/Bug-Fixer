@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -110,9 +109,9 @@ public final class Path implements IResourceFinder
 
 			if (file.exists())
 			{
-return file.toURI().toURL();
+				try
 				{
-					return file.toURL();
+return file.toURI().toURL();
 				}
 				catch (MalformedURLException ex)
 				{

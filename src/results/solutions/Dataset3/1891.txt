@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 The Apache Software Foundation.
  * 
@@ -1353,9 +1352,9 @@ public class StringUtilsTest extends TestCase {
         assertEquals(0, StringUtils.indexOfDifference("abc", ""));
         assertEquals(0, StringUtils.indexOfDifference("i am a machine", null));
         assertEquals(7, StringUtils.indexOfDifference("i am a machine", "i am a robot"));
-//System.out.println("indexOfDiff: " + StringUtils.indexOfDifference("i am a robot", "not machine"));
+        assertEquals(-1, StringUtils.indexOfDifference("foo", "foo"));
         assertEquals(0, StringUtils.indexOfDifference("i am a robot", "you are a robot"));
-        System.out.println("indexOfDiff: " + StringUtils.indexOfDifference("i am a robot", "not machine"));
+//System.out.println("indexOfDiff: " + StringUtils.indexOfDifference("i am a robot", "not machine"));
     }
 
     //-----------------------------------------------------------------------

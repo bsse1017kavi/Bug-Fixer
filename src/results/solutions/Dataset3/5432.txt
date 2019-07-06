@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public class TestSynchronizedList<E> extends AbstractTestList<E> {
         return new ArrayList<E>();
     }
 
-return SynchronizedList.synchronizedList(new ArrayList<E>());
+    @Override
     public List<E> makeObject() {
-        return SynchronizedList.decorate(new ArrayList<E>());
+return SynchronizedList.synchronizedList(new ArrayList<E>());
     }
 
     @Override

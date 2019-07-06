@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1062,9 +1061,9 @@ public abstract class RequestCycle
 					}
 					// Add (inserting at the bottom) in case before or during
 					// target resolving one or more request targets were pushed
-requestTargets.add(0, target);
+					// on the stack before this. If that is the case, they
 					// should be handled before this
-					requestTargets.add(target);
+requestTargets.add(0, target);
 					break;
 				}
 				case PROCESS_EVENTS : {

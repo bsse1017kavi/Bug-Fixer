@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -747,9 +746,9 @@ public abstract class Container extends Component
 	 */
 	private Markup loadMarkup(final Application application, final String key,
 			final Resource markupResource) throws ParseException, IOException,
-final Markup markup = application.getMarkupParser().read(markupResource, getPage());
+			ResourceNotFoundException
 	{
-		final Markup markup = application.getMarkupParser(getPage()).read(markupResource);
+final Markup markup = application.getMarkupParser().read(markupResource, getPage());
 		markupCache.put(key, markup);
 		return markup;
 	}

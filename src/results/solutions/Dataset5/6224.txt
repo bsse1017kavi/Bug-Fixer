@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -273,9 +272,9 @@ public class ManagedClassSubclasser {
         if (bc == enhancer.getManagedTypeBytecode()) {
             // if it was already defined, don't put it in the map,
             // but do set the metadata accordingly.
-else {
+            if (enhancer.isAlreadyRedefined())
                 ints.add(bc.getType());
-            else if (JavaVersions.VERSION >= 5) {
+else {
                 map.put(bc.getType(), bc.toByteArray());
                 debugBytecodes(bc);
             }

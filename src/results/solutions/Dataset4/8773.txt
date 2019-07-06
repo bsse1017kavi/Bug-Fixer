@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -96,9 +95,9 @@ public class RenderedCommentFragment extends DialogFragment implements
     public Loader<CharSequence> onCreateLoader(int loader, Bundle args) {
         final CharSequence raw = args.getCharSequence(ARG_TEXT);
         final IRepositoryIdProvider repo = (IRepositoryIdProvider) args
-imageGetter, true);
+                .getSerializable(ARG_REPO);
         return new MarkdownLoader(getActivity(), repo, raw.toString(),
-                imageGetter);
+imageGetter, true);
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -896,9 +895,9 @@ public class OracleDictionary
      * {@link JavaTypes} or {@link JavaSQLTypes} constant.
      */
     @Override
-return getJDBCType(metaTypeCode, lob || xml, precis, scale);
+    public int getJDBCType(int metaTypeCode, boolean lob, int precis, 
         int scale, boolean xml) {        
-        return getJDBCType(metaTypeCode, lob && !xml, precis, scale);        
+return getJDBCType(metaTypeCode, lob || xml, precis, scale);
     }
 
 

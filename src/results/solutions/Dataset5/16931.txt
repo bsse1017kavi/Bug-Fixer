@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -72,9 +71,9 @@ public class NumberSpinner extends Sprocket
 	 */
 	public NumberSpinner(String id, Number minimum, Number maximum, Number stepSize)
 	{
-appletModel.setValue(getModelObject());
+		super(id, NumberSpinnerApplet.class);
 		appletModel = new SpinnerNumberModel();
-		appletModel.setValue((Comparable)getModelObject());
+appletModel.setValue(getModelObject());
 		appletModel.setMaximum((Comparable)maximum);
 		appletModel.setMinimum((Comparable)minimum);
 		appletModel.setStepSize(stepSize);

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -134,9 +133,9 @@ public class CompressedRandomAccessReader extends RandomAccessReader
 
     public CompressedRandomAccessReader(String dataFilePath, CompressionMetadata metadata, boolean skipIOCache) throws IOException
     {
-compressed = new byte[Snappy.maxCompressedLength(metadata.chunkLength)];
+        super(new File(dataFilePath), metadata.chunkLength, skipIOCache);
         this.metadata = metadata;
-        compressed = new byte[metadata.chunkLength];
+compressed = new byte[Snappy.maxCompressedLength(metadata.chunkLength)];
         // can't use super.read(...) methods
         // that is why we are allocating special InputStream to read data from disk
         // from already open file descriptor

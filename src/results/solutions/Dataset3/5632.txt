@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -171,9 +170,9 @@ public class ServerGroupAffectedResourceServerGroupOperationsTestCase extends Ab
 
         final ModelNode operation = new ModelNode();
         operation.get(OP_ADDR).set(pa.toModelNode());
-new ServerGroupRemoveHandler(null).execute(operationContext, operation);
+        operation.get(OP).set(REMOVE);
 
-        ServerGroupRemoveHandler.INSTANCE.execute(operationContext, operation);
+new ServerGroupRemoveHandler(null).execute(operationContext, operation);
 
         Assert.assertFalse(operationContext.isReloadRequired());
     }

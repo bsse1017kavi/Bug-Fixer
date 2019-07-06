@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -222,9 +221,9 @@ public class PageProvider implements IPageProvider
 		{
 			return pageSource;
 		}
-return Application.get().getMapperContext();
+		if (Application.exists())
 		{
-			return Application.get().getEncoderContext();
+return Application.get().getMapperContext();
 		}
 		else
 		{

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -143,8 +142,8 @@ public class JMSTopicControlHandler extends AbstractRuntimeOnlyHandler {
             throw e;
         } catch (Exception e) {
             context.getFailureDescription().set(e.toString());
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+        }
 
-        context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
     }
 }

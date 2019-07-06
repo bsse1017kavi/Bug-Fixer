@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -920,9 +919,9 @@ public class AntClassLoader extends ClassLoader implements BuildListener {
                 catch (IOException ioe) {
                     log("Exception reading component " + pathComponent , Project.MSG_VERBOSE);
                 }
-throw new ClassNotFoundException(name);
+            }
             
-            throw new ClassNotFoundException();
+throw new ClassNotFoundException(name);
         }
         finally {
             try {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -33,9 +32,9 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
     public ZipArchiveOutputStream(OutputStream out) {
         this.zipOut = new ZipOutputStream(out);
     }
-zipOut.putNextEntry((ZipEntry) entry);
+    
     public void putArchiveEntry(ArchiveEntry entry) throws IOException {
-        zipOut.putNextEntry((ZipArchiveEntry) entry);
+zipOut.putNextEntry((ZipEntry) entry);
     }
 
     public void close() throws IOException {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -78,9 +77,9 @@ public class DfsPhase implements SearchPhase {
             Term[] terms = termsSet.toArray(Term.class);
             TermStatistics[] termStatistics = new TermStatistics[terms.length];
             IndexReaderContext indexReaderContext = context.searcher().getTopReaderContext();
-TermContext termContext = TermContext.build(indexReaderContext, terms[i]);
+            for (int i = 0; i < terms.length; i++) {
                 // LUCENE 4 UPGRADE: cache TermContext?
-                TermContext termContext = TermContext.build(indexReaderContext, terms[i], false);
+TermContext termContext = TermContext.build(indexReaderContext, terms[i]);
                 termStatistics[i] = context.searcher().termStatistics(terms[i], termContext);
             }
 

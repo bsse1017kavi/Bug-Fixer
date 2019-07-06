@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -344,9 +343,9 @@ public abstract class AbstractComponent implements Component {
         }
 
         @Override
-injectionHandle.uninject();
+        public Object processInvocation(InterceptorContext context) throws Exception {
             for(ComponentInjector.InjectionHandle injectionHandle : injections) {
-                injectionHandle.disinject();
+injectionHandle.uninject();
             }
             return null;
         }

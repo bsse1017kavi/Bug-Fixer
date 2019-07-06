@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -110,9 +109,9 @@ public class ClientJMeterEngine implements JMeterEngine, Runnable {
 	public void run() {
 		log.info("running clientengine run method");
 		testListeners = new SearchByClass(TestListener.class);
-PreCompiler compiler = new PreCompiler(true); // limit the changes to client only test elements
+		sampleListeners = new ConvertListeners();
 		HashTree testTree = getTestTree();
-		PreCompiler compiler = new PreCompiler();
+PreCompiler compiler = new PreCompiler(true); // limit the changes to client only test elements
 		synchronized(testTree) {
 			testTree.traverse(compiler);
 			testTree.traverse(new TurnElementsOn());

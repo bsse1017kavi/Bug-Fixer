@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import org.jboss.as.controller.AbstractAddStepHandler;
@@ -32,8 +31,8 @@ public class SharedCacheResource extends ClusteredCacheResource {
 
     @Override
     public void registerChildren(ManagementResourceRegistration resourceRegistration) {
-resourceRegistration.registerSubModel(new StateTransferResource());
+        super.registerChildren(resourceRegistration);
 
-        resourceRegistration.registerSubModel(StateTransferResource.INSTANCE);
+resourceRegistration.registerSubModel(new StateTransferResource());
     }
 }

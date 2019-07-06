@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public class JmsCFRemoveHandler extends BatchModeCommandHandler {
         };
         this.addRequiredPath("/subsystem=messaging");
     }
-public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws CommandFormatException {
+
     @Override
-    public ModelNode buildRequest(CommandContext ctx) throws CommandFormatException {
+public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws CommandFormatException {
 
         final String name = this.name.getValue(ctx.getParsedCommandLine(), true);
         String serverName = "default"; // TODO read server name from props

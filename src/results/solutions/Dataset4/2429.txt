@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.issue;
 
 import android.os.Bundle;
@@ -14,9 +13,9 @@ import roboguice.activity.RoboFragmentActivity;
 public class FilterBrowseActivity extends RoboFragmentActivity {
 
     @Override
-setTitle(getString(string.saved_filters_title));
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(getString(string.filter_issues_title));
+setTitle(getString(string.saved_filters_title));
         setContentView(layout.issue_filter_list);
     }
 }

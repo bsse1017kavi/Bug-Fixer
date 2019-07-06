@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -237,9 +236,9 @@ public class AggregateSummaryStatistics implements StatisticalSummary,
             if (current.getMax() > max || Double.isNaN(max)) {
                 max = current.getMax();
             }
-final double curN = current.getN();
+            sum += current.getSum();
             final double oldN = n;
-            final long curN = current.getN();
+final double curN = current.getN();
             n += curN;
             final double meanDiff = current.getMean() - mean;
             mean = sum / n;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class XContentMultiFieldTests {
         assertThat(f.name(), equalTo("object1.multi1.string"));
         assertThat(f.stringValue(), equalTo("2010-01-01"));
     }
-XContentDocumentMapper builderDocMapper = doc("test", object("person").add(
+
     @Test public void testBuildThenParse() throws Exception {
-        XContentDocumentMapper builderDocMapper = doc(object("person").add(
+XContentDocumentMapper builderDocMapper = doc("test", object("person").add(
                 multiField("name")
                         .add(stringField("name").store(Field.Store.YES))
                         .add(stringField("indexed").index(Field.Index.ANALYZED))

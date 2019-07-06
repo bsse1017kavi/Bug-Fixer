@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -301,9 +300,9 @@ public class JPAAnnotationProcessor implements DeploymentUnitProcessor {
             }
             AnnotationValue pcType = annotation.value("type");
             PersistenceContextType type = (pcType == null || PersistenceContextType.TRANSACTION.name().equals(pcType.asString()))
-AnnotationValue stType = annotation.value("synchronization");
+                ? PersistenceContextType.TRANSACTION : PersistenceContextType.EXTENDED;
 
-            AnnotationValue stType = annotation.value("synchronizationType");
+AnnotationValue stType = annotation.value("synchronization");
             SynchronizationType synchronizationType =
                     (stType == null || SynchronizationType.SYNCHRONIZED.name().equals(stType.asString()))?
                             SynchronizationType.SYNCHRONIZED: SynchronizationType.UNSYNCHRONIZED;

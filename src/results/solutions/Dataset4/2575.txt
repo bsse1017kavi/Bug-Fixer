@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -118,9 +117,9 @@ public class InterpolationTest extends GdxTest {
 	}
 
 	Vector2 getCurrentPosition () {
-temp.mul(getInterpolation().apply(Math.min(1, timer / 1f)));
+		temp.set(targetPosition);
 		temp.sub(position);
-		temp.scl(getInterpolation().apply(Math.min(1, timer / 1f)));
+temp.mul(getInterpolation().apply(Math.min(1, timer / 1f)));
 		temp.add(position);
 		return temp;
 	}

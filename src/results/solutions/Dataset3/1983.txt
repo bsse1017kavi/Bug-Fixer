@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -35,9 +34,9 @@ public class YellOnFlushAndCloseOutputStream extends ProxyOutputStream {
     /**
      * @param proxy OutputStream to delegate to.
      * @param yellForFlush True if flush() is forbidden
-public YellOnFlushAndCloseOutputStream(final OutputStream proxy, final boolean yellForFlush, final boolean yellForClose) {
+     * @param yellForClose True if close() is forbidden
      */
-    public YellOnFlushAndCloseOutputStream(OutputStream proxy, boolean yellForFlush, boolean yellForClose) {
+public YellOnFlushAndCloseOutputStream(final OutputStream proxy, final boolean yellForFlush, final boolean yellForClose) {
         super(proxy);
         this.yellForFlush = yellForFlush;
         this.yellForClose = yellForClose;

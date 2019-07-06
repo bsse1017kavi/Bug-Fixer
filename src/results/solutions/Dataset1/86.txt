@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -93,9 +92,9 @@ public class TestFuzzyQuery2 extends LuceneTestCase {
     Document doc = new Document();
     Field field = newField("field", "", TextField.TYPE_UNSTORED);
     doc.add(field);
-field.setStringValue(mapInt(codePointTable, i));
+    
     for (int i = 0; i < terms; i++) {
-      field.setValue(mapInt(codePointTable, i));
+field.setStringValue(mapInt(codePointTable, i));
       writer.addDocument(doc);
     }   
     

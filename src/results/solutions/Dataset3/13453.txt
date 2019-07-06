@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -191,9 +190,9 @@ public final class ComponentInstallProcessor implements DeploymentUnitProcessor 
         // TODO: Should the view configuration just return a Set instead of a List? Or is there a better way to
         // handle these duplicates?
         final Set<BindingConfiguration> uniqueBindings = new HashSet(bindings);
-final String bindingName = bindingConfiguration.getName().startsWith("java:comp") ? bindingConfiguration.getName() : "java:comp/env/" + bindingConfiguration.getName();
+        for (BindingConfiguration bindingConfiguration : uniqueBindings) {
             if (bindingConfiguration.getName().startsWith("java:comp") || !bindingConfiguration.getName().startsWith("java:")) {
-                final String bindingName = bindingConfiguration.getName();
+final String bindingName = bindingConfiguration.getName().startsWith("java:comp") ? bindingConfiguration.getName() : "java:comp/env/" + bindingConfiguration.getName();
                 final BinderService service = new BinderService(bindingName);
                 final ServiceName serviceName = ContextNames.serviceNameOfEnvEntry(configuration.getApplicationName(), configuration.getModuleName(), configuration.getComponentName(), configuration.getComponentDescription().getNamingMode() == ComponentNamingMode.CREATE, bindingName);
 

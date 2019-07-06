@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -40,9 +39,9 @@ public class QuickTargetSourceCreator extends AbstractBeanFactoryBasedTargetSour
 	public static final String PREFIX_THREAD_LOCAL = "%";
 	public static final String PREFIX_PROTOTYPE = "!";
 
-Class<?> beanClass, String beanName) {
+	@Override
 	protected final AbstractBeanFactoryBasedTargetSource createBeanFactoryBasedTargetSource(
-			Class beanClass, String beanName) {
+Class<?> beanClass, String beanName) {
 
 		if (beanName.startsWith(PREFIX_COMMONS_POOL)) {
 			CommonsPoolTargetSource cpts = new CommonsPoolTargetSource();

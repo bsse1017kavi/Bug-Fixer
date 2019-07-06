@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -93,9 +92,9 @@ public class JMXProtocolPackager implements DeploymentPackager {
             final Collection<Archive<?>> auxArchives = testDeployment.getAuxiliaryArchives();
             JavaArchive archive = generateArquillianServiceArchive(auxArchives);
             archiveHolder.setArchive(archive);
-archiveHolder.addPreparedDeployment(testDeployment.getDeploymentName());
+        }
         addModulesManifestDependencies(appArchive);
-        archiveHolder.addPreparedDeployment(appArchive);
+archiveHolder.addPreparedDeployment(testDeployment.getDeploymentName());
         return appArchive;
     }
 

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.hadoop;
 /*
  * 
@@ -72,9 +71,9 @@ import org.slf4j.LoggerFactory;
  *
  * The default split size is 64k rows.
  */
-private static final Logger logger = LoggerFactory.getLogger(ColumnFamilyInputFormat.class);
+public class ColumnFamilyInputFormat extends InputFormat<ByteBuffer, SortedMap<ByteBuffer, IColumn>>
 {
-    private static final Logger logger = LoggerFactory.getLogger(StorageService.class);
+private static final Logger logger = LoggerFactory.getLogger(ColumnFamilyInputFormat.class);
     
     private String keyspace;
     private String cfName;

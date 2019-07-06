@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -72,9 +71,9 @@ public class AjBuildManagerTest extends TestCase {
 				"testdata/src1/A.java",
 //				"testdata/src1/Hello.java",
 				 }, messageWriter);
-manager.setStructureModel(AsmManager.getDefault().getHierarchy());
+        String err = parser.getOtherMessages(true);		
         assertTrue(err, null == err);
-        manager.setStructureModel(AsmManager.getDefault().getModel());
+manager.setStructureModel(AsmManager.getDefault().getHierarchy());
 		MessageHandler handler = new MessageHandler();
         manager.batchBuild(buildConfig, handler);
         assertCompileMessagesValid(handler);	

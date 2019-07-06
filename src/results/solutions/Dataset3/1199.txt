@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -530,9 +529,9 @@ public class HibernateManagementAdaptor implements ManagementAdaptor {
             final String puResourceName = address.getLastElement().getValue();
             ManagementLookup stats = ManagementLookup.create(persistenceUnitRegistry, puResourceName);
             if (stats != null) {
-context.stepCompleted();
+                handle(context.getResult(), address.getLastElement().getValue(), stats, context);
             }
-            context.completeStep();
+context.stepCompleted();
         }
     }
 

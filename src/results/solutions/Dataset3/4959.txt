@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -401,9 +400,9 @@ public class AdvancedLdapLoginModuleTestCase {
             }
             directoryService = DSAnnotationProcessor.getDirectoryService();
             final String hostname = Utils.getCannonicalHost(managementClient);
-final String secondaryTestAddress = NetworkUtils.canonize(Utils.getSecondaryTestAddress(managementClient, true));
+            final Map<String, String> map = new HashMap<String, String>();
             map.put("hostname", NetworkUtils.formatPossibleIpv6Address(hostname));
-            final String secondaryTestAddress = Utils.getSecondaryTestAddress(managementClient, true);
+final String secondaryTestAddress = NetworkUtils.canonize(Utils.getSecondaryTestAddress(managementClient, true));
             map.put("ldaphost", secondaryTestAddress);
             final String ldifContent = StrSubstitutor.replace(
                     IOUtils.toString(

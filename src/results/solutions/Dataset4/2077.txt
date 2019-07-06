@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.maps.tiled.renderers;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -85,9 +84,9 @@ public abstract class BatchTiledMapRenderer implements TiledMapRenderer, Disposa
 	
 	@Override
 	public void render (int[] layers) {
-MapLayer layer = map.getLayers().getLayer(layerIdx);
+		spriteBatch.begin();
 		for (int layerIdx : layers) {
-			MapLayer layer = map.getLayers().get(layerIdx);
+MapLayer layer = map.getLayers().getLayer(layerIdx);
 			if (layer.isVisible()) {
 				if (layer instanceof TiledMapTileLayer) {
 					renderTileLayer((TiledMapTileLayer) layer);

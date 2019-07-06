@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public abstract class SequencedActionsTest extends SQLListenerTestCase {
             javax.persistence.PessimisticLockException.class,
             javax.persistence.LockTimeoutException.class };
 
-private static long waitInMsec = -1;
+    protected static final int MinThreadWaitInMs = 10000;
 
-    private long waitInMsec = -1;
+private static long waitInMsec = -1;
     private String empTableName;
     private List<TestThread> threads = null;
 

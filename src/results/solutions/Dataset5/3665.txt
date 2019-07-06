@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2005 The Apache Software Foundation.
  * 
@@ -91,9 +90,9 @@ public class SavePropertyDialog extends JDialog implements ActionListener {
 			int x = (countMethods(methods) / 3) + 1;
 			log.info("grid panel is " + 3 + " by " + x);
 			JPanel checkPanel = new JPanel(new GridLayout(x, 3));
-if (name.startsWith("save") && methods[i].getParameterTypes().length == 0) {
+			for (int i = 0; i < methods.length; i++) {
 				String name = methods[i].getName();
-				if (name.startsWith("save")) {
+if (name.startsWith("save") && methods[i].getParameterTypes().length == 0) {
 					try {
 						name = name.substring(4);
 						JCheckBox check = new JCheckBox(JMeterUtils.getResString("save " + name), ((Boolean) methods[i]

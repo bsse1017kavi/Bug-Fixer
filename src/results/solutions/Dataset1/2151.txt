@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -974,9 +973,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
      * @param remote node to send notification to
      */
     private void sendReplicationNotification(InetAddress local, InetAddress remote)
-Message msg = new Message(local, StorageService.Verb.REPLICATION_FINISHED, new byte[0], Gossiper.instance.getVersion(remote));
+    {
         // notify the remote token
-        Message msg = new Message(local, StorageService.Verb.REPLICATION_FINISHED, new byte[0]);
+Message msg = new Message(local, StorageService.Verb.REPLICATION_FINISHED, new byte[0], Gossiper.instance.getVersion(remote));
         IFailureDetector failureDetector = FailureDetector.instance;
         while (failureDetector.isAlive(remote))
         {

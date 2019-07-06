@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.clustering.infinispan.subsystem.ModelKeys.DEFAULT_CACHE;
@@ -196,9 +195,9 @@ public class OperationTestCaseBase extends AbstractSubsystemTest {
     protected static PathAddress getCacheStoreAddress(String containerName, String cacheType, String cacheName) {
         return getCacheAddress(containerName, cacheType, cacheName).append(ModelKeys.STORE, ModelKeys.STORE_NAME);
     }
-return PathAddress.pathAddress(InfinispanSubsystemResourceDefinition.PATH).append(ModelKeys.CACHE_CONTAINER, containerName);
+
     protected static PathAddress getCacheContainerAddress(String containerName) {
-        return PathAddress.pathAddress(InfinispanExtension.SUBSYSTEM_PATH).append(ModelKeys.CACHE_CONTAINER, containerName);
+return PathAddress.pathAddress(InfinispanSubsystemResourceDefinition.PATH).append(ModelKeys.CACHE_CONTAINER, containerName);
     }
 
     protected static PathAddress getCacheAddress(String containerName, String cacheType, String cacheName) {

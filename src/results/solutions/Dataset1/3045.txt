@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryparser.surround.query;
 
 /*
@@ -47,9 +46,9 @@ public class SingleFieldTestDb {
       for (int j = 0; j < docs.length; j++) {
         Document d = new Document();
         d.add(new TextField(fieldName, docs[j], Field.Store.NO));
-writer.shutdown();
+        writer.addDocument(d);
       }
-      writer.close();
+writer.shutdown();
     } catch (java.io.IOException ioe) {
       throw new Error(ioe);
     }

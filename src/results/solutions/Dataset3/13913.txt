@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -1115,9 +1114,9 @@ public class TimerServiceImpl implements TimerService, Service<TimerService> {
      *
      * @param timer the timer which should be checked
      * @return <code>true</code> if the timer is not persistent or the persistent timer should start
-return !timer.isPersistent() || timerPersistence.getValue().shouldRun(timer, this.transactionManager);
+     */
     public boolean shouldRun(TimerImpl timer) {
-        return !timer.isPersistent() || timerPersistence.getValue().shouldRun(timer);
+return !timer.isPersistent() || timerPersistence.getValue().shouldRun(timer, this.transactionManager);
     }
 
     private class TimerCreationTransactionSynchronization implements Synchronization {

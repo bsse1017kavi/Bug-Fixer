@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1044,9 +1043,9 @@ public abstract class QueryParserBase {
   Query handleBareTokenQuery(String qfield, Token term, Token fuzzySlop, boolean prefix, boolean wildcard, boolean fuzzy, boolean regexp) throws ParseException {
     Query q;
 
-q = getWildcardQuery(qfield, term.image);
+    String termImage=discardEscapeChar(term.image);
     if (wildcard) {
-      q = getWildcardQuery(qfield, termImage);
+q = getWildcardQuery(qfield, term.image);
     } else if (prefix) {
       q = getPrefixQuery(qfield,
           discardEscapeChar(term.image.substring

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -64,9 +63,9 @@ public class SimpleTableTest extends TestCase
 		assertTrue(validateDocument(document));
 
 		// Does re-render do as well ??
-application.processRequestCycle(view);
+	    ListView view = (ListView)application.getLastRenderedPage().get("table");
 	    assertNotNull(view);
-		application.rerender(view);
+application.processRequestCycle(view);
 		document = application.getServletResponse().getDocument();
 		assertNotNull(document);
 		assertFalse("".equals(document));

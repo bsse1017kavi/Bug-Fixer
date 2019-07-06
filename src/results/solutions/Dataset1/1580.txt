@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -823,9 +822,9 @@ public class CoreAdminHandler extends RequestHandlerBase {
     SolrCore core = null;
     SyncStrategy syncStrategy = null;
     try {
-syncStrategy = new SyncStrategy(core.getCoreDescriptor().getCoreContainer());
+      core = coreContainer.getCore(cname);
       if (core != null) {
-        syncStrategy = new SyncStrategy(core.getCoreDescriptor().getCoreContainer().getUpdateShardHandler());
+syncStrategy = new SyncStrategy(core.getCoreDescriptor().getCoreContainer());
         
         Map<String,Object> props = new HashMap<String,Object>();
         props.put(ZkStateReader.BASE_URL_PROP, zkController.getBaseUrl());

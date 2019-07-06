@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -268,9 +267,9 @@ public class TransportShardBulkAction extends TransportShardReplicationOperation
                     // ignore, we are on backup
                 }
             }
-indexShard.bulk(new Engine.Bulk(ops).refresh(request.refresh()));
+        }
 
-        indexShard.bulk(new Engine.Bulk(ops));
+indexShard.bulk(new Engine.Bulk(ops).refresh(request.refresh()));
     }
 
     private void updateMappingOnMaster(final IndexRequest request) {

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -333,9 +332,9 @@ public boolean isReadOnly() {
 protected IBuffer openBuffer(IProgressMonitor pm) throws JavaModelException {
 	SourceMapper mapper = getSourceMapper();
 	if (mapper != null) {
-BufferManager bufManager = getBufferManager();
+		char[] contents = mapper.findSource(getType());
 		if (contents != null) {
-			IBufferManager bufManager = getBufferManager();
+BufferManager bufManager = getBufferManager();
 			IBuffer buf = bufManager.openBuffer(contents, pm, this, isReadOnly());
 			// do the source mapping
 			mapper.mapSource(getType(), contents);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -191,9 +190,9 @@ public class MessagingSubsystemAdd extends AbstractSubsystemAdd<MessagingSubsyst
             if (socketRef != null) {
                 final ServiceName socketName = SocketBinding.JBOSS_BINDING_NAME.append(socketRef);
                 serviceBuilder.addDependency(socketName, SocketBinding.class, hqservice.getSocketBindingInjector(socketRef));
-serviceBuilder.setInitialMode(ServiceController.Mode.ACTIVE);
+            }
         }
-        serviceBuilder.setInitialMode(ServiceController.Mode.IMMEDIATE);
+serviceBuilder.setInitialMode(ServiceController.Mode.ACTIVE);
     }
 
     @Override

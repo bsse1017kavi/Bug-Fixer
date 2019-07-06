@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -512,9 +511,9 @@ public class ExampleRunner implements Runnable {
             stdout.println("Removing server " + server.getServerName());
             ModelNode op = new ModelNode();
             op.get("operation").set("remove");
-address.add("server-config", server.getServerName());
+            ModelNode address = op.get("address");
             address.add("host", server.getHostName());
-            address.add("server-config", server.getServerGroupName());
+address.add("server-config", server.getServerName());
             boolean success = true;
             try {
                 executeForResult(OperationBuilder.Factory.create(op).build());

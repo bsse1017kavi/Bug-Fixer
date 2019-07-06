@@ -1,4 +1,3 @@
-
 /*
  *
  * Derby - Class org.apache.derbyTesting.junit.NetworkServerTestSetup
@@ -248,9 +247,9 @@ final public class NetworkServerTestSetup extends BaseTestSetup {
     {
         ArrayList       al = new ArrayList();
         String              classpath = BaseTestCase.getSystemProperty( "java.class.path" );
-al.add( BaseTestCase.getJavaExecutableName() );
+        boolean         skipHostName = false;
 
-        al.add( "java" );
+al.add( BaseTestCase.getJavaExecutableName() );
         al.add( "-classpath" );
         al.add( classpath );
         

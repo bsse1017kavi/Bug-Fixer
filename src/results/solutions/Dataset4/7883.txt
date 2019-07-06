@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -501,9 +500,9 @@ public class MetaDataMappingService extends AbstractComponent {
                         DocumentMapper existingMapper = indexService.mapperService().documentMapper(request.type());
                         if (MapperService.DEFAULT_MAPPING.equals(request.type())) {
                             // _default_ types do not go through merging, but we do test the new settings. Also don't apply the old default
-newMapper = indexService.mapperService().parse(request.type(), new CompressedString(request.source()));
+                            newMapper = indexService.mapperService().parse(request.type(), new CompressedString(request.source()), false);
                         } else {
-                            newMapper = indexService.mapperService().parse(request.type(), new CompressedString(request.source()), existingMapper == null);
+newMapper = indexService.mapperService().parse(request.type(), new CompressedString(request.source()));
                             if (existingMapper != null) {
                                 // first, simulate
                                 DocumentMapper.MergeResult mergeResult = existingMapper.merge(newMapper, mergeFlags().simulate(true));

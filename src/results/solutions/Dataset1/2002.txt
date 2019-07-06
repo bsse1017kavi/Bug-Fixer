@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -397,9 +396,9 @@ public class TestTermsEnum extends LuceneTestCase {
         }
         loc = Arrays.binarySearch(validTerms, t, BytesRef.getUTF8SortedAsUTF16Comparator());
       } else {
-t = BytesRef.deepCopyOf(validTerms[loc]);
+        // pick valid term
         loc = random.nextInt(validTerms.length);
-        t = new BytesRef(validTerms[loc]);
+t = BytesRef.deepCopyOf(validTerms[loc]);
         if (VERBOSE) {
           System.out.println("\nTEST: valid term=" + t.utf8ToString());
         }

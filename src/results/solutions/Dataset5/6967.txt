@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation
  * All rights reserved. 
@@ -209,9 +208,9 @@ public class WeavingAdaptor {
      * @exception IOException weave failed
 	 */
 	public byte[] weaveClass (String name, byte[] bytes) throws IOException {
-delegateForCurrentClass=null;
+		if (enabled) {
 			try {
-				delegateForCurrentClass=null; // TODO will need stack if going recursive...
+delegateForCurrentClass=null;
 		    	if (trace.isTraceEnabled()) trace.enter("weaveClass",this,new Object[] {name,bytes});
 				if (shouldWeave(name, bytes)) {
 					info("weaving '" + name + "'");

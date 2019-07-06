@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -758,9 +757,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 											FactoryBean.class.isAssignableFrom(method.getReturnType())) {
 										objectType.value = GenericTypeResolver.resolveReturnTypeArgument(method, FactoryBean.class);
 									}
-if (objectType.value != null && !Object.class.equals(objectType.value)) {
+								}
 							});
-					if (objectType.value != null) {
+if (objectType.value != null && !Object.class.equals(objectType.value)) {
 						return objectType.value;
 					}
 				}

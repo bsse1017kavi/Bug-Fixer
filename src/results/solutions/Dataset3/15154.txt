@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class ModClusterStopContext implements OperationStepHandler, DescriptionP
     }
 
     @Override
-if (context.getProcessType().isServer()) {
+    public void execute(OperationContext context, ModelNode operation)
             throws OperationFailedException {
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.getProcessType().isServer()) {
             context.addStep(new OperationStepHandler() {
                 @Override
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

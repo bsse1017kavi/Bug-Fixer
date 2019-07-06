@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.codegen;
 
 /*
@@ -1350,9 +1349,9 @@ final public void fsub() {
  */
 public void generateClassLiteralAccessForType(TypeBinding accessedType, FieldBinding syntheticFieldBinding) {
 	Label endLabel;
-if (accessedType.isBaseType() && accessedType != NullBinding) {
+	ExceptionLabel anyExceptionHandler;
 	int saveStackSize;
-	if (accessedType.isBaseType()) {
+if (accessedType.isBaseType() && accessedType != NullBinding) {
 		this.getTYPE(accessedType.id);
 		return;
 	}

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -164,9 +163,9 @@ public class JasperMangler implements Mangler{
     }
     
     public String getJspFilePath() {
-jspFilePath=FileUtil.safePath( docBase, jspFile, false);
+        // lazy evaluation of full path
         if( jspFilePath == null )
-            jspFilePath=FileUtil.safePath( docBase, jspFile);
+jspFilePath=FileUtil.safePath( docBase, jspFile, false);
         return jspFilePath;
     }
 

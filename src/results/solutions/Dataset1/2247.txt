@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -133,9 +132,9 @@ public class SnapShooter {
       }
     }
     Collections.sort(dirs);
-if( i++ > numberToKeep-1 ) {
+    int i=1;
     for(OldBackupDirectory dir : dirs) {
-      if( i > numberToKeep-1 ) {
+if( i++ > numberToKeep-1 ) {
         SnapPuller.delTree(dir.dir);
       }
     }   

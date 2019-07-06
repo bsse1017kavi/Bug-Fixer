@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -39,9 +38,9 @@ public class JaxrSubsystemTestCase extends AbstractSubsystemBaseTest {
 
     @Override
     protected String getSubsystemXml() throws IOException {
-"<properties/>" +
+        return "<subsystem xmlns=\"urn:jboss:domain:jaxr:1.0\">" +
         "<connection-factory jndi-name=\"java:jboss/jaxr/ConnectionFactory\"/>" +
-        "<juddi-server publish-url=\"http://localhost:8080/juddi/publish\" query-url=\"http://localhost:8080/juddi/query\"/>" +
+"<properties/>" +
         "</subsystem>";
     }
 

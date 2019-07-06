@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -69,9 +68,9 @@ public class AntCall extends AntBase {
      *
      * @exception ExecutionException if the build fails
      */
-getAntContext().getBaseDir().getAbsolutePath());
+    public void execute() throws ExecutionException {
         setProperty(MagicProperties.BASEDIR, 
-            getContext().getBaseDir().getAbsolutePath());
+getAntContext().getBaseDir().getAbsolutePath());
         ExecService execService
              = (ExecService)getCoreService(ExecService.class);
 

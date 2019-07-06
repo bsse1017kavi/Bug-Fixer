@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -147,9 +146,9 @@ public class QueueDefinition extends SimpleResourceDefinition {
     @Override
     public void registerOperations(ManagementResourceRegistration registry) {
         super.registerOperations(registry);
-QueueControlHandler.INSTANCE.registerOperations(registry, getResourceDescriptionResolver());
+
         if (registerRuntimeOnly) {
-            QueueControlHandler.INSTANCE.registerOperations(registry);
+QueueControlHandler.INSTANCE.registerOperations(registry, getResourceDescriptionResolver());
         }
     }
 

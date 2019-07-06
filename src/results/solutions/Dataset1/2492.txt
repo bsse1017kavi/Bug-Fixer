@@ -1,4 +1,3 @@
-
 /*
  *
  * Derby - Class BlobClob4BlobTest
@@ -2633,9 +2632,9 @@ public class BlobClob4BlobTest extends BaseJDBCTestCase {
             }
         } catch (java.io.IOException ioe) {
             assertTrue("FAIL - only embedded should be this exception",
-"has been closed.", ioe.getMessage());
+                    usingEmbedded());
             assertEquals("FAIL - wrong exception", "ERROR 40XD0: Container " +
-                    "has been closed", ioe.getMessage());
+"has been closed.", ioe.getMessage());
         }
 
         rollback();

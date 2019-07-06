@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public class MapperQueryParser extends QueryParser {
         return super.newTermQuery(term);
     }
 
-return Queries.newMatchAllQuery();
+    @Override
     protected Query newMatchAllDocsQuery() {
-        return Queries.MATCH_ALL_QUERY;
+return Queries.newMatchAllQuery();
     }
 
     @Override

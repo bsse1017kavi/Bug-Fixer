@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -139,9 +138,9 @@ public class SortParseElement implements SearchParseElement {
                 sortFields.add(SORT_DOC);
             }
         } else {
-throw new SearchParseException(context, "No mapping found for [" + fieldName + "] in order to sort on");
+            FieldMapper fieldMapper = context.smartNameFieldMapper(fieldName);
             if (fieldMapper == null) {
-                throw new SearchParseException(context, "No mapping found for [" + fieldName + "]");
+throw new SearchParseException(context, "No mapping found for [" + fieldName + "] in order to sort on");
             }
             sortFields.add(new SortField(fieldMapper.names().indexName(), fieldMapper.fieldDataType().newFieldComparatorSource(context.fieldDataCache(), missing), reverse));
         }

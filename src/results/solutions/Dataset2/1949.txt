@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -123,9 +122,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream, boolean
 			} else {
 				codeStream.generateConstant(binding.constant, implicitConversion);
 			}
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+		}
 	}
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 public void generateCompoundAssignment(BlockScope currentScope, CodeStream codeStream, Expression expression, int operator, int assignmentImplicitConversion, boolean valueRequired) {
 	boolean isStatic;

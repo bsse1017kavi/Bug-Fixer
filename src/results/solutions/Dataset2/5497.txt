@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1334,9 +1333,9 @@ public abstract class PartStack extends LayoutPart implements ILayoutContainer {
 					ViewStackTrimToolBar vstb = fvm
 							.getViewStackTrimToolbar(children[i]
 									.getID());
-else if (children[i] instanceof EditorSashContainer && !(this instanceof EditorStack)) {
+					vstb.setRestoreOnUnzoom(true);
 				}
-				else if (children[i] instanceof EditorSashContainer) {
+else if (children[i] instanceof EditorSashContainer && !(this instanceof EditorStack)) {
 					perspective.setEditorAreaState(IStackPresentationSite.STATE_MINIMIZED);
 					perspective.setEditorAreaRestoreOnUnzoom(true);
 				}

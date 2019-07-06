@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class TypeFilterParser implements FilterParser {
 
         Filter filter;
         //LUCENE 4 UPGRADE document mapper should use bytesref aswell? 
-filter = new TermFilter(new Term(TypeFieldMapper.NAME, type));
+        DocumentMapper documentMapper = parseContext.mapperService().documentMapper(type.utf8ToString());
         if (documentMapper == null) {
-            filter = new TermFilter(new Term(TypeFieldMapper.TERM_FACTORY.field(), type));
+filter = new TermFilter(new Term(TypeFieldMapper.NAME, type));
         } else {
             filter = documentMapper.typeFilter();
         }

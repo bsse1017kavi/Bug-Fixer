@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util;
 /**
  * Copyright 2009 The Apache Software Foundation
@@ -273,9 +272,9 @@ public final class FieldCacheSanityChecker {
     for (int i = 0; i < all.size(); i++) {
       Object obj = all.get(i);
       if (obj instanceof IndexReader) {
-all.add(subs[j].getCoreCacheKey());
+        IndexReader[] subs = ((IndexReader)obj).getSequentialSubReaders();
         for (int j = 0; (null != subs) && (j < subs.length); j++) {
-          all.add(subs[j].getFieldCacheKey());
+all.add(subs[j].getCoreCacheKey());
         }
       }
       

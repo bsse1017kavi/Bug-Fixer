@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -209,9 +208,9 @@ public class InterTypeConstructorDeclaration extends InterTypeDeclaration {
 		ResolvedMember syntheticInterMember =
 			AjcMemberMaker.interConstructor(declaringTypeX,  signature, aspectType);
 		
-setMunger(myMunger);
+		NewConstructorTypeMunger myMunger = 
 			new NewConstructorTypeMunger(signature, syntheticInterMember, null, null);
-		this.munger = myMunger;
+setMunger(myMunger);
 		
 		this.selector = binding.selector =
 			NameMangler.postIntroducedConstructor(

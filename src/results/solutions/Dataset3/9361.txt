@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -78,9 +77,9 @@ abstract class AbstractFileTask extends AbstractPatchingTask<MiscContentItem> {
 
     @Override
     byte[] apply(PatchingTaskContext context, PatchContentLoader loader) throws IOException {
-if(! target.mkdirs() && ! target.isDirectory()) {
+        final MiscContentItem item = contentItem;
         if(item.isDirectory()) {
-            if(! target.mkdir() && ! target.isDirectory()) {
+if(! target.mkdirs() && ! target.isDirectory()) {
                 throw PatchMessages.MESSAGES.cannotCreateDirectory(target.getAbsolutePath());
             }
             return NO_CONTENT;

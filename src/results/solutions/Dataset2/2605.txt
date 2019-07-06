@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -65,9 +64,9 @@ public class ClasspathValidation {
 		// update resolved classpath problems
 		this.project.flushClasspathProblemMarkers(false/*cycle*/, false/*format*/);
 
-status = ClasspathEntry.validateClasspathEntry(this.project, rawClasspath[i], false/*src attach*/, false /*not referred by a container*/);
+		if (rawClasspath != JavaProject.INVALID_CLASSPATH && outputLocation != null) {
 		 	for (int i = 0; i < rawClasspath.length; i++) {
-				status = ClasspathEntry.validateClasspathEntry(this.project, rawClasspath[i], false/*src attach*/, true /*recurse in container*/);
+status = ClasspathEntry.validateClasspathEntry(this.project, rawClasspath[i], false/*src attach*/, false /*not referred by a container*/);
 				if (!status.isOK()) {
 					if (status.getCode() == IJavaModelStatusConstants.INVALID_CLASSPATH && ((ClasspathEntry) rawClasspath[i]).isOptional())
 						continue; // ignore this entry

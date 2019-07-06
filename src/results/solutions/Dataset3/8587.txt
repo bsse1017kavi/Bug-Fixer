@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -210,9 +209,9 @@ public class ModuleLoadingResourceDefinition extends SimpleResourceDefinition {
     private static List<String> findResourcePaths(String moduleName) throws ModuleLoadException, NoSuchFieldException, IllegalAccessException {
 
         // TODO get a formal API from jboss-modules to replace this reflection
-Module module = Module.getModuleFromCallerModuleLoader(ModuleIdentifier.fromString(moduleName));
+
         List<String> result = new ArrayList<String>();
-        Module module = Module.getModuleFromCallerModuleLoader(ModuleIdentifier.create(moduleName));
+Module module = Module.getModuleFromCallerModuleLoader(ModuleIdentifier.fromString(moduleName));
         ModuleClassLoader mcl = module.getClassLoader();
         Field pathsField = ModuleClassLoader.class.getDeclaredField("paths");
         Field sourceListField = null;

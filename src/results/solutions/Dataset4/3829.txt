@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,9 +57,9 @@ public abstract class SnappyCompressedIndexInput extends CompressedIndexInput<Sn
     protected void doClose() throws IOException {
         // nothing to do here
     }
-public IndexInput clone() {
+
     @Override
-    public Object clone() {
+public IndexInput clone() {
         SnappyCompressedIndexInput cloned = (SnappyCompressedIndexInput) super.clone();
         cloned.inputBuffer = new byte[inputBuffer.length];
         return cloned;

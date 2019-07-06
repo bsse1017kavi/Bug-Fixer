@@ -1,4 +1,3 @@
-
 /*****************************************************************************
  *                                                                           *
  *  This file is part of the BeanShell Java Scripting distribution.          *
@@ -48,8 +47,8 @@ class BSHReturnStatement extends SimpleNode implements ParserConstants
 		if(jjtGetNumChildren() > 0)
 			value = ((SimpleNode)jjtGetChild(0)).eval(callstack, interpreter);
 		else
-return new ReturnControl( kind, value, this );
+			value = Primitive.VOID;
 
-		return new ReturnControl( kind, value );
+return new ReturnControl( kind, value, this );
 	}
 }

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -153,9 +152,9 @@ public class ReloadInterceptor extends  BaseInterceptor
     protected void  loaderHook( DependManager dm, Context context ) {
 	// ReloadInterceptor must be configured _after_ LoaderInterceptor
 	ClassLoader cl=context.getClassLoader();
-context.getAttribute( Context.ATTRIB_PROTECTION_DOMAIN), debug);
+	
 	ClassLoader loader=DependClassLoader.getDependClassLoader( dm, cl,
-		     context.getAttribute( Context.ATTRIB_PROTECTION_DOMAIN));
+context.getAttribute( Context.ATTRIB_PROTECTION_DOMAIN), debug);
 
 	context.setClassLoader(loader);
 	context.setAttribute( "org.apache.tomcat.classloader", loader);

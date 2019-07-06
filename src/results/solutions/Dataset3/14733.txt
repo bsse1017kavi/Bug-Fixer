@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -142,9 +141,9 @@ class ManagedServer {
         // Setup the proxy controller
         final PathElement serverPath = PathElement.pathElement(RUNNING_SERVER, serverName);
         final PathAddress address = PathAddress.EMPTY_ADDRESS.append(PathElement.pathElement(HOST, hostControllerName), serverPath);
-Transformers.Factory.create(transformationTarget), address, ProxyOperationAddressTranslator.SERVER, true);
+        this.protocolClient = new ManagedServerProxy(this);
         this.proxyController = TransformingProxyController.Factory.create(protocolClient,
-                Transformers.Factory.create(transformationTarget), address, ProxyOperationAddressTranslator.SERVER);
+Transformers.Factory.create(transformationTarget), address, ProxyOperationAddressTranslator.SERVER, true);
     }
 
     /**

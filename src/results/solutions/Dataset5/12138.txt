@@ -1,4 +1,3 @@
-
 /*
  * $Id: AutoLinkResolver.java 5861 2006-05-25 20:55:07 +0000 (Thu, 25 May 2006)
  * eelco12 $ $Revision$ $Date: 2006-05-25 20:55:07 +0000 (Thu, 25 May
@@ -197,9 +196,9 @@ public final class AutoLinkResolver implements IComponentResolver
 			// get the query string
 			int queryStringPos = reference.indexOf("?");
 			if (queryStringPos != -1)
-pageParameters = new PageParameters(queryString, "&");
+			{
 				final String queryString = reference.substring(queryStringPos + 1);
-				pageParameters = new PageParameters(new ValueMap(queryString, "&"));
+pageParameters = new PageParameters(queryString, "&");
 				infoPath = reference.substring(0, queryStringPos);
 			}
 			else

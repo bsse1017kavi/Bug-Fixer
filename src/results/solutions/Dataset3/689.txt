@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class BasicDoubleDeploymentFail16_1TestCase extends ContainerResourceMgmt
                     new ResourceAdapterSubsystemParser());
 
             final ModelNode result = executeOperation(operationListToCompositeOperation(operations),false);
-Assert.assertTrue(failureDescription.startsWith("JBAS014803: Duplicate resource"));
+            Assert.assertTrue(!Operations.isSuccessfulOutcome(result));
             final String failureDescription = result.get("result").get("step-1").get("failure-description").asString();
-            Assert.assertTrue(failureDescription.startsWith("WFLYCTL0212: Duplicate resource"));
+Assert.assertTrue(failureDescription.startsWith("JBAS014803: Duplicate resource"));
         }
 
         @Override

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -74,9 +73,9 @@ final class SegmentMerger {
   /**
    * Add an IndexReader to the collection of readers that are to be merged
    * @param reader
-for (final AtomicReaderContext ctx : reader.leaves()) {
+   */
   final void add(IndexReader reader) {
-    for (final AtomicReaderContext ctx : reader.getTopReaderContext().leaves()) {
+for (final AtomicReaderContext ctx : reader.leaves()) {
       final AtomicReader r = ctx.reader();
       mergeState.readers.add(r);
     }

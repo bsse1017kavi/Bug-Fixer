@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryParser.core.builders;
 
 /**
@@ -156,9 +155,9 @@ public class QueryTreeBuilder implements QueryBuilder {
 
       do {
         builder = getQueryBuilder(clazz);
-Class<?>[] classes = clazz.getInterfaces();
+
         if (builder == null) {
-          Class<?>[] classes = node.getClass().getInterfaces();
+Class<?>[] classes = clazz.getInterfaces();
 
           for (Class<?> actualClass : classes) {
             builder = getQueryBuilder(actualClass);

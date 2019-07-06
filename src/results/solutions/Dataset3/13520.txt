@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -76,9 +75,9 @@ public class CSVPrinterTest {
         printer.printRecord("a", "b\nc");
         assertEquals("a,\"b\nc\"" + lineSeparator, sw.toString());
     }
-public void testQuoteAll() throws IOException {
+
     @Test
-    public void testPrinterQuoteAll() throws IOException {
+public void testQuoteAll() throws IOException {
         final StringWriter sw = new StringWriter();
         final CSVPrinter printer = new CSVPrinter(sw, CSVFormat.DEFAULT.withQuotePolicy(Quote.ALL));
         printer.printRecord("a", "b\nc", "d");

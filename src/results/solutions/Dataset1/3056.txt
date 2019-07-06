@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -270,9 +269,9 @@ public class TestBufferedIndexInput extends LuceneTestCase {
         dir.tweakBufferSizes();
         assertEquals(1, hits.length);
         hits = searcher.search(new TermQuery(aaa), null, 1000).scoreDocs;
-writer.shutdown();
+        dir.tweakBufferSizes();
         assertEquals(35, hits.length);
-        writer.close();
+writer.shutdown();
         reader.close();
       } finally {
         TestUtil.rm(indexDir);

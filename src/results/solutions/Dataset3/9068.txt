@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP_ADDR;
@@ -112,9 +111,9 @@ public abstract class CacheAdd extends AbstractAddStepHandler {
                 return parser.parse(input);
             } finally {
                 try {
-log.warn(e.getLocalizedMessage(), e);
+                    input.close();
                 } catch (IOException e) {
-                    log.warn(e.getMessage(), e);
+log.warn(e.getLocalizedMessage(), e);
                 }
             }
         } catch (IOException e) {

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -176,9 +175,9 @@ public abstract class AbstractMgmtTestBase {
 
         ModelNode dsNode = new ModelNode();
         dsNode.get(childType).set(result);
-XMLExtendedStreamWriter writer = XMLExtendedStreamWriterFactory.create(XMLOutputFactory.newInstance()
+
         StringWriter strWriter = new StringWriter();
-        XMLExtendedStreamWriter writer = XMLExtendedStreamWriterFactory.create(XMLOutputFactory.newFactory()
+XMLExtendedStreamWriter writer = XMLExtendedStreamWriterFactory.create(XMLOutputFactory.newInstance()
                 .createXMLStreamWriter(strWriter));
         parser.writeContent(writer, new SubsystemMarshallingContext(dsNode, writer));
         writer.flush();

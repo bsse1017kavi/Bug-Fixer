@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -46,9 +45,9 @@ public class JaxrsJacksonProviderTestCase {
       @Deployment
     public static Archive<?> deploy() {
         WebArchive war = ShrinkWrap.create(WebArchive.class, "jaxrsnoap.war");
-war.addAsWebInfResource(WebXml.get("<servlet-mapping>\n" +
+        war.addPackage(HttpRequest.class.getPackage());
         war.addPackage(JaxrsJacksonProviderTestCase.class.getPackage());
-        war.addAsWebResource(WebXml.get("<servlet-mapping>\n" +
+war.addAsWebInfResource(WebXml.get("<servlet-mapping>\n" +
                 "        <servlet-name>javax.ws.rs.core.Application</servlet-name>\n" +
                 "        <url-pattern>/myjaxrs/*</url-pattern>\n" +
                 "    </servlet-mapping>\n" +

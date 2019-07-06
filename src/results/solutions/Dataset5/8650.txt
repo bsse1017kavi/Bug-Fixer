@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -53,9 +52,9 @@ public abstract class ResolvedTypeMunger {
     public boolean matches(ResolvedTypeX matchType, ResolvedTypeX aspectType) {
     	ResolvedTypeX onType = matchType.getWorld().resolve(signature.getDeclaringType());
     	//System.err.println("matching: " + this + " to " + matchType + " onType = " + onType);
-if (onType.getWeaverState() == null) {
+   		if (matchType.equals(onType)) { 
    			if (!onType.isExposedToWeaver()) {
-   				if (onType.getWeaverState() != null) {
+if (onType.getWeaverState() == null) {
 	   				if (matchType.getWorld().getLint().typeNotExposedToWeaver.isEnabled()) {
 	   					matchType.getWorld().getLint().typeNotExposedToWeaver.signal(
 	   						matchType.getName(), signature.getSourceLocation());

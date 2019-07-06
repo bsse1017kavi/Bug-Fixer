@@ -1,4 +1,3 @@
-
 package org.apache.solr.search;
 
 /*
@@ -151,9 +150,9 @@ public class SimpleQParserPlugin extends QParserPlugin {
     } else {
       // Parse the specified enabled operations to be used by the query.
       String[] operations = opParam.split(",");
-Integer enabledOp = OPERATORS.get(operation.trim().toUpperCase(Locale.ROOT));
+
       for (String operation : operations) {
-        Integer enabledOp = OPERATORS.get(operation.trim().toUpperCase(Locale.getDefault()));
+Integer enabledOp = OPERATORS.get(operation.trim().toUpperCase(Locale.ROOT));
 
         if (enabledOp != null) {
           enabledOps |= enabledOp;

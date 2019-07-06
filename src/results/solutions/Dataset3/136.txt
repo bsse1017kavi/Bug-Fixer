@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public final class ServerProfileUpdate<E extends AbstractSubsystemElement<E>, R>
             throw new IllegalArgumentException("No such subsystem '" + namespaceUri + "' declared on server instance");
         }
         subsystemUpdate.applyUpdate(subsystemElement);
-public <P> void applyUpdate(final UpdateContext updateContext, final UpdateResultHandler<? super R, P> handler, final P param) {
+    }
 
-    protected <P> void applyUpdate(final UpdateContext updateContext, final UpdateResultHandler<? super R, P> handler, final P param) {
+public <P> void applyUpdate(final UpdateContext updateContext, final UpdateResultHandler<? super R, P> handler, final P param) {
         subsystemUpdate.applyUpdate(updateContext, handler, param);
     }
 

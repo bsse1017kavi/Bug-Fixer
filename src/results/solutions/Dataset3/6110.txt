@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public class LaplaceDistribution extends AbstractRealDistribution {
     @Override
     public double inverseCumulativeProbability(double p) throws OutOfRangeException {
         if (p < 0.0 || p > 1.0) {
-return Double.NEGATIVE_INFINITY;
+            throw new OutOfRangeException(p, 0.0, 1.0);
         } else if (p == 0) {
-            return 0.0;
+return Double.NEGATIVE_INFINITY;
         } else if (p == 1) {
             return Double.POSITIVE_INFINITY;
         }

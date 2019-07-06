@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -70,9 +69,9 @@ public class RestPutIndexTemplateAction extends BaseRestHandler {
             putRequest.cause(request.param("cause", ""));
             putRequest.timeout(request.paramAsTime("timeout", timeValueSeconds(10)));
 
-.createParser(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength()).mapOrderedAndClose();
+            // parse the parameters
             Map<String, Object> source = XContentFactory.xContent(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength())
-                    .createParser(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength()).mapAndClose();
+.createParser(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength()).mapOrderedAndClose();
 
             if (source.containsKey("template")) {
                 putRequest.template(source.get("template").toString());

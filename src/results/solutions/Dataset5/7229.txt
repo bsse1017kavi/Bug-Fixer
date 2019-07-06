@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -1348,9 +1347,9 @@ public class DirectoryScanner
      * @since Ant 1.5.2
      */
     public Resource getResource(String name) {
-f.isDirectory(), f.length());
+        File f = FILE_UTILS.resolveFile(basedir, name);
         return new Resource(name, f.exists(), f.lastModified(),
-                            f.isDirectory());
+f.isDirectory(), f.length());
     }
 
     /**

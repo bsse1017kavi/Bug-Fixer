@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -160,9 +159,9 @@ public abstract class AbstractSimpleEngineTests {
     protected MergePolicyProvider createMergePolicy() {
         return new LogByteSizeMergePolicyProvider(store, new IndexSettingsService(new Index("test"), EMPTY_SETTINGS));
     }
-return new SerialMergeSchedulerProvider(shardId, EMPTY_SETTINGS, threadPool);
+
     protected MergeSchedulerProvider createMergeScheduler() {
-        return new SerialMergeSchedulerProvider(shardId, EMPTY_SETTINGS);
+return new SerialMergeSchedulerProvider(shardId, EMPTY_SETTINGS, threadPool);
     }
 
     protected abstract Engine createEngine(Store store, Translog translog);

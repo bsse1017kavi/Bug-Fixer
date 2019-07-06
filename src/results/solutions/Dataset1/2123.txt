@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -95,9 +94,9 @@ public class CommitLogSegment
                 {
                     logger.error("Attempted to write commit log entry for unrecognized column family: " + columnFamily.id());
                 }
-Integer id = cfm.cfId;
+                else
                 {
-                    int id = cfm.cfId;
+Integer id = cfm.cfId;
                     if (!header.isDirty(id))
                     {
                         header.turnOn(id, logWriter.getFilePointer());

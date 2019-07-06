@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -60,9 +59,9 @@ public class ClassLoaderObjectInputStream extends ObjectInputStream {
      * @param objectStreamClass  descriptor of the class
      * @return the Class object described by the ObjectStreamClass
      * @throws IOException in case of an I/O error
-protected Class<?> resolveClass(ObjectStreamClass objectStreamClass)
+     * @throws ClassNotFoundException if the Class cannot be found
      */
-    protected Class resolveClass(ObjectStreamClass objectStreamClass)
+protected Class<?> resolveClass(ObjectStreamClass objectStreamClass)
             throws IOException, ClassNotFoundException {
         
         Class clazz = Class.forName(objectStreamClass.getName(), false, classLoader);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -3580,9 +3579,9 @@ Rectangle getBoundsAtOffset(int offset) {
 	} else {
 		bounds = new Rectangle (0, 0, 0, renderer.getLineHeight());
 	}
-if (offset == lineEnd) {
+	if (offset == caretOffset) {
 		int lineEnd = lineOffset + line.length();
-		if (offset == lineEnd && caretAlignment == PREVIOUS_OFFSET_TRAILING) {
+if (offset == lineEnd) {
 			bounds.width += getCaretWidth();
 		}
 	}

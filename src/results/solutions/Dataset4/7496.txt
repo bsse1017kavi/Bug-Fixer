@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -30,9 +29,9 @@ import java.io.IOException;
 /**
  * A Collector that can collect data in separate buckets.
  */
-public final static BucketCollector NO_OP_COLLECTOR = new BucketCollector() {
+public abstract class BucketCollector implements ReaderContextAware {
 
-    public static BucketCollector NO_OP_COLLECTOR = new BucketCollector() {
+public final static BucketCollector NO_OP_COLLECTOR = new BucketCollector() {
 
         @Override
         public void collect(int docId, long bucketOrdinal) throws IOException {

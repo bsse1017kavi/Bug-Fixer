@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -75,9 +74,9 @@ public class FetchPhase implements SearchPhase {
         for (int index = 0; index < context.docIdsToLoadSize(); index++) {
             int docId = context.docIdsToLoad()[context.docIdsToLoadFrom() + index];
             Document doc = loadDocument(context, fieldSelector, docId);
-DocumentMapper documentMapper = context.mapperService().documentMapper(uid.type());
+            Uid uid = extractUid(context, doc);
 
-            DocumentMapper documentMapper = context.mapperService().type(uid.type());
+DocumentMapper documentMapper = context.mapperService().documentMapper(uid.type());
 
             byte[] source = extractSource(doc, documentMapper);
 

@@ -1,4 +1,3 @@
-
 package storm.kafka.trident;
 
 import backtype.storm.metric.api.IMetric;
@@ -31,9 +30,9 @@ public class KafkaUtils {
 	public static long getOffset(SimpleConsumer consumer, String topic, int partition, long startOffsetTime) {
 		TopicAndPartition topicAndPartition = new TopicAndPartition(topic, partition);
 		Map<TopicAndPartition, PartitionOffsetRequestInfo> requestInfo = new HashMap<TopicAndPartition, PartitionOffsetRequestInfo>();
-requestInfo, kafka.api.OffsetRequest.CurrentVersion(), consumer.clientId());
+		requestInfo.put(topicAndPartition, new PartitionOffsetRequestInfo(startOffsetTime, 1));
 		OffsetRequest request = new OffsetRequest(
-				requestInfo, kafka.api.OffsetRequest.CurrentVersion(), kafka.api.OffsetRequest.DefaultClientId());
+requestInfo, kafka.api.OffsetRequest.CurrentVersion(), consumer.clientId());
 
 		long[] offsets = consumer.getOffsetsBefore(request).offsets(topic, partition);
 		if ( offsets.length > 0) {

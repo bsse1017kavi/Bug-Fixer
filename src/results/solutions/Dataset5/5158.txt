@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -463,9 +462,9 @@ public class DTDGrammar
             DatatypeValidatorFactoryImpl.getDatatypeRegistry().getDatatypeValidator(attTypeString);
         // REVISIT: Don't forget the enumeration
         fAttributeDecl.defaultType = attDefaultType;
-int elementDeclIndex = getElementDeclIndex(elementDecl, -1);
+        fAttributeDecl.defaultValue = fStringPool.toString(attDefaultValue);
 
-        int elementDeclIndex = getElementDeclIndex(elementDecl.localpart, -1);
+int elementDeclIndex = getElementDeclIndex(elementDecl, -1);
         setAttributeDecl(elementDeclIndex, attributeDeclIndex, fAttributeDecl);
 
         int chunk = attributeDeclIndex >> CHUNK_SHIFT;

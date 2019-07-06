@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -224,9 +223,9 @@ public class RemoteDomainConnectionService implements MasterDomainControllerClie
     @Override
     public synchronized void unregister() {
         try {
-log.errorf(e, "Error unregistering from master");
+            new UnregisterModelControllerRequest().executeForResult(new ManagementRequestConnectionStrategy.ExistingConnectionStrategy(connection));
         } catch (Exception e) {
-            throw new RuntimeException(e);
+log.errorf(e, "Error unregistering from master");
         }
         finally {
             managementCommunicationService.getValue().removeHandler(txOperationHandler);

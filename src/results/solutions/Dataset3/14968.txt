@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -176,9 +175,9 @@ class WebVirtualHostAdd extends AbstractAddStepHandler {
             ModelNode resolvedParent = resolveExpressions(context, prop.getValue(), WebReWriteDefinition.ATTRIBUTES);
             result.get(prop.getName()).set(resolvedParent);
             if (prop.getValue().hasDefined(Constants.CONDITION)) {
-result.get(prop.getName()).get(Constants.CONDITION, conditionProp.getName()).set(resolvedCondition);
+                for (Property conditionProp : prop.getValue().get(Constants.CONDITION).asPropertyList()) {
                     ModelNode resolvedCondition = resolveExpressions(context, conditionProp.getValue(), WebReWriteConditionDefinition.ATTRIBUTES);
-                    resolvedParent.get(Constants.CONDITION, conditionProp.getName()).set(resolvedCondition);
+result.get(prop.getName()).get(Constants.CONDITION, conditionProp.getName()).set(resolvedCondition);
                 }
             }
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class PatchConflictsUnitTestCase extends AbstractPatchingTest {
         createModule0(base, "org.jboss.test", randomString());
 
         final PatchingTestStepBuilder oneOff1 = builder.createStepBuilder();
-.oneOffPatchElement("base-oo1", BASE, false)
+        oneOff1.setPatchId("one-off-1")
                 .oneOffPatchIdentity(PRODUCT_VERSION)
-                .oneOffPatchElement("base:oo1", BASE, false)
+.oneOffPatchElement("base-oo1", BASE, false)
                 .updateModuleWithRandomContent("org.jboss.test", NO_CONTENT, moduleHash)
         ;
         try {

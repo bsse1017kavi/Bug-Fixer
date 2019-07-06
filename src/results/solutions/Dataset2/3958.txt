@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -443,9 +442,9 @@ public final boolean checkCastTypesCompatibility(Scope scope, TypeBinding castTy
 
 					case Binding.TYPE_PARAMETER :
 						// ( TYPE_PARAMETER ) CLASS
-checkUnsafeCast(scope, castType, expressionType, null, true);
+						match = expressionType.findSuperTypeOriginatingFrom(castType);
 						if (match == null) {
-							checkUnsafeCast(scope, castType, expressionType, match, true);
+checkUnsafeCast(scope, castType, expressionType, null, true);
 						}
 						// recurse on the type variable upper bound
 						return checkCastTypesCompatibility(scope, ((TypeVariableBinding)castType).upperBound(), expressionType, expression);

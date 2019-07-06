@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public final class JDBCPostCreateEntityCommand {
                 if (relatedId != null) {
                     try {
                         if (cmrField.isForeignKeyValid(relatedId)) {
-relatedCMRField.addRelatedPKWaitingForMyPK(relatedId, ctx.getPrimaryKeyUnchecked());
+                            cmrField.createRelationLinks(ctx, relatedId);
                         } else {
-                            relatedCMRField.addRelatedPKWaitingForMyPK(relatedId, ctx.getPrimaryKey());
+relatedCMRField.addRelatedPKWaitingForMyPK(relatedId, ctx.getPrimaryKeyUnchecked());
                         }
                     } catch (Exception e) {
                         // no such object

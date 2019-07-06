@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -107,9 +106,9 @@ public final class GeoBoundsAggregator extends MetricsAggregator {
             tops.fill(from, tops.size(), Double.NEGATIVE_INFINITY);
             bottoms = bigArrays.resize(bottoms, tops.size());
             bottoms.fill(from, bottoms.size(), Double.NEGATIVE_INFINITY);
-posRights = bigArrays.resize(posRights, tops.size());
-            posLefts.fill(from, posLefts.size(), Double.NEGATIVE_INFINITY);
             posLefts = bigArrays.resize(posLefts, tops.size());
+            posLefts.fill(from, posLefts.size(), Double.NEGATIVE_INFINITY);
+posRights = bigArrays.resize(posRights, tops.size());
             posRights.fill(from, posRights.size(), Double.NEGATIVE_INFINITY);
             negLefts = bigArrays.resize(negLefts, tops.size());
             negLefts.fill(from, negLefts.size(), Double.NEGATIVE_INFINITY);

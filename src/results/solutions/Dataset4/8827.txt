@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1989,9 +1988,9 @@ public class SimpleChildQuerySearchTests extends ElasticsearchIntegrationTest {
         client().prepareIndex("test", "child", "c1").setParent("p1").setSource("c_field", "blue").execute().actionGet();
         client().prepareIndex("test", "child", "c2").setParent("p1").setSource("c_field", "red").execute().actionGet();
         client().prepareIndex("test", "child", "c3").setParent("p2").setSource("c_field", "red").execute().actionGet();
-String scoreMode = ScoreType.values()[randomInt(ScoreType.values().length) - 1].name().toLowerCase(Locale.ROOT);
+        client().admin().indices().prepareRefresh("test").execute().actionGet();
 
-        String scoreMode = ScoreType.values()[randomInt(ScoreType.values().length)].name().toLowerCase(Locale.ROOT);
+String scoreMode = ScoreType.values()[randomInt(ScoreType.values().length) - 1].name().toLowerCase(Locale.ROOT);
         SearchResponse searchResponse = client().prepareSearch("test")
                 .setQuery(filteredQuery(QueryBuilders.hasChildQuery("child", termQuery("c_field", "blue")).scoreType(scoreMode), notFilter(termFilter("p_field", "3"))))
                 .execute().actionGet();

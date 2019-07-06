@@ -1,4 +1,3 @@
-
 /*
  * $Id: ContainerWithAssociatedMarkupHelper.java,v 1.1 2006/03/10 22:20:42
  * jdonnerstag Exp $ $Revision: 1.1 $ $Date: 2006/03/10 22:20:42 $
@@ -82,9 +81,9 @@ class ContainerWithAssociatedMarkupHelper extends AbstractBehavior
 		}
 
 		// Position pointer at current (first) header
-Class markupClass = ((WicketTag)markupStream.getTag()).getMarkupClass();
+		while (nextHeaderMarkup(markupStream) != -1)
 		{
-			Class markupClass = ((WicketTag)markupStream.getTag()).getWicketHeaderClass();
+Class markupClass = ((WicketTag)markupStream.getTag()).getMarkupClass();
 			if (markupClass == null)
 			{
 				markupClass = markupStream.getContainerClass();

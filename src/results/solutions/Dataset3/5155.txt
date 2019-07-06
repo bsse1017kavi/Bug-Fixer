@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -82,9 +81,9 @@ public class ArjArchiveEntry implements ArchiveEntry {
      * regardless of timezone if the archive has been created on a
      * non-Unix system and a time taking the current timezone into
      * account if the archive has beeen created on Unix.</p>
-long ts = isHostOsUnix() ? localFileHeader.dateTimeModified * 1000l
+     */
     public Date getLastModifiedDate() {
-        long ts = isHostOsUnix() ? (localFileHeader.dateTimeModified * 1000l)
+long ts = isHostOsUnix() ? localFileHeader.dateTimeModified * 1000l
             : ZipUtil.dosToJavaTime(0xFFFFFFFFL & localFileHeader.dateTimeModified);
         return new Date(ts);
     }

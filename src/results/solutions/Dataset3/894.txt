@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -215,9 +214,9 @@ public class MockRestServiceServer {
 
 			if (this.requestIterator == null) {
 				this.requestIterator = MockRestServiceServer.this.expectedRequests.iterator();
-throw new AssertionError("No further requests expected: HTTP " + httpMethod + " " + uri);
+			}
 			if (!this.requestIterator.hasNext()) {
-				throw new AssertionError("No further requests expected");
+throw new AssertionError("No further requests expected: HTTP " + httpMethod + " " + uri);
 			}
 
 			RequestMatcherClientHttpRequest request = this.requestIterator.next();

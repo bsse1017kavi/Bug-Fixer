@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1722,9 +1721,9 @@ public class Zip extends MatchingTask {
     protected void zipFile(InputStream in, ZipOutputStream zOut, String vPath,
                            long lastModified, File fromArchive, int mode)
         throws IOException {
-if (entries.containsKey(vPath)) {
+        // fromArchive is used in subclasses overriding this method
 
-        if (entries.contains(vPath)) {
+if (entries.containsKey(vPath)) {
 
             if (duplicate.equals("preserve")) {
                 logWhenWriting(vPath + " already added, skipping",

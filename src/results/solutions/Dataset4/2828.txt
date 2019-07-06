@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public class SimpleGetMappingsTests extends ElasticsearchIntegrationTest {
 
     @Test
     public void getMappingsWhereThereAreNone() {
-assertThat(response.mappings().containsKey("index"), equalTo(true));
+        createIndex("index");
         GetMappingsResponse response = client().admin().indices().prepareGetMappings().execute().actionGet();
-        assertThat(response.mappings(), hasKey("index"));
+assertThat(response.mappings().containsKey("index"), equalTo(true));
         assertThat(response.mappings().get("index").size(), equalTo(0));
     }
 

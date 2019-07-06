@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public class EJBClientXidTransactionTestCase {
     public static Archive<?> createDeployment() {
         final EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class, APP_NAME + ".ear");
 
-jar.addAsManifestResource(EJBClientXidTransactionTestCase.class.getPackage(), "persistence.xml", "persistence.xml");
+        final JavaArchive jar = ShrinkWrap.create(JavaArchive.class, MODULE_NAME + ".jar");
         jar.addPackage(EJBClientXidTransactionTestCase.class.getPackage());
-        jar.addAsManifestResource("ejb/remote/client/tx/persistence.xml", "persistence.xml");
+jar.addAsManifestResource(EJBClientXidTransactionTestCase.class.getPackage(), "persistence.xml", "persistence.xml");
 
         ear.addAsModule(jar);
 

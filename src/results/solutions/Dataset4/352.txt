@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -199,9 +198,9 @@ public class LwjglApplication implements Application {
 			if (!isActive && graphics.config.backgroundFPS == -1) shouldRender = false;
 			int frameRate = isActive ? graphics.config.foregroundFPS : graphics.config.backgroundFPS;
 			if (shouldRender) {
-Display.update();
+				graphics.updateTime();
 				listener.render();
-				Display.update(false);
+Display.update();
 			} else {
 				// Sleeps to avoid wasting CPU in an empty loop.
 				if (frameRate == -1) frameRate = 10;

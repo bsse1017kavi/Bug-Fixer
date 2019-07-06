@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /**********************************************************************
@@ -461,9 +460,9 @@ private void derefPart(LayoutPart part) {
 		boolean hasChildren = (children != null) && (children.length > 0);
 		if (hasChildren) {
 			// make sure one is at least visible
-if(children[i].getControl() != null)
+			int childVisible = 0;
 			for (int i = 0; i < children.length; i++)
-				if(children[i].isVisible())
+if(children[i].getControl() != null)
 					childVisible++;
 
 			// none visible, then reprarent and remove container

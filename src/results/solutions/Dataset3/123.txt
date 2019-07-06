@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class QueuelessThreadPoolService implements Service<ManagedQueuelessExecu
     }
 
     public synchronized ManagedQueuelessExecutorService getValue() throws IllegalStateException {
-throw ThreadsLogger.ROOT_LOGGER.queuelessThreadPoolExecutorUninitialized();
+        final ManagedQueuelessExecutorService value = this.executor;
         if (value == null) {
-            throw ThreadsMessages.MESSAGES.queuelessThreadPoolExecutorUninitialized();
+throw ThreadsLogger.ROOT_LOGGER.queuelessThreadPoolExecutorUninitialized();
         }
         return value;
     }

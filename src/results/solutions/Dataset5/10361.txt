@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class TestApp1 extends WebApplication {
 		getSharedResources().add("cancelButton", new DefaultButtonImageResource("Cancel"));
 	}
 
-return new SecondLevelCacheSessionStore(this, new FilePageStore());
+	@Override
 	protected ISessionStore newSessionStore() {
-		return new SecondLevelCacheSessionStore(new FilePageStore());
+return new SecondLevelCacheSessionStore(this, new FilePageStore());
 		//return new HttpSessionStore();
 	}
 }

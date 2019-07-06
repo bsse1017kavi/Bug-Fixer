@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -149,9 +148,9 @@ public class ClassicalRungeKuttaIntegratorTest {
             Assert.assertEquals(pb.getFinalTime(), stopTime, 1.0e-10);
         }
 
-Assert.assertTrue(error < 1.01 * FastMath.abs(previousValueError));
+        double error = handler.getMaximalValueError();
         if (i > 4) {
-          Assert.assertTrue(error < FastMath.abs(previousValueError));
+Assert.assertTrue(error < 1.01 * FastMath.abs(previousValueError));
         }
         previousValueError = error;
 

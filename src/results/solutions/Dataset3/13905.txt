@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public abstract class AbstractSubsystemUpdate<E extends AbstractSubsystemElement
      * server startup.  By default, this method simply invokes {@link #applyUpdate(UpdateContext, UpdateResultHandler, Object)}
      * directly, but this behavior should be overriden if a different action must be taken at boot time.
      *
-protected void applyUpdateBootAction(BootUpdateContext updateContext) {
+     * @param updateContext the update context
      */
-    protected void applyUpdateBootAction(UpdateContext updateContext) {
+protected void applyUpdateBootAction(BootUpdateContext updateContext) {
         applyUpdate(updateContext, UpdateResultHandler.NULL, null);
     }
 

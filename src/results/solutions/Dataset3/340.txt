@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -68,9 +67,9 @@ public class KernelServices extends ModelTestKernelServices {
         //Initialize the controller
         ServiceContainer container = ServiceContainer.Factory.create("test" + counter.incrementAndGet());
         ServiceTarget target = container.subTarget();
-ModelTestModelControllerService svc = TestModelControllerService.create(processType, runningModeControl, persister, validateOperations, type, modelInitializer);
+        StringConfigurationPersister persister = new StringConfigurationPersister(bootOperations, testParser);
         RunningModeControl runningModeControl = type == ModelType.HOST ? new HostRunningModeControl(runningMode, RestartMode.HC_ONLY) : new RunningModeControl(runningMode);
-        ModelTestModelControllerService svc = new TestModelControllerService(processType, runningModeControl, persister, validateOperations, type, modelInitializer);
+ModelTestModelControllerService svc = TestModelControllerService.create(processType, runningModeControl, persister, validateOperations, type, modelInitializer);
         ServiceBuilder<ModelController> builder = target.addService(Services.JBOSS_SERVER_CONTROLLER, svc);
         builder.install();
 

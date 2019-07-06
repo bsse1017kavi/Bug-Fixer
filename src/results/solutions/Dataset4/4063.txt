@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -221,9 +220,9 @@ public class FileHandle {
 		try {
 			while (true) {
 				int count = input.read(buffer, position, buffer.length - position);
-if (position == buffer.length) {
+				if (count == -1) break;
 				position += count;
-				if (count == 0 && position == buffer.length) {
+if (position == buffer.length) {
 					// Grow buffer.
 					byte[] newBuffer = new byte[buffer.length * 2];
 					System.arraycopy(buffer, 0, newBuffer, 0, position);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -115,9 +114,9 @@ public class TldParsingDeploymentProcessor implements DeploymentUnitProcessor {
             XMLStreamReader xmlReader = inputFactory.createXMLStreamReader(is);
             return TldMetaDataParser.parse(xmlReader);
         } catch (Exception e) {
-Logger.getLogger("org.jboss.web.TldParsingDeploymentProcessor").info("parse " + tld.getName() + ": " + (System.currentTimeMillis() - time) + "ms");
+            throw new DeploymentUnitProcessingException("Failed to parse " + tld, e);
         } finally {
-            Logger.getLogger("org.jboss.web").info("parse " + (System.currentTimeMillis() - time));
+Logger.getLogger("org.jboss.web.TldParsingDeploymentProcessor").info("parse " + tld.getName() + ": " + (System.currentTimeMillis() - time) + "ms");
             try {
                 if (is != null) {
                     is.close();

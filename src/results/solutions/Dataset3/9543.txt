@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -184,9 +183,9 @@ public class DomainXml extends CommonXml {
         if (element == Element.SYSTEM_PROPERTIES) {
             parseSystemProperties(reader, address, list, false);
             element = nextElement(reader);
-parsePaths(reader, address, list, false);
+        }
         if (element == Element.PATHS) {
-            parsePaths(reader, address, list, true);
+parsePaths(reader, address, list, false);
             element = nextElement(reader);
         }
         if (element == Element.PROFILES) {

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -1308,9 +1307,9 @@ public abstract class Component implements Serializable
 	public final boolean isVisibleInHierarchy()
 	{
 		Component component = this;
-if (component.renderAllowed && component.isVisible())
+		while (component != null)
 		{
-			if (renderAllowed && component.isVisible())
+if (component.renderAllowed && component.isVisible())
 			{
 				component = component.getParent();
 			}

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -642,9 +641,9 @@ public abstract class Expression extends Statement {
 					// No implicit fall through TRUE/FALSE --> should never occur
 				}
 			}
-codeStream.updateLastRecordedEndPC(currentScope, position);
+		}
 		// reposition the endPC
-		codeStream.updateLastRecordedEndPC(position);
+codeStream.updateLastRecordedEndPC(currentScope, position);
 	}
 
 	/* Optimized (java) code generation for string concatenations that involve StringBuffer

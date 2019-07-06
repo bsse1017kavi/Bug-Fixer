@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -156,9 +155,9 @@ public class MessageDispatcher {
 		// remove all telegrams from the front of the queue that have gone
 		// past their time stamp.
 		do {
-if (telegram.getTimestamp() > currentTime) break;
+			// Read the telegram from the front of the queue
 			final Telegram telegram = queue.peek();
-			if (telegram.getTimestamp() < currentTime) break;
+if (telegram.getTimestamp() > currentTime) break;
 
 			if (debugEnabled) {
 				Gdx.app.log(LOG_TAG, "Queued telegram ready for dispatch: Sent to " + telegram.receiver + ". Msg is "

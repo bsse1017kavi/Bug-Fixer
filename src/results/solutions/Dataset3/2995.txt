@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -44,9 +43,9 @@ public class WarChildFirstClassLoadingTestCase {
         return war;
     }
 
-Assert.assertNotSame(Stateless.class.getClassLoader(), getClass().getClassLoader());
+    @Test
     public void testChildFirst() throws ClassNotFoundException {
-        Assert.assertEquals(Stateless.class.getClassLoader(), getClass().getClassLoader());
+Assert.assertNotSame(Stateless.class.getClassLoader(), getClass().getClassLoader());
     }
 
 }

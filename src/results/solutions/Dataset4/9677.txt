@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import com.badlogic.gdx.graphics.g3d.AnimatedModelInstance;
@@ -76,9 +75,9 @@ public class PrototypeRendererGL20 implements ModelRenderer {
 	}
 
 	private void flush() {
-lightManager.applyGlobalLights(shader);
+		drawing = false;
 
-		lightManager.applyAmbient(shader);
+lightManager.applyGlobalLights(shader);
 		// do actual drawing
 
 		// frustum culling for all point lights (sphere) @lightMananger

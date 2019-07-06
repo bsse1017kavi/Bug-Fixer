@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -64,9 +63,9 @@ import java.util.List;
 
 /**
  */
-private static ThreadLocal<SearchContext> current = new ThreadLocal<>();
+public abstract class SearchContext implements Releasable {
 
-    private static ThreadLocal<SearchContext> current = new ThreadLocal<SearchContext>();
+private static ThreadLocal<SearchContext> current = new ThreadLocal<>();
 
     public static void setCurrent(SearchContext value) {
         current.set(value);

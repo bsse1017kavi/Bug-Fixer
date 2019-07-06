@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -37,9 +36,9 @@ public class TestCodecHoldsOpenFiles extends LuceneTestCase {
       doc.add(newField("foo", "bar", TextField.TYPE_NOT_STORED));
       w.addDocument(doc);
     }
-w.shutdown();
+
     IndexReader r = w.getReader();
-    w.close();
+w.shutdown();
 
     for(String fileName : d.listAll()) {
       try {

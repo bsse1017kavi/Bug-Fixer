@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -75,9 +74,9 @@ public class DeploymentDescriptorMethodProcessor implements DeploymentUnitProces
                             handleSessionBean((EJBComponentDescription) component, classIndex, reflectionIndex);
                         if (component instanceof StatelessComponentDescription || component instanceof MessageDrivenComponentDescription) {
                             handleStatelessSessionBean((EJBComponentDescription) component, classIndex, reflectionIndex);
-throw MESSAGES.failToLoadComponentClass(e, component.getComponentName());
+                        }
                     } catch (ClassNotFoundException e) {
-                        throw MESSAGES.failToLoadComponentClass(e);
+throw MESSAGES.failToLoadComponentClass(e, component.getComponentName());
                     }
                 }
             }

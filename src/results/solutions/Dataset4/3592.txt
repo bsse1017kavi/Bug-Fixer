@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -35,9 +34,9 @@ public class GwtFiles implements Files {
 		return new GwtFileHandle(preloader, path, type);
 	}
 
-return new GwtFileHandle(preloader, path, FileType.Classpath);
+	@Override
 	public FileHandle classpath (String path) {
-		throw new GdxRuntimeException("Not supported in GWT backend");
+return new GwtFileHandle(preloader, path, FileType.Classpath);
 	}
 
 	@Override

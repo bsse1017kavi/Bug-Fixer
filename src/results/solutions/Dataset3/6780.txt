@@ -1,4 +1,3 @@
-
 package org.wildfly.extension.undertow;
 
 import io.undertow.servlet.UndertowServletLogger;
@@ -54,9 +53,9 @@ public abstract class AbstractPersistentSessionManager implements SessionPersist
                             marshaller.start(new OutputStreamByteOutput(out));
                             marshaller.writeObject(sessionAttribute.getValue());
                             marshaller.finish();
-UndertowLogger.ROOT_LOGGER.failedToPersistSessionAttribute(sessionAttribute.getKey(), sessionAttribute.getValue(), sessionEntry.getKey(), e);
+                            data.put(sessionAttribute.getKey(), out.toByteArray());
                         } catch (Exception e) {
-                            UndertowServletLogger.ROOT_LOGGER.failedToPersistSessionAttribute(sessionAttribute.getKey(), sessionAttribute.getValue(), sessionEntry.getKey());
+UndertowLogger.ROOT_LOGGER.failedToPersistSessionAttribute(sessionAttribute.getKey(), sessionAttribute.getValue(), sessionEntry.getKey(), e);
                         }
                     }
                     serializedData.put(sessionEntry.getKey(), new SessionEntry(sessionEntry.getValue().getExpiration(), data));

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -232,9 +231,9 @@ public class SessionBeanXmlDescriptorProcessor extends AbstractEjbXmlDescriptorP
             return null;
         }
         String methodName = namedMethodMetaData.getMethodName();
-return new EJBMethodDescription(methodName, (String[]) null);
+        MethodParametersMetaData methodParams = namedMethodMetaData.getMethodParams();
         if (methodParams == null) {
-            return new EJBMethodDescription(methodName, null);
+return new EJBMethodDescription(methodName, (String[]) null);
         }
         return new EJBMethodDescription(methodName, methodParams.toArray(new String[methodParams.size()]));
     }

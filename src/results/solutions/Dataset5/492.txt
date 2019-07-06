@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2005 Contributors.
  * All rights reserved. 
@@ -147,9 +146,9 @@ public class ReflectionBasedReferenceTypeDelegateFactory {
 	}
 
 	private static ResolvedType[] toResolvedTypeArray(Class[] classes, World inWorld) {
-ret[i] = ((ReflectionWorld)inWorld).resolve(classes[i]);
+		ResolvedType[] ret = new ResolvedType[classes.length];
 		for (int i = 0; i < ret.length; i++) {
-			ret[i] = inWorld.resolve(classes[i].getName());
+ret[i] = ((ReflectionWorld)inWorld).resolve(classes[i]);
 		}
 		return ret;
 	}

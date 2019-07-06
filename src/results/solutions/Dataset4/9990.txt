@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class DocValuesFormats {
         MapBuilder<String, PreBuiltDocValuesFormatProvider.Factory> builtInDocValuesFormatsX = MapBuilder.newMapBuilder();
         for (String name : DocValuesFormat.availableDocValuesFormats()) {
             builtInDocValuesFormatsX.put(name, new PreBuiltDocValuesFormatProvider.Factory(DocValuesFormat.forName(name)));
-builtInDocValuesFormatsX.put(DocValuesFormatService.DEFAULT_FORMAT, new PreBuiltDocValuesFormatProvider.Factory(DocValuesFormatService.DEFAULT_FORMAT, DocValuesFormat.forName("Lucene45")));
+        }
         // LUCENE UPGRADE: update those DVF if necessary
-        builtInDocValuesFormatsX.put("default", new PreBuiltDocValuesFormatProvider.Factory("default", DocValuesFormat.forName("Lucene45")));
+builtInDocValuesFormatsX.put(DocValuesFormatService.DEFAULT_FORMAT, new PreBuiltDocValuesFormatProvider.Factory(DocValuesFormatService.DEFAULT_FORMAT, DocValuesFormat.forName("Lucene45")));
         builtInDocValuesFormatsX.put("memory", new PreBuiltDocValuesFormatProvider.Factory("memory", DocValuesFormat.forName("Memory")));
         builtInDocValuesFormatsX.put("disk", new PreBuiltDocValuesFormatProvider.Factory("disk", DocValuesFormat.forName("Disk")));
         builtInDocValuesFormats = builtInDocValuesFormatsX.immutableMap();

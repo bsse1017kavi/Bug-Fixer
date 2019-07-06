@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public abstract class BAParticipantCompletionSuperService implements BAParticipa
         String txid;
         
         try {
-throw new RuntimeException("Error on getting TX id from BussinessActivityManager", se);
+            txid = activityManager.currentTransaction().toString();
         } catch (SystemException se) {
-            throw new RuntimeException("Error on getting TX id from BusinessActivityManager", se);
+throw new RuntimeException("Error on getting TX id from BussinessActivityManager", se);
         }
         
         if(participantRegistry.keySet().contains(txid) && ServiceCommand.isPresent(REUSE_BA_PARTICIPANT, serviceCommands)) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -117,9 +116,9 @@ public class RecursiveBundleTrackerTest {
     
     private void makeSUT() {
         BundleTrackerCustomizer customizer = Skeleton.newMock(BundleTrackerCustomizer.class);
-Bundle.INSTALLED | Bundle.STARTING | Bundle.ACTIVE | Bundle.STOPPING, customizer, true);
+
         sut = new InternalRecursiveBundleTracker(context, 
-                Bundle.INSTALLED | Bundle.STARTING | Bundle.ACTIVE | Bundle.STOPPING, customizer);
+Bundle.INSTALLED | Bundle.STARTING | Bundle.ACTIVE | Bundle.STOPPING, customizer, true);
         
         sut.open();
     }

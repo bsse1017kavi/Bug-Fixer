@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -140,9 +139,9 @@ public class ModelControllerClientOperationHandler implements ManagementRequestH
                                         //TODO decide if we should use the remoting principal or not
                                         copySubject.getPrincipals().add(new org.jboss.as.controller.security.InetAddressPrincipal(((InetAddressPrincipal)principal).getInetAddress()));
                                         break;
-copySubject.getPrincipals().add(new AccessMechanismPrincipal(AccessMechanism.NATIVE));
+                                    }
                                 }
-                                copySubject.getPrincipals().add(new AccessMechanismPrincipal(AccessMechanism.JMX));
+copySubject.getPrincipals().add(new AccessMechanismPrincipal(AccessMechanism.NATIVE));
                                 copySubject.setReadOnly();
                                 return copySubject;                            }
                         };

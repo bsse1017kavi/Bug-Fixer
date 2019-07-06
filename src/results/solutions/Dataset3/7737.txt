@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class RaDeploymentParsingProcessor implements DeploymentUnitProcessor {
 
         if (deploymentUnit.getParent() != null) {
             prefix = deploymentUnit.getParent().getName() + "#";
-String deploymentName = prefix + file.getName();
+        }
 
-        String deploymentName = prefix + file.getName().substring(0, file.getName().indexOf(".rar"));
+String deploymentName = prefix + file.getName();
         ConnectorXmlDescriptor xmlDescriptor = process(resolveProperties, file, alternateDescriptor, deploymentName);
 
 

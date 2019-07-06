@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -290,9 +289,9 @@ public class PatternSet extends DataType {
             // Create one NameEntry in the appropriate pattern list for each 
             // line in the file.
             String line = patternReader.readLine();
-line = p.replaceProperties(line);
+            while (line != null) {
                 if (line.length() > 0) {
-                    line = ProjectHelper.replaceProperties(p, line);
+line = p.replaceProperties(line);
                     addPatternToList(patternlist).setName(line);
                 }
                 line = patternReader.readLine();

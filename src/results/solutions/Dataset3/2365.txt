@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class NamingDefinition extends PersistentResourceDefinition {
             .setDefaultValue(new ModelNode().set(Constants.NAME_SERVICE_INIT_REF))
             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES).setAllowExpression(true).build();
 
-.setDefaultValue(AttributeConstants.TRUE_PROPERTY).setValidator(AttributeConstants.TRUE_FALSE_VALIDATOR)
+    protected static final AttributeDefinition EXPORT_CORBALOC = new SimpleAttributeDefinitionBuilder(
             Constants.NAMING_EXPORT_CORBALOC, ModelType.STRING, true)
-            .setDefaultValue(AttributeConstants.DEFAULT_ENABLED_PROPERTY).setValidator(AttributeConstants.ON_OFF_VALIDATOR)
+.setDefaultValue(AttributeConstants.TRUE_PROPERTY).setValidator(AttributeConstants.TRUE_FALSE_VALIDATOR)
             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES).setAllowExpression(true).build();
 
     private static final List<AttributeDefinition> ATTRIBUTES = Collections.unmodifiableList(Arrays.asList(

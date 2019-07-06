@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -160,9 +159,9 @@ public class ExternalLink extends AbstractLink
 				{
 					if (url.length() > 0 && url.charAt(0) == '/')
 					{
-url = UrlUtils.rewriteToContextRelative(url, RequestCycle.get());
+						url = url.substring(1);
 					}
-					url = UrlUtils.rewriteToContextRelative(url, RequestCycle.get().getRequest());
+url = UrlUtils.rewriteToContextRelative(url, RequestCycle.get());
 				}
 
 				// if the tag is an anchor proper

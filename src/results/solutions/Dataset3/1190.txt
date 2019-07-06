@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ import org.junit.runner.RunWith;
 public class ServiceLoaderTestCase {
 
 
-return ShrinkWrapUtils.createJavaArchive("demos/serviceloader-example.jar", ServiceLoaderTestCase.class.getPackage(), TestService.class.getPackage(), ShrinkWrapUtils.class.getPackage());
+    @Deployment
     public static Archive<?> getDeployment() {
-        return ShrinkWrapUtils.createJavaArchive("demos/serviceloader-example.jar", ServiceLoaderTestCase.class.getPackage(), TestService.class.getPackage());
+return ShrinkWrapUtils.createJavaArchive("demos/serviceloader-example.jar", ServiceLoaderTestCase.class.getPackage(), TestService.class.getPackage(), ShrinkWrapUtils.class.getPackage());
     }
 
     @Test

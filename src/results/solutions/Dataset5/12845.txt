@@ -1,4 +1,3 @@
-
 /*
  * $Id: ListenerInterfaceRequestTarget.java,v 1.1 2005/11/27 23:22:45 eelco12
  * Exp $ $Revision$ $Date$
@@ -73,9 +72,9 @@ public class ListenerInterfaceRequestTarget extends AbstractListenerInterfaceReq
 	 */
 	public final void processEvents(final RequestCycle requestCycle)
 	{
-requestCycle.setUpdateSession(true);
+		// Assume cluster needs to be updated now, unless listener
 		// invocation changes this
-		requestCycle.setUpdateCluster(true);
+requestCycle.setUpdateSession(true);
 
 		// Clear all feedback messages if it isn't a redirect
 		getPage().getFeedbackMessages().clear();

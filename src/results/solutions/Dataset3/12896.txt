@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -188,9 +187,9 @@ public class JMSConnectionFactoryDefinitionInjectionSource extends ResourceDefin
         List<PooledConnectionFactoryConfigProperties> adapterParams = getAdapterParams(model);
         String txSupport = transactional ? XA_TX : NO_TX;
 
-PooledConnectionFactoryService.installService(null, null, serviceTarget, pcfName, getHornetQServerName(), connectors,
+        final String pcfName = uniqueName(context, name);
         final ContextNames.BindInfo bindInfo = ContextNames.bindInfoForEnvEntry(context.getApplicationName(), context.getModuleName(), context.getComponentName(), !context.isCompUsesModule(), name);
-        PooledConnectionFactoryService.installService(serviceTarget, pcfName, getHornetQServerName(), connectors,
+PooledConnectionFactoryService.installService(null, null, serviceTarget, pcfName, getHornetQServerName(), connectors,
                 discoveryGroupName, jgroupsChannelName, adapterParams,
                 bindInfo,
                 txSupport, minPoolSize, maxPoolSize, true);

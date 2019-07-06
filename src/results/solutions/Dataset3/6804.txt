@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -179,9 +178,9 @@ public abstract class AbstractControllerTestBase {
                 throws ConfigurationPersistenceException {
             addBootOperations(bootOperations);
             return super.boot(bootOperations, rollbackOnRuntimeFailure);
-protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
+        }
 
-        protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration) {
+protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
             try {
                 AbstractControllerTestBase.this.initModel(rootResource, rootRegistration);
             } catch (Exception e) {

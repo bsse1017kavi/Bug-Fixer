@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -263,9 +262,9 @@ public class BrokerImpl
      * @param managed the transaction mode
      * @param connMode the connection retain mode
      * @param fromDeserialization whether this call happened because of a
-public void initialize(AbstractBrokerFactory factory,
+     * deserialization or creation of a new BrokerImpl.
      */
-    void initialize(AbstractBrokerFactory factory,
+public void initialize(AbstractBrokerFactory factory,
         DelegatingStoreManager sm, boolean managed, int connMode,
         boolean fromDeserialization) {
         _initializeWasInvoked = true;

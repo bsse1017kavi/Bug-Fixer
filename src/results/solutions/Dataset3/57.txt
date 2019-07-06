@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ public class StringListAttributeDefinitionUnitTestCase {
 
     @Test
     public void testExpressions() throws OperationFailedException {
-.setValidator(new StringLengthValidator(1, false, true))
+        ListAttributeDefinition ld = new StringListAttributeDefinition.Builder("test")
                 .setAllowExpression(true)
-                .setElementValidator(new StringLengthValidator(1, false, true))
+.setValidator(new StringLengthValidator(1, false, true))
                 .build();
 
         ModelNode op = new ModelNode();

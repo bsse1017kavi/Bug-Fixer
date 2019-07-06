@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -177,9 +176,9 @@ public class StringFieldMapper extends AbstractFieldMapper<String> implements Al
                         builder.searchQuotedAnalyzer = parserContext.analysisService().defaultSearchQuoteAnalyzer();
                     }
                 } else if (propName.equals("ignore_above")) {
-parseMultiField(builder, name, parserContext, propName, propNode);
+                    builder.ignoreAbove(XContentMapValues.nodeIntegerValue(propNode, -1));
                 } else {
-                    parseMultiField(builder, name, node, parserContext, propName, propNode);
+parseMultiField(builder, name, parserContext, propName, propNode);
                 }
             }
             return builder;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public class InfinispanBeanFactory<G, I, T> implements BeanFactory<G, I, T> {
         return new InfinispanBean<>(id, entry, group, mutator, this, this.timeout, this.listener);
     }
 
-return this.invoker.invoke(this.cache, new FindOperation<BeanKey<I>, BeanEntry<G>>(this.createKey(id)));
+    @Override
     public BeanEntry<G> findValue(I id) {
-        return this.invoker.invoke(this.cache, new LockingFindOperation<BeanKey<I>, BeanEntry<G>>(this.createKey(id)));
+return this.invoker.invoke(this.cache, new FindOperation<BeanKey<I>, BeanEntry<G>>(this.createKey(id)));
     }
 
     @Override

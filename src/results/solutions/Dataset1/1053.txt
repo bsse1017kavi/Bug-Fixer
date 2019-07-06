@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyBuild.propertyconfig
@@ -312,9 +311,9 @@ public class propertyconfig {
 		}
 
 		FileOutputStream os = new FileOutputStream(outputfile);
-outputProp.store(os,
+		try
 		{
-			outputProp.save(os, 
+outputProp.store(os,
 							header.
 							concat("# config is ").concat(config).
 							concat(footer));

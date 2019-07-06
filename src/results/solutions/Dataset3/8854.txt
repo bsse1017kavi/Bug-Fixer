@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -619,9 +618,9 @@ public class FastDateParser implements DateParser, Serializable {
         /**
          * {@inheritDoc}
          */
-regex.append("((?iu)");
+        @Override
         boolean addRegex(final FastDateParser parser, final StringBuilder regex) {
-            regex.append("((?i)(?u)");
+regex.append("((?iu)");
             for(final String textKeyValue : keyValues.keySet()) {
                 escapeRegex(regex, textKeyValue, false).append('|');
             }

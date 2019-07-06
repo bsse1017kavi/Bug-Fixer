@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -89,9 +88,9 @@ public class WebConnectorAdd extends AbstractWebSubsystemUpdate<Void> {
         if(proxyName != null) service.setProxyName(proxyName);
         if(proxyPort != null) service.setProxyPort(proxyPort);
         if(redirectPort != null) service.setRedirectPort(redirectPort);
-context.getServiceTarget().addService(WebSubsystemElement.JBOSS_WEB_CONNECTOR.append(name), service)
+        if(maxPostSize != null) service.setMaxPostSize(maxPostSize);
         if(maxSavePostSize != null) service.setMaxSavePostSize(maxSavePostSize);
-        context.getBatchBuilder().addService(WebSubsystemElement.JBOSS_WEB_CONNECTOR.append(name), service)
+context.getServiceTarget().addService(WebSubsystemElement.JBOSS_WEB_CONNECTOR.append(name), service)
             .addDependency(WebSubsystemElement.JBOSS_WEB, WebServer.class, service.getServer())
             .addDependency(SocketBinding.JBOSS_BINDING_NAME.append(bindingRef), SocketBinding.class, service.getBinding())
             .addListener(new UpdateResultHandler.ServiceStartListener<P>(resultHandler, param))

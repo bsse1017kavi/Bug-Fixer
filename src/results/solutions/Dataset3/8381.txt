@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -213,9 +212,9 @@ public class MappingJackson2JsonView extends AbstractView {
 		this.updateContentLength = updateContentLength;
 	}
 
-setResponseContentType(request, response);
+	@Override
 	protected void prepareResponse(HttpServletRequest request, HttpServletResponse response) {
-		response.setContentType(getContentType());
+setResponseContentType(request, response);
 		response.setCharacterEncoding(this.encoding.getJavaName());
 		if (this.disableCaching) {
 			response.addHeader("Pragma", "no-cache");

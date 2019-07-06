@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -100,9 +99,9 @@ public class WarWebXmlInterceptor extends BaseInterceptor implements ContextInte
 	    String s = ctx.getDocumentBase().toString();
 	    if (s.endsWith("/")) 
 		s = s.substring(0, s.length() - 1);
-webURL = new URL(s + "!/WEB-INF/web.xml"  );
+	    
 	    URL webURL = null;
-	    webURL = new URL(s + "!/" + Constants.Context.ConfigFile);
+webURL = new URL(s + "!/WEB-INF/web.xml"  );
 	    
 	    InputStream is = webURL.openConnection().getInputStream();
 	    

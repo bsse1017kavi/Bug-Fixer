@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -243,9 +242,9 @@ public class IndexRecoveryTests extends ElasticsearchIntegrationTest {
             }
         }
     }
-List<ShardRecoveryResponse> nodeResponses = new ArrayList<>();
+
     private List<ShardRecoveryResponse> findRecoveriesForTargetNode(String nodeName, List<ShardRecoveryResponse> responses) {
-        List<ShardRecoveryResponse> nodeResponses = new ArrayList<ShardRecoveryResponse>();
+List<ShardRecoveryResponse> nodeResponses = new ArrayList<>();
         for (ShardRecoveryResponse response : responses) {
             if (response.recoveryState().getTargetNode().getName().equals(nodeName)) {
                 nodeResponses.add(response);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -630,9 +629,9 @@ private Object getMemberValue(org.eclipse.jdt.internal.core.MemberValuePair memb
 		int length = expressions == null ? 0 : expressions.length;
 		Object[] values = new Object[length];
 		for (int i = 0; i < length; i++) {
-if (previousValueKind != -1 && memberValuePair.valueKind != previousValueKind) {
+			int previousValueKind = memberValuePair.valueKind;
 			Object value = getMemberValue(memberValuePair, expressions[i]);
-			if (previousValueKind != IMemberValuePair.K_UNKNOWN && memberValuePair.valueKind != previousValueKind) {
+if (previousValueKind != -1 && memberValuePair.valueKind != previousValueKind) {
 				// values are heterogeneous, value kind is thus unknown
 				memberValuePair.valueKind = IMemberValuePair.K_UNKNOWN;
 			}

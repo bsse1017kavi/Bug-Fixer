@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -59,9 +58,9 @@ final class JVMOptionRemoveHandler implements OperationStepHandler, DescriptionP
                     model.get(JvmAttributes.JVM_OPTIONS).add(value);
                 }
             }
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+        }
 
-        context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -94,9 +93,9 @@ public class SourceTypeConverter implements CompilerModifiers {
 		CompilationResult compilationResult) {
 		ISourceType sourceType = sourceTypes[0];
 		if (sourceType.getName() == null)
-this.unit = new CompilationUnitDeclaration(this.problemReporter, compilationResult, 0);
+			return null; // do a basic test that the sourceType is valid
 
-		this.unit = new CompilationUnitDeclaration(problemReporter, compilationResult, 0);
+this.unit = new CompilationUnitDeclaration(this.problemReporter, compilationResult, 0);
 		// not filled at this point
 
 		/* only positions available */

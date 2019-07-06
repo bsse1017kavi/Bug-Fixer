@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -72,9 +71,9 @@ public class ViewGistFilesActivity extends RoboSherlockFragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-Intent intent = ViewGistsActivity.createIntent(gist);
+        switch (item.getItemId()) {
         case android.R.id.home:
-            Intent intent = ViewGistActivity.createIntent(gist);
+Intent intent = ViewGistsActivity.createIntent(gist);
             intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
             return true;

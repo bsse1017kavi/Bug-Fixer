@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.provider.generic.sobject;
 
 import org.eclipse.ecf.core.IIdentifiable;
@@ -12,8 +11,8 @@ public interface ISharedObjectInternal extends IIdentifiable {
 	public boolean removeEventProcessor(IEventProcessor ep);
 	
 	public ISharedObjectContext getContext();
-public SharedObjectDescription[] getReplicaDescriptions(ID [] remotes);
+	public boolean isPrimary();
 	public ID getHomeID();
-	public SharedObjectDescription getReplicaDescription(ID remote);
+public SharedObjectDescription[] getReplicaDescriptions(ID [] remotes);
 	public void destroySelf();
 }

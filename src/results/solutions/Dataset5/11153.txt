@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.provider.jmdns.container;
 
 import java.io.IOException;
@@ -65,9 +64,9 @@ public class JMDNSDiscoveryContainer implements IContainer,
 	JmDNS jmdns = null;
 	Object lock = new Object();
 	int requestTimeout = DEFAULT_REQUEST_TIMEOUT;
-private Vector listeners = new Vector();
+	Map serviceListeners = new HashMap();
 	Vector serviceTypeListeners = new Vector();
-	private Vector listeners = null;
+private Vector listeners = new Vector();
 
 	public JMDNSDiscoveryContainer() throws IOException,
 			IDInstantiationException {

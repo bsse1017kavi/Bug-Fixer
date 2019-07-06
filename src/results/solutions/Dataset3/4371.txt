@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class HandlerEnable implements OperationStepHandler {
         final String name = address.getLastElement().getValue();
 
         if (context.getType() == OperationContext.Type.SERVER) {
-final ServiceRegistry serviceRegistry = context.getServiceRegistry(true);
+            context.addStep(new OperationStepHandler() {
                 public void execute(final OperationContext context, ModelNode operation) {
-                    final ServiceRegistry serviceRegistry = context.getServiceRegistry(false);
+final ServiceRegistry serviceRegistry = context.getServiceRegistry(true);
                     final ServiceController<?> controller = serviceRegistry.getService(LogServices.handlerName(name));
                     if (controller != null) {
                         controller.addListener(new AbstractServiceListener<Object>() {

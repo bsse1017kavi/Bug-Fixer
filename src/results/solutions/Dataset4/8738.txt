@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class UidField extends AbstractField {
         int docId = Lucene.NO_DOC;
         TermPositions uid = null;
         try {
-return null; // no doc
+            uid = reader.termPositions(term);
             if (!uid.next()) {
-                return new DocIdAndVersion(Lucene.NO_DOC, -1, reader);
+return null; // no doc
             }
             docId = uid.doc();
             uid.nextPosition();

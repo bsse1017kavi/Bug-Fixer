@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -144,9 +143,9 @@ public class RebalanceAfterActiveTests extends ElasticsearchTestCase {
         routingNodes = clusterState.routingNodes();
 
         assertThat(routingTable.shardsWithState(STARTED).size(), equalTo(10));
-assertThat(routingNode.size(), equalTo(1));
+        // make sure we have an even relocation
         for (RoutingNode routingNode : routingNodes) {
-            assertThat(routingNode.shards().size(), equalTo(1));
+assertThat(routingNode.size(), equalTo(1));
         }
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class ModClusterStopContext implements OperationStepHandler {
                     final int waitTime = WAIT_TIME.resolveModelAttribute(context, operation).asInt();
 
                     try {
-throw new OperationFailedException(new ModelNode().set(ModClusterLogger.ROOT_LOGGER.ContextOrHostNotFound(webHost, webContext)));
+                        service.stopContext(webHost, webContext, waitTime, TimeUnit.SECONDS);
                     } catch (IllegalArgumentException e) {
-                        throw new OperationFailedException(new ModelNode().set(ModClusterLogger.ROOT_LOGGER.contextOrHostNotFound(webHost, webContext)));
+throw new OperationFailedException(new ModelNode().set(ModClusterLogger.ROOT_LOGGER.ContextOrHostNotFound(webHost, webContext)));
                     }
 
                     context.completeStep(new OperationContext.RollbackHandler() {

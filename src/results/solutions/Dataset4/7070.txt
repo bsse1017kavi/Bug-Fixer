@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ public class IndexException extends ElasticSearchException {
     public IndexException(Index index, String msg, Throwable cause) {
         this(index, true, msg, cause);
     }
-super("[" + (index == null ? "_na" : index.name()) + "]" + (withSpace ? " " : "") + msg, cause);
+
     protected IndexException(Index index, boolean withSpace, String msg, Throwable cause) {
-        super("[" + index.name() + "]" + (withSpace ? " " : "") + msg, cause);
+super("[" + (index == null ? "_na" : index.name()) + "]" + (withSpace ? " " : "") + msg, cause);
         this.index = index;
     }
 

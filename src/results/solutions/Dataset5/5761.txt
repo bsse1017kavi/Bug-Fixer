@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -37,9 +36,9 @@ public class JSR223Timer extends JSR223TestElement implements Cloneable, Timer, 
     /** {@inheritDoc} */
     public long delay() {
         long delay = 0;
-Object o = processFileOrScript(scriptEngine, null);
+        try {
             ScriptEngine scriptEngine = getScriptEngine();
-            Object o = processFileOrScript(scriptEngine);
+Object o = processFileOrScript(scriptEngine, null);
             if (o == null) {
                 log.warn("Script did not return a value");
                 return 0;

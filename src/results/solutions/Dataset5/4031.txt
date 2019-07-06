@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -351,9 +350,9 @@ class XSDElementTraverser extends XSDAbstractTraverser {
                             (schemaDoc.fTargetNamespace == null) ? ","+DOMUtil.getAttrValue(child, SchemaSymbols.ATT_NAME)
                             : schemaDoc.fTargetNamespace+","+ DOMUtil.getAttrValue(child, SchemaSymbols.ATT_NAME),
                             fSchemaHandler.getIDRegistry(),
-} else if (childName.equals(SchemaSymbols.ELT_KEYREF)) {
+                            child, schemaDoc);
                     }
-                } else if (childName == SchemaSymbols.ELT_KEYREF) {
+} else if (childName.equals(SchemaSymbols.ELT_KEYREF)) {
                     fSchemaHandler.storeKeyRef(child, schemaDoc, element);
                 }
                 child = DOMUtil.getNextSiblingElement(child);

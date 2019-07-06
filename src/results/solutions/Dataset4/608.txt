@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -296,9 +295,9 @@ public class AndroidApplication extends Activity implements Application {
 
 	@Override
 	public void onConfigurationChanged (Configuration config) {
-if (config.hardKeyboardHidden == Configuration.HARDKEYBOARDHIDDEN_NO) keyboardAvailable = true;
+		super.onConfigurationChanged(config);
 		boolean keyboardAvailable = false;
-		if (config.keyboardHidden == Configuration.HARDKEYBOARDHIDDEN_NO) keyboardAvailable = true;
+if (config.hardKeyboardHidden == Configuration.HARDKEYBOARDHIDDEN_NO) keyboardAvailable = true;
 		input.keyboardAvailable = keyboardAvailable;
 	}
 

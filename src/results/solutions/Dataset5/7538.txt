@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 Jan S. Rellermeyer, and others
  * All rights reserved. This program and the accompanying materials
@@ -355,9 +354,9 @@ final class R_OSGiRemoteServiceContainer implements IRemoteServiceContainerAdapt
 			}
 			connectedID = target;
 
-containerID = (R_OSGiID) IDFactory.getDefault().createID(R_OSGiNamespace.NAME, endpointMgr.getLocalAddress().toString());
+			endpointMgr = remoteService.getEndpointManager(target.getURI());
 
-			containerID = (R_OSGiID) IDFactory.getDefault().createID("r-osgi", endpointMgr.getLocalAddress().toString()); //$NON-NLS-1$
+containerID = (R_OSGiID) IDFactory.getDefault().createID(R_OSGiNamespace.NAME, endpointMgr.getLocalAddress().toString());
 
 			startRegTracker();
 

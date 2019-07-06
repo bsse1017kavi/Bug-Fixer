@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -25,9 +24,9 @@ import android.os.IBinder;
  * Authenticator service that returns a subclass of AbstractAccountAuthenticator
  * in onBind()
  */
-private static AccountAuthenticator AUTHENTICATOR;
+public class AccountAuthenticatorService extends Service {
 
-    private static AccountAuthenticator AUTHENTICATOR = null;
+private static AccountAuthenticator AUTHENTICATOR;
 
     public IBinder onBind(Intent intent) {
         return intent.getAction().equals(ACTION_AUTHENTICATOR_INTENT) ? getAuthenticator()

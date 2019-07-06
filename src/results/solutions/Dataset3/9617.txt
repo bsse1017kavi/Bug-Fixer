@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -143,9 +142,9 @@ public class SaslResource extends SimpleResourceDefinition {
         final List<ModelNode> allowedValues = new ArrayList<ModelNode>();
 
         SaslEnumValidator(Enum<?>[] src, boolean toLowerCase) {
-allowedValues.add(new ModelNode().set(toLowerCase ? e.name().toLowerCase(Locale.ENGLISH) : e.name()));
+            super(1);
             for (Enum<?> e : src) {
-                allowedValues.add(new ModelNode().set(toLowerCase ? e.name().toLowerCase() : e.name()));
+allowedValues.add(new ModelNode().set(toLowerCase ? e.name().toLowerCase(Locale.ENGLISH) : e.name()));
             }
         }
 

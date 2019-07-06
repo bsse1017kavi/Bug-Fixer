@@ -1,4 +1,3 @@
-
 package storm.kafka;
 
 import backtype.storm.Config;
@@ -78,9 +77,9 @@ public class KafkaSpout extends BaseRichSpout {
         context.registerMetric("kafkaOffset", new IMetric() {
             KafkaUtils.KafkaOffsetMetric _kafkaOffsetMetric = new KafkaUtils.KafkaOffsetMetric(_spoutConfig.topic, _connections);
             @Override
-Set<Partition> latestPartitions = new HashSet();
+            public Object getValueAndReset() {
                 List<PartitionManager> pms = _coordinator.getMyManagedPartitions();
-                Set<GlobalPartitionId> latestPartitions = new HashSet();
+Set<Partition> latestPartitions = new HashSet();
                 for(PartitionManager pm : pms) { latestPartitions.add(pm.getPartition()); }
                 _kafkaOffsetMetric.refreshPartitions(latestPartitions);
                 for(PartitionManager pm : pms) {

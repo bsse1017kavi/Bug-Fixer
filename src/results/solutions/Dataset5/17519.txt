@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -164,9 +163,9 @@ class StubFileGenerator{
      */
     private static String genSourceSignature(IProgramElement classNode) {
     	String signature = classNode.getSourceSignature();
-if (index == 0 || (index != -1 && signature.charAt(index-1) != '.') ) {
+		if (signature != null){
 			int index = signature.indexOf("aspect");
-			if (index != -1 && signature.charAt(index-1) != '.') {
+if (index == 0 || (index != -1 && signature.charAt(index-1) != '.') ) {
 				signature = signature.substring(0, index) +
 				"class " +
 				signature.substring(index + 6, signature.length());

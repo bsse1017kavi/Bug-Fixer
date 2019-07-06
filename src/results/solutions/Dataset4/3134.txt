@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -95,9 +94,9 @@ class ShardValidateQueryRequest extends BroadcastShardOperationRequest {
     }
 
     @Override
-out.writeBytesReference(querySource);
+    public void writeTo(StreamOutput out) throws IOException {
         super.writeTo(out);
-        out.writeBytesReference(querySource, true);
+out.writeBytesReference(querySource);
 
         out.writeVInt(types.length);
         for (String type : types) {

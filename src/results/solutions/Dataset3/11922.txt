@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class FlushingHandlerUpdateProperties<T extends ExtHandler> extends Handl
     protected FlushingHandlerUpdateProperties(final AttributeDefinition... attributeDefinitions) {
         super(join(attributeDefinitions, AUTOFLUSH));
     }
-protected void updateRuntime(final ModelNode operation, final T handler) throws OperationFailedException {
+
     @Override
-    protected void updateRuntime(final ModelNode operation, final ExtHandler handler) throws OperationFailedException {
+protected void updateRuntime(final ModelNode operation, final T handler) throws OperationFailedException {
         final ModelNode autoflush = AUTOFLUSH.validateResolvedOperation(operation);
         if (autoflush.isDefined()) {
             handler.setAutoFlush(autoflush.asBoolean());

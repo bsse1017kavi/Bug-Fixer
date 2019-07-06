@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -179,9 +178,9 @@ public class WebPage extends Page
 	 */
 	private void commonInit()
 	{
-MarkupStream markupStream = getAssociatedMarkupStream(false);
+		// Add a Body container if the associated markup contains a <body> tag
 		// get markup stream gracefully
-		MarkupStream markupStream = getApplication().getMarkupCache().getMarkupStream(this, false);
+MarkupStream markupStream = getAssociatedMarkupStream(false);
 		if (markupStream != null)
 		{
 			// The default <body> container. It can be accessed, replaced

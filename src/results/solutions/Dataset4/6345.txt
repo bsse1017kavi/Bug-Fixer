@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class TransportSearchFailuresTests extends AbstractNodesTests {
     @Test
     public void testFailedSearchWithWrongQuery() throws Exception {
         logger.info("Start Testing failed search with wrong query");
-.settings(settingsBuilder().put("index.number_of_shards", 3).put("index.number_of_replicas", 2).put("routing.hash.type", "simple")))
+        startNode("server1");
         client("server1").admin().indices().create(createIndexRequest("test")
-                .settings(settingsBuilder().put("number_of_shards", 3).put("number_of_replicas", 2).put("routing.hash.type", "simple")))
+.settings(settingsBuilder().put("index.number_of_shards", 3).put("index.number_of_replicas", 2).put("routing.hash.type", "simple")))
                 .actionGet();
 
         client("server1").admin().cluster().prepareHealth().setWaitForYellowStatus().execute().actionGet();

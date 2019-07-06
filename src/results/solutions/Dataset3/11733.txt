@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ public class DeflateCompressorOutputStream extends CompressorOutputStream {
     /**
      * Creates a Deflate compressed output stream with the specified parameters.
      */
-this.out = new DeflaterOutputStream(outputStream, new Deflater(parameters.getCompressionLevel(), !parameters.withZlibHeader()));
+    public DeflateCompressorOutputStream(OutputStream outputStream,
                                          DeflateParameters parameters) throws IOException {
-        this.out = new DeflaterOutputStream(outputStream, new Deflater(parameters.getCompressionLevel(), !parameters.isZlibHeaderPresent()));
+this.out = new DeflaterOutputStream(outputStream, new Deflater(parameters.getCompressionLevel(), !parameters.withZlibHeader()));
     }
 
     @Override

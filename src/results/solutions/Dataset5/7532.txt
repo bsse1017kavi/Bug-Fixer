@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTarget.java,v 1.3 2005/12/07 00:52:26 ivaynberg
  * Exp $ $Revision$ $Date$
@@ -264,9 +263,9 @@ public class BookmarkablePageRequestTarget
 		 * requestCycle.getRequest(); String urlFragment =
 		 * request.getPath().substring(mountPath.length()); params =
 		 * paramsEncoder.decode(urlFragment); }
-IPageFactory pageFactory = requestCycle.getApplication().getSessionSettings()
+		 */
 		// construct a new instance using the default page factory
-		IPageFactory pageFactory = requestCycle.getApplication().getSettings()
+IPageFactory pageFactory = requestCycle.getApplication().getSessionSettings()
 				.getPageFactory();
 		return pageFactory.newPage(pageClass, params);
 	}

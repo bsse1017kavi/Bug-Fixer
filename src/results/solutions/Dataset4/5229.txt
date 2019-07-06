@@ -1,4 +1,3 @@
-
 package org.elasticsearch.test.stress.search1;
 
 import org.elasticsearch.action.ActionListener;
@@ -63,9 +62,9 @@ public class ConcurrentSearchSerializationTests {
                     for (int i = 0; i < 1000; i++) {
                         SearchResponse searchResponse = client.prepareSearch("test")
                                 .setQuery(QueryBuilders.matchAllQuery())
-for (SearchHit hit : searchResponse.getHits()) {
+                                .setSize(i % 100)
                                 .execute().actionGet();
-                        for (SearchHit hit : searchResponse.hits()) {
+for (SearchHit hit : searchResponse.getHits()) {
                             try {
                                 if (!hit.sourceAsMap().get("field").equals(data)) {
                                     System.err.println("Field not equal!");

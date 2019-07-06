@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -193,9 +192,9 @@ public class ServerInventoryImpl implements ServerInventory {
         final ManagedServer server = createManagedServer(serverName, domainModel);
         servers.put(processName, server);
 
-server.reconnectServerProcess();
+        if (running){
             try {
-                server.reconnectServerProcess(environment.getHostControllerPort());
+server.reconnectServerProcess();
             } catch (IOException e) {
                 log.errorf(e, "Failed to send reconnect message to server %s", serverName);
             }

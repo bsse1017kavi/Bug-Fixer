@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -120,9 +119,9 @@ public class BinaryFieldMapper extends AbstractFieldMapper<BytesReference> {
 
     private long compressThreshold;
 
-super(names, 1.0f, fieldType, null, null, null, postingsProvider, docValuesProvider, null, null, null, null);
+    protected BinaryFieldMapper(Names names, FieldType fieldType, Boolean compress, long compressThreshold,
                                 PostingsFormatProvider postingsProvider, DocValuesFormatProvider docValuesProvider) {
-        super(names, 1.0f, fieldType, null, null, null, postingsProvider, docValuesProvider, null, null, null);
+super(names, 1.0f, fieldType, null, null, null, postingsProvider, docValuesProvider, null, null, null, null);
         this.compress = compress;
         this.compressThreshold = compressThreshold;
     }

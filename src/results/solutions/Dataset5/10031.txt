@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -276,9 +275,9 @@ public class MailReaderSampler extends AbstractSampler implements Interruptible 
             parent.setResponseCode("500"); // $NON-NLS-1$
             parent.setResponseMessage(ex.toString());
         } catch (MessagingException ex) {
-parent.setResponseMessage(ex.toString() + "\n" + samplerString); // $NON-NLS-1$
+            log.debug("", ex);// No need to log normally, as we set the status
             parent.setResponseCode("500"); // $NON-NLS-1$
-            parent.setResponseMessage(ex.toString());
+parent.setResponseMessage(ex.toString() + "\n" + samplerString); // $NON-NLS-1$
         } catch (IOException ex) {
             log.debug("", ex);// No need to log normally, as we set the status
             parent.setResponseCode("500"); // $NON-NLS-1$

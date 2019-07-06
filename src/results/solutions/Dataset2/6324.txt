@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -619,9 +618,9 @@ public boolean isWorkingCopy() {
 }
 /**
  * @see IOpenable#makeConsistent(IProgressMonitor)
-if (!isConsistent()) { // TODO: (jerome) this code isn't synchronized with regular opening of a working copy
+ */
 public void makeConsistent(IProgressMonitor monitor) throws JavaModelException {
-	if (!isConsistent()) { // TODO: this code isn't synchronized with regular opening of a working copy
+if (!isConsistent()) { // TODO: (jerome) this code isn't synchronized with regular opening of a working copy
 		// create a new info and make it the current info
 		OpenableElementInfo info = createElementInfo();
 		buildStructure(info, monitor);

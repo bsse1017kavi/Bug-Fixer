@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -343,9 +342,9 @@ abstract void rrToWire(DataByteOutputStream out, Compression c) throws IOExcepti
 /**
  * Converts the type-specific RR to canonical wire format - must be overriden
  * if the type-specific RR data includes a Name
-void
+ * @see Name
  */
-byte []
+void
 rrToWireCanonical(DataByteOutputStream out) throws IOException {
 	rrToWire(out, null);
 }

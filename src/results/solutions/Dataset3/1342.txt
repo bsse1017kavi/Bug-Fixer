@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public abstract class ManagementRequest<T> extends ManagementResponseHandler<T> 
      * @param executor The executor to use to handle the request and response
      * @param channel The channel strategy
      * @return A future to retrieve the result when the request is complete
-log.tracef("Scheduling request %s with future %s - %d (%d)", this, future, getBatchId(), getCurrentRequestId());
+     */
     public AsyncFuture<T> execute(final ExecutorService executor, final ManagementClientChannelStrategy channelStrategy) {
-        log.tracef("Scheduling request %s with future %s", this, this);
+log.tracef("Scheduling request %s with future %s - %d (%d)", this, future, getBatchId(), getCurrentRequestId());
         executor.execute(new Runnable() {
             @Override
             public void run() {

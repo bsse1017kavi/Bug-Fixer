@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class JMSQueueService implements Service<Void> {
 
     /** {@inheritDoc} */
     public synchronized void stop(StopContext context) {
-jmsManager.removeQueueFromJNDI(queueName);
+        final JMSServerManager jmsManager = jmsServer.getValue();
         try {
-            jmsManager.destroyQueue(queueName);
+jmsManager.removeQueueFromJNDI(queueName);
         } catch (Exception e) {
             MESSAGING_LOGGER.failedToDestroy(e, "queue", queueName);
         }

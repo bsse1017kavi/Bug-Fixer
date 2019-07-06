@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2002 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -122,9 +121,9 @@ public class PropPanelAssociation extends PropPanelModelElement {
 
     //
     //   this will cause the components on this page to be notified
-Class[] namesToWatch = { MStereotype.class,MNamespace.class,MClassifier.class, MAssociationEnd.class };
+    //      anytime a stereotype, namespace, operation, etc
     //      has its name changed or is removed anywhere in the model
-    Class[] namesToWatch = { MStereotype.class,MNamespace.class,MClassifier.class };
+Class[] namesToWatch = { MStereotype.class,MNamespace.class,MClassifier.class, MAssociationEnd.class };
     setNameEventListening(namesToWatch);
 
     addField(Argo.localize("UMLMenu", "label.name"), nameField);

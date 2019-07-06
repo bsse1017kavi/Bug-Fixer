@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static com.github.mobile.android.util.GitHubIntents.EXTRA_GIST;
@@ -49,9 +48,9 @@ public class ViewGistFileActivity extends RoboActivity {
         setContentView(layout.gist_view_content_item);
 
         final Gist gist = (Gist) getIntent().getSerializableExtra(EXTRA_GIST);
-gistId.setText("Gist " + gist.getId());
+        final GistFile file = (GistFile) getIntent().getSerializableExtra(EXTRA_GIST_FILE);
         gistFile.setText(file.getFilename());
-        gistId.setText("from Gist " + gist.getId());
+gistId.setText("Gist " + gist.getId());
         SourceEditor.showSource(webView, file.getFilename(), new Object() {
             public String toString() {
                 return file.getContent();

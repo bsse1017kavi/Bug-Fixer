@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class TransportFlushAction extends TransportBroadcastOperationAction<Flus
         this.indicesService = indicesService;
     }
 
-return ThreadPool.Names.FLUSH;
+    @Override
     protected String executor() {
-        return ThreadPool.Names.MANAGEMENT;
+return ThreadPool.Names.FLUSH;
     }
 
     @Override

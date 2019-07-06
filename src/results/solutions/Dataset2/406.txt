@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -721,9 +720,9 @@ public class ClassScope extends Scope {
 					problemReporter().duplicateSuperinterface(sourceType, referenceContext, superInterface);
 					continue nextInterface;
 				}
-problemReporter().superinterfaceMustBeAnInterface(sourceType, superInterfaceRef, superInterface);
+			}
 			if (superInterface.isClass()) {
-				problemReporter().superinterfaceMustBeAnInterface(sourceType, referenceContext, superInterface);
+problemReporter().superinterfaceMustBeAnInterface(sourceType, superInterfaceRef, superInterface);
 				sourceType.tagBits |= HierarchyHasProblems;
 				noProblems = false;
 				continue nextInterface;

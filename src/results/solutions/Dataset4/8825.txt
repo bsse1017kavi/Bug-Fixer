@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -312,9 +311,9 @@ public class TransportService extends AbstractLifecycleComponent<TransportServic
             }
             final RequestHolder holder = clientHandlers.remove(requestId);
             if (holder != null) {
-holder.handler().handleException(new ReceiveTimeoutTransportException(holder.node(), holder.action(), "request_id [" + requestId + "]"));
+                // add it to the timeout information holder, in case we are going to get a response later
                 timeoutInfoHandlers.put(requestId, new TimeoutInfoHolder(holder.node(), holder.action()));
-                holder.handler().handleException(new ReceiveTimeoutTransportException(holder.node(), holder.action()));
+holder.handler().handleException(new ReceiveTimeoutTransportException(holder.node(), holder.action(), "request_id [" + requestId + "]"));
             }
         }
     }

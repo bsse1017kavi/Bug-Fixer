@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class PropertyFileFinderTestCase extends PropertyTestHelper {
         System.setProperty("jboss.server.config.user.dir", standaloneMgmtUserFile.getParent());
         System.setProperty("jboss.domain.config.user.dir", domainMgmtUserFile.getParent());
         State propertyFileFinder = new PropertyFileFinder(consoleMock, values);
-assertTrue("Expected to find the "+USER_NAME+" in the list of known enabled users",values.getEnabledKnownUsers().contains(USER_NAME));
+        State nextState = propertyFileFinder.execute();
         assertTrue(nextState instanceof PromptRealmState);
-        assertTrue("Expected to find the "+USER_NAME+" in the list of known users",values.getKnownUsers().contains(USER_NAME));
+assertTrue("Expected to find the "+USER_NAME+" in the list of known enabled users",values.getEnabledKnownUsers().contains(USER_NAME));
         assertTrue("Expected the values.getPropertiesFiles() contained the "+standaloneMgmtUserFile,values.getUserFiles().contains(standaloneMgmtUserFile));
         assertTrue("Expected the values.getPropertiesFiles() contained the "+domainMgmtUserFile,values.getUserFiles().contains(domainMgmtUserFile));
     }

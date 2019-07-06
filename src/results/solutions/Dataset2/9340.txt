@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -111,9 +110,9 @@ public class ToolFactory {
 	 * @see JavaCore#getOptions()
 	 * @deprecated - use #createCodeFormatter(Map) instead
 	 */
-return new org.eclipse.jdt.internal.formatter.old.CodeFormatter(options);
+	public static ICodeFormatter createDefaultCodeFormatter(Map options){
 		if (options == null) options = JavaCore.getOptions();
-		return new org.eclipse.jdt.internal.formatter.CodeFormatter(options);
+return new org.eclipse.jdt.internal.formatter.old.CodeFormatter(options);
 	}
 	
 	/**

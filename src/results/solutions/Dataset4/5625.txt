@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -326,8 +325,8 @@ public class JoglGraphics extends JoglGraphicsBase implements GLEventListener {
 		else canvas.getGL().setSwapInterval(0);
 	}
 
-return new BufferFormat(caps.getRedBits(), caps.getGreenBits(), caps.getBlueBits(), caps.getAlphaBits(), caps.getDepthBits(), caps.getStencilBits(), caps.getNumSamples(), false);
+	@Override public BufferFormat getBufferFormat () {
 		GLCapabilities caps = canvas.getChosenGLCapabilities();
-		return new BufferFormat(caps.getRedBits(), caps.getGreenBits(), caps.getBlueBits(), caps.getAlphaBits(), caps.getDepthBits(), caps.getStencilBits(), caps.getNumSamples());		
+return new BufferFormat(caps.getRedBits(), caps.getGreenBits(), caps.getBlueBits(), caps.getAlphaBits(), caps.getDepthBits(), caps.getStencilBits(), caps.getNumSamples(), false);
 	}
 }

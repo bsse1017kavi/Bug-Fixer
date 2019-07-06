@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ import org.jboss.msc.value.InjectedValue;
  */
 class ProcessControllerConnectionService implements Service<ProcessControllerClient> {
 
-final InjectedValue<ServerInventory> serverInventory = new InjectedValue<ServerInventory>();
+    static final ServiceName SERVICE_NAME = ServiceName.JBOSS.append("host", "controller", "process-controller-connection");
 
-    final InjectedValue<NewServerInventory> serverInventory = new InjectedValue<NewServerInventory>();
+final InjectedValue<ServerInventory> serverInventory = new InjectedValue<ServerInventory>();
 
     private final HostControllerEnvironment environment;
     private final byte[] authCode;

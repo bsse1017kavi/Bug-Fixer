@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -156,9 +155,9 @@ public class AbstractHashedMap<K, V> extends AbstractMap<K, V> implements Iterab
      * Constructor copying elements from another map.
      *
      * @param map  the map to copy
-protected AbstractHashedMap(final Map<? extends K, ? extends V> map) {
+     * @throws NullPointerException if the map is null
      */
-    protected AbstractHashedMap(final Map<K, V> map) {
+protected AbstractHashedMap(final Map<? extends K, ? extends V> map) {
         this(Math.max(2 * map.size(), DEFAULT_CAPACITY), DEFAULT_LOAD_FACTOR);
         _putAll(map);
     }

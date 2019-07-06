@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -90,9 +89,9 @@ public class IfClosure<E> implements Closure<E>, Serializable {
      * @param predicate  predicate to switch on, not null
      * @param trueClosure  closure used if true, not null
      * @since 3.2
-this(predicate, trueClosure, NOPClosure.nopClosure());
+     */
     public IfClosure(final Predicate<? super E> predicate, final Closure<? super E> trueClosure) {
-        this(predicate, trueClosure, NOPClosure.INSTANCE);
+this(predicate, trueClosure, NOPClosure.nopClosure());
     }
 
     /**

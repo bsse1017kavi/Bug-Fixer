@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class Job {
     JobClient client = new JobClient();
     JobConf conf = new JobConf(Job.class);
 
-FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
+    Path outPath = new Path(output);
     client.setConf(conf);
-    FileSystem dfs = FileSystem.get(conf);
+FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
     if (dfs.exists(outPath))
       dfs.delete(outPath, true);
     InputDriver.runJob(input, output + "/data");

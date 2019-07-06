@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.migration;
 
 import java.io.IOException;
@@ -77,9 +76,9 @@ public class DropColumnFamily extends Migration
         schema.purge(cfm);
         schema.setTableDefinition(ksm, newVersion);
 
-cfs.snapshot(Table.getTimestampedSnapshotName(cfs.columnFamily));
+        if (!StorageService.instance.isClientMode())
         {
-            cfs.snapshot(Table.getTimestampedSnapshotName(null));
+cfs.snapshot(Table.getTimestampedSnapshotName(cfs.columnFamily));
 
             CompactionManager.instance.getCompactionLock().lock();
             cfs.flushLock.lock();

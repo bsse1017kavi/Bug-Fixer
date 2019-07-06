@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class GenericSubsystemDescribeHandler implements OperationStepHandler, De
             address = new ModelNode().setEmptyList();
         }
         final Resource resource = context.readResource(PathAddress.EMPTY_ADDRESS);
-context.stepCompleted();
+        final ModelNode result = context.getResult();
         describe(resource, address, result, context.getResourceRegistration());
-        context.completeStep();
+context.stepCompleted();
     }
 
     protected void describe(final Resource resource, final ModelNode address, ModelNode result, final ImmutableManagementResourceRegistration registration) {

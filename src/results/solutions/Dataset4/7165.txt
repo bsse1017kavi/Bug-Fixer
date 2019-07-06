@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -269,9 +268,9 @@ public abstract class DecayFunctionParser implements ScoreFunctionParser {
 
         private final GeoPoint origin;
         private final IndexGeoPointFieldData<?> fieldData;
-private static final GeoDistance distFunction = GeoDistance.DEFAULT;
+        private GeoPointValues geoPointValues = null;
 
-        private static final GeoDistance distFunction = GeoDistance.fromString("arc");
+private static final GeoDistance distFunction = GeoDistance.DEFAULT;
 
         public GeoFieldDataScoreFunction(GeoPoint origin, double scale, double decay, double offset, DecayFunction func,
                 IndexGeoPointFieldData<?> fieldData) {

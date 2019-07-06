@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import android.app.ProgressDialog;
@@ -77,9 +76,9 @@ public class GistsActivity extends RoboFragment {
                         pages.next();
                         int randomPage = 1 + (int) (Math.random() * ((pages.getLastPage() - 1) + 1));
                         Collection<Gist> gists = service.pagePublicGists(randomPage, 1).next();
-return service.getGist(gists.iterator().next().getId());
+                        if (gists.isEmpty())
                             throw new IllegalArgumentException("No Gists found");
-                        return gists.iterator().next();
+return service.getGist(gists.iterator().next().getId());
                     }
 
                     protected void onSuccess(Gist gist) throws Exception {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -205,9 +204,9 @@ public class CommonAnnotationBeanPostProcessorTests {
 		bf.addBeanPostProcessor(bpp);
 		bf.registerBeanDefinition("annotatedBean", new RootBeanDefinition(ExtendedResourceInjectionBean.class, false));
 		bf.registerBeanDefinition("testBean4", new RootBeanDefinition(TestBean.class, false));
-bf.registerResolvableDependency(INestedTestBean.class, new ObjectFactory<Object>() {
+
 		bf.registerResolvableDependency(BeanFactory.class, bf);
-		bf.registerResolvableDependency(INestedTestBean.class, new ObjectFactory() {
+bf.registerResolvableDependency(INestedTestBean.class, new ObjectFactory<Object>() {
 			public Object getObject() throws BeansException {
 				return new NestedTestBean();
 			}

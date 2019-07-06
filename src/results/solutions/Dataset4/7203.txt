@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -100,9 +99,9 @@ public class TransportNodesShutdownAction extends TransportMasterNodeOperationAc
     @Override
     protected void masterOperation(final NodesShutdownRequest request, final ClusterState state, final ActionListener<NodesShutdownResponse> listener) throws ElasticsearchException {
         if (disabled) {
-final ObjectOpenHashSet<DiscoveryNode> nodes = new ObjectOpenHashSet<>();
+            throw new ElasticsearchIllegalStateException("Shutdown is disabled");
         }
-        final ObjectOpenHashSet<DiscoveryNode> nodes = new ObjectOpenHashSet<DiscoveryNode>();
+final ObjectOpenHashSet<DiscoveryNode> nodes = new ObjectOpenHashSet<>();
         if (state.nodes().isAllNodes(request.nodesIds)) {
             logger.info("[cluster_shutdown]: requested, shutting down in [{}]", request.delay);
             nodes.addAll(state.nodes().dataNodes().values());

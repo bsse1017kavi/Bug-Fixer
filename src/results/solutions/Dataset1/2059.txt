@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.join;
 
 /*
@@ -681,9 +680,9 @@ public class TestJoinUtil extends LuceneTestCase {
         if (otherMatchingDocs == null) {
           continue;
         }
-DocsEnum docsEnum = MultiFields.getTermDocsEnum(topLevelReader, MultiFields.getLiveDocs(topLevelReader), "id", new BytesRef(otherSideDoc.id), false);
+
         for (RandomDoc otherSideDoc : otherMatchingDocs) {
-          DocsEnum docsEnum = MultiFields.getTermDocsEnum(topLevelReader, MultiFields.getLiveDocs(topLevelReader), "id", new BytesRef(otherSideDoc.id), 0);
+DocsEnum docsEnum = MultiFields.getTermDocsEnum(topLevelReader, MultiFields.getLiveDocs(topLevelReader), "id", new BytesRef(otherSideDoc.id), false);
           assert docsEnum != null;
           int doc = docsEnum.nextDoc();
           expectedResult.set(doc);

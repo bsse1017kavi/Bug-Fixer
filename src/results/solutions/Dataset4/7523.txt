@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -166,9 +165,9 @@ public class MapperQueryParser extends QueryParser {
         currentMapper = null;
         MapperService.SmartNameFieldMappers fieldMappers = parseContext.smartFieldMappers(field);
         if (fieldMappers != null) {
-Query rangeQuery = currentMapper.rangeQuery(part1, part2, inclusive, inclusive, parseContext);
+            currentMapper = fieldMappers.fieldMappers().mapper();
             if (currentMapper != null) {
-                Query rangeQuery = currentMapper.rangeQuery(part1, part2, inclusive, inclusive);
+Query rangeQuery = currentMapper.rangeQuery(part1, part2, inclusive, inclusive, parseContext);
                 return wrapSmartNameQuery(rangeQuery, fieldMappers, parseContext);
             }
         }

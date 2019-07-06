@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -597,9 +596,9 @@ public int literalIndex(MethodBinding aMethodBinding) {
 		if (index > 0xFFFF){
 			this.classFile.referenceBinding.scope.problemReporter().noMoreAvailableSpaceInConstantPool(this.classFile.referenceBinding.scope.referenceType());
 		}
-writeU1(constantPoolDeclaringClass.isInterface() || constantPoolDeclaringClass.isAnnotationType() ? InterfaceMethodRefTag : MethodRefTag);
+		// Write the interface method ref constant into the constant pool
 		// First add the tag
-		writeU1(constantPoolDeclaringClass.isInterface() ? InterfaceMethodRefTag : MethodRefTag);
+writeU1(constantPoolDeclaringClass.isInterface() || constantPoolDeclaringClass.isAnnotationType() ? InterfaceMethodRefTag : MethodRefTag);
 		// Then write the class index
 		writeU2(classIndex);
 		// The write the nameAndType index

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -102,9 +101,9 @@ public class ChangeSetPerformer {
                     }
                 }
             }
-if (!isDeletedLater(workingSet, entry) && !results.hasBeenAdded(entry.getName())) {
+
             if (copy) {
-                if (!isDeletedLater(workingSet, entry)) {
+if (!isDeletedLater(workingSet, entry) && !results.hasBeenAdded(entry.getName())) {
                     copyStream(in, out, entry);
                     results.addedFromStream(entry.getName());
                 }

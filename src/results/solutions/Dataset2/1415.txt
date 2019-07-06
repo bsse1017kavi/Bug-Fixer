@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -1101,9 +1100,9 @@ public class JavaProject
 				IJavaModelStatus status =
 					JavaConventions.validateClasspathEntry(this, entry, false);
 				if (!status.isOK())
-IMarker.SEVERITY_ERROR,
+					createClasspathProblemMarker(
 						status.getMessage(), 
-						IMarker.SEVERITY_WARNING,
+IMarker.SEVERITY_ERROR,
 						false);
 			}
 

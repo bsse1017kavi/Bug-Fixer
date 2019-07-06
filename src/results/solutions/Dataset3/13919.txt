@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -79,8 +78,8 @@ public final class DomainSubsystemAdd extends AbstractDomainModelUpdate<Void> {
     public DomainSubsystemRemove getCompensatingUpdate(final DomainModel original) {
         return new DomainSubsystemRemove(profileName, namespaceUri);
     }
-return new ServerSubsystemAdd(namespaceUri);
+
     protected ServerSubsystemAdd getServerModelUpdate() {
-        return null;
+return new ServerSubsystemAdd(namespaceUri);
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -69,9 +68,9 @@ public class RestIndicesExistsAction extends BaseRestHandler {
             }
 
             @Override
-channel.sendResponse(new XContentThrowableRestResponse(request, e));
+            public void onFailure(Throwable e) {
                 try {
-                    channel.sendResponse(new StringRestResponse(INTERNAL_SERVER_ERROR));
+channel.sendResponse(new XContentThrowableRestResponse(request, e));
                 } catch (Exception e1) {
                     logger.error("Failed to send failure response", e1);
                 }

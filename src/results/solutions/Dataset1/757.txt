@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.TernaryOperatorNode
@@ -822,9 +821,9 @@ public class TernaryOperatorNode extends ValueNode
  	private ValueNode timestampDiffBind() 
 			throws StandardException
 	{
-setType(DataTypeDescriptor.getBuiltInDataTypeDescriptor( Types.BIGINT));
+        bindDateTimeArg( rightOperand, 2);
         bindDateTimeArg( receiver, 3);
-        setType(DataTypeDescriptor.getBuiltInDataTypeDescriptor( Types.INTEGER));
+setType(DataTypeDescriptor.getBuiltInDataTypeDescriptor( Types.BIGINT));
         return this;
     } // End of timestampDiffBind
 

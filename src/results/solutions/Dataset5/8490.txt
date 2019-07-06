@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -96,9 +95,9 @@ public class RegexpMatcherFactory
             Class implClass = Class.forName( className );
             return ( RegexpMatcher )implClass.newInstance();
         }
-throw new BuildException( "Error", t );
+        catch( Throwable t )
         {
-            throw new BuildException( t );
+throw new BuildException( "Error", t );
         }
     }
 }

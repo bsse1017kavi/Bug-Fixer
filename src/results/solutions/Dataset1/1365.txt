@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.catalog.SYSSTATEMENTSRowFactory
@@ -306,9 +305,9 @@ public class SYSSTATEMENTSRowFactory extends CatalogRowFactory
 			}
 		}
 
-if (dd.isReadOnlyUpgrade()) {
+		// In soft upgrade mode the plan may not be understand by this engine
 		// so force a recompile.
-		if (((DataDictionaryImpl) dd).readOnlyUpgrade) {
+if (dd.isReadOnlyUpgrade()) {
 			valid = false;
 		} else {
 			// 5th column is VALID (boolean)

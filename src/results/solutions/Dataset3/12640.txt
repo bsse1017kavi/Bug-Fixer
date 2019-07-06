@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -182,9 +181,9 @@ class ServerDeploymentStartStopHandler {
             attachVirtualFile(deploymentUnitContext, deploymentRoot);
             deploymentUnitContext.putAttachment(MountHandle.ATTACHMENT_KEY, new MountHandle(handle));
 
-final DeploymentChain deploymentChain = deploymentChainProvider.determineDeploymentChain(deploymentUnitContext);
+            // Execute the deployment chain
             final DeploymentChainProvider deploymentChainProvider = DeploymentChainProvider.INSTANCE;
-            final DeploymentChain deploymentChain = deploymentChainProvider.determineDeploymentChain(deploymentRoot);
+final DeploymentChain deploymentChain = deploymentChainProvider.determineDeploymentChain(deploymentUnitContext);
             log.debugf("Executing deployment '%s' with chain: %s", deploymentName, deploymentChain);
             if(deploymentChain == null)
                 throw new RuntimeException("Failed determine the deployment chain for deployment root: " + deploymentRoot);

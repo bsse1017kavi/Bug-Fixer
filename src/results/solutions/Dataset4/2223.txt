@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -232,9 +231,9 @@ public class PlainOperationRouting extends AbstractComponent implements Operatio
             }
             if ("_local".equals(preference)) {
                 return indexShard.preferNodeActiveShardsIt(localNodeId);
-return indexShard.primaryActiveShardIt();
+            }
             if ("_primary".equals(preference)) {
-                return indexShard.primaryShardIt();
+return indexShard.primaryActiveShardIt();
             }
             if ("_primary_first".equals(preference) || "_primaryFirst".equals(preference)) {
                 return indexShard.primaryFirstActiveShardsIt();

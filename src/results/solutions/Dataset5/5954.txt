@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.25 $ $Date$
@@ -733,9 +732,9 @@ public abstract class Session implements Serializable
 	 */
 	private final void replicate(final Page page)
 	{
-//pageState.addedToSession = true;
+		// Create PageState for page
 		final PageState pageState = newPageState(page);
-		pageState.addedToSession = true;
+//pageState.addedToSession = true;
 		pageState.pageMapName = page.getPageMap().getName();
 
 		// Set HttpSession attribute for new PageState

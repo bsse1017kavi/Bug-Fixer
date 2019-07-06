@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public final class ComponentTypeInjectionSource extends InjectionSource {
         if (iterator.hasNext()) {
             throw new DeploymentUnitProcessingException("Multiple components found for type '" + typeName + "'");
         }
-serviceBuilder.addDependency(description.getServiceName(), ComponentView.class, new ViewManagedReferenceFactory.Injector(injector));
+
         //TODO: should ComponentView also be a managed reference factory?
-        serviceBuilder.addDependency(description.getServiceName(), ManagedReferenceFactory.class, injector);
+serviceBuilder.addDependency(description.getServiceName(), ComponentView.class, new ViewManagedReferenceFactory.Injector(injector));
     }
 
     public boolean equals(final Object injectionSource) {

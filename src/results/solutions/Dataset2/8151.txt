@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -289,9 +288,9 @@ private class ViewReference extends WorkbenchPartReference implements IViewRefer
 	 */
 	public IWorkbenchPart getPart(boolean restore) {
 		if(part != null)
-restoreView(this);
+			return part;
 		if(restore) {
-			IStatus status = restoreView(this);
+restoreView(this);
 		/*
 		 * Views are not lazy created so this code will not run for now.
 		 */

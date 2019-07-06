@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -98,9 +97,9 @@ public class EJB3RemoteServiceAdd extends AbstractBoottimeAddStepHandler {
     ServiceController<EJBRemoteConnectorService> installRuntimeService(final OperationContext context, final ModelNode model, final ServiceVerificationHandler verificationHandler) {
         final String connectorName = model.require(CONNECTOR_REF).asString();
         final String threadPoolName = model.require(THREAD_POOL_NAME).asString();
-final EJBRemoteConnectorService service = new EJBRemoteConnectorService((byte) 0x01, new String[]{"river"});
+        final ServiceTarget serviceTarget = context.getServiceTarget();
         // TODO: Externalize (expose via management API if needed) the version and the marshalling strategy
-        final EJBRemoteConnectorService service = new EJBRemoteConnectorService((byte) 0x01, new String[]{"river", "java-serial"});
+final EJBRemoteConnectorService service = new EJBRemoteConnectorService((byte) 0x01, new String[]{"river"});
         final ServiceBuilder<EJBRemoteConnectorService> ejbRemoteConnectorServiceBuilder = serviceTarget.addService(EJBRemoteConnectorService.SERVICE_NAME, service);
         // add dependency on the Remoting subsytem endpoint
         ejbRemoteConnectorServiceBuilder.addDependency(RemotingServices.SUBSYSTEM_ENDPOINT, Endpoint.class, service.getEndpointInjector());

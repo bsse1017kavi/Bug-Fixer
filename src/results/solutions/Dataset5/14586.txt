@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -752,9 +751,9 @@ public abstract class AbstractCFMetaDataFactory
                 } else {
                     if (log.isTraceEnabled())
                         log.trace(_loc.get("scanning-resource", rsrc));
-URL puUrl  = repos.getConfiguration().getPersistenceUnitRootUrl();
+                    mitr = new ResourceMetaDataIterator(rsrc, loader);
                     
-                    URL puUrl  = repos.getConfiguration().getPuRootUrl();
+URL puUrl  = repos.getConfiguration().getPersistenceUnitRootUrl();
                     String puUrlString = puUrl == null ? null : puUrl.toString();
                     if (log.isTraceEnabled())
                         log.trace(_loc.get("pu-root-url", puUrlString));

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class BinaryMutation implements MutationPolicy {
      *
      * @param original the original chromosome.
      * @return the mutated chromosome.
-public Chromosome mutate(Chromosome original) throws MathIllegalArgumentException {
+     * @throws MathIllegalArgumentException if <code>original</code> is not an instance of {@link BinaryChromosome}.
      */
-    public Chromosome mutate(Chromosome original) {
+public Chromosome mutate(Chromosome original) throws MathIllegalArgumentException {
         if (!(original instanceof BinaryChromosome)) {
             throw new MathIllegalArgumentException(LocalizedFormats.INVALID_BINARY_CHROMOSOME);
         }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -61,9 +60,9 @@ public class AnnotationDrivenBeanDefinitionParserTests {
 	@Test
 	public void testMessageCodesResolver() {
 		loadBeanDefinitions("mvc-config-message-codes-resolver.xml");
-Object initializer = adapter.getWebBindingInitializer();
+		RequestMappingHandlerAdapter adapter = appContext.getBean(RequestMappingHandlerAdapter.class);
 		assertNotNull(adapter);
-		Object initializer = new DirectFieldAccessor(adapter).getPropertyValue("webBindingInitializer");
+Object initializer = adapter.getWebBindingInitializer();
 		assertNotNull(initializer);
 		MessageCodesResolver resolver = ((ConfigurableWebBindingInitializer) initializer).getMessageCodesResolver();
 		assertNotNull(resolver);

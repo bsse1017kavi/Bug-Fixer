@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.jdbcapi.DatabaseMetaDataTest
@@ -491,9 +490,9 @@ public class DatabaseMetaDataTest extends BaseJDBCTestCase {
         assertEquals(DatabaseMetaData.sqlStateSQL99,
                 dmd.getSQLStateType());
         
-assertTrue(dmd.locatorsUpdateCopy());
+        assertFalse(dmd.isCatalogAtStart()); 
         
-        assertFalse(dmd.locatorsUpdateCopy());
+assertTrue(dmd.locatorsUpdateCopy());
         
         assertTrue(dmd.usesLocalFilePerTable());
         assertTrue(dmd.usesLocalFiles());

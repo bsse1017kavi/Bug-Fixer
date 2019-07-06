@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -188,9 +187,9 @@ public class ShardsRoutingStrategy extends AbstractComponent {
                         if (shardEntry.shardId().equals(shardEntry2.shardId())) {
                             assert shardEntry2.assignedToNode();
                             assert !shardEntry2.primary();
-shardEntry.moveFromPrimary();
+
                             changed = true;
-                            shardEntry.moveToBackup();
+shardEntry.moveFromPrimary();
                             shardEntry2.moveToPrimary();
                             elected = true;
                             break;

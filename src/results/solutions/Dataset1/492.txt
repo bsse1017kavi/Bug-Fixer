@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.join;
 
 /*
@@ -73,9 +72,9 @@ class TermsQuery extends MultiTermQuery {
     private final Comparator<BytesRef> comparator;
 
     private BytesRef seekTerm;
-SeekingTermSetTermsEnum(TermsEnum tenum, BytesRefHash terms) {
+    private int upto = 0;
 
-    SeekingTermSetTermsEnum(TermsEnum tenum, BytesRefHash terms) throws IOException {
+SeekingTermSetTermsEnum(TermsEnum tenum, BytesRefHash terms) {
       super(tenum);
       this.terms = terms;
 

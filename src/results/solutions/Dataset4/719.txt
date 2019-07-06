@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -100,9 +99,9 @@ public abstract class NewsFragment extends PagedItemFragment<Event> {
             openDownload(event);
             return;
         }
-if (issue != null && !IssueUtils.isPullRequest(issue)) {
+
         Issue issue = issueMatcher.getIssue(event);
-        if (!IssueUtils.isPullRequest(issue)) {
+if (issue != null && !IssueUtils.isPullRequest(issue)) {
             viewIssue(issue);
             return;
         }

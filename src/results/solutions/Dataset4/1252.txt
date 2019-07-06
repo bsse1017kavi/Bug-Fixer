@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -571,9 +570,9 @@ public class GeoPointFieldMapper implements Mapper, ArrayValueMapperParser {
         GeoPointFieldMapper geoMapper;
 
         public GeoStringFieldMapper(Names names, float boost, FieldType fieldType, String nullValue,
-super(names, boost, fieldType, nullValue, indexAnalyzer, searchAnalyzer, provider, null);
+                                    NamedAnalyzer indexAnalyzer, NamedAnalyzer searchAnalyzer,
                                     PostingsFormatProvider provider) {
-            super(names, boost, fieldType, nullValue, indexAnalyzer, searchAnalyzer, provider);
+super(names, boost, fieldType, nullValue, indexAnalyzer, searchAnalyzer, provider, null);
         }
 
         @Override

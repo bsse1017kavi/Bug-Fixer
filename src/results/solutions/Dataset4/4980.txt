@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -634,9 +633,9 @@ public class RecoveryTarget extends AbstractComponent {
                         BytesReference content = request.content();
                         if (!content.hasArray()) {
                             content = content.toBytesArray();
-onGoingRecovery.recoveryState.getIndex().addRecoveredByteCount(content.length());
+                        }
                         indexOutput.writeBytes(content.array(), content.arrayOffset(), content.length());
-                        onGoingRecovery.recoveryState.getIndex().addRecoveredByteCount(request.length());
+onGoingRecovery.recoveryState.getIndex().addRecoveredByteCount(content.length());
                         RecoveryState.File file = onGoingRecovery.recoveryState.getIndex().file(request.name());
                         if (file != null) {
                             file.updateRecovered(request.length());

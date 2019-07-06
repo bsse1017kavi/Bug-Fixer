@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ class NewLoggerHandlerAdd implements ModelAddOperationHandler, RuntimeOperationH
             }case PERIODIC_ROTATING_FILE_HANDLER: {
                 return NewPeriodicFileHandlerAdd.INSTANCE.execute(context, operation, resultHandler);
             }case SIZE_ROTATING_FILE_HANDLER: {
-resultHandler.handleFailed(new ModelNode().set("unknown log handler type"));
+                return NewSizePeriodicFileHandlerAdd.INSTANCE.execute(context, operation, resultHandler);
             } default: {
-                resultHandler.handleFailed(new ModelNode());
+resultHandler.handleFailed(new ModelNode().set("unknown log handler type"));
             }
         }
         return Cancellable.NULL;

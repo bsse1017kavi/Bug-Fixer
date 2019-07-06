@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -60,9 +59,9 @@ public SearchPattern getBlankPattern() {
 	return new FieldPattern(false, false, false, null, null, null, null, null, R_EXACT_MATCH | R_CASE_SENSITIVE);
 }
 public char[] getIndexKey() {
-public char[][] getIndexCategories() {
+	return this.name;
 }
-public char[][] getMatchCategories() {
+public char[][] getIndexCategories() {
 	if (this.findReferences)
 		return this.findDeclarations || this.writeAccess ? REF_AND_DECL_CATEGORIES : REF_CATEGORIES;
 	if (this.findDeclarations)

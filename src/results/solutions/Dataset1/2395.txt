@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs;
 
 /**
@@ -157,9 +156,9 @@ public class VariableGapTermsIndexWriter extends TermsIndexWriterBase {
   // resulting index terms could be as frequent as every 10
   // terms or as rare as every <maxArcCount> * 10 (eg 2560),
   // in the extremes.
-final String indexFileName = IndexFileNames.segmentFileName(state.segmentName, state.segmentSuffix, TERMS_INDEX_EXTENSION);
+
   public VariableGapTermsIndexWriter(SegmentWriteState state, IndexTermSelector policy) throws IOException {
-    final String indexFileName = IndexFileNames.segmentFileName(state.segmentName, state.formatId, TERMS_INDEX_EXTENSION);
+final String indexFileName = IndexFileNames.segmentFileName(state.segmentName, state.segmentSuffix, TERMS_INDEX_EXTENSION);
     out = state.directory.createOutput(indexFileName, state.context);
     boolean success = false;
     try {

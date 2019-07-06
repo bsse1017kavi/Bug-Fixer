@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -69,9 +68,9 @@ public class MetaDataUpdateSettingsService extends AbstractComponent implements 
         // update an index with number of replicas based on data nodes if possible
         if (!event.state().nodes().localNodeMaster()) {
             return;
-Map<Integer, List<String>> nrReplicasChanged = new HashMap<>();
+        }
 
-        Map<Integer, List<String>> nrReplicasChanged = new HashMap<Integer, List<String>>();
+Map<Integer, List<String>> nrReplicasChanged = new HashMap<>();
 
         // we need to do this each time in case it was changed by update settings
         for (final IndexMetaData indexMetaData : event.state().metaData()) {

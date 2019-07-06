@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -146,9 +145,9 @@ public class TestIndexModifier extends LuceneTestCase {
     // work on disk to make sure potential lock problems are tested:
     String tempDir = System.getProperty("java.io.tmpdir");
     if (tempDir == null)
-Directory rd = FSDirectory.getDirectory(indexDir);
+      throw new IOException("java.io.tmpdir undefined, cannot run test");
     File indexDir = new File(tempDir, "lucenetestindex");
-    Directory rd = FSDirectory.getDirectory(indexDir, null, false);
+Directory rd = FSDirectory.getDirectory(indexDir);
     IndexThread.id = 0;
     IndexThread.idStack.clear();
     IndexModifier index = new IndexModifier(rd, new StandardAnalyzer(), create);

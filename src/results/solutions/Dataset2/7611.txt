@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -2063,9 +2062,9 @@ public class Issue
             IssueTemplateInfo templateInfo = getTemplateInfo();
             templateInfo.setApproved(true);
             templateInfo.save();
-setTypeId(IssueType.MODULE_TEMPLATE__PK);
+            if (approved)
             {        
-                setTypeId(IssueType.GLOBAL_TEMPLATE__PK);
+setTypeId(IssueType.MODULE_TEMPLATE__PK);
             }
             save();
         } 

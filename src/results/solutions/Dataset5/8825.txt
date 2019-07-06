@@ -1,4 +1,3 @@
-
 package bugs;
 
 import bugsOtherPackage.INode;
@@ -21,8 +20,8 @@ class TaggedTexts {
     public static class Tag {  }
     static aspect PC extends NodeImpl<Tag, Tag> {
         // unneeded declare-parents duplicates one in NodeImpl
-declare parents : Tag implements INode<Tag,Tag>;
+        // when here, get spurious error message
         // when commented out, d-p fails and get compiler error at 1) above
-       // declare parents : Tag implements INode<Tag,Tag>;
+declare parents : Tag implements INode<Tag,Tag>;
     }
 }

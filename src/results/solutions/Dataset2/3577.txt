@@ -1,4 +1,3 @@
-
 /* Copyright (C) The Apache Software Foundation. All rights reserved.
  *
  * This software is published under the terms of the Apache Software License
@@ -41,9 +40,9 @@ public class FQCNTest {
   static 
   void init(String file) throws Exception {
     Layout layout = new PatternLayout("%p %c (%C{2}#%M) - %m%n");
-Logger root = Logger.getRootLogger();;
+    FileAppender appender = new FileAppender(layout, file, false);
     appender.setLayout(layout);
-    Category root = Category.getRoot();
+Logger root = Logger.getRootLogger();;
     root.addAppender(appender);
   }
 

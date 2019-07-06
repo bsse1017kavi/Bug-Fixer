@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -989,9 +988,9 @@ public class TestHTTPSamplersAgainstHttpMirrorServer extends JMeterTestCase {
             int contentLength = -1;
             if(contentLengthValue != null) {
                 contentLength = new Integer(contentLengthValue).intValue();
-fail("Did not receive any content-length header");
+            }
             else {
-                fail("Did not receive any content-lenght header");
+fail("Did not receive any content-length header");
             }
             bodySent = new byte[contentLength];
             System.arraycopy(responseData, responseData.length - contentLength, bodySent, 0, contentLength);

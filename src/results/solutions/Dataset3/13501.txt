@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -417,9 +416,9 @@ public abstract class AbstractJdbcInsert {
 		KeyHolder kh = executeInsertAndReturnKeyHolderInternal(values);
 		if (kh != null && kh.getKey() != null) {
 			return kh.getKey();
-throw new DataIntegrityViolationException("Unable to retrieve the generated key for the insert: " +
+		}
 		else {
-			throw new DataIntegrityViolationException("Unable to retreive the generated key for the insert: " +
+throw new DataIntegrityViolationException("Unable to retrieve the generated key for the insert: " +
 					getInsertString());
 		}
 	}

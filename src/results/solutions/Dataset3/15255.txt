@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -324,9 +323,9 @@ public class HibernateTransactionManager extends AbstractPlatformTransactionMana
 
 		Session session = null;
 
-Session newSession = SessionFactoryUtils.openSession(getSessionFactory());
+		try {
 			if (txObject.getSessionHolder() == null || txObject.getSessionHolder().isSynchronizedWithTransaction()) {
-				Session newSession = getSessionFactory().openSession();
+Session newSession = SessionFactoryUtils.openSession(getSessionFactory());
 				if (logger.isDebugEnabled()) {
 					logger.debug("Opened new Session [" + newSession + "] for Hibernate transaction");
 				}

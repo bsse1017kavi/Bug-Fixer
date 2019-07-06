@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -516,9 +515,9 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
         if (ae instanceof ZipArchiveEntry) {
             ZipArchiveEntry ze = (ZipArchiveEntry) ae;
             return !ze.isEncrypted() &&
-return false;
+                (ze.getMethod() == STORED || ze.getMethod() == DEFLATED);
         }
-        return super.canWrite(ae);
+return false;
     }
 
     /**

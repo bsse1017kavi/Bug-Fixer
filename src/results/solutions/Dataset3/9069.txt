@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -1307,9 +1306,9 @@ public class DistributableSessionManager<O extends OutgoingDistributableSessionD
                         log.error(MESSAGES.failToPassivate(passivationCheck.isUnloaded() ? "unloaded " : "", passivationCheck.getRealId()), e);
                     }
                 }
-log.error(MESSAGES.processExpirationPassivationException(ex.getLocalizedMessage()), ex);
+            }
         } catch (Exception ex) {
-            log.error("processExpirationPassivation(): failed with exception: " + ex, ex);
+log.error(MESSAGES.processExpirationPassivationException(ex.getLocalizedMessage()), ex);
         } finally {
             SessionInvalidationTracker.resume();
         }

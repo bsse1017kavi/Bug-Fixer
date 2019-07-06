@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -80,9 +79,9 @@ throws IOException
 {
 	super(_name, Type.CERT, _dclass, _ttl);
 	certType = (short) Integer.parseInt(st.nextToken());
-cert = base64.fromString(st.remainingTokens());
+	keyTag = (short) Integer.parseInt(st.nextToken());
 	alg = (byte) Integer.parseInt(st.nextToken());
-	cert = base64.fromString(st.nextToken());
+cert = base64.fromString(st.remainingTokens());
 }
 
 /**

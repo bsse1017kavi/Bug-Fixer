@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -33,9 +32,9 @@ getRecords(Resolver res, String name, short type, short dclass) {
 	int answerCount = 0, i = 0;
 	Enumeration e;
 
-res = _res = new Resolver();
+	if (res == _res && _res == null) {
 		try {
-			_res = new Resolver();
+res = _res = new Resolver();
 		}
 		catch (UnknownHostException uhe) {
 			System.out.println("Failed to initialize resolver");

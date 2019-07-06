@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -128,9 +127,9 @@ public class JGroupsSubsystemTest extends AbstractSubsystemBaseTest {
 
         for (int i = 0; i < protocolList.length; i++) {
             ModelNode protocol = new ModelNode();
-System.out.println("adding protovcol = " + protocol.toString());
+            protocol.get(ModelKeys.TYPE).set(protocolList[i]) ;
             protocol.get("socket-binding").set("jgroups-udp");
-            System.out.println("adding protocol = " + protocol.toString());
+System.out.println("adding protovcol = " + protocol.toString());
             protocols.add(protocol);
         }
 

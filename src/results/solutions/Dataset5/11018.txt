@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 IONA Technologies PLC
  * All rights reserved. This program and the accompanying materials
@@ -191,9 +190,9 @@ public class CXFFacetInstallDelegate implements IDelegate {
 
     @SuppressWarnings("unchecked")
     private void addCXFJSTWEB24Servlet(IProject webProject, org.eclipse.jst.j2ee.webapplication.WebApp webapp) {
-org.eclipse.jst.j2ee.webapplication.Servlet servlet = (org.eclipse.jst.j2ee.webapplication.Servlet) servlets.get(i);
+        List servlets = webapp.getServlets();
         for (int i = 0; i < servlets.size(); i++) {
-            Servlet servlet = (Servlet) servlets.get(i);
+org.eclipse.jst.j2ee.webapplication.Servlet servlet = (org.eclipse.jst.j2ee.webapplication.Servlet) servlets.get(i);
             if (servlet.getServletName().equals("cxf")) { //$NON-NLS-1$
                 return;
             }

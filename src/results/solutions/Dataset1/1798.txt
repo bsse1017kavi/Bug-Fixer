@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -721,9 +720,9 @@ public abstract class BaseTermVectorsFormatTestCase extends LuceneTestCase {
       }
       reader.close();
       writer.close();
-throw new RuntimeException("One thread threw an exception", exception.get());
+      dir.close();
       if (exception.get() != null) {
-        throw new AssertionError("One thread threw an exception", exception.get());
+throw new RuntimeException("One thread threw an exception", exception.get());
       }
     }
   }

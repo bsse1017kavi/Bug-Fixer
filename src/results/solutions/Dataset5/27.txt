@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -257,9 +256,9 @@ public final class FeedbackMessages implements IClusterable
 	 */
 	public final List<FeedbackMessage> messages(final IFeedbackMessageFilter filter)
 	{
-return Collections.emptyList();
+		if (messages.size() == 0)
 		{
-			return Collections.EMPTY_LIST;
+return Collections.emptyList();
 		}
 
 		final List<FeedbackMessage> list = new ArrayList<FeedbackMessage>();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -379,9 +378,9 @@ public class KeyToolUtils {
 
     private static String getKeyToolPath() throws IOException {
     	if (KEYTOOL_PATH == null) {
-return KEYTOOL_PATH;
+    		throw new IOException("keytool application cannot be found");
     	}
-    	return "keytool";
+return KEYTOOL_PATH;
     }
 
     /**

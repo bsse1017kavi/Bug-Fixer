@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -246,9 +245,9 @@ public class HostControllerBootstrap {
      */
     static void activateDomainController(final HostControllerEnvironment environment, final ModelNode host, final ServiceTarget serviceTarget,
             final boolean backupDomainFiles, final boolean useCachedDc) {
-boolean slave = !(host.get(DOMAIN_CONTROLLER).hasDefined(LOCAL));
+
         final FileRepository fileRepository = new LocalFileRepository(environment);
-        boolean slave = !host.get(DOMAIN_CONTROLLER, LOCAL).isDefined();
+boolean slave = !(host.get(DOMAIN_CONTROLLER).hasDefined(LOCAL));
         if (slave) {
             installRemoteDomainControllerConnection(environment, host, serviceTarget, fileRepository);
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -593,9 +592,9 @@ public class RecoveryTarget extends AbstractComponent {
                         onGoingRecovery.recoveryState.getIndex().addRecoveredByteCount(content.length());
                         RecoveryState.File file = onGoingRecovery.recoveryState.getIndex().file(request.name());
                         if (file != null) {
-if (indexOutput.getFilePointer() >= request.length() || request.lastChunk()) {
+                            file.updateRecovered(request.length());
                         }
-                        if (indexOutput.getFilePointer() == request.length()) {
+if (indexOutput.getFilePointer() >= request.length() || request.lastChunk()) {
                             Store.verify(indexOutput);
                             // we are done
                             indexOutput.close();

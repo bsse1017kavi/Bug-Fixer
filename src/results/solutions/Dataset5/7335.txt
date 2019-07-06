@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -922,9 +921,9 @@ public class DB2Dictionary
     String nullSafe(String s) {
         return s == null ? "" : s;
     }
-public boolean isFatalException(int subtype, SQLException ex) {
+
     @Override
-    protected boolean isFatalException(int subtype, SQLException ex) {
+public boolean isFatalException(int subtype, SQLException ex) {
         String errorState = ex.getSQLState();
         int errorCode = ex.getErrorCode();
         if (errorCode == -952 && "57014".equals(errorState))

@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2002-2004 The Apache Software Foundation.
@@ -434,9 +433,9 @@ public class JMeterTest extends JMeterTestCase {
 		}
 		log.debug("Saving element: " + el.getClass());
 		StringWriter writer = new StringWriter();
-assertNotNull("Load element failed on: "+name,el);
+		SaveService.saveElement(el, writer);
 		el = (TestElement) SaveService.loadElement(new StringReader(writer.toString()));
-		log.debug("Successfully saved");
+assertNotNull("Load element failed on: "+name,el);
 		guiItem.configure(el);
 		assertEquals("CONFIGURE-TEST: Failed on " + name, el.getPropertyAsString(TestElement.NAME), guiItem.getName());
 		guiItem.modifyTestElement(el2);

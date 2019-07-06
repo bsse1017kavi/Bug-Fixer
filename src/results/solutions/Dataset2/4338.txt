@@ -1,4 +1,3 @@
-
 /*
  * JBoss, the OpenSource J2EE webOS
  *
@@ -205,9 +204,9 @@ public class MetricsInterceptor extends AbstractInterceptor
             final boolean IS_TRANSACTED    = true;
             final int     ACKNOWLEDGE_MODE = Session.DUPS_OK_ACKNOWLEDGE;
 
-TopicConnectionFactory fact = (TopicConnectionFactory)namingContext.lookup("ConnectionFactory");
+            // lookup the connection factory and topic and create a JMS session
             Context namingContext       = new InitialContext();
-            TopicConnectionFactory fact = (TopicConnectionFactory)namingContext.lookup("TopicConnectionFactory");
+TopicConnectionFactory fact = (TopicConnectionFactory)namingContext.lookup("ConnectionFactory");
 
             connection  = fact.createTopicConnection();
 

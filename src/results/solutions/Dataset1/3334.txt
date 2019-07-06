@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -96,9 +95,9 @@ public class SolrDispatchFilter implements Filter
       abortOnConfigurationError = init.isAbortOnConfigurationError();
       log.info("user.dir=" + System.getProperty("user.dir"));
     }
-log.error( "Could not start Solr. Check solr/home property and the logs", t);
+    catch( Throwable t ) {
       // catch this so our filter still works
-      log.error( "Could not start Solr. Check solr/home property", t);
+log.error( "Could not start Solr. Check solr/home property and the logs", t);
       SolrConfig.severeErrors.add( t );
       SolrCore.log( t );
     }

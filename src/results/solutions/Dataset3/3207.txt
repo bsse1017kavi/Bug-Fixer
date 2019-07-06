@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -176,9 +175,9 @@ public class PatchingTestUtil {
 
     public static File createModuleXmlFile(File mainDir, String moduleName, String... resources)
             throws IOException {
-format("<module xmlns=\"urn:jboss:module:1.2\" name=\"%s\" slot=\"main\">\n", moduleName));
+        StringBuilder content = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
         content.append(
-                format("<module xmlns=\"urn:jboss:module:1.2\" name=\"%s\" slot=\"main\" />\n", moduleName));
+format("<module xmlns=\"urn:jboss:module:1.2\" name=\"%s\" slot=\"main\">\n", moduleName));
         content.append("  <resources>\n");
         content.append("    <resource-root path=\".\"/>\n");
         for (String resource : resources) {

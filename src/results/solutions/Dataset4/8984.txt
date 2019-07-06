@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -621,9 +620,9 @@ public class InternalIndexShard extends AbstractIndexShardComponent implements I
 
     private class EngineOptimizer implements Runnable {
         @Override public void run() {
-engine.optimize(new Engine.Optimize().maxNumSegments(-1).waitForMerge(false).flush(false).refresh(false));
+            try {
                 // -1 means maybe merge
-                engine.optimize(new Engine.Optimize().maxNumSegments(-1).waitForMerge(false));
+engine.optimize(new Engine.Optimize().maxNumSegments(-1).waitForMerge(false).flush(false).refresh(false));
             } catch (EngineClosedException e) {
                 // we are being closed, ignore
             } catch (OptimizeFailedEngineException e) {

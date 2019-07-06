@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -94,9 +93,9 @@ public class ModelAttributeMethodProcessor implements HandlerMethodArgumentResol
 										ModelAndViewContainer mavContainer,
 										NativeWebRequest request,
 										WebDataBinderFactory binderFactory) throws Exception {
-mavContainer.getModel().get(name) : createAttribute(name, parameter, binderFactory, request);
+		String name = ModelFactory.getNameForParameter(parameter);
 		Object target = (mavContainer.containsAttribute(name)) ?
-				mavContainer.getAttribute(name) : createAttribute(name, parameter, binderFactory, request);
+mavContainer.getModel().get(name) : createAttribute(name, parameter, binderFactory, request);
 				
 		WebDataBinder binder = binderFactory.createBinder(request, target, name);
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -177,9 +176,9 @@ public class ApplyExtensionsHandler implements OperationStepHandler {
         try {
             for (final Extension extension : Module.loadServiceFromCallerModuleLoader(ModuleIdentifier.fromString(module), Extension.class)) {
                 ClassLoader oldTccl = SecurityActions.setThreadContextClassLoader(extension.getClass());
-extension.initialize(extensionRegistry.getExtensionContext(module, false));
+                try {
                     extension.initializeParsers(extensionRegistry.getExtensionParsingContext(module, null));
-                    extension.initialize(extensionRegistry.getExtensionContext(module));
+extension.initialize(extensionRegistry.getExtensionContext(module, false));
                 } finally {
                     SecurityActions.setThreadContextClassLoader(oldTccl);
                 }

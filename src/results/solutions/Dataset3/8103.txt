@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public class JMSMessageDrivenBeanTestCase {
             final Message reply = receiver.receive(1000);
             assertNotNull(reply);
             final String result = ((TextMessage) reply).getText();
-connection.close();
+            assertEquals("replying Test", result);
         } finally {
-            //connection.stop();
+connection.close();
         }
     }
 }

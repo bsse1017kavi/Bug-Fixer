@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -178,9 +177,9 @@ public class HintHandler extends FetchPlanHintHandler {
 
             _supportedKeys.addAll(addPrefix(PREFIX_FETCHPLAN, 
                 Reflection.getBeanStylePropertyNames(
-_supportedKeys.addAll(javaxHintsMap.keySet());
+                      owner.getFetchPlan().getClass())));
 
-            _supportedKeys.addAll(JavaxHintsMap.keySet());
+_supportedKeys.addAll(javaxHintsMap.keySet());
 
             _supportedKeys.addAll(Reflection.getFieldValues(
                 HintHandler.class, 

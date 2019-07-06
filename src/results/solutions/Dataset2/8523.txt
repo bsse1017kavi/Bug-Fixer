@@ -1,4 +1,3 @@
-
 /*
 * JBoss, the OpenSource J2EE webOS
 * Distributable under LGPL license.
@@ -94,9 +93,9 @@ public class TestServer {
 			}
 			lServer.invoke( lNamingName, "start", new Object[] {}, new String[] {} );
 			System.out.println( "Load and register the JMX RMI-Connector" );
-"org.jboss.jmx.connector.rmi.RMIAdaptorService",
+			ObjectName lConnectorName = new ObjectName( lServer.getDefaultDomain(), "service", "RMIConnector" );
 			lServer.createMBean(
-				"org.jboss.jmx.connector.rmi.RMIConnectorService",
+"org.jboss.jmx.connector.rmi.RMIAdaptorService",
 				lConnectorName
 			);
 			System.out.println( "Start the Connector" );

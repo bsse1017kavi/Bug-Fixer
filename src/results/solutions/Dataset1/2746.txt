@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ import org.apache.cassandra.io.Streaming;
  * It registers itself with the Gossiper for ApplicationState namely
  * load information i.e number of requests processed w.r.t distinct
  * keys at an Endpoint. Monitor load information for a 5 minute
-public class StorageLoadBalancer implements IEndPointStateChangeSubscriber
+ * interval and then do load balancing operations if necessary.
  */
-public final class StorageLoadBalancer implements IEndPointStateChangeSubscriber
+public class StorageLoadBalancer implements IEndPointStateChangeSubscriber
 {
     class LoadBalancer implements Runnable
     {

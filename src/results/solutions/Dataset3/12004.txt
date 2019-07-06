@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -164,9 +163,9 @@ public class CacheRegistry<K, V> implements Registry<K, V> {
                     }
                 }
                 return removed;
-Map<K, V> removed = this.invoker.invoke(this.cache, operation, Flag.FORCE_SYNCHRONOUS);
+            }
         };
-        Map<K, V> removed = this.invoker.invoke(this.cache, operation);
+Map<K, V> removed = this.invoker.invoke(this.cache, operation, Flag.FORCE_SYNCHRONOUS);
         if (!removed.isEmpty()) {
             for (Listener<K, V> listener: this.listeners) {
                 listener.removedEntries(removed);

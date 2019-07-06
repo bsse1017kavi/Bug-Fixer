@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2008 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -46,9 +45,9 @@ public class ContainerEntry implements IContainerEntry {
 	public IContainer createContainer() throws ContainerCreateException {
 		try {
 			IContainer container = ContainerFactory.getDefault().createContainer(getFactoryName(), getContainerID());
-containerAdapter.restore(prefs);
+			IStorableContainerAdapter containerAdapter = (IStorableContainerAdapter) container.getAdapter(IStorableContainerAdapter.class);
 			if (containerAdapter != null) {
-				containerAdapter.handleRestore(prefs);
+containerAdapter.restore(prefs);
 			}
 			return container;
 		} catch (IDCreateException e) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,9 +102,9 @@ public class TermsFacetProcessor extends AbstractComponent implements FacetProce
                 }
             } else if (token == XContentParser.Token.START_ARRAY) {
                 if ("exclude".equals(currentFieldName)) {
-builder.add(parser.bytes());
+                    ImmutableSet.Builder<BytesRef> builder = ImmutableSet.builder();
                     while ((token = parser.nextToken()) != XContentParser.Token.END_ARRAY) {
-                        builder.add(new BytesRef(parser.text()));
+builder.add(parser.bytes());
                     }
                     excluded = builder.build();
                 } else if ("fields".equals(currentFieldName)) {

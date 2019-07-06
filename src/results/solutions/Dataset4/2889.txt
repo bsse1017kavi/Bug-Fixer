@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2013 See AUTHORS file.
  * 
@@ -49,9 +48,9 @@ public class IOSMusic implements Music {
 
 	@Override
 	public void play () {
-} else if (!track.isPlaying()) {
+		if (track.isPaused()) {
 			track.setPaused(false);
-		} else {
+} else if (!track.isPlaying()) {
 			track.play();
 		}
 	}

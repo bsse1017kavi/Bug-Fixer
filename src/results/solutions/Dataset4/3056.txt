@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -95,9 +94,9 @@ public class PrefixQueryParser implements QueryParser {
         MultiTermQuery.RewriteMethod method = QueryParsers.parseRewriteMethod(rewriteMethod);
 
         Query query = null;
-if (smartNameFieldMappers.explicitTypeInNameWithDocMapper()) {
+        MapperService.SmartNameFieldMappers smartNameFieldMappers = parseContext.smartFieldMappers(fieldName);
         if (smartNameFieldMappers != null && smartNameFieldMappers.hasMapper()) {
-            if (smartNameFieldMappers.hasDocMapper()) {
+if (smartNameFieldMappers.explicitTypeInNameWithDocMapper()) {
                 String[] previousTypes = QueryParseContext.setTypesWithPrevious(new String[]{smartNameFieldMappers.docMapper().type()});
                 try {
                     query = smartNameFieldMappers.mapper().prefixQuery(value, method, parseContext);

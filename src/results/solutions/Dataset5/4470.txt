@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -261,9 +260,9 @@ public class WebPage extends Page implements INewBrowserWindowListener
 			// will then the javascript run?? If so will that last page in the browser always be \
 			// the last in the access stack?
 			if( !(access.getId() == getNumericId() && access.getVersion() == getCurrentVersionNumber()) )
-PageMap map = getSession().createAutoPageMap();
+			{
 				WebPage clonedPage = (WebPage)Objects.cloneObject(this);
-				PageMap map = PageMap.forName(Long.toString(System.currentTimeMillis()));
+PageMap map = getSession().createAutoPageMap();
 				clonedPage.moveToPageMap(map);
 				setResponsePage(clonedPage);
 			}

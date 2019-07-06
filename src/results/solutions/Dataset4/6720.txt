@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -33,9 +32,9 @@ import static org.hamcrest.Matchers.*;
  */
 @Test
 public class BytesStreamsTests {
-BytesStreamOutput out = CachedStreamOutput.popEntry().cachedBytes();
+
     @Test public void testSimpleStreams() throws Exception {
-        BytesStreamOutput out = CachedStreamOutput.cachedBytes();
+BytesStreamOutput out = CachedStreamOutput.popEntry().cachedBytes();
         out.writeBoolean(false);
         out.writeByte((byte) 1);
         out.writeShort((short) -1);

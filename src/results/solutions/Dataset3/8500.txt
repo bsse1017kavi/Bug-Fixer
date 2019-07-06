@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -107,9 +106,9 @@ public class WeakCheckStateTestCase extends PropertyTestHelper {
     public void testTooShortPassword() {
         values.setUserName("willFail");
         values.setPassword("1QwD%rf".toCharArray());
-AssertConsoleBuilder consoleBuilder = new AssertConsoleBuilder().expectedErrorMessage(MESSAGES.passwordNotLongEnough(8));
+        WeakCheckState weakCheckState = new WeakCheckState(consoleMock, values);
 
-        AssertConsoleBuilder consoleBuilder = new AssertConsoleBuilder().expectedErrorMessage(MESSAGES.passwordNotLontEnough(8));
+AssertConsoleBuilder consoleBuilder = new AssertConsoleBuilder().expectedErrorMessage(MESSAGES.passwordNotLongEnough(8));
         consoleMock.setResponses(consoleBuilder);
 
         State errorState = weakCheckState.execute();

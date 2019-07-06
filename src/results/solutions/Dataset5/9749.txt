@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -501,9 +500,9 @@ String keysymName (int keysym) {
 void manageChildren () {
 	OS.XtManageChild (handle);
 }
-menu.release (false);
+void releaseChildren (boolean destroy) {
 	if (menu != null) {
-		menu.releaseChildren (false);
+menu.release (false);
 		menu = null;
 	}
 	super.releaseChildren (destroy);

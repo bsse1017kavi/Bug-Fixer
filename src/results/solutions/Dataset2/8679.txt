@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -41,9 +40,9 @@ public class AsyncAppenderTestCase extends TestCase {
 
   public void setUp() {
     vectorAppender = new VectorAppender();
-asyncAppender.activate();
+    vectorAppender.setDelay(DELAY);
     asyncAppender.addAppender(vectorAppender);
-    asyncAppender.activateOptions();
+asyncAppender.activate();
     root.addAppender(asyncAppender);
   }
 

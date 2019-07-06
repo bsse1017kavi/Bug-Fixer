@@ -1,4 +1,3 @@
-
 package backtype.storm.drpc;
 
 import backtype.storm.Config;
@@ -139,9 +138,9 @@ public class DRPCSpout implements IRichSpout {
         DistributedRPC.Iface client;
         
         if(_local_drpc_id == null) {
-client = (DistributedRPC.Iface) ServiceRegistry.getService(_local_drpc_id);
+            client = _clients.get(did.index);
         } else {
-            client = (ILocalDRPC) ServiceRegistry.getService(_local_drpc_id);
+client = (DistributedRPC.Iface) ServiceRegistry.getService(_local_drpc_id);
         }
         try {
             client.failRequest(did.id);

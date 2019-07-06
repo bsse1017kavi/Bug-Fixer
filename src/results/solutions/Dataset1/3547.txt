@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -117,9 +116,9 @@ class Collaborator implements InvocationHandler, Serializable {
     public Object invoke(Object proxy, Method method, Object[] args)
             throws Throwable {
         Object toReturn = null;
-if (method.getName().equals("unwrapObject")
+
         // Added method to unwrap from the collaborator.
-        if (method.getName().equals("getWrappedObject")
+if (method.getName().equals("unwrapObject")
                 && method.getDeclaringClass() == WrapperedObject.class) {
             toReturn = object;
         } else

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -117,9 +116,9 @@ public class ComponentCreateTagTest extends TestCase
 	 */
 	public void executeTest(final Class pageClass, final String filename) throws Exception
 	{
-application.getMarkupSettings().setStripWicketTags(true);
+		application = new MockWebApplication(null);
 		application.getRequiredPageSettings().setHomePage(pageClass);
-		application.getSettings().setStripWicketTags(true);
+application.getMarkupSettings().setStripWicketTags(true);
 
 		// Do the processing
 		application.setupRequestAndResponse();

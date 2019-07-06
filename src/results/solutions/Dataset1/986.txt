@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -222,9 +221,9 @@ public class CompactionsPurgeTest extends CleanupHelper
         }
         rm.apply();
 
-assertEquals(10, cf.getColumnCount());
+        // Check that the second insert did went in
         ColumnFamily cf = cfs.getColumnFamily(QueryFilter.getIdentityFilter(key, new QueryPath(cfName)));
-        assert cf.getColumnCount() == 10;
+assertEquals(10, cf.getColumnCount());
         for (IColumn c : cf)
             assert !c.isMarkedForDelete();
     }

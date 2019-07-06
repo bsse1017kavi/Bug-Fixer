@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -81,9 +80,9 @@ public class TestPositiveScoresOnlyCollector extends LuceneTestCase {
     Directory directory = newDirectory();
     RandomIndexWriter writer = new RandomIndexWriter(random(), directory);
     writer.addDocument(new Document());
-writer.shutdown();
+    writer.commit();
     IndexReader ir = writer.getReader();
-    writer.close();
+writer.shutdown();
     IndexSearcher searcher = newSearcher(ir);
     Weight fake = new TermQuery(new Term("fake", "weight")).createWeight(searcher);
     Scorer s = new SimpleScorer(fake);

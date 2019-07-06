@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -162,9 +161,9 @@ public class GeoDistanceFilterParser implements FilterParser {
             throw new QueryParsingException(parseContext.index(), "field [" + fieldName + "] is not a geo_point field");
         }
         GeoPointFieldMapper geoMapper = ((GeoPointFieldMapper) mapper);
-IndexGeoPointFieldData<?> indexFieldData = parseContext.getForField(mapper);
 
-        IndexGeoPointFieldData<?> indexFieldData = parseContext.fieldData().getForField(mapper);
+
+IndexGeoPointFieldData<?> indexFieldData = parseContext.getForField(mapper);
         Filter filter = new GeoDistanceFilter(point.lat(), point.lon(), distance, geoDistance, indexFieldData, geoMapper, optimizeBbox);
         if (cache) {
             filter = parseContext.cacheFilter(filter, cacheKey);

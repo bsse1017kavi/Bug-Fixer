@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -252,9 +251,9 @@ public void resolve(MethodScope initializationScope) {
 				}
 			} else {
 				this.binding.setConstant(Constant.NotAConstant);
-if (this.binding == Expression.getDirectBinding(this.initialization)) {
+			}
 			// check for assignment with no effect
-			if (this.binding == Assignment.getDirectBinding(this.initialization)) {
+if (this.binding == Expression.getDirectBinding(this.initialization)) {
 				initializationScope.problemReporter().assignmentHasNoEffect(this, this.name);
 			}					
 		}

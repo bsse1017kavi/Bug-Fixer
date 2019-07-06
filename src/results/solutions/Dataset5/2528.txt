@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -86,9 +85,9 @@ public class MockAjaxFormPage extends WebPage
 			@Override
 			protected void onEvent(AjaxRequestTarget target)
 			{
-target.add(submit);
+				text.validate();
 				submit.setEnabled(text.isValid());
-				target.addComponent(submit);
+target.add(submit);
 			}
 		});
 		form.add(text);

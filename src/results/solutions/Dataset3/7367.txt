@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -197,9 +196,9 @@ public class OperationTransformationTestCase {
         final ModelNode updateResult = client.execute(update);
         Assert.assertEquals(updateResult.toString(), updateResult.get(OUTCOME).asString(), SUCCESS);
         // "result" => {"test-attribute" => "test"},
-//Assert.assertEquals("test", updateResult.get(SERVER_GROUPS, "main-server-group", HOST, "slave", "main-three", "response", RESULT, "test-attribute").asString());
+        Assert.assertEquals("test", updateResult.get(RESULT, "test-attribute").asString());
         // server-result
-        Assert.assertEquals("test", updateResult.get(SERVER_GROUPS, "main-server-group", HOST, "slave", "main-three", "response", RESULT, "test-attribute").asString());
+//Assert.assertEquals("test", updateResult.get(SERVER_GROUPS, "main-server-group", HOST, "slave", "main-three", "response", RESULT, "test-attribute").asString());
 
         //
         final ModelNode write = new ModelNode();

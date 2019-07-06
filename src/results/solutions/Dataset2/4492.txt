@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -690,9 +689,9 @@ public void locateMatches(String[] filePaths, IWorkspace workspace, org.eclipse.
 			// 1 for file path, 4 for parsing and binding creation, 5 for binding resolution? //$NON-NLS-1$
 			this.progressMonitor.beginTask("", filePaths.length * (this.pattern.mustResolve ? 10 : 5)); //$NON-NLS-1$
 		}
-this.patternLocator.initializePolymorphicSearch(this);
+
 		// initialize pattern for polymorphic search (ie. method reference pattern)
-		this.pattern.initializePolymorphicSearch(this, this.progressMonitor);
+this.patternLocator.initializePolymorphicSearch(this);
 
 		JavaProject previousJavaProject = null;
 		PossibleMatchSet matchSet = new PossibleMatchSet();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -133,9 +132,9 @@ public final class JDBCCustomFinderQuery implements JDBCQueryCommand {
             // Throw the exception if its a FinderException
             Throwable ex = e.getTargetException();
             if (ex instanceof FinderException) {
-throw new FinderException("Error invoking custom finder " +
+                throw (FinderException) ex;
             } else {
-                throw new FinderException("Errror invoking cutom finder " +
+throw new FinderException("Error invoking custom finder " +
                         finderMethod.getName() + ": " + ex);
             }
         }

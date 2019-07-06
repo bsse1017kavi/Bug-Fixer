@@ -1,4 +1,3 @@
-
 package backtype.storm.task;
 
 import backtype.storm.generated.GlobalStreamId;
@@ -33,9 +32,9 @@ public class TopologyContext extends WorkerTopologyContext {
 
     
     public TopologyContext(StormTopology topology, Map stormConf,
-Integer workerPort, List<Number> workerTasks) {
+            Map<Integer, String> taskToComponent, String stormId,
             String codeDir, String pidDir, Integer taskId,
-            Integer workerPort, List<Integer> workerTasks) {
+Integer workerPort, List<Number> workerTasks) {
         super(topology, stormConf, taskToComponent, stormId, codeDir, pidDir, workerPort, workerTasks);
         _taskId = taskId;
     }

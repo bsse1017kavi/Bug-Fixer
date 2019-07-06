@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -156,9 +155,9 @@ public class CollectionParam
                 if (other instanceof Type) {
                     pstate.mapping[i] = ctx.store.getConfiguration().
                     getMappingRepositoryInstance().getMapping((Class) val,
-pstate.discValue[i] = pstate.disc[i] != null ?
+                        ctx.store.getContext().getClassLoader(), true);
                     pstate.disc[i] = pstate.mapping[i].getDiscriminator();
-                    pstate.discValue[i] = pstate.disc != null ?
+pstate.discValue[i] = pstate.disc[i] != null ?
                         pstate.disc[i].getValue() : null;
                 }
             } else if (ImplHelper.isManageable(val)) {

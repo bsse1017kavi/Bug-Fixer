@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -405,9 +404,9 @@ public class Proxy extends Thread {
         File certFile = new File(CERT_DIRECTORY, CERT_FILE);
         InputStream in = null;
         final String certPath = certFile.getAbsolutePath();
-in = new BufferedInputStream(new FileInputStream(certFile));
+        if (certFile.exists() && certFile.canRead()) {
             try {
-                in = new FileInputStream(certFile);
+in = new BufferedInputStream(new FileInputStream(certFile));
                 log.info("Opened Keystore file: "+certPath);
             } catch (FileNotFoundException e) {
                 log.error("No server cert file found: "+certPath, e);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -553,9 +552,9 @@ public class Commandline implements Cloneable {
             return "";
         }
         StringBuffer buf = new StringBuffer("Executing \'");
-if (args.length > 1) {
+        buf.append(args[0]);
         buf.append("\'");
-        if (args.length > 0) {
+if (args.length > 1) {
             buf.append(" with ");
             buf.append(describeArguments(args, 1));
         } else {

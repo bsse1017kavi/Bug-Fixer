@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class IndexGatewayTests extends AbstractNodesTests {
         }
         
         builder.put("index.number_of_replicas", "1");
-builder.put("index.store.type", storeType);
+        builder.put("index.number_of_shards", rarely() ? Integer.toString(between(2, 6)) : "1");
         storeType = rarely() ? "ram" : "fs";
-        builder.put("index.store", storeType);
+builder.put("index.store.type", storeType);
         defaultSettings = builder.build();
         buildNode("server1");
         // since we store (by default) the index snapshot under the gateway, resetting it will reset the index data as well

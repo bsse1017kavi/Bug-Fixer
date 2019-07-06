@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -558,9 +557,9 @@ public final class Workbench extends EventManager implements IWorkbench {
 					return;
 				
 				if (background != null)
-properties.put(Constants.SERVICE_RANKING, new Integer(Integer.MAX_VALUE));
+					splashShell.setBackgroundImage(background);
 				Dictionary properties = new Hashtable();
-				properties.put(Constants.SERVICE_RANKING, Integer.toString(Integer.MAX_VALUE));
+properties.put(Constants.SERVICE_RANKING, new Integer(Integer.MAX_VALUE));
 				BundleContext context = WorkbenchPlugin.getDefault().getBundleContext();
 				context.registerService(StartupMonitor.class.getName(), new StartupMonitor () {
 					

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class HighlightPhase implements SearchHitPhase {
         return context.highlight() != null;
     }
 
-DocumentMapper documentMapper = context.mapperService().documentMapper(hit.type());
+    @Override public void execute(SearchContext context, InternalSearchHit hit, Uid uid, IndexReader reader, int docId) throws ElasticSearchException {
         try {
-            DocumentMapper documentMapper = context.mapperService().type(hit.type());
+DocumentMapper documentMapper = context.mapperService().documentMapper(hit.type());
 
             Map<String, HighlightField> highlightFields = newHashMap();
             for (SearchContextHighlight.Field field : context.highlight().fields()) {

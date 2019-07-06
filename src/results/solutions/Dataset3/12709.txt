@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ class ContentPolicyBuilderImpl implements PatchTool.ContentPolicyBuilder {
         return new ContentVerificationPolicy() {
             @Override
             public boolean ignoreContentValidation(ContentItem item) {
-return ignoreModulesChanges | overrideAll;
+                final ContentType type = item.getContentType();
                 if(type == ContentType.MODULE || type == ContentType.BUNDLE) {
-                    return ignoreModulesChanges;
+return ignoreModulesChanges | overrideAll;
                 }
                 final MiscContentItem misc = (MiscContentItem) item;
                 final String path = misc.getRelativePath();

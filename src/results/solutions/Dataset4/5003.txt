@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com), Nathan Sweet (admin@esotericsoftware.com)
  * 
@@ -267,9 +266,9 @@ public final class Intersector {
 	 */
 	public static boolean intersectRaySphere (Ray ray, Vector3 center, float radius, Vector3 intersection) {
 		dir.set(ray.direction).nor();
-float c = start.dst2(center) - radius * radius;
+		start.set(ray.origin);
 		float b = 2 * (dir.dot(start.tmp().sub(center)));
-		float c = start.dist2(center) - radius * radius;
+float c = start.dst2(center) - radius * radius;
 		float disc = b * b - 4 * c;
 		if (disc < 0) return false;
 

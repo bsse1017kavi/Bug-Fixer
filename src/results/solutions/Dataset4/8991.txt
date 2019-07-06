@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class BoostScoreFunction extends ScoreFunction {
     public double score(int docId, float subQueryScore) {
         return boost;
     }
-public Explanation explainScore(int docId, float subQueryScore) {
+
     @Override
-    public Explanation explainScore(int docId, Explanation subQueryExpl) {
+public Explanation explainScore(int docId, float subQueryScore) {
         Explanation exp = new Explanation(boost, "static boost factor");
         exp.addDetail(new Explanation(boost, "boostFactor"));
         return exp;

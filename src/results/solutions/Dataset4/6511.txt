@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -129,9 +128,9 @@ public class TimestampFieldMapper extends DateFieldMapper implements InternalMap
                     EnabledAttributeMapper enabledState = nodeBooleanValue(fieldNode) ? EnabledAttributeMapper.ENABLED : EnabledAttributeMapper.DISABLED;
                     builder.enabled(enabledState);
                 } else if (fieldName.equals("path")) {
-builder.dateTimeFormatter(parseDateTimeFormatter(fieldNode.toString()));
+                    builder.path(fieldNode.toString());
                 } else if (fieldName.equals("format")) {
-                    builder.dateTimeFormatter(parseDateTimeFormatter(builder.name(), fieldNode.toString()));
+builder.dateTimeFormatter(parseDateTimeFormatter(fieldNode.toString()));
                 } else if (fieldName.equals("default")) {
                     builder.defaultTimestamp(fieldNode == null ? null : fieldNode.toString());
                 }

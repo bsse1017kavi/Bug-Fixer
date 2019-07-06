@@ -1,4 +1,3 @@
-
 package org.wildfly.extension.undertow.deployment;
 
 import java.io.IOException;
@@ -39,9 +38,9 @@ public class ServletResourceManager implements ResourceManager {
         }
         if(overlays != null) {
             for (VirtualFile overlay : overlays) {
-return new VirtualFileResource(overlay.getPhysicalFile(), child, path);
+                VirtualFile child = overlay.getChild(p);
                 if (child.exists()) {
-                    return new VirtualFileResource(child, path);
+return new VirtualFileResource(overlay.getPhysicalFile(), child, path);
                 }
             }
         }

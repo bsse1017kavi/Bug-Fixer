@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -224,9 +223,9 @@ public class DefaultSamplerCreator extends AbstractSamplerCreator {
             XMLReader xmlReader = saxParser.getXMLReader();
             ErrorDetectionHandler detectionHandler =
                     new ErrorDetectionHandler();
-return !detectionHandler.isErrorDetected();
+            xmlReader.setContentHandler(detectionHandler);
             xmlReader.parse(new InputSource(new StringReader(postData)));
-            return detectionHandler.isErrorDetected();
+return !detectionHandler.isErrorDetected();
         } catch (ParserConfigurationException e) {
             return false;
         } catch (SAXException e) {

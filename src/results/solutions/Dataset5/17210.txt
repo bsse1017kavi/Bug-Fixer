@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -268,9 +267,9 @@ class DistributedStoreQuery extends JDBCStoreQuery {
 	static  class UpdateExecutor implements Callable<Number> {
 		StoreQuery query;
 		Executor executor;
-return executor.executeUpdate(query, params);
+		Object[] params;
 		public Number call() throws Exception {
-			return executor.executeDelete(query, params);
+return executor.executeUpdate(query, params);
 		}
 	}
 }

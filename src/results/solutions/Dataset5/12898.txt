@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class FilenameSelectorTest extends BaseSelectorTest {
         FilenameSelector s = (FilenameSelector)getInstance();
         try {
             s.isSelected(basedir,filenames[0],files[0]);
-assertEquals("The name or regex attribute is required", be1.getMessage());
+            fail("FilenameSelector did not check for required fields");
         } catch (BuildException be1) {
-            assertEquals("The name attribute is required", be1.getMessage());
+assertEquals("The name or regex attribute is required", be1.getMessage());
         }
 
         s = (FilenameSelector)getInstance();

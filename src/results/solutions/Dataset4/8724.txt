@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2008-2010, Matthias Mann
  * 
@@ -219,9 +218,9 @@ public class BitmapFont implements Disposable {
 
 		private Glyph getFirstGlyph () {
 			for (Glyph[] page : this.glyphs) {
-if (glyph == null || glyph.height == 0 || glyph.width == 0) continue;
+				if (page == null) continue;
 				for (Glyph glyph : page) {
-					if (glyph == null) continue;
+if (glyph == null || glyph.height == 0 || glyph.width == 0) continue;
 					return glyph;
 				}
 			}

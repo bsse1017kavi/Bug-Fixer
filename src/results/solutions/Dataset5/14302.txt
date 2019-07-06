@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.67 $ $Date$
@@ -387,9 +386,9 @@ public final class PageMap implements Serializable
 		{
 			cycle.setRequestTarget(new IRequestTarget()
 			{
-public void detach(RequestCycle requestCycle)
+				final String responseUrl = interceptContinuationURL;
 
-				public void cleanUp(RequestCycle requestCycle)
+public void detach(RequestCycle requestCycle)
 				{
 				}
 

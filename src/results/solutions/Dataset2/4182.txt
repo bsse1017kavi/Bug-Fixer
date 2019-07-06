@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -81,9 +80,9 @@ public class QualifiedTypeReference extends TypeReference {
 			} else if (qualifiedType != null) {
 				boolean rawQualified;
 				if ((rawQualified = qualifiedType.isRawType()) && !currentType.isStatic()) {
-qualifiedType = scope.environment().createParameterizedType((ReferenceBinding)currentType.erasure(), null, qualifiedType);
+					qualifiedType = scope.environment().createRawType((ReferenceBinding)currentType.erasure(), qualifiedType);
 				} else if (rawQualified || qualifiedType.isParameterizedType()) {
-					qualifiedType = scope.createParameterizedType((ReferenceBinding)currentType.erasure(), null, qualifiedType);
+qualifiedType = scope.environment().createParameterizedType((ReferenceBinding)currentType.erasure(), null, qualifiedType);
 				} else {
 					qualifiedType = currentType;
 				}

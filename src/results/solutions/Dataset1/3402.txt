@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -46,8 +45,8 @@ public class SolrExampleEmbeddedTest extends SolrExampleTests {
   }
 
   @Override
-return new EmbeddedSolrServer( h.getCoreContainer(), "" );
+  protected SolrServer createNewSolrServer()
   {
-    return new EmbeddedSolrServer( h.getCore() );
+return new EmbeddedSolrServer( h.getCoreContainer(), "" );
   }
 }

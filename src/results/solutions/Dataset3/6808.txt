@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class PlatformMBeanTestModelControllerService extends AbstractControllerS
         ResourceBuilder.Factory.create(PathElement.pathElement("root"),new NonResolvingResourceDescriptionResolver()).build(), null, ExpressionResolver.TEST_RESOLVER,
         AuditLogger.NO_OP_LOGGER, new DelegatingConfigurableAuthorizer());
     }
-protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
+
     @Override
-    protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration) {
+protected void initModel(Resource rootResource, ManagementResourceRegistration rootRegistration, Resource modelControllerResource) {
 
         GlobalOperationHandlers.registerGlobalOperations(rootRegistration, processType);
         rootRegistration.registerOperationHandler(ValidateAddressOperationHandler.DEFINITION, ValidateAddressOperationHandler.INSTANCE);

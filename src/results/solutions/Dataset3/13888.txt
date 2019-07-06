@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -354,9 +353,9 @@ final class OperationContextImpl implements OperationContext {
             } catch (OperationFailedException ofe) {
                 if (currentStage != Stage.DONE) {
                     // Handler threw OFE before calling completeStep(); that's equivalent to
-log.warnf(ofe, "Operation (%s) failed - address: (%s)", operation.get(OP), operation.get(OP_ADDR));
+                    // a request that we set the failure description and call completeStep()
                     response.get(FAILURE_DESCRIPTION).set(ofe.getFailureDescription());
-                    log.warnf("Operation (%s) failed - address: (%s)", operation.get(OP), operation.get(OP_ADDR));
+log.warnf(ofe, "Operation (%s) failed - address: (%s)", operation.get(OP), operation.get(OP_ADDR));
                     completeStep();
                 }
                 else {

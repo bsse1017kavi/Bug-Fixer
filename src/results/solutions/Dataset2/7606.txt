@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -1136,9 +1135,9 @@ private boolean updateCurrentDeltaAndIndex(IResourceDelta delta, int elementType
 private void initializeRoots(IJavaModel model) {
 	this.roots = new HashMap();
 	this.otherRoots = new HashMap();
-projects = ((JavaModel)model).getOldJavaProjectsList();
+	IJavaProject[] projects;
 	try {
-		projects = model.getJavaProjects();
+projects = ((JavaModel)model).getOldJavaProjectsList();
 	} catch (JavaModelException e) {
 		// nothing can be done
 		return;

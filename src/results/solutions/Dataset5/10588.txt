@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -390,9 +389,9 @@ class XSDSimpleTypeTraverser extends XSDAbstractTraverser {
             newDecl = fSchemaHandler.fDVFactory.createTypeUnion(name, schemaDoc.fTargetNamespace, (short)finalProperty, memberDecls,
                     annotations == null? null : new XSObjectListImpl(annotations, annotations.length));
         }
-FacetInfo fi = traverseFacets(content, newDecl, baseValidator, schemaDoc);
+        // now traverse facets, if it's derived by restriction
         if (restriction && content != null) {
-            FacetInfo fi = traverseFacets(content, baseValidator, schemaDoc);
+FacetInfo fi = traverseFacets(content, newDecl, baseValidator, schemaDoc);
             content = fi.nodeAfterFacets;
             
             try {

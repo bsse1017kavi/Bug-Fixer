@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -314,9 +313,9 @@ public class TestIndexWriterUnicode extends LuceneTestCase {
     }
 
     IndexReader r = writer.getReader();
-for (AtomicReaderContext ctx : r.leaves()) {
+
     // Test each sub-segment
-    for (AtomicReaderContext ctx : r.getTopReaderContext().leaves()) {
+for (AtomicReaderContext ctx : r.leaves()) {
       checkTermsOrder(ctx.reader(), allTerms, false);
     }
     checkTermsOrder(r, allTerms, true);

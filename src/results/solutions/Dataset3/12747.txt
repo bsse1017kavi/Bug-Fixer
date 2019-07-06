@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -238,9 +237,9 @@ class SecuritySubsystemAdd implements ModelAddOperationHandler, BootOperationHan
                     final SecurityManagementService securityManagementService = new SecurityManagementService(
                             resolvedAuthenticationManagerClassName, deepCopySubject, resolvedCallbackHandlerClassName,
                             resolvedAuthorizationManagerClassName, resolvedAuditManagerClassName,
-.addDependency(DependencyType.OPTIONAL,
+                            resolvedIdentityTrustManagerClassName, resolvedMappingManagerClassName);
                     target.addService(SecurityManagementService.SERVICE_NAME, securityManagementService)
-                            .addDependency(DependencyType.REQUIRED,
+.addDependency(DependencyType.OPTIONAL,
                                     EmbeddedCacheManagerService.getServiceName(CACHE_CONTAINER_NAME),
                                     EmbeddedCacheManager.class,
                                     securityManagementService.getAuthenticationCacheManagerInjector())

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2008-2010, Matthias Mann
  * 
@@ -72,9 +71,9 @@ class GdxFont implements Font {
 	public int drawText (AnimationState as, int x, int y, CharSequence str, int start, int end) {
 		FontState fontState = evalFontState(as);
 		x += fontState.offsetX;
-return bitmapFont.draw(renderer.spriteBatch, str, x, y, color, start, end);
+		y += fontState.offsetY + yOffset;
 		com.badlogic.gdx.graphics.Color color = renderer.getColor(fontState.color);
-		return bitmapFont.draw(renderer.spriteBatch, str, x, y, color);
+return bitmapFont.draw(renderer.spriteBatch, str, x, y, color, start, end);
 	}
 
 	public int drawMultiLineText (AnimationState as, int x, int y, CharSequence str, int width,

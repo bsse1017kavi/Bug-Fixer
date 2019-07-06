@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class WordUtilsTest extends TestCase {
     }
 
     //-----------------------------------------------------------------------
-Constructor<?>[] cons = WordUtils.class.getDeclaredConstructors();
+    public void testConstructor() {
         assertNotNull(new WordUtils());
-        Constructor[] cons = WordUtils.class.getDeclaredConstructors();
+Constructor<?>[] cons = WordUtils.class.getDeclaredConstructors();
         assertEquals(1, cons.length);
         assertEquals(true, Modifier.isPublic(cons[0].getModifiers()));
         assertEquals(true, Modifier.isPublic(WordUtils.class.getModifiers()));

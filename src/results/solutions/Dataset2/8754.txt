@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.startup;
 
 import java.net.*;
@@ -131,9 +130,9 @@ public class EmbededTomcat { // extends WebService
 	if( hostname != null ) sc.setAttribute( "vhost_name", hostname );
 
 	sc.setAttribute( "socketFactory",
-HttpConnectionHandler hc=new HttpConnectionHandler();
+			 "org.apache.tomcat.net.SSLSocketFactory");
 	//	log("XXX " + keyFile + " " + keyPass);
-	HttpConnectionHandler ch=new HttpConnectionHandler();
+HttpConnectionHandler hc=new HttpConnectionHandler();
 	hc.setSecure(true);
 	sc.setTcpConnectionHandler( hc );
 	// XXX add the secure socket

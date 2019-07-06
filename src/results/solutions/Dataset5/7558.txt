@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.4 $ $Date$
@@ -134,9 +133,9 @@ public abstract class Resource implements IResourceListener
 		try
 		{
 			final OutputStream out = response.getOutputStream();
-Streams.copy(resourceStream.getInputStream(), out);
+			try
 			{
-				Streams.writeStream(resourceStream.getInputStream(), out);
+Streams.copy(resourceStream.getInputStream(), out);
 			}
 			finally
 			{

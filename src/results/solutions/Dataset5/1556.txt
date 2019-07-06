@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -86,9 +85,9 @@ public class SSLManagerCommand implements Command {
      * I.e. a FileChooser for PCSI12 (.p12|.P12) files.
      */
     private void sslManager() {
-keyStoreChooser = new JFileChooser(System.getProperty("user.dir")); //$NON-NLS-1$
+        SSLManager.reset();
 
-        keyStoreChooser = new JFileChooser(JMeterUtils.getJMeterProperties().getProperty("user.dir")); //$NON-NLS-1$
+keyStoreChooser = new JFileChooser(System.getProperty("user.dir")); //$NON-NLS-1$
         keyStoreChooser.addChoosableFileFilter(new AcceptPKCS12FileFilter());
         keyStoreChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int retVal = keyStoreChooser.showOpenDialog(GuiPackage.getInstance().getMainFrame());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -168,9 +167,9 @@ public class HighlightPhase extends AbstractComponent implements FetchSubPhase {
                 List<Object> textsToHighlight;
                 if (mapper.stored()) {
                     try {
-textsToHighlight = (List) fieldVisitor.values();
+                        SingleFieldVisitor fieldVisitor = new SingleFieldVisitor(mapper.names().indexName());
                         hitContext.reader().document(hitContext.docId(), fieldVisitor);
-                        textsToHighlight = (List<Object>) fieldVisitor.values();
+textsToHighlight = (List) fieldVisitor.values();
                     } catch (Exception e) {
                         throw new FetchPhaseExecutionException(context, "Failed to highlight field [" + field.field() + "]", e);
                     }

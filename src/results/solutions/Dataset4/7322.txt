@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class LogByteSizeMergePolicyProvider extends AbstractMergePolicyProvider<
     private volatile int mergeFactor;
     private volatile int maxMergeDocs;
     private final boolean calibrateSizeByDeletes;
-private final Set<CustomLogByteSizeMergePolicy> policies = new CopyOnWriteArraySet<>();
+    private boolean asyncMerge;
 
-    private final Set<CustomLogByteSizeMergePolicy> policies = new CopyOnWriteArraySet<CustomLogByteSizeMergePolicy>();
+private final Set<CustomLogByteSizeMergePolicy> policies = new CopyOnWriteArraySet<>();
 
     private final ApplySettings applySettings = new ApplySettings();
 

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -69,9 +68,9 @@ public class Tools {
     static final String STANDALONE = "standalone";
     static final String VERSION = "version";
 
-throw new RuntimeException(result.get(FAILURE_DESCRIPTION).toString());
+    static ModelNode getAndCheckResult(ModelNode result) {
         if (!result.get(OUTCOME).asString().equals(SUCCESS)) {
-            throw new RuntimeException(result.get(FAILURE_DESCRIPTION).asString());
+throw new RuntimeException(result.get(FAILURE_DESCRIPTION).toString());
         }
         return result.get(RESULT);
     }

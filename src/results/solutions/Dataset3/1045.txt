@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class StringBuilderWriterTest extends TestCase {
     public void testAppendConstructStringBuilder() {
         StringBuilder builder = new StringBuilder("Foo");
         StringBuilderWriter writer = new StringBuilderWriter(builder);
-assertEquals(builder, writer.getBuilder());
+        writer.append("Bar");
         assertEquals("FooBar", writer.toString());
-        assertTrue(builder == writer.getBuilder());
+assertEquals(builder, writer.getBuilder());
     }
 
     /** Test {@link StringBuilderWriter} constructor. */

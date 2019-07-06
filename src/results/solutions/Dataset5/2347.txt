@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -937,9 +936,9 @@ void webViewShow(int sender) {
 	size = null;
 }
 
-OS.memmove(dest, frame, 16);
+void setFrame(int frame) {
 	float[] dest = new float[4];
-	OS.memcpy(dest, frame, 16);
+OS.memmove(dest, frame, 16);
 	/* convert to SWT system coordinates */
 	Rectangle bounds = browser.getDisplay().getBounds();
 	location = new Point((int)dest[0], bounds.height - (int)dest[1] - (int)dest[3]);

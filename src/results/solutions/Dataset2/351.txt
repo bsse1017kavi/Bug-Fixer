@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -421,9 +420,9 @@ public class Container implements Cloneable{
      */
     public void addInterceptor( BaseInterceptor bi ) {
 	bi.setContext( getContext() );
-bi.registerHooks( hooks, contextM, context );
+
 	if( Hooks.hasHook( bi, "registerHooks" ) ) {
-	    bi.registerHooks( hooks );
+bi.registerHooks( hooks, contextM, context );
 	} else {
 	    hooks.addModule( bi );
 	}

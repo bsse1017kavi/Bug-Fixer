@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -151,9 +150,9 @@ public class CSVPrinterTest extends TestCase {
         // System.out.println("### :" + printable(result));
 
         StringReader reader = new StringReader(result);
-String[][] parseResult = parser.getRecords();
+
         CSVParser parser = new CSVParser(reader, format);
-        String[][] parseResult = parser.getAllValues();
+String[][] parseResult = parser.getRecords();
 
         if (!equals(lines, parseResult)) {
             System.out.println("Printer output :" + printable(result));

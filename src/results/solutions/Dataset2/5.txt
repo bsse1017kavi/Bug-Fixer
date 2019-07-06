@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -96,9 +95,9 @@ public class ExternalToolsDialog extends JDialog implements ActionListener,
 		// TODO (@author fdietz): i18n
 		setTitle("External Tools");
 
-.getExtensionHandler(IExtensionHandlerKeys.ORG_COLUMBA_CORE_EXTERNALTOOLS);
+		try {
 			handler = PluginManager.getInstance()
-					.getHandler(IExtensionHandlerKeys.ORG_COLUMBA_CORE_EXTERNALTOOLS);
+.getExtensionHandler(IExtensionHandlerKeys.ORG_COLUMBA_CORE_EXTERNALTOOLS);
 		} catch (PluginHandlerNotFoundException e) {
 			e.printStackTrace();
 		}

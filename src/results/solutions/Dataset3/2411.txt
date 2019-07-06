@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -172,9 +171,9 @@ public final class ClassReflectionIndex<T> {
      * Get a collection of methods declared on this object.
      *
      * @param name the name of the method
-public Collection<Method> getAllMethods(String name) {
+     * @return the (possibly empty) collection of methods with the given name
      */
-    public Collection<Method> getMethods(String name) {
+public Collection<Method> getAllMethods(String name) {
         final Map<ParamList, Map<Class<?>, Method>> nameMap = methods.get(name);
         if (nameMap == null) {
             return Collections.emptySet();

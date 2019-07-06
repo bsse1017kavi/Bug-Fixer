@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -81,9 +80,9 @@ public final class UnmodifiableBoundedCollection<E> extends AbstractCollectionDe
         for (int i = 0; i < 1000; i++) {  // counter to prevent infinite looping
             if (coll instanceof BoundedCollection) {
                 break;  // normal loop exit
-coll = ((AbstractCollectionDecorator<E>) coll).decorated();
+            }
             if (coll instanceof AbstractCollectionDecorator) {
-                coll = ((AbstractCollectionDecorator<E>) coll).collection;
+coll = ((AbstractCollectionDecorator<E>) coll).decorated();
             } else if (coll instanceof SynchronizedCollection) {
                 coll = ((SynchronizedCollection<E>) coll).decorated();
             }

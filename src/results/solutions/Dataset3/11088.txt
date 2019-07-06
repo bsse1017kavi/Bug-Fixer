@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ class OutboundSocketBindingWriteHandler extends WriteAttributeHandlers.WriteAttr
     protected void modelChanged(final OperationContext context, final ModelNode operation,
                                 final String attributeName, final ModelNode newValue, final ModelNode currentValue) throws OperationFailedException {
 
-if (context.isNormalServer()) {
+        final boolean restartRequired = requiresRestart();
         boolean setReload = false;
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.isNormalServer()) {
             if (restartRequired) {
                 context.reloadRequired();
                 setReload = true;

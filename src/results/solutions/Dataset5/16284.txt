@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -278,9 +277,9 @@ public class ProjectHelper2 extends ProjectHelper {
                 inputStream = new FileInputStream(buildFile);
             } else {
                 uri = url.toString();
-&& (pling = uri.indexOf("!/")) > -1) {
+                int pling = -1;
                 if (uri.startsWith("jar:file")
-                    && (pling = uri.indexOf("!")) > -1) {
+&& (pling = uri.indexOf("!/")) > -1) {
                     zf = new ZipFile(org.apache.tools.ant.launch.Locator
                                      .fromJarURI(uri), "UTF-8");
                     inputStream =

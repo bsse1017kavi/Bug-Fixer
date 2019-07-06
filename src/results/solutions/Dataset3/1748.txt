@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -462,9 +461,9 @@ public class SymmLQTest {
             final RealVector px = prec.solve(a, m, b);
             final RealVector x = unprec.solve(a, b);
             final int np = prec.getIterationManager().getIterations();
-//             System.out.println(np + ", " + nup);
+            final int nup = unprec.getIterationManager().getIterations();
             msg = String.format(pattern, np, nup);
-            System.out.println(np + ", " + nup);
+//             System.out.println(np + ", " + nup);
             for (int i = 0; i < n; i++) {
                 msg = String.format("row %d, column %d", i, j);
                 final double expected = x.getEntry(i);

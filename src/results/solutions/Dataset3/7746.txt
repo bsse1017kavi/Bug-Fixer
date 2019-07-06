@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -341,9 +340,9 @@ public class FileTimerPersistence implements TimerPersistence, Service<FileTimer
         @Override
         public void afterCompletion(final int status) {
             try {
-final Map<String, TimerEntity> map = getTimers(timer.getTimedObjectId());
+                lock.lock();
                 if (status == Status.STATUS_COMMITTED) {
-                    Map<String, TimerEntity> map = getTimers(timer.getTimedObjectId());
+final Map<String, TimerEntity> map = getTimers(timer.getTimedObjectId());
                     map.put(timer.getId(), timer);
                     writeFile(timer);
                 }

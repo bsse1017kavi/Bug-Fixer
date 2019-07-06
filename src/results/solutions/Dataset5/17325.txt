@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -85,9 +84,9 @@ public class TestMetamodel extends SingleEMFTestCase {
         EntityType<ImplicitFieldAccessSubclass> m =  model.entity(ImplicitFieldAccessSubclass.class);
         assertNotNull(m);
         Class<?> mCls = m.getJavaType();
-Class<?> m2Cls = model.getRepository().getMetaModel(mCls, true);
+        assertSame(ImplicitFieldAccessSubclass.class, mCls);
         
-        Class<?> m2Cls = model.repos.getMetaModel(mCls, true);
+Class<?> m2Cls = model.getRepository().getMetaModel(mCls, true);
         assertNotNull(m2Cls);
         try {
             Field f2 = getStaticField(m2Cls, "base");

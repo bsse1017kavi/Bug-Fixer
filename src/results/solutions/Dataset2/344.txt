@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -132,9 +131,9 @@ public class JavadocParser extends AbstractCommentParser {
 	 */
 	protected Object createArgumentReference(char[] name, int dim, Object typeRef, long dimPos, long argNamePos) throws InvalidInputException {
 		try {
-long pos = (((long) argTypeRef.sourceStart) << 32) + argTypeRef.sourceEnd;
+			TypeReference argTypeRef = (TypeReference) typeRef;
 			if (dim > 0) {
-				long pos = ((long) argTypeRef.sourceStart) << 32 + argTypeRef.sourceEnd;
+long pos = (((long) argTypeRef.sourceStart) << 32) + argTypeRef.sourceEnd;
 				if (typeRef instanceof JavadocSingleTypeReference) {
 					JavadocSingleTypeReference singleRef = (JavadocSingleTypeReference) typeRef;
 					argTypeRef = new JavadocArraySingleTypeReference(singleRef.token, dim, pos);

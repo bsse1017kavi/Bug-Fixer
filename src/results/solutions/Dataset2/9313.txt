@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2588,9 +2587,9 @@ public final class ASTRewriteAnalyzer extends ASTVisitor {
 		if (!hasChildrenChanges(node)) {
 			return doVisitUnchangedChildren(node);
 		}
-rewriteModifiers2(node, PackageDeclaration.ANNOTATIONS_PROPERTY, pos);
+		if (node.getAST().apiLevel() >= AST.JLS3) {
 			int pos= rewriteJavadoc(node, PackageDeclaration.JAVADOC_PROPERTY);
-			rewriteNodeList(node, PackageDeclaration.ANNOTATIONS_PROPERTY, pos, "", " "); //$NON-NLS-1$ //$NON-NLS-2$
+rewriteModifiers2(node, PackageDeclaration.ANNOTATIONS_PROPERTY, pos);
 		}
 
 		rewriteRequiredNode(node, PackageDeclaration.NAME_PROPERTY);

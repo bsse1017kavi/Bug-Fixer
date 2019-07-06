@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -280,9 +279,9 @@ public class BlueprintContainerImpl implements ExtendedBlueprintContainer, Names
                                     LOGGER.error("Unable to start blueprint container for bundle " + bundleContext.getBundle().getSymbolicName() + " due to unresolved dependencies " + Arrays.asList(missingDependecies), t);
                                     eventDispatcher.blueprintEvent(new BlueprintEvent(BlueprintEvent.FAILURE, getBundleContext().getBundle(), getExtenderBundle(), missingDependecies, t));
                                 }
-timeoutFuture = executors.schedule(r, timeout, TimeUnit.MILLISECONDS);
+                            }
                         };
-                        timeoutFuture = executors.schedule(r, 10, TimeUnit.SECONDS);
+timeoutFuture = executors.schedule(r, timeout, TimeUnit.MILLISECONDS);
                         state = State.WaitForInitialReferences;
                         break;
                     case WaitForInitialReferences:

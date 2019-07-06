@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.taxonomy.directory;
 
 import java.io.BufferedInputStream;
@@ -545,9 +544,9 @@ public class DirectoryTaxonomyWriter implements TaxonomyWriter {
     // comment in SinglePositionTokenStream). But because we must be
     // backward-compatible with existing indexes, we can't just fix what
     // we write here (e.g., to write parent+2), and need to do a workaround
-parentStream.set(Math.max(parent+1, 1));
+    // in the reader (which knows that anyway only category 0 has a parent
     // -1).    
-    parentStream.set(parent + 1);
+parentStream.set(Math.max(parent+1, 1));
     Document d = new Document();
     d.add(parentStreamField);
 

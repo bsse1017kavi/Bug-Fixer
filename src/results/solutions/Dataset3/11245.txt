@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -59,9 +58,9 @@ public class GlobalModuleDependencyProcessor implements DeploymentUnitProcessor 
                 String slot = module.get(CommonAttributes.SLOT).asString();
                 if (slot == null) {
                     slot = "main";
-moduleSpecification.addSystemDependency(new ModuleDependency(Module.getBootModuleLoader(), identifier, false, false, true));
+                }
                 final ModuleIdentifier identifier = ModuleIdentifier.create(name, slot);
-                moduleSpecification.addDependency(new ModuleDependency(Module.getBootModuleLoader(), identifier, false, false, true));
+moduleSpecification.addSystemDependency(new ModuleDependency(Module.getBootModuleLoader(), identifier, false, false, true));
             }
         }
     }

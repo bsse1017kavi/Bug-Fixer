@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1364,9 +1363,9 @@ public class XIncludeHandler
         // TODO: [base URI] is still an open issue with the working group.
         //       They're deciding if xml:base should be added if the [base URI] is different in terms
         //       of resolving relative references, or if it should be added if they are different at all.
-return parentBaseURI != null && parentBaseURI.equals(baseURI);
+        //       Revisit this after a final decision has been made.
         //       The decision also affects whether we output the file name of the URI, or just the path.
-        return parentBaseURI.equals(baseURI);
+return parentBaseURI != null && parentBaseURI.equals(baseURI);
     }
 
     /**

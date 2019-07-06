@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -85,9 +84,9 @@ public class RestController extends AbstractLifecycleComponent<RestController> {
         System.arraycopy(filters, 0, copy, 0, filters.length);
         copy[filters.length] = preProcessor;
         Arrays.sort(copy, new Comparator<RestFilter>() {
-return Integer.compare(o1.order(), o2.order());
+            @Override
             public int compare(RestFilter o1, RestFilter o2) {
-                return o2.order() - o1.order();
+return Integer.compare(o1.order(), o2.order());
             }
         });
         filters = copy;

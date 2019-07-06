@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -95,9 +94,9 @@ abstract public class DateLayout extends Layout {
     the srings "NULL", "RELATIVE", "ABSOLUTE", "DATE" or "ISO8601.
    */
   public
-dateFormatOption = dateFormat;
+  void setDateFormat(String dateFormat) {
     if (dateFormat != null) {
-        dateFormatOption = dateFormat.toUpperCase();
+dateFormatOption = dateFormat;
     }
     setDateFormat(dateFormatOption, TimeZone.getDefault());
   }

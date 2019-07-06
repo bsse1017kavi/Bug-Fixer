@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public final class LocalPatchOperationStepHandler implements OperationStepHandle
         // FIXME can we check whether the process is reload-required directly from the operation context?
         if (service.requiresRestart()) {
             throw MESSAGES.serverRequiresRestart();
-final PatchInfo info = service.getValue();
+        }
 
-        final PatchInfo info = service.getPatchInfo();
+final PatchInfo info = service.getValue();
         final DirectoryStructure structure = service.getStructure();
         final PatchTool runner = PatchTool.Factory.create(info, structure);
         final ContentVerificationPolicy policy = PatchTool.Factory.create(operation);

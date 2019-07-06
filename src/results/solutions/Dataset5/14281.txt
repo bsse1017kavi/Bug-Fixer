@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -840,9 +839,9 @@ int /*long*/ nextValidKeyView(int /*long*/ id, int /*long*/ sel) {
 	if (view.window ().firstResponder ().id == id) {
 		// Forward the current event to keyDown...
 		if ((state & CANVAS) != 0) {
-if (event != null && event.type() == OS.NSKeyDown) {
+			NSEvent event = NSApplication.sharedApplication().currentEvent();
 			
-			if (event.type() == OS.NSKeyDown) {
+if (event != null && event.type() == OS.NSKeyDown) {
 				this.keyDown(id, sel, event.id);
 				return 0;
 			}			

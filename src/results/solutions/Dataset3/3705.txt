@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -621,9 +620,9 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
 
     /** Build an array of elements.
      * @param length size of the array to build
-@SuppressWarnings("unchecked") // field is of type T
+     * @return a new array
      */
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked") // field is of type T
     private T[] buildArray(final int length) {
         return (T[]) Array.newInstance(field.getZero().getClass(), length);
     }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util;
 
 /**
@@ -585,9 +584,9 @@ public abstract class LuceneTestCase extends Assert {
             } catch (InterruptedException e) { e.printStackTrace(); }
           }
           // try to stop the thread:
-t.interrupt();
+          t.setUncaughtExceptionHandler(null);
           Thread.setDefaultUncaughtExceptionHandler(null);
-          if (!t.getName().equals("main-EventThread")) t.interrupt();
+t.interrupt();
           try {
             t.join(THREAD_STOP_GRACE_MSEC);
           } catch (InterruptedException e) { e.printStackTrace(); }

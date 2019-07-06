@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -219,9 +218,9 @@ public class WhileStatement extends Statement {
 		codeStream.recordPositionsFrom(pc, this.sourceStart);
 	}
 
-TypeBinding type = condition.resolveTypeExpecting(scope, TypeBinding.BOOLEAN);
+	public void resolve(BlockScope scope) {
 
-		TypeBinding type = condition.resolveTypeExpecting(scope, BooleanBinding);
+TypeBinding type = condition.resolveTypeExpecting(scope, TypeBinding.BOOLEAN);
 		condition.computeConversion(scope, type, type);
 		if (action != null)
 			action.resolve(scope);

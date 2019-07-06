@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class StringFieldsFunctionDataComparator extends FieldComparator<String> 
         values = new String[numHits];
     }
 
-script.setNextReader(context);
+    @Override
     public FieldComparator<String> setNextReader(AtomicReaderContext context) throws IOException {
-        script.setNextReader(context.reader());
+script.setNextReader(context);
         return this;
     }
 

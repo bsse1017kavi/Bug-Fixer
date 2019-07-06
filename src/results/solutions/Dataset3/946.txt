@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -302,9 +301,9 @@ public class CommandCommandHandler extends CommandHandlerWithHelp {
                 pathValid = true;
                 break;
             }
-throw new CommandFormatException("Type '" + typeName + "' not found among child types of '" + ctx.getNodePathFormatter().format(typeAddress) + "'");
+        }
         if(!pathValid) {
-            throw new CommandFormatException("Type '" + typeName + "' not found among child types of '" + ctx.getPrefixFormatter().format(typeAddress) + "'");
+throw new CommandFormatException("Type '" + typeName + "' not found among child types of '" + ctx.getNodePathFormatter().format(typeAddress) + "'");
         }
 
         address.add(typeName, "?");

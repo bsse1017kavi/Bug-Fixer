@@ -1,4 +1,3 @@
-
 package org.apache.lucene.spatial.prefix;
 
 /*
@@ -60,9 +59,9 @@ public class TestRecursivePrefixTreeStrategy extends StrategyTestCase {
     getAddAndVerifyIndexedDocuments(DATA_WORLD_CITIES_POINTS);
 
     //execute queries for each prefix grid scan level
-executeQueries(SpatialMatchConcern.FILTER, QTEST_Cities_Intersects_BBox);
+    for(int i = 0; i <= maxLength; i++) {
       ((RecursivePrefixTreeStrategy)strategy).setPrefixGridScanLevel(i);
-      executeQueries(SpatialMatchConcern.FILTER, QTEST_Cities_IsWithin_BBox);
+executeQueries(SpatialMatchConcern.FILTER, QTEST_Cities_Intersects_BBox);
     }
   }
 

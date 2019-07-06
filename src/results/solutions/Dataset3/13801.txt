@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -40,9 +39,9 @@ public class MixedDomainTestSupport extends DomainTestSupport {
         super(testClass, domainConfig, masterConfig, slaveConfig, new JBossAsManagedConfiguration(), new JBossAsManagedConfiguration(jbossHome));
     }
 
-OldVersionCopier oldVersionCopier = OldVersionCopier.expandOldVersion(version);
+
     public static MixedDomainTestSupport create(String testClass, Version.AsVersion version) throws Exception {
-        OldVersionCopier oldVersionCopier = OldVersionCopier.expandOldVersions();
+OldVersionCopier oldVersionCopier = OldVersionCopier.expandOldVersion(version);
         File dir = oldVersionCopier.getVersionDir(version);
 
         return new MixedDomainTestSupport(testClass, "master-config/domain.xml", "master-config/host.xml",

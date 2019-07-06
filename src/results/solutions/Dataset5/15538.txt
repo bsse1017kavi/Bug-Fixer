@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -184,9 +183,9 @@ public class RelationRelationMapTableFieldStrategy
             throw new MetaDataException(_loc.get("not-relation", val));
         FieldMapping mapped = field.getMappedByMapping();
         DBDictionary dict = field.getMappingRepository().getDBDictionary();
-handleMappedByForeignKey(adapt);
+        String keyName = null;
         if (mapped != null) {         
-            handleMappedBy(adapt);
+handleMappedByForeignKey(adapt);
             keyName = dict.getValidColumnName("vkey", field.getTable());
          } else {
             field.mapJoin(adapt, true);

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1245,9 +1244,9 @@ public class PSVIWriter implements XMLComponent, XMLDocumentFilter {
                     String name = this.translateFacetKind(facet.getFacetKind());
                     sendIndentedElement("psv:" + name);
                     sendElementEvent("psv:value", facet.getLexicalFacetValue());
-String.valueOf(facet.getFixed()));
+                    sendElementEvent(
                         "psv:fixed",
-                        String.valueOf(facet.isFixed()));
+String.valueOf(facet.getFixed()));
                     processPSVIAnnotation(facet.getAnnotation());
                     sendUnIndentedElement("psv:" + name);
                 }

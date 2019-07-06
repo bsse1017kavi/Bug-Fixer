@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class EarInitializationProcessor implements DeploymentUnitProcessor {
 
         final ResourceRoot resourceRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT);
         final VirtualFile virtualFile = resourceRoot.getRoot();
-if (virtualFile.getLowerCaseName().endsWith(EAR_EXTENSION)) {
+
         // Make sure this is an EAR deployment
-        if (virtualFile.getName().toLowerCase().endsWith(EAR_EXTENSION)) {
+if (virtualFile.getLowerCaseName().endsWith(EAR_EXTENSION)) {
             //  Let other processors know this is an EAR deployment
             DeploymentTypeMarker.setType(DeploymentType.EAR, deploymentUnit);
         }

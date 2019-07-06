@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -50,9 +49,9 @@ public class JDBCOracleCreateCommand extends JDBCIdentityColumnCreateCommand
    protected void initInsertSQL()
    {
       jdbcType = pkField.getJDBCType().getJDBCTypes()[0];
-sql.append("{call INSERT INTO ").append(entity.getQualifiedTableName());
+
       StringBuffer sql = new StringBuffer();
-      sql.append("{call INSERT INTO ").append(entity.getTableName());
+sql.append("{call INSERT INTO ").append(entity.getQualifiedTableName());
       sql.append(" (");
       SQLUtil.getColumnNamesClause(pkField, sql)
          .append(", ");

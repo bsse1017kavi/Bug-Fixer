@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class HashableMarshalledValue<T> extends SimpleMarshalledValue<T> {
     /**
      * @param object
      * @param context
-public HashableMarshalledValue(T object, MarshallingContext context) {
+     * @throws IOException
      */
-    public HashableMarshalledValue(T object, MarshallingContext context) throws IOException {
+public HashableMarshalledValue(T object, MarshallingContext context) {
         super(object, context);
         this.hashCode = (object != null ) ? object.hashCode() : 0;
     }

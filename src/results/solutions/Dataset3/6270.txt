@@ -1,4 +1,3 @@
-
 // Licensed to the Apache Software Foundation (ASF) under one
 // or more contributor license agreements.  See the NOTICE file
 // distributed with this work for additional information
@@ -103,9 +102,9 @@ class TestProblem4
     }
 
     public int eventOccurred(double t, double[] y) {
-return SwitchingFunction.RESET_STATE;
+      // this sign change is needed because the state will be reset soon
       sign = -sign;
-      return SwitchingFunction.RESET;
+return SwitchingFunction.RESET_STATE;
     }
   
     public void resetState(double t, double[] y) {

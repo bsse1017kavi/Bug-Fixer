@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -135,9 +134,9 @@ public class BeanShell extends AbstractFunction {
         values = parameters.toArray();
 
         try {
-throw new InvalidVariableException("BeanShell not found", e);
+            bshInterpreter = new BeanShellInterpreter(JMeterUtils.getProperty(INIT_FILE), log);
         } catch (ClassNotFoundException e) {
-            throw new InvalidVariableException("BeanShell not found");
+throw new InvalidVariableException("BeanShell not found", e);
         }
     }
 

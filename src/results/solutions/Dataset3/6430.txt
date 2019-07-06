@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -106,9 +105,9 @@ public class PoolConfigurationRWHandler {
                     final ManagementRepository repository = (ManagementRepository) managementRepoService.getValue();
                     poolConfigs = getMatchingPoolConfigs(jndiName, repository);
                     updatePoolConfigs(poolConfigs, parameterName, newValue);
-throw new OperationFailedException(ConnectorLogger.ROOT_LOGGER.failedToSetAttribute(e.getLocalizedMessage()));
+                    handbackHolder.setHandback(poolConfigs);
                 } catch (Exception e) {
-                    throw new OperationFailedException(new ModelNode().set(ConnectorLogger.ROOT_LOGGER.failedToSetAttribute(e.getLocalizedMessage())));
+throw new OperationFailedException(ConnectorLogger.ROOT_LOGGER.failedToSetAttribute(e.getLocalizedMessage()));
                 }
             }
 

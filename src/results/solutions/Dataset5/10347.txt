@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -1024,9 +1023,9 @@ public class XMLPersistenceMetaDataSerializer
         }
         if (cascades != null) {
             startElement("cascade");
-endElement(cascade);
+            for (String cascade : cascades) {
                 startElement(cascade);
-                endElement("cascade");
+endElement(cascade);
             }
             endElement("cascade");
         }

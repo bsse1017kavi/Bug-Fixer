@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -956,9 +955,9 @@ public class TestIndexReader extends LuceneTestCase {
           try {
             if (0 == x) {
               int docId = 12;
-reader.setNorm(docId, "content", (float) 2.0);
+              for(int i=0;i<13;i++) {
                 reader.deleteDocument(docId);
-                reader.setNorm(docId, "contents", (float) 2.0);
+reader.setNorm(docId, "content", (float) 2.0);
                 docId += 12;
               }
             }

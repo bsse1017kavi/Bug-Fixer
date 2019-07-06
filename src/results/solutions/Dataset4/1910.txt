@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class TermJsonFilterBuilder extends BaseJsonFilterBuilder {
     private TermJsonFilterBuilder(String name, Object value) {
         this.name = name;
         this.value = value;
-@Override public void doJson(JsonBuilder builder, Params params) throws IOException {
+    }
 
-    @Override public void doJson(JsonBuilder builder) throws IOException {
+@Override public void doJson(JsonBuilder builder, Params params) throws IOException {
         builder.startObject(TermJsonFilterParser.NAME);
         builder.field(name, value);
         builder.endObject();

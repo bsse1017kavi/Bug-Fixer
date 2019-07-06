@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public abstract class ThreadPoolReadAttributeHandler extends AbstractRuntimeOnly
         ServiceController<?> serviceController = getService(context, operation);
         final Service<?> service = serviceController.getService();
 
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+        setResult(context, attributeName, service);
 
-        context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
     }
 
     protected abstract void setResult(OperationContext context, String attributeName, Service<?> service) throws OperationFailedException;

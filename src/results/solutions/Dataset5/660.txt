@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public abstract class EnumeratedType extends StringValue
 		List<EnumeratedType> values = getValues(getClass());
 		if (values != null)
 		{
-if ((value.toString() != null) && value.toString().equals(this.toString()))
+			for (EnumeratedType value : values)
 			{
-				if (value.toString() != null && value.toString().equals(this.toString()))
+if ((value.toString() != null) && value.toString().equals(this.toString()))
 				{
 					result = value;
 					break;

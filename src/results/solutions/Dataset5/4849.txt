@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -29,9 +28,9 @@ public final class ChangeListenerSet extends ListenerSet
     /**
      * @see wicket.util.listener.ListenerSet#notifyListener(wicket.util.listener.IListener)
      */
-((IChangeListener)listener).onChange();
+    protected void notifyListener(IListener listener)
     {
-        ((IChangeListener)listener).changed();
+((IChangeListener)listener).onChange();
     }    
 }
 

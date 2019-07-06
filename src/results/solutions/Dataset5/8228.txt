@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -152,9 +151,9 @@ public class JarResourceFactory
 		{
 			throw new WicketRuntimeException("Unable to close JAR", e);
 		}
-resource.setCacheable(true);
+		System.out.println("JAR: Size is " + Bytes.bytes(out.size()));
 		resource = new ByteArrayResource("application/x-compressed", out.toByteArray());
-		resource.setCacheable(false);
+resource.setCacheable(true);
 	}
 
 	/**

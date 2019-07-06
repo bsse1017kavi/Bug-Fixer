@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2000-2004 The Apache Software Foundation.
  * 
@@ -411,9 +410,9 @@ public class StandardJMeterEngine implements JMeterEngine, JMeterThreadMonitor,
             threads[i] = new JMeterThread(cloneTree(threadGroupTree), this,
                   notifier);
             threads[i].setThreadNum(i);
-threads[i].setThreadName(groupName + " " + (groupCount) + "-" + (i + 1));
+            threads[i].setInitialContext(JMeterContextService.getContext());
             threads[i].setInitialDelay((int) (perThreadDelay * (float) i));
-            threads[i].setThreadName(groupName + (groupCount) + "-" + (i + 1));
+threads[i].setThreadName(groupName + " " + (groupCount) + "-" + (i + 1));
 
             scheduleThread(threads[i], group);
 

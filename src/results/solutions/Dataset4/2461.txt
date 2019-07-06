@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public abstract class AbstractAtomicNumericFieldData implements AtomicNumericFie
             return new ScriptDocValues.Longs(getLongValues());
         }
     }
-public BytesValues getBytesValues() {
+
     @Override
-    public BytesValues getBytesValues(boolean needsHashes) {
+public BytesValues getBytesValues() {
         if (isFloat) {
             final DoubleValues values = getDoubleValues();
             return new BytesValues(values.isMultiValued()) {

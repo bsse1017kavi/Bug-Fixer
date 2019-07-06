@@ -1,4 +1,3 @@
-
 package org.jboss.as.subsystem.test.extrasubsystem.subsystem.main;
 
 import org.jboss.as.controller.ReloadRequiredRemoveStepHandler;
@@ -108,9 +107,9 @@ public class MainSubsystemExtension implements Extension {
     private static class SubsystemDescribeHandler implements OperationStepHandler, DescriptionProvider {
         static final SubsystemDescribeHandler INSTANCE = new SubsystemDescribeHandler();
 
-context.stepCompleted();
+        public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
             context.getResult().add(createAddSubsystemOperation());
-            context.completeStep();
+context.stepCompleted();
         }
 
         @Override

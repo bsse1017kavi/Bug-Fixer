@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -144,9 +143,9 @@ public class LocalDeclaration extends AbstractVariableDeclaration {
 		// duplicate checks
 		if ((binding = scope.duplicateName(name)) != null) {
 			// the name already exists... may carry on with the first binding...
-binding = new LocalVariableBinding(this, tb, modifiers, false);
+			scope.problemReporter().redefineLocal(this);
 		} else {
-			binding = new LocalVariableBinding(this, tb, modifiers);
+binding = new LocalVariableBinding(this, tb, modifiers, false);
 			scope.addLocalVariable(binding);
 			binding.constant = NotAConstant;
 			// allow to recursivelly target the binding....

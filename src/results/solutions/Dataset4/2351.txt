@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -64,9 +63,9 @@ public class BulletConstructor extends BaseWorld.Constructor<BulletEntity> {
 	/**
 	 * Creates a btBoxShape with the same dimensions as the shape.
 	 */
-model.getBoundingBox(boundingBox);
+	public BulletConstructor (final Model model, final float mass) {
 		final BoundingBox boundingBox = new BoundingBox(); 
-		model.calculateBoundingBox(boundingBox);
+model.getBoundingBox(boundingBox);
 		final Vector3 dimensions = boundingBox.getDimensions();
 		create(model, mass, dimensions.x, dimensions.y, dimensions.z);
 	}

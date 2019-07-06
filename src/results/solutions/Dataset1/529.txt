@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -165,9 +164,9 @@ public class TestTermsEnum2 extends LuceneTestCase {
       CompiledAutomaton ca = new CompiledAutomaton(automaton, SpecialOperations.isFinite(automaton), false);
       TermsEnum te = MultiFields.getTerms(reader, "field").intersect(ca, null);
       Automaton expected = BasicOperations.intersection(termsAutomaton, automaton);
-found.add(BytesRef.deepCopyOf(te.term()));
+      TreeSet<BytesRef> found = new TreeSet<BytesRef>();
       while (te.next() != null) {
-        found.add(new BytesRef(te.term()));
+found.add(BytesRef.deepCopyOf(te.term()));
       }
       
       Automaton actual = DaciukMihovAutomatonBuilder.build(found);     

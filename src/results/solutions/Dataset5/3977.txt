@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2004 The Apache Software Foundation.
@@ -119,9 +118,9 @@ public class TestBeanHelper {
 			while(iter.hasNext())
 			{
 				JMeterProperty propVal = iter.next();
-values.add(Converter.convert(propVal.getStringValue(), Class.forName(type)));
+				try
 				{
-					values.add(Converter.convert(propVal.getObjectValue(), Class.forName(type)));
+values.add(Converter.convert(propVal.getStringValue(), Class.forName(type)));
 				}
 				catch(Exception e)
 				{

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public interface ServerSecurityManager {
 
     Principal getCallerPrincipal();
 
-boolean isCallerInRole(final String ejbName, final Object mappedRoles, final Map<String, Collection<String>> roleLinks,
+    Subject getSubject();
 
-    boolean isCallerInRole(final Object mappedRoles, final Map<String, Collection<String>> roleLinks,
+boolean isCallerInRole(final String ejbName, final Object mappedRoles, final Map<String, Collection<String>> roleLinks,
             final String... roleNames);
 
     boolean authorize(String ejbName, CodeSource ejbCodeSource, String ejbMethodIntf, Method ejbMethod, Set<Principal> methodRoles, String contextID);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -427,9 +426,9 @@ public class Workbench implements IContextResolver, IWorkbench, IPlatformRunnabl
 			if (modeBeforeKeyStroke.getKeyStrokes().size() >= 1)
 				consumeKeyStroke = true;			
 
-modeContributionItem.setText("carbon".equals(SWT.getPlatform()) ? KeySupport.formatCarbon(KeySequence.getInstance()) : KeySequence.getInstance().format());
+			// clear mode
 			commandManager.setMode(KeySequence.getInstance());	
-			modeContributionItem.setText("carbon".equals(SWT.getPlatform()) ? KeySupport.formatCarbon(modeAfterKeyStroke) : modeAfterKeyStroke.format());				
+modeContributionItem.setText("carbon".equals(SWT.getPlatform()) ? KeySupport.formatCarbon(KeySequence.getInstance()) : KeySequence.getInstance().format());
 		}
 
 		// TODO is this necessary?		

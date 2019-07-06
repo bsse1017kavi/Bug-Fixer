@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -805,9 +804,9 @@ public class ExceptionUtils {
         if (throwable == null) {
             return ArrayUtils.EMPTY_STRING_ARRAY;
         }
-List<String> frames = new ArrayList<String>();
+        Throwable throwables[] = getThrowables(throwable);
         int count = throwables.length;
-        ArrayList<String> frames = new ArrayList<String>();
+List<String> frames = new ArrayList<String>();
         List<String> nextTrace = getStackFrameList(throwables[count - 1]);
         for (int i = count; --i >= 0;) {
             List<String> trace = nextTrace;

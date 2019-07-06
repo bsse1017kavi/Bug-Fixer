@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -156,9 +155,9 @@ public void shutdown() {
 				this.processingThread = null;
 				notifyAll();
 			}
-t.join(250); // do not wait forever
+		}
 		if (t != null)
-			t.join();
+t.join(250); // do not wait forever
 	} catch (InterruptedException ignored) {
 		// ignore
 	}

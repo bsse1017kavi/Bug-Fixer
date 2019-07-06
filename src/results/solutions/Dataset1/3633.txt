@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -155,9 +154,9 @@ public abstract class Directory implements Closeable {
       return this.toString();
   }
 
-return getClass().getSimpleName() + '@' + Integer.toHexString(hashCode()) + " lockFactory=" + getLockFactory();
+  @Override
   public String toString() {
-    return super.toString() + " lockFactory=" + getLockFactory();
+return getClass().getSimpleName() + '@' + Integer.toHexString(hashCode()) + " lockFactory=" + getLockFactory();
   }
 
   /**

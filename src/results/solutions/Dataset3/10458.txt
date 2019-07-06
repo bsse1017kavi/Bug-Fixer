@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -715,9 +714,9 @@ public class ModelControllerImplUnitTestCase {
             child2.get("attribute2").set(2);
 
             context.createResource(PathAddress.EMPTY_ADDRESS.append(PathElement.pathElement("child", "one"))).getModel().set(child1);
-context.stepCompleted();
+            context.createResource(PathAddress.EMPTY_ADDRESS.append(PathElement.pathElement("child", "two"))).getModel().set(child2);
 
-            context.completeStep();
+context.stepCompleted();
         }
     }
 

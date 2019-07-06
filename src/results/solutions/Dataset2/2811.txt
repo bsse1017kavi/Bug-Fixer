@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2001 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -71,9 +70,9 @@ public class FigAssociationRole extends FigAssociation {
     protected void modelChanged() {
         super.modelChanged();
         //change the name
-String asNameStr = ((ar.getName() == null) && (ar.getBase() == null)) ? "" : Notation.generate(this, ar);
+        MAssociationRole ar = (MAssociationRole) getOwner();
         if (ar == null) return;
-        String asNameStr = Notation.generate(this, ar);
+String asNameStr = ((ar.getName() == null) && (ar.getBase() == null)) ? "" : Notation.generate(this, ar);
         _name.setText(asNameStr);
     }
     

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -105,9 +104,9 @@ public class XmlViewResolver extends AbstractCachingViewResolver
 
 	@Override
 	protected View loadView(String viewName, Locale locale) throws BeansException {
-return factory.getBean(viewName, View.class);
+		BeanFactory factory = initFactory();
 		try {
-			return (View) factory.getBean(viewName, View.class);
+return factory.getBean(viewName, View.class);
 		}
 		catch (NoSuchBeanDefinitionException ex) {
 			// to allow for ViewResolver chaining

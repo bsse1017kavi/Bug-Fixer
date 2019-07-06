@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class FsImmutableBlobContainer extends AbstractFsBlobContainer implements
 
     @Override public void writeBlob(final String blobName, final InputStream is, final long sizeInBytes, final WriterListener listener) {
         blobStore.executorService().execute(new Runnable() {
-RandomAccessFile raf;
+            @Override public void run() {
                 File file = new File(path, blobName);
-                RandomAccessFile raf = null;
+RandomAccessFile raf;
                 try {
                     raf = new RandomAccessFile(file, "rw");
                 } catch (FileNotFoundException e) {

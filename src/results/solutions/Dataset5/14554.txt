@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -180,9 +179,9 @@ public class SubmitLink extends Button
 	private String getTriggerJavaScript()
 	{
 		Form form = getForm();
-sb.append(form.getHiddenFieldId(Form.HIDDEN_FIELD_FAKE_SUBMIT));
+		StringBuffer sb = new StringBuffer(100);
 		sb.append("document.getElementById('");
-		sb.append(form.getHiddenFieldId());
+sb.append(form.getHiddenFieldId(Form.HIDDEN_FIELD_FAKE_SUBMIT));
 		sb.append("').name=\'");
 		sb.append(getInputName());
 		sb.append("';");

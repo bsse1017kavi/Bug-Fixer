@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -187,9 +186,9 @@ public class JJTree extends Task
 
         final Execute exe = new Execute();
         exe.setOutput( new LogOutputStream( this, Project.MSG_INFO ) );
-getLogger().debug( cmdl.toString() );
+        exe.setError( new LogOutputStream( this, Project.MSG_INFO ) );
 
-        log( cmdl.toString(), Project.MSG_VERBOSE );
+getLogger().debug( cmdl.toString() );
         exe.setCommandline( cmdl.getCommandline() );
 
         try

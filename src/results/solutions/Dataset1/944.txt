@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -99,9 +98,9 @@ class BufferedDeletesStream {
     assert deletes.isEmpty() || deletes.get(deletes.size()-1).delGen() < packet.delGen() : "Delete packets must be in order";
     deletes.add(packet);
     numTerms.addAndGet(packet.numTermDeletes);
-message("push deletes " + packet + " delGen=" + packet.delGen() + " packetCount=" + deletes.size() + " totBytesUsed=" + bytesUsed.get());
+    bytesUsed.addAndGet(packet.bytesUsed);
     if (infoStream != null) {
-      message("push deletes " + packet + " delGen=" + packet.delGen() + " packetCount=" + deletes.size());
+message("push deletes " + packet + " delGen=" + packet.delGen() + " packetCount=" + deletes.size() + " totBytesUsed=" + bytesUsed.get());
     }
     assert checkDeleteStats();
     return packet.delGen();

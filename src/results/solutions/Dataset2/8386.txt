@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -83,9 +82,9 @@ private void computeClasspathLocations(
 	IMarker cycleMarker = javaProject.getCycleMarker();
 	if (cycleMarker != null) {
 		int severity = JavaCore.ERROR.equals(javaProject.getOption(JavaCore.CORE_CIRCULAR_CLASSPATH, true))
-if (severity != cycleMarker.getAttribute(IMarker.SEVERITY, severity))
+			? IMarker.SEVERITY_ERROR
 			: IMarker.SEVERITY_WARNING;
-		if (severity != ((Integer) cycleMarker.getAttribute(IMarker.SEVERITY)).intValue())
+if (severity != cycleMarker.getAttribute(IMarker.SEVERITY, severity))
 			cycleMarker.setAttribute(IMarker.SEVERITY, severity);
 	}
 

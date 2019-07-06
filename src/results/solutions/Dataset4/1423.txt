@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class IndicesQueriesRegistry {
         addQueryParser(queryParsers, new SpanOrQueryParser());
         addQueryParser(queryParsers, new MoreLikeThisQueryParser());
         addQueryParser(queryParsers, new MoreLikeThisFieldQueryParser());
-addQueryParser(queryParsers, new WrapperQueryParser());
+        addQueryParser(queryParsers, new FuzzyLikeThisQueryParser());
         addQueryParser(queryParsers, new FuzzyLikeThisFieldQueryParser());
-        addQueryParser(queryParsers, new JSONQueryParser());
+addQueryParser(queryParsers, new WrapperQueryParser());
         this.queryParsers = ImmutableMap.copyOf(queryParsers);
 
         Map<String, FilterParser> filterParsers = Maps.newHashMap();

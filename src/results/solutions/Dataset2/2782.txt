@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -63,9 +62,9 @@ throws IOException
 {
 	super(_name, Type.SRV, _dclass, _ttl);
 	priority = Short.parseShort(st.nextToken());
-target = Name.fromString(st.nextToken(), origin);
+	weight = Short.parseShort(st.nextToken());
 	port = Short.parseShort(st.nextToken());
-	target = new Name(st.nextToken(), origin);
+target = Name.fromString(st.nextToken(), origin);
 }
 
 /** Converts rdata to a String */

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -109,9 +108,9 @@ public class JsonAllFieldMapper extends JsonFieldMapper<Void> implements AllFiel
 
     @Override public Query queryStringTermQuery(Term term) {
         return new AllTermQuery(term);
-@Override public Query fieldQuery(String value) {
+    }
 
-    @Override public Query termQuery(String value) {
+@Override public Query fieldQuery(String value) {
         return new AllTermQuery(new Term(names.indexName(), value));
     }
 

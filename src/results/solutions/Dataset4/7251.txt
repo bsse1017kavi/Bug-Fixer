@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -196,9 +195,9 @@ public class RoutingAllocation {
         return this.debugDecision;
     }
 
-ignoredShardToNodes = new HashMap<>();
+    public void addIgnoreShardForNode(ShardId shardId, String nodeId) {
         if (ignoredShardToNodes == null) {
-            ignoredShardToNodes = new HashMap<ShardId, String>();
+ignoredShardToNodes = new HashMap<>();
         }
         ignoredShardToNodes.put(shardId, nodeId);
     }

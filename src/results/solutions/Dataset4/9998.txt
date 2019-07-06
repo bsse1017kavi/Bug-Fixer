@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -129,9 +128,9 @@ public class TransportValidateQueryAction extends TransportBroadcastOperationAct
         List<ShardOperationFailedException> shardFailures = null;
         List<QueryExplanation> queryExplanations = null;
         for (int i = 0; i < shardsResponses.length(); i++) {
-// simply ignore non active shards
+            Object shardResponse = shardsResponses.get(i);
             if (shardResponse == null) {
-                failedShards++;
+// simply ignore non active shards
             } else if (shardResponse instanceof BroadcastShardOperationFailedException) {
                 failedShards++;
                 if (shardFailures == null) {

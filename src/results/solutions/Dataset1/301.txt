@@ -1,4 +1,3 @@
-
 package org.apache.lucene.document;
 
 /*
@@ -344,9 +343,9 @@ public class Field implements IndexableField {
   public void setBytesValue(BytesRef value) {
     if (!(fieldsData instanceof BytesRef)) {
       throw new IllegalArgumentException("cannot change value type from " + fieldsData.getClass().getSimpleName() + " to BytesRef");
-throw new IllegalArgumentException("cannot set a BytesRef value on an indexed field");
+    }
     if (type.indexed()) {
-      throw new IllegalArgumentException("cannot set a Reader value on an indexed field");
+throw new IllegalArgumentException("cannot set a BytesRef value on an indexed field");
     }
     fieldsData = value;
   }

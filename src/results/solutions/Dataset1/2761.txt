@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.admin;
 
 /*
@@ -225,9 +224,9 @@ public class CollectionsHandler extends RequestHandlerBase {
     ZkNodeProps m = new ZkNodeProps(map);
     if(!KNOWN_ROLES.contains(m.getStr("role"))) throw new SolrException(ErrorCode.BAD_REQUEST,"Unknown role. Supported roles are ,"+ KNOWN_ROLES);
     handleResponse(action.toString().toLowerCase(Locale.ROOT), m, rsp);
-public static long DEFAULT_ZK_TIMEOUT = 180*1000;
+  }
 
-  public static long DEFAULT_ZK_TIMEOUT = 60*1000;
+public static long DEFAULT_ZK_TIMEOUT = 180*1000;
 
   private void handleResponse(String operation, ZkNodeProps m,
                               SolrQueryResponse rsp) throws KeeperException, InterruptedException {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -43,9 +42,9 @@ public class JsonpTransportHandler extends AbstractHttpReceivingTransportHandler
 				response.getBody().write("Payload expected.".getBytes("UTF-8"));
 				return;
 			}
-super.handleRequestInternal(request, response, sockJsSession);
+		}
 
-		super.handleRequest(request, response, sockJsSession);
+super.handleRequestInternal(request, response, sockJsSession);
 
 		response.getBody().write("ok".getBytes("UTF-8"));
 	}

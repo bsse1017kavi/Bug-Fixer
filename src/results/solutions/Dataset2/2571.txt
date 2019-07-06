@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -95,9 +94,9 @@ public class ClassLiteralAccess extends Expression {
 					boxedType = new ProblemReferenceBinding(JAVA_LANG_VOID, ProblemReasons.NotFound);
 				}
 			} else {
-this.resolvedType = scope.environment().createParameterizedType(classType, new TypeBinding[]{ boxedType }, null/*not a member*/);
+				boxedType = scope.boxing(targetType);
 			}
-		    this.resolvedType = scope.createParameterizedType(classType, new TypeBinding[]{ boxedType }, null/*not a member*/);
+this.resolvedType = scope.environment().createParameterizedType(classType, new TypeBinding[]{ boxedType }, null/*not a member*/);
 		} else {
 		    this.resolvedType = classType;
 		}

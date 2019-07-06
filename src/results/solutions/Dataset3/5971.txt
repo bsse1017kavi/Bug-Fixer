@@ -1,4 +1,3 @@
-
 package storm.trident.partition;
 
 import backtype.storm.generated.GlobalStreamId;
@@ -8,9 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class IndexHashGrouping implements CustomStreamGrouping {
-else return Math.abs(val.hashCode()) % numPartitions;
+    public static int objectToIndex(Object val, int numPartitions) {
         if(val==null) return 0;
-        else return val.hashCode() % numPartitions;
+else return Math.abs(val.hashCode()) % numPartitions;
     }
     
     int _index;

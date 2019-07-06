@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -150,9 +149,9 @@ public abstract class MessageFolder extends AbstractFolder implements
      * @param type
      */
     public MessageFolder(String name, String type, String path) {
-String dir = path + System.getProperty("file.separator")+getUid();
+        super(name, type);
 
-        String dir = path + getUid();
+String dir = path + System.getProperty("file.separator")+getUid();
 
         if (DiskIO.ensureDirectory(dir)) {
             directoryFile = new File(dir);

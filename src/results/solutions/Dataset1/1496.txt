@@ -1,4 +1,3 @@
-
 /* Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -119,9 +118,9 @@ public class KMeansDriver {
 //    conf.set("mapred.job.tracker", "local");
 
     client.setConf(conf);
-FileSystem fs = FileSystem.get(outPath.toUri(), conf);
+    try {
       JobClient.runJob(conf);
-      FileSystem fs = FileSystem.get(conf);
+FileSystem fs = FileSystem.get(outPath.toUri(), conf);
       return isConverged(clustersOut + "/part-00000", conf, fs);
     } catch (IOException e) {
       log.warn(e.toString(), e);

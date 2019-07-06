@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -40,9 +39,9 @@ public class SingleFieldSelector implements ResetFieldSelector {
         this.name = name;
     }
 
-return FieldSelectorResult.LOAD;
+    @Override public FieldSelectorResult accept(String fieldName) {
         if (name.equals(fieldName)) {
-            return FieldSelectorResult.LOAD_AND_BREAK;
+return FieldSelectorResult.LOAD;
         }
         return FieldSelectorResult.NO_LOAD;
     }

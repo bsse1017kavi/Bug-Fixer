@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.ExtractOperatorNode
@@ -89,9 +88,9 @@ public class ExtractOperatorNode extends UnaryOperatorNode {
 			throws StandardException 
 	{
 		int	operandType;
-bindOperand(fromList, subqueryList,
+		TypeId opTypeId;
 
-		super.bindExpression(fromList, subqueryList,
+bindOperand(fromList, subqueryList,
 				aggregateVector);
 
 		opTypeId = operand.getTypeId();

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -135,9 +134,9 @@ public boolean canBeSeenBy(InvocationSite invocationSite, Scope scope) {
 * NOTE: Cannot invoke this method with a compilation unit scope.
 */
 public boolean canBeSeenBy(TypeBinding receiverType, InvocationSite invocationSite, Scope scope) {
-SourceTypeBinding invocationType = scope.invocationType(); //enclosingSourceType();
+	if (isPublic()) return true;
 
-	SourceTypeBinding invocationType = scope.enclosingSourceType();
+SourceTypeBinding invocationType = scope.invocationType(); //enclosingSourceType();
 	if (invocationType == declaringClass && invocationType == receiverType) return true;
 
 	if (isProtected()) {

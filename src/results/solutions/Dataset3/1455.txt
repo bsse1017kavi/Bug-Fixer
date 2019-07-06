@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -84,9 +83,9 @@ public class WeldComponentIntegrationProcessor implements DeploymentUnitProcesso
                     final ModuleClassLoader classLoader = deploymentUnit.getAttachment(Attachments.MODULE).getClassLoader();
 
 
-for (InterceptorDescription interceptorDescription : description.getAllInterceptors()) {
+                    //get the interceptors so they can be injected as well
                     final Set<Class<?>> interceptorClasses = new HashSet<Class<?>>();
-                    for (InterceptorDescription interceptorDescription : description.getAllInterceptors().values()) {
+for (InterceptorDescription interceptorDescription : description.getAllInterceptors()) {
                         EEModuleClassConfiguration clazz = module.getClassConfiguration(interceptorDescription.getInterceptorClassName());
                         if (clazz != null) {
                             interceptorClasses.add(clazz.getModuleClass());

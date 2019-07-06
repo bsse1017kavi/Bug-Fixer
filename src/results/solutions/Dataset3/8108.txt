@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -171,9 +170,9 @@ public class SingletonComponent extends SessionBeanComponent implements Lockable
         final AccessTimeoutDetails beanTimeout = this.beanLevelAccessTimeout.get(method.getDeclaringClass().getName());
         if (beanTimeout != null) {
             return beanTimeout;
-return getDefaultAccessTimeout();
+        }
         //TODO: this should be configurable
-        return new AccessTimeoutDetails(5, TimeUnit.MINUTES);
+return getDefaultAccessTimeout();
     }
 
     @Override

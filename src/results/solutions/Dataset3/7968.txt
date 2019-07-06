@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -112,9 +111,9 @@ public class ObjectFactoryCreatingFactoryBeanTests {
 
 		ObjectFactoryCreatingFactoryBean factory = new ObjectFactoryCreatingFactoryBean();
 		factory.setTargetBeanName(targetBeanName);
-ObjectFactory<?> objectFactory = factory.getObject();
+		factory.setBeanFactory(beanFactory);
 		factory.afterPropertiesSet();
-		ObjectFactory<?> objectFactory = (ObjectFactory<?>) factory.getObject();
+ObjectFactory<?> objectFactory = factory.getObject();
 		Object actualSingleton = objectFactory.getObject();
 		assertSame(expectedSingleton, actualSingleton);
 

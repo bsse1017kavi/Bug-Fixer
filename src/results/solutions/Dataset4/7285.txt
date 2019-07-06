@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -67,9 +66,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public abstract class BaseFuture<V> implements Future<V> {
 
     /**
-private final Sync<V> sync = new Sync<>();
+     * Synchronization control for AbstractFutures.
      */
-    private final Sync<V> sync = new Sync<V>();
+private final Sync<V> sync = new Sync<>();
 
     /*
     * Improve the documentation of when InterruptedException is thrown. Our

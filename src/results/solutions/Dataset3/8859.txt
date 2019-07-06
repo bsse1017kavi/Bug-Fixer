@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -36,9 +35,9 @@ final class ArrayToArrayGenericConverter implements GenericConverter {
 		TypeDescriptor sourceElementType = sourceType.getElementTypeDescriptor();
 		TypeDescriptor targetElementType = targetType.getElementTypeDescriptor();
 		Object target = Array.newInstance(targetElementType.getType(), Array.getLength(source));
-throw new ConverterNotFoundException(sourceElementType, targetElementType);
+		GenericConverter converter = this.conversionService.getConverter(sourceElementType, targetElementType);		
 		if (converter == null) {
-			throw new ConverterNotFoundException(sourceType, targetType);
+throw new ConverterNotFoundException(sourceElementType, targetElementType);
 		}
 		for (int i = 0; i < Array.getLength(target); i++) {
 			Array.set(target, i, converter.convert(Array.get(source, i), sourceElementType, targetElementType));

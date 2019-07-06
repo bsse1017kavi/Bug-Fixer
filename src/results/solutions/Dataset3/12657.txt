@@ -1,9 +1,8 @@
-
 package storm.kafka;
 
 import java.util.List;
 
-PartitionManager getManager(Partition partition);
+public interface PartitionCoordinator {
     List<PartitionManager> getMyManagedPartitions();
-    PartitionManager getManager(GlobalPartitionId id);
+PartitionManager getManager(Partition partition);
 }

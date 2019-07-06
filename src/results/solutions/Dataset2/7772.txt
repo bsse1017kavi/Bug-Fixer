@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -79,9 +78,9 @@ protected IMethod findCorrespondingMethod(IMethod method, IMethod[] methods) {
 			int existingParamLength = existingParams.length;
 			if (existingParamLength == paramLength) {
 				for (int j = 0; j < paramLength; j++) {
-continue next;
+					String simpleName = Signature.getSimpleName(Signature.toString(existingParams[j]));
 					if (!simpleNames[j].equals(simpleName)) {
-						break next;
+continue next;
 					}
 				}
 				return existingMethod;

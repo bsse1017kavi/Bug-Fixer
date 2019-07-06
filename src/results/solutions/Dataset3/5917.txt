@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ public class StatefulRemoveInterceptor implements Interceptor {
             Ejb2xViewType viewType = view.getPrivateData(Ejb2xViewType.class);
             if (viewType != null) {
                 //this means it is an EJB 2.x view
-if(marker != null && !marker.isFirstInvocation()) {
+                //which is not allowed to remove while enrolled in a TX
                 final StatefulTransactionMarker marker = context.getPrivateData(StatefulTransactionMarker.class);
-                if(!marker.isFirstInvocation()) {
+if(marker != null && !marker.isFirstInvocation()) {
                     throw EjbMessages.MESSAGES.cannotRemoveWhileParticipatingInTransaction();
                 }
             }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -57,9 +56,9 @@ public class TestPhrasePrefixQuery extends LuceneTestCase {
     writer.addDocument(doc2);
     writer.addDocument(doc3);
     writer.addDocument(doc4);
-writer.shutdown();
+    writer.addDocument(doc5);
     IndexReader reader = writer.getReader();
-    writer.close();
+writer.shutdown();
     
     IndexSearcher searcher = newSearcher(reader);
     

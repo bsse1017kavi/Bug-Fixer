@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -80,9 +79,9 @@ public static char[] qualifiedSourceName(TypeBinding binding) {
 		if (type.isLocalType())
 			return type.isMemberType()
 				? CharOperation.concat(qualifiedSourceName(type.enclosingType()), type.sourceName(), '.')
-return binding != null ? binding.qualifiedSourceName() : null;
+				: CharOperation.concat(qualifiedSourceName(type.enclosingType()), new char[] {'.', '1', '.'}, type.sourceName());
 	}
-	return binding.qualifiedSourceName();
+return binding != null ? binding.qualifiedSourceName() : null;
 }
 
 

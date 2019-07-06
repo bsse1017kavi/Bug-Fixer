@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -222,9 +221,9 @@ public class DetachManager
         StateManagerImpl sm, BitSet idxs) {
         FetchConfiguration fetch = broker.getFetchConfiguration();
         FieldMetaData[] fmds = sm.getMetaData().getFields();
-|| fetch.hasAnyFetchGroup(fmds[i].getFetchGroups())
+        for (int i = 0; i < fmds.length; i++) {
             if (fmds[i].isPrimaryKey() || fmds[i].isInDefaultFetchGroup()
-                || fetch.hasFetchGroup(fmds[i].getFetchGroups())
+|| fetch.hasAnyFetchGroup(fmds[i].getFetchGroups())
                 || fetch.hasField(fmds[i].getFullName()))
                 idxs.set(i);
         }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -94,9 +93,9 @@ class StructureTreeManager {
 	public void updateTree(final StructureView structureView) {	
 		if (structureView == null) return;
 		Runnable update = new Runnable() {
-//                SwingTreeViewNode currNode;
+            public void run() {
                 structureTree.removeAll();
-                SwingTreeViewNode currNode;
+//                SwingTreeViewNode currNode;
                 if (structureView.getRootNode() == null) {
                 	structureTree.setModel(NO_STRUCTURE_MODEL);	
                 } else {

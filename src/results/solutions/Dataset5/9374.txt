@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2006 The Apache Software Foundation
  *
@@ -411,9 +410,9 @@ public class ExecTask extends Task {
     protected String resolveExecutable(String exec, boolean mustSearchPath) {
         if (!resolveExecutable) {
             return exec;
-File executableFile = getProject().resolveFile(exec);
+        }
         // try to find the executable
-        File executableFile = FILE_UTILS.resolveFile(getProject().getBaseDir(), exec);
+File executableFile = getProject().resolveFile(exec);
         if (executableFile.exists()) {
             return executableFile.getAbsolutePath();
         }

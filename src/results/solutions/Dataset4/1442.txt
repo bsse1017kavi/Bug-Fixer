@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class JsonBinaryFieldMapper extends JsonFieldMapper<byte[]> {
     }
 
     @Override public void toJson(JsonBuilder builder, Params params) throws IOException {
-builder.field("index_name", names.indexNameClean());
+        builder.startObject(names.name());
         builder.field("type", jsonType());
-        builder.field("indexName", names.indexNameClean());
+builder.field("index_name", names.indexNameClean());
         builder.endObject();
     }
 }

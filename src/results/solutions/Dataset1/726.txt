@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.DRDAProtocolException
@@ -322,9 +321,9 @@ class DRDAProtocolException extends Exception
 	
 	protected static DRDAProtocolException newAgentError(DRDAConnThread agent,
 		int svrcod, String rdbnam, String srvdgn)
-agent.trace("agentError in " + agent);
+	{
         if ( SanityManager.DEBUG )
-            System.out.println("agentError in " + agent);
+agent.trace("agentError in " + agent);
 		Object[] oa = {new Integer(svrcod), rdbnam, srvdgn};
 		return new DRDAProtocolException(DRDA_AgentError,
 										agent,

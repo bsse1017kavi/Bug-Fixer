@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -54,9 +53,9 @@ public class TestSearchWithThreads extends LuceneTestCase {
       final int numTerms = random.nextInt(10);
       for(int termCount=0;termCount<numTerms;termCount++) {
         sb.append(random.nextBoolean() ? "aaa" : "bbb");
-body.setStringValue(sb.toString());
+        sb.append(' ');
       }
-      body.setValue(sb.toString());
+body.setStringValue(sb.toString());
       w.addDocument(doc);
       sb.delete(0, sb.length());
     }

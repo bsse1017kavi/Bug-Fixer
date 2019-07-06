@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -19,9 +18,9 @@ protected char[] pkgName;
 
 public PackageDeclarationPattern(char[] pkgName, int matchRule) {
 	super(PKG_DECL_PATTERN, matchRule);
-public EntryResult[] queryIn(Index index) {
+	this.pkgName = pkgName;
 }
-EntryResult[] queryIn(Index index) {
+public EntryResult[] queryIn(Index index) {
 	// package declarations are not indexed
 	return null;
 }

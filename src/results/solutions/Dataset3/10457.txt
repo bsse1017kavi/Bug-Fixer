@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -274,9 +273,9 @@ class ServerControllerImpl extends BasicModelController implements ServerControl
 
     /**
      * A service listener to track container status.  Must be present when the service is created, or results will
-class ServerStateMonitorListener extends AbstractServiceListener<Object> {
+     * be unpredictable.
      */
-    private class ServerStateMonitorListener extends AbstractServiceListener<Object> {
+class ServerStateMonitorListener extends AbstractServiceListener<Object> {
         private final ServiceRegistry serviceRegistry;
         private final AtomicInteger busyServiceCount = new AtomicInteger();
 

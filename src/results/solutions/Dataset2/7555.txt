@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -226,9 +225,9 @@ public abstract class AttributeValue
         }
         // if the value is set multiple times before saving only
         // save the last saved value
-oldOptionId = new NumberKey(getOptionId());
+        if ( !isNew() && !oldOptionIdIsSet ) 
         {
-            oldOptionId = getOptionId();
+oldOptionId = new NumberKey(getOptionId());
             oldOptionIdIsSet = true;
         }
         super.setOptionId(optionId);

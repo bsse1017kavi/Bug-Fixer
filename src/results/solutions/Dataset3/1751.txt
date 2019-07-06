@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -431,9 +430,9 @@ class HornetQServerAdd implements OperationStepHandler {
                                                final List<ServiceController<?>> newControllers, final ServiceListener listener) {
          final ServiceName hqServiceName = MessagingServices.getHornetQServiceName(PathAddress.pathAddress(operation.get(ModelDescriptionConstants.OP_ADDR)));
          final ServiceName serviceName = hqServiceName.append(name);
-RelativePathService.addService(serviceName, pathName, true, relativeTo, serviceTarget, newControllers, listener);
+         final String relativeTo = path.hasDefined(RELATIVE_TO) ? path.get(RELATIVE_TO).asString() : DEFAULT_RELATIVE_TO;
          final String pathName = path.hasDefined(PATH) ? path.get(PATH).asString() : DEFAULT_PATH + name;
-         RelativePathService.addService(serviceName, pathName, relativeTo, serviceTarget, newControllers, listener);
+RelativePathService.addService(serviceName, pathName, true, relativeTo, serviceTarget, newControllers, listener);
          return serviceName;
      }
 

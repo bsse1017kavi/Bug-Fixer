@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -310,9 +309,9 @@ public interface ModelControllerClient extends Closeable {
          * @param saslOptions Additional options to be passed to the SASL mechanism.
          * @return A model controller client
          * @throws UnknownHostException if the host cannot be found
-return create(ClientConfigurationImpl.create(protocol, hostName, port, handler, sslContext, connectionTimeout, saslOptions));
+         */
         public static ModelControllerClient create(final String protocol, final String hostName, final int port, final CallbackHandler handler, final SSLContext sslContext, final int connectionTimeout, final Map<String, String> saslOptions) throws UnknownHostException {
-            return create(ClientConfigurationImpl.create(protocol, hostName, port, handler, sslContext, connectionTimeout));
+return create(ClientConfigurationImpl.create(protocol, hostName, port, handler, sslContext, connectionTimeout, saslOptions));
         }
 
         /**

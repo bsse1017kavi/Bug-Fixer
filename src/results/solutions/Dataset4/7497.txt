@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -126,9 +125,9 @@ public class LocalIndexShardGateway extends AbstractIndexShardComponent implemen
                     try {
                         files = Arrays.toString(indexShard.store().directory().listAll());
                     } catch (Throwable e1) {
-if (indexShouldExists && indexShard.indexService().store().persistent()) {
+                        files += " (failure=" + ExceptionsHelper.detailedMessage(e1) + ")";
                     }
-                    if (indexShouldExists && indexShard.store().indexStore().persistent()) {
+if (indexShouldExists && indexShard.indexService().store().persistent()) {
                         throw new IndexShardGatewayRecoveryException(shardId(), "shard allocated for local recovery (post api), should exist, but doesn't, current files: " + files, e);
                     }
                 }

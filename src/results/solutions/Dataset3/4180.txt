@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -124,9 +123,9 @@ public class OperationCoordinatorStepHandler {
     private void routetoMasterDomainController(OperationContext context, ModelNode operation) {
         // Per discussion on 2011/03/07, routing requests from a slave to the
         // master may overly complicate the security infrastructure. Therefore,
-context.getFailureDescription().set(String.format("Operation %s for address %s can only be handled by the " +
+        // the ability to do this is being disabled until it's clear that it's
         // not a problem
-        context.getFailureDescription().set(String.format("Operation %s for address %s can only handled by the " +
+context.getFailureDescription().set(String.format("Operation %s for address %s can only be handled by the " +
                 "master Domain Controller; this host is not the master Domain Controller",
                 operation.get(OP).asString(), PathAddress.pathAddress(operation.get(OP_ADDR))));
         context.completeStep();

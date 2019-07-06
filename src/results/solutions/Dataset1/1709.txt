@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements. See the NOTICE file distributed with this
@@ -59,9 +58,9 @@ public class CassandraStorage extends LoadFunc
         try
         {
             // load the next pair
-byte[] key = (byte[])reader.getCurrentKey();
+            if (!reader.nextKeyValue())
                 return null;
-            String key = (String)reader.getCurrentKey();
+byte[] key = (byte[])reader.getCurrentKey();
             SortedMap<byte[],IColumn> cf = (SortedMap<byte[],IColumn>)reader.getCurrentValue();
             assert key != null && cf != null;
             

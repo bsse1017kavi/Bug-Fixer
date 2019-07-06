@@ -1,4 +1,3 @@
-
 package org.columba.mail.folder;
 
 import java.io.File;
@@ -163,9 +162,9 @@ public abstract class AbstractHeaderCache {
 
 		}
 
-folder.setNextMessageUid(nextUid);
+		nextUid++;
 		ColumbaLogger.log.debug("next UID for new messages =" + nextUid);
-		folder.setNextUid(nextUid);
+folder.setNextMessageUid(nextUid);
 
 		// close stream
 		p.close();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /*
@@ -44,9 +43,9 @@ public class TestCachingTokenFilter extends BaseTokenStreamTestCase {
       private int index = 0;
       private CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
       private OffsetAttribute offsetAtt = addAttribute(OffsetAttribute.class);
-public boolean incrementToken() {
+      
       @Override
-      public boolean incrementToken() throws IOException {
+public boolean incrementToken() {
         if (index == tokens.length) {
           return false;
         } else {

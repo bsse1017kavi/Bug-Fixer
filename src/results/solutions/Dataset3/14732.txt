@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -302,9 +301,9 @@ public class DomainModelControllerService extends AbstractControllerService impl
 
         SlaveHostPinger pinger = remoteConnectionId == null ? null : new SlaveHostPinger(hostName, handler, pingScheduler, remoteConnectionId);
         hostRegistrationMap.put(hostName, new HostRegistration(remoteConnectionId, handler, pinger));
-final TransformingProxyController hostControllerClient = TransformingProxyController.Factory.create(handler, transformers, addr, ProxyOperationAddressTranslator.HOST, true);
+
         // Create the proxy controller
-        final TransformingProxyController hostControllerClient = TransformingProxyController.Factory.create(handler, transformers, addr, ProxyOperationAddressTranslator.HOST);
+final TransformingProxyController hostControllerClient = TransformingProxyController.Factory.create(handler, transformers, addr, ProxyOperationAddressTranslator.HOST, true);
 
         modelNodeRegistration.registerProxyController(pe, hostControllerClient);
         runtimeIgnoreTransformationRegistry.registerHost(hostName, runtimeIgnoreTransformation);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ public class EAPRepositoryReachableUtil {
 
     static Boolean reachable;
 
-if (System.getProperties().containsKey(TEST_TRANSFORMERS_EAP)) {
+    public static boolean isReachable() {
         if (reachable == null) {
-            if (System.getProperties().contains(TEST_TRANSFORMERS_EAP)) {
+if (System.getProperties().containsKey(TEST_TRANSFORMERS_EAP)) {
                 try {
                     InetAddress.getByName(EAP_REPOSITORY_HOST);
                     reachable = true;

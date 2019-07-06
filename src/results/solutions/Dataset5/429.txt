@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.209 $ $Date$
@@ -618,9 +617,9 @@ public abstract class Page extends MarkupContainer implements IRedirectListener,
 				for (Component current = component; current != null; current = current.getParent())
 				{
 					levels++;
-+ ":" + Classes.simpleName(component.getClass()));
+				}
 				buffer.append(StringValue.repeat(levels, "	") + component.getPageRelativePath()
-						+ ":" + Classes.name(component.getClass()));
++ ":" + Classes.simpleName(component.getClass()));
 				return null;
 			}
 		});

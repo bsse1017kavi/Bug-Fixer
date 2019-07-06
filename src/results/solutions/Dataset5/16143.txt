@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -735,9 +734,9 @@ final class UCSReader extends XMLEntityReader implements StringPool.StringProduc
             else {
                 if (!fCalledCharPropInit) {
                     XMLCharacterProperties.initCharFlags();
-if ((XMLCharacterProperties.fgCharFlags[ch] & XMLCharacterProperties.E_NameCharFlag) == 0) {
+                    fCalledCharPropInit = true;
                 }
-                if ((XMLCharacterProperties.fgCharFlags[ch] & XMLCharacterProperties.E_InitialNameCharFlag) == 0) {
+if ((XMLCharacterProperties.fgCharFlags[ch] & XMLCharacterProperties.E_NameCharFlag) == 0) {
                     break;
                 }
             }

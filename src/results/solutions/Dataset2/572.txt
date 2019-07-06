@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -232,9 +231,9 @@ public class TypeConverter {
 				char[] identifier = new char[dimStart];
 				System.arraycopy(type, 0, identifier, 0, dimStart);
 				return new ArrayTypeReference(identifier, dim, 0);
-char[][] identifiers =	CharOperation.splitOn('.', type, 0, dimStart);
+			}
 		} else { // qualified type reference
-			char[][] identifiers =	CharOperation.splitOn('.', type, 0, dimStart - 1);
+char[][] identifiers =	CharOperation.splitOn('.', type, 0, dimStart);
 			if (dim == 0) {
 				return new QualifiedTypeReference(identifiers, new long[]{0});
 			} else {

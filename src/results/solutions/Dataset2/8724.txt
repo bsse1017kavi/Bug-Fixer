@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -209,9 +208,9 @@ rrToWireCanonical(DataByteOutputStream out) throws IOException {
 	out.writeByte(labels);
 	out.writeInt(origttl);
 	out.writeInt((int)(expire.getTime() / 1000));
-signer.toWireCanonical(out);
+	out.writeInt((int)(timeSigned.getTime() / 1000));
 	out.writeShort(footprint);
-	signer.toWireCanonical(out, null);
+signer.toWireCanonical(out);
 	out.write(signature);
 }
 

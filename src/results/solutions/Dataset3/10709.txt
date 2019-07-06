@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class OperationCoordinatorStepHandler {
         // Determine routing
         ImmutableManagementResourceRegistration opRegistry = context.getResourceRegistration();
         OperationRouting routing = OperationRouting.determineRouting(operation, localHostControllerInfo, opRegistry);
-&& !routing.isLocalOnly(localHostControllerInfo.getLocalHostName())) {
+
         if (!localHostControllerInfo.isMasterDomainController()
-                && (routing.isRouteToMaster() || !routing.isLocalOnly(localHostControllerInfo.getLocalHostName()))) {
+&& !routing.isLocalOnly(localHostControllerInfo.getLocalHostName())) {
             // We cannot handle this ourselves
             routetoMasterDomainController(context, operation);
         }

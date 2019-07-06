@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.Config;
@@ -121,9 +120,9 @@ public class TransactionalSpoutCoordinator extends BaseRichSpout {
             maybeCommit.status = AttemptStatus.COMMITTING;
             _collector.emit(TRANSACTION_COMMIT_STREAM_ID, new Values(maybeCommit.attempt), maybeCommit.attempt);
         }
-if(_coordinator.isReady() && _activeTx.size() < _maxTransactionActive) {
+        
         try {
-            if(_activeTx.size() < _maxTransactionActive) {
+if(_coordinator.isReady() && _activeTx.size() < _maxTransactionActive) {
                 BigInteger curr = _currTransaction;
                 for(int i=0; i<_maxTransactionActive; i++) {
                     if(!_activeTx.containsKey(curr)) {

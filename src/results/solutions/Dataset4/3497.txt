@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -116,9 +115,9 @@ public abstract class TransportBroadcastOperationAction<Request extends Broadcas
             ClusterBlockException blockException = checkGlobalBlock(clusterState, request);
             if (blockException != null) {
                 throw blockException;
-String[] concreteIndices = clusterState.metaData().concreteIndices(request.indicesOptions(), request.indices());
+            }
             // update to concrete indices
-            String[] concreteIndices = clusterState.metaData().concreteIndices(request.indices(), request.indicesOptions());
+String[] concreteIndices = clusterState.metaData().concreteIndices(request.indicesOptions(), request.indices());
             blockException = checkRequestBlock(clusterState, request, concreteIndices);
             if (blockException != null) {
                 throw blockException;

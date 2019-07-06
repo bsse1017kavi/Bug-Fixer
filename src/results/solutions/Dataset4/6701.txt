@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class RestGetMappingAction extends BaseRestHandler {
                             channel.sendResponse(new XContentThrowableRestResponse(request, new TypeMissingException(new Index(indices[0]), types.iterator().next())));
                             return;
                         }
-builder.startObject(indexMetaData.index(), XContentBuilder.FieldCaseConversion.NONE);
+                    } else {
                         for (IndexMetaData indexMetaData : metaData) {
-                            builder.startObject(indexMetaData.index());
+builder.startObject(indexMetaData.index(), XContentBuilder.FieldCaseConversion.NONE);
 
                             for (MappingMetaData mappingMd : indexMetaData.mappings().values()) {
                                 if (!types.isEmpty() && !types.contains(mappingMd.type())) {

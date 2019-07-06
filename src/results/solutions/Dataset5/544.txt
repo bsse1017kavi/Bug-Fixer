@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1890,9 +1889,9 @@ public void setHeaderVisible (boolean show) {
 	checkWidget ();
 	int style = 0;
 	if (!show) {
-int setter = OS.gcnew_SetterVisibility (dp, OS.Visibility_Collapsed);
+		style = OS.gcnew_Style ();
 		int dp = OS.UIElement_VisibilityProperty ();
-		int setter = OS.gcnew_Setter (dp, OS.Visibility_Collapsed);
+int setter = OS.gcnew_SetterVisibility (dp, OS.Visibility_Collapsed);
 		int collection = OS.Style_Setters (style);
 		OS.SetterBaseCollection_Add (collection, setter);
 		OS.GCHandle_Free (collection);

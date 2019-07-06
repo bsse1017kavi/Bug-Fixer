@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -182,9 +181,9 @@ public final class MessageUtil
             @SuppressWarnings("unchecked")
             Class<? extends ListResourceBundle> clazz = AccessController.doPrivileged(new PrivilegedAction<Class<? extends ListResourceBundle>>() {
               public Class<? extends ListResourceBundle> run()
-return (Class<? extends ListResourceBundle>) b.loadClass(bundleName);
+              {
                 try {
-                  return b.loadClass(bundleName);
+return (Class<? extends ListResourceBundle>) b.loadClass(bundleName);
                 } catch (ClassNotFoundException e) {
                   return null;
                 }

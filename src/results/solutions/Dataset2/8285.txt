@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -795,9 +794,9 @@ public class WorkbenchActionBuilder implements IPropertyChangeListener {
 		// doing so would break cell editors that listen for keyPressed SWT 
 		// events.
 		//keyBindingService.registerGlobalAction(deleteAction);
-AboutInfo[] infos = ((Workbench)workbench).getConfigurationInfo().getFeaturesInfo();
+
 		// See if a welcome page is specified
-		AboutInfo[] infos = ((Workbench)workbench).getFeaturesInfo();
+AboutInfo[] infos = ((Workbench)workbench).getConfigurationInfo().getFeaturesInfo();
 		for (int i = 0; i < infos.length; i++) {
 			if (infos[i].getWelcomePageURL() != null) {
 				quickStartAction = new QuickStartAction(workbench);

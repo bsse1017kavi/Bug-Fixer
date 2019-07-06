@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class BridgeDefinition extends SimpleResourceDefinition {
     private final boolean registerRuntimeOnly;
 
     public static final PrimitiveListAttributeDefinition CONNECTOR_REFS = PrimitiveListAttributeDefinition.Builder.of(STATIC_CONNECTORS, STRING)
-.setElementValidator(new StringLengthValidator(1))
+            .setAllowNull(true)
             .setAlternatives(CommonAttributes.DISCOVERY_GROUP_NAME)
-            .setValidator(new StringLengthValidator(1))
+.setElementValidator(new StringLengthValidator(1))
             .setXmlName(CONNECTOR_REF_STRING)
             .setAttributeMarshaller(new AttributeMarshallers.WrappedListAttributeMarshaller(STATIC_CONNECTORS))
             .setRestartAllServices()

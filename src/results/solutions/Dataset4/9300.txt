@@ -1,4 +1,3 @@
-
 package org.elasticsearch.termvectors;
 /*
  * Licensed to ElasticSearch under one
@@ -40,9 +39,9 @@ public class MultiTermVectorsTests extends AbstractTermVectorTests {
         MultiTermVectorsRequestBuilder requestBuilder = client().prepareMultiTermVectors();
         for (AbstractTermVectorTests.TestConfig test : testConfigs) {
             requestBuilder.add(getRequestForConfig(test).request());
-MultiTermVectorsItemResponse[] responseItems = requestBuilder.get().getResponses();
+        }
 
-        MultiTermVectorsItemResponse[] responseItems = run(requestBuilder).getResponses();
+MultiTermVectorsItemResponse[] responseItems = requestBuilder.get().getResponses();
 
         for (int i = 0; i < testConfigs.length; i++) {
             TestConfig test = testConfigs[i];

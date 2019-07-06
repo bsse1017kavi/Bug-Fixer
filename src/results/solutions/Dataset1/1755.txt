@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class JoinDocFreqValueSource extends FieldCacheSource {
   }
 
   @Override
-final BinaryDocValues terms = cache.getTerms(readerContext.reader(), field, false, PackedInts.FAST);
+  public FunctionValues getValues(Map context, AtomicReaderContext readerContext) throws IOException
   {
-    final BinaryDocValues terms = cache.getTerms(readerContext.reader(), field, PackedInts.FAST);
+final BinaryDocValues terms = cache.getTerms(readerContext.reader(), field, false, PackedInts.FAST);
     final IndexReader top = ReaderUtil.getTopLevelContext(readerContext).reader();
     Terms t = MultiFields.getTerms(top, qfield);
     final TermsEnum termsEnum = t == null ? TermsEnum.EMPTY : t.iterator(null);

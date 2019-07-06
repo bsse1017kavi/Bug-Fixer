@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -353,9 +352,9 @@ public class UndertowDeploymentProcessor implements DeploymentUnitProcessor {
             if(servletVersion != null) {
                 d.setMajorVersion(Integer.parseInt(servletVersion.charAt(0) + ""));
                 d.setMinorVersion(Integer.parseInt(servletVersion.charAt(2) + ""));
-d.setMinorVersion(1);
+            } else {
                 d.setMajorVersion(3);
-                d.setMajorVersion(1);
+d.setMinorVersion(1);
             }
 
             //for 2.2 apps we do not require a leading / in path mappings

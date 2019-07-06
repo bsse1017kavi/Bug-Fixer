@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -148,9 +147,9 @@ public class WLJspc extends MatchingTask
                 " is not valid" );
         }
 
-throw new BuildException( "package attribute must be present." );
+        if( destinationPackage == null )
         {
-            throw new BuildException( "package attribute must be present.", location );
+throw new BuildException( "package attribute must be present." );
         }
 
         String systemClassPath = System.getProperty( "java.class.path" );

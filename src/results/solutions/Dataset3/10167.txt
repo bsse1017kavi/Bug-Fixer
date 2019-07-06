@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class NamingStoreService implements Service<ServiceBasedNamingStore> {
      * @param context The start context
      * @throws StartException If any problems occur creating the context
      */
-store = new WritableServiceBasedNamingStore(context.getController().getServiceContainer(), context.getController().getName(),context.getChildTarget());
+    public synchronized void start(final StartContext context) throws StartException {
         if(store == null) {
-            store = new WritableServiceBasedNamingStore(context.getController().getServiceContainer(), context.getController().getName());
+store = new WritableServiceBasedNamingStore(context.getController().getServiceContainer(), context.getController().getName(),context.getChildTarget());
         }
     }
 

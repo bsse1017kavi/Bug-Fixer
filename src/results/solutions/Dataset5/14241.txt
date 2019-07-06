@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -137,9 +136,9 @@ public class Cab
                 File listFile = createListFile( files );
                 Execute2 exe = new Execute2();
                 setupLogger( exe );
-exe.setCommandline( cmd );
+                exe.setWorkingDirectory( m_baseDir );
                 final Commandline cmd = createCommand( listFile );
-                exe.setCommandline( cmd.getCommandline() );
+exe.setCommandline( cmd );
                 exe.execute();
 
                 listFile.delete();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -235,9 +234,9 @@ public class IndicesTTLService extends AbstractLifecycleComponent<IndicesTTLServ
         }
 
         public void collect(int doc) {
-context.reader().document(doc, fieldVisitor);
+            try {
                 UidAndRoutingFieldVisitor fieldVisitor = new UidAndRoutingFieldVisitor();
-                context.reader().document(doc, new UidAndRoutingFieldVisitor());
+context.reader().document(doc, fieldVisitor);
                 String uid = fieldVisitor.uid();
                 long version = UidField.loadVersion(context, new Term(UidFieldMapper.NAME, uid));
                 docsToPurge.add(new DocToPurge(Uid.typeFromUid(uid), Uid.idFromUid(uid), version, fieldVisitor.routing()));

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -63,9 +62,9 @@ public abstract class TableWithAlternatingRowStyle extends ListView
             throw new IllegalArgumentException("Table and table cell model data must be serializable");
         }
 
-return new ListItem(this, index)
+        // Return an extended Cell, which will automatically change the CSS style with
         // every other Cell.
-        return new ListItem(index, this)
+return new ListItem(this, index)
         {
             protected void onComponentTag(final ComponentTag tag)
             {

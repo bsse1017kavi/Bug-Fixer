@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -56,9 +55,9 @@ public class TestTieredMergePolicy extends LuceneTestCase {
     assertEquals(60, w.numDocs());
 
     if (VERBOSE) {
-((TieredMergePolicy) w.getConfig().getMergePolicy()).setForceMergeDeletesPctAllowed(10.0);
+      System.out.println("\nTEST: forceMergeDeletes2");
     }
-    tmp.setForceMergeDeletesPctAllowed(10.0);
+((TieredMergePolicy) w.getConfig().getMergePolicy()).setForceMergeDeletesPctAllowed(10.0);
     w.forceMergeDeletes();
     assertEquals(60, w.maxDoc());
     assertEquals(60, w.numDocs());

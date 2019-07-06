@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -583,9 +582,9 @@ public void manageSyntheticAccessIfNecessary(BlockScope currentScope, FlowInfo f
 		// NOTE: from target 1.2 on, field's declaring class is touched if any different from receiver type
 		// and not from Object or implicit static field access.	
 		if (fieldBinding.declaringClass != this.delegateThis.type
-CompilerOptions options = currentScope.compilerOptions();
+				&& fieldBinding.declaringClass != null // array.length
 				&& !fieldBinding.isConstantValue()) {
-			CompilerOptions options = currentScope.environment().options;
+CompilerOptions options = currentScope.compilerOptions();
 			if ((options.targetJDK >= ClassFileConstants.JDK1_2
 					&& (options.complianceLevel >= ClassFileConstants.JDK1_4 || !fieldBinding.isStatic())
 					&& fieldBinding.declaringClass.id != T_JavaLangObject) // no change for Object fields

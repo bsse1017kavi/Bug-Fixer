@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1910,9 +1909,9 @@ public class SelectImpl
                     _tables.remove(alias);
                 return alias;
             }
-boolean removeAliasFromParent = key.toString().indexOf(":") != -1;
+        }
         if (!fromParent && _parent != null) {
-            boolean removeAliasFromParent = key.toString().contains(":");
+boolean removeAliasFromParent = key.toString().indexOf(":") != -1;
             alias = _parent.findAlias(table, key, removeAliasFromParent, this);
             if (alias != null) {
                 if (removeAliasFromParent) {

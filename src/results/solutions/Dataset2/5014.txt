@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.problem;
 
 /*
@@ -1732,9 +1731,9 @@ public void packageCollidesWithType(CompilationUnitDeclaration compUnitDecl) {
 		compUnitDecl.currentPackage.sourceEnd);
 }
 public void packageIsNotExpectedPackage(CompilationUnitDeclaration compUnitDecl) {
-new String[] {CharOperation.toString(compUnitDecl.compilationResult.compilationUnit.getPackageName())},
+	this.handle(
 		PackageIsNotExpectedPackage,
-		new String[0],
+new String[] {CharOperation.toString(compUnitDecl.compilationResult.compilationUnit.getPackageName())},
 		compUnitDecl.currentPackage == null ? 0 : compUnitDecl.currentPackage.sourceStart,
 		compUnitDecl.currentPackage == null ? 0 : compUnitDecl.currentPackage.sourceEnd);
 }

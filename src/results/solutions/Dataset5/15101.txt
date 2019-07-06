@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -687,9 +686,9 @@ public class Tree extends AbstractTree implements TreeModelListener
 	/**
 	 * @see org.apache.wicket.Component#onBeforeRender()
 	 */
-super.onAttach();
+	protected void onAttach()
 	{
-		super.onBeforeRender();
+super.onAttach();
 		// if we don't optimize, rebuild the paths on every request
 		if (!getOptimizeItemRemoval())
 		{

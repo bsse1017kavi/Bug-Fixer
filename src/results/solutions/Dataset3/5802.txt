@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public class PermutationIterator<E> implements Iterator<List<E>> {
     /**
      * Standard constructor for this class.
      * @param coll  the collection to generate permutations for
-public PermutationIterator(final Collection<? extends E> coll) {
+     * @throws NullPointerException if coll is null
      */
-    public PermutationIterator(final Collection<E> coll) {
+public PermutationIterator(final Collection<? extends E> coll) {
         if (coll == null) {
             throw new NullPointerException("The collection must not be null");
         }

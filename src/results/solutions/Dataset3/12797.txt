@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -178,9 +177,9 @@ public class CSVParser implements Iterable<String[]> {
      * Returns an iterator on the records. IOExceptions occuring
      * during the iteration are wrapped in a RuntimeException.
      */
-private String[] current;
+    public Iterator<String[]> iterator() {
         return new Iterator<String[]>() {
-            String[] current;
+private String[] current;
             
             public boolean hasNext() {
                 if (current == null) {

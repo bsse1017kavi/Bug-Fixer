@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -207,9 +206,9 @@ public class GenericTypeOperationHandler extends BatchModeCommandHandler {
                 if(isDependsOnProfile() && ctx.isDomainMode()) {
                     final String profileName = profile.getValue(ctx.getParsedCommandLine());
                     if(profile == null) {
-address.toNode(Util.PROFILE, profileName);
+                        return Collections.emptyList();
                     }
-                    address.toNode("profile", profileName);
+address.toNode(Util.PROFILE, profileName);
                 }
                 for(OperationRequestAddress.Node node : getRequiredAddress()) {
                     address.toNode(node.getType(), node.getName());

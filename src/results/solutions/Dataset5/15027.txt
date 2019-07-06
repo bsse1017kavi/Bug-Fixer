@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -469,9 +468,9 @@ public abstract class AbstractStringValidator extends AbstractDatatypeValidator 
                    tokenType == SPECIAL_TOKEN_IDNCNAME ||
                    tokenType == SPECIAL_TOKEN_IDREFNCNAME ||
                    tokenType == SPECIAL_TOKEN_ENTITY) {
-seenErr = !XMLChar.isValidNCName(content);
+            // PATTERN "[\\i-[:]][\\c-[:]]*"
             // REVISIT: !!!NOT IMPLEMENTED in XMLChar
-            //seenErr = !XMLChar.isValidNCName(content);
+seenErr = !XMLChar.isValidNCName(content);
         }
         if (seenErr) {
             throw new InvalidDatatypeValueException(

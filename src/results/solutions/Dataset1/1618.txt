@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -167,9 +166,9 @@ public class MultiSearcher extends Searcher {
     // replace w/ call to Arrays.binarySearch in Java 1.2
     int lo = 0;					  // search starts array
     int hi = searchables.length - 1;		  // for first element less
-int mid = (lo + hi) >>> 1;
+						  // than n, return its index
     while (hi >= lo) {
-      int mid = (lo + hi) >> 1;
+int mid = (lo + hi) >>> 1;
       int midValue = starts[mid];
       if (n < midValue)
 	hi = mid - 1;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008, 2009 28msec Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -86,9 +85,9 @@ public class XQDTTemplateCompletionProcessor extends ScriptTemplateCompletionPro
         } else {
             TemplateContextType contextType = context.getContextType();
             if (contextType instanceof XQueryTemplateContentType) {
-if (template.matches(prefix, contextTypeId)) {
+                String[] alsoMatches = ((XQueryTemplateContentType)contextType).getCompatibleContentTypes();
                 for (String contextTypeId : alsoMatches) {
-                    if (template.getContextTypeId().equals(contextTypeId)) {
+if (template.matches(prefix, contextTypeId)) {
                         return true;
                     }
                 }

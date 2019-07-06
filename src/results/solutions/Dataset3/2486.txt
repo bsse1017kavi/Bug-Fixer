@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -83,9 +82,9 @@ public class EntityBeanEjbCreateMethodInterceptorFactory implements InterceptorF
                 //grab an unasociated entity bean from the pool
                 final EntityBeanComponentInstance instance = entityBeanComponent.acquireUnAssociatedInstance();
 
-instance.associate(primaryKey);
+                //call the ejbCreate method
                 final Object primaryKey = invokeEjbCreate(context, ejbCreate, instance, params);
-                instance.activate(primaryKey);
+instance.associate(primaryKey);
                 primaryKeyReference.set(primaryKey);
 
                 //now add the instance to the cache, so it is usable

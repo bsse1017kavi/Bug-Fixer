@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -126,9 +125,9 @@ public class CompositeCollectionTest<E> extends AbstractCollectionTest<E> {
     @SuppressWarnings("serial")
     protected void setUpMutatorTest() {
         setUpTest();
-public boolean add(final CompositeCollection<E> composite, final List<Collection<E>> collections, final E obj) {
+        c.setMutator(new CompositeCollection.CollectionMutator<E>() {
             
-            public boolean add(CompositeCollection<E> composite, List<Collection<E>> collections, E obj) {
+public boolean add(final CompositeCollection<E> composite, final List<Collection<E>> collections, final E obj) {
                 for (final Collection<E> coll : collections) {
                     coll.add(obj);
                 }

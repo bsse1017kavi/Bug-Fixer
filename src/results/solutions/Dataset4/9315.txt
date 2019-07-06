@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -32,9 +31,9 @@ import java.io.IOException;
  */
 public abstract class MasterNodeOperationRequest implements ActionRequest {
 
-protected TimeValue masterNodeTimeout = DEFAULT_MASTER_NODE_TIMEOUT;
+    public static TimeValue DEFAULT_MASTER_NODE_TIMEOUT = TimeValue.timeValueSeconds(30);
 
-    private TimeValue masterNodeTimeout = DEFAULT_MASTER_NODE_TIMEOUT;
+protected TimeValue masterNodeTimeout = DEFAULT_MASTER_NODE_TIMEOUT;
 
     @Override
     public boolean listenerThreaded() {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -24,9 +23,9 @@
 package org.jboss.as.controller.interfaces;
 
 import static java.lang.System.getSecurityManager;
-import org.wildfly.security.manager.GetBooleanAction;
+import static java.security.AccessController.doPrivileged;
 
-import org.jboss.as.util.security.GetBooleanAction;
+import org.wildfly.security.manager.GetBooleanAction;
 
 /**
  * Security actions to perform possibly privileged operations.  No methods in

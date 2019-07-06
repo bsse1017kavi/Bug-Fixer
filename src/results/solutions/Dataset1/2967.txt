@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -341,9 +340,9 @@ public class TestTermVectorsReader extends LuceneTestCase {
         }
       }
     }
-IndexReader ir = IndexReader.open(dir, true);
+
     // test setDocumentNumber()
-    IndexReader ir = IndexReader.open(dir);
+IndexReader ir = IndexReader.open(dir, true);
     DocNumAwareMapper docNumAwareMapper = new DocNumAwareMapper();
     assertEquals(-1, docNumAwareMapper.getDocumentNumber());
 

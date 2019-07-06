@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -244,9 +243,9 @@ toStringNoData() {
 	sb.append(name);
 	sb.append("\t");
 	if (Options.check("BINDTTL"))
-sb.append((long)ttl & 0xFFFFFFFFL);
+		sb.append(TTL.format(ttl));
 	else
-		sb.append(ttl);
+sb.append((long)ttl & 0xFFFFFFFFL);
 	sb.append(" ");
 	if (dclass != DClass.IN || !Options.check("noPrintIN")) {
 		sb.append(DClass.string(dclass));

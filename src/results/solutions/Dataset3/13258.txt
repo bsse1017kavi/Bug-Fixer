@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -96,9 +95,9 @@ public final class CompositeOperationHandler implements OperationStepHandler {
         }
 
         for (int i = size - 1; i >= 0; i --) {
-context.addStep(responseMap.get(stepName).setEmptyObject(), subOperation, stepHandlerMap.get(stepName), OperationContext.Stage.MODEL, true);
+            final ModelNode subOperation = list.get(i);
             String stepName = "step-" + (i+1);
-            context.addStep(responseMap.get(stepName).setEmptyObject(), subOperation, stepHandlerMap.get(stepName), OperationContext.Stage.IMMEDIATE);
+context.addStep(responseMap.get(stepName).setEmptyObject(), subOperation, stepHandlerMap.get(stepName), OperationContext.Stage.MODEL, true);
         }
 
         context.completeStep(new OperationContext.RollbackHandler() {

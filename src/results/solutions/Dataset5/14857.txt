@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -34,9 +33,9 @@ public class PropertyDump
         final Iterator iterator = properties.keySet().iterator();
         while( iterator.hasNext() )
         {
-getContext().info( key + "=" + value );
+            final String key = (String)iterator.next();
             final Object value = properties.get( key );
-            getContext().warn( key + "=" + value );
+getContext().info( key + "=" + value );
         }
     }
 }

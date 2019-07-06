@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1197,9 +1196,9 @@ public class AnnotationPersistenceMetaDataSerializer
                 writeAnnotations(meta, _qryAnnos.get(meta), output);
     }
 
-FileWriter out = new FileWriter(AccessController
+    public void serialize(File file, int flags) throws IOException {
         try {
-            FileWriter out = new FileWriter((String) AccessController
+FileWriter out = new FileWriter(AccessController
                 .doPrivileged(J2DoPrivHelper.getCanonicalPathAction(file)),
                 (flags & APPEND) > 0);
             serialize(out, flags);

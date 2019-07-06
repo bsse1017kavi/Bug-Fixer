@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class SitePluginTests extends ElasticsearchIntegrationTest {
             throw new RuntimeException(ex);
         }
     }
-HttpServerTransport httpServerTransport = internalCluster().getDataNodeInstance(HttpServerTransport.class);
+
     public HttpClient httpClient() {
-        HttpServerTransport httpServerTransport = cluster().getDataNodeInstance(HttpServerTransport.class);
+HttpServerTransport httpServerTransport = internalCluster().getDataNodeInstance(HttpServerTransport.class);
         return new HttpClient(httpServerTransport.boundAddress().publishAddress());
     }
 

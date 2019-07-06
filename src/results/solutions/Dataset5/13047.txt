@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2004 The Apache Software Foundation
  *
@@ -196,9 +195,9 @@ public class CSharp extends DotnetCompile {
      *  get the argument or null for no argument needed
      *
      *@return    The OutputFile Parameter to CSC
-if (fileAlign != 0 && !"mcs".equals(getExecutable())) {
+     */
     protected String getFileAlignParameter() {
-        if (fileAlign != 0) {
+if (fileAlign != 0 && !"mcs".equals(getExecutable())) {
             return "/filealign:" + fileAlign;
         } else {
             return null;

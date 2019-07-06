@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1305,9 +1304,9 @@ public class FileUtils {
         path = path.replace('\\', '/');
 
         CharacterIterator iter = new StringCharacterIterator(path);
-if (c < 256 && isSpecial[c]) {
+        for (char c = iter.first(); c != CharacterIterator.DONE;
              c = iter.next()) {
-            if (isSpecial[c]) {
+if (c < 256 && isSpecial[c]) {
                 sb.append('%');
                 sb.append(escapedChar1[c]);
                 sb.append(escapedChar2[c]);

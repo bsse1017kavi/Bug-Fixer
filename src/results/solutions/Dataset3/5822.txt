@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ import org.jboss.as.controller.registry.OperationEntry;
 public class PlugInResourceDefinition extends SimpleResourceDefinition {
 
     public PlugInResourceDefinition() {
-new SecurityRealmChildAddHandler(true),
+        super(PathElement.pathElement(PLUG_IN),
                 ControllerResolver.getResolver("core.management.security-realm.plug-in"),
-                new SecurityRealmChildAddHandler(false, false),
+new SecurityRealmChildAddHandler(true),
                 new SecurityRealmChildRemoveHandler(true), OperationEntry.Flag.RESTART_NONE,
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES);
     }

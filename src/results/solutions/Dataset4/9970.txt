@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -293,9 +292,9 @@ public class CommitDiffListFragment extends DialogFragment implements
             CommitUtils.bindCommitter(commit, avatars, committerAvatar);
             committerName.setText(commitCommitter);
             StyledText styledCommitter = new StyledText();
-Date commitCommitterDate = CommitUtils.getCommitterDate(commit);
+            styledCommitter.append(getString(string.committed));
 
-            Date commitCommitterDate = CommitUtils.getCommiterDate(commit);
+Date commitCommitterDate = CommitUtils.getCommitterDate(commit);
             if (commitCommitterDate != null)
                 styledCommitter.append(' ').append(commitCommitterDate);
 

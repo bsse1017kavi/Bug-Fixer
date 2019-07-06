@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public class TestTestCompiler extends junit.framework.TestCase {
             sampler.setName("sampler");
             testing.add(controller, config1);
             testing.add(controller, sampler);
-TestCompiler compiler = new TestCompiler(testing);
+            TestCompiler.initialize();
 
-            TestCompiler compiler = new TestCompiler(testing, new JMeterVariables());
+TestCompiler compiler = new TestCompiler(testing);
             testing.traverse(compiler);
             sampler = (TestSampler) compiler.configureSampler(sampler).getSampler();
             assertEquals("A test value", sampler.getPropertyAsString("test.property"));

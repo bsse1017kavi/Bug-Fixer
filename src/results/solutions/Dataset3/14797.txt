@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -179,9 +178,9 @@ class WebConnectorService implements Service<Connector> {
                             Method m = connector.getProtocolHandler().getClass().getMethod("setSSLVerifyDepth", Integer.TYPE);
                             m.invoke(connector.getProtocolHandler(), ssl.get(Constants.VERIFY_DEPTH).asInt());
                         }
-m.invoke(connector.getProtocolHandler(), ssl.get(Constants.CERTIFICATE_FILE).asString());
+                        if (ssl.hasDefined(Constants.CERTIFICATE_FILE)) {
                             Method m = connector.getProtocolHandler().getClass().getMethod("setSSLCertificateFile", String.class);
-                            m.invoke(connector.getProtocolHandler(), ssl.get(Constants.CERTIFICATE_FILE));
+m.invoke(connector.getProtocolHandler(), ssl.get(Constants.CERTIFICATE_FILE).asString());
                         }
                         if (ssl.hasDefined(Constants.CA_CERTIFICATE_FILE)) {
                             Method m = connector.getProtocolHandler().getClass().getMethod("setSSLCACertificateFile", String.class);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -83,9 +82,9 @@ public class QueryPhase implements SearchPhase {
         searchContext.queryResult().searchTimedOut(false);
         // set the filter on the searcher
         if (searchContext.scopePhases() != null) {
-searchContext.idCache().refresh(searchContext.searcher().getTopReaderContext().leaves());
+            // we have scoped queries, refresh the id cache
             try {
-                searchContext.idCache().refresh(searchContext.searcher().subReaders());
+searchContext.idCache().refresh(searchContext.searcher().getTopReaderContext().leaves());
             } catch (Exception e) {
                 throw new QueryPhaseExecutionException(searchContext, "Failed to refresh id cache for child queries", e);
             }

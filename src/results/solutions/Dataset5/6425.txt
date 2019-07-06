@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -852,9 +851,9 @@ public class EntityManagerImpl
         throw new ArgumentException(flushMode.toString(), null, null, false);
     }
 
-_broker.detachAll(this, false);
+    public void clear() {
         assertNotCloseInvoked();
-        _broker.detachAll(this);
+_broker.detachAll(this, false);
     }
 
     public Object getDelegate() {

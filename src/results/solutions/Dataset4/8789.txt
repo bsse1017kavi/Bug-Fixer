@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -94,9 +93,9 @@ public class StatisticalFacetParser extends AbstractComponent implements FacetPa
                 if ("field".equals(currentFieldName)) {
                     field = parser.text();
                 } else if ("script".equals(currentFieldName)) {
-} else if ("script_id".equals(currentFieldName)) {
+                    script = parser.text();
                     scriptType = ScriptService.ScriptType.INLINE;
-                } else if ("id".equals(currentFieldName)) {
+} else if ("script_id".equals(currentFieldName)) {
                     script = parser.text();
                     scriptType = ScriptService.ScriptType.INDEXED;
                 } else if ("file".equals(currentFieldName)) {

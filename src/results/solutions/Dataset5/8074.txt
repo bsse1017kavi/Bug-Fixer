@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -143,9 +142,9 @@ public class QueryCacheStoreQuery
                 long queryTS = res.getTimestamp();
                 if (timestamps != null) {
                     for (Long ts: timestamps) {
-if (queryTS <= ts) {
+                        // if this is true we have to evict the query 
                         // from cache
-                        if (queryTS < ts) { 
+if (queryTS <= ts) {
                             qcache.remove(qk);
                             return null;
                         }

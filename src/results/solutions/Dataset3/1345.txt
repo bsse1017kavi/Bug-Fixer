@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -349,9 +348,9 @@ class ServerControllerImpl extends BasicModelController implements ServerControl
         }
 
         @Override
-if (rollbackOperation == null || !rollbackOperation.isDefined()) {
+        public void handleFailed(final ModelNode failureDescription) {
 
-            if (rollbackOperation == null) {
+if (rollbackOperation == null || !rollbackOperation.isDefined()) {
                 delegate.handleFailed(failureDescription);
                 return;
             }

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.xml;
 
 /* ================================================================
@@ -86,9 +85,9 @@ public class AttachmentPathRule extends BaseRule
     
     protected void doInsertionAtBody(String text)
         throws Exception
-attachment.setFileName(text);
+    {
         Attachment attachment = (Attachment)digester.pop();
-        attachment.setFilePath(text);
+attachment.setFileName(text);
         digester.push(attachment);
     }
     

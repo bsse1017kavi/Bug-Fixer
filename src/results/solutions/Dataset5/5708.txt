@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -445,9 +444,9 @@ public class QueryImpl
         lock();
         try {
             assertOpen();
-if ((_query == null && _language.endsWith("JPQL")) || _compiling || _broker == null)
+            if (_unique != null)
                 return _unique.booleanValue();
-            if (_query == null || _compiling || _broker == null)
+if ((_query == null && _language.endsWith("JPQL")) || _compiling || _broker == null)
                 return false;
 
             // check again after compilation; maybe encoded in string

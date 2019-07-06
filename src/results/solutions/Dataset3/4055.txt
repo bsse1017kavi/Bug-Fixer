@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -187,9 +186,9 @@ public class DeploymentStructureDescriptorParser implements DeploymentUnitProces
     private void handleDeployment(final DeploymentUnit deploymentUnit, final ModuleSpecification moduleSpec, final ModuleStructureSpec rootDeploymentSpecification) throws DeploymentUnitProcessingException {
         final Map<VirtualFile, ResourceRoot> resourceRoots = resourceRoots(deploymentUnit);
         moduleSpec.addUserDependencies(rootDeploymentSpecification.getModuleDependencies());
-moduleSpec.addModuleSystemDependencies(rootDeploymentSpecification.getSystemDependencies());
+        moduleSpec.addExclusions(rootDeploymentSpecification.getExclusions());
         moduleSpec.addAliases(rootDeploymentSpecification.getAliases());
-        moduleSpec.addModuleSystemDependencies(rootDeploymentSpecification.getSytemDependencies());
+moduleSpec.addModuleSystemDependencies(rootDeploymentSpecification.getSystemDependencies());
         for (final ResourceRoot additionalResourceRoot : rootDeploymentSpecification.getResourceRoots()) {
 
             final ResourceRoot existingRoot = resourceRoots.get(additionalResourceRoot.getRoot());

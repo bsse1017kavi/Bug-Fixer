@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class QueryFacetCollector extends AbstractFacetCollector {
         super(facetName);
         Filter possibleFilter = extractFilterIfApplicable(query);
         if (possibleFilter != null) {
-this.filter = new QueryWrapperFilter(query);
+            this.filter = possibleFilter;
         } else {
-            this.filter = filterCache.weakCache(new QueryWrapperFilter(query));
+this.filter = new QueryWrapperFilter(query);
         }
     }
 

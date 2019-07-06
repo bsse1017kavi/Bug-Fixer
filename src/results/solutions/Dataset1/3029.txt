@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1430,9 +1429,9 @@ public class CliClient
         validateSchemaIsSettled(mySchemaVersion);
         keyspacesMap.put(keySpace, thriftClient.describe_keyspace(keySpace));
     }
-private void executeTruncate(String columnFamily) throws TException, InvalidRequestException, UnavailableException, TimedOutException
+
     // TRUNCATE <columnFamily>
-    private void executeTruncate(String columnFamily) throws TException, InvalidRequestException, UnavailableException
+private void executeTruncate(String columnFamily) throws TException, InvalidRequestException, UnavailableException, TimedOutException
     {
         if (!CliMain.isConnected() || !hasKeySpace())
             return;

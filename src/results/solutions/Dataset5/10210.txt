@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  * 
@@ -649,9 +648,9 @@ public class AbstractDOMParser extends AbstractXMLDocumentParser {
     throws XNIException {
 
         if (fInDTD) {
-fInternalSubset.append (target);
+            if (fInternalSubset != null && !fInDTDExternalSubset) {
                 fInternalSubset.append ("<?");
-                fInternalSubset.append (target.toString ());
+fInternalSubset.append (target);
                 fInternalSubset.append (' ');
                 fInternalSubset.append (data.toString ());
                 fInternalSubset.append ("?>");

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -105,9 +104,9 @@ public class Loggers {
         }
         return getLogger(getLoggerName(loggerName), prefixesList.toArray(new String[prefixesList.size()]));
     }
-return ESLoggerFactory.getLogger(parentLogger.getPrefix(), getLoggerName(parentLogger.getName() + s));
+
     public static ESLogger getLogger(ESLogger parentLogger, String s) {
-        return getLogger(parentLogger.getName() + s, parentLogger.getPrefix());
+return ESLoggerFactory.getLogger(parentLogger.getPrefix(), getLoggerName(parentLogger.getName() + s));
     }
 
     public static ESLogger getLogger(String s) {

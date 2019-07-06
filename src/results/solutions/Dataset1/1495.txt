@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class KMeansJob {
       String measureClass, double convergenceDelta, int maxIterations,
       int numCentroids) throws IOException {
     // delete the output directory
-FileSystem fs = FileSystem.get(outPath.toUri(), conf);
+    JobConf conf = new JobConf(KMeansJob.class);
     Path outPath = new Path(output);
-    FileSystem fs = FileSystem.get(conf);
+FileSystem fs = FileSystem.get(outPath.toUri(), conf);
     if (fs.exists(outPath)) {
       fs.delete(outPath, true);
     }

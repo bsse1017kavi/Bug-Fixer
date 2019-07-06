@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright (c) 2011, Red Hat Middleware LLC, and individual contributors
@@ -209,9 +208,9 @@ public class SendMessagesTestCase {
             Map<String, Object> connectionParams = new HashMap<String, Object>();
             connectionParams.put(TransportConstants.HOST_PROP_NAME, "localhost");       
             connectionParams.put(TransportConstants.PORT_PROP_NAME, 5445);
-connection = cf.createConnection("guest", "guest");
+            TransportConfiguration transportConfiguration = new TransportConfiguration(NettyConnectorFactory.class.getName(), connectionParams);
             ConnectionFactory cf = (ConnectionFactory)  HornetQJMSClient.createConnectionFactoryWithoutHA(JMSFactoryType.CF, transportConfiguration);           
-            connection = cf.createConnection();
+connection = cf.createConnection("guest", "guest");
             
             
             connection.start();

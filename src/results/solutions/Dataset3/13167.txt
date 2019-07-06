@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -72,9 +71,9 @@ public class WebFragmentParsingDeploymentProcessor implements DeploymentUnitProc
                         XMLStreamReader xmlReader = inputFactory.createXMLStreamReader(is);
                         webFragments.put(resourceRoot.getName(), WebFragmentMetaDataParser.parse(xmlReader));
                     } catch (Exception e) {
-Logger.getLogger("org.jboss.web.WebFragmentParsingDeploymentProcessor").info("parse " + resourceRoot.getName() + ": " + (System.currentTimeMillis() - time) + "ms");
+                        throw new DeploymentUnitProcessingException("Failed to parse " + webFragment, e);
                     } finally {
-                        Logger.getLogger("org.jboss.web").info("parse " + (System.currentTimeMillis() - time));
+Logger.getLogger("org.jboss.web.WebFragmentParsingDeploymentProcessor").info("parse " + resourceRoot.getName() + ": " + (System.currentTimeMillis() - time) + "ms");
                         try {
                             if (is != null) {
                                 is.close();

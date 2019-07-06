@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1277,9 +1276,9 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
 
         if (!hasUsedZip64) {
             return;
-long offset = streamCompressor.getTotalBytesWritten();
+        }
 
-        long offset = streamCompressor.getBytesWritten();
+long offset = streamCompressor.getTotalBytesWritten();
 
         writeOut(ZIP64_EOCD_SIG);
         // size, we don't have any variable length as we don't support

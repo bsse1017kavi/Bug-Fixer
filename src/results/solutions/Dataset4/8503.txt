@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com), Nathan Sweet (admin@esotericsoftware.com)
  * 
@@ -59,9 +58,9 @@ public class Sequence implements Action {
 			if (currAction < actions.size()) actions.get(currAction).setTarget(target);
 		}
 	}
-return currAction >= actions.size();
+
 	@Override public boolean isDone () {
-		return currAction == actions.size();
+return currAction >= actions.size();
 	}
 
 	@Override public void finish () {

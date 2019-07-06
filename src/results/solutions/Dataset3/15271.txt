@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ import org.junit.runner.RunWith;
 @RunAsClient
 public class BasicOperationsUnitTestCase {
 
-@Deployment(testable = false)
+    private ModelControllerClient client;
 
-    @Deployment
+@Deployment(testable = false)
     public static Archive<?> getDeployment() {
         return ShrinkWrapUtils.createEmptyJavaArchive("dummy");
     }

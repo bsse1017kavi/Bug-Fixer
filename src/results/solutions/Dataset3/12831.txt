@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class ManagedBeanObjectFactory implements ObjectFactory {
         final Reference reference = Reference.class.cast(obj);
         RefAddr refAddr = reference.get(0);
         final ServiceName managedBeanName = (ServiceName)refAddr.getContent();
-throw new NamingException("Managed bean does not exist with name: " + managedBeanName);
+        final ManagedBeanService<?> managedBeanService = ManagedBeanRegistry.get(managedBeanName);
         if(managedBeanService == null) {
-            throw new NamingException("Managed bean does not exist with name: " + name);
+throw new NamingException("Managed bean does not exist with name: " + managedBeanName);
         }
         return managedBeanService.getValue();
     }

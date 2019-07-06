@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -219,9 +218,9 @@ public class TrimContributionManager extends ContributionManager {
 			List contribs = menuService.getAdditionsForURI(new MenuLocationURI(trimAreaURIs[i]));
 			
 			for (Iterator cacheIter = contribs.iterator(); cacheIter.hasNext();) {
-restrictionExpression, this, cache);
+				AbstractContributionFactory cache = (AbstractContributionFactory) cacheIter.next();
 				ContributionRoot ciList = new ContributionRoot(menuService,
-						restrictionExpression, cache.getNamespace());
+restrictionExpression, this, cache);
 				cache.createContributionItems(wbWindow, ciList);
 				// save the list for later cleanup of any visibility expressions that were added.
 				contributedLists.add(ciList);

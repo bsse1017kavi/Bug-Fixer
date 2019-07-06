@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -64,9 +63,9 @@ Record
 rdataFromString(Name name, short dclass, int ttl, MyStringTokenizer st,
 		Name origin)
 throws TextParseException
-rec.address = new Inet6Address(nextString(st));
+{
 	AAAARecord rec = new AAAARecord(name, dclass, ttl);
-	rec.address = new Inet6Address(st.nextToken());
+rec.address = new Inet6Address(nextString(st));
 	return rec;
 }
 

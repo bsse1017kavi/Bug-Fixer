@@ -1,4 +1,3 @@
-
 /* $Id$ */
 /*
  * The Apache Software License, Version 1.1
@@ -63,9 +62,9 @@ import org.w3c.dom.events.*;
 
 class EventReporter implements EventListener
 {
-String[] phasename={"?","CAPTURING","AT_TARGET","BUBBLING","?"};
+    boolean silent=false; // Toggle this to mask reports you don't care about
     int count=0;
-    String[] phasename={"?","BUBBLING","CAPTURING","AT_TARGET","?"};
+String[] phasename={"?","CAPTURING","AT_TARGET","BUBBLING","?"};
 
 
     public void on()

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -260,9 +259,9 @@ public class ModelDescriptionValidator {
                     }
                 }
             }
-errors.add(new ValidationFailure("Missing description for child type '" + type + "' on ModelNode '" + typeNode.toString()+"'", address));
+
             if (!typeNode.hasDefined(DESCRIPTION)) {
-                errors.add(new ValidationFailure("Missing description for child type '" + type + "'", address));
+errors.add(new ValidationFailure("Missing description for child type '" + type + "' on ModelNode '" + typeNode.toString()+"'", address));
             }
             ModelNode childType = typeNode.get(MODEL_DESCRIPTION);
             if (!childType.isDefined()) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public abstract class PatchOperationTarget {
      * @param jbossHome the jboss home
      * @return the local target
      * @throws IOException
-final PatchTool tool = PatchTool.Factory.loadFromRoot(jbossHome);
+     */
     public static final PatchOperationTarget createLocal(final File jbossHome) throws IOException {
-        final PatchTool tool = PatchTool.Factory.create(jbossHome);
+final PatchTool tool = PatchTool.Factory.loadFromRoot(jbossHome);
         return new LocalPatchOperationTarget(tool);
     }
 

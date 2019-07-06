@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class NodeSettingsService extends AbstractComponent implements ClusterSta
         return globalSettings;
     }
 
-private final CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<>();
+    private volatile Settings lastSettingsApplied;
 
-    private final CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<Listener>();
+private final CopyOnWriteArrayList<Listener> listeners = new CopyOnWriteArrayList<>();
 
     @Inject
     public NodeSettingsService(Settings settings) {

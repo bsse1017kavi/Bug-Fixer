@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2001 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -186,9 +185,9 @@ public class SimpleName extends Name {
 	 * Method declared on ASTNode.
 	 */
 	int memSize() {
-size += HEADERS + 3 * 4 + HEADERS + 2 * identifier.length();
+		int size = BASE_NODE_SIZE + 1 * 4;
 		if (identifier != null) {
-			size += HEADERS + 2 * 4 + HEADERS + 2 * identifier.length();
+size += HEADERS + 3 * 4 + HEADERS + 2 * identifier.length();
 		}
 		return size;
 	}

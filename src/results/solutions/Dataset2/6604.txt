@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -166,9 +165,9 @@ Zone(Name zone, Record [] records) throws IOException {
 private void
 fromXFR(ZoneTransferIn xfrin) throws IOException, ZoneTransferException {
 	data = new HashMap();
-if (!xfrin.isAXFR())
+	type = SECONDARY;
 
-	if (xfrin.getType() != Type.AXFR)
+if (!xfrin.isAXFR())
 		throw new IllegalArgumentException("zones can only be " +
 						   "created from AXFRs");
 	origin = xfrin.getName();

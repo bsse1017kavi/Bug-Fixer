@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -116,9 +115,9 @@ public class DBDictionaryFactory {
     private static DBDictionary newDBDictionary(JDBCConfiguration conf,
         String dclass, String props, Connection conn) {
         DBDictionary dict = null;
-AccessController.doPrivileged(
+        try {
             Class c = Class.forName(dclass, true,
-                (ClassLoader) AccessController.doPrivileged(
+AccessController.doPrivileged(
                     J2DoPrivHelper.getClassLoaderAction(
                         DBDictionary.class)));
             dict = (DBDictionary) AccessController.doPrivileged(

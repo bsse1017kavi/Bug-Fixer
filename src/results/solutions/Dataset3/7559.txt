@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -369,9 +368,9 @@ final class HandlerOperations {
                     restartRequired = true;
                 } else {
                     for (AttributeDefinition attribute : getAttributes()) {
-restartRequired = Logging.requiresReload(attribute.getFlags());
+                        if (attribute.getName().equals(attributeName)) {
                             handleProperty(attribute, context, value, logContextConfiguration, configuration, false);
-                            restartRequired = Logging.requiresRestart(attribute.getFlags());
+restartRequired = Logging.requiresReload(attribute.getFlags());
                             break;
                         }
                     }

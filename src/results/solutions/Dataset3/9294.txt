@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -139,9 +138,9 @@ public class SendToMethodReturnValueHandler implements HandlerMethodReturnValueH
 			return;
 		}
 		else {
-for (String destination : destinations) {
+			SendTo sendTo = returnType.getMethodAnnotation(SendTo.class);
 			String[] destinations = getTargetDestinations(sendTo, inputHeaders, this.defaultDestinationPrefix);
-			for (String destination : getTargetDestinations(sendTo, inputHeaders, this.defaultDestinationPrefix)) {
+for (String destination : destinations) {
 				this.messagingTemplate.convertAndSend(destination, returnValue, postProcessor);
 			}
 		}

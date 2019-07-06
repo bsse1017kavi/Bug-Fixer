@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -185,9 +184,9 @@ public class GlobalOrdinalsBenchmark {
                 String name = "global_ordinals-" + fieldName;
                 if (USE_DOC_VALUES) {
                     fieldName = fieldName + ".doc_values";
-stats.add(terms(name, fieldName, "global_ordinals_low_cardinality"));
+                    name = name + "_doc_values"; // can't have . in agg name
                 }
-                stats.add(terms(name, fieldName, "global_ordinals"));
+stats.add(terms(name, fieldName, "global_ordinals_low_cardinality"));
             }
         }
 

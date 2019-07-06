@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.parser;
 
 /*
@@ -4189,9 +4188,9 @@ protected void consumeToken(int type) {
 		StringLiteral[] literals = this.scanner.nonNLSStrings;
 		// could not reproduce, but this is the only NPE
 		// added preventive null check see PR 9035
-problemReporter().nonExternalizedStringLiteral(literals[i], this.compilationUnit.compilationResult);
+		if (literals != null) {
 			for (int i = 0, max = literals.length; i < max; i++) {
-				problemReporter().nonExternalizedStringLiteral(literals[i]);
+problemReporter().nonExternalizedStringLiteral(literals[i], this.compilationUnit.compilationResult);
 			}
 		}
 		scanner.currentLine = null;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -188,9 +187,9 @@ public class CassandraDaemon extends org.apache.cassandra.service.AbstractCassan
         {
             @Override
             protected void afterExecute(Runnable r, Throwable t)
-cassandraServer.logout();
+            {
                 super.afterExecute(r, t);
-                cassandraServer.clientState.logout();
+cassandraServer.logout();
             }
         };
         serverEngine = new CustomTThreadPoolServer(new TProcessorFactory(processor),

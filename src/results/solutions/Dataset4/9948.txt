@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -107,9 +106,9 @@ public class TransportValidateQueryAction extends TransportBroadcastOperationAct
     protected ShardValidateQueryRequest newShardRequest() {
         return new ShardValidateQueryRequest();
     }
-protected ShardValidateQueryRequest newShardRequest(int numShards, ShardRouting shard, ValidateQueryRequest request) {
+
     @Override
-    protected ShardValidateQueryRequest newShardRequest(ShardRouting shard, ValidateQueryRequest request) {
+protected ShardValidateQueryRequest newShardRequest(int numShards, ShardRouting shard, ValidateQueryRequest request) {
         String[] filteringAliases = clusterService.state().metaData().filteringAliases(shard.index(), request.indices());
         return new ShardValidateQueryRequest(shard.index(), shard.id(), filteringAliases, request);
     }

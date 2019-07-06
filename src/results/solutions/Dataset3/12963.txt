@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -51,9 +50,9 @@ public class StandardEndpointAdapter extends Endpoint {
 
 	private WebSocketSession wsSession;
 
-public StandardEndpointAdapter(WebSocketHandler webSocketHandler) {
 
-	public StandardEndpointAdapter(WebSocketHandler<?> webSocketHandler) {
+
+public StandardEndpointAdapter(WebSocketHandler webSocketHandler) {
 		Assert.notNull(webSocketHandler, "webSocketHandler is required");
 		this.handler = new WebSocketHandlerInvoker(webSocketHandler).setLogger(logger);
 		this.handlerClass= webSocketHandler.getClass();

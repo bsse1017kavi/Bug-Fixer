@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -296,9 +295,9 @@ public class DocumentMapper implements ToXContent {
 
         this.indexAnalyzer = indexAnalyzer;
         this.searchAnalyzer = searchAnalyzer;
-this.typeFilter = typeMapper().termFilter(type, null);
+        this.searchQuoteAnalyzer = searchQuoteAnalyzer != null ? searchQuoteAnalyzer : searchAnalyzer;
 
-        this.typeFilter = typeMapper().fieldFilter(type, null);
+this.typeFilter = typeMapper().termFilter(type, null);
 
         if (rootMapper(ParentFieldMapper.class) != null) {
             // mark the routing field mapper as required

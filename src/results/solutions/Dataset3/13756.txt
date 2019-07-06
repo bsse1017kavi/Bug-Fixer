@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -303,9 +302,9 @@ public class DomainModelUtil {
         return extensionContext;
     }
 
-throw new OperationFailedException(MESSAGES.nullVar("plan").getLocalizedMessage());
+    public static void validateRolloutPlanStructure(ModelNode plan) throws OperationFailedException {
         if(plan == null) {
-            throw new OperationFailedException("rolloutPlan argument is null.");
+throw new OperationFailedException(MESSAGES.nullVar("plan").getLocalizedMessage());
         }
         if(!plan.hasDefined(ROLLOUT_PLAN)) {
             throw new OperationFailedException(MESSAGES.requiredChildIsMissing(ROLLOUT_PLAN, ROLLOUT_PLAN, plan.toString()));

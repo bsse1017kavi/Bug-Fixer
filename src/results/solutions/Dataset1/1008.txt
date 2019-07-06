@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -481,9 +480,9 @@ final class DocumentsWriterFlushControl implements MemoryController {
 
   private final List<DocumentsWriterPerThread> fullFlushBuffer = new ArrayList<DocumentsWriterPerThread>();
 
-documentsWriter.infoStream.message("DWFC", "addFlushableState " + perThread.dwpt);
+  void addFlushableState(ThreadState perThread) {
     if (documentsWriter.infoStream.isEnabled("DWFC")) {
-      documentsWriter.infoStream.message("DWFC", Thread.currentThread().getName() + ": addFlushableState " + perThread.dwpt);
+documentsWriter.infoStream.message("DWFC", "addFlushableState " + perThread.dwpt);
     }
     final DocumentsWriterPerThread dwpt = perThread.dwpt;
     assert perThread.isHeldByCurrentThread();

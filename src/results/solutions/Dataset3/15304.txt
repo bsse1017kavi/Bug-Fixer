@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class DomainSlaveHandler implements NewStepHandler {
         final Map<String, ProxyTask> tasks = new HashMap<String, ProxyTask>();
         final Map<String, Future<ModelNode>> futures = new HashMap<String, Future<ModelNode>>();
 
-ProxyTask task = new ProxyTask(host, operation.clone(), context, entry.getValue());
+        for (Map.Entry<String, NewProxyController> entry : hostProxies.entrySet()) {
             String host = entry.getKey();
-            ProxyTask task = new ProxyTask(host, operation, context, entry.getValue());
+ProxyTask task = new ProxyTask(host, operation.clone(), context, entry.getValue());
             tasks.put(host, task);
             futures.put(host, executorService.submit(task));
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class RaRemove extends AbstractRaOperation implements NewStepHandler {
             for (ModelNode raNode : model.get(RESOURCEADAPTERS).asList()) {
                 ModelNode raCompensatingNode = raNode.clone();
                 compensating.get(RESOURCEADAPTERS).add(raCompensatingNode);
-context.removeResource(PathAddress.EMPTY_ADDRESS);
+            }
         }
-        context.removeModel(PathAddress.EMPTY_ADDRESS);
+context.removeResource(PathAddress.EMPTY_ADDRESS);
 
         context.addStep(new NewStepHandler() {
             public void execute(NewOperationContext context, ModelNode operation) {

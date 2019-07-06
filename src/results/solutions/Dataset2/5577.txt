@@ -1,4 +1,3 @@
-
 /*
  * InstallPluginsDialog.java - Plugin install dialog box
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -42,9 +41,9 @@ class InstallPluginsDialog extends EnhancedDialog
 	static final int UPDATE = 1;
 
 	//{{{ InstallPluginsDialog constructor
-super(dialog,
+	InstallPluginsDialog(JDialog dialog, Vector model, int mode)
 	{
-		super(JOptionPane.getFrameForComponent(dialog),
+super(dialog,
 			(mode == INSTALL
 			? jEdit.getProperty("install-plugins.title")
 			: jEdit.getProperty("update-plugins.title")),true);

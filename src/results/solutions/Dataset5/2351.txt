@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -136,9 +135,9 @@ public class Copydir extends MatchingTask {
                 Enumeration enum = filecopyList.keys();
                 while (enum.hasMoreElements()) {
                     String fromFile = (String) enum.nextElement();
-getProject().copyFile(fromFile, toFile, filtering,
+                    String toFile = (String) filecopyList.get(fromFile);
                     try {
-                        project.copyFile(fromFile, toFile, filtering, 
+getProject().copyFile(fromFile, toFile, filtering,
                                          forceOverwrite);
                     } catch (IOException ioe) {
                         String msg = "Failed to copy " + fromFile + " to " 

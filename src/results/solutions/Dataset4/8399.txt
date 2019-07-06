@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public class DateRangeParser implements Aggregator.Parser {
             } else if (token == XContentParser.Token.VALUE_STRING) {
                 if ("field".equals(currentFieldName)) {
                     field = parser.text();
-} else if ("lang".equals(currentFieldName)) {
+                } else if ("script".equals(currentFieldName)) {
                     script = parser.text();
-                } else if ("script_lang".equals(currentFieldName) || "scriptLang".equals(currentFieldName)) {
+} else if ("lang".equals(currentFieldName)) {
                     scriptLang = parser.text();
                 } else if ("format".equals(currentFieldName)) {
                     format = parser.text();

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -89,9 +88,9 @@ public class AsmRelationshipProvider {
 		ResolvedTypeMunger munger,
 		ResolvedType originatingAspect) {
 
-if (munger.getSourceLocation()!=null && munger.getSourceLocation().getOffset()!=-1) {
+	  if (!AsmManager.isCreatingModel()) return;
 		String sourceHandle = "";
-		if (munger.getSourceLocation()!=null) {
+if (munger.getSourceLocation()!=null && munger.getSourceLocation().getOffset()!=-1) {
 			sourceHandle = AsmManager.getDefault().getHandleProvider().createHandleIdentifier(
 										munger.getSourceLocation().getSourceFile(),
 										munger.getSourceLocation().getLine(),

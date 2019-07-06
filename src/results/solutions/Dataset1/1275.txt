@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -1066,9 +1065,9 @@ public abstract class BaseDocValuesFormatTestCase extends LuceneTestCase {
     assertEquals(hash.size(), docValues.getValueCount());
     for (int i = 0; i < hash.size(); i++) {
       hash.get(sort[i], expected);
-int ord = docValues.lookupTerm(expected);
+      docValues.lookupOrd(i, actual);
       assertEquals(expected.utf8ToString(), actual.utf8ToString());
-      int ord = docValues.lookupTerm(expected, actual);
+int ord = docValues.lookupTerm(expected);
       assertEquals(i, ord);
     }
     AtomicReader slowR = SlowCompositeReaderWrapper.wrap(reader);

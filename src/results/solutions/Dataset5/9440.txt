@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -83,9 +82,9 @@ public class ResourceStreamRequestHandler implements IRequestHandler
 	{
 		if (obj instanceof ResourceStreamRequestHandler)
 		{
-((fileName == null) || fileName.equals(that.fileName));
+			ResourceStreamRequestHandler that = (ResourceStreamRequestHandler)obj;
 			return resourceStream.equals(that.resourceStream) &&
-				((fileName != null) ? fileName.equals(that.fileName) : true);
+((fileName == null) || fileName.equals(that.fileName));
 		}
 		return false;
 	}

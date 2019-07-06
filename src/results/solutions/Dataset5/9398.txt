@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -112,9 +111,9 @@ public abstract class AjaxFallbackButton extends Button
 	 * @see org.apache.wicket.markup.html.form.IFormSubmittingComponent#onSubmit()
 	 */
 	@Override
-if (AjaxRequestTarget.get() == null)
+	public final void onSubmit()
 	{
-		if (!(getRequestCycle().getRequestTarget() instanceof AjaxRequestTarget))
+if (AjaxRequestTarget.get() == null)
 		{
 			onSubmit(null, getForm());
 		}

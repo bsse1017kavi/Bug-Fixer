@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -35,9 +34,9 @@ public class LastModifiedFileComparatorTest extends ComparatorAbstractTestCase {
 
     /** @see junit.framework.TestCase#setUp() */
     @Override
-comparator = LastModifiedFileComparator.LASTMODIFIED_COMPARATOR;
+    protected void setUp() throws Exception {
         super.setUp();
-        comparator = (AbstractFileComparator)LastModifiedFileComparator.LASTMODIFIED_COMPARATOR;
+comparator = LastModifiedFileComparator.LASTMODIFIED_COMPARATOR;
         reverse = LastModifiedFileComparator.LASTMODIFIED_REVERSE;
         File dir = getTestDirectory();
         File olderFile = new File(dir, "older.txt");

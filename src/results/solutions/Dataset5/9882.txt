@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -891,9 +890,9 @@ public abstract class AbstractBrokerFactory
             }
     
             Broker broker =
-false, // WriteBehind broker is always unmanaged.
+                newBroker(_conf.getConnectionUserName(), 
                           _conf.getConnectionPassword(), 
-                          _conf.isConnectionFactoryModeManaged(), 
+false, // WriteBehind broker is always unmanaged.
                           _conf.getConnectionRetainModeConstant(),
                           false);
 

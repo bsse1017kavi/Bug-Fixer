@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -250,9 +249,9 @@ public class Contact {
 	
 	public void fillFullName(String fullName)
 	{
-set(VCARD.N_ADDITIONALNAMES,names[1]);
+			String[] names = tryBreakName(fullName);
 			set(VCARD.N_GIVEN,names[0]);
-			set(VCARD.N_MIDDLE,names[1]);
+set(VCARD.N_ADDITIONALNAMES,names[1]);
 			set(VCARD.N_FAMILY,names[2]);
 	}
 

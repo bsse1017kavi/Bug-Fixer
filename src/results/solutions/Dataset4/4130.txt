@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -45,9 +44,9 @@ public class SimpleFsStore extends FsStore {
     private final Directory directory;
 
     private final boolean suggestUseCompoundFile;
-super(shardId, indexSettings, indexStore);
+
     @Inject public SimpleFsStore(ShardId shardId, @IndexSettings Settings indexSettings, IndexStore indexStore, ByteBufferCache byteBufferCache) throws IOException {
-        super(shardId, indexSettings);
+super(shardId, indexSettings, indexStore);
         LockFactory lockFactory = buildLockFactory();
         File location = ((FsIndexStore) indexStore).shardIndexLocation(shardId);
         location.mkdirs();

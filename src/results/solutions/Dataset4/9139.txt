@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -34,9 +33,9 @@ import java.io.IOException;
 public class GetAliasesRequest extends MasterNodeReadOperationRequest<GetAliasesRequest> {
 
     private String[] indices = Strings.EMPTY_ARRAY;
-private IndicesOptions indicesOptions = IndicesOptions.strictExpandOpen();
+    private String[] aliases = Strings.EMPTY_ARRAY;
 
-    private IndicesOptions indicesOptions = IndicesOptions.strict();
+private IndicesOptions indicesOptions = IndicesOptions.strictExpandOpen();
 
     public GetAliasesRequest(String[] aliases) {
         this.aliases = aliases;

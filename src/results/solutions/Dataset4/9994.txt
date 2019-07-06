@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -123,9 +122,9 @@ public class SimpleChildQuerySearchTests extends ElasticsearchIntegrationTest {
 
     @Test
     // see #2744
-.addMapping("foo")
+    public void test2744() throws ElasticsearchException, IOException {
         assertAcked(prepareCreate("test")
-                .addMapping("parent")
+.addMapping("foo")
                 .addMapping("test", "_parent", "type=foo"));
         ensureGreen();
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -140,9 +139,9 @@ public class ClusterServiceTests extends AbstractZenNodesTests {
                 invoked1.countDown();
                 assert false;
             }
-final CountDownLatch invoked2 = new CountDownLatch(9);
+        });
         invoked1.await();
-        final CountDownLatch invoked2 = new CountDownLatch(8);
+final CountDownLatch invoked2 = new CountDownLatch(9);
         for (int i = 2; i <= 10; i++) {
             clusterService.submitStateUpdateTask(Integer.toString(i), new ClusterStateUpdateTask() {
                 @Override

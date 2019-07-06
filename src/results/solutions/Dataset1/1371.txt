@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.dataimport;
 
 import static org.apache.solr.handler.dataimport.DataImportHandlerException.SEVERE;
@@ -92,9 +91,9 @@ public class DateFormatEvaluator extends Evaluator {
         o = wrapper.resolve();
         localeStr = o.toString();
       } else {
-locale = availableLocales.get(localeStr);
+        localeStr = localeObj.toString();
       }
-      availableLocales.get(localeStr);
+locale = availableLocales.get(localeStr);
       if(locale==null) {
         throw new DataImportHandlerException(SEVERE, "Unsupported locale: " + localeStr);
       }

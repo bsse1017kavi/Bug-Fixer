@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -64,9 +63,9 @@ public class SimpleDumpGenerator implements DumpGenerator {
         try {
             dump = new SimpleDump(System.currentTimeMillis(), cause, context, file);
         } catch (FileNotFoundException e) {
-ArrayList<DumpContributionFailedException> failedContributors = new ArrayList<>();
+            throw new DumpGenerationFailedException("Failed to generate dump", e);
         }
-        ArrayList<DumpContributionFailedException> failedContributors = new ArrayList<DumpContributionFailedException>();
+ArrayList<DumpContributionFailedException> failedContributors = new ArrayList<>();
         for (String name : contributors) {
             DumpContributor contributor = this.contributors.get(name);
             if (contributor == null) {

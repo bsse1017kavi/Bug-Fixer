@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -133,9 +132,9 @@ public class TestRTGBase extends SolrTestCaseJ4 {
     BytesRef termBytes = t.bytes();
     final TermsEnum termsEnum = terms.iterator(null);
     if (!termsEnum.seekExact(termBytes, false)) {
-DocsEnum docs = termsEnum.docs(MultiFields.getLiveDocs(r), null, 0);
+      return -1;
     }
-    DocsEnum docs = termsEnum.docs(MultiFields.getLiveDocs(r), null, false);
+DocsEnum docs = termsEnum.docs(MultiFields.getLiveDocs(r), null, 0);
     int id = docs.nextDoc();
     if (id != DocIdSetIterator.NO_MORE_DOCS) {
       int next = docs.nextDoc();

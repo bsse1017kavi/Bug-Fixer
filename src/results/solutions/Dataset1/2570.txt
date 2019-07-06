@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.PreparedStatement
@@ -1612,9 +1611,9 @@ public class PreparedStatement extends Statement
     boolean listenToUnitOfWork_ = false;
 
     public void listenToUnitOfWork() {
-connection_.CommitAndRollbackListeners_.add(this);
+        if (!listenToUnitOfWork_) {
             listenToUnitOfWork_ = true;
-            connection_.CommitAndRollbackListeners_.put(this,null);
+connection_.CommitAndRollbackListeners_.add(this);
         }
     }
 

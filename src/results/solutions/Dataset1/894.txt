@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.jdbc.EmbedResultSet
@@ -591,9 +590,9 @@ public abstract class EmbedResultSet extends ConnectionChild
 				return;
 			}
 
-theResults.close();
+			try	{
 				try	{
-					theResults.finish(); // release the result set, don't just close it
+theResults.close();
 				    
 				    if (this.singleUseActivation != null)
 				    {

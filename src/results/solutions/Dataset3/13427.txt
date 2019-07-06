@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class SecurityRealmChildRemoveHandler extends SecurityRealmParentRestartH
         if (validateAuthentication && !context.isBooting()) {
             ModelNode validationOp = AuthenticationValidatingHandler.createOperation(operation);
             context.addStep(validationOp, AuthenticationValidatingHandler.INSTANCE, OperationContext.Stage.MODEL);
-RbacSanityCheckOperation.addOperation(context);
+        } // else we know the SecurityRealmAddHandler is part of this overall set of ops and it added AuthenticationValidatingHandler
         if (validateRbac) {
-            RbacSanityCheckOperation.registerOperation(context);
+RbacSanityCheckOperation.addOperation(context);
         }
     }
 }

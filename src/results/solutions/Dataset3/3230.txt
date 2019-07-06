@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class WeldClassFileServices implements ClassFileServices {
     private final ClassLoader moduleClassLoader;
 
     private class WeldClassInfoLoader extends CacheLoader<String, WeldClassFileInfo> {
-return new WeldClassFileInfo(key, index, annotationClassAnnotationsCache, moduleClassLoader);
+        @Override
         public WeldClassFileInfo load(String key) throws Exception {
-            return new WeldClassFileInfo(key, index, annotationClassAnnotationsCache);
+return new WeldClassFileInfo(key, index, annotationClassAnnotationsCache, moduleClassLoader);
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -34,8 +33,8 @@ public class EncodingTest extends TestCase
 	public void test_1() throws Exception
 	{
 		WicketTester tester = new WicketTester();
-tester.assertContains("Hello world! Test: &#65533;&#65533;&#65533;");
+		tester.startPage(Home.class);
 		tester.assertContains("Wicket Examples - encodings");
-		tester.assertContains("Hello world! Test: ���");
+tester.assertContains("Hello world! Test: &#65533;&#65533;&#65533;");
 	}
 }

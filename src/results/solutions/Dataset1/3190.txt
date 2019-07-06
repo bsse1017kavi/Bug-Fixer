@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class TestIndexSplitter extends LuceneTestCase {
     }
     iw.commit();
     DirectoryReader iwReader = iw.getReader();
-iw.shutdown();
+    assertEquals(3, iwReader.leaves().size());
     iwReader.close();
-    iw.close();
+iw.shutdown();
     // we should have 2 segments now
     IndexSplitter is = new IndexSplitter(dir);
     String splitSegName = is.infos.info(1).info.name;

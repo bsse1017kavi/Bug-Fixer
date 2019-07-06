@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -237,9 +236,9 @@ public class MAudit extends AbstractMetamataTask
                 OutputStream out = new FileOutputStream( outFile );
                 handler = new MAuditStreamHandler( this, out );
             }
-throw new BuildException( "Error", e );
+            catch( IOException e )
             {
-                throw new BuildException( e );
+throw new BuildException( "Error", e );
             }
         }
         return handler;

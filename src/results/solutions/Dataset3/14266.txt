@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -34,9 +33,9 @@ public class CpioArchiveInputStreamTest extends AbstractTestCase {
 
         CpioArchiveInputStream in = new CpioArchiveInputStream(new FileInputStream(getFile("bla.cpio")));
         CpioArchiveEntry entry;
-while ((entry = (CpioArchiveEntry) in.getNextEntry()) != null) {
+
         StringBuilder result = new StringBuilder();
-        while ((entry = in.getNextEntry()) != null) {
+while ((entry = (CpioArchiveEntry) in.getNextEntry()) != null) {
             result.append(entry.getName());
             int tmp;
             while ((tmp = in.read()) != -1) {

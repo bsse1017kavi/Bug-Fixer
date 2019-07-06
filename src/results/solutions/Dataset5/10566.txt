@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -367,9 +366,9 @@ final class ObjectFactory {
     {
         //throw security exception if the calling thread is not allowed to access the package
         //restrict the access to package as speicified in java.security policy
-final int lastDot = className.lastIndexOf('.');
+        SecurityManager security = System.getSecurityManager();
         if (security != null) {
-            final int lastDot = className.lastIndexOf(".");
+final int lastDot = className.lastIndexOf('.');
             String packageName = className;
             if (lastDot != -1) packageName = className.substring(0, lastDot);
             security.checkPackageAccess(packageName);

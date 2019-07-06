@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class IronJacamarDeploymentTestCase extends ContainerResourceMgmtTestBase
      */
     @Test
     public void testConfiguration() throws Throwable {
-.add("resource-adapter", "ij.rar");
+        ModelNode address = new ModelNode();
         address.add("deployment", "ij.rar").add("subsystem", "resource-adapters").add("ironjacamar", "ironjacamar")
-                .add("resource-adapter", "ij");
+.add("resource-adapter", "ij.rar");
         ModelNode operation = new ModelNode();
         operation.get(OP).set("read-resource");
         operation.get(OP_ADDR).set(address);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -538,9 +537,9 @@ public class CreditCardValidator extends AbstractValidator<String>
 	{
 		if (creditCardNumber.length() == 13 || creditCardNumber.length() == 16)
 		{
-return CreditCard.VISA;
+			if (creditCardNumber.startsWith("4"))
 			{
-				return CreditCard.SWITCH;
+return CreditCard.VISA;
 			}
 		}
 

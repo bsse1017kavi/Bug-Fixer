@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -45,9 +44,9 @@ final class CollectionToArrayGenericConverter implements GenericConverter {
 				Array.set(array, i, it.next());
 			}
 		} else {
-throw new ConverterNotFoundException(sourceElementType, targetElementType);
+			GenericConverter converter = this.conversionService.getConverter(sourceElementType, targetElementType);
 			if (converter == null) {
-				throw new ConverterNotFoundException(sourceType, targetType);
+throw new ConverterNotFoundException(sourceElementType, targetElementType);
 			}			
 			for (Iterator it = sourceCollection.iterator(); it.hasNext(); i++) {
 				Array.set(array, i, converter.convert(it.next(), sourceElementType, targetElementType));

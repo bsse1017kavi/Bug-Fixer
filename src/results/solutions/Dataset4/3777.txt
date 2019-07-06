@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -107,8 +106,8 @@ public class RangeQueryParser extends AbstractIndexComponent implements XContent
         }
         if (query == null) {
             query = new TermRangeQuery(fieldName, from, to, includeLower, includeUpper);
-return wrapSmartNameQuery(query, smartNameFieldMappers, parseContext);
+        }
         query.setBoost(boost);
-        return wrapSmartNameQuery(query, smartNameFieldMappers, parseContext.indexCache());
+return wrapSmartNameQuery(query, smartNameFieldMappers, parseContext);
     }
 }

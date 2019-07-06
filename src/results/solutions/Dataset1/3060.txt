@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util.junitcompat;
 
 /*
@@ -43,9 +42,9 @@ public class TestFailIfUnreferencedFiles extends WithNestedTests {
     public void testDummy() throws Exception {
       MockDirectoryWrapper dir = newMockDirectory();
       dir.setAssertNoUnrefencedFilesOnClose(true);
-iw.shutdown();
+      IndexWriter iw = new IndexWriter(dir, new IndexWriterConfig(TEST_VERSION_CURRENT, null));
       iw.addDocument(new Document());
-      iw.close();
+iw.shutdown();
       IndexOutput output = dir.createOutput("_hello.world", IOContext.DEFAULT);
       output.writeString("i am unreferenced!");
       output.close();

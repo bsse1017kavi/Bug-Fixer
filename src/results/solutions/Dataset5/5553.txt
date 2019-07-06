@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class SizeAssertion extends AbstractTestElement implements Serializable, 
 	 * took to long to be considered successful. If so an AssertionResult
 	 * containing a FailureMessage will be returned. Otherwise the returned
 	 * AssertionResult will reflect the success of the Sample.
-AssertionResult result = new AssertionResult(getName());
+	 */
 	public AssertionResult getResult(SampleResult response) {
-		AssertionResult result = new AssertionResult();
+AssertionResult result = new AssertionResult(getName());
 		result.setFailure(false);
 		resultData = response.getResponseData();
 		long resultSize = resultData.length;

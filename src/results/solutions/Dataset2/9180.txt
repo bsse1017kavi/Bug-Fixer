@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -243,9 +242,9 @@ public class BlockedJobsDialog extends IconAndMessageDialog {
 	 *            A status describing why the monitor is blocked
 	 */
 	private BlockedJobsDialog(Shell parentShell, IProgressMonitor blocking,
-? ProgressManagerUtil.getNonModalShell()
+			IStatus blockingStatus) {
 		super(parentShell == null
-				? ProgressManagerUtil.getDefaultParent()
+? ProgressManagerUtil.getNonModalShell()
 				: parentShell);
 		blockingMonitor = blocking;
 		if (blockingStatus instanceof IJobStatus)

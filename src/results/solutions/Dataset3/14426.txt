@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.clustering.infinispan.subsystem.CommonAttributes.CACHE_ATTRIBUTES;
@@ -109,9 +108,9 @@ public class CacheWriteAttributeHandler implements OperationStepHandler, SelfReg
 
     public void registerAttributes(final ManagementResourceRegistration registry) {
 
-registry.registerReadWriteAttribute(attr, CacheReadAttributeHandler.INSTANCE, this);
+        final EnumSet<AttributeAccess.Flag> flags = EnumSet.of(AttributeAccess.Flag.RESTART_ALL_SERVICES);
         for (AttributeDefinition attr : attributeDefinitions.values()) {
-           registry.registerReadWriteAttribute(attr.getName(), CacheReadAttributeHandler.INSTANCE, this, flags);
+registry.registerReadWriteAttribute(attr, CacheReadAttributeHandler.INSTANCE, this);
         }
     }
 

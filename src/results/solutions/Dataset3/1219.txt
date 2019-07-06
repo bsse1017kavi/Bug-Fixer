@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class ThreadMXBeanResetPeakThreadCountHandler implements OperationStepHan
             ManagementFactory.getThreadMXBean().resetPeakThreadCount();
         } catch (SecurityException e) {
             throw new OperationFailedException(new ModelNode().set(e.toString()));
-context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+        }
 
-        context.completeStep();
+context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
     }
 
     @Override

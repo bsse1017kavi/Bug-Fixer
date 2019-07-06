@@ -1,4 +1,3 @@
-
 /*
  * HyperSearchRequest.java - HyperSearch request, run in I/O thread
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -240,9 +239,9 @@ loop:			for(int counter = 0; ; counter++)
 				boolean startOfLine = (buffer.getLineStartOffset(
 					buffer.getLineOfOffset(offset)) == offset);
 
-new SegmentCharSequence(text,false),
+				buffer.getText(offset,end - offset,text);
 				SearchMatcher.Match match = matcher.nextMatch(
-					new CharIndexedSegment(text,false),
+new SegmentCharSequence(text,false),
 					startOfLine,endOfLine,counter == 0,
 					false);
 				if(match == null)

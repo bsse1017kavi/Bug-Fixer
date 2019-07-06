@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class StatefulServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
         Stateful bean = (Stateful) session.getAttribute("bean");
-bean = (Stateful) new InitialContext().lookup("java:app/stateful/StatefulBean!" + Stateful.class.getCanonicalName());
+        if (bean == null) {
             try {
-                bean = (Stateful) new InitialContext().lookup("java:app/stateful/StatefulBean!org.jboss.as.test.clustering.unmanaged.ejb3.stateful.bean.Stateful");
+bean = (Stateful) new InitialContext().lookup("java:app/stateful/StatefulBean!" + Stateful.class.getCanonicalName());
             } catch (NamingException e) {
                 throw new ServletException(e);
             }

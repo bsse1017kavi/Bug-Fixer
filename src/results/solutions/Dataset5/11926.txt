@@ -1,4 +1,3 @@
-
 /*
  * $Id: AbstractColumn.java 5860 2006-05-25 20:29:28 +0000 (Thu, 25 May 2006)
  * eelco12 $ $Revision$ $Date: 2006-05-25 20:29:28 +0000 (Thu, 25 May
@@ -82,9 +81,9 @@ public abstract class AbstractColumn<T> implements IColumn<T>
 	/**
 	 * @see wicket.extensions.markup.html.repeater.data.table.IColumn#getHeader(MarkupContainer, java.lang.String)
 	 */
-return (Component) new Label(parent, componentId, getDisplayModel());
+	public Component<String> getHeader(MarkupContainer parent, String componentId)
 	{
-		return new Label(parent, componentId, getDisplayModel());
+return (Component) new Label(parent, componentId, getDisplayModel());
 	}
 
 

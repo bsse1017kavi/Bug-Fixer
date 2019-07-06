@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -387,9 +386,9 @@ public class TimerImpl implements Timer {
      * </p>
      *
      * @return
-return timerService.isStarted() && !isCanceled() && !isExpired() && (timerService.isScheduled(getId()) || timerState == TimerState.CREATED);
+     */
     public boolean isActive() {
-        return timerService.isStarted() && !isCanceled() && !isExpired() && timerService.isScheduled(getId());
+return timerService.isStarted() && !isCanceled() && !isExpired() && (timerService.isScheduled(getId()) || timerState == TimerState.CREATED);
     }
 
     /**

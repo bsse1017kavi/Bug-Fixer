@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -123,9 +122,9 @@ public class JMSQueueDefinition extends SimpleResourceDefinition {
         for (AttributeDefinition attr : attributes) {
             if (registerRuntimeOnly || !attr.getFlags().contains(AttributeAccess.Flag.STORAGE_RUNTIME)) {
                 if (deployed) {
-registry.registerReadOnlyAttribute(attr, null);
+                    registry.registerReadOnlyAttribute(attr, JMSQueueConfigurationRuntimeHandler.INSTANCE);
                 } else {
-                    registry.registerReadWriteAttribute(attr, null, JMSQueueConfigurationWriteHandler.INSTANCE);
+registry.registerReadOnlyAttribute(attr, null);
                 }
             }
         }

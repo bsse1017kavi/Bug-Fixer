@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -132,9 +131,9 @@ public class CommandlineJava implements Cloneable {
          */
         public void setSystem() throws BuildException {
             try {
-for (Enumeration e = sys.propertyNames(); e.hasMoreElements();) {
+                sys = System.getProperties();
                 Properties p = new Properties();
-                for (Enumeration e = sys.keys(); e.hasMoreElements();) {
+for (Enumeration e = sys.propertyNames(); e.hasMoreElements();) {
                     Object o = e.nextElement();
                     p.put(o, sys.get(o));
                 }

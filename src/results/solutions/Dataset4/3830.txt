@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public abstract class AbstractIndexStore extends AbstractIndexComponent implemen
     public static final String INDEX_STORE_THROTTLE_MAX_BYTES_PER_SEC = "index.store.throttle.max_bytes_per_sec";
 
     class ApplySettings implements IndexSettingsService.Listener {
-String rateLimitingType = settings.get(INDEX_STORE_THROTTLE_TYPE, AbstractIndexStore.this.rateLimitingType);
+        @Override
         public void onRefreshSettings(Settings settings) {
-            String rateLimitingType = indexSettings.get(INDEX_STORE_THROTTLE_TYPE, AbstractIndexStore.this.rateLimitingType);
+String rateLimitingType = settings.get(INDEX_STORE_THROTTLE_TYPE, AbstractIndexStore.this.rateLimitingType);
             if (!rateLimitingType.equals(AbstractIndexStore.this.rateLimitingType)) {
                 logger.info("updating index.store.throttle.type from [{}] to [{}]", AbstractIndexStore.this.rateLimitingType, rateLimitingType);
                 if (rateLimitingType.equalsIgnoreCase("node")) {

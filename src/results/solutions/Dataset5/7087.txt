@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -238,9 +237,9 @@ public class ServletWebResponse extends WebResponse
 			// proxies eventually cache '302 temporary redirect' responses:
 			// for most wicket use cases this is fatal since redirects are
 			// usually highly dynamic and can not be statically mapped
-this.disableCaching();
+			// to a request url in general
 			if (cacheable == false)
-				RequestUtils.disableCaching(this);
+this.disableCaching();
 
 			httpServletResponse.sendRedirect(url);
 		}

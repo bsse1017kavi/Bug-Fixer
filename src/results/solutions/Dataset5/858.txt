@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -620,9 +619,9 @@ public class QueryImpl
      * does not exist.
      */
     protected Compilation compilationFromCache() {
-if (compCache == null || getQueryString() == null) {
+        Map compCache =
             _broker.getConfiguration().getQueryCompilationCacheInstance();
-        if (compCache == null) {
+if (compCache == null || getQueryString() == null) {
             return newCompilation();
         } else {
             CompilationKey key = new CompilationKey();

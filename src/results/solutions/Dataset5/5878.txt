@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2004 The Apache Software Foundation.
  * 
@@ -769,9 +768,9 @@ public class XMLEntityManager
                     fEntityAugs.removeAllItems();
                     fEntityAugs.putItem(Constants.ENTITY_SKIPPED, Boolean.TRUE);
                     fEntityHandler.startEntity(entityName, fResourceIdentifier, encoding, fEntityAugs);
-fEntityHandler.endEntity(entityName, fEntityAugs);
+                    fEntityAugs.removeAllItems();
                     fEntityAugs.putItem(Constants.ENTITY_SKIPPED, Boolean.TRUE);
-                    fEntityHandler.endEntity(entityName, null);
+fEntityHandler.endEntity(entityName, fEntityAugs);
                 }
                 return;
             }

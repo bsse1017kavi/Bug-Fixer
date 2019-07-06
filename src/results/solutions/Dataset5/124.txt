@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ public class ConversionUtils {
      * @return the charset encoding - or null, if none was found or the charset is not supported
      */
     public static String getEncodingFromContentType(String contentType){
-int charSetStartPos = contentType.toLowerCase(java.util.Locale.ENGLISH).indexOf(CHARSET_EQ);
+        String charSet = null;
         if (contentType != null) {
-            int charSetStartPos = contentType.toLowerCase().indexOf(CHARSET_EQ);
+int charSetStartPos = contentType.toLowerCase(java.util.Locale.ENGLISH).indexOf(CHARSET_EQ);
             if (charSetStartPos >= 0) {
                 charSet = contentType.substring(charSetStartPos + CHARSET_EQ_LEN);
                 if (charSet != null) {

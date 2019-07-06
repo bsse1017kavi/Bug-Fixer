@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class MockPageParameterPage extends WebPage
 	 */
 	public MockPageParameterPage(PageParameters pageParameters)
 	{
-add(new Label("label", pageParameters.get("id").toString()));
+		add(new BookmarkablePageLink("link", MockPageParameterPage.class,
 			new PageParameters("id=1")));
-		add(new Label("label", pageParameters.getNamedParameter("id").toString()));
+add(new Label("label", pageParameters.get("id").toString()));
 	}
 
 	/**

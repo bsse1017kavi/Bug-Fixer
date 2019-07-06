@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -134,9 +133,9 @@ private String getSourceFor(IJavaElement element) throws JavaModelException {
  */
 protected boolean isRenamingMainType(IJavaElement element, IJavaElement dest) throws JavaModelException {
 	if ((isRename() || getNewNameFor(element) != null)
-typeName = org.eclipse.jdt.internal.core.util.Util.getNameWithoutJavaLikeExtension(typeName);
+		&& dest.getElementType() == IJavaElement.COMPILATION_UNIT) {
 		String typeName = dest.getElementName();
-		typeName = typeName.substring(0, typeName.length() - 5); //TODO (jerome) should not hardcode extension length
+typeName = org.eclipse.jdt.internal.core.util.Util.getNameWithoutJavaLikeExtension(typeName);
 		return element.getElementName().equals(typeName) && element.getParent().equals(dest);
 	}
 	return false;

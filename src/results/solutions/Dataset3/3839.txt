@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -57,9 +56,9 @@ public abstract class CommonDeployableContainer<T extends CommonContainerConfigu
 
         ModelControllerClient modelControllerClient = ModelControllerClient.Factory.create(
                 config.getManagementAddress(),
-managementClient = new ManagementClient(modelControllerClient, config.getManagementAddress().getHostAddress());
+                config.getManagementPort());
 
-        managementClient = new ManagementClient(modelControllerClient);
+managementClient = new ManagementClient(modelControllerClient, config.getManagementAddress().getHostAddress());
 
         archiveDeployerInst.set(new ArchiveDeployer(
                 ServerDeploymentManager.Factory.create(modelControllerClient)));

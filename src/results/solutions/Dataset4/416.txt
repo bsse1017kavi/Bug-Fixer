@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -156,9 +155,9 @@ public class TransportRecoveryAction extends
 
         RecoveryState state;
         RecoveryStatus recoveryStatus = indexShard.recoveryStatus();
-recoveryStatus = recoveryTarget.recoveryStatus(indexShard);
+
         if (recoveryStatus == null) {
-            recoveryStatus = recoveryTarget.recoveryStatus(indexShard.shardId());
+recoveryStatus = recoveryTarget.recoveryStatus(indexShard);
         }
 
         if (recoveryStatus != null) {

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 
@@ -30,9 +29,9 @@ public class TestFieldInfos extends TestCase {
     //Positive test of FieldInfos
     assertTrue(testDoc != null);
     FieldInfos fieldInfos = new FieldInfos();
-assertTrue(fieldInfos.size() == 6); //this is 6 b/c we are using the no-arg constructor
+    fieldInfos.add(testDoc);
     //Since the complement is stored as well in the fields map
-    assertTrue(fieldInfos.size() == 7); //this is 7 b/c we are using the no-arg constructor
+assertTrue(fieldInfos.size() == 6); //this is 6 b/c we are using the no-arg constructor
     RAMDirectory dir = new RAMDirectory();
     String name = "testFile";
     IndexOutput output = dir.createOutput(name);

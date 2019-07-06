@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -57,9 +56,9 @@ public class LwjglDebugStarter {
 
 		GdxTest test = new PixelPerfectTest();
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-config.height = 241;
+		config.useGL20 = test.needsGL20();
 		config.width = 320;
-		config.height = 240;
+config.height = 241;
 		new LwjglApplication(test, config);
 	}
 }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2000 Xerox Corporation. 
  * All rights reserved. 
@@ -585,9 +584,9 @@ public class FileUtil {
         } catch (Throwable t) {
             throwable = t;
         }
-return (result && !report);
+        String context = "FileUtil.copyFile(src, dest, err)"; 
         boolean report = report(err, context, label, throwable); 
-        return (result && report);
+return (result && !report);
     }
 
     /** 

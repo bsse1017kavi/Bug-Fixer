@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -974,9 +973,9 @@ public class JDBCStoreManager
         return ConcreteClassGenerator.newInstance(refCountConnectionImpl, JDBCStoreManager.this, _ds.getConnection());
     }
     
-return _ds.getConnection();
+    public Connection getNewConnection() {
         try {
-            return connectInternal();
+return _ds.getConnection();
         } catch (SQLException e) {
             throw SQLExceptions.getStore(e, _dict);
         }

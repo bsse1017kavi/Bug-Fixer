@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -366,8 +365,8 @@ public class MatchQuery {
         UnicodeUtil.UTF16toUTF8(attr.buffer(), 0, attr.length(), ref);
         return ref;
     }
-return zeroTermsQuery == ZeroTermsQuery.NONE ? MatchNoDocsQuery.INSTANCE : Queries.newMatchAllQuery();
+
     protected Query zeroTermsQuery() {
-        return zeroTermsQuery == ZeroTermsQuery.NONE ? MatchNoDocsQuery.INSTANCE : Queries.MATCH_ALL_QUERY;
+return zeroTermsQuery == ZeroTermsQuery.NONE ? MatchNoDocsQuery.INSTANCE : Queries.newMatchAllQuery();
     }
 }

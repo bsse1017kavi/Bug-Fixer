@@ -1,10 +1,9 @@
-
 package org.kohsuke.rngom.binary;
 
 import org.kohsuke.rngom.binary.visitor.*;
-public GroupPattern(Pattern p1, Pattern p2) {
+
 public class GroupPattern extends BinaryPattern {
-  GroupPattern(Pattern p1, Pattern p2) {
+public GroupPattern(Pattern p1, Pattern p2) {
     super(p1.isNullable() && p2.isNullable(),
 	  combineHashCode(GROUP_HASH_CODE, p1.hashCode(), p2.hashCode()),
 	  p1,

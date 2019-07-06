@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -84,9 +83,9 @@ public class StatusRenderer extends DefaultLabelRenderer {
         }
 
         Flags flags = ((ColumbaHeader) ((MessageNode) value).getHeader())
-if (flags.getDeleted()) {
+                .getFlags();
 
-        if (flags.getExpunged()) {
+if (flags.getDeleted()) {
             setIcon(image3);
 
             setToolTipText(MailResourceLoader.getString("header", "column",

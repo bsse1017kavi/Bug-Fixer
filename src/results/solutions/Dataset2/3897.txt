@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -2746,9 +2745,9 @@ protected void consumePostfixExpression() {
 }
 protected void consumePrimaryNoNewArray() {
 	// PrimaryNoNewArray ::=  PushLPAREN Expression PushRPAREN 
-parenthesizedExpression.bits |= ((((parenthesizedExpression.bits & AstNode.ParenthesizedMASK) >> AstNode.ParenthesizedSHIFT) & 0xFF)  + 1) << AstNode.ParenthesizedSHIFT;
+	final Expression parenthesizedExpression = expressionStack[expressionPtr];
 	updateSourcePosition(parenthesizedExpression);
-	parenthesizedExpression.bits |= AstNode.IsParenthesizedMASK;
+parenthesizedExpression.bits |= ((((parenthesizedExpression.bits & AstNode.ParenthesizedMASK) >> AstNode.ParenthesizedSHIFT) & 0xFF)  + 1) << AstNode.ParenthesizedSHIFT;
 }
 protected void consumePrimaryNoNewArrayArrayType() {
 	// PrimaryNoNewArray ::= ArrayType '.' 'class'

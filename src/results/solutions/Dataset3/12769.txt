@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class JMSService implements Service<JMSServerManager> {
     private final InjectedValue<Context> contextInjector = new InjectedValue<Context>();
     private JMSServerManager jmsServer;
 
-target.addService(JMSServices.JMS_MANAGER, service)
+    public static void addService(final ServiceTarget target) {
         final JMSService service = new JMSService();
-        target.addService(JMSSubsystemElement.JMS_MANAGER, service)
+target.addService(JMSServices.JMS_MANAGER, service)
             .addDependency(MessagingSubsystemElement.JBOSS_MESSAGING, HornetQServer.class, service.getHornetQServer())
             .addDependency(JavaContextService.SERVICE_NAME, Context.class, service.getContextInjector())
             .setInitialMode(Mode.ACTIVE)

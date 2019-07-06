@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -363,9 +362,9 @@ public class LocalGatewayAllocator extends AbstractComponent implements GatewayA
 
     private ObjectLongOpenHashMap<DiscoveryNode> buildShardStates(final DiscoveryNodes nodes, MutableShardRouting shard) {
         ObjectLongOpenHashMap<DiscoveryNode> shardStates = cachedShardsState.get(shard.shardId());
-shardStates = new ObjectLongOpenHashMap<>();
+        ObjectOpenHashSet<String> nodeIds;
         if (shardStates == null) {
-            shardStates = new ObjectLongOpenHashMap<DiscoveryNode>();
+shardStates = new ObjectLongOpenHashMap<>();
             cachedShardsState.put(shard.shardId(), shardStates);
             nodeIds = ObjectOpenHashSet.from(nodes.dataNodes().keys());
         } else {

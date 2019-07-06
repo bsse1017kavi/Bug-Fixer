@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.backends.jglfw;
 
 import static com.badlogic.gdx.utils.SharedLibraryLoader.*;
@@ -84,9 +83,9 @@ public class JglfwApplication implements Application {
 		System.exit(0);
 	}
 
-runOnEDT = config.runOnEDT;
+	void initialize (JglfwApplicationConfiguration config) {
 		forceExit = config.forceExit;
-		runOnEDT = config.forceExit;
+runOnEDT = config.runOnEDT;
 
 		final Thread glThread = Thread.currentThread();
 

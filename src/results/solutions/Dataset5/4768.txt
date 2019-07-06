@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public class TabbedPanel extends Panel
 	 */
 	public TabbedPanel(final String id, final List<? extends ITab> tabs)
 	{
-this.tabs = (List<? extends ITab>)Args.notNull(tabs, "tabs");
+		super(id, new Model<Integer>(-1));
 
-		this.tabs = Args.notNull(tabs, "tabs");
+this.tabs = (List<? extends ITab>)Args.notNull(tabs, "tabs");
 
 		final IModel<Integer> tabCount = new AbstractReadOnlyModel<Integer>()
 		{

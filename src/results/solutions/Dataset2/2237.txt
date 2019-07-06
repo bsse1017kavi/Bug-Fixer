@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -89,9 +88,9 @@ public class AttributeValuePeer
      * SCARAB_ISSUE_ATTRIBUTE_VALUE table
      */
     public static Class getOMClass(Record record, int offset) 
-NumberKey attId = new NumberKey(record.getValue(offset-1 + 3)
+        throws Exception
     {
-        NumberKey attId = new NumberKey(record.getValue(offset-1 + 2)
+NumberKey attId = new NumberKey(record.getValue(offset-1 + 3)
                                         .asString());
         Attribute attribute = Attribute.getInstance(attId);
         String className = attribute.getAttributeType().getJavaClassName(); 

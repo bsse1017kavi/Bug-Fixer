@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -159,9 +158,9 @@ public class CassandraBulkLoader {
 
             columnFamilies.add(columnFamily);
 
-for (EndPoint endpoint: StorageService.instance().getReadStorageEndPoints(key.toString()))
+            /* Get serialized message to send to cluster */
             message = createMessage(Keyspace, key.toString(), CFName, columnFamilies);
-            for (EndPoint endpoint: StorageService.instance().getNStorageEndPoint(key.toString()))
+for (EndPoint endpoint: StorageService.instance().getReadStorageEndPoints(key.toString()))
             {
                 /* Send message to end point */
                 MessagingService.getMessagingInstance().sendOneWay(message, endpoint);

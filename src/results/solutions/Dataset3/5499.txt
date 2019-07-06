@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -139,9 +138,9 @@ class TxAdviceBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
 			transactionAttributeMap.put(nameHolder, attribute);
 		}
 
-attributeSourceDefinition.getPropertyValues().add(NAME_MAP, transactionAttributeMap);
+		RootBeanDefinition attributeSourceDefinition = new RootBeanDefinition(NameMatchTransactionAttributeSource.class);
 		attributeSourceDefinition.setSource(parserContext.extractSource(attrEle));
-		attributeSourceDefinition.getPropertyValues().addPropertyValue(NAME_MAP, transactionAttributeMap);
+attributeSourceDefinition.getPropertyValues().add(NAME_MAP, transactionAttributeMap);
 		return attributeSourceDefinition;
 	}
 

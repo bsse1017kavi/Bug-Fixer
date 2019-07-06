@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -166,9 +165,9 @@ public class TextQueryBuilder extends BaseQueryBuilder implements BoostableQuery
         builder.startObject(TextQueryParser.NAME);
         builder.startObject(name);
 
-builder.field("type", type.toString().toLowerCase(Locale.ENGLISH));
+        builder.field("query", text);
         if (type != null) {
-            builder.field("type", type.toString().toLowerCase());
+builder.field("type", type.toString().toLowerCase(Locale.ENGLISH));
         }
         if (operator != null) {
             builder.field("operator", operator.toString());

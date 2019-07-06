@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public interface PersistenceUnitMetadata extends PersistenceUnitInfo {
 
     void setPersistenceXMLSchemaVersion(String version);
 
-void setTempClassLoaderFactory(TempClassLoaderFactory tempClassLoaderFactory);
+    void setClassLoader(ClassLoader cl);
 
-    void setTempClassloader(ClassLoader cl);
+void setTempClassLoaderFactory(TempClassLoaderFactory tempClassLoaderFactory);
 
     void setSharedCacheMode(SharedCacheMode sharedCacheMode);
 }

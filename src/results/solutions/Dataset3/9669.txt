@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -95,9 +94,9 @@ class MessagingPathHandlers {
     static ModelNode createAddOperation(final ModelNode address, final ModelNode subModel) {
         final ModelNode operation = new ModelNode();
         operation.get(OP).set(ADD);
-operation.get(PATH).set(subModel.require(PATH));
+        operation.get(OP_ADDR).set(address);
         operation.get(RELATIVE_TO).set(subModel.get(RELATIVE_TO));
-        operation.get(PATH).set(subModel.get(PATH));
+operation.get(PATH).set(subModel.require(PATH));
         return operation;
     }
 

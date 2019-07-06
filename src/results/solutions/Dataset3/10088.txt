@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public enum ORBInitializer {
     SECURITY_CLIENT("security", "org.jboss.as.jdkorb.csiv2.CSIv2Initializer", "org.jboss.as.jdkorb.csiv2.SASClientInitializer"),
     SECURITY_IDENTITY("security", "org.jboss.as.jdkorb.csiv2.CSIv2Initializer", "org.jboss.as.jdkorb.csiv2.SASInitializer"),
 
-"com.arjuna.ats.jts.orbspecific.javaidl.interceptors.interposition.InterpositionORBInitializerImpl",
+    // the transaction group encompasses the Interposition and InboundCurrent initializers.
     TRANSACTIONS("transactions",
-            "com.arjuna.ats.jts.orbspecific.jacorb.interceptors.interposition.InterpositionORBInitializerImpl",
+"com.arjuna.ats.jts.orbspecific.javaidl.interceptors.interposition.InterpositionORBInitializerImpl",
             "com.arjuna.ats.jbossatx.jts.InboundTransactionCurrentInitializer",
             "org.jboss.as.jdkorb.tm.TxIORInterceptorInitializer",
             "org.jboss.as.jdkorb.tm.TxServerInterceptorInitializer"),

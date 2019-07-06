@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -116,9 +115,9 @@ public class CachedStreamOutput {
         return entry;
     }
 
-if (entry.bytes().bytes().length() > BYTES_LIMIT) {
+    public static void pushEntry(Entry entry) {
         entry.reset();
-        if (entry.bytes().underlyingBytes().length > BYTES_LIMIT) {
+if (entry.bytes().bytes().length() > BYTES_LIMIT) {
             return;
         }
         Queue<Entry> ref = cache.get();

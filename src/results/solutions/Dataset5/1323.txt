@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class TestJexlFunction extends JMeterTestCase {
     public void setUp() {
         function = new JexlFunction();
         result = new SampleResult();
-result.setResponseData(data, null);
+        jmctx = JMeterContextService.getContext();
         String data = "The quick brown fox";
-        result.setResponseData(data.getBytes());
+result.setResponseData(data, null);
         vars = new JMeterVariables();
         jmctx.setVariables(vars);
         jmctx.setPreviousResult(result);

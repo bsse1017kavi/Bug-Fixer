@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -54,9 +53,9 @@ public final class YuiLib implements IClusterable
 	{
 		if (YUILOADER == null)
 		{
-if (Application.get().usesDeploymentConfig())
+			StringBuffer sb = new StringBuffer();
 			sb.append("yuiloader");
-			if (Application.DEPLOYMENT.equals(Application.get().getConfigurationType()))
+if (Application.get().usesDeploymentConfig())
 			{
 				sb.append("-min");
 			}

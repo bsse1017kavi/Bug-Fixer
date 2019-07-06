@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -433,9 +432,9 @@ public class SimpleSecurityManager implements ServerSecurityManager {
      * @param level
      * @param auditManager
      * @param userPrincipal
-AuditEvent auditEvent = new AuditEvent(AuditLevel.SUCCESS);
+     */
     private void audit(String level, AuditManager auditManager, Principal userPrincipal) {
-        AuditEvent auditEvent = new AuditEvent(level);
+AuditEvent auditEvent = new AuditEvent(AuditLevel.SUCCESS);
         Map<String, Object> ctxMap = new HashMap<String, Object>();
         ctxMap.put("principal", userPrincipal != null ? userPrincipal.getName() : "null");
         ctxMap.put("Source", getClass().getCanonicalName());

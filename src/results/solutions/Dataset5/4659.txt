@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -326,9 +325,9 @@ public class IncCompilerRun implements IAjcRun {
          * AjcSpecXmlReader.DOCTYPE.
          * @see AjcSpecXmlReader#DOCTYPE 
          * @see IXmlWritable#writeXml(XMLWriter) 
-String attr = XMLWriter.makeAttribute("tag", tag);
+         */
         public void writeXml(XMLWriter out) {
-            String attr = out.makeAttribute("tag", tag);
+String attr = XMLWriter.makeAttribute("tag", tag);
             out.startElement(xmlElementName, attr, false);
             super.writeAttributes(out);
             out.endAttributes();

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -16,8 +15,8 @@ package org.aspectj.weaver;
 
 import org.aspectj.bridge.ISourceLocation;
 
-public ISourceLocation makeSourceLocation(int line, int offset);
+public interface ISourceContext {
 	public ISourceLocation makeSourceLocation(IHasPosition position);
-	public ISourceLocation makeSourceLocation(int line);
+public ISourceLocation makeSourceLocation(int line, int offset);
 	public int getOffset();
 }

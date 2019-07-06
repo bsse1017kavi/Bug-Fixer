@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class PersistenceProviderProcessor implements DeploymentUnitProcessor {
                 String adapterClass = holder.getPersistenceProviderAdaptorClassName();
                 if (adapterClass != null) {
                     try {
-adaptor.injectJtaManager(JtaManagerImpl.getInstance());
+                        PersistenceProviderAdaptor adaptor = (PersistenceProviderAdaptor)classLoader.loadClass(adapterClass).newInstance();
                         holder.setAdapter(adaptor);
-                        adaptor.setJtaManager(JtaManagerImpl.getInstance());
+adaptor.injectJtaManager(JtaManagerImpl.getInstance());
                     } catch (InstantiationException e) {
                         throw new DeploymentUnitProcessingException("could not create instance of adapter class '" +
                             adapterClass +"'", e);

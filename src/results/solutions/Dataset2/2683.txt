@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -358,9 +357,9 @@ class DirHandler extends ServletWrapper  {
     {
 	// this is how get locale is implemented. Ugly, but it's in
 	// the next round of optimizations
-getManager("org.apache.tomcat.resources",locale);
+	Locale locale=RequestUtil.getLocale(req);
 	StringManager sm=StringManager.
-	    getManager("org.apache.tomcat.servlets",locale);
+getManager("org.apache.tomcat.resources",locale);
 	DateFormat dateFormat =
 	    new SimpleDateFormat(datePattern,locale );
 

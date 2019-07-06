@@ -1,4 +1,3 @@
-
 package org.argouml.uml.ui.behavior.collaborations;
 
 import java.util.Collection;
@@ -44,9 +43,9 @@ public class UMLClassifierRoleAvailableContentsListModel
      */
     public void roleAdded(MElementEvent e) {
         if (e.getName().equals("base") && e.getSource() == getTarget()) {
-// UmlModelEventPump.getPump().removeModelEventListener(this, clazz, "ownedElement");
+            MClassifier clazz = (MClassifier)getChangedElement(e);
             addAll(clazz.getOwnedElements());
-            UmlModelEventPump.getPump().removeModelEventListener(this, clazz, "ownedElement");
+// UmlModelEventPump.getPump().removeModelEventListener(this, clazz, "ownedElement");
             UmlModelEventPump.getPump().addModelEventListener(this, clazz, "ownedElement");
         } else
         if (e.getName().equals("ownedElement") && ((MClassifierRole)getTarget()).getBases().contains(e.getSource())) {

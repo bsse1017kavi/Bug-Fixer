@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 import java.io.StringReader;
@@ -95,9 +94,9 @@ public class TestMockAnalyzer extends BaseTokenStreamTestCase {
   
   public void testLUCENE_3042() throws Exception {
     String testString = "t";
-TokenStream stream = analyzer.tokenStream("dummy", testString);
+    
     Analyzer analyzer = new MockAnalyzer(random());
-    TokenStream stream = analyzer.tokenStream("dummy", new StringReader(testString));
+TokenStream stream = analyzer.tokenStream("dummy", testString);
     stream.reset();
     while (stream.incrementToken()) {
       // consume

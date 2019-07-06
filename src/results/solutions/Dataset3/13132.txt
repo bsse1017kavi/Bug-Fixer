@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ public class CmpEntityBeanComponentInstance extends EntityBeanComponentInstance 
 
                 invokeEjbStore();
 
-if (context.getPrimaryKeyUnchecked() != null && store.isStoreRequired(context)) {
+                final CmpEntityBeanContext context = getEjbContext();
                 final JDBCEntityPersistenceStore store = getComponent().getStoreManager();
-                if (context.getPrimaryKey() != null && store.isStoreRequired(context)) {
+if (context.getPrimaryKeyUnchecked() != null && store.isStoreRequired(context)) {
                     store.storeEntity(context);
                 }
             }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -110,9 +109,9 @@ public final class JoglApplication implements Application {
 
 	void initialize (ApplicationListener listener, JoglApplicationConfiguration config) {
 		JoglNativesLoader.load();
-audio = new OpenALAudio(16, config.audioDeviceBufferCount, config.audioDeviceBufferSize);
+		graphics = new JoglGraphics(listener, config);
 		input = new JoglInput(graphics.getCanvas());
-		audio = new OpenALAudio(config.audioDeviceBufferCount, config.audioDeviceBufferSize);
+audio = new OpenALAudio(16, config.audioDeviceBufferCount, config.audioDeviceBufferSize);
 		files = new JoglFiles();
 
 		Gdx.app = JoglApplication.this;

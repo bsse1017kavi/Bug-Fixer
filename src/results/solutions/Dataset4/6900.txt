@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -40,9 +39,9 @@ import static org.hamcrest.Matchers.*;
 public class SimpleMapperTests {
 
     @Test public void testSimpleMapper() throws Exception {
-rootObject("person")
+        XContentDocumentMapperParser mapperParser = MapperTests.newParser();
         XContentDocumentMapper docMapper = doc("test",
-                object("person")
+rootObject("person")
                         .add(object("name").add(stringField("first").store(YES).index(Field.Index.NO)))
         ).sourceField(source()).build(mapperParser);
 

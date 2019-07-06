@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -550,9 +549,9 @@ void drawRect (int /*long*/ id, int /*long*/ sel, NSRect rect) {
 		* widget but not send paint events.
 		*/
 		drawWidget (id, context, rect, Thread.currentThread () == display.thread);
-display.isPainting.removeObjectIdenticalTo(view);
+	}
 	context.restoreGraphicsState();
-	display.isPainting.removeObject(view);
+display.isPainting.removeObjectIdenticalTo(view);
 }
 
 void drawWidget (int /*long*/ id, NSGraphicsContext context, NSRect rect, boolean sendPaint) {

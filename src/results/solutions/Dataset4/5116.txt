@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -66,9 +65,9 @@ public class OpenGistTask extends ProgressDialogTask<Gist> {
 
     @Override
     protected void onSuccess(Gist gist) throws Exception {
-((Activity) getContext()).startActivityForResult(GistsViewActivity.createIntent(gist), GIST_VIEW);
+        super.onSuccess(gist);
 
-        ((Activity) getContext()).startActivityForResult(ViewGistsActivity.createIntent(gist), GIST_VIEW);
+((Activity) getContext()).startActivityForResult(GistsViewActivity.createIntent(gist), GIST_VIEW);
     }
 
     @Override

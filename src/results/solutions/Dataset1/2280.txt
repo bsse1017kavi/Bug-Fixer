@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.JoinNode
@@ -906,9 +905,9 @@ public class JoinNode extends TableOperatorNode
 		if (joinClause != null)
 		{
 			/* If joinClause is a parameter, (where ?), then we assume
-if (joinClause.requiresTypeFromContext())
+			 * it will be a nullable boolean.
 			 */
-			if (joinClause.isParameterNode())
+if (joinClause.requiresTypeFromContext())
 			{
 				joinClause.setType(new DataTypeDescriptor(TypeId.BOOLEAN_ID, true));
 			}

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -43,9 +42,9 @@ private String[] knownPackageNames; // of the form "p1/p2"
 
 private long previousStructuralBuildTime;
 private StringSet structurallyChangedTypes;
-public static final byte VERSION = 0x0019; // fix for 325755
+public static int MaxStructurallyChangedTypes = 100; // keep track of ? structurally changed types, otherwise consider all to be changed
 
-public static final byte VERSION = 0x0018; // fix for 291472
+public static final byte VERSION = 0x0019; // fix for 325755
 
 static final byte SOURCE_FOLDER = 1;
 static final byte BINARY_FOLDER = 2;

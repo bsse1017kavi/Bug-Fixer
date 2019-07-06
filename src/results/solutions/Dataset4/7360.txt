@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -607,9 +606,9 @@ public abstract class BlobStoreRepository extends AbstractLifecycleComponent<Rep
      * @return list of snapshots in the repository
      * @throws IOException I/O errors
      */
-ArrayList<SnapshotId> snapshots = new ArrayList<>();
+    protected ImmutableList<SnapshotId> readSnapshotList() throws IOException {
         byte[] data = snapshotsBlobContainer.readBlobFully(SNAPSHOTS_FILE);
-        ArrayList<SnapshotId> snapshots = new ArrayList<SnapshotId>();
+ArrayList<SnapshotId> snapshots = new ArrayList<>();
         XContentParser parser = null;
         try {
             parser = XContentHelper.createParser(data, 0, data.length);

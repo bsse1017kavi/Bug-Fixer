@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class PrepareStepHandler  implements OperationStepHandler {
 
     public PrepareStepHandler(final LocalHostControllerInfo localHostControllerInfo,
                               ContentRepository contentRepository, final Map<String, ProxyController> hostProxies,
-this.slaveHandler = new OperationSlaveStepHandler(localHostControllerInfo, contentRepository, serverProxies);
+                              final Map<String, ProxyController> serverProxies) {
         this.localHostControllerInfo = localHostControllerInfo;
-        this.slaveHandler = new OperationSlaveStepHandler(localHostControllerInfo, serverProxies);
+this.slaveHandler = new OperationSlaveStepHandler(localHostControllerInfo, contentRepository, serverProxies);
         this.coordinatorHandler = new OperationCoordinatorStepHandler(localHostControllerInfo, contentRepository, hostProxies, serverProxies, slaveHandler);
     }
 

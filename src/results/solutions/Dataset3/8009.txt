@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ public final class ResourceAdapterDeploymentService extends AbstractResourceAdap
      * Stop
      */
     @Override
-ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SERVICE_PREFIX.append(this.value.getDeployment().getDeploymentName()));
+    public void stop(StopContext context) {
         DEPLOYMENT_CONNECTOR_LOGGER.debugf("Stopping sevice %s",
-                ConnectorServices.RESOURCE_ADAPTER_SERVICE_PREFIX.append(this.value.getDeployment().getDeploymentName()));
+ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SERVICE_PREFIX.append(this.value.getDeployment().getDeploymentName()));
         managementRepository.getValue().getConnectors().remove(value.getDeployment().getConnector());
         super.stop(context);
     }

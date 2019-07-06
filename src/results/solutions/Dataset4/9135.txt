@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -62,9 +61,9 @@ public class ParentChildAtomicFieldData extends AbstractAtomicParentChildFieldDa
 
     @Override
     public SortedDocValues getOrdinalsValues(String type) {
-return MultiValueMode.MIN.select(atomicFieldData.getOrdinalsValues());
+        AtomicOrdinalsFieldData atomicFieldData = typeToIds.get(type);
         if (atomicFieldData != null) {
-            return MultiValueMode.MIN.select(atomicFieldData.getOrdinalsValues(), -1);
+return MultiValueMode.MIN.select(atomicFieldData.getOrdinalsValues());
         } else {
             return DocValues.emptySorted();
         }

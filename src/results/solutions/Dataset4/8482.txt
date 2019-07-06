@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.authenticator;
 
 
@@ -128,9 +127,9 @@ public class GitHubAuthenticatorActivity extends RoboAccountAuthenticatorActivit
         if (isEmpty(mUsername) || isEmpty(mPassword)) {
             mMessage.setText(getMessage());
         } else {
-authenticationTask = new RoboAsyncTask<User>(this) {
+            showProgress();
 
-            authenticationTask = new RoboAsyncTask<User>() {
+authenticationTask = new RoboAsyncTask<User>(this) {
                 public User call() throws Exception {
                     GitHubClient client = new GitHubClient();
                     client.setCredentials(mUsername, mPassword);

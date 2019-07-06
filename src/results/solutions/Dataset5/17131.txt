@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -73,9 +72,9 @@ public static void main (String[] args) {
 				}
 				case SWT.MouseHover: {
 					TableItem item = table.getItem (new Point (event.x, event.y));
-tip = new Shell (shell, SWT.ON_TOP | SWT.TOOL);
+					if (item != null) {
 						if (tip != null  && !tip.isDisposed ()) tip.dispose ();
-						tip = new Shell (shell, SWT.ON_TOP);
+tip = new Shell (shell, SWT.ON_TOP | SWT.TOOL);
 						tip.setLayout (new FillLayout ());
 						label = new Label (tip, SWT.NONE);
 						label.setForeground (display.getSystemColor (SWT.COLOR_INFO_FOREGROUND));

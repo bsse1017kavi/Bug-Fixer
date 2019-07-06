@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -418,9 +417,9 @@ public abstract class MSVSS extends Task implements MSVSSConstants {
             return FLAG_VERSION_DATE + m_Date;
         } else {
             // Use getShortLabel() so labels longer then 30 char are truncated
-if (label != null && !label.equals("")) {
+            // and the user is warned
             String label = getShortLabel();
-            if (!label.equals("") && label != null) {
+if (label != null && !label.equals("")) {
                 return FLAG_VERSION_LABEL + label;
             }
         }

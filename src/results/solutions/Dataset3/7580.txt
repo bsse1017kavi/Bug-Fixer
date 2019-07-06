@@ -1,4 +1,3 @@
-
 package org.jboss.as.domain.http.server;
 
 import static org.jboss.as.domain.http.server.Constants.LOCATION;
@@ -51,9 +50,9 @@ class LogoutHandler implements ManagementHttpHandler {
 
         String userAgent = requestHeaders.getFirst("User-Agent");
         boolean opera = userAgent != null && userAgent.contains("Opera");
-String referrer = responseHeaders.getFirst("Referer");
+        boolean win = !opera && userAgent != null && userAgent.contains("MSIE");
 
-        String referrer = responseHeaders.getFirst("Referrer");
+String referrer = responseHeaders.getFirst("Referer");
 
         // Calculate location URL
         String protocol = "http";

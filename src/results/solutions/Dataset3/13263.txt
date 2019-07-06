@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -136,9 +135,9 @@ public class ApplyExtensionsHandler implements OperationStepHandler {
                     final PathAddress serverAddress = PathAddress.pathAddress(PathElement.pathElement(HOST, serverIdentity.getHostName()), PathElement.pathElement(SERVER, serverIdentity.getServerName()));
                     final OperationStepHandler handler = context.getResourceRegistration().getOperationHandler(serverAddress, ServerRestartRequiredHandler.OPERATION_NAME);
                     final ModelNode op = new ModelNode();
-context.addStep(op, handler, OperationContext.Stage.MODEL, true);
+                    op.get(OP).set(ServerRestartRequiredHandler.OPERATION_NAME);
                     op.get(OP_ADDR).set(serverAddress.toModelNode());
-                    context.addStep(op, handler, OperationContext.Stage.IMMEDIATE);
+context.addStep(op, handler, OperationContext.Stage.MODEL, true);
                 }
             }
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ import org.junit.runner.RunWith;
 public class TypeBeansTestCase {
     @Deployment(name = "type-beans")
     public static JavaArchive getCycleBeansJar() {
-archive.addAsManifestResource(TypeBeansTestCase.class.getPackage(), "type-jboss-beans.xml", "type-jboss-beans.xml");
+        JavaArchive archive = ShrinkWrap.create(JavaArchive.class, "type-beans.jar");
         archive.addPackage(TFactory.class.getPackage());
-        archive.addAsManifestResource("pojo/type-jboss-beans.xml", "type-jboss-beans.xml");
+archive.addAsManifestResource(TypeBeansTestCase.class.getPackage(), "type-jboss-beans.xml", "type-jboss-beans.xml");
         return archive;
     }
 

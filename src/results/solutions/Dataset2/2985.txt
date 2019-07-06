@@ -1,4 +1,3 @@
-
 /*****************************************************************************
  *                                                                           *
  *  This file is part of the BeanShell Java Scripting distribution.          *
@@ -57,9 +56,9 @@ class BSHArrayDimensions extends SimpleNode
 
     public Object eval( 
 			Class type, CallStack callstack, Interpreter interpreter ) 
-if ( Interpreter.DEBUG ) Interpreter.debug("array base type = "+type);
+		throws EvalError 
 	{
-		Interpreter.debug("array base type = "+type);
+if ( Interpreter.DEBUG ) Interpreter.debug("array base type = "+type);
 		baseType = type;
 		return eval( callstack, interpreter );
 	}

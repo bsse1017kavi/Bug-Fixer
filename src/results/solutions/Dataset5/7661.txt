@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -290,9 +289,9 @@ public class CovReport extends Task
         v.addElement( "-snapshot=" + resolveFile( snapshot.getPath() ) );
         // as a default -sourcepath use . in JProbe, so use project .
         if( sourcePath == null )
-sourcePath.createPath().setLocation( getBaseDirectory() );
+        {
             sourcePath = new Path( project );
-            sourcePath.createPath().setLocation( resolveFile( "." ) );
+sourcePath.createPath().setLocation( getBaseDirectory() );
         }
         v.addElement( "-sourcepath=" + sourcePath );
 

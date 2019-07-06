@@ -1,5 +1,4 @@
 
-
 package org.springframework.samples.petclinic.web;
 
 import java.util.Collection;
@@ -34,9 +33,9 @@ public class FindOwnersForm {
 		this.clinic = clinic;
 	}
 
-dataBinder.setDisallowedFields("id");
+	@InitBinder
 	public void setAllowedFields(WebDataBinder dataBinder) {
-		dataBinder.setDisallowedFields(new String[] {"id"});
+dataBinder.setDisallowedFields("id");
 	}
 
 	@RequestMapping(value = "/owners/search", method = RequestMethod.GET)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -243,9 +242,9 @@ public class InternalTermsStatsStringFacet extends InternalTermsStatsFacet {
             Arrays.sort(entries1, comparatorType.comparator());
             return new InternalTermsStatsStringFacet(name, comparatorType, requiredSize, Arrays.asList(entries1), missing);
         } else {
-List<StringEntry> ordered = new ArrayList<StringEntry>(map.size());
+            Object[] values = map.internalValues();
             Arrays.sort(values, (Comparator) comparatorType.comparator());
-            List<StringEntry> ordered = new ArrayList<StringEntry>();
+List<StringEntry> ordered = new ArrayList<StringEntry>(map.size());
             for (int i = 0; i < requiredSize; i++) {
                 StringEntry value = (StringEntry) values[i];
                 if (value == null) {

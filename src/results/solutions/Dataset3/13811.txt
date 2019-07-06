@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -64,9 +63,9 @@ public final class ContainerMetaDataDeploymentAspect extends AbstractDeploymentA
             if (WSHelper.hasAttachment(dep, JBossWebMetaData.class)) {
                 final JSEArchiveMetaData jseMetaData = this.metaDataBuilderJSE.create(dep);
                 dep.addAttachment(JSEArchiveMetaData.class, jseMetaData);
-if (WSHelper.isJaxwsEjbDeployment(dep)) {
+            }
         }
-        else if (WSHelper.isJaxwsEjbDeployment(dep)) {
+if (WSHelper.isJaxwsEjbDeployment(dep)) {
             this.log.debug("Creating JBoss agnostic EJB3 meta data for deployment: " + dep.getSimpleName());
             final EJBArchiveMetaData ejbMetaData = this.metaDataBuilderEJB3.create(dep);
             dep.addAttachment(EJBArchiveMetaData.class, ejbMetaData);

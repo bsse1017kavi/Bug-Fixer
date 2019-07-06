@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -995,9 +994,9 @@ public class RelationFieldStrategy
         if (col == null)
             throw new InternalException();
 
-if (ImplHelper.isManageable(fieldVal) && !field.getDefiningMetaData().useIdClassFromParent())
+        ClassMapping relmapping = field.getTypeMapping();
         Joinable j = field.getTypeMapping().assertJoinable(col);
-        if (ImplHelper.isManageable(fieldVal))
+if (ImplHelper.isManageable(fieldVal) && !field.getDefiningMetaData().useIdClassFromParent())
             fieldVal = store.getContext().getObjectId(fieldVal);
         if (fieldVal instanceof OpenJPAId)
             fieldVal = ((OpenJPAId) fieldVal).getIdObject();

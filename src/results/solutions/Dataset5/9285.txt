@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -325,9 +324,9 @@ public class SignJar extends Task
 
         cmd.createArg().setValue( jarSource.toString() );
 
-getLogger().info( "Signing Jar : " + jarSource.getAbsolutePath() );
+        cmd.createArg().setValue( alias );
 
-        log( "Signing Jar : " + jarSource.getAbsolutePath() );
+getLogger().info( "Signing Jar : " + jarSource.getAbsolutePath() );
         cmd.setFailonerror( true );
         cmd.execute();
     }

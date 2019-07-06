@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -50,9 +49,9 @@ protected Openable(JavaElement parent) {
 public void bufferChanged(BufferChangedEvent event) {
 	if (event.getBuffer().isClosed()) {
 		JavaModelManager.getJavaModelManager().getElementsOutOfSynchWithBuffers().remove(this);
-JavaModelManager.getJavaModelManager().getElementsOutOfSynchWithBuffers().add(this);
+		getBufferManager().removeBuffer(event.getBuffer());
 	} else {
-		JavaModelManager.getJavaModelManager().getElementsOutOfSynchWithBuffers().put(this, this);
+JavaModelManager.getJavaModelManager().getElementsOutOfSynchWithBuffers().add(this);
 	}
 }	
 /**

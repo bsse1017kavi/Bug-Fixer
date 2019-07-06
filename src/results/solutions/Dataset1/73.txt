@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -357,9 +356,9 @@ public final class TreeClusteringRecommender2 extends AbstractRecommender implem
       // Compare against other clusters; update queue if needed
       // That new pair we're just adding might be pretty close to something else, so
       // catch that case here and put it back into our queue
-if (queue.size() > 0 && similarity > queue.get(queue.size() - 1).getSimilarity()) {
+      for (FastIDSet cluster : clusters) {
         double similarity = clusterSimilarity.getSimilarity(merged, cluster);
-        if (similarity > queue.get(queue.size() - 1).getSimilarity()) {
+if (queue.size() > 0 && similarity > queue.get(queue.size() - 1).getSimilarity()) {
           ListIterator<ClusterClusterPair> queueIterator = queue.listIterator();
           while (queueIterator.hasNext()) {
             if (similarity > queueIterator.next().getSimilarity()) {

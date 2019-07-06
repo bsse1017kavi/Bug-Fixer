@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class DeploymentUploadUtil {
         return contentRepository.addContent(in);
     }
 
-throw createFailureException(MESSAGES.invalidContentDeclaration());
+    private static InputStream getContents(OperationContext context, ModelNode operation) throws OperationFailedException {
         if(! operation.hasDefined(CONTENT)) {
-            createFailureException(MESSAGES.invalidContentDeclaration());
+throw createFailureException(MESSAGES.invalidContentDeclaration());
         }
         return getInputStream(context, operation.require(CONTENT).get(0));
     }

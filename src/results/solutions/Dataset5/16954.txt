@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1181,9 +1180,9 @@ void fixFocus (Control focusControl) {
 	while (control != shell && (control = control.parent) != null) {
 		if (control.setFocus ()) return;
 	}
-window.becomeKeyWindow();
+	shell.setSavedFocus (focusControl);
 	NSWindow window = view.window();
-	window.makeFirstResponder(window);
+window.becomeKeyWindow();
 }
 
 void flagsChanged (int /*long*/ id, int /*long*/ sel, int /*long*/ theEvent) {

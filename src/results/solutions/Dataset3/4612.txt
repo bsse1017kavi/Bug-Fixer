@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public class ComponentConfiguration {
     public ComponentConfiguration(final ComponentDescription componentDescription, final ClassIndex classIndex, final ClassLoader moduleClassLoader, final ModuleLoader moduleLoader) {
         this.componentDescription = componentDescription;
         this.classIndex = classIndex;
-this.concurrentContext = new ConcurrentContext();
+        this.moduleClassLoader = moduleClassLoader;
         this.moduleLoader = moduleLoader;
-        this.concurrentContext = new ConcurrentContext(getApplicationName(),getModuleName(),getComponentName());
+this.concurrentContext = new ConcurrentContext();
     }
 
     /**

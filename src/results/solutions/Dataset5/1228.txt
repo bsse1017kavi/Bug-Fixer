@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -176,9 +175,9 @@ public class FileUpload implements Serializable
 	 * associated with this FileUpload is detached.
 	 * <p>
 	 * If an exception is thrown when closing the input streams, we ignore it,
-public final void closeStreams()
+	 * because the stream might have been closed already.
 	 */
-	void closeStreams()
+public final void closeStreams()
 	{
 		if (inputStreams != null)
 		{

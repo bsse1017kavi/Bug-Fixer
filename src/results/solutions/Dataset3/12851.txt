@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class RaCfgMetricUnitTestCase extends DsMgmtTestBase {
      */
     protected void setModel(String modelName) throws Exception {
         setBaseAddress(modelName + ".rar");
-List<ModelNode> operations = xmlToModelOperations(xml, Namespace.RESOURCEADAPTERS_1_0.getUriString(),
+        String xml = readXmlResource(System.getProperty("jbossas.ts.integ.dir") + "/basic/src/test/resources/jca/metrics/ra/"
                 + modelName + ".xml");
-        List<ModelNode> operations = xmlToModelOperations(xml, Namespace.CURRENT.getUriString(),
+List<ModelNode> operations = xmlToModelOperations(xml, Namespace.RESOURCEADAPTERS_1_0.getUriString(),
                 new ResourceAdapterSubsystemParser());
         executeOperation(operationListToCompositeOperation(operations));
     }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 /**
  * Copyright 2005 The Apache Software Foundation
@@ -36,9 +35,9 @@ public class TermSpans extends Spans {
   protected int doc;
   protected int freq;
   protected int count;
-public TermSpans(DocsAndPositionsEnum postings, Term term) {
+  protected int position;
 
-  public TermSpans(DocsAndPositionsEnum postings, Term term) throws IOException {
+public TermSpans(DocsAndPositionsEnum postings, Term term) {
     this.postings = postings;
     this.term = term;
     doc = -1;

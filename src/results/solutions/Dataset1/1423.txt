@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -59,9 +58,9 @@ public class DatacenterWriteResponseHandler extends WriteResponseHandler
     {
         //Is optimal to check if same datacenter than comparing Arrays.
         int b = -1;
-if (endpointsnitch.getDatacenter(localEndpoint).equals(endpointsnitch.getDatacenter(message.getFrom())))
+        try
         {
-            if (endpointsnitch.isInSameDataCenter(localEndpoint, message.getFrom()))
+if (endpointsnitch.getDatacenter(localEndpoint).equals(endpointsnitch.getDatacenter(message.getFrom())))
             {
                 b = blockFor.decrementAndGet();
             }

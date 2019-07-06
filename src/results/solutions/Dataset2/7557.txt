@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-98 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation for educational, research and non-profit
@@ -46,9 +45,9 @@ public class UseCase extends Classifier {
   public UseCase(String nameStr) { super(new Name(nameStr)); }
   
   public Vector getExtensionPoint() { return _extensionPoint; }
-fireVetoableChangeNoCompare("extensionPoint", _extensionPoint, x);
+  public void setExtensionPoint(Vector x) throws PropertyVetoException {
     if (_extensionPoint == null) _extensionPoint = new Vector();
-    fireVetoableChange("extensionPoint", _extensionPoint, x);
+fireVetoableChangeNoCompare("extensionPoint", _extensionPoint, x);
     _extensionPoint = x;
   }
   public void addExtensionPoint(String x) throws PropertyVetoException {

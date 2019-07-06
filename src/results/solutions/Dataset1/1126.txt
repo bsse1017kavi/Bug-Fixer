@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -49,9 +48,9 @@ public abstract class PerDocConsumer implements Closeable {
 
     for (FieldInfo fieldInfo : mergeState.fieldInfos) {
       mergeState.fieldInfo = fieldInfo; // set the field we are merging
-docValues[i] = getDocValuesForMerge(mergeState.readers.get(i), fieldInfo);
+      if (canMerge(fieldInfo)) {
         for (int i = 0; i < docValues.length; i++) {
-          docValues[i] = getDocValuesForMerge(mergeState.readers.get(i).reader, fieldInfo);
+docValues[i] = getDocValuesForMerge(mergeState.readers.get(i), fieldInfo);
         }
         Type docValuesType = getDocValuesType(fieldInfo);
         assert docValuesType != null;

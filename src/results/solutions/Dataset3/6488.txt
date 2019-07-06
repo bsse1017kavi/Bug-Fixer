@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -87,9 +86,9 @@ public class DeploymentReplaceHandler implements OperationStepHandler, Descripti
     public ModelNode getModelDescription(Locale locale) {
         return DeploymentDescription.getReplaceDeploymentOperation(locale);
     }
-//TODO readd validation and attributes
+
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
-        validator.validate(operation);
+//TODO readd validation and attributes
 
         String name = operation.require(NAME).asString();
         String toReplace = operation.require(TO_REPLACE).asString();

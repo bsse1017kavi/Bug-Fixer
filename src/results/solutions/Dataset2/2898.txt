@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -217,9 +216,9 @@ public class TryStatement extends SubRoutineStatement {
 				catchArguments == null ? 0 : catchArguments.length];
 		for (int i = 0; i < maxCatches; i++) {
 			exceptionLabels[i] = new ExceptionLabel(codeStream, catchArguments[i].binding.type);
-subRoutineStartLabel.initialize(codeStream);
+		}
 		if (subRoutineStartLabel != null) {
-			subRoutineStartLabel.codeStream = codeStream;
+subRoutineStartLabel.initialize(codeStream);
 			this.enterAnyExceptionHandler(codeStream);
 		}
 		// generate the try block

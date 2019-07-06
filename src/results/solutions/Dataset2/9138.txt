@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search;
 
 /*
@@ -166,9 +165,9 @@ public IPath[] enclosingProjectsAndJars() {
 			IProject project = element.getProject();
 			if (project.exists() && project.isOpen()) {
 				if (!paths.contains(path)) paths.add(path);
-IClasspathEntry[] entries = ((JavaProject)javaProject).getExpandedClasspath(true);
+				if (this.includesClasspaths) {
 					IJavaProject javaProject = javaModel.getJavaProject(project.getName());
-					IClasspathEntry[] entries = javaProject.getExpandedClasspath(true);
+IClasspathEntry[] entries = ((JavaProject)javaProject).getExpandedClasspath(true);
 					for (int j = 0; j < entries.length; j++) {
 						IClasspathEntry entry = entries[j];
 						switch (entry.getEntryKind()) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -49,9 +48,9 @@ public class WebParsingDeploymentProcessor implements DeploymentUnitProcessor {
 
     public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
         if(!isWarDeployment(phaseContext.getDeploymentUnit())) {
-final ResourceRoot deploymentRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT);
+            return; // Skip non web deployments
         }
-        final ResourceRoot deploymentRoot = phaseContext.getAttachment(Attachments.DEPLOYMENT_ROOT);
+final ResourceRoot deploymentRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT);
         final VirtualFile webXml = deploymentRoot.getRoot().getChild(WEB_XML);
         WarMetaData warMetaData = phaseContext.getAttachment(WarMetaData.ATTACHMENT_KEY);
         assert warMetaData != null;

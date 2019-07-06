@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -442,9 +441,9 @@ public abstract class PartPane extends LayoutPart implements IPropertyListener, 
      * Add a menu item to the Size Menu
      */
     protected void addSizeItem(Menu sizeMenu, String labelMessage,
-item.setText(labelMessage);
+            final Sash sash) {
         MenuItem item = new MenuItem(sizeMenu, SWT.NONE);
-        item.setText(labelMessage); //$NON-NLS-1$
+item.setText(labelMessage);
         item.addSelectionListener(new SelectionAdapter() {
             public void widgetSelected(SelectionEvent e) {
                 moveSash(sash);

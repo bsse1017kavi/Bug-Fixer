@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class Sort extends BaseResourceCollectionWrapper {
      * to recurse on nested ResourceComparators.
      * @param stk the stack of data types to use (recursively).
      * @param p   the project to use to dereference the references.
-protected synchronized void dieOnCircularReference(Stack<Object> stk, Project p)
+     * @throws BuildException on error.
      */
-    protected synchronized void dieOnCircularReference(Stack stk, Project p)
+protected synchronized void dieOnCircularReference(Stack<Object> stk, Project p)
         throws BuildException {
         if (isChecked()) {
             return;

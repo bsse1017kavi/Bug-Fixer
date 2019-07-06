@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.simpletext;
 
 /**
@@ -43,9 +42,9 @@ class SimpleTextFieldsWriter extends FieldsConsumer {
   final static BytesRef DOC     = new BytesRef("    doc ");
   final static BytesRef POS     = new BytesRef("      pos ");
   final static BytesRef PAYLOAD = new BytesRef("        payload ");
-final String fileName = SimpleTextCodec.getPostingsFileName(state.segmentName, state.codecId);
+
   public SimpleTextFieldsWriter(SegmentWriteState state) throws IOException {
-    final String fileName = SimpleTextCodec.getPostingsFileName(state.segmentName);
+final String fileName = SimpleTextCodec.getPostingsFileName(state.segmentName, state.codecId);
     out = state.directory.createOutput(fileName);
     state.flushedFiles.add(fileName);
   }

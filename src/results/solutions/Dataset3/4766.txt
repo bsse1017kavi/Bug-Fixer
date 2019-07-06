@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -109,9 +108,9 @@ public class EndIfHandler extends CommandHandlerWithHelp {
                 ifRequest = batch.toRequest();
             }
             try {
-throw new CommandLineException("if request failed: " + Util.getFailureDescription(response));
+                final ModelNode response = client.execute(ifRequest);
                 if(!Util.isSuccess(response)) {
-                    new CommandLineException("if request failed: " + Util.getFailureDescription(response));
+throw new CommandLineException("if request failed: " + Util.getFailureDescription(response));
                 }
             } catch (IOException e) {
                 throw new CommandLineException("if request failed", e);

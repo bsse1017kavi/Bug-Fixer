@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -34,9 +33,9 @@ import org.springframework.messaging.Message;
  * @since 4.0
  */
 @Target(ElementType.METHOD)
-public @interface SendTo {
+@Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface ReplyTo {
+public @interface SendTo {
 
 	/**
 	 * The destination for a message created from the return value of a method.

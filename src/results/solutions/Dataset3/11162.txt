@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ class DeploymentPlanBuilderImpl extends AbstractDeploymentPlanBuilder implements
             throw new IllegalArgumentException("deploymentDistributor is null");
         this.deploymentDistributor = deploymentDistributor;
     }
-super(existing, globalRollback);
+
     DeploymentPlanBuilderImpl(DeploymentPlanBuilderImpl existing, boolean globalRollback) {
-        super(existing);
+super(existing, globalRollback);
         this.deploymentDistributor = existing.deploymentDistributor;
     }
 

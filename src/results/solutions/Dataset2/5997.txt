@@ -1,4 +1,3 @@
-
 /*
  * Created on 11.03.2003
  *
@@ -75,9 +74,9 @@ public class RenameFolderAction
 	public void selectionChanged(SelectionChangedEvent evt) {
 		if (((TreeSelectionChangedEvent)evt).getSelected().length > 0) {
 			FolderTreeNode folder =
-if (folder != null && folder instanceof Folder) {
+				((TreeSelectionChangedEvent)evt).getSelected()[0];
 
-			if (folder != null) {
+if (folder != null && folder instanceof Folder) {
 				FolderItem item = folder.getFolderItem();
 				if (item.get("property", "accessrights").equals("user"))
 					setEnabled(true);

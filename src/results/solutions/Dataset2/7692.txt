@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -184,9 +183,9 @@ public class PerspectiveRegistry implements IPerspectiveRegistry, IConfiguration
 	 */
 	private void add(PerspectiveDescriptor desc) {
 		perspectives.add(desc);
-Workbench.getInstance().getConfigurationElementTracker().registerObject(element, desc, IConfigurationElementTracker.REF_WEAK);
+		IConfigurationElement element = desc.getConfigElement();
 		if (element != null) {
-			Workbench.getInstance().getConfigurationElementTracker().registerObject(element, desc);
+Workbench.getInstance().getConfigurationElementTracker().registerObject(element, desc, IConfigurationElementTracker.REF_WEAK);
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 import org.columba.core.action.AbstractColumbaAction;
 import org.columba.core.gui.frame.FrameMediator;
 import org.columba.core.gui.selection.SelectionChangedEvent;
@@ -76,9 +75,9 @@ public class RemoveAddressFromWhiteListAction extends AbstractColumbaAction
      * (non-Javadoc)
      *
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-FolderCommandReference r = ((AbstractMailFrameController) getFrameMediator()).getTableSelection();
+     */
     public void actionPerformed(ActionEvent evt) {
-        FolderCommandReference[] r = ((AbstractMailFrameController) getFrameMediator()).getTableSelection();
+FolderCommandReference r = ((AbstractMailFrameController) getFrameMediator()).getTableSelection();
 
         MainInterface.processor.addOp(new RemoveAddressFromWhiteListCommand(r));
     }

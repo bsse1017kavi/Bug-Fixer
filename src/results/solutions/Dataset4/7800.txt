@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -155,9 +154,9 @@ public class SimpleIdCache extends AbstractIndexComponent implements IdCache, Se
                                     HashedBytesArray nextParent = parentTypes.ceiling(typeAndId[0]);
                                     if (nextParent == null) {
                                         break uid;
-TermsEnum.SeekStatus status = termsEnum.seekCeil(nextParent.toBytesRef());
+                                    }
 
-                                    TermsEnum.SeekStatus status = termsEnum.seekCeil(nextParent.toBytesRef(), false);
+TermsEnum.SeekStatus status = termsEnum.seekCeil(nextParent.toBytesRef());
                                     if (status == TermsEnum.SeekStatus.END) {
                                         break uid;
                                     } else if (status == TermsEnum.SeekStatus.NOT_FOUND) {

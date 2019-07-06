@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -718,9 +717,9 @@ public class SetClasspathOperation extends JavaModelOperation {
 	
 		JavaProject jproject = getProject();
 		String[] oldRequired = jproject.projectPrerequisites(this.oldResolvedPath);
-this.newResolvedPath = jproject.getResolvedClasspath(this.newRawPath, null, true, this.needValidation);
+
 		if (this.newResolvedPath == null) {
-			this.newResolvedPath = jproject.getResolvedClasspath(this.newRawPath, true, this.needValidation);
+this.newResolvedPath = jproject.getResolvedClasspath(this.newRawPath, null, true, this.needValidation);
 		}
 		String[] newRequired = jproject.projectPrerequisites(this.newResolvedPath);
 	

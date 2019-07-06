@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class HeapStore extends AbstractStore<HeapDirectory> {
         this.bufferSize = componentSettings.getAsSize("buffer_size", new SizeValue(100, SizeUnit.KB));
         this.cacheSize = componentSettings.getAsSize("cache_size", new SizeValue(20, SizeUnit.MB));
         this.warmCache = componentSettings.getAsBoolean("warm_cache", true);
-logger.debug("Using [heap] Store with buffer_size[{}], cache_size[{}], warm_cache[{}]",
+
         this.directory = new HeapDirectory(bufferSize, cacheSize, warmCache);
-        logger.debug("Using [Memory] Store with buffer_size[{}], cache_size[{}], warm_cache[{}]",
+logger.debug("Using [heap] Store with buffer_size[{}], cache_size[{}], warm_cache[{}]",
                 new Object[]{directory.bufferSize(), directory.cacheSize(), warmCache});
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class InfinispanSessionManagerFactoryBuilder implements SessionManagerFac
             public XAResourceRecoveryRegistry getRecoveryRegistry() {
                 return null;
             }
-.addAliases(InfinispanRouteLocatorService.getCacheServiceAlias(cacheName))
+        };
         AsynchronousService.addService(target, cacheServiceName, new CacheService<>(cacheName, dependencies))
-                .addAliases(RouteLocatorService.getCacheServiceAlias(cacheName))
+.addAliases(InfinispanRouteLocatorService.getCacheServiceAlias(cacheName))
                 .addDependency(cacheConfigurationServiceName)
                 .addDependency(containerServiceName, EmbeddedCacheManager.class, cacheContainer)
                 .addDependency(GlobalComponentRegistryService.getServiceName(containerName))

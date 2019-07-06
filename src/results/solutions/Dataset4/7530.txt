@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -448,9 +447,9 @@ public class DateFieldMapper extends NumberFieldMapper<Long> {
         }
         if (timeUnit != Defaults.TIME_UNIT) {
             builder.field("numeric_resolution", timeUnit.name().toLowerCase(Locale.ROOT));
-builder.field("locale", dateTimeFormatter.locale());
+        }
         if (dateTimeFormatter.locale() != null) {
-            builder.field("locale", dateTimeFormatter.format());
+builder.field("locale", dateTimeFormatter.locale());
         }
     }
 

@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.view.View.GONE;
@@ -141,9 +140,9 @@ public class GistFragment extends RoboSherlockFragment implements OnItemClickLis
         } else {
             ((TextView) loadingView.findViewById(id.tv_loading)).setText(string.loading_gist);
             headerView.setVisibility(GONE);
-if (gist == null || (gist.getComments() > 0 && comments == null))
+        }
 
-        if (gist == null || comments == null)
+if (gist == null || (gist.getComments() > 0 && comments == null))
             list.addHeaderView(loadingView, null, false);
 
         List<Comment> initialComments = comments;

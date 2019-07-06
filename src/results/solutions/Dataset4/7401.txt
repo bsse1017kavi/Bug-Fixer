@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class PlainHighlighter implements Highlighter {
             cache.put(mapper, entry);
         }
 
-ArrayList<TextFragment> fragsList = new ArrayList<>();
+        // a HACK to make highlighter do highlighting, even though its using the single frag list builder
         int numberOfFragments = field.fieldOptions().numberOfFragments() == 0 ? 1 : field.fieldOptions().numberOfFragments();
-        ArrayList<TextFragment> fragsList = new ArrayList<TextFragment>();
+ArrayList<TextFragment> fragsList = new ArrayList<>();
         List<Object> textsToHighlight;
 
         try {

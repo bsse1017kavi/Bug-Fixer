@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class ResourceInjectionInstallProcessor extends AbstractComponentConfigPr
 
     protected void processComponentConfig(DeploymentUnit deploymentUnit, DeploymentPhaseContext phaseContext, ComponentConfiguration componentConfiguration) throws DeploymentUnitProcessingException {
         final Class<?> componentClass = componentConfiguration.getComponentClass();
-final ClassReflectionIndex<?> classReflectionIndex = deploymentReflectionIndex.getClassIndex(componentClass);
+
         final DeploymentReflectionIndex deploymentReflectionIndex = deploymentUnit.getAttachment(org.jboss.as.server.deployment.Attachments.REFLECTION_INDEX);
-        final ClassReflectionIndex classReflectionIndex = deploymentReflectionIndex.getClassIndex(componentClass);
+final ClassReflectionIndex<?> classReflectionIndex = deploymentReflectionIndex.getClassIndex(componentClass);
 
         final ServiceName envContextServiceName = componentConfiguration.getEnvContextServiceName();
 

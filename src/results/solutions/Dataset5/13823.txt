@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -231,9 +230,9 @@ public abstract class AbstractClasspathResource extends Resource {
      * @return an open input stream for the resource
      * @throws IOException if an error occurs.
      */
-protected synchronized void dieOnCircularReference(Stack<Object> stk, Project p) {
+    protected abstract InputStream openInputStream(ClassLoader cl) throws IOException;
 
-    protected synchronized void dieOnCircularReference(Stack stk, Project p) {
+protected synchronized void dieOnCircularReference(Stack<Object> stk, Project p) {
         if (isChecked()) {
             return;
         }

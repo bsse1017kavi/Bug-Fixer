@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -156,9 +155,9 @@ public abstract class MatchingTask extends Task
     protected DirectoryScanner getDirectoryScanner( File baseDir )
         throws TaskException
     {
-return fileset.getDirectoryScanner( getProject() );
+        fileset.setDir( baseDir );
         fileset.setDefaultexcludes( useDefaultExcludes );
-        return fileset.getDirectoryScanner( project );
+return fileset.getDirectoryScanner( getProject() );
     }
 
 }

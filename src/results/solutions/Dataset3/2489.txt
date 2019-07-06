@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -38,9 +37,9 @@ public class InitialContextFactory implements javax.naming.spi.InitialContextFac
      *
      * @param environment The naming environment
      * @return A naming context instance
-public Context getInitialContext(Hashtable<?, ?> environment) throws NamingException {
+     * @throws NamingException
      */
-    public Context getInitialContext(Hashtable<?, ?> environment) {
+public Context getInitialContext(Hashtable<?, ?> environment) throws NamingException {
         return new NamingContext((Hashtable<String, Object>) environment);
     }
 }

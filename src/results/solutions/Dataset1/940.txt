@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -574,9 +573,9 @@ public class CassandraServer implements Cassandra.Iface
         logger.debug("range_slice");
 
         String keyspace = state().getKeyspace();
-CFMetaData metadata = ThriftValidation.validateColumnFamily(keyspace, column_parent.column_family);
+        state().hasColumnFamilyAccess(column_parent.column_family, Permission.READ);
 
-        CFMetaData metadata = ThriftValidation.validateColumnFamily(keyspace, column_parent.column_family, false);
+CFMetaData metadata = ThriftValidation.validateColumnFamily(keyspace, column_parent.column_family);
         ThriftValidation.validateColumnParent(metadata, column_parent);
         ThriftValidation.validatePredicate(metadata, column_parent, predicate);
         ThriftValidation.validateKeyRange(range);

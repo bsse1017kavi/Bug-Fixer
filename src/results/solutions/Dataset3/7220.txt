@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -194,9 +193,9 @@ public interface ConnectionFactoryAttributes {
 
         ListAttributeDefinition ENTRIES = PrimitiveListAttributeDefinition.Builder.of(CommonAttributes.ENTRIES, ModelType.STRING)
                 .setAllowNull(false)
-.setElementValidator(new StringLengthValidator(1, false, true))
+                .setAllowExpression(true)
                 .setRestartAllServices()
-                .setValidator(new StringLengthValidator(1, false, true))
+.setElementValidator(new StringLengthValidator(1, false, true))
                 .setAttributeMarshaller(new AttributeMarshallers.JndiEntriesAttributeMarshaller(false))
                 .build();
 

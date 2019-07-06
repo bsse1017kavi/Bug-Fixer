@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -114,9 +113,9 @@ throws IOException
 	rec.flags = st.getUInt16();
 	rec.proto = st.getUInt8();
 	rec.alg = st.getUInt8();
-rec.key = st.getBase64();
+	/* If this is a null key, there's no key data */
 	if (!((rec.flags & (FLAG_NOKEY)) == (FLAG_NOKEY)))
-		rec.key = base64.fromString(remainingStrings(st));
+rec.key = st.getBase64();
 	else
 		rec.key = null;
 	return rec;

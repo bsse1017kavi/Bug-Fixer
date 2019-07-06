@@ -1,4 +1,3 @@
-
 /*
  * Created on Jan 27, 2005
  *
@@ -59,9 +58,9 @@ public class LoggerComparator implements Comparator {
       } else {
         return !match;
       }
-int compResult = event.getLoggerName().compareTo(rightSide);
+    }
     
-    int compResult = rightSide.compareTo(event.getLoggerName());
+int compResult = event.getLoggerName().compareTo(rightSide);
     switch(operator.getCode()) {
     case Operator.EQUAL: return compResult == 0;   
     case Operator.NOT_EQUAL: return compResult != 0;      

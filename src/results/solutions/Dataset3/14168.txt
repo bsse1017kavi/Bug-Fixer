@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public class BroadcastGroupAdd extends AbstractAddStepHandler implements Descrip
 
     static BroadcastGroupConfiguration createBroadcastGroupConfiguration(final String name, final ModelNode model) throws OperationFailedException {
 
-final int localPort = CommonAttributes.LOCAL_BIND_PORT.validateResolvedOperation(model).asInt();
+        final ModelNode localAddrNode = CommonAttributes.LOCAL_BIND_ADDRESS.validateResolvedOperation(model);
         final String localAddress = localAddrNode.isDefined() ? localAddrNode.asString() : null;
-        final int localPort = CommonAttributes.LOCAL_BIND_ADDRESS.validateResolvedOperation(model).asInt();
+final int localPort = CommonAttributes.LOCAL_BIND_PORT.validateResolvedOperation(model).asInt();
         final String groupAddress = CommonAttributes.GROUP_ADDRESS.validateResolvedOperation(model).asString();
         final int groupPort = CommonAttributes.GROUP_ADDRESS.validateResolvedOperation(model).asInt();
         final long broadcastPeriod = CommonAttributes.BROADCAST_PERIOD.validateResolvedOperation(model).asLong();

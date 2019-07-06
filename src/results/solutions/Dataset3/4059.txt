@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -126,9 +125,9 @@ public class VirtualServerTestCase extends AbstractMgmtTestBase {
         try {
             response = HttpRequest.get(dURL.toString(), 10, TimeUnit.SECONDS);
         } catch (Exception e) {
-assertTrue("Deployment also on default server. " , failed);
+            failed = true;
         }
-        assertTrue("Deployment also on defaul server. " , failed);
+assertTrue("Deployment also on default server. " , failed);
 
         // undeploy form virtual server
         deployer.undeploy("vsdeployment");

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -70,9 +69,9 @@ public class StatefulBeanTestCase {
     @Test
     public void testSFSB() throws Exception {
         String state = "not in a good mood!";
-Assert.assertEquals("Unexpected state returned from stateful session bean", SimpleInterceptor.class.getName() + "#" + state, storedState);
+        localSfsb.setState(state);
         String storedState = localSfsb.getState();
-        Assert.assertEquals("Unexpected state returned from stateful session bean", SimpleInterceptor.class.getSimpleName() + "#" + state, storedState);
+Assert.assertEquals("Unexpected state returned from stateful session bean", SimpleInterceptor.class.getName() + "#" + state, storedState);
 
     }
 }

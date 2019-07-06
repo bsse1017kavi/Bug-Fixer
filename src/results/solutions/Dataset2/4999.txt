@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -399,9 +398,9 @@ private void initializeBuilder() throws CoreException {
 	this.sourceFolders = new IContainer[sourceList.size()];
 	sourceList.toArray(this.sourceFolders);
 
-? CharOperation.splitAndTrimOn(',', filterSequence.toCharArray())
+	String filterSequence = JavaCore.getOption(JavaCore.CORE_JAVA_BUILD_RESOURCE_COPY_FILTER);
 	char[][] filters = filterSequence != null && filterSequence.length() > 0
-		? CharOperation.splitOn(',', filterSequence.toCharArray())
+? CharOperation.splitAndTrimOn(',', filterSequence.toCharArray())
 		: null;
 	if (filters == null) {
 		this.fileFilters = null;

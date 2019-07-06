@@ -1,4 +1,3 @@
-
 package org.eclipse.jst.jsf.facelet.core.internal.view;
 
 import org.eclipse.core.resources.IFile;
@@ -39,9 +38,9 @@ class ViewDefnAdapterFactory extends AbstractViewDefnAdapterFactory
                 }
             }
         }
-JSFCorePlugin.log(vhe, "While acquiring view adapter"); //$NON-NLS-1$
+        catch (final ViewHandlerException vhe)
         {
-            JSFCorePlugin.log(vhe, "While acquiring view adapter");
+JSFCorePlugin.log(vhe, "While acquiring view adapter"); //$NON-NLS-1$
         }
 
         // not found or failed

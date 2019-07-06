@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -39,9 +38,9 @@ public class ManagedReferenceInjector<T> implements Injector<T> {
         this.injectable = injectable;
     }
 
-injectable.inject(new ValueManagedReferenceFactory(new ImmediateValue<Object>(value)));
+    @Override
     public void inject(T value) throws InjectionException {
-        injectable.inject(new ValueManagedObject(new ImmediateValue<Object>(value)));
+injectable.inject(new ValueManagedReferenceFactory(new ImmediateValue<Object>(value)));
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class HostControllerConfigurationPersister implements ExtensibleConfigura
         this.hostControllerInfo = localHostControllerInfo;
         this.executorService = executorService;
         this.extensionRegistry = extensionRegistry;
-this.hostPersister = ConfigurationPersisterFactory.createHostXmlConfigurationPersister(configurationFile, environment.getHostControllerName());
+        final File configDir = environment.getDomainConfigurationDir();
         final ConfigurationFile configurationFile = environment.getHostConfigurationFile();
-        this.hostPersister = ConfigurationPersisterFactory.createHostXmlConfigurationPersister(configurationFile, executorService);
+this.hostPersister = ConfigurationPersisterFactory.createHostXmlConfigurationPersister(configurationFile, environment.getHostControllerName());
     }
 
     public void initializeDomainConfigurationPersister(boolean slave) {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -57,9 +56,9 @@ public class P4Sync extends P4Base {
      * Label to sync client to; optional.
      * @param label name of a label against which one want to sync
      * @throws BuildException if label is null or empty string
-if (label == null || label.equals("")) {
+     */
     public void setLabel(String label) throws BuildException {
-        if (label == null && !label.equals("")) {
+if (label == null || label.equals("")) {
             throw new BuildException("P4Sync: Labels cannot be Null or Empty");
         }
 

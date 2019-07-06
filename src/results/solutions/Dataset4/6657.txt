@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -265,9 +264,9 @@ public class SimpleIdCache extends AbstractIndexComponent implements IdCache, Se
 
     void onRemoval(SimpleIdReaderCache readerCache) {
         if (readerCache.shardId != null) {
-shard.idCache().onRemoval(readerCache.sizeInBytes());
+            IndexShard shard = indexService.shard(readerCache.shardId.id());
             if (shard != null) {
-                shard.idCache().onCached(readerCache.sizeInBytes());
+shard.idCache().onRemoval(readerCache.sizeInBytes());
             }
         }
     }

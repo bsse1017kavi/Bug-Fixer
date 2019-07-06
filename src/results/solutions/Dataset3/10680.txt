@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -416,9 +415,9 @@ public abstract class CommonXml implements XMLElementReader<List<ModelNode>>, XM
                                 throw unexpectedAttribute(reader, i);
                             }
                             if (setBoottime) {
-setBoottime = true;
+                                throw ParseUtils.duplicateAttribute(reader, BOOT_TIME);
                             }
-                            setValue = true;
+setBoottime = true;
                             SystemPropertyResourceDefinition.BOOT_TIME.parseAndSetParameter(val, op, reader);
                             break;
                         }

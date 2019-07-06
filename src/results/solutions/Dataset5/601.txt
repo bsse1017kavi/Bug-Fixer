@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -47,9 +46,9 @@ public class AbsoluteHref extends WebComponent
         String href = tag.getString("href");
         if (href.charAt(0) != '/')
         {
-String urlPrefix = getPage().urlFor("");
+            WebRequestCycle hcycle = (WebRequestCycle)getRequestCycle();
             String requestUrl = ((WebRequest)hcycle.getRequest()).getHttpServletRequest().getRequestURL().toString();
-            String urlPrefix = hcycle.urlPrefix().toString();
+String urlPrefix = getPage().urlFor("");
             int idx = requestUrl.indexOf(urlPrefix);
             if (idx > 0)
             {

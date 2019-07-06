@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -105,9 +104,9 @@ public class AnalyzerMapper implements Mapper, InternalMapper, RootMapper {
         if (path != null) {
             String value = null;
             List<IndexableField> fields = context.doc().getFields();
-if (field.name().equals(path)) {
+            for (int i = 0, fieldsSize = fields.size(); i < fieldsSize; i++) {
                 IndexableField field = fields.get(i);
-                if (field.name() == path) {
+if (field.name().equals(path)) {
                     value = field.stringValue();
                     break;
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -482,9 +481,9 @@ public class TestDataCacheBehavesIdentical extends AbstractTestCase {
         assertEquals(useDataCache, dataCache.contains(PObject.class, oid));
         
         // delete the record in the database in a separate transaction using
-String sql = "DELETE FROM PObject WHERE id="+oid;
+        // native SQL so that the in-memory instance is not altered 
         em.getTransaction().begin();
-        String sql = "DELETE FROM POBJECT WHERE id="+oid;
+String sql = "DELETE FROM PObject WHERE id="+oid;
         em.createNativeQuery(sql).executeUpdate();
         em.getTransaction().commit();
         

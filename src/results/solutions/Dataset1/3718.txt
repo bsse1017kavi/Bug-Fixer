@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.memory;
 
 /**
@@ -296,9 +295,9 @@ public class PatternAnalyzer extends Analyzer {
           System.arraycopy(buffer, 0, output, len, n);
         }
         len += n;
-return new String(output, 0, len);
+      }
 
-      return new String(output, 0, output.length);
+return new String(output, 0, len);
     } finally {
       if (input != null) input.close();
     }

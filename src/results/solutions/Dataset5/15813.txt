@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -215,9 +214,9 @@ public class SpringBeanLocator implements IProxyTargetLocator
 	/**
 	 * @return bean class this locator is configured with
 	 */
-Class< ? > clazz = beanTypeCache == null ? null : beanTypeCache.get();
+	public Class< ? > getBeanType()
 	{
-		Class< ? > clazz = beanTypeCache == null ? null : (Class< ? >)beanTypeCache.get();
+Class< ? > clazz = beanTypeCache == null ? null : beanTypeCache.get();
 		if (clazz == null)
 		{
 			beanTypeCache = new WeakReference<Class< ? >>(clazz = WicketObjects

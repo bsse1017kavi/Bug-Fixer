@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ import org.apache.openjpa.persistence.kernel.TestIndirectRecursion;
 @FetchGroups( {
         @FetchGroup(name = "State_OutgoingTransitions", attributes = { @FetchAttribute(name = "outgoingTransitions") }),
         @FetchGroup(name = "State_IncomingTransitions", attributes = { @FetchAttribute(name = "incomingTransitions")})})
-@GeneratedValue(strategy = GenerationType.AUTO)
+public class State implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(length = 64)

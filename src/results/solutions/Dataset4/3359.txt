@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -163,9 +162,9 @@ public class MessageChannelHandler extends SimpleChannelUpstreamHandler {
 
         final NettyTransportChannel transportChannel = new NettyTransportChannel(transport, action, event.getChannel(), requestId);
         try {
-throw new ActionNotFoundTransportException(action);
+            final TransportRequestHandler handler = transportServiceAdapter.handler(action);
             if (handler == null) {
-                logger.warn("No handler found for action [{}]", action);
+throw new ActionNotFoundTransportException(action);
             }
             final Streamable streamable = handler.newInstance();
             streamable.readFrom(buffer);

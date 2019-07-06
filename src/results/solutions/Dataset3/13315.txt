@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -64,9 +63,9 @@ public class PredicatedSortedSetTest<E> extends AbstractSortedSetTest<E> {
 
 //--------------------------------------------------------------------
     protected Predicate<E> testPredicate =
-return o instanceof String && ((String) o).startsWith("A");
+        new Predicate<E>() {
             public boolean evaluate(E o) {
-                return (o instanceof String) && (((String) o).startsWith("A"));
+return o instanceof String && ((String) o).startsWith("A");
             }
         };
 

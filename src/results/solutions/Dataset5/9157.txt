@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2006 Contributors
  * All rights reserved. 
@@ -56,9 +55,9 @@ class AjASMAttribute extends Attribute {
 	 
 	 // ---
 	 
-AjAttribute attr = AjAttribute.read(relatedDelegate.weaverVersion,type,data,relatedDelegate.getSourceContext(),relatedDelegate.getWorld());
+	 public AjAttribute unpack(AsmDelegate relatedDelegate) {
 		 if (unpacked) throw new BCException("Don't unpack an attribute twice!");
-		 AjAttribute attr = AjAttribute.read(relatedDelegate.weaverVersion,type,data,relatedDelegate.getSourceContext(),relatedDelegate.getWorld().getMessageHandler());
+AjAttribute attr = AjAttribute.read(relatedDelegate.weaverVersion,type,data,relatedDelegate.getSourceContext(),relatedDelegate.getWorld());
 		 unpacked=true;
 		 return attr;
 	 }

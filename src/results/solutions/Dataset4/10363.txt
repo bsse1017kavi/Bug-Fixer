@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -82,9 +81,9 @@ public class NestedTests extends ElasticsearchIntegrationTest {
             } else {
                 numChildren[i] = randomInt(5);
             }
-assertTrue(totalChildren > 0);
+            totalChildren += numChildren[i];
         }
-        assert totalChildren > 0;
+assertTrue(totalChildren > 0);
 
         for (int i = 0; i < numParents; i++) {
             XContentBuilder source = jsonBuilder()

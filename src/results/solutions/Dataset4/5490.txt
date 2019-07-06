@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class CachedDfSource extends Searcher {
     }
 
     public int docFreq(Term term) {
-throw new IllegalArgumentException("df for term " + term + " not available");
+        int df = dfs.dfMap().get(term);
         if (df == -1) {
-            throw new IllegalArgumentException("df for term " + term.text() + " not available");
+throw new IllegalArgumentException("df for term " + term + " not available");
         }
         return df;
     }

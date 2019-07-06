@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -140,9 +139,9 @@ public class JDBCBrokerFactory
         JDBCConfiguration conf = (JDBCConfiguration) getConfiguration();
         String action = conf.getSynchronizeMappings();
         if (action == null || action.length() == 0)
-Collection classes = conf.getMetaDataRepositoryInstance().
+            return;
 
-        Collection classes = conf.getMetaDataRepository().
+Collection classes = conf.getMetaDataRepositoryInstance().
             loadPersistentTypes(false, loader);
         if (classes.isEmpty())
             return;

@@ -1,4 +1,3 @@
-
 /*
  * HelpIndex.java - Index for help searching feature
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -128,9 +127,9 @@ public class HelpIndex
 		while(enum.hasMoreElements())
 		{
 			ZipEntry entry = (ZipEntry)enum.nextElement();
-if(lname.endsWith(".html")/*  || lname.endsWith(".txt") */)
+			String name = entry.getName();
 			String lname = name.toLowerCase();
-			if(lname.endsWith(".html") || lname.endsWith(".txt"))
+if(lname.endsWith(".html")/*  || lname.endsWith(".txt") */)
 			{
 				// only works for jEdit plugins
 				String url = "jeditresource:/" +

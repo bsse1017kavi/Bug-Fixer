@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -100,9 +99,9 @@ public class RayPickRagdollTest extends BaseBulletTest {
 				btRigidBody body = (btRigidBody)(cb.getCollisionObject());
 				if (body != null && !body.isStaticObject() && !body.isKinematicObject()) {
 					pickedBody = body;
-cb.getHitPointWorld(tmpV);
+					body.setActivationState(Collision.DISABLE_DEACTIVATION);
 
-					tmpV.set(cb.getHitPointWorld().getFloats());
+cb.getHitPointWorld(tmpV);
 					tmpV.mul(body.getCenterOfMassTransform().inv());
 
 					pickConstraint = new btPoint2PointConstraint(body, tmpV);

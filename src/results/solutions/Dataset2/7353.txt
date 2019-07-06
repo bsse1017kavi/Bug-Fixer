@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2002-2003, Simon Nieuviarts
  *
@@ -102,9 +101,9 @@ public class ClusterIdFactory {
         while (n > 0) {
             n--;
             localIdArray[9 - n] = (byte) (d & 0xff);
-localId = ClusterId.toClusterId(localIdArray);
+            d >>= 8;
         }
-        localId = new ClusterId(localIdArray);
+localId = ClusterId.toClusterId(localIdArray);
         SecureRandom.setSeed(localIdArray);
     }
 

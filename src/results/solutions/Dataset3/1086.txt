@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -467,9 +466,9 @@ public class StandaloneXml extends CommonXml implements ManagementXml.Delegate {
                     EnumSet.of(Element.CONTENT, Element.FS_ARCHIVE, Element.FS_EXPLODED));
             element = nextElement(reader, namespace);
         }
-parseDeploymentOverlays(reader, namespace, new ModelNode(), list, true, true);
+
         if (element == Element.DEPLOYMENT_OVERLAYS) {
-            parseDeploymentOverlays(reader, namespace, new ModelNode(), list);
+parseDeploymentOverlays(reader, namespace, new ModelNode(), list, true, true);
             element = nextElement(reader, namespace);
         }
         if (element != null) {

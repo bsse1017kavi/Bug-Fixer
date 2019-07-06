@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 Versant Corp.
  * All rights reserved. This program and the accompanying materials
@@ -35,9 +34,9 @@ public class ServiceURLAdapter {
 
 	private void setURI(ServiceURL aServiceURL) {
 		StringBuffer buf = new StringBuffer();
-protocol = "unknown"; //$NON-NLS-1$
+		String protocol = aServiceURL.getProtocol();
 		if (protocol == null) {
-			protocol = "unknown";
+protocol = "unknown"; //$NON-NLS-1$
 		}
 		buf.append(protocol);
 		buf.append("://"); //$NON-NLS-1$

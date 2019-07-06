@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -257,9 +256,9 @@ public class TypeUtilsTest<B> {
         delegateBooleanAssertion(types, 8, 9, true);
         list8 = (List<Object>[]) list9;
         delegateBooleanAssertion(types, 9, 8, false);
-list8 = (List<Object>[]) list10; // NOTE cast is required by Sun Jave, but not by Eclipse
+        list10 = list8;
         delegateBooleanAssertion(types, 8, 10, true);
-        list8 = list10;
+list8 = (List<Object>[]) list10; // NOTE cast is required by Sun Jave, but not by Eclipse
         delegateBooleanAssertion(types, 10, 8, false);
         // list11 = list8;
         delegateBooleanAssertion(types, 8, 11, false);

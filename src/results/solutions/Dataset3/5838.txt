@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class ServiceActivator implements org.jboss.msc.service.ServiceActivator 
         final LookupService rebindService = new LookupService("BeanWithSimpleInjected");
         final Injector<Context> injector = rebindService.getLookupContextInjector();
 
-.addDependency(ContextNames.contextServiceNameOfModule("managedbean-example", "managedbean-example"), NamingStore.class, new Injector<NamingStore>() {
+        serviceTarget.addService(ServiceName.JBOSS.append("BeanWithSimpleInjected", "rebind"), rebindService)
             .addDependency(ServiceName.JBOSS.append("deployment", "unit","managedbean-example.ear", "managedbean-example.jar", "component", "BeanWithSimpleInjected","START"))
-            .addDependency(ContextNames.contextServiceNameOfModule("managedbean-example.ear", "managedbean-example.jar"), NamingStore.class, new Injector<NamingStore>() {
+.addDependency(ContextNames.contextServiceNameOfModule("managedbean-example", "managedbean-example"), NamingStore.class, new Injector<NamingStore>() {
                 public void inject(final NamingStore value) throws InjectionException {
                     try {
                         injector.inject((Context) value.lookup(new CompositeName()));

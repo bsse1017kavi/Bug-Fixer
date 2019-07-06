@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -358,9 +357,9 @@ public class TestBooleanMinShouldMatch extends LuceneTestCase {
               // check if scores match
               assertEquals("Doc " + id + " scores don't match\n"
                   + CheckHits.topdocsString(top1,0,0)
-score, otherScore, CheckHits.explainToleranceDelta(score, otherScore));
+                  + CheckHits.topdocsString(top2,0,0)
                   + "for query:" + q2.toString(),
-                  score, otherScore, 1.0e-6f);
+score, otherScore, CheckHits.explainToleranceDelta(score, otherScore));
             }
           }
 

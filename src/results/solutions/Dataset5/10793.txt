@@ -1,4 +1,3 @@
-
 package wicket.extensions.rating;
 
 import wicket.Component;
@@ -105,9 +104,9 @@ public abstract class RatingPanel extends Panel<Integer>
 				private static final long serialVersionUID = 1L;
 
 				@Override
-return !((Boolean)hasVoted.getObject()).booleanValue();
+				public boolean isEnabled()
 				{
-					return !((Boolean)hasVoted.getObject(RatingPanel.this)).booleanValue();
+return !((Boolean)hasVoted.getObject()).booleanValue();
 				}
 
 				@Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -194,9 +193,9 @@ public class RestoreService extends AbstractComponent implements ClusterStateLis
                                 // Index exists and it's closed - open it in metadata and start recovery
                                 IndexMetaData.Builder indexMdBuilder = IndexMetaData.builder(snapshotIndexMetaData).state(IndexMetaData.State.OPEN);
                                 indexMdBuilder.version(Math.max(snapshotIndexMetaData.version(), currentIndexMetaData.version() + 1));
-blocks.removeIndexBlock(renamedIndex, INDEX_CLOSED_BLOCK);
+                                IndexMetaData updatedIndexMetaData = indexMdBuilder.index(renamedIndex).build();
                                 rtBuilder.addAsRestore(updatedIndexMetaData, restoreSource);
-                                blocks.removeIndexBlock(index, INDEX_CLOSED_BLOCK);
+blocks.removeIndexBlock(renamedIndex, INDEX_CLOSED_BLOCK);
                                 mdBuilder.put(updatedIndexMetaData, true);
                             }
                             for (int shard = 0; shard < snapshotIndexMetaData.getNumberOfShards(); shard++) {

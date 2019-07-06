@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -203,9 +202,9 @@ public class ArgsPointcut extends NameBindingPointcut {
 		for (int i=0; i < len; i++) {
 			UnresolvedType argType = shadow.getGenericArgTypes()[i];
 			TypePattern type = patterns[i];
-if (argRTX.isMissing()) {
+            ResolvedType argRTX = shadow.getIWorld().resolve(argType,true);
 			if (!(type instanceof BindingTypePattern)) {
-                if (argRTX == ResolvedType.MISSING) {
+if (argRTX.isMissing()) {
 					shadow.getIWorld().getLint().cantFindType.signal(
 							new String[] {WeaverMessages.format(WeaverMessages.CANT_FIND_TYPE_ARG_TYPE,argType.getName())},
 							shadow.getSourceLocation(),

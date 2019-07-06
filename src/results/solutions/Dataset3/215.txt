@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -93,9 +92,9 @@ public class HostProcessReloadHandler extends ProcessReloadHandler<HostRunningMo
             }
 
             @Override
-runningModeControl.setReloaded();
+            public void doReload(HostRunningModeControl runningModeControl) {
                 runningModeControl.setRunningMode(adminOnly ? RunningMode.ADMIN_ONLY : RunningMode.NORMAL);
-                runningModeControl.setReloaded(true);
+runningModeControl.setReloaded();
                 runningModeControl.setUseCurrentConfig(useCurrentHostConfig);
                 runningModeControl.setUseCurrentDomainConfig(useCurrentDomainConfig);
             }

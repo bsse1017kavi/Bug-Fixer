@@ -1,4 +1,3 @@
-
 /**
  *  Derby - Class org.apache.derbyTesting.functionTests.tests.lang.CollationTest2
  *  
@@ -1533,9 +1532,9 @@ public class CollationTest2 extends BaseJDBCTestCase
         doExportTable("APP", "EMPTY_TABLE", emptyFileName, null, null, "UTF-16");
         commit();
         // bulk insert with replace to empty table/one index from an empty file 
-"APP", "EMPTY_TABLE", emptyFileName, "|", "`", null, 1);
+        // import empty_file.dat into EMPTY_TABLE 
         doImportTable(
-                "APP", "EMPTY_TABLE", emptyFileName, "|", "``", null, 1);
+"APP", "EMPTY_TABLE", emptyFileName, "|", "`", null, 1);
 
         commit();
 

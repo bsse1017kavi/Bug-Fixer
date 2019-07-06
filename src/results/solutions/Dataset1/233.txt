@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.pulsing;
 
 /**
@@ -329,9 +328,9 @@ public class PulsingPostingsReaderImpl extends PostingsReaderBase {
             int lastPos = 0;
             for(int posIndex=0;posIndex<freqs[i];posIndex++) {
               if (positionDeltas.length == numPositions) {
-final int pos = positions[posIndex].pos;
+                positionDeltas = ArrayUtil.grow(positionDeltas, 1+numPositions);
               }
-              final int pos = positions[i].pos;
+final int pos = positions[posIndex].pos;
               positionDeltas[numPositions++] = pos - lastPos;
               lastPos = pos;
             }

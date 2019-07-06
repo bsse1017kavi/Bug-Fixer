@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -47,9 +46,9 @@ public class PersistenceExceptions
      * the correct exception translation as well as roll back the
      * current transaction when for all but {@link NoResultException}
      * and {@link NonUniqueResultException} in accordance with
-public static RuntimeExceptionTranslator getRollbackTranslator
+     * section 3.7 of the EJB 3.0 specification.
      */
-    static RuntimeExceptionTranslator getRollbackTranslator
+public static RuntimeExceptionTranslator getRollbackTranslator
         (final OpenJPAEntityManager em) {
         return new RuntimeExceptionTranslator() {
             private boolean throwing = false;

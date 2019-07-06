@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ import java.util.Map;
  * @author <a href="mailto:david.lloyd@redhat.com">David M. Lloyd</a>
  */
 public class ResourceInjectionAnnotationParsingProcessor implements DeploymentUnitProcessor {
-public static final Map<String, String> FIXED_LOCATIONS;
+    private static final DotName RESOURCE_ANNOTATION_NAME = DotName.createSimple(Resource.class.getName());
     private static final DotName RESOURCES_ANNOTATION_NAME = DotName.createSimple(Resources.class.getName());
-    private static final Map<String, String> FIXED_LOCATIONS;
+public static final Map<String, String> FIXED_LOCATIONS;
 
     static {
         final Map<String, String> locations = new HashMap<String, String>();

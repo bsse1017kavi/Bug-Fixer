@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class NestedBuilder extends AggregationBuilder<NestedBuilder> {
 
     @Override
     protected XContentBuilder internalXContent(XContentBuilder builder, Params params) throws IOException {
-throw new SearchSourceBuilderException("nested path must be set on nested aggregation [" + getName() + "]");
+        builder.startObject();
         if (path == null) {
-            throw new SearchSourceBuilderException("nested path must be set on nested aggregation [" + name + "]");
+throw new SearchSourceBuilderException("nested path must be set on nested aggregation [" + getName() + "]");
         }
         builder.field("path", path);
         return builder.endObject();

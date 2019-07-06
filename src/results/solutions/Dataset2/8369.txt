@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.decorators;
 
 /*******************************************************************************
@@ -119,9 +118,9 @@ class LightweightDecoratorManager {
 	void shutdown() {
 		//Disable all fo the enabled decorators 
 		//so as to force a dispose of thier decorators
-lightweightDefinitions[i].setEnabled(false);
+		for (int i = 0; i < lightweightDefinitions.length; i++) {
 			if (lightweightDefinitions[i].isEnabled())
-				lightweightDefinitions[i].setEnabledWithErrorHandling(false);
+lightweightDefinitions[i].setEnabled(false);
 		}
 		overlayCache.disposeAll();
 	}

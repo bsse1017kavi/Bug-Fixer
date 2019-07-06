@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -187,9 +186,9 @@ public class CliClient
             // get the column name
             String columnName = CliCompiler.getColumn(columnFamilySpec, 0);
 
-value.getBytes(), System.currentTimeMillis(), 1);
+            // do the insert
             thriftClient_.insert(tableName, key, columnFamily + ":" + columnName,
-                                 value.getBytes(), System.currentTimeMillis(), true);
+value.getBytes(), System.currentTimeMillis(), 1);
 
             css_.out.println("Value inserted.");
         }

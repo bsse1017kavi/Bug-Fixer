@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -300,9 +299,9 @@ public class StandaloneMockMvcBuilder extends DefaultMockMvcBuilder<StandaloneMo
 	 * In a standalone setup there is no support for placeholder values embedded in
 	 * request mappings. This method allows manually provided placeholder values so they
 	 * can be resolved. Alternatively consider creating a test that initializes a
-public StandaloneMockMvcBuilder addPlaceHolderValue(String name, String value) {
+	 * {@link WebApplicationContext}.
 	 */
-	public StandaloneMockMvcBuilder addPlaceHolderValues(String name, String value) {
+public StandaloneMockMvcBuilder addPlaceHolderValue(String name, String value) {
 		this.placeHolderValues.put(name, value);
 		return this;
 	}

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -33,9 +32,9 @@ public class Constants {
 
     public static final String DOMAIN = "jboss.model";
     public static final ObjectName ROOT_MODEL_NAME;
-ROOT_MODEL_NAME = ObjectName.getInstance(Constants.DOMAIN, "management-root", "server");
+    static {
         try {
-            ROOT_MODEL_NAME = ObjectName.getInstance(Constants.DOMAIN, "type", "root");
+ROOT_MODEL_NAME = ObjectName.getInstance(Constants.DOMAIN, "management-root", "server");
         } catch (MalformedObjectNameException e) {
             throw new RuntimeException(e);
         }

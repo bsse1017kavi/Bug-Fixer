@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -301,9 +300,9 @@ public class JMSSubsystemParser implements XMLStreamConstants, XMLElementReader<
                     } default: {
                         throw ParseUtils.unexpectedAttribute(reader, i);
                     }
-if(connector == null) {
+                }
             }
-            if(connector != null) {
+if(connector == null) {
                 throw ParseUtils.missingRequired(reader, Collections.singleton(Attribute.CONNECTOR_NAME));
             }
             final Element element = Element.forName(reader.getLocalName());

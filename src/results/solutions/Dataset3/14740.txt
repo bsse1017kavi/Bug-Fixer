@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,7 +45,7 @@ public interface RemotingLogger extends BasicLogger {
      */
     RemotingLogger ROOT_LOGGER = Logger.getMessageLogger(RemotingLogger.class, RemotingLogger.class.getPackage().getName());
 
-void listeningOnSocket(String address);
+    @LogMessage(level = INFO)
     @Message(id = 17100, value = "Listening on %s")
-    void listeningOnSocket(InetSocketAddress address);
+void listeningOnSocket(String address);
 }

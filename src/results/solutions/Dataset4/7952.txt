@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -183,9 +182,9 @@ public class TranslogService extends AbstractIndexShardComponent {
         private void reschedule() {
             future = threadPool.schedule(interval, ThreadPool.Names.SAME, this);
         }
-threadPool.executor(ThreadPool.Names.FLUSH).execute(new Runnable() {
+
         private void asyncFlushAndReschedule() {
-            threadPool.executor(ThreadPool.Names.MANAGEMENT).execute(new Runnable() {
+threadPool.executor(ThreadPool.Names.FLUSH).execute(new Runnable() {
                 @Override
                 public void run() {
                     try {

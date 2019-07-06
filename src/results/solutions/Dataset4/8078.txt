@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class GeoPointDoubleArrayIndexFieldData extends AbstractGeoPointIndexFiel
                 lat.add(point.getLat());
                 lon.add(point.getLon());
             }
-if (!(build.isMultiValued() || CommonSettings.getMemoryStorageHint(fieldDataType) == CommonSettings.MemoryStorageFormat.ORDINALS)) {
+
             Ordinals build = builder.build(fieldDataType.getSettings());
-            if (!build.isMultiValued() && CommonSettings.removeOrdsOnSingleValue(fieldDataType)) {
+if (!(build.isMultiValued() || CommonSettings.getMemoryStorageHint(fieldDataType) == CommonSettings.MemoryStorageFormat.ORDINALS)) {
                 Docs ordinals = build.ordinals();
                 int maxDoc = reader.maxDoc();
                 BigDoubleArrayList sLat = new BigDoubleArrayList(reader.maxDoc());

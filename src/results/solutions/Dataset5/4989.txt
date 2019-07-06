@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class FTPSampler extends AbstractSampler implements Interruptible {
     public final static String UPLOAD_FILE = "FTPSampler.upload"; // $NON-NLS-1$
 
     // Should the file data be saved in the response?
-private transient volatile FTPClient savedClient; // used for interrupting the sampler
+    public final static String SAVE_RESPONSE = "FTPSampler.saveresponse"; // $NON-NLS-1$
 
-    private volatile FTPClient savedClient;
+private transient volatile FTPClient savedClient; // used for interrupting the sampler
 
     public FTPSampler() {
     }

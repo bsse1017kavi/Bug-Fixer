@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -184,9 +183,9 @@ public class FileStreamTask extends WrappedRunnable
         MessagingService.validateMagic(input.readInt());
         int msheader = input.readInt();
         assert MessagingService.getBits(msheader, 3, 1) == 0 : "Stream received before stream reply";
-input.readInt(); // Read total size
+        int version = MessagingService.getBits(msheader, 15, 8);
 
-        int totalSize = input.readInt();
+input.readInt(); // Read total size
         String id = input.readUTF();
         Header header = Header.serializer().deserialize(input, version);
 

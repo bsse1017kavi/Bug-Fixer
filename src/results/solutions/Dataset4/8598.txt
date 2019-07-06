@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.scenes.scene2d.ui;
 
 import com.badlogic.gdx.graphics.Color;
@@ -82,9 +81,9 @@ public class Container<T extends Actor> extends WidgetGroup {
 	public void setBackground (Drawable background, boolean adjustPadding) {
 		if (this.background == background) return;
 		this.background = background;
-pad(Value.zero);
+		if (adjustPadding) {
 			if (background == null)
-				pad(null);
+pad(Value.zero);
 			else
 				pad(background.getTopHeight(), background.getLeftWidth(), background.getBottomHeight(), background.getRightWidth());
 			invalidate();

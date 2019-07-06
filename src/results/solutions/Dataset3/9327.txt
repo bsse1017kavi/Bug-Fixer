@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -255,9 +254,9 @@ public abstract class RequestMappingInfoHandlerMapping extends AbstractHandlerMe
 	private Set<String> getRequestParams(HttpServletRequest request, Set<RequestMappingInfo> partialMatches) {
 		for (RequestMappingInfo partialMatch : partialMatches) {
 			ParamsRequestCondition condition = partialMatch.getParamsCondition();
-for (NameValueExpression<String> expr : condition.getExpressions()) {
+			if (!CollectionUtils.isEmpty(condition.getExpressions()) && (condition.getMatchingCondition(request) == null)) {
 				Set<String> expressions = new HashSet<String>();
-				for (NameValueExpression expr : condition.getExpressions()) {
+for (NameValueExpression<String> expr : condition.getExpressions()) {
 					expressions.add(expr.toString());
 				}
 				return expressions;

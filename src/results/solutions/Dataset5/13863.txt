@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -429,9 +428,9 @@ public class Proxy extends Thread {
                 KeyToolUtils.generateHostCert(certFile, keyStorePass, subject, CERT_VALIDITY);
                 log.info(port + "Created keystore in " + canonicalPath);
             } else {
-if(certFile.exists() && !certFile.delete()) {
+                log.info(port + "Generating standard keypair in " + canonicalPath);
                 // Must not exist
-                if(!certFile.delete()) {
+if(certFile.exists() && !certFile.delete()) {
                     throw new IOException("Could not delete file:"+certFile.getAbsolutePath()+", this is needed for certificate generation");
                 }
                 KeyToolUtils.genkeypair(certFile, JMETER_SERVER_ALIAS, keyStorePass, CERT_VALIDITY, null, null);                    

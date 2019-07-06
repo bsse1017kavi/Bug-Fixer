@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -404,9 +403,9 @@ public abstract class SolrQueryParserBase {
     // Use the analyzer to get all the tokens, and then build a TermQuery,
     // PhraseQuery, or nothing based on the term count
 
-source = analyzer.tokenStream(field, queryText);
+    TokenStream source;
     try {
-      source = analyzer.tokenStream(field, new StringReader(queryText));
+source = analyzer.tokenStream(field, queryText);
       source.reset();
     } catch (IOException e) {
       throw new SyntaxError("Unable to initialize TokenStream to analyze query text", e);

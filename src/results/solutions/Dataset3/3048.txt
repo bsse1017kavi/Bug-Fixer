@@ -1,5 +1,4 @@
 
-
 package org.springframework.samples.petclinic.web;
 
 import java.util.Collection;
@@ -46,9 +45,9 @@ public class EditPetForm {
 		return this.clinic.getPetTypes();
 	}
 
-dataBinder.setDisallowedFields(new String[] {"id"});
+	@InitBinder
 	public void setAllowedFields(WebDataBinder dataBinder) {
-		dataBinder.setDisallowedFields("id");
+dataBinder.setDisallowedFields(new String[] {"id"});
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

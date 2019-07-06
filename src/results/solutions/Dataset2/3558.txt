@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -67,9 +66,9 @@ public final class SystemMenuNewEditor extends Action implements ISelfUpdatingAc
 						String editorId = editor.getSite().getId();
 						if (editorId != null) {
 							try {
-WorkbenchPage.MATCH_NONE);
+								((WorkbenchPage) page).openEditor(editor
 										.getEditorInput(), editorId, true,
-										false);
+WorkbenchPage.MATCH_NONE);
 							} catch (PartInitException e) {
 								DialogUtil.openError(page.getWorkbenchWindow()
 										.getShell(), WorkbenchMessages.Error, e

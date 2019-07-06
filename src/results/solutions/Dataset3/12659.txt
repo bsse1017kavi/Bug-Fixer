@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class DataSourceAdd extends AbstractDataSourceAdd {
         try {
             dataSource = from(operation);
         } catch (ValidateException e) {
-+ "]\n reason:" + e.getLocalizedMessage()));
+            e.printStackTrace();
             throw new OperationFailedException(e, new ModelNode().set("Failed to create DataSource instance for [" + operation
-                    + "]"));
++ "]\n reason:" + e.getLocalizedMessage()));
         }
         return new LocalDataSourceService(jndiName, dataSource);
     }

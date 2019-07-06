@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -759,9 +758,9 @@ public class ClassScope extends Scope {
 	
 	private ReferenceBinding findSupertype(TypeReference typeReference) {
 		typeReference.aboutToResolve(this); // allows us to trap completion & selection nodes
-compilationUnitScope().recordQualifiedReference(compoundName);
+		char[][] compoundName = typeReference.getTypeName();
 // replaces 2 calls to addNamespaceReference
-		compilationUnitScope().recordReference(compoundName);
+compilationUnitScope().recordQualifiedReference(compoundName);
 		SourceTypeBinding sourceType = referenceContext.binding;
 		int size = compoundName.length;
 		int n = 1;

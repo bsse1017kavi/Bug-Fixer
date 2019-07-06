@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -59,9 +58,9 @@ protected AbstractImageBuilder(JavaBuilder javaBuilder) {
 	this.outputFolder = javaBuilder.outputFolder;
 	this.sourceFolders = javaBuilder.sourceFolders;
 	this.notifier = javaBuilder.notifier;
-this.nameEnvironment = new NameEnvironment(javaBuilder.classpath);
+
 	this.hasSeparateOutputFolder = !outputFolder.getFullPath().equals(javaBuilder.currentProject.getFullPath());
-	this.nameEnvironment = new NameEnvironment(javaBuilder.classpath, javaBuilder.lastState);
+this.nameEnvironment = new NameEnvironment(javaBuilder.classpath);
 	this.compiler = newCompiler();
 	this.newState = new State(javaBuilder);
 	this.workQueue = new WorkQueue();

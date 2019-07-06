@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -114,9 +113,9 @@ public class EJBClientClusterConfigurationTestCase {
 
     @Deployment(name = DEPLOYMENT_WITH_JBOSS_EJB_CLIENT_XML, managed = false, testable = false)
     @TargetsContainer(JBOSSAS_WITH_REMOTE_OUTBOUND_CONNECTION)
-ejbJar.addClasses(ClusteredStatefulNodeNameEcho.class, NonClusteredStatefulNodeNameEcho.class, NodeNameEcho.class, ApplicationSpecificClusterNodeSelector.class);
+    public static Archive createContainer2Deployment() {
         final JavaArchive ejbJar = ShrinkWrap.create(JavaArchive.class, MODULE_NAME + ".jar");
-        ejbJar.addClasses(ClusteredStatefulNodeNameEcho.class, NonClusteredStatefulNodeNameEcho.class, NodeNameEcho.class);
+ejbJar.addClasses(ClusteredStatefulNodeNameEcho.class, NonClusteredStatefulNodeNameEcho.class, NodeNameEcho.class, ApplicationSpecificClusterNodeSelector.class);
         ejbJar.addAsManifestResource(NonClusteredStatefulNodeNameEcho.class.getPackage(), "jboss-ejb-client.xml", "jboss-ejb-client.xml");
         return ejbJar;
     }

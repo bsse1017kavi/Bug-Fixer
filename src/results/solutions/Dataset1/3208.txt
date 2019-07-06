@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -275,9 +274,9 @@ class DocHelper {
         TEST_VERSION_CURRENT, analyzer).setSimilarity(similarity == null ? IndexSearcher.getDefaultSimilarity() : similarity));
     //writer.setNoCFSRatio(0.0);
     writer.addDocument(doc);
-writer.shutdown();
+    writer.commit();
     SegmentCommitInfo info = writer.newestSegment();
-    writer.close();
+writer.shutdown();
     return info;
   }
 

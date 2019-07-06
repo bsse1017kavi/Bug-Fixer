@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public abstract class AbstractDB2Dictionary
 
         // DB2-based databases have restrictions on having uncast parameters
         // in string functions
-stringLengthFunction = "LENGTH({0})";
+        toUpperCaseFunction = "UPPER(CAST({0} AS VARCHAR(1000)))";
         toLowerCaseFunction = "LOWER(CAST({0} AS VARCHAR(1000)))";
-        stringLengthFunction = "LENGTH(CAST({0} AS VARCHAR(1000)))";
+stringLengthFunction = "LENGTH({0})";
         concatenateFunction = "(CAST({0} AS VARCHAR(1000)))||"
             + "(CAST({1} AS VARCHAR(1000)))";
 

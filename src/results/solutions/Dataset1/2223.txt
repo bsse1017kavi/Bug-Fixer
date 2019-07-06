@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.component;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -323,9 +322,9 @@ public class HttpShardHandler extends ShardHandler {
 
         // Are we hosting the shard that this request is for, and are we active? If so, then handle it ourselves
         // and make it a non-distributed request.
-if (rb.slices.length == 1 && rb.slices[0] != null
+        String ourSlice = cloudDescriptor.getShardId();
         String ourCollection = cloudDescriptor.getCollectionName();
-        if (rb.slices.length == 1
+if (rb.slices.length == 1 && rb.slices[0] != null
             && ( rb.slices[0].equals(ourSlice) || rb.slices[0].equals(ourCollection + "_" + ourSlice) )  // handle the <collection>_<slice> format
             && ZkStateReader.ACTIVE.equals(cloudDescriptor.getLastPublished()) )
         {

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -175,9 +174,9 @@ public class DeltaProcessor {
 									// restore output location				
 									if (outputLocation == null) {
 										outputLocation = SetClasspathOperation.ReuseOutputLocation;
-project.setRawClasspath(fileEntries, outputLocation, null, true, false, project.getResolvedClasspath(true), true);
+									}
 									try {
-										project.setRawClasspath(fileEntries, outputLocation, null, true, false, project.getExpandedClasspath(true), true);
+project.setRawClasspath(fileEntries, outputLocation, null, true, false, project.getResolvedClasspath(true), true);
 									} catch (JavaModelException e) {
 									}
 								} catch (IOException e) {

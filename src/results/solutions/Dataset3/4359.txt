@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -300,9 +299,9 @@ public class RemoteStatelessFailoverTestCase extends ClusterAbstractTestCase {
         double minCalls = minPercentage * numCalls;
         for (String entry: entries) {
             int frequency = Collections.frequency(results, entry);
-log.info(String.format("All %d servers processed at least %f of calls", expectedServers, minCalls));
+            Assert.assertTrue(Integer.toString(frequency), frequency >= minCalls);
         }
-        System.out.println(String.format("All %d servers processed at least %f of calls", expectedServers, minCalls));
+log.info(String.format("All %d servers processed at least %f of calls", expectedServers, minCalls));
     }
 
     private void establishView(ViewChangeListener listener, String... members) throws InterruptedException {

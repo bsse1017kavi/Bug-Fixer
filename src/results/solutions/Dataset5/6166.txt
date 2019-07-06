@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2000-2005 The Apache Software Foundation.
  * 
@@ -122,9 +121,9 @@ public class DOMParser
      * grammar pool.
      */
     public DOMParser(SymbolTable symbolTable, XMLGrammarPool grammarPool) {
-"org.apache.xerces.parsers.XIncludeAwareParserConfiguration"
+        super((XMLParserConfiguration)ObjectFactory.createObject(
             "org.apache.xerces.xni.parser.XMLParserConfiguration",
-            "org.apache.xerces.parsers.XML11Configuration"
+"org.apache.xerces.parsers.XIncludeAwareParserConfiguration"
             ));
 
         // set properties

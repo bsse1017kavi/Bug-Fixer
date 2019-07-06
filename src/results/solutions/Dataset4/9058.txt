@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -860,9 +859,9 @@ public class IndicesRequestTests extends ElasticsearchIntegrationTest {
     }
     
     private static void assertAllRequestsHaveBeenConsumed() {
-assertThat(((InterceptingTransportService)transportService).requests.entrySet(), emptyIterable());
+        Iterable<TransportService> transportServices = internalCluster().getInstances(TransportService.class);
         for (TransportService transportService : transportServices) {
-            assertThat(((InterceptingTransportService)transportService).requests.isEmpty(), equalTo(true));
+assertThat(((InterceptingTransportService)transportService).requests.entrySet(), emptyIterable());
         }
     }
 

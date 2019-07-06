@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -158,9 +157,9 @@ public class FieldJsonQueryParser extends AbstractIndexComponent implements Json
         }
 
         try {
-return optimizeQuery(fixNegativeQueryIfNeeded(query));
+            Query query = queryParser.parse(queryString);
             query.setBoost(boost);
-            return fixNegativeQueryIfNeeded(query);
+return optimizeQuery(fixNegativeQueryIfNeeded(query));
         } catch (ParseException e) {
             throw new QueryParsingException(index, "Failed to parse query [" + queryString + "]", e);
         }

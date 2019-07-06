@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -136,9 +135,9 @@ public class UndeployWildcardTestCase {
             ctx.handleSafe("undeploy " + f.getName());
             if(ctx.getExitCode() == 0) {
                 if(!afterTestDeployments.remove(f.getName())) {
-buf.append("Undeployed unexpected content: ");
+                    if(buf == null) {
                         buf = new StringBuilder();
-                        buf.append("Undeployment unexpected content: ");
+buf.append("Undeployed unexpected content: ");
                         buf.append(f.getName());
                     } else {
                         buf.append(", ").append(f.getName());

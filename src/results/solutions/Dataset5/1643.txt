@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1496,9 +1495,9 @@ public class XSDHandler {
                                      fErrorReporter.getErrorHandler();
                 // Setting a parser property can be much more expensive
                 // than checking its value.  Don't set the ERROR_HANDLER
-!= fSchemaParser.getProperty(ERROR_HANDLER)) {
+                // property unless it's actually changed.
                 if (currErrorHandler
-                    == fSchemaParser.getProperty(ERROR_HANDLER)) {
+!= fSchemaParser.getProperty(ERROR_HANDLER)) {
                     fSchemaParser.setProperty(ERROR_HANDLER, currErrorHandler);
                 }
             }

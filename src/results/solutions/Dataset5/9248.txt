@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -127,9 +126,9 @@ public abstract class JSR223TestElement extends AbstractTestElement
 
         File scriptFile = new File(getFilename());
         if (scriptFile.exists()) {
-fileReader = new BufferedReader(new FileReader(scriptFile)); // TODO Charset ?
+            BufferedReader fileReader = null;
             try {
-                fileReader = new BufferedReader(new FileReader(scriptFile));
+fileReader = new BufferedReader(new FileReader(scriptFile)); // TODO Charset ?
                 return scriptEngine.eval(fileReader);
             } finally {
                 IOUtils.closeQuietly(fileReader);

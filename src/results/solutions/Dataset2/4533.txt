@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -91,9 +90,9 @@ public class TMResults extends AbstractTableModel {
       switch (col) {
       case 0:
 	if (d instanceof UMLClassDiagram) return "Class Diagram";
-return "Diagram";  //TODO
+	if (d instanceof UMLStateDiagram) return "State Diagram";
 	if (d instanceof UMLUseCaseDiagram) return "Use Case Diagram";
-	return "Diagram";  //needs-more-work
+return "Diagram";  //TODO
       case 1: return d.getName();
       case 2: return "N/A";
       case 3:

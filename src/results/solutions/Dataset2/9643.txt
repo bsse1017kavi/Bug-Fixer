@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -239,9 +238,9 @@ send(Message query) throws IOException {
 	}
 
 	query = (Message) query.clone();
-tsig.apply(query, null);
+	applyEDNS(query);
 	if (tsig != null)
-		query.setTSIG(tsig, Rcode.NOERROR, null);
+tsig.apply(query, null);
 
 	byte [] out = query.toWire(Message.MAXLENGTH);
 	int udpSize = maxUDPSize(query);

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1625,9 +1624,9 @@ class BcelClassWeaver implements IClassWeaver {
 		List shadowAccumulator) 
 	{
 		String methodName = invoke.getName(cpg);
-world.makeMethodSignature(clazz, invoke);
+		if (methodName.startsWith(NameMangler.PREFIX)) {
 			Member method =
-				BcelWorld.makeMethodSignature(clazz, invoke);
+world.makeMethodSignature(clazz, invoke);
 			ResolvedMember declaredSig = method.resolve(world);
 			//System.err.println(method + ", declaredSig: "  +declaredSig);
 			if (declaredSig == null) return;

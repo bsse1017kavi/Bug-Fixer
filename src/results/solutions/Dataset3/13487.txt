@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class PatchElementBuilder extends AbstractModificationBuilderTarget<Patch
     public PatchElement createElement(Patch.PatchType patchType) {
         assert patchId != null;
         assert provider != null;
-if (patchType == Patch.PatchType.UPGRADE) {
+
         if (element.getPatchType() == null) {
-            if (patchType == Patch.PatchType.CUMULATIVE) {
+if (patchType == Patch.PatchType.UPGRADE) {
                 element.setUpgrade("unknown");
             } else {
                 element.setNoUpgrade();

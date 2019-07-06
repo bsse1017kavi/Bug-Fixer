@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.SubqueryList
@@ -150,9 +149,9 @@ class SubqueryList extends QueryTreeNodeVector<SubqueryNode>
 	public boolean referencesSessionSchema()
 		throws StandardException
 	{
-if (sqn.referencesSessionSchema())
+        for (SubqueryNode sqn : this)
 		{
-            if (sqn.getResultSet().referencesSessionSchema())
+if (sqn.referencesSessionSchema())
 			{
 				return true;
 			}

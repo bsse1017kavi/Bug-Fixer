@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -809,9 +808,9 @@ public class StorageProxy implements StorageProxyMBean
 
     public static List<Row> getRangeSlice(RangeSliceCommand command, ConsistencyLevel consistency_level)
     throws IOException, UnavailableException, TimeoutException
-logger.debug("Command/ConsistencyLevel is {}/{}", command.toString(), consistency_level);
+    {
         if (logger.isDebugEnabled())
-            logger.debug(command.toString());
+logger.debug("Command/ConsistencyLevel is {}/{}", command.toString(), consistency_level);
         long startTime = System.nanoTime();
         List<Row> rows;
         // now scan until we have enough results

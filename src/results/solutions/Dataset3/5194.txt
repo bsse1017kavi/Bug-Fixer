@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -288,9 +287,9 @@ public final class ASHelper {
     }
 
     public static WSRefRegistry getWSRefRegistry(final DeploymentUnit unit) {
-refRegistry = WSRefRegistry.newInstance();
+        WSRefRegistry refRegistry = unit.getAttachment(WSAttachmentKeys.WS_REFREGISTRY);
         if (refRegistry == null) {
-            refRegistry = refRegistry.newInstance();
+refRegistry = WSRefRegistry.newInstance();
             unit.putAttachment(WSAttachmentKeys.WS_REFREGISTRY, refRegistry);
         }
         return refRegistry;

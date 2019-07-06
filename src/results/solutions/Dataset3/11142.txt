@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -110,9 +109,9 @@ public class SimpleModuleRegistrationTestCase {
         Resource resource = builder.getResource();
 
         // Setup the resolve context
-ResolveContext context = resolver.createResolveContext(env, Collections.singleton(resource), null);
+        XResolver resolver = getResolver();
         XEnvironment env = getEnvironment();
-        ResolveContext context = resolver.createResolverContext(env, Collections.singleton(resource), null);
+ResolveContext context = resolver.createResolveContext(env, Collections.singleton(resource), null);
 
         // Find the providers
         Map<Resource, List<Wire>> wiremap = resolver.resolve(context);

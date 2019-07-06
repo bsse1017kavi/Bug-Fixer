@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -279,9 +278,9 @@ int computeWidth (Control control, FormData data, boolean flushCache) {
 protected void layout (Composite composite, boolean flushCache) {
 	Rectangle rect = composite.getClientArea ();
 	int x = rect.x + marginLeft + marginWidth;
-int height = Math.max (0, rect.height - marginTop - 2 * marginHeight - marginBottom);
+	int y = rect.y + marginTop + marginHeight;
 	int width = Math.max (0, rect.width - marginLeft - 2 * marginWidth - marginRight);
-	int height = Math.max (0, rect.height - marginLeft - 2 * marginHeight - marginBottom);
+int height = Math.max (0, rect.height - marginTop - 2 * marginHeight - marginBottom);
 	layout (composite, true, x, y, width, height, flushCache);
 }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ class GenericOutboundConnectionResourceDefinition extends AbstractOutboundConnec
     static final GenericOutboundConnectionResourceDefinition INSTANCE = new GenericOutboundConnectionResourceDefinition();
 
 
-GenericOutboundConnectionAdd.INSTANCE, GenericOutboundConnectionRemoveHandler.INSTANCE);
+    private GenericOutboundConnectionResourceDefinition() {
         super(ADDRESS, RemotingExtension.getResourceDescriptionResolver(CommonAttributes.OUTBOUND_CONNECTION),
-                GenericOutboundConnectionAdd.INSTANCE, OutboundConnectionRemoveHandler.INSTANCE);
+GenericOutboundConnectionAdd.INSTANCE, GenericOutboundConnectionRemoveHandler.INSTANCE);
     }
 
     @Override

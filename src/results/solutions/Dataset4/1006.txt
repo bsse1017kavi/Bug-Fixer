@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -83,9 +82,9 @@ public class DepthTestAttribute extends Attribute {
 		return new DepthTestAttribute(this);
 	}
 
-int result = super.hashCode();
+	@Override
 	public int hashCode () {
-		int result = (int)type;
+int result = super.hashCode();
 		result = 971 * result + depthFunc;
 		result = 971 * result + NumberUtils.floatToRawIntBits(depthRangeNear);
 		result = 971 * result + NumberUtils.floatToRawIntBits(depthRangeFar);

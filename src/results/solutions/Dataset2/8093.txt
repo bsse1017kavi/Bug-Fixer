@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /**********************************************************************
@@ -184,9 +183,9 @@ public class WorkbenchEditorsDialog extends SelectionDialog {
 		//Save editors button
 		saveSelected = new Button(selectionButtons,SWT.PUSH);
 		saveSelected.setText(WorkbenchMessages.getString("WorkbenchEditorsDialog.saveSelected")); //$NON-NLS-1$
-saveItems(editorsTable.getSelection(),null);
+		saveSelected.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				saveItems(editorsTable.getItems(),null);
+saveItems(editorsTable.getSelection(),null);
 			}
 		});
 		//Select clean editors button

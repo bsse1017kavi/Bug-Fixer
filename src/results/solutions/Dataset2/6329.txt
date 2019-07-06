@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -37,9 +36,9 @@ public class ResetPerspectiveAction extends PerspectiveAction {
      * @param window the window
      */
     public ResetPerspectiveAction(IWorkbenchWindow window) {
-setActionDefinitionId(IWorkbenchCommandConstants.WINDOW_RESET_PERSPECTIVE);
+        super(window);
         setText(WorkbenchMessages.ResetPerspective_text);
-        setActionDefinitionId(IWorkbenchCommandConstants.WINDOW_RESETPERSPECTIVE);
+setActionDefinitionId(IWorkbenchCommandConstants.WINDOW_RESET_PERSPECTIVE);
         // @issue missing action id
         setToolTipText(WorkbenchMessages.ResetPerspective_toolTip); 
         window.getWorkbench().getHelpSystem().setHelp(this,

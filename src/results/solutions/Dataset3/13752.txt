@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -144,9 +143,9 @@ public class DataSourceEnable implements OperationStepHandler {
                         builder.addListener(verificationHandler);
 
 
-if (dataSourceCongServiceName.append("connection-properties").isParentOf(name)) {
+
                         for (ServiceName name : serviceNames) {
-                            if (dataSourceCongServiceName.append("connetion-properties").isParentOf(name)) {
+if (dataSourceCongServiceName.append("connection-properties").isParentOf(name)) {
                                 final ServiceController<?> dataSourceController = registry.getService(name);
                                 ConnectionPropertiesService connPropService = (ConnectionPropertiesService) dataSourceController.getService();
 

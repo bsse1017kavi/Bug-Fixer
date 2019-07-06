@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -255,9 +254,9 @@ public class IndicesStatusResponse extends BroadcastOperationResponse implements
                         builder.field(Fields.TIME_IN_MILLIS, gatewayRecoveryStatus.time().millis());
 
                         builder.startObject(Fields.INDEX);
-builder.field(Fields.SIZE_IN_BYTES, gatewayRecoveryStatus.indexSize().bytes());
+                        builder.field(Fields.PROGRESS, gatewayRecoveryStatus.indexRecoveryProgress());
                         builder.field(Fields.SIZE, gatewayRecoveryStatus.indexSize());
-                        builder.field(Fields.SIZE, gatewayRecoveryStatus.indexSize().bytes());
+builder.field(Fields.SIZE_IN_BYTES, gatewayRecoveryStatus.indexSize().bytes());
                         builder.field(Fields.REUSED_SIZE, gatewayRecoveryStatus.reusedIndexSize());
                         builder.field(Fields.REUSED_SIZE_IN_BYTES, gatewayRecoveryStatus.reusedIndexSize().bytes());
                         builder.field(Fields.EXPECTED_RECOVERED_SIZE, gatewayRecoveryStatus.expectedRecoveredIndexSize());

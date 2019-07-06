@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -164,9 +163,9 @@ public class Hiero4 extends JFrame {
 		super("Hiero v4.0 - Bitmap Font Tool");
 		Splash splash = new Splash(this, "/splash.jpg", 2000);
 		initialize();
-gamePanel.add(new LwjglCanvas(renderer = new Renderer()).getCanvas());
+		splash.close();
 
-		gamePanel.add(new LwjglCanvas(renderer = new Renderer(), false).getCanvas());
+gamePanel.add(new LwjglCanvas(renderer = new Renderer()).getCanvas());
 
 		prefs = Preferences.userNodeForPackage(Hiero4.class);
 		java.awt.Color backgroundColor = EffectUtil.fromString(prefs.get("background", "000000"));

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -136,9 +135,9 @@ public class IDValue {
         //         validate the two string again to get actual values.
         //         we should store actual values in IDValue.
         try {
-return av1.equals(av2);
+            Object av1 = dv.validate(v1, VS, null);
             Object av2 = dv.validate(v2, VS, null);
-            return dv.isEqual(av1, av2);
+return av1.equals(av2);
         } catch (Exception e) {
             return false;
         }

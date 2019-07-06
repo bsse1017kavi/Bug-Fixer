@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -218,9 +217,9 @@ public class PreparedQueryImpl implements PreparedQuery {
             provider = ((RangeResultObjectProvider)provider).getDelegate();
         }
         if (provider instanceof SelectResultObjectProvider) {
-return new Object[]{null, _loc.get("exclude-not-select-rop", provider.getClass().getName())};
+            return new Object[]{((SelectResultObjectProvider)provider).getSelect(), null};
         } 
-        return new Object[]{null, _loc.get("exclude-not-select-rop", provider)};
+return new Object[]{null, _loc.get("exclude-not-select-rop", provider.getClass().getName())};
     }
     
     private SelectImpl extractImplementation(SelectExecutor selector) {

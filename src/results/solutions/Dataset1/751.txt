@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.postingshighlight;
 
 /*
@@ -562,9 +561,9 @@ public class PostingsHighlighter {
           off.pos++;
           dp.nextPosition();
           start = dp.startOffset();
-if (start >= current.endOffset || end > contentLength) {
+          end = dp.endOffset();
         }
-        if (start >= current.endOffset) {
+if (start >= current.endOffset || end > contentLength) {
           pq.offer(off);
           break;
         }

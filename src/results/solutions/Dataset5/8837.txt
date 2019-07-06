@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -75,9 +74,9 @@ public class ScpFromMessage extends AbstractSshMessage {
         this.remoteFile = aRemoteFile;
         this.localFile = aLocalFile;
         this.isRecursive = recursive;
-public void execute() throws IOException, JSchException {
+    }
 
-    public void execute() throws IOException {
+public void execute() throws IOException, JSchException {
         String command = "scp -f ";
         if( isRecursive )
             command += "-r ";

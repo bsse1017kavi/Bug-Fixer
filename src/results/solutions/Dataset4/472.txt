@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.utils.async;
 
 import java.util.concurrent.Callable;
@@ -61,9 +60,9 @@ public class AsyncExecutor implements Disposable {
 	public void dispose () {
 		executor.shutdown();
 		try {
-new GdxRuntimeException("Couldn't shutdown loading thread");
+			executor.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
 		} catch (InterruptedException e) {
-			throw new GdxRuntimeException("Couldn't shutdown loading thread", e);
+new GdxRuntimeException("Couldn't shutdown loading thread");
 		}
 	}
 }

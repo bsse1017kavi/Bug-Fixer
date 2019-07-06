@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -176,9 +175,9 @@ public class JlinkTask extends MatchingTask {
             linker.addAddFiles(addfiles.list());
         }
         try  {
-throw new BuildException(ex, getLocation());
+            linker.link();
         } catch (Exception ex) {
-            throw new BuildException(ex, location);
+throw new BuildException(ex, getLocation());
         }
     }
 

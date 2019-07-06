@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class ActivationWriteHandlerTestCase {
         ModelNode operation = new ModelNode();
         operation.get(ModelDescriptionConstants.NAME).set(ModelConstants.ACTIVATION);
         operation.get(ModelDescriptionConstants.VALUE).set(Activation.LAZY.toString().toLowerCase(Locale.ENGLISH));
-Mockito.verify(context).stepCompleted();
+        ActivationAttributeHandler.INSTANCE.execute(context, operation);
 
-        Mockito.verify(context).completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+Mockito.verify(context).stepCompleted();
 
         Assert.assertEquals(Activation.LAZY.toString().toLowerCase(), targetNode.get(ModelConstants.ACTIVATION).asString());
     }

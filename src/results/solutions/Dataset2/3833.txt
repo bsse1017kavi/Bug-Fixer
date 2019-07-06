@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -71,9 +70,9 @@ public class QualifiedThisReference extends ThisReference {
 	}
 
 	public TypeBinding resolveType(BlockScope scope) {
-TypeBinding type = this.resolvedType = this.qualification.resolveType(scope, true /* check bounds*/);
+
 		constant = NotAConstant;
-		TypeBinding type = this.resolvedType = this.qualification.resolveType(scope);
+TypeBinding type = this.resolvedType = this.qualification.resolveType(scope, true /* check bounds*/);
 		if (type == null) return null;
 		// X.this is not a raw type as denoting enclosing instance
 		if (type.isRawType()) {

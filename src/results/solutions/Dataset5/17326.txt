@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1042,9 +1041,9 @@ public class Expressions {
                 literalType = Literal.TYPE_CLASS;
                 Literal lit = factory.newTypeLiteral(value, Literal.TYPE_CLASS);
                 ClassMetaData can = ((Types.Entity<X>)q.getRoot().getModel()).meta;
-lit.setMetaData(model.getRepository().getMetaData((Class<?>)value, null, true));
+                Class<?> candidate = can.getDescribedType();
                 if (candidate.isAssignableFrom((Class)value)) {
-                   lit.setMetaData(model.repos.getMetaData((Class<?>)value, null, true));
+lit.setMetaData(model.getRepository().getMetaData((Class<?>)value, null, true));
                 } else {
                     lit.setMetaData(can);
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -101,9 +100,9 @@ public class Native2Ascii extends MatchingTask
     {
         if( mapper != null )
         {
-mapper = new Mapper( getProject() );
+            throw new TaskException( "Cannot define more than one mapper" );
         }
-        mapper = new Mapper( project );
+mapper = new Mapper( getProject() );
         return mapper;
     }
 

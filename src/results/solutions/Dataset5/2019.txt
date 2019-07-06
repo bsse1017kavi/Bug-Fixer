@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class ModalWindowPage extends BasePage
 
 		modal1.setPageCreator(new ModalWindow.PageCreator()
 		{
-return new ModalContent1Page(ModalWindowPage.this.getPageReference(), modal1);
+			public Page createPage()
 			{
-				return new ModalContent1Page(ModalWindowPage.this, modal1);
+return new ModalContent1Page(ModalWindowPage.this.getPageReference(), modal1);
 			}
 		});
 		modal1.setWindowClosedCallback(new ModalWindow.WindowClosedCallback()

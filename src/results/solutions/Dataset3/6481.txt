@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ final class DeploymentUnitPhaseService<T> implements Service<T> {
     public synchronized void stop(final StopContext context) {
         context.asynchronous();
         final DeploymentUnit deploymentUnitContext = deploymentUnitInjector.getValue();
-final ListIterator<DeploymentUnitProcessor> iterator = list.listIterator(list.size());
+        final DeployerChains chains = deployerChainsInjector.getValue();
         final List<DeploymentUnitProcessor> list = chains.getChain(phase);
-        final ListIterator<DeploymentUnitProcessor> iterator = list.listIterator();
+final ListIterator<DeploymentUnitProcessor> iterator = list.listIterator(list.size());
         while (iterator.hasPrevious()) {
             final DeploymentUnitProcessor prev = iterator.previous();
             safeUndeploy(deploymentUnitContext, phase, prev);

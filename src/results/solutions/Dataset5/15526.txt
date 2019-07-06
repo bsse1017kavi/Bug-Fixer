@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM 
  * All rights reserved. This program and the accompanying materials
@@ -296,9 +295,9 @@ public class DeclareAnnotationTests extends XMLBasedAjcTestCase {
 	  		IProgramElement.Kind.DECLARE_ANNOTATION_AT_TYPE,
 	  		"declare @type: p.q.DeathByAnnotations : @Colored(\"red\")");
 	  	assertTrue("Couldn't find 'declare @type' element in the tree",ipe!=null);
-assertTrue("Should have a relationship but does not ",l!=null && l.size()>0);
+	  	
 	    List l = AsmManager.getDefault().getRelationshipMap().get(ipe);
-	  	assertTrue("Should have a relationship but does not ",l.size()>0);
+assertTrue("Should have a relationship but does not ",l!=null && l.size()>0);
 	  	
 	  	ipe = top.findElementForLabel(top.getRoot(),
 	  		IProgramElement.Kind.DECLARE_ANNOTATION_AT_METHOD,

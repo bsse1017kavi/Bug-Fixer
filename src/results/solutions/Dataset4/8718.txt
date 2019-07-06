@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class BenchmarkNettyClient {
                 .put("network.server", false)
                 .put("transport.netty.connectionsPerNode", 5)
                 .build();
-final TransportService transportService = new TransportService(new NettyTransport(settings, threadPool), threadPool).start();
+
         final ThreadPool threadPool = new CachedThreadPool();
-        final TransportService transportService = new TransportService(new NettyTransport(settings, threadPool)).start();
+final TransportService transportService = new TransportService(new NettyTransport(settings, threadPool), threadPool).start();
 
         final Node node = new Node("server", new InetSocketTransportAddress("localhost", 9999));
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -461,9 +460,9 @@ public class StrBuilderAppendInsertTest extends TestCase {
         assertEquals("" + SEP, sb.toString());
 
         sb.appendln(FOO);
-sb.appendln(Integer.valueOf(6));
+        assertEquals(SEP + "foo" + SEP, sb.toString());
 
-        sb.appendln(new Integer(6));
+sb.appendln(Integer.valueOf(6));
         assertEquals(SEP + "foo" + SEP + "6" + SEP, sb.toString());
     }
 

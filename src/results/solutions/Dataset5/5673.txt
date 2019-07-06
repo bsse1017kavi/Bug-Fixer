@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -108,9 +107,9 @@ public abstract class SerializerFactory
             token = new StringTokenizer( list, " ;,:" );
             while ( token.hasMoreTokens() ) {
                 className = token.nextToken();
-if ( _factories.containsKey( factory.getSupportedMethod() ) )
+                try {
                     factory = (SerializerFactory) Class.forName( className ).newInstance();
-                    if ( _factories.contains( factory.getSupportedMethod() ) )
+if ( _factories.containsKey( factory.getSupportedMethod() ) )
                         _factories.put( factory.getSupportedMethod(), factory );
                 } catch ( Exception except ) { }
             }

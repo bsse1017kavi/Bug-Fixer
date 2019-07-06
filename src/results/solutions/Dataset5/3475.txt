@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -200,9 +199,9 @@ int findRowPresenter (int current, int rowPresenterType) {
 	}
 	return 0;
 }
-if (!OS.FrameworkElement_IsLoaded (handle)) updateLayout (handle);
+
 int findPart (int column, String partName) {
-	if (!OS.FrameworkElement_IsLoaded (handle)) OS.UIElement_UpdateLayout (handle);
+if (!OS.FrameworkElement_IsLoaded (handle)) updateLayout (handle);
 	if (!OS.FrameworkElement_IsLoaded (handle)) return 0;
 	int rowPresenterType = OS.GridViewRowPresenter_typeid ();
 	int rowPresenter = findRowPresenter (handle, rowPresenterType);

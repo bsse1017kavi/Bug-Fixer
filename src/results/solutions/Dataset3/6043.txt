@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -518,9 +517,9 @@ public class TimerImpl implements Timer {
      */
     public void expireTimer() {
         ROOT_LOGGER.debug("expireTimer: " + this);
-timerService.persistTimer(this);
+        setTimerState(TimerState.EXPIRED);
         // remove from timerservice
-        timerService.removeTimer(this);
+timerService.persistTimer(this);
         // Cancel any scheduled timer task for this timer
         this.cancelTimeout();
     }

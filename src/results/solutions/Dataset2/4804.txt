@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /**********************************************************************
@@ -223,9 +222,9 @@ public class DecoratorsPreferencePage
 		if (super.performOk()) {
 			DecoratorManager manager = getDecoratorManager();
 			DecoratorDefinition[] definitions = manager.getAllDecoratorDefinitions();
-definitions[i].setEnabled(checked);
+			for (int i = 0; i < definitions.length; i++) {
 				boolean checked = checkboxViewer.getChecked(definitions[i]);
-				definitions[i].setEnabledWithErrorHandling(checked);
+definitions[i].setEnabled(checked);
 				
 			}
 			manager.reset();

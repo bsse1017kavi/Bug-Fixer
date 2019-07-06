@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -134,9 +133,9 @@ public interface Engine extends IndexShardComponent, CloseableComponent {
     SnapshotIndexCommit snapshotIndex() throws EngineException;
 
     void recover(RecoveryHandler recoveryHandler) throws EngineException;
-void failEngine(String reason, Throwable failure);
+
     /** fail engine due to some error. the engine will also be closed. */
-    void failEngine(String reason, @Nullable Throwable failure);
+void failEngine(String reason, Throwable failure);
 
     static interface FailedEngineListener {
         void onFailedEngine(ShardId shardId, String reason, @Nullable Throwable t);

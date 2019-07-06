@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class BinaryDVFieldDataTests extends AbstractFieldDataTests {
 
         AtomicReaderContext reader = refreshReader();
         IndexFieldData indexFieldData = getForField("field");
-BytesValues bytesValues = fieldData.getBytesValues();
+        AtomicFieldData fieldData = indexFieldData.load(reader);
 
-        BytesValues bytesValues = fieldData.getBytesValues(randomBoolean());
+BytesValues bytesValues = fieldData.getBytesValues();
 
         CollectionUtils.sortAndDedup(bytesList1);
         assertThat(bytesValues.setDocument(0), equalTo(2));

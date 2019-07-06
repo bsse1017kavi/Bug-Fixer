@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2010 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -388,9 +387,9 @@ public abstract class AbstractMetadataFactory {
 		// ECF remote service id = endpointDescription.getRemoteServiceId()
 		long remoteServiceId = endpointDescription.getRemoteServiceId();
 		encodeLong(result, RemoteConstants.ENDPOINT_REMOTESERVICE_ID, new Long(
-ID connectTargetID = endpointDescription.getConnectTargetID();
+				remoteServiceId));
 		// ECF connectTargetID = endpointDescription.getConnectTargetID()
-		ID connectTargetID = endpointDescription.getTargetID();
+ID connectTargetID = endpointDescription.getConnectTargetID();
 		if (connectTargetID != null) {
 			// external form of ID
 			encodeString(result, RemoteConstants.ENDPOINT_CONNECTTARGET_ID,

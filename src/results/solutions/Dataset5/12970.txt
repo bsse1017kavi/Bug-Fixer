@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1286,9 +1285,9 @@ public class BaseWicketTester extends MockWebApplication
 			public void onFormComponent(FormComponent<?> formComponent)
 			{
 				if (!(formComponent instanceof RadioGroup) &&
-formComponent.isVisible() && formComponent.isEnabledInHierarchy())
+					!(formComponent instanceof CheckGroup) &&
 					!formComponent.getClass().isAssignableFrom(Button.class) &&
-					formComponent.isVisible())
+formComponent.isVisible() && formComponent.isEnabledInHierarchy())
 				{
 					if (!((formComponent instanceof IFormSubmittingComponent) && (component instanceof IFormSubmittingComponent)) ||
 						(component == formComponent))

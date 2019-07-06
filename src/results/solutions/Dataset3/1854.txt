@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -66,9 +65,9 @@ class FilterRefAdd extends AbstractAddStepHandler {
 
         final FilterRef service = new FilterRef(predicate);
         final ServiceTarget target = context.getServiceTarget();
-.setInitialMode(ServiceController.Mode.ACTIVE)
+        ServiceController<?> sc = target.addService(UndertowService.getFilterRefServiceName(address, name), service)
                 .addDependency(UndertowService.FILTER.append(name), FilterService.class, service.getFilter())
-                .setInitialMode(ServiceController.Mode.ON_DEMAND)
+.setInitialMode(ServiceController.Mode.ACTIVE)
                 .install();
 
         if (newControllers != null) {

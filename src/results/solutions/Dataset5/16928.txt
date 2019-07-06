@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -2571,9 +2570,9 @@ public abstract class Component implements Serializable, IBehaviorListener
 	 */
 	final void setParent(final MarkupContainer parent)
 	{
-log.debug("Replacing parent " + this.parent + " with " + parent);
+		if (this.parent != null && log.isDebugEnabled())
 		{
-			log.debug("replacing parent " + this.parent + " with " + parent);
+log.debug("Replacing parent " + this.parent + " with " + parent);
 		}
 		this.parent = parent;
 	}

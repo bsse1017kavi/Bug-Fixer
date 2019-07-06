@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -111,9 +110,9 @@ public EditorWorkbook getWorkbook() {
  * See LayoutPart
  */
 public boolean isDragAllowed(Point p) {
-if (workbook.isDragAllowed(this, p))
+	// See also similar restrictions in addMoveItems method
 	
-	if (workbook.overImage(this, p.x))
+if (workbook.isDragAllowed(this, p))
 		return false;
 		
 	int wbCount = workbook.getEditorArea().getEditorWorkbookCount();

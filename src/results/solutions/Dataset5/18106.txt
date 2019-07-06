@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class BookmarkableHomePageLinksPage extends WebPage
 	public BookmarkableHomePageLinksPage()
 	{
 		Class<? extends Page> homePage = Application.get().getHomePage();
-new PageParameters().set("param1",1).set("param2", "test")));
+		add(new BookmarkablePageLink<Void>("defaulthompage", homePage));
 		add(new BookmarkablePageLink<Void>("defaulthompagewithparams", homePage,
-			new PageParameters("param1=1,param2=test")));
+new PageParameters().set("param1",1).set("param2", "test")));
 		add(new BookmarkablePageLink<Void>("defaulthompagewithpagemap", homePage));
 	}
 

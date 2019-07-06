@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -56,9 +55,9 @@ public class TimerServiceInterceptorOrderTestCase {
         InterceptorOrder.reset();
         InitialContext ctx = new InitialContext();
         BeanChild bean = (BeanChild) ctx.lookup("java:module/" + BeanChild.class.getSimpleName());
-InterceptorOrder.assertEquals(InterceptorParent.class, InterceptorChild.class, MethodInterceptorParent.class, MethodInterceptorChild.class, CDIInterceptor.class, BeanParent.class, BeanChild.class);
+        bean.createTimer();
         Assert.assertTrue(BeanParent.awaitTimerCall());
-        InterceptorOrder.assertEquals(InterceptorParent.class, InterceptorChild.class, MethodInterceptorParent.class, MethodInterceptorChild.class, BeanParent.class, BeanChild.class, CDIInterceptor.class);
+InterceptorOrder.assertEquals(InterceptorParent.class, InterceptorChild.class, MethodInterceptorParent.class, MethodInterceptorChild.class, CDIInterceptor.class, BeanParent.class, BeanChild.class);
 
     }
 

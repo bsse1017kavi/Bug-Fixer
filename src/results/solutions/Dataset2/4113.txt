@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -1957,9 +1956,9 @@ try{
      */
     public DateFormat getDateFormat()
     {
-.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, locale);
+        Locale locale = Localization.getLocale(data.getRequest());
         DateFormat df = DateFormat
-            .getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);
+.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, locale);
         if (timezone != null) 
         {
             df.setTimeZone(timezone);

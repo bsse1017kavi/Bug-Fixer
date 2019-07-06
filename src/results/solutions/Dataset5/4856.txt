@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -165,9 +164,9 @@ public abstract class RefreshingView<T> extends RepeatingView<T>
 	 */
 	public Iterator<Item<T>> getItems()
 	{
-private final Iterator<Component< ? >> delegate = iterator();
+		return new Iterator<Item<T>>()
 		{
-			private final Iterator<Component> delegate = iterator();
+private final Iterator<Component< ? >> delegate = iterator();
 
 			public boolean hasNext()
 			{

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -184,9 +183,9 @@ public class RegistryService<K, V> extends AsynchronousService<Registry<K, V>> i
                 Collection<Address> newMembers = event.getNewMembers();
                 Set<K> removed = new HashSet<K>();
                 // Remove entry of crashed member
-Map.Entry<K, V> old = cache.getAdvancedCache().withFlags(Flag.CACHE_MODE_LOCAL).remove(member);
+                for (Address member: oldMembers) {
                     if (!newMembers.contains(member)) {
-                        Map.Entry<K, V> old = cache.remove(member);
+Map.Entry<K, V> old = cache.getAdvancedCache().withFlags(Flag.CACHE_MODE_LOCAL).remove(member);
                         if (old != null) {
                             removed.add(old.getKey());
                         }

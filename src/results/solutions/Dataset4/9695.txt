@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -161,9 +160,9 @@ public class CommitPoints implements Iterable<CommitPoint> {
                             }
                             if (physicalName == null) {
                                 throw new IOException("Malformed commit, missing physical_name for [" + fileName + "]");
-throw new IOException("Malformed commit, missing length for [" + fileName + "]");
+                            }
                             if (size == -1) {
-                                throw new IOException("Malformed commit, missing size for [" + fileName + "]");
+throw new IOException("Malformed commit, missing length for [" + fileName + "]");
                             }
                             files.add(new CommitPoint.FileInfo(fileName, physicalName, size));
                         }

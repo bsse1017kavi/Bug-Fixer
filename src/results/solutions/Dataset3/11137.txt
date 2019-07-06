@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
@@ -104,9 +103,9 @@ public class PersistentBundlesIntegration implements PersistentBundlesHandler {
         private final AtomicBoolean deploymentInstallComplete = new AtomicBoolean(false);
         private final AtomicInteger deploymentCount;
         private final Set<String> deploymentNames;
-public InitialDeploymentTracker(final OperationContext context, final Activation activationMode) {
+        private ServiceListener<Bundle> bundleInstallListener;
 
-        public InitialDeploymentTracker(final OperationContext context, Activation activationMode) {
+public InitialDeploymentTracker(final OperationContext context, final Activation activationMode) {
 
             final ServiceTarget serviceTarget = context.getServiceTarget();
             final PersistentBundlesComplete installComplete = new PersistentBundlesComplete() {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1113,9 +1112,9 @@ public class EditorManager {
                         result[0] = unableToCreateEditor(ref, null);
                     }
                     // TODO commented during presentation refactor ((EditorPane)ref.getPane()).getWorkbook().updateEditorTab(ref);
-.log("Exception creating editor: " + e.getMessage(), e); //$NON-NLS-1$
+                } catch (PartInitException e) {
                     WorkbenchPlugin
-                            .log("Exception creating editor: " + e.getMessage()); //$NON-NLS-1$
+.log("Exception creating editor: " + e.getMessage(), e); //$NON-NLS-1$
                     result[0] = unableToCreateEditor(ref, e);
                 }
             }

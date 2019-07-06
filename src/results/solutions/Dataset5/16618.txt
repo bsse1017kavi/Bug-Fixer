@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -582,9 +581,9 @@ public class JMeterTest extends JMeterTestCase {
                             // Events often have this constructor
                             objects.add(c.getConstructor(new Class[] { Object.class }).newInstance(
                                     new Object[] { myThis }));
-System.out.println("o.a.j.junit.JMeterTest WARN: " + exName + ": NoSuchMethodException  " + n + ", missing empty Constructor or Constructor with Object parameter");
+                        } catch (NoSuchMethodException f) {
                             // no luck. Ignore this class
-                            System.out.println("o.a.j.junit.JMeterTest WARN: " + exName + ": NoSuchMethodException  " + n);
+System.out.println("o.a.j.junit.JMeterTest WARN: " + exName + ": NoSuchMethodException  " + n + ", missing empty Constructor or Constructor with Object parameter");
                         }
                     }
                 } catch (NoClassDefFoundError e) {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -5665,9 +5664,9 @@ LRESULT wmNotifyChild (NMHDR hdr, int wParam, int lParam) {
 				int pos = OS.GetMessagePos ();
 				POINT pt = new POINT ();
 				pt.x = (short) (pos & 0xFFFF);
-sendDragEvent (1, pt.x, pt.y);
+				pt.y = (short) (pos >> 16); 
 				OS.ScreenToClient (handle, pt);
-				sendDragEvent (pt.x, pt.y);
+sendDragEvent (1, pt.x, pt.y);
 			}
 			break;
 		}

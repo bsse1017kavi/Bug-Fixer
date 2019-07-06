@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -142,9 +141,9 @@ public class Category implements AppenderAttachable {
   void addAppender(Appender newAppender) {
     if(aai == null) {
       aai = new AppenderAttachableImpl();
-repository.fireAddAppenderEvent((Logger)this, newAppender);
+    }
     aai.addAppender(newAppender);
-    repository.fireAddAppenderEvent(this, newAppender);
+repository.fireAddAppenderEvent((Logger)this, newAppender);
   }
 
   /**

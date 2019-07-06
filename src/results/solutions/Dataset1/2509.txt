@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search.sampling;
 
 import java.io.IOException;
@@ -76,9 +75,9 @@ public class OversampleWithDepthTest extends LuceneTestCase {
     // Craft sampling params to enforce sampling
     final SamplingParams params = new SamplingParams();
     params.setMinSampleSize(2);
-params.setSamplingThreshold(60);
+    params.setMaxSampleSize(50);
     params.setOversampleFactor(5);
-    params.setSampingThreshold(60);
+params.setSamplingThreshold(60);
     params.setSampleRatio(0.1);
     
     FacetResult res = searchWithFacets(r, tr, fsp, params);

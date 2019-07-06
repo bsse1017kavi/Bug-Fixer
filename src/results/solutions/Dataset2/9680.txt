@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -53,9 +52,9 @@ public ConfigurableOption(
 	this.currentValueIndex = currentValueIndex;
 		
 	ResourceBundle resource = null;
-resource = ResourceBundle.getBundle(location + ".options", loc); //$NON-NLS-1$
+	try {
 		String location = componentName.substring(0, componentName.lastIndexOf('.'));
-		resource = ResourceBundle.getBundle(location + ".Options", loc); //$NON-NLS-1$
+resource = ResourceBundle.getBundle(location + ".options", loc); //$NON-NLS-1$
 	} catch (MissingResourceException e) {
 		category = "Missing ressources entries for" + componentName + " options"; //$NON-NLS-1$ //$NON-NLS-2$
 		name = "Missing ressources entries for"+ componentName + " options"; //$NON-NLS-1$ //$NON-NLS-2$

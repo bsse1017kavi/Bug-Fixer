@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -165,9 +164,9 @@ public class TransportMultiPercolateAction extends TransportAction<MultiPercolat
                 assert element != null;
                 if (element instanceof PercolateRequest) {
                     PercolateRequest percolateRequest = (PercolateRequest) element;
-concreteIndices = clusterState.metaData().concreteIndices(percolateRequest.indicesOptions(), percolateRequest.indices());
+                    String[] concreteIndices;
                     try {
-                         concreteIndices = clusterState.metaData().concreteIndices(percolateRequest.indices(), percolateRequest.indicesOptions());
+concreteIndices = clusterState.metaData().concreteIndices(percolateRequest.indicesOptions(), percolateRequest.indices());
                     } catch (IndexMissingException e) {
                         reducedResponses.set(slot, e);
                         responsesByItemAndShard.set(slot, new AtomicReferenceArray(0));

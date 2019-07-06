@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -80,9 +79,9 @@ public class MockHttpOutputMessage implements HttpOutputMessage {
 		try {
 			return new String(bytes, charset.name());
 		}
-throw new IllegalStateException(ex);
+		catch (UnsupportedEncodingException ex) {
 			// should not occur
-			throw new InternalError(ex.getMessage());
+throw new IllegalStateException(ex);
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -91,9 +90,9 @@ public class CountFilter implements IFilter
 				filteredCf.addColumn(filteredSuperColumn);
         		Collection<IColumn> subColumns = superColumn.getSubColumns();
         		for(IColumn subColumn : subColumns)
-filteredSuperColumn.addColumn(subColumn);
+        		{
         			if (offset_ <=0 ){
-        				filteredSuperColumn.addColumn(subColumn.name(), subColumn);
+filteredSuperColumn.addColumn(subColumn);
         				countLimit_--;
         			} else
         				offset_--;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public class ClusterDriver {
 
     conf.setMapperClass(ClusterMapper.class);
     conf.setReducerClass(IdentityReducer.class);
-FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
+
     client.setConf(conf);
-    FileSystem dfs = FileSystem.get(conf);
+FileSystem dfs = FileSystem.get(outPath.toUri(), conf);
     if (dfs.exists(outPath))
       dfs.delete(outPath, true);
     JobClient.runJob(conf);

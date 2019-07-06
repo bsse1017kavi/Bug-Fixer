@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -196,9 +195,9 @@ IContainer makeContainersIfNecessary(IPath path) {
 public void scrubOutput() {
 
 	IJavaProject projectElement = JavaCore.create(this.project);
-entries = projectElement.getExpandedClasspath(true);
+	IClasspathEntry[] entries;
 	try {
-		entries = projectElement.getResolvedClasspath(true);
+entries = projectElement.getExpandedClasspath(true);
 	} catch(JavaModelException e){
 		throw this.dc.internalException(e);
 	}

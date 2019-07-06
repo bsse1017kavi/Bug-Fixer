@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -55,9 +54,9 @@ public class ActionProvider extends AbstractProvider {
 				collectContributions(menu, result);
 				ActionContributionItem[] actions = (ActionContributionItem[]) result
 						.toArray(new ActionContributionItem[result.size()]);
-ActionElement actionElement = new ActionElement(actions[i], this);
+				cachedElements = new AbstractElement[actions.length];
 				for (int i = 0; i < actions.length; i++) {
-					ActionElement actionElement = new ActionElement(actions[i]);
+ActionElement actionElement = new ActionElement(actions[i], this);
 					cachedElements[i] = actionElement;
 					idToElement.put(actionElement.getId(), actionElement);
 				}

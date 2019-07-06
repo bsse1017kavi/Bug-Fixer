@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class TransportDeleteAction extends TransportShardReplicationOperationAct
         DeleteRequest request = shardRequest.request;
         indexShard(shardRequest).delete(request.type(), request.id());
         return new DeleteResponse(request.index(), request.type(), request.id());
-@Override protected void shardOperationOnReplica(ShardOperationRequest shardRequest) {
+    }
 
-    @Override protected void shardOperationOnBackup(ShardOperationRequest shardRequest) {
+@Override protected void shardOperationOnReplica(ShardOperationRequest shardRequest) {
         DeleteRequest request = shardRequest.request;
         indexShard(shardRequest).delete(request.type(), request.id());
     }

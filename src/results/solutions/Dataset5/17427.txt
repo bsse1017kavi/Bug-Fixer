@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -48,9 +47,9 @@ import org.apache.myrmidon.interfaces.type.TypeManager;
  */
 public class InstantiatingServiceManager
     extends AbstractLogEnabled
-private static final Resources REZ =
+    implements ServiceManager, Parameterizable, Serviceable, Disposable
 {
-    private final static Resources REZ =
+private static final Resources REZ =
         ResourceManager.getPackageResources( InstantiatingServiceManager.class );
 
     /** Map from service class -> service object. */

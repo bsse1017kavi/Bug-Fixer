@@ -1,4 +1,3 @@
-
 package org.argouml.persistence;
 
 import java.sql.*;
@@ -265,9 +264,9 @@ public class DBWriter
 		stmt.executeUpdate(stmtString);
 
 		store((MGeneralizableElement)cls, stmt);
-Vector attributes = new Vector(UmlHelper.getHelper().getCore().getStructuralFeatures(cls));
+
 		// in case the Classifier has attributes or operations, store these.
-		Vector attributes = new Vector(UmlHelper.getHelper().getCore().getAttributes(cls));
+Vector attributes = new Vector(UmlHelper.getHelper().getCore().getStructuralFeatures(cls));
 		for ( int i = 0; i < attributes.size(); i++) store((MAttribute)attributes.elementAt(i),stmt);
 
 		Vector operations = new Vector(UmlHelper.getHelper().getCore().getOperations(cls));

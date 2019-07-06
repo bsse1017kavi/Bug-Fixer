@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -58,9 +57,9 @@ public abstract class MappingSqlQuery<T> extends MappingSqlQueryWithParameters<T
 	 * This method is implemented to invoke the simpler mapRow
 	 * template method, ignoring parameters.
 	 * @see #mapRow(ResultSet, int)
-protected final T mapRow(ResultSet rs, int rowNum, Object[] parameters, Map<?, ?> context)
+	 */
 	@Override
-	protected final T mapRow(ResultSet rs, int rowNum, Object[] parameters, Map context)
+protected final T mapRow(ResultSet rs, int rowNum, Object[] parameters, Map<?, ?> context)
 			throws SQLException {
 
 		return mapRow(rs, rowNum);

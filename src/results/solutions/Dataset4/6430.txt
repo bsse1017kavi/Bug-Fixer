@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -104,9 +103,9 @@ public class List extends Widget implements Cullable {
 	public boolean touchDown (float x, float y, int pointer) {
 		if (pointer != 0) return false;
 		selected = (int)((height - y) / itemHeight);
-if (listener != null && items.length > 0) listener.selected(this, selected, items[selected]);
+		selected = Math.max(0, selected);
 		selected = Math.min(items.length - 1, selected);
-		if (listener != null) listener.selected(this, selected, items[selected]);
+if (listener != null && items.length > 0) listener.selected(this, selected, items[selected]);
 		return true;
 	}
 

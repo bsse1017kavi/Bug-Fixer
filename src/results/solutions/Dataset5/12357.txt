@@ -1,4 +1,3 @@
-
 /*
  * $Id: Session.java 5063 2006-03-21 11:21:19 -0800 (Tue, 21 Mar 2006)
  * jonathanlocke $ $Revision$ $Date: 2006-03-21 11:21:19 -0800 (Tue, 21
@@ -348,9 +347,9 @@ public abstract class Session implements Serializable
 	 * @param versionNumber
 	 *            The version of the page required
 	 * @return The page based on the first path component (the page id), or null
-public final synchronized Page getPage(final String pageMapName, final String path, final int versionNumber)
+	 *         if the requested version of the page cannot be found.
 	 */
-	public final Page getPage(final String pageMapName, final String path, final int versionNumber)
+public final synchronized Page getPage(final String pageMapName, final String path, final int versionNumber)
 	{
 		if (log.isDebugEnabled())
 		{

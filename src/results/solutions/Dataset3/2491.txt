@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public final class AdditionalModuleProcessor implements DeploymentUnitProcessor 
                 continue;
             }
             String pathName = resourceRoot.getRoot().getPathNameRelativeTo(deploymentRoot.getRoot());
-AdditionalModuleSpecification module = new AdditionalModuleSpecification(identifier, resourceRoot);
+            ModuleIdentifier identifier = ModuleIdentifier.create(ServiceModuleLoader.MODULE_PREFIX + deploymentUnit.getName()
                     + "." + pathName);
-            AdditionalModuleImpl module = new AdditionalModuleImpl(identifier, resourceRoot);
+AdditionalModuleSpecification module = new AdditionalModuleSpecification(identifier, resourceRoot);
             deploymentUnit.addToAttachmentList(Attachments.ADDITIONAL_MODULES, module);
         }
     }

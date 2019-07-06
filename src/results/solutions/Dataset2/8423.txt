@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -3470,9 +3469,9 @@ public final class CompletionEngine
 			if(typeVariables != null) {
 				int iLength = arguments == null ? 0 : arguments.length;
 				done: for (int i = 0; i < iLength; i++) {
-if(arguments[i][j] == node && typeVariables.length > j) {
+					int jLength = arguments[i] == null ? 0 : arguments[i].length;
 					for (int j = 0; j < jLength; j++) {
-						if(arguments[i][j] == node && typeVariables.length >= j) {
+if(arguments[i][j] == node && typeVariables.length > j) {
 							addExpectedType(typeVariables[j].firstBound);
 							break done;
 						}

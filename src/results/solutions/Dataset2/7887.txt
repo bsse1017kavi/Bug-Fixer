@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /******************************************************************************* 
@@ -135,9 +134,9 @@ public class ViewPane extends PartPane implements IPropertyListener {
 	protected void createChildControl() {
 		final IWorkbenchPart part[] = new IWorkbenchPart[] { partReference.getPart(false)};
 		if (part[0] == null)
-if (control == null)
+			return;
 
-		if (control == null || control.getContent() != null)
+if (control == null)
 			return;
 
 		super.createChildControl();

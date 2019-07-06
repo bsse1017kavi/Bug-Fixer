@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.payloads;
 
 /**
@@ -115,9 +114,9 @@ public class PayloadHelper {
       writer.addDocument(doc);
     }
     //writer.optimize();
-IndexSearcher searcher = new IndexSearcher(directory, true);
+    writer.close();
 
-    IndexSearcher searcher = new IndexSearcher(directory);
+IndexSearcher searcher = new IndexSearcher(directory, true);
     searcher.setSimilarity(similarity);
     return searcher;
   }

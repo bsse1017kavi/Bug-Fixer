@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.uima;
 
 /*
@@ -64,9 +63,9 @@ public class UIMABaseAnalyzerTest extends BaseTokenStreamTestCase {
   }
 
   @Test
-IndexWriter writer = new IndexWriter(dir, new IndexWriterConfig(Version.LUCENE_50, analyzer));
+  public void baseUIMAAnalyzerIntegrationTest() throws Exception {
     Directory dir = new RAMDirectory();
-    IndexWriter writer = new IndexWriter(dir, new IndexWriterConfig(Version.LUCENE_40, analyzer));
+IndexWriter writer = new IndexWriter(dir, new IndexWriterConfig(Version.LUCENE_50, analyzer));
     // add the first doc
     Document doc = new Document();
     String dummyTitle = "this is a dummy title ";

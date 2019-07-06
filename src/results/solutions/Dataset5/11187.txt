@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -77,9 +76,9 @@ public class OnChangeAjaxBehaviorPage extends BasePage
 		OnChangeAjaxBehavior onChangeAjaxBehavior = new OnChangeAjaxBehavior()
 		{
 			@Override
-label.setDefaultModelObject(getValue(field.getDefaultModelObjectAsString()));
+			protected void onUpdate(AjaxRequestTarget target)
 			{
-				label.setModelObject(getValue(field.getModelObjectAsString()));
+label.setDefaultModelObject(getValue(field.getDefaultModelObjectAsString()));
 				target.addComponent(label);
 			}
 		};

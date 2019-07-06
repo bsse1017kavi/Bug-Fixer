@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class CLITestUtil {
     private static final String serverAddr = TestSuiteEnvironment.getServerAddress();
     private static final int serverPort = TestSuiteEnvironment.getServerPort();
 
-return CommandContextFactory.getInstance().newCommandContext("http-remoting", serverAddr, serverPort, null, null);
+    public static CommandContext getCommandContext() throws CliInitializationException {
         setJBossCliConfig();
-        return CommandContextFactory.getInstance().newCommandContext(serverAddr, serverPort, null, null);
+return CommandContextFactory.getInstance().newCommandContext("http-remoting", serverAddr, serverPort, null, null);
     }
 
     public static CommandContext getCommandContext(String address, int port, String user, char[] pwd, InputStream in, OutputStream out)

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -243,9 +242,9 @@ public abstract class AbstractTree extends Panel
 	 */
 	protected final TreeState newTreeState(final TreeModel treeModel, final boolean rootVisible)
 	{
-treeSelectionModel.setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
+		final TreeState treeState = new TreeState();
 		final TreeSelectionModel treeSelectionModel = new DefaultTreeSelectionModel();
-		treeSelectionModel.setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+treeSelectionModel.setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
 		treeState.setModel(treeModel);
 		treeState.setSelectionModel(treeSelectionModel);
 		treeState.setRootVisible(rootVisible);

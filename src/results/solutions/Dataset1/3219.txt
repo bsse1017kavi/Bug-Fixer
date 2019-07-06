@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class TestArbitraryIndexDir extends AbstractSolrTestCase{
     Document doc = new Document();
     doc.add(new TextField("id", "2", Field.Store.YES));
     doc.add(new TextField("name", "name2", Field.Store.YES));
-iw.shutdown();
+    iw.addDocument(doc);
     iw.commit();
-    iw.close();
+iw.shutdown();
 
     //commit will cause searcher to open with the new index dir
     assertU(commit());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ class SecurityActions {
 
     static ModuleClassLoader getModuleClassLoader(final String moduleSpec) throws ModuleLoadException {
         try {
-ModuleLoader loader = Module.getCallerModuleLoader();
+            return AccessController.doPrivileged(new PrivilegedExceptionAction<ModuleClassLoader>() {
                 public ModuleClassLoader run() throws ModuleLoadException {
-                    ModuleLoader loader = Module.getCurrentModuleLoader();
+ModuleLoader loader = Module.getCallerModuleLoader();
                     ModuleIdentifier identifier = ModuleIdentifier.fromString(moduleSpec);
                     return loader.loadModule(identifier).getClassLoader();
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -51,9 +50,9 @@ import java.util.List;
  */
 public class TransportShardMultiPercolateAction extends TransportShardSingleOperationAction<TransportShardMultiPercolateAction.Request, TransportShardMultiPercolateAction.Response> {
 
-private static final String ACTION_NAME = MultiPercolateAction.NAME + "[shard]";
+    private final PercolatorService percolatorService;
 
-    private static final String ACTION_NAME = "mpercolate/shard";
+private static final String ACTION_NAME = MultiPercolateAction.NAME + "[shard]";
 
     @Inject
     public TransportShardMultiPercolateAction(Settings settings, ThreadPool threadPool, ClusterService clusterService, TransportService transportService, PercolatorService percolatorService, ActionFilters actionFilters) {

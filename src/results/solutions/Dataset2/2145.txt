@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -94,9 +93,9 @@ void
 rrToWire(DataByteOutputStream dbs, Compression c) throws IOException {
 	if (cert == null)
 		return;
-dbs.writeShort(keyTag);
+
 	dbs.writeShort(certType);
-	dbs.writeByte(keyTag);
+dbs.writeShort(keyTag);
 	dbs.writeByte(alg);
 	dbs.write(cert);
 }

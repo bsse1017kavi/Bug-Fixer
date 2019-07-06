@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -177,9 +176,9 @@ public class TransportValidateQueryAction extends TransportBroadcastOperationAct
 
         DefaultSearchContext searchContext = new DefaultSearchContext(0,
                 new ShardSearchRequest(request).types(request.types()).nowInMillis(request.nowInMillis())
-scriptService, pageCacheRecycler, bigArrays, threadPool.estimatedTimeInMillisCounter()
+                        .filteringAliases(request.filteringAliases()),
                 null, indexShard.acquireSearcher("validate_query"), indexService, indexShard,
-                scriptService, pageCacheRecycler, bigArrays
+scriptService, pageCacheRecycler, bigArrays, threadPool.estimatedTimeInMillisCounter()
         );
         SearchContext.setCurrent(searchContext);
         try {

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.filter;
 /*
  * 
@@ -63,9 +62,9 @@ public class NamesQueryFilter extends QueryFilter
     public ColumnIterator getMemColumnIterator(Memtable memtable, ColumnFamily cf, AbstractType comparator)
     {
         return memtable.getNamesIterator(cf, this);
-public ColumnIterator getSSTableColumnIterator(SSTableReader sstable)
+    }
 
-    public ColumnIterator getSSTableColumnIterator(SSTableReader sstable) throws IOException
+public ColumnIterator getSSTableColumnIterator(SSTableReader sstable)
     {
         return new SSTableNamesIterator(sstable, key, columns);
     }

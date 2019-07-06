@@ -1,4 +1,3 @@
-
 package org.jboss.as.ejb3.deployment.processors;
 
 import org.jboss.as.ee.component.Attachments;
@@ -60,9 +59,9 @@ public class DeploymentRepositoryProcessor implements DeploymentUnitProcessor {
                     final InjectedValue<ComponentView> componentViewInjectedValue = new InjectedValue<ComponentView>();
                     views.put(view.getViewClassName(), componentViewInjectedValue);
                     injectedValues.put(view.getServiceName(), componentViewInjectedValue);
-deploymentInformationMap.put(ejbComponentDescription.getEJBName(), info);
+                }
                 EjbDeploymentInformation info = new EjbDeploymentInformation(ejbComponentDescription.getEJBName(), componentInjectedValue, views, module.getClassLoader());
-                deploymentInformationMap.put(ejbComponentDescription.getEJBClassName(), info);
+deploymentInformationMap.put(ejbComponentDescription.getEJBName(), info);
             }
         }
 

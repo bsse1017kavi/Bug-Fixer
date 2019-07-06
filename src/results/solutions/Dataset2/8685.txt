@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -40,9 +39,9 @@ public boolean execute(){
 		if (monitor == null) return COMPLETE; // index got deleted since acquired
 		try {
 			monitor.enterWrite(); // ask permission to write
-index.add(new IFileDocument(resource, contents), new BinaryIndexer(true));
+			byte[] contents = this.getContents();
 			if (contents == null) return FAILED;
-			index.add(new IFileDocument(resource, contents), new BinaryIndexer());
+index.add(new IFileDocument(resource, contents), new BinaryIndexer(true));
 		} finally {
 			monitor.exitWrite(); // free write lock
 		}

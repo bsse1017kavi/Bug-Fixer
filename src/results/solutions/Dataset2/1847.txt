@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -105,9 +104,9 @@ class StressCategory {
       //System.out.println("..............Creating cat[]...........");
       for(int i = 0; i < LENGTH; i++) {
 	if(ct[i] == null)
-cat[i] = Logger.getLogger(ct[i].catstr);
+	  cat[i] = null;
 	else {
-	  cat[i] = Category.getInstance(ct[i].catstr);
+cat[i] = Logger.getLogger(ct[i].catstr);
 	  cat[i].setLevel(ct[i].level);
 	}
       }

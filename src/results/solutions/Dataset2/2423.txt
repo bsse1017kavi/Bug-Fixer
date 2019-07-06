@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -343,9 +342,9 @@ public class JavaModelStatus extends Status implements IJavaModelStatus, IJavaMo
 					javaProject = (IJavaProject)this.elements[0];
 					return Messages.bind(Messages.classpath_unboundVariablePath, new String[] {this.path.makeRelative().toString(), javaProject.getElementName()});
 
-return Messages.bind(Messages.classpath_cycle, new String[] {javaProject.getElementName(), this.string});
+				case CLASSPATH_CYCLE:
 					javaProject = (IJavaProject)this.elements[0];
-					return Messages.bind(Messages.classpath_cycle, javaProject.getElementName());
+return Messages.bind(Messages.classpath_cycle, new String[] {javaProject.getElementName(), this.string});
 
 				case DISABLED_CP_EXCLUSION_PATTERNS:
 					javaProject = (IJavaProject)this.elements[0];

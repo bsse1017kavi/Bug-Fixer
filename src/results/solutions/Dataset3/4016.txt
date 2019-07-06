@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -60,9 +59,9 @@ public class BeanWithSimpleInjected extends BeanParent {
     }
 
     @PostConstruct
-throw new RuntimeException("PostConstruct called before @Inject method");
+    public void start() {
         if(bean2 == null) {
-            throw new RuntimeException("PostContruct called before @Inject method");
+throw new RuntimeException("PostConstruct called before @Inject method");
         }
 
         log.info("-----> Constructed BeanWithSimpleInjected, simple=" + simple);

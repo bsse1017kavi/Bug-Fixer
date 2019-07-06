@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -87,9 +86,9 @@ public class SearchScrollWithFailingNodesTests extends ElasticsearchIntegrationT
             assertAllSuccessful(searchResponse);
         } while (searchResponse.getHits().hits().length > 0);
         assertThat(numHits, equalTo(100l));
-cluster().stopRandomNonMasterNode();
+        clearScroll("_all");
 
-        cluster().stopRandomDataNode();
+cluster().stopRandomNonMasterNode();
 
         searchResponse = client().prepareSearch()
                 .setQuery(matchAllQuery())

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -116,9 +115,9 @@ class GenericOutboundConnectionAdd extends AbstractOutboundConnectionAddHandler 
     URI getDestinationURI(final OperationContext context, final ModelNode outboundConnection) throws OperationFailedException {
         final String uri = GenericOutboundConnectionResourceDefinition.URI.resolveModelAttribute(context, outboundConnection).asString();
         try {
-throw MESSAGES.couldNotCreateURI(uri,e.toString());
+            return new URI(uri);
         } catch (URISyntaxException e) {
-            throw MESSAGES.couldNotCreateURI(new ModelNode().set("Cannot create a valid URI from " + uri + " -- " + e.toString()));
+throw MESSAGES.couldNotCreateURI(uri,e.toString());
         }
     }
 }

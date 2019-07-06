@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2005 The Apache Software Foundation.
  *
@@ -85,9 +84,9 @@ public class FilterBasedRollingTest extends TestCase {
     swrp.setFileNamePattern("output/filterBased-test2.%i");
     swrp.activateOptions();
 
-rfa.activateOptions();
+    rfa.setRollingPolicy(swrp);
     rfa.setTriggeringPolicy(fbtp);
-    rfa.activate();
+rfa.activateOptions();
     Logger.getRootLogger().addAppender(rfa);
 
     common("output/filterBased-test2");

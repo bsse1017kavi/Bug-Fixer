@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -83,9 +82,9 @@ public class AutoSetup extends BaseInterceptor {
 
     /** This will add all contexts to the default host.
      *	We need a mechanism ( or convention ) to configure
-public void engineInit(ContextManager cm) throws TomcatException {
+     *  virtual hosts too
      */
-    public void engineStart(ContextManager cm) throws TomcatException {
+public void engineInit(ContextManager cm) throws TomcatException {
 	String home=cm.getHome();
 	File webappD=new File(home + "/webapps");
 	if (! webappD.exists() || ! webappD.isDirectory()) {

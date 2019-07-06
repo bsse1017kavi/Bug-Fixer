@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public class NativeManagementWriteAttributeHandler extends ReloadRequiredWriteAt
                 if (model.hasDefined(NativeManagementResourceDefinition.INTERFACE.getName())
                         && (model.hasDefined(NativeManagementResourceDefinition.SOCKET_BINDING.getName()))) {
                     throw ServerMessages.MESSAGES.conflictingConfigs(NativeManagementResourceDefinition.INTERFACE.getName(),
-context.stepCompleted();
+                            NativeManagementResourceDefinition.SOCKET_BINDING.getName());
                 }
-                context.completeStep();
+context.stepCompleted();
             }
         }, OperationContext.Stage.MODEL);
 

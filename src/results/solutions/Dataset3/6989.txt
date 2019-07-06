@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -119,9 +118,9 @@ public class EvalTag extends HtmlEscapingAwareTag {
 	private EvaluationContext createEvaluationContext() {
 		StandardEvaluationContext context = new StandardEvaluationContext();
 		context.addPropertyAccessor(new JspPropertyAccessor(this.pageContext));
-context.setTypeConverter(new StandardTypeConverter(conversionService));
+		ConversionService conversionService = getConversionService();
 		if (conversionService != null) {
-			context.setTypeConverter(new StandardTypeConverter());
+context.setTypeConverter(new StandardTypeConverter(conversionService));
 		}
 		return context;
 	}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class RestCountAction extends AbstractCatAction {
         sb.append("/_cat/count\n");
         sb.append("/_cat/count/{index}\n");
     }
-public void doRequest(final RestRequest request, final RestChannel channel, final Client client) {
+
     @Override
-    public void doRequest(final RestRequest request, final RestChannel channel) {
+public void doRequest(final RestRequest request, final RestChannel channel, final Client client) {
         String[] indices = Strings.splitStringByCommaToArray(request.param("index"));
         CountRequest countRequest = new CountRequest(indices);
         String source = request.param("source");

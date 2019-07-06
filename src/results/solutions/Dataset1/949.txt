@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.AlterTableConstantAction
@@ -792,9 +791,9 @@ class AlterTableConstantAction extends DDLSingleTableConstantAction
 		TransactionController     nested_tc = null;
 
 		try {
-tc.startNestedUserTransaction(false, true);
+
             nested_tc = 
-                tc.startNestedUserTransaction(false);
+tc.startNestedUserTransaction(false, true);
 
             switch (td.getTableType())
             {

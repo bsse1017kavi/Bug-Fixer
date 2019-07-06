@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2002 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -61,9 +60,9 @@ public class ActionAddAttribute extends UMLChangeAction {
 	Object target = pb.getDetailsTarget();
 	if (!(target instanceof MClassifier)) return;
 	MClassifier cls = (MClassifier) target;
-pb.getNavPane().addToHistory(attr);
+
 	MAttribute attr = UmlFactory.getFactory().getCore().buildAttribute(cls);
-	// pb.getNavPane().addToHistory(attr);
+pb.getNavPane().addToHistory(attr);
 	pb.setTarget(attr);
 	pb.getNavPane().forceUpdate();
 	super.actionPerformed(ae);

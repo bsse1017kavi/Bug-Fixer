@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -330,9 +329,9 @@ public class JUnitSampler extends AbstractSampler {
         if (getConstructorString().length() > 0) {
             rlabel = getConstructorString();
         } else {
-sresult.setSampleLabel(getName());// Bug 41522 - don't use rlabel here
+            rlabel = JUnitSampler.class.getName();
         }
-        sresult.setSampleLabel(rlabel);
+sresult.setSampleLabel(getName());// Bug 41522 - don't use rlabel here
         sresult.setSamplerData(getClassname() + "." + getMethod());   
         // check to see if the test class is null. if it is, we create
         // a new instance. this should only happen at the start of a

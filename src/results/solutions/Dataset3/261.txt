@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class UpdateModifiedFileTaskTestCase extends AbstractTaskTestCase {
         fileUpdated = new ContentModification(new MiscContentItem(fileName, new String[] { "bin" }, updatedHash), unmodifiedHash, MODIFY);
 
         PatchBuilder builder = PatchBuilder.create()
-.oneOffPatchIdentity(productConfig.getProductName(), productConfig.getProductVersion())
+                .setPatchId(patchID)
                 .setDescription(randomString())
-                .oneOffPatchIdentity(productConfig.getProductName(), productConfig.getProductVersion(), Constants.NOT_PATCHED)
+.oneOffPatchIdentity(productConfig.getProductName(), productConfig.getProductVersion())
                 .getParent();
 
 //        PatchElementImpl element = new PatchElementImpl("patch element 01");

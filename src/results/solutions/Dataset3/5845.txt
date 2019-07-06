@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class DeployedXmlDataSourceManagementTestCase {
     public static final String TEST_DS_XML = "test-ds.xml";
 
     @Deployment
-.addClass(DeployedXmlDataSourceManagementTestCase.class)
+    public static Archive<?> deploy() {
         return ShrinkWrap.create(JavaArchive.class, "testDsXmlDeployment.jar")
-                .addPackage(DeployedXmlDataSourceManagementTestCase.class.getPackage())
+.addClass(DeployedXmlDataSourceManagementTestCase.class)
                 .addAsManifestResource(DeployedXmlDataSourceManagementTestCase.class.getPackage(), "MANIFEST.MF", "MANIFEST.MF");
     }
 

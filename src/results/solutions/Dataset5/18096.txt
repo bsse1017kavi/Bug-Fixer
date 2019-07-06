@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -37,9 +36,9 @@ public static void main(String[] args) {
 	Canvas canvas = new Canvas(shell, SWT.NONE);
 	DropTarget target = new DropTarget(canvas, DND.DROP_DEFAULT | DND.DROP_LINK);
 	target.setTransfer(new Transfer[] {Snippet83.getInstance()});
-String ops = "";
+	target.addDropListener(new DropTargetAdapter() {
 		public void dragEnter(DropTargetEvent event) {			
-			String ops = null;
+String ops = "";
 			if ((event.operations & DND.DROP_COPY) != 0) ops += "Copy;";
 			if ((event.operations & DND.DROP_MOVE) != 0) ops += "Move;";
 			if ((event.operations & DND.DROP_LINK) != 0) ops += "Link;";

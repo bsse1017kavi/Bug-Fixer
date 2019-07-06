@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -244,9 +243,9 @@ public class SourceFieldMapper extends AbstractFieldMapper<byte[]> implements In
     @Override
     protected Field parseCreateField(ParseContext context) throws IOException {
         if (!enabled) {
-if (!fieldType.stored()) {
+            return null;
         }
-        if (!stored()) {
+if (!fieldType.stored()) {
             return null;
         }
         if (context.flyweight()) {

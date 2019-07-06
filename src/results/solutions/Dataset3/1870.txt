@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ public class ObjectFactoryBuilder implements javax.naming.spi.ObjectFactoryBuild
         }
         return factoryFromReference(reference, SecurityActions.getContextClassLoader(), environment);
     }
-final Module module = Module.getCallerModuleLoader().loadModule(modularReference.getModuleIdentifier());
+
     private ObjectFactory factoryFromModularReference(ModularReference modularReference, final Hashtable<?, ?> environment) throws Exception {
-        final Module module = Module.getCurrentModuleLoader().loadModule(modularReference.getModuleIdentifier());
+final Module module = Module.getCallerModuleLoader().loadModule(modularReference.getModuleIdentifier());
         final ClassLoader classLoader = module.getClassLoader();
         return factoryFromReference(modularReference, classLoader, environment);
     }

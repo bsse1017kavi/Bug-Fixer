@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -183,9 +182,9 @@ public class EnableTransactionManagementIntegrationTests {
 
 		@Bean
 		public CacheManager cacheManager() {
-caches.add(new ConcurrentMapCache(""));
+			SimpleCacheManager mgr = new SimpleCacheManager();
 			ArrayList<Cache> caches = new ArrayList<Cache>();
-			caches.add(new ConcurrentMapCache());
+caches.add(new ConcurrentMapCache(""));
 			mgr.setCaches(caches);
 			return mgr;
 		}

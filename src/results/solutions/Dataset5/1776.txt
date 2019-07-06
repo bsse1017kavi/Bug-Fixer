@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -319,9 +318,9 @@ public class RelationRelationMapTableFieldStrategy
         boolean canChange = val.getForeignKey().isLogical();
         Object mkey;
         if (canChange && !change.isEmpty()) {
-changeRow = rm.getSecondaryRow(field.getTable(),
+            Row changeRow = null;
             if (!field.isUni1ToMFK()) {
-                rm.getSecondaryRow(field.getTable(),
+changeRow = rm.getSecondaryRow(field.getTable(),
                     Row.ACTION_UPDATE);
                 changeRow.whereForeignKey(field.getJoinForeignKey(), sm);
             }

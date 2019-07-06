@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class RussianAnalyzerProvider extends AbstractIndexAnalyzerProvider<Russi
     private final RussianAnalyzer analyzer;
 
     @Inject public RussianAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
-Analysis.parseStopWords(env, settings, RussianAnalyzer.getDefaultStopSet(), version),
+        super(index, indexSettings, name, settings);
         analyzer = new RussianAnalyzer(version,
-                Analysis.parseStopWords(env, settings, RussianAnalyzer.getDefaultStopSet()),
+Analysis.parseStopWords(env, settings, RussianAnalyzer.getDefaultStopSet(), version),
                 Analysis.parseStemExclusion(settings, CharArraySet.EMPTY_SET));
     }
 

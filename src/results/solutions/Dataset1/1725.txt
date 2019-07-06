@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /**
@@ -209,9 +208,9 @@ public final class ZkController {
    * @throws KeeperException
    * @throws InterruptedException
    */
-Stat stat = zkClient.exists(CONFIGS_ZKNODE + "/" + collection + "/" + fileName, null);
+  public boolean configFileExists(String collection, String fileName)
       throws KeeperException, InterruptedException {
-    Stat stat = zkClient.exists(CONFIGS_ZKNODE + "/" + fileName, null);
+Stat stat = zkClient.exists(CONFIGS_ZKNODE + "/" + collection + "/" + fileName, null);
     return stat != null;
   }
 

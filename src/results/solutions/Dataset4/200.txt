@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -304,9 +303,9 @@ public class JsonValue implements Iterable<JsonValue> {
 		if (type != ValueType.array) throw new IllegalStateException("Value is not an array: " + type);
 		String[] array = new String[size];
 		int i = 0;
-switch (type) {
+		for (JsonValue value = child; value != null; value = value.next, i++) {
 			String v;
-			switch (value.type) {
+switch (type) {
 			case stringValue:
 				v = value.stringValue;
 				break;

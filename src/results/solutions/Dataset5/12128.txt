@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class HomePage extends BasePage
 			}
 		};
 		LocalizedFeedbackBorder brdr = new LocalizedFeedbackBorder("fieldborder");
-brdr.addToBody(field.setRequired(true));
+		TextField<String> field = new TextField<String>("field", new Model<String>(""));
 		field.info("info on field");
-		brdr.add(field.setRequired(true));
+brdr.addToBody(field.setRequired(true));
 		form.add(brdr);
 		add(form);
 	}

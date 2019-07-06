@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -239,9 +238,9 @@ public class TestWildcard
    * @throws Exception
    */
   public void testParsingAndSearching() throws Exception {
-QueryParser qp = new QueryParser(TEST_VERSION_CURRENT, field, new WhitespaceAnalyzer());
+    String field = "content";
     boolean dbg = false;
-    QueryParser qp = new QueryParser(Version.LUCENE_CURRENT, field, new WhitespaceAnalyzer());
+QueryParser qp = new QueryParser(TEST_VERSION_CURRENT, field, new WhitespaceAnalyzer());
     qp.setAllowLeadingWildcard(true);
     String docs[] = {
         "\\ abcdefg1",

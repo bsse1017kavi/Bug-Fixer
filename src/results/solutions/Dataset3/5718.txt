@@ -1,4 +1,3 @@
-
 package org.jboss.as.test.iiop.transaction;
 
 import javax.annotation.Resource;
@@ -12,9 +11,9 @@ import javax.transaction.UserTransaction;
 /**
  * @author Stuart Douglas
  */
-public class IIOPTransactionalStatelessBean {
+@RemoteHome(IIOPTransactionalHome.class)
 @Stateless
-public class IIOPTransactionalBMTBean {
+public class IIOPTransactionalStatelessBean {
 
     @Resource
     private UserTransaction userTransaction;

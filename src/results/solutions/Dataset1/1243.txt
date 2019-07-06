@@ -1,4 +1,3 @@
-
 /*
     Derby - Class org.apache.derby.impl.drda.DRDAConnThread
 
@@ -5140,9 +5139,9 @@ public class DRDAConnThread extends Thread {
 					String messageId = ce.getMessageId();
 					
 					// arguments are variable part of a message
-sqlerrmc += args[i] + separator;
+					Object[] args = ce.getArguments();
 					for (int i = 0; args != null &&  i < args.length; i++)
-						sqlerrmc += args[i].toString() + separator;
+sqlerrmc += args[i] + separator;
 					
 					// Severe exceptions need to be logged in the error log
 					// also log location and non-localized message will be

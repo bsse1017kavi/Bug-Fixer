@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -150,9 +149,9 @@ public class ConjugateGradient
                                    final RealLinearOperator m,
                                    final RealVector b,
                                    final RealVector x0)
-MaxCountExceededException {
+        throws NullArgumentException, NonPositiveDefiniteOperatorException,
         NonSquareOperatorException, DimensionMismatchException,
-        MaxCountExceededException, NonPositiveDefiniteOperatorException {
+MaxCountExceededException {
         checkParameters(a, m, b, x0);
         final IterationManager manager = getIterationManager();
         // Initialization of default stopping criterion

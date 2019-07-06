@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -1031,9 +1030,9 @@ public class HostXml extends CommonXml implements ManagementXml.Delegate {
             } else {
                 final Attribute attribute = Attribute.forName(reader.getAttributeLocalName(i));
                 switch (attribute) {
-list.add(Util.getWriteAttributeOperation(address, DIRECTORY_GROUPING, HostResourceDefinition.DIRECTORY_GROUPING.parse(value,reader)));
+                    case DIRECTORY_GROUPING: {
                         final ModelNode address = parentAddress.clone();
-                        list.add(Util.getWriteAttributeOperation(address, DIRECTORY_GROUPING, value));
+list.add(Util.getWriteAttributeOperation(address, DIRECTORY_GROUPING, HostResourceDefinition.DIRECTORY_GROUPING.parse(value,reader)));
                         break;
                     }
                     default:

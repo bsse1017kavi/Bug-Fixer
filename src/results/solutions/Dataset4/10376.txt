@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -184,9 +183,9 @@ public class RestSearchAction extends BaseRestHandler {
         }
         // TODO add different parameters to the query
 
-searchSourceBuilder.explain(request.paramAsBoolean("explain", null));
+
         searchSourceBuilder.queryParserName(request.param("queryParserName"));
-        searchSourceBuilder.explain(request.paramAsBoolean("explain", false));
+searchSourceBuilder.explain(request.paramAsBoolean("explain", null));
 
         List<String> fields = request.params("field");
         if (fields != null && !fields.isEmpty()) {

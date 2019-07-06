@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -196,9 +195,9 @@ public class AutoWebApp extends BaseInterceptor {
 	} else {
 	    for (int i = 0; i < list.length; i++) {
 		String name = list[i];
-if( ignoreDot && name.startsWith("." )) {
+		File f=new File( webappD, name );
 		if( f.isDirectory() ) {
-		    if( ignoreDot && name.statsWith("." )) {
+if( ignoreDot && name.startsWith("." )) {
 			continue;
 		    } else
 			addVHost( cm, webappD, name );

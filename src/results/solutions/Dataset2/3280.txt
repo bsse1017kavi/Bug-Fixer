@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -221,9 +220,9 @@ public class ExternalFoldersManager {
 		if (source.equals(externalProject))
 			return;
 		if (!JavaProject.hasJavaNature(source))
-HashSet externalFolders = getExternalFolders(((JavaProject) JavaCore.create(source)).getResolvedClasspath());
+			return;
 		try {
-			HashSet externalFolders = getExternalFolders(JavaCore.create(source).getResolvedClasspath(true));
+HashSet externalFolders = getExternalFolders(((JavaProject) JavaCore.create(source)).getResolvedClasspath());
 			if (externalFolders == null)
 				return;
 			final Iterator iterator = externalFolders.iterator();

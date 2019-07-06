@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -588,9 +587,9 @@ public class DefaultCallbackHandler extends ValidatingCallbackHandler implements
             final String value = props.get(propName);
             if(propName == null || propName.trim().isEmpty())
                 throw new OperationFormatException("The argument name is not specified: '" + propName + "'");
-final ModelNode toSet = ArgumentValueConverter.DEFAULT.fromString(ctx, value);
+            if(value == null || value.trim().isEmpty())
                 throw new OperationFormatException("The argument value is not specified for " + propName + ": '" + value + "'");
-            final ModelNode toSet = ArgumentValueConverter.DEFAULT.fromString(value);
+final ModelNode toSet = ArgumentValueConverter.DEFAULT.fromString(ctx, value);
             request.get(propName).set(toSet);
         }
 

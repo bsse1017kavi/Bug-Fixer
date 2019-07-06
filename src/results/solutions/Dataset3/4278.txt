@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class SubjectDoAsHandler implements HttpHandler {
         this.wrapped = toWrap;
     }
 
-final SecurityContext securityContext = exchange.getAttachment(SecurityContext.ATTACHMENT_KEY);
+    @Override
     public void handleRequest(final HttpServerExchange exchange) throws Exception {
-        final SecurityContext securityContext = exchange.getSecurityContext();
+final SecurityContext securityContext = exchange.getAttachment(SecurityContext.ATTACHMENT_KEY);
         final Subject useSubject;
         if (securityContext != null) {
             final Account account = securityContext.getAuthenticatedAccount();

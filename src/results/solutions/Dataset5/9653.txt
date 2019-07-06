@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2009 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -103,9 +102,9 @@ public class HelloConsumerApplication implements IApplication,
 			containerFactoryServiceTracker = null;
 		}
 		this.bundleContext = null;
-appLock.notifyAll();
+		synchronized (appLock) {
 			done = true;
-			notifyAll();
+appLock.notifyAll();
 		}
 	}
 

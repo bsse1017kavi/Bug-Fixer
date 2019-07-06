@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class RestIndexAction extends BaseRestHandler {
         }
         // we just send a response, no need to fork
         indexRequest.listenerThreaded(false);
-client.index(indexRequest, new ActionListener<IndexResponse>() {
+        // we don't spawn, then fork if local
         indexRequest.operationThreaded(true);
-        client.execIndex(indexRequest, new ActionListener<IndexResponse>() {
+client.index(indexRequest, new ActionListener<IndexResponse>() {
             @Override public void onResponse(IndexResponse result) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -225,9 +224,9 @@ public abstract class EmbeddedRungeKuttaIntegrator
     double  hNew      = 0;
     boolean firstTime = true;
     for (StepHandler handler : stepHandlers) {
-setStateInitialized(false);
+        handler.reset();
     }
-    statesInitialized = false;
+setStateInitialized(false);
 
     // main integration loop
     isLastStep = false;

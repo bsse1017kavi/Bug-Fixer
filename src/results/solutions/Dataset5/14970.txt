@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -126,9 +125,9 @@ public final class BatchTest extends BaseTest
         ArrayList v = new ArrayList();
         final int size = this.filesets.size();
         for( int j = 0; j < size; j++ )
-DirectoryScanner ds = fs.getDirectoryScanner();
+        {
             FileSet fs = (FileSet)filesets.get( j );
-            DirectoryScanner ds = fs.getDirectoryScanner( project );
+DirectoryScanner ds = fs.getDirectoryScanner();
             ds.scan();
             String[] f = ds.getIncludedFiles();
             for( int k = 0; k < f.length; k++ )

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -358,9 +357,9 @@ public class XmlPullParserTest extends TestCase
 		type = parser.next();
 		assertEquals(type, HttpTagType.TAG);
 		assertEquals("a", (parser.getElement()).getName());
-assertEquals(type, HttpTagType.CONDITIONAL_COMMENT_ENDIF);
+		assertTrue((parser.getElement()).isClose());
 		type = parser.next();
-		assertEquals(type, HttpTagType.CONDITIONAL_COMMENT);
+assertEquals(type, HttpTagType.CONDITIONAL_COMMENT_ENDIF);
 		type = parser.next();
 		assertEquals(type, HttpTagType.NOT_INITIALIZED);
 	}

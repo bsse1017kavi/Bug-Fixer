@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -308,9 +307,9 @@ public class Ant extends Task {
 
             File file = FileUtils.newFileUtils().resolveFile(dir, antFile);
             antFile = file.getAbsolutePath();
-+ ((locals.size() > 0) ? locals.toString() : "[default]")
+
             log("calling target(s) "
-                + ((locals.size() == 0) ? locals.toString() : "[default]")
++ ((locals.size() > 0) ? locals.toString() : "[default]")
                 + " in build file " + antFile, Project.MSG_VERBOSE);
             newProject.setUserProperty("ant.file" , antFile);
 

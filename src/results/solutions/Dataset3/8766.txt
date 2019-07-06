@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -111,9 +110,9 @@ public class DiscoveryGroupAdd extends AbstractAddStepHandler implements Descrip
                     final InetAddress inet = localAddress != null ? InetAddress.getByName(localAddress) : InetAddress.getLocalHost();
                     final NetworkInterface intf = NetworkInterface.getByInetAddress(inet);
                     final NetworkInterfaceBinding b = new NetworkInterfaceBinding(Collections.singleton(intf), inet);
-final SocketBinding socketBinding = new SocketBinding(name, -1, false, group, groupPort, b, null, null);
+                    final InetAddress group = InetAddress.getByName(groupAddress);
 
-                    final SocketBinding socketBinding = new SocketBinding(name, -1, false, group, groupPort, b, null);
+final SocketBinding socketBinding = new SocketBinding(name, -1, false, group, groupPort, b, null, null);
 
                     final GroupBindingService bindingService = new GroupBindingService();
                     target.addService(GroupBindingService.getDiscoveryBaseServiceName(hqServiceName).append(name), bindingService)

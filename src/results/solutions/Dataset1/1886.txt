@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.BaseContainer
@@ -220,9 +219,9 @@ public abstract class BaseContainer implements Lockable {
 		{
             compressContainer(ntt, allocHandle);
 		}
-ntt.commit();
+		finally
 		{
-            ntt.commitNoSync(Transaction.RELEASE_LOCKS);
+ntt.commit();
 
 			ntt.close();
 		}

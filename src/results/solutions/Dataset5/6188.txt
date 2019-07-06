@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -92,9 +91,9 @@ public class ConnectionFactory implements TestListener {
 				Object objfac = ctx.lookup(fac);
 				if (objfac instanceof TopicConnectionFactory){
 					factory = (TopicConnectionFactory)objfac;
-log.error(e.getCause().toString());
+				}
 			} catch (NamingException e){
-				log.error(e.getMessage());
+log.error(e.getCause().toString());
 			}
 		}
 		return factory;

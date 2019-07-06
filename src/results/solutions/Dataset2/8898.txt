@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -853,9 +852,9 @@ public class TypeDeclaration
 			// Resolve annotation
 			if (this.annotation != null) {
 				this.annotation.resolve(this.scope);
-this.scope.problemReporter().annotationMissing(this.sourceStart, this.sourceEnd);
+			} else {
 				if ((this.modifiers & AccPublic) != 0) {
-					this.scope.problemReporter().annotationMissingForPublic(this.sourceStart, this.sourceEnd);
+this.scope.problemReporter().annotationMissing(this.sourceStart, this.sourceEnd);
 				}
 			}
 			

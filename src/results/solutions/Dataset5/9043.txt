@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.54 $ $Date$
@@ -1167,9 +1166,9 @@ public abstract class Component implements Serializable, IConverterSource
 	 *            The tag to write
 	 */
 	protected final void renderComponentTag(ComponentTag tag)
-if (!(tag instanceof ComponentWicketTag) || !settings.getStripWicketTags())
+	{
 		final ApplicationSettings settings = getApplication().getSettings();
-	    if (!(tag instanceof ComponentWicketTag) || !settings.getStripWicketTag())
+if (!(tag instanceof ComponentWicketTag) || !settings.getStripWicketTags())
 	    {
 			// Apply attribute modifiers
 			if ((attributeModifiers != null) && (tag.getType() != XmlTag.CLOSE))

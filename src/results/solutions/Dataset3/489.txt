@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -100,9 +99,9 @@ public class DelegateFileFilter extends AbstractFileFilter implements Serializab
      *
      * @return a String representaion
      */
-String delegate = fileFilter != null ? fileFilter.toString() : filenameFilter.toString();
+    @Override
     public String toString() {
-        String delegate = (fileFilter != null ? fileFilter.toString() : filenameFilter.toString()); 
+String delegate = fileFilter != null ? fileFilter.toString() : filenameFilter.toString();
         return super.toString() + "(" + delegate + ")";
     }
     

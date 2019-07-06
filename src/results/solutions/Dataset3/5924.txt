@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ class LogStoreConstants {
     static SimpleAttributeDefinition PARTICIPANT_STATUS = (new SimpleAttributeDefinitionBuilder("status", ModelType.STRING))
             .setAllowExpression(false)
             .setAllowNull(true)
-.setValidator(new EnumValidator(ParticipantStatus.class, true, false))
+            .setDefaultValue(new ModelNode())
             .setMeasurementUnit(MeasurementUnit.NONE)
-            .setValidator(new EnumValidator(ParticipantStatus.class, false, false))
+.setValidator(new EnumValidator(ParticipantStatus.class, true, false))
             .build();
 
     static SimpleAttributeDefinition PARTICIPANT_JNDI_NAME = (new SimpleAttributeDefinitionBuilder(JNDI_ATTRIBUTE, ModelType.STRING))

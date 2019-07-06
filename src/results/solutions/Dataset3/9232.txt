@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -671,9 +670,9 @@ class ConfigurationClassParser {
 			return resourceLoader.getClassLoader().loadClass(className);
 		}
 
-return clazz.isAssignableFrom((Class<?>) this.source);
+		public boolean isAssignable(Class<?> clazz) throws IOException {
 			if (this.source instanceof Class) {
-				return clazz.isAssignableFrom((Class) this.source);
+return clazz.isAssignableFrom((Class<?>) this.source);
 			}
 			return new AssignableTypeFilter(clazz).match((MetadataReader) this.source, metadataReaderFactory);
 		}

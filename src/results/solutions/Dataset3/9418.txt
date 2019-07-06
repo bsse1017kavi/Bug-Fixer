@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class DomainServerCommunicationServices  implements ServiceActivator, Ser
                     SecurityActions.getSystemProperty(ServerEnvironment.NODE_NAME), endpointType, options, null, null);
 
             // Install the communication services
-HostControllerConnectionService service = new HostControllerConnectionService(host, port, serverName, serverProcessName, authKey, managementSubsystemEndpoint);
+            final int port = managementSocket.getPort();
             final String host = managementSocket.getAddress().getHostAddress();
-            HostControllerConnectionService service = new HostControllerConnectionService(host, port, serverName, serverProcessName, authKey);
+HostControllerConnectionService service = new HostControllerConnectionService(host, port, serverName, serverProcessName, authKey, managementSubsystemEndpoint);
             serviceTarget.addService(HostControllerConnectionService.SERVICE_NAME, service)
                     .addDependency(endpointName, Endpoint.class, service.getEndpointInjector())
                     .addDependency(ControlledProcessStateService.SERVICE_NAME, ControlledProcessStateService.class, service.getProcessStateServiceInjectedValue())

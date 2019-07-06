@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -632,9 +631,9 @@ public class GraggBulirschStoerIntegrator extends AdaptiveStepsizeIntegrator {
     boolean newStep          = true;
     boolean firstStepAlreadyComputed = false;
     for (StepHandler handler : stepHandlers) {
-setStateInitialized(false);
+        handler.reset();
     }
-    statesInitialized = false;
+setStateInitialized(false);
     costPerTimeUnit[0] = 0;
     isLastStep = false;
     do {

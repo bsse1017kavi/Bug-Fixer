@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -206,9 +205,9 @@ public class CSVParser implements Iterable<CSVRecord> {
                 throw new IOException("(line " + getCurrentLineNumber() + ") invalid parse sequence");
             case COMMENT: // Ignored currently
                 if (sb == null) { // first comment for this record
-sb.append(Constants.LF);
+                    sb = new StringBuilder();
                 } else {
-                    sb.append("\n");
+sb.append(Constants.LF);
                 }
                 sb.append(reusableToken.content);
                 reusableToken.type = TOKEN; // Read another token

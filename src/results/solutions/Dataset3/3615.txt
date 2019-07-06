@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class HttpManagementRemoveHandler extends AbstractRemoveStepHandler {
     protected void performRuntime(OperationContext context, ModelNode operation, ModelNode model) throws OperationFailedException {
 
         removeHttpManagementService(context);
-context.removeService(RemotingHttpUpgradeService.SERVICE_NAME);
+
         RemotingServices.removeConnectorServices(context, ManagementRemotingServices.HTTP_CONNECTOR);
-        context.removeService(RemotingHttpUpgradeService.UPGRADE_SERVICE_NAME.append("management"));
+context.removeService(RemotingHttpUpgradeService.SERVICE_NAME);
     }
 
     @Override

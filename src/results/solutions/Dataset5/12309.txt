@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -304,9 +303,9 @@ public class SchemaGrammar  extends Grammar {
      * add a group redefined by restriction: for later constraint checking
      */
     public final void addRedefinedGroupDecl(XSGroupDecl derived, XSGroupDecl base) {
-fRedefinedGroupDecls = resize(fRedefinedGroupDecls, fRGCount << 1);
+        if (fRGCount == fRedefinedGroupDecls.length)
             // double array size each time.
-            fRedefinedGroupDecls = resize(fRedefinedGroupDecls, fRGCount << 2);
+fRedefinedGroupDecls = resize(fRedefinedGroupDecls, fRGCount << 1);
         fRedefinedGroupDecls[fRGCount++] = derived;
         fRedefinedGroupDecls[fRGCount++] = base;
     }

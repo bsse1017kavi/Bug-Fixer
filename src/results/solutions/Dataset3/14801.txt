@@ -1,4 +1,3 @@
-
 package org.jboss.as.arquillian.api;
 
 import java.lang.annotation.ElementType;
@@ -16,8 +15,8 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-Class<? extends ServerSetupTask>[] value();
+public @interface ServerSetup {
 
-    Class<? extends ServerSetupTask> value();
+Class<? extends ServerSetupTask>[] value();
 
 }

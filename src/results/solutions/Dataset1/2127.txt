@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.GenericStatement
@@ -520,9 +519,9 @@ public class GenericStatement
 					preparedStmt.setCompileTimeMillis(
 						parseTime - beginTime, //parse time
 						bindTime - parseTime, //bind time
-generateTime - beginTime, //total compile time
+						optimizeTime - bindTime, //optimize time
 						generateTime - optimizeTime, //generate time
-						getElapsedTimeMillis(beginTime),
+generateTime - beginTime, //total compile time
 						beginTimestamp,
 						endTimestamp);
 				}

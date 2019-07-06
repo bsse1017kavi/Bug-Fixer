@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -452,9 +451,9 @@ public class JDBCStoreManager
     }
 
     protected void setMappedBy(OpenJPAStateManager sm,
-FieldMapping[] fms = mapping.getFieldMappings();
+        FieldMapping mappedByFieldMapping, Object mappedByObject) {
         ClassMapping mapping = (ClassMapping) sm.getMetaData();
-        FieldMapping[] fms = mapping.getDeclaredFieldMappings();
+FieldMapping[] fms = mapping.getFieldMappings();
         for (int i = 0; i < fms.length; i++) {
             if (fms[i] == mappedByFieldMapping) {
                 sm.storeObject(fms[i].getIndex(), mappedByObject);

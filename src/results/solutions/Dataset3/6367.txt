@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -147,9 +146,9 @@ public class CharUtilsPerfRun {
 
     private int run_inlined_CharUtils_isAsciiNumeric(int loopCount) {
         int t = 0;
-boolean b = ch >= '0' && ch <= '9';
+        for (int i = 0; i < loopCount; i++) {
             for (char ch : CHAR_SAMPLES) {
-                boolean b = (ch >= '0' && ch <= '9');
+boolean b = ch >= '0' && ch <= '9';
                 t += b ? 1 : 0;
             }
         }

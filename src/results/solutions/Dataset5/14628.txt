@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTargetUrlCodingStrategy.java,v 1.1 2005/12/10
  * 21:28:56 eelco12 Exp $ $Revision$ $Date$
@@ -131,9 +130,9 @@ public abstract class AbstractRequestTargetUrlCodingStrategy
 			while (entries.hasNext())
 			{
 				Map.Entry entry = (Entry)entries.next();
-String escapedValue = urlEncode(entry.getValue().toString());
+				if(entry.getValue()!=null)
 				{
-				    String escapedValue = urlEncode((String)entry.getValue().toString());
+String escapedValue = urlEncode(entry.getValue().toString());
 				    if(!Strings.isEmpty(escapedValue))
 				    {
 				    		url.append("/").append(entry.getKey()).append("/").append(escapedValue);

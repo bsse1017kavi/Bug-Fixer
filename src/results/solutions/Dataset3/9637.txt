@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -98,9 +97,9 @@ public class OperationRequestHandler implements CommandHandler, OperationCommand
     @Override
     public ModelNode buildRequest(CommandContext ctx) throws OperationFormatException {
         //DefaultOperationRequestBuilder builder = new DefaultOperationRequestBuilder(ctx.getPrefix());
-return ((DefaultOperationCallbackHandler)ctx.getParsedCommandLine()).toOperationRequest();
+        //ctx.getOperationRequestParser().parse(ctx.getArgumentsString(), builder);
         //return builder.buildRequest();
-        return ((DefaultOperationCallbackHandler)ctx.getParsedArguments()).toOperationRequest();
+return ((DefaultOperationCallbackHandler)ctx.getParsedCommandLine()).toOperationRequest();
     }
 
     @Override

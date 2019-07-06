@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -46,9 +45,9 @@ public class CmpDependencyProcessor implements DeploymentUnitProcessor {
             return;
         }
 
-moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, CMP, false, false, true, false));
+        final ModuleSpecification moduleSpecification = deploymentUnit.getAttachment(org.jboss.as.server.deployment.Attachments.MODULE_SPECIFICATION);
         final ModuleLoader moduleLoader = Module.getBootModuleLoader();
-        moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, CMP, false, false, true));
+moduleSpecification.addSystemDependency(new ModuleDependency(moduleLoader, CMP, false, false, true, false));
     }
 
     public void undeploy(DeploymentUnit context) {

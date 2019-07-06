@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -96,9 +95,9 @@ public class OIRPage extends BasePage
 				item.add(new Label("homephone", contact.getHomePhone()));
 				item.add(new Label("cellphone", contact.getCellPhone()));
 
-public Object getObject()
+				item.add(new AttributeModifier("class", true, new AbstractReadOnlyModel()
 				{
-					public Object getObject(Component component)
+public Object getObject()
 					{
 						return (item.getIndex() % 2 == 1) ? "even" : "odd";
 					}

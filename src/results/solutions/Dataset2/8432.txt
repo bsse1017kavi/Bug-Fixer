@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1400,9 +1399,9 @@ public class WorkbenchWindow extends ApplicationWindow implements IWorkbenchWind
 				pageList.add(newPage);
 				firePageOpened(newPage);
 			} catch (WorkbenchException e) {
-String productName = WorkbenchPlugin.getDefault().getProductName();
+				WorkbenchPlugin.log("Unable to create default perspective - constructor failed."); //$NON-NLS-1$
 				result.add(e.getStatus());
-				String productName = getWorkbenchImpl().getProductName();
+String productName = WorkbenchPlugin.getDefault().getProductName();
 				if (productName == null) {
 					productName = ""; //$NON-NLS-1$
 				}

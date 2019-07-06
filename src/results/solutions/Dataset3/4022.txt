@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -81,9 +80,9 @@ public class EntityBeanComponentCreateService extends EJBComponentCreateService 
         localHomeClass = (Class<EJBLocalHome>) load(classLoader, beanMetaData.getLocalHome());
         localClass = (Class<EJBLocalObject>) load(classLoader, beanMetaData.getLocal());
         remoteClass = (Class<EJBObject>) load(classLoader, beanMetaData.getRemote());
-final InterceptorFactory tcclInterceptorFactory = new ImmediateInterceptorFactory(new TCCLInterceptor(componentConfiguration.getModuleClassLoader()));
+        primaryKeyClass = (Class<Object>) load(classLoader, beanMetaData.getPrimKeyClass());
 
-        final InterceptorFactory tcclInterceptorFactory = new ImmediateInterceptorFactory(new TCCLInterceptor(componentConfiguration.getModuleClassLoder()));
+final InterceptorFactory tcclInterceptorFactory = new ImmediateInterceptorFactory(new TCCLInterceptor(componentConfiguration.getModuleClassLoader()));
         final InterceptorFactory namespaceContextInterceptorFactory = componentConfiguration.getNamespaceContextInterceptorFactory();
 
 

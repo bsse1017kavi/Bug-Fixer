@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -248,9 +247,9 @@ public class SubqueryImpl<T> extends ExpressionImpl<T> implements Subquery<T> {
     // if we are in a subquery against a collection from a 
     // correlated parent, the candidate of the subquery
     // should be the class metadata of the collection element 
-PathImpl<?, ?> correlatedRoot = root.getCorrelatedParent();
+    private ClassMetaData getCandidate() {
         RootImpl<?> root = (RootImpl<?>)getRoot();
-        RootImpl<?> correlatedRoot = (RootImpl<?>)root.getCorrelatedParent();
+PathImpl<?, ?> correlatedRoot = root.getCorrelatedParent();
         if (correlatedRoot != null && root.getJoins() != null) {
            Join<?,?> join = root.getJoins().iterator().next();
            FieldMetaData fmd = ((Members.Member<?, ?>)join.getAttribute()).fmd;

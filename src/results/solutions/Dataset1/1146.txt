@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.icu;
 
 /*
@@ -75,9 +74,9 @@ public class TestICUFoldingFilter extends BaseTokenStreamTestCase {
     assertAnalyzesTo(a, "eli\u0307f", new String[] { "elif" });
   }
   
-checkRandomData(random(), a, 1000*RANDOM_MULTIPLIER);
+  /** blast some random strings through the analyzer */
   public void testRandomStrings() throws Exception {
-    checkRandomData(random(), a, 10000*RANDOM_MULTIPLIER);
+checkRandomData(random(), a, 1000*RANDOM_MULTIPLIER);
   }
   
   public void testEmptyTerm() throws IOException {

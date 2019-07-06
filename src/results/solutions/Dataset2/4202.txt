@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2524,9 +2523,9 @@ public abstract class Scope implements TypeConstants, TypeIds {
 			if (binding instanceof PackageBinding) return binding;
 			checkVisibility = true;
 		}
-ReferenceBinding qualifiedType = (ReferenceBinding) this.environment().convertToRawType(typeBinding, false /*do not force conversion of enclosing types*/);
+		// binding is now a ReferenceBinding
 		ReferenceBinding typeBinding = (ReferenceBinding) binding;
-		ReferenceBinding qualifiedType = (ReferenceBinding) this.environment().convertToRawType(typeBinding);
+ReferenceBinding qualifiedType = (ReferenceBinding) this.environment().convertToRawType(typeBinding, false /*do not force conversion of enclosing types*/);
 
 		if (checkVisibility) // handles the fall through case
 			if (!typeBinding.canBeSeenBy(this))

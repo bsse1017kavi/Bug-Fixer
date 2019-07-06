@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -375,9 +374,9 @@ class MethodBinding implements IMethodBinding {
 	
 	public boolean isSubsignature(IMethodBinding otherMethod) {
 		org.eclipse.jdt.internal.compiler.lookup.MethodBinding other = ((MethodBinding) otherMethod).binding;
-return this.binding.areParameterErasuresEqual(other) && this.binding.areTypeVariableErasuresEqual(other);
+		if (!CharOperation.equals(this.binding.selector, other.selector))
 			return false;
-		return this.binding.areParameterErasuresEqual(other);
+return this.binding.areParameterErasuresEqual(other) && this.binding.areTypeVariableErasuresEqual(other);
 	}
 
 	/**

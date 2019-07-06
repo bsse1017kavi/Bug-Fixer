@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -320,9 +319,9 @@ public class RegexExtractor extends AbstractScopedTestElement implements PostPro
             currentResult = matcher.getMatch();
             final int beginMatch = currentResult.beginOffset(0);
             if (beginMatch > beginOffset) { // string is not empty
-combined.add(Integer.valueOf(currentResult.group(1)));// add match as Integer
+                combined.add(rawTemplate.substring(beginOffset, beginMatch));
             }
-            combined.add(new Integer(currentResult.group(1)));// add match as Integer
+combined.add(Integer.valueOf(currentResult.group(1)));// add match as Integer
             beginOffset = currentResult.endOffset(0);
         }
 

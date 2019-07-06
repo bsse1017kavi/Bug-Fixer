@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -210,9 +209,9 @@ public class ResultCollector
 
     private void writeFileEnd()
     {
-out.print("\n</testResults>");
+        if (SaveService.getOutputFormat() == SaveService.SAVE_AS_XML)
         {
-            out.print("</testResults>");
+out.print("\n</testResults>");
         }
     }
 

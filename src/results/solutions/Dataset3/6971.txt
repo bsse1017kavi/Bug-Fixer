@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class ManagementUtil {
 
     static void updateUserDomainCallbackHandler(final OperationContext context, final ModelNode operation, final boolean forRollback) {
         UserDomainCallbackHandler cbh = getUserDomainCallbackHandler(context, operation);
-Resource root = forRollback ? context.getOriginalRootResource() : context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS);
+        if (cbh != null) {
             PathAddress authAddress = getXmlAuthenticationAddress(operation);
-            Resource root = forRollback ? context.getOriginalRootResource() : context.getRootResource();
+Resource root = forRollback ? context.getOriginalRootResource() : context.readResourceFromRoot(PathAddress.EMPTY_ADDRESS);
             ModelNode userMap;
             try {
                 Resource authResource = root.navigate(authAddress);

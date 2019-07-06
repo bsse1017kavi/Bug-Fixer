@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -97,9 +96,9 @@ private void computeClasspathLocations(IWorkspaceRoot workspaceRoot, JavaProject
 		try {
 			if (root.isArchive()) {
 				ZipFile zipFile = manager.getZipFile(path);
-Object target = JavaModel.getTarget(path, true);
+				cpLocations[index++] = new ClasspathJar(zipFile, ((ClasspathEntry) root.getRawClasspathEntry()).getAccessRuleSet());
 			} else {
-				Object target = JavaModel.getTarget(workspaceRoot, path, false);
+Object target = JavaModel.getTarget(path, true);
 				if (target == null) {
 					// target doesn't exist any longer
 					// just resize cpLocations

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -948,9 +947,9 @@ public class BcelTypeMunger extends ConcreteTypeMunger {
 			// Use the iterator form of 'getMethods()' so we do as little work as necessary
 			for (Iterator iter = onType.getSuperclass().getMethods();iter.hasNext() && !quitRightNow;) {
 				ResolvedMember aMethod = (ResolvedMember) iter.next();
-if (!aMethod.getReturnType().getErasureSignature().equals(localReturnTypeESig) && !Modifier.isPrivate(aMethod.getModifiers())) {
+				if (aMethod.getName().equals(localMethodName) && aMethod.getParameterSignature().equals(localParameterSig)) {
 					// check the return types, if they are different we need a bridging method.
-					if (!aMethod.getReturnType().getErasureSignature().equals(localReturnTypeESig)) {
+if (!aMethod.getReturnType().getErasureSignature().equals(localReturnTypeESig) && !Modifier.isPrivate(aMethod.getModifiers())) {
 						// Step3
 						createBridgeMethod(weaver.getWorld(), munger, unMangledInterMethod, gen, paramTypes, aMethod);
 						quitRightNow = true;

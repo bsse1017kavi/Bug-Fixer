@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -162,9 +161,9 @@ public class Chmod extends ExecuteOn
             // we are chmodding the given directory
             createArg().setValue( defaultSet.getDir( getProject() ).getPath() );
             Execute execute = prepareExec();
-execute.setCommandline( getCommand().getCommandline() );
+            try
             {
-                execute.setCommandline( cmdl.getCommandline() );
+execute.setCommandline( getCommand().getCommandline() );
                 runExecute( execute );
             }
             catch( IOException e )

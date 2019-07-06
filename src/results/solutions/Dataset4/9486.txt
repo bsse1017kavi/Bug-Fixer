@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -267,9 +266,9 @@ public class LocalGatewayMetaState extends AbstractComponent implements ClusterS
         MetaData globalMetaData = loadGlobalState();
         if (globalMetaData != null) {
             metaDataBuilder.metaData(globalMetaData);
-Set<String> indices = nodeEnv.findAllIndices();
+        }
 
-        Set<String> indices = nodeEnv.finalAllIndices();
+Set<String> indices = nodeEnv.findAllIndices();
         for (String index : indices) {
             IndexMetaData indexMetaData = loadIndex(index);
             if (indexMetaData == null) {

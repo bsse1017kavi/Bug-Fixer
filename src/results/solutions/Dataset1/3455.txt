@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.CurrentOfResultSet
@@ -322,9 +321,9 @@ class CurrentOfResultSet extends NoPutResultSetImpl
 				cursorActivation.setHeapConglomerateController(activation.getHeapConglomerateController());				
 			}
 		}
-throw StandardException.newException(SQLState.LANG_CURSOR_NOT_FOUND, cursorName);
+
 		if (cursor == null || cursor.isClosed()) {
-			throw StandardException.newException(SQLState.LANG_CURSOR_CLOSED, cursorName);	
+throw StandardException.newException(SQLState.LANG_CURSOR_NOT_FOUND, cursorName);
 		}
 	}
 

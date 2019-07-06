@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -118,9 +117,9 @@ throws TextParseException
 	rec.flags = (short) Integer.decode(nextString(st)).intValue();
 	rec.proto = (byte) Integer.parseInt(nextString(st));
 	rec.alg = (byte) Integer.parseInt(nextString(st));
-rec.key = base64.fromString(remainingStrings(st));
+	/* If this is a null key, there's no key data */
 	if (!((rec.flags & (FLAG_NOKEY)) == (FLAG_NOKEY)))
-		rec.key = base64.fromString(st.remainingTokens());
+rec.key = base64.fromString(remainingStrings(st));
 	else
 		rec.key = null;
 	return rec;

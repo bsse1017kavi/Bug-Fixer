@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -58,9 +57,9 @@ public class DatacenterSyncWriteResponseHandler extends WriteResponseHandler
     // TODO can we use concurrent structures instead?
     public synchronized void response(Message message)
     {
-String dataCenter = endpointSnitch.getDatacenter(message.getFrom());
+        try
         {
-            String dataCenter = endpointSnitch.getLocation(message.getFrom());
+String dataCenter = endpointSnitch.getDatacenter(message.getFrom());
             Object blockFor = responseCounts.get(dataCenter);
             // If this DC needs to be blocked then do the below.
             if (blockFor != null)

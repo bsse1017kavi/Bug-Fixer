@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -296,9 +295,9 @@ public class SendMessageCommand extends Command {
 			composerController.getView().getFrame().requestFocus();
 		} else {
 			// do not prompt user if composer should be really closed
-composerController.fireClosed();
+			composerController.setPromptOnDialogClosing(false);
 			// save composer window state
-			composerController.getContainer().close();
+composerController.fireClosed();
 		}
 	}
 }

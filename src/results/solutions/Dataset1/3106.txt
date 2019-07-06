@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -53,9 +52,9 @@ public class TestSubScorerFreqs extends LuceneTestCase {
       doc.add(newTextField("f", "a b c d", Field.Store.NO));
       w.addDocument(doc);
     }
-w.shutdown();
+
     s = newSearcher(w.getReader());
-    w.close();
+w.shutdown();
   }
 
   @AfterClass

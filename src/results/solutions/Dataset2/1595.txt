@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * 
@@ -72,9 +71,9 @@ import org.apache.tomcat.util.*;
  * by webapps and Request.doRead() methods. 
  *
  * This will also deal with the "contentLength" limit.
-public final class ServletInputStreamFacade extends ServletInputStream {
+ * <b>Important</b> Only the methods in ServletInputStream can be public.
  */
-final class ServletInputStreamFacade extends ServletInputStream {
+public final class ServletInputStreamFacade extends ServletInputStream {
     private int bytesRead = 0;
     // Stop after reading ContentLength bytes. 
     private int limit = -1;

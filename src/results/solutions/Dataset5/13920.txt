@@ -1,4 +1,3 @@
-
 /*
  * $Id: ComponentStringResourceLoader.java,v 1.5 2005/01/19 08:07:57
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -101,9 +100,9 @@ public class PropertiesFactory
 		final String key = createResourceKey(clazz, locale, style);
 		Properties props = (Properties)propertiesCache.get(key);
 		if ((props == null) && (propertiesCache.containsKey(key) == false))
-clazz.getName().replace('.', '/'), style, locale, "properties");
+		{
 			final IResourceStream resource = application.getResourceSettings().getResourceStreamLocator().locate(clazz,
-					style, locale, "properties");
+clazz.getName().replace('.', '/'), style, locale, "properties");
 
 			if (resource != null)
 			{

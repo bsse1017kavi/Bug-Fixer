@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -331,9 +330,9 @@ public final class ArithmeticUtils {
      *
      * @param n Argument.
      * @return {@code n!}
-public static double factorialDouble(final int n) throws NotPositiveException {
+     * @throws NotPositiveException if {@code n < 0}.
      */
-    public static double factorialDouble(final int n) throws NotPositiveException, MathArithmeticException {
+public static double factorialDouble(final int n) throws NotPositiveException {
         if (n < 0) {
             throw new NotPositiveException(LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER,
                                            n);

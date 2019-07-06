@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -134,9 +133,9 @@ public class MAudit extends AbstractMetamataTask
 
     public Path createSearchpath()
     {
-searchPath = new Path( getProject() );
+        if( searchPath == null )
         {
-            searchPath = new Path( project );
+searchPath = new Path( getProject() );
         }
         return searchPath;
     }

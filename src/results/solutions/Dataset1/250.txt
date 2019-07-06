@@ -1,4 +1,3 @@
-
  /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class StreamRequestVerbHandler implements IVerbHandler
             StreamRequestMessage srm = StreamRequestMessage.serializer().deserialize(new DataInputStream(bufIn));
             if (logger.isDebugEnabled())
                 logger.debug(srm.toString());
-StreamOut.transferRangesForRequest(session, srm.ranges, srm.type);
+
             StreamOutSession session = StreamOutSession.create(srm.table, message.getFrom(), srm.sessionId);
-            StreamOut.transferRangesForRequest(session, srm.ranges);
+StreamOut.transferRangesForRequest(session, srm.ranges, srm.type);
         }
         catch (IOException ex)
         {

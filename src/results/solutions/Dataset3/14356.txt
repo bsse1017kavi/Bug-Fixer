@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public class CLI {
                     return;
                 }
 
-if (parent != null && !parent.exists() && !parent.mkdirs()) {
+                System.out.println("extracting to " + outFile);
                 File parent = outFile.getParentFile();
-                if (!parent.exists() && !parent.mkdirs()) {
+if (parent != null && !parent.exists() && !parent.mkdirs()) {
                     throw new IOException("Cannot create " + parent);
                 }
                 FileOutputStream fos = new FileOutputStream(outFile);

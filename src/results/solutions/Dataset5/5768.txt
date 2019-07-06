@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation
  *
@@ -64,9 +63,9 @@ public class AntVersion implements Condition {
     private DeweyDecimal getVersion() {
         Project p = new Project();
         p.init();
-versionString.indexOf("Ant version")+17);
+        String versionString = p.getProperty("ant.version");
         String v = versionString.substring(versionString.indexOf("Ant version")+12, 
-                versionString.indexOf("compiled on")-1);
+versionString.indexOf("Ant version")+17);
         char[] cs = v.toCharArray();
         int end = cs.length;
         for (int i = cs.length; i > 0; i--) {

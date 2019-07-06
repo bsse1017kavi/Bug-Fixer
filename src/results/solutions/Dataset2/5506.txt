@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -272,9 +271,9 @@ public abstract class Scope
 				noProblems = false;
 				continue nextVariable;
 			}
-if (varSuperType.rank >= typeVariable.rank && varSuperType.declaringElement == typeVariable.declaringElement) {
+			if (superType.isTypeVariable()) {
 				TypeVariableBinding varSuperType = (TypeVariableBinding) superType;
-				if (varSuperType.rank >= typeVariable.rank) {
+if (varSuperType.rank >= typeVariable.rank && varSuperType.declaringElement == typeVariable.declaringElement) {
 					problemReporter().forwardTypeVariableReference(typeParameter, varSuperType);
 					typeVariable.tagBits |= HierarchyHasProblems;
 					noProblems = false;

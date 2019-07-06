@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2002, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2018,9 +2017,9 @@ public class CodeFormatterVisitor extends ASTVisitor {
 	private void formatTypeOpeningBrace(String bracePosition, boolean insertSpaceBeforeBrace, TypeDeclaration typeDeclaration) {
 		int fieldCount = (typeDeclaration.fields == null) ? 0 : typeDeclaration.fields.length;
 		int methodCount = (typeDeclaration.methods == null) ? 0 : typeDeclaration.methods.length;
-if (methodCount <= 2) {
+		int typeCount = (typeDeclaration.memberTypes == null) ? 0 : typeDeclaration.memberTypes.length;
 	
-		if (methodCount != 0) {
+if (methodCount <= 2) {
 			for (int i = 0, max = methodCount; i < max; i++) {
 				final AbstractMethodDeclaration abstractMethodDeclaration = typeDeclaration.methods[i];
 				if (abstractMethodDeclaration.isDefaultConstructor()) {

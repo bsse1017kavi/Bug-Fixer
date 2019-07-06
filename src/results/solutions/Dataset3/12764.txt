@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -83,9 +82,9 @@ public class LoadTimeWeavingConfiguration implements ImportAware, BeanClassLoade
 		switch ((AspectJWeaving) this.enableLTW.get("aspectjWeaving")) {
 			case DISABLED:
 				// AJ weaving is disabled -> do nothing
-if (this.beanClassLoader.getResource(ASPECTJ_AOP_XML_RESOURCE) == null) {
+				break;
 			case AUTODETECT:
-				if (this.beanClassLoader.getResource(ASPECTJ_AOP_XML_RESOURCE) != null) {
+if (this.beanClassLoader.getResource(ASPECTJ_AOP_XML_RESOURCE) == null) {
 					// No aop.xml present on the classpath -> treat as 'disabled'
 					break;
 				}

@@ -1,4 +1,3 @@
-
 /*
  * CompleteWord.java - Complete word dialog
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -487,9 +486,9 @@ public class CompleteWord extends JWindow
 
 			// \t handled above
 			if(ch != '\b' && ch != '\t')
-if(!Character.isLetterOrDigit(ch) && noWordSep.indexOf(ch) == -1)
+			{
 				/* eg, foo<C+b>, will insert foobar, */
-				if(!Character.isLetter(ch) && noWordSep.indexOf(ch) == -1)
+if(!Character.isLetterOrDigit(ch) && noWordSep.indexOf(ch) == -1)
 				{
 					insertSelected();
 					textArea.userInput(ch);

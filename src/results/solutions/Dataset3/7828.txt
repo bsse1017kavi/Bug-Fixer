@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ import org.xnio.ssl.XnioSsl;
 public class HttpsListenerService extends HttpListenerService {
 
     private final InjectedValue<SecurityRealm> securityRealm = new InjectedValue<>();
-public HttpsListenerService(final String name) {
+    private volatile AcceptingChannel<SslConnection> sslServer;
 
-    HttpsListenerService(final String name) {
+public HttpsListenerService(final String name) {
         super(name);
     }
 

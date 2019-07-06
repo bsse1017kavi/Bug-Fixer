@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  *
@@ -90,9 +89,9 @@ public class DefaultMessageContext implements MessageContext {
 			return Collections.emptyList();
 		}
 		return Collections.unmodifiableList(messages);
-public void add(MessageResolver messageResolver, String element) {
+	}
 
-	public void addMessage(String element, MessageResolver messageResolver) {
+public void add(MessageResolver messageResolver, String element) {
 		List<Message> messages = messagesByElement.get(element);
 		messages.add(new ResolvableMessage(messageResolver));
 	}

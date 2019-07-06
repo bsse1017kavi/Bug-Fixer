@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -564,9 +563,9 @@ public class FieldMetaData
      * For a primary key field, return the type of the corresponding object id 
      * class field.
      */
-if (relmeta == null || getValue().isEmbedded())
+    public Class getObjectIdFieldType() {
         ClassMetaData relmeta = getDeclaredTypeMetaData();
-        if (relmeta == null)
+if (relmeta == null || getValue().isEmbedded())
             return getDeclaredType();
         switch (relmeta.getIdentityType()) {
             case ClassMetaData.ID_DATASTORE:

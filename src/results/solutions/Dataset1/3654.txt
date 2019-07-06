@@ -1,4 +1,3 @@
-
 /*
  *
  * Derby - Class org.apache.derbyTesting.functionTests.tests.lang.ClobStoredProcedureTest
@@ -138,9 +137,9 @@ public class ClobStoredProcedureTest extends BaseJDBCTestCase {
         locator = cs.getInt(1);
         //verify if the locator rturned and expected are equal.
         //remember in setup a locator is already created
-"SYSIBM.CLOBCREATELOCATOR() are incorrect", 4, locator);
+        //hence expected value is 2
         assertEquals("The locator values returned by " +
-            "SYSIBM.CLOBCREATELOCATOR() are incorrect", 2, locator);
+"SYSIBM.CLOBCREATELOCATOR() are incorrect", 4, locator);
         cs.close();
     }
 

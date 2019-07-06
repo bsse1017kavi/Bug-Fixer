@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -225,9 +224,9 @@ class ExtendedDismaxQParser extends QParser {
       StringBuilder sb = new StringBuilder();
       for (int i=0; i<clauses.size(); i++) {
         Clause clause = clauses.get(i);
-if (lowercaseOperators && i>0 && i+1<clauses.size()) {
+        String s = clause.raw;
         // and and or won't be operators at the start or end
-        if (i>0 && i+1<clauses.size()) {
+if (lowercaseOperators && i>0 && i+1<clauses.size()) {
           if ("AND".equalsIgnoreCase(s)) {
             s="AND";
           } else if ("OR".equalsIgnoreCase(s)) {

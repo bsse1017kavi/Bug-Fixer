@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -114,9 +113,9 @@ Compiler getCompiler(ICompilerRequestor requestor) {
 				this.options, 
 				requestor, 
 				this.problemFactory,
-getMapper().startPosOffset + codeSnippet.length - 1);
+				this.context,
 				getMapper().startPosOffset,
-				getMapper().startPosOffset + codeSnippet.length - 1 + Util.LINE_SEPARATOR_CHARS.length); // 14838
+getMapper().startPosOffset + codeSnippet.length - 1);
 		// Initialize the compiler's lookup environment with the already compiled super classes
 		IBinaryType binary = this.context.getRootCodeSnippetBinary();
 		if (binary != null) {

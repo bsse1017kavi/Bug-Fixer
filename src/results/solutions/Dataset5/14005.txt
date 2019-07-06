@@ -1,4 +1,3 @@
-
 package wapplet;
 
 import java.awt.Container;
@@ -31,9 +30,9 @@ public class HostApplet extends JApplet implements IAppletServer
 			Container container = getContentPane();
 			Class c = Class.forName(appletClassName);
 			if (c != null)
-applet.init(this, container, getModel());
+			{
 				applet = (IApplet)c.newInstance();
-				applet.init(container, this, getModel());
+applet.init(this, container, getModel());
 			}
 		}
 		catch (ClassNotFoundException e)

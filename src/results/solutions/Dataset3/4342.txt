@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public final class LookupInjectionSource extends InjectionSource {
             lookupName = "java:module/" + this.lookupName.substring(10);
         } else {
             lookupName = this.lookupName;
-bindInfo.setupLookupInjection(serviceBuilder, injector, phaseContext.getDeploymentUnit());
+        }
         final ContextNames.BindInfo bindInfo = ContextNames.bindInfoFor(applicationName, moduleName, componentName, lookupName);
-        bindInfo.setupLookupInjection(serviceBuilder, injector);
+bindInfo.setupLookupInjection(serviceBuilder, injector, phaseContext.getDeploymentUnit());
     }
 
 

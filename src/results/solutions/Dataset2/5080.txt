@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -19,9 +18,9 @@ import org.eclipse.jdt.core.compiler.*;
 public class CompilationParticipantResult {
 	protected SourceFile sourceFile;
 	protected boolean hasAnnotations; // only set during processAnnotations
-protected CategorizedProblem[] problems; // new problems to report against this compilationUnit
+	protected IFile[] addedFiles; // added/changed generated source files that need to be compiled
 	protected IFile[] deletedFiles; // previously generated source files that should be deleted
-	protected IProblem[] problems; // new problems to report against this compilationUnit
+protected CategorizedProblem[] problems; // new problems to report against this compilationUnit
 	protected String[] dependencies; // fully-qualified type names of any new dependencies, each name is of the form 'p1.p2.A.B'
 
 protected CompilationParticipantResult(SourceFile sourceFile) {

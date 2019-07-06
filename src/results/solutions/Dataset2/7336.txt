@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -229,9 +228,9 @@ void compile(SourceFile[] units, String[] initialTypeNames, String[] additionalF
 
 protected void createErrorFor(IResource resource, String message) {
 	try {
-if (message.equals(Util.bind("build.duplicateResource"))) //$NON-NLS-1$
+		IMarker marker = resource.createMarker(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER);
 		int severity = IMarker.SEVERITY_ERROR;
-		if (message.equals(Util.bind("build.duplicateResource")))
+if (message.equals(Util.bind("build.duplicateResource"))) //$NON-NLS-1$
 			if (JavaCore.WARNING.equals(javaBuilder.javaProject.getOption(JavaCore.CORE_JAVA_BUILD_DUPLICATE_RESOURCE, true)))
 				severity = IMarker.SEVERITY_WARNING;
 		marker.setAttributes(

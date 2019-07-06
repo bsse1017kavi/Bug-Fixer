@@ -1,4 +1,3 @@
-
 // Copyright (c) 2002-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -86,9 +85,9 @@ refreshDefault() {
 		defaultResolver = new ExtendedResolver();
 	}
 	catch (UnknownHostException e) {
-defaultSearchPath = ResolverConfig.getCurrentConfig().searchPath();
+		throw new RuntimeException("Failed to initialize resolver");
 	}
-	defaultSearchPath = FindServer.searchPath();
+defaultSearchPath = ResolverConfig.getCurrentConfig().searchPath();
 	defaultCaches = new HashMap();
 }
 

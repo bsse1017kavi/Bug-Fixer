@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -114,9 +113,9 @@ public abstract class Unpack
     private void validate()
         throws TaskException
     {
-final String message = "No Src for " + getContext().getName() + " specified";
+        if( null == m_src )
         {
-            final String message = "No Src for " + getName() + " specified";
+final String message = "No Src for " + getContext().getName() + " specified";
             throw new TaskException( message );
         }
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -467,9 +466,9 @@ public class JDBCStoreQuery
             // The bulk operation will return null to indicate that the database
             // does not support the request bulk delete operation; in
             // this case, we need to perform the query in-memory and
-sql[i] = dict.toDelete(mappings[i], sel, params);
+            // manually delete the instances
             if (updates == null)
-                sql[i] = dict.toDelete(mappings[i], sel, _store, params);
+sql[i] = dict.toDelete(mappings[i], sel, params);
             else
                 sql[i] = dict.toUpdate(mappings[i], sel, _store, params,
                     updates);

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -278,9 +277,9 @@ verify(Message m, byte [] b, int length, TSIGRecord old) {
 		h.addData(b, header.length, len);
 
 		DataByteOutputStream out = new DataByteOutputStream();
-out.writeUnsignedInt(tsig.ttl);
+		tsig.getName().toWireCanonical(out);
 		out.writeShort(tsig.dclass);
-		out.writeInt(tsig.ttl);
+out.writeUnsignedInt(tsig.ttl);
 		tsig.getAlgorithm().toWireCanonical(out);
 		long time = tsig.getTimeSigned().getTime() / 1000;
 		short timeHigh = (short) (time >> 32);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public final class ModuleDependencyProcessor implements DeploymentUnitProcessor 
             if (dependencyString == null)
                 continue;
 
-final String[] dependencyParts = dependencyDef.trim().split(" ");
+            final String[] dependencyDefs = dependencyString.split(",");
             for (final String dependencyDef : dependencyDefs) {
-                final String[] dependencyParts = dependencyDef.split(" ");
+final String[] dependencyParts = dependencyDef.trim().split(" ");
                 if (dependencyParts.length == 0) {
                     throw new RuntimeException("Invalid dependency: " + dependencyString);
                 }

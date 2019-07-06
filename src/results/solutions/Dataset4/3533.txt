@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class TransportIndicesAliasesAction extends TransportMasterNodeOperationA
         super(settings, transportService, clusterService, threadPool);
         this.indexAliasesService = indexAliasesService;
     }
-return ThreadPool.Names.MANAGEMENT;
+
     @Override protected String executor() {
-        return ThreadPool.Names.CACHED;
+return ThreadPool.Names.MANAGEMENT;
     }
 
     @Override protected String transportAction() {

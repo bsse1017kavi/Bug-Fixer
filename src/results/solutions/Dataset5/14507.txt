@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2009 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -126,9 +125,9 @@ public class ExpandStatement extends Statement {
         final String sep = (String) (separator != null ? separator.evaluate(ctx) : null);
         Object targetObject = null;
         if (isForeach()) {
-if (!(targetObject instanceof Collection<?>))
+            targetObject = target.evaluate(ctx);
             if (targetObject != null) {
-                if (!(targetObject instanceof Collection))
+if (!(targetObject instanceof Collection<?>))
                     throw new EvaluationException("Collection expected!", target, ctx);
 
                 final Collection<?> col = (Collection<?>) targetObject;

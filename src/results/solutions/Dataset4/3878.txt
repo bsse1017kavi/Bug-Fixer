@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -83,9 +82,9 @@ public class DoubleArrayIndexFieldData extends AbstractIndexFieldData<DoubleArra
     public DoubleArrayAtomicFieldData loadDirect(AtomicReaderContext context) throws Exception {
 
         AtomicReader reader = context.reader();
-return DoubleArrayAtomicFieldData.empty(reader.maxDoc());
+        Terms terms = reader.terms(getFieldNames().indexName());
         if (terms == null) {
-            return DoubleArrayAtomicFieldData.EMPTY;
+return DoubleArrayAtomicFieldData.empty(reader.maxDoc());
         }
         // TODO: how can we guess the number of terms? numerics end up creating more terms per value...
         final BigDoubleArrayList values = new BigDoubleArrayList();

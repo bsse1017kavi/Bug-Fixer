@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -311,9 +310,9 @@ public abstract class AbstractExpressionBuilder {
             addAccessPath(meta);
             path.setMetaData(meta);
         }
-XMLMetaData xmlmeta = fmd.getRepository().getXMLMetaData(fmd.getDeclaredType());
+        else {
             // xmlsupport xpath
-            XMLMetaData xmlmeta = fmd.getRepository().getXMLMetaData(fmd);
+XMLMetaData xmlmeta = fmd.getRepository().getXMLMetaData(fmd.getDeclaredType());
             if (xmlmeta != null) {
                 path.get(fmd, xmlmeta);
                 return path;

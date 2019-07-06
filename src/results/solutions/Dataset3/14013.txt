@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class StatefulComponentSessionIdGeneratingInterceptorFactory implements I
     public Interceptor create(InterceptorFactoryContext context) {
         final AtomicReference<SessionID> sessionIdReference = new AtomicReference<SessionID>();
         context.getContextData().put(StatefulSessionComponent.SESSION_ID_REFERENCE_KEY, sessionIdReference);
-final SessionID id = (SessionID) context.getContextData().get(SessionID.class);
+
         //if we are attaching to an existing instance this will not be null
-        final SessionID id = (SessionID) context.getContextData().get(SessionID.SESSION_ID_KEY);
+final SessionID id = (SessionID) context.getContextData().get(SessionID.class);
         if(id == null) {
             return new StatefulComponentSessionIdGeneratingInterceptor(sessionIdReference);
         } else {

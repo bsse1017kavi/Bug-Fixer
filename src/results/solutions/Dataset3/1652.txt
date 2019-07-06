@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -520,9 +519,9 @@ public class HostXml extends CommonXml {
                 case JVM: {
                     if (sawJvm) {
                         throw new XMLStreamException(element.getLocalName() + " already defined", reader.getLocation());
-parseJvm(reader, address, list, new HashSet<String>(), true);
+                    }
 
-                    parseJvm(reader, address, list, new HashSet<String>());
+parseJvm(reader, address, list, new HashSet<String>(), true);
                     sawJvm = true;
                     break;
                 }

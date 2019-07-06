@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -46,8 +45,8 @@ public class ContainerFeedbackMessageFilter implements IFeedbackMessageFilter
 	/**
 	 * @see wicket.feedback.IFeedbackMessageFilter#accept(wicket.feedback.FeedbackMessage)
 	 */
-return container.getParent().contains(message.getReporter(), false);
+	public boolean accept(FeedbackMessage message)
 	{
-		return container.isAncestorOf(message.getReporter());
+return container.getParent().contains(message.getReporter(), false);
 	}
 }

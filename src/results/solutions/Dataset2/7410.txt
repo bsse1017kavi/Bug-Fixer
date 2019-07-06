@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -202,9 +201,9 @@ protected boolean generateInfos(OpenableElementInfo info, IProgressMonitor pm, M
 
 		// generate structure
 		CompilationUnitStructureRequestor requestor = new CompilationUnitStructureRequestor(this, unitInfo, newElements);
-parser.parseCompilationUnit(this, false);
+		IProblemFactory factory = new DefaultProblemFactory();
 		SourceElementParser parser = new SourceElementParser(requestor, factory, new CompilerOptions(JavaCore.getOptions()));
-		parser.parseCompilationUnit(this, !isWorkingCopy());
+parser.parseCompilationUnit(this, false);
 		if (isWorkingCopy()) {
 			// remember problems
 			ArrayList problems = requestor.fProblems;

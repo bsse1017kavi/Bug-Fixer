@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class LZFCompressedIndexInput extends CompressedIndexInput<LZFCompressorC
     protected void doClose() throws IOException {
         // nothing to do here...
     }
-public IndexInput clone() {
+
     @Override
-    public Object clone() {
+public IndexInput clone() {
         LZFCompressedIndexInput cloned = (LZFCompressedIndexInput) super.clone();
         cloned.inputBuffer = new byte[LZFChunk.MAX_CHUNK_LEN];
         return cloned;

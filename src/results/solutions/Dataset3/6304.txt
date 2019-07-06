@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public class ServerModelDeploymentStartStopUpdate extends AbstractServerModelUpd
         // TODO using the deploymentElement cached in the model update method
         // has a bad smell
         if (deploymentElement != null) {
-deploymentElement.getSha1Hash(), updateContext.getServiceTarget(), updateContext.getServiceContainer(), resultHandler, param);
+            if (isStart) {
                 startStopHandler.deploy(deploymentElement.getUniqueName(), deploymentElement.getRuntimeName(),
-                        deploymentElement.getSha1Hash(), updateContext.getBatchBuilder(), updateContext.getServiceContainer(), resultHandler, param);
+deploymentElement.getSha1Hash(), updateContext.getServiceTarget(), updateContext.getServiceContainer(), resultHandler, param);
             }
             else {
                 startStopHandler.undeploy(getDeploymentUnitName(), updateContext.getServiceContainer(), resultHandler, param);

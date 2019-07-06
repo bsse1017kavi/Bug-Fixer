@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public final class OutputUtils {
    * @return {@code Path} array
    */
   public static Path[] listOutputFiles(FileSystem fs, Path outpath) throws IOException {
-if (!s.isDir() && !s.getPath().getName().startsWith("_")) {
+    Collection<Path> outpaths = Lists.newArrayList();
     for (FileStatus s : fs.listStatus(outpath, PathFilters.logsCRCFilter())) {
-      if (!s.isDir()) {
+if (!s.isDir() && !s.getPath().getName().startsWith("_")) {
         outpaths.add(s.getPath());
       }
     }

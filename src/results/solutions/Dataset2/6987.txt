@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -221,9 +220,9 @@ public class SourceMapper
 			String typeSig = Signature.createTypeSignature(typeNames[i], false);
 			int lastIndex = typeSig.lastIndexOf('.');
 			if (lastIndex == -1) {
-typeSigs[i] = Signature.C_UNRESOLVED + typeSig.substring(lastIndex + 1, typeSig.length());
+				typeSigs[i] = typeSig;
 			} else {
-				typeSigs[i] = "" + Signature.C_UNRESOLVED + typeSig.substring(lastIndex + 1, typeSig.length());
+typeSigs[i] = Signature.C_UNRESOLVED + typeSig.substring(lastIndex + 1, typeSig.length());
 			}
 		}
 		return typeSigs;

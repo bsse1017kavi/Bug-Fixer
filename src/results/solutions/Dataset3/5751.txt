@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -341,9 +340,9 @@ public class ModelTestUtils {
             // compare string representations of the keys to help see the difference
             if (!keys1.toString().equals(keys2.toString())){
                 //Just to make debugging easier
-Assert.assertEquals(getCompareStackAsString(stack) + ": " + node1 + "\n" + node2, keys1.toString(), keys2.toString());
+                System.out.print("");
             }
-            Assert.assertEquals(node1 + "\n" + node2, keys1.toString(), keys2.toString());
+Assert.assertEquals(getCompareStackAsString(stack) + ": " + node1 + "\n" + node2, keys1.toString(), keys2.toString());
             Assert.assertTrue(keys1.containsAll(keys2));
 
             for (String key : keys1) {

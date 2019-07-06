@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public class WithoutCPWithoutFPTest extends WicketWebTestCase
 		beginAt("/hello/message/Test");
 		dumpHtml();
 		assertTitleEquals("Wicket Examples - helloworld");
-public void testWithSlash() throws Exception
+		assertTextInElement("message", "Message is: 'Test'");
 	}
-	public void bugTestWithSlash() throws Exception
+public void testWithSlash() throws Exception
 	{
 		beginAt("/hello/message/Test%2FWith%20a%20Slash");
 		dumpHtml();

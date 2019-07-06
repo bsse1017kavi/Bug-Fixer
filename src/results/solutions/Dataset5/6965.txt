@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -255,9 +254,9 @@ public class EjbcHelper {
                 regenerateSupportClasses(descriptorFile);
             }
             else {
-manifest += "Name: " + descriptorName.replace('\\', '/') + "\nEnterprise-Bean: True\n\n";
+                System.out.println(descriptorFile.getName() + " is up to date");
             }
-            manifest += "Name: " + descriptorFile.getName() + "\nEnterprise-Bean: True\n\n";
+manifest += "Name: " + descriptorName.replace('\\', '/') + "\nEnterprise-Bean: True\n\n";
         }
         
         FileWriter fw = new FileWriter(manifestFile);

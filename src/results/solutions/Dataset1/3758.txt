@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.function;
 
 /**
@@ -87,9 +86,9 @@ public abstract class FunctionTestSetup extends LuceneTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     // prepare a small index with just a few documents.  
-anlzr = new StandardAnalyzer(TEST_VERSION_CURRENT);
+    super.setUp();
     dir = new RAMDirectory();
-    anlzr = new StandardAnalyzer(org.apache.lucene.util.Version.LUCENE_CURRENT);
+anlzr = new StandardAnalyzer(TEST_VERSION_CURRENT);
     IndexWriter iw = new IndexWriter(dir, anlzr,
                                      IndexWriter.MaxFieldLength.LIMITED);
     // add docs not exactly in natural ID order, to verify we do check the order of docs by scores

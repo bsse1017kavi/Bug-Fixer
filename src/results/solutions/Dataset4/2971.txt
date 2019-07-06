@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -159,9 +158,9 @@ public class SizeFieldMapper extends IntegerFieldMapper implements RootMapper {
         }
         builder.startObject(contentType());
         if (enabledState != Defaults.ENABLED_STATE) {
-if (fieldType().stored() != Defaults.SIZE_FIELD_TYPE.stored() && enabledState.enabled) {
+            builder.field("enabled", enabledState.enabled);
         }
-        if (fieldType().stored() != Defaults.SIZE_FIELD_TYPE.stored()) {
+if (fieldType().stored() != Defaults.SIZE_FIELD_TYPE.stored() && enabledState.enabled) {
             builder.field("store", fieldType().stored());
         }
         builder.endObject();

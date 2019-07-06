@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class TestCacheModeEnableSelective extends AbstractCacheModeTestCase {
         { UncacheableEntity.class, XmlUncacheableEntity.class, UnspecifiedEntity.class, };
 
     @Override
-emf = createEntityManagerFactory("cache-mode-enable", null);
+    public OpenJPAEntityManagerFactorySPI getEntityManagerFactory() {
         if (emf == null) {
-            emf = createEntityManagerFactory("cache-mode-enable");
+emf = createEntityManagerFactory("cache-mode-enable", null);
             assertNotNull(emf);
             cache = emf.getCache();
             assertNotNull(cache);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -230,9 +229,9 @@ public final class ReportMenuFactory {
     public static JMenu makeMenu(Collection menuInfo, String actionCommand, String menuName) {
         Iterator iter = menuInfo.iterator();
         JMenu menu = new JMenu(menuName);
-menu.add(makeMenuItem(info.getLabel(), info.getClassName(), actionCommand));
+        while (iter.hasNext()) {
             MenuInfo info = (MenuInfo) iter.next();
-            menu.add(makeMenuItem(info.label, info.className, actionCommand));
+menu.add(makeMenuItem(info.getLabel(), info.getClassName(), actionCommand));
         }
         return menu;
     }

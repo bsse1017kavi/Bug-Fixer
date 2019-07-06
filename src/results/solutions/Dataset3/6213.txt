@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source
 * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -41,9 +40,9 @@ class ManagedServerSocketBinding extends ServerSocket implements ManagedBinding 
     ManagedServerSocketBinding(final SocketBindingManager socketBindings) throws IOException {
         this.socketBindings = socketBindings;
     }
-return InetSocketAddress.class.cast(getLocalSocketAddress());
+
     public InetSocketAddress getBindAddress() {
-        return InetSocketAddress.class.cast(getLocalPort());
+return InetSocketAddress.class.cast(getLocalSocketAddress());
     }
 
     public void bind(SocketAddress endpoint, int backlog) throws IOException {

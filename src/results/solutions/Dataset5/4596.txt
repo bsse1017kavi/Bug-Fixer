@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2004 The Apache Software Foundation.
  * 
@@ -792,9 +791,9 @@ public class XML11NSDocumentScannerImpl extends XML11DocumentScannerImpl {
          */
         protected boolean scanRootElementHook()
             throws IOException, XNIException {
-&& !fDisallowDoctype && (fValidation || fLoadExternalDTD)) {
+            
             if (fExternalSubsetResolver != null && !fSeenDoctypeDecl 
-                && (fValidation || fLoadExternalDTD)) {
+&& !fDisallowDoctype && (fValidation || fLoadExternalDTD)) {
                 scanStartElementName();
                 resolveExternalSubsetAndRead();
                 reconfigurePipeline();

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -102,9 +101,9 @@ public class JChannelFactory implements ChannelFactory, ChannelListener, Protoco
             // Collect bridges, eliminating duplicates
             final Map<String, RelayConfig.BridgeConfig> bridges = new HashMap<String, RelayConfig.BridgeConfig>();
             for (final RemoteSiteConfiguration remoteSite: remoteSites) {
-final String cluster = remoteSite.getClusterName();
+                final String siteName = remoteSite.getName();
                 sites.add(siteName);
-                final String cluster = remoteSite.getCluster();
+final String cluster = remoteSite.getClusterName();
                 final String clusterName = (cluster != null) ? cluster : siteName;
                 final RelayConfig.BridgeConfig bridge = new RelayConfig.BridgeConfig(clusterName) {
                     @Override

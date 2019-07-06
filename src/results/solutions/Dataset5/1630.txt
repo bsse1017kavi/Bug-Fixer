@@ -1,4 +1,3 @@
-
 /*
  * Copyright Teachscape
  */
@@ -72,9 +71,9 @@ public class SimpleGetCommand extends AbstractGetCommand {
 		method.setFollowRedirects(true);
 		try {
 			int code = client.executeMethod(method);
-log.error(method.getResponseBodyAsString());
+			if (code != 200) {
 				log.error("ERROR! code: " + code);
-				//log.error(method.getResponseBodyAsString());
+log.error(method.getResponseBodyAsString());
 				// TODO rather than failing, just gather statistics
 				// throw new Exception(new String(method.getResponseBody()));
 			}

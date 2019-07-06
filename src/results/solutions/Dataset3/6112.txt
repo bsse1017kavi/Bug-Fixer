@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -148,9 +147,9 @@ public class AbstractSockJsServiceTests extends AbstractHttpRequestTests {
 		String body = this.servletResponse.getContentAsString();
 		assertEquals("{\"entropy\"", body.substring(0, body.indexOf(':')));
 		assertEquals(",\"origins\":[\"*:*\"],\"cookie_needed\":false,\"websocket\":true}",
-this.service.setSessionCookieNeeded(false);
+				body.substring(body.indexOf(',')));
 
-		this.service.setDummySessionCookieEnabled(false);
+this.service.setSessionCookieNeeded(false);
 		this.service.setWebSocketsEnabled(false);
 		handleRequest("GET", "/a/info", HttpStatus.OK);
 

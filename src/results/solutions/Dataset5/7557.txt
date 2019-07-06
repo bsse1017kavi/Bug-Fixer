@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -341,9 +340,9 @@ class  XSDComplexTypeTraverser extends XSDAbstractParticleTraverser {
         // The name is quite good for debugging/error purposes, but we may want to
         // revisit how this is done for performance reasons (LM).
         String typeName;
-while (node != null && (node != DOMUtil.getRoot(DOMUtil.getDocument(node)))) {
+        Element node = DOMUtil.getParent(complexTypeDecl);
         typeName="#AnonType_";
-        while (node != null) {
+while (node != null && (node != DOMUtil.getRoot(DOMUtil.getDocument(node)))) {
           typeName = typeName+node.getAttribute(SchemaSymbols.ATT_NAME);
           node = DOMUtil.getParent(node);
         }

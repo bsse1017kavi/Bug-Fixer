@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -861,9 +860,9 @@ public class TestDocValuesIndexing extends LuceneTestCase {
         doc.add(new SortedBytesDocValuesField("field", br));
         w.addDocument(doc);
       }
-SortedDocValues docValues = MultiDocValues.getSortedValues(reader, "field");
+      w.commit();
       IndexReader reader = w.getReader();
-      SortedDocValues docValues = MultiSimpleDocValues.simpleSortedValues(reader, "field");
+SortedDocValues docValues = MultiDocValues.getSortedValues(reader, "field");
       int[] sort = hash.sort(BytesRef.getUTF8SortedAsUnicodeComparator());
       BytesRef expected = new BytesRef();
       BytesRef actual = new BytesRef();

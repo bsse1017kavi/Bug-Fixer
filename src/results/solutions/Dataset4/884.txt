@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.backends.jglfw;
 
 import static com.badlogic.jglfw.Glfw.*;
@@ -756,9 +755,9 @@ public class JglfwInput implements Input {
 		public void mouseButton (long window, int button, boolean pressed) {
 			if (pressed) {
 				mousePressed++;
-mousePressed--;
+				processor.touchDown(mouseX, mouseY, 0, button);
 			} else {
-				mousePressed = Math.max(0, mousePressed - 1);
+mousePressed--;
 				processor.touchUp(mouseX, mouseY, 0, button);
 			}
 		}

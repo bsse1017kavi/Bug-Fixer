@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import android.app.ProgressDialog;
@@ -81,9 +80,9 @@ public class ShareGistActivity extends RoboActivity {
 		final String name = enteredName.length() > 0 ? enteredName : "file.txt";
 		final String content = contentText.getText().toString();
 		final ProgressDialog progress = new ProgressDialog(this);
-new RoboAsyncTask<Gist>(this) {
+		progress.setMessage("Creating Gist...");
 		progress.show();
-		new RoboAsyncTask<Gist>() {
+new RoboAsyncTask<Gist>(this) {
 
 			public Gist call() throws Exception {
 				Gist gist = new Gist();

@@ -1,4 +1,3 @@
-
 package org.junit.tests.experimental.theories.runner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -42,8 +41,8 @@ public class WhenNoParametersMatch {
 
 		String result= testResult(AssumptionsFail.class).toString();
 
-assertThat(result, containsString("invalid assumption:"));
+		assertThat(result, containsString(matcher.toString()));
 		assertThat(result, containsString("" + data));
-		assertThat(result, containsString("ignored test:"));
+assertThat(result, containsString("invalid assumption:"));
 	}
 }

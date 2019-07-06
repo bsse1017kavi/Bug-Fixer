@@ -1,4 +1,3 @@
-
 /*
  
 Derby - Class org.apache.derbyTesting.functionTests.tests.replicationTests.ReplicationRun
@@ -2183,9 +2182,9 @@ public class ReplicationRun extends BaseTestCase
         String command = "start";
         String securityOption = "";
         
-String workingDirName = masterDatabasePath +FS+ dbSubDirPath;
+        securityOption = "-noSecurityManager";
         
-        String workingDirName = masterDatabasePath +FS+ masterDbSubPath;
+String workingDirName = masterDatabasePath +FS+ dbSubDirPath;
         
         final String[] commandElements = {ReplicationRun.getMasterJavaExecutableName()
                 , " -Dderby.system.home=" + workingDirName

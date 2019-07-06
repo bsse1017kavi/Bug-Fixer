@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public final class NamingSubsystemAdd extends AbstractSubsystemAdd<NamingSubsyst
         log.info("Activating Naming Subsystem");
 
         NamingContext.initializeNamingManager();
-final BatchBuilder builder = updateContext.getServiceTarget();
+
         // Create the Naming Service
-        final BatchBuilder builder = updateContext.getBatchBuilder();
+final BatchBuilder builder = updateContext.getServiceTarget();
         builder.addService(NamingService.SERVICE_NAME, new NamingService(true)).install();
 
         // Create java: context service

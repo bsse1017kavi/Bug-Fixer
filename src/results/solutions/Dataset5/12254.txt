@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class XPathExtractorGui extends AbstractPostProcessorGui {
         setLayout(new BorderLayout());
         setBorder(makeBorder());
 
-box.add(createScopePanel(true, false, false));
+        Box box = Box.createVerticalBox();
         box.add(makeTitlePanel());
-        box.add(createScopePanel(true));
+box.add(createScopePanel(true, false, false));
         xml.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), JMeterUtils
                 .getResString("xpath_assertion_option"))); //$NON-NLS-1$
         box.add(xml);

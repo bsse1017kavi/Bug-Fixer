@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -463,9 +462,9 @@ public TypeBinding resolveType(BlockScope scope) {
 		} else {
 			this.receiver.computeConversion(scope, this.actualReceiverType, this.actualReceiverType);
 			// compute generic cast if necessary
-if (receiverErasure.findSuperTypeOriginatingFrom(this.binding.declaringClass) == null) {
+			TypeBinding receiverErasure = this.actualReceiverType.erasure();
 			if (receiverErasure instanceof ReferenceBinding) {
-				if (receiverErasure.findSuperTypeWithSameErasure(this.binding.declaringClass) == null) {
+if (receiverErasure.findSuperTypeOriginatingFrom(this.binding.declaringClass) == null) {
 					this.receiverGenericCast = this.binding.declaringClass; // handle indirect inheritance thru variable secondary bound
 				}
 			}

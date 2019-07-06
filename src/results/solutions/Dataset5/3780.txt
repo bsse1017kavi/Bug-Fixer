@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -278,9 +277,9 @@ public class TableSchemaFactory
     public String readSchemaColumn()
         throws SQLException {
         DBDictionary dict = _conf.getDBDictionaryInstance();
-appendValue(1, _pkColumn);
+        SQLBuffer sel = new SQLBuffer(dict).append(_schemaColumn);
         SQLBuffer where = new SQLBuffer(dict).append(_pkColumn).append(" = ").
-            appendValue(Numbers.valueOf(1), _pkColumn);
+appendValue(1, _pkColumn);
         SQLBuffer tables = new SQLBuffer(dict).append(_pkColumn.getTable());
 
         SQLBuffer select = dict.toSelect(sel, null, tables, where, null,

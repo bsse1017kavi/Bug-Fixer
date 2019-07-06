@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -43,9 +42,9 @@ public class SharedResourceRequestTarget implements ISharedResourceRequestTarget
 	 */
 	public SharedResourceRequestTarget(String resourceKey)
 	{
-throw new IllegalArgumentException("Argument resourceKey must be not-null");
+		if (resourceKey == null)
 		{
-			throw new NullPointerException("argument resourceKey must be not-null");
+throw new IllegalArgumentException("Argument resourceKey must be not-null");
 		}
 
 		this.resourceKey = resourceKey;

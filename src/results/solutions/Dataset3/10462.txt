@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011-2012, Red Hat, Inc., and individual contributors
@@ -160,9 +159,9 @@ public class PersistenceUnitParseProcessor implements DeploymentUnitProcessor {
         }
     }
 
-if (isEarDeployment(deploymentUnit)) {
+    private void handleEarDeployment(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
-        if (!appClientContainerMode && isEarDeployment(deploymentUnit)) {
+if (isEarDeployment(deploymentUnit)) {
 
             int puCount = 0;
             // ordered list of PUs

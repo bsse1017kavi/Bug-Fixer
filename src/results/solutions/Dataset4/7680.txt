@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public interface FilterCache extends IndexComponent, CloseableComponent {
 
     boolean isCached(Filter filter);
 
-void clear(String reason);
+    void clear(IndexReader reader);
 
-    void clear();
+void clear(String reason);
 
     EntriesStats entriesStats();
 

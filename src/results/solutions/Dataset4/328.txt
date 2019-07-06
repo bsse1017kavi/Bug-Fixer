@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -90,9 +89,9 @@ public class StreamUtils {
 
 	/** Close and ignore all errors. */
 	public static void closeQuietly (Closeable c) {
-} catch (Exception e) {
+		if (c != null) try {
 			c.close();
-		} catch (IOException e) {
+} catch (Exception e) {
 			// ignore
 		}
 	}

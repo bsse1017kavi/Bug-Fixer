@@ -1,4 +1,3 @@
-
 /*
  * AboutDialog.java - About jEdit dialog box
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -132,9 +131,9 @@ public class AboutDialog extends EnhancedDialog
 			g.setColor(new Color(96,96,96));
 			image.paintIcon(this,g,1,1);
 
-String[] args = { jEdit.getVersion(), System.getProperty("java.version") };
+			FontMetrics fm = g.getFontMetrics();
 
-			String[] args = { jEdit.getVersion() };
+String[] args = { jEdit.getVersion(), System.getProperty("java.version") };
 			String version = jEdit.getProperty("about.version",args);
 			g.drawString(version,(getWidth() - fm.stringWidth(version)) / 2,
 				getHeight() - 5);

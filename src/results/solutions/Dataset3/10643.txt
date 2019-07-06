@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class ModuleContextProcessor implements DeploymentUnitProcessor {
         final ContextService contextService = new ContextService(moduleContextJndiName);
         serviceTarget.addService(moduleContextServiceName, contextService)
             .addDependency(ContextNames.GLOBAL_CONTEXT_SERVICE_NAME, Context.class, contextService.getParentContextInjector())
-phaseContext.getDeploymentUnit().putAttachment(ModuleContextConfig.ATTACHMENT_KEY, new ModuleContextConfig(moduleContextServiceName, moduleContextJndiName));
+            .install();
 
-        phaseContext.putAttachment(ModuleContextConfig.ATTACHMENT_KEY, new ModuleContextConfig(moduleContextServiceName, moduleContextJndiName));
+phaseContext.getDeploymentUnit().putAttachment(ModuleContextConfig.ATTACHMENT_KEY, new ModuleContextConfig(moduleContextServiceName, moduleContextJndiName));
         // TODO: These names will need to change when application scoping becomes available.
     }
 

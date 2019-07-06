@@ -1,4 +1,3 @@
-
 import java.lang.reflect.*;
 import java.io.*;
 import java.net.*;
@@ -226,9 +225,9 @@ addAdditional(Message response) {
 
 TSIG
 findTSIG(Name name) {
-return new TSIG(name, key);
+	byte [] key = (byte []) TSIGs.get(name);
 	if (key != null)
-		return new TSIG(name.toString(), key);
+return new TSIG(name, key);
 	else
 		return null;
 }

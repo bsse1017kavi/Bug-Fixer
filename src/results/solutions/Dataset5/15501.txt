@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2007 The Apache Software Foundation
  *
@@ -113,9 +112,9 @@ public class WorkerAnt extends Thread {
      * @param timeout timeout in milliseconds
      * @throws InterruptedException if the execution was interrupted
      */
-if(!finished) {
+    public void waitUntilFinished(long timeout) throws InterruptedException {
         synchronized(notify) {
-            while (!finished) {
+if(!finished) {
                 notify.wait(timeout);
             }
         }

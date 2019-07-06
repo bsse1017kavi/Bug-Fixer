@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ public final class RemoteDeployer implements Deployer {
     private CallbackHandler callbackHandler;
     private ServerDeploymentManager deploymentManager;
 
-deploymentManager = ServerDeploymentManager.Factory.create(address, PORT, callbackHandler);
+    public RemoteDeployer() throws IOException {
         callbackHandler = getCallbackHandler();
-        deploymentManager = ServerDeploymentManager.Factory.create(address, PORT); //TODO!! add cbh par
+deploymentManager = ServerDeploymentManager.Factory.create(address, PORT, callbackHandler);
     }
 
     @Override

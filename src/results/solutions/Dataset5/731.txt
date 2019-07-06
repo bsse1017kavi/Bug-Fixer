@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -642,9 +641,9 @@ public class XmlTag extends MarkupElement
 
 					// Attributes without values are possible, e.g. 'disabled'
 					if (value != null)
-value = Strings.escapeMarkup(value);
+					{
 						buffer.append("=\"");
-						value = Strings.replaceAll(value, "\"", "\\\"");
+value = Strings.escapeMarkup(value);
 						buffer.append(value);
 						buffer.append("\"");
 					}

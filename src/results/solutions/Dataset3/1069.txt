@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.task.OutputCollector;
@@ -24,9 +23,9 @@ public class TransactionalSpoutBatchExecutor implements IRichBolt {
 
     @Override
     public void execute(Tuple input) {
-_collector.ack(input);
+        _collector.setAnchor(input);
         _spout.emitBatch((TransactionAttempt) input.getValue(0), _collector);
-        _collector.ack();
+_collector.ack(input);
     }
 
     @Override

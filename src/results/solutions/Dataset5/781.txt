@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -92,9 +91,9 @@ public class DeclarePrecedence extends Declare {
     			}
     			seenStar = true;
     			continue;
-if (exactType.isMissing()) continue;
+    		}
     		ResolvedType exactType = pi.getExactType().resolve(scope.getWorld());
-    		if (exactType == ResolvedType.MISSING) continue;
+if (exactType.isMissing()) continue;
     		
     		// Cannot do a dec prec specifying a non-aspect types unless suffixed with a '+'
     		if (!exactType.isAspect() && !pi.isIncludeSubtypes() && !exactType.isTypeVariableReference()) {

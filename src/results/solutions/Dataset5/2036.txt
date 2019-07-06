@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2005 The Apache Software Foundation
  *
@@ -221,9 +220,9 @@ public abstract class DotnetCompile
         //bail on no references
         if (notEmpty(references)) {
             if (isWindows) {
-return REFERENCE_OPTION + references;
+                return REFERENCE_OPTION + '\"' + references + '\"';
             } else {
-                return references;
+return REFERENCE_OPTION + references;
             }
         } else {
             return null;

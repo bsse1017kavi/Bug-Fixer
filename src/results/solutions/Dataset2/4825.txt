@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1290,9 +1289,9 @@ public int getNextToken() throws InvalidInputException {
 							}
 
 						}
-if (this.checkNonExternalizedStringLiterals){ // check for presence of	NLS tags
+						throw e; // rethrow
 					}
-					if (this.checkNonExternalizedStringLiterals){ // check for presence of	NLS tags //$NON-NLS-?$ where ? is an int.
+if (this.checkNonExternalizedStringLiterals){ // check for presence of	NLS tags
 						if (this.currentLine == null) {
 							this.currentLine = new NLSLine();
 						}

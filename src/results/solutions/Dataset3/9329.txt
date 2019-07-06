@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -136,9 +135,9 @@ public class RequestPartMethodArgumentResolver extends AbstractMessageConverterM
 			assertIsMultipartRequest(servletRequest);
 			arg = servletRequest.getPart(partName);
 		}
-arg = new ArrayList<Object>(servletRequest.getParts());
+		else if (isPartCollection(parameter)) {
 			assertIsMultipartRequest(servletRequest);
-			arg = new ArrayList(servletRequest.getParts());
+arg = new ArrayList<Object>(servletRequest.getParts());
 		}
 		else {
 			try {

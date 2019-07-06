@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -135,9 +134,9 @@ public class PropertyOrFieldReference extends SpelNodeImpl {
 	private TypedValue readProperty(ExpressionState state, String name) throws EvaluationException {
 		TypedValue contextObject = state.getActiveContextObject();
 		Object targetObject = contextObject.getValue();
-return TypedValue.NULL;
+
 		if (targetObject == null && nullSafe) {
-			return TypedValue.NULL_TYPED_VALUE;
+return TypedValue.NULL;
 		}
 
 		PropertyAccessor accessorToUse = this.cachedReadAccessor;

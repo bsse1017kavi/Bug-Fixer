@@ -1,4 +1,3 @@
-
 package org.apache.solr.client.solrj.impl;
 
 import org.apache.solr.client.solrj.SolrRequest;
@@ -66,9 +65,9 @@ public class CloudSolrServer extends SolrServer {
     synchronized(this) {
       if (zkController != null) return;
       try {
-zk.getZkStateReader().updateCloudState(true);
+        ZkController zk = new ZkController(zkHost, zkConnectTimeout, zkClientTimeout, null, null, null);
         zk.addShardZkNodeWatches();
-        zk.updateCloudState(true);
+zk.getZkStateReader().updateCloudState(true);
         zkController = zk;
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();

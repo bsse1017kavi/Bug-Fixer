@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -119,9 +118,9 @@ public abstract class AbstractOptions<T> extends FormComponent<T>
 		checkComponentTag(tag, "select");
 
 		super.onComponentTag(tag);
-attrs.put("multiple", "multiple");
+		IValueMap attrs = tag.getAttributes();
 
-		attrs.put("multiple", null);
+attrs.put("multiple", "multiple");
 		attrs.put("size", getPalette().getRows());
 
 		if (!palette.isPaletteEnabled())

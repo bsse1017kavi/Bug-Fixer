@@ -1,4 +1,3 @@
-
 package storm.kafka;
 
 import kafka.javaapi.consumer.SimpleConsumer;
@@ -19,9 +18,9 @@ public class StaticPartitionConnections {
         this.hosts = (StaticHosts) conf.hosts;
     }
 
-Broker hp = hosts.getPartitionInformation().getBrokerFor(partition);
+    public SimpleConsumer getConsumer(int partition) {
         if (!_kafka.containsKey(partition)) {
-            HostPort hp = hosts.getPartitionInformation().getHostFor(partition);
+Broker hp = hosts.getPartitionInformation().getBrokerFor(partition);
             _kafka.put(partition, new SimpleConsumer(hp.host, hp.port, _config.socketTimeoutMs, _config.bufferSizeBytes, _config.clientId));
 
         }

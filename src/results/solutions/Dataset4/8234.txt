@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -175,9 +174,9 @@ public class ChildrenConstantScoreQuery extends Query {
             this.queryNorm = norm * topLevelBoost;
             queryWeight *= this.queryNorm;
         }
-public Scorer scorer(AtomicReaderContext context, Bits acceptDocs) throws IOException {
+
         @Override
-        public Scorer scorer(AtomicReaderContext context, boolean scoreDocsInOrder, boolean topScorer, Bits acceptDocs) throws IOException {
+public Scorer scorer(AtomicReaderContext context, Bits acceptDocs) throws IOException {
             if (remaining == 0) {
                 return null;
             }

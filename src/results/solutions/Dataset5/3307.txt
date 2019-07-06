@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public class EntityB {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-@OneToOne(cascade = CascadeType.ALL)
+    private String name;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "entityc_id", referencedColumnName = "entityc_id",
         nullable = false)
     @ForeignKey

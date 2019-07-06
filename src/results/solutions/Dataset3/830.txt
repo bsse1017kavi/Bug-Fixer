@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -407,9 +406,9 @@ public abstract class CacheAddHandler extends AbstractAddStepHandler {
                     .cacheStopTimeout(stopTimeout)
                     .transactionMode(transactional ? org.infinispan.transaction.TransactionMode.TRANSACTIONAL : org.infinispan.transaction.TransactionMode.NON_TRANSACTIONAL)
                     .lockingMode(lockingMode)
-.invocationBatching().disable()
+                    .useSynchronization(useSynchronization)
                     .recovery().enabled(recoveryEnabled)
-                    .invocationBatching().enable(transactional)
+.invocationBatching().disable()
             ;
             if (transactional) {
                 if (batching) {

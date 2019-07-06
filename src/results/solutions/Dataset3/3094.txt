@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -178,9 +177,9 @@ public class ManagedBeanAnnotationProcessor implements DeploymentUnitProcessor {
         Method method = null;
         if(classInfo != null) {
             // Try to resolve with the help of the annotation index
-final List<AnnotationTarget> targets = classAnnotations.get(DotName.createSimple(annotationType.getName()));
+            final Map<DotName, List<AnnotationTarget>> classAnnotations = classInfo.annotations();
 
-            final List<AnnotationTarget> targets = classAnnotations.get(DotName.createSimple(annotationType.toString()));
+final List<AnnotationTarget> targets = classAnnotations.get(DotName.createSimple(annotationType.getName()));
             if (targets == null || targets.isEmpty()) {
                 return null;
             }

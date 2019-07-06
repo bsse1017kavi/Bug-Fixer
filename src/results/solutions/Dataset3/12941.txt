@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class WebConnectorRemove implements ModelRemoveOperationHandler {
 
         if (context.getRuntimeContext() != null) {
             context.getRuntimeContext().setRuntimeTask(new RuntimeTask() {
-.getService(WebSubsystemServices.JBOSS_WEB_CONNECTOR.append(name));
+                public void execute(RuntimeTaskContext context) throws OperationFailedException {
                     final ServiceController<?> service = context.getServiceRegistry()
-                            .getService(WebSubsystemServices.JBOSS_WEB_HOST.append(name));
+.getService(WebSubsystemServices.JBOSS_WEB_CONNECTOR.append(name));
                     if (service != null) {
                         service.addListener(new ResultHandler.ServiceRemoveListener(resultHandler));
                     } else {

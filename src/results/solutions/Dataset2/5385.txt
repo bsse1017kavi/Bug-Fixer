@@ -1,4 +1,3 @@
-
 import org.columba.core.command.DefaultCommandReference;
 import org.columba.core.command.Worker;
 import org.columba.core.gui.frame.AbstractFrameController;
@@ -63,9 +62,9 @@ public class LearnHamCommand extends FolderCommand {
 		IPCHelper ipcHelper = new IPCHelper();
 
 		String path = srcFolder.getDirectoryFile().getAbsolutePath();
-ipcHelper.executeCommand(ExternalToolsHelper.getSALearn()+" --ham --dir " + path);
+
 		ColumbaLogger.log.debug("creating process..");
-		ipcHelper.executeCommand("sa-learn --ham --dir " + path);
+ipcHelper.executeCommand(ExternalToolsHelper.getSALearn()+" --ham --dir " + path);
 
 		int exitCode = ipcHelper.waitFor();
 		ColumbaLogger.log.debug("exitcode=" + exitCode);

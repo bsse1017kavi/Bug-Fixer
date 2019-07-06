@@ -1,4 +1,3 @@
-
 /*
  * $Id: UnauthorizedInstantiationException.java,v 1.2 2006/01/02 07:15:49
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -37,9 +36,9 @@ public class UnauthorizedInstantiationException extends AuthorizationException
 	 * @param componentClass
 	 *            The unauthorized component class
 	 */
-super("Not authorized to instantiate class " + componentClass.getName());
+	public UnauthorizedInstantiationException(final Class componentClass)
 	{
-		super("Not authorized to instantiate class " + componentClass);
+super("Not authorized to instantiate class " + componentClass.getName());
 		this.componentClass = componentClass;
 	}
 	

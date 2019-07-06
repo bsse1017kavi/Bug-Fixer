@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1132,9 +1131,9 @@ public final class SelectionEngine extends Engine implements ISearchRequestor {
 					// find the type declaration that corresponds to the original source type
 					typeDeclaration = new ASTNodeFinder(parsedUnit).findType(context);
 				} 
-ClassFileReader reader = (ClassFileReader) classFile.getBinaryTypeInfo((IFile) classFile.resource(), false/*don't fully initialize so as to keep constant pool (used below)*/);
+			} else { // binary type
 				ClassFile classFile = (ClassFile) context.getClassFile();
-				ClassFileReader reader = (ClassFileReader) classFile.getBinaryTypeInfo((IFile) classFile.getResource(), false/*don't fully initialize so as to keep constant pool (used below)*/);
+ClassFileReader reader = (ClassFileReader) classFile.getBinaryTypeInfo((IFile) classFile.resource(), false/*don't fully initialize so as to keep constant pool (used below)*/);
 				CompilationResult result = new CompilationResult(reader.getFileName(), 1, 1, this.compilerOptions.maxProblemsPerUnit);
 				parsedUnit = new CompilationUnitDeclaration(this.parser.problemReporter(), result, 0);
 				HashSetOfCharArrayArray typeNames = new HashSetOfCharArrayArray();

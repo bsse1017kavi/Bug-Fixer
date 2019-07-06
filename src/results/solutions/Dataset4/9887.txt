@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class NoneIndexShardGateway extends AbstractIndexShardComponent implement
     public void recover(boolean indexShouldExists, RecoveryStatus recoveryStatus) throws IndexShardGatewayRecoveryException {
         recoveryStatus().index().startTime(System.currentTimeMillis());
         // in the none case, we simply start the shard
-logger.debug("cleaning shard content before creation");
+        // clean the store, there should be nothing there...
         try {
-            logger.info("deleting shard content");
+logger.debug("cleaning shard content before creation");
             indexShard.store().deleteContent();
         } catch (IOException e) {
             logger.warn("failed to clean store before starting shard", e);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class TestPredicatedBag<T> extends AbstractTestBag<T> {
     }
 
     protected Predicate<T> truePredicate = TruePredicate.<T>truePredicate();
-return PredicatedBag.predicatedBag(bag, predicate);
+
     protected Bag<T> decorateBag(HashBag<T> bag, Predicate<T> predicate) {
-        return PredicatedBag.decorate(bag, predicate);
+return PredicatedBag.predicatedBag(bag, predicate);
     }
 
     @Override

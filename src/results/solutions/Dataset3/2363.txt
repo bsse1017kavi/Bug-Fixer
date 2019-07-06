@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -35,9 +34,9 @@ public class UnicodeUnescaperTest extends TestCase {
             fail("Default behaviour should not parse u+");
         } catch(IllegalArgumentException iae) {
             // expected
-uu = new UnicodeUnescaper(UnicodeUnescaper.OPTION.escapePlus);
+        }
 
-        uu = new UnicodeUnescaper(UnicodeUnescaper.PARAM.escapePlus);
+uu = new UnicodeUnescaper(UnicodeUnescaper.OPTION.escapePlus);
         assertEquals("Failed to unescape unicode characters with 'u+' notation", "G", uu.translate(input));
     }
 

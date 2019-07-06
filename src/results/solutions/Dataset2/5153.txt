@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /************************************************************************
@@ -358,9 +357,9 @@ public abstract class PluginActionBuilder extends RegistryReader {
 		/**
 		 * Contributes action from the action descriptor into the provided tool bar manager.
 		 */
-String tpath = ad.getToolbarId();
+		protected void contributeToolbarAction(ActionDescriptor ad, IToolBarManager toolbar, boolean appendIfMissing) {
 			// Get config data.
-			String tpath = ad.getToolbarPath();
+String tpath = ad.getToolbarId();
 			String tgroup = ad.getToolbarGroup();
 			if (tpath == null && tgroup == null)
 				return;

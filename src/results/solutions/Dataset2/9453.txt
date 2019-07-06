@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -203,9 +202,9 @@ send(Message query) throws IOException {
 	Message response;
 	DatagramSocket s;
 	DatagramPacket dp;
-if (Options.check("verbose"))
+	short udpLength = 512;
 
-	if (Options.check("verbosemsg"))
+if (Options.check("verbose"))
 		System.err.println("Sending to " + addr.getHostAddress() +
 				   ":" + port);
 

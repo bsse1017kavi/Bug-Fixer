@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class SigarProcessProbe extends AbstractComponent implements ProcessProbe
         stats.timestamp = System.currentTimeMillis();
 
         try {
-stats.cpu.percent = (short) (cpu.getPercent() * 100);
+            ProcCpu cpu = sigar.getProcCpu(sigar.getPid());
             stats.cpu = new ProcessStats.Cpu();
-            stats.cpu.percent = cpu.getPercent();
+stats.cpu.percent = (short) (cpu.getPercent() * 100);
             stats.cpu.sys = cpu.getSys();
             stats.cpu.user = cpu.getUser();
         } catch (SigarException e) {

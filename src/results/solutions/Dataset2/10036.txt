@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -72,9 +71,9 @@ class JavaProjectElementInfo extends OpenableElementInfo {
 		char[][] inclusionPatterns = null;
 		char[][] exclusionPatterns = null;
 		IClasspathEntry[] classpath = null;
-classpath = project.getResolvedClasspath(true/*ignoreUnresolvedEntry*/, false/*don't generateMarkerOnError*/, false/*don't returnResolutionInProgress*/);
+		IPath projectOutput = null;
 		try {
-			classpath = project.getResolvedClasspath(true/*ignore unresolved variable*/);
+classpath = project.getResolvedClasspath(true/*ignoreUnresolvedEntry*/, false/*don't generateMarkerOnError*/, false/*don't returnResolutionInProgress*/);
 			for (int i = 0; i < classpath.length; i++) {
 				IClasspathEntry entry = classpath[i];
 				if (projectPath.equals(entry.getPath())) {

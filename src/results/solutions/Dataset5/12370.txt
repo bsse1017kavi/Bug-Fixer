@@ -1,4 +1,3 @@
-
 /*
  * $Id: PropertyResolver.java 4710 2006-03-02 00:46:15 -0800 (Thu, 02 Mar 2006)
  * eelco12 $ $Revision$ $Date: 2006-03-02 00:46:15 -0800 (Thu, 02 Mar
@@ -138,9 +137,9 @@ public class PropertyResolver
 	}
 
 	private static ObjectAndGetSetter getObjectAndGetSetter(final String expression,
-final String expressionBracketsSeperated = Strings.replaceAll(expression, "[", ".[").toString();
+			final Object object, boolean tryToCreateNull)
 	{
-		final String expressionBracketsSeperated = Strings.replaceAll(expression, "[", ".[");
+final String expressionBracketsSeperated = Strings.replaceAll(expression, "[", ".[").toString();
 		int index = expressionBracketsSeperated.indexOf('.');
 		int lastIndex = 0;
 		Object value = object;

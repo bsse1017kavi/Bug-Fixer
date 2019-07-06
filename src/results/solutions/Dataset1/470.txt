@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -37,9 +36,9 @@ public class MatchAllDocsQuery extends Query {
     final float score;
     private int doc = -1;
     private final int maxDoc;
-MatchAllScorer(IndexReader reader, Bits liveDocs, Weight w, float score) {
+    private final Bits liveDocs;
 
-    MatchAllScorer(IndexReader reader, Bits liveDocs, Weight w, float score) throws IOException {
+MatchAllScorer(IndexReader reader, Bits liveDocs, Weight w, float score) {
       super(w);
       this.liveDocs = liveDocs;
       this.score = score;

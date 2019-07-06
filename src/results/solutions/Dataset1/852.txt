@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class StorageProxy implements StorageProxyMBean
     private static Comparator<String> keyComparator = new Comparator<String>()
     {
         public int compare(String o1, String o2)
-return p.decorateKey(o1).compareTo(p.decorateKey(o2));
+        {
             IPartitioner p = StorageService.getPartitioner();
-            return p.getDecoratedKeyComparator().compare(p.decorateKey(o1), p.decorateKey(o2));
+return p.decorateKey(o1).compareTo(p.decorateKey(o2));
         }
     };
 

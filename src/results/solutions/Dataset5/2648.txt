@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -226,9 +225,9 @@ public class Tar
     {
         final SourceFileScanner scanner = new SourceFileScanner();
         setupLogger( scanner );
-return scanner.restrict( files, baseDir, null, mapper, getContext() ).length == 0;
+        final MergingMapper mapper = new MergingMapper();
         mapper.setTo( tarFile.getAbsolutePath() );
-        return scanner.restrict( files, baseDir, null, mapper ).length == 0;
+return scanner.restrict( files, baseDir, null, mapper, getContext() ).length == 0;
     }
 
     private void tarFile( final File file,

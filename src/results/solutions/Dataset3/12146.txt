@@ -1,4 +1,3 @@
-
 package org.jboss.as.test.patching;
 
 import org.jboss.arquillian.container.test.api.ContainerController;
@@ -51,9 +50,9 @@ public class AbstractPatchingTestCase {
         final boolean success = CliUtilsForPatching.rollbackAll();
         if (!success) {
             // Reset installation state
-Assert.fail("failed to rollback all patches " + CliUtilsForPatching.info(false));
+            final File home = new File(PatchingTestUtil.AS_DISTRIBUTION);
             PatchingTestUtil.resetInstallationState(home, BASE_MODULE_DIRECTORY);
-            Assert.fail("failed to rollback all patches " + CliUtilsForPatching.info());
+Assert.fail("failed to rollback all patches " + CliUtilsForPatching.info(false));
         }
     }
 }

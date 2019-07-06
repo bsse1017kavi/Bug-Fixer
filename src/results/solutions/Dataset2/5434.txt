@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -61,9 +60,9 @@ public class SpamRenderer extends DefaultLabelRenderer {
         ColumbaHeader header = (ColumbaHeader) ((MessageNode) value).getHeader();
 
         setIcon(null);
-Boolean bool = (Boolean) header.get("columba.spam");
+        setToolTipText(MailResourceLoader.getString("header", "column", "nospam"));
 
-        Boolean bool = (Boolean) header.getAttributes().get("columba.spam");
+Boolean bool = (Boolean) header.get("columba.spam");
 
         if (bool != null) {
             if (bool.equals(Boolean.TRUE)) {

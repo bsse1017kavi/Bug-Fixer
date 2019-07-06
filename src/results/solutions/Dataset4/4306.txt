@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -163,9 +162,9 @@ public abstract class Streams {
     public static byte[] copyToByteArray(InputStream in) throws IOException {
         CachedStreamOutput.Entry cachedEntry = CachedStreamOutput.popEntry();
         try {
-return out.bytes().copyBytesArray().toBytes();
+            BytesStreamOutput out = cachedEntry.bytes();
             copy(in, out);
-            return out.copiedByteArray();
+return out.bytes().copyBytesArray().toBytes();
         } finally {
             CachedStreamOutput.pushEntry(cachedEntry);
         }

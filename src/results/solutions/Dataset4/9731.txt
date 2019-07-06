@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class IndicesStore extends AbstractComponent implements ClusterStateListe
     @Inject public IndicesStore(Settings settings, NodeEnvironment nodeEnv, IndicesService indicesService, ClusterService clusterService) {
         super(settings);
         this.nodeEnv = nodeEnv;
-clusterService.addLast(this);
+        this.indicesService = indicesService;
         this.clusterService = clusterService;
-        clusterService.add(this);
+clusterService.addLast(this);
     }
 
     public void close() {

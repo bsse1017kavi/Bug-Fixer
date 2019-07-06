@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -51,9 +50,9 @@ public class MatchAllDocsFilterTests {
 
         IndexReader reader = IndexReader.open(indexWriter, true);
         IndexSearcher searcher = new IndexSearcher(reader);
-long count = Lucene.count(searcher, query);
+
         DeletionAwareConstantScoreQuery query = new DeletionAwareConstantScoreQuery(Queries.MATCH_ALL_FILTER);
-        long count = Lucene.count(searcher, query, -1);
+long count = Lucene.count(searcher, query);
         assertThat(count, equalTo(2l));
 
         reader.close();

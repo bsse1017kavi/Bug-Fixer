@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -196,9 +195,9 @@ public class CliClient
 
             // do the insert
             try
-value.getBytes(), System.currentTimeMillis(), ConsistencyLevel.ONE);
+            {
                 thriftClient_.insert(tableName, key, new ColumnPath(columnFamily, null, columnName.getBytes("UTF-8")),
-                                     value.getBytes(), System.currentTimeMillis(), 1);
+value.getBytes(), System.currentTimeMillis(), ConsistencyLevel.ONE);
             }
             catch (UnsupportedEncodingException e)
             {

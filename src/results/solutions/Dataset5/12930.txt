@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1141,9 +1140,9 @@ public class XSAttributeChecker {
         if (attrValues[ATTIDX_MAXOCCURS] != null) {
             int min = ((XInt)attrValues[ATTIDX_MINOCCURS]).intValue();
             int max = ((XInt)attrValues[ATTIDX_MAXOCCURS]).intValue();
-reportSchemaError ("p-props-correct.2.1",
+            if (max != SchemaSymbols.OCCURRENCE_UNBOUNDED) {
                 if (min > max) {
-                    reportSchemaError ("p-props-correct:2.1",
+reportSchemaError ("p-props-correct.2.1",
                                        new Object[] {elName, attrValues[ATTIDX_MINOCCURS], attrValues[ATTIDX_MAXOCCURS]});
                     attrValues[ATTIDX_MINOCCURS] = attrValues[ATTIDX_MAXOCCURS];
                 }

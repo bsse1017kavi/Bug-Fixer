@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class RestMoreLikeThisAction extends BaseRestHandler {
         mltRequest.listenerThreaded(false);
         //TODO the ParseField class that encapsulates the supported names used for an attribute
         //needs some work if it is to be used in a REST context like this too
-mltRequest.minimumShouldMatch(request.param("minimum_should_match", "0"));
+        // See the MoreLikeThisQueryParser constants that hold the valid syntax
         mltRequest.fields(request.paramAsStringArray("mlt_fields", null));
-        mltRequest.percentTermsToMatch(request.paramAsFloat("percent_terms_to_match", -1));
+mltRequest.minimumShouldMatch(request.param("minimum_should_match", "0"));
         mltRequest.minTermFreq(request.paramAsInt("min_term_freq", -1));
         mltRequest.maxQueryTerms(request.paramAsInt("max_query_terms", -1));
         mltRequest.stopWords(request.paramAsStringArray("stop_words", null));

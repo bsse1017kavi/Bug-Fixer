@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class DeploymentPackagedRATestCase {
     @Deployment
     public static Archive createDeplyoment() {
         final EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class, EAR_NAME + ".ear");
-rar.addAsManifestResource(DeploymentPackagedRATestCase.class.getPackage(), "ra.xml", "ra.xml");
+
         final JavaArchive rar = ShrinkWrap.create(JavaArchive.class, RAR_NAME + ".rar");
-        rar.addAsManifestResource("ejb/mdb/resourceadapter/ra.xml", "ra.xml");
+rar.addAsManifestResource(DeploymentPackagedRATestCase.class.getPackage(), "ra.xml", "ra.xml");
 
         final JavaArchive ejbJar = ShrinkWrap.create(JavaArchive.class, EJB_JAR_NAME + ".jar");
         ejbJar.addClasses(NonJMSMDB.class, DeploymentPackagedRATestCase.class);

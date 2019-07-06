@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2013, Red Hat Middleware LLC, and individual contributors
@@ -47,9 +46,9 @@ public class StandaloneAccessControlTestCase extends AbstractCoreModelTest {
         new SensitiveTargetAccessConstraintDefinition(new SensitivityClassification("play", "security-realm", true, true, true));
         new ApplicationTypeAccessConstraintDefinition(new ApplicationTypeConfig("play", "deployment", false));
 
-.setXmlResource("standalone.xml")
+
         KernelServices kernelServices = createKernelServicesBuilder(TestModelType.STANDALONE)
-                .setXmlResource("constraints.xml")
+.setXmlResource("standalone.xml")
                 .validateDescription()
                 .build();
         Assert.assertTrue(kernelServices.isSuccessfulBoot());

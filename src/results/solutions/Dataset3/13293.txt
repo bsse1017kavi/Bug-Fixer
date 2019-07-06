@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -464,9 +463,9 @@ public class CompositeMap<K, V> extends AbstractIterableMap<K, V> implements Ser
      */
     @Override
     public boolean equals(Object obj) {
-return this.entrySet().equals(map.entrySet());
+        if (obj instanceof Map) {
             Map<?, ?> map = (Map<?, ?>) obj;
-            return (this.entrySet().equals(map.entrySet()));
+return this.entrySet().equals(map.entrySet());
         }
         return false;
     }

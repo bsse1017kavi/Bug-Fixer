@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class SizeRotatingFileHandlerAdd extends FileHandlerAdd {
         return element;
     }
 
-final BatchBuilder batchBuilder = updateContext.getServiceTarget();
+    protected <P> void applyUpdate(final UpdateContext updateContext, final UpdateResultHandler<? super Void, P> handler, final P param) {
         try {
-            final BatchBuilder batchBuilder = updateContext.getBatchBuilder();
+final BatchBuilder batchBuilder = updateContext.getServiceTarget();
             final SizeRotatingFileHandlerService service = new SizeRotatingFileHandlerService();
             final ServiceBuilder<Handler> serviceBuilder = batchBuilder.addService(LogServices.handlerName(getName()), service);
             final String relativeTo = getRelativeTo();

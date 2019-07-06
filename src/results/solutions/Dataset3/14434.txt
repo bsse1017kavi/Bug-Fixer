@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class ResourceInjectionTestCase {
 
     @Deployment
     public static WebArchive createWebDeployment() {
-war.addAsWebInfResource(ResourceInjectionTestCase.class.getPackage(), "web.xml", "web.xml");
+        final WebArchive war = ShrinkWrap.create(WebArchive.class, "resource-injection-test.war");
         war.addPackage(SimpleSLSB.class.getPackage());
-        war.addAsWebInfResource("injection/web.xml");
+war.addAsWebInfResource(ResourceInjectionTestCase.class.getPackage(), "web.xml", "web.xml");
         logger.info("War created: " + war.toString(true));
         return war;
     }

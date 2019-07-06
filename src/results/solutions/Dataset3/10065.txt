@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -325,9 +324,9 @@ public class DataSourcesExtension implements Extension {
                             XADATASOURCE_PROPERTIES);
                     writer.writeStartElement(isXADataSource ? DataSources.Tag.XA_DATASOURCE.getLocalName()
                             : DataSources.Tag.DATASOURCE.getLocalName());
-ENABLED.marshallAsAttribute(dataSourceNode, writer);
+                    JNDINAME.marshallAsAttribute(dataSourceNode, false, writer);
                     POOLNAME.marshallAsAttribute(dataSourceNode, false, writer);
-                    ENABLED.marshallAsAttribute(dataSourceNode, false, writer);
+ENABLED.marshallAsAttribute(dataSourceNode, writer);
                     JTA.marshallAsAttribute(dataSourceNode, false, writer);
                     USE_JAVA_CONTEXT.marshallAsAttribute(dataSourceNode, false, writer);
                     SPY.marshallAsAttribute(dataSourceNode, false, writer);

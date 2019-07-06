@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -99,9 +98,9 @@ public class ExitCommand implements Command
      *
      *@param  e  Description of Parameter
      */
-ActionRouter.getInstance().doActionNow(
+    public void doAction(ActionEvent e)
     {
-        ActionRouter.getInstance().actionPerformed(
+ActionRouter.getInstance().doActionNow(
             new ActionEvent(e.getSource(), e.getID(), CheckDirty.CHECK_DIRTY));
         if (GuiPackage.getInstance().isDirty())
         {

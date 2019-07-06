@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1176,9 +1175,9 @@ public class Accessible {
 				event.result = null;
 				for (int i = 0; i < accessibleActionListeners.size(); i++) {
 					AccessibleActionListener listener = (AccessibleActionListener) accessibleActionListeners.elementAt(i);
-return ACC.OK.equals(event.result);
+					listener.doAction(event);
 				}
-				return true;
+return ACC.OK.equals(event.result);
 			}
 		} 
 		return false;

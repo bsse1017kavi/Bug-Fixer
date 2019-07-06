@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -88,9 +87,9 @@ private void generateInnerClassHandles(IType type, IBinaryType typeInfo, ArrayLi
 	IBinaryNestedType[] innerTypes = typeInfo.getMemberTypes();
 	if (innerTypes != null) {
 		for (int i = 0, typeCount = innerTypes.length; i < typeCount; i++) {
-IType innerType = new BinaryType((JavaElement)parentClassFile, ClassFile.simpleName(binaryType.getName()));
+			IBinaryNestedType binaryType = innerTypes[i];
 			IClassFile parentClassFile= ((IPackageFragment)this.classFile.getParent()).getClassFile(new String(ClassFile.unqualifiedName(binaryType.getName())) + SUFFIX_STRING_class);
-			IType innerType = new BinaryType((JavaElement)parentClassFile, new String(ClassFile.simpleName(binaryType.getName())));
+IType innerType = new BinaryType((JavaElement)parentClassFile, ClassFile.simpleName(binaryType.getName()));
 			childrenHandles.add(innerType);
 		}
 	}

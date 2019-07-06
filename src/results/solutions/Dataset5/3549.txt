@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -4171,9 +4170,9 @@ static int /*long*/ applicationDelegateProc(int /*long*/ id, int /*long*/ sel, i
 		NSBundle javaFrameworkBundle = NSBundle.bundleWithIdentifier(NSString.stringWith("com.apple.JavaVM"));
 		NSString defaultAppNib = javaFrameworkBundle.pathForResource(NSString.stringWith("DefaultApp"), NSString.stringWith("nib"));
 		NSDictionary dict = NSDictionary.dictionaryWithObject(applicationDelegate, NSString.stringWith("NSOwner"));
-System.out.println("*** SSQ path=" + defaultAppNib != null ? defaultAppNib.getString() : " defaultAppNib=null");
+		if (!NSBundle.loadNibFile(defaultAppNib, dict, 0)) {
 			//TEMPORARY CODE
-			System.out.println("*** SSQ path=" + defaultAppNib.getString());
+System.out.println("*** SSQ path=" + defaultAppNib != null ? defaultAppNib.getString() : " defaultAppNib=null");
 			defaultAppNib = javaFrameworkBundle.resourcePath().stringByAppendingString(NSString.stringWith("/English.lproj/DefaultApp.nib"));
 			NSBundle.loadNibFile(defaultAppNib, dict, 0);
 		}

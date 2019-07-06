@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -77,9 +76,9 @@ public class PropertiesFactory implements IPropertiesFactory
 		this.application = application;
 
 		propertiesLoader = new ArrayList<IPropertiesLoader>();
-propertiesLoader.add(new XmlFilePropertiesLoader("properties.xml"));
+		propertiesLoader.add(new IsoPropertiesFilePropertiesLoader("properties"));
 		propertiesLoader.add(new UtfPropertiesFilePropertiesLoader("utf8.properties", "utf-8"));
-		propertiesLoader.add(new XmlFilePropertiesLoader("xml"));
+propertiesLoader.add(new XmlFilePropertiesLoader("properties.xml"));
 	}
 
 	/**

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene42;
 
 /*
@@ -249,9 +248,9 @@ class Lucene42DocValuesProducer extends DocValuesProducer {
           throw new RuntimeException(bogus);
         }
       }
-public int lookupTerm(BytesRef key) {
+
       @Override
-      public int lookupTerm(BytesRef key, BytesRef spare) {
+public int lookupTerm(BytesRef key) {
         try {
           InputOutput<Long> o = fstEnum.seekCeil(key);
           if (o == null) {

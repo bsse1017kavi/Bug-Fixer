@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2003-2004 The Apache Software Foundation
  *
@@ -294,9 +293,9 @@ public class ComponentHelper  {
             final String message = taskClass + " is abstract";
             project.log(message, Project.MSG_ERR);
             throw new BuildException(message);
-taskClass.getConstructor((Class[])null);
+        }
         try {
-            taskClass.getConstructor(null);
+taskClass.getConstructor((Class[])null);
             // don't have to check for public, since
             // getConstructor finds public constructors only.
         } catch (NoSuchMethodException e) {

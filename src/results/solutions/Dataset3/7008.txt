@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -179,9 +178,9 @@ public class FunctionReference extends SpelNodeImpl {
 	}
 	
 	@Override 
-generateCodeForArguments(mv, cf, method, this.children);
+	public void generateCode(MethodVisitor mv,CodeFlow cf) {
 		String methodDeclaringClassSlashedDescriptor = this.method.getDeclaringClass().getName().replace('.', '/');
-		CodeFlow.generateCodeForArguments(mv, cf, method, this.children);
+generateCodeForArguments(mv, cf, method, this.children);
 		mv.visitMethodInsn(INVOKESTATIC, methodDeclaringClassSlashedDescriptor, this.method.getName(),
 				CodeFlow.createSignatureDescriptor(this.method), false);
 		cf.pushDescriptor(this.exitTypeDescriptor);

@@ -1,4 +1,3 @@
-
 package org.argouml.ocl.ui;
 
 import java.beans.*;
@@ -21,9 +20,9 @@ public class DialogConstraint extends JDialog {
     ArgoConstraintEvaluation ace;
 
     public DialogConstraint(MModelElement me, JFrame parentFrame) {
-ace=new ArgoConstraintEvaluation(this, me);
+      super(parentFrame, true);
       setTitle("Enter new OCL constraint");
-      ace=new ArgoConstraintEvaluation(this);
+ace=new ArgoConstraintEvaluation(this, me);
       ace.setConstraint("context " + me.getName());
       getContentPane().add(ace);
       pack();

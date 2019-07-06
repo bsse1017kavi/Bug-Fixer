@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -66,9 +65,9 @@ public class BeanShellAssertion extends AbstractTestElement implements Serializa
 		return this;
 	}
 
-bshInterpreter = new BeanShellInterpreter(JMeterUtils.getProperty(INIT_FILE), log);
+	private void init(){
 		try {
-			bshInterpreter = new BeanShellInterpreter(INIT_FILE, log);
+bshInterpreter = new BeanShellInterpreter(JMeterUtils.getProperty(INIT_FILE), log);
 		} catch (ClassNotFoundException e) {
 			log.error("Cannot find BeanShell: "+e.toString());
 		}		

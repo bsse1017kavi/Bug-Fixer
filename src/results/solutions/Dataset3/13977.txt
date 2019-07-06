@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -265,9 +264,9 @@ public class EnumUtils {
      * @throws IllegalArgumentException if {@code enumClass} is not an enum class
      * @since 3.2
      */
-final long[] lvalues = ArrayUtils.clone(Validate.notNull(values));
+    public static <E extends Enum<E>> EnumSet<E> processBitVectors(final Class<E> enumClass, final long... values) {
         final EnumSet<E> results = EnumSet.noneOf(asEnum(enumClass));
-        long[] lvalues = ArrayUtils.clone(Validate.notNull(values));
+final long[] lvalues = ArrayUtils.clone(Validate.notNull(values));
         ArrayUtils.reverse(lvalues);
         for (final E constant : enumClass.getEnumConstants()) {
             final int block = constant.ordinal() / Long.SIZE;

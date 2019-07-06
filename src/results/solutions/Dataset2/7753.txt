@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -317,9 +316,9 @@ class DefaultCommentMapper {
 			int commentStart = this.comments[startIdx].getStartPosition();
 			if (previousEnd < commentStart && previousEndLine != nodeStartLine) {
 				int lastTokenEnd = previousEnd;
-while (this.scanner.currentPosition < commentStart) {
+				this.scanner.resetTo(previousEnd, commentStart);
 				try {
-					while (this.scanner.currentPosition != commentStart) {
+while (this.scanner.currentPosition < commentStart) {
 						if (this.scanner.getNextToken() != TerminalTokens.TokenNameWHITESPACE) {
 							lastTokenEnd =  this.scanner.getCurrentTokenEndPosition();
 						}

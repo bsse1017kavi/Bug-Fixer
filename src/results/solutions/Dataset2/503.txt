@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -108,9 +107,9 @@ public class ViewLabelProvider extends LabelProvider implements IColorProvider {
 	public Color getForeground(Object element) {
 		if (element instanceof IViewDescriptor) {
 			IWorkbenchPage activePage = window.getActivePage();
-.findViewReference(((IViewDescriptor) element).getId()) != null) {
+			if (activePage != null) {
 				if (activePage
-						.findView(((IViewDescriptor) element).getId()) != null) {
+.findViewReference(((IViewDescriptor) element).getId()) != null) {
 					return dimmedForeground;
 				}
 			}

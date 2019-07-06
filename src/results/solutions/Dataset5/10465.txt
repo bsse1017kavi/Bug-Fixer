@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2010 ZXing authors
  *
@@ -51,9 +50,9 @@ final class PreviewCallback implements Camera.PreviewCallback {
       Message message = previewHandler.obtainMessage(previewMessage, cameraResolution.x,
           cameraResolution.y, data);
       message.sendToTarget();
-Log.d(TAG, "Got preview callback, but no handler for it");
+      previewHandler = null;
     } else {
-      Log.v(TAG, "Got preview callback, but no handler for it");
+Log.d(TAG, "Got preview callback, but no handler for it");
     }
   }
 

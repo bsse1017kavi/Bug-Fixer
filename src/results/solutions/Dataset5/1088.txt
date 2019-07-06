@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2001-2005 The Apache Software Foundation
  *
@@ -420,9 +419,9 @@ public abstract class Definer extends DefBase {
     private void loadAntlib(ClassLoader classLoader, URL url) {
         try {
             Antlib antlib = Antlib.createAntlib(getProject(), url, getURI());
-antlib.execute();
+            antlib.setClassLoader(classLoader);
             antlib.setURI(getURI());
-            antlib.perform();
+antlib.execute();
         } catch (BuildException ex) {
             throw ProjectHelper.addLocationToBuildException(
                 ex, getLocation());

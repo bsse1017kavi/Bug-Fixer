@@ -1,4 +1,3 @@
-
 /*
  * $Id: MarkupContainer.java 4965 2006-03-16 11:21:07 -0800 (Thu, 16 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-16 11:21:07 -0800 (Thu, 16 Mar
@@ -161,9 +160,9 @@ public abstract class MarkupContainer<T> extends Component<T>
 			throw new IllegalArgumentException("argument child may not be null");
 		}
 
-log.debug("Add " + child.getId() + " to component " + this.getClass().getName()+" with path "+getPath());
+		if (log.isDebugEnabled())
 		{
-			log.debug("Add " + child.getId() + " to " + this);
+log.debug("Add " + child.getId() + " to component " + this.getClass().getName()+" with path "+getPath());
 		}
 
 		// Add to map

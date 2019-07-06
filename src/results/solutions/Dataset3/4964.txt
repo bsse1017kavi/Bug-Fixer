@@ -1,4 +1,3 @@
-
 package org.jboss.as.ejb3.deployment.processors.merging;
 
 import javax.ejb.SessionBean;
@@ -40,9 +39,9 @@ public class SessionBeanMergingProcessor extends AbstractMergingProcessor<Sessio
             // interface
             description.getConfigurators().add(new ComponentConfigurator() {
                 @Override
-configuration.addPostConstructInterceptor(SessionBeanSetSessionContextMethodInvocationInterceptor.FACTORY, InterceptorOrder.ComponentPostConstruct.EJB_SET_CONTEXT_METHOD_INVOCATION_INTERCEPTOR);
+                public void configure(DeploymentPhaseContext context, ComponentDescription description, ComponentConfiguration configuration) throws DeploymentUnitProcessingException {
                     if (SessionBean.class.isAssignableFrom(configuration.getComponentClass())) {
-                        configuration.addPostConstructInterceptor(SessionBeanSetSessionContextMethodInvocationInterceptor.FACTORY, InterceptorOrder.ComponentPostConstruct.EJB_SET_SESSION_CONTEXT_METHOD_INVOCATION_INTERCEPTOR);
+configuration.addPostConstructInterceptor(SessionBeanSetSessionContextMethodInvocationInterceptor.FACTORY, InterceptorOrder.ComponentPostConstruct.EJB_SET_CONTEXT_METHOD_INVOCATION_INTERCEPTOR);
                     }
                 }
             });

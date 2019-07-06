@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -78,9 +77,9 @@ public class TridentWordCount {
         Thread.sleep(1000);
       }
     }
-StormSubmitter.submitTopologyWithProgressBar(args[0], conf, buildTopology(null));
+    else {
       conf.setNumWorkers(3);
-      StormSubmitter.submitTopology(args[0], conf, buildTopology(null));
+StormSubmitter.submitTopologyWithProgressBar(args[0], conf, buildTopology(null));
     }
   }
 }

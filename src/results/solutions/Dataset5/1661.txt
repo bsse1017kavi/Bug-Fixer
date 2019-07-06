@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -138,9 +137,9 @@ abstract class SelectionImpl<X> implements Selection<X>, CriteriaExpression {
     
     public StringBuilder asVariable(AliasContext q) {
         throw new IllegalStateException(this.getClass().getSimpleName() + " can not be rendered as variable");
-public StringBuilder asProjection(AliasContext q) {
+    }
     
-    public final StringBuilder asProjection(AliasContext q) {
+public StringBuilder asProjection(AliasContext q) {
         String as = (isAutoAliased() ? "" : " AS " + getAlias());
         return asValue(q).append(as);
     }

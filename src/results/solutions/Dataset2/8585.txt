@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 import java.util.List;
@@ -147,9 +146,9 @@ public class IssueTypePeer
         {
             for (int i =0; i<types.size();i++)
             {
-&& it.getName().trim().equalsIgnoreCase(name.trim()))
+                IssueType it = (IssueType)types.get(i);
                 if (id != null && !it.getIssueTypeId().equals(id)
-                    && it.getName().trim().toLowerCase().equals(name.trim().toLowerCase()))
+&& it.getName().trim().equalsIgnoreCase(name.trim()))
                 {
                     unique = false;
                 }

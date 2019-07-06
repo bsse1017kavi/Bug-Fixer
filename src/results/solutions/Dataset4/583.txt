@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static com.madgag.android.listviews.ReflectiveHolderFactory.reflectiveFactoryFor;
@@ -84,9 +83,9 @@ public class GistFragment extends ListLoadingFragment<Comment> {
                     List<Comment> comments;
                     if (gist.getComments() > 0)
                         comments = service.getComments(id);
-return new FullGist(gist, service.isStarred(id), comments);
+                    else
                         comments = Collections.emptyList();
-                    return new FullGist(gist, comments);
+return new FullGist(gist, service.isStarred(id), comments);
                 } catch (IOException e) {
                     return new FullGist();
                 }

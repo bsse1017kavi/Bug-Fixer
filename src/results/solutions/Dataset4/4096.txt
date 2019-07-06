@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -97,9 +96,9 @@ public class NoMasterNodeTests extends ElasticsearchIntegrationTest {
             assertThat(e.status(), equalTo(RestStatus.SERVICE_UNAVAILABLE));
         }
 
-client().prepareUpdate("test", "type1", "1").setInlineScript("test script").setTimeout(timeout).execute().actionGet();
+        long now = System.currentTimeMillis();
         try {
-            client().prepareUpdate("test", "type1", "1").setScript("test script").setTimeout(timeout).execute().actionGet();
+client().prepareUpdate("test", "type1", "1").setInlineScript("test script").setTimeout(timeout).execute().actionGet();
             fail("Expected ClusterBlockException");
         } catch (ClusterBlockException e) {
             assertThat(System.currentTimeMillis() - now, greaterThan(timeout.millis() - 50));

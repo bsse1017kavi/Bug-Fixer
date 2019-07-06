@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -1764,9 +1763,9 @@ public class VAJAntToolGUI extends Frame
         {
             if( event.getPriority() <= getBuildInfo().getOutputMessageLevel() )
             {
-msg = "[" + event.getTask().getName() + "] ";
+                String msg = "";
                 if( event.getTask() != null )
-                    msg = "[" + event.getTask().getTaskName() + "] ";
+msg = "[" + event.getTask().getName() + "] ";
                 getMessageTextArea().append( lineSeparator + msg + event.getMessage() );
             }
         }

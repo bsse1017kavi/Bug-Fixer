@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -28,9 +27,9 @@ import org.apache.lucene.index.TermEnum;
   the enumeration is greater than all that precede it.  */
 public abstract class FilteredTermEnum extends TermEnum {
     private Term currentTerm = null;
-public FilteredTermEnum() throws IOException {}
+    private TermEnum actualEnum = null;
     
-    public FilteredTermEnum(IndexReader reader, Term term) throws IOException {}
+public FilteredTermEnum() throws IOException {}
 
     /** Equality compare on the term */
     protected abstract boolean termCompare(Term term);

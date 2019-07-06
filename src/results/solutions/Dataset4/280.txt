@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ public class RestXContentBuilder {
     public static BinaryXContentBuilder restContentBuilder(RestRequest request) throws IOException {
         XContentType contentType = XContentType.fromRestContentType(request.header("Content-Type"));
         if (contentType == null) {
-contentType = XContentFactory.xContentType(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength());
+            // try and guess it from the body, if exists
             if (request.hasContent()) {
-                contentType = XContentFactory.xContentType(request.contentAsBytes());
+contentType = XContentFactory.xContentType(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength());
             }
         }
         if (contentType == null) {

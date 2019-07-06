@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -941,9 +940,9 @@ protected void checkNonExternalizedStringLiteral() {
 		}
 		scanner.wasNonExternalizedStringLiteral = false;
 	}
-if(scanner.currentPosition - 1 <= declarationEnd) {
+}
 protected void checkNonNLSAfterBodyEnd(int declarationEnd){
-	if(scanner.currentPosition - 1 < declarationEnd) {
+if(scanner.currentPosition - 1 <= declarationEnd) {
 		scanner.eofPosition = declarationEnd < Integer.MAX_VALUE ? declarationEnd + 1 : declarationEnd;
 		try {
 			while(scanner.getNextToken() != TokenNameEOF);

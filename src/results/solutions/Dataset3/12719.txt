@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ public class SessionAttributesCacheKeyExternalizer extends AbstractSimpleExterna
     public void writeObject(ObjectOutput output, SessionAttributesCacheKey key) throws IOException {
         output.writeUTF(key.toString());
     }
-public SessionAttributesCacheKey readObject(ObjectInput input) throws IOException {
+
     @Override
-    public SessionAttributesCacheKey readObject(ObjectInput input) throws IOException, ClassNotFoundException {
+public SessionAttributesCacheKey readObject(ObjectInput input) throws IOException {
         return new SessionAttributesCacheKey(input.readUTF());
     }
 }

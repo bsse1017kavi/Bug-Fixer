@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -209,9 +208,9 @@ public class QueryResponse extends SolrResponseBase
 
           for (Object oGrp : groupsArr) {
             SimpleOrderedMap grpMap = (SimpleOrderedMap) oGrp;
-Group group = new Group(sGroupValue != null ? sGroupValue.toString() : null, doclist) ;
+            Object sGroupValue = grpMap.get( "groupValue");
             SolrDocumentList doclist = (SolrDocumentList) grpMap.get( "doclist");
-            Group group = new Group(sGroupValue.toString(), doclist) ;
+Group group = new Group(sGroupValue != null ? sGroupValue.toString() : null, doclist) ;
             groupedCommand.add(group);
           }
 

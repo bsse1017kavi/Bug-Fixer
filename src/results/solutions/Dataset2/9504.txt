@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -91,9 +90,9 @@ public class ReplyWithTemplateCommand extends ReplyCommand {
             initMimeHeader(bodyPart);
 
             StringBuffer bodyText;
-String quotedBodyText = createQuotedBody(bodyPart.getHeader(), folder, uids, address);
+            Integer[] address = bodyPart.getAddress();
 
-            String quotedBodyText = createQuotedBody(folder, uids, address);
+String quotedBodyText = createQuotedBody(bodyPart.getHeader(), folder, uids, address);
 
             // get answer from template
             String templateBody = getTemplateBody();

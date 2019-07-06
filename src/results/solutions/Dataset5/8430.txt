@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -4350,9 +4349,9 @@ public abstract class Component
 	public void onEvent(IEvent<?> event)
 	{
 	}
-public final <T> void send(IEventSink sink, Broadcast type, T payload)
+
 	/** {@inheritDoc} */
-	public final void send(IEventSink sink, Broadcast type, Object payload)
+public final <T> void send(IEventSink sink, Broadcast type, T payload)
 	{
 		new ComponentEventSender(this, getApplication().getFrameworkSettings()).send(sink, type,
 			payload);

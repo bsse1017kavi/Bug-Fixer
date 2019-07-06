@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ import org.wildfly.iiop.openjdk.rmi.ir.IRConstructionException;
  * @author <a href="mailto:tadamski@redhat.com">Tomasz Adamski</a>
  */
 @MessageLogger(projectCode = "WFLYIIOP", length = 4)
-IIOPLogger ROOT_LOGGER = Logger.getMessageLogger(IIOPLogger.class, "org.wildfly.iiop.openjdk");
+public interface IIOPLogger extends BasicLogger {
 
-    IIOPLogger ROOT_LOGGER = Logger.getMessageLogger(IIOPLogger.class, IIOPLogger.class.getPackage().toString());
+IIOPLogger ROOT_LOGGER = Logger.getMessageLogger(IIOPLogger.class, "org.wildfly.iiop.openjdk");
 
     @LogMessage(level = INFO)
     @Message(id = 1, value = "Activating IIOP Subsystem")

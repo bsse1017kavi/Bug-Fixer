@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -246,9 +245,9 @@ public class ParallelReader extends IndexReader {
   protected synchronized IndexReader doOpenIfChanged() throws CorruptIndexException, IOException {
     // doReopen calls ensureOpen
     return doReopen(false);
-private IndexReader doReopen(boolean doClone) throws CorruptIndexException, IOException {
+  }
     
-  protected IndexReader doReopen(boolean doClone) throws CorruptIndexException, IOException {
+private IndexReader doReopen(boolean doClone) throws CorruptIndexException, IOException {
     ensureOpen();
     
     boolean reopened = false;

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -714,9 +713,9 @@ public class ViewsPreferencePage extends PreferencePage implements
                 .getDefaultInt(IPreferenceConstants.VIEW_TAB_POSITION);
         viewTopButton.setSelection(viewTopValue == SWT.TOP);
         viewBottomButton.setSelection(viewTopValue == SWT.BOTTOM);
-perspBarLocation = apiStore
+        viewAlignment = viewTopValue;
 
-        perspBarLocation = store
+perspBarLocation = apiStore
                 .getDefaultString(IWorkbenchPreferenceConstants.DOCK_PERSPECTIVE_BAR);
         perspLeftButton.setSelection(IWorkbenchPreferenceConstants.LEFT
                 .equals(perspBarLocation));

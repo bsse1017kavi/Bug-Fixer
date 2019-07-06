@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -338,9 +337,9 @@ public final class InfinispanSubsystemXMLReader_1_2 implements XMLElementReader<
                     break;
                 }
                 case VIRTUAL_NODES: {
-SegmentsAndVirtualNodeConverter.virtualNodesToSegments(value), cache, reader);
+                    // AS7-5753: convert any non-expression virtual nodes value to a segments value,
                     DistributedCacheResource.SEGMENTS.parseAndSetParameter(
-                            InfinispanResourceAndOperationTransformer_1_3.virtualNodesToSegments(value), cache, reader);
+SegmentsAndVirtualNodeConverter.virtualNodesToSegments(value), cache, reader);
                     break;
                 }
                 case L1_LIFESPAN: {

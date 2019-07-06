@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.tools.ij.utilMain
@@ -268,9 +267,9 @@ public class utilMain implements java.security.PrivilegedAction {
 	
 	private void supportIJProperties(ConnectionEnv env) {
 	  //check if the property is set to not show select count and set the static variable
-JDBCDisplayUtil.setShowSelectCount( !showNoCountForSelect );
+        //accordingly. 
         boolean showNoCountForSelect = Boolean.valueOf(util.getSystemProperty("ij.showNoCountForSelect")).booleanValue();
-        JDBCDisplayUtil.showSelectCount = !showNoCountForSelect;
+JDBCDisplayUtil.setShowSelectCount( !showNoCountForSelect );
 
         //check if the property is set to not show initial connections and accordingly set the
         //static variable.

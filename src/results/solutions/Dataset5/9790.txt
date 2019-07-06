@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -96,9 +95,9 @@ public class ExamplePse extends Displaytag
         // Add the sortable header and define how to sort the different columns
         add(new SortableListViewHeaders("header", table)
         {
-final String name = header.getId();
+	        protected Comparable getObjectToCompare(final SortableListViewHeader header, final Object object)
 	        {
-	            final String name = header.getName();
+final String name = header.getId();
 	            if (name.equals("city"))
 	            {
 	                return ((ReportableListObject)object).getCity();

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.DssTrace
@@ -179,9 +178,9 @@ public class DssTrace
             try {
                 // Attempt to make the trace directory if it does not exist.
                 // If we can't create the directory the exception will occur 
-if (traceDirectory != null)
+                // when trying to create the trace file.
                 File traceDirectory = new File(fileName).getParentFile();
-                if (!PrivilegedFileOps.exists(traceDirectory))
+if (traceDirectory != null)
                 {
                     PrivilegedFileOps.mkdirs(traceDirectory);
                 }

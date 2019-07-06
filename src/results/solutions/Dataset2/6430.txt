@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -155,9 +154,9 @@ public static void createProblemType(TypeDeclaration typeDeclaration, Compilatio
 	// add its fields
 	FieldBinding[] fields = typeBinding.fields;
 	if ((fields != null) && (fields != NoFields)) {
-FieldReference.getConstantFor(fields[i], false, null, null, 0);
+		for (int i = 0, max = fields.length; i < max; i++) {
 			if (fields[i].constant == null) {
-				FieldReference.getConstantFor(fields[i], false, null, 0);
+FieldReference.getConstantFor(fields[i], false, null, null, 0);
 			}
 		}
 		classFile.addFieldInfos();

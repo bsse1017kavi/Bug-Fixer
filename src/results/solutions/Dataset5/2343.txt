@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -201,9 +200,9 @@ public Rectangle computeTrim (int x, int y, int width, int height) {
 	OS.ReleaseDC (handle, hDC);
 	int offsetY = OS.COMCTL32_MAJOR >= 6 && OS.IsAppThemed () ? 0 : 1;
 	trim.x -= CLIENT_INSET;
-trim.height += tm.tmHeight + CLIENT_INSET + offsetY;
+	trim.y -= tm.tmHeight + offsetY;
 	trim.width += CLIENT_INSET * 2;
-	trim.height += tm.tmHeight + CLIENT_INSET;
+trim.height += tm.tmHeight + CLIENT_INSET + offsetY;
 	return trim;
 }
 

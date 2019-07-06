@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class IndexStoreModule extends AbstractModule implements SpawnModules {
 
     @Override
     public Iterable<? extends Module> spawnModules() {
-if ((Constants.WINDOWS || Constants.SUN_OS || Constants.LINUX)
+        Class<? extends Module> indexStoreModule = NioFsIndexStoreModule.class;
         // Same logic as FSDirectory#open ...
-        if ((Constants.WINDOWS || Constants.SUN_OS)
+if ((Constants.WINDOWS || Constants.SUN_OS || Constants.LINUX)
                 && Constants.JRE_IS_64BIT && MMapDirectory.UNMAP_SUPPORTED) {
             indexStoreModule = MmapFsIndexStoreModule.class;
         } else if (Constants.WINDOWS) {

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public final class DOMUtil {
                 if (filter.accept(child)) {
                     matches.addElement(child);
                 }
-final int reclength = recmatches.getLength();
+                if (recurse) {
                     NodeList recmatches = listChildNodes(child, filter, recurse);
-                    final int reclength = matches.getLength();
+final int reclength = recmatches.getLength();
                     for (int j = 0; j < reclength; j++) {
                         matches.addElement(recmatches.item(i));
                     }

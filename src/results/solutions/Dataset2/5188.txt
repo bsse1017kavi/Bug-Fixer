@@ -1,4 +1,3 @@
-
 package org.jboss.ejb.plugins.cmp.jdbc.ejbql;
 
 import java.util.ArrayList;
@@ -79,9 +78,9 @@ public class SQLGenerator {
       JDBCEntityBridge selectEntity = schema.getEntityBridge();
 
       // get a list of all fields to be loaded
-if(readAhead.isOnFind()) {
+      List loadFields = new ArrayList();
       loadFields.addAll(selectEntity.getPrimaryKeyFields());
-      if(!readAhead.isOnFind()) {
+if(readAhead.isOnFind()) {
          String eagerLoadGroupName = readAhead.getEagerLoadGroup();
          loadFields.addAll(selectEntity.getLoadGroup(eagerLoadGroupName));
       }

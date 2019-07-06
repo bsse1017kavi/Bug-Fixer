@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -204,9 +203,9 @@ public class BasicOperationsUnitTestCase {
         Assert.assertTrue(result.hasDefined(RESULT));
         Assert.assertEquals(SUCCESS, result.get(OUTCOME).asString());
         final List<ModelNode> steps = getSteps(result.get(RESULT));
-Assert.assertEquals(8080, httpBinding.get(RESULT, "port").resolve().asInt());
+        Assert.assertEquals(1, steps.size());
         final ModelNode httpBinding = steps.get(0);
-        Assert.assertEquals(8080, httpBinding.get(RESULT, "port").asInt());
+Assert.assertEquals(8080, httpBinding.get(RESULT, "port").resolve().asInt());
 
     }
 

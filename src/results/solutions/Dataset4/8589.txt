@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -44,9 +43,9 @@ public class UAX29URLEmailTokenizerFactory extends AbstractTokenizerFactory {
         maxTokenLength = settings.getAsInt("max_token_length", StandardAnalyzer.DEFAULT_MAX_TOKEN_LENGTH);
     }
 
-UAX29URLEmailTokenizer tokenizer = new UAX29URLEmailTokenizer(version, reader);
+    @Override
     public Tokenizer create(Reader reader) {
-        UAX29URLEmailTokenizer tokenizer = new UAX29URLEmailTokenizer(reader);
+UAX29URLEmailTokenizer tokenizer = new UAX29URLEmailTokenizer(version, reader);
         tokenizer.setMaxTokenLength(maxTokenLength);
         return tokenizer;
     }

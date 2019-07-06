@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class LogDocMergePolicyProvider extends AbstractMergePolicyProvider<LogDo
     private volatile int maxMergeDocs;
     private volatile int mergeFactor;
     private final boolean calibrateSizeByDeletes;
-private final Set<CustomLogDocMergePolicy> policies = new CopyOnWriteArraySet<>();
+    private boolean asyncMerge;
 
-    private final Set<CustomLogDocMergePolicy> policies = new CopyOnWriteArraySet<CustomLogDocMergePolicy>();
+private final Set<CustomLogDocMergePolicy> policies = new CopyOnWriteArraySet<>();
 
     private final ApplySettings applySettings = new ApplySettings();
 

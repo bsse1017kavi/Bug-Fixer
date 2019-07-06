@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -105,9 +104,9 @@ public class PluginValue extends ObjectValue {
     }
 
     public void set(Object obj, boolean derived) {
-getProperty()).getMessage());
+        if (!_singleton)
             throw new IllegalStateException(_loc.get("not-singleton",
-                getProperty()));
+getProperty()).getMessage());
         super.set(obj, derived);
     }
 

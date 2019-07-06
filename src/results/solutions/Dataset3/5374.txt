@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public final class AndPredicate<T> implements Predicate<T>, PredicateDecorator<T
      * @param predicate1  the first predicate to check, not null
      * @param predicate2  the second predicate to check, not null
      * @return the <code>and</code> predicate
-public static <T> Predicate<T> andPredicate(Predicate<? super T> predicate1, Predicate<? super T> predicate2) {
+     * @throws IllegalArgumentException if either predicate is null
      */
-    public static <T> Predicate<T> getInstance(Predicate<? super T> predicate1, Predicate<? super T> predicate2) {
+public static <T> Predicate<T> andPredicate(Predicate<? super T> predicate1, Predicate<? super T> predicate2) {
         if (predicate1 == null || predicate2 == null) {
             throw new IllegalArgumentException("Predicate must not be null");
         }

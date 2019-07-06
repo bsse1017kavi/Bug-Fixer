@@ -1,4 +1,3 @@
-
 package org.springframework.ui.message;
 
 import static org.junit.Assert.assertEquals;
@@ -14,9 +13,9 @@ public class MessageBuilderTests {
 		MockMessageSource messageSource = new MockMessageSource();
 		messageSource.addMessage("invalidFormat", Locale.US, "#{label} must be in format #{format}");
 		messageSource.addMessage("mathForm.decimalField", Locale.US, "Decimal Field");
-.arg("format", "#,###.##").locale(Locale.US).defaultMessage("Field must be in format #,###.##").build();
+		MessageBuilder builder = new MessageBuilder(messageSource);
 		String message = builder.code("invalidFormat").arg("label", new ResolvableArgument("mathForm.decimalField"))
-				.arg("format", "#,###.##").defaultMessage("Field must be in format #,###.##").build();
+.arg("format", "#,###.##").locale(Locale.US).defaultMessage("Field must be in format #,###.##").build();
 		assertEquals("Decimal Field must be in format #,###.##", message);
 	}
 }

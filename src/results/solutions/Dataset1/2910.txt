@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class AriesApplicationManagerImpl implements AriesApplicationManager {
       if (deploymentManifest != null) { 
         deploymentMetadata = _deploymentMetadataFactory.createDeploymentMetadata(deploymentManifest);
         
-String depSymbolicName = deploymentMetadata.getApplicationSymbolicName();
+        // Validate: symbolic names must match
         String appSymbolicName = applicationMetadata.getApplicationSymbolicName();
-        String depSymbolicName = applicationMetadata.getApplicationSymbolicName();
+String depSymbolicName = deploymentMetadata.getApplicationSymbolicName();
         if (!appSymbolicName.equals(depSymbolicName)) {
           throw new ManagementException (MessageUtil.getMessage("APPMANAGEMENT0002E", ebaFile.getName(), appSymbolicName, depSymbolicName));
         }

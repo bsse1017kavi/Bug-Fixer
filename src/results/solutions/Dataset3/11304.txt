@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -499,9 +498,9 @@ public abstract class AbstractDataSourceService implements Service<DataSource> {
 
         // Override this method to change how jndiName is build in AS7
         @Override
-if (!rawJndiName.startsWith("java:") && javaContext) {
+        protected String buildJndiName(String rawJndiName, Boolean javaContext) {
             final String jndiName;
-            if (!rawJndiName.startsWith("java:")) {
+if (!rawJndiName.startsWith("java:") && javaContext) {
                 if (rawJndiName.startsWith("jboss/")) {
                     // Bind to java:jboss/ namespace
                     jndiName = "java:" + rawJndiName;

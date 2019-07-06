@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -735,9 +734,9 @@ public class PackageTest extends JMeterTestCase {
 
 	public void XPathtestDefault() throws Exception {
 		XPathFileContainer f = new XPathFileContainer("../build.xml", "/project/@default");
-assertEquals("install", f.getXPathString(0));
+		assertNotNull(f);
 		assertTrue("Not empty", f.size() > 0);
-		assertEquals("all", f.getXPathString(0));
+assertEquals("install", f.getXPathString(0));
 
 	}
     

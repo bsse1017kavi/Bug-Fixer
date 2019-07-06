@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -90,9 +89,9 @@ public class NamespaceRemoveHandler implements OperationStepHandler, Description
         if (toRemove != null) {
             namespaces.set(newList);
         } else {
-context.stepCompleted();
+            throw new OperationFailedException(new ModelNode().set(MESSAGES.namespaceNotFound(prefix)));
         }
-        context.completeStep();
+context.stepCompleted();
     }
 
     @Override

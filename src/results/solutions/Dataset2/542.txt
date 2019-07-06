@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -796,9 +795,9 @@ public class EditorManager {
 				try {
 					String workbookID = ref.getMemento().getString(IWorkbenchConstants.TAG_WORKBOOK);
 					editorPresentation.setActiveEditorWorkbookFromID(workbookID);
-// TODO commented during presentation refactor ((EditorPane)ref.getPane()).getWorkbook().updateEditorTab(ref);
+					openInternalEditor(ref, desc, editorInput, false);
 					ref.getPane().createChildControl();
-					((EditorPane)ref.getPane()).getWorkbook().updateEditorTab(ref);
+// TODO commented during presentation refactor ((EditorPane)ref.getPane()).getWorkbook().updateEditorTab(ref);
 				} catch (PartInitException e) {
 					WorkbenchPlugin.log("Exception creating editor: " + e.getMessage()); //$NON-NLS-1$
 					result[0] = unableToCreateEditor(ref, e);				

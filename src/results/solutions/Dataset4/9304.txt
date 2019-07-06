@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class InternalTransportClusterAdminClient extends AbstractClusterAdminCli
         this.nodesService = nodesService;
         this.threadPool = threadPool;
         MapBuilder<ClusterAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<ClusterAction, TransportActionNodeProxy>();
-actionsBuilder.put((ClusterAction) action, new TransportActionNodeProxy(settings, action, transportService));
+        for (GenericAction action : actions.values()) {
             if (action instanceof ClusterAction) {
-                actionsBuilder.put((ClusterAction) action, new TransportActionNodeProxy(action, transportService));
+actionsBuilder.put((ClusterAction) action, new TransportActionNodeProxy(settings, action, transportService));
             }
         }
         this.actions = actionsBuilder.immutableMap();

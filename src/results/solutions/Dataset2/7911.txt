@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -260,9 +259,9 @@ public class ClasspathEntry implements IClasspathEntry {
 		return this;
 	}
 
-if (rules == null || rules.length == 0) return referringRules;
+	private IAccessRule[] combine(IAccessRule[] referringRules, IAccessRule[] rules, boolean combine) {
 		if (!combine) return rules;
-		if (rules == null) return referringRules;
+if (rules == null || rules.length == 0) return referringRules;
 		
 		// concat access rules
 		int referringRulesLength = referringRules.length;

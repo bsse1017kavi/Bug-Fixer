@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1570,9 +1569,9 @@ public class AnnotationPersistenceMetaDataParser
 
             meta = getRepository().addQueryMetaData(null, query.name());
             meta.setQueryString(query.query());
-if (ImplHelper.isManagedType(getConfiguration(), res))
+            meta.setLanguage(QueryLanguages.LANG_SQL);
             Class res = query.resultClass();
-            if (ImplHelper.isManagedType(res))
+if (ImplHelper.isManagedType(getConfiguration(), res))
                 meta.setCandidateType(res);
             else if (!void.class.equals(res))
                 meta.setResultType(res);

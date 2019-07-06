@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.core;
 
 /*
@@ -73,9 +72,9 @@ private static synchronized char[] scannedIdentifier(String id) {
 	String trimmed = id.trim();
 	if (!trimmed.equals(id)) {
 		return null;
-SCANNER.setSource(id.toCharArray());
+	}
 	try {
-		SCANNER.setSourceBuffer(id.toCharArray());
+SCANNER.setSource(id.toCharArray());
 		int token = SCANNER.getNextToken();
 		char[] currentIdentifier;
 		try {

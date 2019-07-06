@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -365,9 +364,9 @@ public class ProxyControl extends GenericController {
 	/**
 	 * Receives the recorded sampler from the proxy server for placing in the
 	 * test tree. param serverResponse to be added to allow saving of the
-public synchronized void deliverSampler(HTTPSamplerBase sampler, TestElement[] subConfigs, SampleResult result) {
+	 * server's response while recording. A future consideration.
 	 */
-	public void deliverSampler(HTTPSamplerBase sampler, TestElement[] subConfigs, SampleResult result) {
+public synchronized void deliverSampler(HTTPSamplerBase sampler, TestElement[] subConfigs, SampleResult result) {
 		if (filterContentType(result) && filterUrl(sampler)) {
 			JMeterTreeNode myTarget = findTargetControllerNode();
 			Collection defaultConfigurations = findApplicableElements(myTarget, ConfigTestElement.class, false);

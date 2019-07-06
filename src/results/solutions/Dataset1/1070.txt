@@ -1,4 +1,3 @@
-
 package org.apache.solr.core;
 
 /**
@@ -32,9 +31,9 @@ public class TestLegacyMergeSchedulerPolicyConfig extends SolrTestCaseJ4 {
     initCore("solrconfig-legacy.xml", "schema.xml");
   }
 
-IndexWriter writer = ((DirectUpdateHandler2)h.getCore().getUpdateHandler()).getSolrCoreState().getIndexWriter(h.getCore());
+  @Test
   public void testLegacy() throws Exception {
-    IndexWriter writer = ((DirectUpdateHandler2)h.getCore().getUpdateHandler()).getIndexWriterProvider().getIndexWriter(h.getCore());
+IndexWriter writer = ((DirectUpdateHandler2)h.getCore().getUpdateHandler()).getSolrCoreState().getIndexWriter(h.getCore());
     assertTrue(writer.getConfig().getMergePolicy().getClass().getName().equals(LogDocMergePolicy.class.getName()));
     assertTrue(writer.getConfig().getMergeScheduler().getClass().getName().equals(SerialMergeScheduler.class.getName()));
   }

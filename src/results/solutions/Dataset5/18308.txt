@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -90,9 +89,9 @@ public class IntSum extends AbstractFunction implements Serializable {
         } catch (NumberFormatException ignored) {
         }
 
-vars.put(varName.trim(), totalString);
+        String totalString = Integer.toString(sum);
 		if (vars != null && varName != null){// vars will be null on TestPlan
-			vars.put(varName, totalString);
+vars.put(varName.trim(), totalString);
 		}
 
 		return totalString;

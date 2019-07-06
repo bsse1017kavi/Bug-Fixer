@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -1292,9 +1291,9 @@ public class SegmentReader extends IndexReader implements Cloneable {
 
   // This is necessary so that cloned SegmentReaders (which
   // share the underlying postings data) will map to the
-public final Object getCoreCacheKey() {
+  // same entry in the FieldCache.  See LUCENE-1579.
   @Override
-  public final Object getFieldCacheKey() {
+public final Object getCoreCacheKey() {
     return core;
   }
   

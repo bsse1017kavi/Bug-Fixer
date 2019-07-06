@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -136,9 +135,9 @@ public class ModelControllerClientOperationHandler implements ManagementRequestH
                                 //Add the remote address and the access mechanism
                                 Collection<Principal> principals = context.getChannel().getConnection().getPrincipals();
                                 for (Principal principal : principals) {
-copySubject.getPrincipals().add(new org.jboss.as.controller.security.InetAddressPrincipal(((InetAddressPrincipal)principal).getInetAddress()));
+                                    if (principal instanceof InetAddressPrincipal) {
                                         //TODO decide if we should use the remoting principal or not
-                                        copySubject.getPrincipals().add(new org.jboss.as.controller.security.InetAddressPrincipal((InetAddressPrincipal)principal));
+copySubject.getPrincipals().add(new org.jboss.as.controller.security.InetAddressPrincipal(((InetAddressPrincipal)principal).getInetAddress()));
                                         break;
                                     }
                                 }

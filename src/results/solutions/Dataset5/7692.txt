@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -141,9 +140,9 @@ public class Recorder extends Task
         throws TaskException
     {
         if( filename == null )
-log( "setting a recorder for name " + filename,
+            throw new TaskException( "No filename specified" );
 
-        getProject().log( "setting a recorder for name " + filename,
+log( "setting a recorder for name " + filename,
                           Project.MSG_DEBUG );
 
         // get the recorder entry

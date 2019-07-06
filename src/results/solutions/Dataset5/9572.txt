@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -73,9 +72,9 @@ public class Move extends Copy {
                                          + "must be set.");
             }
             destFile = (destFile == null)
-? destFile.getParentFile() : destDir;
+                ? new File(destDir, file.getName()) : destFile;
             destDir = (destDir == null)
-                ? fileUtils.getParentFile(destFile) : destDir;
+? destFile.getParentFile() : destDir;
 
             completeDirMap.put(file, destFile);
             file = null;

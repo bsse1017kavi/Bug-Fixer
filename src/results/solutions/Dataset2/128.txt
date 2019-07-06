@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -587,9 +586,9 @@ public class IncomingServerPanel extends DefaultPanel implements
             } catch (Exception e) {
                 //let exception handler process other errors
                 new ExceptionHandler().processException(e);
-IMAPServer server = new IMAPServer((ImapItem)serverItem);
+            }
         } else {
-            IMAPServer server = new IMAPServer(/*accountItem.getImapItem()*/(ImapItem)serverItem,null);
+IMAPServer server = new IMAPServer((ImapItem)serverItem);
 
             try {
                 list = server.checkSupportedAuthenticationMethods();

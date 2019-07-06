@@ -1,4 +1,3 @@
-
 package org.jboss.proxy;
 
 import java.lang.reflect.*;
@@ -152,9 +151,9 @@ class ProxyCompiler {
 		fname = fname.substring(1 + fname.lastIndexOf('.')) + ".class";
 		fname = "/tmp/" + fname;
 		java.io.OutputStream cf = new java.io.FileOutputStream(fname);
-Logger.log("wrote "+fname);
+		cf.write(code);
 		cf.close();
-		System.out.println("wrote "+fname);
+Logger.log("wrote "+fname);
 	    } catch(java.io.IOException ee) { }
 	    //* ---- ---- */
 

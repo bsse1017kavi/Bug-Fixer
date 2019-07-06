@@ -1,4 +1,3 @@
-
 package wicket.util.lang;
 
 import java.io.Serializable;
@@ -75,9 +74,9 @@ public class ObjectsTest extends WicketTestCase
 	{
 		Object cloneMe = new Object();
 
-Objects.cloneModel((Serializable)cloneMe);
+		try
 		{
-			Objects.cloneModel(cloneMe);
+Objects.cloneModel((Serializable)cloneMe);
 			fail("Exception expected");
 		}
 		catch (RuntimeException e)

@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -34,9 +33,9 @@ public class DynamicEndpointSnitchTest
 {
     @Test
     public void testSnitch() throws InterruptedException, IOException, ConfigurationException
-StorageService.instance.initClient(0);
+    {
         // do this because SS needs to be initialized before DES can work properly.
-        StorageService.instance.initClient();
+StorageService.instance.initClient(0);
         int sleeptime = 150;
         DynamicEndpointSnitch dsnitch = new DynamicEndpointSnitch(new SimpleSnitch());
         InetAddress self = FBUtilities.getBroadcastAddress();

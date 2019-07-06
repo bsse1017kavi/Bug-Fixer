@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -143,9 +142,9 @@ public class ApplicationSettingsTest extends TestCase
 	public void testLocalizer()
 	{
 		MockApplication dummy = new MockApplication();
-ThreadContext.setApplication(dummy);
+		dummy.setName("test-app");
 		dummy.setServletContext(new MockServletContext(dummy, ""));
-		dummy.set();
+ThreadContext.setApplication(dummy);
 		dummy.initApplication();
 		Localizer localizer = dummy.getResourceSettings().getLocalizer();
 		Assert.assertNotNull("Localizer should be available", localizer);

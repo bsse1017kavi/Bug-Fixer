@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class CSVConfigGuesser {
             // tralalal
             BufferedReader bIn = new BufferedReader(new InputStreamReader((getInputStream())));
             String[] lines = new String[10];
-while ( (line = bIn.readLine()) != null && counter <= 10) {
+            String line = null;
             int counter = 0;
-            while ( (line = bIn.readLine()) != null || counter > 10) {
+while ( (line = bIn.readLine()) != null && counter <= 10) {
                 lines[counter] = line;
                 counter++;
             }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -39,9 +38,9 @@ public class Application extends WicketExampleApplication
 	@Override
 	protected void init()
 	{
-getRootRequestMapperAsCompound().add(new MountedMapper("/hello", HelloWorld.class));
+		super.init();
 
-		getRootMapperAsCompound().add(new MountedMapper("/hello", HelloWorld.class));
+getRootRequestMapperAsCompound().add(new MountedMapper("/hello", HelloWorld.class));
 	}
 
 	/**

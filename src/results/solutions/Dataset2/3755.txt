@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.startup;
 
 import java.beans.*;
@@ -47,9 +46,9 @@ public class Jspc {
     {
 	if( args!=null )
 	    processArgs( args );
-File.separator + "common";
+	Vector v=new Vector();
 	String commonDir=installDir + File.separator + "lib" +
-	    File.separator + "container";
+File.separator + "common";
 	IntrospectionUtils.addToClassPath( v, commonDir);
 	IntrospectionUtils.addToolsJar(v);
 	String containerDir=installDir + File.separator + "lib" +

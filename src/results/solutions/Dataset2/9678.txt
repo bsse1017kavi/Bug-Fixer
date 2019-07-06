@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -839,9 +838,9 @@ public class WorkbenchWindow extends ApplicationWindow implements
      * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets.Shell)
      */
     protected void configureShell(Shell shell) {
-detachedWindowShells = new ShellPool(shell, SWT.TOOL | SWT.TITLE | SWT.MIN | SWT.MAX | SWT.RESIZE | getDefaultOrientation());
+        super.configureShell(shell);
 
-        detachedWindowShells = new ShellPool(shell, SWT.RESIZE | getDefaultOrientation());
+detachedWindowShells = new ShellPool(shell, SWT.TOOL | SWT.TITLE | SWT.MIN | SWT.MAX | SWT.RESIZE | getDefaultOrientation());
         
         String title = getWindowConfigurer().basicGetTitle();
         if (title != null) {

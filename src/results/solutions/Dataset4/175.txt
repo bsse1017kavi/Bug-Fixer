@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdxinvaders;
 
 import android.content.pm.ActivityInfo;
@@ -14,9 +13,9 @@ public class GdxInvadersAndroid extends AndroidApplication {
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-config.useGL20 = true;
+		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useWakelock = true;
-		config.useGL20 = false;
+config.useGL20 = true;
 		initialize(new GdxInvaders(), config);
 	}
 }

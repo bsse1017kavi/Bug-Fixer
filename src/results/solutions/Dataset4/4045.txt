@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public class IndicesQueriesRegistry {
     private ImmutableMap<String, FilterParser> filterParsers;
 
     @Inject
-addQueryParser(queryParsers, new MatchQueryParser());
+    public IndicesQueriesRegistry(Settings settings, @Nullable ClusterService clusterService) {
         Map<String, QueryParser> queryParsers = Maps.newHashMap();
-        addQueryParser(queryParsers, new TextQueryParser());
+addQueryParser(queryParsers, new MatchQueryParser());
         addQueryParser(queryParsers, new NestedQueryParser());
         addQueryParser(queryParsers, new HasChildQueryParser());
         addQueryParser(queryParsers, new TopChildrenQueryParser());

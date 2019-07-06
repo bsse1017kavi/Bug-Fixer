@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /**
@@ -51,9 +50,9 @@ class MockCharFilter extends CharStream {
     if (bufferedCh >= 0) {
       int ch = bufferedCh;
       bufferedCh = -1;
-addOffCorrectMap(currentOffset, delta-1);
+      currentOffset++;
       
-      addOffCorrectMap(currentOffset+delta, delta-1);
+addOffCorrectMap(currentOffset, delta-1);
       delta--;
       return ch;
     }

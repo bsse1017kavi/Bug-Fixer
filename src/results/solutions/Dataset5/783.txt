@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -82,9 +81,9 @@ public class ExactTypePattern extends TypePattern {
 	 */
 	protected boolean couldEverMatchSameTypesAs(TypePattern other) {
 		if (super.couldEverMatchSameTypesAs(other)) return true;
-if (!ResolvedType.isMissing(otherType)) {
+		// false is necessary but not sufficient
 		UnresolvedType otherType = other.getExactType();
-		if (otherType != ResolvedType.MISSING) {
+if (!ResolvedType.isMissing(otherType)) {
 			return type.equals(otherType);
 		} 
 		if (other instanceof WildTypePattern) {

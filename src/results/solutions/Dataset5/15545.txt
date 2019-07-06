@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -589,9 +588,9 @@ class Expressions {
             return Expressions.asValue(q, "LOCATE", OPEN_BRACE, pattern, COMMA, path, CLOSE_BRACE);
         }
     }
-static Expression<Character> defaultTrim = new Constant<Character>(Character.class, Character.valueOf(' '));
+    
     public static class Trim extends BinarayFunctionalExpression<String> {
-        static Expression<Character> defaultTrim = new Constant<Character>(Character.class, new Character(' '));
+static Expression<Character> defaultTrim = new Constant<Character>(Character.class, Character.valueOf(' '));
         static Trimspec defaultSpec = Trimspec.BOTH;
         private Trimspec ts;
         

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -98,9 +97,9 @@ public class TestDualTreeBidiMap2<K extends Comparable<K>, V extends Comparable<
 
     public void testSortOrder() throws Exception {
         SortedBidiMap<K, V> sm = makeFullMap();
-List<K> newSortedKeys = getAsList(getSampleKeys());
+
         // Sort by the comparator used in the makeEmptyBidiMap() method
-        List<K> newSortedKeys = Arrays.asList(getSampleKeys());
+List<K> newSortedKeys = getAsList(getSampleKeys());
         Collections.sort(newSortedKeys, new ReverseComparator<K>(ComparableComparator.<K>getInstance()));
         newSortedKeys = Collections.unmodifiableList(newSortedKeys);
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -182,9 +181,9 @@ public class IOSApplication implements Application {
 		CGSize bounds = UIScreen.getMainScreen().getApplicationFrame().size();
 
 		// determine orientation and resulting width + height
-orientation = viewController.getInterfaceOrientation();
+		UIInterfaceOrientation orientation;
 		if (viewController != null) {
-			viewController.getInterfaceOrientation();
+orientation = viewController.getInterfaceOrientation();
 		} else if (config.orientationLandscape == config.orientationPortrait) {
 			/*
 			 * if the app has orientation in any side then we can only check

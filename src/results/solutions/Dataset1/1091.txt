@@ -1,4 +1,3 @@
-
 /*
  *
  * Derby - Class BlobClob4BlobTest
@@ -3248,9 +3247,9 @@ public class BlobClob4BlobTest extends BaseJDBCTestCase {
             int numBytes = inStream.read(value);
             // check that the two values match
             if (numBytes >= 0) {
-valueString = new String(readBytes, "US-ASCII");
+                byte[] readBytes = new byte[numBytes];
                 System.arraycopy(value, 0, readBytes, 0, numBytes);
-                valueString = new String(readBytes);
+valueString = new String(readBytes, "US-ASCII");
                 assertEquals("FAIL - wrong substring value",
                         valueString, subStr);
             } else {

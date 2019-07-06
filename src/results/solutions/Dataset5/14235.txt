@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -152,9 +151,9 @@ public class Cvs
         if( m_dest == null ) {
           m_dest = getBaseDirectory();
         }
-exe.setCommandline( command );
+        exe.setWorkingDirectory( m_dest );
 
-        exe.setCommandline( command.getCommandline() );
+exe.setCommandline( command );
         exe.setEnvironment( env );
         try
         {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -64,9 +63,9 @@ public class RecoveryPercolatorTests extends ElasticsearchIntegrationTest {
         return 1;
     }
 
-return builder().put("gateway.type", "local").build();
+    @Override
     protected Settings nodeSettings(int nodeOrdinal) {
-        return builder().put(super.nodeSettings(nodeOrdinal)).put("gateway.type", "local").build();
+return builder().put("gateway.type", "local").build();
     }
 
     @Test

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
  */
 public class DocumentProcessorTest extends MahoutTestCase {
 
-Configuration configuration = getConfiguration();
+  @Test
   public void testTokenizeDocuments() throws Exception {
-    Configuration configuration = new Configuration();
+Configuration configuration = getConfiguration();
     Path input = new Path(getTestTempDirPath(), "inputDir");
     Path output = new Path(getTestTempDirPath(), "outputDir");
     FileSystem fs = FileSystem.get(input.toUri(), configuration);

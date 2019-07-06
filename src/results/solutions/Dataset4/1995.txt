@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.utils;
 
 import java.util.Arrays;
@@ -38,9 +37,9 @@ public class Bits {
 		checkCapacity(word);
 		bits[word] ^= 1L << (index & 0x3F);
 	}
-if(len>=bits.length) {
+	
 	private void checkCapacity(int len) {
-		if(len> bits.length) {
+if(len>=bits.length) {
 			long[] newBits = new long[len+1];
 			System.arraycopy(bits, 0, newBits, 0, bits.length);
 			bits = newBits;

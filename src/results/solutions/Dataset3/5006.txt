@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public class ServerEnvironmentResourceDescription extends SimpleResourceDefiniti
     /**
      * Creates a new description provider to describe the server environment.
      *
-private ServerEnvironmentResourceDescription(final ServerEnvironment environment) {
+     * @param environment the environment the resource is based on.
      */
-    public ServerEnvironmentResourceDescription(final ServerEnvironment environment) {
+private ServerEnvironmentResourceDescription(final ServerEnvironment environment) {
         super(RESOURCE_PATH, ServerDescriptions.getResourceDescriptionResolver("server.env"));
         osh = new ServerEnvironmentReadHandler(environment);
     }

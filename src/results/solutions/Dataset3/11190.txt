@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -102,9 +101,9 @@ public abstract class AbstractMessageChannel implements MessageChannel, BeanName
 	@Override
 	public final boolean send(Message<?> message, long timeout) {
 
-logger.trace("[" + this.beanName + "] send message " + message);
+		Assert.notNull(message, "Message must not be null");
 		if (logger.isTraceEnabled()) {
-			logger.trace("[" + this.beanName + "] sending message " + message);
+logger.trace("[" + this.beanName + "] send message " + message);
 		}
 
 		message = this.interceptorChain.preSend(message, this);

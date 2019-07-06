@@ -1,10 +1,9 @@
-
 package storm.trident.state;
 
 import java.io.Serializable;
 
 
-T deserialize(byte[] b);
+public interface Serializer<T> extends Serializable {
     byte[] serialize(T obj);
-    Object deserialize(byte[] b);
+T deserialize(byte[] b);
 }

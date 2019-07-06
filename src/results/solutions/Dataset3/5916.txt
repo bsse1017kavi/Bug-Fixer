@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -127,9 +126,9 @@ class WebConnectorService implements Service<Connector> {
             if (ssl != null) {
                 boolean nativeSSL = false;
                 if (connector.getProtocolHandler() instanceof Http11AprProtocol) {
-throw new StartException("Non HTTP connectors do not support SSL");
+                    nativeSSL = true;
                 } else if (!(connector.getProtocolHandler() instanceof Http11Protocol)) {
-                    throw new StartException("Non HTTP connectors dor not support SSL");
+throw new StartException("Non HTTP connectors do not support SSL");
                 }
                 // Enable SSL
                 try {

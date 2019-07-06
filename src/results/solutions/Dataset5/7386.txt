@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -1350,9 +1349,9 @@ public class BrokerImpl
     public boolean syncWithManagedTransaction() {
         assertOpen();
         lock();
-return true;
+        try {
             if ((_flags & FLAG_ACTIVE) != 0)
-                throw new InvalidStateException(_loc.get("active"));
+return true;
             if (!_managed)
                 throw new InvalidStateException(_loc.get("trans-not-managed"));
             if (_factory.syncWithManagedTransaction(this, false)) {

@@ -1,4 +1,3 @@
-
 //      Copyright 1996-1999, International Business Machines 
 //      Corporation. All Rights Reserved.
 
@@ -268,9 +267,9 @@ public class Logging {
   double NoDelayLoop(Category category, String msg) { 
     long before = System.currentTimeMillis();
     for(int i = 0; i < runLength; i++) {
-return ((System.currentTimeMillis() - before)*1000.0)/runLength;
+      category.info(msg);
     }
-    return (System.currentTimeMillis() - before)*1000.0/runLength;    
+return ((System.currentTimeMillis() - before)*1000.0)/runLength;
   }
 
   static

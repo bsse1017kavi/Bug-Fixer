@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -903,9 +902,9 @@ public abstract class FrameworkServlet extends HttpServletBean {
 		LocaleContext previousLocaleContext = LocaleContextHolder.getLocaleContext();
 		LocaleContext localeContext = buildLocaleContext(request);
 
-if (previousAttributes == null || (previousAttributes instanceof ServletRequestAttributes)) {
+		RequestAttributes previousAttributes = RequestContextHolder.getRequestAttributes();
 		ServletRequestAttributes requestAttributes = null;
-		if (previousAttributes == null || previousAttributes.getClass().equals(ServletRequestAttributes.class)) {
+if (previousAttributes == null || (previousAttributes instanceof ServletRequestAttributes)) {
 			requestAttributes = new ServletRequestAttributes(request);
 		}
 

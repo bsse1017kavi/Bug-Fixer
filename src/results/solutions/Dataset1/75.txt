@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -29,9 +28,9 @@ public class CompressedSegmentedFile extends SegmentedFile
 {
     private final CompressionMetadata metadata;
 
-super(path, metadata.dataLength, metadata.compressedFileLength);
+    public CompressedSegmentedFile(String path, CompressionMetadata metadata)
     {
-        super(path, metadata.dataLength);
+super(path, metadata.dataLength, metadata.compressedFileLength);
         this.metadata = metadata;
     }
 

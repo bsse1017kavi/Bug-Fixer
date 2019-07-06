@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1684,9 +1683,9 @@ public class XMLSchemaValidator
             while (t.hasMoreTokens()) {
                 namespace = t.nextToken ();
                 if (!t.hasMoreTokens()) {
-"General", new Object[]{"No matching location hint for namespace '" + namespace + "' in attribute schemaLocation"},
+                    // REVISIT: new error code
                     fXSIErrorReporter.reportError(XSMessageFormatter.SCHEMA_DOMAIN,
-                                                  "general", new Object[]{"No matching location hint for namespace '" + namespace + "' in attribute schemaLocation"},
+"General", new Object[]{"No matching location hint for namespace '" + namespace + "' in attribute schemaLocation"},
                                                   XMLErrorReporter.SEVERITY_WARNING);
                     break;
                 }

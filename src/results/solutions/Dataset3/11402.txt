@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -110,9 +109,9 @@ public abstract class MultivariateOptimizer
      * @param params Point at which the objective function must be evaluated.
      * @return the objective function value at the specified point.
      * @throws TooManyEvaluationsException if the maximal number of
-public double computeObjectiveValue(double[] params) {
+     * evaluations is exceeded.
      */
-    protected double computeObjectiveValue(double[] params) {
+public double computeObjectiveValue(double[] params) {
         super.incrementEvaluationCount();
         return function.value(params);
     }

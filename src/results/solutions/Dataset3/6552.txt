@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class RaStructureProcessor implements DeploymentUnitProcessor {
         final VirtualFile deploymentRoot = resourceRoot.getRoot();
         if (deploymentRoot == null || !deploymentRoot.exists()) {
             return;
-final String deploymentRootName = deploymentRoot.getLowerCaseName();
+        }
 
-        final String deploymentRootName = deploymentRoot.getName().toLowerCase();
+final String deploymentRootName = deploymentRoot.getLowerCaseName();
         if (!deploymentRootName.endsWith(RAR_EXTENSION)) {
             return;
         }

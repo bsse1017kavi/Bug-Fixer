@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -220,9 +219,9 @@ public class SolrConfig extends Config {
      // way arround that in the PluginInfo framework
      loadPluginInfo(SolrEventListener.class, "//listener",false, true);
 
-loadPluginInfo(CodecFactory.class,"codecFactory",false, false);
+     loadPluginInfo(DirectoryFactory.class,"directoryFactory",false, true);
      loadPluginInfo(IndexDeletionPolicy.class,indexConfigPrefix+"/deletionPolicy",false, true);
-     loadPluginInfo(CodecFactory.class,"mainIndex/codecFactory",false, false);
+loadPluginInfo(CodecFactory.class,"codecFactory",false, false);
      loadPluginInfo(IndexReaderFactory.class,"indexReaderFactory",false, true);
      loadPluginInfo(UpdateRequestProcessorChain.class,"updateRequestProcessorChain",false, false);
      loadPluginInfo(UpdateLog.class,"updateHandler/updateLog",false, false);

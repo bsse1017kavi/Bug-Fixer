@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -130,9 +129,9 @@ public class GlobalOperationHandlers {
             // We're going to add a bunch of steps that should immediately follow this one. We are going to add them
             // in reverse order of how they should execute, as that is the way adding a Stage.IMMEDIATE step works
 
-context.addStep(assemblyHandler, queryRuntime ? OperationContext.Stage.VERIFY : OperationContext.Stage.IMMEDIATE);
+            // Last to execute is the handler that assembles the overall response from the pieces created by all the other steps
             final ReadResourceAssemblyHandler assemblyHandler = new ReadResourceAssemblyHandler(directAttributes, metrics, otherAttributes, directChildren, childResources);
-            context.addStep(assemblyHandler, OperationContext.Stage.IMMEDIATE);
+context.addStep(assemblyHandler, queryRuntime ? OperationContext.Stage.VERIFY : OperationContext.Stage.IMMEDIATE);
             final ImmutableManagementResourceRegistration registry = context.getResourceRegistration();
             final Resource resource = context.readResource(PathAddress.EMPTY_ADDRESS);
             // Get the model for this resource.

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -82,9 +81,9 @@ public class TransactionResourceDefinition extends SimpleResourceDefinition {
     static final SimpleAttributeDefinition MODE = new SimpleAttributeDefinitionBuilder(ModelKeys.MODE, ModelType.STRING, true)
             .setXmlName(Attribute.MODE.getLocalName())
             .setAllowExpression(true)
-.setDefaultValue(new ModelNode().set(TransactionMode.DEFAULT.name()))
+            .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
             .setValidator(new EnumValidator<>(TransactionMode.class, true, true))
-            .setDefaultValue(new ModelNode().set(TransactionMode.NONE.name()))
+.setDefaultValue(new ModelNode().set(TransactionMode.DEFAULT.name()))
             .build();
 
     static final SimpleAttributeDefinition STOP_TIMEOUT = new SimpleAttributeDefinitionBuilder(ModelKeys.STOP_TIMEOUT, ModelType.LONG, true)

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.util.streams.LoopingAlphabetReader
@@ -111,9 +110,9 @@ public class LoopingAlphabetReader
                                  int trailingBlanks) {
         this.length = length;
         this.trailingBlanks = trailingBlanks;
-this.alphabet = alphabet.getClone();
+        this.remainingNonBlanks = length - trailingBlanks;
         this.remainingBlanks = trailingBlanks;
-        this.alphabet = alphabet;
+this.alphabet = alphabet.getClone();
         fillBuffer(alphabet.charCount());
     }
 

@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -161,9 +160,9 @@ public class IMAPStore {
 		// create IMAP protocol
 		imap =
 			new IMAPProtocol(
-item.getBoolean("enable_ssl", false));
+				item.get("host"),
 				item.getInteger("port"),
-				item.getBoolean("enable_ssl", true));
+item.getBoolean("enable_ssl", false));
 
 		// register interest on status updates
 		imap.registerInterest((ProgressObserver) root.getObservable());

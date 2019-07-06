@@ -1,4 +1,3 @@
-
 /*****************************************************************************
  *                                                                           *
  *  This file is part of the BeanShell Java Scripting distribution.          *
@@ -189,9 +188,9 @@ class BSHPrimarySuffix extends SimpleNode
 		try {
 			Object indexVal = 
 				((SimpleNode)callerInfo.jjtGetChild(0)).eval( 
-indexVal = Types.getAssignableForm( indexVal, Integer.TYPE);
+					callstack, interpreter );
 			if ( !(indexVal instanceof Primitive) )
-				indexVal = NameSpace.getAssignableForm( indexVal, Integer.TYPE);
+indexVal = Types.getAssignableForm( indexVal, Integer.TYPE);
 			index = ((Primitive)indexVal).intValue();
 		} catch( UtilEvalError e ) {
 			Interpreter.debug("doIndex: "+e);

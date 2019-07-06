@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -149,9 +148,9 @@ public class NOTATIONDatatypeValidator extends AbstractStringValidator {
         // checkValueSpace (content);
         int length = getLength(content);
         // REVISIT: XML Schema group does not clearly specify how QNames should be 
-if (state !=null && (fFacetsDefined & DatatypeValidator.FACET_ENUMERATION) != 0 &&
+        // compared against length, minLength, maxLength we don't do any comparison
         //
-        if ((fFacetsDefined & DatatypeValidator.FACET_ENUMERATION) != 0 &&
+if (state !=null && (fFacetsDefined & DatatypeValidator.FACET_ENUMERATION) != 0 &&
             (fEnumeration != null)) {
             String prefix = state.getSymbol("");
             String localpart = content;

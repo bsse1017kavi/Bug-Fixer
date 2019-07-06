@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -145,9 +144,9 @@ public class VertexBufferObject implements VertexData {
 	@Override
 	public void updateVertices (int targetOffset, float[] vertices, int sourceOffset, int count) {
 		isDirty = true;
-BufferUtils.copy(vertices, sourceOffset, count, byteBuffer);
+		final int pos = byteBuffer.position();
 		byteBuffer.position(targetOffset * 4);
-		BufferUtils.copy(vertices, sourceOffset, byteBuffer, count);
+BufferUtils.copy(vertices, sourceOffset, count, byteBuffer);
 		byteBuffer.position(pos);
 		buffer.position(0);
 		bufferChanged();

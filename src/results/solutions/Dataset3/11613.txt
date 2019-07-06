@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class ClassLoaderAwareCache<K, V> extends AbstractDelegatingAdvancedCache
     @Override
     public void addListener(Object listener) {
         super.addListener(new ClassLoaderAwareListener(listener, this));
-class ClassLoaderAwareCommandInterceptor extends CommandInterceptor {
+    }
 
-    private class ClassLoaderAwareCommandInterceptor extends CommandInterceptor {
+class ClassLoaderAwareCommandInterceptor extends CommandInterceptor {
         private final AdvancedCache<?, ?> cache;
         ClassLoaderAwareCommandInterceptor(AdvancedCache<?, ?> cache) {
             this.cache = cache;

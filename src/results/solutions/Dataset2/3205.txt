@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -47,9 +46,9 @@ protected void indexFile(IDocument document) throws IOException {
 	// Add the name of the file to the index
 	output.addDocument(document);
 
-SourceElementParser parser = new SourceElementParser(requestor, problemFactory, true); // index local declarations
+	// Create a new Parser
 	SourceIndexerRequestor requestor = new SourceIndexerRequestor(this, document);
-	SourceElementParser parser = new SourceElementParser(requestor, problemFactory);
+SourceElementParser parser = new SourceElementParser(requestor, problemFactory, true); // index local declarations
 
 	// Launch the parser
 	char[] source = null;

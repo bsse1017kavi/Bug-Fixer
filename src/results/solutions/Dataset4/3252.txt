@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -313,8 +312,8 @@ public class RepositoryCodeFragment extends DialogFragment implements
         Entry entry = (Entry) parent.getItemAtPosition(position);
         if (entry instanceof Folder)
             setFolder(tree, (Folder) entry);
-tree.branch, entry.entry.getPath(), entry.entry.getSha()));
+        else
             startActivity(BranchFileViewActivity.createIntent(repository,
-                    tree.branch, entry.name, entry.entry.getSha()));
+tree.branch, entry.entry.getPath(), entry.entry.getSha()));
     }
 }

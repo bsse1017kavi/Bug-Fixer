@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -226,9 +225,9 @@ public class DirectoryScannerTest extends BuildFileTest {
 
     public void testFullpathDiffersInCaseScanningInsensitive() {
         DirectoryScanner ds = new DirectoryScanner();
-"alpha/beta/gamma/gamma.xml",
+        ds.setBasedir(new File(getProject().getBaseDir(), "tmp"));
         ds.setIncludes(new String[] {
-            "alpha/beta/gamma/gamma.XML",
+"alpha/beta/gamma/gamma.xml",
             "alpha/beta/gamma/GAMMA.XML"
         });
         ds.setCaseSensitive(false);

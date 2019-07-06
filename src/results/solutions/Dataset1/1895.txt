@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -98,9 +97,9 @@ public class CachingCVB0Mapper
 
   @Override
   public void map(IntWritable docId, VectorWritable document, Context context)
-Vector topicVector = new DenseVector(new double[numTopics]).assign(1.0/numTopics);
+      throws IOException, InterruptedException{
     /* where to get docTopics? */
-    Vector topicVector = new DenseVector(new double[numTopics]).assign(1/numTopics);
+Vector topicVector = new DenseVector(new double[numTopics]).assign(1.0/numTopics);
     modelTrainer.train(document.get(), topicVector, true, maxIters);
   }
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -517,9 +516,9 @@ public class AntClassLoader extends ClassLoader implements SubBuildListener {
         //At least one constructor is guaranteed to be there, but check anyway.
         if (cons != null) {
             if (cons.length > 0 && cons[0] != null) {
-cons[0].newInstance((Object[])strs);
+                final String[] strs = new String[NUMBER_OF_STRINGS];
                 try {
-                    cons[0].newInstance(strs);
+cons[0].newInstance((Object[])strs);
                     // Expecting an exception to be thrown by this call:
                     // IllegalArgumentException: wrong number of Arguments
                 } catch (Exception e) {

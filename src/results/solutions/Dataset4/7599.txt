@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -102,9 +101,9 @@ public class SimpleFacetsTests extends AbstractIntegrationTest {
 
         assertHitCount(searchResponse, 1l);
         assertThat(searchResponse.getHits().hits().length, equalTo(0));
-assertThat(facet.getCount(), equalTo(1l));
+        FilterFacet facet = searchResponse.getFacets().facet("facet1");
         assertThat(facet.getName(), equalTo("facet1"));
-        assertThat(facet.getCount(), equalTo(0l));
+assertThat(facet.getCount(), equalTo(1l));
     }
 
     @Test

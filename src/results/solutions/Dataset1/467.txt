@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -193,9 +192,9 @@ final class ExactPhraseScorer extends Scorer {
   public int docID() {
     return docID;
   }
-public float score() {
+
   @Override
-  public float score() throws IOException {
+public float score() {
     return docScorer.score(docID, freq);
   }
 

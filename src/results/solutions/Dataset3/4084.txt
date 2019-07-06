@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -109,9 +108,9 @@ public class CloseChannels {
                 clientConfig.setUri(new URI("testing://127.0.0.1:6999"));
                 clientConfig.setUriScheme("testing");
                 clientConfig.setChannelFactory(new ManagementChannelFactory());
-client.connect(null); // TODO - FIXME
+                ProtocolChannelClient<ManagementChannel> client = ProtocolChannelClient.create(clientConfig);
                 final int val = i;
-                client.connect();
+client.connect(null); // TODO - FIXME
                 System.out.println("Opening channel");
                 final ManagementChannel clientChannel = client.openChannel("channel");
                 clientChannel.addCloseHandler(new CloseHandler<Channel>() {

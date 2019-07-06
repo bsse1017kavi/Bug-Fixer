@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -427,9 +426,9 @@ public class Json {
 				serializer.write(this, value, knownType);
 				return;
 			}
-if (knownType != null && actualType != knownType && actualType != Array.class)
+
 			if (value instanceof Array) {
-				if (knownType != null && actualType != knownType)
+if (knownType != null && actualType != knownType && actualType != Array.class)
 					throw new SerializationException("Serialization of an Array other than the known type is not supported.\n"
 						+ "Known type: " + knownType + "\nActual type: " + actualType);
 				writeArrayStart();

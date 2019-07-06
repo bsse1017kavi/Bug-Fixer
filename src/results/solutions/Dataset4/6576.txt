@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -46,9 +45,9 @@ public class ETC1Compressor {
 				Pixmap tmp = new Pixmap(pixmap.getWidth(), pixmap.getHeight(), Format.RGB888);
 				tmp.drawPixmap(pixmap, 0, 0, 0, 0, pixmap.getWidth(), pixmap.getHeight());
 				pixmap.dispose();
-ETC1.encodeImagePKM(pixmap).write(new FileHandle(inputFile.outputFile));
+				pixmap = tmp;
 			}
-			ETC1.encodeImage(pixmap).write(new FileHandle(inputFile.outputFile));
+ETC1.encodeImagePKM(pixmap).write(new FileHandle(inputFile.outputFile));
 			pixmap.dispose();
 		}
 

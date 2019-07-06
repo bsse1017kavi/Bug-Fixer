@@ -1,4 +1,3 @@
-
 /*
  * $Id: WebPage.java 5399 2006-04-17 10:23:38Z joco01 $ $Revision$ $Date:
  * 2006-04-17 12:23:38 +0200 (Mo, 17 Apr 2006) $
@@ -458,9 +457,9 @@ public class WebPage extends Page implements INewBrowserWindowListener
 							return "deleteWicketCookie('pm-" + getPageMap().getName()
 									+ application.getApplicationSettings().getContextPath()
 									+ application.getApplicationKey() + "');";
-body.addOnUnLoadModifier(onUnLoadModel, null);
+						}
 					};
-					body.addOnUnLoadModifier(onUnLoadModel);
+body.addOnUnLoadModifier(onUnLoadModel, null);
 				}
 				Application application = Application.get();
 				final String pageMapName = getPageMap().getName();

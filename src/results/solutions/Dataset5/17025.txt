@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -249,9 +248,9 @@ public class ResponseAssertion
       String toCheck=""; // The string to check (Url or data)
       
       // What are we testing against?
-toCheck = new StringBuffer(response.getResponseHeaders()).append(new String(response.responseDataAsBA())).toString();
+      if (ResponseAssertion.RESPONSE_DATA.equals(getTestField()))
       {
-		toCheck = new String(response.responseDataAsBA());
+toCheck = new StringBuffer(response.getResponseHeaders()).append(new String(response.responseDataAsBA())).toString();
       }
       else if (ResponseAssertion.RESPONSE_CODE.equals(getTestField()))
       {

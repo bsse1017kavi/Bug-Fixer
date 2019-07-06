@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -142,9 +141,9 @@ public class TransportMoreLikeThisAction extends BaseAction<MoreLikeThisRequest,
                     } else {
                         // we did not ask for any fields, try and get it from the source
                         parseSource(getResponse, boolBuilder, docMapper, fields, request);
-if (!boolBuilder.hasClauses()) {
+                    }
 
-                    if (boolBuilder.clauses().isEmpty()) {
+if (!boolBuilder.hasClauses()) {
                         // no field added, fail
                         listener.onFailure(new ElasticSearchException("No fields found to fetch the 'likeText' from"));
                         return;

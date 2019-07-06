@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class SortableLongField extends FieldType {
   }
 
   public CharsRef indexedToReadable(BytesRef input, CharsRef charsRef) {
-charsRef.copyChars(indexedToReadable, 0, indexedToReadable.length);
+    // TODO: this could be more efficient, but the sortable types should be deprecated instead
     final char[] indexedToReadable = indexedToReadable(input.utf8ToChars(charsRef).toString()).toCharArray();
-    charsRef.copy(indexedToReadable, 0, indexedToReadable.length);
+charsRef.copyChars(indexedToReadable, 0, indexedToReadable.length);
     return charsRef;
   }
 

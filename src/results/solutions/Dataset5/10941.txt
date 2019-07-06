@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -131,9 +130,9 @@ public class DataSourceLogs {
 
         long totalTime = -1;
         if (startTime != -1)
-StringBuilder buf = new StringBuilder(25 + msg.length());
+            totalTime = System.currentTimeMillis() - startTime;
 
-        StringBuffer buf = new StringBuffer(25 + msg.length());
+StringBuilder buf = new StringBuilder(25 + msg.length());
         buf.append("<t ").append(Thread.currentThread().hashCode());
         if (conn != null)
             buf.append(", ").append(conn);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -291,9 +290,9 @@ public class CompressIndexInputOutputTests {
                 continue;
             }
             Document document = reader.document(doc);
-reader.document(doc, visitor);
+            checkDoc(document);
             DocumentStoredFieldVisitor visitor = new DocumentStoredFieldVisitor("id", "field", "count");
-            reader.document(i, visitor);
+reader.document(doc, visitor);
             document = visitor.getDocument();
             checkDoc(document);
         }

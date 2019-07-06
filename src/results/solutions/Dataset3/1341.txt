@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -112,9 +111,9 @@ public class ManagementChannel extends ProtocolChannel {
 
     private class RequestReceiver {
         private volatile ManagementOperationHandler operationHandler;
-log.tracef("%s handling request %d(%d)", ManagementChannel.this, header.getBatchId(), header.getRequestId());
+
         private void handleRequest(final ManagementRequestHeader header, final DataInput input) throws IOException {
-            log.tracef("%s handling request %d", ManagementChannel.this, header.getBatchId());
+log.tracef("%s handling request %d(%d)", ManagementChannel.this, header.getBatchId(), header.getRequestId());
             final FlushableDataOutputImpl output = FlushableDataOutputImpl.create(writeMessage());
 
             Exception error = null;

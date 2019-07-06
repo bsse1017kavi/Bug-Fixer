@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1689,9 +1688,9 @@ public class EntityManagerImpl
     public void setProperty(String prop, Object value) {
         if (!setKernelProperty(this, prop, value)) {
             if (!setKernelProperty(this.getFetchPlan(), prop, value)) {
-log.warn(_loc.get("ignored-em-prop", prop, value == null ? "" : value.getClass()+":" + value));
+                Log log = getConfiguration().getLog(OpenJPAConfiguration.LOG_RUNTIME);
                 if (log.isWarnEnabled()) {
-                    log.warn(_loc.get("bad-em-prop", prop, value == null ? "" : value.getClass()+":" + value));
+log.warn(_loc.get("ignored-em-prop", prop, value == null ? "" : value.getClass()+":" + value));
                  }
             }
         }

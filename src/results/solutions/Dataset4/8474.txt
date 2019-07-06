@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -133,9 +132,9 @@ public class IndexAliasesService extends AbstractIndexComponent implements Itera
         }
         try {
             byte[] filterSource = filter.uncompressed();
-return indexQueryParser.parseInnerFilter(parser).filter();
+            XContentParser parser = XContentFactory.xContent(filterSource).createParser(filterSource);
             try {
-                return indexQueryParser.parseInnerFilter(parser);
+return indexQueryParser.parseInnerFilter(parser).filter();
             } finally {
                 parser.close();
             }

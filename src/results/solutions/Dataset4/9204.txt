@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -372,9 +371,9 @@ public final class OrdinalsBuilder implements Closeable {
 
     /**
      * Builds an {@link Ordinals} instance from the builders current state. 
-final float acceptableOverheadRatio = settings.getAsFloat("acceptable_overhead_ratio", PackedInts.DEFAULT);
+     */
     public Ordinals build(Settings settings) {
-        final float acceptableOverheadRatio = settings.getAsFloat("acceptable_overhead_ratio", PackedInts.COMPACT);
+final float acceptableOverheadRatio = settings.getAsFloat("acceptable_overhead_ratio", PackedInts.DEFAULT);
         if (numMultiValuedDocs > 0 || MultiOrdinals.significantlySmallerThanSinglePackedOrdinals(maxDoc, numDocsWithValue, getNumOrds())) {
             // MultiOrdinals can be smaller than SinglePackedOrdinals for sparse fields
             return new MultiOrdinals(this);

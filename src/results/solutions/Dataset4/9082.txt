@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public class RestNodesShutdownAction extends BaseRestHandler {
                     }
                     builder.endObject();
 
-} catch (Throwable e) {
+                    builder.endObject();
                     channel.sendResponse(new XContentRestResponse(request, RestStatus.OK, builder));
-                } catch (Exception e) {
+} catch (Throwable e) {
                     onFailure(e);
                 }
             }

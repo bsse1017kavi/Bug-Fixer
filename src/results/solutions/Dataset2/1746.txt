@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -32,9 +31,9 @@ public abstract class AbstractMemberHandle extends NonStateSpecificHandleImpl im
 		sb.append('(');
 		for (int i = 0; i < parameterTypes.length; i++) {
 			try {
-throw new StateSpecificException("Incompatible parameter types"/*nonNLS*/);
+				((TypeImpl)parameterTypes[i]).appendSignature(sb, true);
 			} catch (ClassCastException e) {
-				throw new StateSpecificException(Util.bind("build.incompatibleParameterTypes"/*nonNLS*/));
+throw new StateSpecificException("Incompatible parameter types"/*nonNLS*/);
 			}
 		}
 		sb.append(')');

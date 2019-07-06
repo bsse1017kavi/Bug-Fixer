@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -114,9 +113,9 @@ public class Bootstrap {
     private static Class getFactoryClass(ConfigurationProvider conf,
         ClassLoader loader) {
         if (loader == null)
-Object cls = BrokerFactoryValue.get(conf);
+            loader = Thread.currentThread().getContextClassLoader();
 
-        Object cls = BrokerFactoryValue.getBrokerFactoryClassName(conf);
+Object cls = BrokerFactoryValue.get(conf);
         if (cls instanceof Class)
             return (Class) cls;
 

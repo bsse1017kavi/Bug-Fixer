@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -298,9 +297,9 @@ public class AllocationExpression extends Expression implements InvocationSite {
 				if (this.resolvedType instanceof ReferenceBinding) {
 					// record a best guess, for clients who need hint about possible contructor match
 					TypeBinding[] pseudoArgs = new TypeBinding[length];
-this.binding = scope.findMethod((ReferenceBinding) this.resolvedType, TypeConstants.INIT, pseudoArgs, this);
+					for (int i = length; --i >= 0;)
 						pseudoArgs[i] = argumentTypes[i] == null ? this.resolvedType : argumentTypes[i]; // replace args with errors with receiver
-					this.binding = scope.getConstructor((ReferenceBinding) this.resolvedType, pseudoArgs, this);
+this.binding = scope.findMethod((ReferenceBinding) this.resolvedType, TypeConstants.INIT, pseudoArgs, this);
 				}
 				return this.resolvedType;
 			}

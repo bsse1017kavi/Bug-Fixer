@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ class HtmlParserHTMLParser extends HTMLParser {
             log.debug("Parsing html of: " + baseUrl);
         }
 
-String contents = new String(html); // TODO - charset?
+        Parser htmlParser = null;
         try {
-            String contents = new String(html);
+String contents = new String(html); // TODO - charset?
             htmlParser = new Parser();
             htmlParser.setInputHTML(contents);
         } catch (Exception e) {

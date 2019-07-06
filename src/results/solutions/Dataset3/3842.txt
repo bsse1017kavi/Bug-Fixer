@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -258,9 +257,9 @@ final class ConcreteResourceRegistration extends AbstractResourceRegistration {
                 return null;
             }
             return subregistry.getOperationDescription(iterator, next.getValue(), operationName, inheritance);
-return entry == null ? inherited : entry.getDescriptionProvider();
+        } else {
             final OperationEntry entry = operationsUpdater.get(this, operationName);
-            return entry == null ? null : entry.getDescriptionProvider();
+return entry == null ? inherited : entry.getDescriptionProvider();
         }
     }
 

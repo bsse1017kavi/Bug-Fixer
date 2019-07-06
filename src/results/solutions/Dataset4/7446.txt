@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -148,9 +147,9 @@ public class SimpleDateMappingTests extends ElasticsearchTestCase {
         assertThat(doc.rootDoc().getField(fieldB).tokenStream(defaultMapper.indexAnalyzer()), notNullValue());
         
         TokenStream tokenStream = doc.rootDoc().getField(fieldA).tokenStream(defaultMapper.indexAnalyzer());
-List<Long> values = new ArrayList<>();
+        tokenStream.reset();
         NumericTermAttribute nta = tokenStream.addAttribute(NumericTermAttribute.class);
-        List<Long> values = new ArrayList<Long>();
+List<Long> values = new ArrayList<>();
         while(tokenStream.incrementToken()) {
             values.add(nta.getRawValue());
         }

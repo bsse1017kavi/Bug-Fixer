@@ -1,4 +1,3 @@
-
 /*
  * $Id: Fragment.java 5075 2006-03-21 18:59:42 -0800 (Tue, 21 Mar 2006)
  * ivaynberg $ $Revision$ $Date: 2006-03-21 18:59:42 -0800 (Tue, 21 Mar
@@ -180,9 +179,9 @@ public class Fragment<T> extends WebMarkupContainer<T>
 	 * 
 	 * @return The Fragments markup
 	 */
-MarkupFragment fragment = this.markupProvider.getAssociatedMarkup(false);
+	private MarkupFragment getFragment()
 	{
-		MarkupFragment fragment = this.markupProvider.getAssociatedMarkupFragment(false);
+MarkupFragment fragment = this.markupProvider.getAssociatedMarkup(false);
 		if (fragment == null)
 		{
 			fragment = this.markupProvider.getMarkupFragment();

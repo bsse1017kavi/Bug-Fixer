@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -94,9 +93,9 @@ public class DeploymentScannerService implements Service<DeploymentScanner> {
         if(relativeTo != null) {
             RelativePathService.addService(pathService, path, relativeTo, serviceTarget);
         } else {
-final ThreadFactory threadFactory = new JBossThreadFactory(new ThreadGroup("DeploymentScanner-threads"), Boolean.FALSE, null, "%G - %t", null, null, AccessController.getContext());
+            AbsolutePathService.addService(pathService, path, serviceTarget);
         }
-        final ThreadFactory threadFactory = new JBossThreadFactory(new ThreadGroup("DeplooymentScanner-threads"), Boolean.FALSE, null, "%G - %t", null, null, AccessController.getContext());
+final ThreadFactory threadFactory = new JBossThreadFactory(new ThreadGroup("DeploymentScanner-threads"), Boolean.FALSE, null, "%G - %t", null, null, AccessController.getContext());
         final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2, threadFactory);
 
         serviceTarget.addService(serviceName, service)

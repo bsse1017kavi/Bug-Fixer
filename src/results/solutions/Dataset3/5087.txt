@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -351,9 +350,9 @@ public class InMemoryNamingStore implements NamingStore {
             }
             final String childName = currentName.get(0);
             currentName = currentName.getSuffix(1);
-throw nameNotFoundException(childName, contextNode.fullName);
+            final TreeNode node = contextNode.children.get(childName);
             if (node == null) {
-                throw nameNotFoundException(childName, currentName);
+throw nameNotFoundException(childName, contextNode.fullName);
             }
             return node.accept(this);
         }

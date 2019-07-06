@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -85,9 +84,9 @@ public class RequestUtil {
     public static Hashtable readFormData( Request request ) {
 
         String contentType=request.getContentType();
-contentType=contentType.substring(0,contentType.indexOf(";"));
+	if (contentType != null) {
             if (contentType.indexOf(";")>0)
-                contentType=contentType.substring(0,contentType.indexOf(";")-1);
+contentType=contentType.substring(0,contentType.indexOf(";"));
             contentType = contentType.toLowerCase().trim();
         }
 

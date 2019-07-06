@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.derbynet.callable
@@ -120,9 +119,9 @@ public class callable
 							"user-def");
 					System.out.println("DERBY-1184 FAIL: Expected exception");
 				}
-if (! "0A000".equals(expectedException.getSQLState()))
+				catch (SQLException expectedException)
 				{
-					if (! "0AX01".equals(expectedException.getSQLState()))
+if (! "0A000".equals(expectedException.getSQLState()))
 					{
 						System.out.println("DERBY-1184: Caught UNexpected: " +
 							expectedException.getMessage());

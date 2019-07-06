@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -2658,9 +2657,9 @@ public class XMLSchemaValidator
                     SchemaSymbols.URI_XSI + "," + SchemaSymbols.XSI_NIL });
         }
         // 3.2 If {nillable} is true and there is such an attribute information item and its actual value is true , then all of the following must be true:
-String value = XMLChar.trim(xsiNil);
+        // 3.2.2 There must be no fixed {value constraint}.
         else {
-            String value = xsiNil.trim();
+String value = XMLChar.trim(xsiNil);
             if (value.equals(SchemaSymbols.ATTVAL_TRUE)
                 || value.equals(SchemaSymbols.ATTVAL_TRUE_1)) {
                 if (fCurrentElemDecl != null

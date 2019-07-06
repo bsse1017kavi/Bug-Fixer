@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2449,9 +2448,9 @@ public class WorkbenchPage extends CompatibleWorkbenchPage implements
 					}
 					else if (kids[i] instanceof EditorSashContainer) {
 		    			LayoutPart[] editors = ((EditorSashContainer)kids[i]).getChildren();
-zoomed = ((EditorStack)editors[j]).getState() == IStackPresentationSite.STATE_MAXIMIZED;
+		    			for (int j = 0; j < editors.length && !zoomed; j++) {
 							if (editors[j] instanceof EditorStack) {
-								zoomed = ((EditorStack)kids[i]).getState() == IStackPresentationSite.STATE_MAXIMIZED;
+zoomed = ((EditorStack)editors[j]).getState() == IStackPresentationSite.STATE_MAXIMIZED;
 							}
 		    			}
 					}

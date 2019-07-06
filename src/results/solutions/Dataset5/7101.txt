@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -87,9 +86,9 @@ public final class Iterators {
      */
 
     public static Iterator array(final Object[] o) {
-int len = (o==null)?0:o.length;
+        return new Iterator() {
             int i = 0;
-            int len = o.length;
+int len = (o==null)?0:o.length;
             public boolean hasNext() {
                 return i < len;
             }

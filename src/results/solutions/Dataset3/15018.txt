@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -265,9 +264,9 @@ public class EjbJarParsingDeploymentUnitProcessor implements DeploymentUnitProce
         // Locate the descriptor
         final VirtualFile descriptor = getDescriptor(deploymentRoot, JBOSS_EJB3_XML);
         if (descriptor == null) {
-return deploymentUnit.getAttachment(EjbJarJBossAllParser.ATTACHMENT_KEY);
+            // no descriptor found
             //but there may have been an ejb-jar element in jboss-all.xml
-            return deploymentUnit.getAttachment(EjbJarBossAllParser.ATTACHMENT_KEY);
+return deploymentUnit.getAttachment(EjbJarJBossAllParser.ATTACHMENT_KEY);
         }
 
         // get the XMLStreamReader and parse the descriptor

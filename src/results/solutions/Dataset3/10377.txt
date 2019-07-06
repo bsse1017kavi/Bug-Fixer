@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -182,9 +181,9 @@ public class JMXSubsystemTestCase extends AbstractSubsystemTest {
 
         //Make sure that we can connect to the MBean server
         String host = "localhost";
-"service:jmx:remoting-jmx://" + host + ":" + port);
+        int port = 12345;
         String urlString = System.getProperty("jmx.service.url",
-            "service:jmx:remote://" + host + ":" + port);
+"service:jmx:remoting-jmx://" + host + ":" + port);
         JMXServiceURL serviceURL = new JMXServiceURL(urlString);
 
         MBeanServerConnection connection = null;

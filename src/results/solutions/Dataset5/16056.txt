@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class Guess extends HangmanPage
 		add(new Label("guessesRemaining", new PropertyModel(getGame(), "guessesRemaining")));
 
 		// Components for displaying the current word
-public Object getObject()
+		add(new Label("word", new Model()
 		{
-			public Object getObject(wicket.Component component)
+public Object getObject()
 			{
 				return getGame().getWord().asString(true);
 			}

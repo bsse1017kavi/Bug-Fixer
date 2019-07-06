@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -22,9 +21,9 @@ package org.elasticsearch.common.recycler;
 
 public class NoneRecyclerTests extends AbstractRecyclerTests {
 
-return Recyclers.none(RECYCLER_C);
+    @Override
     protected Recycler<byte[]> newRecycler() {
-        return new NoneRecycler<byte[]>(RECYCLER_C);
+return Recyclers.none(RECYCLER_C);
     }
 
 }

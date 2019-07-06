@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -85,9 +84,9 @@ class LocationAdd extends AbstractAddStepHandler {
         if (newControllers != null) {
             newControllers.add(serviceController);
         }
-private void configureFilterRef(final ModelNode model, ServiceBuilder<LocationService> builder, LocationService service) {
+    }
 
-    private static void configureFilterRef(final ModelNode model, ServiceBuilder<LocationService> builder, LocationService service) {
+private void configureFilterRef(final ModelNode model, ServiceBuilder<LocationService> builder, LocationService service) {
         if (model.hasDefined(Constants.FILTER_REF)) {
             for (Property property : model.get(Constants.FILTER_REF).asPropertyList()) {
                 String name = property.getName();

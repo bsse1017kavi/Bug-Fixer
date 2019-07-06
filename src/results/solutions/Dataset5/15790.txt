@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -119,9 +118,9 @@ public class WLStop extends Task
      */
     public Path createClasspath()
     {
-classpath = new Path();
+        if( classpath == null )
         {
-            classpath = new Path( getProject() );
+classpath = new Path();
         }
         return classpath.createPath();
     }

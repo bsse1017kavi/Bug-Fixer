@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -142,9 +141,9 @@ public Object nativeToJava(TransferData transferData) {
 	formatetc.dwAspect = COM.DVASPECT_CONTENT;
 	formatetc.lindex = -1;
 	formatetc.tymed = COM.TYMED_HGLOBAL;
-transferData.result = getData(dataObject, formatetc, stgmedium);
+	STGMEDIUM stgmedium = new STGMEDIUM();
 	stgmedium.tymed = COM.TYMED_HGLOBAL;
-	transferData.result = dataObject.GetData(formatetc, stgmedium);
+transferData.result = getData(dataObject, formatetc, stgmedium);
 
 	if (transferData.result != COM.S_OK) return null;
 	int /*long*/ hMem = stgmedium.unionField;

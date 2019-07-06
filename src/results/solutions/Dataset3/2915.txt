@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -41,9 +40,9 @@ public class TCCLSingletonService implements Service<TCCLSingletonService> {
 
     public static ServiceName SERVICE_NAME = Services.JBOSS_AS.append("weld", "singleton");
 
-SingletonProvider.initialize(new ModuleGroupSingletonProvider());
+    @Override
     public void start(StartContext context) throws StartException {
-        SingletonProvider.initialize(new TCCLSingletonProvider());
+SingletonProvider.initialize(new ModuleGroupSingletonProvider());
     }
 
     @Override

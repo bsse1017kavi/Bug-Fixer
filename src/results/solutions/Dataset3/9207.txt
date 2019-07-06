@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -85,9 +84,9 @@ public class MutablePropertyValues implements PropertyValues, Serializable {
 	public MutablePropertyValues(Map<?, ?> original) {
 		// We can optimize this because it's all new:
 		// There is no replacement of existing property values.
-for (Map.Entry<?, ?> entry : original.entrySet()) {
+		if (original != null) {
 			this.propertyValueList = new ArrayList<PropertyValue>(original.size());
-			for (Map.Entry entry : original.entrySet()) {
+for (Map.Entry<?, ?> entry : original.entrySet()) {
 				this.propertyValueList.add(new PropertyValue(entry.getKey().toString(), entry.getValue()));
 			}
 		}

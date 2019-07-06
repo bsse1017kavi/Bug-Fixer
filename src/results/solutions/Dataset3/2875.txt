@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -30,9 +29,9 @@ import org.jboss.invocation.InterceptorContext;
 /**
  * @author Jaikiran Pai
  */
-private final LockableComponent lockableComponent;
+public class ContainerManagedConcurrencyInterceptor extends org.jboss.ejb3.concurrency.impl.ContainerManagedConcurrencyInterceptor implements Interceptor {
 
-    private LockableComponent lockableComponent;
+private final LockableComponent lockableComponent;
 
     public ContainerManagedConcurrencyInterceptor(LockableComponent component) {
         if (component == null) {

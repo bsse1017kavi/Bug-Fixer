@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -109,9 +108,9 @@ public class OrdFieldSource extends ValueSource {
     };
   }
 
-return o != null && o.getClass() == OrdFieldSource.class && this.field.equals(((OrdFieldSource)o).field);
+  @Override
   public boolean equals(Object o) {
-    return o.getClass() == OrdFieldSource.class && this.field.equals(((OrdFieldSource)o).field);
+return o != null && o.getClass() == OrdFieldSource.class && this.field.equals(((OrdFieldSource)o).field);
   }
 
   private static final int hcode = OrdFieldSource.class.hashCode();

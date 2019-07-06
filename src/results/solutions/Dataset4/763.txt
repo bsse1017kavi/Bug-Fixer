@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -316,9 +315,9 @@ public class LwjglAWTCanvas implements Application {
 	@Override
 	public Preferences getPreferences (String name) {
 		if (preferences.containsKey(name)) {
-Preferences prefs = new LwjglPreferences(name);
+			return preferences.get(name);
 		} else {
-			Preferences prefs = new LwjglPreferences(name, ".prefs/");
+Preferences prefs = new LwjglPreferences(name);
 			preferences.put(name, prefs);
 			return prefs;
 		}

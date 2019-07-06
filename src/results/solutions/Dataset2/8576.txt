@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -47,9 +46,9 @@ public class WizardProvider extends AbstractProvider {
 			collectWizards(rootCategory, result);
 			IWizardDescriptor[] wizards = (IWizardDescriptor[]) result
 					.toArray(new IWizardDescriptor[result.size()]);
-WizardElement wizardElement = new WizardElement(wizards[i], this);
+			cachedElements = new AbstractElement[wizards.length];
 			for (int i = 0; i < wizards.length; i++) {
-				WizardElement wizardElement = new WizardElement(wizards[i]);
+WizardElement wizardElement = new WizardElement(wizards[i], this);
 				cachedElements[i] = wizardElement;
 				idToElement.put(wizardElement.getId(), wizardElement);
 			}

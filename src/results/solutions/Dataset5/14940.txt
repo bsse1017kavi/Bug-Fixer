@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ class RootImpl<X> extends FromImpl<X,X> implements Root<X> {
     public Value toValue(ExpressionFactory factory, CriteriaQueryImpl<?> c) {
         SubqueryImpl<?> subquery = c.getDelegator();
         Path var = null;
-if (c.ctx() != null && !alias.equalsIgnoreCase(c.ctx().schemaAlias)
+        Value val = null;
         String alias = c.getAlias(this);
-        if (!alias.equalsIgnoreCase(c.ctx().schemaAlias)
+if (c.ctx() != null && !alias.equalsIgnoreCase(c.ctx().schemaAlias)
             && (val = c.getRegisteredRootVariable(this)) != null) {
             // this is cross join
             var = factory.newPath(val);

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -63,8 +62,8 @@ public char[] getMainTypeName() {
 public SourceEntry getSourceEntry() {
 	return fSourceEntry;
 }
-return new StringBuffer("CompilationUnit(").append(getFileName()).append(")").toString(); //$NON-NLS-1$ //$NON-NLS-2$
+	public String toString() {
 		// don't use append(char[]) due to JDK1.2 problems
-		return new StringBuffer("CompilationUnit("/*nonNLS*/).append(getFileName()).append(")"/*nonNLS*/).toString();
+return new StringBuffer("CompilationUnit(").append(getFileName()).append(")").toString(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

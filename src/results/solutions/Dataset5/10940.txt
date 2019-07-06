@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -87,9 +86,9 @@ public class StringListValue extends Value {
         
         // unalias the list and concatenate the list of
         // canonical values.  Also, catch any bad aliases.
-StringBuilder retv = new StringBuilder();
+        boolean found;
         String iString;
-        StringBuffer retv = new StringBuffer();
+StringBuilder retv = new StringBuilder();
         String[] vals = str.split(",", 0);
         
         for (int i = 0; i < vals.length; i++) {

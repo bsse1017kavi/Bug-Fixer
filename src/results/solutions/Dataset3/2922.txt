@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -31,9 +30,9 @@ import org.jboss.ejb3.annotation.ResourceAdapter;
 /**
  * @author Jaikiran Pai
  */
-@ResourceAdapter(value = "ear-containing-rar.ear#rar-within-a-ear.rar")
+@MessageDriven(messageListenerInterface = SimpleMessageListener.class, activationConfig = {
         @ActivationConfigProperty(propertyName = "someProp", propertyValue = "hello world")})
-@ResourceAdapter(value = "rar-within-a-ear.rar")
+@ResourceAdapter(value = "ear-containing-rar.ear#rar-within-a-ear.rar")
 public class NonJMSMDB implements SimpleMessageListener {
     
     @Override

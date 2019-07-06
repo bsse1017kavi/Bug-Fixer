@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -84,9 +83,9 @@ public class KeyToolUtils {
         		keytoolPath = null; // don't try anything else if the property is provided
         	}
         } else {
-File javaHome = SystemUtils.getJavaHome();
+        	keytoolPath = "keytool"; // $NON-NLS-1$
         	if (!checkKeytool(keytoolPath)) { // Not found on PATH, check Java Home
-        		File javaHome = JOrphanUtils.getJavaHome();
+File javaHome = SystemUtils.getJavaHome();
         		if (javaHome != null) {
         			keytoolPath = new File(new File(javaHome,"bin"),"keytool").getPath(); // $NON-NLS-1$ $NON-NLS-2$
 					if (!checkKeytool(keytoolPath)) {

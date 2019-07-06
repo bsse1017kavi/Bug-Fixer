@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -251,9 +250,9 @@ public class CookieValuePersister implements IValuePersister
     		}
     
     		cookie.setVersion(getSettings().getVersion());
-getWebResponse().getHttpServletResponse().addCookie(cookie);
+    		cookie.setSecure(getSettings().isSecure());
     
-    		getWebResponse().addCookie(cookie);
+getWebResponse().getHttpServletResponse().addCookie(cookie);
     
     		if (log.isDebugEnabled())
     		{

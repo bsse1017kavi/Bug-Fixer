@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -108,9 +107,9 @@ public class CrosscuttingMembers {
 			exposeTypes(dp.getParents().getExactTypes());
 			declareParents.add(dp);
 		} else if (declare instanceof DeclareSoft) {
-ShadowMunger m = Advice.makeSoftener(world, d.getPointcut(), d.getException(),inAspect,d);
+			DeclareSoft d = (DeclareSoft)declare;
 			// Ordered so that during concretization we can check the related munger
-			ShadowMunger m = Advice.makeSoftener(world, d.getPointcut(), d.getException(),inAspect);
+ShadowMunger m = Advice.makeSoftener(world, d.getPointcut(), d.getException(),inAspect,d);
 			Pointcut concretePointcut = d.getPointcut().concretize(inAspect, 0,m);
 			m.pointcut = concretePointcut;
 			declareSofts.add(new DeclareSoft(d.getException(), concretePointcut));

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -241,9 +240,9 @@ class SecurityDomainAdd extends AbstractAddStepHandler {
             MappingModuleEntry entry = new MappingModuleEntry(codeName, options, mappingType);
             mappingInfo.add(entry);
             applicationPolicy.setMappingInfo(mappingType, mappingInfo);
-if(module.hasDefined(MODULE) && moduleName.length() > 0 ){
+
             String moduleName = module.get(MODULE).asString();
-            if(moduleName != null && moduleName.length() > 0 ){
+if(module.hasDefined(MODULE) && moduleName.length() > 0 ){
                 mappingInfo.setJBossModuleName(moduleName);
             }
         }

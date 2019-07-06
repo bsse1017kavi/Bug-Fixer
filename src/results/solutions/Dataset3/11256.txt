@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -29,9 +28,9 @@ import org.jboss.arquillian.core.spi.LoadableExtension;
  */
 public class CommonContainerExtension implements LoadableExtension {
 
-builder.service(ApplicationArchiveProcessor.class, OSGiApplicationArchiveProcessor.class);
+    @Override
     public void register(ExtensionBuilder builder) {
-        builder.service(ApplicationArchiveProcessor.class, DelegatingApplicationArchiveProcessor.class);
+builder.service(ApplicationArchiveProcessor.class, OSGiApplicationArchiveProcessor.class);
         builder.service(DeploymentExceptionTransformer.class, ExceptionTransformer.class);
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -28,9 +27,9 @@ public class RegisterDataType
                                      final File file )
         throws TaskException
     {
-try { getDeployer().deployType( DataType.ROLE, name, file ); }
+        if( null == className )
         {
-            try { getDeployer().deployDataType( name, file ); }
+try { getDeployer().deployType( DataType.ROLE, name, file ); }
             catch( final DeploymentException de )
             {
                 throw new TaskException( "Failed deploying " + name + " from " + file, de );

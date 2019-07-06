@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -304,9 +303,9 @@ public abstract class DirectoryWalker<T> {
         } else {
             directoryFilter = (directoryFilter != null ? directoryFilter : TrueFileFilter.TRUE);
             fileFilter = (fileFilter != null ? fileFilter : TrueFileFilter.TRUE);
-this.filter = FileFilterUtils.or(directoryFilter, fileFilter);
+            directoryFilter = FileFilterUtils.makeDirectoryOnly(directoryFilter);
             fileFilter = FileFilterUtils.makeFileOnly(fileFilter);
-            this.filter = FileFilterUtils.orFileFilter(directoryFilter, fileFilter);
+this.filter = FileFilterUtils.or(directoryFilter, fileFilter);
         }
         this.depthLimit = depthLimit;
     }

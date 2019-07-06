@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -391,9 +390,9 @@ LRESULT wmNCPaint (int /*long*/ hwnd, int /*long*/ wParam, int /*long*/ lParam) 
 				cornerRect.bottom = Math.max (cornerRect.top, windowRect.bottom - windowRect.top - trimRect.bottom);
 				if (cornerRect.left != cornerRect.right && cornerRect.top != cornerRect.bottom) {
 					int /*long*/ hDC = OS.GetWindowDC (hwnd);
-int /*long*/ hwndScroll = shell.scrolledHandle ();
+					OS.FillRect (hDC, cornerRect, OS.COLOR_BTNFACE + 1);
 					Decorations shell = menuShell ();
-					int hwndScroll = shell.scrolledHandle ();
+int /*long*/ hwndScroll = shell.scrolledHandle ();
 					boolean drawGripper = hwnd == hwndScroll;
 					if (!drawGripper) {
 						RECT shellRect = new RECT ();

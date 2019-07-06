@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class EJBWebServicesTestCase {
                 + "    <test:setState>"
                 + "      <arg0>Foo</arg0>"
                 + "    </test:setState>"
-String result = HttpRequest.post("http://localhost:8080/ejbws-example/SingletonEndpoint", message, 10, SECONDS);
+                + "  </soapenv:Body>"
                 + "</soapenv:Envelope>";
-        String result = HttpRequest.put("http://localhost:8080/ejbws-example/SingletonEndpoint", message, 10, SECONDS);
+String result = HttpRequest.post("http://localhost:8080/ejbws-example/SingletonEndpoint", message, 10, SECONDS);
         // TODO: check something
         System.out.println(result);
     }

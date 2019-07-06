@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.BaseDataFileFactory
@@ -468,9 +467,9 @@ public class BaseDataFileFactory
 				rawStoreDaemon.stop();
 		}
 
-logMsg(new Date() +
+		boolean logBootTrace = PropertyUtil.getSystemBoolean(Property.LOG_BOOT_TRACE);
 		logMsg(LINE);
-		logMsg("\n" + new Date() +
+logMsg(new Date() +
                 MessageService.getTextMessage(
                     MessageId.STORE_SHUTDOWN_MSG,
                     getIdentifier(),

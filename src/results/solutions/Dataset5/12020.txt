@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -140,9 +139,9 @@ public class ZipTest extends BuildFileTest {
         executeTarget("zipEmptyDir");
         assertTrue("archive should be created",
                    getProject().resolveFile("test3.zip").exists());
-expectLogContaining("zipEmptyCreate", "Note: creating empty");
+    }
     public void testZipEmptyCreate() {
-        executeTarget("zipEmptyCreate");
+expectLogContaining("zipEmptyCreate", "Note: creating empty");
         assertTrue("archive should be created",
                    getProject().resolveFile("test3.zip").exists());
     }

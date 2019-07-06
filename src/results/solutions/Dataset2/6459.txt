@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -399,9 +398,9 @@ private void computeInheritedMethods() {
 	int lastPosition = 0;
 	interfacesToVisit[lastPosition] = type.superInterfaces();
 
-superType = this.type.superclass();
+	ReferenceBinding superType;
 	if (this.type.isClass()) {
-		superType = this.type;
+superType = this.type.superclass();
 	} else { // check interface methods against Object
 		superType = this.type.scope.getJavaLangObject();
 	}

@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -213,9 +212,9 @@ public class XMLContactDocumentParser {
 				country = e6.getText();
 			String label = "";
 			Element e7 = typeElement.getChild(VCARD.LABEL);
-CDATA cdata = (CDATA) e7.getContent().get(0);
+			if ( e7 != null) {
 				if (e7.getContent() != null && e7.getContent().size() > 0) {
-					CDATA cdata = (CDATA) typeElement.getContent().get(0);
+CDATA cdata = (CDATA) e7.getContent().get(0);
 					if ( cdata != null)
 						label = cdata.getText();
 				}

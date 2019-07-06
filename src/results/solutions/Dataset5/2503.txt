@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -78,9 +77,9 @@ public abstract class AjaxLazyLoadPanel extends Panel
 			@Override
 			protected void respond(AjaxRequestTarget target)
 			{
-target.add(AjaxLazyLoadPanel.this);
+				Component component = getLazyLoadComponent(LAZY_LOAD_COMPONENT_ID);
 				AjaxLazyLoadPanel.this.replace(component);
-				target.addComponent(AjaxLazyLoadPanel.this);
+target.add(AjaxLazyLoadPanel.this);
 				setState((byte)2);
 			}
 

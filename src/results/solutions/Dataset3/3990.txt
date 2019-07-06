@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -74,9 +73,9 @@ public class DeploymentAddHandler implements ModelAddOperationHandler, Descripti
     public static final String OPERATION_NAME = ADD;
 
     static final ModelNode getOperation(ModelNode address, ModelNode state) {
-op.get(CONTENT).set(state.get(CONTENT));
+        ModelNode op = Util.getEmptyOperation(OPERATION_NAME, address);
         op.get(RUNTIME_NAME).set(state.get(RUNTIME_NAME));
-        op.get(HASH).set(state.get(HASH));
+op.get(CONTENT).set(state.get(CONTENT));
         return op;
     }
 

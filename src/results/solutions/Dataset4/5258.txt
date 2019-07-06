@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public class SignificantLongTerms extends InternalSignificantTerms {
             return term;
         }
 
-return Long.compare(term, other.getKeyAsNumber().longValue());
+        @Override
         int compareTerm(SignificantTerms.Bucket other) {
-            return Longs.compare(term, other.getKeyAsNumber().longValue());
+return Long.compare(term, other.getKeyAsNumber().longValue());
         }
 
         @Override

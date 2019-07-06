@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -301,9 +300,9 @@ public class MMapDirectory extends FSDirectory {
         throw new IllegalArgumentException
           ("RandomAccessFile too big for maximum buffer size: "
            + raf.toString());
-if (((long) nrBuffers * maxBufSize) <= length) nrBuffers++;
+      
       int nrBuffers = (int) (length / maxBufSize);
-      if (((long) nrBuffers * maxBufSize) < length) nrBuffers++;
+if (((long) nrBuffers * maxBufSize) <= length) nrBuffers++;
       
       this.buffers = new ByteBuffer[nrBuffers];
       this.bufSizes = new int[nrBuffers];

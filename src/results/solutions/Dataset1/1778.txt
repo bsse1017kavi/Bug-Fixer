@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.dataimport;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -182,9 +181,9 @@ class DebugLogger {
       }
 
       @Override
-long start = System.nanoTime();
+      public Object getData(String query) {
         log(DIHLogLevels.ENTITY_META, "query", query);
-        long start = System.currentTimeMillis();
+long start = System.nanoTime();
         try {
           return ds.getData(query);
         } catch (DataImportHandlerException de) {

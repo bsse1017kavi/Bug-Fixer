@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -59,9 +58,9 @@ public class RestIndicesStatusAction extends BaseRestHandler {
         }
         indicesStatusRequest.operationThreading(operationThreading);
         client.admin().indices().execStatus(indicesStatusRequest, new ActionListener<IndicesStatusResponse>() {
-JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);
+            @Override public void onResponse(IndicesStatusResponse response) {
                 try {
-                    JsonBuilder builder = RestJsonBuilder.cached(request);
+JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);
                     builder.startObject();
                     builder.field("ok", true);
 

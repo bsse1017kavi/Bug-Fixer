@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -31,9 +30,9 @@ class InitializerSignatureImpl extends CodeSignatureImpl implements InitializerS
     
     public String getName() {
     	return Modifier.isStatic(getModifiers()) ? "<clinit>": "<init>";
-protected String createToString(StringMaker sm) {
+    }
 
-    String toString(StringMaker sm) {
+protected String createToString(StringMaker sm) {
         StringBuffer buf = new StringBuffer();
         buf.append(sm.makeModifiersString(getModifiers()));    
         buf.append(sm.makePrimaryTypeName(getDeclaringType(),getDeclaringTypeName()));

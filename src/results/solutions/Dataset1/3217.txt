@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries.function;
 
 /*
@@ -90,9 +89,9 @@ public class TestDocValuesFieldSources extends LuceneTestCase {
       iw.addDocument(document);
       if (random().nextBoolean() && i % 10 == 9) {
         iw.commit();
-iw.shutdown();
+      }
     }
-    iw.close();
+iw.shutdown();
 
     DirectoryReader rd = DirectoryReader.open(d);
     for (AtomicReaderContext leave : rd.leaves()) {

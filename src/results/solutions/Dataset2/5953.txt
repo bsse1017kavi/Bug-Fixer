@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search;
 
 /*
@@ -25,9 +24,9 @@ public JavaWorkspaceScope() {
 	IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
 	for (int i = 0, length = projects.length; i < length; i++) {
 		IProject project = projects[i];
-this.add(javaCore.create(project), false, new Hashtable(2));
+		if (project.isAccessible()) {
 			try {
-				this.add(javaCore.create(project), false);
+this.add(javaCore.create(project), false, new Hashtable(2));
 			} catch (JavaModelException e) {
 			}
 		}

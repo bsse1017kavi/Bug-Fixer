@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class CreateJmsResourceHandler extends BatchModeCommandHandler {
         super(ctx, "create-jms-resource", true);
         this.addRequiredPath("/subsystem=messaging");
     }
-public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws OperationFormatException {
+
     @Override
-    public ModelNode buildRequest(CommandContext ctx) throws OperationFormatException {
+public ModelNode buildRequestWithoutHeaders(CommandContext ctx) throws OperationFormatException {
 
         try {
             if(!ctx.getParsedCommandLine().hasProperties()) {

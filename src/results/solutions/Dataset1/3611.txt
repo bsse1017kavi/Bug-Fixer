@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -354,9 +353,9 @@ public class ColumnFamily implements IColumnContainer, IIterableColumns
 
     public String toString()
     {
-sb.append(cfm == null ? "<anonymous>" : cfm.cfName);
+        StringBuilder sb = new StringBuilder("ColumnFamily(");
         CFMetaData cfm = metadata();
-        sb.append(cfm == null ? "-deleted-" : cfm.cfName);
+sb.append(cfm == null ? "<anonymous>" : cfm.cfName);
 
         if (isMarkedForDelete())
             sb.append(" -deleted at " + getMarkedForDeleteAt() + "-");

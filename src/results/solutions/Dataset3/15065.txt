@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class DeleteJmsResourceHandler extends BatchModeCommandHandler {
 
     @Override
     public ModelNode buildRequest(CommandContext ctx)
-if(!ctx.getParsedArguments().hasArguments()) {
+            throws OperationFormatException {
 
-        if(!ctx.hasArguments()) {
+if(!ctx.getParsedArguments().hasArguments()) {
             throw new OperationFormatException("Arguments are missing");
         }
 

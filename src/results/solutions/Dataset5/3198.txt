@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -79,9 +78,9 @@ class Safari extends WebBrowser {
 		NativeGetCookie = new Runnable () {
 			public void run () {
 				NSHTTPCookieStorage storage = NSHTTPCookieStorage.sharedHTTPCookieStorage ();
-int count = (int)/*64*/cookies.count ();
+				NSURL url = NSURL.URLWithString (NSString.stringWith (CookieUrl));
 				NSArray cookies = storage.cookiesForURL (url);
-				int count = cookies.count ();
+int count = (int)/*64*/cookies.count ();
 				if (count == 0) return;
 
 				NSString name = NSString.stringWith (CookieName);

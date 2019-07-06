@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.component;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -109,9 +108,9 @@ public class TermsComponent extends SearchComponent {
 
     for (String field : fields) {
       NamedList fieldTerms = new NamedList();
-Terms terms = lfields == null ? null : lfields.terms(field);
+      termsResult.add(field, fieldTerms);
 
-      Terms terms = lfields.terms(field);
+Terms terms = lfields == null ? null : lfields.terms(field);
       if (terms == null) {
         // no terms for this field
         continue;

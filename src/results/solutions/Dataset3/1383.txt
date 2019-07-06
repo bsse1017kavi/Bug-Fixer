@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -550,9 +549,9 @@ public abstract class AbstractProxyControllerTest {
                     node.get(ATTRIBUTES, VALUE, REQUIRED).set(true);
                     node.get(ATTRIBUTES, VALUE, MIN_LENGTH).set(1);
                     return node;
-hostChildReg.registerReadWriteAttribute("value", null, new WriteAttributeHandlers.ModelTypeValidatingHandler(ModelType.STRING), AttributeAccess.Storage.CONFIGURATION);
+                }
             });
-            hostChildReg.registerReadWriteAttribute("value", null, new WriteAttributeHandlers.ValidatingWriteAttributeOperationHandler(ModelType.STRING), AttributeAccess.Storage.CONFIGURATION);
+hostChildReg.registerReadWriteAttribute("value", null, new WriteAttributeHandlers.ModelTypeValidatingHandler(ModelType.STRING), AttributeAccess.Storage.CONFIGURATION);
             hostChildReg.registerMetric("metric", GlobalOperationsTestCase.TestMetricHandler.INSTANCE);
 
             hostChildReg.registerOperationHandler("test-op",

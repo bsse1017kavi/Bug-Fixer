@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -236,9 +235,9 @@ public class MoreLikeThisRequest extends ActionRequest<MoreLikeThisRequest> impl
     /**
      * The percent of the terms to match for each field. Defaults to <tt>0.3f</tt>.
      */
-return minimumShouldMatch(Math.round(percentTermsToMatch * 100) + "%");
+    @Deprecated
     public MoreLikeThisRequest percentTermsToMatch(float percentTermsToMatch) {
-        return minimumShouldMatch((int) (percentTermsToMatch * 100) + "%");
+return minimumShouldMatch(Math.round(percentTermsToMatch * 100) + "%");
     }
 
     /**

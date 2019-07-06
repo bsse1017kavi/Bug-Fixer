@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -158,9 +157,9 @@ public class MethodDeclaration extends AbstractMethodDeclaration {
 				//	in 1.6 and above, also tolerate implementing interface method
 				if (complianceLevel >= ClassFileConstants.JDK1_6
 						&& ((bindingModifiers & (ClassFileConstants.AccStatic|ExtraCompilerModifiers.AccImplementing)) == ExtraCompilerModifiers.AccImplementing))
-this.scope.problemReporter().methodMustOverride(this, complianceLevel);
+					break checkOverride;
 				// claims to override, and doesn't actually do so
-				this.scope.problemReporter().methodMustOverride(this);
+this.scope.problemReporter().methodMustOverride(this, complianceLevel);
 			} else if (!this.binding.declaringClass.isInterface()
 						&& (bindingModifiers & (ClassFileConstants.AccStatic|ExtraCompilerModifiers.AccOverriding)) == ExtraCompilerModifiers.AccOverriding) {
 				// actually overrides, but did not claim to do so

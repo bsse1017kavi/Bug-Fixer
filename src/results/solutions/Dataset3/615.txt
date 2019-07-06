@@ -1,4 +1,3 @@
-
 package backtype.storm.messaging.netty;
 
 import java.net.InetSocketAddress;
@@ -43,9 +42,9 @@ class Server implements IConnection {
         bootstrap.setOption("child.tcpNoDelay", true);
         bootstrap.setOption("child.receiveBufferSize", buffer_size);
         bootstrap.setOption("child.keepAlive", true);
-bootstrap.setPipelineFactory(new StormServerPipelineFactory(this));
+
         // Set up the pipeline factory.
-        bootstrap.setPipelineFactory(new StormServerPipelineFactory(this, storm_conf));
+bootstrap.setPipelineFactory(new StormServerPipelineFactory(this));
 
         // Bind and start to accept incoming connections.
         Channel channel = bootstrap.bind(new InetSocketAddress(port));

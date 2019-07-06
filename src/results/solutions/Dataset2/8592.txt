@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.eval;
 
 /*
@@ -95,9 +94,9 @@ public void generateCode(
 			codeStream.dup();
 			for (int i = 0; i < argsLength; i++) {
 				codeStream.generateInlinedValue(i);
-((CodeSnippetCodeStream)codeStream).generateObjectWrapperForType(binding.parameters[i]);
+				arguments[i].generateCode(currentScope, codeStream, true);
 				if (binding.parameters[i].isBaseType()) {
-					codeStream.generateObjectWrapperForType(binding.parameters[i]);
+((CodeSnippetCodeStream)codeStream).generateObjectWrapperForType(binding.parameters[i]);
 				}
 				codeStream.aastore();
 				if (i < argsLength - 1) {

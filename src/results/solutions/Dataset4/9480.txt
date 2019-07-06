@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -142,9 +141,9 @@ public class GistFilesViewActivity extends PagerActivity {
         adapter = new GistFilesPagerAdapter(this, gist);
         pager.setAdapter(adapter);
         indicator.setViewPager(pager);
-pager.scheduleSetItem(initialPosition);
+
         if (initialPosition < adapter.getCount()) {
-            pager.scheduleSetItem(initialPosition, null);
+pager.scheduleSetItem(initialPosition);
             onPageSelected(initialPosition);
         }
     }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -28,9 +27,9 @@ import org.elasticsearch.common.geo.GeoPoint;
 public abstract class AtomicGeoPointFieldData<Script extends ScriptDocValues> implements AtomicFieldData<Script> {
 
     public abstract GeoPointValues getGeoPointValues();
-public BytesValues getBytesValues() {
+
     @Override
-    public BytesValues getBytesValues(boolean needsHashes) {
+public BytesValues getBytesValues() {
         final GeoPointValues values = getGeoPointValues();
         return new BytesValues(values.isMultiValued()) {
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -114,9 +113,9 @@ public class DBAppender2 extends AppenderSkeleton {
   public void setConnectionSource(ConnectionSource connectionSource) {
     this.connectionSource = connectionSource;
   }
-event.prepareForDeferredProcessing();
+
   protected void append(LoggingEvent event) {
-    event.prepareForSerialization();
+event.prepareForDeferredProcessing();
     eventsBuffer.add(event);
 
     if (eventsBuffer.size() >= batchSize) {

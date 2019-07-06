@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class PageAndComponentProvider extends PageProvider implements IPageAndCo
 				 * couldve been created in one of the lifecycle callbacks of this page. Lets invoke
 				 * the callbacks to give the page a chance to create the missing component.
 				 */
-if (page.isPageStateless())
+
 				// make sure this page instance was just created so the page can be stateless
-				if (getPageId() == null)
+if (page.isPageStateless())
 				{
 					Page p = (Page)page;
 					p.internalInitialize();

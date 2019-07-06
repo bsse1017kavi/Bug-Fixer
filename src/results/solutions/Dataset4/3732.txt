@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class PercentilesBuilder extends ValuesSourceMetricsAggregationBuilder<Pe
 
     public PercentilesBuilder percentiles(double... percentiles) {
         for (int i = 0; i < percentiles.length; i++) {
-name + "] must be in the [0, 100] range");
+            if (percentiles[i] < 0 || percentiles[i] > 100) {
                 throw new IllegalArgumentException("the percents in the percentiles aggregation [" +
-                        getName() + "] must be in the [0, 100] range");
+name + "] must be in the [0, 100] range");
             }
         }
         this.percentiles = percentiles;

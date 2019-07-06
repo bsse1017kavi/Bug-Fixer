@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class ServerManager extends AbstractMgmtTestBase {
         op.get("protocol").set(conn.getProtocol());
         op.get("secure").set(conn.isSecure());
         op.get("enabled").set(true);
-ModelNode ssl = createOpNode("subsystem=web/connector=test-" + conn.getName() + "-connector/ssl=configuration", "add");
+        steps.add(op);
         if (conn.isSecure()) {
-            ModelNode ssl = createOpNode("subsystem=web/connector=test-" + conn.getName() + "-connector/configuration=ssl", "add");
+ModelNode ssl = createOpNode("subsystem=web/connector=test-" + conn.getName() + "-connector/ssl=configuration", "add");
             if (conn.equals(Connector.HTTPSNATIVE)) {
                 ssl.get("certificate-key-file").set(keyPEMFile);
                 ssl.get("certificate-file").set(certPEMFile);

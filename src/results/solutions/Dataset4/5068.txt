@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class HighlightSearchTests extends AbstractNodesTests {
     }
 
     @Test public void testSimpleHighlighting() throws Exception {
-.setSearchType(DFS_QUERY_THEN_FETCH)
+        SearchResponse searchResponse = client.prepareSearch()
                 .setIndices("test")
-                .setSearchType(QUERY_THEN_FETCH)
+.setSearchType(DFS_QUERY_THEN_FETCH)
                 .setQuery(termQuery("_all", "test"))
                 .setFrom(0).setSize(60)
                 .addHighlightedField("_all").setHighlighterOrder("score").setHighlighterPreTags("<xxx>").setHighlighterPostTags("</xxx>")

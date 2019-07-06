@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2006 The Apache Software Foundation
  *
@@ -428,9 +427,9 @@ public class Jar extends Zip {
 
         zipDir(null, zOut, "META-INF/", ZipFileSet.DEFAULT_DIR_MODE,
                JAR_MARKER);
-OutputStreamWriter osw = new OutputStreamWriter(baos, Manifest.JAR_ENCODING);
+        // time to write the manifest
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        OutputStreamWriter osw = new OutputStreamWriter(baos, "UTF-8");
+OutputStreamWriter osw = new OutputStreamWriter(baos, Manifest.JAR_ENCODING);
         PrintWriter writer = new PrintWriter(osw);
         manifest.write(writer);
         writer.flush();

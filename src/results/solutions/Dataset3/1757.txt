@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -259,9 +258,9 @@ interface ProcessLogger extends BasicLogger {
     @LogMessage(level = INFO)
     @Message(id = 12020, value = "Waiting %d seconds until trying to restart process %s.")
     void waitingToRestart(int seconds, String processName);
-@Message(id = 12021, value = "Failed to kill process '%s', trying to destroy the process instead.")
+
     @LogMessage(level = WARN)
-    @Message(id = 12021, value = "Failed to kill process, trying to destroy the process instead.")
+@Message(id = 12021, value = "Failed to kill process '%s', trying to destroy the process instead.")
     void failedToKillProcess(String process);
 
 }

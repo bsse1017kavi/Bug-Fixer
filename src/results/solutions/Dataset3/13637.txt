@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -66,9 +65,9 @@ public class DeploymentSubsystemDescriptions {
         subsystem.get(DESCRIPTION).set(bundle.getString("deployment.scanner.subsystem"));
         subsystem.get(HEAD_COMMENT_ALLOWED).set(true);
         subsystem.get(TAIL_COMMENT_ALLOWED).set(true);
-subsystem.get(ATTRIBUTES).setEmptyObject();
+        subsystem.get(NAMESPACE).set(Namespace.CURRENT.getUriString());
 
-        subsystem.get(ATTRIBUTES);
+subsystem.get(ATTRIBUTES).setEmptyObject();
         subsystem.get(OPERATIONS);
         subsystem.get(CHILDREN, CommonAttributes.SCANNER, DESCRIPTION).set(bundle.getString("deployment.scanner.subsystem.scanners"));
 

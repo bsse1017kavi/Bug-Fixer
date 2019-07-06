@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -136,9 +135,9 @@ public class WordCount extends Configured implements Tool
 
         private static Mutation getMutation(Text word, int sum)
         {
-c.setValue(ByteBufferUtil.bytes(String.valueOf(sum)));
+            Column c = new Column();
             c.setName(Arrays.copyOf(word.getBytes(), word.getLength()));
-            c.setValue(ByteBufferUtil.bytes(String.valueOf(sum));
+c.setValue(ByteBufferUtil.bytes(String.valueOf(sum)));
             c.setTimestamp(System.currentTimeMillis());
 
             Mutation m = new Mutation();

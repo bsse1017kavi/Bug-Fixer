@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -41,9 +40,9 @@ public class WriteReplaceInterceptor implements Interceptor {
         this.serviceName = serviceName;
     }
 
-SessionID sessionId = (SessionID) context.getPrivateData(SessionID.SESSION_ID_KEY);
+    @Override
     public Object processInvocation(final InterceptorContext context) throws Exception {
-        SessionID sessionId = (SessionID) context.getPrivateData(StatefulContextIdKey.INSTANCE);
+SessionID sessionId = (SessionID) context.getPrivateData(SessionID.SESSION_ID_KEY);
         return new StatefulSerializedProxy(serviceName, sessionId);
     }
 

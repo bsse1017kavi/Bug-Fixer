@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -279,9 +278,9 @@ public class DomainModelControllerService extends AbstractControllerService impl
 
             //Install the core remoting endpoint and listener
             ManagementRemotingServices.installRemotingEndpoint(serviceTarget, ManagementRemotingServices.MANAGEMENT_ENDPOINT,
-if (!hostControllerInfo.isMasterDomainController() && !environment.isUseCachedDc()) {
+                    hostControllerInfo.getLocalHostName(), EndpointService.EndpointType.MANAGEMENT, null, null);
 
-            if (!hostControllerInfo.isMasterDomainController()) {
+if (!hostControllerInfo.isMasterDomainController() && !environment.isUseCachedDc()) {
                 serverInventory = getFuture(inventoryFuture);
 
                 Future<MasterDomainControllerClient> clientFuture = RemoteDomainConnectionService.install(serviceTarget,

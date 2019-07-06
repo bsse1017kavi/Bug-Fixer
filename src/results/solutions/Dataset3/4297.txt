@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ final class LoggingOperations {
     static void addCommitStep(final OperationContext context, final ConfigurationPersistence configurationPersistence) {
         context.addStep(new CommitOperationStepHandler(configurationPersistence), Stage.RUNTIME);
     }
-private static AttachmentKey<Boolean> WRITTEN_KEY = AttachmentKey.create(Boolean.class);
+
     private static final class CommitOperationStepHandler implements OperationStepHandler {
-        private static final AttachmentKey<Boolean> WRITTEN_KEY = AttachmentKey.create(Boolean.class);
+private static AttachmentKey<Boolean> WRITTEN_KEY = AttachmentKey.create(Boolean.class);
         private final ConfigurationPersistence configurationPersistence;
         private final boolean persistConfig;
 

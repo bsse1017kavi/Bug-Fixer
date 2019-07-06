@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene41;
 
 /*
@@ -66,9 +65,9 @@ public class TestBlockPostingsFormat3 extends LuceneTestCase {
   static final int MAXDOC = Lucene41PostingsFormat.BLOCK_SIZE * 20;
   
   // creates 8 fields with different options and does "duels" of fields against each other
-Analyzer analyzer = new Analyzer(Analyzer.PER_FIELD_REUSE_STRATEGY) {
+  public void test() throws Exception {
     Directory dir = newDirectory();
-    Analyzer analyzer = new Analyzer(new Analyzer.PerFieldReuseStrategy()) {
+Analyzer analyzer = new Analyzer(Analyzer.PER_FIELD_REUSE_STRATEGY) {
       @Override
       protected TokenStreamComponents createComponents(String fieldName, Reader reader) {
         Tokenizer tokenizer = new MockTokenizer(reader);

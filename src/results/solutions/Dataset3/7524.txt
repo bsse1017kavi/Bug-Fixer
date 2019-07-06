@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -33,9 +32,9 @@ public class JPADefaultDatasourceWriteHandler extends AbstractWriteAttributeHand
         OperationFailedException {
 
         final String dataSourceName = resolvedValue.asString();
-JPAService jpaService = JPAService.class.cast(sc.getService());
+        final ServiceRegistry registry = context.getServiceRegistry(true);
         ServiceController<?> sc = registry.getRequiredService(JPAService.SERVICE_NAME);
-        JPAService jpaService = JPAService.class.cast(sc.getValue());
+JPAService jpaService = JPAService.class.cast(sc.getService());
         handbackHolder.setHandback(JPAService.getDefaultDataSourceName());
         jpaService.setDefaultDataSourceName(dataSourceName);
 

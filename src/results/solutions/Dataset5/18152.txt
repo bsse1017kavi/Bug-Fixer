@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -844,9 +843,9 @@ public abstract class Component implements Serializable
 		}
 
 		// Set self in case the model is component aware
-((IConvertible)model).setConverterProvider(this);
+		if (model instanceof IConvertible)
 		{
-			((IConvertible)model).setConverter(getConverter());
+((IConvertible)model).setConverterProvider(this);
 		}
 		this.model = (IModel)model;
 		return this;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -106,9 +105,9 @@ public class BaseDataSourceAddHandler extends BaseOperationCommand {
 
         builder.addNode("subsystem", "datasources");
         builder.addNode(dsType, jndiName.getValue(args, true));
-setParams(ctx, builder.getModelNode());
+        builder.setOperationName("add");
 
-        setParams(args, builder.getModelNode());
+setParams(ctx, builder.getModelNode());
 
         return builder.buildRequest();
     }

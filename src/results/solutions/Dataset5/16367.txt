@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -348,9 +347,9 @@ public class WebPage extends Page implements IHeaderRenderer
 	protected void onEndRequest()
 	{
 	    final Component header = get(HtmlHeaderSectionHandler.HEADER_ID);
-this.remove(header);
+	    if (header != null)
 	    {
-	        this.remove(header.getId());
+this.remove(header);
 	    }
 		
 		super.onEndRequest();

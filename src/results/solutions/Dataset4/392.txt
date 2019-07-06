@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -70,9 +69,9 @@ public class HasChildFilterParser extends AbstractIndexComponent implements XCon
                     query = parseContext.parseInnerQuery();
                 }
             } else if (token.isValue()) {
-} else if ("_scope".equals(currentFieldName)) {
+                if ("type".equals(currentFieldName)) {
                     childType = parser.text();
-                } else if ("scope".equals(currentFieldName)) {
+} else if ("_scope".equals(currentFieldName)) {
                     scope = parser.text();
                 } else if ("_name".equals(currentFieldName)) {
                     filterName = parser.text();

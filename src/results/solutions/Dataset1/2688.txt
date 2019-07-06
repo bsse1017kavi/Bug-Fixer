@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -751,9 +750,9 @@ public class TestPerfTasksLogic extends BenchmarkTestCase {
     writer.close();
     Directory dir = benchmark.getRunData().getDirectory();
     IndexReader reader = IndexReader.open(dir);
-assertTrue(tfv.size() > 0);
+    Fields tfv = reader.getTermVectors(0);
     assertNotNull(tfv);
-    assertTrue(tfv.getUniqueFieldCount() > 0);
+assertTrue(tfv.size() > 0);
     reader.close();
   }
 

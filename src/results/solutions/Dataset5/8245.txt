@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2641,9 +2640,9 @@ void resetCustomDraw () {
  * </ul>
  */
 public void setInsertMark (TreeItem item, boolean before) {
-OS.gtk_tree_view_set_drag_dest_row(handle, 0, OS.GTK_TREE_VIEW_DROP_BEFORE);
+	checkWidget ();
 	if (item == null) {
-		OS.gtk_tree_view_unset_rows_drag_dest(handle);
+OS.gtk_tree_view_set_drag_dest_row(handle, 0, OS.GTK_TREE_VIEW_DROP_BEFORE);
 		return;
 	}
 	if (item.isDisposed()) error (SWT.ERROR_INVALID_ARGUMENT);

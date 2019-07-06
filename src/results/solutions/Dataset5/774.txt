@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -235,9 +234,9 @@ public class MySQLDictionary
 
     @Override
     public String[] getCreateTableSQL(Table table) {
-sql[0] = sql[0] + " ENGINE = " + tableType;
+        String[] sql = super.getCreateTableSQL(table);
         if (!StringUtils.isEmpty(tableType))
-            sql[0] = sql[0] + " TYPE = " + tableType;
+sql[0] = sql[0] + " ENGINE = " + tableType;
         return sql;
     }
 

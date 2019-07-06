@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -453,9 +452,9 @@ class ReflectionTab extends OpenGLTab {
 		GL.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		GL.glClearDepth(1.0f);
 		GL.glClearStencil(0);
-loadTexture(getGlCanvas(), IMAGES[i], i, textures);
+		GL.glGenTextures(IMAGES.length, textures);
 		for (int i = 0; i < IMAGES.length; i++) {
-			loadTexture(getContext(), IMAGES[i], i, textures);
+loadTexture(getGlCanvas(), IMAGES[i], i, textures);
 		}
 
 		GL.glShadeModel(GL.GL_SMOOTH);

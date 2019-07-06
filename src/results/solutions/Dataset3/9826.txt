@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -149,9 +148,9 @@ final class NewOperationContextImpl implements NewOperationContext {
             throw new IllegalArgumentException("stage is null");
         }
         if (currentStage == Stage.DONE) {
-if (stage.compareTo(currentStage) < 0 && (stage != Stage.IMMEDIATE || currentStage == Stage.DONE)) {
+            throw new IllegalStateException("Operation already complete");
         }
-        if (stage.compareTo(currentStage) < 0) {
+if (stage.compareTo(currentStage) < 0 && (stage != Stage.IMMEDIATE || currentStage == Stage.DONE)) {
             throw new IllegalStateException("Stage " + stage + " is already complete");
         }
         if (contextType == Type.MANAGEMENT && stage.compareTo(Stage.MODEL) > 0) {

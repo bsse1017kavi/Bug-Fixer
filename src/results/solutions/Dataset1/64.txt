@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.derbynet.SecureServerTest
@@ -466,9 +465,9 @@ public class SecureServerTest extends BaseJDBCTestCase
     {
         String          portNumber = Integer.toString( getTestConfiguration().getPort() );
         StringBuffer    buffer = new StringBuffer();
-buffer.append( getJavaExecutableName() + " -classpath " );
+        String          classpath = getSystemProperty( "java.class.path" );
 
-        buffer.append( "java -classpath " );
+buffer.append( getJavaExecutableName() + " -classpath " );
         buffer.append( classpath );
         buffer.append( " -Demma.verbosity.level=silent");
         buffer.append( " org.apache.derby.drda.NetworkServerControl -p " + portNumber + " " + commandSpecifics );

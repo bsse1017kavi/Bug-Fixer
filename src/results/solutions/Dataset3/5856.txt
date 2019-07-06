@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012 Red Hat Inc. and/or its affiliates and other contributors
@@ -100,9 +99,9 @@ public class JConsoleCLIPlugin extends JConsolePlugin {
 
         if (mbeanServerConn instanceof RemotingMBeanServerConnection) {
             return connectUsingRemoting(cmdCtx, (RemotingMBeanServerConnection)mbeanServerConn);
-cmdCtx.connectController("http-remoting", "localhost", 9990);
+        } else {
             try {
-                cmdCtx.connectController("localhost", 9999);
+cmdCtx.connectController("http-remoting", "localhost", 9990);
             } catch (Exception e) {
                 String message = "CLI GUI unable to connect to JBoss AS with localhost:9999 \n";
                 message += "Go to Connection -> New Connection and enter a Remote Process \n";

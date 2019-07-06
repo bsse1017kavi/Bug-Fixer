@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2014 See AUTHORS file.
  * 
@@ -218,9 +217,9 @@ public class OrthoCachedTiledMapRenderer implements TiledMapRenderer, Disposable
 		canCacheMoreE = col2 < layerWidth;
 		canCacheMoreW = col1 > 0;
 		canCacheMoreS = row1 > 0;
-for (int row = row1; row < row2; row++) {
+
 		float[] vertices = this.vertices;
-		for (int row = row2; row >= row1; row--) {
+for (int row = row1; row < row2; row++) {
 			for (int col = col1; col < col2; col++) {
 				final TiledMapTileLayer.Cell cell = layer.getCell(col, row);
 				if (cell == null) continue;

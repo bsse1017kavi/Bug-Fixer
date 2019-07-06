@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -200,9 +199,9 @@ final class BcelMethod extends ResolvedMember {
 		// here and one in the real 'method' - should we reduce it to one layer?
 		method.addAnnotation(annotation.getBcelAnnotation());
 	 }
-if (annotationTypes == null || method.getAnnotations().length!=annotations.length) { // sometimes the list changes underneath us!
+	 
 	 private void ensureAnnotationTypesRetrieved() {
-		if (annotationTypes == null) {
+if (annotationTypes == null || method.getAnnotations().length!=annotations.length) { // sometimes the list changes underneath us!
     		Annotation annos[] = method.getAnnotations();
     		annotationTypes = new ResolvedTypeX[annos.length];
     		annotations = new AnnotationX[annos.length];

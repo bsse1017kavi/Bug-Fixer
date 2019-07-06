@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -33,9 +32,9 @@ public class XMPPSClientSOContainer extends XMPPClientSOContainer {
 		super(userhost, ka);
 	}
 	public Namespace getConnectNamespace() {
-protected ISynchAsynchConnection createConnection(ID remoteSpace,
+		return IDFactory.getDefault().getNamespaceByName(XmppPlugin.getDefault().getSecureNamespaceIdentifier());
 	}
-	protected ISynchAsynchConnection makeConnection(ID remoteSpace,
+protected ISynchAsynchConnection createConnection(ID remoteSpace,
 			Object data) throws ConnectionInstantiationException {
 		ISynchAsynchConnection conn = null;
 		boolean google = false;

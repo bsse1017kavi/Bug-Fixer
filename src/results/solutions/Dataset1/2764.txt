@@ -1,4 +1,3 @@
-
 package org.apache.solr.update;
 
 /*
@@ -220,9 +219,9 @@ public class SolrCmdDistributor {
     Set<Node> removeNodes = new HashSet<Node>();
     Set<Node> nodes = adds.keySet();
  
-if (alist == null || alist.size() < limit) continue;
+    for (Node node : nodes) {
       List<AddRequest> alist = adds.get(node);
-      if (alist == null || alist.size() < limit) return false;
+if (alist == null || alist.size() < limit) continue;
   
       UpdateRequestExt ureq = new UpdateRequestExt();
       

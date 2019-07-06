@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -58,9 +57,9 @@ init() {
 }
 
 public
-String [] servers = FindServer.servers();
+ExtendedResolver() throws UnknownHostException {
 	init();
-	String [] servers = FindServer.find();
+String [] servers = FindServer.servers();
 	if (servers != null) {
 		for (int i = 0; i < servers.length; i++)
 			resolvers.addElement(new SimpleResolver(servers[i]));

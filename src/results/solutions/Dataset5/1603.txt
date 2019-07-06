@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class NumberFieldErrorListener extends FocusAdapter {
         } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(source,
                     JMeterUtils.getResString("you_must_enter_a_valid_number"), //$NON-NLS-1$
-FocusRequester.requestFocus(source);
+                    JMeterUtils.getResString("invalid_data"),  //$NON-NLS-1$
                     JOptionPane.WARNING_MESSAGE);
-            new FocusRequester(source);
+FocusRequester.requestFocus(source);
         }
     }
 }

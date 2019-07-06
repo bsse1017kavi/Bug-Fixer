@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -47,9 +46,9 @@ public class TestFieldCacheTermsFilter extends LuceneTestCase {
       doc.add(new Field(fieldName, "" + term, Field.Store.YES, Field.Index.NOT_ANALYZED));
       w.addDocument(doc);
     }
-IndexReader reader = IndexReader.open(rd, true);
+    w.close();
 
-    IndexReader reader = IndexReader.open(rd);
+IndexReader reader = IndexReader.open(rd, true);
     IndexSearcher searcher = new IndexSearcher(reader);
     int numDocs = reader.numDocs();
     ScoreDoc[] results;

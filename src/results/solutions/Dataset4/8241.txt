@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -302,9 +301,9 @@ public class RecoveryTarget extends AbstractComponent {
             if (cause instanceof AlreadyClosedException) {
                 listener.onIgnoreRecovery(true, "source shard is closed (" + request.sourceNode() + ")");
                 return;
-logger.warn("[{}][{}] recovery from [{}] failed", e, request.shardId().index().name(), request.shardId().id(), request.sourceNode());
+            }
 
-            logger.trace("[{}][{}] recovery from [{}] failed", e, request.shardId().index().name(), request.shardId().id(), request.sourceNode());
+logger.warn("[{}][{}] recovery from [{}] failed", e, request.shardId().index().name(), request.shardId().id(), request.sourceNode());
             listener.onRecoveryFailure(new RecoveryFailedException(request, e), true);
         }
     }

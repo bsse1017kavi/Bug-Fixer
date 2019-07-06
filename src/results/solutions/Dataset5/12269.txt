@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class Clear implements Command {
             }
         } else if (actionCommand.equals(ActionNames.RESET_GUI)) {
             JMeterGUIComponent guiComp = guiPackage.getCurrentGui();
-Iterator<?> iter = guiPackage.getTreeModel().getNodesOfType(Clearable.class).iterator();
+            guiComp.clearGui();
         } else {
-            Iterator iter = guiPackage.getTreeModel().getNodesOfType(Clearable.class).iterator();
+Iterator<?> iter = guiPackage.getTreeModel().getNodesOfType(Clearable.class).iterator();
             while (iter.hasNext()) {
                 JMeterTreeNode node = null;
                 JMeterGUIComponent guiComp = null;

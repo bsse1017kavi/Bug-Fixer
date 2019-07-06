@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -224,9 +223,9 @@ class TestModelControllerService extends ModelTestModelControllerService {
             String hostConfig = null;
             String initialHostConfig = null;
             RunningMode initialRunningMode = runningModeControl.getRunningMode();
-ProductConfig productConfig = new ProductConfig(null, "",  props);
+            boolean backupDomainFiles = false;
             boolean useCachedDc = false;
-            ProductConfig productConfig = new ProductConfig(null, "");
+ProductConfig productConfig = new ProductConfig(null, "",  props);
             return new HostControllerEnvironment(props, isRestart, modulePath, processControllerAddress, processControllerPort,
                     hostControllerAddress, hostControllerPort, defaultJVM, domainConfig, initialDomainConfig, hostConfig, initialHostConfig,
                     initialRunningMode, backupDomainFiles, useCachedDc, productConfig);

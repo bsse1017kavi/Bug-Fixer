@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -738,9 +737,9 @@ public class ComponentDescription implements ResourceInjectionTarget {
 
             new ClassDescriptionTraversal(configuration.getComponentClass(), applicationClasses) {
                 @Override
-final InterceptorClassDescription interceptorConfig = InterceptorClassDescription.merge(mergeInterceptorConfig(clazz, classDescription, description, metadataComplete), moduleDescription.getInterceptorClassOverride(clazz.getName()));
+                public void handle(final Class<?> clazz, EEModuleClassDescription classDescription) throws DeploymentUnitProcessingException {
 
-                    final InterceptorClassDescription interceptorConfig = mergeInterceptorConfig(clazz, classDescription, description, metadataComplete);
+final InterceptorClassDescription interceptorConfig = InterceptorClassDescription.merge(mergeInterceptorConfig(clazz, classDescription, description, metadataComplete), moduleDescription.getInterceptorClassOverride(clazz.getName()));
 
                     handleClassMethod(clazz, interceptorConfig.getPostConstruct(), userPostConstruct, true, true);
                     handleClassMethod(clazz, interceptorConfig.getPreDestroy(), userPreDestroy, true, true);

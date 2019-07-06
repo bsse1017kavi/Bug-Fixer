@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2005 The Apache Software Foundation
  *
@@ -111,9 +110,9 @@ public class ScriptSelector extends BaseSelector {
         this.basedir = basedir;
         this.filename = filename;
         runner.addBean("basedir", basedir);
-runner.executeScript("ant_selector");
+        runner.addBean("filename", filename);
         runner.addBean("file", file);
-        runner.executeScript("<ANT-Selector>");
+runner.executeScript("ant_selector");
         return isSelected();
     }
 

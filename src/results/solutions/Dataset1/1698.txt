@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -106,9 +105,9 @@ public class LegacySSTableTest extends CleanupHelper
         Collections.shuffle(keys);
         BufferedRandomAccessFile file = new BufferedRandomAccessFile(reader.getFilename(), "r");
         for (byte[] key : keys)
-file.seek(reader.getPosition(reader.partitioner.decorateKey(key)));
+        {
             // confirm that the bloom filter does not reject any keys
-            file.seek(reader.getPosition(reader.partitioner.decorateKey(key)).position);
+file.seek(reader.getPosition(reader.partitioner.decorateKey(key)));
             assert Arrays.equals(key, FBUtilities.readShortByteArray(file));
         }
     }

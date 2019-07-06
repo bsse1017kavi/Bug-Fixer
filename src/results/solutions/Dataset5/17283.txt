@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -46,9 +45,9 @@ class Caches {
                 cls = Class.forName(className, true, loader);
                 if (classes == null)
                     classes = new HashSet();
-conf.getLog(OpenJPAConfiguration.LOG_RUNTIME).warn(null, t);
+                classes.add(cls);
             } catch (Throwable t) {
-                conf.getLog(OpenJPAConfiguration.LOG_RUNTIME).warn(t, t);
+conf.getLog(OpenJPAConfiguration.LOG_RUNTIME).warn(null, t);
             }
         }
         return classes;

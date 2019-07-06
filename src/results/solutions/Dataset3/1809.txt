@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -566,9 +565,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
 		return exposedObject;
 	}
-protected Class predictBeanType(String beanName, RootBeanDefinition mbd, Class... typesToMatch) {
+
 	@Override
-	protected Class predictBeanType(String beanName, RootBeanDefinition mbd, Class[] typesToMatch) {
+protected Class predictBeanType(String beanName, RootBeanDefinition mbd, Class... typesToMatch) {
 		Class beanClass;
 		if (mbd.getFactoryMethodName() != null) {
 			beanClass = getTypeForFactoryMethod(beanName, mbd, typesToMatch);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  *
@@ -214,9 +213,9 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
 	private static void writeFileStart(PrintWriter writer, SampleSaveConfiguration saveConfig) {
 		if (saveConfig.saveAsXml()) {
 			writer.println(XML_HEADER);
-writer.println(OldSaveService.printableFieldNamesToString(saveConfig));
+			writer.println(TESTRESULTS_START_V1_1);
 		} else if (saveConfig.saveFieldNames()) {
-			writer.println(OldSaveService.printableFieldNamesToString());
+writer.println(OldSaveService.printableFieldNamesToString(saveConfig));
 		}
 	}
 

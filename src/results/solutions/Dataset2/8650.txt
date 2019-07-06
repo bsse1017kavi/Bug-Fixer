@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -40,9 +39,9 @@ public class ThrowStatement extends Statement {
 		if ((bits & IsReachableMASK) == 0)
 			return;
 		int pc = codeStream.position;
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+		exception.generateCode(currentScope, codeStream, true);
 		codeStream.athrow();
-		codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 	}
 
 	public void resolve(BlockScope scope) {

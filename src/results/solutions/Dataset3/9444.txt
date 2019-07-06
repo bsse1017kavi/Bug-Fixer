@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -216,9 +215,9 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
     // the following objects are shared to reduce garbage
 
     private final CSVFormat format;
-private final CSVLexer lexer;
+    private final Map<String, Integer> headerMap;
 
-    private final Lexer lexer;
+private final CSVLexer lexer;
 
     /** A record buffer for getRecord(). Grows as necessary and is reused. */
     private final List<String> record = new ArrayList<String>();

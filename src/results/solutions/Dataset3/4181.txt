@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -340,9 +339,9 @@ public class UndeployHandler extends DeploymentHandler {
 
         final List<String> deploymentNames;
         if(name.indexOf('*') < 0) {
-deploymentNames = Util.getMatchingDeployments(client, name, null);
+            deploymentNames = Collections.singletonList(name);
         } else {
-            deploymentNames = Util.getMatchingDeployments(client, name);
+deploymentNames = Util.getMatchingDeployments(client, name, null);
             if(deploymentNames.isEmpty()) {
                 throw new CommandFormatException("No deployment matched wildcard expression " + name);
             }

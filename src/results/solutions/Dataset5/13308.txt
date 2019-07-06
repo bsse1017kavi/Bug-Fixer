@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -135,9 +134,9 @@ public class SpringWebApplicationFactory implements IWebApplicationFactory
 		{
 			additionalContext = createWebApplicationContext(ac, filter);
 		}
-return createApplication((additionalContext != null) ? additionalContext : ac, beanName);
+
 		String beanName = filter.getFilterConfig().getInitParameter("applicationBean");
-		return createApplication(additionalContext, beanName);
+return createApplication((additionalContext != null) ? additionalContext : ac, beanName);
 	}
 
 	private WebApplication createApplication(ApplicationContext ac, String beanName)

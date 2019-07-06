@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -50,9 +49,9 @@ public class TestMultiMMap extends LuceneTestCase {
     for (int i = 0; i < 10*RANDOM_MULTIPLIER; i++)
       assertChunking(random, _TestUtil.nextInt(random, 20, 100));
   }
-File path = _TestUtil.createTempFile("mmap" + chunkSize, "tmp", workDir);
+  
   private void assertChunking(Random random, int chunkSize) throws Exception {
-    File path = File.createTempFile("mmap" + chunkSize, "tmp", workDir);
+File path = _TestUtil.createTempFile("mmap" + chunkSize, "tmp", workDir);
     path.delete();
     path.mkdirs();
     MMapDirectory dir = new MMapDirectory(path);

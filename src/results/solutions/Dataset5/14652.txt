@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -318,9 +317,9 @@ public void create (Composite parent, int style) {
 					browser.dispose ();
 					/*
 					 * Print the error from the first failed attempt since at this point it's
-SWT.error (SWT.ERROR_NO_HANDLES, e, " [MOZILLA_FIVE_HOME='" + mozillaPath + "']"); //$NON-NLS-1$ //$NON-NLS-2$
+					 * known that the failure was not due to the libstdc++.so.6 dependency.
 					 */
-					SWT.error (SWT.ERROR_NO_HANDLES, e);
+SWT.error (SWT.ERROR_NO_HANDLES, e, " [MOZILLA_FIVE_HOME='" + mozillaPath + "']"); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
 		}

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -298,9 +297,9 @@ void checkGC (int mask) {
 			case SWT.LINE_DASHDOT: dashes = width != 0 ? LINE_DASHDOT : LINE_DASHDOT_ZERO; break;
 			case SWT.LINE_DASHDOTDOT: dashes = width != 0 ? LINE_DASHDOTDOT : LINE_DASHDOTDOT_ZERO; break;
 			case SWT.LINE_CUSTOM: dashes = data.lineDashes; break;
-float /*double*/[] lengths = new float /*double*/[dashes.length];
+		}
 		if (dashes != null) {
-			float[] lengths = new float[dashes.length];
+float /*double*/[] lengths = new float /*double*/[dashes.length];
 			for (int i = 0; i < lengths.length; i++) {
 				lengths[i] = width == 0 || data.lineStyle == SWT.LINE_CUSTOM ? dashes[i] : dashes[i] * width;
 			}

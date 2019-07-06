@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1247,9 +1246,9 @@ public void setVisible (boolean visible) {
 		boolean iconic = false;
 		Shell shell = parent != null ? parent.getShell() : null;
 		do {
-iconic = minimized || (shell != null && shell.minimized);
+			OS.g_main_context_iteration (0, false);
 			if (isDisposed ()) break;
-			iconic = shell != null && shell.minimized;
+iconic = minimized || (shell != null && shell.minimized);
 		} while (!mapped && !iconic);
 		display.dispatchEvents = null;
 		if (isDisposed ()) return;

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -106,9 +105,9 @@ public abstract class SimpleMixedDomainTest  {
         //The version fields should be the same
         assertEquals(masterModel, slaveModel);
     }
-if (version == AsVersion.AS_7_1_2_FINAL || version == AsVersion.AS_7_1_3_FINAL) {
+
     private void cleanupKnownDifferencesInModelsForVersioningCheck(ModelNode masterModel, ModelNode slaveModel) {
-        if (version == AsVersion.V_7_1_2_Final || version == AsVersion.V_7_1_3_Final) {
+if (version == AsVersion.AS_7_1_2_FINAL || version == AsVersion.AS_7_1_3_FINAL) {
             //First get rid of any undefined crap
             cleanUndefinedNodes(masterModel);
             cleanUndefinedNodes(slaveModel);

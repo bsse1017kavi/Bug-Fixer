@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -37,9 +36,9 @@ import javax.persistence.TransactionRequiredException;
  */
 @Stateful
 public class SimpleStatefulSessionBean implements SimpleStatefulSessionLocal {
-@PersistenceContext(type = PersistenceContextType.EXTENDED, unitName = "H2DS",
+    private String state;
 
-    @PersistenceContext(type = PersistenceContextType.TRANSACTION, unitName = "H2DS",
+@PersistenceContext(type = PersistenceContextType.EXTENDED, unitName = "H2DS",
         properties = @PersistenceProperty(name = "hibernate.hbm2ddl.auto", value = "create-drop"))
     private EntityManager entityManager;
 

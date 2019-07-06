@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -159,9 +158,9 @@ public class GenerateKey
         if( null == dname && null == expandedDname )
         {
             throw new TaskException( "dname must be set" );
-getLogger().info( "Generating Key for " + alias );
+        }
 
-        log( "Generating Key for " + alias );
+getLogger().info( "Generating Key for " + alias );
         final ExecTask cmd = (ExecTask)project.createTask( "exec" );
         cmd.setExecutable( "keytool" );
 

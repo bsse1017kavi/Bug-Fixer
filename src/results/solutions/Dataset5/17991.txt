@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -557,9 +556,9 @@ public class FetchConfigurationImpl
     private int getAvailableRecursionDepth(FieldMetaData fm, Class type, 
         boolean traverse) {
         // see if there's a previous limit
-if (ImplHelper.isAssignable(f._fromType, type)) {
+        int avail = Integer.MIN_VALUE;
         for (FetchConfigurationImpl f = this; f != null; f = f._parent) {
-            if (ImplHelper.isAssignable(type, f._fromType)) {
+if (ImplHelper.isAssignable(f._fromType, type)) {
                 avail = f._availableRecursion;
                 if (traverse)
                     avail = reduce(avail);

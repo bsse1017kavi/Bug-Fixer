@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class SFSBDestroyInterceptor implements Interceptor {
         try {
 
             return interceptorContext.proceed();
-SFSBContextHandleImpl sfsbContextHandle = new SFSBContextHandleImpl(sfsb.getId());
+        } finally {
             StatefulSessionComponentInstance sfsb = (StatefulSessionComponentInstance) interceptorContext.getPrivateData(ComponentInstance.class);
-            SFSBContextHandleImpl sfsbContextHandle = new SFSBContextHandleImpl(sfsb);
+SFSBContextHandleImpl sfsbContextHandle = new SFSBContextHandleImpl(sfsb.getId());
             List<EntityManager> readyToClose = sfsbxpcMap.remove(sfsbContextHandle);
             if (readyToClose != null && readyToClose.size() > 0) {
                 for (EntityManager entityManager : readyToClose) {

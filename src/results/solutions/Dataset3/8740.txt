@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -79,9 +78,9 @@ public final class Main {
             } else {
                 final Bootstrap bootstrap = Bootstrap.Factory.newInstance();
                 final Bootstrap.Configuration configuration = new Bootstrap.Configuration();
-bootstrap.bootstrap(configuration, Collections.<ServiceActivator>emptyList()).get();
+                configuration.setServerEnvironment(serverEnvironment);
                 configuration.setModuleLoader(Module.getSystemModuleLoader());
-                bootstrap.start(configuration, Collections.<ServiceActivator>emptyList()).get();
+bootstrap.bootstrap(configuration, Collections.<ServiceActivator>emptyList()).get();
                 return;
             }
         } catch (Throwable t) {

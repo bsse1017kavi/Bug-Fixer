@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -54,9 +53,9 @@ public class RestXContentBuilder {
             // default to JSON
             contentType = XContentType.JSON;
         }
-builder.prettyPrint().lfAtEnd();
+        XContentBuilder builder = new XContentBuilder(XContentFactory.xContent(contentType), new BytesStreamOutput());
         if (request.paramAsBoolean("pretty", false)) {
-            builder.prettyPrint();
+builder.prettyPrint().lfAtEnd();
         }
 
         builder.humanReadable(request.paramAsBoolean("human", builder.humanReadable()));

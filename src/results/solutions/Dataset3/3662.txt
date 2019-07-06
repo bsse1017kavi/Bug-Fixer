@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -81,9 +80,9 @@ public class SubnetMatchCriteriaElement extends AbstractInterfaceCriteriaElement
         this.network = net;
         this.mask = mask;
         // Handle elements
-setInterfaceCriteria(new SubnetMatchInterfaceCriteria(this.network, this.mask));
+        requireNoContent(reader);        
 
-        setInterfaceCriteria(new SubnetMatchInterfaceCriteria(network, mask));
+setInterfaceCriteria(new SubnetMatchInterfaceCriteria(this.network, this.mask));
     }
 
     @Override

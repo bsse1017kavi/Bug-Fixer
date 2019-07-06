@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -129,9 +128,9 @@ public class DomainUtil {
      * @return The constructed URL
      */
     public static String constructUrl(final HttpServerExchange exchange, final String path) {
-String protocol = exchange.getConnection().getSslSessionInfo() != null ? "https" : "http";
+        final HeaderMap headers = exchange.getRequestHeaders();
         String host = headers.getFirst(HOST);
-        String protocol = exchange.getConnection().getSslSession() != null ? "https" : "http";
+String protocol = exchange.getConnection().getSslSessionInfo() != null ? "https" : "http";
 
         return protocol + "://" + host + path;
     }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public final class ResourceAdaptersAdd extends AbstractSubsystemAdd<ResourceAdap
     protected ResourceAdaptersAdd() {
         super(Namespace.CURRENT.getUriString());
     }
-final ServiceTarget serviceTarget = updateContext.getServiceTarget();
+
     protected <P> void applyUpdate(UpdateContext updateContext, UpdateResultHandler<? super Void, P> resultHandler, P param) {
-        final ServiceTarget serviceTarget = updateContext.getBatchBuilder();
+final ServiceTarget serviceTarget = updateContext.getServiceTarget();
         serviceTarget.addService( ConnectorServices.RESOURCEADAPTERS_SERVICE, new ResourceAdaptersService(resourceAdapters))
             .setInitialMode(Mode.ACTIVE)
             .install();

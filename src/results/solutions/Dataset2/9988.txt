@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -143,9 +142,9 @@ public class SuperFieldAccess extends Expression {
 	/* (omit javadoc for this method)
 	 * Method declared on ASTNode.
 	 */
-result.setSourceRange(getStartPosition(), getLength());
+	ASTNode clone0(AST target) {
 		SuperFieldAccess result = new SuperFieldAccess(target);
-		result.setSourceRange(this.getStartPosition(), this.getLength());
+result.setSourceRange(getStartPosition(), getLength());
 		result.setName((SimpleName) ASTNode.copySubtree(target, getName()));
 		result.setQualifier((Name) ASTNode.copySubtree(target, getQualifier()));
 		return result;

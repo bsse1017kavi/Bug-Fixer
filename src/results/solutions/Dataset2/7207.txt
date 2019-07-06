@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -478,9 +477,9 @@ public abstract class CachedFolder extends LocalFolder {
 
         if (newUid == null) {
             return null;
-Source source = getDataStorageInstance().getMessageSource(newUid);
+        }
 
-        Source source = getDataStorageInstance().getFileSource(newUid);
+Source source = getDataStorageInstance().getMessageSource(newUid);
 
         Header header = HeaderParser.parse(source);
         ColumbaHeader h = new ColumbaHeader(header);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -714,9 +713,9 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 
 		Object value = getAutowireCandidateResolver().getSuggestedValue(descriptor);
 		if (value != null) {
-BeanDefinition bd = (beanName != null && containsBean(beanName) ? getMergedBeanDefinition(beanName) : null);
+			if (value instanceof String) {
 				String strVal = resolveEmbeddedValue((String) value);
-				BeanDefinition bd = (containsBean(beanName) ? getMergedBeanDefinition(beanName) : null);
+BeanDefinition bd = (beanName != null && containsBean(beanName) ? getMergedBeanDefinition(beanName) : null);
 				value = evaluateBeanDefinitionString(strVal, bd);
 			}
 			TypeConverter converter = (typeConverter != null ? typeConverter : getTypeConverter());

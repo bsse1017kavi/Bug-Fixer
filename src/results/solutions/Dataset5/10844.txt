@@ -1,4 +1,3 @@
-
 /*
  * $Id: org.eclipse.jdt.ui.prefs 5004 2006-03-17 20:47:08 -0800 (Fri, 17 Mar
  * 2006) eelco12 $ $Revision: 5004 $ $Date: 2006-03-17 20:47:08 -0800 (Fri, 17
@@ -129,9 +128,9 @@ public final class ValidationError implements IValidationError
 	 */
 	public ValidationError setVars(Map<String, Object> vars)
 	{
-throw new IllegalArgumentException("Argument [[vars]] cannot be null");
+		if (vars == null)
 		{
-			throw new IllegalArgumentException("Argument [[params]] cannot be null");
+throw new IllegalArgumentException("Argument [[vars]] cannot be null");
 		}
 		this.vars = vars;
 		return this;

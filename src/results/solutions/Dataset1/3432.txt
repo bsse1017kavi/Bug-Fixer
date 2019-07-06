@@ -1,4 +1,3 @@
-
 /*
  
    Derby - Class org.apache.derbyTesting.functionTests.tests.jdbc4.Driver40UnbootedTest
@@ -155,9 +154,9 @@ public class Driver40UnbootedTest extends BaseJDBCTestCase
         Process     process = Runtime.getRuntime().exec( command );
         
         SpawnedProcess spawned = new SpawnedProcess( process, "UnbootedTest" );
-assertEquals(0, spawned.complete());
+        
         // Ensure it completes without failures.
-        assertEquals(0, spawned.complete(false));
+assertEquals(0, spawned.complete());
 
         assertEquals( SUCCESS, spawned.getFullServerOutput() );
     }

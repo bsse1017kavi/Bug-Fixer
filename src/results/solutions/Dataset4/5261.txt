@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -53,9 +52,9 @@ public class DiscoveryNode implements Streamable, Serializable {
             if ("local".equals(nodeMode)) {
                 return true;
             } else if ("network".equals(nodeMode)) {
-throw new ElasticsearchIllegalArgumentException("unsupported node.mode [" + nodeMode + "]. Should be one of [local, network].");
+                return false;
             } else {
-                throw new ElasticsearchIllegalArgumentException("unsupported node.mode [" + nodeMode + "]");
+throw new ElasticsearchIllegalArgumentException("unsupported node.mode [" + nodeMode + "]. Should be one of [local, network].");
             }
         }
         return false;

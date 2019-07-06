@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -76,9 +75,9 @@ public class TransportCreateSnapshotAction extends TransportMasterNodeOperationA
     @Override
     protected void masterOperation(final CreateSnapshotRequest request, ClusterState state, final ActionListener<CreateSnapshotResponse> listener) throws ElasticSearchException {
         SnapshotsService.SnapshotRequest snapshotRequest =
-.indicesOptions(request.indicesOptions())
+                new SnapshotsService.SnapshotRequest("create_snapshot[" + request.snapshot() + "]", request.snapshot(), request.repository())
                         .indices(request.indices())
-                        .ignoreIndices(request.ignoreIndices())
+.indicesOptions(request.indicesOptions())
                         .settings(request.settings())
                         .includeGlobalState(request.includeGlobalState())
                         .masterNodeTimeout(request.masterNodeTimeout());

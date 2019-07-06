@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-98 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation for educational, research and non-profit
@@ -38,9 +37,9 @@ public class PredIsStartState implements Predicate {
 
   private PredIsStartState() { }
 
-(PseudostateKind.INITIAL.equals(((Pseudostate)obj).getKind()));
+  public boolean predicate(Object obj) {
     return (obj instanceof Pseudostate) &&
-      (((Pseudostate)obj).getKind() == PseudostateKind.INITIAL);
+(PseudostateKind.INITIAL.equals(((Pseudostate)obj).getKind()));
   }
   
 } /* end class PredIsStartState */

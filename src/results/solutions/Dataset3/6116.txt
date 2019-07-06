@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -63,9 +62,9 @@ final class DeploymentModelBuilderJAXWS_JSE extends AbstractDeploymentModelBuild
             dep.addAttachment(JBossWebMetaData.class, webMetaData);
             final List<ServletMetaData> servlets = ASHelper.getJaxwsServlets(unit);
             for (ServletMetaData servlet : servlets) {
-final String servletClass = ASHelper.getEndpointClassName(servlet);
+                final String servletName = servlet.getName();
                 this.log.debug("JSE name: " + servletName);
-                final String servletClass = ASHelper.getEndpointName(servlet);
+final String servletClass = ASHelper.getEndpointClassName(servlet);
                 this.log.debug("JSE class: " + servletClass);
 
                 this.newHttpEndpoint(servletClass, servletName, dep);

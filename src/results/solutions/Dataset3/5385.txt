@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -52,9 +51,9 @@ public class InstantiateFactory<T> implements Factory<T>, Serializable {
      * @param classToInstantiate  the class to instantiate, not null
      * @param paramTypes  the constructor parameter types
      * @param args  the constructor arguments
-public static <T> Factory<T> instantiateFactory(Class<T> classToInstantiate, Class<?>[] paramTypes, Object[] args) {
+     * @return a new instantiate factory
      */
-    public static <T> Factory<T> getInstance(Class<T> classToInstantiate, Class<?>[] paramTypes, Object[] args) {
+public static <T> Factory<T> instantiateFactory(Class<T> classToInstantiate, Class<?>[] paramTypes, Object[] args) {
         if (classToInstantiate == null) {
             throw new IllegalArgumentException("Class to instantiate must not be null");
         }

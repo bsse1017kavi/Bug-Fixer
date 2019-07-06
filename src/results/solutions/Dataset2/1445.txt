@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist;
 
 /*
@@ -592,9 +591,9 @@ public final class CompletionEngine
 		
 		CompilationResult compilationResult = new CompilationResult((topLevelType.getElementName() + ".java").toCharArray(), 1, 1);
 	
-TypeDeclaration typeDeclaration = converter.buildTypeDeclaration(type, compilationUnit, compilationResult, problemReporter);
+		CompilationUnitDeclaration compilationUnit = new CompilationUnitDeclaration(problemReporter, compilationResult, 0);
 		
-		TypeDeclaration typeDeclaration = converter.buildCompilationUnit(type, compilationUnit, compilationResult, problemReporter);
+TypeDeclaration typeDeclaration = converter.buildTypeDeclaration(type, compilationUnit, compilationResult, problemReporter);
 		
 		if(compilationUnit != null) {	
 			// build AST from snippet

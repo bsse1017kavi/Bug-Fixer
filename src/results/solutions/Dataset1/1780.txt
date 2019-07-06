@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -493,9 +492,9 @@ public class AntiEntropyService
                 Callback callback = new Callback();
                 // send ranges to the remote node
                 StreamOutSession outsession = StreamOutSession.create(request.cf.left, request.endpoint, callback);
-StreamIn.requestRanges(request.endpoint, request.cf.left, differences, callback, OperationType.AES);
+                StreamOut.transferSSTables(outsession, sstables, differences, OperationType.AES);
                 // request ranges from the remote node
-                StreamIn.requestRanges(request.endpoint, request.cf.left, Collections.singletonList(cfstore), differences, callback, OperationType.AES);
+StreamIn.requestRanges(request.endpoint, request.cf.left, differences, callback, OperationType.AES);
             }
             catch(Exception e)
             {

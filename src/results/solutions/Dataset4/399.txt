@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ public class TransportNodesHotThreadsAction extends TransportNodesOperationActio
                 .busiestThreads(request.request.threads)
                 .type(request.request.type)
                 .interval(request.request.interval)
-return new NodeHotThreads(clusterService.localNode(), hotThreads.detect());
+                .threadElementsSnapshotCount(request.request.snapshots);
         try {
-            return new NodeHotThreads(clusterService.state().nodes().localNode(), hotThreads.detect());
+return new NodeHotThreads(clusterService.localNode(), hotThreads.detect());
         } catch (Exception e) {
             throw new ElasticSearchException("failed to detect hot threads", e);
         }

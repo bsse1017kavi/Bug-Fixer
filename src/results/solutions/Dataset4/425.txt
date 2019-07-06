@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -84,9 +83,9 @@ public class TransportIndexAction extends TransportShardReplicationOperationActi
         super(settings, transportService, clusterService, indicesService, threadPool, shardStateAction);
         this.createIndexAction = createIndexAction;
         this.mappingUpdatedAction = mappingUpdatedAction;
-this.waitForMappingChange = settings.getAsBoolean("action.wait_on_mapping_change", false);
+        this.autoCreateIndex = settings.getAsBoolean("action.auto_create_index", true);
         this.allowIdGeneration = settings.getAsBoolean("action.allow_id_generation", true);
-        this.waitForMappingChange = settings.getAsBoolean("action.wait_on_mapping_change", true);
+this.waitForMappingChange = settings.getAsBoolean("action.wait_on_mapping_change", false);
     }
 
     @Override

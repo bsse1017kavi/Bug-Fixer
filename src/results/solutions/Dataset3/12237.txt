@@ -1,4 +1,3 @@
-
 package org.jboss.as.mail.extension;
 
 
@@ -15,9 +14,9 @@ import java.util.Properties;
  * @author Tomaz Cerar
  * @created 27.7.11 0:14
  */
-private volatile Session session;
+public class MailSessionService implements Service<Session> {
     private static final Logger log = Logger.getLogger(MailSessionService.class);
-    private Session session;
+private volatile Session session;
     private final MailSessionConfig sessionConfig;
 
     public MailSessionService(MailSessionConfig sessionConfig) {

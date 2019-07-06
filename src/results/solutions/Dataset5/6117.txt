@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -188,9 +187,9 @@ public class Rpm extends Task
             streamhandler = new PumpStreamHandler( outputstream, errorstream );
         }
 
-exe.setAntRun( getProject() );
+        Execute exe = new Execute( streamhandler, null );
 
-        exe.setAntRun( project );
+exe.setAntRun( getProject() );
         if( topDir == null ) topDir = getBaseDirectory();
         exe.setWorkingDirectory( topDir );
 

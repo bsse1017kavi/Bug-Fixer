@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -109,9 +108,9 @@ public class Theories extends JUnit4ClassRunner {
 								handleDataPointSuccess();
 							} catch (AssumptionViolatedException e) {
 								handleAssumptionViolation(e);
-.getArgumentStrings(nullsOk()));
+							} catch (Throwable e) {
 								reportParameterizedError(e, complete
-										.getAllArguments(nullsOk()));
+.getArgumentStrings(nullsOk()));
 							}
 						}
 

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -132,9 +131,9 @@ public class InterTypeMethodDeclaration extends InterTypeDeclaration {
 		
 		NewMethodTypeMunger myMunger = new NewMethodTypeMunger(sig, null);
 		setMunger(myMunger);
-myMunger.getInterMethodBody(aspectType);
+		ResolvedType aspectType = world.fromEclipse(classScope.referenceContext.binding);
 		ResolvedMember me =
-			myMunger.getDispatchMethod(aspectType);
+myMunger.getInterMethodBody(aspectType);
 		this.selector = binding.selector = me.getName().toCharArray();
 		
 		return new EclipseTypeMunger(world, myMunger, aspectType, this);

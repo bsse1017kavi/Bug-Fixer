@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class CountRequest extends BroadcastOperationRequest {
     @Override public CountRequest operationThreading(BroadcastOperationThreading operationThreading) {
         super.operationThreading(operationThreading);
         return this;
-@Override protected void beforeStart() {
+    }
 
-    @Override protected void beforeLocalFork() {
+@Override protected void beforeStart() {
         if (querySourceUnsafe) {
             querySource = Arrays.copyOfRange(querySource, querySourceOffset, querySourceOffset + querySourceLength);
             querySourceOffset = 0;

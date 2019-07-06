@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class ContextIndexSearcher extends IndexSearcher {
     public void inStage(Stage stage) {
         this.currentState = stage;
     }
-assert currentState == stage : "Expected stage " + stage + " but was stage " + currentState;
+
     public void finishStage(Stage stage) {
-        assert currentState == stage;
+assert currentState == stage : "Expected stage " + stage + " but was stage " + currentState;
         this.currentState = Stage.NA;
     }
 

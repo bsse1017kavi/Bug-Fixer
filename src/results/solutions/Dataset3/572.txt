@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -30,9 +29,9 @@ import javax.ejb.ConcurrentAccessTimeoutException;
 import javax.ejb.EJBException;
 import javax.transaction.Synchronization;
 import javax.transaction.TransactionSynchronizationRegistry;
-import static org.jboss.as.ejb3.component.stateful.StatefulComponentInstanceInterceptor.getComponentInstance;
+import java.util.concurrent.locks.ReentrantLock;
 
-import static org.jboss.as.ejb3.component.stateful.ComponentInstanceInterceptor.getComponentInstance;
+import static org.jboss.as.ejb3.component.stateful.StatefulComponentInstanceInterceptor.getComponentInstance;
 
 /**
  * @author <a href="mailto:cdewolf@redhat.com">Carlo de Wolf</a>

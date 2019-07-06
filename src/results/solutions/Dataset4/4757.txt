@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public abstract class ShardReplicationOperationRequest<T extends ShardReplicatio
 
     public ShardReplicationOperationRequest(T request) {
         super(request);
-this.threadedOperation = request.operationThreaded();
+        this.timeout = request.timeout();
         this.index = request.index();
-        this.threadedOperation = request.threadedOperation;
+this.threadedOperation = request.operationThreaded();
         this.replicationType = request.replicationType();
         this.consistencyLevel = request.consistencyLevel();
     }

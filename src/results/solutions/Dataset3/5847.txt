@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class DeployedXmlJMSManagementTestCase {
     public static final String TEST_JMS_XML = "test-jms.xml";
 
     @Deployment
-.addClass(DeployedXmlJMSManagementTestCase.class)
+    public static Archive<?> deploy() {
         return ShrinkWrap.create(JavaArchive.class, "testJMSXmlDeployment.jar")
-                .addPackage(DeployedXmlJMSManagementTestCase.class.getPackage())
+.addClass(DeployedXmlJMSManagementTestCase.class)
                 .addAsManifestResource(DeployedXmlJMSManagementTestCase.class.getPackage(), "MANIFEST.MF", "MANIFEST.MF");
     }
 

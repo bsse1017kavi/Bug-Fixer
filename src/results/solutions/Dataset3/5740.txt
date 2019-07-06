@@ -1,4 +1,3 @@
-
 package backtype.storm.tuple;
 
 import backtype.storm.utils.WritableUtils;
@@ -50,9 +49,9 @@ public class MessageId {
     }
 
     @Override
-return _anchorsToIds.equals(((MessageId) other)._anchorsToIds);
+    public boolean equals(Object other) {
         if(other instanceof MessageId) {
-            return _anchorsToIds == ((MessageId) other)._anchorsToIds;
+return _anchorsToIds.equals(((MessageId) other)._anchorsToIds);
         } else {
             return false;
         }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -198,9 +197,9 @@ public int numberOfDifferentLocals(StackMapFrame prevFrame) {
 					case TypeIds.T_double :
 					case TypeIds.T_long :
 						indexInCurrentLocals++; // next entry  is null
-if (indexInPrevLocals < prevLocalsLength && prevLocalsCounter < prevNumberOfLocals) {
+				}
 			}
-			for (;indexInPrevLocals < prevLocalsLength && prevLocalsCounter < prevNumberOfLocals; indexInPrevLocals++) {
+if (indexInPrevLocals < prevLocalsLength && prevLocalsCounter < prevNumberOfLocals) {
 				VerificationTypeInfo prevLocal = prevLocals[indexInPrevLocals];
 				if (prevLocal != null) {
 					prevLocalsCounter++;

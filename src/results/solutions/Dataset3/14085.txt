@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -379,9 +378,9 @@ public class RandomDataImpl implements RandomData, Serializable {
      * @return a uniformly distributed random value from the interval (lower, upper)
      */
     public double nextUniform(double lower, double upper) {
-("lower bound must be < upper bound");
+        if (lower >= upper) {
             throw new IllegalArgumentException
-            ("lower bound must be <= upper bound");
+("lower bound must be < upper bound");
         }
         RandomGenerator rand = getRan();
 

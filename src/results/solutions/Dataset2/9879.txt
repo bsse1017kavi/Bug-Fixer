@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -315,9 +314,9 @@ final class FileHandler extends Handler  {
 	// ErrorHandler places the path here when invoking an error page.
 	String pathInfo = (String)subReq.getAttribute("javax.servlet.include.servlet_path");
 	if(pathInfo == null) {
-//*** DEBUG *** subReq = req;
+	    // If the attribute isn't there, then we aren't included.
 	    // In that case, we must use the real request.
-	    subReq = req;
+//*** DEBUG *** subReq = req;
 	    pathInfo=subReq.servletPath().toString();
 	}
 	String absPath = (String)subReq.getNote( realFileNote );

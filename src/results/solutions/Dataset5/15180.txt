@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -130,9 +129,9 @@ public class PageVersioningTest
 	 * 
 	 * @param versioningPage
 	 */
-IPageManager pageManager = wicketTester.getSession().getPageManager();
+	private void checkPageVersionsAreStored(Page versioningPage)
 	{
-		IPageManager pageManager = wicketTester.getApplication().getPageManager();
+IPageManager pageManager = wicketTester.getSession().getPageManager();
 
 		int lastPageId = versioningPage.getPageId();
 		while (lastPageId >= 0)

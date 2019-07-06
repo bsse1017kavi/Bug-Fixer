@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -445,9 +444,9 @@ public class JDBCExpressionFactory
     }
 
     private Value getLiteralRawString(Value val) {
-StringBuilder value = new StringBuilder();
+        if (val instanceof Lit) {
             Lit lit = (Lit) val;
-            StringBuffer value = new StringBuffer();
+StringBuilder value = new StringBuilder();
             int pType = lit.getParseType(); 
             if (pType == Literal.TYPE_SQ_STRING ||
                 pType == Literal.TYPE_STRING)

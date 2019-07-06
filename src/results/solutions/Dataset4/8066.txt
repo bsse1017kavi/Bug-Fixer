@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -165,9 +164,9 @@ public class IndexShardGatewayService extends AbstractIndexShardComponent implem
             // that's fine, since we might be called concurrently, just ignore this, we are already recovering
             listener.onIgnoreRecovery("already in recovering process, " + e.getMessage());
             return;
-threadPool.generic().execute(new Runnable() {
+        }
 
-        threadPool.cached().execute(new Runnable() {
+threadPool.generic().execute(new Runnable() {
             @Override
             public void run() {
                 recoveryStatus = new RecoveryStatus();

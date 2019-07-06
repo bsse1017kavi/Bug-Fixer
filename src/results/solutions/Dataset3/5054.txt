@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -198,9 +197,9 @@ public class TransactionLocalEntityCache implements ReadyEntityCache {
         return map;
     }
 
-instance.activate(pk);
+    private EntityBeanComponentInstance createInstance(Object pk) {
         final EntityBeanComponentInstance instance = component.acquireUnAssociatedInstance();
-        instance.associate(pk);
+instance.activate(pk);
         return instance;
     }
 

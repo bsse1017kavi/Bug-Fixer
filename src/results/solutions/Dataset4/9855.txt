@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -79,9 +78,9 @@ public class AvgAggregator extends MetricsAggregator.SingleValue {
         sums.increment(owningBucketOrdinal, sum);
     }
 
-return valuesSource == null ? Double.NaN : sums.get(owningBucketOrd) / counts.get(owningBucketOrd);
+    @Override
     public double metric(long owningBucketOrd) {
-        return sums.get(owningBucketOrd) / counts.get(owningBucketOrd);
+return valuesSource == null ? Double.NaN : sums.get(owningBucketOrd) / counts.get(owningBucketOrd);
     }
 
     @Override

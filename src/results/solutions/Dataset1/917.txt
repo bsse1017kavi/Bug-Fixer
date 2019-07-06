@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.clustering.carrot2;
 
 /*
@@ -223,9 +222,9 @@ public class LuceneCarrot2StemmerFactory implements IStemmerFactory {
     }
 
     public static IStemmer createStemmer() {
-} catch (Exception e) {
+      try {
         return new LuceneStemmerAdapter();
-      } catch (Throwable e) {
+} catch (Exception e) {
         return IdentityStemmer.INSTANCE;
       }
     }

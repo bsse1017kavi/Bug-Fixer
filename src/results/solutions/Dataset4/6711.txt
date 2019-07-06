@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class FilteredCollector extends XCollector {
         this.collector = collector;
         this.filter = filter;
     }
-public void postCollection() throws IOException {
+
     @Override
-    public void postCollection() {
+public void postCollection() throws IOException {
         if (collector instanceof XCollector) {
             ((XCollector) collector).postCollection();
         }

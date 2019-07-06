@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -187,9 +186,9 @@ public class BcelRenderer implements ITestVisitor, IExprVisitor {
         Member getClass = Member.method(TypeX.OBJECT, 0, "getClass", "()Ljava/lang/Class;");
         il.append(Utility.createInvoke(fact, world, getClass));
         // aload annotationClass
-Member isAnnotationPresent = Member.method(TypeX.forName("java/lang/Class"),0,
+        int annClassIndex = fact.getConstantPool().addClass(hasAnnotation.getAnnotationType().getSignature());
         il.append(new LDC_W(annClassIndex));
-        Member isAnnotationPresent = Member.method(TypeX.forName("Ljava/lang/Class"),0,
+Member isAnnotationPresent = Member.method(TypeX.forName("java/lang/Class"),0,
                 "isAnnotationPresent","(Ljava/lang/Class;)Z");
         il.append(Utility.createInvoke(fact,world,isAnnotationPresent));
         il.append(createJumpBasedOnBooleanOnStack());

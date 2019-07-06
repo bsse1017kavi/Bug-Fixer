@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -95,9 +94,9 @@ public void findIndexMatches(IndexInput input, IIndexSearchRequestor requestor, 
 					potentialRefs[i] &= references[i];
 				else
 					potentialRefs[i] = 0;
-while (--potentialLength >= 0 && potentialRefs[potentialLength] == 0);
+			}
 			// check to see that there are still potential references after the merge
-			while (--potentialLength >= 0 && potentialRefs[potentialLength] == 0) {}
+while (--potentialLength >= 0 && potentialRefs[potentialLength] == 0);
 			if (potentialLength == -1) return;
 		}
 	} while (this.hasNextQuery());

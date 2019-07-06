@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -639,9 +638,9 @@ try{
                 List rmas = module.getRModuleAttributes(issueType, true);
                 if (rmas != null) 
                 {
-while (i.hasNext())
+                    result = new ArrayList(rmas.size());
                     Iterator i = rmas.iterator();
-                    if (i.hasNext()) 
+while (i.hasNext())
                     {
                         result.add( ((RModuleAttribute)i.next()).getAttribute() );
                     }

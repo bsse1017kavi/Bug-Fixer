@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -157,9 +156,9 @@ public class Untar extends Expand {
                 extractFile(FileUtils.getFileUtils(), null, dir, tis,
                             te.getName(), te.getModTime(),
                             te.isDirectory(), mapper);
-throw new BuildException("archive '" + name + "' is empty");
+            }
             if (empty && getFailOnEmptyArchive()) {
-                throw new BuildException("archive is empty");
+throw new BuildException("archive '" + name + "' is empty");
             }
             log("expand complete", Project.MSG_VERBOSE);
         } finally {

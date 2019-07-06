@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public class ResourceRequestHandler implements IRequestHandler
 	 * @see org.apache.wicket.ng.request.IRequestHandler#respond(org.apache.wicket.ng.request.cycle.RequestCycle)
 	 */
 	public void respond(final RequestCycle requestCycle)
-requestCycle.getResponse(), pageParameters);
+	{
 		IResource.Attributes a = new IResource.Attributes(requestCycle.getRequest(),
-			requestCycle.getResponse(), locale, style, variation, pageParameters);
+requestCycle.getResponse(), pageParameters);
 		resource.respond(a);
 	}
 

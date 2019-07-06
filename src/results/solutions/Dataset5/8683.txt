@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public final class CLOptionDescriptor {
 
         m_id = id;
         m_name = name;
-m_incompatible = ((flags & DUPLICATES_ALLOWED) != 0) ? new int[0] : new int[] { id };
+        m_flags = flags;
         m_description = description;
-        m_incompatible = ((flags & DUPLICATES_ALLOWED) > 0) ? new int[0] : new int[] { id };
+m_incompatible = ((flags & DUPLICATES_ALLOWED) != 0) ? new int[0] : new int[] { id };
     }
 
 

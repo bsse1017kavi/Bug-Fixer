@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -110,9 +109,9 @@ public abstract class ClearCase extends Task
         try
         {
             Project aProj = getProject();
-exe.setWorkingDirectory( getBaseDirectory() );
+            Execute exe = new Execute( new LogStreamHandler( this, Project.MSG_INFO, Project.MSG_WARN ) );
             exe.setAntRun( aProj );
-            exe.setWorkingDirectory( aProj.getBaseDir() );
+exe.setWorkingDirectory( getBaseDirectory() );
             exe.setCommandline( cmd.getCommandline() );
             return exe.execute();
         }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -58,9 +57,9 @@ public class TaskAdapter
     public void execute()
         throws TaskException
     {
-getProject().enableLogging( getLogger() );
+        try
         {
-            getProject().setLogger( getLogger() );
+getProject().enableLogging( getLogger() );
             getProject().contextualize( getContext() );
             getProject().init();
 

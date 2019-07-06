@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -813,9 +812,9 @@ public class Matrix4 implements Serializable {
 	 * @param up the up vector
 	 * @return This matrix */
 	public Matrix4 setToLookAt (Vector3 position, Vector3 target, Vector3 up) {
-this.mul(tmpMat.setToTranslation(position.tmp().scl(-1)));
+		tmpVec.set(target).sub(position);
 		setToLookAt(tmpVec, up);
-		this.mul(tmpMat.setToTranslation(-position.x, -position.y, -position.z));
+this.mul(tmpMat.setToTranslation(position.tmp().scl(-1)));
 
 		return this;
 	}

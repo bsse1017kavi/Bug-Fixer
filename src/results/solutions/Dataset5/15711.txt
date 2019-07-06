@@ -1,4 +1,3 @@
-
 /*
  * Closure.java
  * 
@@ -109,9 +108,9 @@ public class ClassClosure
 				
 				// Get the input stream a second time to add to JAR
 				final InputStream in2 = inputStreamForClassName(classname.getType());
-addClass(classfile.getName().getInternalName(), in2);
+				try
 				{
-					addClass(classfile.getName().getExternalName(), in2);
+addClass(classfile.getName().getInternalName(), in2);
 				}
 				finally
 				{

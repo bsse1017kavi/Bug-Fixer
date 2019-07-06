@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -1338,9 +1337,9 @@ public class ThreadsSubsystemTestCase {
 
             rootRegistration.registerOperationHandler("setup", new OperationStepHandler() {
                 @Override
-context.stepCompleted();
+                public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
                     context.createResource(PathAddress.EMPTY_ADDRESS.append(PathElement.pathElement("profile", "test")));
-                    context.completeStep();
+context.stepCompleted();
                 }
             }, new DescriptionProvider() {
                 @Override

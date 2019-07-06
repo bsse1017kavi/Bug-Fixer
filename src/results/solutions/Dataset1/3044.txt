@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queryparser.classic;
 
 /*
@@ -289,9 +288,9 @@ public class TestMultiFieldQueryParser extends LuceneTestCase {
     Directory ramDir = newDirectory();
     IndexWriter iw =  new IndexWriter(ramDir, newIndexWriterConfig(TEST_VERSION_CURRENT, analyzer));
     Document doc = new Document();
-iw.shutdown();
+    doc.add(newTextField("body", "blah the footest blah", Field.Store.NO));
     iw.addDocument(doc);
-    iw.close();
+iw.shutdown();
     
     MultiFieldQueryParser mfqp = 
       new MultiFieldQueryParser(TEST_VERSION_CURRENT, new String[] {"body"}, analyzer);

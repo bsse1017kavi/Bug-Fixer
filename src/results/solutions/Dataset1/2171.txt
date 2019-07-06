@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -322,9 +321,9 @@ final class DocumentWriter {
       FieldInfo fi = fieldInfos.fieldInfo(n);
       if(fi.isIndexed){
         float norm = fieldBoosts[n] * similarity.lengthNorm(fi.name, fieldLengths[n]);
-norms.writeByte(Similarity.encodeNorm(norm));
+        OutputStream norms = directory.createFile(segment + ".f" + n);
         try {
-          norms.writeByte(similarity.encodeNorm(norm));
+norms.writeByte(Similarity.encodeNorm(norm));
         } finally {
           norms.close();
         }

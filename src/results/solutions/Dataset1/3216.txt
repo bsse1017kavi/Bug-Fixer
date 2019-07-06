@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries.function;
 
 /*
@@ -65,9 +64,9 @@ public class TestLongNormValueSource extends LuceneTestCase {
     doc.add(new TextField("text", "second test", Field.Store.NO));
     iw.addDocument(doc);
 
-iw.shutdown();
+    reader = iw.getReader();
     searcher = newSearcher(reader);
-    iw.close();
+iw.shutdown();
   }
 
   @AfterClass

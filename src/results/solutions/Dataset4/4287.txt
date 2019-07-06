@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -63,9 +62,9 @@ public class BulletEntity extends BaseEntity {
 
 	@Override
 	public void dispose () {
-if (body != null) body.delete();
+		// Don't rely on the GC
 		if (motionState != null) motionState.dispose();
-		if (body != null) body.dispose();
+if (body != null) body.delete();
 		// And remove the reference
 		motionState = null;
 		body = null;

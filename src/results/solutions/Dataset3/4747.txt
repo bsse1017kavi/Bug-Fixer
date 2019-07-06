@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -366,9 +365,9 @@ public class ServerEnvironment extends ProcessEnvironment implements Serializabl
         tmp = getFileFromProperty(SERVER_CONFIG_DIR, props);
         if (tmp == null) {
             tmp = new File(serverBaseDir, "configuration");
-if (standalone && (!serverConfigurationDir.exists() || !serverConfigurationDir.isDirectory())) {
+        }
         serverConfigurationDir = tmp;
-        if (standalone && !serverConfigurationDir.exists() && !serverConfigurationDir.isDirectory()) {
+if (standalone && (!serverConfigurationDir.exists() || !serverConfigurationDir.isDirectory())) {
             throw MESSAGES.configDirectoryDoesNotExist(serverConfigurationDir);
         }
 

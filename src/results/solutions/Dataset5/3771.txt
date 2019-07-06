@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class BeanShellSampler extends AbstractSampler
 
 	transient private BeanShellInterpreter bshInterpreter;
 
-bshInterpreter = new BeanShellInterpreter(JMeterUtils.getProperty(INIT_FILE), log);
+	public BeanShellSampler() {
 		try {
-			bshInterpreter = new BeanShellInterpreter(INIT_FILE, log);
+bshInterpreter = new BeanShellInterpreter(JMeterUtils.getProperty(INIT_FILE), log);
 		} catch (ClassNotFoundException e) {
 			log.error("Cannot find BeanShell: "+e.toString());
 		}

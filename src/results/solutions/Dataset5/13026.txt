@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class TextAreaEditor extends PropertyEditorSupport implements FocusListen
     /**
      * @param descriptor
      */
-textUI.setLanguage((String) descriptor.getValue(GenericTestBeanCustomizer.TEXT_LANGUAGE));
+    public TextAreaEditor(PropertyDescriptor descriptor) {
         textUI = new JSyntaxTextArea(20, 20);
-//        textUI.setSyntaxEditingStyle((String) descriptor.getValue(GenericTestBeanCustomizer.SYNTAX_TYPE));
+textUI.setLanguage((String) descriptor.getValue(GenericTestBeanCustomizer.TEXT_LANGUAGE));
         scroller = new JTextScrollPane(textUI, true);
         init();
     }

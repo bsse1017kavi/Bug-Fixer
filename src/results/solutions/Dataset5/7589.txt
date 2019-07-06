@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -458,9 +457,9 @@ public class PersistenceUnitInfoImpl
         if (info.getPersistenceProviderClassName() != null)
             map.put(KEY_PROVIDER, info.getPersistenceProviderClassName());
         
-map.put(VALIDATION_MODE, String.valueOf(info.getValidationMode()).toLowerCase());
+        // convert validation-mode enum to a StringValue
         if (info.getValidationMode() != null)
-            map.put(VALIDATION_MODE, String.valueOf(info.getValidationMode()));
+map.put(VALIDATION_MODE, String.valueOf(info.getValidationMode()).toLowerCase());
 
         if (info.getPersistenceXMLSchemaVersion() != null) {
             map.put(PERSISTENCE_VERSION, info.getPersistenceXMLSchemaVersion());

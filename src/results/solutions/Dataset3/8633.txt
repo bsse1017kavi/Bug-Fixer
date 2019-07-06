@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public class CoreGroupCommunicationServiceService implements Service<CoreGroupCo
      * @see org.jboss.msc.service.Service#start(org.jboss.msc.service.StartContext)
      */
     @Override
-this.service.setChannel(this.channel.getValue());
+    public void start(StartContext context) throws StartException {
         this.service = new CoreGroupCommunicationService();
-        this.service.setChannel(channel.getValue());
+this.service.setChannel(this.channel.getValue());
         this.service.setScopeId(this.scope);
 
         try {

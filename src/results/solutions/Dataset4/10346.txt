@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -53,9 +52,9 @@ public class UpdateSettingsValidationTests extends ElasticsearchIntegrationTest 
         assertThat(healthResponse.isTimedOut(), equalTo(false));
         assertThat(healthResponse.getIndices().get("test").getActiveShards(), equalTo(5));
 
-fail();
+        try {
             client().admin().indices().prepareUpdateSettings("test").setSettings(settingsBuilder().put("index.refresh_interval", "")).execute().actionGet();
-            assert false;
+fail();
         } catch (ElasticsearchIllegalArgumentException ex) {
             logger.info("Error message: [{}]", ex.getMessage());
         }

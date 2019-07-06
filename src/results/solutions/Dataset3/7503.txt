@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ class PeriodicRotatingFileHandlerAdd implements ModelAddOperationHandler {
                         final PeriodicRotatingFileHandlerService service = new PeriodicRotatingFileHandlerService();
                         final ServiceBuilder<Handler> serviceBuilder = serviceTarget.addService(LogServices.handlerName(name), service);
                         if (operation.hasDefined(FILE)) {
-if (operation.get(FILE).hasDefined(CommonAttributes.RELATIVE_TO)) {
+                            final HandlerFileService fileService = new HandlerFileService(operation.get(FILE, PATH).asString());
                             final ServiceBuilder<?> fileBuilder = serviceTarget.addService(LogServices.handlerFileName(name), fileService);
-                            if (operation.hasDefined(CommonAttributes.RELATIVE_TO)) {
+if (operation.get(FILE).hasDefined(CommonAttributes.RELATIVE_TO)) {
                                 fileBuilder.addDependency(AbstractPathService.pathNameOf(operation.get(FILE, RELATIVE_TO).asString()), String.class, fileService.getRelativeToInjector());
                             }
                             fileBuilder.setInitialMode(ServiceController.Mode.ACTIVE).install();

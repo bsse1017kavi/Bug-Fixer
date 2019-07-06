@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -134,9 +133,9 @@ public class BasicTransactionalModelController extends BasicModelController impl
             final OperationHandler operationHandler = getRegistry().getOperationHandler(address, operationName);
             if (operationHandler == null) {
                 throw new IllegalStateException("No handler for " + operationName + " at address " + address);
-final OperationContext context = contextFactory.getOperationContext(modelSource, address, operationHandler, executionContext);
+            }
 
-            final OperationContext context = contextFactory.getOperationContext(modelSource, address, operationHandler);
+final OperationContext context = contextFactory.getOperationContext(modelSource, address, operationHandler, executionContext);
             try {
                 final OperationResult result = operationHandler.execute(context, executionContext.getOperation(), handler);
                 ControllerResource txResource = getControllerResource(context, executionContext.getOperation(), operationHandler, handler, address, modelSource, configurationPersisterProvider);

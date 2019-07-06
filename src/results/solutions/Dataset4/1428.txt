@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -71,9 +70,9 @@ public class GatewayService extends AbstractLifecycleComponent<GatewayService> i
         this.gateway = gateway;
         this.clusterService = clusterService;
         this.discoveryService = discoveryService;
-this.initialStateTimeout = componentSettings.getAsTime("initial_state_timeout", TimeValue.timeValueSeconds(30));
+        this.threadPool = threadPool;
         this.metaDataService = metaDataService;
-        this.initialStateTimeout = componentSettings.getAsTime("initialStateTimeout", TimeValue.timeValueSeconds(30));
+this.initialStateTimeout = componentSettings.getAsTime("initial_state_timeout", TimeValue.timeValueSeconds(30));
     }
 
     @Override protected void doStart() throws ElasticSearchException {

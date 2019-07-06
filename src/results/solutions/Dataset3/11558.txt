@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -429,9 +428,9 @@ public class EmpiricalDistributionImpl implements Serializable, EmpiricalDistrib
      * Generates a random value from this distribution.
      *
      * @return the random value.
-public double getNextValue() throws MathIllegalStateException {
+     * @throws MathIllegalStateException if the distribution has not been loaded
      */
-    public double getNextValue() throws IllegalStateException {
+public double getNextValue() throws MathIllegalStateException {
 
         if (!loaded) {
             throw new MathIllegalStateException(LocalizedFormats.DISTRIBUTION_NOT_LOADED);

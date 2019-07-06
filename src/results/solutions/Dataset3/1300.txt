@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class StringEncoderComparatorTest {
     @Test
     public void testComparatorWithDoubleMetaphoneAndInvalidInput() throws Exception {
         StringEncoderComparator sCompare =
-int compare = sCompare.compare(new Double(3.0), Long.valueOf(3));
+            new StringEncoderComparator( new DoubleMetaphone() );
            
-        int compare = sCompare.compare(new Double(3.0), new Long(3));
+int compare = sCompare.compare(new Double(3.0), Long.valueOf(3));
         assertEquals( "Trying to compare objects that make no sense to the underlying encoder should return a zero compare code",
                                 0, compare);        
     }

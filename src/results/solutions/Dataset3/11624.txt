@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public final class SmoothingBicubicSplineInterpolatorTest {
             // Expected
         }
 
-p = interpolator.interpolate(xval, wyval, wzval);
+        double[][] wzval = new double[xval.length][yval.length + 1];
         try {
-            p = interpolator.interpolate(xval, wyval, zval);
+p = interpolator.interpolate(xval, wyval, wzval);
             Assert.fail("an exception should have been thrown");
         } catch (IllegalArgumentException e) {
             // Expected

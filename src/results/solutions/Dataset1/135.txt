@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -614,9 +613,9 @@ public class CassandraServer implements Cassandra.Iface
     /**
      * Schedule the current thread for access to the required services
      */
-requestScheduler.queue(Thread.currentThread(), clientState.getSchedulingValue());
+    private void schedule()
     {
-        requestScheduler.queue(Thread.currentThread(), clientState.getSchedulingId());
+requestScheduler.queue(Thread.currentThread(), clientState.getSchedulingValue());
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -206,9 +205,9 @@ public abstract class BlobStoreGateway extends SharedStorageGateway {
 
     private MetaData readMetaData(byte[] data) throws IOException {
         XContentParser parser = null;
-BytesStreamInput siBytes = new BytesStreamInput(data, false);
+        try {
             if (LZF.isCompressed(data)) {
-                BytesStreamInput siBytes = new BytesStreamInput(data);
+BytesStreamInput siBytes = new BytesStreamInput(data, false);
                 LZFStreamInput siLzf = CachedStreamInput.cachedLzf(siBytes);
                 parser = XContentFactory.xContent(XContentType.JSON).createParser(siLzf);
             } else {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -171,9 +170,9 @@ public TypeBinding checkFieldAccess(BlockScope scope) {
 	//int i = staticI;
 	//static int staticI = 2 ;
 
-&& ms.fieldDeclarationIndex != MethodScope.NotInFieldDecl
+	MethodScope ms = scope.methodScope();
 	if (ms.enclosingSourceType() == fieldBinding.declaringClass
-		&& ms.fieldDeclarationIndex != ms.NotInFieldDecl
+&& ms.fieldDeclarationIndex != MethodScope.NotInFieldDecl
 		&& fieldBinding.id >= ms.fieldDeclarationIndex) {
 		//if the field is static and ms is not .... then it is valid
 		if (!fieldBinding.isStatic() || ms.isStatic)

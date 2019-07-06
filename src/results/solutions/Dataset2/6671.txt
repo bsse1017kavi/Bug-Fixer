@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -184,8 +183,8 @@ public void exitType(int declarationEnd) {
 }
 /**
  * Creates a new parser.
-return new SourceElementParser(this, new DefaultProblemFactory(), new CompilerOptions(settings), false/*don't report local declarations*/, true/*optimize string literals*/);
+ */
 protected SourceElementParser getParser(Map settings) {
-	return new SourceElementParser(this, new DefaultProblemFactory(), new CompilerOptions(settings));
+return new SourceElementParser(this, new DefaultProblemFactory(), new CompilerOptions(settings), false/*don't report local declarations*/, true/*optimize string literals*/);
 }
 }

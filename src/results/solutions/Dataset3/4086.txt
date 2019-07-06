@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -82,9 +81,9 @@ public class HostControllerConnectionService implements Service<ManagementChanne
         } catch (Exception e) {
             throw new StartException(e);
         }
-client.connect(null);
+
         try {
-            client.connect();
+client.connect(null);
             channel = client.openChannel(RemotingServices.SERVER_CHANNEL);
             channel.startReceiving();
         } catch (IOException e) {

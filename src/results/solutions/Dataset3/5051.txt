@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -139,9 +138,9 @@ public class EntityBeanComponentInstance extends EjbComponentInstance {
      * Associates this entity with a primary key. This method is called when an entity bean is moved from the
      * pool to the entity cache
      *
-public synchronized void activate(Object primaryKey) {
+     * @param primaryKey The primary key to associate the entity with
      */
-    public synchronized void associate(Object primaryKey) {
+public synchronized void activate(Object primaryKey) {
         this.primaryKey = primaryKey;
         try {
             final InterceptorContext context = prepareInterceptorContext();

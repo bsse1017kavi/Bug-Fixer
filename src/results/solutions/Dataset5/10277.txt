@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -43,9 +42,9 @@ public final class Main
             final URL[] urls = buildURLList( libDir );
 
             final LauncherClassLoader classLoader = new LauncherClassLoader( urls );
-final Class clazz = classLoader.loadClass( "org.apache.myrmidon.Main" );
+
             //load class and retrieve appropriate main method.
-            final Class clazz = classLoader.loadClass( "org.apache.ant.Main" );
+final Class clazz = classLoader.loadClass( "org.apache.myrmidon.Main" );
             final Method method = clazz.getMethod( "main", new Class[] { args.getClass() } );
 
             //kick the tires and light the fires....

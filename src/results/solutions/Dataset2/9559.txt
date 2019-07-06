@@ -1,4 +1,3 @@
-
 /*
  * @(#)PolygonScaleHandle.java
  *
@@ -162,9 +161,9 @@ class PolygonScaleHandle extends AbstractHandle {
 			return resetPolygon();
 		}
 
-if (!fe.hasNextFigure()) {
+		protected boolean resetPolygon() {
 			FigureEnumeration fe = getAffectedFigures();
-			if (!fe.hasMoreElements()) {
+if (!fe.hasNextFigure()) {
 				return false;
 			}
 			PolygonFigure figure = (PolygonFigure)fe.nextFigure();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -97,9 +96,9 @@ public class ParameterExpressionImpl<T> extends ExpressionImpl<T>
         
         return param;
     }   
-public StringBuilder asValue(AliasContext q) {
+    
     @Override
-    public StringBuilder asValue(CriteriaQueryImpl<?> q) {
+public StringBuilder asValue(AliasContext q) {
         return Expressions.asValue(q, ":", _name == null ? "param" : _name);
     }
     

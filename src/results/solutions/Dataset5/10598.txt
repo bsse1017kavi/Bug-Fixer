@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class ConstantThroughputTimerBeanInfo extends BeanInfoSupport {
                 new String[] { "throughput", //$NON-NLS-1$
                 "calcMode" }); //$NON-NLS-1$
 
-p.setValue(DEFAULT, Double.valueOf(0.0));
+        PropertyDescriptor p = property("throughput"); //$NON-NLS-1$
         p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, new Double(0.0));
+p.setValue(DEFAULT, Double.valueOf(0.0));
 
         p = property("calcMode"); //$NON-NLS-1$
         p.setValue(NOT_UNDEFINED, Boolean.TRUE);

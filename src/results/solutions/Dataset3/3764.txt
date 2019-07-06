@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -142,9 +141,9 @@ public class DormandPrince54IntegratorTest
       double minStep = 0;
       double maxStep = pb.getFinalTime() - pb.getInitialTime();
       double scalAbsoluteTolerance = Math.pow(10.0, i);
-EmbeddedRungeKuttaIntegrator integ =
+      double scalRelativeTolerance = 0.01 * scalAbsoluteTolerance;
 
-      RungeKuttaFehlbergIntegrator integ =
+EmbeddedRungeKuttaIntegrator integ =
           new DormandPrince54Integrator(minStep, maxStep,
                                         scalAbsoluteTolerance, scalRelativeTolerance);
       TestProblemHandler handler = new TestProblemHandler(pb, integ);

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.marshal;
 
 import static org.junit.Assert.assertEquals;
@@ -149,9 +148,9 @@ public class UUIDTypeTest
         int c = sign(uuidType.compare(bytebuffer(u1), bytebuffer(u2)));
         expC = sign(expC);
         assertEquals("Expected " + describeCompare(u1, u2, expC) + ", got "
-if (u1.version() == 1 && u2.version() == 1)
+                + describeCompare(u1, u2, c), expC, c);
 
-        if (u1.version() == 1)
+if (u1.version() == 1 && u2.version() == 1)
             assertEquals(c, sign(TimeUUIDType.instance.compare(bytebuffer(u1), bytebuffer(u2))));
 
         logJdkUUIDCompareToVariance(u1, u2, c);

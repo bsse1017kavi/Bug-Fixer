@@ -1,4 +1,3 @@
-
 package org.apache.solr.core;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -39,9 +38,9 @@ public class IndexReaderFactoryTest extends AbstractSolrTestCase {
    * @throws Exception
    */
   public void testAltReaderUsed() throws Exception {
-assertTrue("readerFactory is not an instanceof " + AlternateDirectoryTest.TestIndexReaderFactory.class, readerFactory instanceof StandardIndexReaderFactory);
+    IndexReaderFactory readerFactory = h.getCore().getIndexReaderFactory();
     assertNotNull("Factory is null", readerFactory);
-    assertTrue("readerFactory is not an instanceof " + AlternateIndexReaderTest.TestIndexReaderFactory.class, readerFactory instanceof StandardIndexReaderFactory);
+assertTrue("readerFactory is not an instanceof " + AlternateDirectoryTest.TestIndexReaderFactory.class, readerFactory instanceof StandardIndexReaderFactory);
     assertTrue("termInfoIndexDivisor not set to 12", readerFactory.getTermInfosIndexDivisor() == 12);
 
 

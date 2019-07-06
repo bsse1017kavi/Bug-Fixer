@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -284,9 +283,9 @@ public abstract class ResolvedType extends UnresolvedType implements AnnotatedEl
             // we need to know if it is an interface from Parent kind munger
             // as those are used for @AJ ITD and we precisely want to skip those
             boolean shouldSkip = false;
-if (munger.getMunger()!=null && munger.getMunger().getKind() == ResolvedTypeMunger.Parent) {
+            for (int j = 0; j < rtx.interTypeMungers.size(); j++) {
                 ConcreteTypeMunger munger = (ConcreteTypeMunger) rtx.interTypeMungers.get(j);
-                if (munger.getMunger().getKind() == ResolvedTypeMunger.Parent) {
+if (munger.getMunger()!=null && munger.getMunger().getKind() == ResolvedTypeMunger.Parent) {
                     shouldSkip = true;
                     break;
                 }

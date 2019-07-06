@@ -1,4 +1,3 @@
-
 /*
  * Created on 11.03.2003
  *
@@ -65,9 +64,9 @@ public class ApplyFilterAction
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-((AbstractMailFrameController) getFrameMediator()).getTreeSelection();
+	public void actionPerformed(ActionEvent evt) {
 		FolderCommandReference[] r =
-			((AbstractMailFrameController) getFrameController()).getTreeSelection();
+((AbstractMailFrameController) getFrameMediator()).getTreeSelection();
 
 		//Folder folder = (Folder) r[0].getFolder();
 		MainInterface.processor.addOp(new ApplyFilterCommand(r));

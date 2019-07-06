@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -72,9 +71,9 @@ public class DashboardIssueFragment extends PagedItemFragment<RepositoryIssue> {
         filterData = (Map<String, String>) getArguments().getSerializable(ARG_FILTER);
     }
 
-startActivity(ViewIssuesActivity.createIntent(items, position - getListAdapter().getHeadersCount()));
+    @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        startActivity(ViewIssuesActivity.createIntent(items, position - l.getHeaderViewsCount()));
+startActivity(ViewIssuesActivity.createIntent(items, position - getListAdapter().getHeadersCount()));
     }
 
     @Override

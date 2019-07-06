@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,9 +42,9 @@ import static org.hamcrest.Matchers.*;
 public class ConcurrentRebalanceRoutingTests {
 
     private final ESLogger logger = Loggers.getLogger(ConcurrentRebalanceRoutingTests.class);
-AllocationService strategy = new AllocationService(settingsBuilder()
+
     @Test public void testClusterConcurrentRebalance() {
-        ShardsAllocation strategy = new ShardsAllocation(settingsBuilder()
+AllocationService strategy = new AllocationService(settingsBuilder()
                 .put("cluster.routing.allocation.concurrent_recoveries", 10)
                 .put("cluster.routing.allocation.allow_rebalance", "always")
                 .put("cluster.routing.allocation.cluster_concurrent_rebalance", 3)

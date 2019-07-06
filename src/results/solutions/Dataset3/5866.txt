@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -147,9 +146,9 @@ public abstract class RandomKey<T> extends AbstractListChromosome<Double> implem
      * @return true iff chromosomes encode the same permutation
      */
     @Override
-if (! (another instanceof RandomKey<?>))
+    protected boolean isSame(Chromosome another) {
         // type check
-        if (! (another instanceof RandomKey))
+if (! (another instanceof RandomKey<?>))
             return false;
         RandomKey<?> anotherRk = (RandomKey<?>) another;
         // size check

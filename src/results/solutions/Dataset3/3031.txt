@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -133,9 +132,9 @@ public class Messaging12SubsystemParser extends MessagingSubsystemParser {
         }
 
         checkOnlyOneOfElements(reader, seen, Element.STATIC_CONNECTORS, Element.DISCOVERY_GROUP_REF);
-throw missingRequired(reader, required);
+
         if(!required.isEmpty()) {
-            missingRequired(reader, required);
+throw missingRequired(reader, required);
         }
 
         updates.add(bridgeAdd);

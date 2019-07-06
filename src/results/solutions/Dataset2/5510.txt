@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.util.xml;
 
 import org.apache.tomcat.util.IntrospectionUtils;
@@ -804,9 +803,9 @@ class SetProperties extends XmlAction {
 
 	    String value1=xh.replaceProperties( value );
 	    if( !value1.equals(value) && ctx.getDebug() > -1 )
-IntrospectionUtils.setProperty( elem, name, value1 );
+		ctx.log( "Replace " + value + " " + value1 );
 		
-	    IntrospectionUtils.setProperty( elem, name, value );
+IntrospectionUtils.setProperty( elem, name, value1 );
 	}
     }
 }

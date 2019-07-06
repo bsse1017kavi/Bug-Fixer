@@ -1,4 +1,3 @@
-
 // Copyright (c) 2002-2004 Brian Wellington (bwelling@xbill.org)
 
 package org.xbill.DNS;
@@ -415,9 +414,9 @@ lookup(Name current) {
 			timedout = true;
 		else
 			networkerror = true;
-int rcode = response.getHeader().getRcode();
+		return;
 	}
-	short rcode = response.getHeader().getRcode();
+int rcode = response.getHeader().getRcode();
 	if (rcode != Rcode.NOERROR && rcode != Rcode.NXDOMAIN) {
 		// The server we contacted is broken or otherwise unhelpful.
 		// Press on.

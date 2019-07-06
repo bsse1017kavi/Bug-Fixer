@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -151,9 +150,9 @@ public abstract class ElasticsearchBackwardsCompatIntegrationTest extends Elasti
                 .put(TransportModule.TRANSPORT_SERVICE_TYPE_KEY, TransportService.class.getName())
                 .build();
 
-assertFalse("backward compatibility tests must run in network mode. You probably have a system property overriding the test settings.",
+        // verify that the end node setting will have network enabled.
         Tuple<Settings, Environment> finalSettings = InternalSettingsPreparer.prepareSettings(settings, true);
-        assertFalse("backward compatibility tests must run in network mode. You probably have a system property overriding the test settings",
+assertFalse("backward compatibility tests must run in network mode. You probably have a system property overriding the test settings.",
                 DiscoveryNode.localNode(finalSettings.v1()));
         return settings;
     }

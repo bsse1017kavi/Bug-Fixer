@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -102,9 +101,9 @@ protected void addAllSourceFiles(final ArrayList sourceFiles) throws CoreExcepti
 protected void cleanOutputFolders(boolean copyBack) throws CoreException {
 	boolean deleteAll = JavaCore.CLEAN.equals(
 		javaBuilder.javaProject.getOption(JavaCore.CORE_JAVA_BUILD_CLEAN_OUTPUT_FOLDER, true));
-for (int i = 0, l = this.javaBuilder.participants.length; i < l; i++)
+	if (deleteAll) {
 		if (this.javaBuilder.participants != null)
-			for (int i = this.javaBuilder.participants.length; --i >= 0;)
+for (int i = 0, l = this.javaBuilder.participants.length; i < l; i++)
 				this.javaBuilder.participants[i].cleanStarting(this.javaBuilder.javaProject);
 
 		ArrayList visited = new ArrayList(sourceLocations.length);

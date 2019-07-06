@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -396,9 +395,9 @@ public void setSelection (int value) {
 	OS.SendMessage (handle, OS.TBM_SETPOS, 1, value);
 }
 
-if ((style & SWT.HORIZONTAL) != 0) return bits | OS.TBS_HORZ | OS.TBS_DOWNISLEFT;
+int widgetStyle () {
 	int bits = super.widgetStyle () | OS.WS_TABSTOP | OS.TBS_BOTH | OS.TBS_AUTOTICKS;
-	if ((style & SWT.HORIZONTAL) != 0) return bits | OS.TBS_HORZ;
+if ((style & SWT.HORIZONTAL) != 0) return bits | OS.TBS_HORZ | OS.TBS_DOWNISLEFT;
 	return bits | OS.TBS_VERT;
 }
 

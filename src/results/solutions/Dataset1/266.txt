@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one * or more contributor license agreements.  See the NOTICE file
 * distributed with this work for additional information
@@ -28,9 +27,9 @@ import org.apache.cassandra.db.marshal.LongType;
 
 public class SuperColumnTest
 {   
-SuperColumn sc = new SuperColumn("sc1".getBytes(), LongType.instance, ClockType.Timestamp, TimestampReconciler.instance);
+    @Test
     public void testMissingSubcolumn() {
-    	SuperColumn sc = new SuperColumn("sc1".getBytes(), LongType.instance, ClockType.Timestamp, new TimestampReconciler());
+SuperColumn sc = new SuperColumn("sc1".getBytes(), LongType.instance, ClockType.Timestamp, TimestampReconciler.instance);
     	sc.addColumn(new Column(getBytes(1), "value".getBytes(), new TimestampClock(1)));
     	assertNotNull(sc.getSubColumn(getBytes(1)));
     	assertNull(sc.getSubColumn(getBytes(2)));

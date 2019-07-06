@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -126,9 +125,9 @@ public class SimpleIndexQueryParserTests {
         return this.queryParser;
     }
 
-NumericUtils.longToPrefixCoded(val, NumericUtils.PRECISION_STEP_DEFAULT, bytesRef);
+    private BytesRef longToPrefixCoded(long val) {
         BytesRef bytesRef = new BytesRef();
-        NumericUtils.longToPrefixCoded(val, 0, bytesRef);
+NumericUtils.longToPrefixCoded(val, NumericUtils.PRECISION_STEP_DEFAULT, bytesRef);
         return bytesRef;
     }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2008 John Krasnay and others.
  * All rights reserved. This program and the accompanying materials
@@ -117,9 +116,9 @@ public class Element extends Node implements Cloneable, IVEXElement {
 		IVEXElement root = this;
 		while (root.getParent() != null) {
 			root = root.getParent();
-return ((IVEXElement) root).getDocument();
+		}
 		if (root instanceof RootElement) {
-			return ((IVEXRootElement) root).getDocument();
+return ((IVEXElement) root).getDocument();
 		} else {
 			return null;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public abstract class AbstractAddStepHandler implements NewStepHandler {
                             context.addStep(verificationHandler, NewOperationContext.Stage.VERIFY);
                         }
 
-context.removeService(controller.getName());
+                        if (context.completeStep() == NewOperationContext.ResultAction.ROLLBACK) {
                             for(ServiceController<?> controller : controllers) {
-                                context.removeService(controller);
+context.removeService(controller.getName());
                             }
                         }
                     }

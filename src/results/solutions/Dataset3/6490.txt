@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class MessageDrivenComponentInstance extends BasicComponentInstance {
         super(component, instanceReference, preDestroyInterceptor, methodInterceptors);
     }
 
-super(MessageDrivenComponentInstance.this.getComponent(), MessageDrivenComponentInstance.this);
+    protected class MessageDrivenComponentInstanceContext extends BaseMessageDrivenContext {
         protected MessageDrivenComponentInstanceContext() {
-            super(MessageDrivenComponentInstance.this.getComponent(), getInstance());
+super(MessageDrivenComponentInstance.this.getComponent(), MessageDrivenComponentInstance.this);
         }
     };
 

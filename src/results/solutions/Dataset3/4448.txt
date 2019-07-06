@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class SSLIdentityService implements Service<SSLIdentityService> {
     }
 
     public void start(StartContext context) throws StartException {
-if (ssl.hasDefined(PROTOCOL)) {
+        try {
             String protocol = "TLS";
-            if (ssl.has(PROTOCOL)) {
+if (ssl.hasDefined(PROTOCOL)) {
                 protocol = ssl.get(PROTOCOL).asString();
             }
 

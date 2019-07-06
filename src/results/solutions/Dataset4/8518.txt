@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -52,9 +51,9 @@ public abstract class AbstractIndexStore extends AbstractIndexComponent implemen
     @Override public StoreFilesMetaData listStoreMetaData(ShardId shardId) throws IOException {
         InternalIndexShard indexShard = (InternalIndexShard) indexService.shard(shardId.id());
         if (indexShard == null) {
-return new StoreFilesMetaData(true, shardId, indexShard.store().list());
+            return listUnallocatedStoreMetaData(shardId);
         } else {
-            return new StoreFilesMetaData(true, shardId, indexShard.store().listWithMd5());
+return new StoreFilesMetaData(true, shardId, indexShard.store().list());
         }
     }
 

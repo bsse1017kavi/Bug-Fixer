@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -178,9 +177,9 @@ public class DefaultedMap<K, V> extends AbstractMapDecorator<K, V> implements Se
      * @throws ClassNotFoundException
      */
     @SuppressWarnings("unchecked")
-map = (Map<K, V>) in.readObject();
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        map = (Map) in.readObject();
+map = (Map<K, V>) in.readObject();
     }
 
     //-----------------------------------------------------------------------

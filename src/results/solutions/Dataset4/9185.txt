@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -205,9 +204,9 @@ public class ElasticsearchRestTests extends ElasticsearchIntegrationTest {
         return messageBuilder.toString();
     }
 
-return compatibilityVersion().onOrAfter(Version.V_1_2_0);
+    @Override
     protected boolean randomizeNumberOfShardsAndReplicas() {
-        return COMPATIBILITY_VERSION.onOrAfter(Version.V_1_2_0);
+return compatibilityVersion().onOrAfter(Version.V_1_2_0);
     }
 
     @Test

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public interface ZenPing extends LifecycleComponent<ZenPing> {
         void onPing(PingResponse[] pings);
     }
 
-public static final PingResponse[] EMPTY = new PingResponse[0];
+    public static class PingResponse implements Streamable {
         
-        public static PingResponse[] EMPTY = new PingResponse[0];
+public static final PingResponse[] EMPTY = new PingResponse[0];
 
         private ClusterName clusterName;
 

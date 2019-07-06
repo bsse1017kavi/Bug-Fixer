@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -120,9 +119,9 @@ public class StreamingRepairTask implements Runnable
             Collection<SSTableReader> sstables = cfstore.markCurrentSSTablesReferenced();
             // send ranges to the remote node
             StreamOutSession outsession = StreamOutSession.create(tableName, dst, callback);
-StreamIn.requestRanges(dst, tableName, Collections.singleton(cfstore), ranges, callback, OperationType.AES);
+            StreamOut.transferSSTables(outsession, sstables, ranges, OperationType.AES);
             // request ranges from the remote node
-            StreamIn.requestRanges(dst, tableName, ranges, callback, OperationType.AES);
+StreamIn.requestRanges(dst, tableName, Collections.singleton(cfstore), ranges, callback, OperationType.AES);
         }
         catch(Exception e)
         {

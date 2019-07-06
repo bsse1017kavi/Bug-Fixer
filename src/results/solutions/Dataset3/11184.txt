@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -127,9 +126,9 @@ public class StompWebSocketIntegrationTests extends AbstractWebSocketIntegration
 
 		try {
 			assertTrue(clientHandler.latch.await(2, TimeUnit.SECONDS));
-assertTrue("Expected STOMP MESSAGE, got " + payload, payload.startsWith("MESSAGE\n"));
+
 			String payload = clientHandler.actual.get(0).getPayload();
-			assertTrue("Expected STOMP Command=MESSAGE, got " + payload, payload.startsWith("MESSAGE\n"));
+assertTrue("Expected STOMP MESSAGE, got " + payload, payload.startsWith("MESSAGE\n"));
 		}
 		finally {
 			session.close();

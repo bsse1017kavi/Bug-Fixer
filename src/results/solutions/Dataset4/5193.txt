@@ -1,4 +1,3 @@
-
 package com.github.mobile.android;
 
 import android.util.Log;
@@ -48,9 +47,9 @@ public class RequestReader {
         ObjectInputStream input = null;
         boolean delete = false;
         try {
-input = new ObjectInputStream(new GZIPInputStream(new FileInputStream(dir.getFD()), 8192));
+            dir = new RandomAccessFile(handle, "rw");
             lock = dir.getChannel().lock();
-            input = new ObjectInputStream(new GZIPInputStream(new FileInputStream(dir.getFD()), 8192 * 8));
+input = new ObjectInputStream(new GZIPInputStream(new FileInputStream(dir.getFD()), 8192));
             int streamVersion = input.readInt();
             if (streamVersion != version) {
                 delete = true;

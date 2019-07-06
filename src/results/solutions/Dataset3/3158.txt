@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class RaDeploymentParsingProcessor implements DeploymentUnitProcessor {
 
         final VirtualFile file = deploymentRoot.getRoot();
         if (file == null || !file.exists())
-final String deploymentRootName = file.getName().toLowerCase();
+            return;
 
-        final String deploymentRootName = file.getLowerCaseName();
+final String deploymentRootName = file.getName().toLowerCase();
         if (!deploymentRootName.endsWith(".rar")) {
             return;
         }

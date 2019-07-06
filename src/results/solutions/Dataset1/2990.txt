@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -146,9 +145,9 @@ public class DisjunctionMaxQuery extends Query implements Iterable<Query> {
         boolean topScorer) throws IOException {
       Scorer[] scorers = new Scorer[weights.size()];
       int idx = 0;
-if (subScorer != null) {
+      for (Weight w : weights) {
         Scorer subScorer = w.scorer(reader, true, false);
-        if (subScorer != null && subScorer.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
+if (subScorer != null) {
           scorers[idx++] = subScorer;
         }
       }

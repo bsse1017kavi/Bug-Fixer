@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class TrustAllSSLSocketFactory extends SSLSocketFactory  {
         try {
             sslcontext = SSLContext.getInstance("TLS"); // $NON-NLS-1$
             sslcontext.init( null, new TrustManager[]{
-return new java.security.cert.X509Certificate[0];
+                    new X509TrustManager() {
                         public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                            return null;
+return new java.security.cert.X509Certificate[0];
                         }
                         public void checkClientTrusted(
                                 java.security.cert.X509Certificate[] certs, String authType) {

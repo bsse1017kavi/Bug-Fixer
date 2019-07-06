@@ -1,4 +1,3 @@
-
 /*
  * $Id: SimplePageAuthorizationStrategy.java,v 1.1 2006/02/09 01:04:49 eelco12
  * Exp $ $Revision$ $Date$
@@ -106,9 +105,9 @@ public abstract class SimplePageAuthorizationStrategy extends AbstractPageAuthor
 
 	/**
 	 * @see wicket.authorization.strategies.page.AbstractPageAuthorizationStrategy#isPageAuthorized(java.lang.Class)
-protected boolean isPageAuthorized(final Class<? extends Page> pageClass)
+	 */
 	@Override
-	protected boolean isPageAuthorized(final Class pageClass)
+protected boolean isPageAuthorized(final Class<? extends Page> pageClass)
 	{
 		if (instanceOf(pageClass, securePageSuperType))
 		{

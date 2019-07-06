@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -280,9 +279,9 @@ public class BasicDistributedZkTest extends AbstractDistributedZkTestCase {
       query("q","fox duplicate horses", "hl","true", "hl.fl", t1);
       query("q","*:*", "rows",100);
     }
-handle.put("explain", SKIPVAL);
+
     // test debugging
-    handle.put("explain", UNORDERED);
+handle.put("explain", SKIPVAL);
     handle.put("debug", UNORDERED);
     handle.put("time", SKIPVAL);
     query("q","now their fox sat had put","fl","*,score",CommonParams.DEBUG_QUERY, "true");

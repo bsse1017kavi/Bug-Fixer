@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -819,9 +818,9 @@ public class TestCompoundFile extends LuceneTestCase
       riw.addDocument(doc);
       if (random().nextInt(7) == 0) {
         riw.commit();
-riw.shutdown();
+      }
     }
-    riw.close();
+riw.shutdown();
     checkFiles(dir);
     dir.close();
   }

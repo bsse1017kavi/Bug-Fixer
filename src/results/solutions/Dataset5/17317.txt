@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -119,9 +118,9 @@ public class MockWebApplicationTest extends TestCase {
         title.addExpectedChild(new TextContent("Mock Page"));
         Tag body = new Tag("body");
         html.addExpectedChild(body);
-a.addExpectedAttribute("id", "wicket-actionLink");
+        Tag a = new Tag("a");
         a.addExpectedAttribute("href", "/MockWebApplication/MockWebApplication\\?component=[0-9]*.actionLink&amp;rendering=[0-9]*&amp;interface=ILinkListener");
-        a.addExpectedAttribute("id", "actionLink");
+a.addExpectedAttribute("id", "wicket-actionLink");
         body.addExpectedChild(a);
         a.addExpectedChild(new TextContent("Action link clicked "));
         Tag span = new Tag("span");

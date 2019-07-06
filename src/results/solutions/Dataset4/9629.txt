@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -144,9 +143,9 @@ public class Group extends Actor implements Cullable {
 				for (int i = 0; i < children.size(); i++) {
 					Actor child = children.get(i);
 					if (!child.visible) continue;
-child.draw(batch, parentAlpha);
+					child.x += offsetX;
 					child.y += offsetY;
-//					child.draw(batch, parentAlpha);
+child.draw(batch, parentAlpha);
 					child.x -= offsetX;
 					child.y -= offsetY;
 				}

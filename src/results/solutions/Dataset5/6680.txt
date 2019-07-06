@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public abstract class AbstractMapper
 			Strings.isEmpty(urlCopy.getQueryParameters().get(0).getValue()))
 		{
 			removeMetaParameter(urlCopy);
-PageParameters decoded = encoder.decodePageParameters(request.cloneWithUrl(urlCopy));
+		}
 
-		PageParameters decoded = encoder.decodePageParameters(request.requestWithUrl(urlCopy));
+PageParameters decoded = encoder.decodePageParameters(request.cloneWithUrl(urlCopy));
 		return decoded;
 	}
 

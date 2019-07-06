@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -84,9 +83,9 @@ public class ThumbnailImageResource extends DynamicImageResource
 	{
 		if(thumbnail == null)
 		{
-setLastModifiedTime(Time.now());
+			final BufferedImage image = getScaledImageInstance();
 			thumbnail = toImageData(image);
-			lastModifiedTime = Time.now();
+setLastModifiedTime(Time.now());
 		} 
 		return thumbnail;
 	}

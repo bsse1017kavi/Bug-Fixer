@@ -1,4 +1,3 @@
-
 package com.github.mobile.android;
 
 import android.content.Context;
@@ -209,9 +208,9 @@ public class AccountDataManager {
         new RoboAsyncTask<List<Issue>>(context, EXECUTOR) {
 
             public List<Issue> call() throws Exception {
-filterId.append(entry.getKey()).append('=').append(entry.getValue()).append(',');
+                StringBuilder filterId = new StringBuilder();
                 for (Entry<String, String> entry : filter.entrySet())
-                    filterId.append(entry.getKey()).append('=').append(entry.getKey()).append(',');
+filterId.append(entry.getKey()).append('=').append(entry.getValue()).append(',');
                 File cache = new File(folder, digest(filterId.toString()));
 
                 List<Issue> cached = read(cache);

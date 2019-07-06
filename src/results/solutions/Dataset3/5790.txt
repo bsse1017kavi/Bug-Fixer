@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public class BagUtils {
      * @param <E> the element type
      * @param bag the bag whose unmodifiable view is to be returned, must not be null
      * @return an unmodifiable view of that bag
-public static <E> Bag<E> unmodifiableBag(final Bag<? extends E> bag) {
+     * @throws IllegalArgumentException if the Bag is null
      */
-    public static <E> Bag<E> unmodifiableBag(final Bag<E> bag) {
+public static <E> Bag<E> unmodifiableBag(final Bag<? extends E> bag) {
         return UnmodifiableBag.unmodifiableBag(bag);
     }
 

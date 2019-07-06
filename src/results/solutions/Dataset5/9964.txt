@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -547,9 +546,9 @@ public class AjaxRequestTarget implements IPageRequestHandler
 		if (markupIdToComponent.values().contains(page))
 		{
 			// the page itself has been added to the request target, we simply issue a redirect back
-final String url = rc.urlFor(handler).toString();
+			// to the page
 			IRequestHandler handler = new RenderPageRequestHandler(new PageProvider(page));
-			final String url = rc.renderUrlFor(handler).toString();
+final String url = rc.urlFor(handler).toString();
 			response.sendRedirect(url);
 			return;
 		}

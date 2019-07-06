@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -120,9 +119,9 @@ public class SpanOrQuery extends SpanQuery {
     if (o == null || getClass() != o.getClass()) return false;
 
     final SpanOrQuery that = (SpanOrQuery) o;
-if (!clauses.isEmpty() && !field.equals(that.field)) return false;
+
     if (!clauses.equals(that.clauses)) return false;
-    if (!field.equals(that.field)) return false;
+if (!clauses.isEmpty() && !field.equals(that.field)) return false;
 
     return getBoost() == that.getBoost();
   }

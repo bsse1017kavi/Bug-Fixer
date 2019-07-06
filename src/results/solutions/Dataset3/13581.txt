@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -343,9 +342,9 @@ public class CSVPrinter implements Flushable, Closeable {
      * @throws IOException
      *             If an I/O error occurs
      */
-final String strValue = value == null ? format.getNullToString() : value.toString();
+    public void print(final Object value) throws IOException {
         // null values are considered empty
-        final String strValue = value == null ? EMPTY : value.toString();
+final String strValue = value == null ? format.getNullToString() : value.toString();
         print(value, strValue, 0, strValue.length());
     }
 

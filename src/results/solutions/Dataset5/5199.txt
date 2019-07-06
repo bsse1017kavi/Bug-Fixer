@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1117,9 +1116,9 @@ public abstract class RequestCycle
 				handlingException = true;
 
 				// probably our last chance the exception can be logged.
-if (!(e instanceof PageExpiredException))
+				// Note that a PageExpiredException should not be logged, because
 				// it's not an internal error
-				if (e instanceof PageExpiredException)
+if (!(e instanceof PageExpiredException))
 				{
 					logRuntimeException(e);
 				}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -213,9 +212,9 @@ public abstract class EmbeddedRungeKuttaIntegrator
     if (requiresDenseOutput() || (! eventsHandlersManager.isEmpty())) {
       final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();
       rki.reinitialize(this, yTmp, yDotK, forward);
-interpolator = new DummyStepInterpolator(yTmp, yDotK[stages - 1], forward);
+      interpolator = rki;
     } else {
-      interpolator = new DummyStepInterpolator(yTmp, forward);
+interpolator = new DummyStepInterpolator(yTmp, yDotK[stages - 1], forward);
     }
     interpolator.storeTime(t0);
 

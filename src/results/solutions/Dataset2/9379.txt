@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -176,9 +175,9 @@ main(String argv[]) throws IOException {
 	catch (ArrayIndexOutOfBoundsException e) {
 		if (name == null)
 			usage();
-rec = Record.newRecord(name, type, dclass);
+	}
 
-	rec = Record.newRecord(name, (short) type, (short) dclass);
+rec = Record.newRecord(name, type, dclass);
 	query = Message.newQuery(rec);
 	if (opt != null)
 		query.addRecord(opt, Section.ADDITIONAL);

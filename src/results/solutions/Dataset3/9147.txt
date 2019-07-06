@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class QueuelessThreadPoolMetricsHandler extends ThreadPoolMetricsHandler 
             context.getResult().set(pool.getRejectedCount());
         }else if (attributeName.equals(CommonAttributes.QUEUE_SIZE)) {
             context.getResult().set(pool.getRejectedCount());
-throw ThreadsMessages.MESSAGES.unsupportedQueuelessThreadPoolMetric(attributeName);
+        } else {
             // Programming bug. Throw a RuntimeException, not OFE, as this is not a client error
-            throw ThreadsLogger.ROOT_LOGGER.unsupportedQueuelessThreadPoolMetric(attributeName);
+throw ThreadsMessages.MESSAGES.unsupportedQueuelessThreadPoolMetric(attributeName);
         }
     }
 }

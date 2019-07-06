@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.55 $ $Date$
@@ -219,9 +218,9 @@ public abstract class Resource implements IResourceListener
 	 * @return Any query parameters associated with the request for this
 	 *         resource
 	 */
-if (parameters.get() == null)
+	protected ValueMap getParameters()
 	{
-		if (parameters == null)
+if (parameters.get() == null)
 		{
 			setParameters(RequestCycle.get().getRequest().getParameterMap());
 		}

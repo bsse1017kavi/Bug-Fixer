@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1772,9 +1771,9 @@ public class Project {
             Object old = references.get(name);
             if (old == value) {
                 // no warning, this is not changing anything
-if (old != null && !(old instanceof UnknownElement)) {
+                return;
             }
-            if (old != null) {
+if (old != null && !(old instanceof UnknownElement)) {
                 log("Overriding previous definition of reference to " + name,
                     MSG_WARN);
             }

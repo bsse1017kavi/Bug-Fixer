@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -112,9 +111,9 @@ public class JmsListenerAnnotationBeanPostProcessorTests {
 
 		@Bean
 		public JmsListenerAnnotationBeanPostProcessor postProcessor() {
-postProcessor.setContainerFactoryBeanName("testFactory");
+			JmsListenerAnnotationBeanPostProcessor postProcessor = new JmsListenerAnnotationBeanPostProcessor();
 			postProcessor.setEndpointRegistry(jmsListenerEndpointRegistry());
-			postProcessor.setDefaultContainerFactory(testFactory());
+postProcessor.setContainerFactoryBeanName("testFactory");
 			return postProcessor;
 		}
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class MappingUpdatedAction extends TransportMasterNodeOperationAction<Map
     }
 
     @Override protected MappingUpdatedResponse masterOperation(MappingUpdatedRequest request, ClusterState state) throws ElasticSearchException {
-} catch (Exception e) {
+        try {
             metaDataMappingService.updateMapping(request.index(), request.type(), request.mappingSource());
-        } catch (IOException e) {
+} catch (Exception e) {
             throw new ElasticSearchParseException("failed to parse mapping form compressed string", e);
         }
         return new MappingUpdatedResponse();

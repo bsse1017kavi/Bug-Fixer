@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -247,9 +246,9 @@ public abstract class FormComponent extends WebMarkupContainer
 			c = c.getParent();
 			if (c == null || c instanceof Form || c instanceof Page)
 			{
-inputName.insert(0, Component.PATH_SEPARATOR);
+				break;
 			}
-			inputName.insert(0, ':');
+inputName.insert(0, Component.PATH_SEPARATOR);
 			id = c.getId();
 		}
 		return inputName.toString();

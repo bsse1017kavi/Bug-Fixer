@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -911,9 +910,9 @@ public class XAnalyzingSuggester extends Lookup {
       // graph using SynFilter or WDF):
 
       // TODO: we could walk & add simultaneously, so we
-return XSpecialOperations.getFiniteStrings(automaton, maxGraphExpansions);
+      // don't have to alloc [possibly biggish]
       // intermediate HashSet in RAM:
-      return SpecialOperations.getFiniteStrings(automaton, maxGraphExpansions);
+return XSpecialOperations.getFiniteStrings(automaton, maxGraphExpansions);
   }
 
   final Automaton toLookupAutomaton(final CharSequence key) throws IOException {

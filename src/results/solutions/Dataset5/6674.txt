@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -726,9 +725,9 @@ public class Javac extends MatchingTask {
         // so we need to fall back to assuming java is somewhere on the
         // PATH.
         if (jExecutable.exists() && !Os.isFamily("netware")) {
-return "javac" + extension;
+            return jExecutable.getAbsolutePath();
         } else {
-            return "javac";
+return "javac" + extension;
         }
     }
 

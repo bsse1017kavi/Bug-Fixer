@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -187,9 +186,9 @@ public abstract class TransportSingleOperationAction<Request extends SingleOpera
                             } else {
                                 listener.onResponse(response);
                             }
-@Override public void handleException(TransportException exp) {
+                        }
 
-                        @Override public void handleException(RemoteTransportException exp) {
+@Override public void handleException(TransportException exp) {
                             onFailure(shard, exp);
                         }
 

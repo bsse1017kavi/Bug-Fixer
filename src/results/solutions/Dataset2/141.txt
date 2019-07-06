@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -382,9 +381,9 @@ public SyntheticFieldBinding addSyntheticFieldForSwitchEnum(char[] fieldName, St
 	SyntheticFieldBinding synthField = (SyntheticFieldBinding) synthetics[FIELD_EMUL].get(key); //$NON-NLS-1$
 	if (synthField == null) {
 		synthField = new SyntheticFieldBinding(
-AccPrivate | AccStatic | AccSynthetic,
+			fieldName,
 			scope.createArrayType(BaseTypes.IntBinding,1),
-			AccPrivate | AccStatic | AccSynthetic | AccFinal,
+AccPrivate | AccStatic | AccSynthetic,
 			this,
 			Constant.NotAConstant,
 			synthetics[FIELD_EMUL].size());

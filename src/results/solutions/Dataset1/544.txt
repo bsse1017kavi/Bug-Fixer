@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /**
@@ -278,9 +277,9 @@ public abstract class CollationTestBase extends LuceneTestCase {
       BytesRef bytes = termAtt.getBytesRef();
       ts.reset();
       assertTrue(ts.incrementToken());
-map.put(term, BytesRef.deepCopyOf(bytes));
+      termAtt.fillBytesRef();
       // ensure we make a copy of the actual bytes too
-      map.put(term, new BytesRef(bytes));
+map.put(term, BytesRef.deepCopyOf(bytes));
     }
     
     Thread threads[] = new Thread[numThreads];

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class EntityBeanSynchronizationInterceptor extends AbstractEJBInterceptor
                 if (context.getPrivateData(InternalInvocationMarker.class) == null) {
                     if (instance.isRemoved() || instance.isDiscarded()) {
                         final Object primaryKey = context.getPrivateData(EntityBeanComponent.PRIMARY_KEY_CONTEXT_KEY);
-throw MESSAGES.instanceWasRemoved(component.getComponentName(), primaryKey);
+                        component.getCache().release(instance, true);
                         lock.unlock();
-                        throw MESSAGES.instaceWasRemoved(component.getComponentName(), primaryKey);
+throw MESSAGES.instanceWasRemoved(component.getComponentName(), primaryKey);
                     }
                 }
 

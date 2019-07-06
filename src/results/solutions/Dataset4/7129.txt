@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -30,9 +29,9 @@ public class IssueUtils {
      * Is the given issue a pull request?
      *
      * @param issue
-public static boolean isPullRequest(final Issue issue) {
+     * @return true if pull request, false otherwise
      */
-    public static boolean isPullRequest(Issue issue) {
+public static boolean isPullRequest(final Issue issue) {
         return issue != null && issue.getPullRequest() != null
                 && !TextUtils.isEmpty(issue.getPullRequest().getHtmlUrl());
     }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -44,9 +43,9 @@ public class BulletBuild {
 		// must regenerate the SWIG wrappers with the changed value.
 		cppFlags += " -DBT_NO_PROFILE";
 
-String[] headers = {"src/bullet/", "src/custom/", "src/extras/serialize/"};
+		// generate build scripts
 		String[] excludes = {"src/bullet/BulletMultiThreaded/GpuSoftBodySolvers/**"};
-		String[] headers = {"src/bullet/", "src/custom/", "src/extras/serialize"};
+String[] headers = {"src/bullet/", "src/custom/", "src/extras/serialize/"};
 
 		BuildTarget win32home = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
 		win32home.compilerPrefix = "";

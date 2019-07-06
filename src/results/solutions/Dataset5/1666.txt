@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -387,9 +386,9 @@ public class WebRequestEncoder implements IRequestEncoder
 	protected final String encode(RequestCycle requestCycle,
 			IListenerInterfaceRequestTarget requestTarget)
 	{
-Component component = requestTarget.getTarget();
+		final StringBuffer url = new StringBuffer(urlPrefix(requestCycle));
 		url.append("?path=");
-		Component component = requestTarget.getComponent();
+Component component = requestTarget.getTarget();
 		url.append(component.getPath());
 		Page currentPage = component.getPage();
 		final PageMap pageMap = currentPage.getPageMap();

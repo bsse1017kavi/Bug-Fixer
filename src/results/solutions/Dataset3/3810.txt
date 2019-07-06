@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class EjbLocalRefInjectionTestCase {
     @Deployment
     public static WebArchive deployment() {
         WebArchive war = ShrinkWrap.create(WebArchive.class, "war-example.war");
-war.addAsWebInfResource(getWebXml(), "web.xml");
+        war.addPackage(HttpRequest.class.getPackage());
         war.addClasses(EjbLocalRefInjectionTestCase.class, EjbLocalRefInjectionServlet.class, NamedSLSB.class, SimpleSLSB.class, Hello.class);
-        war.addAsWebResource(getWebXml(),"web.xml");
+war.addAsWebInfResource(getWebXml(), "web.xml");
         return war;
     }
 

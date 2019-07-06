@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db;
 
 import java.util.ArrayList;
@@ -86,9 +85,9 @@ class MeteredFlusher implements Runnable
                 cfs.forceFlush();
             }
         }
-logger.trace("memtable memory usage is {} bytes with {} live", liveBytes + flushingBytes, liveBytes);
+        finally
         {
-            logger.debug("memtable memory usage is {} bytes with {} live", liveBytes + flushingBytes, liveBytes);
+logger.trace("memtable memory usage is {} bytes with {} live", liveBytes + flushingBytes, liveBytes);
         }
     }
 

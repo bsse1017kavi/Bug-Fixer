@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public interface OperationMessageHandler {
             Logger.Level level;
             switch (severity) {
                 case ERROR: level = Logger.Level.ERROR; break;
-default: level = Logger.Level.TRACE; break;
+                case WARN: level = Logger.Level.WARN; break;
                 case INFO:
-                default: level = Logger.Level.DEBUG; break;
+default: level = Logger.Level.TRACE; break;
             }
             log.log(level, message);
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -242,9 +241,9 @@ public class ASModuleHandler extends CommandHandlerWithHelp {
         }
 
         final String[] resourceArr = (resourcePaths == null) ? new String[0] : resourcePaths.split(pathDelimiter);
-final File f = new File(resourceArr[i]);
+        File[] resourceFiles = new File[resourceArr.length];
         for(int i = 0; i < resourceArr.length; ++i) {
-            final File f = new File(ctx.getCurrentDir(), resourceArr[i]);
+final File f = new File(resourceArr[i]);
             if(!f.exists()) {
                 throw new CommandLineException("Failed to locate " + f.getAbsolutePath());
             }

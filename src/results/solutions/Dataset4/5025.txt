@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -37,9 +36,9 @@ public class UnmappedSignificantTerms extends InternalSignificantTerms {
     public static final Type TYPE = new Type("significant_terms", "umsigterms");
 
     private static final Collection<Bucket> BUCKETS = Collections.emptyList();
-public static final AggregationStreams.Stream STREAM = new AggregationStreams.Stream() {
+    private static final Map<String, Bucket> BUCKETS_MAP = Collections.emptyMap();
 
-    public static AggregationStreams.Stream STREAM = new AggregationStreams.Stream() {
+public static final AggregationStreams.Stream STREAM = new AggregationStreams.Stream() {
         @Override
         public UnmappedSignificantTerms readResult(StreamInput in) throws IOException {
             UnmappedSignificantTerms buckets = new UnmappedSignificantTerms();

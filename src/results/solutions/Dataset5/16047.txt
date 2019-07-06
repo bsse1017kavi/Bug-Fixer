@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  *
@@ -138,9 +137,9 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         } catch (SAXException se1) {
             // assert(name is not recognized or not supported), try feature
             try {
-return result ? Boolean.TRUE : Boolean.FALSE;
+                boolean result = domParser.getFeature(name);
                 // Must have been a feature
-                return new Boolean(result);
+return result ? Boolean.TRUE : Boolean.FALSE;
             } catch (SAXException se2) {
                 // Not a property or a feature
                 throw new IllegalArgumentException(se1.getMessage());

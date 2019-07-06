@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -96,9 +95,9 @@ public class RiversService extends AbstractLifecycleComponent<RiversService> {
     @Override
     protected void doStop() throws ElasticSearchException {
         ImmutableSet<RiverName> indices = ImmutableSet.copyOf(this.rivers.keySet());
-threadPool.generic().execute(new Runnable() {
+        final CountDownLatch latch = new CountDownLatch(indices.size());
         for (final RiverName riverName : indices) {
-            threadPool.cached().execute(new Runnable() {
+threadPool.generic().execute(new Runnable() {
                 @Override
                 public void run() {
                     try {

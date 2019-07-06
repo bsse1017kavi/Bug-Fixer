@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -560,9 +559,9 @@ public final class SolrCore implements SolrInfoMBean {
     this.codec= initCodec(solrConfig, schema);
     
     if (updateHandler == null) {
-directoryFactory = updateHandler.getSolrCoreState().getDirectoryFactory();
+      initDirectoryFactory();
     } else {
-      directoryFactory = updateHandler.getIndexWriterProvider().getDirectoryFactory();
+directoryFactory = updateHandler.getSolrCoreState().getDirectoryFactory();
     }
     
     initIndex();

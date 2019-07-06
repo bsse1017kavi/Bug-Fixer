@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -226,9 +225,9 @@ public class TestPerSegmentDeletes extends LuceneTestCase {
       throws IOException {
     Fields fields = MultiFields.getFields(reader);
     Terms cterms = fields.terms(term.field);
-DocsEnum docsEnum = _TestUtil.docs(random(), ctermsEnum, bits, null, false);
+    TermsEnum ctermsEnum = cterms.iterator(null);
     if (ctermsEnum.seekExact(new BytesRef(term.text()), false)) {
-      DocsEnum docsEnum = _TestUtil.docs(random(), ctermsEnum, bits, null, 0);
+DocsEnum docsEnum = _TestUtil.docs(random(), ctermsEnum, bits, null, false);
       return toArray(docsEnum);
     }
     return null;

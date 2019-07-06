@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class TFIDFPartialVectorReducer extends MapReduceBase
                      Reporter reporter) throws IOException {
     if (!values.hasNext()) return;
     Vector value = values.next().get();
-.toString(), (int)featureCount, value.getNumNondefaultElements());
+    Iterator<Element> it = value.iterateNonZero();
     Vector vector = new RandomAccessSparseVector(key
-        .toString(), Integer.MAX_VALUE, value.getNumNondefaultElements());
+.toString(), (int)featureCount, value.getNumNondefaultElements());
     while (it.hasNext()) {
       Element e = it.next();
       if (!dictionary.containsKey(e.index())) continue;

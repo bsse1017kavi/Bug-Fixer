@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -753,9 +752,9 @@ public class ConfigurationImpl
      * Convert <code>propName</code> to a lowercase-with-hyphens-style string.
      * This algorithm is only designed for mixes of uppercase and lowercase 
      * letters and lone digits. A more sophisticated conversion should probably 
-public static String toXMLName(String propName) {
+     * be handled by a proper parser generator or regular expressions.
      */
-    static String toXMLName(String propName) {
+public static String toXMLName(String propName) {
         if (propName == null)
             return null;
         StringBuffer buf = new StringBuffer();

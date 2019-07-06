@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -222,9 +221,9 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 			getReaderContext().error("Resource location must not be empty", ele);
 			return;
 		}
-location = environment.resolveRequiredPlaceholders(location);
+
 		// Resolve system properties: e.g. "${user.dir}"
-		location = environment.getPropertyResolver().resolveRequiredPlaceholders(location);
+location = environment.resolveRequiredPlaceholders(location);
 
 		Set<Resource> actualResources = new LinkedHashSet<Resource>(4);
 

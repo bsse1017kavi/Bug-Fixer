@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -54,9 +53,9 @@ public void setTitle(NSString aString) {
 public void setWraps(boolean flag) {
 	OS.objc_msgSend(this.id, OS.sel_setWraps_, flag);
 }
-int /*long*/ result = OS.objc_msgSend(this.id, OS.sel_title);
+
 public NSString title() {
-	int result = OS.objc_msgSend(this.id, OS.sel_title);
+int /*long*/ result = OS.objc_msgSend(this.id, OS.sel_title);
 	return result != 0 ? new NSString(result) : null;
 }
 

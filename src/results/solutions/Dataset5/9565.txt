@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2002-2004 The Apache Software Foundation
  *
@@ -174,9 +173,9 @@ public final class ChainReaderHelper {
                                         + " that takes in a Reader as its "
                                         + "single argument.");
                                 }
-(Reader) constructors[j].newInstance((Object[])rdr);
+                                final Reader[] rdr = {instream};
                                 instream =
-                                    (Reader) constructors[j].newInstance(rdr);
+(Reader) constructors[j].newInstance((Object[])rdr);
                                 setProjectOnObject(instream);
                                 if (Parameterizable.class.isAssignableFrom(clazz)) {
                                     final Parameter[] params = filter.getParams();

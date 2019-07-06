@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -37,9 +36,9 @@ import org.springframework.util.NumberUtils;
  * @see java.lang.Float
  * @see java.lang.Double
  * @see java.math.BigDecimal
-class CharacterToNumberFactory implements ConverterFactory<Character, Number> {
+ * @see NumberUtils 
  */
-public class CharacterToNumberFactory implements ConverterFactory<Character, Number> {
+class CharacterToNumberFactory implements ConverterFactory<Character, Number> {
 
 	public <T extends Number> Converter<Character, T> getConverter(Class<T> targetType) {
 		return new CharacterToNumber<T>(targetType);

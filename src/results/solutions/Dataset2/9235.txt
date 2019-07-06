@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -179,9 +178,9 @@ public class ForeachStatement extends Statement {
 				break;
 			case RAW_ITERABLE :
 			case GENERIC_ITERABLE :
-final TypeBinding collectionTypeBinding = collection.resolvedType.erasure();
+				collection.generateCode(scope, codeStream, true);
 				// declaringClass.iterator();
-				final TypeBinding collectionTypeBinding = collection.resolvedType;
+final TypeBinding collectionTypeBinding = collection.resolvedType.erasure();
 				MethodBinding iteratorMethodBinding =
 					new MethodBinding(
 							AccPublic,

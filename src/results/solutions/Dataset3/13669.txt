@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -87,9 +86,9 @@ public class GroupAwareCacheFactory<K extends Serializable, V extends Cacheable<
         // Create the store for SerializationGroupMembers from the container
         BackingCacheEntryStore<K, V, SerializationGroupMember<K, V, UUID>> store = storeSource.createIntegratedObjectStore(beanName, container, timeout);
         container.setBackingCacheEntryStore(store);
-GroupAwareBackingCache<K, V, UUID, SerializationGroupMember<K, V, UUID>> backingCache = new GroupAwareBackingCacheImpl<K, V, UUID>(factory, container, groupCache, Executors.defaultThreadFactory());
+
         // Set up the backing cache with the store and group cache
-        GroupAwareBackingCache<K, V, UUID, SerializationGroupMember<K, V, UUID>> backingCache = new GroupAwareBackingCacheImpl<K, V, UUID>(factory, container, groupCache, Executors.newScheduledThreadPool(1, Executors.defaultThreadFactory()));
+GroupAwareBackingCache<K, V, UUID, SerializationGroupMember<K, V, UUID>> backingCache = new GroupAwareBackingCacheImpl<K, V, UUID>(factory, container, groupCache, Executors.defaultThreadFactory());
 
         // Listen for backing cache lifecycle changes so we know when to start/stop groupCache
         backingCache.addLifecycleListener(this);

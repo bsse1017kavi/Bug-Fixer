@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -116,9 +115,9 @@ public class CLIWrapper {
      * be used
      */
     public boolean sendConnect(String cliAddress) {
-ctx.connectController("http-remoting", addr, TestSuiteEnvironment.getServerPort());
+        String addr = cliAddress != null ? cliAddress : TestSuiteEnvironment.getServerAddress();
         try {
-            ctx.connectController(addr, TestSuiteEnvironment.getServerPort());
+ctx.connectController("http-remoting", addr, TestSuiteEnvironment.getServerPort());
             return true;
         } catch (CommandLineException e) {
             e.printStackTrace();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class TransportIndicesExistsAction extends TransportMasterNodeReadOperati
     @Override
     protected void masterOperation(final IndicesExistsRequest request, final ClusterState state, final ActionListener<IndicesExistsResponse> listener) throws ElasticsearchException {
         boolean exists;
-clusterService.state().metaData().concreteIndices(request.indicesOptions(), request.indices());
+        try {
             // Similar as the previous behaviour, but now also aliases and wildcards are supported.
-            clusterService.state().metaData().concreteIndices(request.indices(), request.indicesOptions());
+clusterService.state().metaData().concreteIndices(request.indicesOptions(), request.indices());
             exists = true;
         } catch (IndexMissingException e) {
             exists = false;

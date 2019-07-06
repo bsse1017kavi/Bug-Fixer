@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.tools;
 
 /* ================================================================
@@ -114,9 +113,9 @@ public class Email
         Iterator iter = toUsers.iterator();
         while ( iter.hasNext() ) 
         {
-toUser.getEmail());
+            ScarabUser toUser = (ScarabUser)iter.next();
             te.setTo(toUser.getFirstName() + " " + toUser.getLastName(), 
-                     toUser.getUserName());
+toUser.getEmail());
             te.send();
         }
     }

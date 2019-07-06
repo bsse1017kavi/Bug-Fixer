@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -47,9 +46,9 @@ public class SaveAllAction extends PageEventAction implements IPropertyListener 
     public SaveAllAction(IWorkbenchWindow window) {
         super(WorkbenchMessages.getString("SaveAll.text"), window); //$NON-NLS-1$
         setToolTipText(WorkbenchMessages.getString("SaveAll.toolTip")); //$NON-NLS-1$
-WorkbenchHelp.setHelp(this, IWorkbenchHelpContextIds.SAVE_ALL_ACTION);
+        setId("saveAll"); //$NON-NLS-1$
         setEnabled(false);
-        WorkbenchHelp.setHelp(this, IHelpContextIds.SAVE_ALL_ACTION);
+WorkbenchHelp.setHelp(this, IWorkbenchHelpContextIds.SAVE_ALL_ACTION);
         setImageDescriptor(WorkbenchImages
                 .getImageDescriptor(IWorkbenchGraphicConstants.IMG_ETOOL_SAVEALL_EDIT));
         setDisabledImageDescriptor(WorkbenchImages

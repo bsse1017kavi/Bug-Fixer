@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -112,9 +111,9 @@ public abstract class Continuus extends Task
     {
         try
         {
-exe.setWorkingDirectory( getBaseDirectory() );
+            Execute exe = new Execute( handler );
             exe.setAntRun( getProject() );
-            exe.setWorkingDirectory( getProject().getBaseDir() );
+exe.setWorkingDirectory( getBaseDirectory() );
             exe.setCommandline( cmd.getCommandline() );
             return exe.execute();
         }

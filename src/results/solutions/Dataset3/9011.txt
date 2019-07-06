@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ final class MetaDataBuilderJAXRPC_EJB extends AbstractMetaDataBuilderEJB {
         final List<EJBMetaData> wsEjbsMD = new LinkedList<EJBMetaData>();
         final JBossWebservicesMetaData jbossWebservicesMD = WSHelper.getOptionalAttachment(dep, JBossWebservicesMetaData.class);
         final JAXRPCDeployment jaxrpcDeployment = WSHelper.getRequiredAttachment(dep, JAXRPCDeployment.class);
-buildEnterpriseBeanMetaData(wsEjbsMD, ejbEndpoint, jbossWebservicesMD);
+
         for (final EJBEndpoint ejbEndpoint : jaxrpcDeployment.getEjbEndpoints()) {
-            this.buildEnterpriseBeanMetaData(wsEjbsMD, ejbEndpoint, jbossWebservicesMD);
+buildEnterpriseBeanMetaData(wsEjbsMD, ejbEndpoint, jbossWebservicesMD);
         }
 
         ejbArchiveMD.setEnterpriseBeans(wsEjbsMD);

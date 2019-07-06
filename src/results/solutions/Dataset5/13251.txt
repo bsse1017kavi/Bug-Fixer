@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -84,9 +83,9 @@ public class TestMultipleEntityProjection extends SingleEMFTestCase {
 					Date date = df.parse("2001-01-01");
 					mag.setDatePublished(date);
 				} catch (ParseException e) {
-mag.setTsPublished(new Timestamp(System.currentTimeMillis() - 100000));
+					mag.setDatePublished(null);
 				}
-                mag.setTsPublished(new Timestamp(System.currentTimeMillis()));
+mag.setTsPublished(new Timestamp(System.currentTimeMillis() - 100000));
 				
 				em.persist(pub);
 			}

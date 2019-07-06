@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -54,9 +53,9 @@ public class DeleteByQueryRequest extends IndicesReplicationOperationRequest {
     String querySource() {
         return querySource;
     }
-return querySource(queryBuilder.buildAsString());
+
     @Required public DeleteByQueryRequest querySource(QueryBuilder queryBuilder) {
-        return querySource(queryBuilder.build());
+return querySource(queryBuilder.buildAsString());
     }
 
     @Required public DeleteByQueryRequest querySource(String querySource) {

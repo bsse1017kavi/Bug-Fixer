@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -123,9 +122,9 @@ public class ViewMessageCommand extends Command implements ISelectionListener {
 			// get flags
 			flags = srcFolder.getFlags(uid);
 		} catch (FolderInconsistentException ex) {
-JOptionPane.showOptionDialog(null, MailResourceLoader
+			Object[] options = new String[] { MailResourceLoader.getString("",
 					"global", "ok").replaceAll("&", ""), };
-			int result = JOptionPane.showOptionDialog(null, MailResourceLoader
+JOptionPane.showOptionDialog(null, MailResourceLoader
 					.getString("dialog", "error", "message_deleted"), "Error",
 					JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE,
 					null, options, options[0]);

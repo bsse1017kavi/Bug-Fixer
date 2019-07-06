@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -252,9 +251,9 @@ public class ProjectHelper {
             // not quite sure what to do with others except drop 'em
 
             if (node.getNodeType() == Node.ELEMENT_NODE) {
-String methodName = "create" +
+                Element element = (Element)node;
                 String propType = element.getTagName();
-                String methodName = "add" +
+String methodName = "create" +
 		    Character.toUpperCase(propType.charAt(0)) +
                     propType.substring(1);
 

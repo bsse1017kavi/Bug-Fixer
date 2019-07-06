@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -121,9 +120,9 @@ public class ModelTypeValidator implements ParameterValidator {
      */
     @Override
     public void validateParameter(String parameterName, ModelNode value) throws OperationFailedException {
-throw new OperationFailedException(new ModelNode().set(parameterName + " may not be null.")); //TODO i18n
+        if (!value.isDefined()) {
             if (!nullable)
-                throw new OperationFailedException(new ModelNode().set(parameterName + " may not be null ")); //TODO i18n
+throw new OperationFailedException(new ModelNode().set(parameterName + " may not be null.")); //TODO i18n
         } else  {
             boolean matched = false;
             if (strictType) {

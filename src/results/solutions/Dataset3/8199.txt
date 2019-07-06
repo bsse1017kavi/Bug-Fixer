@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -604,9 +603,9 @@ public abstract class AbstractRegion<S extends Space, T extends Space> implement
      * @param transform transform to apply
      * @return a new region, resulting from the application of the
      * transform to the instance
-return buildNew(recurseTransform(getTree(false), transform));
+     */
     public AbstractRegion<S, T> applyTransform(final Transform<S, T> transform) {
-        return (AbstractRegion<S, T>) buildNew(recurseTransform(getTree(false), transform));
+return buildNew(recurseTransform(getTree(false), transform));
     }
 
     /** Recursively transform an inside/outside BSP-tree.

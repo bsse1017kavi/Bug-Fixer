@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -301,9 +300,9 @@ public class ConstructorDeclaration extends AbstractMethodDeclaration {
 		}
 		classFile.completeMethodInfo(methodAttributeOffset, attributeNumber);
 
-throw new AbortMethod(scope.referenceCompilationUnit().compilationResult, null);
+		// if a problem got reported during code gen, then trigger problem method creation
 		if (ignoreFurtherInvestigation) {
-			throw new AbortMethod(scope.referenceCompilationUnit().compilationResult);
+throw new AbortMethod(scope.referenceCompilationUnit().compilationResult, null);
 		}
 	}
 

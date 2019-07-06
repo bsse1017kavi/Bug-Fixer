@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.tests.lang.timestampArith
@@ -79,9 +78,9 @@ public class timestampArith
     private static final String WEEK_FROM_TODAY;
     static {
         Calendar cal = Calendar.getInstance();
-while( cal.get( Calendar.HOUR) == 23 && cal.get( Calendar.MINUTE) >= 58)
+        // Make sure that we are not so close to midnight that TODAY might be yesterday before
         // we are finished using it.
-        while( cal.get( Calendar.HOUR) == 23 && cal.get( Calendar.MINUTE) == 58)
+while( cal.get( Calendar.HOUR) == 23 && cal.get( Calendar.MINUTE) >= 58)
         {
             try
             {

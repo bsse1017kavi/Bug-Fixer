@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -168,9 +167,9 @@ class HornetQServerAdd implements OperationStepHandler {
         model.get(CONNECTION_FACTORY).setEmptyObject();
         model.get(JMS_QUEUE).setEmptyObject();
         model.get(JMS_TOPIC).setEmptyObject();
-if (context.isNormalServer()) {
+        model.get(POOLED_CONNECTION_FACTORY).setEmptyObject();
 
-        if (context.getType() == OperationContext.Type.SERVER) {
+if (context.isNormalServer()) {
             context.addStep(new OperationStepHandler() {
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
                     final List<ServiceController<?>> controllers = new ArrayList<ServiceController<?>>();

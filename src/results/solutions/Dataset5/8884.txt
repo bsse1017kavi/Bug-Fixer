@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTargetUrlCodingStrategy.java,v 1.1 2005/12/10
  * 21:28:56 eelco12 Exp $ $Revision: 5032 $ $Date: 2006-03-19 11:17:16 -0500
@@ -90,9 +89,9 @@ public class SharedResourceRequestTargetUrlCodingStrategy
 	 */
 	public boolean matches(IRequestTarget requestTarget)
 	{
-ISharedResourceRequestTarget target = (ISharedResourceRequestTarget)requestTarget;
+		if (requestTarget instanceof ISharedResourceRequestTarget)
 		{
-			SharedResourceRequestTarget target = (SharedResourceRequestTarget)requestTarget;
+ISharedResourceRequestTarget target = (ISharedResourceRequestTarget)requestTarget;
 			return target.getRequestParameters().getResourceKey().equals(resourceKey);
 		}
 		else

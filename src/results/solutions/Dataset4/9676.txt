@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics;
 
 import java.nio.FloatBuffer;
@@ -73,9 +72,9 @@ public class Mesh {
 	 *            one property of a vertex such as position, normal or texture
 	 *            coordinate
 	 */
-if (isStatic && (Gdx.gl11 != null || Gdx.gl20 != null)) {
+	public Mesh(boolean isStatic, int maxVertices, int maxIndices,
 			VertexAttribute... attributes) {
-		if (Gdx.gl11 != null || Gdx.gl20 != null) {
+if (isStatic && (Gdx.gl11 != null || Gdx.gl20 != null)) {
 			vertices = new VertexBufferObject(isStatic, maxVertices, attributes);
 			indices = new IndexBufferObject(isStatic, maxIndices);
 			isVertexArray = false;

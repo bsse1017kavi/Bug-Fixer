@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class PageablesPage extends BasePage
 
 		PageableListView listview = new PageableListView("rows", Arrays.asList(names), 10)
 		{
-item.add(new Label("name", item.getDefaultModelObjectAsString()));
+			protected void populateItem(ListItem item)
 			{
-				item.add(new Label("name", item.getModelObjectAsString()));
+item.add(new Label("name", item.getDefaultModelObjectAsString()));
 			}
 		};
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class ProxyListValidator implements ParameterValidator {
                     InetAddress.getByName(host);
                 } catch (UnknownHostException e) {
                     host = null;
-throw new OperationFailedException(new ModelNode().set(ModClusterLogger.ROOT_LOGGER.needHostAndPort()));
+                }
                 if (host == null || port == 0) {
-                    throw new OperationFailedException(ModClusterLogger.ROOT_LOGGER.needHostAndPort());
+throw new OperationFailedException(new ModelNode().set(ModClusterLogger.ROOT_LOGGER.needHostAndPort()));
                 }
             }
         }

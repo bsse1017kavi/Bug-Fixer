@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.protocol.http.sampler;
 
 import java.io.IOException;
@@ -33,9 +32,9 @@ public class SoapSampler extends HTTPSampler
 	 * and sending the POST data:
 	 *
 	 *@param connection       <code>URLConnection</code> to set headers on
-public void setPostHeaders(URLConnection connection)
+	 *@exception IOException  if an I/O exception occurs
 	 ***************************************/
-	public void setHeaders(URLConnection connection)
+public void setPostHeaders(URLConnection connection)
 	  		throws IOException
 	{
 		((HttpURLConnection)connection).setRequestMethod("POST");

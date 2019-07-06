@@ -1,4 +1,3 @@
-
 package com.badlogic.rtm;
 
 import java.io.BufferedReader;
@@ -198,9 +197,9 @@ public class LevelRenderer implements ApplicationListener {
 		gl.glColor4f(1, 1, 1, 1);
 		floorMesh.render(GL10.GL_TRIANGLES);
 		wallMesh.render(GL10.GL_TRIANGLES);
-font.draw(batch, "fps: " + Gdx.graphics.getFramesPerSecond() + ", delta:" + Gdx.graphics.getDeltaTime(), 10, 10, Color.WHITE);
+		
 		batch.begin();
-		font.draw(batch, "fps: " + Gdx.graphics.getFramesPerSecond(), 10, 10, Color.RED);
+font.draw(batch, "fps: " + Gdx.graphics.getFramesPerSecond() + ", delta:" + Gdx.graphics.getDeltaTime(), 10, 10, Color.WHITE);
 		batch.end();
 		
 		processInput();

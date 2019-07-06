@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class CustomQueryWrappingFilter extends NoCacheFilter implements Releasab
     public DocIdSet getDocIdSet(final AtomicReaderContext context, final Bits acceptDocs) throws IOException {
         final SearchContext searchContext = SearchContext.current();
         if (docIdSets == null) {
-docIdSets = new IdentityHashMap<>();
+            assert searcher == null;
             IndexSearcher searcher = searchContext.searcher();
-            docIdSets = new IdentityHashMap<AtomicReader, DocIdSet>();
+docIdSets = new IdentityHashMap<>();
             this.searcher = searcher;
             searchContext.addReleasable(this);
 

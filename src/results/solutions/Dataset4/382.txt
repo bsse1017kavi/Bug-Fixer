@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -53,9 +52,9 @@ public class UserRepositoryListAdapter extends RepositoryListAdapter<Repository,
     public UserRepositoryListAdapter(LayoutInflater inflater, User user) {
         this(inflater, null, user);
     }
-protected void update(final int position, final RepositoryItemView view, final Repository repository) {
+
     @Override
-    protected void update(final RepositoryItemView view, final Repository repository) {
+protected void update(final int position, final RepositoryItemView view, final Repository repository) {
         view.repoName.setText(login.equals(repository.getOwner().getLogin()) ? repository.getName() : repository
                 .generateId());
 

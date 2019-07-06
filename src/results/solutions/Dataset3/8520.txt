@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -178,9 +177,9 @@ public class ComplexFormat {
         double re = complex.getReal();
         CompositeFormat.formatDouble(re, getRealFormat(), toAppendTo, pos);
 
-StringBuffer imAppendTo;
+        // format sign and imaginary
         double im = complex.getImaginary();
-        StringBuffer imAppendTo = new StringBuffer();
+StringBuffer imAppendTo;
         if (im < 0.0) {
             toAppendTo.append(" - ");
             imAppendTo = formatImaginary(-im, new StringBuffer(), pos);

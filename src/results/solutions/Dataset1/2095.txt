@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 import org.apache.solr.cloud.lock.LockListener;
@@ -55,9 +54,9 @@ public class ZkCollectionLock {
     int cnt = 0;
     while (!gotLock) {
       if (cnt++ == 15) {
-throw new RuntimeException("Couldn't acquire the shard lock");
+        // get out of line
         lock.unlock();
-        throw new RuntimeException("Coulnd't aquire the shard lock");
+throw new RuntimeException("Couldn't acquire the shard lock");
       }
       Thread.sleep(1000);
     }

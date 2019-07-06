@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -86,9 +85,9 @@ public class StatisticalFieldsFacetCollector extends AbstractFacetCollector {
             statsProc.max = Double.NaN;
         }
         return new InternalStatisticalFacet(facetName, statsProc.min(), statsProc.max(), statsProc.total(), statsProc.sumOfSquares(), statsProc.count());
-public static class StatsProc implements NumericFieldData.MissingDoubleValueInDocProc {
+    }
 
-    public static class StatsProc implements NumericFieldData.DoubleValueInDocProc {
+public static class StatsProc implements NumericFieldData.MissingDoubleValueInDocProc {
 
         double min = Double.MAX_VALUE;
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -275,9 +274,9 @@ public class CassandraBulkLoader {
         rm.add(baseColumnFamily);
 
         try
-message = rm.makeRowMutationMessage(StorageService.Verb.BINARY, MessagingService.version_);
+        {
             /* Make message */
-            message = rm.makeRowMutationMessage(StorageService.Verb.BINARY);
+message = rm.makeRowMutationMessage(StorageService.Verb.BINARY, MessagingService.version_);
         }
         catch (IOException e)
         {

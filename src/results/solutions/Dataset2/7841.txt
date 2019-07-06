@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -52,9 +51,9 @@ public class XLoggerTestCase extends TestCase {
     logger.fatal("Message " + ++i);
     Exception e = new Exception("Just testing");
     logger.debug("Message " + ++i, e);
-assertTrue(Compare.compare(FILTERED, "witness/customLogger."+number));
+
     Transformer.transform("output/temp", FILTERED, new LineNumberFilter());
-    assert(Compare.compare(FILTERED, "witness/customLogger."+number));
+assertTrue(Compare.compare(FILTERED, "witness/customLogger."+number));
 
   }
 

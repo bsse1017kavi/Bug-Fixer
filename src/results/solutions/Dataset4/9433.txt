@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -107,9 +106,9 @@ public class TransportDeleteIndexAction extends TransportMasterNodeOperationActi
         }
         final AtomicReference<DeleteIndexResponse> responseRef = new AtomicReference<DeleteIndexResponse>();
         final AtomicReference<Throwable> failureRef = new AtomicReference<Throwable>();
-deleteIndexService.deleteIndex(new MetaDataDeleteIndexService.Request(index).timeout(request.timeout()).masterTimeout(request.masterNodeTimeout()), new MetaDataDeleteIndexService.Listener() {
+        final CountDownLatch latch = new CountDownLatch(request.indices().length);
         for (final String index : request.indices()) {
-            deleteIndexService.deleteIndex(new MetaDataDeleteIndexService.Request(index).timeout(request.timeout()), new MetaDataDeleteIndexService.Listener() {
+deleteIndexService.deleteIndex(new MetaDataDeleteIndexService.Request(index).timeout(request.timeout()).masterTimeout(request.masterNodeTimeout()), new MetaDataDeleteIndexService.Listener() {
                 @Override
                 public void onResponse(MetaDataDeleteIndexService.Response response) {
                     responseRef.set(new DeleteIndexResponse(response.acknowledged()));

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -23,9 +22,9 @@ import org.springframework.core.NamedThreadLocal;
 /**
  * Holds thread-specific context about a mapping operation
  * @author Keith Donald
-abstract class MappingContextHolder {
+ * @see SpelMapper#map(Object, Object)
  */
-class MappingContextHolder {
+abstract class MappingContextHolder {
 
 	private static final ThreadLocal<Stack<Object>> mappingContextHolder = new NamedThreadLocal<Stack<Object>>(
 			"Mapping context");

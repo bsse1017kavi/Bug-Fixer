@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /*
@@ -359,9 +358,9 @@ public class WorkbenchPreferencePage extends PreferencePage implements IWorkbenc
 			try {
 				description.setSnapshotInterval(newSaveInterval * 60000);
 				ResourcesPlugin.getWorkspace().setDescription(description);
-WorkbenchPlugin.log("Error changing save interval preference", e.getStatus()); //$NON-NLS-1$
+				store.firePropertyChangeEvent(IPreferenceConstants.SAVE_INTERVAL, new Integer((int)oldSaveInterval), new Integer((int)newSaveInterval));
 			} catch (CoreException e) {
-				WorkbenchPlugin.log("Error changing save interval preference", e.getStatus());
+WorkbenchPlugin.log("Error changing save interval preference", e.getStatus()); //$NON-NLS-1$
 			}
 		}
 

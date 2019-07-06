@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -549,9 +548,9 @@ public class TestAddIndexes extends LuceneTestCase {
   }
 
   private void verifyTermDocs(Directory dir, Term term, int numDocs)
-DocsEnum docsEnum = _TestUtil.docs(random(), reader, term.field, term.bytes, null, null, 0);
+      throws IOException {
     IndexReader reader = DirectoryReader.open(dir);
-    DocsEnum docsEnum = _TestUtil.docs(random(), reader, term.field, term.bytes, null, null, false);
+DocsEnum docsEnum = _TestUtil.docs(random(), reader, term.field, term.bytes, null, null, 0);
     int count = 0;
     while (docsEnum.nextDoc() != DocIdSetIterator.NO_MORE_DOCS)
       count++;

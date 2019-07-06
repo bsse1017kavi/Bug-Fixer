@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class TransportMoreLikeThisAction extends BaseAction<MoreLikeThisRequest,
                 .type(request.type())
                 .id(request.id())
                 .listenerThreaded(false);
-if (!getResponse.exists()) {
+        getAction.execute(getRequest, new ActionListener<GetResponse>() {
             @Override public void onResponse(GetResponse getResponse) {
-                if (getResponse.exists()) {
+if (!getResponse.exists()) {
                     listener.onFailure(new ElasticSearchException("document missing"));
                     return;
                 }

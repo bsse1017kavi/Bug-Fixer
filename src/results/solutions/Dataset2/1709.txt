@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -366,9 +365,9 @@ private void processPackageFragmentResource(IPackageFragment source, IPackageFra
 		createNeededPackageFragments(root, newFragName, shouldMoveFolder);
 
 		// Process resources
-srcFolder.move(destPath, fForce, true /* keep history */, getSubProgressMonitor(1));
+		if (shouldMoveFolder) {
 			// move underlying resource
-			srcFolder.move(destPath, fForce, getSubProgressMonitor(1));
+srcFolder.move(destPath, fForce, true /* keep history */, getSubProgressMonitor(1));
 			this.hasModifiedResource = true;
 		} else {
 			// process the leaf resources

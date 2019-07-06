@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -141,9 +140,9 @@ public class LegacyGlobalConfigurationAdapter {
                 .marshallerClass(Util.<Marshaller> loadClass(legacy.getMarshallerClass(), legacy.getClassLoader()))
                 .version(legacy.getMarshallVersion())
         ;
-builder.serialization().addAdvancedExternalizer(externalizerConfig.getId(), externalizerConfig.getAdvancedExternalizer());
+
         for (AdvancedExternalizerConfig externalizerConfig : legacy.getExternalizers()) {
-            builder.serialization().addAdvancedExternalizer(externalizerConfig.getAdvancedExternalizer());
+builder.serialization().addAdvancedExternalizer(externalizerConfig.getId(), externalizerConfig.getAdvancedExternalizer());
         }
 
         builder.asyncTransportExecutor()

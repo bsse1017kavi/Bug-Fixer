@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -56,9 +55,9 @@ public class TestWildcardRandom extends LuceneTestCase {
     Field field = newField("field", "", StringField.TYPE_UNSTORED);
     doc.add(field);
     
-field.setStringValue(df.format(i));
+    NumberFormat df = new DecimalFormat("000", new DecimalFormatSymbols(Locale.ENGLISH));
     for (int i = 0; i < 1000; i++) {
-      field.setValue(df.format(i));
+field.setStringValue(df.format(i));
       writer.addDocument(doc);
     }
     

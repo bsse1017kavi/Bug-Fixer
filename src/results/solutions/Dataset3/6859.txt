@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -891,9 +890,9 @@ public class IteratorUtils {
             return ((Map) obj).values().iterator();
             
         } else if (obj instanceof Dictionary) {
-} else if (obj.getClass().isArray()) {
+            return new EnumerationIterator(((Dictionary) obj).elements());
             
-        } else if (obj != null && obj.getClass().isArray()) {
+} else if (obj.getClass().isArray()) {
             return new ArrayIterator(obj);
             
         } else {

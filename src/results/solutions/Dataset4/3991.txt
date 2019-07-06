@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import android.view.View;
@@ -47,9 +46,9 @@ public class GistViewHolder implements ViewHolder<Gist> {
         String description = gist.getDescription();
         if (!gist.isPublic() && description != null && description.length() > 0 && id.length() > 8)
             id = id.substring(0, 8) + "...";
-title.setText(description);
+        gistId.setText(id);
 
-        title.setText(gist.getDescription());
+title.setText(description);
         created.setText(Time.relativeTimeFor(gist.getCreatedAt()));
 
         comments.setText(MessageFormat.format("{0}", gist.getComments()));

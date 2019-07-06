@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -46,9 +45,9 @@ public class RendererMap {
     if(renderer == null) {
       LogLog.error("Could not instantiate renderer ["+renderingClassName+"].");
       return;
-Class renderedClass = Class.forName(renderedClassName);
+    } else {
       try {
-	Class renderedClass = Loader.loadClass(renderedClassName);
+Class renderedClass = Class.forName(renderedClassName);
 	repository.setRenderer(renderedClass, renderer);
       } catch(ClassNotFoundException e) {
 	LogLog.error("Could not find class ["+renderedClassName+"].", e);

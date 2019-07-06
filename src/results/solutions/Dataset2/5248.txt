@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -197,9 +196,9 @@ public class CopyPackageFragmentRootOperation extends JavaModelOperation {
 				} catch (Assert.AssertionFailedException e) {
 					IJavaModelStatus status = new JavaModelStatus(IJavaModelStatusConstants.INVALID_PATH, e.getMessage());
 					throw new JavaModelException(status);
-return JavaCore.newProjectEntry(entry.getPath(), entry.getAccessibleFiles(), entry.getNonAccessibleFiles(), entry.combineAccessRestrictions(), entry.getExtraAttributes(), entry.isExported());
+				}
 			case IClasspathEntry.CPE_PROJECT:
-				return JavaCore.newProjectEntry(entry.getPath(), entry.getAccessibleFiles(), entry.getNonAccessibleFiles(), entry.getExtraAttributes(), entry.isExported());
+return JavaCore.newProjectEntry(entry.getPath(), entry.getAccessibleFiles(), entry.getNonAccessibleFiles(), entry.combineAccessRestrictions(), entry.getExtraAttributes(), entry.isExported());
 			case IClasspathEntry.CPE_SOURCE:
 				return JavaCore.newSourceEntry(this.destination, entry.getInclusionPatterns(), entry.getExclusionPatterns(), entry.getOutputLocation(), entry.getExtraAttributes());
 			case IClasspathEntry.CPE_VARIABLE:

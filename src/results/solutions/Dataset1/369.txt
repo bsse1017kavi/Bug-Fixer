@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public abstract class BaseActivator implements BundleActivator {
         providerBundleTracker = new BundleTracker(context,
                 Bundle.ACTIVE, new ProviderBundleTrackerCustomizer(this, context.getBundle()));
         providerBundleTracker.open();
-Bundle.INSTALLED | Bundle.RESOLVED | Bundle.STARTING | Bundle.ACTIVE, new ConsumerBundleTrackerCustomizer(this, consumerHeaderName));
+
         consumerBundleTracker = new BundleTracker(context,
-                Bundle.INSTALLED, new ConsumerBundleTrackerCustomizer(this, consumerHeaderName));
+Bundle.INSTALLED | Bundle.RESOLVED | Bundle.STARTING | Bundle.ACTIVE, new ConsumerBundleTrackerCustomizer(this, consumerHeaderName));
         consumerBundleTracker.open();
 
         for (Bundle bundle : context.getBundles()) {

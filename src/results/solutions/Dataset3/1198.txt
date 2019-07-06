@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public abstract class EntityMetricsHandler extends AbstractRuntimeOnlyHandler {
     protected void executeRuntimeStep(OperationContext context, ModelNode operation) throws OperationFailedException {
         EntityStatistics statistics = entityStatistics(operation);
         if (statistics != null) {
-context.stepCompleted();
+            handle(statistics, context, operation.require(ModelDescriptionConstants.NAME).asString());
         }
-        context.completeStep();
+context.stepCompleted();
     }
 
     protected abstract void handle(EntityStatistics statistics, OperationContext context, String attributeName);

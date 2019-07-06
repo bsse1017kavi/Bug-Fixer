@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -97,9 +96,9 @@ public class Stage extends InputAdapter implements Disposable {
 	 * @param height the height of the viewport in device independent pixels
 	 * @param stretch whether to stretch the viewport or not
 	 */
-if (width > height && width/(float)Gdx.graphics.getWidth() <= height/(float)Gdx.graphics.getHeight()) {
+	public void setViewport (float width, float height, boolean stretch) {
 		if (!stretch) {
-			if (width > height) {
+if (width > height && width/(float)Gdx.graphics.getWidth() <= height/(float)Gdx.graphics.getHeight()) {
 				float toDeviceSpace = Gdx.graphics.getHeight() / height;
 				float toViewportSpace = height / Gdx.graphics.getHeight();
 

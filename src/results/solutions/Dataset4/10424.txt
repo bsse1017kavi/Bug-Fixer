@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -143,9 +142,9 @@ public class JsonQueryParseContext {
         MapperService.SmartNameFieldMappers smartMapper = smartFieldMappers(name);
         if (smartMapper == null) {
             return name;
-return smartMapper.fieldMappers().mapper().names().indexName();
+        }
         if (smartMapper.fieldMappers().mapper() != null) {
-            return smartMapper.fieldMappers().mapper().indexName();
+return smartMapper.fieldMappers().mapper().names().indexName();
         }
         return name;
     }

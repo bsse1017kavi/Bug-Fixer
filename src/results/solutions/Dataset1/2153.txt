@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.gms;
 /*
  * 
@@ -84,9 +83,9 @@ public class GossipDigestSynVerbHandler implements IVerbHandler
             List<GossipDigest> deltaGossipDigestList = new ArrayList<GossipDigest>();
             Map<InetAddress, EndpointState> deltaEpStateMap = new HashMap<InetAddress, EndpointState>();
             Gossiper.instance.examineGossiper(gDigestList, deltaGossipDigestList, deltaEpStateMap);
-Message gDigestAckMessage = Gossiper.instance.makeGossipDigestAckMessage(gDigestAck, message.getVersion());
+
             GossipDigestAckMessage gDigestAck = new GossipDigestAckMessage(deltaGossipDigestList, deltaEpStateMap);
-            Message gDigestAckMessage = Gossiper.instance.makeGossipDigestAckMessage(gDigestAck);
+Message gDigestAckMessage = Gossiper.instance.makeGossipDigestAckMessage(gDigestAck, message.getVersion());
             if (logger_.isTraceEnabled())
                 logger_.trace("Sending a GossipDigestAckMessage to {}", from);
             MessagingService.instance().sendOneWay(gDigestAckMessage, from);

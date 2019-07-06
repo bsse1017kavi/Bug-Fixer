@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010-2011 the original author or authors.
  *
@@ -115,9 +114,9 @@ public class AnnotatedClassCacheableService implements CacheableService<Object> 
 	@Caching(cacheable = { @Cacheable("primary"), @Cacheable("secondary") })
 	public Object multiCache(Object arg1) {
 		return counter.getAndIncrement();
-@Caching(evict = { @CacheEvict("primary"), @CacheEvict(value = "secondary", key = "#p0"),  @CacheEvict(value = "primary", key = "#p0 + 'A'") })
+	}
 
-	@Caching(evict = { @CacheEvict("primary"), @CacheEvict(value = "secondary", key = "#p0") })
+@Caching(evict = { @CacheEvict("primary"), @CacheEvict(value = "secondary", key = "#p0"),  @CacheEvict(value = "primary", key = "#p0 + 'A'") })
 	public Object multiEvict(Object arg1) {
 		return counter.getAndIncrement();
 	}

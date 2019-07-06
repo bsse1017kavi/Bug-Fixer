@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -629,9 +628,9 @@ public class AnnotationPersistenceMappingParser
             new org.apache.openjpa.jdbc.schema.ForeignKey();
         if (!StringUtils.isEmpty(name))
             fk.setName(name);
-fk.setUpdateAction(toForeignKeyAction(updateAction));
+        fk.setDeferred(deferred);
         fk.setDeleteAction(toForeignKeyAction(deleteAction));
-        fk.setUpdateAction(toForeignKeyAction(deleteAction));
+fk.setUpdateAction(toForeignKeyAction(updateAction));
         info.setForeignKey(fk);
     }
 

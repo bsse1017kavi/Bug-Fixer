@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  *
@@ -141,9 +140,9 @@ public class EClassType extends AbstractTypeImpl {
 			final Type t = emfMetaModel.getTypeForETypedElement(feature);
 			if (t == null) {
 				log.warn("Couldn't resolve type for " + getTypeName(feature.getEType()));
-if (feature.isChangeable() && !feature.isMany()){ //  && !feature.isDerived()  { !feature.isUnsettable()
+			}
 			else {
-				if (feature.isChangeable() && !feature.isDerived() && !feature.isMany()) { // !feature.isUnsettable()
+if (feature.isChangeable() && !feature.isMany()){ //  && !feature.isDerived()  { !feature.isUnsettable()
 					// &&
 					result.add(new OperationImpl(this, "set" + StringHelper.firstUpper(feature.getName()), this,
 							new Type[] { t }) {

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -135,9 +134,9 @@ public abstract class SAXParserFactory {
         try {
             return (SAXParserFactory) FactoryFinder.find(
                 /* The default property name according to the JAXP spec */
-"org.apache.xerces.jaxp.SAXParserFactoryImpl");
+                "javax.xml.parsers.SAXParserFactory",
                 /* The fallback implementation class name */
-                null);
+"org.apache.xerces.jaxp.SAXParserFactoryImpl");
         } catch (FactoryFinder.ConfigurationError e) {
             throw new FactoryConfigurationError(e.getException(),
                                                 e.getMessage());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -114,9 +113,9 @@ public abstract class JsonNumberFieldMapper<T extends Number> extends JsonFieldM
     }
 
     /**
-@Override public boolean useTermQueryWithQueryString() {
+     * Use the field query created here when matching on numbers.
      */
-    @Override public boolean useFieldQueryWithQueryString() {
+@Override public boolean useTermQueryWithQueryString() {
         return true;
     }
 

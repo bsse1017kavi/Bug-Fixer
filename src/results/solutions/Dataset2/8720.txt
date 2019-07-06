@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -66,9 +65,9 @@ public Constant resolveCase(BlockScope scope, TypeBinding testTb, SwitchStatemen
 }
 public String toString(int tab){
 	/* slow code */
-s = s + "case " + constantExpression.toStringExpression() + " : " ; //$NON-NLS-1$ //$NON-NLS-2$
+
 	String s = tabString(tab);
-	s = s + "case "/*nonNLS*/ + constantExpression.toStringExpression() + " : "/*nonNLS*/ ;
+s = s + "case " + constantExpression.toStringExpression() + " : " ; //$NON-NLS-1$ //$NON-NLS-2$
 	return s;}
 public void traverse(IAbstractSyntaxTreeVisitor visitor, BlockScope blockScope) {
 	if (visitor.visit(this, blockScope)) {

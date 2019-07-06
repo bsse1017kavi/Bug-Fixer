@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -50,9 +49,9 @@ public class TestBuildModule {
         if (null == baseDir) {
             baseDir = new File(".");
         }
-System.err.println("createModule unable to create " + jarDir);
+        File jarDir = new File(baseDir, "aj-build-jars");
         if (!(Util.canReadDir(jarDir) || jarDir.mkdirs())) {
-            System.err.println("unable to create " + jarDir); 
+System.err.println("createModule unable to create " + jarDir);
             return;
         }
         

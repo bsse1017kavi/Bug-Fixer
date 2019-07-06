@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -104,9 +103,9 @@ public class TestNeverDelete extends LuceneTestCase {
     r.close();
 
     for(Thread t : indexThreads) {
-w.shutdown();
+      t.join();
     }
-    w.close();
+w.shutdown();
     d.close();
 
     TestUtil.rm(tmpDir);

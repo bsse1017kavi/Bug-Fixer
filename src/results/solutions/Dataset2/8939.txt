@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -242,9 +241,9 @@ public class CompletionJavadocParser extends JavadocParser {
 	private char[][][] possibleTags(char[] prefix, boolean newLine) {
 		char[][][] possibleTags = new char[2][][];
 		if (newLine) {
-possibleTags[BLOCK_IDX] = CharOperation.NO_CHAR_CHAR;
+			System.arraycopy(this.levelTags[BLOCK_IDX], 0, possibleTags[BLOCK_IDX] = new char[this.levelTagsLength[BLOCK_IDX]][], 0, this.levelTagsLength[BLOCK_IDX]);
 		} else {
-			possibleTags[BLOCK_IDX] = new char[0][];
+possibleTags[BLOCK_IDX] = CharOperation.NO_CHAR_CHAR;
 		}
 		System.arraycopy(this.levelTags[INLINE_IDX], 0, possibleTags[INLINE_IDX] = new char[this.levelTagsLength[INLINE_IDX]][], 0, this.levelTagsLength[INLINE_IDX]);
 		if (prefix == null || prefix.length == 0) return possibleTags;

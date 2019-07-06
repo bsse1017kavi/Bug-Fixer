@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.tests;
 
 import java.util.Random;
@@ -56,9 +55,9 @@ public class IsometricTileTest extends GdxTest {
 			int colY = BOUND_Y - TILE_HEIGHT_DIAMOND;
 			for(int x=0; x < WIDTH; x++) {						
 				for(int y=0; y < HEIGHT; y++) {								
-cache.add(texture, tileX, tileY, rand.nextInt(2) * 54, 0,TILE_WIDTH, TILE_HEIGHT);
+					int tileX = colX - y * TILE_WIDTH / 2;
 					int tileY = colY - y * TILE_HEIGHT_DIAMOND / 2;
-					cache.add(texture, tileX, tileY, rand.nextInt(2) * 54, 0,TILE_WIDTH, TILE_HEIGHT, Color.WHITE);				
+cache.add(texture, tileX, tileY, rand.nextInt(2) * 54, 0,TILE_WIDTH, TILE_HEIGHT);
 				}
 				colX += TILE_WIDTH / 2;
 				colY -= TILE_HEIGHT_DIAMOND / 2;

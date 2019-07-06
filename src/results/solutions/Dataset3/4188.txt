@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -68,9 +67,9 @@ public class TransactionJndiBindingProcessor implements DeploymentUnitProcessor{
         }
 
         for(AbstractComponentDescription component : moduleDescription.getComponentDescriptions()) {
-bindServices(deploymentUnit, serviceTarget,moduleDescription, component.getComponentName(), compContextServiceName);
+            if(component.getNamingMode() == ComponentNamingMode.CREATE) {
                 final ServiceName compContextServiceName = ContextNames.contextServiceNameOfComponent(moduleDescription.getAppName(),moduleDescription.getModuleName(),component.getComponentName());
-                bindServices(deploymentUnit, serviceTarget,moduleDescription, moduleDescription.getModuleName(), compContextServiceName);
+bindServices(deploymentUnit, serviceTarget,moduleDescription, component.getComponentName(), compContextServiceName);
             }
         }
 

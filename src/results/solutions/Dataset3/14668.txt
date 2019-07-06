@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -171,9 +170,9 @@ public class GenericConversionService implements ConversionService, ConverterReg
 			logger.debug("Converted to null");
 			return null;
 		}
-if (source == null || targetType.getType().isInstance(source)) {
+		GenericConverter converter = getConverter(sourceType, targetType);
 		if (converter == null) {
-			if (targetType.getType().isInstance(source)) {
+if (source == null || targetType.getType().isInstance(source)) {
 				logger.debug("No converter found - returning assignable source object as-is");
 				return source;
 			}

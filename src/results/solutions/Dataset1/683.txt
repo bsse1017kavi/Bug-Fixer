@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public class KeysSearcher extends SecondaryIndexSearcher
              * so, we need to loop after starting with start_key, until we get to keys in the given `range`.
              * But, if the calling StorageProxy is doing a good job estimating data from each range, the range
              * should be pretty close to `start_key`. */
-expressionString(primary), index.getBaseCFStore().metadata.getKeyValidator().getString(startKey)));
+            if (logger.isDebugEnabled())
                 logger.debug(String.format("Scanning index %s starting with %s",
-                                           expressionString(primary), index.getUnderlyingCfs().getComparator().getString(startKey)));
+expressionString(primary), index.getBaseCFStore().metadata.getKeyValidator().getString(startKey)));
 
             // We shouldn't fetch only 1 row as this provides buggy paging in case the first row doesn't satisfy all clauses
             int count = Math.max(clause.count, 2);

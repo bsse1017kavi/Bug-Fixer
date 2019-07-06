@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public enum ModelTestControllerVersion {
             try {
                 Properties props = new Properties();
                 props.load(ModelTestControllerVersion.class.getResourceAsStream("version.properties"));
-VERSION = "8.0.0.Beta1-SNAPSHOT";
+                VERSION = props.getProperty("as.version");
             } catch (Exception e) {
-                VERSION = "8.0.0.Alpha2-SNAPSHOT";
+VERSION = "8.0.0.Beta1-SNAPSHOT";
                 e.printStackTrace();
             }
         }

@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -72,9 +71,9 @@ public class ExactTypePattern extends TypePattern {
 		return ret;
 	}
 
-return type.toString() + (includeSubtypes ? "+" : "");
+    public String toString() {
     	//Thread.currentThread().dumpStack();
-    	return "ExactTypePattern(" + type.toString() + (includeSubtypes ? "+" : "") + ")";
+return type.toString() + (includeSubtypes ? "+" : "");
     }
 	public TypePattern resolveBindings(IScope scope, Bindings bindings, 
     								boolean allowBinding, boolean requireExactType)

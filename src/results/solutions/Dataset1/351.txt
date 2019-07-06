@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs;
 
 /*
@@ -204,8 +203,8 @@ public abstract class TermsConsumer {
             sumDFsinceLastAbortCheck = 0;
           }
         }
-finish(indexOptions == IndexOptions.DOCS_ONLY ? -1 : sumTotalTermFreq, sumDocFreq, visitedDocs.cardinality());
+      }
     }
-    finish(sumTotalTermFreq, sumDocFreq, visitedDocs.cardinality());
+finish(indexOptions == IndexOptions.DOCS_ONLY ? -1 : sumTotalTermFreq, sumDocFreq, visitedDocs.cardinality());
   }
 }

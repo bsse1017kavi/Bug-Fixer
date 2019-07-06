@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -728,9 +727,9 @@ public class SimpleFacets {
 
           }
 
-BytesRef termCopy = BytesRef.deepCopyOf(term);
+          if (sortByCount) {
             if (c>min) {
-              BytesRef termCopy = new BytesRef(term);
+BytesRef termCopy = BytesRef.deepCopyOf(term);
               queue.add(new CountPair<BytesRef,Integer>(termCopy, c));
               if (queue.size()>=maxsize) min=queue.last().val;
             }

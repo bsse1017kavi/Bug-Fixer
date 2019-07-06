@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -105,9 +104,9 @@ public class DeploymentScannerService implements Service<DeploymentScanner> {
         final ServiceName serviceName = getServiceName(name);
         final ServiceName pathService = serviceName.append("path");
         final ServiceName relativePathService = relativeTo != null ? RelativePathService.pathNameOf(relativeTo) : null;
-RelativePathService.addService(pathService, path, false, relativeTo, serviceTarget, newControllers, listeners);
+
         if (relativeTo != null) {
-            RelativePathService.addService(pathService, path, relativeTo, serviceTarget, newControllers, listeners);
+RelativePathService.addService(pathService, path, false, relativeTo, serviceTarget, newControllers, listeners);
         } else {
             AbsolutePathService.addService(pathService, path, serviceTarget, newControllers, listeners);
         }

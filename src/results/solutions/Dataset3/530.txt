@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012 Red Hat Inc. and/or its affiliates and other contributors
@@ -36,9 +35,9 @@ import org.jboss.dmr.ModelNode;
  */
 public class JSFImplListHandler implements OperationStepHandler {
     public static final String OPERATION_NAME = "list-active-jsf-impls";
-.withFlags(OperationEntry.Flag.READ_ONLY, OperationEntry.Flag.RUNTIME_ONLY)
+
     public static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(OPERATION_NAME, JSFExtension.getResourceDescriptionResolver())
-            .withFlag(OperationEntry.Flag.READ_ONLY)
+.withFlags(OperationEntry.Flag.READ_ONLY, OperationEntry.Flag.RUNTIME_ONLY)
             .build();
 
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

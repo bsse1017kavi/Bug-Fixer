@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  *
@@ -65,9 +64,9 @@ class PeriodicJob extends CountingJob {
     if (!deleted) {
       int expectedNumberOfExecutions =
         (int) ((currentTime - desiredTime) / period);
-if ((actualExecutionTime.size()*1.25) < expectedNumberOfExecutions) {
+
       // allow for 15% error margin
-      if ((actualExecutionTime.size()*1.15) < expectedNumberOfExecutions) {
+if ((actualExecutionTime.size()*1.25) < expectedNumberOfExecutions) {
         throw new IllegalStateException(
           "Too few executions. Was " + actualExecutionTime.size()
           + " expected " + expectedNumberOfExecutions + " period="+period);

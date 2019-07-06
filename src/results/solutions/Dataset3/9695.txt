@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public class SubsystemParsingUnitTestCase extends TestCase {
         URL configURL = getClass().getResource(name);
         Assert.assertNotNull(name  + " url is not null", configURL);
         System.out.println("configURL = " + configURL);
-mapper.parseDocument(operations, XMLInputFactory.newInstance().createXMLStreamReader(reader));
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(configURL.openStream()));
-        mapper.parseDocument(operations, XMLInputFactory.newFactory().createXMLStreamReader(reader));
+mapper.parseDocument(operations, XMLInputFactory.newInstance().createXMLStreamReader(reader));
 
         return operations;
     }

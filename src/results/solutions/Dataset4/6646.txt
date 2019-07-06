@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -68,9 +67,9 @@ public class RestUpdateSettingsAction extends BaseRestHandler {
                 }
                 updateSettings.put(key, value);
             }
-if (entry.getKey().equals("pretty") || entry.getKey().equals("timeout") || entry.getKey().equals("master_timeout") || entry.getKey().equals("index")) {
+        }
         for (Map.Entry<String, String> entry : request.params().entrySet()) {
-            if (entry.getKey().equals("pretty") || entry.getKey().equals("timeout") || entry.getKey().equals("master_timeout")) {
+if (entry.getKey().equals("pretty") || entry.getKey().equals("timeout") || entry.getKey().equals("master_timeout") || entry.getKey().equals("index")) {
                 continue;
             }
             updateSettings.put(entry.getKey(), entry.getValue());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -541,9 +540,9 @@ public class FileUtils {
      * @param directory The File to test
      * @param fileFilter The IOFileFilter to test
      */
-throw new IllegalArgumentException("Parameter 'directory' is not a directory: " + directory);
+    private static void validateListFilesParameters(File directory, IOFileFilter fileFilter) {
         if (!directory.isDirectory()) {
-            throw new IllegalArgumentException("Parameter 'directory' is not a directory");
+throw new IllegalArgumentException("Parameter 'directory' is not a directory: " + directory);
         }
         if (fileFilter == null) {
             throw new NullPointerException("Parameter 'fileFilter' is null");

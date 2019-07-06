@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.particles;
 
 import java.io.BufferedReader;
@@ -122,9 +121,9 @@ public class ParticleEffect {
 	private void loadEmitterImages (FileHandle imagesDir) {
 		for (int i = 0, n = emitters.size(); i < n; i++) {
 			ParticleEmitter emitter = emitters.get(i);
-String imageName = new File(imagePath.replace('\\', '/')).getName();
+			String imagePath = emitter.getImagePath();
 			if (imagePath == null) continue;
-			String imageName = new File(imagePath).getName();
+String imageName = new File(imagePath.replace('\\', '/')).getName();
 			emitter.setTexture(loadTexture(imagesDir.child(imageName)));
 		}
 	}

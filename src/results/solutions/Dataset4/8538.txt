@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -615,9 +614,9 @@ public class IndicesClusterStateService extends AbstractLifecycleComponent<Indic
             }
         } else {
             if (shardRouting.relocatingNodeId() == null) {
-boolean indexShouldExists = indexShardRouting.primaryAllocatedPostApi();
+                // we are the first primary, recover from the gateway
                 // if its post api allocation, the index should exists
-                boolean indexShouldExists = indexShardRouting.allocatedPostApi();
+boolean indexShouldExists = indexShardRouting.primaryAllocatedPostApi();
                 IndexShardGatewayService shardGatewayService = indexService.shardInjector(shardId).getInstance(IndexShardGatewayService.class);
                 shardGatewayService.recover(indexShouldExists, new IndexShardGatewayService.RecoveryListener() {
                     @Override

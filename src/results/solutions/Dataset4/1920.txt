@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2014 See AUTHORS file.
  *
@@ -162,9 +161,9 @@ public class GdxSetupUI extends JFrame {
 				try {  //give them a poke in the right direction
 					if (System.getProperty("os.name").contains("Windows")) {
 						String replaced = sdkLocation.replace("\\", "\\\\");
-Runtime.getRuntime().exec("\"" + sdkLocation + "tools/android sdk\"");
+						Runtime.getRuntime().exec("\"" + replaced + "\\SDK Manager.exe\"");
 					} else {
-						Runtime.getRuntime().exec(sdkLocation + "tools/android sdk");
+Runtime.getRuntime().exec("\"" + sdkLocation + "tools/android sdk\"");
 					}
 				} catch (IOException e) {
 					e.printStackTrace();

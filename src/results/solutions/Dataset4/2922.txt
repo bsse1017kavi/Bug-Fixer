@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -139,9 +138,9 @@ public class HunspellService extends AbstractComponent {
      * @return The loaded Hunspell dictionary
      * @throws Exception when loading fails (due to IO errors or malformed dictionary files)
      */
-logger.debug("Loading hunspell dictionary [{}]...", locale);
+    private Dictionary loadDictionary(String locale, Settings nodeSettings, Environment env) throws Exception {
         if (logger.isDebugEnabled()) {
-            logger.debug("Loading huspell dictionary [{}]...", locale);
+logger.debug("Loading hunspell dictionary [{}]...", locale);
         }
         File dicDir = new File(hunspellDir, locale);
         if (!dicDir.exists() || !dicDir.isDirectory()) {

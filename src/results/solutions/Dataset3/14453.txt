@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -428,9 +427,9 @@ public class FieldUtils {
         Validate.isTrue(target != null, "target object must not be null");
         final Class<?> cls = target.getClass();
         final Field field = getField(cls, fieldName, forceAccess);
-return readField(field, target, false);
+        Validate.isTrue(field != null, "Cannot locate field %s on %s" , fieldName, cls);
         // already forced access above, don't repeat it here:
-        return readField(field, target);
+return readField(field, target, false);
     }
 
     /**

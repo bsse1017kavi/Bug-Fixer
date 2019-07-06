@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -307,9 +306,9 @@ public class BlueprintExtender implements BundleActivator, SynchronousBundleList
         return path.substring(index + 1);
     }
     
-return Integer.toHexString(bundle.hashCode()) + "/" + filePath;
+    private String cachePath(Bundle bundle, String filePath)
     {
-      return bundle.getSymbolicName() + "/" + bundle.getVersion() + "/" + filePath;
+return Integer.toHexString(bundle.hashCode()) + "/" + filePath;
     }    
     
     private URL getOverrideURLForCachePath(String privatePath){

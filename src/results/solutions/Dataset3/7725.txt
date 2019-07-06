@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -52,9 +51,9 @@ final class StringToNumberConverterFactory implements ConverterFactory<String, N
 		public StringToNumber(Class<T> targetType) {
 			this.targetType = targetType;
 		}
-if (source.length() == 0) {
+
 		public T convert(String source) {
-			if ("".equals(source)) {
+if (source.length() == 0) {
 				return null;
 			}
 			return NumberUtils.parseNumber(source, this.targetType);

@@ -1,4 +1,3 @@
-
 /*
  * $Id: PropertyPopulator.java 5840 2006-05-24 20:49:09 +0000 (Wed, 24 May 2006)
  * joco01 $ $Revision$ $Date: 2006-05-24 20:49:09 +0000 (Wed, 24 May
@@ -63,9 +62,9 @@ public class PropertyPopulator implements ICellPopulator
 	 * @see wicket.extensions.markup.html.repeater.data.grid.ICellPopulator#populateItem(wicket.extensions.markup.html.repeater.refreshing.Item,
 	 *      java.lang.String, wicket.model.IModel)
 	 */
-new Label(cellItem, componentId, new PropertyModel(rowModel, property));
+	public void populateItem(Item cellItem, String componentId, IModel rowModel)
 	{
-		cellItem.add(new Label(cellItem, componentId, new PropertyModel(rowModel, property)));
+new Label(cellItem, componentId, new PropertyModel(rowModel, property));
 	}
 
 }

@@ -1,4 +1,3 @@
-
 /*
  * $Id: ComponentStringResourceLoader.java,v 1.5 2005/01/19 08:07:57
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -179,9 +178,9 @@ public class ComponentStringResourceLoader implements IStringResourceLoader
 			return strings;
 		}
 
-final IResourceStream resource = component.getApplication().getResourceStreamLocator().locate(
+		// Do the resource load
 		final Properties properties = new Properties();
-		final IResourceStream resource = component.getApplication().getResourceLocator().locate(
+final IResourceStream resource = component.getApplication().getResourceStreamLocator().locate(
 				component.getClass(), style, locale, "properties");
 		if (resource != null)
 		{

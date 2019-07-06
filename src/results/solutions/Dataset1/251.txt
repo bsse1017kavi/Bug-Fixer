@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -106,9 +105,9 @@ public class StreamInSession
     public void finished(PendingFile remoteFile, PendingFile localFile) throws IOException
     {
         if (logger.isDebugEnabled())
-Future future = CompactionManager.instance.submitSSTableBuild(localFile.desc, remoteFile.type);
+            logger.debug("Finished {}. Sending ack to {}", remoteFile, this);
 
-        Future future = CompactionManager.instance.submitSSTableBuild(localFile.desc);
+Future future = CompactionManager.instance.submitSSTableBuild(localFile.desc, remoteFile.type);
         buildFutures.add(future);
 
         files.remove(remoteFile);

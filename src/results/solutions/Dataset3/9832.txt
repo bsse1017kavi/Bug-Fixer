@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -98,9 +97,9 @@ public class ExpressionTestsUsingCoreConversionService extends ExpressionTestCas
 	/**
 	 * Type converter that uses the core conversion service.
 	 */
-private final ConversionService service = ConversionServiceFactory.createDefaultConversionService();
+	private static class TypeConvertorUsingConversionService implements TypeConverter {
 
-		private final ConversionService service = ConversionServiceFactory.createDefault();
+private final ConversionService service = ConversionServiceFactory.createDefaultConversionService();
 
 		public boolean canConvert(Class<?> sourceType, Class<?> targetType) {
 			return this.service.canConvert(sourceType, targetType);

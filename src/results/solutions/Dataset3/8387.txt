@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -196,9 +195,9 @@ public class CliLauncher {
                         SecurityActions.setSystemProperty((String)prop, (String)props.get(prop));
                     }
                 } else {
-argError = "Only one of '--file', '--commands' or '--command' can appear as the argument at a time: " + arg;
+                    // assume it's commands
                     if(file != null) {
-                        argError = "Only one of '--file', '--commands' or '--command' can appear as the argument at a time.";
+argError = "Only one of '--file', '--commands' or '--command' can appear as the argument at a time: " + arg;
                         break;
                     }
                     if(commands != null) {

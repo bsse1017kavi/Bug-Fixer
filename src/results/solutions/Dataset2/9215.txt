@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler;
 
 /*
@@ -622,9 +621,9 @@ public class ClassFile
 		// return codeStream.generateCodeAttributeForProblemMethod(comp.options.runtimeExceptionNameForCompileError, "")
 		int[] exceptionHandler =
 			codeStream.generateCodeAttributeForProblemMethod(
-.environment()
+				referenceBinding
 					.scope
-					.problemReporter()
+.environment()
 					.options
 					.runtimeExceptionNameForCompileError,
 				problemString);

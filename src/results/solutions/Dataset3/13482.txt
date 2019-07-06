@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -53,9 +52,9 @@ public class MasterDomainControllerOperationHandlerService extends AbstractModel
         this.registry = registry;
     }
 
-final MasterDomainControllerOperationHandlerImpl handler = new MasterDomainControllerOperationHandlerImpl(getExecutor(), getController(), registry, domainController);
+    @Override
     public Channel.Key initialize(final ManagementChannel channel) {
-        final MasterDomainControllerOperationHandlerImpl handler = new MasterDomainControllerOperationHandlerImpl(getExecutor(), getController(), registry, domainController, channel);
+final MasterDomainControllerOperationHandlerImpl handler = new MasterDomainControllerOperationHandlerImpl(getExecutor(), getController(), registry, domainController);
         final Channel.Receiver receiver = handler;
         channel.setReceiver(receiver);
         return channel.addCloseHandler(new CloseHandler<Channel>() {

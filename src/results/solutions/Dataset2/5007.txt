@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -118,9 +117,9 @@ public class MissingType implements IGenericType {
 
 }
 	
-options = new CompilerOptions(settings);
+public HierarchyResolver(INameEnvironment nameEnvironment, Map settings, IHierarchyRequestor requestor, IProblemFactory problemFactory) {
 	// create a problem handler with the 'exit after all problems' handling policy
-	options = settings == null ? new CompilerOptions() : new CompilerOptions(settings);
+options = new CompilerOptions(settings);
 	IErrorHandlingPolicy policy = DefaultErrorHandlingPolicies.exitAfterAllProblems();
 	ProblemReporter problemReporter = new ProblemReporter(policy, options, problemFactory);
 

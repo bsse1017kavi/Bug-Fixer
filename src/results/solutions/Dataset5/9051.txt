@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -115,9 +114,9 @@ public class ListMultipleChoice extends AbstractChoice
 		}
 		final IChoiceList choices = getChoices();
 		for (final StringTokenizer tokenizer = new StringTokenizer(value, ";"); tokenizer
-selectedValues.add(choices.choiceForId(tokenizer.nextToken()).getObject());
+				.hasMoreTokens();)
 		{
-			selectedValues.add(choices.choiceForId(tokenizer.nextToken()));
+selectedValues.add(choices.choiceForId(tokenizer.nextToken()).getObject());
 		}
 	}
 

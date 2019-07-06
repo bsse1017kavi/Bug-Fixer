@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.values;
 
 /**
@@ -294,9 +293,9 @@ final class SortedBytesMergeUtils {
       return 0;
     }
 
-bytesRef.copyBytes(missingValue);
+    @Override
     public BytesRef getByOrd(int ord, BytesRef bytesRef) {
-      bytesRef.copy(missingValue);
+bytesRef.copyBytes(missingValue);
       return bytesRef;
     }
 

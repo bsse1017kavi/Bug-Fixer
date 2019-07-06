@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.admin;
 
 /*
@@ -261,9 +260,9 @@ public class CollectionsHandler extends RequestHandlerBase {
     String name = req.getParams().required().get("name");
     
     ZkNodeProps m = new ZkNodeProps(Overseer.QUEUE_OPERATION,
-handleResponse(OverseerCollectionProcessor.DELETEALIAS, m, rsp);
+        OverseerCollectionProcessor.DELETEALIAS, "name", name);
     
-    handleResponse(OverseerCollectionProcessor.CREATEALIAS, m, rsp);
+handleResponse(OverseerCollectionProcessor.DELETEALIAS, m, rsp);
   }
 
   private void handleDeleteAction(SolrQueryRequest req, SolrQueryResponse rsp) throws KeeperException, InterruptedException {

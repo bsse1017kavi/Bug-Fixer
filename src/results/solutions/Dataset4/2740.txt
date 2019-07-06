@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -87,9 +86,9 @@ public class StatisticalScriptFacetBuilder extends AbstractFacetBuilder {
         if (script == null) {
             throw new SearchSourceBuilderException("script must be set on statistical script facet [" + name + "]");
         }
-builder.startObject(StatisticalFacet.TYPE);
+        builder.startObject(name);
 
-        builder.startObject(StatisticalFacetCollectorParser.NAME);
+builder.startObject(StatisticalFacet.TYPE);
         builder.field("script", script);
         if (lang != null) {
             builder.field("lang", lang);

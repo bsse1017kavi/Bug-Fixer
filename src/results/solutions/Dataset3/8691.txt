@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -157,9 +156,9 @@ public class TransactionScopedEntityManager extends AbstractEntityManager implem
         }
         else {
             testForMixedSyncronizationTypes(entityManager, puScopedName, synchronizationType);
-TransactionUtil.getTransaction().toString());
+            if (JPA_LOGGER.isDebugEnabled()) {
                 JPA_LOGGER.debugf("%s: reuse entity manager session already in tx %s", TransactionUtil.getEntityManagerDetails(entityManager),
-                    getTransaction().toString());
+TransactionUtil.getTransaction().toString());
             }
         }
         return entityManager;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -110,9 +109,9 @@ public class StatisticalSampleResult extends SampleResult implements
      *
      * @param event sample event whose key is to be calculated
      * @return the key to use for aggregating samples
-StringBuilder sb = new StringBuilder(80);
+     */
     public static String getKey(SampleEvent event) {
-        StringBuffer sb = new StringBuffer(80);
+StringBuilder sb = new StringBuilder(80);
         sb.append(event.getResult().getSampleLabel()).append("-").append(event.getThreadGroup());
         return sb.toString();
     }

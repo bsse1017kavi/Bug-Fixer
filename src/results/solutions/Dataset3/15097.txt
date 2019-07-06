@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2012, Red Hat, Inc., and individual contributors
@@ -48,9 +47,9 @@ public class ExecutionTimeInterceptor extends AbstractEJBInterceptor {
         final long start = System.currentTimeMillis();
         try {
             return context.proceed();
-component.getInvocationMetrics().finishInvocation(context.getMethod(), waitTime, executionTime);
+        } finally {
             final long executionTime = System.currentTimeMillis() - start;
-            component.getInvocationMetrics().finishInvocation(waitTime, executionTime);
+component.getInvocationMetrics().finishInvocation(context.getMethod(), waitTime, executionTime);
         }
     }
 }

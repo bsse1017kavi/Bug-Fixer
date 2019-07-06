@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -418,9 +417,9 @@ public class HandlerMethodInvoker {
 	private Object resolveRequestParam(String paramName, boolean required, String defaultValue,
 			MethodParameter methodParam, NativeWebRequest webRequest, Object handlerForInitBinderCall)
 			throws Exception {
-if (Map.class.isAssignableFrom(paramType) && paramName.length() == 0) {
+
 		Class<?> paramType = methodParam.getParameterType();
-		if (Map.class.isAssignableFrom(paramType)) {
+if (Map.class.isAssignableFrom(paramType) && paramName.length() == 0) {
 			return resolveRequestParamMap((Class<? extends Map>) paramType, webRequest);
 		}
 		if (paramName.length() == 0) {

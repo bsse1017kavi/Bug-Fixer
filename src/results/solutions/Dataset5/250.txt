@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -305,9 +304,9 @@ public void setUsesEPSOnResolutionMismatch(boolean flag) {
 	OS.objc_msgSend(this.id, OS.sel_setUsesEPSOnResolutionMismatch_1, flag);
 }
 
-OS.objc_msgSend_stret(result, this.id, OS.sel_size);
+public NSSize size() {
 	NSSize result = new NSSize();
-	OS.objc_msgSend_struct(result, this.id, OS.sel_size);
+OS.objc_msgSend_stret(result, this.id, OS.sel_size);
 	return result;
 }
 

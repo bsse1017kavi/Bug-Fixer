@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -109,9 +108,9 @@ public class TiledMapPacker {
 			if (this.settings.stripUnusedTiles) {
 				usedIds = new IntArray(map.layers.size() * map.height * map.width);
 				for (TiledLayer layer : map.layers) {
-usedIds.add(layer.tiles[y][x]);
+					for (int y = 0; y < layer.tiles.length; ++y) {
 						for (int x = 0; x < layer.tiles[y].length; ++x) {
-							usedIds.add(layer.tiles[y][x] & ~0xE0000000);
+usedIds.add(layer.tiles[y][x]);
 						}
 					}
 				}

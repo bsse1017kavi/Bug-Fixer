@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -339,9 +338,9 @@ public class QueryParseContext {
     private <T> T failIfFieldMappingNotFound(String name, T fieldMapping) {
         if (allowUnmappedFields) {
             return fieldMapping;
-if (fieldMapping == null && indexCreatedVersion.onOrAfter(Version.V_1_4_0_Beta)) {
+        } else {
             Version indexCreatedVersion = indexQueryParser.getIndexCreatedVersion();
-            if (fieldMapping == null && indexCreatedVersion.onOrAfter(Version.V_1_4_0)) {
+if (fieldMapping == null && indexCreatedVersion.onOrAfter(Version.V_1_4_0_Beta)) {
                 throw new QueryParsingException(index, "Strict field resolution and no field mapping can be found for the field with name [" + name + "]");
             } else {
                 return fieldMapping;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -949,9 +948,9 @@ public class InternalIndexShard extends AbstractIndexShardComponent implements I
                 logger.warn("check index [failure]\n{}", new String(os.bytes().toBytes(), Charsets.UTF_8));
                 if ("fix".equalsIgnoreCase(checkIndexOnStartup)) {
                     if (logger.isDebugEnabled()) {
-checkIndex.fixIndex(status);
+                        logger.debug("fixing index, writing new segments file ...");
                     }
-                    checkIndex.fixIndex(status, codecService.codec(indexSettings.get(Engine.INDEX_CODEC, "default")));
+checkIndex.fixIndex(status);
                     if (logger.isDebugEnabled()) {
                         logger.debug("index fixed, wrote new segments file \"{}\"", status.segmentsFileName);
                     }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.standard;
 
 /**
@@ -57,9 +56,9 @@ public abstract class StandardTermsIndexReader {
 
     public abstract void getIndexOffset(long ord, TermsIndexResult result) throws IOException;
 
-public abstract boolean isIndexTerm(long ord, int docFreq, boolean onlyLoaded) throws IOException;
+    /** Call this sequentially for each term encoutered,
      *  after calling {@link #getIndexOffset}. */
-    public abstract boolean isIndexTerm(long ord, int docFreq) throws IOException;
+public abstract boolean isIndexTerm(long ord, int docFreq, boolean onlyLoaded) throws IOException;
 
     /** Finds the next index term, after the specified
      *  ord.  Returns true if one exists.  */

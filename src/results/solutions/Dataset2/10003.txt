@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -482,9 +481,9 @@ protected void consumeTypeImportOnDemandDeclarationName() {
 		positions, 
 		0, 
 		length); 
-ImportReference reference = this.createAssistImportReference(subset, positions, AccDefault/*TODO (olivier) update for static imports*/);
+
 	/* build specific assist node on import statement */
-	ImportReference reference = this.createAssistImportReference(subset, positions, AccDefault/*TODO: (olivier) update for static imports*/);
+ImportReference reference = this.createAssistImportReference(subset, positions, AccDefault/*TODO (olivier) update for static imports*/);
 	reference.onDemand = true;
 	assistNode = reference;
 	this.lastCheckPoint = reference.sourceEnd + 1;

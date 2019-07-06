@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -124,9 +123,9 @@ public class CumulativePatchTestCase extends AbstractTaskTestCase {
         String layerPatchID = randomString();
         File patchDir = mkdir(tempDir, patchID);
         String moduleName = randomString();
-ContentModification fileModified = ContentModificationUtils.modifyMisc(patchDir, patchID, "updated script", standaloneShellFile, "bin", "standalone.sh");
+
         ContentModification moduleAdded = ContentModificationUtils.addModule(patchDir, layerPatchID, moduleName);
-        ContentModification fileModified = ContentModificationUtils.modifyMisc(patchDir, "updated script", standaloneShellFile, "bin", "standalone.sh");
+ContentModification fileModified = ContentModificationUtils.modifyMisc(patchDir, patchID, "updated script", standaloneShellFile, "bin", "standalone.sh");
 
         InstalledIdentity installedIdentity = loadInstalledIdentity();
 

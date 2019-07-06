@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -42,9 +41,9 @@ public class ManagedContainerConfiguration extends CommonContainerConfiguration 
 
     @Override
     public void validate() throws ConfigurationException {
-Validate.configurationDirectoryExists(jbossHome, "jbossHome '" + jbossHome + "' must exist");
+        super.validate();
 
-        Validate.configurationDirectoryExists(jbossHome, "jbossHome must exist");
+Validate.configurationDirectoryExists(jbossHome, "jbossHome '" + jbossHome + "' must exist");
         if (javaHome != null) {
             Validate.configurationDirectoryExists(javaHome, "javaHome must exist");
         }

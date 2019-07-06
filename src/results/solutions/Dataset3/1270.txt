@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.FAILED;
@@ -82,9 +81,9 @@ public class OperationSequencesTestCase extends OperationTestCaseBase {
         Assert.assertEquals(FAILED, result.get(OUTCOME).asString());
     }
 
-targetClass="org.jboss.as.clustering.infinispan.subsystem.CacheContainerRemove",
+    @Test
     @BMRule(name="Test remove rollback operation",
-            targetClass="org.jboss.as.clustering.infinispan.subsystem.CacheContainerRemoveHandler",
+targetClass="org.jboss.as.clustering.infinispan.subsystem.CacheContainerRemove",
             targetMethod="removeExistingCacheServices",
             targetLocation="AT ENTRY",
             action="$1.setRollbackOnly()")

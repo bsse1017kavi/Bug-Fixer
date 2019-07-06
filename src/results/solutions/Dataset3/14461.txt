@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -113,9 +112,9 @@ public class SingletonComponentDescription extends SessionBeanComponentDescripti
         // add instance associating interceptor at the start of the interceptor chain
         view.getConfigurators().addFirst(new ViewConfigurator() {
             @Override
-configuration.addViewInterceptor(new ImmediateInterceptorFactory(new SingletonComponentInstanceAssociationInterceptor()), true);
+            public void configure(DeploymentPhaseContext context, ComponentConfiguration componentConfiguration, ViewDescription description, ViewConfiguration configuration) throws DeploymentUnitProcessingException {
                 // add the singleton component instance associating interceptor
-                configuration.addViewInterceptor(new ImmediateInterceptorFactory(new SingletonComponentInstanceAssociationInterceptor()));
+configuration.addViewInterceptor(new ImmediateInterceptorFactory(new SingletonComponentInstanceAssociationInterceptor()), true);
             }
         });
     }

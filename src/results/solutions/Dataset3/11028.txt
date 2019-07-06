@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional;
 
 import backtype.storm.Config;
@@ -128,9 +127,9 @@ public class TransactionalSpoutCoordinator implements IRichSpout {
                         _collector.emit(TRANSACTION_BATCH_STREAM_ID, new Values(attempt, state, _currTransaction), attempt);
                     }
                     curr = nextTransactionId(curr);
-} catch(FailedBatchException e) {
+                }
             }     
-        } catch(FailedTransactionException e) {
+} catch(FailedBatchException e) {
             LOG.warn("Failed to get metadata for a transaction", e);
         }
     }

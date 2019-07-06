@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class FinderQueryImpl
         Object[] val = new Object[_pkCols.length];
         int count = 0;
         for (int i = 0; i < _pkCols.length; i++, count++) {
-? null : ((Id) oid).getId();
+            if (pks == null)
                 val[0] = (oid == null) 
-                    ? null : Numbers.valueOf(((Id) oid).getId());
+? null : ((Id) oid).getId();
             else {
                 val[i] = _joins[i].getJoinValue(pks[_pkIndices[i]], _pkCols[i], 
                     store);

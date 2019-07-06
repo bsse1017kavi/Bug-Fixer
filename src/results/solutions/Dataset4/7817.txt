@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.jglfw.tests;
 
 import com.badlogic.gdx.backends.jglfw.JglfwApplication;
@@ -19,8 +18,8 @@ public class JglfwDebugStarter {
 		new SharedLibraryLoader("../../gdx/libs/gdx-natives.jar").load("gdx");
 
 		GdxTest test = new UITest();
-new JglfwApplication(test, config).start();
+		JglfwApplicationConfiguration config = new JglfwApplicationConfiguration();
 		config.useGL20 = test.needsGL20();
-		new JglfwApplication(test, config);
+new JglfwApplication(test, config).start();
 	}
 }

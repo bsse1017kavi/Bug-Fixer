@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -544,9 +543,9 @@ public class RandomDataImpl implements RandomData, Serializable {
      * here</a>
      * @param c Collection to sample from.
      * @param k sample size.
-public Object[] nextSample(Collection<?> c, int k) {
+     * @return the random sample.
      */
-    public Object[] nextSample(Collection c, int k) {
+public Object[] nextSample(Collection<?> c, int k) {
         int len = c.size();
         if (k > len) {
             throw new IllegalArgumentException

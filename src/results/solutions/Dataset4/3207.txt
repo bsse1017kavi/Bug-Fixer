@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -33,9 +32,9 @@ import org.elasticsearch.common.component.LifecycleComponent;
  *
  * @author kimchy (shay.banon)
  */
-final ClusterBlock NO_MASTER_BLOCK = new ClusterBlock(2, "no master", true, true, ClusterBlockLevel.ALL);
+public interface Discovery extends LifecycleComponent<Discovery> {
 
-    final ClusterBlock NO_MASTER_BLOCK = new ClusterBlock(2, "no master", true, ClusterBlockLevel.ALL);
+final ClusterBlock NO_MASTER_BLOCK = new ClusterBlock(2, "no master", true, true, ClusterBlockLevel.ALL);
 
     DiscoveryNode localNode();
 

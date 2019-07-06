@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ public class RestSearchAction extends BaseRestHandler {
         client.execSearch(searchRequest, new ActionListener<SearchResponse>() {
             @Override public void onResponse(SearchResponse result) {
                 try {
-result.toJson(builder, request);
+                    JsonBuilder builder = RestJsonBuilder.cached(request);
                     builder.startObject();
-                    result.toJson(builder);
+result.toJson(builder, request);
                     builder.endObject();
                     channel.sendResponse(new JsonRestResponse(request, OK, builder));
                 } catch (Exception e) {

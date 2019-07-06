@@ -1,4 +1,3 @@
-
 package org.jboss.ejb.plugins.inflow;
 
 import java.security.AccessController;
@@ -8,9 +7,9 @@ import java.security.PrivilegedAction;
  * @author Scott.Stark@jboss.org
  * @version $Revison:$
  */
-static PrivilegedAction ACTION = new GetTCLAction(null);
+public class GetTCLAction implements PrivilegedAction
 {
-   static PrivilegedAction ACTION = new GetTCLAction();
+static PrivilegedAction ACTION = new GetTCLAction(null);
    Thread t;
 
    GetTCLAction(Thread t)

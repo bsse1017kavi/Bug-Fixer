@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -35,9 +34,9 @@ public class MSCAuxiliaryArchiveAppender implements AuxiliaryArchiveAppender {
 
     @Override
     public Archive<?> createAuxiliaryArchive() {
-archive.addPackage(MSCEnricherExtension.class.getPackage());
+        JavaArchive archive = ShrinkWrap.create(JavaArchive.class, "arquillian-testenricher-msc.jar");
         archive.addAsServiceProvider(RemoteLoadableExtension.class, MSCEnricherRemoteExtension.class);
-        archive.addPackage(MSCTestEnricher.class.getPackage());
+archive.addPackage(MSCEnricherExtension.class.getPackage());
         return archive;
     }
 }

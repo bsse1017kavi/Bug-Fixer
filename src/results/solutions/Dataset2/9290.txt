@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -2599,9 +2598,9 @@ public final class JavaCore extends Plugin implements IExecutableExtension {
 	 * @param monitor a progress monitor, or <code>null</code> if progress
 	 *    reporting and cancellation are not desired
 	 * @exception CoreException if the operation failed.
-if (JavaModelManager.isResourceTreeLocked()) {
+	 */
 	public static void run(IWorkspaceRunnable action, IProgressMonitor monitor) throws CoreException {
-		if (JavaModelManager.isResourceTreeLocked()) { // TODO: remove workaround bug http://bugs.eclipse.org/bugs/show_bug.cgi?id=29624
+if (JavaModelManager.isResourceTreeLocked()) {
 			new BatchOperation(action).run(monitor);
 		} else {
 			// use IWorkspace.run(...) to ensure that a build will be done in autobuild mode

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.fr;
 
 /**
@@ -41,9 +40,9 @@ public class TestElision extends BaseTokenStreamTestCase {
     String test = "Plop, juste pour voir l'embrouille avec O'brian. M'enfin.";
     Tokenizer tokenizer = new StandardTokenizer(Version.LUCENE_CURRENT, new StringReader(test));
     Set articles = new HashSet();
-TokenFilter filter = new ElisionFilter(Version.LUCENE_CURRENT, tokenizer, articles);
+    articles.add("l");
     articles.add("M");
-    TokenFilter filter = new ElisionFilter(tokenizer, articles);
+TokenFilter filter = new ElisionFilter(Version.LUCENE_CURRENT, tokenizer, articles);
     List tas = filtre(filter);
     assertEquals("embrouille", tas.get(4));
     assertEquals("O'brian", tas.get(6));

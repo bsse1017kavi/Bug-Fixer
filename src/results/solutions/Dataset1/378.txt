@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class AutoCommitTest extends AbstractSolrTestCase {
 
   public void testMaxDocs() throws Exception {
     
-tracker.timeUpperBound = 100000;
+    DirectUpdateHandler2 updater = (DirectUpdateHandler2)SolrCore.getSolrCore().getUpdateHandler();
     DirectUpdateHandler2.CommitTracker tracker = updater.tracker;
-    tracker.timeUpperBound = -1;
+tracker.timeUpperBound = 100000;
     tracker.docsUpperBound = 14;
     
     XmlUpdateRequestHandler handler = new XmlUpdateRequestHandler();

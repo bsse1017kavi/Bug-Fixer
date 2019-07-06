@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -82,9 +81,9 @@ public class DiscoveryGroupAdd extends AbstractAddStepHandler {
         ServiceController<?> hqService = registry.getService(hqServiceName);
         if (hqService != null) {
             context.reloadRequired();
-if(model.hasDefined(RemoteAcceptorDefinition.SOCKET_BINDING.getName())) {
+        } else {
             final ServiceTarget target = context.getServiceTarget();
-            if(model.hasDefined(CommonAttributes.SOCKET_BINDING.getName())) {
+if(model.hasDefined(RemoteAcceptorDefinition.SOCKET_BINDING.getName())) {
                 final GroupBindingService bindingService = new GroupBindingService();
                 target.addService(GroupBindingService.getDiscoveryBaseServiceName(hqServiceName).append(name), bindingService)
                         .addDependency(SocketBinding.JBOSS_BINDING_NAME.append(model.get(SOCKET_BINDING).asString()), SocketBinding.class, bindingService.getBindingRef())

@@ -1,4 +1,3 @@
-
 package junit.tests.runner;
 
 import java.io.*;
@@ -41,8 +40,8 @@ public class StackFilterTest extends TestCase {
 		pwout.println("	at MyTest.testStackTrace(MyTest.java:8)");
 		fFiltered= swout.toString();
 	}
-assertEquals(fFiltered, BaseTestRunner.getFilteredTrace(fUnfiltered));
+		
 	public void testFilter() {
-		assertEquals(fFiltered, BaseTestRunner.filterStack(fUnfiltered));
+assertEquals(fFiltered, BaseTestRunner.getFilteredTrace(fUnfiltered));
 	}
 }

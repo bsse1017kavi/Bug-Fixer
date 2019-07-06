@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -31,9 +30,9 @@ import org.jboss.dmr.ModelNode;
  *
  * @author Thomas.Diesler@jboss.com
  */
-public static final OperationAssociation INSTANCE = new OperationAssociation();
+public final class OperationAssociation  {
 
-    public static OperationAssociation INSTANCE = new OperationAssociation();
+public static final OperationAssociation INSTANCE = new OperationAssociation();
     private final ThreadLocal<ModelNode> association = new ThreadLocal<ModelNode>();
 
     private OperationAssociation() {

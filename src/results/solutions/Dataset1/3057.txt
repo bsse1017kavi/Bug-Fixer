@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -317,9 +316,9 @@ public class TestMultiMMap extends LuceneTestCase {
       docid.setStringValue("" + i);
       junk.setStringValue(TestUtil.randomUnicodeString(random));
       writer.addDocument(doc);
-writer.shutdown();
+    }
     IndexReader reader = writer.getReader();
-    writer.close();
+writer.shutdown();
     
     int numAsserts = atLeast(100);
     for (int i = 0; i < numAsserts; i++) {

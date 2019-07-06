@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class ModClusterStopContext implements OperationStepHandler, DescriptionP
                     ServiceController<?> controller = context.getServiceRegistry(false).getService(ModClusterService.NAME);
                     ModCluster modcluster = (ModCluster) controller.getValue();
                     log.debug("stop-context: " + operation);
-modcluster.stopContext(contexthost.webhost, contexthost.webcontext, contexthost.waittime);
+                    ContextHost contexthost = new ContextHost(operation);
 
-                    modcluster.stopContext(contexthost.webhost, contexthost.webcontext);
+modcluster.stopContext(contexthost.webhost, contexthost.webcontext, contexthost.waittime);
                     context.completeStep();
                 }
             }, OperationContext.Stage.RUNTIME);

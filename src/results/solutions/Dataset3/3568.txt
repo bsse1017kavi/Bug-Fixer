@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ public class BaseLayerTestCase extends AbstractTaskTestCase {
         String patchID = randomString();
         File patchDir = mkdir(tempDir, patchID);
         String layerPatchId = "mylayerPatchID";//randomString();
-ContentModification fileAdded = ContentModificationUtils.addMisc(patchDir, patchID, "new file resource", "bin", "my-new-standalone.sh");
+        String moduleName = randomString();
         ContentModification moduleAdded = ContentModificationUtils.addModule(patchDir, layerPatchId, moduleName);
-        ContentModification fileAdded = ContentModificationUtils.addMisc(patchDir, "new file resource", "bin", "my-new-standalone.sh");
+ContentModification fileAdded = ContentModificationUtils.addMisc(patchDir, patchID, "new file resource", "bin", "my-new-standalone.sh");
 
         Patch patch = PatchBuilder.create()
                 .setPatchId(patchID)

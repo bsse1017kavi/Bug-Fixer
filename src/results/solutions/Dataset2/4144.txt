@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.context;
 
 import org.apache.tomcat.core.*;
@@ -21,9 +20,9 @@ import org.w3c.dom.*;
  */
 public class WebXmlReader extends BaseInterceptor {
     public static final String defaultWelcomeList[]={"index.jsp", "index.html", "index.htm"};
-private static StringManager sm =StringManager.getManager("org.apache.tomcat.resources");
+    public static final int DEFAULT_SESSION_TIMEOUT=30;
 
-    private static StringManager sm =StringManager.getManager("org.apache.tomcat.core");
+private static StringManager sm =StringManager.getManager("org.apache.tomcat.resources");
     boolean validate=true;
 
     public WebXmlReader() {

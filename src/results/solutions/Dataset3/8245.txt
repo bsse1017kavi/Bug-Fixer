@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class XADataSourceAddCompositeHandler extends ResourceCompositeOperationH
         final ModelNode req = super.buildRequestWithoutHeaders(ctx);
         final ModelNode steps = req.get(Util.STEPS);
 
-final List<Property> propsList = xaProps.getValueConverter().fromString(ctx, xaPropsStr).asPropertyList();
+        final String xaPropsStr = xaProps.getValue(ctx.getParsedCommandLine());
         if(xaPropsStr != null) {
-            final List<Property> propsList = xaProps.getValueConverter().fromString(xaPropsStr).asPropertyList();
+final List<Property> propsList = xaProps.getValueConverter().fromString(ctx, xaPropsStr).asPropertyList();
             for(Property prop : propsList) {
                 final ModelNode address = this.buildOperationAddress(ctx);
                 address.add(XA_DATASOURCE_PROPERTIES, prop.getName());

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -346,9 +345,9 @@ public Rectangle computeTrim (int x, int y, int width, int height) {
 		xborder += borderWidth;
 		yborder += borderWidth;
 	}
-if (property [0] == 0) {
+	int [] property = new int [1];
 	OS.gtk_widget_style_get (handle, OS.interior_focus, property, 0);
-	if (property [0] != 0) {
+if (property [0] == 0) {
 		OS.gtk_widget_style_get (handle, OS.focus_line_width, property, 0);
 		xborder += property [0];
 		yborder += property [0];

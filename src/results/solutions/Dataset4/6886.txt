@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class ExponentialDecayFunctionParser extends DecayFunctionParser {
 
         @Override
         public Explanation explainFunction(String valueExpl, double value, double scale) {
-ce.setDescription("exp(- " + valueExpl + " * " + -1 * scale + ")");
+            ComplexExplanation ce = new ComplexExplanation();
             ce.setValue((float) evaluate(value, scale));
-            ce.setDescription("exp(- abs(" + valueExpl + ") * " + -1 * scale + ")");
+ce.setDescription("exp(- " + valueExpl + " * " + -1 * scale + ")");
             return ce;
         }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -114,9 +113,9 @@ public class Kurtosis extends AbstractStorelessUnivariateStatistic  implements S
                 if (moment.n <= 3 || variance < 10E-20) {
                     kurtosis = 0.0;
                 } else {
-(n * (n + 1) * moment.getResult() -
+                    double n = moment.n;
                     kurtosis =
-                        (n * (n + 1) * moment.m4 -
+(n * (n + 1) * moment.getResult() -
                                 3 * moment.m2 * moment.m2 * (n - 1)) /
                                 ((n - 1) * (n -2) * (n -3) * variance * variance);
                 }

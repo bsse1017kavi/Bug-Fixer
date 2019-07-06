@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.util.xmlissues;
 
 /* ================================================================
@@ -393,9 +392,9 @@ public class ScarabIssues implements java.io.Serializable
         attachmentOM.setIssue(issueOM);
         attachmentOM.setName(attachment.getName());
         attachmentOM.setAttachmentType(@OM@.AttachmentType.getInstance(attachment.getType()));
-attachmentOM.setData(attachment.getData());
+        attachmentOM.setMimeType(attachment.getMimetype());
         attachmentOM.setFileName(attachment.getPath());
-        attachmentOM.setData(attachment.getData().getBytes());
+attachmentOM.setData(attachment.getData());
         attachmentOM.setCreatedDate(attachment.getCreatedDate().getDate());
         attachmentOM.setModifiedDate(attachment.getModifiedDate().getDate());
         @OM@.ScarabUser creUser = @OM@.ScarabUserManager

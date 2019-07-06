@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -186,9 +185,9 @@ private static void initMsgHook(Display display) {
 static int /*long*/ getMsgProc(int /*long*/ code, int /*long*/ wParam, int /*long*/ lParam) {
 	Display display = Display.getCurrent();
 	if (display == null) return 0;
-if (code < 0 || (wParam & OS.PM_REMOVE) == 0) {
+	LONG hHook = (LONG)display.getData(HHOOK);
 	if (hHook == null) return 0;
-	if (code < 0) {
+if (code < 0 || (wParam & OS.PM_REMOVE) == 0) {
 		return OS.CallNextHookEx(hHook.value, (int)/*64*/code, wParam, lParam);
 	}
 	MSG msg = (MSG)display.getData(HHOOKMSG);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -181,9 +180,9 @@ public class ScriptTermsStringFieldFacetExecutor extends FacetExecutor {
         }
 
         @Override
-ScriptTermsStringFieldFacetExecutor.this.total = total;
+        public void postCollection() {
             ScriptTermsStringFieldFacetExecutor.this.missing = missing;
-            ScriptTermsStringFieldFacetExecutor.this.total = missing;
+ScriptTermsStringFieldFacetExecutor.this.total = total;
         }
 
         private boolean match(String value) {

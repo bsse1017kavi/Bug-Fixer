@@ -1,4 +1,3 @@
-
 package backtype.storm.transactional.state;
 
 import backtype.storm.transactional.TransactionalSpoutCoordinator;
@@ -82,9 +81,9 @@ public class RotatingTransactionalState {
             getState(txid, init);
             return null;
         }
-public void cleanupBefore(BigInteger txid) {
+    }
     
-    public void commit(BigInteger txid) {
+public void cleanupBefore(BigInteger txid) {
         SortedMap<BigInteger, Object> toDelete = _curr.headMap(txid);
         for(BigInteger tx: toDelete.keySet()) {
             _curr.remove(tx);

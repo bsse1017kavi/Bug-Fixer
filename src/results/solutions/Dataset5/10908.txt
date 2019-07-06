@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -71,9 +70,9 @@ public final class LibraryApplication extends WicketExampleApplication
 		getRequestCycleSettings().setRenderStrategy(IRequestCycleSettings.REDIRECT_TO_RENDER);
 
 		// Install a simple page authorization strategy, that checks all pages
-(Class)AuthenticatedWebPage.class, SignIn.class)
+		// of type AuthenticatedWebPage.
 		IAuthorizationStrategy authorizationStrategy = new SimplePageAuthorizationStrategy(
-			(Class<? extends Component<?>>)AuthenticatedWebPage.class, SignIn.class)
+(Class)AuthenticatedWebPage.class, SignIn.class)
 		{
 			@Override
 			protected boolean isAuthorized()

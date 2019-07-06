@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -140,9 +139,9 @@ public class BeanShellSampler extends BeanShellTestElement implements Sampler
                 bshOut = bshInterpreter.source(fileName);
             }
 
-res.setResponseData(out, null);
+            if (bshOut != null) {// Set response data
                 String out = bshOut.toString();
-                res.setResponseData(out.getBytes());
+res.setResponseData(out, null);
             }
             // script can also use setResponseData() so long as it returns null
 

@@ -1,4 +1,3 @@
-
 package org.jboss.as.test.integration.security.common;
 
 import java.util.ArrayList;
@@ -51,9 +50,9 @@ public abstract class AbstractSecurityDomainSetup implements ServerSetupTask {
             throw new RuntimeException("Operation not successful; outcome = " + result.get("outcome"));
         }
     }
-public void tearDown(final ManagementClient managementClient, final String containerId) {
+
     @Override
-    public void tearDown(final ManagementClient managementClient) {
+public void tearDown(final ManagementClient managementClient, final String containerId) {
 
         ModelNode op = new ModelNode();
         op.get(OP).set(REMOVE);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class SizeFieldMapper extends IntegerFieldMapper implements RootMapper {
         this(Defaults.ENABLED, new FieldType(Defaults.SIZE_FIELD_TYPE), null);
     }
 
-Defaults.BOOST, fieldType, Defaults.NULL_VALUE, Defaults.IGNORE_MALFORMED, provider, null);
+    public SizeFieldMapper(boolean enabled, FieldType fieldType, PostingsFormatProvider provider) {
         super(new Names(Defaults.NAME), Defaults.PRECISION_STEP, Defaults.FUZZY_FACTOR,
-                Defaults.BOOST, fieldType, Defaults.NULL_VALUE, Defaults.IGNORE_MALFORMED, provider);
+Defaults.BOOST, fieldType, Defaults.NULL_VALUE, Defaults.IGNORE_MALFORMED, provider, null);
         this.enabled = enabled;
     }
 

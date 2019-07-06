@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -136,9 +135,9 @@ public class TextField extends FieldType {
     BytesRef upper = analyzeMultiTerm(field.getName(), part2, multiAnalyzer);
     return new TermRangeQuery(field.getName(), lower, upper, minInclusive, maxInclusive);
   }
-if (part == null || analyzerIn == null) return null;
+
   public static BytesRef analyzeMultiTerm(String field, String part, Analyzer analyzerIn) {
-    if (part == null) return null;
+if (part == null || analyzerIn == null) return null;
 
     TokenStream source;
     try {

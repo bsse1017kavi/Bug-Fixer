@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -669,9 +668,9 @@ public class ServerOperationResolver {
             // TODO - deal with "add", "remove" and changing "auto-start" attribute
             if (ModelDescriptionConstants.WRITE_ATTRIBUTE_OPERATION.equals(operation.require(OP).asString())) {
                 final String attr = operation.get(NAME).asString();
-final String group = host.get(address.getLastElement().getKey(), address.getLastElement().getValue(), GROUP).asString();
+                if (GROUP.equals(attr) || SOCKET_BINDING_GROUP.equals(attr) || SOCKET_BINDING_PORT_OFFSET.equals(attr)) {
                     final String serverName = address.getElement(0).getValue();
-                    final String group = host.get(address.getLastElement().getKey(), address.getLastElement().getValue(), GROUP).toString();
+final String group = host.get(address.getLastElement().getKey(), address.getLastElement().getValue(), GROUP).asString();
                     final ServerIdentity id = new ServerIdentity(localHostName, group, serverName);
                     result = getServerRestartRequiredOperations(Collections.singleton(id));
                     return result;

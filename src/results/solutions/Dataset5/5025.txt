@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -334,9 +333,9 @@ void generateExtraMethods(String className) {
 	/* NSString helpers */
 	if (className.equals("NSString")) {
 		/* Get java string */
-out("\tchar[] buffer = new char[(int)/*64*/length()];");
+		out("public String getString() {");
 		outln();
-		out("\tchar[] buffer = new char[length()];");
+out("\tchar[] buffer = new char[(int)/*64*/length()];");
 		outln();
 		out("\tgetCharacters(buffer);");
 		outln();

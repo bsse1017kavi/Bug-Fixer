@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -228,9 +227,9 @@ public class FieldDeclaration extends AbstractVariableDeclaration {
 								|| initializationType.isCompatibleWith(fieldType)) {
 							this.initialization.computeConversion(initializationScope, fieldType, initializationType);
 							if (initializationType.needsUncheckedConversion(fieldType)) {
-} else if (initializationScope.compilerOptions().sourceLevel >= JDK1_5 // autoboxing
+								    initializationScope.problemReporter().unsafeTypeConversion(this.initialization, initializationType, fieldType);
 							}									
-						} else if (initializationScope.environment().options.sourceLevel >= JDK1_5 // autoboxing
+} else if (initializationScope.compilerOptions().sourceLevel >= JDK1_5 // autoboxing
 										&& (initializationScope.isBoxingCompatibleWith(initializationType, fieldType) 
 												|| (initializationType.isBaseType()  // narrowing then boxing ?
 														&& initializationType != null 

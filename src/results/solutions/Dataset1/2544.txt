@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -99,9 +98,9 @@ public class SystemTable
     /**
      * Record token being used by another node
      */
-if (ep == FBUtilities.getLocalAddress())
+    public static synchronized void updateToken(InetAddress ep, Token token)
     {
-        if (ep == FBUtilities.getBroadcastAddress())
+if (ep == FBUtilities.getLocalAddress())
             return;
         IPartitioner p = StorageService.getPartitioner();
         ColumnFamily cf = ColumnFamily.create(Table.SYSTEM_TABLE, STATUS_CF);

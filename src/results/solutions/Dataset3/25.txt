@@ -1,10 +1,9 @@
-
 package backtype.storm.serialization;
 
 import backtype.storm.tuple.Tuple;
 
 
-long crc32(Tuple tuple);
+public interface ITupleSerializer {
     byte[] serialize(Tuple tuple);
-//    long crc32(Tuple tuple);
+long crc32(Tuple tuple);
 }

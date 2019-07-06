@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public class FixedGenerationCount implements StoppingCondition {
      * Create a new FixedGenerationCount instance.
      *
      * @param maxGenerations number of generations to evolve
-public FixedGenerationCount(final int maxGenerations) throws NumberIsTooSmallException {
+     * @throws NumberIsTooSmallException if the number of generations is &lt; 1
      */
-    public FixedGenerationCount(final int maxGenerations) {
+public FixedGenerationCount(final int maxGenerations) throws NumberIsTooSmallException {
         if (maxGenerations <= 0) {
             throw new NumberIsTooSmallException(maxGenerations, 1, true);
         }

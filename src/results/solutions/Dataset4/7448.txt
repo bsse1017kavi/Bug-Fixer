@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -33,9 +32,9 @@ import java.util.Map;
  * */
 public class TemplateQueryBuilderTest extends ElasticsearchTestCase {
 
-Map<String, Object> vars = new HashMap<>();
+    @Test
     public void testJSONGeneration() throws IOException {
-        Map<String, Object> vars = new HashMap<String, Object>();
+Map<String, Object> vars = new HashMap<>();
         vars.put("template", "filled");
         TemplateQueryBuilder builder = new TemplateQueryBuilder("I am a $template string", vars);
         XContentBuilder content = XContentFactory.jsonBuilder();

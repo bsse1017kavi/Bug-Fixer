@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -94,9 +93,9 @@ public class FunctionReference extends SpelNodeImpl {
 		}
 
 		// Convert arguments if necessary and remap them for varargs if required
-ReflectionHelper.convertAllArguments(m.getParameterTypes(), m.isVarArgs(), converter, functionArgs);
+		if (functionArgs != null) {
 			TypeConverter converter = state.getEvaluationContext().getTypeConverter();
-			ReflectionHelper.convertArguments(m.getParameterTypes(), m.isVarArgs(), converter, functionArgs);
+ReflectionHelper.convertAllArguments(m.getParameterTypes(), m.isVarArgs(), converter, functionArgs);
 		}
 		if (m.isVarArgs()) {
 			functionArgs = ReflectionHelper.setupArgumentsForVarargsInvocation(m.getParameterTypes(), functionArgs);

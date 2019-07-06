@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -95,9 +94,9 @@ public class CheckboxTagTests extends AbstractFormTagTests {
 		assertEquals("Both tag and hidden element not rendered", 2, rootElement.elements().size());
 		Element checkboxElement = (Element) rootElement.elements().get(0);
 		assertEquals("input", checkboxElement.getName());
-assertEquals("someMap[key]", checkboxElement.attribute("name").getValue());
+		assertEquals("checkbox", checkboxElement.attribute("type").getValue());
 		assertEquals("someMapkey1", checkboxElement.attribute("id").getValue());
-		assertEquals("someMapkey", checkboxElement.attribute("name").getValue());
+assertEquals("someMap[key]", checkboxElement.attribute("name").getValue());
 		assertEquals("checked", checkboxElement.attribute("checked").getValue());
 		assertEquals("true", checkboxElement.attribute("value").getValue());
 	}

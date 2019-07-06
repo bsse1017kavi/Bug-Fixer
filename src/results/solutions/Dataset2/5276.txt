@@ -1,4 +1,3 @@
-
 /*
  * ManagePanel.java - Manages plugins
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -289,9 +288,9 @@ public class ManagePanel extends JPanel
 			EditPlugin[] plugins = jEdit.getPlugins();
 			entries = new ArrayList();
 			for(int i = 0; i < plugins.length; i++)
-String path = plugin.getPluginJAR().getPath();
+			{
 				EditPlugin plugin = plugins[i];
-				String path = plugin.getJAR().getPath();
+String path = plugin.getPluginJAR().getPath();
 				if(!new File(path).exists())
 				{
 					continue;

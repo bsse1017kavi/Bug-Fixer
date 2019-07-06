@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -279,9 +278,9 @@ public class TermsStringOrdinalsFacetExecutor extends FacetExecutor {
             current = values.getValueByOrd(position);
             return true;
         }
-return BytesRef.deepCopyOf(current);
+
         public BytesRef copyCurrent() {
-            return values.copyShared();
+return BytesRef.deepCopyOf(current);
         }
 
         @Override

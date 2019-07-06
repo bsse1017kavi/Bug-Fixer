@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -510,9 +509,9 @@ public Browser(Composite parent, int style) {
 	auto.setProperty(RegisterAsBrowser, variant);
 	variant.dispose();
 	
-if (rgdispid != null) auto.setProperty(rgdispid[0], variant);
+	variant = new Variant(false);
 	int[] rgdispid = auto.getIDsOfNames(new String[] {"RegisterAsDropTarget"}); //$NON-NLS-1$
-	auto.setProperty(rgdispid[0], variant);
+if (rgdispid != null) auto.setProperty(rgdispid[0], variant);
 	variant.dispose();
 }
 

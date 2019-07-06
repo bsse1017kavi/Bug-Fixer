@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.1 $ $Date$
@@ -141,9 +140,9 @@ public class BrowserInfoPage extends WebPage
 	 * Adds components.
 	 */
 	private final void initComps()
-PageParameters parameters = new PageParameters();
+	{
 		WebComponent meta = new WebComponent("meta");
-		PageParameters<String,Object> parameters = new PageParameters<String,Object>();
+PageParameters parameters = new PageParameters();
 		parameters.put("cto", continueTo);
 		CharSequence url = urlFor(new BookmarkablePageRequestTarget(BrowserInfoPage.class, parameters));
 		meta.add(new AttributeModifier("content", true, new Model("0; url=" + url)));

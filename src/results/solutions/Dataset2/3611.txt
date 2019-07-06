@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist;
 
 /*
@@ -2133,9 +2132,9 @@ public final class CompletionEngine
 				int count = 2;
 				char[] originalName = name;
 				for(int j = 0 ; j < excludeNames.length ; j++){
-j = 0;
+					if(CharOperation.equals(name, excludeNames[j], false)) {
 						name = CharOperation.concat(originalName, String.valueOf(count++).toCharArray());
-						i = 0;
+j = 0;
 					}	
 				}
 				

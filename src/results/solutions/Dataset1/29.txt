@@ -1,4 +1,3 @@
-
 /*
     Derby - Class org.apache.derby.impl.drda.DRDAConnThread
 
@@ -3792,9 +3791,9 @@ public class DRDAConnThread extends Thread {
 		try {
 			parseSQLDTA_work(stmt);
 		} 
-skipRemainder(true);
+		catch (SQLException se)
 		{
-			skipRemainder(false);
+skipRemainder(true);
 			throw se;
 		}
 	}

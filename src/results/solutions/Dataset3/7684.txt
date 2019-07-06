@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -84,9 +83,9 @@ public class ModelControllerClientTestCase {
         handler.setDelegate(null);
     }
 
-final ExistingChannelModelControllerClient client = new ExistingChannelModelControllerClient(clientChannel, channels.getExecutorService());
+    private ModelControllerClient createTestClient() {
         final Channel clientChannel = channels.getClientChannel();
-        final ExistingChannelModelControllerClient client = new ExistingChannelModelControllerClient(clientChannel);
+final ExistingChannelModelControllerClient client = new ExistingChannelModelControllerClient(clientChannel, channels.getExecutorService());
         clientChannel.receiveMessage(ManagementChannelReceiver.createDelegating(client));
         return client;
     }

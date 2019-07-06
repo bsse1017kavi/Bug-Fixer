@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -54,9 +53,9 @@ public abstract class ActionRequestBuilder<Request extends ActionRequest, Respon
         request.putHeader(key, value);
         return (RequestBuilder) this;
     }
-PlainListenableActionFuture<Response> future = new PlainListenableActionFuture<>(request.listenerThreaded(), client.threadPool());
+
     public ListenableActionFuture<Response> execute() {
-        PlainListenableActionFuture<Response> future = new PlainListenableActionFuture<Response>(request.listenerThreaded(), client.threadPool());
+PlainListenableActionFuture<Response> future = new PlainListenableActionFuture<>(request.listenerThreaded(), client.threadPool());
         execute(future);
         return future;
     }

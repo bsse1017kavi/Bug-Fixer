@@ -1,4 +1,3 @@
-
 /*
  * EudoraMailImportFilter.java Created 2003-05-14 by Karl Peder Olesen
  * 
@@ -239,9 +238,9 @@ public class EudoraMailImportFilter extends AbstractMailboxImporter {
 		String line = tokenizer.nextLine();
 		while (line != null) {
 			if (line.indexOf(':') != -1) {
-String header = EncodedWord.decode(
+				// a header
 				String key = line.substring(0, line.indexOf(':'));
-				String header = decoder.decode(
+String header = EncodedWord.decode(
 						(CharSequence) line.substring(line.indexOf(':') + 1)
 								.trim()).toString();
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2002-2004 The Apache Software Foundation
  *
@@ -63,9 +62,9 @@ public class JspcTest extends BuildFileTest {
     /**
      * The JUnit setup method
      */
-baseDir = new File(System.getProperty("root"), TASKDEFS_DIR);
+    public void setUp() {
         configureProject(TASKDEFS_DIR + "jspc.xml");
-        baseDir = new File(TASKDEFS_DIR);
+baseDir = new File(System.getProperty("root"), TASKDEFS_DIR);
         outDir = new File(baseDir, "jsp/java");
     }
 

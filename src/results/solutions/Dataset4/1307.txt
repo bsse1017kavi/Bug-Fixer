@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -32,9 +31,9 @@ import org.elasticsearch.index.settings.IndexSettings;
  * @author kimchy (Shay Banon)
  */
 public class ASCIIFoldingTokenFilterFactory extends AbstractTokenFilterFactory {
-super(index, indexSettings, name, settings);
+
     @Inject public ASCIIFoldingTokenFilterFactory(Index index, @IndexSettings Settings indexSettings, @Assisted String name, @Assisted Settings settings) {
-        super(index, indexSettings, name);
+super(index, indexSettings, name, settings);
     }
 
     @Override public TokenStream create(TokenStream tokenStream) {

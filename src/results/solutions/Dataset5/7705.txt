@@ -1,4 +1,3 @@
-
 /*
  * $Id: RefreshingView.java 5564 2006-04-28 16:05:28 -0700 (Fri, 28 Apr 2006)
  * ivaynberg $ $Revision$ $Date: 2006-04-28 16:05:28 -0700 (Fri, 28 Apr
@@ -189,9 +188,9 @@ public abstract class RefreshingView extends RepeatingView
 	 */
 	protected void addItems(Iterator items)
 	{
-((Item)items.next()).reattach();
+		while (items.hasNext())
 		{
-			add((Item)items.next());
+((Item)items.next()).reattach();
 		}
 	}
 

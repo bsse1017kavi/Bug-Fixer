@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2004 The Apache Software Foundation
  *
@@ -37,9 +36,9 @@ public class TimestampPolicy extends BaseLibraryPolicy {
      * @throws org.apache.tools.ant.BuildException
      *          if needed
      */
-owner.setUseTimestamp(true);
+    public boolean beforeConnect(Libraries owner, ListIterator libraries) {
         owner.markAllLibrariesForFetch(true);
-        owner._setUseTimestamp(true);
+owner.setUseTimestamp(true);
         return true;
     }
 

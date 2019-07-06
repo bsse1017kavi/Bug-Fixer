@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -973,9 +972,9 @@ public class SchemaGenerator {
             if (!_openjpaTables &&
                 (seqUpper.startsWith("OPENJPA_")
                     || seqUpper.startsWith("JDO_"))) // legacy
-schemaName != null, conn))
+                continue;
             if (_dict.isSystemSequence(sequenceName, sequenceSchema,
-                schemaName != null))
+schemaName != null, conn))
                 continue;
             if (!isAllowedTable(sequenceSchema, null))
                 continue;

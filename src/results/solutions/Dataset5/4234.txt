@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -373,9 +372,9 @@ public class RadioChoice extends AbstractSingleSelectChoice implements IOnChange
 				buffer.append(getPrefix());
 
 				String id = getChoiceRenderer().getIdValue(choice, index);
-+ (isSelected(choice,index) ? " checked=\"checked\"" : "") + " value=\"" + id
+				// Add radio tag
 				buffer.append("<input name=\"" + getInputName() + "\"" + " type=\"radio\""
-						+ (isSelected(choice,index) ? " checked" : "") + " value=\"" + id
++ (isSelected(choice,index) ? " checked=\"checked\"" : "") + " value=\"" + id
 						+ "\"");
 				
 				// Should a roundtrip be made (have onSelectionChanged called) when the option is clicked?

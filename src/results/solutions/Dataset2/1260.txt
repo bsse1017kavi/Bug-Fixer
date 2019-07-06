@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -95,9 +94,9 @@ public TypeBinding resolveType(BlockScope scope) {
 			return null;
 		}
 		if (isTypeUseDeprecated(binding, scope))
-return this.expressionType = binding;
+			scope.problemReporter().deprecatedType(binding, this);
 	}
-	return binding;
+return this.expressionType = binding;
 }
 public abstract void traverse(IAbstractSyntaxTreeVisitor visitor, ClassScope classScope);
 }

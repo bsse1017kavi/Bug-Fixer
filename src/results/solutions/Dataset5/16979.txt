@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -209,9 +208,9 @@ public class Classloader extends Task {
                 }
                 getProject().log("Setting parent loader " + name + " "
                     + parent + " " + parentFirst, Project.MSG_DEBUG);
-acl = AntClassLoader.newAntClassLoader((ClassLoader) parent,
+
                 // The param is "parentFirst"
-                acl = new AntClassLoader((ClassLoader) parent,
+acl = AntClassLoader.newAntClassLoader((ClassLoader) parent,
                          getProject(), classpath, parentFirst);
 
                 getProject().addReference(loaderName, acl);

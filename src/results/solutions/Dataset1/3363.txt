@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.values;
 
 /**
@@ -277,9 +276,9 @@ public abstract class IndexDocValues implements Closeable {
      */
     public int getByValue(BytesRef value, BytesRef spare) {
       return binarySearch(value, spare, 0, getValueCount() - 1);
-private int binarySearch(BytesRef b, BytesRef bytesRef, int low,
+    }    
 
-    protected int binarySearch(BytesRef b, BytesRef bytesRef, int low,
+private int binarySearch(BytesRef b, BytesRef bytesRef, int low,
         int high) {
       int mid = 0;
       while (low <= high) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public final class ServerExtensionAdd extends AbstractServerModelUpdate<Void> {
         // no action
     }
 
-public void applyUpdateBootAction(final BootUpdateContext updateContext) {
+    /** {@inheritDoc}
      * @param updateContext*/
-    public void applyUpdateBootAction(final UpdateContext updateContext) {
+public void applyUpdateBootAction(final BootUpdateContext updateContext) {
         try {
             for (Extension extension : Module.loadServiceFromCurrent(ModuleIdentifier.fromString(moduleName), Extension.class)) {
                 extension.activate(null);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class EJBServlet extends HttpServlet {
         SecurityClient client = null;
         try {           
             InitialContext ctx = new InitialContext();
-client.setSimple("user1", "password1");
+            
             client = SecurityClientFactory.getSecurityClient();
-            client.setSimple("somebody", "password");
+client.setSimple("user1", "password1");
             client.login();
 
             injectedSession.hello();

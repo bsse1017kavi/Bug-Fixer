@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.taxonomy.directory;
 
 import java.io.IOException;
@@ -146,9 +145,9 @@ class ParentArray {
    * and also doesn't need to worry about reads happening at the same time.
    * 
    * NOTE: add() and refresh() CANNOT be used together. If you call add(),
-void add(int ordinal, int parentOrdinal) {
+   * this changes the arrays and refresh() can no longer be used.
    */
-  void add(int ordinal, int parentOrdinal) throws IOException {
+void add(int ordinal, int parentOrdinal) {
     if (ordinal >= prefetchParentOrdinal.length) {
       // grow the array, if necessary.
       // In Java 6, we could just do Arrays.copyOf()...

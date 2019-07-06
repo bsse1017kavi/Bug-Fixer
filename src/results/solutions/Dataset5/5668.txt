@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -180,9 +179,9 @@ public class ExplicitConstructorCall
 		}
 	}
 
-syntheticAccessor = binding.getAccessMethod(true);
+	public void manageSyntheticAccessIfNecessary(BlockScope currentScope) {
 		if (binding.alwaysNeedsAccessMethod()) {
-			syntheticAccessor = binding.getAccessMethod();
+syntheticAccessor = binding.getAccessMethod(true);
 			return;
 		}
 		

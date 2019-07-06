@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -225,9 +224,9 @@ public class NativeJDBCSeq
     @Override
     protected Object nextInternal(JDBCStore store, ClassMapping mapping)
         throws SQLException {
-return getSequence(conn);
+        Connection conn = getConnection(store);
         try {
-            return Numbers.valueOf(getSequence(conn));
+return getSequence(conn);
         } finally {
             closeConnection(conn);
         }

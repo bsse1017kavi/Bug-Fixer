@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder;
 
 /*
@@ -332,9 +331,9 @@ protected void findSourceFiles(IResourceDelta sourceDelta, int segmentCount) thr
 						} else if (definedTypeNames.length > 0) { // skip it if it failed to successfully define a type
 							IPath packagePath = typePath.removeLastSegments(1);
 							for (int i = 0, length = definedTypeNames.length; i < length; i++)
-newState.remove(sourceLocation);
+								removeClassFile(packagePath.append(new String(definedTypeNames[i])));
 						}
-						newState.remove(location);
+newState.remove(sourceLocation);
 						return;
 					case IResourceDelta.CHANGED :
 						if ((sourceDelta.getFlags() & IResourceDelta.CONTENT) == 0)

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -107,9 +106,9 @@ public class ParameterizedMethodBinding extends MethodBinding {
 		method.typeVariables = NoTypeVariables;
 		method.originalMethod = originalMethod;
 		method.parameters = originalMethod.parameters;
-method.returnType = scope.environment().createParameterizedType(
+		method.thrownExceptions = originalMethod.thrownExceptions;
 		ReferenceBinding genericClassType = scope.getJavaLangClass();
-		method.returnType = scope.createParameterizedType(
+method.returnType = scope.environment().createParameterizedType(
 			genericClassType,
 			new TypeBinding[] {  scope.environment().createWildcard(genericClassType, 0, receiverType.erasure(), null /*no extra bound*/, Wildcard.EXTENDS) },
 			null);

@@ -1,4 +1,3 @@
-
 /**
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -78,9 +77,9 @@ public class UndertowConnector implements Connector {
         // Do nothing
     }
 
-return this.listener.getBinding().getValue().getAbsolutePort();
+    @Override
     public int getPort() {
-        return this.listener.getBinding().getValue().getPort();
+return this.listener.getBinding().getValue().getAbsolutePort();
     }
 
     @Override

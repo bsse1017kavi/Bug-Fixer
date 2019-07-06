@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyTesting.functionTests.harness.Sed
@@ -356,9 +355,9 @@ public class Sed
 
         // Define the input and output files based on args
         if (is == null)
-inFile = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            inFile = new BufferedReader(new FileReader(srcFile));
         else
-            inFile = new BufferedReader(new InputStreamReader(is));
+inFile = new BufferedReader(new InputStreamReader(is, "UTF-8"));
         outFile = new PrintWriter
         ( new BufferedWriter(new FileWriter(dstFile), 10000), true );
 

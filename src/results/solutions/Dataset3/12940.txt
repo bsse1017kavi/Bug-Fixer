@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -223,9 +222,9 @@ public class HttpHeaders implements MultiValueMap<String, String>, Serializable 
 	 * <p>Returns an empty set when the allowed methods are unspecified.
 	 * @return the allowed methods
 	 */
-if (!StringUtils.isEmpty(value)) {
+	public Set<HttpMethod> getAllow() {
 		String value = getFirst(ALLOW);
-		if (value != null) {
+if (!StringUtils.isEmpty(value)) {
 			List<HttpMethod> allowedMethod = new ArrayList<HttpMethod>(5);
 			String[] tokens = value.split(",\\s*");
 			for (String token : tokens) {

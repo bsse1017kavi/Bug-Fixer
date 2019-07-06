@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -59,9 +58,9 @@ public class TestBooleanQueryVisitSubscorers extends LuceneTestCase {
     RandomIndexWriter writer = new RandomIndexWriter(random(), dir, config);
     writer.addDocument(doc("lucene", "lucene is a very popular search engine library"));
     writer.addDocument(doc("solr", "solr is a very popular search server and is using lucene"));
-writer.shutdown();
+    writer.addDocument(doc("nutch", "nutch is an internet search engine with web crawler and is using lucene and hadoop"));
     reader = writer.getReader();
-    writer.close();
+writer.shutdown();
     searcher = newSearcher(reader);
   }
   

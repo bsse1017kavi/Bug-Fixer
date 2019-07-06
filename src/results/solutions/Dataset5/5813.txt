@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -52,9 +51,9 @@ public class TestDataCacheOptimisticLockRecovery
 
         emf = Persistence.createEntityManagerFactory("test", options);
 
-em.createQuery("delete from OptimisticLockInstance").executeUpdate();
+        EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.createQuery("delete from OptimisticLockInstance");
+em.createQuery("delete from OptimisticLockInstance").executeUpdate();
 
         OptimisticLockInstance oli = new OptimisticLockInstance("foo");
         try {

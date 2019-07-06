@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -234,9 +233,9 @@ final class RequestDispatcherImpl implements RequestDispatcher {
 		throw (RuntimeException) ex;
 	    else if ( ex instanceof ServletException )
 		throw (ServletException) ex;
-(sm.getString("dispatcher.forwardException"), ex );
+	    else
 		throw new ServletException
-		    (sm.getString("dispatcher.forwardException", ex));
+(sm.getString("dispatcher.forwardException"), ex );
 	}
 
 	// close the response - output after this point will be discarded.

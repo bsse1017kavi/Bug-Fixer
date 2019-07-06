@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -35,9 +34,9 @@ public class TestSizeBoundedForceMerge extends LuceneTestCase {
 
   private void addDocs(IndexWriter writer, int numDocs, boolean withID) throws IOException {
     for (int i = 0; i < numDocs; i++) {
-doc.add(new StringField("id", "" + i, Field.Store.NO));
+      Document doc = new Document();
       if (withID) {
-        doc.add(new Field("id", "" + i, StringField.TYPE_UNSTORED));
+doc.add(new StringField("id", "" + i, Field.Store.NO));
       }
       writer.addDocument(doc);
     }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -371,9 +370,9 @@ public Point getPreferredSize () {
 	REBARBANDINFO rbBand = new REBARBANDINFO ();
 	rbBand.cbSize = REBARBANDINFO.sizeof;
 	rbBand.fMask = OS.RBBIM_CHILDSIZE | OS.RBBIM_IDEALSIZE;
-return new Point (width, rbBand.cyMaxChild);
+	OS.SendMessage (hwnd, OS.RB_GETBANDINFO, index, rbBand);
 	int width = rbBand.cxIdeal + parent.getMargin (index);
-	return new Point (width, rbBand.cyMinChild);
+return new Point (width, rbBand.cyMaxChild);
 }
 
 /**

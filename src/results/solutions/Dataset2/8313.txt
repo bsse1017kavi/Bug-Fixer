@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -284,9 +283,9 @@ public  class AttributeGroup
                 .add(AttributeGroupPeer.ATTRIBUTE_GROUP_ID, getAttributeGroupId());
             AttributeGroupPeer.doDelete(c);
             List attrGroups = module.getAttributeGroups(getIssueType());
-getIssueType(), Boolean.FALSE);
+            attrGroups.remove(this);
             ScarabCache.put(attrGroups, module, GET_ATTRIBUTE_GROUPS, 
-                            getIssueType(), new Boolean(false));
+getIssueType(), Boolean.FALSE);
         } 
         else
         {

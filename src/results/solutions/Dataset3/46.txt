@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -386,9 +385,9 @@ public class DistributableSessionTestCase {
         long interval = 10L;
         AuthenticatedSession authenticatedSession = new AuthenticatedSession(null, null);
         ArgumentCaptor<TimeUnit> capturedUnit = ArgumentCaptor.forClass(TimeUnit.class);
-when(manager.createSessionId()).thenReturn(sessionId);
+        
         when(this.manager.getSessionManager()).thenReturn(manager);
-        when(manager.createIdentifier()).thenReturn(sessionId);
+when(manager.createSessionId()).thenReturn(sessionId);
         when(manager.createSession(sessionId)).thenReturn(session);
         when(this.session.getAttributes()).thenReturn(oldAttributes);
         when(this.session.getMetaData()).thenReturn(oldMetaData);

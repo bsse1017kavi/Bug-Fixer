@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.service;
 /*
  * 
@@ -105,9 +104,9 @@ public class GCInspector
             Long previousCount = gccounts.get(gc.getName());
             Long count = gc.getCollectionCount();
             
-if (count.equals(previousCount))
+            if (previousCount == null)
                 previousCount = 0L;           
-            if (count == previousCount)
+if (count.equals(previousCount))
                 continue;
             
             gccounts.put(gc.getName(), count);

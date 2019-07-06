@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -83,9 +82,9 @@ public class ValveUtil {
         op = new ModelNode();
         op.get(OP).set(WRITE_ATTRIBUTE_OPERATION);
         op.get(OP_ADDR).add(SUBSYSTEM, "web");
-op.get("enabled").set("true");
+        op.get(OP_ADDR).add("valve", name);
         op.get(NAME).set("enabled");
-        op.get("enabled").set("false");
+op.get("enabled").set("true");
         updates.add(op);
         applyUpdates(updates, client);
 

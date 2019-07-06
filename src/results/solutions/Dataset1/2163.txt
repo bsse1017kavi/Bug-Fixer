@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.jdbc.EmbedStatement
@@ -1201,9 +1200,9 @@ public class EmbedStatement extends ConnectionChild
 					// Set up the finalization of the ResultSet to
 					// mark the activation as unused. It will be
 					// closed sometime later by the connection
-lresults.singleUseActivation = a;
+					// outside of finalization.
 					if (a.isSingleExecution())
-						lresults.finalizeActivation = a;
+lresults.singleUseActivation = a;
 
 					updateCount = -1;
 					retval = true;

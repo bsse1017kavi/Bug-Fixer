@@ -1,4 +1,3 @@
-
 package org.jboss.as.subsystem.test;
 
 import java.io.Serializable;
@@ -18,9 +17,9 @@ import org.jboss.msc.service.ServiceTarget;
  * @author <a href="kabir.khan@jboss.com">Kabir Khan</a>
  */
 public class AdditionalInitialization extends AdditionalParsers {
-public static class ManagementAdditionalInitialization extends AdditionalInitialization implements Serializable {
+    public static final AdditionalInitialization MANAGEMENT = new ManagementAdditionalInitialization();
 
-    private static class ManagementAdditionalInitialization extends AdditionalInitialization implements Serializable {
+public static class ManagementAdditionalInitialization extends AdditionalInitialization implements Serializable {
         private static final long serialVersionUID = -509444465514822866L;
 
         @Override

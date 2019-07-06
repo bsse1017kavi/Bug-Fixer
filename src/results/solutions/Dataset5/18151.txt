@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -29,9 +28,9 @@ public class MapProperty extends MultiProperty {
 
     private Map<String, JMeterProperty> value;
 
-public MapProperty(String name, Map<?,?> value) {
+    private transient Map<String, JMeterProperty> savedValue = null;
 
-    public MapProperty(String name, Map value) {
+public MapProperty(String name, Map<?,?> value) {
         super(name);
         log.info("map = " + value);
         this.value = normalizeMap(value);

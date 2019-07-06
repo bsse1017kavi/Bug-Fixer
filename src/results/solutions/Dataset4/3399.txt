@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -145,9 +144,9 @@ public final class AndroidGraphicsDaydream implements Graphics, Renderer {
 			view.setRenderer(this);
 			return view;
 		} else {
-int sdkVersion = Integer.parseInt(android.os.Build.VERSION.SDK);
+			config.useGL20 = false;
 			configChooser = getEglConfigChooser();
-			int sdkVersion = android.os.Build.VERSION.SDK_INT;
+int sdkVersion = Integer.parseInt(android.os.Build.VERSION.SDK);
 
 			if (sdkVersion >= 11) {
 				GLSurfaceView view = new GLSurfaceView(dream) {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -182,9 +181,9 @@ public abstract class Actor {
 		actions.clear();
 	}
 
-String name = this.name != null ? this.name : getClass().getName();
+	@Override
 	public String toString () {
-		String name = this.name != null ? this.name : getClass().getSimpleName();
+String name = this.name != null ? this.name : getClass().getName();
 		if (name.equals("")) name = getClass().getName();
 		return name + " pos=" + x + "," + y + " origin=" + originX + "," + originY + " size=" + width + "," + height;
 	}

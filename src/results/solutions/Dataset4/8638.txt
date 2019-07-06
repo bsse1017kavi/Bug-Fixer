@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.shaders;
 
 import com.badlogic.gdx.Gdx;
@@ -66,9 +65,9 @@ public class DepthShader extends DefaultShader {
 	public DepthShader(final String prefix, final String vertexShader, final String fragmentShader, final Renderable renderable, int numBones) {
 		this(new ShaderProgram(prefix + vertexShader, prefix + fragmentShader), renderable, numBones);
 	}
-super(shaderProgram, renderable, false, false, false, 0, 0, 0, numBones);
+	
 	public DepthShader(final ShaderProgram shaderProgram, final Renderable renderable, int numBones) {
-		super(shaderProgram, renderable, false, false, false, false, 0, 0, 0, numBones);
+super(shaderProgram, renderable, false, false, false, 0, 0, 0, numBones);
 		this.numBones = numBones;
 		int w = 0;
 		final int n = renderable.mesh.getVertexAttributes().size();

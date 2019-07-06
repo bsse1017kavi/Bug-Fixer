@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -545,9 +544,9 @@ public class SearchContext implements Releasable {
     }
 
     public SearchLookup lookup() {
-searchLookup = new SearchLookup(mapperService(), fieldData(), request.types());
+        // TODO: The types should take into account the parsing context in QueryParserContext...
         if (searchLookup == null) {
-            searchLookup = new SearchLookup(mapperService(), fieldDataCache(), request.types());
+searchLookup = new SearchLookup(mapperService(), fieldData(), request.types());
         }
         return searchLookup;
     }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2004 The Apache Software Foundation.
  * 
@@ -1022,9 +1021,9 @@ public class DOMSerializerImpl implements LSSerializer, DOMConfiguration {
               while (next == null) {
                 // Move to sibling if possible.
                 next = node.getNextSibling();
-if (node == null || root == node){
+                if (next == null){
                     node = node.getParentNode();
-                    if (root == node){
+if (node == null || root == node){
                         next = null;
                         break;                   
                     }

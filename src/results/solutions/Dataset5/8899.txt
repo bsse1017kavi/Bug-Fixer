@@ -1,4 +1,3 @@
-
 /**
  * <copyright> 
  *
@@ -51,9 +50,9 @@ public class TypeSystemImpl extends AbstractTypeSystemImpl implements TypeSystem
 	 * @see org.eclipse.xand3.analyzation.TypeSystem#typeForName(java.lang.String,
 	 *      org.eclipse.xpand3.staticTypesystem.AbstractTypeReference[])
 	 */
-if (dt != null) {
+	public Type typeForName(String name, AbstractTypeReference... typeArguments) {
 		DeclaredType dt = contr.typeForName(name);
-		if (dt == null) {
+if (dt != null) {
 			//TODO CACHING
 			Type t = FACTORY.createType();
 			t.setDeclaredType(dt);

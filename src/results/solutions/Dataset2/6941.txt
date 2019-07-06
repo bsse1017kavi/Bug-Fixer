@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /******************************************************************************* 
@@ -424,9 +423,9 @@ public void dispose() {
 		for (int i = 0, length = children.size(); i < length; i++){
 			LayoutPart child = (LayoutPart)children.get(i);
 			child.setContainer(null);
-if (child instanceof ViewStack)
+			// In PartSashContainer dispose really means deactivate, so we
 			// only dispose PartTabFolders.
-			if (child instanceof PartTabFolder)
+if (child instanceof ViewStack)
 				child.dispose();
 		}
 	}

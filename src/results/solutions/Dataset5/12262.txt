@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2006 The Apache Software Foundation
  *
@@ -282,9 +281,9 @@ public class XSLTProcess extends MatchingTask implements XSLTLogger {
                 "input file " + inFile.toString() + " does not exist", getLocation());
         }
 
-baseDir = FILE_UTILS.resolveFile(getProject().getBaseDir(),".");
+        try {
             if (baseDir == null) {
-                baseDir = getProject().resolveFile(".");
+baseDir = FILE_UTILS.resolveFile(getProject().getBaseDir(),".");
             }
 
             liaison = getLiaison();

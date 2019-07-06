@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -424,9 +423,9 @@ class ColumnFamilyStoreMBeanIterator implements Iterator<Map.Entry<String, Colum
     private MBeanServerConnection mbeanServerConn;
     
     public ColumnFamilyStoreMBeanIterator(MBeanServerConnection mbeanServerConn)
-ObjectName query = new ObjectName("org.apache.cassandra.db:type=ColumnFamilies,*");
+    throws MalformedObjectNameException, NullPointerException, IOException
     {
-        ObjectName query = new ObjectName("org.apache.cassandra.db:type=ColumnFamilyStores,*");
+ObjectName query = new ObjectName("org.apache.cassandra.db:type=ColumnFamilies,*");
         resIter = mbeanServerConn.queryNames(query, null).iterator();
         this.mbeanServerConn = mbeanServerConn;
     }

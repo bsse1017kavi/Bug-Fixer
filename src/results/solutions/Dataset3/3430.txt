@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ import org.jboss.msc.service.ServiceName;
  *
  * @author Brian Stansberry (c) 2011 Red Hat Inc.
  */
-static final HornetQServerControlHandler INSTANCE = new HornetQServerControlHandler();
+public class HornetQServerControlHandler extends AbstractRuntimeOnlyHandler {
 
-    public static HornetQServerControlHandler INSTANCE = new HornetQServerControlHandler();
+static final HornetQServerControlHandler INSTANCE = new HornetQServerControlHandler();
 
     public static final AttributeDefinition STARTED = new SimpleAttributeDefinition(CommonAttributes.STARTED, ModelType.BOOLEAN,
             false, AttributeAccess.Flag.STORAGE_RUNTIME);

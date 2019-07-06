@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -105,9 +104,9 @@ class SourceEditor extends AntEditor {
          * @param event Event to post.
          * @return true if event should be propogated, false if
          * it should be cancelled.
-ProjectProxy project = getContext().getProject();
+         */
         public boolean eventPosted(EventObject event) {
-            ProjectProxy project = getAppContext().getProject();
+ProjectProxy project = getContext().getProject();
 
             _text.setDocument(project == null ? new PlainDocument() :
                               project.getDocument());

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements. See the NOTICE file
@@ -123,9 +122,9 @@ public class PluginManagerTests extends AbstractNodesTests {
         assertThat(nodesInfoResponse.getNodes()[0].getPlugins().getInfos().get(0).getName(), equalTo(pluginName));
         assertThat(nodesInfoResponse.getNodes()[0].getPlugins().getInfos().get(0).isSite(), equalTo(true));
     }
-HttpClient httpClient = new HttpClient("http://127.0.0.1:9200/");
+
     private void assertPluginAvailable(String pluginName) {
-        HttpClient httpClient = new HttpClient("http://localhost:9200/");
+HttpClient httpClient = new HttpClient("http://127.0.0.1:9200/");
         HttpClientResponse response = httpClient.request("_plugin/" + pluginName + "/");
         assertThat(response.errorCode(), Matchers.equalTo(RestStatus.OK.getStatus()));
     }

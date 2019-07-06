@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.loader;
 
 import com.badlogic.gdx.assets.AssetLoaderParameters;
@@ -209,9 +208,9 @@ public class G3dModelLoader extends ModelLoader<AssetLoaderParameters<Model>> {
 						jsonTexture.id = textureId;
 						
 						String fileName = texture.getString("filename", null);
-jsonTexture.fileName = materialDir + "/" + fileName;
+						if(fileName == null)
 							throw new GdxRuntimeException("Texture needs filename.");
-						jsonTexture.fileName = materialDir + (materialDir.endsWith("/") ? "" : "/") + fileName;
+jsonTexture.fileName = materialDir + "/" + fileName;
 						
 						jsonTexture.uvTranslation = readVector2(texture.get("uvTranslation"), 0f, 0f);
 						jsonTexture.uvScaling = readVector2(texture.get("uvScaling"), 1f, 1f);

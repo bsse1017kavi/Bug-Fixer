@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -656,9 +655,9 @@ public final class WorkbenchKeyboard {
 				"ExecutionError.Message"); //$NON-NLS-1$
 		String title = Util.translateString(RESOURCE_BUNDLE,
 				"ExecutionError.Title"); //$NON-NLS-1$
-exceptionMessage = exception.getClass().getName();
+		String exceptionMessage = exception.getMessage();
 		if (exceptionMessage == null) {
-			exceptionMessage = message;
+exceptionMessage = exception.getClass().getName();
 		}
 		IStatus status = new Status(IStatus.ERROR,
 				WorkbenchPlugin.PI_WORKBENCH, 0, exceptionMessage, exception);

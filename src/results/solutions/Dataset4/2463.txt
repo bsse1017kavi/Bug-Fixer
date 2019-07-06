@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -293,9 +292,9 @@ public final class BytesRefOrdValComparator extends NestedWrappableComparator<By
         return ord;
     }
 
-termsIndex = indexFieldData.load(context).getBytesValues();
+    @Override
     public FieldComparator<BytesRef> setNextReader(AtomicReaderContext context) throws IOException {
-        termsIndex = indexFieldData.load(context).getBytesValues(false);
+termsIndex = indexFieldData.load(context).getBytesValues();
         assert termsIndex.ordinals() != null;
         missingOrd = ordInCurrentReader(termsIndex, missingValue);
         assert consistentInsertedOrd(termsIndex, missingOrd, missingValue);

@@ -1,4 +1,3 @@
-
 /*
  * @(#) IIOPCosNaming.java	1.0 02/07/15
  *
@@ -93,9 +92,9 @@ public class IIOPCosNaming implements NameService {
 		    
 		    // add a shudown hook for this process
 		    Runtime.getRuntime().addShutdownHook(new Thread() {
-IIOPCosNaming.this.stop();
+			    public void run() {
 				try {
-				    stop();
+IIOPCosNaming.this.stop();
 				} catch (Exception e) {
 				    TraceCarol.error("IIOPCosNaming ShutdownHook problem" ,e);
 				}

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -294,9 +293,9 @@ public class MethodUtilsTestCase extends TestCase {
             childOne = new BetaBean("ChildOne");
             MethodUtils.invokeMethod(parent, "bogus", childOne);
             // should get here!
-} catch (ReflectionException e) {
+            fail("No exception thrown when no appropriate method exists");
             
-        } catch (NoSuchMethodException e) {
+} catch (ReflectionException e) {
             // this is what we're expecting!
         }
         

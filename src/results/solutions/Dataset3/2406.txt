@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -31,9 +30,9 @@ import javax.interceptor.InvocationContext;
  * @author John Bailey
  */
 @Interceptors(InterceptorFromParent.class)
-public Object interceptParent(InvocationContext context) throws Exception {
+public class BeanParent {
     @AroundInvoke
-    public Object intercept(InvocationContext context) throws Exception {
+public Object interceptParent(InvocationContext context) throws Exception {
         if (!context.getMethod().getName().equals("echo")) {
             return context.proceed();
         }

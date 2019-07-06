@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.lucene40;
 
 /*
@@ -477,9 +476,9 @@ public class Lucene40TermVectorsReader extends TermVectorsReader {
     public long totalTermFreq() {
       return freq;
     }
-public DocsEnum docs(Bits liveDocs, DocsEnum reuse, boolean needsFreqs /* ignored */) throws IOException {
+
     @Override
-    public DocsEnum docs(Bits liveDocs, DocsEnum reuse, int flags /* ignored */) throws IOException {
+public DocsEnum docs(Bits liveDocs, DocsEnum reuse, boolean needsFreqs /* ignored */) throws IOException {
       TVDocsEnum docsEnum;
       if (reuse != null && reuse instanceof TVDocsEnum) {
         docsEnum = (TVDocsEnum) reuse;

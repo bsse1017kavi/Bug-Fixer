@@ -1,4 +1,3 @@
-
 /*
  * SearchBar.java - Search & replace toolbar
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -239,9 +238,9 @@ public class SearchBar extends JPanel
 		SearchAndReplace.setSearchString(find.getText());
 		SearchAndReplace.setReverseSearch(reverse);
 
-if(SearchAndReplace.find(view,view.getBuffer(),start,false,reverse))
+		try
 		{
-			if(SearchAndReplace.find(view,view.getBuffer(),start))
+if(SearchAndReplace.find(view,view.getBuffer(),start,false,reverse))
 				return true;
 		}
 		catch(Exception e)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -194,9 +193,9 @@ public abstract class AbstractScalarDifferentiableOptimizer
      * @exception FunctionEvaluationException if the objective function throws one during
      * the search
      * @exception OptimizationException if the algorithm failed to converge
-protected abstract RealPointValuePair doOptimize()
+     * @exception IllegalArgumentException if the start point dimension is wrong
      */
-    abstract protected RealPointValuePair doOptimize()
+protected abstract RealPointValuePair doOptimize()
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException;
 
 }

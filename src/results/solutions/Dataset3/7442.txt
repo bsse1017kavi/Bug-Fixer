@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -207,9 +206,9 @@ public abstract class UnivariateRealSolverImpl
      * @throws IllegalArgumentException
      */
     protected void verifyInterval(final double lower, final double upper) {
-LocalizedFormats.ENDPOINTS_NOT_AN_INTERVAL,
+        if (lower >= upper) {
             throw MathRuntimeException.createIllegalArgumentException(
-                    "endpoints do not specify an interval: [{0}, {1}]",
+LocalizedFormats.ENDPOINTS_NOT_AN_INTERVAL,
                     lower, upper);
         }
     }

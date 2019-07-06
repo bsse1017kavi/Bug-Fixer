@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class RemoteOutboundConnectionService extends AbstractOutboundConnectionS
             uri = this.getConnectionURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
-return endpoint.connect(uri, this.connectionCreationOptions, getCallbackHandler());
+        }
         final Endpoint endpoint = this.endpointInjectedValue.getValue();
-        return endpoint.connect(uri, this.connectionCreationOptions);
+return endpoint.connect(uri, this.connectionCreationOptions, getCallbackHandler());
     }
 
     Injector<OutboundSocketBinding> getDestinationOutboundSocketBindingInjector() {

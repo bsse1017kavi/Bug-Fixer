@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder;
 
 /*
@@ -277,9 +276,9 @@ private IProject[] getRequiredProjects() {
 		// some binary resources on the class path can come from projects that are not included in the project references
 		if (binaryResources != null) {
 			Object[] keyTable = binaryResources.keyTable;
-if (p != null && p != currentProject && !projects.contains(p))
+			for (int i = 0, l = keyTable.length; i < l; i++) {
 				IProject p = (IProject) keyTable[i];
-				if (p != null && !projects.contains(p))
+if (p != null && p != currentProject && !projects.contains(p))
 					projects.add(p);
 			}
 		}

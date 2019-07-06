@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -180,9 +179,9 @@ public class Clinit extends AbstractMethodDeclaration {
 					int oldPosition = codeStream.position;
 					codeStream.return_();
 					codeStream.updateLocalVariablesAttribute(oldPosition);
-codeStream.recordPositionsFrom(0, declaringType.sourceStart);
+				}
 				// Record the end of the clinit: point to the declaration of the class
-				codeStream.recordPositionsFrom(0, declaringType);
+codeStream.recordPositionsFrom(0, declaringType.sourceStart);
 				classFile.completeCodeAttributeForClinit(codeAttributeOffset);
 			}
 	}

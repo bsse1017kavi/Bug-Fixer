@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -54,9 +53,9 @@ public class SMIMEAssertionTestElement extends AbstractTestElement implements
             return SMIMEAssertion.getResult(this, response, getName());
         } catch (NoClassDefFoundError e) {
             AssertionResult assertionResult = new AssertionResult(getName());
-.getResString("bouncy_castle_unavailable_message")); //$NON-NLS-1$
+            assertionResult.setError(true);
             assertionResult.setResultForFailure(JMeterUtils
-                .getResString("bouncy_castle_unavailable_message"));
+.getResString("bouncy_castle_unavailable_message")); //$NON-NLS-1$
             return assertionResult;
         }
     }

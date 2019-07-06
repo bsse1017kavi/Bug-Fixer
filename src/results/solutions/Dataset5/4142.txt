@@ -1,4 +1,3 @@
-
 /*
  * ==============================================================================
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -124,9 +123,9 @@ public abstract class PortletApplication extends Application implements ISession
 		Session session = sessionStore.lookup(request);
 
 		if (session == null)
-session = getSessionFactory().newSession(request);
+		{
 			// Create session using session factory
-			session = getSessionFactory().newSession();
+session = getSessionFactory().newSession(request);
 
 			// Set the client Locale for this session
 			session.setLocale(request.getLocale());

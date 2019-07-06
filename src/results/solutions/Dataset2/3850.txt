@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -397,9 +396,9 @@ public abstract class ASTNode implements TypeConstants, TypeIds {
 		if (type.isBaseType())
 			return false;
 
-if ((refType.isPrivate() || refType.isLocalType()) && !scope.isDefinedInType(refType)) {
+		ReferenceBinding refType = (ReferenceBinding) type;
 
-		if ((refType.isPrivate() /*|| refType.isLocalType()*/) && !scope.isDefinedInType(refType)) {
+if ((refType.isPrivate() || refType.isLocalType()) && !scope.isDefinedInType(refType)) {
 			// ignore cases where type is used from within inside itself 
 			((ReferenceBinding)refType.erasure()).modifiers |= ExtraCompilerModifiers.AccLocallyUsed;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -38,9 +37,9 @@ public class AuthenticatedHtmlPage extends HtmlPage
     {
         final RequestCycle cycle = getRequestCycle();
         boolean signedIn = cycle.getSession().getProperty("wicket.examples.signin2.user") != null;
-cycle.redirectToInterceptPage(new SignIn2(null));
+        if (!signedIn)
         {
-            cycle.redirectToInterceptPage(SignIn2.class);
+cycle.redirectToInterceptPage(new SignIn2(null));
         }
         return signedIn;
     }

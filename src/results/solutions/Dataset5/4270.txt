@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1507,9 +1506,9 @@ LRESULT WM_ACTIVATE (int wParam, int lParam) {
 	if (OS.GetParent (lParam) == handle) {
 		TCHAR buffer = new TCHAR (0, 128);
 		OS.GetClassName (lParam, buffer, buffer.length ());
-return LRESULT.ZERO;
+		String className = buffer.toString (0, buffer.strlen ());
 		if (className.equals (Display.AWT_WINDOW_CLASS)) {
-			return LRESULT.ONE;
+return LRESULT.ZERO;
 		}
 	}
 	if ((wParam & 0xFFFF) != 0) {

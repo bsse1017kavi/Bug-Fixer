@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -493,9 +492,9 @@ public final class PropertyResolver
 			{
 				method = clz.getMethod("is" + name, null);
 			}
-log.debug("Cannot find getter " + clz + "." + expression);
+			catch (Exception e)
 			{
-				log.debug("Cannot find getter " + clz + "." + expression, e);
+log.debug("Cannot find getter " + clz + "." + expression);
 			}
 		}
 		return method;

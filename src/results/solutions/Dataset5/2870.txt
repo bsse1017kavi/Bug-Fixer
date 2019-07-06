@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -364,9 +363,9 @@ public abstract class DefaultRmicAdapter implements RmicAdapter {
                 // Not a .class file or the one we'd generate
                 return null;
             }
-String base = name.substring(0, name.length() - ".class".length());
+
             // we know that name.endsWith(".class")
-            String base = name.substring(0, name.length() - 6);
+String base = name.substring(0, name.length() - ".class".length());
 
             String classname = base.replace(File.separatorChar, '.');
             if (attributes.getVerify()

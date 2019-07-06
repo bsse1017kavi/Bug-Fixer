@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -81,9 +80,9 @@ public class MultiSourceTypeFactory
             throw new TypeException( message );
         }
 
-if( m_type != null && !m_type.isInstance( object ) )
+        // Create the object
         final Object object = factory.create( name );
-        if( !m_type.isInstance( object ) )
+if( m_type != null && !m_type.isInstance( object ) )
         {
             final String message = REZ.getString( "mismatched-type.error", name, object.getClass().getName() );
             throw new TypeException( message );

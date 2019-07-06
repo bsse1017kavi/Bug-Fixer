@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -54,9 +53,9 @@ public class StompBrokerRelayMessageHandlerTests {
 
 		this.tcpClient = new StubTcpOperations();
 
-this.brokerRelay.setTcpClient(this.tcpClient);
+		this.brokerRelay = new StompBrokerRelayMessageHandler(new StubMessageChannel(),
 				new StubMessageChannel(), new StubMessageChannel(), Arrays.asList("/topic"));
-		this.brokerRelay.setTcpClient(tcpClient);
+this.brokerRelay.setTcpClient(this.tcpClient);
 	}
 
 

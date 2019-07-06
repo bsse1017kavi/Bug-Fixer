@@ -1,4 +1,3 @@
-
 /* 
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public final class IconToolbarBean {
     /**
      * Constructor to transform a line value (from icon set file) to a icon bean for toolbar.
      * @param strToSplit - the line value (i18n key, ActionNames ID, icon path, optional icon pressed path)
-IconToolbarBean(final String strToSplit) throws NullPointerException, IllegalArgumentException {
+     * @throws JMeterException if error in parsing.
      */
-    IconToolbarBean(final String strToSplit) throws JMeterException {
+IconToolbarBean(final String strToSplit) throws NullPointerException, IllegalArgumentException {
         if (strToSplit == null) {
             throw new NullPointerException("Icon definition must not be null"); //$NON-NLS-1$
         }

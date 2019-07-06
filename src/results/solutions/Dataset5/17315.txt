@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -47,9 +46,9 @@ public class BindingTypePattern extends ExactTypePattern implements BindingPatte
     	if (isVarArgs != o.isVarArgs) return false;
     	return o.type.equals(this.type) && o.formalIndex == this.formalIndex;
     }
-result = 37*result + super.hashCode();
+    public int hashCode() {
         int result = 17;
-        result = 37*result + type.hashCode();
+result = 37*result + super.hashCode();
         result = 37*result + formalIndex;
         return result;
     }

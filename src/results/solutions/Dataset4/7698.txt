@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -222,9 +221,9 @@ public class MapperService extends AbstractIndexComponent implements Iterable<Do
         DocumentMapper mapper = mappers.get(type);
         if (mapper != null) {
             return mapper;
-throw new TypeMissingException(index, type, "typing to auto create mapping, but dynamic mapping is disabled");
+        }
         if (!dynamic) {
-            return null;
+throw new TypeMissingException(index, type, "typing to auto create mapping, but dynamic mapping is disabled");
         }
         // go ahead and dynamically create it
         synchronized (mutex) {

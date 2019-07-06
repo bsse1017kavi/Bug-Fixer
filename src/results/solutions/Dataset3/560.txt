@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ import org.jboss.dmr.ModelType;
  * {@link org.jboss.as.controller.ResourceDefinition} for the file data store
  */
 public class FileDataStoreResourceDefinition extends SimpleResourceDefinition {
-new SimpleAttributeDefinitionBuilder(EJB3SubsystemModel.PATH, ModelType.STRING, false)
+
     public static final SimpleAttributeDefinition PATH =
-            new SimpleAttributeDefinitionBuilder(EJB3SubsystemModel.PATH, ModelType.STRING, true)
+new SimpleAttributeDefinitionBuilder(EJB3SubsystemModel.PATH, ModelType.STRING, false)
                     .setAllowExpression(true)
                     .setValidator(new ModelTypeValidator(ModelType.STRING, true, true))
                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -180,9 +179,9 @@ public class FixedOrderComparator<T> implements Comparator<T>, Serializable {
      *  it was already known to the Comparator.
      * @throws UnsupportedOperationException if a comparison has already been made
      */
-final Integer position = map.put(obj, Integer.valueOf(counter++));
+    public boolean add(final T obj) {
         checkLocked();
-        final Integer position = map.put(obj, new Integer(counter++));
+final Integer position = map.put(obj, Integer.valueOf(counter++));
         return position == null;
     }
 

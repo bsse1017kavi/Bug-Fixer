@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class TestPredicatedSortedMap<K, V> extends AbstractTestSortedMap<K, V> {
     }
 
     //-----------------------------------------------------------------------
-return PredicatedSortedMap.predicatedSortedMap(map, keyPredicate, valuePredicate);
+    protected SortedMap<K, V> decorateMap(SortedMap<K, V> map, Predicate<? super K> keyPredicate,
         Predicate<? super V> valuePredicate) {
-        return PredicatedSortedMap.decorate(map, keyPredicate, valuePredicate);
+return PredicatedSortedMap.predicatedSortedMap(map, keyPredicate, valuePredicate);
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -189,9 +188,9 @@ public abstract class AbstractAjaxBehavior
 	protected void writeJsReference(final Response response, final PackageResourceReference ref)
 	{
 		String url = RequestCycle.get().urlFor(ref);
-response.println("\"></script>");
+		response.write("\t<script language=\"JavaScript\" type=\"text/javascript\" " + "src=\"");
 		response.write(url);
-		response.write("\"></script>\n");
+response.println("\"></script>");
 	}
 
 	/**

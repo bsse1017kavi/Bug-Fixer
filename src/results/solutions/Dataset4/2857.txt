@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public class ShardSlowLogSearchService extends AbstractIndexShardComponent {
         );
     }
 
-public synchronized void onRefreshSettings(Settings settings) {
+    class ApplySettings implements IndexSettingsService.Listener {
         @Override
-        public void onRefreshSettings(Settings settings) {
+public synchronized void onRefreshSettings(Settings settings) {
             long queryWarnThreshold = settings.getAsTime("index.search.slowlog.threshold.query.warn", TimeValue.timeValueNanos(ShardSlowLogSearchService.this.queryWarnThreshold)).nanos();
             if (queryWarnThreshold != ShardSlowLogSearchService.this.queryWarnThreshold) {
                 ShardSlowLogSearchService.this.queryWarnThreshold = queryWarnThreshold;

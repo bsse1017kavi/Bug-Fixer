@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.loaders.g3d;
 
 import java.io.BufferedReader;
@@ -49,9 +48,9 @@ public class G3DTLoader {
 			KeyframedSubMesh[] subMeshes = new KeyframedSubMesh[numMeshes];
 			for(int i = 0; i < numMeshes; i++) {
 				subMeshes[i] = readMesh(in);
-model.setAnimation(model.getAnimations()[0].name, 0, false);
+			}
 			KeyframedModel model = new KeyframedModel(subMeshes);			
-			model.setAnimation(model.getAnimations()[0].name, 0);
+model.setAnimation(model.getAnimations()[0].name, 0, false);
 			return model;
 		} catch(Throwable e) {
 			throw new GdxRuntimeException("Couldn't read keyframed model, error in line " + lineNum + ", '" + line + "' : " + e.getMessage(), e);

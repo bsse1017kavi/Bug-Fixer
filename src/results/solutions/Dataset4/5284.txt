@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -41,9 +40,9 @@ public class GdxSetup {
 	public void build (String outputDir, String appName, String packageName, String mainClass, String sdkLocation) {
 		Project project = new Project();
 		
-if(!isSdkLocationValid(sdkLocation)) {
+		String packageDir = packageName.replace('.', '/');
 		String sdkPath = sdkLocation.replace('\\', '/');
-		if(isSdkLocationValid(sdkLocation)) {
+if(!isSdkLocationValid(sdkLocation)) {
 			System.out.println("Android SDK location '" + sdkLocation + "' doesn't contain an SDK");
 		}
 

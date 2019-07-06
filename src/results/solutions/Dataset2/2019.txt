@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -92,9 +91,9 @@ Record
 rdataFromString(Name name, short dclass, int ttl, MyStringTokenizer st,
 		Name origin)
 throws TextParseException
-String s = nextString(st);
+{
 	ARecord rec = new ARecord(name, dclass, ttl);
-	String s = st.nextToken();
+String s = nextString(st);
 	try {
 		InetAddress address;
 		if (s.equals("@me@")) {

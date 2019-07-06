@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -131,9 +130,9 @@ public class SingletonComponent extends SessionBeanComponent implements Lockable
     public void start() {
         super.start();
         if (this.initOnStartup) {
-ROOT_LOGGER.debugf("%s bean is a @Startup (a.k.a init-on-startup) bean, creating/getting the singleton instance", this.getComponentName());
+            // Do not call createInstance() because we can't ever assume that the singleton instance
             // hasn't already been created.
-            ROOT_LOGGER.debug(this.getComponentName() + " bean is a @Startup (a.k.a init-on-startup) bean, creating/getting the singleton instance");
+ROOT_LOGGER.debugf("%s bean is a @Startup (a.k.a init-on-startup) bean, creating/getting the singleton instance", this.getComponentName());
             this.getComponentInstance();
         }
     }

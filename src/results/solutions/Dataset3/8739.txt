@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -139,9 +138,9 @@ public class EmbeddedServerFactory {
 
                     Method setModuleLoaderMethod = configurationClass.getMethod("setModuleLoader", ModuleLoader.class);
                     setModuleLoaderMethod.invoke(configuration, moduleLoader);
-Method bootstrapStartMethod = bootstrapClass.getMethod("startup", configurationClass, List.class);
+
                     Class<?> bootstrapClass = serverModuleClassLoader.loadClass(Bootstrap.class.getName());
-                    Method bootstrapStartMethod = bootstrapClass.getMethod("start", configurationClass, List.class);
+Method bootstrapStartMethod = bootstrapClass.getMethod("startup", configurationClass, List.class);
                     Object future = bootstrapStartMethod.invoke(bootstrap, configuration, Collections.<ServiceActivator>emptyList());
 
                     Class<?> asyncFutureClass = serverModuleClassLoader.loadClass(AsyncFuture.class.getName());

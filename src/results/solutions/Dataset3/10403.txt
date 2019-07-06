@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -296,9 +295,9 @@ public class FileSystemUtils {
         if (path.length() > 0 && path.charAt(0) != '"') {
             path = "\"" + path + "\"";
         }
-String[] cmdAttribs = new String[] {"cmd.exe", "/C", "dir /a /-c " + path};
+        
         // build and run the 'dir' command
-        String[] cmdAttribs = new String[] {"cmd.exe", "/C", "dir /-c " + path};
+String[] cmdAttribs = new String[] {"cmd.exe", "/C", "dir /a /-c " + path};
         
         // read in the output of the command to an ArrayList
         List<String> lines = performCommand(cmdAttribs, Integer.MAX_VALUE, timeout);

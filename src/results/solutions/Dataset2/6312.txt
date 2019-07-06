@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.util.xml;
 
 import org.apache.tomcat.util.*;
@@ -609,9 +608,9 @@ class AddChild extends XmlAction {
 	Object obj=st.pop();
 	Object parent=st.peek();
 	st.push( obj ); // put it back
-if( ctx.getDebug() >0) ctx.log("Calling " + parentC + "." + parentM  +" " + obj  );
+
 	String parentC=parent.getClass().getName();
-	ctx.log("Calling " + parentC + "." + parentM  +" " + obj  );
+if( ctx.getDebug() >0) ctx.log("Calling " + parentC + "." + parentM  +" " + obj  );
 
 	Class params[]=new Class[1];
 	if( paramT==null) {

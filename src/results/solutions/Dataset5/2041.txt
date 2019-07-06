@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2004 IBM Corporation.
  * All rights reserved. 
@@ -225,9 +224,9 @@ public class ExactAnnotationTypePattern extends AnnotationTypePattern {
 		String ret = "@" + annotationType.toString();
 		if (formalName != null) ret = ret + " " + formalName;
 		return ret;
-public Object accept(PatternNodeVisitor visitor, Object data) {
+	}
 
-    public Object accept(PointcutVisitor visitor, Object data) {
+public Object accept(PatternNodeVisitor visitor, Object data) {
         return visitor.visit(this, data);
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -82,9 +81,9 @@ public class QueryProcessor
                                                   select.getColumnsLimit()));
         }
 
-rows = StorageProxy.read(commands, select.getConsistencyLevel());
+        try
         {
-            rows = StorageProxy.readProtocol(commands, select.getConsistencyLevel());
+rows = StorageProxy.read(commands, select.getConsistencyLevel());
         }
         catch (TimeoutException e)
         {

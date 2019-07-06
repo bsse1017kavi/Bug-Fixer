@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.store.raw.data.ChainAllocPageOperation
@@ -181,9 +180,9 @@ public final class CompressSpacePageOperation extends PhysicalPageOperation
 			SanityManager.ASSERT(
                 undoPage instanceof AllocPage, 
 				"undo Page is not an allocPage");
-((AllocPage)undoPage).undoCompressSpace(
+		}
 
-		((AllocPage)undoPage).compressSpace(
+((AllocPage)undoPage).undoCompressSpace(
              CLRInstant, newHighestPage, num_pages_truncated);
 	}
 

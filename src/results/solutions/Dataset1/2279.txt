@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.HasVariantValueNodeVisitor
@@ -114,9 +113,9 @@ public class HasVariantValueNodeVisitor implements Visitor
 	 */
 	public Visitable visit(Visitable node) throws StandardException
 	{
-if (ignoreParameters && ((ValueNode)node).requiresTypeFromContext())
+		if (node instanceof ValueNode)
 		{
-			if (ignoreParameters && ((ValueNode)node).isParameterNode())
+if (ignoreParameters && ((ValueNode)node).requiresTypeFromContext())
 				return node;
 				
 			if (((ValueNode)node).getOrderableVariantType() <= variantType)

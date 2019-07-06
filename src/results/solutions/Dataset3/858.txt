@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -47,9 +46,9 @@ class MockAsyncContext implements AsyncContext {
 
 	private final List<AsyncListener> listeners = new ArrayList<AsyncListener>();
 
-private long timeout = 10 * 1000L;	// 10 seconds is Tomcat's default
+	private String dispatchedPath;
 
-	private long timeout = 10 * 60 * 1000L;	// 10 seconds is Tomcat's default
+private long timeout = 10 * 1000L;	// 10 seconds is Tomcat's default
 
 
 	public MockAsyncContext(ServletRequest request, ServletResponse response) {

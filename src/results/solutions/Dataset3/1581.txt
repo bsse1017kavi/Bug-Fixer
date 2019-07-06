@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -197,9 +196,9 @@ public class JasperReportsUtilsTests extends TestCase {
 		HSSFSheet sheet = workbook.getSheetAt(0);
 		assertNotNull("Sheet should not be null", sheet);
 		HSSFRow row = sheet.getRow(3);
-assertEquals("Cell content should be Dear Lord!", "Dear Lord!", cell.getRichStringCellValue().getString());
+		HSSFCell cell = row.getCell((short) 1);
 		assertNotNull("Cell should not be null", cell);
-		assertEquals("Cell content should be Dear Lord!", "Dear Lord!", cell.getStringCellValue());
+assertEquals("Cell content should be Dear Lord!", "Dear Lord!", cell.getRichStringCellValue().getString());
 	}
 
 	private JasperReport getReport() throws Exception {

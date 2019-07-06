@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -59,9 +58,9 @@ class AliasStepHandler implements OperationStepHandler {
             throw ControllerMessages.MESSAGES.aliasStepHandlerOperationNotFound(op, addr, mapped);
         }
 
-context.addStep(copy, targetHandler, Stage.MODEL, true);
+        ModelNode copy = operation.clone();
         copy.get(OP_ADDR).set(mapped.toModelNode());
-        context.addStep(copy, targetHandler, Stage.IMMEDIATE);
+context.addStep(copy, targetHandler, Stage.MODEL, true);
         context.stepCompleted();
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -221,9 +220,9 @@ public class PropertySetter {
       if ("true".equalsIgnoreCase(v)) {
         return Boolean.TRUE;
       } else if ("false".equalsIgnoreCase(v)) {
-} else if (Priority.class.isAssignableFrom(type)) {
+        return Boolean.FALSE;
       }
-    } else if (Level.class.isAssignableFrom(type)) {
+} else if (Priority.class.isAssignableFrom(type)) {
       return OptionConverter.toLevel(v, Level.DEBUG);
     }
     return null;

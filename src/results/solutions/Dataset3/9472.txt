@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class FramedSnappyCompressorInputStream extends CompressorInputStream {
 
     private boolean endReached, inUncompressedChunk;
 
-private final PureJavaCrc32C checksum = new PureJavaCrc32C();
+    private int uncompressedBytesRemaining;
     private long expectedChecksum = -1;
-    private PureJavaCrc32C checksum = new PureJavaCrc32C();
+private final PureJavaCrc32C checksum = new PureJavaCrc32C();
 
     /**
      * Constructs a new input stream that decompresses snappy-framed-compressed data

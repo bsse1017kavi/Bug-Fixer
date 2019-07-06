@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public final class TestMapReduce extends MahoutTestCase {
   
   @Override
   @Before
-conf = getConfiguration();
+  public void setUp() throws Exception {
     super.setUp();
-    conf = new Configuration();
+conf = getConfiguration();
     fs = FileSystem.get(conf);
   }
   

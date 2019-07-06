@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -488,9 +487,9 @@ public MethodBinding findMethodForArray(ArrayBinding receiverType, char[] select
 	ReferenceBinding object = getJavaLangObject();
 	MethodBinding methodBinding = object.getExactMethod(selector, argumentTypes);
 	if (methodBinding != null) {
-return new MethodBinding((methodBinding.modifiers & ~AccProtected) | AccPublic, CLONE, methodBinding.returnType, argumentTypes, null, object);
+		// handle the method clone() specially... cannot be protected or throw exceptions
 		if (argumentTypes == NoParameters && CharOperation.equals(selector, CLONE))
-			return new MethodBinding((methodBinding.modifiers ^ AccProtected) | AccPublic, CLONE, methodBinding.returnType, argumentTypes, null, object);
+return new MethodBinding((methodBinding.modifiers & ~AccProtected) | AccPublic, CLONE, methodBinding.returnType, argumentTypes, null, object);
 		if (canBeSeenByForCodeSnippet(methodBinding, receiverType, invocationSite, this))
 			return methodBinding;
 	}

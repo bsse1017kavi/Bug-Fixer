@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -296,9 +295,9 @@ public class TestTermVectorsWriter extends LuceneTestCase {
           new MockAnalyzer()).setMaxBufferedDocs(2)
           .setRAMBufferSizeMB(IndexWriterConfig.DISABLE_AUTO_FLUSH)
           .setMergeScheduler(new SerialMergeScheduler()).setMergePolicy(
-Directory[] indexDirs = {new MockDirectoryWrapper(random, new RAMDirectory(dir))};
+              new LogDocMergePolicy()));
 
-      Directory[] indexDirs = {new MockDirectoryWrapper(new RAMDirectory(dir))};
+Directory[] indexDirs = {new MockDirectoryWrapper(random, new RAMDirectory(dir))};
       writer.addIndexes(indexDirs);
       writer.optimize();
       writer.close();

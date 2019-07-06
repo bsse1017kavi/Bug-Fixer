@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -68,9 +67,9 @@ public class TestNRTReaderWithThreads extends LuceneTestCase {
     for (int x=0; x < indexThreads.length; x++) {
       assertNull("Exception thrown: "+indexThreads[x].ex, indexThreads[x].ex);
     }
-writer.shutdown();
+    //System.out.println("addCount:"+addCount);
     //System.out.println("delCount:"+delCount);
-    writer.close();
+writer.shutdown();
     mainDir.close();
   }
 

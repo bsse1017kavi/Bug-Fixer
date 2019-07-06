@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -125,9 +124,9 @@ public class TexturePackerFileProcessor extends FileProcessor {
 						inputFile.inputFile.delete();
 					}
 				};
-String scaledPackFileName = rootSettings.scaledPackFileName(packFileName, i);
+				deleteProcessor.setRecursive(false);
 
-				String scaledPackFileName = rootSettings.getScaledPackFileName(packFileName, i);
+String scaledPackFileName = rootSettings.scaledPackFileName(packFileName, i);
 				File packFile = new File(scaledPackFileName);
 
 				String prefix = packFile.getName();

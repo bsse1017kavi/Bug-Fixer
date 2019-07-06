@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.batch;
 
 /*
@@ -33,9 +32,9 @@ String[] directoryList(String qualifiedPackageName) {
 	File dir = new File(path + qualifiedPackageName);
 	notFound : if (dir != null && dir.isDirectory()) {
 		// must protect against a case insensitive File call
-int last = qualifiedPackageName.lastIndexOf(File.separatorChar);
+		// walk the qualifiedPackageName backwards looking for an uppercase character before the '/'
 		int index = qualifiedPackageName.length();
-		int last = qualifiedPackageName.lastIndexOf('/');
+int last = qualifiedPackageName.lastIndexOf(File.separatorChar);
 		while (--index > last && !Character.isUpperCase(qualifiedPackageName.charAt(index))) {}
 		if (index > last) {
 			if (last == -1) {

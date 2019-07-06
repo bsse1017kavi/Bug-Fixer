@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.miscellaneous;
 
 /*
@@ -41,9 +40,9 @@ public final class PatternKeywordMarkerFilter extends KeywordMarkerFilter {
    * @param in
    *          TokenStream to filter
    * @param pattern
-public PatternKeywordMarkerFilter(TokenStream in, Pattern pattern) {
+   *          the pattern to apply to the incoming term buffer
    **/
-  protected PatternKeywordMarkerFilter(TokenStream in, Pattern pattern) {
+public PatternKeywordMarkerFilter(TokenStream in, Pattern pattern) {
     super(in);
     this.matcher = pattern.matcher("");
   }

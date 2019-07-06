@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -902,9 +901,9 @@ public class DeploymentStructureDescriptorParser implements DeploymentUnitProces
                             parseFilterList(reader, resourceFilters);
                             break;
                         default:
-break;
+                            throw unexpectedContent(reader);
                     }
-                    // not reached
+break;
                 }
                 default: {
                     throw unexpectedContent(reader);

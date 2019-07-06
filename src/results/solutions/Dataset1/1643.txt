@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db;
 
 import java.io.DataOutputStream;
@@ -39,9 +38,9 @@ public class RangeCommand
                            Arrays.copyOf(dob.getData(), dob.getLength()));
     }
 
-byte[] bytes = message.getMessageBody();
+    public static RangeCommand read(Message message) throws IOException
     {
-        byte[] bytes = (byte[]) message.getMessageBody()[0];
+byte[] bytes = message.getMessageBody();
         DataInputBuffer dib = new DataInputBuffer();
         dib.reset(bytes, bytes.length);
         return serializer.deserialize(new DataInputStream(dib));

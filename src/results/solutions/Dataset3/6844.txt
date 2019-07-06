@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -157,9 +156,9 @@ public class BatchSqlUpdate extends SqlUpdate {
 	 * meaning "not applicable", as the statement is not actually
 	 * executed by this method)
 	 * @see #flush
-public int update(Object... params) throws DataAccessException {
+	 */
 	@Override
-	public int update(Object[] params) throws DataAccessException {
+public int update(Object... params) throws DataAccessException {
 		validateParameters(params);
 		this.parameterQueue.add(params.clone());
 

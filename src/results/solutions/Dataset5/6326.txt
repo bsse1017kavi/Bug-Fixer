@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -193,9 +192,9 @@ public class SelectConstructor {
             for (int i = 0; i < exps.projections.length; i++) {
                 resultVal = (Val) exps.projections[i];
                 // have to join through to related type for pc object 
-Val.JOIN_REL | Val.FORCE_OUTER);
+                // projections; this ensures that we have all our joins cached
                 state.projections[i] = resultVal.initialize(sel, ctx, 
-                    Val.JOIN_REL);
+Val.JOIN_REL | Val.FORCE_OUTER);
                 joins = sel.and(joins, state.projections[i].joins);
             }
         }

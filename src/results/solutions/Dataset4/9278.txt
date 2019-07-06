@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class TranslogService extends AbstractIndexShardComponent {
             }
             if (disableFlush) {
                 return;
-int currentNumberOfOperations = translog.estimatedNumberOfOperations();
+            }
 
-            int currentNumberOfOperations = translog.numberOfOperations();
+int currentNumberOfOperations = translog.estimatedNumberOfOperations();
             if (currentNumberOfOperations > flushThresholdOperations) {
                 logger.trace("flushing translog, operations [{}], breached [{}]", currentNumberOfOperations, flushThresholdOperations);
                 asyncFlushAndReschedule();

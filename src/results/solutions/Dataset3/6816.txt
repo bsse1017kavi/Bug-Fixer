@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 the original author or authors.
  *
@@ -43,9 +42,9 @@ public class TestVelocityEngine extends VelocityEngine {
 	public void addTemplate(String expectedName, Template template) {
 		this.templates.put(expectedName, template);
 	}
-public Template getTemplate(String name) throws ResourceNotFoundException {
 
-	public Template getTemplate(String name) {
+
+public Template getTemplate(String name) throws ResourceNotFoundException {
 		Template template = (Template) this.templates.get(name);
 		if (template == null) {
 			throw new ResourceNotFoundException("No template registered for name [" + name + "]");

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1144,9 +1143,9 @@ public class JUnitTask extends Task {
      * @return created file
      */
     private File createTempPropertiesFile(String prefix) {
-tmpDir != null ? tmpDir : getProject().getBaseDir(), true, true);
+        File propsFile =
             FILE_UTILS.createTempFile(prefix, ".properties",
-                tmpDir != null ? tmpDir : getProject().getBaseDir(), true);
+tmpDir != null ? tmpDir : getProject().getBaseDir(), true, true);
         return propsFile;
     }
 

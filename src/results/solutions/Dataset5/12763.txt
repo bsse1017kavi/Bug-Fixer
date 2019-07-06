@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2003 Contributors.
  * All rights reserved. 
@@ -269,9 +268,9 @@ public class AspectJElementHierarchy implements IHierarchy {
 		this.configFile = configFile;
 	}
 	
-StringTokenizer st = new StringTokenizer(handle, ProgramElement.ID_DELIM);
+	// TODO: optimize this lookup
 	public IProgramElement findElementForHandle(String handle) {
-		StringTokenizer st = new StringTokenizer(handle, IProgramElement.ID_DELIM);
+StringTokenizer st = new StringTokenizer(handle, ProgramElement.ID_DELIM);
 		String file = st.nextToken();
 		int line = new Integer(st.nextToken()).intValue();
 		int col = new Integer(st.nextToken()).intValue();

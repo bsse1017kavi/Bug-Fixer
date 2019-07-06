@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -96,9 +95,9 @@ public class Cvs extends Task {
             toExecute.createArgument().setValue("-n");
         }
         if (quiet) {
-toExecute.createArgument().setLine(command);
+            toExecute.createArgument().setValue("-q");
         }
-        toExecute.createArgument().setValue(command);
+toExecute.createArgument().setLine(command);
         toExecute.addArguments(cmd.getCommandline());
 
 	if (pack != null) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class DomainFinalResultHandler implements OperationStepHandler {
         shouldContinue = shouldContinue && collectContextFailure(context, isDomain);
         shouldContinue = shouldContinue && collectHostFailures(context, isDomain);
         if(shouldContinue){
-contextResult.set(getDomainResults(operation));
+            ModelNode contextResult = context.getResult();
             contextResult.setEmptyObject(); // clear out any old data
-            contextResult.get(DOMAIN_RESULTS).set(getDomainResults(operation));
+contextResult.set(getDomainResults(operation));
             if (domainOperationContext.getServerResults().size() > 0) {
                 populateServerGroupResults(context, context.getResult());
             }

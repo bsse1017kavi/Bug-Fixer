@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -66,9 +65,9 @@ public class TestSimilarity extends LuceneTestCase {
     d2.add(newTextField("field", "a b c", Field.Store.YES));
     
     writer.addDocument(d1);
-writer.shutdown();
+    writer.addDocument(d2);
     IndexReader reader = writer.getReader();
-    writer.close();
+writer.shutdown();
 
     IndexSearcher searcher = newSearcher(reader);
     searcher.setSimilarity(new SimpleSimilarity());

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -156,9 +155,9 @@ class MAuditStreamHandler implements ExecuteStreamHandler
             String filepath = (String)keys.nextElement();
             Vector v = (Vector)auditedFiles.get( filepath );
             String fullclassname = (String)filemapping.get( filepath );
-task.log( "Could not find class mapping for " + filepath, Project.MSG_WARN );
+            if( fullclassname == null )
             {
-                task.getProject().log( "Could not find class mapping for " + filepath, Project.MSG_WARN );
+task.log( "Could not find class mapping for " + filepath, Project.MSG_WARN );
                 continue;
             }
             int pos = fullclassname.lastIndexOf( '.' );

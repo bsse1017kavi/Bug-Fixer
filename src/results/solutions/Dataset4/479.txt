@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ public class SearchContextException extends SearchException {
     }
 
     private static String buildMessage(SearchContext context, String msg) {
-sb.append("query[").append(context.parsedQuery().query()).append("],from[").append(context.from()).append("],size[").append(context.size()).append("]");
+        StringBuilder sb = new StringBuilder();
         sb.append('[').append(context.shardTarget().index()).append("][").append(context.shardTarget().shardId()).append("]: ");
-        sb.append("query[").append(context.originalQuery()).append("],from[").append(context.from()).append("],size[").append(context.size()).append("]");
+sb.append("query[").append(context.parsedQuery().query()).append("],from[").append(context.from()).append("],size[").append(context.size()).append("]");
         if (context.sort() != null) {
             sb.append(",sort[").append(context.sort()).append("]");
         }

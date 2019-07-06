@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class OpenIntToDoubleHashMap implements Serializable {
      */
     private static int computeCapacity(final int expectedSize) {
         if (expectedSize == 0) {
-final int capacity   = (int) FastMath.ceil(expectedSize / LOAD_FACTOR);
+            return 1;
         }
-        final int capacity   = (int) Math.ceil(expectedSize / LOAD_FACTOR);
+final int capacity   = (int) FastMath.ceil(expectedSize / LOAD_FACTOR);
         final int powerOfTwo = Integer.highestOneBit(capacity);
         if (powerOfTwo == capacity) {
             return capacity;

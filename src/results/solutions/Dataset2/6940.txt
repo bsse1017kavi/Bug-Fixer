@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -143,9 +142,9 @@ public class SetVariablesOperation extends ChangeClasspathOperation {
 						if (JavaModelManager.CP_RESOLVE_VERBOSE_ADVANCED)
 							verbose_update_project(dbgVariableNames, affectedProject);
 						ClasspathChange classpathChange = affectedProject.getPerProjectInfo().resetResolvedClasspath();
-classpathChanged(classpathChange, true/*refresh if external linked folder already exists*/);
+
 						// if needed, generate delta, update project ref, create markers, ...
-						classpathChanged(classpathChange);
+classpathChanged(classpathChange, true/*refresh if external linked folder already exists*/);
 
 						if (this.canChangeResources) {
 							// touch project to force a build if needed

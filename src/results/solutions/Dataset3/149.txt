@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -133,9 +132,9 @@ class CollectionGenericConverter implements GenericConverter {
 			sourceElementType = getElementType(sourceCollection);
 		}
 		TypeDescriptor targetElementType = targetType.getElementTypeDescriptor();
-return sourceCollection;
+		if (sourceElementType == TypeDescriptor.NULL || sourceElementType.isAssignableTo(targetElementType)) {
 			if (sourceType.isAssignableTo(targetType)) {
-				return source;
+return sourceCollection;
 			} else {
 				Collection targetCollection = CollectionFactory.createCollection(targetType.getType(), sourceCollection.size());
 				targetCollection.addAll(sourceCollection);

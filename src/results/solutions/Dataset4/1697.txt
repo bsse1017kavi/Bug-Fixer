@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class PrioritizedEsThreadPoolExecutor extends EsThreadPoolExecutor {
         super(corePoolSize, maximumPoolSize, keepAliveTime, unit, new PriorityBlockingQueue<Runnable>(initialWorkQueuSize), threadFactory, handler);
     }
 
-if (!(command instanceof Comparable)) {
+    @Override
     public void execute(Runnable command) {
-        if (!(command instanceof PrioritizedRunnable)) {
+if (!(command instanceof Comparable)) {
             command = PrioritizedRunnable.wrap(command, Priority.NORMAL);
         }
         super.execute(command);

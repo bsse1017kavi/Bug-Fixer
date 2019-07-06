@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -419,9 +418,9 @@ public abstract class LogMergePolicy extends MergePolicy {
    * index.  We simply merge adjacent segments that have
    * deletes, up to mergeFactor at a time.
    */ 
-throws IOException {
+  @Override
   public MergeSpecification findForcedDeletesMerges(SegmentInfos segmentInfos)
-      throws CorruptIndexException, IOException {
+throws IOException {
     final List<SegmentInfoPerCommit> segments = segmentInfos.asList();
     final int numSegments = segments.size();
 

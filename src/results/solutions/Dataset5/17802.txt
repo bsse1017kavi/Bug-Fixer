@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -1084,9 +1083,9 @@ public class ReverseMappingTool
         // not compatible with builtin identity later, then we'll assign
         // an application identity class
         Column[] pks = table.getPrimaryKey().getColumns();
-&& pks[0].isCompatible(Types.BIGINT, null, 0, 0)) {
+        cls.setPrimaryKeyColumns(pks);
         if (pks.length == 1 && _datastore
-            && pks[0].isCompatible(Types.BIGINT, 0)) {
+&& pks[0].isCompatible(Types.BIGINT, null, 0, 0)) {
             cls.setObjectIdType(null, false);
             cls.setIdentityType(ClassMapping.ID_DATASTORE);
         } else if (pks.length == 1 && _builtin)

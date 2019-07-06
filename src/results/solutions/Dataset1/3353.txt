@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public final class DefaultOptionCreator {
    * Returns a default command line option for input directory specification. Used by all clustering jobs plus others
    */
   public static DefaultOptionBuilder inputOption() {
-"Path to job input directory.");
+    return new DefaultOptionBuilder().withLongName("input").withRequired(false).withShortName("i").withArgument(
         new ArgumentBuilder().withName("input").withMinimum(1).withMaximum(1).create()).withDescription(
-        "Path to job input directory. Must be a SequenceFile of VectorWritable");
+"Path to job input directory.");
   }
 
   /**

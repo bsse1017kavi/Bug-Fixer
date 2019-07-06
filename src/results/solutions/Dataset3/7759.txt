@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -149,9 +148,9 @@ final class ModuleLoaderIntegration extends FrameworkModuleLoaderPlugin {
             ModuleIdentifier identifier = deployment.getAttachment(MODULE_IDENTIFIER_KEY);
             if (identifier == null) {
                 XIdentityCapability icap = brev.getIdentityCapability();
-String name = icap.getName();
+                BundleRevisions brevs = bundle.adapt(BundleRevisions.class);
                 int revsize = brevs.getRevisions().size();
-                String name = icap.getSymbolicName();
+String name = icap.getName();
                 if (revsize > 1) {
                     name += "-rev" + (revsize - 1);
                 }

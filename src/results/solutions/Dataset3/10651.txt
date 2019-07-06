@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class JMSTopicService implements Service<Void> {
 
     /** {@inheritDoc} */
     public synchronized void stop(StopContext context) {
-jmsManager.removeTopicFromJNDI(name);
+        final JMSServerManager jmsManager = jmsServer.getValue();
         try {
-            jmsManager.destroyTopic(name);
+jmsManager.removeTopicFromJNDI(name);
         } catch (Exception e) {
             MESSAGING_LOGGER.failedToDestroy(e, "jms topic", name);
         }

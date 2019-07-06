@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -149,9 +148,9 @@ public class StandaloneXml extends CommonXml {
             parseSocketBindingGroup(reader, interfaceNames, address, list);
             element = nextElement(reader);
         }
-parseSystemProperties(reader, address, list);
+        // System properties
         if (element == Element.SYSTEM_PROPERTIES) {
-            list.add(Util.getWriteAttributeOperation(address, "system-properties", parseProperties(reader)));
+parseSystemProperties(reader, address, list);
             element = nextElement(reader);
         }
         if (element == Element.DEPLOYMENTS) {

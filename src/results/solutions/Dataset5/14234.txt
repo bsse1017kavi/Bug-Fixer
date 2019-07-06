@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -297,9 +296,9 @@ public class BaseWicketTester
 		// reconfigure application for the test environment
 		application.setPageRendererProvider(new LastPageRecordingPageRendererProvider(
 			application.getPageRendererProvider()));
-// application.setPageManagerProvider(newTestPageManagerProvider());
+		application.setRequestCycleProvider(new TestRequestCycleProvider(
 			application.getRequestCycleProvider()));
-		application.setPageManagerProvider(newTestPageManagerProvider());
+// application.setPageManagerProvider(newTestPageManagerProvider());
 
 		// create a new session when the old one is invalidated
 		application.getSessionStore().registerUnboundListener(new UnboundListener()

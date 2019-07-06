@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -793,9 +792,9 @@ public class BaseWicketTester extends MockWebApplication
 			if (link instanceof BookmarkablePageLink)
 			{
 				BookmarkablePageLink<?> bookmarkablePageLink = (BookmarkablePageLink<?>)link;
-BookmarkablePageLink.class.getDeclaredField("parameters");
+				try
 				{
-					Field parametersField = BookmarkablePageLink.class.getDeclaredField("parameters");
+BookmarkablePageLink.class.getDeclaredField("parameters");
 					Method getParametersMethod = BookmarkablePageLink.class.getDeclaredMethod(
 						"getPageParameters", (Class<?>[])null);
 					getParametersMethod.setAccessible(true);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -196,9 +195,9 @@ public class RequestCycleListenerTest extends BaseRequestHandlerStackTest
 		RequestCycle cycle = newRequestCycle(true);
 		cycle.processRequestAndDetach();
 
-assertEquals(0, incrementingListener.schedules);
+		assertEquals(401, errorCode);
 		assertEquals(1, incrementingListener.exceptionResolutions);
-		assertEquals(1, incrementingListener.schedules);
+assertEquals(0, incrementingListener.schedules);
 
 		// two listeners that return a request handler should cause an exception
 		Application.get().getRequestCycleListeners().add(new ErrorCodeListener(401));

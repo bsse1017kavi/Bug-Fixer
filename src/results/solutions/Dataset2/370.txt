@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -597,9 +596,9 @@ public class EditorManager {
 				oldDesc = (EditorDescriptor) getEditorRegistry().getDefaultEditor();
 			if ((desc.getId().equals(oldDesc.getId())) && (reusableEditor instanceof IReusableEditor)) {
 				Workbench wb = (Workbench) window.getWorkbench();
-page.reuseEditor((IReusableEditor) reusableEditor,input);
+				editorPresentation.moveEditor(reusableEditor, -1);
 				wb.getEditorHistory().add(reusableEditor.getEditorInput(), site.getEditorDescriptor());
-				((IReusableEditor) reusableEditor).setInput(input);
+page.reuseEditor((IReusableEditor) reusableEditor,input);
 				return reusableEditorRef;
 			} else {
 				//findReusableEditor(...) checks pinned and saves editor if necessary

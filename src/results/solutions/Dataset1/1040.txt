@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -145,9 +144,9 @@ public class SyncStrategy {
         log.info("Sync Success - now sync replicas to me");
         
         syncToMe(zkController, collection, shardId, leaderProps, core.getCoreDescriptor());
-log.info("Leader's attempt to sync with shard failed, moving to the next candidate");
+        
       } else {
-        log.info("Leader's attempt to sync with shard failed, moving to the next canidate");
+log.info("Leader's attempt to sync with shard failed, moving to the next candidate");
         // lets see who seems ahead...
       }
       

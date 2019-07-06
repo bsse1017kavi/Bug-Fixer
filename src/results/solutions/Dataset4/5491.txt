@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class IndexFieldDataService extends AbstractIndexComponent implements Ind
     private final static ImmutableMap<String, IndexFieldData.Builder> buildersByType;
     private final static ImmutableMap<Tuple<String, String>, IndexFieldData.Builder> buildersByTypeAndFormat;
 
-.put("string", new PagedBytesIndexFieldData.Builder())
+    static {
         buildersByType = MapBuilder.<String, IndexFieldData.Builder>newMapBuilder()
-                .put("string", new ConcreteBytesRefIndexFieldData.Builder())
+.put("string", new PagedBytesIndexFieldData.Builder())
                 .put("float", new FloatArrayIndexFieldData.Builder())
                 .put("double", new DoubleArrayIndexFieldData.Builder())
                 .put("byte", new ByteArrayIndexFieldData.Builder())

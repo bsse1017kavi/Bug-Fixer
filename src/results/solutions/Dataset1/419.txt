@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.icu.segmentation;
 
 /*
@@ -108,9 +107,9 @@ public final class ICUTokenizer extends Tokenizer {
     super.reset(input);
     reset();
   }
-public void end() {
+  
   @Override
-  public void end() throws IOException {
+public void end() {
     final int finalOffset = (length < 0) ? offset : offset + length;
     offsetAtt.setOffset(correctOffset(finalOffset), correctOffset(finalOffset));
   }  

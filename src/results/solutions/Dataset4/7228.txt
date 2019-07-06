@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class TransportSuggestAction extends TransportBroadcastOperationAction<Su
     @Override
     protected SuggestResponse newResponse(SuggestRequest request, AtomicReferenceArray shardsResponses, ClusterState clusterState) {
         int successfulShards = 0;
-final Map<String, List<Suggest.Suggestion>> groupedSuggestions = new HashMap<>();
+        int failedShards = 0;
 
-        final Map<String, List<Suggest.Suggestion>> groupedSuggestions = new HashMap<String, List<Suggest.Suggestion>>();
+final Map<String, List<Suggest.Suggestion>> groupedSuggestions = new HashMap<>();
 
         List<ShardOperationFailedException> shardFailures = null;
         for (int i = 0; i < shardsResponses.length(); i++) {

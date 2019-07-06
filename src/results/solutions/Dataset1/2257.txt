@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -46,9 +45,9 @@ public final class QueryResultKey {
 
     int h = query.hashCode();
 
-h += filt.hashCode();
+    if (filters != null) {
       for (Query filt : filters)
-        h += filters.hashCode();
+h += filt.hashCode();
     }
 
     sfields = (this.sort !=null) ? this.sort.getSort() : defaultSort;

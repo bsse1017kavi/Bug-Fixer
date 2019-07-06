@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -632,9 +631,9 @@ int Invoke (int dispIdMember, int /*long*/ riid, int lcid, int dwFlags, int /*lo
 		}
 		return COM.S_OK;
 	}
-Object temp = convertToJava (variant);
+
 	variant = Variant.win32_new (dispParams.rgvarg);
-	Object temp = (Object[])convertToJava (variant);
+Object temp = convertToJava (variant);
 	variant.dispose ();
 	Object returnValue = null;
 	if (temp instanceof Object[]) {

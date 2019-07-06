@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -244,9 +243,9 @@ public class MappingJackson2HttpMessageConverterTests {
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		JacksonViewBean bean = new JacksonViewBean();
 		bean.setWithView1("with");
-MappingJacksonValue jsv = new MappingJacksonValue(bean, MyJacksonView1.class);
+		bean.setWithView2("with");
 		bean.setWithoutView("without");
-		MappingJacksonValueHolder jsv = new MappingJacksonValueHolder(bean, MyJacksonView1.class);
+MappingJacksonValue jsv = new MappingJacksonValue(bean, MyJacksonView1.class);
 		this.converter.writeInternal(jsv, outputMessage);
 
 		String result = outputMessage.getBodyAsString(Charset.forName("UTF-8"));

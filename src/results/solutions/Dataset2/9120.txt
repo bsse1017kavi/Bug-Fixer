@@ -1,4 +1,3 @@
-
 //The contents of this file are subject to the Mozilla Public License Version 1.1
 //(the "License"); you may not use this file except in compliance with the 
 //License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
@@ -34,9 +33,9 @@ public class GnuPGUtil extends DefaultUtil {
 	static String[] cmd =
 		{
 			"--batch --no-tty --passphrase-fd 0 -d",
-"--no-secmem-warning --batch --no-tty --digest-algo %digest-algo% --verify %sigfile% -" };
+			"--no-secmem-warning --no-greeting --batch --no-tty --armor --output - --encrypt --group recipientgroup=%recipients%  -r recipientgroup",		
 			"--no-secmem-warning --no-greeting --batch --digest-algo SHA1 --yes --no-tty --armor --textmode --passphrase-fd 0 --output - --detach-sign -u %user% ",
-			"--no-secmem-warning --batch --no-tty --digest-algo SHA1 --verify %sigfile% -" };
+"--no-secmem-warning --batch --no-tty --digest-algo %digest-algo% --verify %sigfile% -" };
 
 	/* (non-Javadoc)
 	 * @see org.columba.mail.pgp.DefaultUtil#getRawCommandString(int)

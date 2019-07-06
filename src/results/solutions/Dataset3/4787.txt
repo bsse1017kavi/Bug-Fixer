@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -142,9 +141,9 @@ public class StaticListableBeanFactory implements ListableBeanFactory {
 	public boolean isTypeMatch(String name, Class targetType) throws NoSuchBeanDefinitionException {
 		Class type = getType(name);
 		return (targetType == null || (type != null && targetType.isAssignableFrom(type)));
-public Class<?> getType(String name) throws NoSuchBeanDefinitionException {
+	}
 
-	public Class getType(String name) throws NoSuchBeanDefinitionException {
+public Class<?> getType(String name) throws NoSuchBeanDefinitionException {
 		String beanName = BeanFactoryUtils.transformedBeanName(name);
 
 		Object bean = this.beans.get(beanName);

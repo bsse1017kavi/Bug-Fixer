@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -750,9 +749,9 @@ LRESULT CDDS_SUBITEMPREPAINT (NMLVCUSTOMDRAW nmcd, int /*long*/ wParam, int /*lo
 	* TVM_INSERTITEM calls NM_CUSTOMDRAW before the new item
 	* has been added to the array.  The fix is to check for
 	* null.
-if (item == null || item.isDisposed ()) return null;
+	*/
 	TableItem item = _getItem ((int)/*64*/nmcd.dwItemSpec);
-	if (item == null) return null;
+if (item == null || item.isDisposed ()) return null;
 	int /*long*/ hFont = item.fontHandle (nmcd.iSubItem);
 	if (hFont != -1) OS.SelectObject (hDC, hFont);
 	if (ignoreCustomDraw || (nmcd.left == nmcd.right)) {

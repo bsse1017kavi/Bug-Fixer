@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -151,9 +150,9 @@ public class DateHistogramFacetProcessor extends AbstractComponent implements Fa
 
         if (keyField == null) {
             throw new FacetPhaseExecutionException(facetName, "key field is required to be set for histogram facet, either using [field] or using [key_field]");
-FieldMapper mapper = context.smartNameFieldMapper(keyField);
+        }
 
-        FieldMapper mapper = context.mapperService().smartNameFieldMapper(keyField);
+FieldMapper mapper = context.smartNameFieldMapper(keyField);
         if (mapper == null) {
             throw new FacetPhaseExecutionException(facetName, "(key) field [" + keyField + "] not found");
         }

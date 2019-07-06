@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -146,9 +145,9 @@ public class UpToDate extends MatchingTask implements Condition
         throws TaskException
     {
         boolean upToDate = eval();
-setProperty( _property, this.getValue() );
+        if( upToDate )
         {
-            this.project.setProperty( _property, this.getValue() );
+setProperty( _property, this.getValue() );
             if( mapperElement == null )
             {
                 log( "File \"" + _targetFile.getAbsolutePath() + "\" is up to date.",

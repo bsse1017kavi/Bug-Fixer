@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -194,9 +193,9 @@ abstract class AbstractChoice extends FormComponent
 	/**
 	 * @return The collection of object that this choice has
 	 */
-List choices = (this.choices != null) ? (List)this.choices.getObject() : null;
+	public List getChoices()
 	{
-		List choices = (this.choices != null) ? (List)this.choices.getObject(this) : null;
+List choices = (this.choices != null) ? (List)this.choices.getObject() : null;
 		if (choices == null)
 		{
 			throw new NullPointerException(

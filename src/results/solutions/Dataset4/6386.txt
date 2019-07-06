@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -118,9 +117,9 @@ public class TexturePacker {
 	}
 
 	private void writeImages (File packFile, Array<Page> pages) {
-int dotIndex = imageName.indexOf('.');
+		File packDir = packFile.getParentFile();
 		String imageName = packFile.getName();
-		int dotIndex = imageName.lastIndexOf('.');
+int dotIndex = imageName.indexOf('.');
 		if (dotIndex != -1) imageName = imageName.substring(0, dotIndex);
 
 		int fileIndex = 0;

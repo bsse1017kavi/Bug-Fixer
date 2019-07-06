@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class ShardTermVectorService extends AbstractIndexShardComponent {
         this.indexShard = indexShard;
         return this;
     }
-final Engine.Searcher searcher = indexShard.acquireSearcher("term_vector");
+
     public TermVectorResponse getTermVector(TermVectorRequest request) {
-        final Engine.Searcher searcher = indexShard.acquireSearcher();
+final Engine.Searcher searcher = indexShard.acquireSearcher("term_vector");
         IndexReader topLevelReader = searcher.reader();
         final TermVectorResponse termVectorResponse = new TermVectorResponse(request.index(), request.type(), request.id());
         final Term uidTerm = new Term(UidFieldMapper.NAME, Uid.createUidAsBytes(request.type(), request.id()));

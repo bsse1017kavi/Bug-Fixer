@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 Google Inc.
  * 
@@ -142,9 +141,9 @@ public final class System {
       int len) /*-{
     // TODO(jgw): using Function.apply() blows up for large arrays (around 8k items at least).
     if (src == dest && srcOfs < destOfs) {
-dst[destEnd] = src[--srcOfs];
+      srcOfs += len;
       for (var destEnd = destOfs + len; destEnd-- > destOfs;) {
-        dest[destEnd] = src[--srcOfs];
+dst[destEnd] = src[--srcOfs];
       }
     } else {
       for (var destEnd = destOfs + len; destOfs < destEnd;) {

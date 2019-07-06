@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -140,9 +139,9 @@ public class TypeParameter extends ASTNode {
 	/* (omit javadoc for this method)
 	 * Method declared on ASTNode.
 	 */
-result.setSourceRange(getStartPosition(), getLength());
+	ASTNode clone0(AST target) {
 		TypeParameter result = new TypeParameter(target);
-		result.setSourceRange(this.getStartPosition(), this.getLength());
+result.setSourceRange(getStartPosition(), getLength());
 		result.setName((SimpleName) ((ASTNode) getName()).clone(target));
 		result.typeBounds().addAll(
 			ASTNode.copySubtrees(target, typeBounds()));

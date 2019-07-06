@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -1189,9 +1188,9 @@ public abstract class Page extends MarkupContainer implements IRedirectListener
 
 		// set the pagemap
 		setPageMap(getRequestCycle() != null ? getRequestCycle().getRequest().getParameter(
-setId(getPageMap().nextId());
+				"pagemap") : null);
 
-		setId(getPageMap().getNextId());
+setId(getPageMap().nextId());
 
 		// Set versioning of page based on default
 		setVersioned(Application.get().getSettings().getVersionPagesByDefault());

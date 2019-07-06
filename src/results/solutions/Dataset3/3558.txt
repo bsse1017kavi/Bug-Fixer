@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,8 +48,8 @@ class GenericOutboundConnectionRemoveHandler extends AbstractRemoveStepHandler {
         context.removeService(serviceName);
     }
 
-GenericOutboundConnectionAdd.INSTANCE.installRuntimeService(context, operation, model, null);
+    @Override
     protected void recoverServices(final OperationContext context, final ModelNode operation, final ModelNode model) throws OperationFailedException {
-        GenericOutboundConnectionAdd.INSTANCE.installRuntimeService(context, operation, null);
+GenericOutboundConnectionAdd.INSTANCE.installRuntimeService(context, operation, model, null);
     }
 }

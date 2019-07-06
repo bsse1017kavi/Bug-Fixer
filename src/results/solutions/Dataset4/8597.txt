@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class TransportSearchScanAction extends TransportSearchTypeAction {
         @Override protected void moveToSecondPhase() throws Exception {
             long totalHits = 0;
             final InternalSearchResponse internalResponse = searchPhaseController.merge(EMPTY_DOCS, queryResults, ImmutableMap.<SearchShardTarget, FetchSearchResultProvider>of());
-scrollId = buildScrollId(request.searchType(), queryResults.values(), null);
+            String scrollId = null;
             if (request.scroll() != null) {
-                scrollId = buildScrollId(request.searchType(), queryResults.values());
+scrollId = buildScrollId(request.searchType(), queryResults.values(), null);
             }
             listener.onResponse(new SearchResponse(internalResponse, scrollId, expectedSuccessfulOps, successulOps.get(), buildTookInMillis(), buildShardFailures()));
             searchCache.releaseQueryResults(queryResults);

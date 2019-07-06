@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ abstract class AbstractPlatformMBeanResource implements Resource.ResourceEntry {
 
     @Override
     public Resource requireChild(PathElement address) {
-throw new NoSuchResourceException(address);
+        final Resource resource = getChild(address);
         if (resource == null) {
-            throw new NoSuchElementException(address.toString());
+throw new NoSuchResourceException(address);
         }
         return resource;
     }

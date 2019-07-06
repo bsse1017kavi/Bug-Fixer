@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -412,9 +411,9 @@ public class ExecTask extends Task {
         //test for and handle a forced process death
         if (exe.killedProcess()) {
             log("Timeout: killed the sub-process", Project.MSG_WARN);
-if (Execute.isFailure(returnCode)) {
+        }
         maybeSetResultPropertyValue(returnCode);
-        if (returnCode != 0) {
+if (Execute.isFailure(returnCode)) {
             if (failOnError) {
                 throw new BuildException(getTaskType() + " returned: "
                     + returnCode, getLocation());

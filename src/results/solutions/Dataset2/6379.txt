@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -70,9 +69,9 @@ public class CommentRecorderParser extends Parser {
 			} else {
 				this.javadocParser.reportProblems = false;
 			}
-if (this.currentElement == null) this.lastJavadocEnd = commentSourceEnd;
+			deprecated = this.javadocParser.checkDeprecation(lastCommentIndex);
 			this.javadoc = this.javadocParser.docComment;
-			if (currentElement == null) this.lastJavadocEnd = commentSourceEnd;
+if (this.currentElement == null) this.lastJavadocEnd = commentSourceEnd;
 			break nextComment;
 		}
 		if (deprecated) {

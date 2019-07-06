@@ -1,4 +1,3 @@
-
 package org.junit.tests.experimental.theories.runner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -55,9 +54,9 @@ public class UnsuccessfulWithDataPointFields {
 	}
 
 	@Test
-hasSingleFailureContaining("everythingIsZero(ONE, ONE)"));
+	public void reportBadParams() throws Exception {
 		assertThat(testResult(DoesntUseParams.class),
-				hasSingleFailureContaining("everythingIsZero(1, 1)"));
+hasSingleFailureContaining("everythingIsZero(ONE, ONE)"));
 	}
 
 	@RunWith(Theories.class)

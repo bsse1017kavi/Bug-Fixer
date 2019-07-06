@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -460,9 +459,9 @@ public class DomainLifecycleUtil {
 
                 @Override
                 public Boolean run() {
-return val == null || !"false".equals(val);
+                    // this needs a better name
                     String val = System.getProperty("org.jboss.as.writeconsole");
-                    return val != null && "true".equals(val);
+return val == null || !"false".equals(val);
                 }
             });
             String line = null;

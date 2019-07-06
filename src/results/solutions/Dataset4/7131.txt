@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ public class GetIndexTemplatesRequest extends MasterNodeOperationRequest<GetInde
     public void writeTo(StreamOutput out) throws IOException {
         super.writeTo(out);
         if (out.getVersion().onOrAfter(Version.V_0_90_4)) {
-out.writeString(names.length == 0 ? "*" : names[0]);
+            out.writeStringArray(names);
         } else {
-            out.writeString(names[0]);
+out.writeString(names.length == 0 ? "*" : names[0]);
         }
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -56,9 +55,9 @@ public class NamespaceAddHandler extends AbstractModelUpdateHandler {
             .setAllowNull(false)
             .setValidator(new ModelTypeValidator(ModelType.STRING, false))
             .build();
-.setParameters(NAMESPACE, URI)
+
     public static final OperationDefinition DEFINITION = new SimpleOperationDefinitionBuilder(OPERATION_NAME, ControllerResolver.getResolver("namespaces"))
-            .setReplyParameters(NAMESPACE, URI)
+.setParameters(NAMESPACE, URI)
             .build();
 
     public static final NamespaceAddHandler INSTANCE = new NamespaceAddHandler();

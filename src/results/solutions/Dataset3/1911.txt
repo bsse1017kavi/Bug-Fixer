@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ class SessionOpenRequestHandler extends EJBIdentifierBasedMessageHandler {
     }
 
     @Override
-throw EjbMessages.MESSAGES.messageInputStreamCannotBeNull();
+    public void processMessage(ChannelAssociation channelAssociation, MessageInputStream messageInputStream) throws IOException {
         if (messageInputStream == null) {
-            throw new IllegalArgumentException("Cannot read from null message inputstream");
+throw EjbMessages.MESSAGES.messageInputStreamCannotBeNull();
         }
         final DataInputStream dataInputStream = new DataInputStream(messageInputStream);
         // read invocation id

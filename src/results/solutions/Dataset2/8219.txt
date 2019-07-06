@@ -1,4 +1,3 @@
-
 //Source file: D:\\tmp\\generated\\s1\\struts\\component\\xmlDefinition\\I18nFactorySet.java
 
 package org.apache.struts.tiles.xmlDefinition;
@@ -196,9 +195,9 @@ public class I18nFactorySet extends FactorySet
       // Init list of filenames
     StringTokenizer tokenizer = new StringTokenizer( proposedFilename, "," );
     this.filenames = new ArrayList(tokenizer.countTokens());
-this.filenames.add(tokenizer.nextToken().trim());
+    while( tokenizer.hasMoreTokens() )
       {
-      this.filenames.add(tokenizer.nextToken());
+this.filenames.add(tokenizer.nextToken().trim());
       }
 
     loaded = new HashMap();

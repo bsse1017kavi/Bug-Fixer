@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -158,9 +157,9 @@ public abstract class CascadeDeleteStrategy {
                     log.trace(oldValue + " already removed");
                 }
             }
-executeDeleteSQL(batchCascadeDeleteSql, ctx.getPrimaryKeyUnchecked());
+
             if (didDelete) {
-                executeDeleteSQL(batchCascadeDeleteSql, ctx.getPrimaryKey());
+executeDeleteSQL(batchCascadeDeleteSql, ctx.getPrimaryKeyUnchecked());
             }
         }
     }

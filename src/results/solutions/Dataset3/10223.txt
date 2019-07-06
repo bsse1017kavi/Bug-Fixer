@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ class PatchXml_1_0 extends PatchXmlUtils implements XMLStreamConstants, XMLEleme
     }
 
     @Override
-doReadElement(reader, builder, factory.getOriginalIdentity());
+    public void readElement(XMLExtendedStreamReader reader, PatchXml.Result<PatchMetadataResolver> factory) throws XMLStreamException {
         final PatchBuilder builder = new PatchBuilder();
-        doReadElement(reader, builder);
+doReadElement(reader, builder, factory.getOriginalIdentity());
         factory.setResult(builder);
     }
 

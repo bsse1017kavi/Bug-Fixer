@@ -1,4 +1,3 @@
-
 package org.columba.mail.gui.composer.command;
 
 import org.columba.core.command.DefaultCommandReference;
@@ -51,9 +50,9 @@ public class ReplyAsAttachmentCommand extends FolderCommand{
 	 */
 	public void execute(Worker worker) throws Exception {
 		Folder folder = (Folder) ( (FolderCommandReference) getReferences()[0] ).getFolder();
-Message message = new Message();
+		Object[] uids = ( (FolderCommandReference) getReferences()[0] ).getUids();
 
-		Message message = (Message) folder.getMessage(uids[0], worker);
+Message message = new Message();
 		
 
 		ColumbaHeader header = (ColumbaHeader) message.getHeader();

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -50,9 +49,9 @@ import org.jboss.as.server.controller.resources.DeploymentResourceDefinition;
                 DeploymentAttributes.DOMAIN_DEPLOYMENT_ADD_DEFINITION,
                 isMaster ? new DeploymentAddHandler(contentRepository) : new DeploymentAddHandler(),
                 isMaster ? DeploymentRemoveHandler.createForMaster(contentRepository) : DeploymentRemoveHandler.createForSlave(fileRepository));
-public static DomainDeploymentResourceDefinition createForServerGroup(HostFileRepository fileRepository) {
+    }
 
-    public static DomainDeploymentResourceDefinition createForServerGroup(ContentRepository contentRepository, HostFileRepository fileRepository) {
+public static DomainDeploymentResourceDefinition createForServerGroup(HostFileRepository fileRepository) {
         return new DomainDeploymentResourceDefinition(DeploymentResourceParent.SERVER_GROUP, DeploymentAttributes.SERVER_GROUP_DEPLOYMENT_ADD_DEFINITION,
                 new ServerGroupDeploymentAddHandler(fileRepository), ServerGroupDeploymentRemoveHandler.INSTANCE);
     }

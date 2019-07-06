@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -144,9 +143,9 @@ public class Input extends Task
         // adopted from org.apache.tools.ant.taskdefs.Property
         if( addproperty != null )
         {
-setProperty( addproperty, input );
+            if( project.getProperty( addproperty ) == null )
             {
-                project.setProperty( addproperty, input );
+setProperty( addproperty, input );
             }
             else
             {

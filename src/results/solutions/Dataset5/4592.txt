@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -664,9 +663,9 @@ public class BuildArgParser extends Main {
 // this would enable the '-source 1.5' to do the same as '-1.5' but doesnt sound quite right as
 // as an option right now as it doesnt mean we support 1.5 source code - people will get confused...
             } else if (arg.equals("-source")) {
-if (level.equals("1.5") || level.equals("5")) {
+            	if (args.size() > nextArgIndex) {
             		String level = ((ConfigParser.Arg)args.get(nextArgIndex)).getValue();
-            		if (level.equals("1.5")){
+if (level.equals("1.5") || level.equals("5")) {
             			buildConfig.setBehaveInJava5Way(true);
             		}
             		unparsedArgs.add("-source");

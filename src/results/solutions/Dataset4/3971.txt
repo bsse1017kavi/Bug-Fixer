@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -269,9 +268,9 @@ public class ShardsRoutingStrategy extends AbstractComponent {
                 if (primary == null || !primary.active()) {
                     continue;
                 }
-for (RoutingNode routingNode : routingNodes.sortedNodesLeastToHigh()) {
+            }
             // go over the nodes and try and allocate the remaining ones
-            for (RoutingNode routingNode : routingNodes.nodesToShards().values()) {
+for (RoutingNode routingNode : routingNodes.sortedNodesLeastToHigh()) {
                 if (routingNode.canAllocate(routingNodes) && routingNode.canAllocate(shard)) {
                     changed = true;
                     routingNode.add(shard);

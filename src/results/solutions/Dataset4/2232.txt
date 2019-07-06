@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,8 +102,8 @@ public class ShardId implements Serializable, Streamable {
         shardId = in.readVInt();
     }
 
-out.writeVInt(shardId);
+    @Override public void writeTo(StreamOutput out) throws IOException {
         index.writeTo(out);
-        out.writeInt(shardId);
+out.writeVInt(shardId);
     }
 }

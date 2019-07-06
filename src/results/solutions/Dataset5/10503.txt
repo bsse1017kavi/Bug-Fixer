@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class SourceTrackers {
         buf.append(_loc.get("source-trackers-location-header")).append(SEP);
         String sourceFilePath;
         for (int i = 0; i < trackers.length; i++) {
-AccessController.doPrivileged(
+            sourceFilePath = (trackers[i].getSourceFile() == null ?
                 _loc.get("source-tracker-file-unknown").getMessage() :
-                (String) AccessController.doPrivileged(
+AccessController.doPrivileged(
                     J2DoPrivHelper.getAbsolutePathAction(
                         trackers[i].getSourceFile())));
             buf.append("  ").append(_loc.get(

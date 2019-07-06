@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -300,9 +299,9 @@ public abstract class AbstractSharedClusterTest extends ElasticsearchTestCase {
         return actionGet.getStatus();
     }
 
-.health(Requests.clusterHealthRequest().waitForRelocatingShards(0).waitForYellowStatus().waitForEvents(Priority.LANGUID)).actionGet();
+    public ClusterHealthStatus ensureYellow() {
         ClusterHealthResponse actionGet = client().admin().cluster()
-                .health(Requests.clusterHealthRequest().waitForYellowStatus().waitForEvents(Priority.LANGUID)).actionGet();
+.health(Requests.clusterHealthRequest().waitForRelocatingShards(0).waitForYellowStatus().waitForEvents(Priority.LANGUID)).actionGet();
         assertThat(actionGet.isTimedOut(), equalTo(false));
         return actionGet.getStatus();
     }

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.backends.jogl;
 
 import java.io.BufferedOutputStream;
@@ -21,9 +20,9 @@ public class JoglNativesLoader {
 
 		NativeLibLoader.disableLoading();
 		com.sun.gluegen.runtime.NativeLibLoader.disableLoading();
-//		System.loadLibrary("jawt");
+		// By wkien: On some systems (read: mine) jogl_awt would not find its
 		// dependency jawt if not loaded before
-		System.loadLibrary("jawt");
+//		System.loadLibrary("jawt");
 		loadLibrary("gluegen-rt");
 		loadLibrary("jogl_awt");
 		loadLibrary("jogl");

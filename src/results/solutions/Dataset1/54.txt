@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.vectorhighlight;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -164,9 +163,9 @@ public class FieldPhraseListTest extends AbstractTestCase {
 
     FieldQuery fq = new FieldQuery( tq( "d" ), true, true );
     FieldTermStack stack = new FieldTermStack( reader, 0, F, fq );
-assertEquals( "d(1.0)((9,10))", fpl.phraseList.get( 0 ).toString() );
+    FieldPhraseList fpl = new FieldPhraseList( stack, fq );
     assertEquals( 1, fpl.phraseList.size() );
-    assertEquals( "d(1.0)((6,7))", fpl.phraseList.get( 0 ).toString() );
+assertEquals( "d(1.0)((9,10))", fpl.phraseList.get( 0 ).toString() );
   }
   
   public void test1PhraseLongMV() throws Exception {

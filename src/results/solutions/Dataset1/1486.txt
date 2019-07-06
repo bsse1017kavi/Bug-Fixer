@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -88,9 +87,9 @@ public interface StorageServiceMBean
      * specified key i.e for replication.
      *
      * @param key - key for which we need to find the endpoint return value -
-public List<InetAddress> getNaturalEndpoints(String table, byte[] key);
+     * the endpoint responsible for this key
      */
-    public List<InetAddress> getNaturalEndpoints(String key, String table);
+public List<InetAddress> getNaturalEndpoints(String table, byte[] key);
 
     /**
      * Forces major compaction (all sstable files compacted)

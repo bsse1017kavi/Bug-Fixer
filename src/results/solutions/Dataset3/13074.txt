@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -473,9 +472,9 @@ public class DomainLifecycleUtil {
         if (!serversAvailable) {
             throw new TimeoutException(String.format("Managed servers were not started within [%d] seconds", configuration.getStartupTimeoutInSeconds()));
         }
-public void awaitHostController(long start) throws InterruptedException, TimeoutException {
+    }
 
-    private void awaitHostController(long start) throws InterruptedException, TimeoutException {
+public void awaitHostController(long start) throws InterruptedException, TimeoutException {
 
         boolean hcAvailable = false;
         long deadline = start + configuration.getStartupTimeoutInSeconds() * 1000;

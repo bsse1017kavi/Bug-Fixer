@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -210,9 +209,9 @@ public class AbstractSockJsSessionTests extends BaseAbstractSockJsSessionTests<T
 		this.session.delegateConnectionEstablished();
 		try {
 			this.session.writeFrame(SockJsFrame.openFrame());
-catch (TransportErrorException ex) {
+			fail("expected exception");
 		}
-		catch (SockJsRuntimeException ex) {
+catch (TransportErrorException ex) {
 			assertEquals(CloseStatus.SERVER_ERROR, this.session.getStatus());
 			verify(this.webSocketHandler).afterConnectionClosed(this.session, CloseStatus.SERVER_ERROR);
 		}

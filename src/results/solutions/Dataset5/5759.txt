@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -37,9 +36,9 @@ public class JSR223PostProcessor extends JSR223TestElement implements Cloneable,
     private static final long serialVersionUID = 232L;
 
     public void process() {
-processFileOrScript(scriptEngine, null);
+        try {
             ScriptEngine scriptEngine = getScriptEngine();
-            processFileOrScript(scriptEngine);
+processFileOrScript(scriptEngine, null);
         } catch (ScriptException e) {
             log.warn("Problem in JSR223 script ", e);
         } catch (IOException e) {

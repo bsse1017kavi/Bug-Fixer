@@ -1,4 +1,3 @@
-
 /**
  *
  */
@@ -318,9 +317,9 @@ public class HostControllerEnvironment extends ProcessEnvironment {
 
         tmp = getFileFromProperty(DOMAIN_CONFIG_DIR);
         if (tmp == null) {
-if (!tmp.exists() || !tmp.isDirectory()) {
+            tmp = new File(this.domainBaseDir, "configuration");
         }
-        if (!tmp.exists() && !tmp.isDirectory()) {
+if (!tmp.exists() || !tmp.isDirectory()) {
             throw MESSAGES.configDirectoryDoesNotExist(tmp);
         }
         this.domainConfigurationDir = tmp;

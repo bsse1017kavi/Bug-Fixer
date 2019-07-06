@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2008 Google Inc.
  *
@@ -67,9 +66,9 @@ class Initializer {
         if (instance == null
                 || (injectionPoints.isEmpty() && !injector.membersInjectorStore.hasTypeListeners())) {
             return Initializables.of(instance);
-InjectableReference<T> initializable = new InjectableReference<>(injector, instance, source);
+        }
 
-        InjectableReference<T> initializable = new InjectableReference<T>(injector, instance, source);
+InjectableReference<T> initializable = new InjectableReference<>(injector, instance, source);
         pendingInjection.put(instance, initializable);
         return initializable;
     }

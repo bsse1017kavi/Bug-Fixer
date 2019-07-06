@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -499,9 +498,9 @@ public class TestDuelingCodecs extends LuceneTestCase {
   public void assertStoredField(IndexableField leftField, IndexableField rightField) {
     assertEquals(info, leftField.name(), rightField.name());
     assertEquals(info, leftField.binaryValue(), rightField.binaryValue());
-assertEquals(info, leftField.fieldType().numericType(), rightField.fieldType().numericType());
+    assertEquals(info, leftField.stringValue(), rightField.stringValue());
     assertEquals(info, leftField.numericValue(), rightField.numericValue());
-    assertEquals(info, leftField.numericDataType(), rightField.numericDataType());
+assertEquals(info, leftField.fieldType().numericType(), rightField.fieldType().numericType());
     // TODO: should we check the FT at all?
   }
   

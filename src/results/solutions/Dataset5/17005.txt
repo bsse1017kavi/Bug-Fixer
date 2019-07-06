@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -261,9 +260,9 @@ public class AntClassLoader extends ClassLoader implements BuildListener {
         if (classpath != null) {
             Path actualClasspath = classpath.concatSystemClasspath("ignore");
             String[] pathElements = actualClasspath.list();
-addPathElement(pathElements[i]);
+            for (int i = 0; i < pathElements.length; ++i) {
                 try {
-                    addPathElement((String)pathElements[i]);
+addPathElement(pathElements[i]);
                 }
                 catch (BuildException e) {
                     // ignore path elements which are invalid relative to the project

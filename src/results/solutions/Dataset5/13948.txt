@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -35,9 +34,9 @@ public class CompilerMessagesCellRenderer extends JLabel implements ListCellRend
 		int index,
 		boolean isSelected,
 		boolean cellHasFocus) {
-IMessage.Kind kind = IMessage.ERROR;
+            String label = "<no message>";
             String detail = null;
-            IMessage.Kind kind = IMessage.INFO;
+IMessage.Kind kind = IMessage.ERROR;
             if (value instanceof IMessage) {
 				IMessage cm = (IMessage) value;
                 label = cm.getMessage();

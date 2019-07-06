@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public class PrototypeFactory {
                     (Class<T>) prototype.getClass(),
                     new Class<?>[] { prototype.getClass() },
                     new Object[] { prototype });
-return (Factory<T>) new PrototypeSerializationFactory<Serializable>((Serializable) prototype);
+            } catch (NoSuchMethodException ex2) {
                 if (prototype instanceof Serializable) {
-                    return new PrototypeSerializationFactory((Serializable) prototype);
+return (Factory<T>) new PrototypeSerializationFactory<Serializable>((Serializable) prototype);
                 }
             }
         }

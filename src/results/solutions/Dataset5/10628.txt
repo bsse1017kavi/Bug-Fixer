@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -140,9 +139,9 @@ public class DependSet extends MatchingTask
         /*
          * If we're on Windows, we have to munge the time up to 2 secs to
          * be able to check file modification times.
-if( Os.isFamily( Os.OS_FAMILY_WINDOWS ) )
+         * (Windows has a max resolution of two secs for modification times)
          */
-        if( Os.isFamily( "windows" ) )
+if( Os.isFamily( Os.OS_FAMILY_WINDOWS ) )
         {
             now += 2000;
         }

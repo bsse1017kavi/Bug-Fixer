@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -193,9 +192,9 @@ public final class LwjglGraphics implements Graphics {
 	private void initiateGLInstances () {
 		String version = org.lwjgl.opengl.GL11.glGetString(GL11.GL_VERSION);
 		major = Integer.parseInt("" + version.charAt(0));
-if (config.useGL20 && (major >= 2 || version.contains("2.1"))) { // special case for MESA, wtf...
+		minor = Integer.parseInt("" + version.charAt(2));
 
-		if (config.useGL20 && major >= 2) {
+if (config.useGL20 && (major >= 2 || version.contains("2.1"))) { // special case for MESA, wtf...
 			// FIXME add check whether gl 2.0 is supported
 			gl20 = new LwjglGL20();
 			gl = gl20;

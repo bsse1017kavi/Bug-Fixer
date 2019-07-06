@@ -1,4 +1,3 @@
-
 package backtype.storm.utils;
 
 import backtype.storm.generated.ComponentObject;
@@ -80,9 +79,9 @@ public class Utils {
             throw new RuntimeException(ex);
         }
     }
-InputStream is = Utils.class.getResourceAsStream("/" + name);
+
     public static Map findAndReadConfigFile(String name, boolean mustExist) {
-        InputStream is = Object.class.getResourceAsStream("/" + name);
+InputStream is = Utils.class.getResourceAsStream("/" + name);
         if(is==null) {
             if(mustExist) throw new RuntimeException("Could not find config file on classpath " + name);
             else return new HashMap();

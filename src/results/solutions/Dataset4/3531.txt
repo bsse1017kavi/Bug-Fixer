@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.ui.fragments;
 
 import static com.github.mobile.android.R.layout.pull_request_list_item;
@@ -31,9 +30,9 @@ public class PullRequestsFragment extends ListLoadingFragment<PullRequest> {
 
     @Inject
     PullRequestService pullRequestService;
-protected ViewHoldingListAdapter<PullRequest> adapterFor(List<PullRequest> pullRequests) {
+
     @Override
-    protected ListAdapter adapterFor(List<PullRequest> pullRequests) {
+protected ViewHoldingListAdapter<PullRequest> adapterFor(List<PullRequest> pullRequests) {
         return new ViewHoldingListAdapter<PullRequest>(pullRequests, viewInflatorFor(getActivity(),
                 pull_request_list_item), reflectiveFactoryFor(PullRequestViewHolder.class));
     }

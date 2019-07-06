@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.ControllerMessages.MESSAGES;
@@ -89,9 +88,9 @@ public class CacheContainerWriteAttributeHandler implements OperationStepHandler
       *
       * @param context operation context
       * @return {@code true} if a runtime stage handler should be added; {@code false} otherwise.
-return context.getProcessType().isServer() && !context.isBooting();
+      */
      protected boolean requiresRuntime(OperationContext context) {
-         return context.getType() == OperationContext.Type.SERVER && !context.isBooting();
+return context.getProcessType().isServer() && !context.isBooting();
      }
 
      protected AttributeDefinition getAttributeDefinition(final String attributeName) {

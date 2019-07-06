@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /*
@@ -84,9 +83,9 @@ public class TestNRTCachingDirectory extends LuceneTestCase {
     if (r != null) {
       r.close();
     }
-w.shutdown();
+
     // Close should force cache to clear since all files are sync'd
-    w.close();
+w.shutdown();
 
     final String[] cachedFiles = cachedDir.listCachedFiles();
     for(String file : cachedFiles) {

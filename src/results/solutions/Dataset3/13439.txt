@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ abstract class AbstractRealmPrincipal extends SecurityRealmPrincipal implements 
         return obj != null && this.getClass().equals(obj.getClass()) ? equals((AbstractRealmPrincipal) obj) : false;
 
     }
-return (this == user ? true : super.equals(user)) && (realm == null ? user.realm == null : realm.equals(user.realm));
+
     private boolean equals(AbstractRealmPrincipal user) {
-        return this == user ? true : super.equals(user) && realm.equals(user.realm);
+return (this == user ? true : super.equals(user)) && (realm == null ? user.realm == null : realm.equals(user.realm));
     }
 
 }

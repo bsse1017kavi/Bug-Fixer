@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -25,9 +24,9 @@ import org.apache.mahout.math.hadoop.similarity.Cooccurrence;
  */
 public class DistributedEuclideanDistanceVectorSimilarity extends AbstractDistributedVectorSimilarity {
 
-double weightOfVectorB, long numberOfColumns) {
+  @Override
   protected double doComputeResult(int rowA, int rowB, Iterable<Cooccurrence> cooccurrences, double weightOfVectorA,
-      double weightOfVectorB, int numberOfColumns) {
+double weightOfVectorB, long numberOfColumns) {
 
     double n = 0.0;
     double sumXYdiff2 = 0.0;

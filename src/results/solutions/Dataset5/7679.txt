@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -333,9 +332,9 @@ public Point computeSize (int wHint, int hHint, boolean changed) {
 					OS.HUnlock (oDataHandle[0]);
 				} else {
 					Font font = getFont ();
-int fontHeight = info.ascent + info.descent + info.leading;
+					FontInfo info = new FontInfo ();
 					OS.FetchFontInfo (font.id, font.size, font.style, info);
-					int fontHeight = info.ascent + info.descent;
+int fontHeight = info.ascent + info.descent + info.leading;
 					height = fontHeight;
 				}
 				OS.DisposeHandle (oDataHandle[0]);

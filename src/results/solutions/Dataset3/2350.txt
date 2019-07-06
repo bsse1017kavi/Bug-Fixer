@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ public class LdapAuthenticationResourceDefinition extends SimpleResourceDefiniti
     };
 
     public LdapAuthenticationResourceDefinition() {
-new LdapAuthenticationAddHandler(), new SecurityRealmChildRemoveHandler(true, false),
+        super(PathElement.pathElement(ModelDescriptionConstants.AUTHENTICATION, ModelDescriptionConstants.LDAP),
                 ControllerResolver.getResolver("core.management.security-realm.authentication.ldap"),
-                new LdapAuthenticationAddHandler(), new SecurityRealmChildRemoveHandler(true),
+new LdapAuthenticationAddHandler(), new SecurityRealmChildRemoveHandler(true, false),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES, OperationEntry.Flag.RESTART_RESOURCE_SERVICES);
     }
 

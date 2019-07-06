@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -414,9 +413,9 @@ public abstract class AttributeDefinition {
         String bundleKey = prefix == null ? name : (prefix + "." + name);
         bundleKey += "." + ModelDescriptionConstants.DEPRECATED;
         return bundle.getString(bundleKey);
-public ModelNode addDeprecatedInfo(final ModelNode model) {
+    }
 
-    protected ModelNode addDeprecatedInfo(final ModelNode model) {
+public ModelNode addDeprecatedInfo(final ModelNode model) {
         if (deprecationData == null) { return null; }
         ModelNode deprecated = model.get(ModelDescriptionConstants.DEPRECATED);
         deprecated.get(ModelDescriptionConstants.SINCE).set(deprecationData.getSince().toString());

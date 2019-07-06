@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -441,9 +440,9 @@ public class MapperService extends AbstractIndexComponent implements Iterable<Do
             DocumentMapper docMapper = documentMapper(type);
             if (docMapper == null) {
                 useTermsFilter = false;
-if (!docMapper.typeMapper().fieldType().indexed()) {
+                break;
             }
-            if (!docMapper.typeMapper().indexed()) {
+if (!docMapper.typeMapper().fieldType().indexed()) {
                 useTermsFilter = false;
                 break;
             }

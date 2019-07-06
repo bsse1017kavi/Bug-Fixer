@@ -1,5 +1,4 @@
 
-
 package org.apache.tomcat.modules.loggers;
 
 
@@ -195,9 +194,9 @@ public class AccessLogInterceptor extends BaseInterceptor {
 			char c = logformat.charAt(i);
 			if (c == '%'  &&  ++i < logformat.length()) {
 			    c = logformat.charAt(i);
-if( request.remoteHost().toString() != null )
+			    switch (c) {
 			    case 'h':
-				if( reqest.remoteHost().toString() != null )
+if( request.remoteHost().toString() != null )
 				    fw.write(request.remoteHost().toString());
 				else
 				    fw.write( "DEFAULT" );

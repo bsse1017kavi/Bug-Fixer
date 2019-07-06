@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -312,9 +311,9 @@ public class MethodReference extends SpelNodeImpl {
 		if (!isStaticMethod) {
 			if (descriptor == null || !descriptor.substring(1).equals(methodDeclaringClassSlashedDescriptor)) {
 				CodeFlow.insertCheckCast(mv, "L"+ methodDeclaringClassSlashedDescriptor);
-generateCodeForArguments(mv, cf, method, children);
+			}
 		}
-		CodeFlow.generateCodeForArguments(mv, cf, method, children);		
+generateCodeForArguments(mv, cf, method, children);
 		mv.visitMethodInsn(isStaticMethod ? INVOKESTATIC : INVOKEVIRTUAL,
 				methodDeclaringClassSlashedDescriptor, method.getName(), CodeFlow.createSignatureDescriptor(method), itf);
 		cf.pushDescriptor(this.exitTypeDescriptor);

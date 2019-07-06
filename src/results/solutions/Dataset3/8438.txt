@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class PropertyFilePrompt implements State {
                 if (setRealm) {
                     stateValues.setRealm(DEFAULT_APPLICATION_REALM);
                 }
-return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.invalidChoiceResponse(), this, stateValues);
+                return new PropertyFileFinder(theConsole, stateValues);
             default:
-                return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.invalidChoiceResponse(), this);
+return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.invalidChoiceResponse(), this, stateValues);
         }
     }
 

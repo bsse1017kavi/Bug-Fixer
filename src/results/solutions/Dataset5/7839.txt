@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$ $Date$
  * 
@@ -353,9 +352,9 @@ public class CheckBoxMultipleChoice extends ListMultipleChoice
 				buffer.append("<input name=\"" + getInputName() + "\"" + " type=\"checkbox\""
 						+ (isSelected(choice, index) ? " checked=\"checked\"" : "") + " value=\""
 						+ id + "\" id=\"" + idAttr + "\"/>");
-String display = getLocalizer().getString(label, this, label);
+
 				// Add label for checkbox
-				String display = getLocalizer().getString(getId() + "." + label, this, label);
+String display = getLocalizer().getString(label, this, label);
 				String escaped = Strings.escapeMarkup(display, false, true);
 
 				buffer.append("<label for=\"" + idAttr + "\">").append(escaped).append("</label>");

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -35,9 +34,9 @@ public class TestMapBackedSet<E> extends AbstractTestSet<E> {
         super(testName);
     }
 
-return MapBackedSet.mapBackedSet(new HashedMap<E, Object>());
+    @Override
     public Set<E> makeObject() {
-        return MapBackedSet.decorate(new HashedMap<E, Object>());
+return MapBackedSet.mapBackedSet(new HashedMap<E, Object>());
     }
 
     @Override

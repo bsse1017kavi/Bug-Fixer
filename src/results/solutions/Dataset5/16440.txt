@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -170,9 +169,9 @@ public class SystemPath extends Task {
                     // other classes that needs to be replaced ??
                     try {
                         Class taskClass = acl.loadClass(c.getName());
-//System.out.println("Loaded " + key + " " + taskClass.getClassLoader() );
+                        //project.addTaskDefinition(key, taskClass);
                         project.getTaskDefinitions().put(key, taskClass);
-                        System.out.println("Loaded " + key + " " + taskClass.getClassLoader() );
+//System.out.println("Loaded " + key + " " + taskClass.getClassLoader() );
                     } catch (NoClassDefFoundError ncdfe) {
                         log("Could not load a dependent class ("
                             + ncdfe.getMessage() + ") for task " + key, Project.MSG_DEBUG);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public final class WSIntegrationProcessorJAXWS_HANDLER extends AbstractIntegrati
     @Override
     protected void processAnnotation(final DeploymentUnit unit, final ClassInfo classInfo, final AnnotationInstance wsAnnotation, final CompositeIndex compositeIndex) throws DeploymentUnitProcessingException {
         final WSEndpointHandlersMapping mapping = getRequiredAttachment(unit, WS_ENDPOINT_HANDLERS_MAPPING_KEY);
-if (isEjb3(classInfo)) {
+        final String endpointClassName = classInfo.name().toString();
 
-        if (isJaxwsEjb(classInfo)) {
+if (isEjb3(classInfo)) {
             for (final EJBEndpoint ejbEndpoint : getJaxwsEjbs(unit)) {
                 if (endpointClassName.equals(ejbEndpoint.getClassName())) {
                     for (final String handlerClassName : mapping.getHandlers(endpointClassName)) {

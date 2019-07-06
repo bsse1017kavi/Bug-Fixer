@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -253,9 +252,9 @@ public class AnnotProxyFieldValueFactory implements IFieldValueFactory
 		else
 		{
 			BeanFactory parent = beanFactory.getParentBeanFactory();
-return getBeanDefinition((ConfigurableListableBeanFactory)parent, name);
+			if (parent != null && parent instanceof ConfigurableListableBeanFactory)
 			{
-				return getBeanDefinition(beanFactory, name);
+return getBeanDefinition((ConfigurableListableBeanFactory)parent, name);
 			}
 			else
 			{

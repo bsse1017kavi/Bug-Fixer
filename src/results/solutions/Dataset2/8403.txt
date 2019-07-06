@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -83,9 +82,9 @@ rdataFromString(Name name, short dclass, int ttl, MyStringTokenizer st,
 throws TextParseException
 {
 	TXTRecord rec = new TXTRecord(name, dclass, ttl);
-rec.strings.add(nextString(st));
+	rec.strings = new ArrayList();
 	while (st.hasMoreTokens())
-		rec.strings.add(st.nextToken());
+rec.strings.add(nextString(st));
 	return rec;
 }
 

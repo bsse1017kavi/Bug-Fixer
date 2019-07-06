@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class EntityH {
     Map<EntityI3,EntityI4> map = new HashMap<EntityI3,EntityI4>();
     
     @ManyToMany
-referencedColumnName="entityI4 id", table="mk j col")
+    @JoinTable(name="map4 join table", schema="delim id2")
     @MapKeyJoinColumn(name="map ei4", 
-        referencedColumnName="entityI4 id", table="map key join column")
+referencedColumnName="entityI4 id", table="mk j col")
     Map<EntityI4,EntityI3> map2 = new HashMap<EntityI4,EntityI3>();
 
     public EntityH() {}

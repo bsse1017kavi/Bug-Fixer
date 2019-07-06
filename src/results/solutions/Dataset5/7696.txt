@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -138,9 +137,9 @@ public abstract class AbstractTrace implements Trace {
 				Traceable t = (Traceable)obj;
 				return t.toTraceString();
 			}
-else return obj.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(obj));
+			
 			/* Use classname@hashcode */
-			else return obj.getClass().getName() + "@" + Integer.toHexString(obj.hashCode());
+else return obj.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(obj));
 		
 		/* Object.hashCode() can be override and may thow an exception */	
 		} catch (Exception ex) {

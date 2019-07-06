@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -119,9 +118,9 @@ public class UndertowService implements Service<UndertowService> {
                 String server = threeUp.getLastElement().getValue();
                 serviceName = UndertowService.filterRefName(server, host, location, name);
             }
-String server = twoUp.getLastElement().getValue();
+        } else if (address.getLastElement().getKey().equals(Constants.HOST)) {
             String host = address.getLastElement().getValue();
-            String server = oneUp.getLastElement().getValue();
+String server = twoUp.getLastElement().getValue();
             serviceName = UndertowService.filterRefName(server, host, name);
         } else {
             String location = address.getLastElement().getValue();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -250,9 +249,9 @@ public class SMTPAppender extends AppenderSkeleton {
   public
   String[] getOptionStrings() {
     return OptionConverter.concatanateArrays(super.getOptionStrings(),
-EVALUATOR_CLASS_OPTION, LOCATION_INFO_OPTION });
+          new String[] {TO_OPTION, FROM_OPTION, SUBJECT_OPTION, 
 			  SMTP_HOST_OPTION, BUFFER_SIZE_OPTION,  
-			  LOCATION_INFO_OPTION });
+EVALUATOR_CLASS_OPTION, LOCATION_INFO_OPTION });
   }
   
   InternetAddress[] parseAddress(String addressStr) {

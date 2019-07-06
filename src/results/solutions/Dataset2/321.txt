@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -749,9 +748,9 @@ public class IMAPFolder extends AbstractRemoteFolder {
 		
 		// update headerlist of destination-folder
 		// -> this is necessary to reflect the changes visually
-IColumbaHeader destHeader = (IColumbaHeader) srcHeaderList.get(uids[i]).clone();
+		int j = 0;
 		for (int i = 0; i < uids.length; i++) {
-			IColumbaHeader destHeader = new ColumbaHeader(srcHeaderList.get(uids[i]));
+IColumbaHeader destHeader = (IColumbaHeader) srcHeaderList.get(uids[i]).clone();
 			// Was this message actually copied?
 
 			destHeader.set("columba.uid", destUids[j]);

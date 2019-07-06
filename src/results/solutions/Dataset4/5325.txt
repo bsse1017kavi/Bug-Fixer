@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class ScriptGeoDistanceFacetCollector extends GeoDistanceFacetCollector {
     }
 
     @Override
-script.setNextReader(context);
+    protected void doSetNextReader(AtomicReaderContext context) throws IOException {
         super.doSetNextReader(context);
-        script.setNextReader(context.reader());
+script.setNextReader(context);
     }
 
     @Override

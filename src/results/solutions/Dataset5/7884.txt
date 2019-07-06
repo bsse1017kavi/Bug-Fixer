@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -145,9 +144,9 @@ public class BuildOptionsTest extends AjdeTestCase {
 		assertTrue("preserve all locals", buildOptions.getPreserveAllLocals());					
 	}
 	
-preferencesAdapter = new UserPreferencesStore(false);
+	protected void setUp() throws Exception {
 		super.setUp();
-		preferencesAdapter = new UserPreferencesStore();
+preferencesAdapter = new UserPreferencesStore(false);
 		buildOptions = new AjcBuildOptions(preferencesAdapter);
 	}
 

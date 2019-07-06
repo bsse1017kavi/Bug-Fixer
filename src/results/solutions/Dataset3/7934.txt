@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class IronJacamarDeploymentParsingProcessor implements DeploymentUnitProc
      * @param phaseContext the deployment unit context
      * @throws DeploymentUnitProcessingException
      */
-final ResourceRoot resourceRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT);
+    @Override
     public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
-        final ResourceRoot resourceRoot = phaseContext.getAttachment(Attachments.DEPLOYMENT_ROOT);
+final ResourceRoot resourceRoot = phaseContext.getDeploymentUnit().getAttachment(Attachments.DEPLOYMENT_ROOT);
         final VirtualFile deploymentRoot = resourceRoot.getRoot();
 
         if (deploymentRoot == null || !deploymentRoot.exists())

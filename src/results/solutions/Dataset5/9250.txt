@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -402,9 +401,9 @@ public class AjaxRequestTarget implements IRequestTarget
 			throw new IllegalArgumentException(
 					"cannot update component that does not have setOutputMarkupId property set to true. Component: "
 							+ component.toString());
-appendJavascript("Wicket.Focus.setFocusOnId('" + id + "');");
+		}
 		final String id = component != null ? component.getMarkupId() : null;
-		appendJavascript("Wicket.Focus.setFocusOnId('" + null + "');");
+appendJavascript("Wicket.Focus.setFocusOnId('" + id + "');");
 	}
 
 

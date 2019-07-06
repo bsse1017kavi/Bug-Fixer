@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public final class ResourceAdapterDeploymentService extends AbstractResourceAdap
         final ServiceContainer container = context.getController().getServiceContainer();
         final URL url = connectorXmlDescriptor == null ? null : connectorXmlDescriptor.getUrl();
         final String deploymentName = connectorXmlDescriptor == null ? null : connectorXmlDescriptor.getDeploymentName();
-log.debugf("DEPLOYMENT name = %s",deploymentName);
+        final File root = connectorXmlDescriptor == null ? null : connectorXmlDescriptor.getRoot();
         CommonDeployment raDeployment = null;
-        log.infof("DEPLOYMENT name = %s",deploymentName);
+log.debugf("DEPLOYMENT name = %s",deploymentName);
         final AS7RaDeployer raDeployer = new AS7RaDeployer(context.getChildTarget(), url, deploymentName, root, module.getClassLoader(), cmd,
                 ijmd);
         raDeployer.setConfiguration(config.getValue());

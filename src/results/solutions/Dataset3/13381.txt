@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -33,9 +32,9 @@ import org.jboss.as.controller.PathElement;
  * @author <a href="mailto:david.lloyd@redhat.com">David M. Lloyd</a>
  */
 final class ProxyOperationRegistry extends OperationRegistry {
-ProxyOperationRegistry(final String valueString, final OperationSubregistry parent, final OperationHandler operationHandler) {
+    private final OperationHandler operationHandler;
 
-    ProxyOperationRegistry(final String valueString, final Subregistry parent, final OperationHandler operationHandler) {
+ProxyOperationRegistry(final String valueString, final OperationSubregistry parent, final OperationHandler operationHandler) {
         super(valueString, parent);
         this.operationHandler = operationHandler;
     }

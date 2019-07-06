@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -657,9 +656,9 @@ public class WildTypePattern extends TypePattern {
 		if (resolvedTypeInTheWorld.isGenericWildcard()) {
 			type = resolvedTypeInTheWorld;
 		} else {
-if ((type instanceof ResolvedType) && ((ResolvedType)type).isMissing()) {
+			type = lookupTypeInScope(scope, fullyQualifiedName, this);
 		}
-		if (type == ResolvedType.MISSING) {
+if ((type instanceof ResolvedType) && ((ResolvedType)type).isMissing()) {
 			return resolveBindingsForMissingType(resolvedTypeInTheWorld, originalName, scope, bindings, allowBinding, requireExactType);
 		} else {
 			return resolveBindingsForExactType(scope,type,fullyQualifiedName,requireExactType);

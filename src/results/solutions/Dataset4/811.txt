@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class BulkAction extends Action<BulkRequest, BulkResponse, BulkRequestBui
     }
 
     @Override
-.withType(TransportRequestOptions.Type.BULK)
+    public TransportRequestOptions transportOptions(Settings settings) {
         return TransportRequestOptions.options()
-                .withType(TransportRequestOptions.Type.fromString(settings.get("action.bulk.transport.type", TransportRequestOptions.Type.LOW.toString())))
+.withType(TransportRequestOptions.Type.BULK)
                 .withCompress(settings.getAsBoolean("action.bulk.compress", true)
                 );
     }

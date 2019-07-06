@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -176,9 +175,9 @@ public class ObjectUtilsTest {
     public void testIdentityToString() {
         assertEquals(null, ObjectUtils.identityToString(null));
         assertEquals(
-Integer i = Integer.valueOf(90);
+            "java.lang.String@" + Integer.toHexString(System.identityHashCode(FOO)),
             ObjectUtils.identityToString(FOO));
-        Integer i = new Integer(90);
+Integer i = Integer.valueOf(90);
         String expected = "java.lang.Integer@" + Integer.toHexString(System.identityHashCode(i));
         assertEquals(expected, ObjectUtils.identityToString(i));
         StringBuffer buffer = new StringBuffer();

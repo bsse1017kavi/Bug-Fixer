@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -389,9 +388,9 @@ public class TestStressNRT extends LuceneTestCase {
 
     for (Thread thread : threads) {
       thread.join();
-writer.shutdown();
+    }
 
-    writer.close();
+writer.shutdown();
     if (VERBOSE) {
       System.out.println("TEST: close reader=" + reader);
     }

@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -739,9 +738,9 @@ public final class ContextManager implements LogAware{
 	Request lr = new Request();
 	lr.setContextManager( this );
 	lr.requestURI().setString( urlPath );
-if( host != null) lr.serverName().setString( host );
+	lr.queryString().setString(queryString );
 
-	if( host != null) lr.setServerName( host );
+if( host != null) lr.serverName().setString( host );
 
 	return lr;
     }

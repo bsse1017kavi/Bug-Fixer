@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -101,9 +100,9 @@ public class CustomBoostFactorQuery extends Query {
             subQueryWeight.normalize(norm);
         }
 
-Scorer subQueryScorer = subQueryWeight.scorer(reader, scoreDocsInOrder, false);
+        @Override
         public Scorer scorer(IndexReader reader, boolean scoreDocsInOrder, boolean topScorer) throws IOException {
-            Scorer subQueryScorer = subQueryWeight.scorer(reader, true, false);
+Scorer subQueryScorer = subQueryWeight.scorer(reader, scoreDocsInOrder, false);
             if (subQueryScorer == null) {
                 return null;
             }

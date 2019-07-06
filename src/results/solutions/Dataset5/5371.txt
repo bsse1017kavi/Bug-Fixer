@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -697,9 +696,9 @@ public class Delete extends MatchingTask {
                 }
             }
         }
-handle("Unable to delete directory " + d.getAbsolutePath());
+        log("Deleting directory " + d.getAbsolutePath(), verbosity);
         if (!delete(d)) {
-            handle("Unable to delete directory " + dir.getAbsolutePath());
+handle("Unable to delete directory " + d.getAbsolutePath());
         }
     }
 

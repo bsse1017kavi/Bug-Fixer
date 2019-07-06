@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ import org.jboss.dmr.ModelNode;
  */
 public class RootLoggerRemove extends AbstractRemoveStepHandler {
 
-public static final String OPERATION_NAME = "remove";
+    public static final RootLoggerRemove INSTANCE = new RootLoggerRemove();
 
-    public static final String OPERATION_NAME = "remove-root-logger";
+public static final String OPERATION_NAME = "remove";
 
     @Override
     protected void performRuntime(OperationContext context, ModelNode operation, ModelNode model) throws OperationFailedException {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1104,9 +1103,9 @@ void drawImage(Image srcImage, int srcX, int srcY, int srcWidth, int srcHeight, 
 		NSRect destRect = new NSRect();
 		destRect.x = destX;
 		destRect.y = destY;
-imageHandle.drawInRect(destRect, srcRect, OS.NSCompositeSourceOver, data.alpha / 255f);
+		destRect.width = destWidth;
 		destRect.height = destHeight;
-		imageHandle.drawInRect(destRect, srcRect, OS.NSCompositeSourceOver, 1);
+imageHandle.drawInRect(destRect, srcRect, OS.NSCompositeSourceOver, data.alpha / 255f);
 		handle.restoreGraphicsState();
 	} finally {
 		uncheckGC(pool);

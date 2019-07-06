@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -253,9 +252,9 @@ public abstract class DecayFunctionParser implements ScoreFunctionParser {
         if (originString != null) {
             origin = dateFieldMapper.value(originString).longValue();
         }
-throw new ElasticSearchParseException(DecayFunctionBuilder.SCALE + "must be set for date fields.");
+
         if (scaleString == null) {
-            throw new ElasticSearchParseException(DecayFunctionBuilder.SCALE + "must be set for geo fields.");
+throw new ElasticSearchParseException(DecayFunctionBuilder.SCALE + "must be set for date fields.");
         }
         TimeValue val = TimeValue.parseTimeValue(scaleString, TimeValue.timeValueHours(24));
         double scale = val.getMillis();

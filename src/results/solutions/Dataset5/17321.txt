@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -28,9 +27,9 @@ public abstract class Declare extends PatternNode {
 		byte kind = s.readByte();
 		switch (kind) {
 			case ERROR_OR_WARNING:
-return DeclarePrecedence.read(s, context);
+				return DeclareErrorOrWarning.read(s, context);
 			case DOMINATES:
-				return DeclareDominates.read(s, context);
+return DeclarePrecedence.read(s, context);
 			case PARENTS:
 				return DeclareParents.read(s, context);
 			case SOFT:

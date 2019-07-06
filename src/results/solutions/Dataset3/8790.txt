@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2007 the original author or authors.
  *
@@ -238,9 +237,9 @@ public abstract class AbstractJdbcInsert {
 	 * finalizes the configuration for this object and subsequent attempts to compile are ignored.
 	 * This will be implicitly called the first time an un-compiled insert is executed.
 	 * @throws org.springframework.dao.InvalidDataAccessApiUsageException if the object hasn't
-public synchronized final void compile() throws InvalidDataAccessApiUsageException {
+	 * been correctly initialized, for example if no DataSource has been provided
 	 */
-	public final void compile() throws InvalidDataAccessApiUsageException {
+public synchronized final void compile() throws InvalidDataAccessApiUsageException {
 		if (!isCompiled()) {
 			if (getTableName() == null) {
 				throw new InvalidDataAccessApiUsageException("Table name is required");

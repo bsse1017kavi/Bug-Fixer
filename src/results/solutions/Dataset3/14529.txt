@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class JMSTopicAdd extends AbstractAddStepHandler {
     public static final String OPERATION_NAME = ADD;
 
     /**
-public static ModelNode getOperation(ModelNode address, ModelNode existing) {
+     * Create an "add" operation using the existing model
      */
-    static ModelNode getOperation(ModelNode address, ModelNode existing) {
+public static ModelNode getOperation(ModelNode address, ModelNode existing) {
         ModelNode op = Util.getEmptyOperation(OPERATION_NAME, address);
         if (existing.hasDefined(ENTRIES)) {
             op.get(ENTRIES).set(existing.get(ENTRIES));

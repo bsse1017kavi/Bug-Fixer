@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -73,9 +72,9 @@ public class OrderPreservingPartitioner implements IPartitioner
             return new StringToken(initialToken);
 
         // generate random token
-StringBuilder buffer = new StringBuilder();
+        String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         Random r = new Random();
-        StringBuffer buffer = new StringBuffer();
+StringBuilder buffer = new StringBuilder();
         for (int j = 0; j < 16; j++) {
             buffer.append(chars.charAt(r.nextInt(chars.length())));
         }

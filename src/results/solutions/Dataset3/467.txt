@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class BroadcastGroupControlHandler extends AbstractHornetQComponentContro
         if (GET_CONNECTOR_PAIRS_AS_JSON.equals(operationName)) {
             BroadcastGroupControl control = getHornetQComponentControl(context, operation, false);
             try {
-context.getFailureDescription().set(e.getLocalizedMessage());
+                context.getResult().set(control.getConnectorPairsAsJSON());
             } catch (Exception e) {
-                context.getFailureDescription().set(e.toString());
+context.getFailureDescription().set(e.getLocalizedMessage());
             }
         } else {
             unsupportedOperation(operationName);

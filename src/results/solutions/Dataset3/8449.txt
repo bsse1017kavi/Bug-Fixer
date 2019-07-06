@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -42,9 +41,9 @@ public interface ModelControllerClient extends Closeable {
      *
      * @param operation the operation to execute
      * @param handler the result handler
-OperationResult execute(ModelNode operation, ResultHandler handler);
+     * @return a handle which may be used to cancel the operation
      */
-    Cancellable execute(ModelNode operation, ResultHandler handler);
+OperationResult execute(ModelNode operation, ResultHandler handler);
 
     /**
      * Execute an operation synchronously.

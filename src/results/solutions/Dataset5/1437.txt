@@ -1,4 +1,3 @@
-
 package org.eclipse.swt.internal.cocoa;
 
 public class NSEvent extends NSObject {
@@ -141,9 +140,9 @@ public static NSEvent mouseEventWithType(int type, NSPoint location, int flags, 
 	return result != 0 ? new NSEvent(result) : null;
 }
 
-OS.objc_msgSend_struct(result, OS.class_NSEvent, OS.sel_mouseLocation);
+public static NSPoint mouseLocation() {
 	NSPoint result = new NSPoint();
-	OS.objc_msgSend_stret(result, OS.class_NSEvent, OS.sel_mouseLocation);
+OS.objc_msgSend_struct(result, OS.class_NSEvent, OS.sel_mouseLocation);
 	return result;
 }
 

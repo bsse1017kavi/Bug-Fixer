@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -929,9 +928,9 @@ public class AjaxRequestTarget implements IRequestTarget
 			}
 
 			// we need to write response as CDATA and parse it on client,
-response.write("><![CDATA[<head xmlns:wicket=\"http://wicket.sourceforge.net\">");
+			// because
 			// konqueror crashes when there is a <script> element
-			response.write("><![CDATA[<head xmlns:org.apache.wicket=\"http://org.apache.wicket.sourceforge.net\">");
+response.write("><![CDATA[<head xmlns:wicket=\"http://wicket.sourceforge.net\">");
 
 			response.write(encodingHeaderResponse.getContents());
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class RestSearchScrollAction extends BaseRestHandler {
 
     @Override
     public void handleRequest(final RestRequest request, final RestChannel channel) {
-scrollId = request.content().toUtf8();
+        String scrollId = request.param("scroll_id");
         if (scrollId == null && request.hasContent()) {
-            scrollId = request.contentAsString();
+scrollId = request.content().toUtf8();
         }
         SearchScrollRequest searchScrollRequest = new SearchScrollRequest(scrollId);
         searchScrollRequest.listenerThreaded(false);

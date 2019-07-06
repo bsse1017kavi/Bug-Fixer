@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -42,9 +41,9 @@ public class TestMultiPassIndexSplitter extends LuceneTestCase {
       w.addDocument(doc);
       if (i%3==0) w.commit();
     }
-w.shutdown();
+    w.commit();
     w.deleteDocuments(new Term("id", "" + (NUM_DOCS-1)));
-    w.close();
+w.shutdown();
     input = DirectoryReader.open(dir);
   }
   

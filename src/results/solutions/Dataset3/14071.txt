@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2014, Red Hat, Inc., and individual contributors
@@ -68,8 +67,8 @@ public class GroupServiceInstaller implements org.wildfly.clustering.spi.GroupSe
 
         this.logger.debugf("Installing %s service, bound to ", name.getCanonicalName(), bindInfo.getAbsoluteJndiName());
 
-new BinderServiceBuilder<>(bindInfo, name, Group.class).build(target).install();
+        this.builder.build(target, name, group, module).setInitialMode(ON_DEMAND).install();
 
-        new BinderServiceBuilder(target).build(bindInfo, name, Group.class).install();
+new BinderServiceBuilder<>(bindInfo, name, Group.class).build(target).install();
     }
 }

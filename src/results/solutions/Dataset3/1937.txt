@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -84,9 +83,9 @@ class AccessLogService implements Service<AccessLogService> {
     InjectedValue<XnioWorker> getWorker() {
         return worker;
     }
-return new AccessLogHandler(handler, logReceiver, pattern, AccessLogService.class.getClassLoader());
+
     protected AccessLogHandler configureAccessLogHandler(HttpHandler handler) {
-        return new AccessLogHandler(handler, logReceiver, pattern, AccessLogHandler.class.getClassLoader());
+return new AccessLogHandler(handler, logReceiver, pattern, AccessLogService.class.getClassLoader());
     }
 
 }

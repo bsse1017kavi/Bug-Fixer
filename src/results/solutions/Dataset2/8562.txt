@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1837,9 +1836,9 @@ public class ASTMatcher {
 		}
 		if (level >= AST.LEVEL_3_0) {
 			if (!safeSubtreeListMatch(node.modifiers(), o.modifiers())) {
-if (node.isVarargs() != o.isVarargs()) {
+				return false;
 			}
-			if (node.isVariableArity() != o.isVariableArity()) {
+if (node.isVarargs() != o.isVarargs()) {
 				return false;
 			}
 		}

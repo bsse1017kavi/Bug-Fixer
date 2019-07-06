@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -978,9 +977,9 @@ public void notifySourceElementRequestor(AbstractMethodDeclaration methodDeclara
 		argumentNames = new char[argumentLength][];
 		for (int i = 0; i < argumentLength; i++) {
 			argumentTypes[i] = CharOperation.concatWith(arguments[i].type.getParameterizedTypeName(), '.');
-isVarArgs = arguments[argumentLength-1].isVarArgs();
+			argumentNames[i] = arguments[i].name;
 		}
-		isVarArgs = arguments[argumentLength-1].isVarArgs;
+isVarArgs = arguments[argumentLength-1].isVarArgs();
 	}
 	char[][] thrownExceptionTypes = null;
 	TypeReference[] thrownExceptions = methodDeclaration.thrownExceptions;

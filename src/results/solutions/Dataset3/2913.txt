@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class WebVirtualHostDefinition extends SimpleResourceDefinition {
                     .setAllowNull(true)      // todo should be false, but 'add' won't validate then
                     .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES)
                     .build();
-new SimpleListAttributeDefinition.Builder(Constants.ALIAS,
+
     protected static final SimpleListAttributeDefinition ALIAS =
-            SimpleListAttributeDefinition.Builder.of(Constants.ALIAS,
+new SimpleListAttributeDefinition.Builder(Constants.ALIAS,
                     new SimpleAttributeDefinitionBuilder(Constants.ALIAS, ModelType.STRING, false)
                             .setXmlName(Constants.ALIAS)
                             .setAllowNull(false)

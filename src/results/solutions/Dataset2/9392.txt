@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -37,9 +36,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream) {
 	if ((bits & IsReachableMASK) == 0) {
 		return;
 	}
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+	int pc = codeStream.position;
 	block.generateCode(currentScope, codeStream);
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 public boolean isField() {
 	return false;

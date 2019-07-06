@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.core;
 
 /*
@@ -63,9 +62,9 @@ public static boolean isOverlappingRoots(IPath rootPath1, IPath rootPath2) {
 /**
  * Returns the current identifier extracted by the scanner (ie. without unicodes)
  * from the given id.
-private static synchronized char[] scannedIdentifier(String id) {
+ * Returns <code>null</code> if the id was not valid.
  */
-private static char[] scannedIdentifier(String id) {
+private static synchronized char[] scannedIdentifier(String id) {
 	if (id == null) {
 		return null;
 	}

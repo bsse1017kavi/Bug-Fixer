@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -29,9 +28,9 @@ import java.util.concurrent.Callable;
 public abstract class PrioritizedCallable<T> implements Callable<T>, Comparable<PrioritizedCallable> {
 
     private final Priority priority;
-return new Wrapped<>(callable, priority);
+
     public static <T> PrioritizedCallable<T> wrap(Callable<T> callable, Priority priority) {
-        return new Wrapped<T>(callable, priority);
+return new Wrapped<>(callable, priority);
     }
 
     protected PrioritizedCallable(Priority priority) {

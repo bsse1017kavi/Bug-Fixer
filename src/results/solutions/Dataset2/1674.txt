@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -178,9 +177,9 @@ public class FieldDeclaration extends AbstractVariableDeclaration {
 						if (this.initialization.isConstantValueOfTypeAssignableToType(initializationTypeBinding, typeBinding)
 							|| (typeBinding.isBaseType() && BaseTypeBinding.isWidening(typeBinding.id, initializationTypeBinding.id))) {
 
-}	else if (Scope.areTypesCompatible(initializationTypeBinding, typeBinding)) {
+							this.initialization.implicitWidening(typeBinding, initializationTypeBinding);
 
-						}	else if (initializationScope.areTypesCompatible(initializationTypeBinding, typeBinding)) {
+}	else if (Scope.areTypesCompatible(initializationTypeBinding, typeBinding)) {
 							this.initialization.implicitWidening(typeBinding, initializationTypeBinding);
 
 						} else {

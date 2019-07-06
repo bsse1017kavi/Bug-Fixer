@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012 Red Hat Inc. and/or its affiliates and other contributors
@@ -47,9 +46,9 @@ public class ClientMappingsHandler extends AbstractBindingWriteHandler {
     @Override
     void handleRuntimeRollback(ModelNode operation, String attributeName, ModelNode attributeValue, SocketBinding binding) {
         try {
-throw ControllerMessages.MESSAGES.failedToRecoverServices(e);
+            binding.setClientMappings(BindingAddHandler.parseClientMappings(attributeValue));
         } catch (OperationFailedException e) {
-            ControllerMessages.MESSAGES.failedToRecoverServices(e);
+throw ControllerMessages.MESSAGES.failedToRecoverServices(e);
         }
     }
 }

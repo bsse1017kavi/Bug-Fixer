@@ -1,4 +1,3 @@
-
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,9 +66,9 @@ public class StartAction extends AbstractAction {
 		// The following states are illegal.
 		if (EnumSet.of(State.INSTALL_FAILED, State.UNINSTALLED, State.UNINSTALLING).contains(state))
 			throw new SubsystemException("Cannot stop from state " + state);
-waitForStateChange(state);
+		// The following states must wait.
 		if (EnumSet.of(State.INSTALLING, State.RESOLVING, State.STARTING, State.STOPPING).contains(state)) {
-			waitForStateChange();
+waitForStateChange(state);
 			return new StartAction(instigator, requestor, target).run();
 		}
 		// The following states mean the requested state has already been attained.

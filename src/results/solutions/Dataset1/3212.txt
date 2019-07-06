@@ -1,4 +1,3 @@
-
 package org.apache.lucene.queries;
 
 /*
@@ -56,9 +55,9 @@ public class BooleanFilterTest extends LuceneTestCase {
     addDoc(writer, "guest", "020", "20040101", "Y");
     addDoc(writer, "guest", "020", "20050101", "Y");
     addDoc(writer, "admin", "020", "20050101", "Maybe");
-writer.shutdown();
+    addDoc(writer, "admin guest", "030", "20050101", "N");
     reader = SlowCompositeReaderWrapper.wrap(writer.getReader());
-    writer.close();
+writer.shutdown();
   }
 
   @Override

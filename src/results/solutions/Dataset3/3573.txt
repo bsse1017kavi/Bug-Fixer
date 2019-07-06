@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -354,9 +353,9 @@ public class StandaloneXml extends CommonXml {
 
             final ModelNode deploymentAddress = address.clone().add(DEPLOYMENT, uniqueName);
             final ModelNode deploymentAdd = Util.getEmptyOperation(ADD, deploymentAddress);
-deploymentAdd.get(ENABLED).set(enabled);
+            deploymentAdd.get(RUNTIME_NAME).set(runtimeName);
             deploymentAdd.get(HASH).set(hash);
-            if(startInput != null) deploymentAdd.get(ENABLED).set(startInput);
+deploymentAdd.get(ENABLED).set(enabled);
             list.add(deploymentAdd);
         }
     }

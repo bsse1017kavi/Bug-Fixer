@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -87,9 +86,9 @@ public class DeleteByQueryTests extends ElasticsearchIntegrationTest {
             fail("Exception should have been thrown.");
         } catch (IndexMissingException e) {
             //everything well
-deleteByQueryRequestBuilder.setIndicesOptions(IndicesOptions.lenientExpandOpen());
+        }
 
-        deleteByQueryRequestBuilder.setIndicesOptions(IndicesOptions.lenient());
+deleteByQueryRequestBuilder.setIndicesOptions(IndicesOptions.lenientExpandOpen());
         DeleteByQueryResponse actionGet = deleteByQueryRequestBuilder.execute().actionGet();
         assertThat(actionGet.status(), equalTo(RestStatus.OK));
         assertThat(actionGet.getIndex("twitter").getFailedShards(), equalTo(0));

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -643,9 +642,9 @@ public abstract class MarkupContainer extends Component implements Iterable<Comp
 					final Component child = (Component)childObject;
 
 					// Do not call remove() because the state change would than be
-child.detach();
+					// recorded twice.
 					child.internalOnRemove();
-					child.detachModel();
+child.detach();
 					child.setParent(null);
 				}
 			}

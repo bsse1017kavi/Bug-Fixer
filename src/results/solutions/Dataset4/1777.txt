@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class TransportClusterHealthAction extends TransportMasterNodeOperationAc
 
     @Override protected ClusterHealthResponse newResponse() {
         return new ClusterHealthResponse();
-@Override protected ClusterHealthResponse masterOperation(ClusterHealthRequest request, ClusterState state) throws ElasticSearchException {
+    }
 
-    @Override protected ClusterHealthResponse masterOperation(ClusterHealthRequest request) throws ElasticSearchException {
+@Override protected ClusterHealthResponse masterOperation(ClusterHealthRequest request, ClusterState state) throws ElasticSearchException {
         int waitFor = 3;
         if (request.waitForStatus() == null) {
             waitFor--;

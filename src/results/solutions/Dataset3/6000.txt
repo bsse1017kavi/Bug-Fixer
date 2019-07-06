@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -220,9 +219,9 @@ class SecuritySubsystemAdd implements ModelAddOperationHandler, BootOperationHan
 
                     // add service to bind SecurityDomainObjectFactory to JNDI
                     final SecurityDomainJndiInjectable securityDomainJndiInjectable = new SecurityDomainJndiInjectable();
-.addInjection(binderService.getManagedObjectInjector(), securityDomainJndiInjectable)
+                    final BinderService binderService = new BinderService("jaas");
                     target.addService(ContextNames.JAVA_CONTEXT_SERVICE_NAME.append("jaas"), binderService)
-                            .addInjection(binderService.getJndiInjectableInjector(), securityDomainJndiInjectable)
+.addInjection(binderService.getManagedObjectInjector(), securityDomainJndiInjectable)
                             .addDependency(ContextNames.JAVA_CONTEXT_SERVICE_NAME, NamingStore.class, binderService.getNamingStoreInjector())
                             .addDependency(SecurityManagementService.SERVICE_NAME, ISecurityManagement.class, securityDomainJndiInjectable.getSecurityManagementInjector())
                             .setInitialMode(ServiceController.Mode.ACTIVE)

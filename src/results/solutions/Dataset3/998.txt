@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -93,9 +92,9 @@ public class BasicTransactionalModelController extends BasicModelController impl
     /** {@inheritDoc} */
     @Override
     public OperationResult execute(final Operation executionContext, final ResultHandler handler) {
-if (executionContext.getOperation().hasDefined(OP_ADDR)) {
+        ControllerTransaction transaction = null;
         try {
-            if (executionContext.getOperation().get(OP_ADDR).hasDefined(OP_ADDR)) {
+if (executionContext.getOperation().hasDefined(OP_ADDR)) {
                 final PathAddress address = PathAddress.pathAddress(executionContext.getOperation().get(OP_ADDR));
 
                 final ProxyController proxyExecutor = getRegistry().getProxyController(address);

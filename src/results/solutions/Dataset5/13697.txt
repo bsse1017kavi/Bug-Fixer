@@ -1,5 +1,4 @@
 
-
 import org.aspectj.testing.Tester;
 
 /** @testcase PR#827 after returning advice on interface and implementation constructor */
@@ -46,9 +45,9 @@ class U {
     }
 }
 
-pointcut pc(): execution(new(..)) && !within(A);
+aspect A {
     /** must pick out both interface and implementor constructor execution */
-    pointcut pc(): execution(new(..));
+pointcut pc(): execution(new(..)) && !within(A);
 
     before(): pc() {
         U.e(U.before + thisJoinPoint);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -145,9 +144,9 @@ public abstract class LoadableDetachableModel<T> implements IModel<T>
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-StringBuilder sb = new StringBuilder(super.toString());
+	public String toString()
 	{
-		StringBuffer sb = new StringBuffer(super.toString());
+StringBuilder sb = new StringBuilder(super.toString());
 		sb.append(":attached=").append(attached).append(":tempModelObject=[").append(
 			this.transientModelObject).append("]");
 		return sb.toString();

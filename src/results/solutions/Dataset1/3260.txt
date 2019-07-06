@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -94,9 +93,9 @@ public class CassandraDaemon
         // replay the log if necessary and check for compaction candidates
         RecoveryManager.doRecovery();
         CompactionManager.instance.checkAllColumnFamilies();
-StorageService.instance.initServer();
+
         // start server internals
-        StorageService.instance().initServer();
+StorageService.instance.initServer();
         
         // now we start listening for clients
         CassandraServer cassandraServer = new CassandraServer();

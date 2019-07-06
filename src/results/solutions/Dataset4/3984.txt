@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -223,9 +222,9 @@ public class InternalStringTermsFacet extends InternalTermsFacet {
     public long getOtherCount() {
         return otherCount();
     }
-public Facet reduce(List<Facet> facets) {
+
     @Override
-    public Facet reduce(String name, List<Facet> facets) {
+public Facet reduce(List<Facet> facets) {
         if (facets.size() == 1) {
             return facets.get(0);
         }

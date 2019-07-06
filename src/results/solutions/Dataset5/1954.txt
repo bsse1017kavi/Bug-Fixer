@@ -1,4 +1,3 @@
-
 class A {
 	void m() {
 		System.out.println("A");
@@ -13,9 +12,9 @@ class B extends A {
 
 
 aspect IfPointcut { 
-execution(* foo(*,*)) &&
+
 	after(A a, B b) returning:
-	   call(* foo(*,*)) && 
+execution(* foo(*,*)) &&
 	(args(b,a) || args(a,b)) { 
 		System.out.println("Woven"); 
 	}

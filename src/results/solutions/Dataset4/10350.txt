@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -170,9 +169,9 @@ public class PrioritizedExecutorsTests extends ElasticsearchTestCase {
             @Override
             public void run() {
                 try {
-fail();
+                    block.await();
                 } catch (InterruptedException e) {
-                    assert false;
+fail();
                 }
             }
 

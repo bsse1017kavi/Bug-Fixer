@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -166,9 +165,9 @@ public class NestedQueryParser implements QueryParser {
             // restore the thread local one...
             parentFilterContext.set(currentParentFilterContext);
         }
-static ThreadLocal<LateBindingParentFilter> parentFilterContext = new ThreadLocal<>();
+    }
 
-    static ThreadLocal<LateBindingParentFilter> parentFilterContext = new ThreadLocal<LateBindingParentFilter>();
+static ThreadLocal<LateBindingParentFilter> parentFilterContext = new ThreadLocal<>();
 
     static class LateBindingParentFilter extends Filter {
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -113,9 +112,9 @@ public class DumpMonitorService extends AbstractComponent {
     private Map<String, Object> fillContextMap(Map<String, Object> context) {
         if (context == null) {
             context = newHashMap();
-context.put("localNode", clusterService.localNode());
+        }
         if (clusterService != null) {
-            context.put("localNode", clusterService.state().nodes().localNode());
+context.put("localNode", clusterService.localNode());
         }
         return context;
     }

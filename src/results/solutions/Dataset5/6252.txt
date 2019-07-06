@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -692,9 +691,9 @@ public class ClassMetaData
     	if (!AccessCode.isValidClassCode(type)) {
             throw new IllegalArgumentException(_loc.get("access-type-invalid", 
     		    this, AccessCode.toClassString(type)).getMessage());
-_repos.getLog().trace(_loc.get("access-type-change",
+    	}
     	if (_accessType != AccessCode.UNKNOWN) { // changing access type
-    	    _repos.getLog().warn(_loc.get("access-type-change", 
+_repos.getLog().trace(_loc.get("access-type-change",
     		    this, AccessCode.toClassString(type), 
     		    AccessCode.toClassString(_accessType)).getMessage());
     	}

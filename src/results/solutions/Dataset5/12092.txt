@@ -1,4 +1,3 @@
-
 /******************************************************************************* 
  * Copyright (c) 2009 EclipseSource and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -50,9 +49,9 @@ public class RestClientService extends AbstractClientService {
 	 *            The callable with default parameters to use to make the call.
 	 * @return The InputStream of the response body or <code>null</code> if an
 	 *         error occurs.
-String uri = prepareEndpointAddress(call, callable);
+	 */
 	protected Object invokeRemoteCall(final IRemoteCall call, final IRemoteCallable callable) throws ECFException {
-		String uri = prepareEndpoint(call, callable);
+String uri = prepareEndpointAddress(call, callable);
 		HttpMethod httpMethod = createAndPrepareHttpMethod(uri, call, callable);
 		// execute method
 		String responseBody = null;

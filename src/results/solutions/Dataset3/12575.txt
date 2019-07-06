@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -53,9 +52,9 @@ class AES256SHA256Decoder extends CoderBase {
                 System.arraycopy(coder.properties, 2, salt, 0, saltSize);
                 final byte[] iv = new byte[16];
                 System.arraycopy(coder.properties, 2 + saltSize, iv, 0, ivSize);
-throw new PasswordRequiredException();
+
                 if (passwordBytes == null) {
-                    throw new IOException("Cannot read encrypted files without a password");
+throw new PasswordRequiredException();
                 }
                 final byte[] aesKeyBytes;
                 if (numCyclesPower == 0x3f) {

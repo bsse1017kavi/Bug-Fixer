@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -597,9 +596,9 @@ public class JBossContextConfig extends ContextConfig {
 
     protected void processTld(ArrayList<TagLibraryInfo> tagLibraries, String location, TldMetaData tldMetaData) {
 
-if (relativeLocation != null && relativeLocation.startsWith("/WEB-INF/lib/")) {
+        String relativeLocation = location;
         String jarPath = null;
-        if (relativeLocation.startsWith("/WEB-INF/lib/")) {
+if (relativeLocation != null && relativeLocation.startsWith("/WEB-INF/lib/")) {
             int pos = relativeLocation.indexOf('/', "/WEB-INF/lib/".length());
             if (pos > 0) {
                 jarPath = relativeLocation.substring(pos);

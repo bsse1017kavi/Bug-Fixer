@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -490,9 +489,9 @@ public void setAlignment (int alignment) {
 	style &= ~(SWT.LEFT | SWT.RIGHT | SWT.CENTER);
 	style |= alignment & (SWT.LEFT | SWT.RIGHT | SWT.CENTER);
 	int /*long*/ hwndHeader = parent.hwndHeader;
-hdItem.mask = OS.HDI_FORMAT;
+	if (hwndHeader == 0) return;
 	HDITEM hdItem = new HDITEM ();
-	hdItem.mask = OS.HDI_FORMAT | OS.HDI_IMAGE;
+hdItem.mask = OS.HDI_FORMAT;
 	OS.SendMessage (hwndHeader, OS.HDM_GETITEM, index, hdItem);
 	hdItem.fmt &= ~OS.HDF_JUSTIFYMASK;
 	if ((style & SWT.LEFT) == SWT.LEFT) hdItem.fmt |= OS.HDF_LEFT;

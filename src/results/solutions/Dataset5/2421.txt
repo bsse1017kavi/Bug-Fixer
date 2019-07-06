@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved.
@@ -1471,9 +1470,9 @@ public class BcelWeaver implements IWeaver {
     public void weaveNormalTypeMungers(ResolvedType onType) {
     	ContextToken tok = CompilationAndWeavingContext.enteringPhase(CompilationAndWeavingContext.PROCESSING_TYPE_MUNGERS, onType.getName());
     	if (onType.isRawType() || onType.isParameterizedType()) onType = onType.getGenericType();
-if (!m.isLateMunger() && m.matches(onType)) {
+		for (Iterator i = typeMungerList.iterator(); i.hasNext(); ) {
 			ConcreteTypeMunger m = (ConcreteTypeMunger)i.next();
-			if (m.matches(onType)) {
+if (!m.isLateMunger() && m.matches(onType)) {
 				onType.addInterTypeMunger(m);
 			}
 		}

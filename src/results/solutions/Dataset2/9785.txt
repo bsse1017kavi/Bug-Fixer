@@ -1,4 +1,3 @@
-
 /*
  * SwingInstall.java
  *
@@ -137,9 +136,9 @@ public class SwingInstall extends JFrame
 		{
 			OperatingSystem.OSTask osTask = (OperatingSystem.OSTask)keys.next();
 			String dir = ((JTextField)osTaskDirs.get(osTask)).getText();
-osTask.setEnabled(true);
+			if(dir != null && dir.length() != 0)
 			{
-				osTask.setEnabled(false);
+osTask.setEnabled(true);
 				osTask.setDirectory(dir);
 			}
 			else

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class LikeExpression extends BinaryExpressionPredicate {
 	}
 	
 	@Override
-+ (_escaped ? "ESCAPE " + JPQLHelper.toJPQL(ctx, _echar) : EMPTY);
+	public String asExpression(AliasContext ctx) {
 		return super.asExpression(ctx) 
-		    + (_escaped ? "ESCAPE " + JPQLHelper.toJPQL(ctx, _echar) : "");
++ (_escaped ? "ESCAPE " + JPQLHelper.toJPQL(ctx, _echar) : EMPTY);
 	}
 
 }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -40,9 +39,9 @@ import org.jboss.msc.service.ServiceTarget;
  */
 public class SpecifiedInterfaceAddHandler extends InterfaceAddHandler {
 
-protected SpecifiedInterfaceAddHandler() {
+    public static SpecifiedInterfaceAddHandler INSTANCE = new SpecifiedInterfaceAddHandler();
 
-    private SpecifiedInterfaceAddHandler() {
+protected SpecifiedInterfaceAddHandler() {
         super(true);
     }
 

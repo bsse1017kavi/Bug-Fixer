@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -2510,9 +2509,9 @@ public class FileUtils {
         BigInteger size = BigInteger.ZERO;
 
         for (final File file : files) {
-size = size.add(BigInteger.valueOf(sizeOf(file)));
+            try {
                 if (!isSymlink(file)) {
-                    size.add(BigInteger.valueOf(sizeOf(file)));
+size = size.add(BigInteger.valueOf(sizeOf(file)));
                 }
             } catch (IOException ioe) {
                 // Ignore exceptions caught when asking if a File is a symlink.

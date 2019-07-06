@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class DoubleScriptDataComparator extends FieldComparator<Double> {
         private InnerSource(SearchScript script) {
             this.script = script;
         }
-public FieldComparator<? extends Number> newComparator(String fieldname, int numHits, int sortPos, boolean reversed) throws IOException {
+
         @Override
-        public FieldComparator newComparator(String fieldname, int numHits, int sortPos, boolean reversed) throws IOException {
+public FieldComparator<? extends Number> newComparator(String fieldname, int numHits, int sortPos, boolean reversed) throws IOException {
             return new DoubleScriptDataComparator(numHits, script);
         }
 

@@ -1,4 +1,3 @@
-
 package backtype.storm.spout;
 
 import backtype.storm.generated.ShellComponent;
@@ -34,9 +33,9 @@ public class ShellSpout implements ISpout {
 
         try {
             Number subpid = _process.launch(stormConf, context);
-throw new RuntimeException("Error when launching multilang subprocess", e);
+            LOG.info("Launched subprocess with pid " + subpid);
         } catch (IOException e) {
-            throw new RuntimeException("Error when launching multilang subprocess\n" + _process.getErrorsString(), e);
+throw new RuntimeException("Error when launching multilang subprocess", e);
         }
     }
 

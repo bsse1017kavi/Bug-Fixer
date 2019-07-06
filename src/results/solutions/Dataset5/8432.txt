@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -824,9 +823,9 @@ public class DiskPageStore extends AbstractPageStore implements ISerializationAw
 	/**
 	 * @see org.apache.wicket.protocol.http.SecondLevelCacheSessionStore.IPageStore#unbind(java.lang.String)
 	 */
-SessionEntry entry = sessionIdToEntryMap.remove(sessionId);
+	public void unbind(String sessionId)
 	{
-		SessionEntry entry = sessionIdToEntryMap.get(sessionId);
+SessionEntry entry = sessionIdToEntryMap.remove(sessionId);
 		if (entry != null)
 		{
 			if (isSynchronous())

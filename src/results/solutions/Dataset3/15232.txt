@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -66,9 +65,9 @@ public class RemoteLocalCallTestCase {
     @Deployment(name = "client")
     @TargetsContainer("multinode-client")
     public static Archive<?> deployment1() {
-jar.addAsManifestResource("META-INF/jboss-ejb-client.xml", "jboss-ejb-client.xml");
+        JavaArchive jar = createJar(ARCHIVE_NAME_CLIENT);
         jar.addClasses(RemoteLocalCallTestCase.class);
-        jar.addAsManifestResource("META-INF/jboss-ejb-client-receivers.xml", "jboss-ejb-client.xml");
+jar.addAsManifestResource("META-INF/jboss-ejb-client.xml", "jboss-ejb-client.xml");
         return jar;
     }
 

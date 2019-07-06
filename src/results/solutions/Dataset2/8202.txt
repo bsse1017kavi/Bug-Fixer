@@ -1,4 +1,3 @@
-
 package org.jboss.metadata.aggregate;
 
 import java.lang.reflect.*;
@@ -152,9 +151,9 @@ public class AggregateBean extends AggregateMetaData implements BeanMetaData {
 
     public MethodMetaData getHomeMethod(String name, Class[] args) {
         for(int i=0; i<homeMethods.length; i++)
-return homeMethods[i];
+            if(homeMethods[i].getName().equals(name) &&
                paramsMatch(homeMethods[i].getParameterTypes(), args))
-                return methods[i];
+return homeMethods[i];
         throw new IllegalArgumentException("Method not found");
     }
 

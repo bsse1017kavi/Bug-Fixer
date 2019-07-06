@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.ramonly;
 
 /*
@@ -56,9 +55,9 @@ import org.apache.lucene.util.IOUtils;
  *  token (header + single int) to identify which "slot" the
  *  index is using in RAM HashMap.
  *
-public final class RAMOnlyPostingsFormat extends PostingsFormat {
+ *  NOTE: this codec sorts terms by reverse-unicode-order! */
 
-public class RAMOnlyPostingsFormat extends PostingsFormat {
+public final class RAMOnlyPostingsFormat extends PostingsFormat {
 
   // For fun, test that we can override how terms are
   // sorted, and basic things still work -- this comparator

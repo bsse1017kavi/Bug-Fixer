@@ -1,4 +1,3 @@
-
 /*
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -57,9 +56,9 @@ public class Images {
     public static Icon getIcon(String name, int width, int height) {
         Icon icon = getIcon(name);
         if (icon == null) {
-icon = new ImageIcon(((ImageIcon)icon).getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
+            return null;
         }
-        icon = new ImageIcon(((ImageIcon)icon).getImage().getScaledInstance(32, -1, Image.SCALE_SMOOTH));
+icon = new ImageIcon(((ImageIcon)icon).getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
         return icon;
     }
     

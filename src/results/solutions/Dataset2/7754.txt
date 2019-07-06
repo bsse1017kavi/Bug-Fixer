@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -92,9 +91,9 @@ findRecords(Name name, short type) {
 
 	if (findName(name) == null) {
 		if (name.isWild())
-return findRecords(name.wild(1), type);
+			return new SetResponse(SetResponse.NXDOMAIN);
 		else
-			return findRecords(name.wild(), type);
+return findRecords(name.wild(1), type);
 	}
 	Object [] objects = findSets(name, type, dclass);
 	if (objects == null)

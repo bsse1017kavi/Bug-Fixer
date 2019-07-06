@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -86,9 +85,9 @@ public class QbobViewer implements ApplicationListener {
 		Gdx.gl.glEnable(GL10.GL_DEPTH_TEST);
 				
 		Gdx.gl.glActiveTexture(GL10.GL_TEXTURE0);
-diffuse.setFilter(TextureFilter.MipMap, TextureFilter.Linear);
+		Gdx.gl.glEnable(GL10.GL_TEXTURE_2D);
 		diffuse.bind();
-		diffuse.setFilter(TextureFilter.MipMapNearestNearest, TextureFilter.Linear);				
+diffuse.setFilter(TextureFilter.MipMap, TextureFilter.Linear);
 		
 		Gdx.gl.glActiveTexture(GL10.GL_TEXTURE1);
 		Gdx.gl.glEnable(GL10.GL_TEXTURE_2D);

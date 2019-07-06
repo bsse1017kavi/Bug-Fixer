@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -415,9 +414,9 @@ public class GeoFilterTests extends AbstractSharedClusterTest {
                         geoBoundingBoxFilter("pin")
                                 .topLeft(90, -179.99999)
                                 .bottomRight(-90, 179.99999))
-assertHitCount(world, 53);
+        ).execute().actionGet();
 
-        assertHitCount(world, 246);
+assertHitCount(world, 53);
 
         SearchResponse distance = client().prepareSearch().addField("pin").setQuery(
                 filteredQuery(

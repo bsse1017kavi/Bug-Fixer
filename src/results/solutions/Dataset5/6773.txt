@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -750,9 +749,9 @@ public class AnnotationPersistenceMetaDataParser
     private void parseDetachedState(ClassMetaData meta,
         DetachedState detached) {
         if (detached != null) {
-else if (StringUtils.isEmpty(detached.fieldName()))
+            if (!detached.enabled())
                 meta.setDetachedState(null);
-            else if (!StringUtils.isEmpty(detached.fieldName()))
+else if (StringUtils.isEmpty(detached.fieldName()))
                 meta.setDetachedState(ClassMetaData.SYNTHETIC);
             else
                 meta.setDetachedState(detached.fieldName());

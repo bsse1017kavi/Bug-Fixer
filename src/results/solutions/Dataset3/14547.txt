@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -70,9 +69,9 @@ public class    ProtocolUtils {
 
     public static void expectHeader(final DataInput input, int expected) throws IOException {
         expectHeader(input.readByte(), expected);
-public static void expectHeader(final byte actual, int expected) throws IOException {
+    }
 
-    private static void expectHeader(final byte actual, int expected) throws IOException {
+public static void expectHeader(final byte actual, int expected) throws IOException {
         if (actual != (byte) expected) {
             throw new IOException("Invalid byte token.  Expecting '" + expected + "' received '" + actual + "'");
         }

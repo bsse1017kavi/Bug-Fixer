@@ -1,4 +1,3 @@
-
 /*
  * @(#)StandardDrawing.java
  *
@@ -192,9 +191,9 @@ public class StandardDrawing extends CompositeFigure implements Drawing {
 	 * Releases the drawing lock.
 	 */
 	public synchronized void unlock() {
-notify();
+		if (fDrawingLockHolder != null) {
 			fDrawingLockHolder = null;
-			notifyAll();
+notify();
 		}
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -65,8 +64,8 @@ public class SpanMultiTermQueryParser implements QueryParser {
         if (!(subQuery instanceof MultiTermQuery)) {
             throw new QueryParsingException(parseContext.index(), "spanMultiTerm [" + MATCH_NAME + "] must be of type multi term query");
         }
-return new SpanMultiTermQueryWrapper<>((MultiTermQuery) subQuery);
+
         parser.nextToken();
-        return new SpanMultiTermQueryWrapper<MultiTermQuery>((MultiTermQuery) subQuery);
+return new SpanMultiTermQueryWrapper<>((MultiTermQuery) subQuery);
     }
 }

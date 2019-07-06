@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class RestIndicesStatusAction extends BaseRestHandler {
         if (operationThreading == BroadcastOperationThreading.NO_THREADS) {
             // since we don't spawn, don't allow no_threads, but change it to a single thread
             operationThreading = BroadcastOperationThreading.SINGLE_THREAD;
-client.admin().indices().status(indicesStatusRequest, new ActionListener<IndicesStatusResponse>() {
+        }
         indicesStatusRequest.operationThreading(operationThreading);
-        client.admin().indices().execStatus(indicesStatusRequest, new ActionListener<IndicesStatusResponse>() {
+client.admin().indices().status(indicesStatusRequest, new ActionListener<IndicesStatusResponse>() {
             @Override public void onResponse(IndicesStatusResponse response) {
                 try {
                     JsonBuilder builder = RestJsonBuilder.restJsonBuilder(request);

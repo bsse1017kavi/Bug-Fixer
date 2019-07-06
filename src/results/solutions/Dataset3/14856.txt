@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class SessionContextAdapterTestCase {
     public void getServletContext() {
         DeploymentInfo info = mock(DeploymentInfo.class);
         ServletContainer container = mock(ServletContainer.class);
-ServletContextImpl context = new ServletContextImpl(container, this.deployment);
+
         when(this.deployment.getDeploymentInfo()).thenReturn(info);
-        ServletContextImpl context = new ServletContextImpl(container, deployment);
+ServletContextImpl context = new ServletContextImpl(container, this.deployment);
 
         when(this.deployment.getServletContext()).thenReturn(context);
 

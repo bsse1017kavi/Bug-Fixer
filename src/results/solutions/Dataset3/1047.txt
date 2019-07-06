@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -191,9 +190,9 @@ abstract class ListenerResourceDefinition extends PersistentResourceDefinition {
 
     @Override
     public void registerAttributes(ManagementResourceRegistration resourceRegistration) {
-resourceRegistration.registerReadOnlyAttribute(attr.definition, ReadStatisticHandler.INSTANCE);
+        super.registerAttributes(resourceRegistration);
         for(ConnectorStat attr : ConnectorStat.values()) {
-            resourceRegistration.registerMetric(attr.definition, ReadStatisticHandler.INSTANCE);
+resourceRegistration.registerReadOnlyAttribute(attr.definition, ReadStatisticHandler.INSTANCE);
         }
     }
 

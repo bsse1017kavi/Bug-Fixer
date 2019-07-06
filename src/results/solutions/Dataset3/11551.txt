@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class OSGiFrameworkPropertyRemove extends AbstractRemoveStepHandler {
 
         @Override
         public ModelNode getModelDescription(Locale locale) {
-node.get(ModelDescriptionConstants.DESCRIPTION).set(OSGiDescriptionProviders.getResourceBundle(locale).getString("framework.property.remove"));
+            ModelNode node = new ModelNode();
             node.get(ModelDescriptionConstants.OPERATION_NAME).set(ModelDescriptionConstants.REMOVE);
-            node.get(ModelDescriptionConstants.DESCRIPTION).set(OSGiSubsystemProviders.getResourceBundle(locale).getString("framework.property.remove"));
+node.get(ModelDescriptionConstants.DESCRIPTION).set(OSGiDescriptionProviders.getResourceBundle(locale).getString("framework.property.remove"));
             node.get(ModelDescriptionConstants.REQUEST_PROPERTIES).setEmptyObject();
             node.get(ModelDescriptionConstants.REPLY_PROPERTIES).setEmptyObject();
             return node;

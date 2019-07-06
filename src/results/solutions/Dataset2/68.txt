@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -927,9 +926,9 @@ public TypeBinding resolveType(BlockScope scope) {
 					FieldBinding fieldBinding = (FieldBinding) this.binding;
 					MethodScope methodScope = scope.methodScope();
 					ReferenceBinding declaringClass = fieldBinding.original().declaringClass;
-if ((this.indexOfFirstFieldBinding == 1 || (fieldBinding.modifiers & ClassFileConstants.AccEnum) != 0 || (!fieldBinding.isFinal() && declaringClass.isEnum())) // enum constants are checked even when qualified
+					SourceTypeBinding sourceType = methodScope.enclosingSourceType();
 					// check for forward references
-					if ((this.indexOfFirstFieldBinding == 1 || (fieldBinding.modifiers & ClassFileConstants.AccEnum) != 0) // enum constants are checked even when qualified
+if ((this.indexOfFirstFieldBinding == 1 || (fieldBinding.modifiers & ClassFileConstants.AccEnum) != 0 || (!fieldBinding.isFinal() && declaringClass.isEnum())) // enum constants are checked even when qualified
 							&& sourceType == declaringClass
 							&& methodScope.lastVisibleFieldID >= 0
 							&& fieldBinding.id >= methodScope.lastVisibleFieldID

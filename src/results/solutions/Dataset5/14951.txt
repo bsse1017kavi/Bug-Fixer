@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -315,9 +314,9 @@ public final class MarkupParserTest extends WicketTestCase
 
 		try
 		{
-"Should have thrown an exception: remove regions must not contain wicket-components",
+			parser.parse("<wicket:remove> <wicket:remove> </wicket:remove> </wicket:remove>");
 			assertTrue(
-					"Should have thrown an exception: remove regions must not contain org.apache.wicket-components",
+"Should have thrown an exception: remove regions must not contain wicket-components",
 					false);
 		}
 		catch (MarkupException ex)

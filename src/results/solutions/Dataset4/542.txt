@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public class TransportSearchAction extends TransportAction<SearchRequest, Search
                                  TransportSearchQueryThenFetchAction queryThenFetchAction,
                                  TransportSearchDfsQueryAndFetchAction dfsQueryAndFetchAction,
                                  TransportSearchQueryAndFetchAction queryAndFetchAction,
-super(settings, SearchAction.NAME, threadPool);
+                                 TransportSearchScanAction scanAction,
                                  TransportSearchCountAction countAction) {
-        super(settings, threadPool);
+super(settings, SearchAction.NAME, threadPool);
         this.clusterService = clusterService;
         this.dfsQueryThenFetchAction = dfsQueryThenFetchAction;
         this.queryThenFetchAction = queryThenFetchAction;

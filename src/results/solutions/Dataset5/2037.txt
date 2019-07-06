@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class ThroughputControllerGui extends AbstractControllerGui {
         if (style == ThroughputController.BYNUMBER) {
             try {
                 ((ThroughputController) tc).setMaxThroughput(Integer.parseInt(throughput.getText().trim()));
-((ThroughputController) tc).setMaxThroughput(throughput.getText().trim().split("\\.")[0]); // $NON-NLS-1$
+            } catch (NumberFormatException e) {
                 // In case we are converting back from floating point, drop the decimal fraction
-                ((ThroughputController) tc).setMaxThroughput((throughput.getText().trim().split("\\.")[0])); // $NON-NLS-1$
+((ThroughputController) tc).setMaxThroughput(throughput.getText().trim().split("\\.")[0]); // $NON-NLS-1$
             }
         } else {
             try {

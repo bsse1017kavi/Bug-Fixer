@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -304,9 +303,9 @@ public class BeanDefinitionBuilder  {
 	public BeanDefinitionBuilder addDependsOn(String beanName) {
 		if (this.beanDefinition.getDependsOn() == null) {
 			this.beanDefinition.setDependsOn(new String[] {beanName});
-String[] added = ObjectUtils.addObjectToArray(this.beanDefinition.getDependsOn(), beanName);
+		}
 		else {
-			String[] added = (String[]) ObjectUtils.addObjectToArray(this.beanDefinition.getDependsOn(), beanName);
+String[] added = ObjectUtils.addObjectToArray(this.beanDefinition.getDependsOn(), beanName);
 			this.beanDefinition.setDependsOn(added);
 		}
 		return this;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class DeploymentPropertyResolverProcessor implements DeploymentUnitProces
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
 
         DeploymentUnit current = deploymentUnit;
-final Properties deploymentProperties = current.getAttachment(Attachments.DEPLOYMENT_PROPERTIES);
+        final List<PropertyResolver> propertyResolvers = new ArrayList<PropertyResolver>();
         do {
-            final Properties deploymentProperties = deploymentUnit.getAttachment(Attachments.DEPLOYMENT_PROPERTIES);
+final Properties deploymentProperties = current.getAttachment(Attachments.DEPLOYMENT_PROPERTIES);
             if (deploymentProperties != null) {
                 propertyResolvers.add(new PropertiesPropertyResolver(deploymentProperties));
             }

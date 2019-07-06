@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public final class ExceptionClosure<E> implements Closure<E>, Serializable {
      * Always throw an exception.
      * 
      * @param input  the input object
-public void execute(final E input) {
+     * @throws FunctorException always
      */
-    public void execute(E input) {
+public void execute(final E input) {
         throw new FunctorException("ExceptionClosure invoked");
     }
 

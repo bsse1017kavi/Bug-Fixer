@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -94,9 +93,9 @@ public class InternalTopHits extends InternalAggregation implements TopHits, ToX
     }
 
     @Override
-if (aggregations.size() == 1 && from == 0) {
+    public InternalAggregation reduce(ReduceContext reduceContext) {
         List<InternalAggregation> aggregations = reduceContext.aggregations();
-        if (aggregations.size() == 1) {
+if (aggregations.size() == 1 && from == 0) {
             return aggregations.get(0);
         }
 

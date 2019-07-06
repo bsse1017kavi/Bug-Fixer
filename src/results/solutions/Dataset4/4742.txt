@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -140,9 +139,9 @@ public class FetchPhase implements SearchPhase {
                     fieldSelector = AllButSourceFieldSelector.INSTANCE;
                 }
             } else if (fieldSelectorMapper != null) {
-if (extractFieldNames != null || sourceRequested) {
+                // we are asking specific stored fields, just add the UID and be done
                 fieldSelectorMapper.add(UidFieldMapper.NAME);
-                if (extractFieldNames != null) {
+if (extractFieldNames != null || sourceRequested) {
                     fieldSelectorMapper.add(SourceFieldMapper.NAME);
                 }
                 fieldSelector = fieldSelectorMapper;

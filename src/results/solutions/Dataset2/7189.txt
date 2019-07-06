@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -192,9 +191,9 @@ public class ClasspathEntry implements IClasspathEntry {
 				|| referringEntry.getExclusionPatterns().length > 0) {
 			return new ClasspathEntry(
 								this.getContentKind(), this.getEntryKind(), this.getPath(),
-this.getSourceAttachmentPath(), this.getSourceAttachmentRootPath(), this.getOutputLocation(),
+								ClasspathEntry.concatPatterns(referringEntry.getInclusionPatterns(), this.getInclusionPatterns()), 
 								ClasspathEntry.concatPatterns(referringEntry.getExclusionPatterns(), this.getExclusionPatterns()), 
-								this.getOutputLocation(), this.getSourceAttachmentPath(), this.getSourceAttachmentRootPath(), 
+this.getSourceAttachmentPath(), this.getSourceAttachmentRootPath(), this.getOutputLocation(),
 								referringEntry.isExported()|| this.isExported); // duplicate container entry for tagging it as exported
 		}
 		// no need to clone

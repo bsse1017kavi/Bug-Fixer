@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.DDMReader
@@ -663,9 +662,9 @@ class DDMReader
 	 * @exception DRDProtocolException
 	 */
 	protected byte readByte () throws DRDAProtocolException
-return buffer[pos++];
+	{
 		ensureBLayerDataInBuffer (1, ADJUST_LENGTHS);
-		return (byte) (buffer[pos++] & 0xff);
+return buffer[pos++];
 	}
 
 	/**

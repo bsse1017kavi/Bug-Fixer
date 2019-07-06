@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -39,9 +38,9 @@ public class BufferingClientHttpRequestFactory extends AbstractClientHttpRequest
 	@Override
 	protected ClientHttpRequest createRequest(URI uri, HttpMethod httpMethod, ClientHttpRequestFactory requestFactory)
 			throws IOException {
-return new BufferingClientHttpRequestWrapper(request);
+		ClientHttpRequest request = requestFactory.createRequest(uri, httpMethod);
 		if (shouldBuffer(uri, httpMethod)) {
-			return new BufferingClientHttpRequest(request);
+return new BufferingClientHttpRequestWrapper(request);
 		}
 		else {
 			return request;

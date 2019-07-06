@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 import java.net.*;
@@ -482,9 +481,9 @@ doAssert(Tokenizer st) throws IOException {
 	if (response == null) {
 		print("No response has been received");
 		return true;
-int rcode = response.getHeader().getRcode();
+	}
 	if (field.equalsIgnoreCase("rcode")) {
-		short rcode = response.getHeader().getRcode();
+int rcode = response.getHeader().getRcode();
 		if (rcode != Rcode.value(expected)) {
 			value = Rcode.string(rcode);
 			flag = false;

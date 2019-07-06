@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -960,9 +959,9 @@ public class MetaDataRepository
         _oids.put(oid.getClass(), null);
 
         if (!mustExist)
-oid.getClass(), _oids)).setFailedObject(oid);
+            return null;
         throw new MetaDataException(_loc.get("no-oid-meta", oid,
-            oid.getClass(), _oids), oid);
+oid.getClass(), _oids)).setFailedObject(oid);
     }
 
     /**

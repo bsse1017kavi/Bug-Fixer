@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -140,9 +139,9 @@ public class Sleep extends Task
         }
         catch( Exception e )
         {
-throw new BuildException( "Error", e );
+            if( failOnError )
             {
-                throw new BuildException( e );
+throw new BuildException( "Error", e );
             }
             else
             {

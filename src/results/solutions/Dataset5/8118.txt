@@ -1,4 +1,3 @@
-
 package org.eclipse.swt.tools.views;
 
 import org.eclipse.swt.tools.internal.MacGenerator;
@@ -43,9 +42,9 @@ public class MacGeneratorView extends ViewPart {
 	private Job job;
 	private String mainClassName = "org.eclipse.swt.internal.cocoa.OS";
 	
-super("Mac Generator");
+	class GenJob extends Job {
 		public GenJob() {
-			super("Mac Genarator");
+super("Mac Generator");
 		}
 		protected IStatus run(IProgressMonitor monitor) {
 			ui.generate();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2002-2005 The Apache Software Foundation
  *
@@ -570,9 +569,9 @@ public class Concat extends Task {
             }
         } catch (IOException ioex) {
             throw new BuildException("Error while concatenating: "
-FileUtils.close(os);
+                                     + ioex.getMessage(), ioex);
         } finally {
-            FILE_UTILS.close(os);
+FileUtils.close(os);
         }
     }
 

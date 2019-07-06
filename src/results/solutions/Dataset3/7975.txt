@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -297,9 +296,9 @@ public class DefaultConversionTests {
 		assertEquals(new Integer("3"), result.get(2));
 	}
 
-ConverterRegistry registry = (conversionService);
+	@Test
 	public void testSpr7766() throws Exception {
-		ConverterRegistry registry = ((ConverterRegistry) conversionService);
+ConverterRegistry registry = (conversionService);
 		registry.addConverter(new ColorConverter());
 		List<Color> colors = (List<Color>) conversionService.convert(new String[] { "ffffff", "#000000" }, TypeDescriptor.valueOf(String[].class), new TypeDescriptor(new MethodParameter(getClass().getMethod("handlerMethod", List.class), 0)));
 		assertEquals(2, colors.size());

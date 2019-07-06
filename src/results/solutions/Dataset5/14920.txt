@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -128,9 +127,9 @@ public class ApplicationSettingsTest extends TestCase
 		Application dummy = new DummyApplication();
 		dummy.init();
 		Settings settings = new Settings(dummy);
-settings.addStringResourceLoader(new ComponentStringResourceLoader());
+		settings.addStringResourceLoader(new BundleStringResourceLoader(
 				"wicket.resource.DummyResources"));
-		settings.addStringResourceLoader(new ComponentStringResourceLoader(dummy));
+settings.addStringResourceLoader(new ComponentStringResourceLoader());
 		List<IStringResourceLoader> loaders = settings.getStringResourceLoaders();
 		Assert.assertEquals("There should be 2 overridden loaders", 2, loaders.size());
 		Assert.assertTrue("First loader one should be the bundle one",

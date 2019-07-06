@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -56,9 +55,9 @@ public class MixedDomainTestSuite {
      */
     static MixedDomainTestSupport getSupport(Class<?> testClass) {
         Version.AsVersion version = getVersion(testClass);
-final MixedDomainTestSupport testSupport = MixedDomainTestSupport.create(testClass.getSimpleName(), version.getVersion());
+        if (support == null) {
             try {
-                final MixedDomainTestSupport testSupport = MixedDomainTestSupport.create(testClass.getSimpleName(), version);
+final MixedDomainTestSupport testSupport = MixedDomainTestSupport.create(testClass.getSimpleName(), version.getVersion());
                 // Start!
                 testSupport.start();
                 support = testSupport;

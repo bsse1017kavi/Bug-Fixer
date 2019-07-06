@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -54,9 +53,9 @@ public class AsmDeclarationsTest extends AjdeTestCase {
 		String label = "declare error: \"Illegal construct..\"";
 		IProgramElement decErrNode = model.findElementForSignature(aspect, IProgramElement.Kind.DECLARE_ERROR, "declare error");
 		assertNotNull(decErrNode);
-String decWarnMessage = "declare warning: \"Illegal call.\"";
+		assertEquals(decErrNode.toLabelString(), label);
 		
-		String decWarnMessage = "declare warning: \"Illegal construct..\"";
+String decWarnMessage = "declare warning: \"Illegal call.\"";
 		IProgramElement decWarnNode = model.findElementForSignature(aspect, IProgramElement.Kind.DECLARE_WARNING, "declare warning");
 		assertNotNull(decWarnNode);
 		assertEquals(decWarnNode.toLabelString(), decWarnMessage);	

@@ -1,4 +1,3 @@
-
 package org.jboss.as.patching.installation;
 
 import java.io.IOException;
@@ -75,9 +74,9 @@ public class InstallationManagerImpl extends InstallationManager {
     public InstalledImage getInstalledImage() {
         return installedImage;
     }
-public InstallationModification modifyInstallation(final ModificationCompletionCallback callback) {
+
     @Override
-    public InstallationModification modifyInstallation(final ModificationCompletion callback) {
+public InstallationModification modifyInstallation(final ModificationCompletionCallback callback) {
         if (! writable.compareAndSet(true, false)) {
             // This should be guarded by the OperationContext.lock
             throw new IllegalStateException();

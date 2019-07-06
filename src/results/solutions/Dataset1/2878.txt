@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.ConstraintConstantAction
@@ -287,9 +286,9 @@ public abstract class ConstraintConstantAction extends DDLSingleTableConstantAct
 			PreparedStatement ps = lcc.prepareInternalStatement(checkStmt.toString());
 
             // This is a substatement; for now, we do not set any timeout
-rs = ps.executeSubStatement(lcc, false, 0L);
+            // for it. We might change this behaviour later, by linking
             // timeout to its parent statement's timeout settings.
-			rs = ps.execute(lcc, false, 0L);
+rs = ps.executeSubStatement(lcc, false, 0L);
 			ExecRow row = rs.getNextRow();
 			if (SanityManager.DEBUG)
 			{

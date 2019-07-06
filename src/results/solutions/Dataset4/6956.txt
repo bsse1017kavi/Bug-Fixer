@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -127,9 +126,9 @@ public class JmxService {
                 }
             });
             if (!success) {
-logger.info("bound_address[{}], publish_address[{}]", serviceUrl, publishUrl);
+                throw new JmxConnectorCreationException("Failed to bind to [" + port + "]", lastException.get());
             }
-            logger.info("boundAddress [{}], publishAddress [{}]", serviceUrl, publishUrl);
+logger.info("bound_address[{}], publish_address[{}]", serviceUrl, publishUrl);
         }
 
         for (ResourceDMBean resource : constructionMBeans) {

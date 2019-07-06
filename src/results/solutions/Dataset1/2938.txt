@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -88,9 +87,9 @@ public class TestBooleanPrefixQuery extends LuceneTestCase {
         doc.add(new Field("category", categories[i], Field.Store.YES, Field.Index.NOT_ANALYZED));
         writer.addDocument(doc);
       }
-reader = IndexReader.open(directory, true);
+      writer.close();
       
-      reader = IndexReader.open(directory);
+reader = IndexReader.open(directory, true);
       PrefixQuery query = new PrefixQuery(new Term("category", "foo"));
       rw1 = query.rewrite(reader);
       

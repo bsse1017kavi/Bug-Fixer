@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -619,9 +618,9 @@ public class PlatformMBeanResourceUnitTestCase {
         ModelNode response = client.execute(op);
         if (expectFailure) {
             Assert.assertEquals(FAILED, response.get(OUTCOME).asString());
-Assert.assertEquals(response.get(FAILURE_DESCRIPTION).asString(),SUCCESS, response.get(OUTCOME).asString());
+            return response.get(FAILURE_DESCRIPTION);
         } else {
-            Assert.assertEquals(SUCCESS, response.get(OUTCOME).asString());
+Assert.assertEquals(response.get(FAILURE_DESCRIPTION).asString(),SUCCESS, response.get(OUTCOME).asString());
             return response.get(RESULT);
         }
     }

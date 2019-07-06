@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -40,9 +39,9 @@ class CatchClauseSignatureImpl extends SignatureImpl implements CatchClauseSigna
     public String getParameterName() {
         if (parameterName == null) parameterName = extractString(4);
         return parameterName;
-protected String createToString(StringMaker sm) {
+    }
     
-    String toString(StringMaker sm) {
+protected String createToString(StringMaker sm) {
         return "catch(" + sm.makeTypeName(getParameterType()) + ")";
     }    
 }

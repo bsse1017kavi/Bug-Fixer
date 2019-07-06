@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class ServerLogPanel extends ScrollableTable<LogStatement>
     final OpenTrader session;
     public static final String[] MARKERS_AND_STYLES = {"SELECT", "INSERT", "UPDATE", "DELETE"}; 
     
-super("Server Log (" + session.getServiceURI() + ")", w,h, false);
+    
     public ServerLogPanel(final OpenTrader session, final int w, final int h) {
-        super("Server Logs", w,h, false);
+super("Server Log (" + session.getServiceURI() + ")", w,h, false);
         this.session = session;
         
         session.registerHandler(ServiceEvent.TradableAdded.TYPE, this);

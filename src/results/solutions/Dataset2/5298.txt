@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -331,9 +330,9 @@ public class WWinKeyBindingService {
 		Iterator iterator = keySequenceMapForMode.keySet().iterator();
 
 		while (iterator.hasNext()) {
-if (keySequence.isChildOf(mode, false))
+			KeySequence keySequence = (KeySequence) iterator.next();
 			
-			if (keySequence.isChildOf(mode))
+if (keySequence.isChildOf(mode, false))
 				keyStrokeSetForMode.add(keySequence.getKeyStrokes().get(size));	
 		}
 

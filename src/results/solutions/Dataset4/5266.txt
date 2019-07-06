@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -238,9 +237,9 @@ public abstract class NetworkUtils {
      */
     public static List<NetworkInterface> getAllAvailableInterfaces() throws SocketException {
         List<NetworkInterface> allInterfaces = new ArrayList<NetworkInterface>();
-allInterfaces.add(intf);
+        for (Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces(); interfaces.hasMoreElements(); ) {
             NetworkInterface intf = interfaces.nextElement();
-            allInterfaces.add(interfaces.nextElement());
+allInterfaces.add(intf);
 
             Enumeration<NetworkInterface> subInterfaces = intf.getSubInterfaces();
             if (subInterfaces != null && subInterfaces.hasMoreElements()) {

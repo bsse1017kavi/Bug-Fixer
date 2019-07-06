@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -65,9 +64,9 @@ public class TestDocBoost extends LuceneTestCase {
     writer.optimize();
     writer.close();
 
-new IndexSearcher(store, true).search
+    final float[] scores = new float[4];
 
-    new IndexSearcher(store).search
+new IndexSearcher(store, true).search
       (new TermQuery(new Term("field", "word")),
        new Collector() {
          private int base = 0;

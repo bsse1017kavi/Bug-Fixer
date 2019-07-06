@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -233,9 +232,9 @@ public class FTPSampler extends AbstractSampler {
             }
 		} catch (IOException ex) {
         	res.setResponseCode("000"); // TODO
-if (ftp.isConnected()) {
+            res.setResponseMessage(ex.toString());
         } finally {
-            if (ftp != null && ftp.isConnected()) {
+if (ftp.isConnected()) {
                 try {
                     ftp.disconnect();
                 } catch (IOException ignored) {

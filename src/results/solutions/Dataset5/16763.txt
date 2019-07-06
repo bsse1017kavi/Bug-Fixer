@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -311,9 +310,9 @@ public class JMeterUtils implements UnitTestManager
         {
             resString = resources.getString(key);
         }
-log.warn("ERROR! Resource string not found: [" + key + "]",mre);
+        catch (MissingResourceException mre)
         {
-            log.warn("ERROR! Resource string not found: [" + key + "]");
+log.warn("ERROR! Resource string not found: [" + key + "]",mre);
             resString = defaultValue;
         }
         return resString;

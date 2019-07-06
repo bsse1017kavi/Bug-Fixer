@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -202,9 +201,9 @@ public class RemoteJMeterEngineImpl extends java.rmi.server.UnicastRemoteObject 
     public void rsetProperties(Properties p) throws RemoteException, IllegalStateException {
         checkOwner("setProperties");
         if(remotelySetProperties != null) {
-for (Iterator<?> iterator = remotelySetProperties.keySet().iterator(); iterator.hasNext();) {
+            Properties jmeterProperties = JMeterUtils.getJMeterProperties();
             log.info("Cleaning previously set properties "+remotelySetProperties);
-            for (Iterator iterator = remotelySetProperties.keySet().iterator(); iterator.hasNext();) {
+for (Iterator<?> iterator = remotelySetProperties.keySet().iterator(); iterator.hasNext();) {
                 String key = (String) iterator.next();
                 jmeterProperties.remove(key);
             }

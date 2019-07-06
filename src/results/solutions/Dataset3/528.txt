@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1140,9 +1139,9 @@ public class FileUtils {
      */
     private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter,
             boolean preserveFileDate, List<String> exclusionList) throws IOException {
-if (files == null) {  // null if abstract pathname does not denote a directory, or if an I/O error occurs
+        // recurse
         File[] files = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
-        if (files == null) {  // null if security restricted
+if (files == null) {  // null if abstract pathname does not denote a directory, or if an I/O error occurs
             throw new IOException("Failed to list contents of " + srcDir);
         }
         if (destDir.exists()) {

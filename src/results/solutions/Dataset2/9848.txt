@@ -1,4 +1,3 @@
-
 /*
  * Created on 06.04.2003
  *
@@ -57,9 +56,9 @@ public class MessageFrameController extends AbstractMailFrameController {
 
 	public void selectInbox() {
 		Folder inboxFolder = (Folder) MainInterface.treeModel.getFolder(101);
-Object[] uids = inboxFolder.getUids();
+		try {
 
-			Object[] uids = inboxFolder.getUids(null);
+Object[] uids = inboxFolder.getUids();
 			if (uids.length > 0) {
 				Object uid = uids[0];
 

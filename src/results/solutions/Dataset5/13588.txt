@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -2961,9 +2960,9 @@ class XMLGregorianCalendarImpl
         }
         
         private int parseInt(int minDigits, int maxDigits)
-while (isDigit(peek()) && (vidx - vstart) < maxDigits) {
+            throws IllegalArgumentException {
             int vstart = vidx;
-            while (isDigit(peek()) && (vidx - vstart) <= maxDigits) {
+while (isDigit(peek()) && (vidx - vstart) < maxDigits) {
                 vidx++;
             }
             if ((vidx - vstart) < minDigits) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -128,9 +127,9 @@ public class SortParseElement implements SearchParseElement {
             if (fieldMappers == null || fieldMappers.mappers().isEmpty()) {
                 if (type == -1) {
                     throw new SearchParseException(context, "No built in mapping found for [" + fieldName + "], and no explicit type defined");
-fieldName = fieldMappers.mappers().get(0).names().indexName();
+                }
             } else {
-                fieldName = fieldMappers.mappers().get(0).indexName();
+fieldName = fieldMappers.mappers().get(0).names().indexName();
                 if (type == -1) {
                     type = fieldMappers.mappers().get(0).sortType();
                 }

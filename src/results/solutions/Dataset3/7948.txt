@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -878,9 +877,9 @@ public final class ThreadsParser implements XMLStreamConstants, XMLElementReader
     public void writeUnboundedQueueThreadPool(final XMLExtendedStreamWriter writer, final ModelNode node, final String elementName, final boolean includeName)
             throws XMLStreamException {
         writer.writeStartElement(elementName);
-writeAttribute(writer, Attribute.NAME, node.get(NAME));
+
         if (includeName && node.hasDefined(NAME)) {
-            writeAttribute(writer, Attribute.BLOCKING, node.get(NAME));
+writeAttribute(writer, Attribute.NAME, node.get(NAME));
         }
 
         writeRef(writer, node, Element.THREAD_FACTORY, THREAD_FACTORY);

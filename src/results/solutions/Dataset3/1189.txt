@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -2811,9 +2810,9 @@ public class FileUtils {
         if (destDir.exists()) {
             throw new FileExistsException("Destination '" + destDir + "' already exists");
         }
-if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath() + File.separator)) {
+        final boolean rename = srcDir.renameTo(destDir);
         if (!rename) {
-            if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath() + File.pathSeparator)) {
+if (destDir.getCanonicalPath().startsWith(srcDir.getCanonicalPath() + File.separator)) {
                 throw new IOException("Cannot move directory: "+srcDir+" to a subdirectory of itself: "+destDir);
             }
             copyDirectory( srcDir, destDir );

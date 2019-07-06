@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -308,9 +307,9 @@ public class EnterpriseDeploymentTestCase {
     private File getResourceFile(String resource) {
         File file = new File(resource);
         if (file.exists())
-String testResourcesDir = System.getProperty("jbossas.ts.submodule.dir") + "/target/test-classes";
+            return file;
 
-        String testResourcesDir = "target/test-classes";
+String testResourcesDir = System.getProperty("jbossas.ts.submodule.dir") + "/target/test-classes";
         file = new File(testResourcesDir + "/" + resource);
         if (file.exists())
             return file;

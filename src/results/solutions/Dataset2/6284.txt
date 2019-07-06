@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -37,9 +36,9 @@ public static boolean isDeclaringPackageFragment(IPackageFragment packageFragmen
 		fileName = CharOperation.lastSegment(fileName, '\\');
 		
 		try { 
-if (!org.eclipse.jdt.internal.core.util.Util.isJavaLikeFileName(fileName) || !packageFragment.getCompilationUnit(new String(fileName)).exists()) {
+			switch (packageFragment.getKind()) {
 				case IPackageFragmentRoot.K_SOURCE :
-					if (!Util.isJavaFileName(fileName) || !packageFragment.getCompilationUnit(new String(fileName)).exists()) {
+if (!org.eclipse.jdt.internal.core.util.Util.isJavaLikeFileName(fileName) || !packageFragment.getCompilationUnit(new String(fileName)).exists()) {
 						return false; // unit doesn't live in selected package
 					}
 					break;

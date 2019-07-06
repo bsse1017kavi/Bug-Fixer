@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.keybindings;
 
 import java.io.StringReader;
@@ -311,9 +310,9 @@ public class KeyManager {
 		preferenceDefinitions = Collections.EMPTY_LIST;
 		
 		IPreferenceStore preferenceStore = WorkbenchPlugin.getDefault().getPreferenceStore();
-if (preferenceString != null && preferenceString.length() != 0) {
+		String preferenceString = preferenceStore.getString("org.eclipse.ui.keys");
 		
-		if (preferenceString != null) {
+if (preferenceString != null && preferenceString.length() != 0) {
 			StringReader stringReader = new StringReader(preferenceString);
 
 			try {

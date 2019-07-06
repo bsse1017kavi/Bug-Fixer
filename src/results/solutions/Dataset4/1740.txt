@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class PlainHighlighter implements Highlighter {
         }
         Map<FieldMapper<?>, org.apache.lucene.search.highlight.Highlighter> cache = (Map<FieldMapper<?>, org.apache.lucene.search.highlight.Highlighter>) hitContext.cache().get(CACHE_KEY);
 
-Query query = highlighterContext.query.originalQuery();
+        org.apache.lucene.search.highlight.Highlighter entry = cache.get(mapper);
         if (entry == null) {
-            Query query = highlighterContext.highlightQuery;
+Query query = highlighterContext.query.originalQuery();
             QueryScorer queryScorer = new CustomQueryScorer(query, field.requireFieldMatch() ? mapper.names().indexName() : null);
             queryScorer.setExpandMultiTermQuery(true);
             Fragmenter fragmenter;

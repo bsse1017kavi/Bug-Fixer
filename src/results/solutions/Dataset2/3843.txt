@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -136,9 +135,9 @@ public String toString() {
 	IJavaElement[] roots= getElements();
 	buffer.append('[');
 	for (int i= 0; i < roots.length; i++) {
-buffer.append(", "); //$NON-NLS-1$
+		buffer.append(roots[i].getElementName());
 		if (i < (roots.length - 1)) {
-			buffer.append(", "/*nonNLS*/);
+buffer.append(", "); //$NON-NLS-1$
 		}
 	}
 	buffer.append(']');

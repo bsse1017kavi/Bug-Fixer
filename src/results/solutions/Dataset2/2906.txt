@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -266,9 +265,9 @@ public abstract class MultiOperation extends JavaModelOperation {
 		String newName = getNewNameFor(element);
 		boolean isValid = true;
 	
-if (((IPackageFragment) element).isDefaultPackage()) {
+		switch (element.getElementType()) {
 			case IJavaElement.PACKAGE_FRAGMENT :
-				if (element.getElementName().equals(IPackageFragment.DEFAULT_PACKAGE_NAME)) {
+if (((IPackageFragment) element).isDefaultPackage()) {
 					// don't allow renaming of default package (see PR #1G47GUM)
 					throw new JavaModelException(new JavaModelStatus(IJavaModelStatusConstants.NAME_COLLISION, element));
 				}

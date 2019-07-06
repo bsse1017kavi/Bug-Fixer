@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public class ConnectionDefinitionAdd extends AbstractAddStepHandler {
             ServiceName raServiceName = ServiceName.of(ConnectorServices.RA_SERVICE, archiveName);
 
             final ModifiableResourceAdapter ravalue = ((ModifiableResourceAdapter) context.getServiceRegistry(false).getService(raServiceName).getValue());
-final ModifiableConnDef connectionDefinitionValue = RaOperationUtil.buildConnectionDefinitionObject(context, recoveryEnvModel, poolName, isXa);
+            boolean isXa = ravalue.getTransactionSupport() == TransactionSupportEnum.XATransaction;
 
-            final ModifiableConnDef connectionDefinitionValue = RaOperationUtil.buildConnectionDefinitionObject(context, operation, poolName, isXa);
+final ModifiableConnDef connectionDefinitionValue = RaOperationUtil.buildConnectionDefinitionObject(context, recoveryEnvModel, poolName, isXa);
 
 
 

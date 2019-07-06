@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -529,9 +528,9 @@ public class CSVFormat implements Serializable {
         if (escape == null && quotePolicy == Quote.NONE) {
             throw new IllegalStateException("No quotes mode set but no escape character is set");
         }
-final Set<String> set = new HashSet<String>(header.length);
+        
         if (header != null) {
-            Set<String> set = new HashSet<String>(header.length);
+final Set<String> set = new HashSet<String>(header.length);
             set.addAll(Arrays.asList(header));
             if (set.size() != header.length) {
                 throw new IllegalStateException("The header contains duplicate names: " + Arrays.toString(header));

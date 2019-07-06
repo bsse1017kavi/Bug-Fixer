@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -45,9 +44,9 @@ public class ManyIndicesStressTest {
 
         int numberOfIndices = 100;
         int numberOfDocs = 100;
-.put("index.shard.check_on_startup", false)
+
         Settings settings = ImmutableSettings.settingsBuilder()
-                .put("index.shard.check_index", false)
+.put("index.shard.check_on_startup", false)
                 .put("gateway.type", "fs")
                 .put("index.number_of_shards", 1)
                 .build();

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -377,9 +376,9 @@ public class CompactionManager implements CompactionManagerMBean
 
         ColumnFamilyStore cfs = Table.open(ksname).getColumnFamilyStore(cfname);
         submitUserDefined(cfs, descriptors, getDefaultGcBefore(cfs));
-Future<Object> submitUserDefined(final ColumnFamilyStore cfs, final Collection<Descriptor> dataFiles, final int gcBefore)
+    }
 
-    private Future<Object> submitUserDefined(final ColumnFamilyStore cfs, final Collection<Descriptor> dataFiles, final int gcBefore)
+Future<Object> submitUserDefined(final ColumnFamilyStore cfs, final Collection<Descriptor> dataFiles, final int gcBefore)
     {
         Callable<Object> callable = new Callable<Object>()
         {

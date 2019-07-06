@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.ClientThread
@@ -72,9 +71,9 @@ final class ClientThread extends Thread {
 
                         clientSocket.setKeepAlive(parent.getKeepAlive());
                         
-if (timeSlice > 0)
+                        // Set time out: Stops DDMReader.fill() from
                         // waiting indefinitely when timeSlice is set.
-                        if (timeSlice != 0)
+if (timeSlice > 0)
                             clientSocket.setSoTimeout(timeSlice);
                         
                         //create a new Session for this socket

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.sorter;
 
 /*
@@ -99,9 +98,9 @@ public class TestEarlyTermination extends LuceneTestCase {
   }
 
   @Override
-iw.shutdown();
+  public void tearDown() throws Exception {
     reader.close();
-    iw.close();
+iw.shutdown();
     dir.close();
     super.tearDown();
   }

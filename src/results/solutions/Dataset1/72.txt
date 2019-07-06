@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.sorter;
 
 /*
@@ -558,9 +557,9 @@ public class SortingAtomicReader extends FilterAtomicReader {
       return slowAdvance(target);
     }
     
-return docIt < 0 ? -1 : docIt >= upto ? NO_MORE_DOCS : docs[docIt];
+    @Override
     public int docID() {
-      return docIt >= upto ? NO_MORE_DOCS : docs[docIt];
+return docIt < 0 ? -1 : docIt >= upto ? NO_MORE_DOCS : docs[docIt];
     }
     
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -39,9 +38,9 @@ final class AtomicMapFieldUpdater<C, K, V> {
         return new AtomicMapFieldUpdater<C, K, V>(updater);
     }
 
-this.updater = (AtomicReferenceFieldUpdater) updater;
+    @SuppressWarnings( { "unchecked" })
     AtomicMapFieldUpdater(AtomicReferenceFieldUpdater<C, Map> updater) {
-        this.updater = (AtomicReferenceFieldUpdater<C, Map<K, V>>) updater;
+this.updater = (AtomicReferenceFieldUpdater) updater;
     }
 
     public void clear(C instance) {

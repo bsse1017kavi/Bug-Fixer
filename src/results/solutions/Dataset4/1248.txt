@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -270,9 +269,9 @@ public class NettyHttpServerTransport extends AbstractLifecycleComponent<HttpSer
             if (!lifecycle.started()) {
                 // ignore
                 return;
-logger.warn("Caught exception while handling client http traffic", e.getCause());
+            }
             if (!NetworkExceptionHelper.isCloseConnectionException(e.getCause())) {
-                logger.warn("Caught exception while handling client http trafic", e.getCause());
+logger.warn("Caught exception while handling client http traffic", e.getCause());
             }
         }
     }

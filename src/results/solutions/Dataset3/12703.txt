@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class ProtocolLayerRemove implements OperationStepHandler {
         // read /subsystem=jgroups/stack=* for update
         final Resource resource = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS);
         final ModelNode subModel = resource.getModel();
-ModelNode type = ProtocolResourceDefinition.TYPE.validateOperation(operation);
+
          // validate the protocol type to be added
-        ModelNode type = ProtocolResource.TYPE.validateOperation(operation);
+ModelNode type = ProtocolResourceDefinition.TYPE.validateOperation(operation);
         PathElement protocolRelativePath = PathElement.pathElement(ModelKeys.PROTOCOL, type.asString());
 
         // if child resource already exists, throw OFE

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -50,9 +49,9 @@ public class Facility
         if( 1 == children.length )
         {
             final String typeName = children[ 0 ].getName();
-m_aspectHandler = (AspectHandler)newInstance( AspectHandler.ROLE, typeName );
+            try
             {
-                m_aspectHandler = (AspectHandler)newInstance( AspectHandler.class, typeName );
+m_aspectHandler = (AspectHandler)newInstance( AspectHandler.ROLE, typeName );
             }
             catch( final Exception e )
             {

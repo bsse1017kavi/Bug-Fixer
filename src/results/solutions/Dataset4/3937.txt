@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -49,9 +48,9 @@ public class SourceFieldVisitor extends BaseFieldVisitor {
     }
 
     @Override
-document.add(new StoredField(SourceFieldMapper.NAME, source));
+    public Document createDocument() {
         Document document = new Document();
-        document.add(new StoredField("_source", source));
+document.add(new StoredField(SourceFieldMapper.NAME, source));
         return document;
     }
 

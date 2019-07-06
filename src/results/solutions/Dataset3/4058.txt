@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -109,9 +108,9 @@ public class ValidateOperationOperationTestCase extends AbstractMgmtTestBase {
 
 
     private void executeInvalidOperation(ModelNode operation) throws IOException {
-Assert.fail("Should have failed on no required parameter included");
+        try {
             executeOperation(createValidateOperation(operation));
-            Assert.fail("Should have failed on no required paramter included");
+Assert.fail("Should have failed on no required parameter included");
         } catch (MgmtOperationException expected) {
         }
     }

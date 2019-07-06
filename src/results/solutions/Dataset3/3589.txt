@@ -1,4 +1,3 @@
-
 package org.jboss.as.server.deploymentoverlay;
 
 import java.util.Arrays;
@@ -43,9 +42,9 @@ public class ContentAdd extends AbstractAddStepHandler {
         }
         final byte[] hash = operation.get(ContentDefinition.CONTENT.getName()).asBytes();
         if(remoteRepository != null) {
-if(!contentRepository.syncContent(hash)) {
+            remoteRepository.getDeploymentFiles(hash);
         }
-        if(!contentRepository.hasContent(hash)) {
+if(!contentRepository.syncContent(hash)) {
             throw ServerMessages.MESSAGES.noSuchDeploymentContent(Arrays.toString(hash));
         }
     }

@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -129,9 +128,9 @@ public class Ear extends Jar {
         String vPathLowerCase = vPath.toLowerCase(Locale.ENGLISH);
         if (XML_DESCRIPTOR_PATH.equals(vPathLowerCase))  {
             if (deploymentDescriptor != null
-logWhenWriting("Warning: selected " + archiveType
+                || !FILE_UTILS.fileNameEquals(deploymentDescriptor, file)
                 || descriptorAdded) {
-                logOnFirstPass("Warning: selected " + archiveType
+logWhenWriting("Warning: selected " + archiveType
                                + " files include a " + XML_DESCRIPTOR_PATH
                                + " which will"
                                + " be ignored (please use appxml attribute to "

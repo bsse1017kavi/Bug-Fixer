@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class ExampleRunner {
     public static void main(String[] args) throws Exception {
         DeploymentUtils utils = null;
         final ModelControllerClient client = ModelControllerClient.Factory.create(InetAddress.getByName("localhost"), 9999);
-utils.addWarDeployment("war-example.war", true, SimpleServlet.class.getPackage());
+        try {
             utils = new DeploymentUtils();
-            utils.addWarDeployment("war-example.war", SimpleServlet.class.getPackage(), true);
+utils.addWarDeployment("war-example.war", true, SimpleServlet.class.getPackage());
             utils.deploy();
 
             // Create the test connector

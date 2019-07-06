@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -32,9 +31,9 @@ import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 
 public class TestStrategyAnnotaion extends SingleEMFTestCase {
 
-super.setUp(Person.class, Address.class, CLEAR_TABLES);
+    @Override
     public void setUp() {
-        super.setUp(DROP_TABLES, Person.class, Address.class);
+super.setUp(Person.class, Address.class, CLEAR_TABLES);
     }
 
     public void testStrategy() {

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$
  * $Date$
@@ -184,9 +183,9 @@ public abstract class Link extends WebMarkupContainer implements ILinkListener
 	public final void onLinkClicked()
 	{
 		// Since the invocation of onLinkClicked occurred through a URL that
-setRedirect(true);
+		// would repeat the action if the user refreshed the page, we redirect
 		// to our resulting page so this won't happen.
-		getRequestCycle().setRedirect(true);
+setRedirect(true);
 
 		onClick();
 	}

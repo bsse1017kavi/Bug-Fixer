@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 EclipseSource and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -45,9 +44,9 @@ class ServiceEndpointDescriptionHelper {
 		// Get serviceName from description
 		serviceID = description.getServiceID();
 		if (serviceID == null)
-serviceName = serviceID.getServiceName();
+			throw new NullPointerException(
 					"ServiceEndpointDescription serviceID cannot be null");
-		serviceName = serviceID.getName();
+serviceName = serviceID.getServiceName();
 		if (serviceName == null)
 			throw new NullPointerException(
 					"ServiceEndpointDescription serviceName is null");

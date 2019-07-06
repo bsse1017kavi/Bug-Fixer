@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -138,9 +137,9 @@ public class CatchClause extends ASTNode {
 	/* (omit javadoc for this method)
 	 * Method declared on ASTNode.
 	 */
-result.setSourceRange(getStartPosition(), getLength());
+	ASTNode clone0(AST target) {
 		CatchClause result = new CatchClause(target);
-		result.setSourceRange(this.getStartPosition(), this.getLength());
+result.setSourceRange(getStartPosition(), getLength());
 		result.setBody((Block) getBody().clone(target));
 		result.setException(
 			(SingleVariableDeclaration) ASTNode.copySubtree(target, getException()));

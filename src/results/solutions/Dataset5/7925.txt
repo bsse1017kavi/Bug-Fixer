@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -244,9 +243,9 @@ public class ReportMenuBar extends JMenuBar implements LocaleChangeListener {
         }
         optionsMenu.setMnemonic('O');
         optionsMenu.add(functionHelper);
-sslManager = new JMenuItem(JMeterUtils.getResString("sslmanager")); // $NON-NLS-1$
+        optionsMenu.add(lafMenu);
         if (SSLManager.isSSLSupported()) {
-            sslManager = new JMenuItem(JMeterUtils.getResString("sslManager")); // $NON-NLS-1$
+sslManager = new JMenuItem(JMeterUtils.getResString("sslmanager")); // $NON-NLS-1$
             sslManager.addActionListener(ReportActionRouter.getInstance());
             sslManager.setActionCommand("sslManager"); // $NON-NLS-1$
             sslManager.setMnemonic('S');

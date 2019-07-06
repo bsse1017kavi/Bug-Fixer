@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -86,9 +85,9 @@ public class ApacheConfig  { // implements XXX
     public void execute(ContextManager cm) throws TomcatException {
 	try {
 	    String tomcatHome= cm.getHome();
-//System.out.println("Tomcat home= " + tomcatHome);
+	    String apacheHome=findApache();
 	    
-	    System.out.println("Tomcat home= " + tomcatHome);
+//System.out.println("Tomcat home= " + tomcatHome);
 	    
 	    FileWriter configW=new FileWriter( tomcatHome + APACHE_CONFIG);
 	    PrintWriter pw=new PrintWriter( configW );

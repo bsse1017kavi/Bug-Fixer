@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -516,9 +515,9 @@ public class RegistrySharedObject extends BaseSharedObject implements IRemoteSer
 		}
 		Trace.exiting(Activator.PLUGIN_ID, IRemoteServiceProviderDebugOptions.METHODS_EXITING, this.getClass(), ADD_REGISTRATION);
 	}
-final Object localServiceRegistrationValue = registration.getProperty(Constants.PROXY_SERVICE_REGISTRATION);
+
 	private void localRegisterService(RemoteServiceRegistrationImpl registration) {
-		final Object localServiceRegistrationValue = registration.getProperty(Constants.LOCAL_SERVICE_REGISTRATION);
+final Object localServiceRegistrationValue = registration.getProperty(Constants.PROXY_SERVICE_REGISTRATION);
 		if (localServiceRegistrationValue != null) {
 			final BundleContext context = Activator.getDefault().getContext();
 			if (context == null)

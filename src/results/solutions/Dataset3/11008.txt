@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class BMPEntityBeanTestCase {
     @Deployment
     public static Archive<?> deploy() {
 
-war.addAsWebInfResource(BMPEntityBeanTestCase.class.getPackage(), "ejb-jar.xml", "ejb-jar.xml");
+        WebArchive war = ShrinkWrap.create(WebArchive.class, ARCHIVE_NAME);
         war.addPackage(BMPEntityBeanTestCase.class.getPackage());
-        war.addAsWebInfResource("ejb/entity/bmp/ejb-jar.xml", "ejb-jar.xml");
+war.addAsWebInfResource(BMPEntityBeanTestCase.class.getPackage(), "ejb-jar.xml", "ejb-jar.xml");
         return war;
     }
 

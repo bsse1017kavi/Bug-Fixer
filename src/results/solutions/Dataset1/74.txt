@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -256,9 +255,9 @@ public abstract class SSTable
     public static long getTotalBytes(Iterable<SSTableReader> sstables)
     {
         long sum = 0;
-sum += sstable.onDiskLength();
+        for (SSTableReader sstable : sstables)
         {
-            sum += sstable.length();
+sum += sstable.onDiskLength();
         }
         return sum;
     }

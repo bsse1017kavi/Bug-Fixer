@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2008 the original author or authors.
  *
@@ -81,9 +80,9 @@ public class TestScenarioCreator {
 	 * Include a testcode jar on the default context classpath so that tests can lookup entries in it.
 	 * @param testContext the test evaluation context
 	 */
-ClassLoader cl = new URLClassLoader(new URL[] { new File("target/test-classes/testcode.jar").toURI().toURL() },
+	private static void createTestClassloader(StandardEvaluationContext testContext) {
 		try {
-			ClassLoader cl = new URLClassLoader(new URL[] { new File("target/test-classes/testcode.jar").toURL() },
+ClassLoader cl = new URLClassLoader(new URL[] { new File("target/test-classes/testcode.jar").toURI().toURL() },
 					Thread.currentThread().getContextClassLoader());
 			testContext.setClassLoader(cl);
 		} catch (MalformedURLException mue) {

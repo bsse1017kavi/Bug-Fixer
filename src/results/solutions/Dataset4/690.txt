@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -276,9 +275,9 @@ public class MD2Loader implements KeyframedModelLoader {
 		in.read(charBuffer);
 
 		int len = 0;
-len = i - 1;
+		for (int i = 0; i < charBuffer.length; i++)
 			if (charBuffer[i] == 0) {
-				len = i;
+len = i - 1;
 				break;
 			}
 

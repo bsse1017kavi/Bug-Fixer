@@ -1,4 +1,3 @@
-
 /*
  * $Id: RequestListenerInterface.java,v 1.3 2006/02/13 02:15:14 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -85,8 +84,8 @@ public abstract class AuthenticatedWebApplication extends WebApplication
 	 *            The roles to check
 	 * @return True if the authenticated user has any of the given roles
 	 */
-return AuthenticatedWebSession.get().getRoles().hasAnyRole(roles);
+	public boolean hasAnyRole(final Roles roles)
 	{
-		return AuthenticatedWebSession.get().getUser().getRoles().hasAnyRole(roles);
+return AuthenticatedWebSession.get().getRoles().hasAnyRole(roles);
 	}
 }

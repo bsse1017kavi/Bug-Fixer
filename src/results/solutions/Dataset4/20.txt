@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -96,9 +95,9 @@ public class RayPickRagdollTest extends BaseBulletTest {
 			Ray ray = camera.getPickRay(screenX, screenY);
 			Vector3.tmp.set(ray.direction).scl(10f).add(ray.origin);
 			ClosestRayResultCallback cb = new ClosestRayResultCallback(ray.origin, Vector3.tmp);
-btRigidBody body = (btRigidBody)(cb.getM_collisionObject());
+			world.collisionWorld.rayTest(ray.origin, Vector3.tmp, cb);
 			if (cb.hasHit()) {
-				btRigidBody body = btRigidBody.upcast(cb.getM_collisionObject());
+btRigidBody body = (btRigidBody)(cb.getM_collisionObject());
 				if (body != null && !body.isStaticObject() && !body.isKinematicObject()) {
 					pickedBody = body;
 					body.setActivationState(gdxBullet.DISABLE_DEACTIVATION);

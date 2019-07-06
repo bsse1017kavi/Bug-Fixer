@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.lookup;
 
 /*
@@ -224,9 +223,9 @@ public class BlockScope extends Scope {
 					else if (!(local.declaration instanceof Argument)) // catch variable
 						this.problemReporter().unusedLocalVariable(local.declaration);
 				}
-&& environment().options.preserveAllLocalVariables) {
+				if (!generatesLocal) {
 					if (local.declaration != null
-						&& referenceCompilationUnit().problemReporter.options.preserveAllLocalVariables) {
+&& environment().options.preserveAllLocalVariables) {
 						generatesLocal = true; // force it to be preserved in the generated code
 						local.used = true;
 					}

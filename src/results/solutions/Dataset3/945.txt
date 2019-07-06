@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class CommandCompleter implements CommandLineCompleter {
             return 0;
         }
 
-parsedCmd.parse(ctx.getCurrentNodePath(), buffer, false);
+        final DefaultCallbackHandler parsedCmd = (DefaultCallbackHandler) ctx.getParsedCommandLine();
         try {
-            parsedCmd.parse(ctx.getPrefix(), buffer, false);
+parsedCmd.parse(ctx.getCurrentNodePath(), buffer, false);
         } catch(CommandFormatException e) {
             if(!parsedCmd.endsOnAddressOperationNameSeparator() || !parsedCmd.endsOnSeparator()) {
                 return -1;

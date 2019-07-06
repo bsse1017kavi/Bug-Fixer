@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -371,9 +370,9 @@ public class GetTermVectorTests extends AbstractTermVectorTests {
                 if (test.expectedException != null) {
                     assertThrows(request, test.expectedException);
                     continue;
-TermVectorResponse response = request.get();
+                }
 
-                TermVectorResponse response = run(request);
+TermVectorResponse response = request.get();
                 Fields luceneTermVectors = getTermVectorsFromLucene(directoryReader, test.doc);
                 validateResponse(response, luceneTermVectors, test);
             } catch (Throwable t) {

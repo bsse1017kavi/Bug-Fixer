@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -34,9 +33,9 @@ public class ClosePerspectiveAction extends Action {
 	public void run() {
 		WorkbenchPage page = (WorkbenchPage) window.getActivePage();
 		if (page != null) {
-page.closePerspective(persp, true,true);
+			Perspective persp = page.getActivePerspective();
 			if (persp != null)
-				page.closePerspective(persp, true);
+page.closePerspective(persp, true,true);
 		}
 	}
 }

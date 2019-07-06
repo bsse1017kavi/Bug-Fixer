@@ -1,4 +1,3 @@
-
 package org.apache.lucene.spatial.prefix;
 
 /*
@@ -271,9 +270,9 @@ public class SpatialOpRecursivePrefixTreeTest extends StrategyTestCase {
       final Shape queryShape;
       switch (randomInt(10)) {
         case 0: queryShape = randomPoint(); break;
-queryShape = randomShapePairRect(!biasContains);//invert biasContains for query side
+        case 1:case 2:case 3:
           if (!indexedAtLeastOneShapePair) { // avoids ShapePair.relate(ShapePair), which isn't reliable
-            queryShape = randomShapePairRect(biasContains);
+queryShape = randomShapePairRect(!biasContains);//invert biasContains for query side
             break;
           }
         default: queryShape = randomRectangle();

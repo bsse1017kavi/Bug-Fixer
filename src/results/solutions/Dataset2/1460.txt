@@ -1,4 +1,3 @@
-
 import java.lang.reflect.*;
 import java.io.*;
 import java.net.*;
@@ -370,9 +369,9 @@ doAXFR(Name name, Message query, Socket s) {
 		while (e.hasMoreElements()) {
 			RRset rrset = (RRset) e.nextElement();
 			Message response = new Message();
-header.setFlag(Flags.QR);
+			Header header = response.getHeader();
 			header.setID(id);
-/*			header.setFlag(Flags.QR);*/
+header.setFlag(Flags.QR);
 			header.setFlag(Flags.AA);
 			addRRset(rrset.getName(), response, rrset,
 				 Section.ANSWER, FLAG_DNSSECOK);

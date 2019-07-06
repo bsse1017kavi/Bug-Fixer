@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -155,9 +154,9 @@ public class LibPath extends AbstractTask {
     public void execute() throws AntException {
         AntContext context = getAntContext();
         ComponentService componentService = (ComponentService)
-MessageLevel.DEBUG);
+            context.getCoreService(ComponentService.class);
         log("Adding lib path " + url + " for " + libraryId,
-            MessageLevel.MSG_DEBUG);
+MessageLevel.DEBUG);
         componentService.addLibPath(libraryId, url);
     }
 

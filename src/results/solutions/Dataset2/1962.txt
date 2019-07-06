@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -59,9 +58,9 @@ public TypeBinding resolveType(BlockScope scope) {
 	// it can be a package, type, member type, local variable or field
 	binding = scope.getBinding(tokens, this);
 	if (!binding.isValidBinding()) {
-} else if (binding instanceof ProblemReferenceBinding || binding instanceof MissingTypeBinding) {
+		if (binding instanceof ProblemFieldBinding) {
 			scope.problemReporter().invalidField(this, (FieldBinding) binding);
-		} else if (binding instanceof ProblemReferenceBinding) {
+} else if (binding instanceof ProblemReferenceBinding || binding instanceof MissingTypeBinding) {
 			scope.problemReporter().invalidType(this, (TypeBinding) binding);
 		} else {
 			scope.problemReporter().unresolvableReference(this, binding);

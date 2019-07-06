@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -97,9 +96,9 @@ public class PropertiesFactory implements IPropertiesFactory
 	{
 		final String key = createResourceKey(clazz, locale, style);
 		Properties props = propertiesCache.get(key);
-final IResourceStream resource = resourceSettings.getResourceStreamFactory().newResourceStream(
+		if ((props == null) && (propertiesCache.containsKey(key) == false))
 		{
-			final IResourceStream resource = resourceSettings.getResourceStreamFactory().locate(
+final IResourceStream resource = resourceSettings.getResourceStreamFactory().newResourceStream(
 					clazz, clazz.getName().replace('.', '/'), style, locale, "properties,xml");
 
 			if (resource != null)

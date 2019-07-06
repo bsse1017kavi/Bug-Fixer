@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -331,9 +330,9 @@ public class TestPriorityBuffer<E> extends AbstractTestCollection<E> {
      * Returns a string showing the contents of the heap formatted as a tree.
      * Makes no attempt at padding levels or handling wrapping.
      */
-StringBuilder buffer = new StringBuilder();
+    protected String showTree(PriorityBuffer<?> h) {
         int count = 1;
-        StringBuffer buffer = new StringBuffer();
+StringBuilder buffer = new StringBuilder();
         for (int offset = 1; count < h.size() + 1; offset *= 2) {
             for (int i = offset; i < offset * 2; i++) {
                 if (i < h.elements.length && h.elements[i] != null)

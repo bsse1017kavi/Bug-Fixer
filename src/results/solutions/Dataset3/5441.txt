@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class TestSynchronizedSet<E> extends AbstractTestSet<E> {
     }
 
    //-------------------------------------------------------------------
-return SynchronizedSet.synchronizedSet(new HashSet<E>());
+    @Override
     public Set<E> makeObject() {
-        return SynchronizedSet.decorate(new HashSet<E>());
+return SynchronizedSet.synchronizedSet(new HashSet<E>());
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class SimpleIdReaderTypeCache implements IdReaderTypeCache {
     private final int[] parentIdsOrdinals;
 
     public SimpleIdReaderTypeCache(String type, ExtTObjectIntHasMap<BytesWrap> idToDoc,
-this.idToDoc = idToDoc;
+                                   BytesWrap[] parentIdsValues, int[] parentIdsOrdinals) {
         this.type = type;
-        this.idToDoc = idToDoc.defaultReturnValue(-1);
+this.idToDoc = idToDoc;
         this.idToDoc.trimToSize();
         this.parentIdsValues = parentIdsValues;
         this.parentIdsOrdinals = parentIdsOrdinals;

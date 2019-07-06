@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -129,9 +128,9 @@ public abstract class AbstractSimpleTransportTests {
             }
 
             @Override public void messageReceived(StringMessage request, TransportChannel channel) {
-channel.sendResponse(new StringMessage("hello " + request.message), TransportResponseOptions.options().withCompress(true));
+                assertThat("moshe", equalTo(request.message));
                 try {
-                    channel.sendResponse(new StringMessage("hello " + request.message), TransportResponseOptions.options().withCompress());
+channel.sendResponse(new StringMessage("hello " + request.message), TransportResponseOptions.options().withCompress(true));
                 } catch (IOException e) {
                     e.printStackTrace();
                     assertThat(e.getMessage(), false, equalTo(true));

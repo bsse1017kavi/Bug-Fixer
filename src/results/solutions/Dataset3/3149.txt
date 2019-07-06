@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -152,9 +151,9 @@ public final class CompositeOperationHandler implements OperationStepHandler {
                 @Override
                 public DescriptionProvider getDescriptionProvider() {
                     return new DescriptionProvider() {
-return new DefaultOperationDescriptionProvider(getName(), resolver, attributeResolver, replyType, replyValueType, replyAllowNull, deprecationData, replyParameters, parameters, accessConstraints).getModelDescription(locale);
+                        @Override
                         public ModelNode getModelDescription(Locale locale) {
-                            return new DefaultOperationDescriptionProvider(getName(), resolver, attributeResolver, replyType, replyValueType, deprecationData, replyParameters, parameters).getModelDescription(locale);
+return new DefaultOperationDescriptionProvider(getName(), resolver, attributeResolver, replyType, replyValueType, replyAllowNull, deprecationData, replyParameters, parameters, accessConstraints).getModelDescription(locale);
                         }
                     };
                 }

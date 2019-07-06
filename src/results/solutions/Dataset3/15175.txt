@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -665,9 +664,9 @@ public abstract class SessionFactoryUtils {
 		}
 		if (ex instanceof WrongClassException) {
 			return new HibernateObjectRetrievalFailureException((WrongClassException) ex);
-return new IncorrectResultSizeDataAccessException(ex.getMessage(), 1, ex);
+		}
 		if (ex instanceof NonUniqueResultException) {
-			return new IncorrectResultSizeDataAccessException(ex.getMessage(), 1);
+return new IncorrectResultSizeDataAccessException(ex.getMessage(), 1, ex);
 		}
 		if (ex instanceof StaleObjectStateException) {
 			return new HibernateOptimisticLockingFailureException((StaleObjectStateException) ex);

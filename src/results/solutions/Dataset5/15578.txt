@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -133,9 +132,9 @@ public class UploadPage extends WicketExamplePage
         {
             final String fileName = (String)listItem.getModelObject();
             listItem.add(new Label("file", fileName));
-public void onClick()
+            listItem.add(new Link("delete") {
                 
-                public void onLinkClicked()
+public void onClick()
                 {
                     File toDelete = new File(tempDir, fileName);
                     log.info("delete " + toDelete);

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -123,9 +122,9 @@ public class Vector3DFormat extends VectorFormat<Euclidean3D> {
      * @return the parsed {@link Vector3D} object.
      * @throws MathParseException if the beginning of the specified string
      * cannot be parsed.
-public Vector3D parse(final String source) throws MathParseException {
+     */
     @Override
-    public Vector3D parse(final String source) {
+public Vector3D parse(final String source) throws MathParseException {
         ParsePosition parsePosition = new ParsePosition(0);
         Vector3D result = parse(source, parsePosition);
         if (parsePosition.getIndex() == 0) {

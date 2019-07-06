@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -34,9 +33,9 @@ import java.io.IOException;
  * select all matching documents, and the negativeQuery contains the undesirable elements which
  * are simply used to lessen the scores. Documents that match the negativeQuery have their score
  * multiplied by the supplied "boost" parameter, so this should be less than 1 to achieve a
-public class BoostingQueryBuilder extends BaseQueryBuilder implements BoostableQueryBuilder<BoostingQueryBuilder> {
+ * demoting effect
  */
-public class BoostingQueryBuilder extends BaseQueryBuilder {
+public class BoostingQueryBuilder extends BaseQueryBuilder implements BoostableQueryBuilder<BoostingQueryBuilder> {
 
     private QueryBuilder positiveQuery;
 

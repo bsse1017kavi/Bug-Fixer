@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -1387,9 +1386,9 @@ public class SimpleChildQuerySearchTests extends ElasticsearchIntegrationTest {
                 .setSource("name", "William")
                 .get();
         client().prepareIndex("grandissue", "child_type_two", "4").setParent("2").setRouting("1")
-refresh();
+                .setSource("name", "Kate")
                 .get();
-        client().admin().indices().prepareRefresh("grandissue").get();
+refresh();
 
         SearchResponse searchResponse = client().prepareSearch("grandissue").setQuery(
                 boolQuery().must(

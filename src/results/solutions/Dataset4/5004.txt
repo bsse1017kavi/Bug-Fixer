@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -33,9 +32,9 @@ import java.io.IOException;
  */
 public abstract class BroadcastOperationRequest<T extends BroadcastOperationRequest> extends ActionRequest<T> {
 
-private BroadcastOperationThreading operationThreading = BroadcastOperationThreading.THREAD_PER_SHARD;
+    protected String[] indices;
 
-    private BroadcastOperationThreading operationThreading = BroadcastOperationThreading.SINGLE_THREAD;
+private BroadcastOperationThreading operationThreading = BroadcastOperationThreading.THREAD_PER_SHARD;
     private IgnoreIndices ignoreIndices = IgnoreIndices.NONE;
 
     protected BroadcastOperationRequest() {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2007 committers of openArchitectureWare and others.
  * All rights reserved. This program and the accompanying materials
@@ -132,9 +131,9 @@ public class XpandEditorPlugin extends AbstractUIPlugin {
 	}
 
 	public ContextTypeRegistry getContextTypeRegistry() {
-contextTypeRegistry.addContextType("org.eclipse.xpand.ui.editor.context.Default");
+		if (contextTypeRegistry == null) {
 			contextTypeRegistry = new ContributionContextTypeRegistry();
-			contextTypeRegistry.addContextType("org.eclipse.internal.xtend.xpand2.editor.context.Default");
+contextTypeRegistry.addContextType("org.eclipse.xpand.ui.editor.context.Default");
 		}
 		return contextTypeRegistry;
 	}

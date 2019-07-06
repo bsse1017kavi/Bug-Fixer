@@ -1,4 +1,3 @@
-
 /**
  *  Derby - Class org.apache.derbyTesting.functionTests.tests.lang.ErrorCodeTest
  *  
@@ -47,9 +46,9 @@ public final class ErrorCodeTest extends BaseJDBCTestCase {
 
     public static Test suite()
     {
-suite.addTest(TestConfiguration.defaultSuite(ErrorCodeTest.class));
+        TestSuite suite = new TestSuite("errorcode Test");
         
-        suite.addTest(TestConfiguration.embeddedSuite(ErrorCodeTest.class));
+suite.addTest(TestConfiguration.defaultSuite(ErrorCodeTest.class));
         
         return new LocaleTestSetup(suite, Locale.ENGLISH);
     }

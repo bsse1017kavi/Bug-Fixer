@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class PersistenceUnitService implements Service<PersistenceUnitService> {
 
     private final PersistenceProviderAdaptor persistenceProviderAdaptor;
     private final PersistenceProvider persistenceProvider;
-private volatile EntityManagerFactory entityManagerFactory;
+    private final PersistenceUnitMetadata pu;
 
-    private EntityManagerFactory entityManagerFactory;
+private volatile EntityManagerFactory entityManagerFactory;
 
     public PersistenceUnitService(final PersistenceUnitMetadata pu, final PersistenceProviderAdaptor persistenceProviderAdaptor, final PersistenceProvider persistenceProvider) {
         this.pu = pu;

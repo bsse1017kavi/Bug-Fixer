@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -80,9 +79,9 @@ public class AuthServlet extends HttpServlet {
 	throws ServletException, IOException
     {
 	Request req=((HttpServletRequestFacade)request).getRealRequest();
-if( "EXPERIMENTAL_FORM".equals( ctx.getAuthMethod() )) {
+	Context ctx=req.getContext();
 	String realm=ctx.getRealmName();
-	if( "FORM".equals( ctx.getAuthMethod() )) {
+if( "EXPERIMENTAL_FORM".equals( ctx.getAuthMethod() )) {
 	    // the code is not uglier that the spec, we are just implementing it.
 	    // if you don't understand what's here - you're not alone !
 	    // ( it helps to  read the spec > 10 times !)

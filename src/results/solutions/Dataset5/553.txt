@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -228,9 +227,9 @@ int calculateWidth (int index, GC gc) {
 		short [] height = new short [1];
 		OS.GetDataBrowserTableViewRowHeight (parent.handle, height);
 		event.width = width;
-if (parent.itemHeight < event.height) {
+		event.height = height [0];
 		parent.sendEvent (SWT.MeasureItem, event);
-		if (parent.itemHeight == -1) {
+if (parent.itemHeight < event.height) {
 			parent.itemHeight = event.height;
 			OS.SetDataBrowserTableViewRowHeight (parent.handle, (short) event.height);
 		}

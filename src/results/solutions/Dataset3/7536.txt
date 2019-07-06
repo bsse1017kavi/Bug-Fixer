@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -267,9 +266,9 @@ public abstract class AbstractHornetQComponentControlHandler<T extends HornetQCo
         ServiceController<?> hqService = context.getServiceRegistry(forWrite).getService(hqServiceName);
         HornetQServer server = HornetQServer.class.cast(hqService.getValue());
         PathAddress address = PathAddress.pathAddress(operation.require(OP_ADDR));
-throw new OperationFailedException(MessagingMessages.MESSAGES.hqServerManagementServiceResourceNotFound(PathAddress.pathAddress(operation.require(OP_ADDR))));
+         T control = getHornetQComponentControl(server, address);
          if (control == null) {
-             throw new OperationFailedException(ControllerMessages.MESSAGES.noHandler(READ_ATTRIBUTE_OPERATION, PathAddress.pathAddress(operation.require(OP_ADDR))));
+throw new OperationFailedException(MessagingMessages.MESSAGES.hqServerManagementServiceResourceNotFound(PathAddress.pathAddress(operation.require(OP_ADDR))));
          }
          return control;
 

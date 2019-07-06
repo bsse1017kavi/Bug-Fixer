@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -29,9 +28,9 @@ public class MathConfigurationExceptionTest extends TestCase {
 
     public void testConstructor(){
         MathConfigurationException ex = new MathConfigurationException();
-assertEquals(0, ex.getMessage(Locale.FRENCH).length());
+        assertNull(ex.getCause());
         assertNull(ex.getMessage());
-        assertNull(ex.getMessage(Locale.FRENCH));
+assertEquals(0, ex.getMessage(Locale.FRENCH).length());
     }
     
     public void testConstructorPatternArguments(){

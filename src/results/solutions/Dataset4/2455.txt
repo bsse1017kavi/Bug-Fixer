@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -194,9 +193,9 @@ public class LocalTransport extends AbstractLifecycleComponent<Transport> implem
         return this.threadPool;
     }
 
-StreamInput stream = new BytesStreamInput(data, false);
+    void messageReceived(byte[] data, String action, LocalTransport sourceTransport, @Nullable final Long sendRequestId) {
         transportServiceAdapter.received(data.length);
-        StreamInput stream = new BytesStreamInput(data);
+StreamInput stream = new BytesStreamInput(data, false);
         stream = CachedStreamInput.cachedHandles(stream);
 
         try {

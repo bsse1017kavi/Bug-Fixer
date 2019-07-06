@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -159,9 +158,9 @@ class NewSharedWebMetaDataBuilder {
      *
      * @param metadata the shared jboss.web metadata
      */
-if (config.get(DISABLED).asBoolean(false)) {
+    void enableJsp(final WebMetaData metadata) {
         final ModelNode config = containerConfig.get(JSP_CONFIGURATION);
-        if (config.get(DISABLED).asBoolean()) {
+if (config.get(DISABLED).asBoolean(false)) {
             return;
         }
         final ServletMetaData servlet = new ServletMetaData();

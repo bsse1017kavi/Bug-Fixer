@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -45,9 +44,9 @@ public interface ResponseBodyInterceptor {
 	 * @param response the current response
 	 * @param <T> the type supported by the message converter
 	 *
-<T> T beforeBodyWrite(T body, MediaType contentType, Class<? extends HttpMessageConverter<T>> converterType,
+	 * @return the body that was passed in or a modified, possibly new instance
 	 */
-	<T> T beforeBodyWrite(T body, MediaType contentType, Class<HttpMessageConverter<T>> converterType,
+<T> T beforeBodyWrite(T body, MediaType contentType, Class<? extends HttpMessageConverter<T>> converterType,
 			MethodParameter returnType, ServerHttpRequest request, ServerHttpResponse response);
 
 }

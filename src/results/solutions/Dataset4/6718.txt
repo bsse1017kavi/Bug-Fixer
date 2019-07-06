@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -44,9 +43,9 @@ public class VersionedIndexReaderTests {
     private IndexReader indexReader;
     private IndexWriter indexWriter;
     private VersionedMap versionedMap;
-versionedMap = new ConcurrentVersionedMapLong();
+
     @BeforeTest public void setUp() throws Exception {
-        versionedMap = new NonBlockingVersionedMap();
+versionedMap = new ConcurrentVersionedMapLong();
         dir = new RAMDirectory();
         indexWriter = new IndexWriter(dir, Lucene.STANDARD_ANALYZER, true, IndexWriter.MaxFieldLength.UNLIMITED);
         indexWriter.addDocument(doc().add(field("value", "0")).build());

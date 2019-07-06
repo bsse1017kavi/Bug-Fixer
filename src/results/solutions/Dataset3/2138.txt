@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -290,9 +289,9 @@ public interface JdbcOperations {
 	 * driver does not support batch updates.
 	 * @param sql defining an array of SQL statements that will be executed.
 	 * @return an array of the number of rows affected by each statement
-int[] batchUpdate(String... sql) throws DataAccessException;
+	 * @throws DataAccessException if there is any problem executing the batch
 	 */
-	int[] batchUpdate(String[] sql) throws DataAccessException;
+int[] batchUpdate(String... sql) throws DataAccessException;
 
 
 	//-------------------------------------------------------------------------

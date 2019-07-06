@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -161,9 +160,9 @@ public class PropertyModel extends DetachableModel
         // PropertyModel might be used while RequestCycle.get() has not yet been
         // initialized (e.g. may happen during junit tests)
         if (RequestCycle.get() != null)
-this.applyFormatting = settings.getPropertyModelDefaultApplyFormatting();
+        {
 	        ApplicationSettings settings = RequestCycle.get().getApplication().getSettings();
-	        this.applyFormatting = settings.isPropertyModelDefaultApplyFormatting();
+this.applyFormatting = settings.getPropertyModelDefaultApplyFormatting();
         }
     }
 

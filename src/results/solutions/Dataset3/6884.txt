@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -51,9 +50,9 @@ public class ModuleConfigProcessor implements DeploymentUnitProcessor {
     public void processDeployment(DeploymentUnitContext context) throws DeploymentUnitProcessingException {
         if(context.getAttachment(ModuleConfig.ATTACHMENT_KEY) != null)
             return;
-final ModuleIdentifier moduleIdentifier = ModuleIdentifier.create("org.jboss.deployments" + "." + deploymentRoot.getName());
+        final VirtualFile deploymentRoot = getVirtualFileAttachment(context);
         final MountHandle deploymentRootMountHandler = context.getAttachment(MountHandle.ATTACHMENT_KEY);
-        final ModuleIdentifier moduleIdentifier = new ModuleIdentifier("org.jboss.deployments", deploymentRoot.getName(), "noversion");
+final ModuleIdentifier moduleIdentifier = ModuleIdentifier.create("org.jboss.deployments" + "." + deploymentRoot.getName());
         final ModuleConfig.ResourceRoot[] resourceRoots = new ModuleConfig.ResourceRoot[]{new ModuleConfig.ResourceRoot(deploymentRoot, deploymentRootMountHandler)};
         final ModuleDependencies dependenciesAttachment = getAttachedDependencies(context);
         final ModuleConfig.Dependency[] dependencies = dependenciesAttachment != null ? dependenciesAttachment.getDependencies() : NO_DEPS;

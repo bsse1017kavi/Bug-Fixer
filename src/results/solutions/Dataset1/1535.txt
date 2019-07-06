@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -467,9 +466,9 @@ public class CliClient extends CliUserHelp
     {
         if (!CliMain.isConnected() || !hasKeySpace())
             return;
-String columnFamily = CliCompiler.getColumnFamily(statement, keyspacesMap.get(keySpace).cf_defs);
+
         IndexClause clause = new IndexClause();
-        String columnFamily = statement.getChild(0).getText();
+String columnFamily = CliCompiler.getColumnFamily(statement, keyspacesMap.get(keySpace).cf_defs);
         // ^(CONDITIONS ^(CONDITION $column $value) ...)
         Tree conditions = statement.getChild(1);
         

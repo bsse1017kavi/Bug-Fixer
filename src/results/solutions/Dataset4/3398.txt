@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com)
  * 
@@ -138,9 +137,9 @@ final class AndroidInput implements Input, OnKeyListener, OnTouchListener, Senso
 	int freeEventIndex = 0;
 	
 	/** whether multitouch is supported or not **/
-AndroidInput( AndroidApplication activity, View view, int sleepTime )
+	final boolean hasMultitouch;
 	
-	AndroidInput( AndroidApplication activity, GLSurfaceView view, int sleepTime )
+AndroidInput( AndroidApplication activity, View view, int sleepTime )
 	{
 		view.setOnKeyListener( this );
 		view.setOnTouchListener( this );

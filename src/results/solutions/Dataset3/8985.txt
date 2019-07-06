@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -55,9 +54,9 @@ public class FormHttpMessageConverter extends AbstractHttpMessageConverter<Multi
 	public FormHttpMessageConverter() {
 		super(new MediaType("application", "x-www-form-urlencoded"));
 	}
-public boolean supports(Class<?> clazz) {
+
 	@Override
-	public boolean supports(Class<? extends MultiValueMap<String, String>> clazz) {
+public boolean supports(Class<?> clazz) {
 		return MultiValueMap.class.isAssignableFrom(clazz);
 	}
 

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -382,9 +381,9 @@ public class NSHandler implements NamespaceHandler {
       if (isPersistenceUnit)
           filter.append("(!(").append(PersistenceContextProvider.PROXY_FACTORY_EMF_ATTRIBUTE)
           .append("=*))");
-.append("=true)");
+      else
           filter.append("(").append(PersistenceContextProvider.PROXY_FACTORY_EMF_ATTRIBUTE)
-                  .append("=*)");
+.append("=true)");
 
       // Add the empty name filter if necessary
       if (!"".equals(unitName))

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class PackageTest extends JMeterTestCase {
         jmctx = JMeterContextService.getContext();
         variables = new HashMap<String, String>();
         variables.put("my_regex", ".*");
-result.setResponseData("<html>hello world</html> costs: $3.47,$5.67", null);
+        variables.put("server", "jakarta.apache.org");
         result = new SampleResult();
-        result.setResponseData("<html>hello world</html> costs: $3.47,$5.67".getBytes());
+result.setResponseData("<html>hello world</html> costs: $3.47,$5.67", null);
         transformer = new ReplaceStringWithFunctions(new CompoundVariable(), variables);
         jmctx.setVariables(new JMeterVariables());
         jmctx.setSamplingStarted(true);

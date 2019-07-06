@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2005 Contributors
  * All rights reserved. 
@@ -229,9 +228,9 @@ public class GenericSignatureParserTest extends TestCase {
 	public void testFullyQualifiedSuperclassAfterTypeParams() {
 		try {
 			Signature.FieldTypeSignature cSig = parser.parseAsFieldSignature("Ljava/util/List</;");
-assertTrue(ex.getMessage().indexOf("Ljava/util/List</;") != -1);
+			fail("Expected IllegalStateException");
 		} catch (IllegalStateException ex) {
-			assertTrue(ex.getMessage().contains("Ljava/util/List</;"));
+assertTrue(ex.getMessage().indexOf("Ljava/util/List</;") != -1);
 		}
 	}
 	

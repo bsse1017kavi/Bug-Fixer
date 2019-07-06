@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.controllers;
 
 import com.badlogic.gdx.jnigen.AntScriptGenerator;
@@ -28,9 +27,9 @@ public class DesktopControllersBuild {
 		};
 		win32home.cIncludes = new String[0];
 		win32home.libraries = "-ldinput8 -ldxguid";
-if(!BuildExecutor.executeAnt("jni/build-windows32home.xml", "-Dhas-compiler=true postcompile -v")) {
+
 		new AntScriptGenerator().generate(buildConfig, win32home);
-		if(!BuildExecutor.executeAnt("jni/build-windows32home.xml", "-Dhas-compiler=true -v postcompile")) {
+if(!BuildExecutor.executeAnt("jni/build-windows32home.xml", "-Dhas-compiler=true postcompile -v")) {
 			throw new Exception("build failed");
 		}
 		BuildExecutor.executeAnt("jni/build.xml", "pack-natives");

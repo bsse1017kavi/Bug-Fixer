@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -278,9 +277,9 @@ public class CFMetaDataParser extends XMLMetaDataParser {
         throws SAXException {
         if (name == null)
             return null;
-throw getException(_loc.get("invalid-class", name).getMessage());
+        Class cls = classForName(name, _package, resolve, currentClassLoader());
         if (cls == null)
-            throw getException(_loc.get("invalid-class", name));
+throw getException(_loc.get("invalid-class", name).getMessage());
         return cls;
     }
 

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests;
 
 import com.badlogic.gdx.Gdx;
@@ -97,9 +96,9 @@ public class MD5Test extends GdxTest implements InputProcessor {
 
 		gl.glDisable(GL10.GL_DEPTH_TEST);
 
-+ (renderer.isJniUsed() ? ", jni" : ", java") + ", render time: " + renderTime + ", skin time: " + skinTime, 10, 20,
+		batch.begin();
 		font.draw(batch, "fps: " + Gdx.graphics.getFramesPerSecond()
-				+ (renderer.isJniUsed() ? ", jni" : ", java"), 10, 20,
++ (renderer.isJniUsed() ? ", jni" : ", java") + ", render time: " + renderTime + ", skin time: " + skinTime, 10, 20,
 				Color.WHITE);
 		batch.end();
 		

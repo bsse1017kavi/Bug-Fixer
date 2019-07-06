@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -699,9 +698,9 @@ public class CSVParserTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-new CSVParser(null, invalidFormat).close();
+    public void testInvalidFormat() throws Exception {
         final CSVFormat invalidFormat = CSVFormat.DEFAULT.withDelimiter(CR);
-        new CSVParser((Reader) null, invalidFormat).close();
+new CSVParser(null, invalidFormat).close();
     }
 
     private void validateRecordNumbers(final String lineSeparator) throws IOException {

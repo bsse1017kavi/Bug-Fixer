@@ -1,4 +1,3 @@
-
 /***************************************
  *                                     *
  *  JBoss: The OpenSource J2EE WebOS   *
@@ -26,9 +25,9 @@ import org.jboss.ejb.plugins.cmp.jdbc.JDBCUtil;
  * @author <a href="mailto:dwintschel@esports.com">Daniel Wintschel</a>
  */
 public class JDBCDB2IdentityValLocalCreateCommand extends JDBCIdentityColumnCreateCommand {
-protected int executeInsert(int paramIndex, PreparedStatement ps, EntityEnterpriseContext ctx ) throws SQLException {
+    private static final String SQL = "values (identity_val_local())";
 
-    protected int executeInsert( PreparedStatement ps, EntityEnterpriseContext ctx ) throws SQLException {
+protected int executeInsert(int paramIndex, PreparedStatement ps, EntityEnterpriseContext ctx ) throws SQLException {
         int rows = ps.executeUpdate();
         ResultSet results = null;
         try {

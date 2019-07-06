@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -32,9 +31,9 @@ public class SystemMenuMaximize extends ContributionItem {
         stackPresentationSite = null;
     }
     
-menuItem.setText(WorkbenchMessages.getString("PartPane.maximize")); //$NON-NLS-1$
+    public void fill(Menu menu, int index) {
         MenuItem menuItem = new MenuItem(menu, SWT.NONE);
-        menuItem.setText(WorkbenchMessages.getString("PartPane.maximize"));
+menuItem.setText(WorkbenchMessages.getString("PartPane.maximize")); //$NON-NLS-1$
         menuItem.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent e) {

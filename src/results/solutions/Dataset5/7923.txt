@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -382,9 +381,9 @@ public class JspC extends MatchingTask
         getLogger().debug( "compiling " + compileList.size() + " files" );
 
         if( compileList.size() > 0 )
-CompilerAdapterFactory.getCompiler( compiler.toString(), getContext() );
+        {
             CompilerAdapter adapter =
-                CompilerAdapterFactory.getCompiler( compiler.toString(), this );
+CompilerAdapterFactory.getCompiler( compiler.toString(), getContext() );
             getLogger().info( "Compiling " + compileList.size() +
                               " source file"
                               + ( compileList.size() == 1 ? "" : "s" )

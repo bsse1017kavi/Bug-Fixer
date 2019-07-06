@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -262,9 +261,9 @@ public final class ListRewrite {
 	private ASTNode createTargetNode(ASTNode first, ASTNode last, boolean isMove) {
 		if (first == null || last == null) {
 			throw new IllegalArgumentException();
-CopySourceInfo info= getRewriteStore().markAsRangeCopySource(this.parent, this.childProperty, first, last, isMove);
+		}
 		//validateIsInsideAST(node);
-		CopySourceInfo info= getRewriteStore().markAsRangeCopySource(parent, childProperty, first, last, isMove);
+CopySourceInfo info= getRewriteStore().markAsRangeCopySource(this.parent, this.childProperty, first, last, isMove);
 	
 		NodeInfoStore nodeStore= this.rewriter.getNodeStore();
 		ASTNode placeholder= nodeStore.newPlaceholderNode(first.getNodeType()); // revisit: could use list type

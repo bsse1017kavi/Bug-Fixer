@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -1362,9 +1361,9 @@ public final class CompletionEngine
 							//proposal.setTypeName(null);
 							proposal.setCompletion(completion);
 							proposal.setFlags(constructor.modifiers);
-if(parameterNames != null) proposal.setParameterNames(parameterNames);
+							proposal.setReplaceRange(this.endPosition - this.offset, this.endPosition - this.offset);
 							proposal.setRelevance(relevance);
-							if(parameterNames == null) proposal.setParameterNames(parameterNames);
+if(parameterNames != null) proposal.setParameterNames(parameterNames);
 							this.requestor.accept(proposal);
 							if(DEBUG) {
 								this.printDebug(proposal);

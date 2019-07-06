@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util;
 
 import static org.apache.lucene.util.LuceneTestCase.*;
@@ -160,9 +159,9 @@ public final class RunListenerPrintReproduceInfo extends RunListener {
       if (classEnvRule.timeZone != null) {
         addVmOpt(b, "tests.timezone", classEnvRule.timeZone.getID());
       }
-addVmOpt(b, "tests.file.encoding", System.getProperty("file.encoding"));
+    }
 
-    addVmOpt(b, "randomized.file.encoding", System.getProperty("file.encoding"));
+addVmOpt(b, "tests.file.encoding", System.getProperty("file.encoding"));
 
     System.err.println(b.toString());
   }

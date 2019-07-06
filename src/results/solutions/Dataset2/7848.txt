@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -103,9 +102,9 @@ public class MatchLocator implements ITypeRequestor {
 			// get source
 			SourceTypeElementInfo elementInfo = (SourceTypeElementInfo) sourceType;
 			IType type = elementInfo.getHandle();
-final char[] source = Util.getResourceContentsAsCharArray(file);
+			try {
 				final IFile file = (IFile) type.getUnderlyingResource();
-				final char[] source = PotentialMatch.getContents(file);
+final char[] source = Util.getResourceContentsAsCharArray(file);
 
 				// get main type name
 				final String fileName = file.getFullPath().lastSegment();

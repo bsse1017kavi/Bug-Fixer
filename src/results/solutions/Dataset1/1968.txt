@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -147,9 +146,9 @@ public class StorageLoadBalancer implements IEndpointStateChangeSubscriber
 
     class MoveMessageVerbHandler implements IVerbHandler
     {
-Message reply = message.getInternalReply(new byte[] {(byte)(isMoveable_.get() ? 1 : 0)});
+        public void doVerb(Message message)
         {
-            Message reply = message.getReply(FBUtilities.getLocalAddress(), new byte[] {(byte)(isMoveable_.get() ? 1 : 0)});
+Message reply = message.getInternalReply(new byte[] {(byte)(isMoveable_.get() ? 1 : 0)});
             MessagingService.instance.sendOneWay(reply, message.getFrom());
             if ( isMoveable_.get() )
             {

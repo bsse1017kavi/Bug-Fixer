@@ -1,4 +1,3 @@
-
 /*
  * $Id: DefaultRequestTargetResolverStrategy.java,v 1.4 2005/12/30 21:47:05
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -187,9 +186,9 @@ public class DefaultRequestTargetResolverStrategy implements IRequestTargetResol
 	 */
 	protected IRequestTarget resolveListenerInterfaceTarget(RequestCycle requestCycle,
 			final Page page, final String componentPath, final String interfaceName,
-if (interfaceName.equals(Page.REDIRECT_LISTENER_INTERFACE.getName()))
+			RequestParameters requestParameters)
 	{
-		if (interfaceName.equals("IRedirectListener"))
+if (interfaceName.equals(Page.REDIRECT_LISTENER_INTERFACE.getName()))
 		{
 			return new RedirectPageRequestTarget(page);
 		}

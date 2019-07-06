@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -25,9 +24,9 @@ import org.elasticsearch.common.thread.ThreadLocals;
 /**
  * @author kimchy (shay.banon)
  */
-public static final ThreadLocal<ThreadLocals.CleanableValue<byte[]>> cachedBytes = new ThreadLocal<ThreadLocals.CleanableValue<byte[]>>() {
+public class Bytes {
 
-    public static ThreadLocal<ThreadLocals.CleanableValue<byte[]>> cachedBytes = new ThreadLocal<ThreadLocals.CleanableValue<byte[]>>() {
+public static final ThreadLocal<ThreadLocals.CleanableValue<byte[]>> cachedBytes = new ThreadLocal<ThreadLocals.CleanableValue<byte[]>>() {
         @Override protected ThreadLocals.CleanableValue<byte[]> initialValue() {
             return new ThreadLocals.CleanableValue<byte[]>(new byte[1024]);
         }

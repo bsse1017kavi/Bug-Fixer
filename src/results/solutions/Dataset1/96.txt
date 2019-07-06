@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -305,9 +304,9 @@ public class TestIndexWriterUnicode extends LuceneTestCase {
         assertTrue(((int) chars[0]) >= UnicodeUtil.UNI_SUR_HIGH_START && ((int) chars[0]) <= UnicodeUtil.UNI_SUR_HIGH_END);
         chars[1] = (char) getInt(rnd, UnicodeUtil.UNI_SUR_LOW_START, UnicodeUtil.UNI_SUR_LOW_END);
         s = new String(chars, 0, 2);
-f.setStringValue(s);
+      }
       allTerms.add(s);
-      f.setValue(s);
+f.setStringValue(s);
 
       writer.addDocument(d);
 

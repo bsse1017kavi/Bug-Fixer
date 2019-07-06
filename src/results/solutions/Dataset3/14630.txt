@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -318,9 +317,9 @@ public class CpioArchiveOutputStream extends ArchiveOutputStream implements
         if (this.cpioEntry != null) {
             closeArchiveEntry();
         }
-this.cpioEntry.setName(CPIO_TRAILER);
+        this.cpioEntry = new CpioArchiveEntry(this.entryFormat);
         this.cpioEntry.setMode(0);
-        this.cpioEntry.setName("TRAILER!!!");
+this.cpioEntry.setName(CPIO_TRAILER);
         this.cpioEntry.setNumberOfLinks(1);
         writeHeader(this.cpioEntry);
         closeArchiveEntry();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -550,9 +549,9 @@ public class DerivativeStructure implements FieldElement<DerivativeStructure>, S
      * f'({@link #getValue()}), f''({@link #getValue()})...]).
      * @return f(this)
      * @exception DimensionMismatchException if the number of derivatives
-public DerivativeStructure compose(final double ... f) {
+     * in the array is not equal to {@link #getOrder() order} + 1
      */
-    public DerivativeStructure compose(final double[] f) {
+public DerivativeStructure compose(final double ... f) {
         if (f.length != getOrder() + 1) {
             throw new DimensionMismatchException(f.length, getOrder() + 1);
         }

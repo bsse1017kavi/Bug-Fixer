@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -157,9 +156,9 @@ final class TermVectorsConsumer extends TermsHashConsumer {
 
     perFields[numVectorFields++] = fieldToFlush;
   }
-void startDocument() {
+
   @Override
-  void startDocument() throws IOException {
+void startDocument() {
     assert clearLastVectorFieldName();
     reset();
   }

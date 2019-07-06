@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -89,9 +88,9 @@ public class StreamingUpdateSolrServer extends CommonsHttpSolrServer
           public String getContentType() { return ClientUtils.TEXT_XML; }
           public boolean isRepeatable()  { return false; }
   
-OutputStreamWriter writer = new OutputStreamWriter(out, "UTF-8");
+          public void writeRequest(OutputStream out) throws IOException {
             try {
-              OutputStreamWriter writer = new OutputStreamWriter( out );
+OutputStreamWriter writer = new OutputStreamWriter(out, "UTF-8");
               writer.append( "<stream>" ); // can be anything...
               UpdateRequest req = queue.poll( 250, TimeUnit.MILLISECONDS );
               while( req != null ) {

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 import java.io.IOException;
 
@@ -31,9 +30,9 @@ public class BoostingQuery extends Query {
     public BoostingQuery(Query match, Query context, float boost) {
       this.match = match;
       this.context = (Query)context.clone();        // clone before boost
-this.context.setBoost(0.0f);                      // ignore context-only matches
+      this.boost = boost;
 
-      context.setBoost(0.0f);                      // ignore context-only matches
+this.context.setBoost(0.0f);                      // ignore context-only matches
     }
 
     public Query rewrite(IndexReader reader) throws IOException {

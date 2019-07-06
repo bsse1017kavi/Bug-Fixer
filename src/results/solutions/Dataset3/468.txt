@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -116,9 +115,9 @@ public class DiscoveryGroupAdd extends AbstractAddStepHandler implements Descrip
                     target.addService(GroupBindingService.DISCOVERY.append(name), bindingService)
                             .addInjectionValue(bindingService.getBindingRef(), new ImmediateValue<SocketBinding>(socketBinding))
                             .install();
-throw new OperationFailedException(new ModelNode().set(e.getLocalizedMessage()));
+
                 } catch (Exception e) {
-                    throw new OperationFailedException(new ModelNode().set(e.getMessage()));
+throw new OperationFailedException(new ModelNode().set(e.getLocalizedMessage()));
                 }
             }
         }

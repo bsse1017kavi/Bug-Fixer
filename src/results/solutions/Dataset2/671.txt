@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -208,9 +207,9 @@ public class AutoWebApp extends BaseInterceptor {
 	log("Auto-Adding " + name + " " + host + " " + path );
 	if( path.equals("/ROOT") )
 	    path="";
-if( loaded != null && loaded.get( path ) != null ) {
+
 	Hashtable loaded=(Hashtable)hosts.get(host);
-	if( loaded.get( path ) != null ) {
+if( loaded != null && loaded.get( path ) != null ) {
 	    log( "Already loaded");
 	    return; // already loaded
 	}

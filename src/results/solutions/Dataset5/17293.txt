@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -41,9 +40,9 @@ public class SourceTrackers {
         StringBuffer buf = new StringBuffer(20 * (trackers.length + 1));
         buf.append(_loc.get("source-trackers-location-header")).append(SEP);
         String sourceFilePath;
-_loc.get("source-tracker-file-unknown").getMessage() :
+        for (int i = 0; i < trackers.length; i++) {
             sourceFilePath = (trackers[i].getSourceFile() == null ?
-                _loc.get("source-tracker-file-unknown") :
+_loc.get("source-tracker-file-unknown").getMessage() :
                 trackers[i].getSourceFile().getAbsolutePath());
             buf.append("  ").append(_loc.get(
                 "source-trackers-location-line-item",

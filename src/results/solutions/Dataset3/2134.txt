@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -1331,9 +1330,9 @@ public final class XmlBeanFactoryTests {
 
 		// Check that the bean can invoke the overridden method on itself
 		// This differs from Spring's AOP support, which has a distinct notion
-TestBean jenny3 = oom.invokesOverriddenMethodOnSelf();
+		// of a "target" object, meaning that the target needs explicit knowledge
 		// of AOP proxying to invoke an advised method on itself.
-		TestBean jenny3 = oom.invokesOverridenMethodOnSelf();
+TestBean jenny3 = oom.invokesOverriddenMethodOnSelf();
 		assertEquals("Jenny", jenny3.getName());
 		assertNotSame(jenny1, jenny3);
 

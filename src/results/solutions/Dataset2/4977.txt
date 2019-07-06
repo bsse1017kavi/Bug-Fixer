@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -134,9 +133,9 @@ private void locateMatchesInClassFile() throws CoreException, JavaModelException
 			if (root.isArchive()) {
 				// class file in a jar
 				String pkgPath = pkg.getElementName().replace('.', '/');
-pkgPath + "/" + classFile.getElementName() : //$NON-NLS-1$
+				String classFilePath = 
 					(pkgPath.length() > 0) ?
-						pkgPath + "/"/*nonNLS*/ + classFile.getElementName() :
+pkgPath + "/" + classFile.getElementName() : //$NON-NLS-1$
 						classFile.getElementName();
 				ZipFile zipFile = null;
 				try {

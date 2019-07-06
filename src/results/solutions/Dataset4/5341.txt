@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -117,9 +116,9 @@ public class TermsStatsStringFacetCollector extends AbstractFacetCollector {
 
     @Override
     protected void doSetNextReader(AtomicReaderContext context) throws IOException {
-script.setNextReader(context);
+        keyFieldData = fieldDataCache.cache(keyFieldDataType, context.reader(), keyFieldName);
         if (script != null) {
-            script.setNextReader(context.reader());
+script.setNextReader(context);
         } else {
             aggregator.valueFieldData = (NumericFieldData) fieldDataCache.cache(valueFieldDataType, context.reader(), valueFieldName);
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,8 +58,8 @@ public class BeanWithSimpleInjected {
     }
 
     @AroundInvoke
-return "#BeanWithSimpleInjected#" + context.proceed();
+    public Object intercept(InvocationContext context) throws Exception {
         log.info("-----> Intercepting call to " + context.getMethod());
-        return context.proceed();
+return "#BeanWithSimpleInjected#" + context.proceed();
     }
 }

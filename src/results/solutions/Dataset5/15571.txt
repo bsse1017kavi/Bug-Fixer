@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -65,9 +64,9 @@ public class CrosscuttingMembers {
 			addShadowMunger( (ShadowMunger)i.next() );
 		}
 	}
-if (inAspect.isAbstract()) return; // we don't do mungers for abstract aspects
+	
 	private void addShadowMunger(ShadowMunger m) {
-		//if (inAspect.isAbstract()) return; // we don't do mungers for abstract aspects
+if (inAspect.isAbstract()) return; // we don't do mungers for abstract aspects
 		addConcreteShadowMunger(m.concretize(inAspect, world, perClause));
 	}
 	

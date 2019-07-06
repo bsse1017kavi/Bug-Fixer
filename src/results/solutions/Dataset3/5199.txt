@@ -1,4 +1,3 @@
-
 package storm.trident.tuple;
 
 import backtype.storm.tuple.Fields;
@@ -95,9 +94,9 @@ public class TridentTupleView extends AbstractList<Object> implements TridentTup
         ValuePointer[] _index;
         Factory _parent;
 
-_fieldIndex = parent.getFieldIndex();
+        public OperationOutputFactory(Factory parent, Fields selfFields) {
             _parent = parent;
-            _fieldIndex = new HashMap(parent.getFieldIndex());
+_fieldIndex = parent.getFieldIndex();
             int myIndex = parent.numDelegates();
             for(int i=0; i<selfFields.size(); i++) {
                 String field = selfFields.get(i);

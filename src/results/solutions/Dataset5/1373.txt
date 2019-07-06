@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1893,9 +1892,9 @@ public abstract class Component implements IClusterable, IConverterLocator
 	{
 		if (behavior == null)
 		{
-if (behaviors == null || !behaviors.contains(behavior))
+			throw new IllegalArgumentException("Argument `behavior` cannot be null");
 		}
-		if (!behaviors.contains(behavior))
+if (behaviors == null || !behaviors.contains(behavior))
 		{
 			throw new IllegalStateException(
 					"Tried to remove a behavior that was not added to the component. Behavior: " +

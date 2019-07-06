@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -35,9 +34,9 @@ public class DistributedCooccurrenceVectorSimilarity implements DistributedVecto
   public double similarity(int rowA,
                            int rowB,
                            Iterable<Cooccurrence> cooccurrences,
-long numberOfColumns) {
+                           double weightOfVectorA,
                            double weightOfVectorB,
-                           int numberOfColumns) {
+long numberOfColumns) {
     return AbstractDistributedVectorSimilarity.countElements(cooccurrences);
   }
 }

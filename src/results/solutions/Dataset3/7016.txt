@@ -1,4 +1,3 @@
-
 /*
  *  Copyright 2001-2005 The Apache Software Foundation
  *
@@ -1218,9 +1217,9 @@ public class FastArrayList extends ArrayList {
                 throw new IllegalStateException();
             }
             get().remove(lastReturnedIndex);
-iter = get().listIterator(lastReturnedIndex);
+            last--;
             expected = list;
-            iter = get().listIterator(previousIndex());
+iter = get().listIterator(lastReturnedIndex);
             lastReturnedIndex = -1;
         }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class ApplicationContextProcessor implements DeploymentUnitProcessor {
         EEModuleDescription moduleDescription = deploymentUnit.getAttachment(org.jboss.as.ee.component.Attachments.EE_MODULE_DESCRIPTION);
 
         final ServiceTarget serviceTarget = phaseContext.getServiceTarget();
-final NamingStoreService contextService = new NamingStoreService(new ServiceBasedNamingStore(phaseContext.getServiceRegistry(),applicationContextServiceName));
+
         final ServiceName applicationContextServiceName = ContextNames.contextServiceNameOfApplication(moduleDescription.getApplicationName());
-        final NamingStoreService contextService = new NamingStoreService();
+final NamingStoreService contextService = new NamingStoreService(new ServiceBasedNamingStore(phaseContext.getServiceRegistry(),applicationContextServiceName));
         serviceTarget.addService(applicationContextServiceName, contextService).install();
 
         final BinderService applicationNameBinder = new BinderService("AppName");

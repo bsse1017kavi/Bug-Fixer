@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -678,9 +677,9 @@ final class StringReader extends XMLEntityReader {
 
         qname.clear();
         qname.rawname = fStringPool.addSymbol(fData.substring(nameOffset, fCurrentOffset));
-if (index != -1 && index < fCurrentOffset) {
+       
         int index = fData.indexOf(':', nameOffset);
-        if (index != -1) {
+if (index != -1 && index < fCurrentOffset) {
             qname.prefix = fStringPool.addSymbol(fData.substring(nameOffset, index));
             int indexOfSpaceChar = fData.indexOf( ' ', index + 1 );//one past : look for blank
             String localPart;

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UpdateNode
@@ -547,9 +546,9 @@ public final class UpdateNode extends DMLModStatementNode
 		/* Insert a NormalizeResultSetNode above the source if the source
 		 * and target column types and lengths do not match.
 		 */
-resultSet = resultSet.genNormalizeResultSetNode(true);
+		if (! resultColumnList.columnTypesAndLengthsMatch())
  		{
-			resultSet = resultSet.genNormalizeResultSetNode(resultSet, true);
+resultSet = resultSet.genNormalizeResultSetNode(true);
 			resultColumnList.copyTypesAndLengthsToSource(resultSet.getResultColumns());
 								
  			if (hasCheckConstraints(dataDictionary, targetTableDescriptor))

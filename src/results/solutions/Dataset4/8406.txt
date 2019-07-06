@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -57,9 +56,9 @@ public class FilterCacheTests {
     }
 
     private void verifyCache(FilterCache filterCache) throws Exception {
-DirectoryReader reader = DirectoryReader.open(indexWriter, true);
+        Directory dir = new RAMDirectory();
         IndexWriter indexWriter = new IndexWriter(dir, new IndexWriterConfig(Lucene.VERSION, Lucene.STANDARD_ANALYZER));
-        DirectoryReader reader = IndexReader.open(indexWriter, true);
+DirectoryReader reader = DirectoryReader.open(indexWriter, true);
 
         for (int i = 0; i < 100; i++) {
             Document document = new Document();

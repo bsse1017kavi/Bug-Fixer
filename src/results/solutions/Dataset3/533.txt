@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -39,9 +38,9 @@ class UriComponentTemplate extends UriTemplate {
 	}
 
 	@Override
-return encodeUriVariableValues ? UriUtils.encodeUriComponent(variableValueString, uriComponent) :
+	protected String getVariableValueAsString(Object variableValue) {
 		String variableValueString = super.getVariableValueAsString(variableValue);
-		return encodeUriVariableValues ? UriUtils.encode(variableValueString, uriComponent, false) :
+return encodeUriVariableValues ? UriUtils.encodeUriComponent(variableValueString, uriComponent) :
 				variableValueString;
 	}
 }

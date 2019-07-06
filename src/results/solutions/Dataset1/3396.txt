@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -864,9 +863,9 @@ public class TestIndexWriterExceptions extends LuceneTestCase {
       }
       assertTrue(dir.fileExists("1.fnx"));
       assertTrue(failure.failOnCommit && failure.failOnDeleteFile);
-// FIXME: on windows, this often fails! assertEquals(0, dir.listAll().length);
+      w.rollback();
       assertFalse(dir.fileExists("1.fnx"));
-      assertEquals(0, dir.listAll().length);
+// FIXME: on windows, this often fails! assertEquals(0, dir.listAll().length);
       dir.close();
     }
   }

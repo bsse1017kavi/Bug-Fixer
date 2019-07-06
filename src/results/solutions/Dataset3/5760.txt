@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class InfinispanSubsystemXMLWriter implements XMLElementWriter<SubsystemM
      * {@inheritDoc}
      * @see org.jboss.staxmapper.XMLElementWriter#writeContent(org.jboss.staxmapper.XMLExtendedStreamWriter, java.lang.Object)
      */
-context.startSubsystemElement(InfinispanSchema.CURRENT.getNamespaceUri(), false);
+    @Override
     public void writeContent(XMLExtendedStreamWriter writer, SubsystemMarshallingContext context) throws XMLStreamException {
-        context.startSubsystemElement(Namespace.CURRENT.getUri(), false);
+context.startSubsystemElement(InfinispanSchema.CURRENT.getNamespaceUri(), false);
         ModelNode model = context.getModelNode();
         if (model.isDefined()) {
             if (model.hasDefined(CacheContainerResourceDefinition.WILDCARD_PATH.getKey())) {

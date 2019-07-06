@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -1645,9 +1644,9 @@ public class PercolatorTests extends ElasticsearchIntegrationTest {
                 .setIndices("test").setDocumentType("doc")
                 .setSource(jsonBuilder().startObject()
                         .startObject("doc").field("message", "A new bonsai tree ").endObject()
-assertNoFailures(percolate);
+                        .endObject())
                 .execute().actionGet();
-        assertThat(percolate.getFailedShards(), equalTo(0));
+assertNoFailures(percolate);
         assertMatchCount(percolate, 0l);
     }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -481,9 +480,9 @@ void createWidget (int index) {
 	* front of all siblings.  This is not incorrect but is
 	* unexpected.  The fix is to force all widgets to always
 	* be created behind their siblings.
-if (OS.XtIsRealized (topHandle) && !OS.XtIsSubclass (topHandle, OS.shellWidgetClass ())) {
+	*/
 	int topHandle = topHandle ();
-	if (OS.XtIsRealized (topHandle)) {
+if (OS.XtIsRealized (topHandle) && !OS.XtIsSubclass (topHandle, OS.shellWidgetClass ())) {
 		int window = OS.XtWindow (topHandle);
 		if (window != 0) {
 			int display = OS.XtDisplay (topHandle);

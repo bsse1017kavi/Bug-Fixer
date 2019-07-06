@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1242,9 +1241,9 @@ public class DiskPageStore extends AbstractPageStore implements ISerializationAw
 				serialized.versionNumber, serialized.ajaxVersionNumber);
 		}
 		else
-throw new IllegalArgumentException("Unknown object type: " + type);
+		{
 			String type = page != null ? page.getClass().getName() : null;
-			throw new IllegalArgumentException("Unknown object type" + type);
+throw new IllegalArgumentException("Unknown object type: " + type);
 		}
 	}
 

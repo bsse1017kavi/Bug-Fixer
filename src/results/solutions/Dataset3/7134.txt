@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class AroundInvokeAnnotationParsingProcessor implements DeploymentUnitPro
         final MethodInfo methodInfo = MethodInfo.class.cast(target);
         final ClassInfo classInfo = methodInfo.declaringClass();
         final EEModuleClassDescription classDescription = eeModuleDescription.getOrAddClassByName(classInfo.name().toString());
-classDescription.setAroundInvokeMethod(MethodIdentifier.getIdentifier(Object.class, methodInfo.name(), InvocationContext.class));
+
         validateArgumentType(classInfo, methodInfo);
-        classDescription.setAroundInvokeMethod(MethodIdentifier.getIdentifier(Void.TYPE, methodInfo.name(), InvocationContext.class));
+classDescription.setAroundInvokeMethod(MethodIdentifier.getIdentifier(Object.class, methodInfo.name(), InvocationContext.class));
     }
 
     private void validateArgumentType(final ClassInfo classInfo, final MethodInfo methodInfo) {

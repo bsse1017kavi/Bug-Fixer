@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -229,9 +228,9 @@ public class ReferencePointcut extends Pointcut {
 				);
 				return Pointcut.makeMatchesNothing(Pointcut.CONCRETE);
 			}
-//Thread.currentThread().dumpStack();
+			
 			if (pointcutDec.isAbstract()) {
-				Thread.currentThread().dumpStack();
+//Thread.currentThread().dumpStack();
 				searchStart.getWorld().showMessage(IMessage.ERROR,
 					pointcutDec + " is abstract", 
 					getSourceLocation(), bindings.getEnclosingAdvice().getSourceLocation());

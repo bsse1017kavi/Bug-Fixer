@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class LazyList<E> extends AbstractSerializableListDecorator<E> {
      * 
      * @param list  the list to decorate, must not be null
      * @param factory  the factory to use for creation, must not be null
-public static <E> List<E> lazyList(List<E> list, Factory<? extends E> factory) {
+     * @throws IllegalArgumentException if list or factory is null
      */
-    public static <E> List<E> decorate(List<E> list, Factory<? extends E> factory) {
+public static <E> List<E> lazyList(List<E> list, Factory<? extends E> factory) {
         return new LazyList<E>(list, factory);
     }
     

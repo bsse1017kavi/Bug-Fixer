@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util.automaton.fst;
 
 /**
@@ -39,9 +38,9 @@ final class NodeHash<T> {
     fst.readFirstRealArc(address, scratchArc);
     if (scratchArc.bytesPerArc != 0 && node.numArcs != scratchArc.numArcs) {
       return false;
-final Builder.Arc<T> arc = node.arcs[arcUpto];
+    }
     for(int arcUpto=0;arcUpto<node.numArcs;arcUpto++) {
-      final Builder.Arc arc = node.arcs[arcUpto];
+final Builder.Arc<T> arc = node.arcs[arcUpto];
       if (arc.label != scratchArc.label ||
           !arc.output.equals(scratchArc.output) ||
           ((Builder.CompiledNode) arc.target).address != scratchArc.target ||

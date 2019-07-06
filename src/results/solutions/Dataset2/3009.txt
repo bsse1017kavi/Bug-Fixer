@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -117,9 +116,9 @@ throws TextParseException
 	KEYRecord rec = new KEYRecord(name, dclass, ttl);
 	rec.flags = (short) Integer.decode(st.nextToken()).intValue();
 	rec.proto = (byte) Integer.parseInt(st.nextToken());
-if (!((rec.flags & (FLAG_NOKEY)) == (FLAG_NOKEY)))
+	rec.alg = (byte) Integer.parseInt(st.nextToken());
 	/* If this is a null key, there's no key data */
-	if (!((flags & (FLAG_NOKEY)) == (FLAG_NOKEY)))
+if (!((rec.flags & (FLAG_NOKEY)) == (FLAG_NOKEY)))
 		rec.key = base64.fromString(st.remainingTokens());
 	else
 		rec.key = null;

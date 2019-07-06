@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,8 +42,8 @@ public class HeaderTest extends WicketTestCase
 	public void test_1() throws Exception
 	{
 		executeTest(TestPage.class, "TestPage_ExpectedResult-1.html");
-executeListener(page.get("link"), "TestPage_ExpectedResult-2.html");
+		TestPage page = (TestPage)tester.getLastRenderedPage();
 
-		executedListener(TestPage.class, page.get("link"), "TestPage_ExpectedResult-2.html");
+executeListener(page.get("link"), "TestPage_ExpectedResult-2.html");
 	}
 }

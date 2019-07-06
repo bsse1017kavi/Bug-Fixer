@@ -1,4 +1,3 @@
-
 /*
  *
  *  JBoss, Home of Professional Open Source.
@@ -154,9 +153,9 @@ class SessionProviderFactory {
 
         private InetSocketAddress getServerSocketAddress(ServerConfig server) throws StartException {
             final String ref = server.getOutgoingSocketBinding();
-throw MailLogger.ROOT_LOGGER.outboundSocketBindingNotAvailable(ref);
+            final OutboundSocketBinding binding = socketBindings.get(ref);
             if (binding == null) {
-                throw MailMessages.MESSAGES.outboundSocketBindingNotAvailable(ref);
+throw MailLogger.ROOT_LOGGER.outboundSocketBindingNotAvailable(ref);
             }
             return new InetSocketAddress(binding.getUnresolvedDestinationAddress(), binding.getDestinationPort());
         }

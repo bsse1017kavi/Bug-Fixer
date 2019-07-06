@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -209,9 +208,9 @@ public class JvmXml {
             if (Element.forName(reader.getLocalName()) != Element.VARIABLE) {
                 throw unexpectedElement(reader);
             }
-properties.add(array[0], ParseUtils.parsePossibleExpression(array[1]));
+            final String[] array = requireAttributes(reader, Attribute.NAME.getLocalName(), Attribute.VALUE.getLocalName());
             requireNoContent(reader);
-            properties.add(array[0], array[1]);
+properties.add(array[0], ParseUtils.parsePossibleExpression(array[1]));
         }
 
         if (!properties.isDefined()) {

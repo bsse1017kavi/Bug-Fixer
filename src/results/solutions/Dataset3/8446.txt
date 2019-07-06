@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -93,9 +92,9 @@ public class JPAExtension implements Extension {
     }
 
 
-SubsystemRegistration registration = context.registerSubsystem(SUBSYSTEM_NAME, 1, 1);
+    @Override
     public void initialize(ExtensionContext context) {
-        SubsystemRegistration registration = context.registerSubsystem(SUBSYSTEM_NAME, 1, 0);
+SubsystemRegistration registration = context.registerSubsystem(SUBSYSTEM_NAME, 1, 1);
         final ManagementResourceRegistration nodeRegistration = registration.registerSubsystemModel(DESCRIPTION);
         PersistenceUnitRegistryImpl persistenceUnitRegistry = new PersistenceUnitRegistryImpl();
         JPASubSystemAdd subsystemAdd = new JPASubSystemAdd(persistenceUnitRegistry);

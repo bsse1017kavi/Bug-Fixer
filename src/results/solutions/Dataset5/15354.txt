@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -145,8 +144,8 @@ public class RenderPageRequestHandler implements IPageRequestHandler, IPageClass
 	/**
 	 * @see org.apache.wicket.ng.request.IRequestHandler#respond(org.apache.wicket.ng.request.cycle.RequestCycle)
 	 */
-Application.get().getPageRendererProvider().get(this).respond(requestCycle);
+	public void respond(RequestCycle requestCycle)
 	{
-		Application.get().getRenderPageRequestHandlerDelegate(this).respond(requestCycle);
+Application.get().getPageRendererProvider().get(this).respond(requestCycle);
 	}
 }

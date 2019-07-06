@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -127,9 +126,9 @@ public class MultiDocValues extends DocValues {
     if (reader instanceof AtomicReader) {
       // already an atomic reader
       return puller.pull((AtomicReader) reader, field);
-final List<AtomicReaderContext> leaves = reader.leaves();
+    }
     assert reader instanceof CompositeReader;
-    final List<AtomicReaderContext> leaves = reader.getTopReaderContext().leaves();
+final List<AtomicReaderContext> leaves = reader.leaves();
     switch (leaves.size()) {
       case 0:
         // no fields

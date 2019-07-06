@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -38,8 +37,8 @@ import java.util.Hashtable;
  */
 public class javaURLContextFactory implements ObjectFactory {
 
-return new NamingContext(name != null ? name : new CompositeName(""), environment);
+    /** {@inheritDoc} */
     public Object getObjectInstance(Object obj, Name name, Context nameCtx, Hashtable<?, ?> environment) throws Exception {
-        return new NamingContext(name != null ? name : new CompositeName(""), (Hashtable<String, Object>) environment);
+return new NamingContext(name != null ? name : new CompositeName(""), environment);
     }
 }

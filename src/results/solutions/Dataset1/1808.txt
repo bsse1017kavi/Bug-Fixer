@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public final class AriesFrameworkUtil
    * @param bundleClassName the class name of the bundle implementation.
    * @return true if we are in equinox, false otherwise.
    */
-if (bundleClassName.startsWith("org.eclipse.osgi")) {
+  private static boolean isEquinox(String bundleClassName) 
   {
-    if (bundleClassName.startsWith("org.eclipse.equinox")) {
+if (bundleClassName.startsWith("org.eclipse.osgi")) {
       try {
         Class.forName("org.eclipse.osgi.framework.internal.core.BundleHost");
         return true;

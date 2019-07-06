@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -107,9 +106,9 @@ public class HostEnvironmentResourceDescription extends SimpleResourceDefinition
      * Creates a new description provider to describe the server environment.
      *
      * @param environment the environment the resource is based on.
-super(RESOURCE_PATH, HostResolver.getResolver("host.env"));
+     */
     private HostEnvironmentResourceDescription(final HostControllerEnvironment environment) {
-        super(RESOURCE_PATH, HostRootDescription.getResourceDescriptionResolver("host.env"));
+super(RESOURCE_PATH, HostResolver.getResolver("host.env"));
         osh = new HostEnvironmentReadHandler(environment);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$ $Date:
  * 2006-03-16 11:34:01 -0800 (Thu, 16 Mar 2006) $
@@ -461,9 +460,9 @@ public abstract class Page extends MarkupContainer implements IRedirectListener,
 	 */
 	public final FeedbackMessages getFeedbackMessages()
 	{
-feedbackMessages = new FeedbackMessages(false);
+		if (feedbackMessages == null)
 		{
-			feedbackMessages = new FeedbackMessages();
+feedbackMessages = new FeedbackMessages(false);
 		}
 		return feedbackMessages;
 	}

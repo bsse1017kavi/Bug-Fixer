@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public class SizeFileComparatorTest extends ComparatorAbstractTestCase {
 
     /** @see junit.framework.TestCase#setUp() */
     @Override
-comparator = (AbstractFileComparator) SizeFileComparator.SIZE_COMPARATOR;
+    protected void setUp() throws Exception {
         super.setUp();
-        comparator = SizeFileComparator.SIZE_COMPARATOR;
+comparator = (AbstractFileComparator) SizeFileComparator.SIZE_COMPARATOR;
         reverse = SizeFileComparator.SIZE_REVERSE;
         final File dir = getTestDirectory();
         smallerDir = new File(dir, "smallerdir");

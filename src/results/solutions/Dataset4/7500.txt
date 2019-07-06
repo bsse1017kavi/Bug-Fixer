@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -178,9 +177,9 @@ public class TransportSearchDfsQueryAndFetchAction extends TransportSearchTypeAc
                 //
             }
         }
-sortedShardList = searchPhaseController.sortDocs(request, useSlowScroll, queryFetchResults);
+
         void innerFinishHim() throws Exception {
-            sortedShardList = searchPhaseController.sortDocs(queryFetchResults);
+sortedShardList = searchPhaseController.sortDocs(request, useSlowScroll, queryFetchResults);
             final InternalSearchResponse internalResponse = searchPhaseController.merge(sortedShardList, queryFetchResults, queryFetchResults);
             String scrollId = null;
             if (request.scroll() != null) {

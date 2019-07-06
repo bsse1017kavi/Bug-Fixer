@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class BaseLayerTestCase extends AbstractTaskTestCase {
         assertEquals(1, layers.size());
         Layer layer = layers.get(0);
         assertEquals(BASE, layer.getName());
-assertEquals(BASE, targetInfo.getReleasePatchID());
+
         PatchableTarget.TargetInfo targetInfo = layer.loadTargetInfo();
-        assertEquals(BASE, targetInfo.getCumulativeID());
+assertEquals(BASE, targetInfo.getReleasePatchID());
         assertTrue(targetInfo.getPatchIDs().isEmpty());
         DirectoryStructure directoryStructure = targetInfo.getDirectoryStructure();
         assertEquals(newFile(env.getBundleRepositoryRoot(), "system", LAYERS, BASE), directoryStructure.getBundleRepositoryRoot());

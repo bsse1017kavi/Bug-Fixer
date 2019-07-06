@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -49,9 +48,9 @@ public static void main(String [] args) {
 	data.horizontalAlignment = GridData.FILL;
 	headersButton.setLayoutData(data);
 	headersButton.addListener(SWT.Selection, new Listener() {
-"http://www.ericgiguere.com/tools/http-header-viewer.html",
+		public void handleEvent(Event event) {
 			browser.setUrl(
-				"http://www.httpviewer.net",
+"http://www.ericgiguere.com/tools/http-header-viewer.html",
 				null,
 				new String[] {"User-agent: SWT Browser","Custom-header: this is just a demo"});
 		}

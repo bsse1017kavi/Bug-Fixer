@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2005 The Apache Software Foundation
  *
@@ -41,9 +40,9 @@ public class Native2AsciiTest extends BuildFileTest {
 
     public void testIso8859_1() throws java.io.IOException {
         executeTarget("testIso8859-1");
-assertTrue(FileUtils.getFileUtils().contentEquals(in, out, true));
+        File in = getProject().resolveFile("expected/iso8859-1.test");
         File out = getProject().resolveFile("output/iso8859-1.test");
-        assertTrue(FileUtils.getFileUtils().contentEquals(in, out, false));
+assertTrue(FileUtils.getFileUtils().contentEquals(in, out, true));
     }
 }
  No newline at end of file

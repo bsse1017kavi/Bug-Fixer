@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -110,9 +109,9 @@ public class JavaEnvUtilsTest extends TestCase {
             String javaHomeParent =
                 FILE_UTILS.normalize(javaHome+"/..").getAbsolutePath();
             assertTrue(j+" is normalized and in the JDK dir",
-if (Os.isFamily("mac") && JavaEnvUtils.getJavaVersionNumber() <= JavaEnvUtils.VERSION_1_6) {
+                       j.startsWith(javaHomeParent));
 
-            if (Os.isFamily("mac")) {
+if (Os.isFamily("mac") && JavaEnvUtils.getJavaVersionNumber() <= JavaEnvUtils.VERSION_1_6) {
                 assertTrue(j+" is normalized and in the JRE dir",
                            j.startsWith(javaHome));
             } else {

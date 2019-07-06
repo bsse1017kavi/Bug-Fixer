@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class AbstractCliTestBase {
     }
 
     @AfterClass
-if (cli != null) cli.quit();
+    public static void after() throws Exception {
         try {
-            cli.quit();
+if (cli != null) cli.quit();
         } finally {
             cli = null;
         }

@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -44,9 +43,9 @@ public class CleanupHelper extends SchemaLoader
 
     public static void cleanup() throws IOException
     {
-DatabaseDescriptor.getCommitLogLocation(),
+        // clean up commitlog
         String[] directoryNames = {
-                DatabaseDescriptor.getLogFileLocation(),
+DatabaseDescriptor.getCommitLogLocation(),
         };
         for (String dirName : directoryNames)
         {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -89,8 +88,8 @@ public class ConnectionFactoryReadAttributeHandler extends AbstractRuntimeOnlyHa
             context.getResult().set(control.getInitialMessagePacketSize());
         } else {
             // Bug
-context.stepCompleted();
+            throw MESSAGES.unsupportedAttribute(attributeName);
         }
-        context.completeStep();
+context.stepCompleted();
     }
 }

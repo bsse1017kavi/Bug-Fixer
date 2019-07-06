@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -1229,9 +1228,9 @@ public class LoggingSubsystemParser implements XMLStreamConstants, XMLElementRea
             writeAttribute(writer, Attribute.VALUE, node.get(QUEUE_LENGTH.getName()));
             writer.writeEndElement();
         }
-writer.writeAttribute(Attribute.VALUE.getLocalName(), node.get(OVERFLOW_ACTION.getName()).asString().toLowerCase(Locale.ENGLISH));
+        if (OVERFLOW_ACTION.isMarshallable(node)) {
             writer.writeStartElement(Element.OVERFLOW_ACTION.getLocalName());
-            writer.writeAttribute(Attribute.VALUE.getLocalName(), node.get(OVERFLOW_ACTION.getName()).asString().toLowerCase());
+writer.writeAttribute(Attribute.VALUE.getLocalName(), node.get(OVERFLOW_ACTION.getName()).asString().toLowerCase(Locale.ENGLISH));
             writer.writeEndElement();
         }
         if (SUBHANDLERS.isMarshallable(node)) {

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -305,9 +304,9 @@ protected boolean findSourceFiles(IResourceDelta delta) throws CoreException {
 		if (md.sourceFolder.equals(javaBuilder.currentProject)) {
 			// skip nested source & output folders when the project is a source folder
 			int segmentCount = delta.getFullPath().segmentCount();
-if (!isExcludedFromProject(children[j].getFullPath()))
+			IResourceDelta[] children = delta.getAffectedChildren();
 			for (int j = 0, m = children.length; j < m; j++)
-				if (!isExcludedFromProject(children[i].getFullPath()))
+if (!isExcludedFromProject(children[j].getFullPath()))
 					findSourceFiles(children[j], md, segmentCount);
 		} else {
 			IResourceDelta sourceDelta = delta.findMember(md.sourceFolder.getProjectRelativePath());

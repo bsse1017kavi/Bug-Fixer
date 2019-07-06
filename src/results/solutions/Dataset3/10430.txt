@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -234,9 +233,9 @@ public class BigFractionTest extends TestCase {
             } catch (IllegalArgumentException iae) {
                 // expected
             }
-assertEquals(1l, new BigFraction(Double.longBitsToDouble(0x0010000000000000L)).getNumeratorAsLong());
+        }
         assertEquals(1l, new BigFraction(Double.MAX_VALUE).getDenominatorAsLong());
-        assertEquals(1l, new BigFraction(Double.MIN_NORMAL).getNumeratorAsLong());
+assertEquals(1l, new BigFraction(Double.longBitsToDouble(0x0010000000000000L)).getNumeratorAsLong());
         assertEquals(1l, new BigFraction(Double.MIN_VALUE).getNumeratorAsLong());
     }
 

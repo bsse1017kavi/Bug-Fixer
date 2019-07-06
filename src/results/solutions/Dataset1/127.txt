@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -163,9 +162,9 @@ public class SSTableExport
     {
         IPartitioner partitioner = StorageService.getPartitioner();
         BufferedRandomAccessFile input = new BufferedRandomAccessFile(SSTable.indexFilename(ssTableFile), "r");
-DecoratedKey decoratedKey = partitioner.convertFromDiskFormat(FBUtilities.readShortByteArray(input));
+        while (!input.isEOF())
         {
-            DecoratedKey decoratedKey = partitioner.convertFromDiskFormat(input.readUTF());
+DecoratedKey decoratedKey = partitioner.convertFromDiskFormat(FBUtilities.readShortByteArray(input));
             long dataPosition = input.readLong();
             outs.println(asStr(decoratedKey.key));
         }

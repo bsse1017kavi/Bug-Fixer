@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -213,9 +212,9 @@ public class RedirectView extends AbstractUrlBasedView {
 		// Prepare target URL.
 		StringBuilder targetUrl = new StringBuilder();
 		if (this.contextRelative && getUrl().startsWith("/")) {
-targetUrl.append(UriUtils.encodeUri(getUrl(), encoding));
+			// Do not apply context path to relative URLs.
 			targetUrl.append(UriUtils.encodePath(request.getContextPath(), encoding));
-			targetUrl.append(UriUtils.encodePath(getUrl(), encoding));
+targetUrl.append(UriUtils.encodeUri(getUrl(), encoding));
 		}
 		else {
 			targetUrl.append(UriUtils.encodeUri(getUrl(), encoding));

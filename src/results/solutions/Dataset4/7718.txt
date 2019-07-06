@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.tests;
 
 import com.badlogic.gdx.Gdx;
@@ -29,9 +28,9 @@ public class FreeTypeTest extends GdxTest {
 			batch.setProjectionMatrix(cam.combined);
 		}
 		font = new BitmapFont(Gdx.files.internal("data/arial-15.fnt"), flip);
-FreeTypeBitmapFontData fontData = generator.generateData(15, FreeTypeFontGenerator.DEFAULT_CHARS, flip);
+		FileHandle fontFile = Gdx.files.internal("data/arial.ttf");
 		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(fontFile);
-		FreeTypeBitmapFontData fontData = generator.generateData(22, FreeTypeFontGenerator.DEFAULT_CHARS, flip);
+FreeTypeBitmapFontData fontData = generator.generateData(15, FreeTypeFontGenerator.DEFAULT_CHARS, flip);
 		generator.dispose();
 		ftFont = new BitmapFont(fontData, fontData.getTextureRegion(), false);
 	}

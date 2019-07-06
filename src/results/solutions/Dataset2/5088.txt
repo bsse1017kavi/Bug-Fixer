@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -78,9 +77,9 @@ public class AsyncAppender extends AppenderSkeleton
     // Set the NDC and thread name for the calling thread as these
     // LoggingEvent fields were not set at event creation time.
     event.getNDC();
-event.getLocationInformation();
+    event.getThreadName();
     if(locationInfo) {
-      event.setLocationInformation();	
+event.getLocationInformation();
     }
     synchronized(bf) {
       if(bf.isFull()) {

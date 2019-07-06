@@ -1,4 +1,3 @@
-
 package com.github.mobile.android;
 
 import android.content.Context;
@@ -108,9 +107,9 @@ public class AccountDataManager {
         V data = new RequestReader(file, FORMAT_VERSION).read();
         if (data != null)
             Log.d(TAG,
-return new RequestReader(file, FORMAT_VERSION).read();
+                    MessageFormat.format("Cache hit to {0}, {1} ms to load {2} bytes", file.getName(),
                             (System.currentTimeMillis() - start), length));
-        return data;
+return new RequestReader(file, FORMAT_VERSION).read();
     }
 
     /**

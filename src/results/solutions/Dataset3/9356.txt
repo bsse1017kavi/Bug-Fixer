@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -174,9 +173,9 @@ public class SockJsClient implements WebSocketClient, Lifecycle {
 		}
 	}
 
-if (isRunning()) {
+	@Override
 	public void stop() {
-		if (!isRunning()) {
+if (isRunning()) {
 			this.running = false;
 			for (Transport transport : this.transports) {
 				if (transport instanceof Lifecycle) {

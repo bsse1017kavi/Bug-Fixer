@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -174,9 +173,9 @@ public class EJBRemoteConnectorService implements Service<EJBRemoteConnectorServ
                 final String clientMarshallingStrategy = dataInputStream.readUTF();
                 log.debug("Client with protocol version " + version + " and marshalling strategy " + clientMarshallingStrategy +
                         " will communicate on " + channel);
-case 0x01:
+                switch (version) {
                     // TODO: Change this to 0x01
-                    case 0x00:
+case 0x01:
                         // enroll VersionOneProtocolChannelReceiver for handling subsequent messages on this channel
                         final VersionOneProtocolChannelReceiver receiver = new VersionOneProtocolChannelReceiver(channel, this.serviceContainer, clientMarshallingStrategy);
                         receiver.startReceiving();

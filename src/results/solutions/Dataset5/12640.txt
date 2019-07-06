@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -275,9 +274,9 @@ public static boolean launch (String fileName) {
  */
 /*public*/ static boolean launch (String fileName, String workingDir) {
 	if (fileName == null) SWT.error (SWT.ERROR_NULL_ARGUMENT);
-if (isExecutable(fileName)) {
+	NSAutoreleasePool pool = (NSAutoreleasePool) new NSAutoreleasePool().alloc().init();
 	try {
-		if (workingDir != null && isExecutable(fileName)) {
+if (isExecutable(fileName)) {
 			try {
 				Compatibility.exec(new String[] {fileName}, null, workingDir);
 				return true;

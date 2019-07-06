@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -59,9 +58,9 @@ public abstract class Pack
             output = getPackingStream( fileOutput );
             copy( getSrc(), output );
         }
-final String message = "Problem creating " + getContext().getName() +
+        catch( final IOException ioe )
         {
-            final String message = "Problem creating " + getName() +
+final String message = "Problem creating " + getContext().getName() +
                 ":" + ioe.getMessage();
             throw new TaskException( message, ioe );
         }

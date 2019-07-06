@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -198,9 +197,9 @@ public class VersionsTests extends ElasticsearchLuceneTestCase {
             super(UidFieldMapper.NAME, uid, FIELD_TYPE);
             this.uid = uid;
             this.version = version;
-public TokenStream tokenStream(Analyzer analyzer, TokenStream reuse) throws IOException {
+        }
         @Override
-        public TokenStream tokenStream(Analyzer analyzer) throws IOException {
+public TokenStream tokenStream(Analyzer analyzer, TokenStream reuse) throws IOException {
             return new TokenStream() {
                 boolean finished = true;
                 final CharTermAttribute term = addAttribute(CharTermAttribute.class);

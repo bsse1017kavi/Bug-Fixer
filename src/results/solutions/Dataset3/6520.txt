@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -115,9 +114,9 @@ public abstract class AbstractDataSourceAdd implements ModelAddOperationHandler 
                     startConfigAndAddDependency(dataSourceServiceBuilder, dataSourceService, jndiName, serviceTarget, operation);
 
                      ModelNode node = operation.require(DATASOURCE_DRIVER);
-driverName.replaceAll("\\.", "_"));
+                    final String driverName = node.asString();
                     final ServiceName driverServiceName = ServiceName.JBOSS.append("jdbc-driver",
-                            driverName.replaceAll(".", "_"));
+driverName.replaceAll("\\.", "_"));
                     if (driverServiceName != null) {
                         dataSourceServiceBuilder.addDependency(driverServiceName, Driver.class,
                                 dataSourceService.getDriverInjector());

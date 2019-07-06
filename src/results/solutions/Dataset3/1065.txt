@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -49,9 +48,9 @@ public class StandaloneServer extends AbstractServer {
         super(environment);
         extensionRegistrar = StandardElementReaderRegistrar.Factory.getRegistrar();
     }
-final File standalone = new File(getEnvironment().getServerConfigurationDir(), STANDALONE_XML);
+
     public void start() throws ServerStartException {
-        final File standalone = new File(getEnvironment().getDomainConfigurationDir(), STANDALONE_XML);
+final File standalone = new File(getEnvironment().getServerConfigurationDir(), STANDALONE_XML);
         if(! standalone.isFile()) {
             throw new ServerStartException("File " + standalone.getAbsolutePath()  + " does not exist.");
         }

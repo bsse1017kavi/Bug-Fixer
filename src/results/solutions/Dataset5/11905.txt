@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999-2004 The Apache Software Foundation.
  * 
@@ -503,9 +502,9 @@ public class Writer
         Method getXMLVersion = null;
         try {
             getXMLVersion = fLocator.getClass().getMethod("getXMLVersion", new Class[]{});
-version = (String) getXMLVersion.invoke(fLocator, (Object[]) null);
+            // If Locator implements Locator2, this method will exist.
             if (getXMLVersion != null) {
-                version = (String) getXMLVersion.invoke(fLocator, null);
+version = (String) getXMLVersion.invoke(fLocator, (Object[]) null);
             }
         } 
         catch (Exception e) { 

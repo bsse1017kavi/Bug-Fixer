@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ import org.jboss.dmr.ModelType;
 public class ObjectTypeValidator extends ModelTypeValidator implements AllowedValuesValidator {
     private final Map<String, AttributeDefinition> allowedValues;
     private final List<ModelNode> nodeValues;
-super(nullable, true, false, ModelType.OBJECT, findModelTypes(attributes));
+
     public ObjectTypeValidator(final boolean nullable, final AttributeDefinition... attributes) {
-        super(nullable, false, false, ModelType.OBJECT, findModelTypes(attributes));
+super(nullable, true, false, ModelType.OBJECT, findModelTypes(attributes));
         allowedValues = new HashMap<String, AttributeDefinition>(attributes.length);
         nodeValues = new ArrayList<ModelNode>(attributes.length);
         for (AttributeDefinition attribute : attributes) {

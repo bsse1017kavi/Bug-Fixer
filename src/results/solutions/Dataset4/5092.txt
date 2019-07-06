@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.ui.fragments;
 
 
@@ -44,9 +43,9 @@ public class IssuesFragment extends ListLoadingFragment<Issue> {
 		return new AsyncLoader<List<Issue>>(getActivity()) {
 			@Override
 			public List<Issue> loadInBackground() {
-return issueService.getIssues();
+				Log.i(TAG, "started loadInBackground");
 				try {
-					return issueService.getIssues("rtyley","agit", Collections.<String, String>emptyMap());
+return issueService.getIssues();
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 				}

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -114,9 +113,9 @@ public class TestFieldsReader extends LuceneTestCase {
 
   public static class FaultyFSDirectory extends Directory {
 
-public FaultyFSDirectory(File dir) {
+    Directory fsDir;
     
-    public FaultyFSDirectory(File dir) throws IOException {
+public FaultyFSDirectory(File dir) {
       fsDir = newFSDirectory(dir);
       lockFactory = fsDir.getLockFactory();
     }

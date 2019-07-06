@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -93,9 +92,9 @@ public class SyncCampaign implements Runnable {
         Log.d(TAG, "Syncing " + orgs.size() + " users and orgs");
         for (User org : orgs) {
             if (cancelled)
-Log.d(TAG, "Syncing repos for " + org.getLogin());
+                return;
 
-            Log.d(TAG, "Syncing repos for " + org.getLogin() + "...");
+Log.d(TAG, "Syncing repos for " + org.getLogin());
             try {
                 cache.requestAndStore(repos.under(org));
                 syncResult.stats.numUpdates++;

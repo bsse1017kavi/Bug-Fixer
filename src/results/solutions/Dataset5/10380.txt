@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -356,9 +355,9 @@ public final class XmlPullParser implements IXmlPullParser
 		// The closing tag of a conditional comment, e.g.
 		// "<!--[if IE]><a href='test.html'>my link</a><![endif]-->
 		// and also <!--<![endif]-->"
-lastType = HttpTagType.CONDITIONAL_COMMENT_ENDIF;
+		if (tagText.equals("![endif]--"))
 		{
-			lastType = HttpTagType.CONDITIONAL_COMMENT;
+lastType = HttpTagType.CONDITIONAL_COMMENT_ENDIF;
 			input.setPosition(closeBracketIndex + 1);
 			return;
 		}

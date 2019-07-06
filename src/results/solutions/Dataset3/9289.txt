@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -62,9 +61,9 @@ public class CommonsDbcpNativeJdbcExtractor extends NativeJdbcExtractorAdapter {
 	private static Object getInnermostDelegate(Object obj) throws SQLException {
 		if (obj == null) {
 			return null;
-Class<?> classToAnalyze = obj.getClass();
+		}
 		try {
-			Class classToAnalyze = obj.getClass();
+Class<?> classToAnalyze = obj.getClass();
 			while (!Modifier.isPublic(classToAnalyze.getModifiers())) {
 				classToAnalyze = classToAnalyze.getSuperclass();
 				if (classToAnalyze == null) {

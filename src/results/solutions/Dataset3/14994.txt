@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class SecurityDependencyProcessor implements DeploymentUnitProcessor {
             ModuleName.PICKETBOX.getSlot());
 
     /** {@inheritDoc} */
-final ModuleLoader moduleLoader = Module.getBootModuleLoader();
+    public void deploy(DeploymentPhaseContext phaseContext) throws DeploymentUnitProcessingException {
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
-        final ModuleLoader moduleLoader = Module.getSystemModuleLoader();
+final ModuleLoader moduleLoader = Module.getBootModuleLoader();
         final ModuleSpecification moduleSpecification = deploymentUnit.getAttachment(Attachments.MODULE_SPECIFICATION);
         moduleSpecification.addDependency(new ModuleDependency(moduleLoader, PICKETBOX_ID, false, true, false));
     }

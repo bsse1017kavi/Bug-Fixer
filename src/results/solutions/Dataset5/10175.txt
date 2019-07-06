@@ -1,4 +1,3 @@
-
 /*******************************************************************************
 * Copyright (c) 2009 EclipseSource and others. All rights reserved. This
 * program and the accompanying materials are made available under the terms of
@@ -71,9 +70,9 @@ public class EventHookImpl implements EventHook {
 
 	private void handleRegisteredServiceEvent(
 			ServiceReference serviceReference, Collection contexts) {
-Object remoteInterfaces = serviceReference.getProperty(ServiceConstants.OSGI_REMOTE_INTERFACES);
+		// This checkes to see if the serviceReference has any remote interfaces declared via
 		// osgi.remote.interfaces
-		Object remoteInterfaces = serviceReference.getProperty(ServiceConstants.OSGI_REMOTE_INTERFACES_KEY);
+Object remoteInterfaces = serviceReference.getProperty(ServiceConstants.OSGI_REMOTE_INTERFACES);
 		// If so then we handle further, if not then ignore
 		if (remoteInterfaces != null) {
 			// get configuration determines whether we are the correct distribution provider,

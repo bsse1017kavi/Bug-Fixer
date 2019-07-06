@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -184,9 +183,9 @@ public class EntityManagerFactoryImpl
         Object val;
         for (Map.Entry entry : (Set<Map.Entry>) props.entrySet()) {
             prop = (String) entry.getKey();
-prop = prop.substring("openjpa.".length());
+            if (!prop.startsWith("openjpa."))
                 continue;
-            prop = prop.substring(5);
+prop = prop.substring("openjpa.".length());
             try {
                 setter = ImplHelper.getSetter(em.getClass(), prop);
             } catch (OpenJPAException ke) {

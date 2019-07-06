@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -97,9 +96,9 @@ public class ValidateAddressOperationHandler implements OperationStepHandler {
 
                     // On the DC the host=master is not a proxy but the validate-address is registered at the root
                     // Otherwise delegate to the proxy handler
-context.addStep(newOperation, proxyHandler, OperationContext.Stage.MODEL, true);
+                    final OperationStepHandler proxyHandler = registration.getOperationHandler(PathAddress.EMPTY_ADDRESS, OPERATION_NAME);
                     if(proxyHandler != null) {
-                        context.addStep(newOperation, proxyHandler, OperationContext.Stage.IMMEDIATE);
+context.addStep(newOperation, proxyHandler, OperationContext.Stage.MODEL, true);
                         context.stepCompleted();
                         return;
                     }

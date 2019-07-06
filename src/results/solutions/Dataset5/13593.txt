@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -530,9 +529,9 @@ public class TestDependentFields2 extends BaseKernelTest {
         owner = (DependentFieldsPC) pm.find(DependentFieldsPC.class, oid);
         if (mapped)
             assertEquals(2, owner.getDependentMappedList().size());
-DependentFieldsPC detached = (DependentFieldsPC) pm.detachCopy(owner);
+        else
             assertEquals(2, owner.getDependentInverseKeyList().size());
-        DependentFieldsPC detached = (DependentFieldsPC) pm.detach(owner);
+DependentFieldsPC detached = (DependentFieldsPC) pm.detachCopy(owner);
         endEm(pm);
 
         if (mapped) {

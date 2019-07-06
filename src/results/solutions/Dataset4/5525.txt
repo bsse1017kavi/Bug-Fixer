@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -139,9 +138,9 @@ public class ParentFieldMapper extends AbstractFieldMapper<Uid> implements org.e
     @Override public Term term(String type, String id) {
         return term(Uid.createUid(type, id));
     }
-return termFactory.createTerm(uid);
+
     @Override public Term term(String uid) {
-        return new Term(names.indexName(), uid);
+return termFactory.createTerm(uid);
     }
 
     @Override protected String contentType() {

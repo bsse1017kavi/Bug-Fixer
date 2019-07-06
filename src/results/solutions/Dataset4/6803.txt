@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -363,9 +362,9 @@ public class ByteFieldMapper extends NumberFieldMapper<Byte> {
         private final byte number;
 
         private final NumberFieldMapper mapper;
-super(mapper, mapper.fieldType.stored() ? number : null, fieldType);
+
         public CustomByteNumericField(NumberFieldMapper mapper, byte number, FieldType fieldType) {
-            super(mapper, mapper.fieldType.stored() ? new byte[]{number} : null, fieldType);
+super(mapper, mapper.fieldType.stored() ? number : null, fieldType);
             this.mapper = mapper;
             this.number = number;
         }

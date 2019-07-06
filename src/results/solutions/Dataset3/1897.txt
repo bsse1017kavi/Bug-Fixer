@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -248,9 +247,9 @@ public class InfinispanSessionManager<V, L> implements SessionManager<L, Transac
         return new SchedulableSession(session);
     }
 
-Session<L> session = this.factory.createSession(id, this.factory.createValue(id));
+    @Override
     public Session<L> createSession(String id) {
-        Session<L> session = this.factory.createSession(id, this.factory.createValue(id, null));
+Session<L> session = this.factory.createSession(id, this.factory.createValue(id));
         final Time time = this.defaultMaxInactiveInterval;
         session.getMetaData().setMaxInactiveInterval(time.getValue(), time.getUnit());
         return new SchedulableSession(session);

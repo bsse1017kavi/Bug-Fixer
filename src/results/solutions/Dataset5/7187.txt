@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -190,9 +189,9 @@ public abstract class AbstractRequestCycleProcessor implements IRequestCycleProc
 	 *            the <code>Class</code> of the <code>Page</code> to be checked
 	 * @return true if the given <code>pageClass</code> is mounted, false otherwise
 	 */
-RequestCycle.get();
+	private boolean isPageMounted(Class<? extends Page> pageClass)
 	{
-		RequestCycle cycle = RequestCycle.get();
+RequestCycle.get();
 		CharSequence path = getRequestCodingStrategy().pathForTarget(
 			new BookmarkablePageRequestTarget(pageClass));
 		return path != null;

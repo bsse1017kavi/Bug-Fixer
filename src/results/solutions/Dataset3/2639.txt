@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -355,9 +354,9 @@ public class TarArchiveInputStream extends ArchiveInputStream {
             } else if ("uid".equals(key)){
                 currEntry.setUserId(Integer.parseInt(val));
             } else if ("uname".equals(key)){
-currEntry.setSize(Long.parseLong(val));
+                currEntry.setUserName(val);
             } else if ("size".equals(key)){
-                currEntry.adjustSize(Long.parseLong(val));
+currEntry.setSize(Long.parseLong(val));
             }
         }
     }

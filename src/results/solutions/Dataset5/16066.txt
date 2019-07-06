@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -105,9 +104,9 @@ public abstract class SimplePageAuthorizationStrategy extends AbstractPageAuthor
 
 	/**
 	 * @see org.apache.wicket.authorization.strategies.page.AbstractPageAuthorizationStrategy#isPageAuthorized(java.lang.Class)
-protected <T extends Page<?>> boolean isPageAuthorized(final Class<T> pageClass)
+	 */
 	@Override
-	protected <T extends Component<?>> boolean isPageAuthorized(final Class<T> pageClass)
+protected <T extends Page<?>> boolean isPageAuthorized(final Class<T> pageClass)
 	{
 		if (instanceOf(pageClass, securePageSuperTypeRef.get()))
 		{

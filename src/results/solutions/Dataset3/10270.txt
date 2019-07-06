@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -93,9 +92,9 @@ final class HandlerChainAdd extends AbstractAddStepHandler {
                     handlerChain = new UnifiedHandlerChainMetaData();
                     handlerChain.setId(handlerChainId);
                     handlerChain.setProtocolBindings(protocolBindings);
-context.reloadRequired();
+                    handlerChains.add(handlerChain);
                     if (!context.isBooting()) {
-                        context.restartRequired();
+context.reloadRequired();
                     }
                     return;
                 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public final class TermSuggester extends Suggester<TermSuggestionContext> {
         return new TermSuggestParser(this);
     }
 
-final List<Token> result = new ArrayList<>();
+
     private List<Token> queryTerms(SuggestionContext suggestion, CharsRef spare) throws IOException {
-        final List<Token> result = new ArrayList<TermSuggester.Token>();
+final List<Token> result = new ArrayList<>();
         final String field = suggestion.getField();
         SuggestUtils.analyze(suggestion.getAnalyzer(), suggestion.getText(), field, new SuggestUtils.TokenConsumer() {
             @Override

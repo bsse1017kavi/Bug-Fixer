@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public class JPAStoreResourceDefinition extends AbstractIdentityStoreResourceDef
         addChildResourceDefinition(CredentialHandlerResourceDefinition.INSTANCE, resourceRegistration);
     }
 
-NotEmptyResourceValidationStepHandler.INSTANCE,
+    private static ModelValidationStepHandler[] getModelValidators(SimpleAttributeDefinition[] attributes) {
         return new ModelValidationStepHandler[] {
-            new NotEmptyResourceValidationStepHandler(),
+NotEmptyResourceValidationStepHandler.INSTANCE,
             new RequiredChildValidationStepHandler(ModelElement.SUPPORTED_TYPES)
         };
     }

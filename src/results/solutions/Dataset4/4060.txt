@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -70,9 +69,9 @@ public class RepositoryViewActivity extends RoboSherlockFragmentActivity {
         actionBar.setSubtitle(repository.getOwner().getLogin());
         actionBar.setDisplayHomeAsUpEnabled(true);
         avatarHelper.bind(actionBar, repository.getOwner());
-pager.setAdapter(new RepositoryPagerAdapter(getSupportFragmentManager(), repository.isHasIssues()));
+
         ViewPager pager = (ViewPager) findViewById(id.vp_pages);
-        pager.setAdapter(new RepositoryPagerAdapter(getSupportFragmentManager()));
+pager.setAdapter(new RepositoryPagerAdapter(getSupportFragmentManager(), repository.isHasIssues()));
         ((TitlePageIndicator) findViewById(id.tpi_header)).setViewPager(pager);
     }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -78,9 +77,9 @@ public class ClientApplication {
 	}
 	
 	protected ISharedObjectContainer createClient() throws Exception {
-ISharedObjectContainer result =  SharedObjectContainerFactory.getDefault().createSharedObjectContainer(contd,new Object[] { newContainerID, new Integer(DEFAULT_TIMEOUT)});
+		// Make identity instance for the new container
 		ID newContainerID = IDFactory.getDefault().createGUID();
-		ISharedObjectContainer result =  SharedObjectContainerFactory.getDefault().createSharedObjectContainer(contd,null,new Object[] { newContainerID, new Integer(DEFAULT_TIMEOUT)});
+ISharedObjectContainer result =  SharedObjectContainerFactory.getDefault().createSharedObjectContainer(contd,new Object[] { newContainerID, new Integer(DEFAULT_TIMEOUT)});
 		return result;
 	}
 	

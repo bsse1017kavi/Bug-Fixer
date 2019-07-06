@@ -1,4 +1,3 @@
-
 package org.columba.mail.pop3;
 
 import java.net.URL;
@@ -43,9 +42,9 @@ public class CheckForNewMessagesCommand extends Command {
 
 		server = r[0].getServer();
 
-int totalMessageCount = server.getMessageCount(worker);
+		command.log("Authenticating...", worker);
 
-		int totalMessageCount = server.getMessageCount();
+int totalMessageCount = server.getMessageCount(worker);
 
 		try {
 			Vector newUIDList = command.fetchUIDList(totalMessageCount, worker);

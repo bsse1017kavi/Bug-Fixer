@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.filter;
 /*
  * 
@@ -85,9 +84,9 @@ public class NamesQueryFilter extends QueryFilter
     public void collectReducedColumns(IColumnContainer container, Iterator<IColumn> reducedColumns, int gcBefore)
     {
         while (reducedColumns.hasNext())
-if (QueryFilter.isRelevant(column, container, gcBefore))
+        {
             IColumn column = reducedColumns.next();
-            if (!column.isMarkedForDelete() || column.getLocalDeletionTime() > gcBefore)
+if (QueryFilter.isRelevant(column, container, gcBefore))
                 container.addColumn(column);
         }
     }

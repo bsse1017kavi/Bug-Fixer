@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -115,9 +114,9 @@ public final class BayesUtils {
     SequenceFile.Writer writer = new SequenceFile.Writer(fs, conf, indexPath, Text.class, IntWritable.class);
     Collection<String> seen = new HashSet<String>();
     int i = 0;
-String theLabel = ((Pair<?,?>) label).getFirst().toString().split("/")[1];
+    try {
       for (Object label : labels) {
-        String theLabel = ((Pair<?,?>) label).getFirst().toString();
+String theLabel = ((Pair<?,?>) label).getFirst().toString().split("/")[1];
         if (!seen.contains(theLabel)) {
           writer.append(new Text(theLabel), new IntWritable(i++));
           seen.add(theLabel);

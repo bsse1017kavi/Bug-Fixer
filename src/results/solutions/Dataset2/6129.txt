@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -657,9 +656,9 @@ public class IMAPServer implements IMAPListener {
 			} catch (ConnectionDroppedException e1) {
 				// Do nothing special here
 			}
-if( selectedFolder == null || protocol.getState() < IMAPProtocol.SELECTED) {
+		}
 		
-		if( selectedFolder == null ) {
+if( selectedFolder == null || protocol.getState() < IMAPProtocol.SELECTED) {
 			// if none selected select this folder instead of getting the status
 			ensureSelectedState(folder);
 			return selectedStatus;

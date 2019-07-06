@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -107,9 +106,9 @@ final class ManagedProcess {
 
     void send(final List<String> msg) throws IOException {
         final StringBuilder b = new StringBuilder();
-b.append('\0').append(s);
+        b.append("MSG");
         for (String s : msg) {
-            b.append('\0').append(msg);
+b.append('\0').append(s);
         }
         b.append('\n');
         StreamUtils.writeString(commandStream, b);

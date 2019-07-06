@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2002-2004 The Apache Software Foundation.
@@ -475,9 +474,9 @@ public class JMeterTest extends JMeterTestCase
 		}
 		log.debug("Saving element: " + el.getClass());
 		StringWriter writer = new StringWriter();
-(TestElement)SaveService.loadElement(new StringReader(writer.toString()));
+		SaveService.saveElement(el, writer);
 		el =
-			SaveService.loadElement(new StringReader(writer.toString()));
+(TestElement)SaveService.loadElement(new StringReader(writer.toString()));
 		log.debug("Successfully saved");
 		guiItem.configure(el);
 		assertEquals(

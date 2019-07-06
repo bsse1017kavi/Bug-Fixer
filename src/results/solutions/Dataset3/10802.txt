@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -256,9 +255,9 @@ class Constants {
 
     //Note: ENABLED default is false in AS7 (true in IJ) because of the enable/disable operation behaviour
     static SimpleAttributeDefinition ENABLED = new SimpleAttributeDefinitionBuilder(ENABLED_NAME, ModelType.BOOLEAN)
-.setDefaultValue(new ModelNode(false))
+            .setXmlName(DataSource.Attribute.ENABLED.getLocalName())
             .setAllowExpression(false)
-            .setDefaultValue(new ModelNode(true))
+.setDefaultValue(new ModelNode(false))
             .setAllowNull(true)
             .build();
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -867,9 +866,9 @@ public int nullStatus(FlowInfo flowInfo) {
 					constant = Constant.NotAConstant;
 					//deprecated test
 					TypeBinding type = (TypeBinding)binding;
-type = scope.environment().convertToRawType(type, false /*do not force conversion of enclosing types*/);
+					if (isTypeUseDeprecated(type, scope))
 						scope.problemReporter().deprecatedType(type, this);
-					type = scope.environment().convertToRawType(type);
+type = scope.environment().convertToRawType(type, false /*do not force conversion of enclosing types*/);
 					return this.resolvedType = type;
 			}
 		}

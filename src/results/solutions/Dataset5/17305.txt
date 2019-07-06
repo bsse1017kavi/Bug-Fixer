@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -92,9 +91,9 @@ public final class PatternValidator extends AbstractValidator
      * @return Error for component or NO_ERROR if none
      */
     public ValidationErrorMessage validate(final FormComponent component)
-final String value = component.getRequestString();
+    {
         // Get component value
-        final String value = component.getStringValue();
+final String value = component.getRequestString();
         
         // Check value against pattern
         if (!pattern.matcher(value).matches())

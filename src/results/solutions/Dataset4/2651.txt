@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.loaders.md5;
 
 import com.badlogic.gdx.math.Quaternion;
@@ -92,9 +91,9 @@ public class MD5Quaternion
 	private static final MD5Quaternion inv = new MD5Quaternion( );	
 	public void rotate( Vector3 vec )
 	{
-//		inv.normalize();
+		inv.x = -x; inv.y = -y; inv.z = -z; inv.w = w;
 		
-		inv.normalize();
+//		inv.normalize();
 		tmp.set( this );
 		tmp.multiply( vec );
 		tmp.multiply( inv );

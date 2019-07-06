@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -135,9 +134,9 @@ public class Http10Interceptor extends PoolTcpConnector
 	    reqA.setSocket( socket );
 	    resA.setSocket( socket );
 
-reqA.scheme().setString( "https" );
+	    reqA.readNextRequest(resA);
 	    if( secure ) {
-		reqA.setScheme( "https" );
+reqA.scheme().setString( "https" );
 	    }
 	    
 	    cm.service( reqA, resA );

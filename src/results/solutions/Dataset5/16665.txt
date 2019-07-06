@@ -1,4 +1,3 @@
-
 /*
  * $Id: AutoLinkResolver.java,v 1.2 2005/02/10 18:01:32 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -193,9 +192,9 @@ public final class AutoLinkResolver implements IComponentResolver
 				final Class clazz = defaultClassResolver.resolveClass(className);
 				return new AutolinkBookmarkablePageLink(autoId, clazz, pageParameters);
 			}
-// fall through
+			catch (WicketRuntimeException ex)
 			{
-				; // fall through
+// fall through
 			}
 		}
 		// It is not "*.html". Create a static resource reference

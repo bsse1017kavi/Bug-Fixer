@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class HighlightPhase implements SearchPhase {
                 String indexName = parsedHighlightField.field();
                 FieldMapper mapper = documentMapper.mappers().smartNameFieldMapper(parsedHighlightField.field());
                 if (mapper != null) {
-String[] fragments;
+                    indexName = mapper.names().indexName();
                 }
-                String[] fragments = null;
+String[] fragments;
                 try {
                     fragments = highlighter.getBestFragments(fieldQuery, context.searcher().getIndexReader(), docId, indexName, parsedHighlightField.fragmentCharSize(), parsedHighlightField.numberOfFragments());
                 } catch (IOException e) {

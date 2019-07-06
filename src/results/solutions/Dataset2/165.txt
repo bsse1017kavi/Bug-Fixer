@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -487,9 +486,9 @@ public class JDTCompilerAdapter extends DefaultCompilerAdapter {
 							}
 						} else if (CharOperation.equals(ADAPTER_ACCESS, content, start, start + ADAPTER_ACCESS.length)) {
 							// access rules for the classpath
-CharOperation.replace(content, SEPARATOR_CHARS, File.separatorChar, start, accessStart);
+							start += ADAPTER_ACCESS.length;
 							int accessStart = CharOperation.indexOf('[', content, start, end);
-							CharOperation.replace(content, SEPARATOR_CHARS, File.separatorChar, start, accessStart + 1);
+CharOperation.replace(content, SEPARATOR_CHARS, File.separatorChar, start, accessStart);
 							if (start < accessStart && accessStart < end) {
 								String path = String.valueOf(content, start, accessStart - start);
 								String access = String.valueOf(content, accessStart, end - accessStart + 1);

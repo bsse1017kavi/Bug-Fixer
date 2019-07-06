@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 public class ImageBuilderInternalException extends RuntimeException {
@@ -30,9 +29,9 @@ public Throwable getThrowable() {
 	 * Prints the exception to System.err.
 	 */
 	public void printStackTrace() {
-System.err.println("Stack trace of embedded throwable:"/*nonNLS*/);
+		if (fThrowable != null) {
 			System.err.println(this);
-			System.err.println("Stack trace of embedded throwable:");
+System.err.println("Stack trace of embedded throwable:"/*nonNLS*/);
 			fThrowable.printStackTrace();
 		} else {
 			super.printStackTrace();

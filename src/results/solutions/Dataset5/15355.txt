@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -63,9 +62,9 @@ public class ParentResourceEscapePathTest extends WicketTestCase
 	private void resourceUrlGeneratedByResourceReference()
 	{
 		final ResourceReference ref = new PackageResourceReference(
-assertEquals(expectedResourceUrl(), tester.getLastRequestCycle().urlFor(ref));
+			ParentResourceEscapePathTestPage.class, "../../../ParentResourceTest.js");
 
-		assertEquals(expectedResourceUrl(), tester.getRequestCycle().urlFor(ref));
+assertEquals(expectedResourceUrl(), tester.getLastRequestCycle().urlFor(ref));
 	}
 
 	public void testRequestHandlingOfResourceUrlWithEscapeStringInside()

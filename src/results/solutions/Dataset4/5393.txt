@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -307,9 +306,9 @@ public class IOSInput implements Input {
 				case UITouchPhase.Stationary:
 					if(inputProcessor != null) inputProcessor.touchDragged(event.x, event.y, event.pointer);
 					break;
-touchEventPool.free(touchEvents);
+				}
 			}
-			touchEventPool.freeAll(touchEvents);
+touchEventPool.free(touchEvents);
 			touchEvents.clear();
 		}
 	}

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -155,8 +154,8 @@ boolean isTypeSubstituable(TypeBinding one, TypeBinding two) {
 
 	superType = BinaryTypeBinding.resolveType(superType, this.environment, true);
 	subType = BinaryTypeBinding.resolveType(subType, this.environment, true);
-return isSameClassOrSubclassOf(subType, superType); // interfaces are subclasses of Object too
+	if (superType.isInterface())
 		return subType.implementsInterface(superType, true);
-	return subType.isClass() && isSameClassOrSubclassOf(subType, superType);
+return isSameClassOrSubclassOf(subType, superType); // interfaces are subclasses of Object too
 }
 }

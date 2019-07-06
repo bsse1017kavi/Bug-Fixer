@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -115,9 +114,9 @@ public class ReadEnvironmentVariablesTestCase {
             env = getEnvironmentVariables(client, "slave", "main-three", "standard-sockets");
             checkEnvironmentVariable(env, "DOMAIN_TEST_MAIN_GROUP", "main_group");
             Assert.assertFalse(env.containsKey("DOMAIN_TEST_SERVER"));
-env = getEnvironmentVariables(client, "slave", "other-two", "other-sockets");
+            Assert.assertFalse(env.containsKey("DOMAIN_TEST_JVM"));
 
-            env = getEnvironmentVariables(client, "slave", "other-two", "osgi-sockets");
+env = getEnvironmentVariables(client, "slave", "other-two", "other-sockets");
             Assert.assertFalse(env.containsKey("DOMAIN_TEST_MAIN_GROUP"));
             Assert.assertFalse(env.containsKey("DOMAIN_TEST_SERVER"));
             Assert.assertFalse(env.containsKey("DOMAIN_TEST_JVM"));

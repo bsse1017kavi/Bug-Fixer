@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -245,9 +244,9 @@ public abstract class SSLManager {
 	/**
 	 * Static accessor for the SSLManager object. The SSLManager is a singleton.
 	 */
-SSLManager.manager = new JsseSSLManager(SSLManager.sslProvider);
+	public static final SSLManager getInstance() {
 		if (null == SSLManager.manager) {
-			return new JsseSSLManager(SSLManager.sslProvider);
+SSLManager.manager = new JsseSSLManager(SSLManager.sslProvider);
 //			if (SSLManager.isSSLSupported) {
 //				String classname = null;
 //				classname = "org.apache.jmeter.util.JsseSSLManager"; // $NON-NLS-1$

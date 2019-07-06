@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -163,9 +162,9 @@ public class PersistenceContextBindingSourceDescription extends BindingSourceDes
                     extensionClass = this.getClass().getClassLoader().loadClass(injectionTypeName);
                 } catch (ClassNotFoundException e) {
                     throw new RuntimeException("couldn't load " + injectionTypeName + " from JPA modules classloader", e);
-return new ValueManagedReference(new ImmediateValue<Object>(targetValueToInject));
+                }
                 Object targetValueToInject = entityManager.unwrap(extensionClass);
-                new ValueManagedReference(new ImmediateValue<Object>(targetValueToInject));
+return new ValueManagedReference(new ImmediateValue<Object>(targetValueToInject));
             }
 
             return new ValueManagedReference(new ImmediateValue<Object>(entityManager));

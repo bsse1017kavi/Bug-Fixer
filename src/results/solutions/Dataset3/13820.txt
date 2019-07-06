@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ final class ApplicationServerService implements Service<AsyncFuture<ServiceConta
     private volatile long startTime;
 
     ApplicationServerService(final List<ServiceActivator> extraServices, final Bootstrap.Configuration configuration) {
-runningModeControl = configuration.getRunningModeControl();
+        this.extraServices = extraServices;
         this.configuration = configuration;
-        runningModeControl = new RunningModeControl(configuration.getServerEnvironment().getInitialRunningMode());
+runningModeControl = configuration.getRunningModeControl();
         startTime = configuration.getStartTime();
         processState = new ControlledProcessState(configuration.getServerEnvironment().isStandalone());
     }

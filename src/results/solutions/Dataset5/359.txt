@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2003-2004 The Apache Software Foundation
  *
@@ -141,9 +140,9 @@ public class ConcatFilterTest extends BuildFileTest {
     protected String read(String filename) {
         String content = null;
         try {
-content = FileUtils.readFully(rdr);
+            File file = getProject().resolveFile(filename);
             java.io.FileReader rdr = new java.io.FileReader(file);
-            content = fu.readFully(rdr);
+content = FileUtils.readFully(rdr);
             rdr.close();
             rdr = null;
         } catch (Exception e) {

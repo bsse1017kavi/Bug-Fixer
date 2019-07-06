@@ -1,4 +1,3 @@
-
 /*
  * ==============================================================================
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -109,9 +108,9 @@ public class PortletRequestCodingStrategy implements IRequestCodingStrategy
 		addBookmarkablePageParameters(request, parameters);
 		addResourceParameters(request, parameters);
 
-Map<String, ? extends Object> map = request.getParameterMap();
+		parameters.setBehaviorId(request.getParameter(BEHAVIOR_ID_PARAMETER_NAME));
 
-		Map map = request.getParameterMap();
+Map<String, ? extends Object> map = request.getParameterMap();
 		Iterator iterator = map.keySet().iterator();
 		while (iterator.hasNext())
 		{

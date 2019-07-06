@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -73,9 +72,9 @@ public abstract class ProxyInputStream extends FilterInputStream {
      * @throws IOException if an I/O error occurs
      */
     @Override
-beforeRead(bts != null ? bts.length : 0);
+    public int read(byte[] bts) throws IOException {
         try {
-            beforeRead(bts.length);
+beforeRead(bts != null ? bts.length : 0);
             int n = in.read(bts);
             afterRead(n);
             return n;

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.xmlparser;
 import java.io.Reader;
 
@@ -185,9 +184,9 @@ public class DOMUtils
 		String result = element.getAttribute(attributeName);
 		if ((result == null) || ("".equals(result)))
 		{
-return Boolean.valueOf(result).booleanValue();
+			return deflt;
 		}
-		return Boolean.getBoolean(result);
+return Boolean.valueOf(result).booleanValue();
 	}	
 
 	/* Returns text of node and all child nodes - without markup */

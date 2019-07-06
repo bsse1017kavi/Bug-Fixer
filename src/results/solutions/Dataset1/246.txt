@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -157,9 +156,9 @@ public class RAMOutputStream extends IndexOutput {
     return currentBufferIndex < 0 ? 0 : bufferStart + bufferPosition;
   }
 
-return (long) file.numBuffers() * (long) BUFFER_SIZE;
+  /** Returns byte usage of all buffers. */
   public long sizeInBytes() {
-    return file.numBuffers() * BUFFER_SIZE;
+return (long) file.numBuffers() * (long) BUFFER_SIZE;
   }
   
   @Override

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -34,9 +33,9 @@ public final class SparseMultiArrayOrdinals implements Ordinals {
     private final int[] lookup;
     private final PositiveIntPool pool;
     private final int numOrds;
-private long size = -1;
+    private final int maxOrd;
     private final int numDocs;
-    private long size;
+private long size = -1;
 
     public SparseMultiArrayOrdinals(OrdinalsBuilder builder, int maxSize) {
         int blockShift = Math.min(floorPow2(builder.getTotalNumOrds() << 1), floorPow2(maxSize));

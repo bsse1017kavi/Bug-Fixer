@@ -1,4 +1,3 @@
-
 /***
  * ASM: a very small and fast Java bytecode manipulation framework
  * Copyright (c) 2000-2011 INRIA, France Telecom
@@ -117,9 +116,9 @@ final class FieldWriter extends FieldVisitor {
      * @param value
      *            the field's constant value. May be <tt>null</tt>.
      */
-super(Opcodes.ASM6);
+    FieldWriter(final ClassWriter cw, final int access, final String name,
             final String desc, final String signature, final Object value) {
-        super(Opcodes.ASM5);
+super(Opcodes.ASM6);
         if (cw.firstField == null) {
             cw.firstField = this;
         } else {

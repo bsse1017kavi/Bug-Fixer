@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1938,9 +1937,9 @@ public void pack (boolean changed) {
 public boolean print (GC gc) {
 	checkWidget ();
 	if (gc == null) error (SWT.ERROR_NULL_ARGUMENT);
-int /*long*/ topHandle = topHandle ();
+	if (gc.isDisposed ()) error (SWT.ERROR_INVALID_ARGUMENT);
 	if (!OS.IsWinCE && OS.WIN32_VERSION >= OS.VERSION (5, 1)) {
-		int topHandle = topHandle ();
+int /*long*/ topHandle = topHandle ();
 		int bits = OS.GetWindowLong (topHandle, OS.GWL_STYLE);
 		if ((bits & OS.WS_VISIBLE) == 0) {
 			OS.DefWindowProc (topHandle, OS.WM_SETREDRAW, 1, 0);

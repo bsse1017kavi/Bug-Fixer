@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -47,9 +46,9 @@ public interface TypeConverter {
 	 * @param value the value to be converted
 	 * @param typeDescriptor a type descriptor that supplies extra information about the requested result type
 	 * @return the converted value
-Object convertValue(Object value, TypeDescriptor typeDescriptor) throws EvaluationException;
+	 * @throws EvaluationException if conversion is not possible
 	 */
-	<T> T convertValue(Object value, TypeDescriptor typeDescriptor) throws EvaluationException;
+Object convertValue(Object value, TypeDescriptor typeDescriptor) throws EvaluationException;
 
 	/**
 	 * Return true if the type converter can convert the specified type to the desired target type.

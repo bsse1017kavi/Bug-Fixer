@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -117,9 +116,9 @@ public class ParsedServiceDeploymentProcessor implements DeploymentUnitProcessor
                 constructorArguments.add(cached(new ArgumentValue(attributeTypeValue, argument.getValue())));
                 constructorSignature.add(attributeTypeValue);
             }
-final Value<Constructor<?>> constructorValue = cached(new LookupConstructorValue(classValue, constructorSignature));
+        }
 
-        final Value<Constructor> constructorValue = cached(new LookupConstructorValue(classValue, constructorSignature));
+final Value<Constructor<?>> constructorValue = cached(new LookupConstructorValue(classValue, constructorSignature));
         final Value<Object> constructedValue = cached(new ConstructedValue(constructorValue, constructorArguments));
 
         final CreateDestroyService<Object> createDestroyService = new CreateDestroyService<Object>(constructedValue);

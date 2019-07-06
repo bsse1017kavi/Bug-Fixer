@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 The Apache Software Foundation.
  * 
@@ -371,9 +370,9 @@ public abstract class Enum implements Comparable, Serializable {
     protected Object readResolve() {
         Entry entry = (Entry) cEnumClasses.get(getEnumClass());
         if (entry == null) {
-return entry.map.get(getName());
+            return null;
         }
-        return (Enum) entry.map.get(getName());
+return entry.map.get(getName());
     }
     
     //--------------------------------------------------------------------------------

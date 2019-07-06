@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist.complete;
 
 /*
@@ -657,9 +656,9 @@ protected void consumeFormalParameter() {
 protected void consumeMethodHeaderName() {
 	if (this.indexOfAssistIdentifier() < 0) {
 		super.consumeMethodHeaderName();
-CompletionOnMethodName md = new CompletionOnMethodName(this.compilationUnit.compilationResult);
+	} else {
 		// MethodHeaderName ::= Modifiersopt Type 'Identifier' '('
-		CompletionOnMethodName md = new CompletionOnMethodName();
+CompletionOnMethodName md = new CompletionOnMethodName(this.compilationUnit.compilationResult);
 	
 		//name
 		md.selector = identifierStack[identifierPtr];

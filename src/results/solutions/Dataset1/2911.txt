@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derbyBuild.ReleaseNotesGenerator
@@ -392,9 +391,9 @@ public class ReleaseNotesGenerator extends GeneratorBase {
                     continue;
                 }
 
-Element paragraph = outputDoc.createElement(SPAN);
+                String key = "Note for DERBY-" + issue.getKey();
                 //println("Release note: "+issue.getKey()+" - "+issue.getTitle());
-                Element paragraph = outputDoc.createElement(PARAGRAPH);
+Element paragraph = outputDoc.createElement(SPAN);
                 paragraph.appendChild(outputDoc.createTextNode(key + ": "));
                 cloneChildren(summaryText, paragraph);
                 insertLine(issuesSection);

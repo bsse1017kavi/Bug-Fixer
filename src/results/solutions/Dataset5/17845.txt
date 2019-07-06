@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -89,9 +88,9 @@ public class TestElementPropertyConverter extends AbstractCollectionConverter {
             JMeterProperty jmp=iter.next();
             // Skip special properties if required
             if (!testFormat22 || !ConversionHelp.isSpecialProperty(jmp.getName())) 
-if (!(TestElement.COMMENTS.equals(jmp.getName())
+            {
             	// Don't save empty comments
-	       		if (!(TestPlan.COMMENTS.equals(jmp.getName())
+if (!(TestElement.COMMENTS.equals(jmp.getName())
 		       			&& jmp.getStringValue().length()==0))
 		       	{
 		            writeItem(jmp, context, writer);

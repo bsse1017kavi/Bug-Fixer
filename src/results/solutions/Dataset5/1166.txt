@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -221,9 +220,9 @@ public abstract class MSVSS extends Task implements MSVSSConstants {
      */
     public void execute() throws BuildException {
         int result = 0;
-if (Execute.isFailure(result) && getFailOnError()) {
+        Commandline commandLine = buildCmdLine();
         result = run(commandLine);
-        if (result != 0 && getFailOnError()) {
+if (Execute.isFailure(result) && getFailOnError()) {
             String msg = "Failed executing: " + formatCommandLine(commandLine)
                      + " With a return code of " + result;
             throw new BuildException(msg, getLocation());

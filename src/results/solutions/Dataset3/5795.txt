@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -187,9 +186,9 @@ public class SetUtils {
      * @param <E> the element type
      * @param set  the set to make unmodifiable, must not be null
      * @return an unmodifiable set backed by the given set
-public static <E> Set<E> unmodifiableSet(final Set<? extends E> set) {
+     * @throws IllegalArgumentException  if the set is null
      */
-    public static <E> Set<E> unmodifiableSet(final Set<E> set) {
+public static <E> Set<E> unmodifiableSet(final Set<? extends E> set) {
         return UnmodifiableSet.unmodifiableSet(set);
     }
 

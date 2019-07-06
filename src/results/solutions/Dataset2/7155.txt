@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -405,9 +404,9 @@ public class LayoutTreeNode extends LayoutTree {
         }
         double wTotal = wLeft + wRight;
                 
-int redistribute = subtract(preferredWidth, total);
+        preferredWidth = Math.max(0, subtract(preferredWidth, SASH_WIDTH));
         width = Math.max(0, subtract(width, SASH_WIDTH));
-        int redistribute = preferredWidth - total;
+int redistribute = subtract(preferredWidth, total);
         
     	int leftMinimum = 0;
     	

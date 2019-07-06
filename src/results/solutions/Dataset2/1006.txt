@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -437,9 +436,9 @@ public class BindingKeyResolver extends BindingKeyParser {
 			case Wildcard.SUPER:
 				BindingKeyResolver boundResolver = (BindingKeyResolver) this.types.get(0);
 				this.typeBinding = this.environment.createWildcard((ReferenceBinding) this.typeBinding, this.wildcardRank, (TypeBinding) boundResolver.compilerBinding, null /*no extra bound*/, kind);
-this.typeBinding = this.environment.createWildcard((ReferenceBinding) this.typeBinding, this.rank++, null/*no bound*/, null /*no extra bound*/, kind);
+				break;
 			case Wildcard.UNBOUND:
-				this.typeBinding = this.environment.createWildcard((ReferenceBinding) this.typeBinding, rank++, null/*no bound*/, null /*no extra bound*/, kind);
+this.typeBinding = this.environment.createWildcard((ReferenceBinding) this.typeBinding, this.rank++, null/*no bound*/, null /*no extra bound*/, kind);
 				break;
 		}
 	}

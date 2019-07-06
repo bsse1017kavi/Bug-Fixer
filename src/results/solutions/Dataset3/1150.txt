@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1141,9 +1140,9 @@ public class BZip2CompressorOutputStream extends CompressorOutputStream implemen
         }
         for (i = 0; i <= last + NUM_OVERSHOOT_BYTES; i++) {
             quadrant[i] = 0;
-block[0] = block[last + 1];
+        }
 
-        block[0] = (char) (block[last + 1]);
+block[0] = block[last + 1];
 
         if (last < 4000) {
             /*

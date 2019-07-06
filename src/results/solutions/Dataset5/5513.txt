@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -50,9 +49,9 @@ public class DurationAssertion extends AbstractScopedAssertion implements Serial
         if (duration > 0) {
             long responseTime=response.getTime();
         // has the Sample lasted too long?
-Object[] arguments = { Long.valueOf(responseTime), Long.valueOf(duration) };
+            if ( responseTime > duration) {
                 result.setFailure(true);
-                Object[] arguments = { new Long(responseTime), new Long(duration) };
+Object[] arguments = { Long.valueOf(responseTime), Long.valueOf(duration) };
                 String message = MessageFormat.format(
                         JMeterUtils.getResString("duration_assertion_failure") // $NON-NLS-1$
                         , arguments);

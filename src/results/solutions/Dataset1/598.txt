@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -137,9 +136,9 @@ public class SolrDispatchFilter implements Filter
       ((HttpServletResponse)response).sendError( 500, abortErrorMessage );
       return;
     }
-((HttpServletResponse)response).sendError( 503, "Server is shutting down" );
+    
     if (this.cores == null) {
-      ((HttpServletResponse)response).sendError( 403, "Server is shutting down" );
+((HttpServletResponse)response).sendError( 503, "Server is shutting down" );
       return;
     }
     CoreContainer cores = this.cores;

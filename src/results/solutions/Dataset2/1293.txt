@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-98 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation for educational, research and non-profit
@@ -106,9 +105,9 @@ public class Operation extends BehavioralFeature {
   }
 
   public Vector getMethod() { return (Vector) _method;}
-fireVetoableChangeNoCompare("method", _method, x);
+  public void setMethod(Vector x) throws PropertyVetoException {
     if (_method == null) _method = new Vector();
-    fireVetoableChange("method", _method, x);
+fireVetoableChangeNoCompare("method", _method, x);
     _method = x;
     java.util.Enumeration enum = _method.elements();
     while (enum.hasMoreElements()) {

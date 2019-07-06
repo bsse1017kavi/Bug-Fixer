@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2002-2004 The Apache Software Foundation.
@@ -50,9 +49,9 @@ public class AddParent implements Command
     public void doAction(ActionEvent e)
     {
         String name = ((Component)e.getSource()).getName();
-TestElement controller = GuiPackage.getInstance().createTestElement(name);
+        try
         {
-            TestElement controller = (TestElement)GuiPackage.getInstance().createTestElement(name);
+TestElement controller = GuiPackage.getInstance().createTestElement(name);
             addParentToTree(controller);
         }
         catch(Exception err)

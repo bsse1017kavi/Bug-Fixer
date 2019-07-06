@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class GaussNewtonOptimizer extends AbstractLeastSquaresOptimizer {
             // build the linear problem
             final double[]   b = new double[cols];
             final double[][] a = new double[cols][cols];
-final double[] grad   = weightedResidualJacobian[i];
+            for (int i = 0; i < rows; ++i) {
 
-                final double[] grad   = jacobian[i];
+final double[] grad   = weightedResidualJacobian[i];
                 final double weight   = residualsWeights[i];
                 final double residual = objective[i] - targetValues[i];
 

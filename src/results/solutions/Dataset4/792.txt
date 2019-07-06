@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -146,9 +145,9 @@ public class StringOrdValFieldDataComparator extends FieldComparator {
         if (cleanFieldData instanceof MultiValueStringFieldData) {
             throw new IOException("Can't sort on string types with more than one value per doc, or more than one token per field");
         }
-order = fieldData.ordinals();
+        SingleValueStringFieldData fieldData = (SingleValueStringFieldData) cleanFieldData;
         currentReaderGen++;
-        order = fieldData.order();
+order = fieldData.ordinals();
         lookup = fieldData.values();
         assert lookup.length > 0;
         if (bottomSlot != -1) {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -194,9 +193,9 @@ public class StompHeaderAccessor extends SimpMessageHeaderAccessor {
 			if (subscriptionId != null) {
 				String name = StompCommand.MESSAGE.equals(getCommand()) ? STOMP_SUBSCRIPTION_HEADER : STOMP_ID_HEADER;
 				result.put(name, Arrays.asList(subscriptionId));
-logger.warn(getCommand() + " frame does not have a subscription identifier" + this.toString());
+			}
 			else {
-				logger.warn(getCommand() + " frame should have a subscription: " + this.toString());
+logger.warn(getCommand() + " frame does not have a subscription identifier" + this.toString());
 			}
 		}
 

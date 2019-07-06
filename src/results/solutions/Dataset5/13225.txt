@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -591,9 +590,9 @@ public class GenericTestBeanCustomizer extends JPanel implements SharedCustomize
 			if (propertyEditor != null) {
 				try {
 				if (propertyEditor instanceof WrapperEditor){
-if (tags != null && tags.length > 0) {
+					WrapperEditor we = (WrapperEditor) propertyEditor;
 					String tags[]=we.getTags();
-					if (tags != null) {
+if (tags != null && tags.length > 0) {
 						we.setAsText(tags[0]);
 					} else {
 						we.setValue("");

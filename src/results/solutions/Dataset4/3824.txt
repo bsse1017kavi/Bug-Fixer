@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -140,9 +139,9 @@ public class BulkRequest implements ActionRequest {
                     }
                 }
             }
-add(new DeleteRequest(index, type, id).parent(parent).routing(routing));
+
             if ("delete".equals(action)) {
-                add(new DeleteRequest(index, type, id).routing(routing));
+add(new DeleteRequest(index, type, id).parent(parent).routing(routing));
             } else {
                 nextMarker = findNextMarker(marker, from, data, length);
                 if (nextMarker == -1) {

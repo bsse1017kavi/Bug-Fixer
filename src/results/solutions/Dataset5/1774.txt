@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.10 $ $Date$
@@ -71,9 +70,9 @@ public class Panel extends HtmlContainer
         if (!markupStream.atOpenCloseTag())
         {
             markupStream.throwMarkupException("A panel must be referenced by an openclose tag.");
-renderComponentTag(markupStream);
+        }
 
-        renderTag(markupStream);
+renderComponentTag(markupStream);
 
         // Render the associated markup
         renderAssociatedMarkup("panel",

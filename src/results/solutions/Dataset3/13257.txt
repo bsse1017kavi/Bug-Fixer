@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -247,9 +246,9 @@ class ConfigurationClassParser {
 				MetadataReader reader = this.metadataReaderFactory.getMetadataReader(candidate);
 				if (new AssignableTypeFilter(ImportSelector.class).match(reader, metadataReaderFactory)) {
 					// the candidate class is an ImportSelector -> delegate to it to determine imports
-ImportSelectorContext context = new ImportSelectorContext(importingClassMetadata, this.registry);
+					try {
 						ImportSelector selector = BeanUtils.instantiateClass(Class.forName(candidate), ImportSelector.class);
-						ImportSelector.Context context = new ImportSelector.Context(importingClassMetadata, this.registry);
+ImportSelectorContext context = new ImportSelectorContext(importingClassMetadata, this.registry);
 						processImport(configClass, selector.selectImports(context), false);
 					} catch (ClassNotFoundException ex) {
 						throw new IllegalStateException(ex);

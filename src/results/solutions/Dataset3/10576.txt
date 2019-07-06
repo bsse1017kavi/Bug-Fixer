@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -46,8 +45,8 @@ public class ServerSocketBindingUpdate extends AbstractServerModelUpdate<Void> {
         return new ServerSocketBindingUpdate(bindingUpdate.getCompensatingUpdate(original.getSocketBindings()));
     }
 
-}
+    public <P> void applyUpdate(UpdateContext updateContext, org.jboss.as.model.UpdateResultHandler<? super Void,P> resultHandler, P param) {
         bindingUpdate.applyUpdate(updateContext, resultHandler, param);
-    };
+}
 
 }

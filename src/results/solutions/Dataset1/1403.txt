@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -58,9 +57,9 @@ public class DriverTest extends MahoutTestCase {
     indexDir = getTestTempDir("intermediate");
     indexDir.delete();
     outputDir = getTestTempDir("output");
-conf = getConfiguration();
+    outputDir.delete();
 
-    conf = new Configuration();
+conf = getConfiguration();
   }
 
   private Document asDocument(String line) {

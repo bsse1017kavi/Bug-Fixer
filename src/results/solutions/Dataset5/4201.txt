@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 Versant Corp.
  * All rights reserved. This program and the accompanying materials
@@ -21,9 +20,9 @@ public class CompositeNamespace extends Namespace {
 	public static final String NAME = "ecf.namespace.composite"; //$NON-NLS-1$
 
 	/* (non-Javadoc)
-public ID createInstance(final Object[] parameters) {
+	 * @see org.eclipse.ecf.core.identity.Namespace#createInstance(java.lang.Object[])
 	 */
-	public ID createInstance(Object[] parameters) {
+public ID createInstance(final Object[] parameters) {
 		if (parameters == null || parameters.length < 1 || parameters.length > 2) {
 			throw new IDCreateException(Messages.CompositeNamespace_WrongParameterCount);
 		} else if (parameters[0] instanceof String) {

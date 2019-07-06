@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -84,9 +83,9 @@ public class Trace {
 
     String name;
 
-if (e != null) e.printStackTrace(printStream);
+    public void dumpStack(Throwable e, String msg) {
         msg(msg);
-        e.printStackTrace(printStream);
+if (e != null) e.printStackTrace(printStream);
     }
 
     public static void errDumpStack(Throwable e, String msg) {

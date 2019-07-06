@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.grouping;
 
 /*
@@ -101,9 +100,9 @@ public class AllGroupsCollectorTest extends LuceneTestCase {
     doc.add(new TextField("content", "random word stuck in alot of other text", Field.Store.YES));
     doc.add(new Field("id", "6", customType));
     w.addDocument(doc);
-w.shutdown();
+
     IndexSearcher indexSearcher = newSearcher(w.getReader());
-    w.close();
+w.shutdown();
 
     AbstractAllGroupsCollector<?> allGroupsCollector = createRandomCollector(groupField);
     indexSearcher.search(new TermQuery(new Term("content", "random")), allGroupsCollector);

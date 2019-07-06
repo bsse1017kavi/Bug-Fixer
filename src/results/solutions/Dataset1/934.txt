@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -216,9 +215,9 @@ public class Memtable implements Comparable<Memtable>
         SSTableReader ssTable = writer.closeAndOpenReader();
         cfStore.onMemtableFlush(cLogCtx);
         cfStore.storeLocation(ssTable);
-logger_.info("Completed flushing " + ssTable.getFilename());
+        buffer.close();
         isFlushed_ = true;
-        logger_.info("Completed flushing " + this);
+logger_.info("Completed flushing " + ssTable.getFilename());
     }
 
     public String toString()

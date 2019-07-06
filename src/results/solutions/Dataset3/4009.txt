@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -867,9 +866,9 @@ public class EntityTable implements Table {
             }
 
             if (references != null) {
-log.trace("inFlush, ignoring flushCreated");
+                if (inFlush) {
                     if (log.isTraceEnabled()) {
-                        log.trace("inFlush, ignorning flushCreated");
+log.trace("inFlush, ignoring flushCreated");
                     }
                     return;
                 } else if (log.isTraceEnabled()) {

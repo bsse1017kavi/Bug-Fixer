@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -144,9 +143,9 @@ public class SimpleBrokerMessageHandlerTests {
 
 	protected Message<String> createConnectMessage(String sessionId) {
 		SimpMessageHeaderAccessor headers = SimpMessageHeaderAccessor.create(SimpMessageType.CONNECT);
-return MessageBuilder.withPayload("").setHeaders(headers).build();
+		headers.setSessionId(sessionId);
 
-		return MessageBuilder.withPayloadAndHeaders("", headers).build();
+return MessageBuilder.withPayload("").setHeaders(headers).build();
 	}
 
 	protected Message<String> createMessage(String destination, String payload) {

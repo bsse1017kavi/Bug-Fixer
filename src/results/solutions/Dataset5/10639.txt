@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -64,9 +63,9 @@ public class Execute
     public static void runCommand( final Task task, final String[] cmdline )
         throws TaskException
     {
-task.hackGetLogger().debug( Commandline.toString( cmdline ) );
+        try
         {
-            task.log( Commandline.toString( cmdline ), Project.MSG_VERBOSE );
+task.hackGetLogger().debug( Commandline.toString( cmdline ) );
             final Execute exe = new Execute();
             exe.setOutput( new LogOutputStream( task, Project.MSG_INFO ) );
             exe.setError( new LogOutputStream( task, Project.MSG_WARN ) );

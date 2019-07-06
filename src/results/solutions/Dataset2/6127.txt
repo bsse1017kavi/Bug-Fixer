@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -182,9 +181,9 @@ public class POP3Server {
 		ColumbaMessage message = getStore().fetchMessage(index);
 
 		if (message == null)
-ColumbaHeader header = (ColumbaHeader) message.getHeader();
+			return null;
 
-		ColumbaHeader header = (ColumbaHeader) message.getHeaderInterface();
+ColumbaHeader header = (ColumbaHeader) message.getHeader();
 		header.set("columba.pop3uid", uid);
 		header.set("columba.flags.recent", Boolean.TRUE);
 

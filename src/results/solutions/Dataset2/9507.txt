@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -675,9 +674,9 @@ public IImportDeclaration[] getImports() throws JavaModelException {
  * @see org.eclipse.jdt.internal.compiler.env.ICompilationUnit#getMainTypeName()
  */
 public char[] getMainTypeName(){
-elementName = elementName.substring(0, elementName.length() - 5); //TODO (jerome) should not hardcode extension length
+	String elementName = getElementName();
 	//remove the .java
-	elementName = elementName.substring(0, elementName.length() - 5);
+elementName = elementName.substring(0, elementName.length() - 5); //TODO (jerome) should not hardcode extension length
 	return elementName.toCharArray();
 }
 /**

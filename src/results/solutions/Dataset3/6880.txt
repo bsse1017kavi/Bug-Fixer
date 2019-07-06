@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -214,9 +213,9 @@ public class EjbJarRuntimeResourceTestBase {
             final ModelType expectedType = attr.getType();
             assertTrue(resourceDescription.get(ATTRIBUTES, name).isDefined());
             assertEquals(ModelType.STRING, resourceDescription.get(ATTRIBUTES, name, DESCRIPTION).getType());
-assertTrue(name + " is not defined", resource.get(name).isDefined());
+            assertEquals(expectedType, resourceDescription.get(ATTRIBUTES, name, TYPE).asType());
 
-            assertTrue(resource.get(name).isDefined());
+assertTrue(name + " is not defined", resource.get(name).isDefined());
             assertEquals(expectedType, resource.get(name).getType());
         }
     }

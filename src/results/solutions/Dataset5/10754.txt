@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab;
 
 import java.io.IOException;
@@ -109,9 +108,9 @@ public class DiscoveryStartup {
 		action.setUsername(username);
 		ID targetID = null;
 		String targetString = null;
-targetID = IDFactory.getDefault().makeStringID(targetString);
+        try {
     		targetString = svcInfo.getServiceURI().toString();
-            targetID = IDFactory.makeStringID(targetString);
+targetID = IDFactory.getDefault().makeStringID(targetString);
         } catch (Exception e) {
         	ClientPlugin.log("cannot create target id for "+targetString,e);
         }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -388,9 +387,9 @@ public class Util {
         final ModelNode request;
         try {
             if(profile != null) {
-builder.addNode("subsystem", "messaging");
+                builder.addNode("profile", profile);
             }
-            builder.addNode("subsystem", "jms");
+builder.addNode("subsystem", "messaging");
             builder.operationName("read-children-names");
             builder.addProperty("child-type", type);
             request = builder.buildRequest();

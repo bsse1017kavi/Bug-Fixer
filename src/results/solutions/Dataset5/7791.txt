@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -250,9 +249,9 @@ public class PackageResource extends AbstractResource
 				return sendResourceError(resourceResponse, 500, "Unable to open resource stream");
 			}
 		}
-Application.get().getResourceSettings().getCachingStrategy().decorateResponse(resourceResponse);
+
 		// modify the resource response depending on the current caching strategy needs
-		Application.get().getResourceSettings().getResourceCachingStrategy().processResponse(resourceResponse);
+Application.get().getResourceSettings().getCachingStrategy().decorateResponse(resourceResponse);
 
 		return resourceResponse;
 	}

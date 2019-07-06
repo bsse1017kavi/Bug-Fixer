@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -196,9 +195,9 @@ public class ForStatement extends Statement {
 	/* (omit javadoc for this method)
 	 * Method declared on ASTNode.
 	 */
-result.setSourceRange(getStartPosition(), getLength());
+	ASTNode clone0(AST target) {
 		ForStatement result = new ForStatement(target);
-		result.setSourceRange(this.getStartPosition(), this.getLength());
+result.setSourceRange(getStartPosition(), getLength());
 		result.copyLeadingComment(this);
 		result.initializers().addAll(ASTNode.copySubtrees(target, initializers()));
 		result.setExpression(

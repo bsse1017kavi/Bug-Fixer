@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -144,9 +143,9 @@ public class TransportClearIndicesCacheAction extends TransportBroadcastOperatio
                 }
             }
             if (request.recycler()) {
-// cacheRecycler.clear();
+                logger.info("Clear CacheRecycler on index [{}]", service.index());
                 clearedAtLeastOne = true;
-                cacheRecycler.clear();
+// cacheRecycler.clear();
             }
             if (request.idCache()) {
                 clearedAtLeastOne = true;

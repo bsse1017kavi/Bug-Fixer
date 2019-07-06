@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class MixtureMultivariateRealDistribution<T extends MultivariateRealDistr
      * Gets the distributions that make up the mixture model.
      *
      * @return the component distributions and associated weights.
-final List<Pair<Double, T>> list = new ArrayList<Pair<Double, T>>(weight.length);
+     */
     public List<Pair<Double, T>> getComponents() {
-        final List<Pair<Double, T>> list = new ArrayList<Pair<Double, T>>();
+final List<Pair<Double, T>> list = new ArrayList<Pair<Double, T>>(weight.length);
 
         for (int i = 0; i < weight.length; i++) {
             list.add(new Pair<Double, T>(weight[i], distribution.get(i)));

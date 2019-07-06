@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -150,9 +149,9 @@ public class RecorderEntry implements BuildLogger
         log( "--- MESSAGE LOGGED", Project.MSG_DEBUG );
 
         StringBuffer buf = new StringBuffer();
-String name = "[" + event.getTask().getName() + "]";
+        if( event.getTask() != null )
         {
-            String name = "[" + event.getTask().getTaskName() + "]";
+String name = "[" + event.getTask().getName() + "]";
             /**
              * @todo replace 12 with DefaultLogger.LEFT_COLUMN_SIZE
              */

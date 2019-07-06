@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -100,9 +99,9 @@ public class BcelTypeMunger extends ConcreteTypeMunger {
 			info.addConcreteMunger(this);
 		}
 		// Whilst type mungers aren't persisting their source locations, we add this relationship during
-if (changed && worthReporting) {
+		// compilation time (see other reference to ResolvedTypeMunger.persist)
 		if (ResolvedTypeMunger.persistSourceLocation) {
-			if (changed) {
+if (changed && worthReporting) {
 				if (munger.getKind().equals(ResolvedTypeMunger.Parent)) {
 			  	  AsmRelationshipProvider.getDefault().addRelationship(weaver.getLazyClassGen().getType(), munger,getAspectType());
 				} else {

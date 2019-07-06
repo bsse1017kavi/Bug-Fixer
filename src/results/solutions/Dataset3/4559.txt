@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public class JGroupsSubsystemRemoveHandler extends AbstractRemoveStepHandler {
 
         String defaultChannel = ModelNodes.asString(JGroupsSubsystemResourceDefinition.DEFAULT_CHANNEL.resolveModelAttribute(context, model));
         if ((defaultChannel != null) && !defaultChannel.equals(ChannelService.DEFAULT)) {
-context.removeService(ChannelService.getStackServiceName(ChannelService.DEFAULT));
+            context.removeService(ChannelService.getServiceName(ChannelService.DEFAULT));
             context.removeService(ConnectedChannelService.getServiceName(ChannelService.DEFAULT));
-            context.removeService(ChannelService.getFactoryServiceName(ChannelService.DEFAULT));
+context.removeService(ChannelService.getStackServiceName(ChannelService.DEFAULT));
 
             for (GroupServiceInstaller installer : ServiceLoader.load(ClusteredGroupServiceInstaller.class, ClusteredGroupServiceInstaller.class.getClassLoader())) {
                 for (ServiceName name : installer.getServiceNames(ChannelService.DEFAULT)) {

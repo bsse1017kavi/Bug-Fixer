@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class ServiceActivatorDependencyProcessor implements DeploymentUnitProces
                 Attachments.MODULE_SPECIFICATION);
         if(deploymentRoot == null)
             return;
-moduleSpecification.addSystemDependency(MSC_DEP);
+        final ServicesAttachment servicesAttachments = phaseContext.getDeploymentUnit().getAttachment(Attachments.SERVICES);
         if(servicesAttachments != null && !servicesAttachments.getServiceImplementations(ServiceActivator.class.getName()).isEmpty()) {
-            moduleSpecification.addDependency(MSC_DEP);
+moduleSpecification.addSystemDependency(MSC_DEP);
         }
     }
 

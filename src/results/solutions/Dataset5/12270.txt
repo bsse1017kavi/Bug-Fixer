@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -131,9 +130,9 @@ public class LDAPArgumentsPanel extends AbstractConfigGui implements ActionListe
         stopTableEditing();
         LDAPArguments arguments = null;
         if (args instanceof LDAPArguments) {
-Iterator<LDAPArgument> modelData = (Iterator<LDAPArgument>) tableModel.iterator();
+            arguments = (LDAPArguments) args;
             arguments.clear();
-            Iterator<LDAPArgument> modelData = tableModel.iterator();
+Iterator<LDAPArgument> modelData = (Iterator<LDAPArgument>) tableModel.iterator();
             while (modelData.hasNext()) {
                 LDAPArgument arg = modelData.next();
                 arg.setMetaData("=");

@@ -1,4 +1,3 @@
-
 package de.swagner.paxbritannica.particlesystem;
 
 import com.badlogic.gdx.Gdx;
@@ -58,9 +57,9 @@ public class ParticleEmitter extends Sprite {
 		delta = Math.min(0.06f, Gdx.graphics.getDeltaTime());
 		
 		if (particle.life > 0) {
-particle.velocity.scl((float) Math.pow(damping, delta));
+			particle.life -= delta;
 			particle.position.add(particle.velocity.x * delta*10,particle.velocity.y * delta*10);
-			particle.velocity.mul((float) Math.pow(damping, delta));
+particle.velocity.scl((float) Math.pow(damping, delta));
 			particle.scale += this.delta_scale * delta/5f;
 		}
 	}

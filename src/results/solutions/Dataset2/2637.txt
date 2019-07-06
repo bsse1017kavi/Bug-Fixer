@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -530,9 +529,9 @@ public int computeSeverity(int problemId){
 		case IProblem.ForbiddenReference:
 			return this.options.getSeverity(CompilerOptions.ForbiddenReference);
 
-return this.options.getSeverity(CompilerOptions.InexactVarargsArgument);
+		case IProblem.InexactParameterToVarargsConstructor :
 		case IProblem.InexactParameterToVarargsMethod :
-			return Warning; // TODO (philippe) need this to default to a warning this.options.getSeverity(CompilerOptions.InexactParameterToVarargs);
+return this.options.getSeverity(CompilerOptions.InexactVarargsArgument);
 
 		/*
 		 * Javadoc syntax errors

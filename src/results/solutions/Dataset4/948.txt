@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -764,9 +763,9 @@ public class PercolatorService extends AbstractComponent {
                     BytesValues values = idFieldData.load(atomicReaderContext).getBytesValues();
                     final int localDocId = scoreDoc.doc - atomicReaderContext.docBase;
                     final int numValues = values.setDocument(localDocId);
-matches.add(BytesRef.deepCopyOf(bytes));
+                    assert numValues == 1;
                     BytesRef bytes = values.nextValue();
-                    matches.add(values.copyShared());
+matches.add(BytesRef.deepCopyOf(bytes));
                     if (hls != null) {
                         Query query = context.percolateQueries().get(bytes);
                         context.parsedQuery(new ParsedQuery(query, ImmutableMap.<String, Filter>of()));

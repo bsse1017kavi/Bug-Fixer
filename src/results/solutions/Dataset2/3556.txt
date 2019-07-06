@@ -1,4 +1,3 @@
-
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; either version 2 of the License, or
@@ -109,9 +108,9 @@ public class MessageComposer {
 		if (references != null)
 			header.set("References", references);
 
-"Columba v" + org.columba.core.main.MainInterface.version);
+		header.set(
 			"X-Mailer",
-			"Columba v" + org.columba.main.MainInterface.version);
+"Columba v" + org.columba.core.main.MainInterface.version);
 
 		// shortFrom
 		String shortFrom = controller.getModel().getHeaderField("From");

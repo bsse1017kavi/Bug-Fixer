@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ class JMSSubsystemDescribeHandler implements ModelQueryOperationHandler {
 
         if(subModel.hasDefined(CommonAttributes.CONNECTION_FACTORY)) {
             for(final Property property : subModel.get(CommonAttributes.CONNECTION_FACTORY).asPropertyList()) {
-result.add(ConnectionFactoryAdd.getAddOperation(address, property.getValue()));
+                final ModelNode address = rootAddress.toModelNode();
                 address.add(CommonAttributes.CONNECTION_FACTORY, property.getName());
-                result.add(ConnectionFactoryAdd.getAddOperation(address, subModel));
+result.add(ConnectionFactoryAdd.getAddOperation(address, property.getValue()));
             }
         }
         if(subModel.hasDefined(CommonAttributes.QUEUE)) {

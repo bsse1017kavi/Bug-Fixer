@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -88,9 +87,9 @@ public class ModelMap extends LinkedHashMap<String, Object> {
 	 * than for empty collections as is already done by JSTL tags.</emphasis>
 	 * @param attributeValue the model attribute value (never {@code null})
 	 */
-if (attributeValue instanceof Collection && ((Collection<?>) attributeValue).isEmpty()) {
+	public ModelMap addAttribute(Object attributeValue) {
 		Assert.notNull(attributeValue, "Model object must not be null");
-		if (attributeValue instanceof Collection && ((Collection) attributeValue).isEmpty()) {
+if (attributeValue instanceof Collection && ((Collection<?>) attributeValue).isEmpty()) {
 			return this;
 		}
 		return addAttribute(Conventions.getVariableName(attributeValue), attributeValue);

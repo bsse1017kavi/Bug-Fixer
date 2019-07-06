@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -39,9 +38,9 @@ public class Theories extends BlockJUnit4ClassRunner {
 			if (each.getAnnotation(DataPoint.class) != null && !Modifier.isStatic(each.getModifiers()))
 				errors.add(new Error("DataPoint field " + each.getName() + " must be static"));
 	}
-protected void validateConstructor(List<Throwable> errors) {
+	
 	@Override
-	protected void validateNoArgConstructor(List<Throwable> errors) {
+protected void validateConstructor(List<Throwable> errors) {
 		// constructor can have args
 		// TODO: should still be public
 	}

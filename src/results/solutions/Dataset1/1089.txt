@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -110,9 +109,9 @@ public class TestDocsAndPositions extends LuceneTestCase {
    * this test indexes random numbers within a range into a field and checks
    * their occurrences by searching for a number from that range selected at
    * random. All positions for that number are saved up front and compared to
-public void testRandomPositions() throws IOException {
+   * the enums positions.
    */
-  public void testRandomPositons() throws IOException {
+public void testRandomPositions() throws IOException {
     Directory dir = newDirectory();
     RandomIndexWriter writer = new RandomIndexWriter(random, dir,
         newIndexWriterConfig(TEST_VERSION_CURRENT, new MockAnalyzer(

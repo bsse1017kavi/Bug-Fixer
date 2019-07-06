@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -316,9 +315,9 @@ public final class LocalizedImageResource implements IClusterable, IResourceList
 			// Create URL to component
 			url = component.urlFor(IResourceListener.INTERFACE);
 		}
-tag.put("src", RequestCycle.get().getOriginalResponse().encodeURL(url));
+
 		// Set the SRC attribute to point to the component or shared resource
-		tag.put("src", Strings.replaceAll(RequestCycle.get().getOriginalResponse().encodeURL(url), "&", "&amp;"));
+tag.put("src", RequestCycle.get().getOriginalResponse().encodeURL(url));
 	}
 
 	/**

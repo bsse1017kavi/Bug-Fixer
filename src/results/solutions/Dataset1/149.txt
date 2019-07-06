@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -1992,9 +1991,9 @@ public class IndexWriter implements Closeable {
     else
       count = 0;
 
-count += info.docCount - numDeletedDocs(info);
+    for (int i = 0; i < segmentInfos.size(); i++) {
       final SegmentInfo info = segmentInfos.info(i);
-      count += info.docCount - info.getDelCount();
+count += info.docCount - numDeletedDocs(info);
     }
     return count;
   }

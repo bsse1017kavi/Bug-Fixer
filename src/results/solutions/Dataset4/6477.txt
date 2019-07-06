@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -146,9 +145,9 @@ public class IOSApplication extends UIApplicationDelegate implements Application
 		
 		// setup libgdx
 		this.input = new IOSInput(this);
-this.audio = new IOSAudio();
+		this.graphics = new IOSGraphics(getBounds(uiViewController), this, input, gl20);
 		this.files = new IOSFiles();
-		this.audio = new IOSAudio(config.useObjectAL);
+this.audio = new IOSAudio();
 		this.net = new IOSNet(this);
 
 		Gdx.files = this.files;

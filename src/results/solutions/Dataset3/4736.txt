@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -116,9 +115,9 @@ public class ConstantInitializerTest {
      */
     @Test
     public void testToString() {
-.compile("ConstantInitializer@-?\\d+ \\[ object = " + VALUE
+        final String s = init.toString();
         final Pattern pattern = Pattern
-                .compile("ConstantInitializer@\\d+ \\[ object = " + VALUE
+.compile("ConstantInitializer@-?\\d+ \\[ object = " + VALUE
                         + " \\]");
         assertTrue("Wrong string: " + s, pattern.matcher(s).matches());
     }

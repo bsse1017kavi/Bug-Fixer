@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -114,9 +113,9 @@ public abstract class NumberUtils {
 	/**
 	 * Raise an overflow exception for the given number and target class.
 	 * @param number the number we tried to convert
-private static void raiseOverflowException(Number number, Class<?> targetClass) {
+	 * @param targetClass the target class we tried to convert to
 	 */
-	private static void raiseOverflowException(Number number, Class targetClass) {
+private static void raiseOverflowException(Number number, Class<?> targetClass) {
 		throw new IllegalArgumentException("Could not convert number [" + number + "] of type [" +
 				number.getClass().getName() + "] to target class [" + targetClass.getName() + "]: overflow");
 	}

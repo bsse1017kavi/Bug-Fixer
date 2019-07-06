@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public class MissingParser implements Aggregator.Parser {
     }
 
     @Override
-ValuesSourceConfig<ValuesSource> config = new ValuesSourceConfig<>(ValuesSource.class);
+    public AggregatorFactory parse(String aggregationName, XContentParser parser, SearchContext context) throws IOException {
 
-        ValuesSourceConfig<ValuesSource> config = new ValuesSourceConfig<ValuesSource>(ValuesSource.class);
+ValuesSourceConfig<ValuesSource> config = new ValuesSourceConfig<>(ValuesSource.class);
 
         String field = null;
 

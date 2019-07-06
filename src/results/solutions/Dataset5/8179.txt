@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -184,9 +183,9 @@ public class AjBuildManager {
         setStructureModel(model);            
     }
     
-bcelWorld = new BcelWorld(buildConfig.getClasspath(), handler, null);
+    /** init only on initial batch compile? no file-specific options */
 	private void initBcelWorld(IMessageHandler handler) throws IOException {
-		bcelWorld = new BcelWorld(buildConfig.getClasspath(), handler);
+bcelWorld = new BcelWorld(buildConfig.getClasspath(), handler, null);
 		bcelWorld.setXnoInline(buildConfig.isXnoInline());
 		bcelWeaver = new BcelWeaver(bcelWorld);
 		

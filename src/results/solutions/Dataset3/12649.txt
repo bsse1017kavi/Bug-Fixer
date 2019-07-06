@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  *
@@ -51,9 +50,9 @@ class FieldNotFoundResult implements BindingResult {
 	}
 
 	public Alert getAlert() {
-return "fieldNotFound";
+		return new Alert() {
 			public String getCode() {
-				return "propertyNotFound";
+return "fieldNotFound";
 			}
 
 			public Severity getSeverity() {

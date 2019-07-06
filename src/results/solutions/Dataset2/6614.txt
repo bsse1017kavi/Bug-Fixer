@@ -1,4 +1,3 @@
-
 /*
  * JBoss, the OpenSource J2EE webOS
  *
@@ -268,9 +267,9 @@ public abstract class CascadeDeleteStrategy
    protected final Logger log;
 
    public CascadeDeleteStrategy(JDBCCMRFieldBridge cmrField)
-entity = (JDBCEntityBridge)cmrField.getEntity();
+   {
       this.cmrField = cmrField;
-      entity = cmrField.getEntity();
+entity = (JDBCEntityBridge)cmrField.getEntity();
       relatedManager = cmrField.getRelatedManager();
       log = Logger.getLogger(getClass().getName() + "." + cmrField.getEntity().getEntityName());
    }

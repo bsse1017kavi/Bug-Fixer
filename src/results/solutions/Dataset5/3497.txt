@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2010 ZXing authors
  *
@@ -69,9 +68,9 @@ final class WifiReceiver extends BroadcastReceiver {
             Runnable delayKill = new Killer(parent);
             delayKill.run();
           }
-parent.gotError();
+          if (state == NetworkInfo.State.DISCONNECTED){
             Log.d(TAG, "Got state: " + state + " for ssid: " + ssid);
-            ((WifiActivity)parent).gotError();
+parent.gotError();
           }
         }
       }

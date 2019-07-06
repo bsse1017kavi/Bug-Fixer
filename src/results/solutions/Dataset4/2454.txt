@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -67,9 +66,9 @@ public class RestXContentBuilder {
         restDocumentSource(source, 0, source.length, builder, params);
     }
 
-BytesStreamInput siBytes = new BytesStreamInput(source, offset, length, false);
+    public static void restDocumentSource(byte[] source, int offset, int length, XContentBuilder builder, ToXContent.Params params) throws IOException {
         if (LZF.isCompressed(source, offset, length)) {
-            BytesStreamInput siBytes = new BytesStreamInput(source, offset, length);
+BytesStreamInput siBytes = new BytesStreamInput(source, offset, length, false);
             LZFStreamInput siLzf = CachedStreamInput.cachedLzf(siBytes);
             XContentType contentType = XContentFactory.xContentType(siLzf);
             siLzf.resetToBufferStart();

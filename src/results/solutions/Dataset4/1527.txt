@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class CodecTests extends AbstractNodesTests {
                 .addMapping("type1", jsonBuilder().startObject().startObject("type1").startObject("properties").startObject("field1")
                         .field("postings_format", "test1").field("index_options", "docs").field("type", "string").endObject().endObject().endObject().endObject())
                 .setSettings(ImmutableSettings.settingsBuilder()
-.put("codec.postings_format.test1.type", "pulsing")
+                        .put("number_of_shards", 1)
                         .put("number_of_replicas", 0)
-                        .put("codec.postings_format.test1.type", "pulsing40")
+.put("codec.postings_format.test1.type", "pulsing")
                 ).execute().actionGet();
 
         client.prepareIndex("test", "type1", "1").setSource("field1", "quick brown fox", "field2", "quick brown fox").execute().actionGet();

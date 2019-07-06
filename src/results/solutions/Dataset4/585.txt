@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -567,9 +566,9 @@ public class UpdateTests extends ElasticsearchIntegrationTest {
                         .endObject())
                 .setSettings(ImmutableSettings.builder().put(MergePolicyModule.MERGE_POLICY_TYPE_KEY, NoMergePolicyProvider.class))
                 .execute().actionGet();
-final int numberOfThreads = scaledRandomIntBetween(3,5);
+        ensureGreen();
 
-        final int numberOfThreads = scaledRandomIntBetween(5,10);
+final int numberOfThreads = scaledRandomIntBetween(3,5);
         final int numberOfIdsPerThread = scaledRandomIntBetween(3,10);
         final int numberOfUpdatesPerId = scaledRandomIntBetween(100,200);
         final int retryOnConflict = randomIntBetween(0,1);

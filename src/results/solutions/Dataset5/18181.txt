@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -107,9 +106,9 @@ public final class XSNamedMap4Types extends XSNamedMapImpl {
     public XSObject itemByName(String namespace, String localName) {
         for (int i = 0; i < fNSNum; i++) {
             if (isEqual(namespace, fNamespaces[i])) {
-if (type != null && type.getTypeCategory() == fType) {
+                XSTypeDefinition type = (XSTypeDefinition)fMaps[i].get(localName);
                 // only return it if it matches the required type
-                if (type.getTypeCategory() == fType) {
+if (type != null && type.getTypeCategory() == fType) {
                     return type;
                 }
                 return null;

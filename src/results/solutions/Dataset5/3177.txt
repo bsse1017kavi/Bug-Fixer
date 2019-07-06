@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.provider.xmpp.identity;
 
 import java.net.URI;
@@ -107,9 +106,9 @@ public class XMPPRoomID extends BaseID implements IChatID {
 		StringBuffer sb = new StringBuffer("XMPPRoomID[");
 		sb.append(uri).append("]");
 		return sb.toString();
-if (clazz.isInstance(this)) {
+	}
 	public Object getAdapter(Class clazz) {
-		if (clazz.equals(IChatID.class)) {
+if (clazz.isInstance(this)) {
 			return this;
 		} else return super.getAdapter(clazz);
 	}

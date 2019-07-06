@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis;
 
 /*
@@ -548,9 +547,9 @@ public abstract class BaseTokenStreamTestCase extends LuceneTestCase {
       FieldType ft = new FieldType(TextField.TYPE_NOT_STORED);
       if (random.nextBoolean()) {
         ft.setStoreTermVectors(true);
-if (ft.storeTermVectorPositions() && !OLD_FORMAT_IMPERSONATION_IS_ACTIVE) {
+        ft.setStoreTermVectorOffsets(random.nextBoolean());
         ft.setStoreTermVectorPositions(random.nextBoolean());
-        if (ft.storeTermVectorPositions() && !PREFLEX_IMPERSONATION_IS_ACTIVE) {
+if (ft.storeTermVectorPositions() && !OLD_FORMAT_IMPERSONATION_IS_ACTIVE) {
           ft.setStoreTermVectorPayloads(random.nextBoolean());
         }
       }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -103,9 +102,9 @@ public final class Server {
     }    
     
     private void sendCommand(ServerManagerProtocolCommand command, Object o) throws IOException {
-communicationHandler.sendMessage(cmd);
+        
         byte[] cmd = ServerManagerProtocolUtils.createCommandBytes(command, o);
-        communicationHandler.sendMessage(cmd, StreamUtils.calculateChecksum(cmd));
+communicationHandler.sendMessage(cmd);
     }
 
 }

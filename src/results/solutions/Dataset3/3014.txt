@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -159,9 +158,9 @@ public class LoggingExtension implements Extension {
 
         if (context.isRegisterTransformers()) {
             registerTransformers(subsystem);
-subsystem.registerXMLElementWriter(LoggingSubsystemWriter.INSTANCE);
+        }
 
-        subsystem.registerXMLElementWriter(LoggingSubsystemParser.INSTANCE);
+subsystem.registerXMLElementWriter(LoggingSubsystemWriter.INSTANCE);
     }
 
     private void registerTransformers(SubsystemRegistration subsystem) {

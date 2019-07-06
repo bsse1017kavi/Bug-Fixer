@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -91,9 +90,9 @@ public abstract class AbstractHttpSendingTransportHandler
 			AbstractHttpServerSockJsSession session) throws Exception {
 
 		logger.debug("Opening " + getTransportType() + " connection");
-session.delegateConnectionEstablished();
+		session.setFrameFormat(getFrameFormat(request));
 		session.writeFrame(response, SockJsFrame.openFrame());
-		session.connectionInitialized();
+session.delegateConnectionEstablished();
 	}
 
 	protected abstract MediaType getContentType();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public class Suggester extends SolrSpellChecker {
   @Override
   public String init(NamedList config, SolrCore core) {
     LOG.info("init: " + config);
-: Float.valueOf((String)config.get(THRESHOLD_TOKEN_FREQUENCY));
+    String name = super.init(config, core);
     threshold = config.get(THRESHOLD_TOKEN_FREQUENCY) == null ? 0.0f
-            : (Float) config.get(THRESHOLD_TOKEN_FREQUENCY);
+: Float.valueOf((String)config.get(THRESHOLD_TOKEN_FREQUENCY));
     sourceLocation = (String) config.get(LOCATION);
     field = (String)config.get(FIELD);
     lookupImpl = (String)config.get(LOOKUP_IMPL);

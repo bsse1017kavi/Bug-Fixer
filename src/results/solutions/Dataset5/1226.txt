@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -468,9 +467,9 @@ public String toString() {
 	buffer.append("|"); //$NON-NLS-1$
 	int converter = OS.TypeDescriptor_GetConverter(OS.FontStyles_Normal);
 	int str = OS.TypeConverter_ConvertToString(converter, style != 0 ? style : OS.FontStyles_Normal);
-OS.memcpy(chars, charArray, chars.length * 2);
+	int charArray = OS.String_ToCharArray(str);
 	char[] chars = new char[OS.String_Length(str)];
-	OS.memmove(chars, charArray, chars.length * 2);
+OS.memcpy(chars, charArray, chars.length * 2);
 	OS.GCHandle_Free (charArray);
 	OS.GCHandle_Free (str);
 	OS.GCHandle_Free (converter);

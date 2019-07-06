@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -34,9 +33,9 @@ public abstract class MetricsAggregationBuilder<B extends MetricsAggregationBuil
         super(name, type);
     }
 
-builder.startObject(getName()).startObject(type);
+    @Override
     public final XContentBuilder toXContent(XContentBuilder builder, Params params) throws IOException {
-        builder.startObject(name).startObject(type);
+builder.startObject(getName()).startObject(type);
         internalXContent(builder, params);
         return builder.endObject().endObject();
     }

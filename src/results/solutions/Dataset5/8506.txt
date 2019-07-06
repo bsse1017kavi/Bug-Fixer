@@ -1,4 +1,3 @@
-
 import java.lang.reflect.*;
 import org.aspectj.testing.Tester;
 
@@ -34,9 +33,9 @@ abstract aspect A {
          // because of the change to the meaning
          // of initialization
 	 //&& initialization(new(..)) ;
-after() returning: j() {
+         && initialization(I.new(..)) ;
 
-     after() returning(Object o): j() {
+after() returning: j() {
 	 Tester.note("advised default constructor");
 	 count++;
      }

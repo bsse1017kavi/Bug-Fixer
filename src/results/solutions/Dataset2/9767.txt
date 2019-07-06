@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2010 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -144,9 +143,9 @@ public class RawTypeBinding extends ParameterizedTypeBinding {
 	    }
         return false;
 	}
-if (this == otherType || erasure() == otherType) // https://bugs.eclipse.org/bugs/show_bug.cgi?id=329588
+
     public boolean isProvablyDistinct(TypeBinding otherType) {
-		if (this == otherType)
+if (this == otherType || erasure() == otherType) // https://bugs.eclipse.org/bugs/show_bug.cgi?id=329588
 		    return false;
 	    if (otherType == null)
 	        return true;

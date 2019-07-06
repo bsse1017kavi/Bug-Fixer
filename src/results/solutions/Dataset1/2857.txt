@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -147,9 +146,9 @@ public abstract class AbstractDistribZkTestBase extends BaseDistributedSearchTes
       Map<String,Slice> slices = clusterState.getSlicesMap(collection);
       assertNotNull("Could not find collection:" + collection, slices);
       for (Map.Entry<String,Slice> entry : slices.entrySet()) {
-if (verbose) System.out.println("replica:" + shard.getValue().getName() + " rstate:"
+        Map<String,Replica> shards = entry.getValue().getReplicasMap();
         for (Map.Entry<String,Replica> shard : shards.entrySet()) {
-          if (verbose) System.out.println("rstate:"
+if (verbose) System.out.println("replica:" + shard.getValue().getName() + " rstate:"
               + shard.getValue().getStr(ZkStateReader.STATE_PROP)
               + " live:"
               + clusterState.liveNodesContain(shard.getValue().getNodeName()));

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2005 The Apache Software Foundation.
  *
@@ -308,9 +307,9 @@ public class SampleResultConverter extends AbstractCollectionConverter {
 			Object subItem) {
 		String nodeName = reader.getNodeName();
 		if (subItem instanceof AssertionResult) {
-res.storeSubResult((SampleResult) subItem);
+			res.addAssertionResult((AssertionResult) subItem);
 		} else if (subItem instanceof SampleResult) {
-			res.addSubResult((SampleResult) subItem);
+res.storeSubResult((SampleResult) subItem);
 		} else if (nodeName.equals(TAG_RESPONSE_HEADER)) {
 			res.setResponseHeaders((String) subItem);
 		} else if (nodeName.equals(TAG_REQUEST_HEADER)) {

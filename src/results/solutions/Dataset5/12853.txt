@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -175,9 +174,9 @@ public abstract class WebApplication extends Application
 	{
 		final WicketServlet servlet = getWicketServlet();
 		final String configuration = wicketServlet.getInitParameter("configuration");
-getSettings().configure(wicketServlet.getServletContext(),configuration, wicketServlet.getInitParameter("sourceFolder"));
+		if (configuration != null)
 		{
-			getSettings().configure(configuration, wicketServlet.getInitParameter("sourceFolder"));
+getSettings().configure(wicketServlet.getServletContext(),configuration, wicketServlet.getInitParameter("sourceFolder"));
 		}
 	}
 

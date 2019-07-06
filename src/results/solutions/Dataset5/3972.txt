@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -280,9 +279,9 @@ public class WebRequestCycle extends RequestCycle
 		page.visitChildren(Form.class, new Component.IVisitor()
 		{
 			// For each FormComponent found on the Page (not Form)
-((Form)component).loadPersistentFormComponentValues();
+			public Object component(final Component component)
 			{
-				((Form)component).setFormComponentValuesFromPersister();
+((Form)component).loadPersistentFormComponentValues();
 				return CONTINUE_TRAVERSAL;
 			}
 		});

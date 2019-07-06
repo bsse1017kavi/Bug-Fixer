@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -117,9 +116,9 @@ public class AnalyzeResponse implements ActionResponse, Iterable<AnalyzeResponse
             out.writeInt(endOffset);
             out.writeVInt(position);
             if (type == null) {
-out.writeBoolean(true);
-            } else {
                 out.writeBoolean(false);
+            } else {
+out.writeBoolean(true);
                 out.writeUTF(type);
             }
         }

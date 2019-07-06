@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -304,9 +303,9 @@ public class StompBrokerRelayMessageHandler extends AbstractBrokerMessageHandler
 			}
 		}
 
-logger.trace("Reading message for sessionId=" + sessionId + ", " + message);
+		private void readStompFrame(Message<byte[]> message) {
 			if (logger.isTraceEnabled()) {
-				logger.trace("Reading message " + message);
+logger.trace("Reading message for sessionId=" + sessionId + ", " + message);
 			}
 
 			StompHeaderAccessor headers = StompHeaderAccessor.wrap(message);

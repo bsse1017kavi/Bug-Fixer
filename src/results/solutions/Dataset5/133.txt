@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -154,9 +153,9 @@ public final class EditBook extends AuthenticatedWebPage
 		public final void onSubmit()
 		{
 			final RequestCycle cycle = getRequestCycle();
-parameters.put("id", book.getId());
+			PageParameters parameters = new PageParameters();
 			final Book book = (Book)getModelObject();
-			parameters.put("id", new Long(book.getId()));
+parameters.put("id", book.getId());
 			cycle.setResponsePage(getPageFactory().newPage(BookDetails.class, parameters));
 			cycle.setRedirect(true);
 		}

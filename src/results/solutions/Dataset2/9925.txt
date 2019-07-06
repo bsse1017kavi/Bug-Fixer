@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -405,9 +404,9 @@ public void saveIndexes(){
 			}
 			try {
 				index.save();
-JobManager.log("-> got the following exception while merging:"); //$NON-NLS-1$
+			} catch(IOException e){
 				if (IndexManager.VERBOSE) {
-					JobManager.log("-> got the following exception while merging:");
+JobManager.log("-> got the following exception while merging:"); //$NON-NLS-1$
 					e.printStackTrace();
 				}
 				//org.eclipse.jdt.internal.core.Util.log(e);

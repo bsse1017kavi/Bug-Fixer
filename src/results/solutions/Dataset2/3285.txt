@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -102,9 +101,9 @@ public class ViewerActionBuilder extends PluginActionBuilder {
             IWorkbenchPart part) {
 		Assert.isTrue(part instanceof IViewPart || part instanceof IEditorPart);
         provider = prov;
-IWorkbenchRegistryConstants.PL_POPUP_MENU);
+        this.part = part;
         readContributions(id, IWorkbenchRegistryConstants.TAG_VIEWER_CONTRIBUTION,
-                IWorkbenchConstants.PL_POPUP_MENU);
+IWorkbenchRegistryConstants.PL_POPUP_MENU);
         return (cache != null);
     }
 

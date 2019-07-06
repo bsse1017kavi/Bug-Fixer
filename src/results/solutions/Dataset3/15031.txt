@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -175,9 +174,9 @@ interface CommonAttributes {
     SimpleAttributeDefinition TARGET = new SimpleAttributeDefinitionBuilder("target", ModelType.STRING, true).
             setDefaultValue(new ModelNode().set(Target.SYSTEM_OUT.toString())).
             setValidator(new TargetValidator(false)).
-SimpleAttributeDefinition USE_PARENT_HANDLERS = new SimpleAttributeDefinitionBuilder("use-parent-handlers", ModelType.BOOLEAN, true).
+            build();
 
-    SimpleAttributeDefinition USE_PARENT_HANDLERS = new SimpleAttributeDefinitionBuilder("use-parent-handlers", ModelType.BOOLEAN).
+SimpleAttributeDefinition USE_PARENT_HANDLERS = new SimpleAttributeDefinitionBuilder("use-parent-handlers", ModelType.BOOLEAN, true).
             setDefaultValue(new ModelNode().set(true)).
             build();
 

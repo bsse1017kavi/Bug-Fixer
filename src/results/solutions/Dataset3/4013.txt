@@ -1,4 +1,3 @@
-
 package org.jboss.as.connector.pool;
 
 import java.util.ArrayList;
@@ -43,9 +42,9 @@ public abstract class PoolOperations implements OperationStepHandler {
 
         if (context.getType() == OperationContext.Type.SERVER) {
             context.addStep(new OperationStepHandler() {
-ConnectorServices.MANAGEMENT_REPOSITORY_SERVICE);
+                public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
                     final ServiceController<?> managementRepoService = context.getServiceRegistry(false).getService(
-                            ConnectorServices.MANAGEMENT_REPOSISTORY_SERVICE);
+ConnectorServices.MANAGEMENT_REPOSITORY_SERVICE);
                     if (managementRepoService != null) {
                         ModelNode operationResult = null;
                         try {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -175,9 +174,9 @@ class GetMapValue
         LRSMapFieldStrategy strat = (LRSMapFieldStrategy) field.getStrategy();
         ClassMapping[] clss = strat.getIndependentValueMappings(true);
         if (clss != null && clss.length > 1)
-ClassMapping cls = (clss == null || clss.length == 0) ? null : clss[0];
+            throw RelationStrategies.unjoinable(field);
 
-        ClassMapping cls = (clss.length == 0) ? null : clss[0];
+ClassMapping cls = (clss == null || clss.length == 0) ? null : clss[0];
         ForeignKey fk = strat.getJoinForeignKey(cls);
 
         // manually create a subselect for the Map's value

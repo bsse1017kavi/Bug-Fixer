@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -282,9 +281,9 @@ public class WarDeploymentProcessor implements DeploymentUnitProcessor {
             final WebDeploymentService webappService = new WebDeploymentService(webContext, injectionContainer, setupActions, attributes);
             ServiceBuilder<StandardContext> webappBuilder = serviceTarget.addService(webappServiceName, webappService)
                     .addDependency(WebSubsystemServices.JBOSS_WEB_HOST.append(hostName), VirtualHost.class, new WebContextInjector(webContext))
-.addDependency(JndiNamingDependencyProcessor.serviceName(deploymentUnit.getServiceName()));
+                    .addDependencies(injectionContainer.getServiceNames()).addDependency(realmServiceName, Realm.class, webappService.getRealm())
                     .addDependencies(deploymentUnit.getAttachmentList(Attachments.WEB_DEPENDENCIES))
-                    .addDependency(JndiNamingDependencyProcessor.serviceName(deploymentUnit));
+.addDependency(JndiNamingDependencyProcessor.serviceName(deploymentUnit.getServiceName()));
 
             // add any dependencies required by the setup action
             for (final SetupAction action : setupActions) {

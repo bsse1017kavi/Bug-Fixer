@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -838,9 +837,9 @@ void HandleClosed (int sender, int e) {
 
 void HandleClosing (int sender, int e) {
 	if (!checkEvent (e)) return;
-if (isEnabled ()) {
+	closing = true;
 	boolean doit = false;
-	if (isEnabled () && isActive ()) {
+if (isEnabled ()) {
 		Event event = new Event ();
 		sendEvent (SWT.Close, event);
 		doit = event.doit || isDisposed ();

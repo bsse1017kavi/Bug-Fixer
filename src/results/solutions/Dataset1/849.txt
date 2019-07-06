@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -131,9 +130,9 @@ public class BinaryMemtable implements IFlushable<DecoratedKey>
     public List<DecoratedKey> getSortedKeys()
     {
         assert !columnFamilies_.isEmpty();
-Collections.sort(keys);
+        logger_.info("Sorting " + this);
         List<DecoratedKey> keys = new ArrayList<DecoratedKey>(columnFamilies_.keySet());
-        Collections.sort(keys, partitioner_.getDecoratedKeyComparator());
+Collections.sort(keys);
         return keys;
     }
 

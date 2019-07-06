@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -176,9 +175,9 @@ public abstract class AbstractLoggingSubsystemTest extends AbstractSubsystemBase
     static PathAddress createFileHandlerAddress(final String profileName, final String name) {
         return createAddress(profileName, CommonAttributes.FILE_HANDLER, name);
     }
-final KernelServices kernelServices = createKernelServicesBuilder(createAdditionalInitialization()).setSubsystemXml(getSubsystemXml()).build();
+
     protected KernelServices boot() throws Exception {
-        final KernelServices kernelServices = createKernelServicesBuilder(LoggingTestEnvironment.get()).setSubsystemXml(getSubsystemXml()).build();
+final KernelServices kernelServices = createKernelServicesBuilder(createAdditionalInitialization()).setSubsystemXml(getSubsystemXml()).build();
         final Throwable bootError = kernelServices.getBootError();
         Assert.assertTrue("Failed to boot: " + String.valueOf(bootError), kernelServices.isSuccessfulBoot());
         return kernelServices;

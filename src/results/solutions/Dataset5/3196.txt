@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -412,9 +411,9 @@ public abstract class WebApplication extends Application
 	 * @param servletResponse
 	 * @return a WebResponse object
 	 */
-return (getRequestCycleSettings().getBufferResponse()
+	protected WebResponse newWebResponse(final HttpServletResponse servletResponse)
 	{
-		return (getSettings().getBufferResponse()
+return (getRequestCycleSettings().getBufferResponse()
 				? new BufferedWebResponse(servletResponse)
 				: new WebResponse(servletResponse));
 	}

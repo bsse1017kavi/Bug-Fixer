@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -276,9 +275,9 @@ public class NewJMSSubsystemParser implements XMLStreamConstants, XMLElementRead
             final Element element = Element.forName(reader.getLocalName());
             if(element != Element.CONNECTOR_REF) {
                 throw ParseUtils.unexpectedElement(reader);
-final ModelNode connector = connectors.get(name).setEmptyObject();
+            }
             ParseUtils.requireNoContent(reader);
-            final ModelNode connector = connectors.get(name);
+final ModelNode connector = connectors.get(name).setEmptyObject();
             if(backup != null) {
                 connector.get(CONNECTOR_BACKUP_NAME).set(backup);
             }

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 import java.util.List;
@@ -97,9 +96,9 @@ public  class RModuleIssueType
             for (int j=0; j<attGroups.size(); j++)
             {
                 // delete attribute-attribute group map
-attGroup.delete(user, module);
+                AttributeGroup attGroup = 
                               (AttributeGroup)attGroups.get(j);
-                attGroup.delete(user);
+attGroup.delete(user, module);
             }
 
             Criteria c = new Criteria()

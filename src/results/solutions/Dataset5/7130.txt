@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -178,9 +177,9 @@ public class Localizer
 	public String getString(final String key, final Component component, final IModel model,
 			final String defaultValue) throws MissingResourceException
 	{
-boolean addedToPage = (component != null && null != component.findParent(Page.class));
+		final IResourceSettings resourceSettings = Application.get().getResourceSettings();
 
-		boolean addedToPage = (null != component.findParent(Page.class));
+boolean addedToPage = (component != null && null != component.findParent(Page.class));
 		if (!addedToPage)
 		{
 			logger

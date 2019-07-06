@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public class HttpMirrorThread implements Runnable {
             out.write(baos.toByteArray());
 
             // Check if we have found a content-length header
-contentLength = Integer.parseInt(contentLengthHeaderValue);
+            String contentLengthHeaderValue = getRequestHeaderValue(headerString, "Content-Length"); //$NON-NLS-1$
             if(contentLengthHeaderValue != null) {
-                contentLength = Integer.valueOf(contentLengthHeaderValue).intValue();
+contentLength = Integer.parseInt(contentLengthHeaderValue);
             }
             // Look for special Sleep request
             String sleepHeaderValue = getRequestHeaderValue(headerString, "X-Sleep"); //$NON-NLS-1$

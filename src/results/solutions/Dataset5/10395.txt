@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -120,9 +119,9 @@ public ToolItem (ToolBar parent, int style) {
 public ToolItem (ToolBar parent, int style, int index) {
 	super (parent, checkStyle (style));
 	this.parent = parent;
-error (SWT.ERROR_INVALID_RANGE);
+	int count = parent.getItemCount ();
 	if (!(0 <= index && index <= count)) {
-		error (SWT.ERROR_ITEM_NOT_ADDED);
+error (SWT.ERROR_INVALID_RANGE);
 	}
 	createWidget (index);
 }

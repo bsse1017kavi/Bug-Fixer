@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -617,9 +616,9 @@ public class IndexLookupTests extends ElasticsearchIntegrationTest {
             if (result instanceof Integer) {
                 assertThat(((Integer) result).intValue(), equalTo(value));
             } else if (result instanceof Long) {
-fail();
+                assertThat(((Long) result).intValue(), equalTo(value));
             } else {
-                assert false;
+fail();
             }
         }
     }

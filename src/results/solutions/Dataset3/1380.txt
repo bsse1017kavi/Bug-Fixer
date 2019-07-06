@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class SimpleCacheFactoryBuilderService<K, V extends Identifiable<K>> exte
         return this;
     }
 
-RemoveOnCancelScheduledExecutorService.build(target, deploymentUnitServiceName.append(this.name, "expiration"), THREAD_FACTORY)
+    @Override
     public void installDeploymentUnitDependencies(ServiceTarget target, ServiceName deploymentUnitServiceName) {
-        target.addService(deploymentUnitServiceName.append(this.name, "expiration"), new RemoveOnCancelScheduledExecutorService(THREAD_FACTORY))
+RemoveOnCancelScheduledExecutorService.build(target, deploymentUnitServiceName.append(this.name, "expiration"), THREAD_FACTORY)
                 .setInitialMode(ServiceController.Mode.ON_DEMAND)
                 .install()
         ;

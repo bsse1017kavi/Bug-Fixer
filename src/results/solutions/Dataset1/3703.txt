@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UpdateNode
@@ -843,9 +842,9 @@ public final class UpdateNode extends DMLModStatementNode
             mb.callMethod(VMOpcode.INVOKEINTERFACE, (String) null, "getUpdateVTIResultSet", ClassName.ResultSet, 1);
 		}
         else
-generateGenerationClauses( resultColumnList, resultSet.getResultSetNumber(), true, acb, mb );
+        {
 			// arg 2 generate code to evaluate generation clauses
-			generateGenerationClauses( resultColumnList, resultSet.getResultSetNumber(), acb, mb );
+generateGenerationClauses( resultColumnList, resultSet.getResultSetNumber(), true, acb, mb );
 
             // generate code to evaluate CHECK CONSTRAINTS
             generateCheckConstraints( checkConstraints, acb, mb ); // arg 3

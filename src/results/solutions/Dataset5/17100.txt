@@ -1,4 +1,3 @@
-
 /*
  * $Id: ComponentStringResourceLoader.java,v 1.5 2005/01/19 08:07:57
  * jonathanlocke Exp $ $Revision$ $Date$
@@ -197,9 +196,9 @@ public abstract class AbstractStringResourceLoader
 	 *            the strings from (see {@link wicket.Session})
 	 * @return The string resource value or null if resource not found
 	 */
-return application.getResourceSettings().getPropertiesFactory().get(application, clazz, style, locale);
+	protected Properties getProperties(final Class clazz, final Locale locale, final String style)
 	{
-		return application.getPropertiesFactory().get(application, clazz, style, locale);
+return application.getResourceSettings().getPropertiesFactory().get(application, clazz, style, locale);
 	}
 
 	/**

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public final class DomainDescriptionProviders {
     };
 
     public static final DescriptionProvider PROFILE = new DescriptionProvider() {
-return ProfileDescription.getProfileWithIncludesDescription(locale);
+        @Override
         public ModelNode getModelDescription(Locale locale) {
-            return ProfileDescription.getProfileDescription(locale);
+return ProfileDescription.getProfileWithIncludesDescription(locale);
         }
     };
 

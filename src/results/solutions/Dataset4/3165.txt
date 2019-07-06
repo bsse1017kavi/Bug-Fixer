@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -88,9 +87,9 @@ public class RestUpdateAction extends BaseRestHandler {
         updateRequest.retryOnConflict(request.paramAsInt("retry_on_conflict", updateRequest.retryOnConflict()));
 
         // see if we have it in the body
-updateRequest.source(request.content());
+        if (request.hasContent()) {
             try {
-                updateRequest.source(request.contentByteArray(), request.contentByteArrayOffset(), request.contentLength());
+updateRequest.source(request.content());
                 IndexRequest upsertRequest = updateRequest.upsertRequest();
                 if (upsertRequest != null) {
                     upsertRequest.routing(request.param("routing"));

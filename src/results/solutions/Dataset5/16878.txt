@@ -1,4 +1,3 @@
-
 /**
  * <copyright> 
  *
@@ -36,9 +35,9 @@ public class BackendTypeConverter {
 
 	public StaticProperty getEnumLiteral(Identifier name) {
 		return getEnumLiteral(qualify(name));
-public static String qualify(Identifier name) {
+	}
 
-	private String qualify(Identifier name) {
+public static String qualify(Identifier name) {
 		String value = name.getValue();
 		if (name.getNext() != null) {
 			value += SyntaxConstants.NS_DELIM + qualify(name.getNext());

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -87,9 +86,9 @@ public class TestNearSpansOrdered extends LuceneTestCase {
     return makeQuery("w1","w2","w3",1,true);
   }
   
-CheckHits.checkHits(random, q, FIELD, searcher, new int[] {0,1});
+  public void testSpanNearQuery() throws Exception {
     SpanNearQuery q = makeQuery();
-    CheckHits.checkHits(q, FIELD, searcher, new int[] {0,1});
+CheckHits.checkHits(random, q, FIELD, searcher, new int[] {0,1});
   }
 
   public String s(Spans span) {

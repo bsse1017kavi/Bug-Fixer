@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -153,9 +152,9 @@ public class PackageTest extends TestCase {
 			while (enumr.hasMoreElements()) {
 				String key = null;
 				try {
-if (!resname.equalsIgnoreCase("de") && val.equals(prb.getString(key))){
+					key = (String) enumr.nextElement();
 					String val =defaultPRB.getString(key);
-                    if (val.equals(prb.getString(key))){
+if (!resname.equalsIgnoreCase("de") && val.equals(prb.getString(key))){
                         System.out.println("Possible duplicate value for "+key+" in "+res);
                         subTestFailures++;
                     }

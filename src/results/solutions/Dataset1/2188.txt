@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -38,9 +37,9 @@ public final class InformationGainRatio extends AbstractJob {
   }
 
   @Override
-ToolRunner.run(getConf(), job, args);
+  public int run(String[] args) throws Exception {
     InformationGain job = new InformationGain();
-    ToolRunner.run(job, args);
+ToolRunner.run(getConf(), job, args);
     informationGain = job.getInformationGain();
     entropy = job.getEntropy();
     informationGainRatio = informationGain / entropy;

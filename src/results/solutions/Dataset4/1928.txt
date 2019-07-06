@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -447,9 +446,9 @@ public class Store extends AbstractIndexShardComponent implements CloseableIndex
                     return ImmutableMap.of();
                 }
                 Version maxVersion = Version.LUCENE_3_0; // we don't know which version was used to write so we take the max version.
-final Version version = Lucene.parseVersionLenient(info.info.getVersion(), Version.LUCENE_3_0);
+                Set<String> added = new HashSet<>();
                 for (SegmentCommitInfo info : segmentCommitInfos) {
-                    final Version version = Version.parseLeniently(info.info.getVersion());
+final Version version = Lucene.parseVersionLenient(info.info.getVersion(), Version.LUCENE_3_0);
                     if (version.onOrAfter(maxVersion)) {
                         maxVersion = version;
                     }

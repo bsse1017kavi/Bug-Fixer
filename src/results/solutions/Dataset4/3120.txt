@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -443,9 +442,9 @@ public class LwjglGraphics implements Graphics {
 
 	public boolean shouldRender () {
 		synchronized (this) {
-return rq || isContinuous;
+			boolean rq = requestRendering;
 			requestRendering = false;
-			return rq || isContinuous || Display.isDirty();
+return rq || isContinuous;
 		}
 	}
 

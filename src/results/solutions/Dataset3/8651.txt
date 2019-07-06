@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -137,9 +136,9 @@ public interface Bootstrap {
                 }
                 else {
                     QName rootElement = new QName(Namespace.CURRENT.getUriString(), "server");
-persister.registerAdditionalRootElement(new QName(Namespace.DOMAIN_1_0.getUriString(), "server"), parser);
+                    StandaloneXml parser = new StandaloneXml(Module.getBootModuleLoader());
                     BackupXmlConfigurationPersister persister = new BackupXmlConfigurationPersister(serverEnvironment.getServerConfigurationFile(), rootElement, parser, parser);
-                    persister.registerAdditionalRootElement(new QName(Namespace.DOMAIN_1_1.getUriString(), "server"), parser);
+persister.registerAdditionalRootElement(new QName(Namespace.DOMAIN_1_0.getUriString(), "server"), parser);
                     configurationPersister = persister;
                 }
             }

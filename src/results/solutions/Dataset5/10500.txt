@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -59,9 +58,9 @@ public class FileValue extends Value {
     public File get() {
         return value;
     }
-return (value == null) ? null : AccessController.doPrivileged(
+
     protected String getInternalString() {
-        return (value == null) ? null : (String) AccessController.doPrivileged(
+return (value == null) ? null : AccessController.doPrivileged(
             J2DoPrivHelper.getAbsolutePathAction(value));
     }
 

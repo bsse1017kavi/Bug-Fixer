@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -709,9 +708,9 @@ public class LangUtil {
         int start = 0;
         int loc;
         while (-1 != (loc = in.indexOf(sought, start))) {
-result.append(replace);
+            result.append(in.substring(start, loc));
             if (!LangUtil.isEmpty(replace)) {
-                result.append(in.substring(start, loc));
+result.append(replace);
             }
             start = loc + len;
         }

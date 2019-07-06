@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -81,9 +80,9 @@ public class ServerDeploymentHelper {
 
     public void undeploy(String runtimeName) throws ServerDeploymentException {
         ServerDeploymentActionResult actionResult;
-builder = builder.undeploy(runtimeName).andRemoveUndeployed();
+        try {
             DeploymentPlanBuilder builder = deploymentManager.newDeploymentPlan();
-            builder = builder.undeploy(runtimeName).remove(runtimeName);
+builder = builder.undeploy(runtimeName).andRemoveUndeployed();
             DeploymentPlan plan = builder.build();
             DeploymentAction action = builder.getLastAction();
             Future<ServerDeploymentPlanResult> future = deploymentManager.execute(plan);

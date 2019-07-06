@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -233,9 +232,9 @@ public class UnaryExpression extends OperatorExpression {
 
 		// the code is an int
 		// (cast)  left   Op (cast)  rigth --> result
-int result = OperatorSignatures[tableId][(expressionId << 4) + expressionId];
+		//  0000   0000       0000   0000      0000
 		//  <<16   <<12       <<8    <<4       <<0
-		int result = ResolveTypeTables[tableId][(expressionId << 4) + expressionId];
+int result = OperatorSignatures[tableId][(expressionId << 4) + expressionId];
 		this.expression.implicitConversion = result >>> 12;
 		this.bits |= result & 0xF;
 		switch (result & 0xF) { // only switch on possible result type.....

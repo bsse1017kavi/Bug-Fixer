@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -270,9 +269,9 @@ public class BufferUtils {
 	#include <stdlib.h>
 	#include <string.h>
 	*/
-int size = buffer.capacity();
+	
 	public static void disposeUnsafeByteBuffer(ByteBuffer buffer) {
-		int size = 0; 
+int size = buffer.capacity();
 		synchronized(unsafeBuffers) {
 			if(!unsafeBuffers.removeValue(buffer, true))
 				throw new IllegalArgumentException("buffer not allocated with newUnsafeByteBuffer or already disposed");

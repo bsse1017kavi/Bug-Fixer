@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class TestMapBackedSet2<E> extends AbstractTestSet<E> {
         super(testName);
     }
 
-return MapBackedSet.mapBackedSet(new LinkedMap<E, Object>());
+    @Override
     public Set<E> makeObject() {
-        return MapBackedSet.decorate(new LinkedMap<E, Object>());
+return MapBackedSet.mapBackedSet(new LinkedMap<E, Object>());
     }
 
     @SuppressWarnings("unchecked")

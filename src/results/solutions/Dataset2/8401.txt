@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -268,9 +267,9 @@ public final class AST {
 		ast.setBindingResolver(resolver);
 		converter.setAST(ast);
 	
-unit.setTypeRoot(workingCopy);
+		CompilationUnit unit = converter.convert(compilationUnitDeclaration, source);
 		unit.setLineEndTable(compilationUnitDeclaration.compilationResult.getLineSeparatorPositions());
-		unit.setJavaElement(workingCopy);
+unit.setTypeRoot(workingCopy);
 		ast.setDefaultNodeFlag(savedDefaultNodeFlag);
 		return unit;
 	}

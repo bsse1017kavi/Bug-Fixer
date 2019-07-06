@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2014 Red Hat Inc. and/or its affiliates and other contributors
@@ -39,9 +38,9 @@ import org.wildfly.clustering.infinispan.spi.service.CacheServiceName;
 public class LockingMetricsHandler extends AbstractRuntimeOnlyHandler {
 
     @Override
-PathAddress address = context.getCurrentAddress();
+    protected void executeRuntimeStep(OperationContext context, ModelNode operation) throws OperationFailedException {
         // Address is of the form: /subsystem=infinispan/cache-container=*/*-cache=*/locking=LOCKING
-        PathAddress address = Operations.getPathAddress(operation);
+PathAddress address = context.getCurrentAddress();
         String containerName = address.getElement(address.size() - 3).getValue();
         String cacheName = address.getElement(address.size() - 2).getValue();
         String name = Operations.getAttributeName(operation);

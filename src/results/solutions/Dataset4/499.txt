@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -32,9 +31,9 @@ public class AliasesExistRequestBuilder extends BaseAliasesRequestBuilder<Aliase
         super(client, aliases);
     }
 
-client.aliasesExist(request, listener);
+    @Override
     protected void doExecute(ActionListener<AliasesExistResponse> listener) {
-        ((IndicesAdminClient) client).aliasesExist(request, listener);
+client.aliasesExist(request, listener);
     }
 
 }

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.memory;
 
 /*
@@ -871,9 +870,9 @@ public class MemoryIndex {
       public long totalTermFreq() {
         return info.sortedTerms[termUpto].getValue().size();
       }
-public DocsEnum docs(Bits liveDocs, DocsEnum reuse, int flags) {
+
       @Override
-      public DocsEnum docs(Bits liveDocs, DocsEnum reuse, boolean needsFreqs) {
+public DocsEnum docs(Bits liveDocs, DocsEnum reuse, int flags) {
         if (reuse == null || !(reuse instanceof MemoryDocsEnum)) {
           reuse = new MemoryDocsEnum();
         }

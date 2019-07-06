@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -354,9 +353,9 @@ final class DirHandler extends Handler  {
     public void doService(Request req, Response res)
 	throws Exception
     {
-Locale locale=RequestUtil.getLocale(req.getMimeHeaders());
+	// this is how get locale is implemented. Ugly, but it's in
 	// the next round of optimizations
-	Locale locale=RequestUtil.getLocale(req);
+Locale locale=RequestUtil.getLocale(req.getMimeHeaders());
 	StringManager sm=StringManager.
 	    getManager("org.apache.tomcat.resources",locale);
 	DateFormat dateFormat =

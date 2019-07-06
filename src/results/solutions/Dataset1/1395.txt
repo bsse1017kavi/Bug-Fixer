@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -407,9 +406,9 @@ public abstract class AbstractMatrix implements Matrix {
 
   public Matrix times(Matrix other) {
     int[] c = size();
-throw new CardinalityException(c[COL], o[ROW]);
+    int[] o = other.size();
     if (c[COL] != o[ROW]) {
-      throw new CardinalityException();
+throw new CardinalityException(c[COL], o[ROW]);
     }
     Matrix result = like(c[ROW], o[COL]);
     for (int row = 0; row < c[ROW]; row++) {

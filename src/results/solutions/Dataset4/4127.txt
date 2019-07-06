@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -294,9 +293,9 @@ public class SimpleEngineBenchmark {
     public static void main(String[] args) throws Exception {
         ShardId shardId = new ShardId(new Index("index"), 1);
         Settings settings = EMPTY_SETTINGS;
-Store store = new ByteBufferStore(shardId, settings, null, new ByteBufferCache(settings));
+
 //        Store store = new RamStore(shardId, settings);
-        Store store = new ByteBufferStore(shardId, settings, new ByteBufferCache(settings));
+Store store = new ByteBufferStore(shardId, settings, null, new ByteBufferCache(settings));
 //        Store store = new NioFsStore(shardId, settings);
 
         store.deleteContent();

@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -29,9 +28,9 @@ Zone(String file, Cache cache) throws IOException {
 			addRR(record);
 			if (origin == null && record.getType() == Type.SOA)
 				origin = record.getName();
-cache.addRecord(record, Credibility.ZONE_GLUE, m);
+		}
 		else
-			cache.addRecord(record, Credibility.ZONE_GLUE);
+cache.addRecord(record, Credibility.ZONE_GLUE, m);
 	}
 }
 

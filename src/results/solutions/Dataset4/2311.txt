@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -31,9 +30,9 @@ public class TestResponseHeaderRestAction extends BaseRestHandler {
         super(settings, client);
         controller.registerHandler(RestRequest.Method.GET, "/_protected", this);
     }
-public void handleRequest(RestRequest request, RestChannel channel, Client client) {
+
     @Override
-    public void handleRequest(RestRequest request, RestChannel channel) {
+public void handleRequest(RestRequest request, RestChannel channel, Client client) {
         if ("password".equals(request.header("Secret"))) {
             RestResponse response = new BytesRestResponse(RestStatus.OK, "Access granted");
             response.addHeader("Secret", "granted");

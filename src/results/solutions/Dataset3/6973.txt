@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -103,9 +102,9 @@ public class PhoneticEngine {
          *
          * @param phonemeExpr   the expression to apply
          * @param maxPhonemes   the maximum number of phonemes to build up
-final Set<Rule.Phoneme> newPhonemes = new LinkedHashSet<Rule.Phoneme>(maxPhonemes);
+         */
         public void apply(final Rule.PhonemeExpr phonemeExpr, final int maxPhonemes) {
-            final List<Rule.Phoneme> newPhonemes = new ArrayList<Rule.Phoneme>(maxPhonemes);
+final Set<Rule.Phoneme> newPhonemes = new LinkedHashSet<Rule.Phoneme>(maxPhonemes);
 
             EXPR: for (final Rule.Phoneme left : this.phonemes) {
                 for (final Rule.Phoneme right : phonemeExpr.getPhonemes()) {

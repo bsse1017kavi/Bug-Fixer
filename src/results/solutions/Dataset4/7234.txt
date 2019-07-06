@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -123,9 +122,9 @@ public final class TermVectorFields extends Fields {
      *                    header information as {@link BytesRef}.
      * @param termVectors Stores the actual term vectors as a {@link BytesRef}.
      */
-fieldMap = new ObjectLongOpenHashMap<>();
+    public TermVectorFields(BytesReference headerRef, BytesReference termVectors) throws IOException {
         BytesStreamInput header = new BytesStreamInput(headerRef);
-        fieldMap = new ObjectLongOpenHashMap<String>();
+fieldMap = new ObjectLongOpenHashMap<>();
 
         // here we read the header to fill the field offset map
         String headerString = header.readString();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 The Apache Software Foundation.
  * 
@@ -455,9 +454,9 @@ public class NumberUtils {
                         && isDigits(numeric.substring(1))
                         && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
                         try {
-; //Too big for a long
+                            return createLong(numeric);
                         } catch (NumberFormatException nfe) {
-                            //Too big for a long
+; //Too big for a long
                         }
                         return createBigInteger(numeric);
 

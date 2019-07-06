@@ -1,4 +1,3 @@
-
 package org.xbill.DNS.security;
 
 import java.io.IOException;
@@ -143,9 +142,9 @@ throws IOException, SignatureException, InvalidKeyException,
 	if (algorithm == DNSSEC.DSA) {
 		DSAKey dsakey = (DSAKey) privateKey;
 		signature = DSASignature.create(dsakey.getParams(), signature);
-SIGRecord r = new SIGRecord(Name.root, DClass.ANY, 0,
+	}
 	
-	SIGRecord r = new SIGRecord(new Name("."), DClass.ANY, 0,
+SIGRecord r = new SIGRecord(Name.root, DClass.ANY, 0,
 				    0, algorithm,
 				    0, timeExpires, timeSigned,
 				    footprint,

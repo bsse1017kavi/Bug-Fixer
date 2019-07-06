@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -651,9 +650,9 @@ public class AntiEntropyService
             logger.info("Performing streaming repair of " + differences.size() + " ranges to " + remote + " for " + cf);
             ColumnFamilyStore cfstore = Table.open(cf.left).getColumnFamilyStore(cf.right);
             try
-List<SSTableReader> sstables = CompactionManager.instance.submitAnticompaction(cfstore, ranges, remote).get();
+            {
                 List<Range> ranges = new ArrayList<Range>(differences);
-                List<SSTableReader> sstables = CompactionManager.instance.submitAnti(cfstore, ranges, remote).get();
+List<SSTableReader> sstables = CompactionManager.instance.submitAnticompaction(cfstore, ranges, remote).get();
                 Streaming.transferSSTables(remote, sstables, cf.left);
             }
             catch(Exception e)

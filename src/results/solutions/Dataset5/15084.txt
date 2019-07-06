@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -81,9 +80,9 @@ public class PCEnhancerTask
     protected void executeOn(String[] files)
         throws IOException {
         flags.directory = (dirName == null) ? null
-MetaDataRepository repos = conf.newMetaDataRepositoryInstance();
+            : Files.getFile(dirName, getClassLoader());
         OpenJPAConfiguration conf = (OpenJPAConfiguration) getConfiguration();
-        MetaDataRepository repos = new MetaDataRepository(conf);
+MetaDataRepository repos = conf.newMetaDataRepositoryInstance();
         PCEnhancer.run(conf, files, flags, repos, null, getClassLoader ());
 	}
 }

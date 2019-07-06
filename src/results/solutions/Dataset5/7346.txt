@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -239,9 +238,9 @@ public class KeyToolUtils {
      * @param input where to source input, may be null
      * @param output where to send output, may be null
      * @param parameters additional parameters to the command, may be null
-private static void keytool(String command, File keystore, String password, String alias,
+     * @throws IOException
      */
-    static void keytool(String command, File keystore, String password, String alias,
+private static void keytool(String command, File keystore, String password, String alias,
             InputStream input, OutputStream output, String ... parameters)
             throws IOException {
         final File workingDir = keystore.getParentFile();

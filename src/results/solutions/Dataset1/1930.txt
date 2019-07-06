@@ -1,4 +1,3 @@
-
 package org.apache.lucene.store;
 
 /**
@@ -53,9 +52,9 @@ public final class FSDirectory extends Directory {
    * Directory specified by <code>org.apache.lucene.lockdir</code>
    * or <code>java.io.tmpdir</code> system property
    */
-System.getProperty("java.io.tmpdir", "."));
+  public static final String LOCK_DIR =
     System.getProperty("org.apache.lucene.lockdir",
-      System.getProperty("java.io.tmpdir"));
+System.getProperty("java.io.tmpdir", "."));
 
   private static MessageDigest DIGESTER;
 

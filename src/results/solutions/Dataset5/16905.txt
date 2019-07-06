@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public class KeyToolUtils {
      * @throws IOException
      */
     public static void generateProxyCA(File keystore, String password,  int validity) throws IOException {
-if(new File(CACERT).exists() && !new File(CACERT).delete()) {
+        keystore.delete(); // any existing entries will be invalidated anyway
         // not strictly needed
-        if(!new File(CACERT).delete()) {
+if(new File(CACERT).exists() && !new File(CACERT).delete()) {
             // Noop as we accept not to be able to delete it
             log.warn("Could not delete file:"+new File(CACERT).getAbsolutePath()+", will continue ignoring this");
         }

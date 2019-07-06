@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -177,9 +176,9 @@ public class TransportDeleteWarmerAction extends TransportMasterNodeOperationAct
                             }
                         }
                     }
-return ClusterState.builder(currentState).metaData(mdBuilder).build();
+                }
 
-                return ClusterState.builder().state(currentState).metaData(mdBuilder).build();
+return ClusterState.builder(currentState).metaData(mdBuilder).build();
             }
 
             @Override

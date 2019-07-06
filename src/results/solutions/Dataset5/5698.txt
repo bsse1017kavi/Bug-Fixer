@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -118,9 +117,9 @@ public abstract class AbstractRepeater extends WebMarkupContainer
 	@Override
 	protected void onBeforeRender()
 	{
-if (getApplication().usesDevelopmentConfig())
+		onPopulate();
 
-		if (Application.get().getConfigurationType().equals(Application.DEVELOPMENT))
+if (getApplication().usesDevelopmentConfig())
 		{
 			Iterator<? extends Component> i = iterator();
 			while (i.hasNext())

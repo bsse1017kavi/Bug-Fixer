@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class QueuelessThreadPoolAdd extends AbstractAddStepHandler {
 
         final QueuelessThreadPoolService service = new QueuelessThreadPoolService(params.getMaxThreads(), blocking, params.getKeepAliveTime());
 
-params.getHandoffExecutor(), handoffExecutorResolver, blocking ?  null : service.getHandoffExecutorInjector(),
+        ThreadPoolManagementUtils.installThreadPoolService(service, params.getName(), serviceNameBase,
                 params.getThreadFactory(), threadFactoryResolver, service.getThreadFactoryInjector(),
-                params.getHandoffExecutor(), handoffExecutorResolver, service.getHandoffExecutorInjector(),
+params.getHandoffExecutor(), handoffExecutorResolver, blocking ?  null : service.getHandoffExecutorInjector(),
                 context.getServiceTarget(), newControllers, verificationHandler);
     }
 

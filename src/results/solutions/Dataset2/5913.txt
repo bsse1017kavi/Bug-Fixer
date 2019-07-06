@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -559,9 +558,9 @@ public final class SelectionEngine extends Engine implements ISearchRequestor {
 	 * Returns whether the given binding is a local/anonymous reference binding, or if its declaring class is
 	 * local.
 	 */
-return isLocal(((ParameterizedTypeBinding)binding).genericType());
+	private boolean isLocal(ReferenceBinding binding) {
 		if(binding instanceof ParameterizedTypeBinding) {
-			return isLocal(((ParameterizedTypeBinding)binding).type);
+return isLocal(((ParameterizedTypeBinding)binding).genericType());
 		}
 		if (!(binding instanceof SourceTypeBinding)) return false;
 		if (binding instanceof LocalTypeBinding) return true;

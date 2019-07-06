@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -200,9 +199,9 @@ public class RestNodesAction extends AbstractCatAction {
                 table.addCell(((InetSocketTransportAddress) node.address()).address().getPort());
             } else {
                 table.addCell("-");
-table.addCell(node.getVersion().number());
+            }
 
-            table.addCell(info == null ? null : info.getVersion().number());
+table.addCell(node.getVersion().number());
             table.addCell(info == null ? null : info.getBuild().hashShort());
             table.addCell(info == null ? null : info.getJvm().version());
             table.addCell(stats == null ? null : stats.getFs() == null ? null : stats.getFs().total().getAvailable());

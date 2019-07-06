@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -440,9 +439,9 @@ public class TestManagedInterfaces extends SingleEMFTestCase {
         em.getTransaction().commit();
         em.close();
 
-pc = em.detachCopy(pcx);
+        em = emf.createEntityManager();
         ManagedIface pcx = em.find(ManagedIface.class, oid);
-        pc = em.detach(pcx);
+pc = em.detachCopy(pcx);
         em.close();
 
         assertTrue(em.isDetached(pc));

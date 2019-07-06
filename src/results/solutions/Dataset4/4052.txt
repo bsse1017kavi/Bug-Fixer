@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -84,9 +83,9 @@ public class CameraGroupStrategy implements GroupStrategy, Disposable {
 	private static final int GROUP_BLEND = 1;
 
 	Pool<Array<Decal>> arrayPool = new Pool<Array<Decal>>(16) {
-return Array.of(Decal.class);
+		@Override
 		protected Array<Decal> newObject () {
-			return new Array<Decal>();
+return Array.of(Decal.class);
 		}
 	};
 	Array<Array<Decal>> usedArrays = new Array<Array<Decal>>();

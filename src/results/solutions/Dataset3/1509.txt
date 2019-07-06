@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -58,9 +57,9 @@ public abstract class AbstractModel<E extends AbstractModel<E>> extends Abstract
      *
      * @param element the element to add
      */
-throw new IllegalArgumentException("Duplicate element " + element);
+    protected final void addElement(AbstractModelElement<?> element) {
         if (! elements.add(element)) {
-            throw new IllegalArgumentException("Domain already contains element " + element);
+throw new IllegalArgumentException("Duplicate element " + element);
         }
     }
 

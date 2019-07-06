@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.actions;
 
 /* ================================================================
@@ -105,9 +104,9 @@ public class HandleRoleRequests extends RequireLoginFirstAction
                 {
                     TurbineSecurity.grant(user, 
                         (org.apache.fulcrum.security.entity.Group)module, 
-l10n.get("RoleRequestGranted"));
+                        TurbineSecurity.getRole(role));
                     getScarabRequestTool(context).setConfirmMessage(
-                        l10n.get("Your role request was granted."));    
+l10n.get("RoleRequestGranted"));
                 }
                 else 
                 {

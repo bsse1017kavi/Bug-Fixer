@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -71,9 +70,9 @@ public class RandomString extends AbstractFunction {
     /** {@inheritDoc} */
     @Override
     public synchronized String execute(SampleResult previousResult, Sampler currentSampler)
-int length = Integer.parseInt(values[0].execute());
+            throws InvalidVariableException {
 
-        int length = Integer.valueOf(values[0].execute());
+int length = Integer.parseInt(values[0].execute());
 
         String charsToUse = null;//means no restriction
         if (values.length >= CHARS) {

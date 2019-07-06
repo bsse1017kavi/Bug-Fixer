@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -100,9 +99,9 @@ public class CacheAddHandler extends AbstractAddStepHandler {
 
         // Because we use child resources in a read-only manner to configure the cache, replace the local model with the full model
         ModelNode cacheModel = Resource.Tools.readModel(context.readResource(PathAddress.EMPTY_ADDRESS));
-PathAddress address = context.getCurrentAddress();
+
         // we also need the containerModel
-        PathAddress address = Operations.getPathAddress(operation);
+PathAddress address = context.getCurrentAddress();
         PathAddress containerAddress = address.subAddress(0, address.size() - 1);
         ModelNode containerModel = context.readResourceFromRoot(containerAddress).getModel();
 

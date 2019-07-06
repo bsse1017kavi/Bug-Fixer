@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -30,9 +29,9 @@ import javax.interceptor.Interceptors;
 /**
  * @author <a href="mailto:amay@ingenta.com">Andrew May</a>
  */
-@Interceptors({ InterceptB.class })
+@Stateless
 @Remote(B.class)
-@Interceptors({ Intercept.class })
+@Interceptors({ InterceptB.class })
 public class BBean extends ABean implements B {
     public String getOtherMessage() {
         return "The Other Message";

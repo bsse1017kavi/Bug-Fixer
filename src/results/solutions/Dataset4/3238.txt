@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -200,9 +199,9 @@ public abstract class TransportSearchTypeAction extends BaseAction<SearchRequest
                 DiscoveryNode node = nodes.get(shard.currentNodeId());
                 if (node == null) {
                     onFirstPhaseResult(shard, shardIt, null);
-sendExecuteFirstPhase(node, internalSearchRequest(shard, shardsIts.size(), request, filteringAliases, startTime), new SearchServiceListener<FirstResult>() {
+                } else {
                     String[] filteringAliases = clusterState.metaData().filteringAliases(shard.index(), request.indices());
-                    sendExecuteFirstPhase(node, internalSearchRequest(shard, shardsIts.size(), request, filteringAliases), new SearchServiceListener<FirstResult>() {
+sendExecuteFirstPhase(node, internalSearchRequest(shard, shardsIts.size(), request, filteringAliases, startTime), new SearchServiceListener<FirstResult>() {
                         @Override public void onResult(FirstResult result) {
                             onFirstPhaseResult(shard, result, shardIt);
                         }

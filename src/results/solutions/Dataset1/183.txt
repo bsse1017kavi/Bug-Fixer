@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -209,9 +208,9 @@ public class CassandraServer implements Cassandra.Iface
         else
         {
             SliceRange range = predicate.slice_range;
-return getSlice(new SliceFromReadCommand(keyspace, key, column_parent, range.start, range.finish, range.reversed, range.count), consistency_level);
+            if (range.count < 0)
                 throw new InvalidRequestException("get_slice requires non-negative count");
-            return getSlice(new SliceFromReadCommand(keyspace, key, column_parent, range.start, range.finish, range.is_ascending, range.count), consistency_level);
+return getSlice(new SliceFromReadCommand(keyspace, key, column_parent, range.start, range.finish, range.reversed, range.count), consistency_level);
         }
     }
 

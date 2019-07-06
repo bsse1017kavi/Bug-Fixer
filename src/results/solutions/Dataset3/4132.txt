@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -62,9 +61,9 @@ public class ApplicationContextProcessor implements DeploymentUnitProcessor {
         final RootContextService contextService = new RootContextService();
         serviceTarget.addService(applicationContextServiceName, contextService).install();
 
-serviceTarget.addService(applicationContextServiceName.append("AppName"), applicationNameBinder).addDependency(
+        final BinderService<String> applicationNameBinder = new BinderService<String>("AppName", Values
                 .immediateValue(deploymentUnit.getName()));
-        serviceTarget.addService(applicationContextServiceName.append("app-name"), applicationNameBinder).addDependency(
+serviceTarget.addService(applicationContextServiceName.append("AppName"), applicationNameBinder).addDependency(
                 applicationContextServiceName, Context.class, applicationNameBinder.getContextInjector()).install();
 
         final ContextService envContextService = new ContextService(JndiName.of("env"));

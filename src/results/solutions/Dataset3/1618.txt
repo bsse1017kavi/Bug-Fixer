@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -234,9 +233,9 @@ public final class ContainerStateMonitor extends AbstractServiceListener<Object>
                 boolean unavailable = controller != null;
                 missingServices.put(name, new MissingDependencyInfo(name, unavailable, entry.getValue()));
             }
-final Map<ServiceController<?>, String> currentFailedControllers = new HashMap<ServiceController<?>, String>(failedControllers);
+        }
 
-        final Map<ServiceController<?>, String> currentFailedControllers = new TreeMap<ServiceController<?>, String>(failedControllers);
+final Map<ServiceController<?>, String> currentFailedControllers = new HashMap<ServiceController<?>, String>(failedControllers);
 
         previousMissingDepSet = new HashSet<ServiceName>(missingDeps.keySet());
 

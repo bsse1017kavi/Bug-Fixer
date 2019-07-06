@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public class HttpMirrorThread extends Thread {
 
             // Check if we have found a content-length header
             final String headerString = headers.toString();
-contentLength = Integer.valueOf(contentLengthHeaderValue).intValue();
+            String contentLengthHeaderValue = getRequestHeaderValue(headerString, "Content-Length"); //$NON-NLS-1$
             if(contentLengthHeaderValue != null) {
-                contentLength = new Integer(contentLengthHeaderValue).intValue();
+contentLength = Integer.valueOf(contentLengthHeaderValue).intValue();
             }
             String sleepHeaderValue = getRequestHeaderValue(headerString, "X-Sleep"); //$NON-NLS-1$
             if(sleepHeaderValue != null) {

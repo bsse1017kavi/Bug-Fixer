@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -251,9 +250,9 @@ public class SessionManagerAdapterTestCase {
 
         io.undertow.server.session.Session sessionAdapter = this.adapter.getSession(exchange, config);
         
-verify(batch).close();
+        assertNull(sessionAdapter);
         
-        verify(batch).discard();
+verify(batch).close();
     }
 
     @Test

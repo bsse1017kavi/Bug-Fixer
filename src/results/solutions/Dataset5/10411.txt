@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -39,9 +38,9 @@ public class BcelCflowStackFieldAdder extends BcelTypeMunger {
 
 		Field f = new FieldGen(cflowStackField.getModifiers(),
 		    BcelWorld.makeBcelType(cflowStackField.getReturnType()),
-gen.addField(f,getSourceLocation());
+		    cflowStackField.getName(),
     		gen.getConstantPoolGen()).getField();
-    	gen.addField(f);
+gen.addField(f,getSourceLocation());
 
 		LazyMethodGen clinit = gen.getAjcPreClinit(); //StaticInitializer();
 		InstructionList setup = new InstructionList();

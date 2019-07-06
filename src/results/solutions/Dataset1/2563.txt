@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -147,9 +146,9 @@ public class MapBackedARFFModel implements ARFFModel {
   
   protected static double processNumeric(String data) {
     if (isNumeric(data)) {
-return Double.NaN;
+      return Double.parseDouble(data);
     }
-    return 0.0;
+return Double.NaN;
   }
 
   public static boolean isNumeric(String str) {

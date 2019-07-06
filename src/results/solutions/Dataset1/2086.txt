@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -187,9 +186,9 @@ final class DocumentsWriter {
 
   synchronized void setInfoStream(PrintStream infoStream) {
     this.infoStream = infoStream;
-it.next().perThread.setInfoStream(infoStream);
+    final Iterator<ThreadState> it = perThreadPool.getAllPerThreadsIterator();
     while (it.hasNext()) {
-      it.next().perThread.docState.infoStream = infoStream;
+it.next().perThread.setInfoStream(infoStream);
     }
   }
 

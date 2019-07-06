@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2011, Nathan Sweet <nathan.sweet@gmail.com>
  * All rights reserved.
@@ -127,9 +126,9 @@ public class LibgdxToolkit extends Toolkit<Actor, Table, TableLayout> {
 		if (layout.debugRects != null) layout.debugRects.clear();
 	}
 
-layout.debugRects.add(new DebugRect(type, x, (int)(layout.getTable().height - y), w, h));
+	public void addDebugRectangle (TableLayout layout, int type, int x, int y, int w, int h) {
 		if (layout.debugRects == null) layout.debugRects = new Array();
-		layout.debugRects.add(new DebugRect(type, x, y, w, h));
+layout.debugRects.add(new DebugRect(type, x, (int)(layout.getTable().height - y), w, h));
 	}
 
 	/** Sets the name of a font. */

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1274,9 +1273,9 @@ public void notifySourceElementRequestor(
 			CharOperation.concatWith(importReference.getImportName(), '.')); 
 	} else {
 		requestor.acceptImport(
-importReference.tokens,
+			importReference.declarationSourceStart, 
 			importReference.declarationSourceEnd, 
-			CharOperation.concatWith(importReference.getImportName(), '.'), 
+importReference.tokens,
 			importReference.onDemand,
 			importReference.modifiers); 
 	}

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -538,9 +537,9 @@ public abstract class AbstractTransactionAspectTests extends TestCase {
 		TransactionAttribute txatt = new DefaultTransactionAttribute();
 
 		Method m = setNameMethod;
-Method m2 = getNameMethod;
+		MapTransactionAttributeSource tas = new MapTransactionAttributeSource();
 		tas.register(m, txatt);
-		// Method m2 = getNameMethod;
+Method m2 = getNameMethod;
 		// No attributes for m2
 
 		MockControl ptmControl = MockControl.createControl(PlatformTransactionManager.class);

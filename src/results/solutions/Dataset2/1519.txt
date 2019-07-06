@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -61,9 +60,9 @@ public class JavaElementFinder extends BindingKeyParser {
 		this.element = ((IType) this.element).getField(new String(fieldName));
 	}
 
-this.element = this.project.findType(new String(CharOperation.replaceOnCopy(fullyQualifiedName, '/', '.')), this.owner);
+	public void consumeFullyQualifiedName(char[] fullyQualifiedName) {
 		try {
-			this.element = this.project.findType(new String(CharOperation.replaceOnCopy(fullyQualifiedName, '/', '.')), owner);
+this.element = this.project.findType(new String(CharOperation.replaceOnCopy(fullyQualifiedName, '/', '.')), this.owner);
 		} catch (JavaModelException e) {
 			this.exception = e;
 		}

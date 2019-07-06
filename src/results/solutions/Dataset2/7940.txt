@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /******************************************************************************* 
@@ -75,9 +74,9 @@ public PartTabFolder() {
 	super("PartTabFolder");//$NON-NLS-1$
 	setID(this.toString());	// Each folder has a unique ID so relative positioning is unambiguous.
 
-tabLocation = WorkbenchPlugin.getDefault().getPreferenceStore().getInt(
+	// Get the location of the tabs from the preferences
 	if (tabLocation == -1)
-		tabLocation = getPreferenceStore().getInt(
+tabLocation = WorkbenchPlugin.getDefault().getPreferenceStore().getInt(
 			IPreferenceConstants.VIEW_TAB_POSITION);
 		
 }

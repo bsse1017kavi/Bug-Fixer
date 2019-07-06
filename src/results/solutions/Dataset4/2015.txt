@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.comment;
 
 import android.view.View;
@@ -45,9 +44,9 @@ public class CommentViewHolder implements ViewHolder<Comment> {
 
     public void updateViewFor(final Comment comment) {
         bodyViewer.setHtml(comment.getBodyHtml());
-avatarView.setImageDrawable(null);
+        authorView.setText(comment.getUser().getLogin());
         dateView.setText(Time.relativeTimeFor(comment.getUpdatedAt()));
-        avatarView.setBackgroundDrawable(null);
+avatarView.setImageDrawable(null);
         avatarHelper.bind(avatarView, comment.getUser());
     }
 }

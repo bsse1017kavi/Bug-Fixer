@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class RemoteDomainControllerTestCase {
         final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
 
         communicationService = new ManagementCommunicationService();
-final NetworkInterfaceService networkInterfaceService = new NetworkInterfaceService("test", true, false, true, null);
+        communicationService.getThreadFactoryInjector().inject(Executors.defaultThreadFactory());
         communicationService.getExecutorServiceInjector().inject(executorService);
-        final NetworkInterfaceService networkInterfaceService = new NetworkInterfaceService("test", false, false, true, null);
+final NetworkInterfaceService networkInterfaceService = new NetworkInterfaceService("test", true, false, true, null);
         networkInterfaceService.start(null);
         communicationService.getInterfaceInjector().inject(networkInterfaceService.getValue());
         communicationService.getPortInjector().inject(12345);

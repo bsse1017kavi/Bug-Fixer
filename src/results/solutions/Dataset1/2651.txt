@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -158,9 +157,9 @@ public class SSTableImport
 
         try
         {
-SSTableWriter writer = new SSTableWriter(ssTablePath, json.size());
+            JSONObject json = (JSONObject)JSONValue.parseWithException(new FileReader(jsonFile));
             
-            SSTableWriter writer = new SSTableWriter(ssTablePath, json.size(), partitioner);
+SSTableWriter writer = new SSTableWriter(ssTablePath, json.size());
             SortedMap<DecoratedKey,String> decoratedKeys = new TreeMap<DecoratedKey,String>();
             
             // sort by dk representation, but hold onto the hex version

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -5703,9 +5702,9 @@ void handleKey(Event event) {
 	} else {
 		// character key pressed
 		action = getKeyBinding(event.character | event.stateMask);
-if ((event.stateMask & SWT.CTRL) != 0 && event.character <= 31) {
+		if (action == SWT.NULL) {
 			// see if we have a control character
-			if ((event.stateMask & SWT.CTRL) != 0 && (event.character >= 0) && event.character <= 31) {
+if ((event.stateMask & SWT.CTRL) != 0 && event.character <= 31) {
 				// get the character from the CTRL+char sequence, the control
 				// key subtracts 64 from the value of the key that it modifies
 				int c = event.character + 64;

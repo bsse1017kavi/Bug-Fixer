@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -370,9 +369,9 @@ class PostProcessorRegistrationDelegate {
 
 		@Override
 		public void postProcessBeforeDestruction(Object bean, String beanName) {
-multicaster.removeApplicationListener((ApplicationListener<?>) bean);
+			if (bean instanceof ApplicationListener) {
 				ApplicationEventMulticaster multicaster = this.applicationContext.getApplicationEventMulticaster();
-				multicaster.removeApplicationListener((ApplicationListener) bean);
+multicaster.removeApplicationListener((ApplicationListener<?>) bean);
 				multicaster.removeApplicationListenerBean(beanName);
 			}
 		}

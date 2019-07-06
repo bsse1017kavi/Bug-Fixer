@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -77,9 +76,9 @@ public class HttpMirrorThread extends Thread {
             // If we do not find such a header, we will just have to read until
             // we have to block to read more, until we support chunked transfer
             int contentLength = -1;
-StringBuilder headers = new StringBuilder();
+            boolean isChunked = false;
             byte[] buffer = new byte[1024];
-            StringBuffer headers = new StringBuffer();
+StringBuilder headers = new StringBuilder();
             int length = 0;
             int positionOfBody = 0;
             while(positionOfBody <= 0 && ((length = in.read(buffer)) != -1)) {

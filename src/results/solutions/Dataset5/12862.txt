@@ -1,4 +1,3 @@
-
 import org.aspectj.testing.Tester;
 public class Driver {
   
@@ -73,9 +72,9 @@ aspect A pertarget(target(Foo)){
     }
     void Foo.introducedNonStaticMethod() {
         // System.out.println(thisJoinPoint.className +"."+ 
-Foo.new(int n) { this(); ranIntroducedConstructor = true; }
+        // thisJoinPoint.methodName);
     }
-    Foo.new(int n) { ranIntroducedConstructor = true; }
+Foo.new(int n) { this(); ranIntroducedConstructor = true; }
 
 	// make sure advice doesn't go on the toString() method
 	// this would result in an infinite recursion

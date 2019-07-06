@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -69,9 +68,9 @@ public class DomainDeploymentUtils implements Closeable {
     private final ModelControllerClient client;
 //    private final DomainDeploymentManager manager;
     private boolean injectedClient = true;
-this(ModelControllerClient.Factory.create(InetAddress.getByName("localhost"), 9999, DemoAuthentication.getCallbackHandler()));
+
     public DomainDeploymentUtils() throws UnknownHostException {
-        this(ModelControllerClient.Factory.create(InetAddress.getByName("localhost"), 9999));
+this(ModelControllerClient.Factory.create(InetAddress.getByName("localhost"), 9999, DemoAuthentication.getCallbackHandler()));
         this.injectedClient = false;
     }
 

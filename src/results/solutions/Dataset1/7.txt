@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -64,9 +63,9 @@ public class AntiEntropyServiceTest extends CleanupHelper
 
     @BeforeClass
     public static void prepareClass() throws Exception
-tablename = "Keyspace5";
+    {
         LOCAL = FBUtilities.getLocalAddress();
-        tablename = "Keyspace4";
+tablename = "Keyspace5";
         StorageService.instance.initServer();
         // generate a fake endpoint for which we can spoof receiving/sending trees
         REMOTE = InetAddress.getByName("127.0.0.2");

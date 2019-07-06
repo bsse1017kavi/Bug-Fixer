@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public class SessionInvocationContextInterceptor implements Interceptor {
             context.putPrivateData(InvocationContext.class, null);
         }
     }
-private final InterceptorContext context;
+
     protected static class CustomSessionInvocationContext extends BaseSessionInvocationContext implements TransactionalInvocationContext {
-        private InterceptorContext context;
+private final InterceptorContext context;
 
         protected CustomSessionInvocationContext(boolean lifecycleCallback, InterceptorContext context, Class<?> invokedBusinessInterface, Method method, Object[] parameters) {
             super(lifecycleCallback, invokedBusinessInterface, method, parameters);

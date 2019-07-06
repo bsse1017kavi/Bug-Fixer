@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -267,9 +266,9 @@ public class AntXMLContext {
      * @param attr attributes of the current element
      */
     public void configureId(Object element, Attributes attr) {
-project.addIdReference(id, element);
+        String id = attr.getValue("id");
         if (id != null) {
-            project.addReference(id, element);
+project.addIdReference(id, element);
         }
     }
 

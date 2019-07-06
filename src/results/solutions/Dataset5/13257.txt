@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -812,9 +811,9 @@ public class XMLNamespaceBinder
             else if (aprefix != XMLSymbols.EMPTY_STRING) {
                 fAttributeQName.uri = fNamespaceContext.getURI(aprefix);
                 if (fAttributeQName.uri == null) {
-new Object[]{element.rawname,arawname,aprefix},
+                    fErrorReporter.reportError(XMLMessageFormatter.XMLNS_DOMAIN,
                                                "AttributePrefixUnbound",
-                                               new Object[]{aprefix, arawname},
+new Object[]{element.rawname,arawname,aprefix},
                                                XMLErrorReporter.SEVERITY_FATAL_ERROR);
                 }
                 attributes.setName(i, fAttributeQName);

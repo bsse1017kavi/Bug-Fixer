@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -172,9 +171,9 @@ public class HostConfigurationPersisterImpl implements HostConfigurationPersiste
         }
 
         @Override
-streamWriter.writeStartElement(Element.HOST.getLocalName());
+        public void writeContent(XMLExtendedStreamWriter streamWriter) throws XMLStreamException {
             streamWriter.writeStartDocument();
-            streamWriter.writeStartElement(Element.DOMAIN.getLocalName());
+streamWriter.writeStartElement(Element.HOST.getLocalName());
             hostModel.writeContent(streamWriter);
             streamWriter.writeEndDocument();
         }

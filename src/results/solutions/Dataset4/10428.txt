@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class TermsJsonFilterParser extends AbstractIndexComponent implements Jso
         FieldMapper fieldMapper = null;
         MapperService.SmartNameFieldMappers smartNameFieldMappers = parseContext.smartFieldMappers(fieldName);
         if (smartNameFieldMappers != null) {
-fieldName = fieldMapper.names().indexName();
+            if (smartNameFieldMappers.hasMapper()) {
                 fieldMapper = smartNameFieldMappers.mapper();
-                fieldName = fieldMapper.indexName();
+fieldName = fieldMapper.names().indexName();
             }
         }
 

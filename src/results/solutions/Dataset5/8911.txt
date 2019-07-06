@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -111,9 +110,9 @@ public class ModuleController extends GenericController implements ReplaceableCo
     }
 
     public List getNodePath() {
-return (List<?>) ((CollectionProperty) prop).getObjectValue();
+        JMeterProperty prop = getProperty(NODE_PATH);
         if (!(prop instanceof NullProperty)) {
-            return (List) ((CollectionProperty) prop).getObjectValue();
+return (List<?>) ((CollectionProperty) prop).getObjectValue();
         }
         return null;
     }

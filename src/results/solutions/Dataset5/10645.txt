@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -117,9 +116,9 @@ public class CovMerge extends Task
             cmdl.createArgument().setValue( "-jp_paramfile=" + paramfile.getAbsolutePath() );
 
             final Execute exe = new Execute();
-getLogger().debug( cmdl.toString() );
+            exe.setOutput( new LogOutputStream( this, Project.MSG_INFO ) );
             exe.setError( new LogOutputStream( this, Project.MSG_WARN ) );
-            log( cmdl.toString(), Project.MSG_VERBOSE );
+getLogger().debug( cmdl.toString() );
             exe.setCommandline( cmdl.getCommandline() );
 
             // JProbe process always return 0 so  we will not be

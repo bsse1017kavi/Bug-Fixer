@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -83,9 +82,9 @@ public class RaAdd extends AbstractRaOperation implements NewStepHandler {
 
                     context.addStep(verificationHandler, NewOperationContext.Stage.VERIFY);
 
-context.removeService(ConnectorServices.RESOURCEADAPTERS_SERVICE);
+                    if (context.completeStep() == NewOperationContext.ResultAction.ROLLBACK) {
                         if(controller != null) {
-                            context.removeService(controller);
+context.removeService(ConnectorServices.RESOURCEADAPTERS_SERVICE);
                         }
                     }
                 }

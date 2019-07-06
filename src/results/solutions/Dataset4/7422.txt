@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -158,9 +157,9 @@ public class ThreadPoolStats implements Streamable, ToXContent, Iterable<ThreadP
     }
 
     @Override
-stats = new ArrayList<>(size);
+    public void readFrom(StreamInput in) throws IOException {
         int size = in.readVInt();
-        stats = new ArrayList<Stats>(size);
+stats = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             Stats stats1 = new Stats();
             stats1.readFrom(in);

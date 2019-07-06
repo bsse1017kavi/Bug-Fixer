@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -1021,9 +1020,9 @@ public class Javadoc
             for( int j = 0; j < list.length; j++ )
             {
                 final File source = resolveFile( list[ j ] );
-final DirectoryScanner ds = fs.getDirectoryScanner();
+                fs.setDir( source );
 
-                final DirectoryScanner ds = fs.getDirectoryScanner( getProject() );
+final DirectoryScanner ds = fs.getDirectoryScanner();
                 final String[] packageDirs = ds.getIncludedDirectories();
 
                 for( int i = 0; i < packageDirs.length; i++ )

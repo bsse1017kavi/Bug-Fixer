@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -87,9 +86,9 @@ public class AjdtCommand implements ICommand {
         try {
 			//buildManager.setMessageHandler(handler);
             CountingMessageHandler counter = new CountingMessageHandler(handler);
-//System.err.println("errs: " + counter.hasErrors());
+            // regenerate configuration b/c world might have changed (?)
 			AjBuildConfig config = genBuildConfig(savedArgs, counter);  
-			System.err.println("errs: " + counter.hasErrors());          
+//System.err.println("errs: " + counter.hasErrors());
             return (!counter.hasErrors()
                     && buildManager.incrementalBuild(config, handler)
                     && !counter.hasErrors());

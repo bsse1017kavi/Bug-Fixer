@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -174,9 +173,9 @@ public class JavaTest extends BuildFileTest {
     public void testRunSuccessWithFailOnError() {
         executeTarget("testRunSuccessWithFailOnError");
     }
-File logFile = FILE_UTILS.createTempFile("spawn","log", project.getBaseDir(), false, false);
+
     public void testSpawn() {
-        File logFile = FILE_UTILS.createTempFileName("spawn","log", project.getBaseDir(), false);
+File logFile = FILE_UTILS.createTempFile("spawn","log", project.getBaseDir(), false, false);
         // this is guaranteed by FileUtils#createTempFile
         assertTrue("log file not existing", !logFile.exists());
         project.setProperty("logFile", logFile.getAbsolutePath());

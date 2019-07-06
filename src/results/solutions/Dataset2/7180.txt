@@ -1,4 +1,3 @@
-
 /*
  * RegisterViewer.java - Dockable view of register contents
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -51,9 +50,9 @@ public class RegisterViewer extends JPanel implements EBComponent
 		registerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		registerList.setCellRenderer(new Renderer());
 		registerList.addListSelectionListener(new ListHandler());
-contentTextArea = new JTextArea(10,20);
+		registerList.addMouseListener(new MouseHandler());
 
-		contentTextArea = new JTextArea(20,120);
+contentTextArea = new JTextArea(10,20);
 		contentTextArea.setEditable(true);
 		contentTextArea.getDocument().addDocumentListener(
 			new DocumentHandler());

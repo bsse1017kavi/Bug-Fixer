@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -90,9 +89,9 @@ public class RestEasyIntegrationTestCase {
 
     @Deployment(name = DEPLOYMENT_NAME, managed = false, testable = false)
     public static WebArchive endpointWar() {
-archive.setWebXML(RestEasyIntegrationTestCase.class.getPackage(), "web.xml");
+        final WebArchive archive = ShrinkWrap.create(WebArchive.class, DEPLOYMENT_NAME);
         archive.addClass(SimpleRestEndpoint.class);
-        archive.setWebXML("osgi/jaxrs/web.xml");
+archive.setWebXML(RestEasyIntegrationTestCase.class.getPackage(), "web.xml");
         // [SHRINKWRAP-278] WebArchive.setManifest() results in WEB-INF/classes/META-INF/MANIFEST.MF
         archive.add(new Asset() {
             public InputStream openStream() {

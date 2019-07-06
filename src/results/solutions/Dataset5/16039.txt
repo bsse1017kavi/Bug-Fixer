@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -183,9 +182,9 @@ public class CollectionProperty extends MultiProperty {
      *
      * @see AbstractProperty#getPropertyType()
      */
-if (value != null && value.size() > 0) {
+    @Override
     protected Class<? extends JMeterProperty> getPropertyType() {
-        if (value.size() > 0) {
+if (value != null && value.size() > 0) {
             return value.iterator().next().getClass();
         }
         return NullProperty.class;

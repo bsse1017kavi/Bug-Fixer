@@ -1,4 +1,3 @@
-
 /*
  * JEditTextArea.java - jEdit's text component
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -101,9 +100,9 @@ class MouseHandler extends MouseInputAdapter
 		textArea.invalidateLine(textArea.getCaretLine());
 
 		clickCount = evt.getClickCount();
-&& textArea.selectionManager.insideSelection(x,y)
+
 		if(textArea.isDragEnabled()
-			&& textArea.insideSelection(x,y)
+&& textArea.selectionManager.insideSelection(x,y)
 			&& clickCount == 1 && !evt.isShiftDown())
 		{
 			maybeDragAndDrop = true;

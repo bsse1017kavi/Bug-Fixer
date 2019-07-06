@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -755,9 +754,9 @@ public class SimpleFacets {
             // iterate over TermDocs to calculate the intersection
 
             // TODO: specialize when base docset is a bitset or hash set (skipDocs)?  or does it matter for this?
-docsEnum = termsEnum.docs(null, docsEnum, 0);
+            // TODO: do this per-segment for better efficiency (MultiDocsEnum just uses base class impl)
             // TODO: would passing deleted docs lead to better efficiency over checking the fastForRandomSet?
-            docsEnum = termsEnum.docs(null, docsEnum, false);
+docsEnum = termsEnum.docs(null, docsEnum, 0);
             c=0;
 
             if (docsEnum instanceof MultiDocsEnum) {

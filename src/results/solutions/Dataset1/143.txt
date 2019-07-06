@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.preflex;
 
 /**
@@ -309,9 +308,9 @@ public final class TermInfosReader {
         if (useCache) {
           termsCache.put(new CloneableTerm(term), new TermInfoAndOrd(ti, enumerator.position));
         }
-assert enumerator.position == tiOrd.termOrd;
+      } else {
         assert sameTermInfo(ti, tiOrd, enumerator);
-        assert (int) enumerator.position == tiOrd.termOrd;
+assert enumerator.position == tiOrd.termOrd;
       }
     } else {
       ti = null;

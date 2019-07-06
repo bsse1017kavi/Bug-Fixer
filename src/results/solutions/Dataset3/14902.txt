@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -86,9 +85,9 @@ public abstract class AbstractStreamServerService implements Service<AcceptingCh
     public void start(final StartContext context) throws StartException {
         try {
             NetworkServerProvider networkServerProvider = endpointValue.getValue().getConnectionProviderInterface("remote", NetworkServerProvider.class);
-streamServer = networkServerProvider.createServer(getSocketAddress(), options, sap, null);
+            ServerAuthenticationProvider sap = authenticationProviderValue.getValue();
             OptionMap options = optionMapInjectedValue.getValue();
-            streamServer = networkServerProvider.createServer(getSocketAddress(), options, sap);
+streamServer = networkServerProvider.createServer(getSocketAddress(), options, sap, null);
             log.infof("Listening on %s", getSocketAddress());
 
         } catch (BindException e) {

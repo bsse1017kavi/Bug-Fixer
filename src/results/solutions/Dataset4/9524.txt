@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -168,9 +167,9 @@ public class SkinPacker {
 		new LwjglApplication(new ApplicationListener() {
 			public void create () {
 				Skin skin = new Skin();
-if (atlas.getPages().size > 1)
+				TextureAtlasData atlas = new TextureAtlasData(new FileHandle(new File(packedDir, "pack")), new FileHandle(packedDir),
 					true);
-				if (atlas.getPages().size != 1)
+if (atlas.getPages().size > 1)
 					throw new GdxRuntimeException("Skin images could not be packed on to a single image!");
 				Texture texture = new Texture(1, 1, Format.Alpha);
 				for (Region region : atlas.getRegions()) {

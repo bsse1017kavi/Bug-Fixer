@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -138,9 +137,9 @@ public class DeploymentService implements Service<Void> {
          * This will be called for all dependent services before the
          * BatchBuilder.install() call returns. So at that point we know what
          * the dependent services are.
-public void listenerAdded(ServiceController<?> controller) {
+         */
         @Override
-        public void listenerAdded(ServiceController<? extends Object> controller) {
+public void listenerAdded(ServiceController<?> controller) {
             synchronized(dependents) {
                 dependents.put(controller.getName(), controller);
             }

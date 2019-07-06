@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -141,9 +140,9 @@ class DomainApiHandler implements ManagementHttpHandler {
             final ModelNode dmr = new ModelNode();
             dmr.get("operation").set("upload-deployment-stream");
             dmr.get("address").setEmptyList();
-NewOperationBuilder operation = new NewOperationBuilder(dmr);
+            dmr.get("input-stream-index").set(0);
 
-            NewOperationBuilder operation = NewOperationBuilder.Factory.create(dmr);
+NewOperationBuilder operation = new NewOperationBuilder(dmr);
             operation.addInputStream(result.stream);
             response = modelController.execute(operation.build());
             drain(http.getRequestBody());

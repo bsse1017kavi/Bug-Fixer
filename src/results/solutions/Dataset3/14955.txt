@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -94,9 +93,9 @@ public class ComparatorChain<E> implements Comparator<E>, Serializable {
      *
      * @param comparator First Comparator in the ComparatorChain
      * @param reverse    false = forward sort; true = reverse sort
-comparatorChain = new ArrayList<Comparator<E>>(1);
+     */
     public ComparatorChain(Comparator<E> comparator, boolean reverse) {
-        comparatorChain = new ArrayList<Comparator<E>>();
+comparatorChain = new ArrayList<Comparator<E>>(1);
         comparatorChain.add(comparator);
         orderingBits = new BitSet(1);
         if (reverse == true) {

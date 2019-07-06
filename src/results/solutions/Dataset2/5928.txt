@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.problem;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -114,9 +113,9 @@ public final String localizedMessage(IProblem problem) {
 /**
  * This method initializes the MessageTemplates class variable according
  * to the current Locale.
-ResourceBundle bundle = ResourceBundle.getBundle("org.eclipse.jdt.internal.compiler.problem.messages", loc); //$NON-NLS-1$
+ */
 public static String[] loadMessageTemplates(Locale loc) {
-	ResourceBundle bundle = ResourceBundle.getBundle("org.eclipse.jdt.internal.compiler.problem.Messages", loc); //$NON-NLS-1$
+ResourceBundle bundle = ResourceBundle.getBundle("org.eclipse.jdt.internal.compiler.problem.messages", loc); //$NON-NLS-1$
 	String[] templates = new String[500];
 	for (int i = 0, max = templates.length; i < max; i++) {
 		try {

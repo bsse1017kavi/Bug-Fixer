@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist.impl;
 
 /*
@@ -52,9 +51,9 @@ public abstract class AssistParser extends Parser {
 	//  it is changed back to false when the method is exited,
 	//  and it is poped when the type is exited)
 	protected int inMethodPtr;
-super(problemReporter, true, assertMode);
+	protected boolean[] inMethodStack = new boolean[StackIncrement];
 public AssistParser(ProblemReporter problemReporter, boolean assertMode) {
-	super(problemReporter, false, assertMode);
+super(problemReporter, true, assertMode);
 }
 public abstract char[] assistIdentifier();
 public int bodyEnd(AbstractMethodDeclaration method){

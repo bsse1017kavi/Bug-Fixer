@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -32,9 +31,9 @@ public class BuildExecutor {
 	 * @param params
 	 * @return whether the Ant succeeded */
 	public static boolean executeAnt (String buildFile, String params) {
-String command = ant + " -f \"" + build.file().getAbsolutePath() + "\" " + params;
+		FileDescriptor build = new FileDescriptor(buildFile);
 		String ant = System.getProperty("os.name").contains("Windows") ? "ant.bat" : "ant";
-		String command = ant + " -f " + build.file().getAbsolutePath() + " " + params;
+String command = ant + " -f \"" + build.file().getAbsolutePath() + "\" " + params;
 		System.out.println("Executing '" + command + "'");
 		return startProcess(command, build.parent().file());
 	}

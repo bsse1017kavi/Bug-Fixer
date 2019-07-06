@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class ConvexHull2D implements ConvexHull<Euclidean2D, Vector2D>, Serializ
     /**
      * Simple constructor.
      * @param vertices the vertices of the convex hull
-ConvexHull2D(final Collection<Vector2D> vertices, final double tolerance) {
+     * @param tolerance tolerance below which points are considered identical
      */
-    public ConvexHull2D(final Collection<Vector2D> vertices, final double tolerance) {
+ConvexHull2D(final Collection<Vector2D> vertices, final double tolerance) {
         this.vertices = vertices.toArray(new Vector2D[vertices.size()]);
 
         // construct the line segments - handle special cases of 1 or 2 points

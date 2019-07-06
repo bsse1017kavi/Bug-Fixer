@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -64,9 +63,9 @@ public class SwitchPerspectiveSubmenu extends IMenu implements ActionListener {
 		// -> otherwise, don't create submenu
 		boolean isManagedFrame = false;
 
-.getExtensionHandler(IExtensionHandlerKeys.ORG_COLUMBA_CORE_FRAME);
+		try {
 			handler =  PluginManager.getInstance()
-					.getHandler(IExtensionHandlerKeys.ORG_COLUMBA_CORE_FRAME);
+.getExtensionHandler(IExtensionHandlerKeys.ORG_COLUMBA_CORE_FRAME);
 		} catch (PluginHandlerNotFoundException e) {
 			e.printStackTrace();
 		}

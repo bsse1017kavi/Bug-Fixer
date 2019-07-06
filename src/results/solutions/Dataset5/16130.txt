@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -83,9 +82,9 @@ public class WebResponseExceptionsTest extends WicketTestCase
 	 */
 	public void testInternalErrorPage()
 	{
-AjaxLink<?> link = (AjaxLink<?>)tester.getComponentFromLastRenderedPage("link");
+		tester.startPage(TestErrorPage.class);
 		tester.setExposeExceptions(false);
-		AjaxLink link = (AjaxLink)tester.getComponentFromLastRenderedPage("link");
+AjaxLink<?> link = (AjaxLink<?>)tester.getComponentFromLastRenderedPage("link");
 
 		tester.executeAjaxEvent(link, "onclick");
 		assertEquals(500, tester.getLastResponse().getStatus());

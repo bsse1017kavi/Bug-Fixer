@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class ScriptsScoreBenchmark extends BasicScriptBenchmark {
         int maxIter = 100;
         int warmerIter = 10;
 
-List<Results> allResults = new ArrayList<>();
+        boolean runMVEL = false;
         init(maxTerms);
-        List<Results> allResults = new ArrayList<BasicScriptBenchmark.Results>();
+List<Results> allResults = new ArrayList<>();
         Settings settings = settingsBuilder().put("plugin.types", NativeScriptExamplesPlugin.class.getName()).build();
 
         String clusterName = ScriptsScoreBenchmark.class.getSimpleName();

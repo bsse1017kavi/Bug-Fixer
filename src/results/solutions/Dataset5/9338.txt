@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -92,9 +91,9 @@ public class BuildElementHandler extends ModelElementHandler {
         for (Iterator i = getAttributes(); i.hasNext();) {
             String attributeName = (String) i.next();
             buildElement.addAttribute(attributeName,
-buildElement.addAspectAttributes(getAspectAttributes());
+                getAttribute(attributeName));
         }
-        buildElement.setAspects(getAspects());
+buildElement.addAspectAttributes(getAspectAttributes());
     }
 
 

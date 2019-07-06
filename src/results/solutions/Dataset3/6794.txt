@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -57,9 +56,9 @@ public abstract class ServerRestartRequiredServerConfigWriteAttributeHandler ext
     @Override
     protected void modelChanged(OperationContext context, ModelNode operation, String attributeName, ModelNode newValue,
             ModelNode currentValue) throws OperationFailedException {
-ServerOperationResolver.addToDontPropagateToServersAttachment(context, operation);
+        if (newValue.equals(currentValue)) {
             //Set an attachment to avoid propagation to the servers, we don't want them to go into restart-required if nothing changed
-            context.attach(ServerOperationResolver.DONT_PROPAGATE_TO_SERVERS_ATTACHMENT, true);
+ServerOperationResolver.addToDontPropagateToServersAttachment(context, operation);
         }
         validateReferencedNewValueExisits(context, newValue);
 

@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -528,9 +527,9 @@ final class SubsystemTestDelegate {
         op.get("inherited").set(false);
         op.get("operations").set(true);
         op.get("include-aliases").set(true);
-throw new RuntimeException(result.get(FAILURE_DESCRIPTION).toString());
+        ModelNode result = kernelServices.executeOperation(op);
         if (result.hasDefined(FAILURE_DESCRIPTION)) {
-            throw new RuntimeException(result.get(FAILURE_DESCRIPTION).asString());
+throw new RuntimeException(result.get(FAILURE_DESCRIPTION).toString());
         }
         ModelNode model = result.get(RESULT);
 

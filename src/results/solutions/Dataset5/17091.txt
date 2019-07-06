@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -132,9 +131,9 @@ public final class WicketMessageTagHandler extends AbstractMarkupFilter
 				{
 					throw new ParseException("Wrong format of wicket:message attribute value. "
 							+ text + "; Must be: key=value[, key=value]", tag.getPos());
-String value = Application.get().getMarkupSettings().getLocalizer().getString(messageKey,
+				}
 
-				String value = Application.get().getLocalizer().getString(messageKey,
+String value = Application.get().getMarkupSettings().getLocalizer().getString(messageKey,
 						null, searchStack, containerInfo.getLocale(), containerInfo.getStyle());
 
 				if (value.length() > 0)

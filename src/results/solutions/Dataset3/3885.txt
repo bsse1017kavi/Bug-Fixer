@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -74,9 +73,9 @@ public interface RemotingMessages {
     IllegalStateException connectionUriEmpty(String connectionName);
 
     @Message(id = 17117, value = "Outbound socket binding reference cannot be null or empty for connection named: %s")
-@Message(id = 17118, value = "Destination URI cannot be null while creating a outbound remote connection service")
+    IllegalStateException outboundSocketBindingEmpty(String connectionName);
 
-    @Message(id = 17118, value = "Destination URI cannot be null while creating an outbound remote connection service")
+@Message(id = 17118, value = "Destination URI cannot be null while creating a outbound remote connection service")
     IllegalStateException destinationUriEmpty();
 
     @Message(id = 17119, value = "A security realm has been specified but no supported mechanism identified")

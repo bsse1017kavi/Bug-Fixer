@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -679,9 +678,9 @@ public class ExpressionTypeConverterUnitTestCase {
     @Test
     public void testSimpleTypeExpressionList() throws Exception {
         ModelNode description = createDescription(ModelType.LIST, ModelType.INT);
-assertCast(ArrayType.class, converter.getOpenType());
+        description.get(EXPRESSIONS_ALLOWED).set(true);
         TypeConverter converter = getConverter(description);
-        ArrayType<?> arrayType = assertCast(ArrayType.class, converter.getOpenType());
+assertCast(ArrayType.class, converter.getOpenType());
 
         ModelNode node = new ModelNode();
         node.addExpression("${this.should.not.exist.!!!!!:1}");

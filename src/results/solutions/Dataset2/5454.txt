@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.ast;
 
 /*
@@ -65,9 +64,9 @@ public void generateCode(BlockScope currentScope, CodeStream codeStream, boolean
 		} else {
 			// nothing particular after all
 			codeStream.aload_0();
-codeStream.recordPositionsFrom(pc, this.sourceStart);
+		}
 	}
-	codeStream.recordPositionsFrom(pc, this);
+codeStream.recordPositionsFrom(pc, this.sourceStart);
 }
 void manageEnclosingInstanceAccessIfNecessary(BlockScope currentScope) {
 	currentScope.emulateOuterAccess((SourceTypeBinding) currentCompatibleType, false); // request cascade of accesses

@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.particles.batches;
 
 import com.badlogic.gdx.Application.ApplicationType;
@@ -83,9 +82,9 @@ public class PointSpriteParticleBatch extends BufferedParticleBatch<PointSpriteC
 		renderable = new Renderable();
 		renderable.primitiveType = GL20.GL_POINTS;
 		renderable.meshPartOffset = 0;
-TextureAttribute.createDiffuse((Texture)null));
+		renderable.material = new Material(	new BlendingAttribute(GL20.GL_ONE, GL20.GL_ONE_MINUS_SRC_ALPHA, 1f),
 			new DepthTestAttribute(GL20.GL_LEQUAL, false),
-			TextureAttribute.createDiffuse(null));
+TextureAttribute.createDiffuse((Texture)null));
 	}
 
 	public void setTexture(Texture texture){

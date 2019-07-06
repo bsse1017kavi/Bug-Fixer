@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -208,9 +207,9 @@ public class StatefulComponentDescription extends SessionBeanComponentDescriptio
 
                 for(Method method : viewConfiguration.getProxyFactory().getCachedMethods()) {
                     if((method.getName().equals("hashCode") && method.getParameterTypes().length==0) ||
-viewConfiguration.addViewInterceptor(method, new StatefulIdentityInterceptorFactory(sessionIdContextKey), InterceptorOrder.View.SESSION_BEAN_EQUALS_HASHCODE);
+                            method.getName().equals("equals") && method.getParameterTypes().length ==1 &&
                                     method.getParameterTypes()[0] == Object.class) {
-                        viewConfiguration.addViewInterceptor(new StatefulIdentityInterceptorFactory(sessionIdContextKey), InterceptorOrder.View.SESSION_BEAN_EQUALS_HASHCODE);
+viewConfiguration.addViewInterceptor(method, new StatefulIdentityInterceptorFactory(sessionIdContextKey), InterceptorOrder.View.SESSION_BEAN_EQUALS_HASHCODE);
                     }
                 }
             }

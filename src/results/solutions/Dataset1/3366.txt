@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -104,9 +103,9 @@ public class TestDistance extends LuceneTestCase {
     LatLongDistanceFilter f = new LatLongDistanceFilter(new QueryWrapperFilter(new MatchAllDocsQuery()),
                                                         lat, lng, 1.0, latField, lngField);
 
-f.getDocIdSet(leaves[i], leaves[i].reader.getLiveDocs());
+    AtomicReaderContext[] leaves = ReaderUtil.leaves(r.getTopReaderContext());
     for (int i = 0; i < leaves.length; i++) {
-      f.getDocIdSet(leaves[i]);
+f.getDocIdSet(leaves[i], leaves[i].reader.getLiveDocs());
     }
     r.close();
   }

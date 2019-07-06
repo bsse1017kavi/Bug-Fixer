@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -215,9 +214,9 @@ public final class PhraseSuggestParser implements SuggestContextParser {
         if (suggestion.model() == null) {
             suggestion.setModel(LaplaceScorer.FACTORY);
         }
-final ShingleTokenFilterFactory.Factory shingleFilterFactory = SuggestUtils.getShingleFilterFactory(suggestion.getAnalyzer() == null ? context.mapperService().fieldSearchAnalyzer(suggestion.getField()) : suggestion.getAnalyzer()); ;
+        
         if (!gramSizeSet || suggestion.generators().isEmpty()) {
-            final ShingleTokenFilterFactory shingleFilterFactory = SuggestUtils.getShingleFilterFactory(suggestion.getAnalyzer() == null ? context.mapperService().fieldSearchAnalyzer(suggestion.getField()) : suggestion.getAnalyzer()); ;
+final ShingleTokenFilterFactory.Factory shingleFilterFactory = SuggestUtils.getShingleFilterFactory(suggestion.getAnalyzer() == null ? context.mapperService().fieldSearchAnalyzer(suggestion.getField()) : suggestion.getAnalyzer()); ;
             if (!gramSizeSet) {
                 // try to detect the shingle size
                 if (shingleFilterFactory != null) {

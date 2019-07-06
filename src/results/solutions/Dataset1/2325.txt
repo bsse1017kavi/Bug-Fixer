@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -92,9 +91,9 @@ public class EntityProcessorBase extends EntityProcessor {
         scriptTransformer.setFunctionName(functionName);
         transformers.add(scriptTransformer);
         continue;
-Class clazz = DocBuilder.loadClass(trans, context.getSolrCore());
+      }
       try {
-        Class clazz = DocBuilder.loadClass(trans);
+Class clazz = DocBuilder.loadClass(trans, context.getSolrCore());
         if (clazz.newInstance() instanceof Transformer) {
           transformers.add((Transformer) clazz.newInstance());
         } else {

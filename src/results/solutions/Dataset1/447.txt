@@ -1,4 +1,3 @@
-
 package org.apache.lucene.util.junitcompat;
 
 /*
@@ -292,9 +291,9 @@ public class TestReproduceMessage extends WithNestedTests {
     type = SoreType.ERROR; 
     where = SorePoint.AFTER_CLASS;
     Assert.assertTrue(runAndReturnSyserr().contains("NOTE: reproduce with:"));
-private String runAndReturnSyserr() {
+  }
 
-  private String runAndReturnSyserr() throws Exception {
+private String runAndReturnSyserr() {
     JUnitCore.runClasses(Nested.class);
 
     String err = getSysErr();

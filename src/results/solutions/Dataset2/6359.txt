@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -177,9 +176,9 @@ findRecord(Record r) {
  */
 public boolean
 findRRset(Name name, short type, int section) {
-if (r.getType() == type && name.equals(r.getName()))
+	for (int i = 0; i < sections[section].size(); i++) {
 		Record r = (Record) sections[section].elementAt(i);
-		if (r.getType() == type || name.equals(r.getName()))
+if (r.getType() == type && name.equals(r.getName()))
 			return true;
 	}
 	return false;

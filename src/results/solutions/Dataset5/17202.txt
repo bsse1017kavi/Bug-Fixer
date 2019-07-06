@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -343,9 +342,9 @@ public class PackageTest extends TestCase {
 		Properties messagesFr = new Properties();
 		String languageBundle = bundlePath+"_"+language+ ".properties";
 		InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(languageBundle);
-for (Iterator<Map.Entry<Object, Object>> iterator = messages.entrySet().iterator(); iterator.hasNext();) {
+		if(inputStream == null) {
 			Map<String, String> messagesAsProperties = new HashMap<String, String>();
-			for (Iterator iterator = messages.entrySet().iterator(); iterator.hasNext();) {
+for (Iterator<Map.Entry<Object, Object>> iterator = messages.entrySet().iterator(); iterator.hasNext();) {
 				Map.Entry<Object, Object> entry = (Map.Entry<Object, Object>) iterator.next();
 				messagesAsProperties.put((String) entry.getKey(), (String) entry.getValue()); 
 			}

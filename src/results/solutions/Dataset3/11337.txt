@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -56,9 +55,9 @@ abstract class Lexer {
     Lexer(final CSVFormat format, final ExtendedBufferedReader in) {
         this.format = format;
         this.in = in;
-this.encapsulator = mapNullToDisabled(format.getQuoteChar());
+        this.delimiter = format.getDelimiter();
         this.escape = mapNullToDisabled(format.getEscape());
-        this.encapsulator = mapNullToDisabled(format.getEncapsulator());
+this.encapsulator = mapNullToDisabled(format.getQuoteChar());
         this.commmentStart = mapNullToDisabled(format.getCommentStart());
         this.ignoreSurroundingSpaces = format.getIgnoreSurroundingSpaces();
         this.ignoreEmptyLines = format.getIgnoreEmptyLines();

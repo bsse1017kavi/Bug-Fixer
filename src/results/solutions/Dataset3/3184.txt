@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -99,9 +98,9 @@ public class ScatterZipOutputStream  {
      *
      * @param target The archive to receive the contents of this #ScatterZipOutputStream
      * @throws IOException If writing fails
-backingStore.closeForWriting();
+     */
     public void writeTo(ZipArchiveOutputStream target) throws IOException {
-        backingStore.close();
+backingStore.closeForWriting();
         InputStream data = backingStore.getInputStream();
         for (CompressedEntry compressedEntry : items) {
             final BoundedInputStream rawStream = new BoundedInputStream(data, compressedEntry.compressedSize);

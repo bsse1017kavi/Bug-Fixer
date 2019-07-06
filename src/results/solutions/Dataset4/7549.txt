@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class ShardsAllocatorModuleTests extends ElasticsearchIntegrationTest {
                 "org.elasticsearch.cluster.routing.allocation.allocator.EvenShardsCountAllocator").build();
         assertAllocatorInstance(build, EvenShardsCountAllocator.class);
     }
-while (immutableCluster().size() != 0) {
+
     private void assertAllocatorInstance(Settings settings, Class<? extends ShardsAllocator> clazz) {
-        while (cluster().size() != 0) {
+while (immutableCluster().size() != 0) {
             cluster().stopRandomNode();     
         }
         cluster().startNode(settings);

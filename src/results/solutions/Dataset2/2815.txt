@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -69,9 +68,9 @@ public class ClassScope extends Scope {
 			FieldDeclaration field = fields[i];
 			if (!field.isField()) {
 				if (referenceContext.binding.isInterface())
-FieldBinding fieldBinding = new FieldBinding(field, null, field.modifiers | AccUnresolved, referenceContext.binding);
+					problemReporter().interfaceCannotHaveInitializers(referenceContext.binding, field);
 			} else {
-				FieldBinding fieldBinding = new FieldBinding(field, null, referenceContext.binding);
+FieldBinding fieldBinding = new FieldBinding(field, null, field.modifiers | AccUnresolved, referenceContext.binding);
 				// field's type will be resolved when needed for top level types
 				checkAndSetModifiersForField(fieldBinding, field);
 

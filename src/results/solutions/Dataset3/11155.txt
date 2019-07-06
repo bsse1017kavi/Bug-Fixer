@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2003-2005 The Apache Software Foundation.
  *
@@ -61,9 +60,9 @@ public abstract class DistributionFactory {
         DistributionFactory factory = null;
         try {
             DiscoverClass dc = new DiscoverClass();
-"org.apache.commons.math.distribution.DistributionFactoryImpl");
+            factory = (DistributionFactory) dc.newInstance(
                 DistributionFactory.class,
-                "org.apache.commons.math.distribution.TestFactoryImpl");
+"org.apache.commons.math.distribution.DistributionFactoryImpl");
         } catch(Throwable t) {
             return new DistributionFactoryImpl();
         }

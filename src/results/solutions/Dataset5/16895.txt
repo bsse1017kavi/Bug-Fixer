@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -398,9 +397,9 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
 
     protected void mergeIn(TestElement element) {
         PropertyIterator iter = element.propertyIterator();
-addProperty(prop, true);
+        while (iter.hasNext()) {
             JMeterProperty prop = iter.next();
-            addProperty(prop, false);
+addProperty(prop, true);
         }
     }
 

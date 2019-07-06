@@ -1,4 +1,3 @@
-
 package storm.trident.topology;
 
 import backtype.storm.generated.GlobalStreamId;
@@ -163,9 +162,9 @@ public class TridentTopologyBuilder {
                 bd.allGrouping(masterCoordinator(batchGroup), MasterBatchCoordinator.SUCCESS_STREAM_ID);
                 if(c.spout instanceof ICommitterTridentSpout) {
                     bd.allGrouping(masterCoordinator(batchGroup), MasterBatchCoordinator.COMMIT_STREAM_ID);
-scd.addConfigurations(m);
+                }
                 for(Map m: c.componentConfs) {
-                    bd.addConfigurations(m);
+scd.addConfigurations(m);
                 }
             }
         }

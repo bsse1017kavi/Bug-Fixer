@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2005 The Apache Software Foundation.
  * 
@@ -122,9 +121,9 @@ public class BitFieldTest extends TestCase {
      * test the isAllSet() method
      */
     public void testIsAllSet() {
-assertTrue(bf_zero.isAllSet(j));
+        for (int j = 0; j < 0x3F80; j += 0x80) {
             assertTrue(!bf_multi.isAllSet(j));
-            assertTrue(!bf_zero.isAllSet(j));
+assertTrue(bf_zero.isAllSet(j));
         }
         assertTrue(bf_multi.isAllSet(0x3F80));
         assertTrue(!bf_single.isAllSet(0));

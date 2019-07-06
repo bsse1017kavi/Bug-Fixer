@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -317,9 +316,9 @@ public class QueryComponent extends SearchComponent
 
     // in this first phase, request only the unique key field
     // and any fields needed for merging.
-if ( (rb.getFieldFlags() & SolrIndexSearcher.GET_SCORES)!=0 || rb.getSortSpec().includesScore()) {
+    sreq.params.set(ResponseBuilder.FIELD_SORT_VALUES,"true");
 
-    if (rb.getSortSpec().includesScore()) {
+if ( (rb.getFieldFlags() & SolrIndexSearcher.GET_SCORES)!=0 || rb.getSortSpec().includesScore()) {
       sreq.params.set(CommonParams.FL, rb.req.getSchema().getUniqueKeyField().getName() + ",score");
     } else {
       sreq.params.set(CommonParams.FL, rb.req.getSchema().getUniqueKeyField().getName());      

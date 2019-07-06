@@ -1,4 +1,3 @@
-
 package wicket.extensions.ajax.markup.html.form.upload;
 
 import java.io.Serializable;
@@ -120,9 +119,9 @@ public class UploadInfo implements Serializable
 	public long getRemainingMilliseconds()
 	{
 		int percentageComplete = getPercentageComplete();
-long totalTime = ((getElapsedSeconds() * 100) / Math.max(percentageComplete, 1));
 
-		long totalTime = ((getElapsedSeconds() * 100) / percentageComplete);
+
+long totalTime = ((getElapsedSeconds() * 100) / Math.max(percentageComplete, 1));
 		long remainingTime = (totalTime - getElapsedSeconds());
 		long remainingTimeInMillis = remainingTime * 1000;
 

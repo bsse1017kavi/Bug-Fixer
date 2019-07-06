@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -216,9 +215,9 @@ public class SimpAnnotationMethodIntegrationTests extends AbstractWebSocketInteg
 			registry.addEndpoint("/ws").setHandshakeHandler(this.handshakeHandler);
 		}
 
-configurer.setApplicationDestinationPrefixes("/app");
+		@Override
 		public void configureMessageBroker(MessageBrokerConfigurer configurer) {
-			configurer.setAnnotationMethodDestinationPrefixes("/app");
+configurer.setApplicationDestinationPrefixes("/app");
 			configurer.enableSimpleBroker("/topic", "/queue");
 		}
 	}

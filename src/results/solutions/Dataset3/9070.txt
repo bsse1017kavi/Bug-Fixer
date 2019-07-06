@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -113,9 +112,9 @@ abstract class AbstractInvocationHandlerEJB extends AbstractInvocationHandler {
          final Object retObj = componentView.invoke(context);
          // set return value
          wsInvocation.setReturnValue(retObj);
-log.error(MESSAGES.methodInvocationFailed(t.getLocalizedMessage()), t);
+      }
       catch (Throwable t) {
-         log.error("Method invocation failed with exception: " + t.getMessage(), t);
+log.error(MESSAGES.methodInvocationFailed(t.getLocalizedMessage()), t);
          handleInvocationException(t);
       }
       finally {

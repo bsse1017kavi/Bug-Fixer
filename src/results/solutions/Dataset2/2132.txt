@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -155,9 +154,9 @@ public class TableController implements TreeSelectionListener, FolderListener,
 								.getContactItemMap());
 			} catch (Exception e1) {
 				if (Logging.DEBUG)
-ErrorDialog.createDialog(e1.getMessage(), e1);
+					e1.printStackTrace();
 
-				new ErrorDialog(e1.getMessage(), e1);
+ErrorDialog.createDialog(e1.getMessage(), e1);
 			}
 		} else {
 			filterDecorator.setContactItemMap(null);

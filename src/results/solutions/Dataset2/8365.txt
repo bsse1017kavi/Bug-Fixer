@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -202,9 +201,9 @@ public class Transaction
         Iterator iter = associatedUsers.iterator();
         while ( iter.hasNext() ) 
         {
-toUser.getEmail());
+            ScarabUser toUser = (ScarabUser)iter.next();
             te.setTo(toUser.getFirstName() + " " + toUser.getLastName(), 
-                     toUser.getUserName());
+toUser.getEmail());
             te.send();
         }
     }

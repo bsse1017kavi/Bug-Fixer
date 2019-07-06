@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -59,9 +58,9 @@ public class RestFilterChainTests extends ElasticsearchTestCase {
 
         ArrayList<RestFilter> restFiltersByOrder = Lists.newArrayList(filters);
         Collections.sort(restFiltersByOrder, new Comparator<RestFilter>() {
-return Integer.compare(o1.order(), o2.order());
+            @Override
             public int compare(RestFilter o1, RestFilter o2) {
-                return Integer.compare(o2.order(), o1.order());
+return Integer.compare(o1.order(), o2.order());
             }
         });
 

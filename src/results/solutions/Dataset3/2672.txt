@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -137,9 +136,9 @@ public interface Bootstrap {
                     configurationPersister = new NullConfigurationPersister(new StandaloneXml(moduleLoader));
                 }
                 else {
-configurationPersister = new BackupXmlConfigurationPersister(serverEnvironment.getServerConfigurationFile(), rootElement, parser, parser);
+                    QName rootElement = new QName(Namespace.CURRENT.getUriString(), "server");
                     StandaloneXml parser = new StandaloneXml(Module.getBootModuleLoader());
-                    configurationPersister = new BackupXmlConfigurationPersister(new File(serverEnvironment.getServerConfigurationDir(), "standalone.xml"), rootElement, parser, parser);
+configurationPersister = new BackupXmlConfigurationPersister(serverEnvironment.getServerConfigurationFile(), rootElement, parser, parser);
                 }
             }
             return configurationPersister;

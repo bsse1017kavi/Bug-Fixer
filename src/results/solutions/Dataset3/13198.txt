@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -440,9 +439,9 @@ public class FilesystemObserverTestCase extends TestCase {
         long lastModified = file.exists() ? file.lastModified() : 0;
         try {
             FileUtils.touch(file);
-Thread.sleep(50);
+            while (lastModified == file.lastModified()) {
                 try {
-                    Thread.sleep(5);
+Thread.sleep(50);
                 } catch(InterruptedException ie) {
                     // ignore
                 }

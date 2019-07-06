@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -122,9 +121,9 @@ public final class ResourceAdapterDeploymentService extends AbstractResourceAdap
 
 
         if (raDeployer.checkActivation(cmd, ijmd)) {
-ServiceName raServiceName = ConnectorServices.getResourceAdapterServiceName(deploymentName);
+            DEPLOYMENT_CONNECTOR_LOGGER.debugf("Activating: %s", deploymentName);
 
-            ServiceName raServiceName = ConnectorServices.getResourceAdapterServiceName(deploymentName,null);
+ServiceName raServiceName = ConnectorServices.getResourceAdapterServiceName(deploymentName);
             value = new ResourceAdapterDeployment(raDeployment, deploymentName, raServiceName);
 
             managementRepository.getValue().getConnectors().add(value.getDeployment().getConnector());

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.jdbc.AutoloadedDriver
@@ -91,9 +90,9 @@ public class AutoloadedDriver implements Driver
 		//
 		// We don't want to accidentally boot the engine just because
 		// the application is looking for a connection from some other
-return InternalDriver.embeddedDriverAcceptsURL(url);
+		// driver.
 		//
-		return ( isBooted() && InternalDriver.embeddedDriverAcceptsURL(url) );
+return InternalDriver.embeddedDriverAcceptsURL(url);
 	}
 
    

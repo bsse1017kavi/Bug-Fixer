@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -125,9 +124,9 @@ public class Block extends Statement {
 		if (this.statements == null)
 			return ""; //$NON-NLS-1$
 		StringBuffer buffer = new StringBuffer();
-if (statements[i] instanceof Block || statements[i] instanceof EmptyStatement) {
+		for (int i = 0; i < statements.length; i++) {
 			buffer.append(statements[i].toString(tab + 1));
-			if (statements[i] instanceof Block) {
+if (statements[i] instanceof Block || statements[i] instanceof EmptyStatement) {
 				buffer.append("\n"); //$NON-NLS-1$
 			} else {
 				buffer.append(";\n"); //$NON-NLS-1$

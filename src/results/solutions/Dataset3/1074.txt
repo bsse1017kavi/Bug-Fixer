@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -130,9 +129,9 @@ public class MessagingClientTestCase {
             client.close();
         }
     }
-ModelNode result = client.execute(new NewOperationBuilder(update).build());
+
     static void applyUpdate(ModelNode update, final NewModelControllerClient client) throws IOException {
-        ModelNode result = client.execute(NewOperationBuilder.Factory.create(update).build());
+ModelNode result = client.execute(new NewOperationBuilder(update).build());
         if (result.hasDefined("outcome") && "success".equals(result.get("outcome").asString())) {
             if (result.hasDefined("result")) {
                 System.out.println(result.get("result"));

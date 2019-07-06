@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -69,9 +68,9 @@ public class ServerGroupDeploymentReplaceHandler implements OperationStepHandler
         this.validator.registerValidator(TO_REPLACE, new StringLengthValidator(1));
     }
 
-return DeploymentDescription.getReplaceDeploymentOperation(locale);
+    @Override
     public ModelNode getModelDescription(Locale locale) {
-        return DeploymentDescription.getDeployDeploymentOperation(locale);
+return DeploymentDescription.getReplaceDeploymentOperation(locale);
     }
 
     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

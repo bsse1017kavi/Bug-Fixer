@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class EmbeddedPercolatorBenchmarkTest {
         Injector injector = new ModulesBuilder().add(
                 new SettingsModule(settings),
                 new ThreadPoolModule(settings),
-new IndexSettingsModule(index, settings),
+                new ScriptModule(settings),
                 new MapperServiceModule(),
-                new IndexSettingsModule(settings),
+new IndexSettingsModule(index, settings),
                 new IndexCacheModule(settings),
                 new AnalysisModule(settings),
                 new IndexEngineModule(settings),

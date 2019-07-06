@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -107,9 +106,9 @@ public final class RequestConditionHolder extends AbstractRequestCondition<Reque
 	public RequestConditionHolder getMatchingCondition(HttpServletRequest request) {
 		if (condition == null) {
 			return this;
-return (match != null) ? new RequestConditionHolder(match) : null;
+		}
 		RequestCondition<?> match = (RequestCondition<?>) condition.getMatchingCondition(request);
-		return new RequestConditionHolder(match);
+return (match != null) ? new RequestConditionHolder(match) : null;
 	}
 
 	/**

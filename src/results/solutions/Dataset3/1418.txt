@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -67,9 +66,9 @@ public class EarMetaDataParsingProcessor implements DeploymentUnitProcessor {
         final VirtualFile deploymentFile = deploymentRoot.getRoot();
 
         final PropertyResolver propertyResolver = deploymentUnit.getAttachment(org.jboss.as.ee.metadata.property.Attachments.FINAL_PROPERTY_RESOLVER);
-EarMetaData earMetaData = handleSpecMetadata(deploymentFile, SpecDescriptorPropertyReplacement.propertyReplacer(deploymentUnit));
+        final PropertyReplacer propertyReplacer = PropertyReplacers.resolvingReplacer(propertyResolver);
 
-        EarMetaData earMetaData = handleSpecMetadata(deploymentFile, propertyReplacer);
+EarMetaData earMetaData = handleSpecMetadata(deploymentFile, SpecDescriptorPropertyReplacement.propertyReplacer(deploymentUnit));
         JBossAppMetaData jbossMetaData = handleJbossMetadata(deploymentFile ,propertyReplacer);
         if (earMetaData == null && jbossMetaData == null) {
             return;

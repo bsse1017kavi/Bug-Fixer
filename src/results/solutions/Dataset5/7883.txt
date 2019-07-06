@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -106,9 +105,9 @@ public class ResourceSelectorContainer extends DataType {
      * Overrides the version from DataType to recurse on nested ResourceSelectors.
      * @param stk the Stack of references.
      * @param p   the Project to resolve against.
-protected void dieOnCircularReference(Stack stk, Project p) {
+     * @throws BuildException on error.
      */
-    public void dieOnCircularReference(Stack stk, Project p) {
+protected void dieOnCircularReference(Stack stk, Project p) {
         if (isChecked()) {
             return;
         }

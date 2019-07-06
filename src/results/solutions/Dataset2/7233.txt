@@ -1,4 +1,3 @@
-
 package org.junit.runner.notification;
 
 import java.util.ArrayList;
@@ -163,9 +162,9 @@ public class RunNotifier {
 	public void fireTestAssumptionFailed(final Description description,
 			final AssumptionViolatedException e) {
 		new SafeNotifier() {
-each.testAssumptionInvalid(description, e);
+			@Override
 			protected void notifyListener(RunListener each) throws Exception {
-				each.testAssumptionFailed(description, e);
+each.testAssumptionInvalid(description, e);
 			};
 		}.run();
 	}

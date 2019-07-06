@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -56,9 +55,9 @@ public class ExternalLink extends HtmlContainer
      */
     protected void handleComponentTag(RequestCycle cycle, ComponentTag tag)
     {
-tag.put("href", href.replaceAll("&", "&amp;"));
+        if (href != null)
         {
-            tag.put("href", href);
+tag.put("href", href.replaceAll("&", "&amp;"));
         }
     }
 

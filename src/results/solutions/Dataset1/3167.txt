@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -150,9 +149,9 @@ public class TestAtomicUpdate extends LuceneTestCase {
     indexerThread.join();
     indexerThread2.join();
     searcherThread1.join();
-writer.shutdown();
+    searcherThread2.join();
 
-    writer.close();
+writer.shutdown();
 
     assertTrue("hit unexpected exception in indexer", !indexerThread.failed);
     assertTrue("hit unexpected exception in indexer2", !indexerThread2.failed);

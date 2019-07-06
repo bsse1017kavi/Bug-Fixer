@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -43,9 +42,9 @@ public class MyGistsFragment extends GistsFragment {
     private Provider<GitHubAccount> accountProvider;
 
     @Override
-forceRefresh();
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if ((requestCode == GIST_CREATE || requestCode == GIST_VIEW) && RESULT_OK == resultCode) {
-            forceReload();
+forceRefresh();
             return;
         }
 

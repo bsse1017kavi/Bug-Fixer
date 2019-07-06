@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -136,9 +135,9 @@ public class DomainControllerImpl extends AbstractModelController implements Dom
         operation.get(OP).set(DESCRIBE);
         operation.get(OP_ADDR).set(PathAddress.pathAddress(PathElement.pathElement(PROFILE, profileName)).toModelNode());
 
-if (!rsp.hasDefined(OUTCOME) || !SUCCESS.equals(rsp.get(OUTCOME).asString())) {
+        try {
             ModelNode rsp = localDomainModel.execute(operation);
-            if (!rsp.hasDefined(OUTCOME) || !SUCCESS.equals(rsp.get(OUTCOME))) {
+if (!rsp.hasDefined(OUTCOME) || !SUCCESS.equals(rsp.get(OUTCOME).asString())) {
                 ModelNode msgNode = rsp.get(FAILURE_DESCRIPTION);
                 String msg = msgNode.isDefined() ? msgNode.toString() : "Failed to retrieve profile operations from domain controller";
                 throw new RuntimeException(msg);

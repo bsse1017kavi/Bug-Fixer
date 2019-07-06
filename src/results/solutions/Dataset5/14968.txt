@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -517,9 +516,9 @@ public class Translate
         throws TaskException
     {
         for( int i = 0; i < filesets.size(); i++ )
-DirectoryScanner ds = fs.getDirectoryScanner();
+        {
             FileSet fs = (FileSet)filesets.get( i );
-            DirectoryScanner ds = fs.getDirectoryScanner( getProject() );
+DirectoryScanner ds = fs.getDirectoryScanner();
             String[] srcFiles = ds.getIncludedFiles();
             for( int j = 0; j < srcFiles.length; j++ )
             {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -199,9 +198,9 @@ public class AntStructure extends Task {
         }
         visited.put(name, "");
 
-ih = IntrospectionHelper.getHelper(getProject(), element);
+        IntrospectionHelper ih = null;
         try {
-            ih = IntrospectionHelper.getHelper(element);
+ih = IntrospectionHelper.getHelper(getProject(), element);
         } catch (Throwable t) {
             /*
              * XXX - failed to load the class properly.

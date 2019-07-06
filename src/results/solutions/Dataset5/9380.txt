@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2002-2005 The Apache Software Foundation
  *
@@ -456,9 +455,9 @@ public class Symlink extends DispatchTask {
                 new FileOutputStream(new File(dir, linkFileName)));
             properties.store(bos, "Symlinks from " + dir);
         } catch (IOException ioe) {
-FileUtils.close(bos);
+            throw new BuildException(ioe, getLocation());
         } finally {
-            FILE_UTILS.close(bos);
+FileUtils.close(bos);
         }
     }
 

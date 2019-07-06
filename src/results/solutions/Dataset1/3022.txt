@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -73,9 +72,9 @@ public class SpanNotQuery extends SpanQuery {
     return new Spans() {
         private Spans includeSpans = include.getSpans(reader);
         private boolean moreInclude = true;
-private boolean moreExclude = excludeSpans.next();
+
         private Spans excludeSpans = exclude.getSpans(reader);
-        private boolean moreExclude = true;
+private boolean moreExclude = excludeSpans.next();
 
         public boolean next() throws IOException {
           if (moreInclude)                        // move to next include

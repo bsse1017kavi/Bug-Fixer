@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -45,9 +44,9 @@ public class WebValveParamAdd implements OperationStepHandler {
 
         final ModelNode mimetypes = context.readResourceForUpdate(PathAddress.EMPTY_ADDRESS).getModel().get(PARAM);
         if (operation.hasDefined("param-name") && operation.hasDefined("param-value")) {
-throw new OperationFailedException(MESSAGES.paramNameAndParamValueRequiredForAddParam());
+            mimetypes.get(operation.get("param-name").asString()).set(operation.get("param-value").asString());
         } else {
-            throw new OperationFailedException(new ModelNode().set(MESSAGES.paramNameAndParamValueRequiredForAddParam()));
+throw new OperationFailedException(MESSAGES.paramNameAndParamValueRequiredForAddParam());
         }
 
         if (!context.isBooting() && context.isNormalServer()) {

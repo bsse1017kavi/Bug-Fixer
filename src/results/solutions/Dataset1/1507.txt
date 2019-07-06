@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -105,9 +104,9 @@ public class Classify {
     modelPaths.put("sigma_k", new Path(modelBasePath + "/trainer-weights/Sigma_k/part-*"));
     modelPaths.put("sigma_kSigma_j", new Path(modelBasePath + "/trainer-weights/Sigma_kSigma_j/part-*"));
     modelPaths.put("thetaNormalizer", new Path(modelBasePath + "/trainer-thetaNormalizer/part-*"));
-FileSystem fs = FileSystem.get((new Path(modelBasePath)).toUri(), conf);
+    modelPaths.put("weight", new Path(modelBasePath + "/trainer-tfIdf/trainer-tfIdf/part-*"));
 
-    FileSystem fs = FileSystem.get(conf);
+FileSystem fs = FileSystem.get((new Path(modelBasePath)).toUri(), conf);
 
     log.info("Loading model from: {}", modelPaths);
 

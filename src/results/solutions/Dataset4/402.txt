@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -121,9 +120,9 @@ public class MetaDataIndexAliasesService extends AbstractComponent {
                                 if (indexService == null) {
                                     indexService = indicesService.indexService(indexMetaData.index());
                                     if (indexService == null) {
-indexService = indicesService.createIndex(indexMetaData.index(), indexMetaData.settings(), clusterService.localNode().id());
+                                        // temporarily create the index so we have can parse the filter
                                         try {
-                                            indexService = indicesService.createIndex(indexMetaData.index(), indexMetaData.settings(), currentState.nodes().localNode().id());
+indexService = indicesService.createIndex(indexMetaData.index(), indexMetaData.settings(), clusterService.localNode().id());
                                         } catch (Exception e) {
                                             logger.warn("[{}] failed to temporary create in order to apply alias action", e, indexMetaData.index());
                                             continue;

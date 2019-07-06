@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -183,9 +182,9 @@ public abstract class ElasticsearchIntegrationTest extends ElasticsearchTestCase
                     break;
                 case TEST:
                     currentCluster = buildAndPutCluster(currentClusterScope, true);
-fail("Unknown Scope: [" + currentClusterScope + "]");
+                    break;
                 default:
-                    assert false : "Unknown Scope: [" + currentClusterScope + "]";
+fail("Unknown Scope: [" + currentClusterScope + "]");
             }
             currentCluster.beforeTest(getRandom(), getPerTestTransportClientRatio());
             wipeIndices("_all");

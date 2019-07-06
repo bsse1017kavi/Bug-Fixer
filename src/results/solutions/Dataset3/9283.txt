@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -91,9 +90,9 @@ public interface SimpleJdbcCallOperations {
 	 * then the name specified must match the name of the parameter declared for the procedure in the
 	 * database.
 	 * @param parameterName the name of the returned results and/or the name of the ref cursor parameter
-SimpleJdbcCallOperations returningResultSet(String parameterName, RowMapper<?> rowMapper);
+	 * @param rowMapper the RowMapper implementation that will map the data returned for each row
 	 * */
-	SimpleJdbcCallOperations returningResultSet(String parameterName, RowMapper rowMapper);
+SimpleJdbcCallOperations returningResultSet(String parameterName, RowMapper<?> rowMapper);
 
 	/**
 	 * Turn off any processing of parameter meta data information obtained via JDBC.

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -52,9 +51,9 @@ public class ServletStompEndpointRegistryTests {
 	public void setup() {
 		MessageChannel channel = Mockito.mock(MessageChannel.class);
 		this.webSocketHandler = new SubProtocolWebSocketHandler(channel);
-this.registry = new ServletStompEndpointRegistry(webSocketHandler, queueSuffixResolver, taskScheduler, false);
+		this.queueSuffixResolver = new SimpleUserQueueSuffixResolver();
 		TaskScheduler taskScheduler = Mockito.mock(TaskScheduler.class);
-		this.registry = new ServletStompEndpointRegistry(webSocketHandler, queueSuffixResolver, taskScheduler);
+this.registry = new ServletStompEndpointRegistry(webSocketHandler, queueSuffixResolver, taskScheduler, false);
 	}
 
 

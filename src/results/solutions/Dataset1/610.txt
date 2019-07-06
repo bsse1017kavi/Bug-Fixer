@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.iapi.tools.i18n.LocalizedOutput
@@ -29,9 +28,9 @@ public class LocalizedOutput extends PrintWriter {
 	private OutputStream out;
 	public LocalizedOutput(OutputStream o){
 		super(new OutputStreamWriter(o), true);
-LocalizedOutput(OutputStream o, String enc) throws UnsupportedEncodingException {
+		out = o;
 	}
-	public LocalizedOutput(OutputStream o, String enc) throws UnsupportedEncodingException {
+LocalizedOutput(OutputStream o, String enc) throws UnsupportedEncodingException {
 		super(new OutputStreamWriter(o, enc), true);
 		out = o;
 	}

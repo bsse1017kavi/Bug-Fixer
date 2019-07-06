@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -374,9 +373,9 @@ void showMenu () {
 
 int trayItemProc (int target, int userData, int selector, int arg0) {
 	switch (selector) {
-if (mask == Cocoa.NSControlKeyMask) {
+		case 0: {
 			int mask = Cocoa.objc_msgSend (arg0, Cocoa.S_modifierFlags) & Cocoa.NSDeviceIndependentModifierFlagsMask;
-			if ((mask & Cocoa.NSControlKeyMask) == mask) {
+if (mask == Cocoa.NSControlKeyMask) {
 				showMenu ();
 			} else {
 				highlight = true;

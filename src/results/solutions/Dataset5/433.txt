@@ -1,4 +1,3 @@
-
 package wicket.markup.html.form.validation;
 
 import wicket.markup.html.form.FormComponent;
@@ -16,8 +15,8 @@ public class DefaultValidatorResourceKeyFactory implements IValidatorResourceKey
 	/**
 	 * @see IValidatorResourceKeyFactory#newKey(IValidator, FormComponent)
 	 */
-return formComponent.getId() + "." + Classes.simpleName(validator.getClass());
+	public String newKey(IValidator validator, FormComponent formComponent)
 	{
-		return formComponent.getId() + "." + Classes.name(validator.getClass());
+return formComponent.getId() + "." + Classes.simpleName(validator.getClass());
 	}
 }

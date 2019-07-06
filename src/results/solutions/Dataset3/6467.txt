@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -56,9 +55,9 @@ import org.springframework.util.ReflectionUtils;
  * @see SpringConfigurator
  * @see ServletServerContainerFactoryBean
  */
-private static Log logger = LogFactory.getLog(ServerEndpointExporter.class);
+public class ServerEndpointExporter implements InitializingBean, BeanPostProcessor, ApplicationContextAware {
 
-	private static final Log logger = LogFactory.getLog(ServerEndpointExporter.class);
+private static Log logger = LogFactory.getLog(ServerEndpointExporter.class);
 
 
 	private final List<Class<?>> annotatedEndpointClasses = new ArrayList<Class<?>>();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.postingshighlight;
 
 /*
@@ -111,8 +110,8 @@ final class WholeBreakIterator extends BreakIterator {
   @Override
   public void setText(CharacterIterator newText) {
     start = newText.getBeginIndex();
-current = start;
+    end = newText.getEndIndex();
     text = newText;
-    current = newText.getIndex();
+current = start;
   }
 }

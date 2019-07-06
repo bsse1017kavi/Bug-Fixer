@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2010-2011 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -144,9 +143,9 @@ public class PropertiesUtil {
 				.getProperty(org.osgi.service.remoteserviceadmin.RemoteConstants.SERVICE_EXPORTED_INTENTS_EXTRA));
 		if (extraIntents != null)
 			results.addAll(Arrays.asList(extraIntents));
-return (String[]) results.toArray(new String[results.size()]);
+		if (results.size() == 0)
 			return null;
-		return (String[]) results.toArray(new String[] {});
+return (String[]) results.toArray(new String[results.size()]);
 	}
 
 	public static List getStringPlusProperty(Map properties, String key) {

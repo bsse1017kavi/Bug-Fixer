@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -639,9 +638,9 @@ public class CommandlineJava implements Cloneable {
      * Determine whether the classpath has been specified, and whether it shall
      * really be used or be nulled by build.sysclasspath.
      * @return true if the classpath is to be used.
-public boolean haveClasspath() {
+     * @since Ant 1.6
      */
-    protected boolean haveClasspath() {
+public boolean haveClasspath() {
         Path fullClasspath = classpath != null
             ? classpath.concatSystemClasspath("ignore") : null;
         return fullClasspath != null

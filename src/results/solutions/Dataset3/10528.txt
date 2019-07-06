@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -41,9 +40,9 @@ final class CollectionToMapConverter implements GenericConverter {
 	@SuppressWarnings("unchecked")
 	public Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor targetType) {
 		if (source == null) {
-Collection<?> sourceCollection = (Collection<?>) source;
+			return this.conversionService.convertNullSource(sourceType, targetType);
 		}		
-		Collection sourceCollection = (Collection) source;
+Collection<?> sourceCollection = (Collection<?>) source;
 		TypeDescriptor sourceElementType = sourceType.getElementTypeDescriptor();
 		if (sourceElementType == TypeDescriptor.NULL) {
 			sourceElementType = getElementType(sourceCollection);

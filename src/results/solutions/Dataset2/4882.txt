@@ -1,4 +1,3 @@
-
 package org.junit.runners;
 
 import java.lang.annotation.Annotation;
@@ -257,9 +256,9 @@ public abstract class ParentRunner<T> extends Runner implements Filterable,
 		collectInitializationErrors(errors);
 		if (!errors.isEmpty())
 			throw new InitializationError(errors);
-protected List<T> getFilteredChildren() {
+	}
 
-	private List<T> getFilteredChildren() {
+protected List<T> getFilteredChildren() {
 		ArrayList<T> filtered= new ArrayList<T>();
 		for (T each : getChildren())
 			if (shouldRun(each))

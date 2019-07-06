@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.parser;
 
 /*
@@ -13,9 +12,9 @@ import org.eclipse.jdt.internal.compiler.ast.*;
 public class RecoveredElement {
 
 	public RecoveredElement parent;
-protected Parser recoveringParser;
+	public int bracketBalance;
 	public boolean foundOpeningBrace;
-	private Parser recoveringParser;
+protected Parser recoveringParser;
 public RecoveredElement(RecoveredElement parent, int bracketBalance){
 	this(parent, bracketBalance, null);
 }

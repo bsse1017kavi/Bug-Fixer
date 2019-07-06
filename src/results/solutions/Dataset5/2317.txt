@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 The Apache Software Foundation.
  *
@@ -50,9 +49,9 @@ public class CounterConfig extends AbstractTestElement implements Serializable, 
 
 	// This class is not cloned per thread, so this is shared
 	private long globalCounter = Long.MIN_VALUE;
-transient private ThreadLocal perTheadNumber = new ThreadLocal() {
+    
     // Used for per-thread/user numbers
-    private ThreadLocal perTheadNumber = new ThreadLocal() {
+transient private ThreadLocal perTheadNumber = new ThreadLocal() {
         protected synchronized Object initialValue() {
             return new Long(getStart());
         }

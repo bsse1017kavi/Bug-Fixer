@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -43,9 +42,9 @@ import org.jboss.as.messaging.MessagingExtension;
  *
  * @author <a href="http://jmesnil.net">Jeff Mesnil</a> (c) 2012 Red Hat Inc.
  */
-static final AttributeDefinition[] ATTRIBUTES = { CommonAttributes.DESTINATION_ENTRIES, CommonAttributes.SELECTOR, CommonAttributes.DURABLE };
+public class JMSQueueDefinition extends SimpleResourceDefinition {
 
-    static final AttributeDefinition[] ATTRIBUTES = { JndiEntriesAttribute.DESTINATION, CommonAttributes.SELECTOR, CommonAttributes.DURABLE };
+static final AttributeDefinition[] ATTRIBUTES = { CommonAttributes.DESTINATION_ENTRIES, CommonAttributes.SELECTOR, CommonAttributes.DURABLE };
 
     static final AttributeDefinition QUEUE_ADDRESS = create("queue-address", STRING)
             .setStorageRuntime()

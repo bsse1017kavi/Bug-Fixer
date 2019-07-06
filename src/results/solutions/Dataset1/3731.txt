@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -20,9 +19,9 @@ package org.apache.lucene.index;
 import java.io.IOException;
 import org.apache.lucene.store.InputStream;
 
-FieldInfos fieldInfos;
+final class SegmentTermEnum extends TermEnum implements Cloneable {
   private InputStream input;
-  private FieldInfos fieldInfos;
+FieldInfos fieldInfos;
   long size;
   long position = -1;
 

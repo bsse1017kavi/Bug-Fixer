@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -632,9 +631,9 @@ public final class SelectionEngine extends Engine implements ISearchRequestor {
 						this.selectedIdentifier = typeName;
 						field.type = new SelectionOnSingleTypeReference(typeName, -1);
 						// position not used
-char[][] previousIdentifiers = CharOperation.splitOn('.', typeName, 0, dot);
+					} else {
 						qualifiedSelection = typeName;
-						char[][] previousIdentifiers = CharOperation.splitOn('.', typeName, 0, dot - 1);
+char[][] previousIdentifiers = CharOperation.splitOn('.', typeName, 0, dot);
 						char[] selectionIdentifier =
 							CharOperation.subarray(typeName, dot + 1, typeName.length);
 						this.selectedIdentifier = selectionIdentifier;

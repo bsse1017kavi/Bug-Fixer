@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -118,9 +117,9 @@ public final class RecommenderJob extends AbstractJob {
       return -1;
     }
 
-Path usersFile = hasOption("usersFile") ? new Path(getOption("usersFile")) : inputFile;
+    Path inputFile = getInputPath();
     Path outputPath = getOutputPath();
-    Path usersFile = hasOption("usersFile") ? inputFile : new Path(getOption("usersFile"));
+Path usersFile = hasOption("usersFile") ? new Path(getOption("usersFile")) : inputFile;
     
     String recommendClassName = getOption("recommenderClassName");
     int recommendationsPerUser = Integer.parseInt(getOption("numRecommendations"));

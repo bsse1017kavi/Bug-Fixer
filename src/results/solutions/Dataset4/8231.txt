@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -152,9 +151,9 @@ public class RestAllocationAction extends AbstractCatAction {
 
             long used = nodeStats.getFs().getTotal().getTotal().bytes() - nodeStats.getFs().getTotal().getAvailable().bytes();
             long avail = nodeStats.getFs().getTotal().getAvailable().bytes();
-if (used >= 0 && avail >= 0) {
+
             short diskPercent = -1;
-            if (used >= 0 && avail > 0) {
+if (used >= 0 && avail >= 0) {
                 diskPercent = (short) (used * 100 / (used + avail));
             }
 

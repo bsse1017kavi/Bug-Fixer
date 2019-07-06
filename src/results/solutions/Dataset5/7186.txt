@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -809,9 +808,9 @@ public class WicketFilter implements Filter
 		if (detectPortletContext)
 		{
 			// load the portlet context
-Class.forName("javax.portlet.PortletContext");
+			try
 			{
-				Class<?> portletClass = Class.forName("javax.portlet.PortletContext");
+Class.forName("javax.portlet.PortletContext");
 				return true;
 			}
 			catch (ClassNotFoundException e)

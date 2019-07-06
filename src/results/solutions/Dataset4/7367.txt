@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public abstract class BucketsAggregator extends Aggregator {
 
     public BucketsAggregator(String name, BucketAggregationMode bucketAggregationMode, AggregatorFactories factories,
                              long estimatedBucketsCount, AggregationContext context, Aggregator parent) {
-List<Aggregator> collectables = new ArrayList<>(subAggregators.length);
+        super(name, bucketAggregationMode, factories, estimatedBucketsCount, context, parent);
         docCounts = bigArrays.newLongArray(estimatedBucketsCount, true);
-        List<Aggregator> collectables = new ArrayList<Aggregator>(subAggregators.length);
+List<Aggregator> collectables = new ArrayList<>(subAggregators.length);
         for (int i = 0; i < subAggregators.length; i++) {
             if (subAggregators[i].shouldCollect()) {
                 collectables.add((subAggregators[i]));

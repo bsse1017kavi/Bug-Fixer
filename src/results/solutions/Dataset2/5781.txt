@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -223,9 +222,9 @@ public class DocumentationManager {
       if(o instanceof MModelElement) {
 	  Collection comments = ((MModelElement) o).getComments();
 	  if (!comments.isEmpty()) {
-String s = (c.getName()!=null) ? c.getName().trim() : null;
+	    for(Iterator iter = comments.iterator(); iter.hasNext(); ) {
 		  MComment c = (MComment)iter.next();
-		  String s = c.getName().trim();
+String s = (c.getName()!=null) ? c.getName().trim() : null;
 		  if (s != null && s.length() > 0) {
 		    if(result.length() > 0) {
 		       result.append("\n");

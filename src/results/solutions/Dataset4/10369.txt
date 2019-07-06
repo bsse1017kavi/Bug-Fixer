@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -133,9 +132,9 @@ public class TribeTests extends ElasticsearchIntegrationTest {
         });
 
         logger.info("make sure master level write operations fail... (we don't really have a master)");
-fail();
+        try {
             tribeClient.admin().indices().prepareCreate("tribe_index").setMasterNodeTimeout("10ms").get();
-            assert false;
+fail();
         } catch (MasterNotDiscoveredException e) {
             // all is well!
         }

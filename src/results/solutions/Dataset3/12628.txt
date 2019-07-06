@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -659,9 +658,9 @@ public class TarArchiveEntry implements TarConstants, ArchiveEntry {
      * Strips Windows' drive letter as well as any leading slashes,
      * turns path separators into forward slahes.
      */
-String osname = System.getProperty("os.name").toLowerCase(Locale.ENGLISH);
+    private static String normalizeFileName(String fileName,
                                             boolean preserveLeadingSlashes) {
-        String osname = System.getProperty("os.name").toLowerCase(Locale.US);
+String osname = System.getProperty("os.name").toLowerCase(Locale.ENGLISH);
 
         if (osname != null) {
 

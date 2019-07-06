@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
@@ -248,9 +247,9 @@ public class CookieManager extends ConfigTestElement implements TestListener, Se
 	public String getCookieHeaderForURL(URL url) {
 		boolean debugEnabled = log.isDebugEnabled();
 
-!protocol.equalsIgnoreCase(HTTPSamplerBase.PROTOCOL_HTTPS)) {
+        String protocol = url.getProtocol().trim();
 		if (!protocol.equalsIgnoreCase(HTTPSamplerBase.PROTOCOL_HTTP) && 
-             !protocol.equalsIgnoreCase(HTTPSamplerBase.PROTOCOL_HTTP)) {
+!protocol.equalsIgnoreCase(HTTPSamplerBase.PROTOCOL_HTTPS)) {
 			return null;
         }
 

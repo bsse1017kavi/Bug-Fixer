@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -40,9 +39,9 @@ public final class DefaultClassResolver implements IClassResolver
 	 *    wicket/examples/repeater/RepeatingPage at java.lang.ClassLoader.defineClass1(Native Method) 
 	 * </pre>
 	 * 
-private final ConcurrentReaderHashMap classes = new ConcurrentReaderHashMap();
+	 * This problem has gone since we synchronize the access.
 	 */
-	private ConcurrentReaderHashMap classes = new ConcurrentReaderHashMap();
+private final ConcurrentReaderHashMap classes = new ConcurrentReaderHashMap();
 
 	/**
 	 * @see org.apache.wicket.application.IClassResolver#resolveClass(java.lang.String)

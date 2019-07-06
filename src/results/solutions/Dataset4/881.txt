@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Retention(RUNTIME)
 @Documented
 public @interface RiverIndexName {
-public static final String DEFAULT_INDEX_NAME = "_river";
+
     static class Conf {
-        public static String DEFAULT_INDEX_NAME = "_river";
+public static final String DEFAULT_INDEX_NAME = "_river";
 
         public static String indexName(Settings settings) {
             return settings.get("river.index_name", DEFAULT_INDEX_NAME);

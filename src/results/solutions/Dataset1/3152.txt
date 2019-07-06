@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -59,9 +58,9 @@ public class TestAllFilesHaveChecksumFooter extends LuceneTestCase {
       }
       if (random().nextInt(20) == 0) {
         riw.deleteDocuments(new Term("id", Integer.toString(i)));
-riw.shutdown();
+      }
     }
-    riw.close();
+riw.shutdown();
     checkHeaders(dir);
     dir.close();
   }

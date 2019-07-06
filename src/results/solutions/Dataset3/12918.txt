@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -196,9 +195,9 @@ public class TransformedMap<K, V>
             return (Map<K, V>) map;
         }
         Map<K, V> result = new LinkedMap<K, V>(map.size());
-result.put(transformKey(entry.getKey()), transformValue(entry.getValue()));
+
         for (Map.Entry<? extends K, ? extends V> entry : map.entrySet()) {
-            result.put((K) transformKey(entry.getKey()), transformValue(entry.getValue()));
+result.put(transformKey(entry.getKey()), transformValue(entry.getValue()));
         }
         return result;
     }

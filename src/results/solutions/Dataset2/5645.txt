@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -287,9 +286,9 @@ protected boolean outputLocationChanged(IState lastBuiltState) throws CoreExcept
 	try {
 		IPath oldOutputLocation = ((StateImpl) lastBuiltState).getOutputLocation();
 		IPath newOutputLocation = getJavaProject().getOutputLocation();
-throw new CoreException(new Status(IStatus.ERROR, JavaCore.PLUGIN_ID, Platform.PLUGIN_ERROR, Util.bind("element.projectDoesNotExist"/*nonNLS*/, getProject().getFullPath().toString()), e));
+		return !oldOutputLocation.equals(newOutputLocation);
 	} catch (JavaModelException e) {
-		throw new CoreException(new Status(IStatus.ERROR, JavaCore.PLUGIN_ID, Platform.PLUGIN_ERROR, Util.bind("element.projectDoesNotExist", getProject().getFullPath().toString()), e));
+throw new CoreException(new Status(IStatus.ERROR, JavaCore.PLUGIN_ID, Platform.PLUGIN_ERROR, Util.bind("element.projectDoesNotExist"/*nonNLS*/, getProject().getFullPath().toString()), e));
 	}
 }
 protected void setLastBuiltState(IState state) {

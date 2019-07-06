@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -81,8 +80,8 @@ public class HTTPSampler2 extends HTTPSamplerBase implements Interruptible {
     /* (non-Javadoc)
      * @see org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase#testIterationStart(org.apache.jmeter.engine.event.LoopIterationEvent)
      */
-hc.notifyFirstSampleAfterLoopRestart();
+    @Override
     public void testIterationStart(LoopIterationEvent event) {
-        hc.testIterationStart(event);
+hc.notifyFirstSampleAfterLoopRestart();
     }
 }

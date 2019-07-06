@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -443,9 +442,9 @@ public class StringResourceModel extends AbstractReadOnlyDetachableModel
 	{
 		// Initialise information that we need to work successfully
 		final Session session = Session.get();
-this.localizer = session.getApplication().getMarkupSettings().getLocalizer();
+		if (session != null)
 		{
-			this.localizer = session.getApplication().getLocalizer();
+this.localizer = session.getApplication().getMarkupSettings().getLocalizer();
 			this.locale = session.getLocale();
 		}
 		else

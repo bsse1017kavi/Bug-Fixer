@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -47,9 +46,9 @@ public class MD5Test extends GdxTest implements InputProcessor {
 		model = MD5Loader.loadModel(Gdx.files.internal("data/zfat.md5mesh").read(), false);
 		anim = MD5Loader.loadAnimation(Gdx.files.internal("data/walk1.md5anim").read());
 		skeleton = new MD5Joints();
-renderer = new MD5Renderer(model, true, false);
+		skeleton.joints = new float[anim.frames[0].joints.length];
 		animInfo = new MD5AnimationInfo(anim.frames.length, anim.secondsPerFrame);
-		renderer = new MD5Renderer(model, false, true);
+renderer = new MD5Renderer(model, true, false);
 		renderer.setSkeleton(model.baseSkeleton);
 
 		// long start = System.nanoTime();

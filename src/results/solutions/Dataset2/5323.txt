@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1206,9 +1205,9 @@ public class ClassFile
 		// add synthetic methods infos
 		SyntheticMethodBinding[] syntheticMethods = this.referenceBinding.syntheticMethods();
 		if (syntheticMethods != null) {
-switch (syntheticMethod.purpose) {
+			for (int i = 0, max = syntheticMethods.length; i < max; i++) {
 				SyntheticMethodBinding syntheticMethod = syntheticMethods[i];
-				switch (syntheticMethod.kind) {
+switch (syntheticMethod.purpose) {
 					case SyntheticMethodBinding.FieldReadAccess :
 						// generate a method info to emulate an reading access to
 						// a non-accessible field

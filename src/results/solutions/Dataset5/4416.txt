@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -93,9 +92,9 @@ public class WebExternalResourceStream extends AbstractResourceStream
 	}
 
 	@Override
-return WebApplication.get().getServletContext().getMimeType(url);
+	public String getContentType()
 	{
-		return null;
+return WebApplication.get().getServletContext().getMimeType(url);
 	}
 
 	public InputStream getInputStream() throws ResourceStreamNotFoundException

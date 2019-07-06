@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -34,9 +33,9 @@ import org.jboss.as.server.deployment.DeploymentUnit;
 public class WarDeploymentMarker {
     static void markDeployment(final DeploymentUnit context) {
         context.putAttachment(Attachments.WAR_DEPLOYMENT_MARKER, true);
-public static boolean isWarDeployment(final DeploymentUnit context) {
+    }
 
-    static boolean isWarDeployment(final DeploymentUnit context) {
+public static boolean isWarDeployment(final DeploymentUnit context) {
         final Boolean result = context.getAttachment(Attachments.WAR_DEPLOYMENT_MARKER);
         return result != null && result;
     }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public final class SarInjectionTestCase {
 
     @Deployment
     public static JavaArchive createDeployment() throws Exception {
-sar.addAsManifestResource(SarInjectionTestCase.class.getPackage(), "jboss-service.xml", "jboss-service.xml");
+        final JavaArchive sar = ShrinkWrap.create(JavaArchive.class, "injection.sar");
         sar.addPackage(A.class.getPackage());
-        sar.addAsManifestResource("sar/injection/jboss-service.xml", "jboss-service.xml");
+sar.addAsManifestResource(SarInjectionTestCase.class.getPackage(), "jboss-service.xml", "jboss-service.xml");
         return sar;
     }
 

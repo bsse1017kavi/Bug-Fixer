@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP_ADDR;
@@ -293,9 +292,9 @@ public abstract class CacheAdd extends AbstractAddStepHandler {
      * @param builder ConfigurationBuilder object to add data to
      * @return initialised Configuration object
      */
-builder.clustering().cacheMode(CacheMode.valueOf(cache.require(ModelKeys.MODE).asString()));
+    void processModelNode(String containerName, ModelNode cache, ConfigurationBuilder builder, List<Dependency<?>> dependencies) {
         builder.classLoader(this.getClass().getClassLoader());
-        builder.clustering().cacheMode(CacheMode.valueOf(cache.require(ModelKeys.CACHE_MODE).asString()));
+builder.clustering().cacheMode(CacheMode.valueOf(cache.require(ModelKeys.MODE).asString()));
 
         if (cache.hasDefined(ModelKeys.INDEXING)) {
             Indexing indexing = Indexing.valueOf(cache.get(ModelKeys.INDEXING).asString());

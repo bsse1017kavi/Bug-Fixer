@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db;
 
 import java.io.IOException;
@@ -88,9 +87,9 @@ public class NameSortTest extends ColumnFamilyStoreTest
                 byte[] bytes = j % 2 == 0 ? bytes1 : bytes2;
                 assert Arrays.equals(bytes, column.value());
             }
-assert cf != null : "key " + key + " is missing!";
+
             cf = table.get(key, "Super1");
-            assert cf != null;
+assert cf != null : "key " + key + " is missing!";
             Collection<IColumn> superColumns = cf.getAllColumns();
             assert superColumns.size() == 8;
             for (IColumn superColumn : superColumns)

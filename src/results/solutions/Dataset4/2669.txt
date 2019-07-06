@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class UpdateRequest extends InstanceShardOperationRequest {
     @Nullable
     String scriptLang;
     @Nullable
-int retryOnConflict = 0;
+    Map<String, Object> scriptParams;
 
-    int retryOnConflict = 1;
+int retryOnConflict = 0;
 
     private ReplicationType replicationType = ReplicationType.DEFAULT;
     private WriteConsistencyLevel consistencyLevel = WriteConsistencyLevel.DEFAULT;

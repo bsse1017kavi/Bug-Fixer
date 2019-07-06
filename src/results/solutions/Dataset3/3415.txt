@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -44,8 +43,8 @@ public class WebBundleParserTestCase {
 
         Manifest manifest = WebBundleURIParser.parse("webbundle://foo?Bundle-SymbolicName=com.example");
         OSGiMetaData metadata = OSGiMetaDataBuilder.load(manifest);
-Assert.assertEquals("foo", metadata.getHeader(WebExtension.WEB_CONTEXTPATH));
+
         Assert.assertEquals("com.example", metadata.getBundleSymbolicName());
-        Assert.assertEquals("foo", metadata.getHeader(WebExtension.WEB_CONTEXT_PATH));
+Assert.assertEquals("foo", metadata.getHeader(WebExtension.WEB_CONTEXTPATH));
     }
 }

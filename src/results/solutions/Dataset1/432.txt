@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -115,9 +114,9 @@ public class TestRegexpRandom2 extends LuceneTestCase {
 
     private class SimpleAutomatonTermsEnum extends FilteredTermsEnum {
       CharacterRunAutomaton runAutomaton = new CharacterRunAutomaton(automaton);
-private SimpleAutomatonTermsEnum(TermsEnum tenum) {
+      CharsRef utf16 = new CharsRef(10);
 
-      private SimpleAutomatonTermsEnum(TermsEnum tenum) throws IOException {
+private SimpleAutomatonTermsEnum(TermsEnum tenum) {
         super(tenum);
         setInitialSeekTerm(new BytesRef(""));
       }

@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.om;
 
 /* ================================================================
@@ -101,9 +100,9 @@ public class ScarabModulePeer
     public static boolean checkExists( Group group )
         throws DataBackendException, Exception
     {
-String name = ((ModuleEntity)group).getRealName();
+        Criteria criteria = new Criteria();
         criteria.addSelectColumn(MODULE_ID);
-        String name = ((ModuleEntity)group).getName();
+String name = ((ModuleEntity)group).getRealName();
         criteria.add(MODULE_NAME, name);
         criteria.add(PARENT_ID, ((ModuleEntity)group).getParentId());
         List results = (List) BasePeer.doSelect(criteria);

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.HashTableResultSet
@@ -366,9 +365,9 @@ class HashTableResultSet extends NoPutResultSetImpl
 					if (SanityManager.DEBUG)
 					{
 						// Columns is really a Storable[]
-if (! (columns[i] instanceof Storable))
+						for (int i = 0; i < columns.length; i++)
 						{
-							if (! (columns[0] instanceof Storable))
+if (! (columns[i] instanceof Storable))
 							{
 								SanityManager.THROWASSERT(
 								"columns[" + i + "] expected to be Storable, not " +

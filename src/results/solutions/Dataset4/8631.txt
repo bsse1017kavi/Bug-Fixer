@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.graphics.g3d.test;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -137,8 +136,8 @@ public class KeyframedModelViewer implements ApplicationListener {
 	public static void main(String[] argv) {
 		if(argv.length != 1 && argv.length != 2) {
 			System.out.println("StillModelViewer <filename> ?<texture-filename>");
-new JoglApplication(new KeyframedModelViewer("data/boy.g3dt", argv.length==2?argv[1]:null), "KeframedModel Viewer", 320, 240, false);
+			System.exit(-1);
 		}
-		new JoglApplication(new KeyframedModelViewer(argv[0], argv.length==2?argv[1]:null), "KeframedModel Viewer", 320, 240, false);
+new JoglApplication(new KeyframedModelViewer("data/boy.g3dt", argv.length==2?argv[1]:null), "KeframedModel Viewer", 320, 240, false);
 	}
 }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -79,8 +78,8 @@ public class AjaxPagingNavigation extends PagingNavigation
 	 * @return the ajaxified page number link.
 	 */
 	@Override
-return new AjaxPagingNavigationLink<Void>(id, pageable, pageIndex);
+	protected Link< ? > newPagingNavigationLink(String id, IPageable pageable, int pageIndex)
 	{
-		return new AjaxPagingNavigationLink(id, pageable, pageIndex);
+return new AjaxPagingNavigationLink<Void>(id, pageable, pageIndex);
 	}
 }

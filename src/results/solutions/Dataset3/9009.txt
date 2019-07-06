@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -203,9 +202,9 @@ public class Percentile extends AbstractUnivariateStatistic implements Serializa
             return Double.NaN;
         }
         if (length == 1) {
-double n = length;
+            return values[begin]; // always return single value for n = 1
         }
-        double n = (double) length;
+double n = length;
         double pos = p * (n + 1) / 100;
         double fpos = Math.floor(pos);
         int intPos = (int) fpos;

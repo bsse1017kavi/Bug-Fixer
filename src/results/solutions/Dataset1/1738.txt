@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.memory;
 
 /**
@@ -1851,9 +1850,9 @@ public class DirectPostingsFormat extends PostingsFormat {
     }
 
     public DocsEnum reset(int[] docIDs, int[] freqs) {
-docID = upto = -1;
+      this.docIDs = docIDs;
       this.freqs = freqs;
-      upto = -1;
+docID = upto = -1;
       return this;
     }
 

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -63,9 +62,9 @@ public final class PluginContextRegistry extends AbstractContextRegistry {
 			pluginRegistryReader = new PluginRegistryReader();
 
 		pluginRegistryReader.readRegistry(pluginRegistry, PlatformUI.PLUGIN_ID, TAG_ROOT);
-if (!contextDefinitions.equals(super.contextDefinitions)) {
+		boolean contextRegistryChanged = false;
 			
-		if (!contextDefinitions.equals(this.contextDefinitions)) {
+if (!contextDefinitions.equals(super.contextDefinitions)) {
 			super.contextDefinitions = Collections.unmodifiableList(contextDefinitions);		
 			contextRegistryChanged = true;
 		}				

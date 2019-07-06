@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.cloud;
 
 /*
@@ -34,9 +33,9 @@ public class Slice extends ZkNodeProps {
   public static String RANGE = "range";
   public static String LEADER = "leader";       // FUTURE: do we want to record the leader as a slice property in the JSON (as opposed to isLeader as a replica property?)
 
-private final Integer replicationFactor;      // FUTURE: optional per-slice override of the collection replicationFactor
+  private final String name;
   private final HashPartitioner.Range range;
-  private final Integer replicationFactor;
+private final Integer replicationFactor;      // FUTURE: optional per-slice override of the collection replicationFactor
   private final Map<String,Replica> replicas;
   private final Replica leader;
 

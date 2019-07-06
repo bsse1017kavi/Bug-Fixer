@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -110,9 +109,9 @@ public abstract class AbstractServerSockJsSession extends AbstractSockJsSession 
 			throw ex;
 		}
 		catch (Throwable ex) {
-throw new SockJsRuntimeException("Failed to write " + frame, ex);
+			logger.warn("Terminating connection due to failure to send message: " + ex.getMessage());
 			close();
-			throw new NestedSockJsRuntimeException("Failed to write " + frame, ex);
+throw new SockJsRuntimeException("Failed to write " + frame, ex);
 		}
 	}
 

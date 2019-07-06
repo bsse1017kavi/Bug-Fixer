@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -138,9 +137,9 @@ public class IndicesLifecycleListenerTests extends ElasticsearchIntegrationTest 
         final ConcurrentMap<ShardId, List<IndexShardState>> shardStates = Maps.newConcurrentMap();
 
         @Override
-new CopyOnWriteArrayList<>(new IndexShardState[]{newState}));
+        public void indexShardStateChanged(IndexShard indexShard, @Nullable IndexShardState previousState, IndexShardState newState, @Nullable String reason) {
             List<IndexShardState> shardStates = this.shardStates.putIfAbsent(indexShard.shardId(),
-                    new CopyOnWriteArrayList<IndexShardState>(new IndexShardState[]{newState}));
+new CopyOnWriteArrayList<>(new IndexShardState[]{newState}));
             if (shardStates != null) {
                 shardStates.add(newState);
             }

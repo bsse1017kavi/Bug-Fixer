@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class TransactionAttributeAnnotationProcessor extends AbstractAnnotationE
             AnnotationTarget target = annotationInstance.target();
             TransactionAttributeType transactionAttributeType = TransactionAttributeType.valueOf(annotationInstance.value().asEnum());
             if (target instanceof ClassInfo) {
-componentDescription.setTransactionAttribute(methodIntf, methodIntf == null ? className : null, transactionAttributeType);
+                // Style 1
                 final String className = target.toString();
-                componentDescription.setTransactionAttribute(methodIntf, className, transactionAttributeType);
+componentDescription.setTransactionAttribute(methodIntf, methodIntf == null ? className : null, transactionAttributeType);
             } else if (target instanceof MethodInfo) {
                 // Style 3
                 final MethodInfo method = (MethodInfo) target;

@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.utils.reflect;
 
 import java.lang.reflect.Modifier;
@@ -42,9 +41,9 @@ public final class ClassReflection {
 	static public boolean isStaticClass (Class c) {
 		return Modifier.isStatic(c.getModifiers());
 	}
-static public Object newInstance (Class c) throws ReflectionException {
+
 	/** Creates a new instance of the class represented by the supplied Class. */
-	static public <T> T newInstance (Class<T> c) throws ReflectionException {
+static public Object newInstance (Class c) throws ReflectionException {
 		try {
 			return c.newInstance();
 		} catch (InstantiationException e) {

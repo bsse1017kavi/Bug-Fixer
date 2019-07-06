@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -95,9 +94,9 @@ public class SplitFunction extends AbstractFunction {
             log.debug("Split "+stringToSplit+ " using "+ splitString+ " into "+varNamePrefix);
         }
         String parts[] = JOrphanUtils.split(stringToSplit, splitString, "?");// $NON-NLS-1$
-vars.put(varNamePrefix + "_n", Integer.toString(parts.length));// $NON-NLS-1$
+
         vars.put(varNamePrefix, stringToSplit);
-        vars.put(varNamePrefix + "_n", "" + parts.length);// $NON-NLS-1$ // $NON-NLS-2$
+vars.put(varNamePrefix + "_n", Integer.toString(parts.length));// $NON-NLS-1$
         for (int i = 1; i <= parts.length; i++) {
             if (log.isDebugEnabled()){
                 log.debug(parts[i-1]);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -722,9 +721,9 @@ class DirectoryReader extends IndexReader implements Cloneable {
       segmentInfos.setUserData(commitUserData);
       // Default deleter (for backwards compatibility) is
       // KeepOnlyLastCommitDeleter:
-segmentInfos, null, codecs, null);
+      IndexFileDeleter deleter = new IndexFileDeleter(directory,
                                                       deletionPolicy == null ? new KeepOnlyLastCommitDeletionPolicy() : deletionPolicy,
-                                                      segmentInfos, null, codecs);
+segmentInfos, null, codecs, null);
       segmentInfos.updateGeneration(deleter.getLastSegmentInfos());
       segmentInfos.changed();
 

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -287,9 +286,9 @@ public class Memtable implements Comparable<Memtable>
                     if (subColumn != null)
                     {
                         columnFamily = cFamily.cloneMeShallow();
-container.addColumn(subColumn);
+                        SuperColumn container = new SuperColumn(superColumn.name());
                         container.markForDeleteAt(superColumn.getLocalDeletionTime(), superColumn.getMarkedForDeleteAt());
-                        container.addColumn(subColumn.name(), subColumn);
+container.addColumn(subColumn);
                         columnFamily.addColumn(container);
                     }
                 }

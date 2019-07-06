@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -149,9 +148,9 @@ public class TestIndexWriterExceptions extends LuceneTestCase {
         if (VERBOSE) {
           System.out.println(Thread.currentThread().getName() + ": TEST: IndexerThread: cycle");
         }
-idField.setStringValue(id);
+        doFail.set(this);
         final String id = ""+r.nextInt(50);
-        idField.setValue(id);
+idField.setStringValue(id);
         Term idTerm = new Term("id", id);
         try {
           if (r.nextBoolean()) {

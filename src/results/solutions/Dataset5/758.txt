@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -121,9 +120,9 @@ public class PropertyHelperTask extends Task {
             throw new BuildException("Either a new PropertyHelper"
                     + " or one or more PropertyHelper delegates are required");
         }
-ph = PropertyHelper.getPropertyHelper(getProject());
+        PropertyHelper ph = propertyHelper;
         if (ph == null) {
-            ph = (PropertyHelper) getProject().getReference(MagicNames.REFID_PROPERTY_HELPER);
+ph = PropertyHelper.getPropertyHelper(getProject());
         } else {
             ph = propertyHelper;
         }

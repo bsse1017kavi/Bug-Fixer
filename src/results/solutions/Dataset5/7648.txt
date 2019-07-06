@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -385,9 +384,9 @@ public class Java extends Task
 
             exe.setAntRun( project );
 
-dir = getBaseDirectory();
+            if( dir == null )
             {
-                dir = project.getBaseDir();
+dir = getBaseDirectory();
             }
             else if( !dir.exists() || !dir.isDirectory() )
             {

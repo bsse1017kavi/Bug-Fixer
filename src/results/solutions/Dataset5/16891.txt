@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -296,9 +295,9 @@ public class AdviceDeclaration extends AjMethodDeclaration {
 		} else if (kind == AdviceKind.AfterThrowing) {
 			adviceAnnotation = AtAspectJAnnotationFactory.createAfterThrowingAnnotation(pointcutExpression,extraArgumentName,declarationSourceStart);
 		} else if (kind == AdviceKind.Around) {
-AtAspectJAnnotationFactory.addAnnotation(this, adviceAnnotation,this.scope);
+			adviceAnnotation = AtAspectJAnnotationFactory.createAroundAnnotation(pointcutExpression,declarationSourceStart);
 		}
-		AtAspectJAnnotationFactory.addAnnotation(this, adviceAnnotation);
+AtAspectJAnnotationFactory.addAnnotation(this, adviceAnnotation,this.scope);
 	}
 	
 	// override, Called by ClassScope.postParse

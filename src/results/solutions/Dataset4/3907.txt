@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -182,9 +181,9 @@ public class ElasticsearchRestTests extends ElasticsearchIntegrationTest {
             String testSection = testCandidate.getTestSection().getName().replace("*", "").replace("\\", "/").replaceAll("\\s+/", "/").trim();
             String testPath = testCandidate.getSuitePath() + "/" + testSection;
             assumeFalse("[" + testCandidate.getTestPath() + "] skipped, reason: blacklisted", blacklistedPathMatcher.matches(Paths.get(testPath)));
-restTestExecutionContext.resetClient(cluster().httpAddresses());
+        }
 
-        restTestExecutionContext.resetClient(immutableCluster().httpAddresses());
+restTestExecutionContext.resetClient(cluster().httpAddresses());
         restTestExecutionContext.clear();
 
         //skip test if the whole suite (yaml file) is disabled

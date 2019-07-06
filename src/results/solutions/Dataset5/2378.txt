@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -325,9 +324,9 @@ public class CookieUtils
 		{
 			cookie.setDomain(domain);
 		}
-String path = request.getContainerRequest().getContextPath() + "/" +
+
 		ServletWebRequest request = (ServletWebRequest)getWebRequest();
-		String path = request.getHttpServletRequest().getContextPath() + "/" +
+String path = request.getContainerRequest().getContextPath() + "/" +
 			request.getFilterPrefix();
 
 		cookie.setPath(path);

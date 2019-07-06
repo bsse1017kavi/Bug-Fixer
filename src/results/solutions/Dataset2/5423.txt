@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -86,9 +85,9 @@ public class AnonymousLocalTypeDeclaration extends LocalTypeDeclaration {
 				cd.modifiers, //methodDeclaration
 				argumentsLength == 0 ? NoParameters : argumentTypes, //arguments bindings
 				inheritedConstructorBinding.thrownExceptions, //exceptions
-cd.scope = new MethodScope(scope, cd, true);
+				binding); //declaringClass
 				
-		cd.scope = new MethodScope(scope, this, true);
+cd.scope = new MethodScope(scope, cd, true);
 		cd.bindArguments();
 		cd.constructorCall.resolve(cd.scope);
 

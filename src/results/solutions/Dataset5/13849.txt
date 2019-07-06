@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -413,9 +412,9 @@ void hookEvents () {
 			OS.kEventClassControl, OS.kEventControlDraw,
 		};
 		int controlTarget = OS.GetControlEventTarget (handle);
-if ((parent.state & CANVAS) == 0) {
+		OS.InstallEventHandler (controlTarget, controlProc, mask.length / 2, mask, handle, null);
 	}
-	if (parent.scrolledHandle == 0) {
+if ((parent.state & CANVAS) == 0) {
 		oldActionProc = OS.GetControlAction (handle);
 		OS.SetControlAction (handle, display.actionProc);
 	}

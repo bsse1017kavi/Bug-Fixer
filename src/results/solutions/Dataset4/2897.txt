@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,9 +64,9 @@ public class HeapDumpContributor implements DumpContributor {
     }
 
     @Override
-throw new DumpContributionFailedException(getName(), "Heap dump not enabled on this JVM");
+    public void contribute(Dump dump) throws DumpContributionFailedException {
         if (heapDumpMethod == null) {
-            throw new DumpContributionFailedException(getName(), "Heap dump not enalbed on this JVM");
+throw new DumpContributionFailedException(getName(), "Heap dump not enabled on this JVM");
         }
         try {
             heapDumpMethod.invoke(diagnosticMBean, dump.createFile("heap.hprof").getAbsolutePath(), true);

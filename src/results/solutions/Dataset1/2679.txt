@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -87,9 +86,9 @@ public class MultiReader extends IndexReader implements Cloneable {
   
   // used only by openIfChaged
   private MultiReader(IndexReader[] subReaders, boolean[] decrefOnClose,
-this.subReaders =  subReaders;
+                      Collection<ReaderFinishedListener> readerFinishedListeners)
                       throws IOException {
-    this.subReaders =  subReaders.clone();
+this.subReaders =  subReaders;
     this.decrefOnClose = decrefOnClose;
     this.readerFinishedListeners = readerFinishedListeners;
     starts = new int[subReaders.length + 1];    // build starts array

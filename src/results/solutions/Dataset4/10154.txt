@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -137,9 +136,9 @@ public class TransportIndicesStatusAction extends TransportBroadcastOperationAct
         return new ShardStatus();
     }
 
-InternalIndexShard indexShard = (InternalIndexShard) indexService.shardSafe(request.shardId());
+    @Override protected ShardStatus shardOperation(IndexShardStatusRequest request) throws ElasticSearchException {
         InternalIndexService indexService = (InternalIndexService) indicesService.indexServiceSafe(request.index());
-        InternalIndexShard indexShard = (InternalIndexShard) indexService.shard(request.shardId());
+InternalIndexShard indexShard = (InternalIndexShard) indexService.shardSafe(request.shardId());
         ShardStatus shardStatus = new ShardStatus(indexShard.routingEntry());
         shardStatus.state = indexShard.state();
         try {

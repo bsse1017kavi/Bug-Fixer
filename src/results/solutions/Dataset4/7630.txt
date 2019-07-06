@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ public class GeoDistanceFacetProcessor extends AbstractComponent implements Face
                                 } else if ("to".equals(currentName)) {
                                     to = parser.doubleValue();
                                 }
-entries.add(new GeoDistanceFacet.Entry(from, to, 0, 0, 0, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY));
+                            }
                         }
-                        entries.add(new GeoDistanceFacet.Entry(from, to, 0, 0, 0, Double.MAX_VALUE, Double.MIN_VALUE));
+entries.add(new GeoDistanceFacet.Entry(from, to, 0, 0, 0, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY));
                     }
                 } else {
                     token = parser.nextToken();

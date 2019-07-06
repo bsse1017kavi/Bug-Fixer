@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -77,9 +76,9 @@ public class MethodAnnotationAggregator {
                                 methods.put(method, entry.getValue());
                             }
                         } else {
-throw new RuntimeException("Could not resolve method " + entry.getKey() + " on class " + c + " with annotations " + entry.getValue());
+                            //this should not happen
                             //but if it does, we give some info
-                            logger.error("Could not resolve method " + entry.getKey() + " on class " + c + " with annotations " + entry.getValue());
+throw new RuntimeException("Could not resolve method " + entry.getKey() + " on class " + c + " with annotations " + entry.getValue());
                         }
                     }
                 }

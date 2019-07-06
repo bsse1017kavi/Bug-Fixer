@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -150,9 +149,9 @@ public class ValidateUserState extends AbstractValidationState {
                             case DISABLE:
                                 stateValues.getOptions().setEnableDisableMode(true);
                                 stateValues.getOptions().setDisable(true);
-return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.invalidChoiceUpdateUserResponse(), this, stateValues);
+                                return new PreModificationState(theConsole, stateValues);
                             default:
-                                return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.invalidChoiceUpdateUserResponse(), this);
+return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.invalidChoiceUpdateUserResponse(), this, stateValues);
                         }
                         return ValidateUserState.this;
                     }

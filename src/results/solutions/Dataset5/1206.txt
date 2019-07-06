@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -226,9 +225,9 @@ public class JDBCSampler extends AbstractSampler
         }
         // Calculate response time
         end = System.currentTimeMillis();
-res.setSamplerData(this.toString());
+        time += end - start;
         res.setTime(time);
-        res.setSamplerData(this);
+res.setSamplerData(this.toString());
         return res;
     }
 

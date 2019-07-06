@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -23,9 +22,9 @@ public class SimpleResponsePageClassTest extends TestCase
 		MockWebApplication mockWebApp = new MockWebApplication(null);
 		
         mockWebApp.getPages().setHomePage(SimpleResponsePageClass.class);
-SimpleResponsePageClass manageBook = (SimpleResponsePageClass) mockWebApp.getLastRenderedPage();
+        mockWebApp.setupRequestAndResponse();
         mockWebApp.processRequestCycle();
-        SimpleResponsePageClass manageBook = (SimpleResponsePageClass) mockWebApp.getLastRenderedPage();;
+SimpleResponsePageClass manageBook = (SimpleResponsePageClass) mockWebApp.getLastRenderedPage();
 
         Form form = (Form) manageBook.get("form");
         mockWebApp.setupRequestAndResponse();

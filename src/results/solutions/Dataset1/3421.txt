@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spans;
 
 /**
@@ -59,9 +58,9 @@ public class TestPayloadSpans extends LuceneTestCase {
 
   @Override
   public void setUp() throws Exception {
-searcher = helper.setUp(random, similarity, 1000);
+    super.setUp();
     PayloadHelper helper = new PayloadHelper();
-    searcher = helper.setUp(similarity, 1000);
+searcher = helper.setUp(random, similarity, 1000);
     indexReader = searcher.getIndexReader();
   }
 

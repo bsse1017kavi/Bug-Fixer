@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class PrefixHandler extends CommandHandlerWithHelp {
             return;
         }
 
-ctx.getOperationRequestParser().parse(ctx.getArgumentsString(), handler);
+        OperationRequestParser.CallbackHandler handler = new DefaultOperationCallbackHandler(ctx.getPrefix());
         try {
-            ctx.getOperationRequestParser().parse(ctx.getCommandArguments(), handler);
+ctx.getOperationRequestParser().parse(ctx.getArgumentsString(), handler);
         } catch (CommandFormatException e) {
             ctx.printLine(e.getLocalizedMessage());
         }

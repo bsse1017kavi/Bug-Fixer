@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -31,8 +30,8 @@ import java.io.IOException;
 /**
  * User: jpai
  */
-void processMessage(final ChannelAssociation channelAssociation, final MessageInputStream messageInputStream) throws IOException;
+interface MessageHandler {
 
-    void processMessage(final Channel channel, final MessageInputStream messageInputStream) throws IOException;
+void processMessage(final ChannelAssociation channelAssociation, final MessageInputStream messageInputStream) throws IOException;
 
 }

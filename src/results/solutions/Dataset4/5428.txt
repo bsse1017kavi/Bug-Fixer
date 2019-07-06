@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,8 +62,8 @@ public class ScriptRangeFacetCollector extends AbstractFacetCollector {
             }
         }
     }
-return new InternalRangeFacet(facetName, entries);
+
     @Override public Facet facet() {
-        return new InternalRangeFacet(facetName, "_na", "_na", entries);
+return new InternalRangeFacet(facetName, entries);
     }
 }

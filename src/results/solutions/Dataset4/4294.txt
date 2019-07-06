@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,9 +25,9 @@ import org.elasticsearch.index.fielddata.util.IntArrayRef;
 /**
  * "Flat" multi valued ordinals, the first level array size is as the maximum
  * values a docId has. Ordinals are populated in order from the first flat array
-public final class MultiFlatArrayOrdinals implements Ordinals {
+ * value to the next.
  */
-public class MultiFlatArrayOrdinals implements Ordinals {
+public final class MultiFlatArrayOrdinals implements Ordinals {
 
     // ordinals with value 0 indicates no value
     private final int[][] ordinals;

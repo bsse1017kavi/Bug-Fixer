@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.marshal;
 /*
  * 
@@ -88,9 +87,9 @@ public abstract class AbstractType<T> implements Comparator<ByteBuffer>
                 if (o2.remaining() == 0)
                 {
                     return 1;
-return AbstractType.this.compare(o2, o1);
+                }
 
-                return -AbstractType.this.compare(o1, o2);
+return AbstractType.this.compare(o2, o1);
             }
         };
     }

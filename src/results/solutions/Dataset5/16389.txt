@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -200,9 +199,9 @@ public abstract class AbstractChangeTracker
      */
     private void setIdentity(Object val) {
         if (val == null || _identity != null)
-if (ImplHelper.isManagedType(null, val.getClass()))
+            return;
 
-        if (ImplHelper.isManagedType(val.getClass()))
+if (ImplHelper.isManagedType(null, val.getClass()))
             _identity = Boolean.TRUE;
         else
             _identity = Boolean.FALSE;

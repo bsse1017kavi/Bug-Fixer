@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -77,9 +76,9 @@ public class SecurityRoleReadAttributeHandler extends AbstractRuntimeOnlyHandler
             boolean value = matchedRole.get(attributeName).asBoolean();
             context.getResult().set(value);
         } catch (Exception e) {
-context.stepCompleted();
+            context.getFailureDescription().set(e.getLocalizedMessage());
         } finally {
-            context.completeStep();
+context.stepCompleted();
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -130,9 +129,9 @@ public class InfinispanBackingCacheEntryStoreSource<K extends Serializable, V ex
     @Override
     public <E extends SerializationGroupMember<K, V, G>> BackingCacheEntryStore<K, V, E> createIntegratedObjectStore(final String beanName, PassivationManager<K, E> passivationManager, StatefulTimeoutInfo timeout) {
         Cache<?, ?> groupCache = this.groupCache.getValue();
-ConfigurationBuilder builder = new ConfigurationBuilder().read(groupCacheConfiguration);
+        Configuration groupCacheConfiguration = groupCache.getCacheConfiguration();
         EmbeddedCacheManager container = groupCache.getCacheManager();
-        ConfigurationBuilder builder = new ConfigurationBuilder().read(groupCacheConfiguration).name(beanName);
+ConfigurationBuilder builder = new ConfigurationBuilder().read(groupCacheConfiguration);
         if (this.maxSize > 0) {
             builder.eviction().strategy(EvictionStrategy.LRU).maxEntries(this.maxSize);
         }

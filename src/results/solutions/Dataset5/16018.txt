@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -34,9 +33,9 @@ public class FieldSignatureImpl extends MemberSignatureImpl implements FieldSign
     public Class getFieldType() {
         if (fieldType == null) fieldType = extractType(3);
         return fieldType;
-protected String createToString(StringMaker sm) {
+    }
     
-    String toString(StringMaker sm) {
+protected String createToString(StringMaker sm) {
         StringBuffer buf = new StringBuffer();
         buf.append(sm.makeModifiersString(getModifiers()));
         if (sm.includeArgs) buf.append(sm.makeTypeName(getFieldType()));

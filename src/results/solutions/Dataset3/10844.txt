@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -292,9 +291,9 @@ public class FormTagTests extends AbstractHtmlElementTagTests {
 		this.tag.doEndTag();
 		this.tag.doFinally();
 
-assertEquals("<input type=\"hidden\" name=\"key\" value=\"value\" />", getInputTag(output));
+		String output = getOutput();
 
-		assertEquals("<input type=\"hidden\" name=\"key\" value=\"value\"></input>", getInputTag(output));
+assertEquals("<input type=\"hidden\" name=\"key\" value=\"value\" />", getInputTag(output));
 		assertFormTagOpened(output);
 		assertFormTagClosed(output);
 

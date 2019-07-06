@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ public class JGroupsSubsystemXMLWriter implements XMLElementWriter<SubsystemMars
      * {@inheritDoc}
      * @see org.jboss.staxmapper.XMLElementWriter#writeContent(org.jboss.staxmapper.XMLExtendedStreamWriter, java.lang.Object)
      */
-context.startSubsystemElement(Namespace.CURRENT.getUri(), false);
+    @Override
     public void writeContent(XMLExtendedStreamWriter writer, SubsystemMarshallingContext context) throws XMLStreamException {
-        context.startSubsystemElement(JGroupsSchema.CURRENT.getNamespaceUri(), false);
+context.startSubsystemElement(Namespace.CURRENT.getUri(), false);
         ModelNode model = context.getModelNode();
 
         if (model.isDefined()) {

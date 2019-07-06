@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -133,9 +132,9 @@ public class DeleteElementsOperation extends MultiOperation {
 		}
 		if (delta.getAffectedChildren().length > 0) {
 			cu.save(getSubProgressMonitor(1), fForce);
-this.setAttribute(HAS_MODIFIED_RESOURCE_ATTR, TRUE);
+			if (!cu.isWorkingCopy()) { // if unit is working copy, then save will have already fired the delta
 				addDelta(delta);
-				this.setAttribute("hasModifiedResource", "true");
+this.setAttribute(HAS_MODIFIED_RESOURCE_ATTR, TRUE);
 			}
 		}
 	}

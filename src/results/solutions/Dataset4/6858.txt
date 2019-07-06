@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.particles;
 
 import java.awt.FileDialog;
@@ -43,9 +42,9 @@ class ImagePanel extends EditorPanel {
 						imageLabel.setIcon(icon);
 						widthLabel.setText("Width: " + icon.getIconWidth());
 						heightLabel.setText("Height: " + icon.getIconHeight());
-emitter.setSprite(null);
+						revalidate();
 						emitter.setImagePath(new File(dir, file).getAbsolutePath());
-						emitter.setTexture(null);
+emitter.setSprite(null);
 					} catch (Exception ex) {
 						ex.printStackTrace();
 					}

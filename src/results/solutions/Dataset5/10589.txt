@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -3536,9 +3535,9 @@ LRESULT WM_WINDOWPOSCHANGED (int wParam, int lParam) {
 	if (ignoreResize) return null;
 	LRESULT result = super.WM_WINDOWPOSCHANGED (wParam, lParam);
 	if (result != null) return result;
-if ((lpwp.flags & OS.SWP_NOSIZE) == 0 || (lpwp.flags & OS.SWP_DRAWFRAME) != 0) {
+	WINDOWPOS lpwp = new WINDOWPOS ();
 	OS.MoveMemory (lpwp, lParam, WINDOWPOS.sizeof);
-	if ((lpwp.flags & OS.SWP_NOSIZE) == 0) {
+if ((lpwp.flags & OS.SWP_NOSIZE) == 0 || (lpwp.flags & OS.SWP_DRAWFRAME) != 0) {
 		setResizeChildren (false);
 		int code = callWindowProc (handle, OS.WM_WINDOWPOSCHANGED, wParam, lParam);
 		sendEvent (SWT.Resize);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -334,9 +333,9 @@ public class RemoteDomainConnectionService implements MasterDomainControllerClie
 
                     while (!shutdown.get()) {
                         log.debug("Attempting reconnection to master...");
-log.info("Reconnected to master");
+                        try {
                             connect();
-                            log.info("Connected to master");
+log.info("Reconnected to master");
                             break;
                         } catch (Exception e) {
                         }

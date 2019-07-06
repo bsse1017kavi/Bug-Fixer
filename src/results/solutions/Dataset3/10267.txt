@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ final class EndpointConfigAdd extends AbstractAddStepHandler {
 
             EndpointConfig endpointConfig = new EndpointConfig();
             endpointConfig.setConfigName(name);
-context.reloadRequired();
+            config.addEndpointConfig(endpointConfig);
             if (!context.isBooting()) {
-                context.restartRequired();
+context.reloadRequired();
             }
         }
     }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -213,9 +212,9 @@ public class OSGiRuntimeResource implements Resource {
 
     private BundleContext getBundleContext() {
         BundleManager bundleManager = injectedBundleManager.getOptionalValue();
-LOGGER.debugf("BundleContext not available for management operation");
+        BundleContext context = bundleManager != null ? bundleManager.getSystemBundle().getBundleContext() : null;
         if (context == null) {
-            LOGGER.warnBundleContextNotAvailable();
+LOGGER.debugf("BundleContext not available for management operation");
         }
         return context;
     }

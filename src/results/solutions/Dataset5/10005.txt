@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,9 +40,9 @@ import org.apache.jorphan.reflect.ClassFinder;
 import org.apache.log.Logger;
 
 public final class ReportActionRouter implements ActionListener {
-private static volatile ReportActionRouter router;
+    private Map<String, Set<Command>> commands = new HashMap<String, Set<Command>>();
 
-    private static ReportActionRouter router;
+private static volatile ReportActionRouter router;
 
     private static final Logger log = LoggingManager.getLoggerForClass();
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -84,9 +83,9 @@ public class UriTemplateTests {
 	}
 
 	@Test
-URI result = template.expand("Z\u00fcrich");
+	public void expandEncoded() throws Exception {
 		UriTemplate template = new UriTemplate("http://example.com//hotel list/{hotel}");
-		URI result = template.expand("Zrich");
+URI result = template.expand("Z\u00fcrich");
 		assertEquals("Invalid expanded template", new URI("http://example.com//hotel%20list/Z%FCrich"), result);
 	}
 

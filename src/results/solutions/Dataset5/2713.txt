@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -229,9 +228,9 @@ public class UnionDatatypeValidator extends AbstractDatatypeValidator {
     {
         int index = -1; //number of validators
         boolean valid=false; 
-currentDV =  (DatatypeValidator)this.fBaseValidators.elementAt(index);
+        DatatypeValidator currentDV = null;
         while ( (fValidatorsSize-1) > index++ ) {  //check content against each validator in Union     
-            currentDV =  (DatatypeValidator)this.fBaseValidators.get(index);
+currentDV =  (DatatypeValidator)this.fBaseValidators.elementAt(index);
             if ( valid ) {//content is valid
                 break;
             }

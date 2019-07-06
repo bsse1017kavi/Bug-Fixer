@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -394,9 +393,9 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
      * @return the formatted string
      * @since 2.1
      */
-return printer.format(millis);
+    @Override
     public String format(long millis) {
-        return format(new Date(millis));
+return printer.format(millis);
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.12 $ $Date$
@@ -451,9 +450,9 @@ public final class StringsTest extends TestCase
 	{
 		NullPointerException np = new NullPointerException("null test");
 		WicketRuntimeException wre = new WicketRuntimeException("null test", np);
-assertTrue(exceptionString.indexOf("WicketRuntimeException") != -1);
+		String exceptionString = Strings.toString(wre);
 		assertTrue(exceptionString.length() > 1);
-		assertTrue(exceptionString.contains("WicketRuntimeException"));
+assertTrue(exceptionString.indexOf("WicketRuntimeException") != -1);
 	}
 
 	/**

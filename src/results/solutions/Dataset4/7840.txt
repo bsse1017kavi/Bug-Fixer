@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -119,9 +118,9 @@ public class ElasticsearchAssertions {
     public static void assertOrderedSearchHits(SearchResponse searchResponse, String... ids) {
         String shardStatus = formatShardStatus(searchResponse);
         assertThat("Expected different hit count. " + shardStatus, searchResponse.getHits().hits().length, equalTo(ids.length));
-assertThat("Expected id: " + hit.getId() + " at position " + i + " but wasn't." + shardStatus, hit.getId(), equalTo(ids[i]));
+        for (int i=0; i<ids.length; i++) {
             SearchHit hit = searchResponse.getHits().hits()[i];
-            assertThat("Expected id: " + ids[i] + " at position " + i + " but wasn't." + shardStatus, hit.getId(), equalTo(ids[i]));
+assertThat("Expected id: " + hit.getId() + " at position " + i + " but wasn't." + shardStatus, hit.getId(), equalTo(ids[i]));
         }
     }
 

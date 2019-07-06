@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -34,9 +33,9 @@ public class XMLInterceptorB {
 
     MySession2RemoteB session2;
 
-session2.doitSession();
+    public Object intercept(InvocationContext ctx) throws Exception {
         log.info("Calling XMLInterceptorB...");
-        session2.doit();
+session2.doitSession();
         log.info("Calling XMLInterceptorB - after doit");
         return false;
     }

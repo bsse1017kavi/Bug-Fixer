@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2011, Nathan Sweet <nathan.sweet@gmail.com>
  * All rights reserved.
@@ -504,9 +503,9 @@ public class Table extends WidgetGroup {
 	/** Draws the debug lines for all tables in the stage. If this method is not called each frame, no debug lines will be drawn. If
 	 * debug is never turned on for any table in the application, calling this method will have no effect. If a table has ever had
 	 * debug set, calling this method causes an expensive traversal of all actors in the stage. */
-drawDebug(stage.getActors(), stage.getBatch());
+	static public void drawDebug (Stage stage) {
 		if (!TableToolkit.drawDebug) return;
-		drawDebug(stage.getActors(), stage.getSpriteBatch());
+drawDebug(stage.getActors(), stage.getBatch());
 	}
 
 	static private void drawDebug (Array<Actor> actors, Batch batch) {

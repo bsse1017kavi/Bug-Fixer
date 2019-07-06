@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class InternalTransportClusterAdminClient extends AbstractClusterAdminCli
     @Inject
     public InternalTransportClusterAdminClient(Settings settings, TransportClientNodesService nodesService, ThreadPool threadPool, TransportService transportService,
                                                Map<String, GenericAction> actions) {
-MapBuilder<ClusterAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<>();
+        this.nodesService = nodesService;
         this.threadPool = threadPool;
-        MapBuilder<ClusterAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<ClusterAction, TransportActionNodeProxy>();
+MapBuilder<ClusterAction, TransportActionNodeProxy> actionsBuilder = new MapBuilder<>();
         for (GenericAction action : actions.values()) {
             if (action instanceof ClusterAction) {
                 actionsBuilder.put((ClusterAction) action, new TransportActionNodeProxy(settings, action, transportService));

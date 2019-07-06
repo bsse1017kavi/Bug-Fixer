@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -41,9 +40,9 @@ class UserTransactionRollbackTask extends UserTransactionManagementTask {
         super(transactionRequestHandler, transactionsRepository, marshallerFactory, userTransactionID, channelAssociation, invocationId);
     }
 
-final Transaction transaction = this.transactionsRepository.removeUserTransaction(this.userTransactionID);
+    @Override
     protected void manageTransaction() throws Throwable {
-        final Transaction transaction = this.transactionsRepository.removeTransaction(this.userTransactionID);
+final Transaction transaction = this.transactionsRepository.removeUserTransaction(this.userTransactionID);
         if(transaction != null) {
             this.resumeTransaction(transaction);
             this.transactionsRepository.getTransactionManager().rollback();

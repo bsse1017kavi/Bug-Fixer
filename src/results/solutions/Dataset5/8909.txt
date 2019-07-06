@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2005 Contributors.
  * All rights reserved. 
@@ -104,9 +103,9 @@ public class LTWWorld extends BcelWorld implements IReflectionWorld {
 
         char fc = name.charAt(0);
         if (fc=='j' || fc=='c' || fc=='o' || fc=='s') { // cheaper than imminent string startsWith tests
-ReferenceTypeDelegate bootstrapLoaderDelegate = resolveReflectionTypeDelegate(ty, loader);
+	        if (name.startsWith("java") || name.startsWith("com.sun.") || name.startsWith("org.w3c") || 
 	        	name.startsWith("sun.") || name.startsWith("org.omg")) {
-		        ReferenceTypeDelegate bootstrapLoaderDelegate = resolveReflectionTypeDelegate(ty, null);
+ReferenceTypeDelegate bootstrapLoaderDelegate = resolveReflectionTypeDelegate(ty, loader);
 		        if (bootstrapLoaderDelegate != null) {
 		            // it's always fine to load these bytes: there's no weaving into them
 		            // and since the class isn't initialized, all we are doing at this point is loading the bytes

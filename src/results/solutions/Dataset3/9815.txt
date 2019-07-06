@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -132,9 +131,9 @@ public final class JDBCFindByPrimaryKeyQuery extends JDBCAbstractQueryCommand {
                 JDBCAbstractCMPFieldBridge pkField = ((JDBCAbstractCMPFieldBridge) pkFields[i]);
                 Object fieldValue = pkField.getPrimaryKeyValue(args[0]);
                 pk = pkField.setPrimaryKeyValue(pk, fieldValue);
-return Collections.singletonList(pk != null ? factory.getEntityObject(pk) : null);
+            }
 
-            return Collections.singletonList(factory.getEntityObject(pk));
+return Collections.singletonList(pk != null ? factory.getEntityObject(pk) : null);
         }
         return super.execute(finderMethod, args, ctx, factory);
     }

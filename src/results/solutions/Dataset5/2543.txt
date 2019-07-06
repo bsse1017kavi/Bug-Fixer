@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -122,9 +121,9 @@ public class InterTypeFieldDeclaration extends InterTypeDeclaration {
 			new ResolvedMember(Member.FIELD, EclipseWorld.fromBinding(onTypeBinding),
 					declaredModifiers, EclipseWorld.fromBinding(binding.returnType),
 					new String(declaredSelector), TypeX.NONE);
-setMunger(myMunger);
+		
 		NewFieldTypeMunger myMunger = new NewFieldTypeMunger(sig, null);
-		this.munger = myMunger;
+setMunger(myMunger);
 		ResolvedTypeX aspectType = world.fromEclipse(classScope.referenceContext.binding);
 		ResolvedMember me = 
 			myMunger.getInitMethod(aspectType);

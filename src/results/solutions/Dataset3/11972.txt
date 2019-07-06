@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class StatelessComponentCreateServiceFactory extends EJBComponentCreateSe
             throw MESSAGES.ejbJarConfigNotBeenSet(this,configuration.getComponentName());
         }
         configuration.getCreateDependencies().add(new DependencyConfigurator<StatelessSessionComponentCreateService>() {
-builder.addDependency(DependencyType.OPTIONAL, RegistryInstallerService.SERVICE_NAME);
+            @Override
             public void configureDependency(ServiceBuilder<?> builder, StatelessSessionComponentCreateService service) {
-                builder.addDependency(RegistryInstallerService.SERVICE_NAME);
+builder.addDependency(DependencyType.OPTIONAL, RegistryInstallerService.SERVICE_NAME);
                 builder.addDependency(DependencyType.OPTIONAL, ServiceName.JBOSS.append("clustering", "group", "ejb", "default"), Group.class, service.getGroupInjector());
                 builder.addDependency(DependencyType.OPTIONAL, EJBRemoteConnectorService.SERVICE_NAME);
             }

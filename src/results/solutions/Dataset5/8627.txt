@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2164,9 +2163,9 @@ int kEventAccessibleGetNamedAttribute (int nextHandler, int theEvent, int userDa
 	if (err == OS.noErr && itemInfo.v0_columnProperty != OS.kDataBrowserItemNoProperty && itemInfo.v0_item != OS.kDataBrowserNoItem && itemInfo.v0_propertyPart == OS.kDataBrowserPropertyEnclosingPart) {
 		int columnIndex = 0;
 		for (columnIndex = 0; columnIndex < columnCount; columnIndex++) {
-if (columnIndex != columnCount || columnCount == 0) {
+			if (columns [columnIndex].id == itemInfo.v0_columnProperty) break;
 		}
-		if (columnIndex != columnCount) {
+if (columnIndex != columnCount || columnCount == 0) {
 			int index = itemInfo.v0_item - 1;
 			if (0 <= index && index < itemCount) {
 				TableItem tableItem = _getItem (index);

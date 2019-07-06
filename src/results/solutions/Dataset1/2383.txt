@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -597,9 +596,9 @@ public class StorageProxy implements StorageProxyMBean
     }
     
     private static boolean randomlyReadRepair(ReadCommand command)
-return cfmd.getReadRepairChance() > random.nextDouble();
+    {
         CFMetaData cfmd = DatabaseDescriptor.getTableMetaData(command.table).get(command.getColumnFamilyName());
-        return cfmd.readRepairChance > random.nextDouble();
+return cfmd.getReadRepairChance() > random.nextDouble();
     }
 
     public long getReadOperations()

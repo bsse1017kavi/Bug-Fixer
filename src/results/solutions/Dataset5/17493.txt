@@ -1,4 +1,3 @@
-
 /*
  * $Id: WicketTester.java 5844 2006-05-24 20:53:56 +0000 (Wed, 24 May 2006)
  * joco01 $ $Revision$ $Date: 2006-05-24 20:53:56 +0000 (Wed, 24 May
@@ -499,9 +498,9 @@ public class WicketTester extends MockWebApplication
 	 * @param path
 	 *            path to {@link ListView} component
 	 * @param expectedList
-public void assertListView(String path, List expectedList)
+	 *            expected list in the model of {@link ListView}
 	 */
-	public void assertListView(String path, List<String> expectedList)
+public void assertListView(String path, List expectedList)
 	{
 		ListView listView = (ListView)getComponentFromLastRenderedPage(path);
 		WicketTesterHelper.assertEquals(expectedList, listView.getList());

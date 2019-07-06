@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2014 the original author or authors.
  *
@@ -52,9 +51,9 @@ public class JsonpReceivingTransportHandler extends AbstractHttpReceivingTranspo
 	public void handleRequestInternal(ServerHttpRequest request, ServerHttpResponse response,
 			WebSocketHandler wsHandler, AbstractHttpSockJsSession sockJsSession) throws SockJsException {
 
-response.getBody().write("ok".getBytes(UTF8_CHARSET));
+		super.handleRequestInternal(request, response, wsHandler, sockJsSession);
 		try {
-			response.getBody().write("ok".getBytes("UTF-8"));
+response.getBody().write("ok".getBytes(UTF8_CHARSET));
 		}
 		catch (IOException ex) {
 			throw new SockJsException("Failed to write to the response body", sockJsSession.getId(), ex);

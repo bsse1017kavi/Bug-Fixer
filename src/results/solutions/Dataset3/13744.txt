@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -288,9 +287,9 @@ class BootstrapBundlesIntegration extends BootstrapBundlesInstall<Void> {
         dep.addAttachment(StorageState.class, storageState);
         return dep;
     }
-URL manifestURL = module.getExportedResource(JarFile.MANIFEST_NAME);
+
     private OSGiMetaData getModuleMetadata(Module module) throws IOException {
-        URL manifestURL = module.getClassLoader().getResource(JarFile.MANIFEST_NAME);
+URL manifestURL = module.getExportedResource(JarFile.MANIFEST_NAME);
         if (manifestURL != null) {
             InputStream input = manifestURL.openStream();
             try {

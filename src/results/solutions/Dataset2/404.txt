@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.indexing;
 
 /*
@@ -261,9 +260,9 @@ public void indexAll(IProject project) {
 	if (JavaCore.getPlugin() == null || this.workspace == null) return;
 
 	// Also request indexing of binaries on the classpath
-IJavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
+	// determine the new children
 	try {
-		IJavaModel model = JavaModelManager.getJavaModel(this.workspace);
+IJavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
 		IJavaProject javaProject = ((JavaModel) model).getJavaProject(project);	
 		// only consider immediate libraries - each project will do the same
 		IClasspathEntry[] entries;

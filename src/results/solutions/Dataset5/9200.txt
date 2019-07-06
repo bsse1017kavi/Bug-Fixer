@@ -1,4 +1,3 @@
-
 /*
  * $Id: BookmarkablePageRequestTargetEncoderDecoder.java,v 1.1 2005/12/10 21:28:56 eelco12
  * Exp $ $Revision$ $Date$
@@ -42,9 +41,9 @@ public abstract class AbstractRequestTargetEncoderDecoder implements IRequestTar
 	 */
 	public AbstractRequestTargetEncoderDecoder(final String mountPath)
 	{
-throw new IllegalArgumentException("Argument mountPath must be not null");
+		if (mountPath == null)
 		{
-			throw new NullPointerException("argument mountPath must be not null");
+throw new IllegalArgumentException("Argument mountPath must be not null");
 		}
 
 		this.mountPath = mountPath;

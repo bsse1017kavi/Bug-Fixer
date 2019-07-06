@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -180,9 +179,9 @@ public class SimpleSecurityManager {
                 throw new SecurityException("Invalid User");
             }
         }
-RunAs runAsIdentity = new RunAsIdentity(runAs, runAsPrincipal);
+
         if (runAs != null) {
-            RunAs runAsIdentity = new RunAsIdentity(runAs, null);
+RunAs runAsIdentity = new RunAsIdentity(runAs, runAsPrincipal);
             current.setOutgoingRunAs(runAsIdentity);
         } else if (previous != null && previous.getOutgoingRunAs() != null) {
             // Ensure the propagation continues.

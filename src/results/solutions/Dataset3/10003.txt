@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -167,9 +166,9 @@ public class Logistic implements UnivariateDifferentiableFunction, Differentiabl
             final double gk = Logistic.value(mMinusX, 1, b, q, 0, oneOverN);
             final double gm = factor2 * b * qExp;
             final double gb = factor2 * mMinusX * qExp;
-final double gn = factor1 * FastMath.log(qExp1) * oneOverN;
+            final double gq = factor2 * exp;
             final double ga = Logistic.value(mMinusX, 0, b, q, 1, oneOverN);
-            final double gn = factor1 * Math.log(qExp1) * oneOverN;
+final double gn = factor1 * FastMath.log(qExp1) * oneOverN;
 
             return new double[] { gk, gm, gb, gq, ga, gn };
         }

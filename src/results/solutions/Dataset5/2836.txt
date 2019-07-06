@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2003 Contributors.
  * All rights reserved. 
@@ -295,9 +294,9 @@ public class AspectJElementHierarchy implements IHierarchy {
 		if (ret != null) return ret;
 		
 		StringTokenizer st = new StringTokenizer(handle, ProgramElement.ID_DELIM);
-//		int col = new Integer(st.nextToken()).intValue();
+		String file = st.nextToken();
 		int line = new Integer(st.nextToken()).intValue();
-		int col = new Integer(st.nextToken()).intValue();
+//		int col = new Integer(st.nextToken()).intValue();
 		// TODO: use column number when available
 		ret = findElementForSourceLine(file, line);
 		if (ret != null) { 

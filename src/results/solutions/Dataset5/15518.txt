@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -176,9 +175,9 @@ public class Attrib extends ExecuteOn {
      * Defauls is to allow windows
      * @return true if the os is valid.
      */
-Os.isFamily(Os.FAMILY_WINDOWS) : super.isValidOs();
+    protected boolean isValidOs() {
         return getOs() == null && getOsFamily() == null ?
-            Os.isFamily(Os.WINDOWS) : super.isValidOs();
+Os.isFamily(Os.FAMILY_WINDOWS) : super.isValidOs();
     }
 
     private static String getSignString(boolean attr) {

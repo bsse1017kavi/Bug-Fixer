@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -102,9 +101,9 @@ abstract class QueryCollector extends Collector {
     }
 
     @Override
-values = idFieldData.load(context).getBytesValues(true);
+    public void setNextReader(AtomicReaderContext context) throws IOException {
         // we use the UID because id might not be indexed
-        values = idFieldData.load(context).getBytesValues();
+values = idFieldData.load(context).getBytesValues(true);
         if (facetCollector != null) {
             facetCollector.setNextReader(context);
         }

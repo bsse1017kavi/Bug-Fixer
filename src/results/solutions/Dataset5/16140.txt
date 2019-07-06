@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -257,9 +256,9 @@ LRESULT WM_MOUSEWHEEL (int wParam, int lParam) {
 		OS.SystemParametersInfo (OS.SPI_GETWHEELSCROLLLINES, 0, value, 0);
 		int delta = (short) (wParam >> 16);
 		int code = 0, count = 0;
-count = Math.abs (delta / OS.WHEEL_DELTA);
+  		if (value [0] == OS.WHEEL_PAGESCROLL) {	
    			code = delta < 0 ? OS.SB_PAGEDOWN : OS.SB_PAGEUP;
-   			count = 1;
+count = Math.abs (delta / OS.WHEEL_DELTA);
   		} else {
   			code = delta < 0 ? OS.SB_LINEDOWN : OS.SB_LINEUP;
   			delta = Math.abs (delta);

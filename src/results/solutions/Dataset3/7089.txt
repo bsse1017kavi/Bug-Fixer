@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -107,9 +106,9 @@ public class ProtocolChannelClient<T extends ProtocolChannel> implements Closeab
         //TODO Don't hardcode this login stuff
         //There is currently a probable bug in jboss remoting, so the user realm name MUST be the same as
         //the endpoint name.
-IoFuture<Connection> future = endpoint.connect(uri, OptionMap.EMPTY, "TestUser", endpoint.getName(), "TestUserPassword".toCharArray());
+        //Connection connection = endpoint.connect(uri, OptionMap.EMPTY, "bob", endpoint.getName(), "pass".toCharArray()).get();
 
-        IoFuture<Connection> future = endpoint.connect(uri, OptionMap.EMPTY, "bob", endpoint.getName(), "pass".toCharArray());
+IoFuture<Connection> future = endpoint.connect(uri, OptionMap.EMPTY, "TestUser", endpoint.getName(), "TestUserPassword".toCharArray());
         Status status = future.await(connectTimeout, TimeUnit.MILLISECONDS);
         if (status == Status.WAITING) {
             future.cancel();

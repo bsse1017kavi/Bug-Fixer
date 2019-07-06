@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2003-2004 The Apache Software Foundation.
  *
@@ -341,9 +340,9 @@ public class ExecTaskTest extends BuildFileTest {
     public void testspawn() {
         project.executeTarget("init");
         if (project.getProperty("test.can.run") == null) {
-myBuild = new MonitoredBuild(new File(System.getProperty("root"), BUILD_FILE), "spawn");
+            return;
         }
-        myBuild = new MonitoredBuild(new File(BUILD_FILE), "spawn");
+myBuild = new MonitoredBuild(new File(System.getProperty("root"), BUILD_FILE), "spawn");
         FileUtils fileutils  = FileUtils.newFileUtils();
         logFile = fileutils.createTempFile("spawn","log", project.getBaseDir());
         // this is guaranteed by FileUtils#createTempFile

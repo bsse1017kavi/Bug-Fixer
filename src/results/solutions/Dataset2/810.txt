@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.actions;
 
 /*
@@ -71,9 +70,9 @@ public class MoveFilesAndFoldersOperation extends CopyFilesAndFoldersOperation {
 				if (existing != null) {
 					canMove = delete(existing, subMonitor);
 				}
-source.move(destinationPath, IResource.KEEP_HISTORY | IResource.SHALLOW, new SubProgressMonitor(subMonitor, 0));
+				// was the resource deleted successfully or was there no existing resource to delete?
 				if (canMove) {
-					source.move(destinationPath, IResource.KEEP_HISTORY, new SubProgressMonitor(subMonitor, 0));
+source.move(destinationPath, IResource.KEEP_HISTORY | IResource.SHALLOW, new SubProgressMonitor(subMonitor, 0));
 				}
 				subMonitor.worked(1);
 				if (subMonitor.isCanceled()) {

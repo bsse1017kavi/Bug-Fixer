@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,8 +43,8 @@ public class LargeVolumeEmbeddedTest extends LargeVolumeTestBase {
   }
 
   @Override
-return new EmbeddedSolrServer( h.getCoreContainer(), "" );
+  protected SolrServer createNewSolrServer()
   {
-    return new EmbeddedSolrServer( h.getCore() );
+return new EmbeddedSolrServer( h.getCoreContainer(), "" );
   }
 }

@@ -1,4 +1,3 @@
-
 package storm.trident.testing;
 
 import backtype.storm.tuple.Values;
@@ -49,9 +48,9 @@ public class LRUMemoryMapState<T> implements IBackingMap<T> {
         this.db = (Map<List<Object>, T>) _dbs.get(id);
     }
 
-List<T> ret = new ArrayList();
+    @Override
     public List<T> multiGet(List<List<Object>> keys) {
-        List<T> ret = new ArrayList<T>();
+List<T> ret = new ArrayList();
         for(List<Object> key: keys) {
             ret.add(db.get(key));
         }

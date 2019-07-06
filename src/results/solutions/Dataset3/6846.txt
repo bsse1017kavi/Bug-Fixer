@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2008 the original author or authors.
  *
@@ -280,9 +279,9 @@ public class CachingConnectionFactory extends SingleConnectionFactory {
 
 		public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 			String methodName = method.getName();
-return (proxy == args[0]);
+			if (methodName.equals("equals")) {
 				// Only consider equal when proxies are identical.
-				return (proxy == args[0] ? Boolean.TRUE : Boolean.FALSE);
+return (proxy == args[0]);
 			}
 			else if (methodName.equals("hashCode")) {
 				// Use hashCode of Session proxy.

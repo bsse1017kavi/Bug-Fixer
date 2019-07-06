@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -109,9 +108,9 @@ public class JbossDeploymentTool extends GenericDeploymentTool {
         if (jbossCMPD.exists()) {
             ejbFiles.put(META_DIR + descriptorFileName, jbossCMPD);
         } else {
-+ jbossCMPD.getPath(), Project.MSG_VERBOSE);
+            log("Unable to locate jboss cmp descriptor. "
                 + "It was expected to be in "
-                + jbossCMPD.getPath(), Project.MSG_WARN);
++ jbossCMPD.getPath(), Project.MSG_VERBOSE);
             return;
         }
     }

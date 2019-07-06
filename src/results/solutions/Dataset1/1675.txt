@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -80,9 +79,9 @@ public class TestParallelTermEnum extends LuceneTestCase {
     
     for (String t : termsList) {
       BytesRef b = te.next();
-DocsEnum td = _TestUtil.docs(random(), te, liveDocs, null, 0);
+      assertNotNull(b);
       assertEquals(t, b.utf8ToString());
-      DocsEnum td = _TestUtil.docs(random(), te, liveDocs, null, false);
+DocsEnum td = _TestUtil.docs(random(), te, liveDocs, null, 0);
       assertTrue(td.nextDoc() != DocIdSetIterator.NO_MORE_DOCS);
       assertEquals(0, td.docID());
       assertEquals(td.nextDoc(), DocIdSetIterator.NO_MORE_DOCS);

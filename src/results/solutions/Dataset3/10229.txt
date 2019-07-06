@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -125,9 +124,9 @@ public class ServiceProviderRegistryService implements ServiceProviderRegistry, 
     public void start(StartContext context) throws StartException {
         this.notifier = this.notifierRef.getValue();
         this.notifier.registerGroupMembershipListener(this);
-this.cache = new AtomicMapCache<String, ClusterNode, Void>(cache.getAdvancedCache());
+        @SuppressWarnings("unchecked")
         Cache<String, Map<ClusterNode, Void>> cache = this.cacheRef.getValue();
-        this.cache = new AtomicMapCache<String, ClusterNode, Void>(cache.getAdvancedCache().with(this.getClass().getClassLoader()));
+this.cache = new AtomicMapCache<String, ClusterNode, Void>(cache.getAdvancedCache());
         this.cache.addListener(this);
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -187,9 +186,9 @@ public abstract class P4Base extends org.apache.tools.ant.Task {
             String cmdl = "";
             for (int i = 0; i < cmdline.length; i++) {
                 cmdl += cmdline[i] + " ";
-log(cmdl.describeCommand(), Project.MSG_VERBOSE);
+            }
 
-            log("Execing " + cmdl, Project.MSG_VERBOSE);
+log(cmdl.describeCommand(), Project.MSG_VERBOSE);
 
             if (handler == null) {
                 handler = new SimpleP4OutputHandler(this);

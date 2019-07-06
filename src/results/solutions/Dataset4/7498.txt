@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -151,9 +150,9 @@ class InternalOrder extends Terms.Order {
             // them will cause loads of redundant object constructions). The "special" comparators here will fetch the
             // sub aggregation values directly from the sub aggregators bypassing bucket creation. Note that the comparator
             // attached to the order will still be used in the reduce phase of the Aggregation.
-final Aggregator aggregator = path.resolveAggregator(termsAggregator);
+
             OrderPath path = path();
-            final Aggregator aggregator = path.resolveAggregator(termsAggregator, false);
+final Aggregator aggregator = path.resolveAggregator(termsAggregator);
             final String key = path.tokens[path.tokens.length - 1].key;
 
             if (aggregator instanceof SingleBucketAggregator) {

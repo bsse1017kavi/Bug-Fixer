@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -130,9 +129,9 @@ public class SizeAssertionGui extends AbstractAssertionGui implements ActionList
     public void configure(TestElement el) {
         super.configure(el);
         SizeAssertion assertion = (SizeAssertion) el;
-showScopeSettings(assertion, true);
+        size.setText(assertion.getAllowedSize());
         setState(assertion.getCompOper());
-        showScopeSettings(assertion);
+showScopeSettings(assertion, true);
         
         if (assertion.isTestFieldResponseHeaders()) {
         responseHeadersButton.setSelected(true);

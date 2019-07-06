@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -134,9 +133,9 @@ public class JsfManagedBeanProcessor implements DeploymentUnitProcessor {
                         managedBeanClass = false;
                         if (indent == 1) {
                             managedBean = false;
-managedBeanClasses.add(parser.getText().trim());
+                        }
                     } else if (managedBeanClass && event == XMLStreamConstants.CHARACTERS) {
-                        managedBeanClasses.add(parser.getText());
+managedBeanClasses.add(parser.getText().trim());
                     }
                 }
             } catch (Exception e) {

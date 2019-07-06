@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -294,9 +293,9 @@ private void locateMatchesInCompilationUnit(char[] source) throws CoreException 
 		char[] qualifiedName = this.getQualifiedName();
 		if (qualifiedName == null || (this.parsedUnit = (CompilationUnitDeclaration)this.locator.parsedUnits.get(qualifiedName)) == null) {
 			this.parsedUnit = this.locator.dietParse(source);
-if (this.parsedUnit != null && this.parsedUnit != ALREADY_RESOLVED) {
+		}
 	}
-	if (this.parsedUnit != null) {
+if (this.parsedUnit != null && this.parsedUnit != ALREADY_RESOLVED) {
 		try {
 			this.locator.parser.matchSet = this.matchSet;
 			this.locator.parser.scanner.setSource(source);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -85,9 +84,9 @@ public class DeploymentHandlerUtil {
             final DeploymentModelUtils model = DeploymentModelUtils.create(context, PathAddress.EMPTY_ADDRESS);
 
             context.addStep(new OperationStepHandler() {
-final ServiceRegistry serviceRegistry = context.getServiceRegistry(true);
+                public void execute(OperationContext context, ModelNode operation) {
                     final ServiceName deploymentUnitServiceName = Services.deploymentUnitName(deploymentUnitName);
-                    final ServiceRegistry serviceRegistry = context.getServiceRegistry(false);
+final ServiceRegistry serviceRegistry = context.getServiceRegistry(true);
                     final ServiceController<?> deploymentController = serviceRegistry.getService(deploymentUnitServiceName);
                     if (deploymentController != null) {
                         final ServiceVerificationHandler verificationHandler = new ServiceVerificationHandler();

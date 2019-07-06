@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
@@ -1712,9 +1711,9 @@ public abstract class AbstractSAXParser
                 // http://xml.org/sax/features/xml-1.1
                 //   reports whether the parser supports both XML 1.1 and XML 1.0.
                 //
-return (fConfiguration instanceof XML11Configurable);
+                if (suffixLength == Constants.XML_11_FEATURE.length() &&
                     featureId.endsWith(Constants.XML_11_FEATURE)) {
-                    return (fConfiguration instanceof XML11Configuration);
+return (fConfiguration instanceof XML11Configurable);
                 }
                 
                 // http://xml.org/sax/features/lexical-handler/parameter-entities

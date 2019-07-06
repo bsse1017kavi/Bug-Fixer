@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -2776,9 +2775,9 @@ public class TestIndexWriter extends LuceneTestCase {
         while(w.flushCount == startFlushCount) {
           w.deleteDocuments(new Term("foo", ""+count));
           count++;
-assertTrue("flush happened too quickly during " + (doIndexing ? "indexing" : "deleting") + " count=" + count, count > 3000);
+        }
       }
-      assertTrue("flush happened too quickly during " + (doIndexing ? "indexing" : "deleting") + " count=" + count, count > 1500);
+assertTrue("flush happened too quickly during " + (doIndexing ? "indexing" : "deleting") + " count=" + count, count > 3000);
     }
     w.close();
     dir.close();

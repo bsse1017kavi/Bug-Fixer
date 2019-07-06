@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -262,9 +261,9 @@ public class Table
 
         // check 10x as often as the shortest lifetime, so we can exceed all lifetimes by 10% at most
         int minCheckMs = Integer.MAX_VALUE;
-minCheckMs = Math.min(minCheckMs, cfs.getMemtableFlushAfterMins() * 60 * 1000);
+        for (ColumnFamilyStore cfs : columnFamilyStores.values())
         {
-            minCheckMs = Math.min(minCheckMs, cfs.metadata.memtableFlushAfterMins * 60 * 1000);
+minCheckMs = Math.min(minCheckMs, cfs.getMemtableFlushAfterMins() * 60 * 1000);
         }
 
         Runnable runnable = new Runnable()

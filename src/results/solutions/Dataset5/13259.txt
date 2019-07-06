@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2005 The Apache Software Foundation
  *
@@ -196,9 +195,9 @@ public class Untar extends Expand {
          *  @return input stream with on-the-fly decompression
          *  @exception IOException thrown by GZIPInputStream constructor
          *  @exception BuildException thrown if bzip stream does not
-public InputStream decompress(final String name,
+         *     start with expected magic values
          */
-        private InputStream decompress(final String name,
+public InputStream decompress(final String name,
                                        final InputStream istream)
             throws IOException, BuildException {
             final String v = getValue();

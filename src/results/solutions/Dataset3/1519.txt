@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -570,9 +569,9 @@ public class CollectionUtilsTest extends MockTestCase {
         
         assertTrue(CollectionUtils.isEqualCollection(collectionA, collectionA, e));
         assertTrue(CollectionUtils.isEqualCollection(collectionA, collB, e));
-final Equator<Number> defaultEquator = DefaultEquator.defaultEquator();
+        assertTrue(CollectionUtils.isEqualCollection(collB, collectionA, e));
         
-        final Equator<Number> defaultEquator = new DefaultEquator<Number>();
+final Equator<Number> defaultEquator = DefaultEquator.defaultEquator();
         assertFalse(CollectionUtils.isEqualCollection(collectionA, collectionB, defaultEquator));
         assertFalse(CollectionUtils.isEqualCollection(collectionA, collB, defaultEquator));        
     }

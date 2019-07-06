@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2012, Red Hat Middleware LLC, and individual contributors
@@ -80,9 +79,9 @@ class SystemPropertyTransformers {
 
             @Override
             public TransformedOperation transformOperation(TransformationContext context, PathAddress address, ModelNode operation)
-if (transformed.get(NAME).asString().equals(BOOT_TIME)) {
+                    throws OperationFailedException {
                 ModelNode transformed = operation;
-                if (transformed.get(NAME).equals(BOOT_TIME) || transformed.get(NAME).equals(BOOT_TIME)) {
+if (transformed.get(NAME).asString().equals(BOOT_TIME)) {
                     transformed = transformed.clone();
                     if (!transformed.get(VALUE).isDefined()) {
                         transformed.get(VALUE).set(true);

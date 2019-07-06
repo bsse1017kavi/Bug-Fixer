@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50,9 +49,9 @@ public class FilteredQueryParser implements QueryParser {
 
     @Override
     public Query parse(QueryParseContext parseContext) throws IOException, QueryParsingException {
-Query query = Queries.newMatchAllQuery();
+        XContentParser parser = parseContext.parser();
 
-        Query query = Queries.MATCH_ALL_QUERY;
+Query query = Queries.newMatchAllQuery();
         Filter filter = null;
         boolean filterFound = false;
         float boost = 1.0f;

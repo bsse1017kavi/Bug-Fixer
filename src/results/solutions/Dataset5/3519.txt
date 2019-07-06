@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.315 $ $Date$
@@ -2834,9 +2833,9 @@ public abstract class Component implements Serializable
 		// Get the parent's associated markup stream.
 		MarkupContainer parentWithAssociatedMarkup = findParentWithAssociatedMarkup();
 		MarkupStream markupStream = null;
-markupStream = parentWithAssociatedMarkup.getAssociatedMarkupStream(true);
+		while (markupStream == null)
 		{
-			markupStream = parentWithAssociatedMarkup.getAssociatedMarkupStream();
+markupStream = parentWithAssociatedMarkup.getAssociatedMarkupStream(true);
 	
 			// Make sure the markup stream is positioned at the correct element
 			String componentPath = parent.getPageRelativePath();

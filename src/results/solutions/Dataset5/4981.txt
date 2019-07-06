@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -341,9 +340,9 @@ public class PrimaryRow
             if (!rowValueEquals(prev, val)) {
             	if (allowsUpdate(col, prev, val)) {
             		super.setObject(col, val, metaType, overrideDefault);
-new Object[]{ col.getFullDBIdentifier().getName(),
+            	} else if (!isDefaultValue(val)) {
             		throw new InvalidStateException(_loc.get("diff-values",
-            				new Object[]{ col.getFullName(),
+new Object[]{ col.getFullDBIdentifier().getName(),
                             (prev == null) ? null : prev.getClass(), prev,
                             (val == null) ? null : val.getClass(), val })).
             				setFatal(true);

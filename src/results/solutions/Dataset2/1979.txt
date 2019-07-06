@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -501,9 +500,9 @@ public static Object getTarget(IContainer container, IPath path, boolean checkRe
 		return null;
 	}
 
-if (!checkResourceExistence ||externalFile.exists()) return externalFile;
+	// lookup - outside the container
 	File externalFile = new File(path.toOSString());
-	if (externalFile.exists()) return externalFile;
+if (!checkResourceExistence ||externalFile.exists()) return externalFile;
 	return null;	
 }
 }

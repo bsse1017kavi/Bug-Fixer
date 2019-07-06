@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -501,9 +500,9 @@ hashCode() {
 	int code = labels;
 	for (int i = 0; i < labels; i++) {
 		if (name[i] instanceof BitString) {
-code += ((code << 3) + b.data[j]);
+			BitString b = (BitString) name[i];
 			for (int j = 0; j < b.bytes(); j++)
-				code += ((code << 3) + b.data[i]);
+code += ((code << 3) + b.data[j]);
 		}
 		else {
 			byte [] b = (byte []) name[i];

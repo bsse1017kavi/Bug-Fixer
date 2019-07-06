@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -100,9 +99,9 @@ public class MasterDomainControllerOperationHandlerImpl extends ModelControllerO
 
         @Override
         protected void writeResponse(final FlushableDataOutput output) throws IOException {
-getController().addClient(new RemoteDomainControllerSlaveClient(hostId, getContext().getChannel()));
+            ModelNode node;
             try {
-                getController().addClient(new RemoteDomainControllerSlaveClient(hostId, getChannel()));
+getController().addClient(new RemoteDomainControllerSlaveClient(hostId, getContext().getChannel()));
                 node = getController().getDomainModel();
             } catch (IllegalArgumentException e){
                 log.error(e);

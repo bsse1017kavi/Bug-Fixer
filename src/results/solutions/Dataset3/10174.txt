@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -48,9 +47,9 @@ public class TestCompositeMap<K, V> extends AbstractTestIterableMap<K, V> {
     
     @Override
     public CompositeMap<K, V> makeObject() {
-map.setMutator( new EmptyMapMutator<K, V>() );
+        CompositeMap<K, V> map = new CompositeMap<K, V>();
         map.addComposited(new HashMap<K, V>());
-        map.setMutator( new EmptyMapMutator() );
+map.setMutator( new EmptyMapMutator<K, V>() );
         return map;
     }
     

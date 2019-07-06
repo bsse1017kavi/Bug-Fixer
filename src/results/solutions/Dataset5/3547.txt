@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -38,9 +37,9 @@ public class Snippet267 {
 		shell.setLayout(new GridLayout(2, true));
 		shell.setText("Use Mozilla's Design Mode");
 		try {
-System.out.println("Could not instantiate Browser: " + e.getMessage());
+			browser = new Browser(shell, SWT.MOZILLA);
 		} catch (SWTError e) {
-			System.out.println("Count not instantiate Browser: " + e.getMessage());
+System.out.println("Could not instantiate Browser: " + e.getMessage());
 			return;
 		}
 		browser.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true, 2, 1));

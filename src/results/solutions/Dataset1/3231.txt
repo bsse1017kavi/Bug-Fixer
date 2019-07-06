@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -244,9 +243,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
         MessagingService.instance.registerVerbHandlers(Verb.DEFINITIONS_UPDATE_RESPONSE, new DefinitionsUpdateResponseVerbHandler());
         MessagingService.instance.registerVerbHandlers(Verb.TRUNCATE, new TruncateVerbHandler());
         MessagingService.instance.registerVerbHandlers(Verb.SCHEMA_CHECK, new SchemaCheckVerbHandler());
-for (String table : DatabaseDescriptor.getNonSystemTables())
+
         replicationStrategies = new HashMap<String, AbstractReplicationStrategy>();
-        for (String table : DatabaseDescriptor.getTables())
+for (String table : DatabaseDescriptor.getNonSystemTables())
             initReplicationStrategy(table);
 
         // spin up the streaming serivice so it is available for jmx tools.

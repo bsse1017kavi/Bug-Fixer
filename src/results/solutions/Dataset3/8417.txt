@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -120,9 +119,9 @@ abstract class RFC1522Codec {
             throw new DecoderException("RFC 1522 violation: malformed encoded content");
         }
         int termnator = text.length() - 2;
-if (to == termnator) {
+        int from = 2;
         int to = text.indexOf(SEP, from);
-        if ((to == -1) || (to == termnator)) {
+if (to == termnator) {
             throw new DecoderException("RFC 1522 violation: charset token not found");
         }
         String charset = text.substring(from, to);

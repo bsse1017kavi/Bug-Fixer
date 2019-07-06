@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.vectorhighlight;
 
 /*
@@ -302,9 +301,9 @@ public class IndexTimeSynonymTest extends AbstractTestCase {
       Tokenizer ts = new Tokenizer(Token.TOKEN_ATTRIBUTE_FACTORY, reader) {
         final AttributeImpl reusableToken = (AttributeImpl) addAttribute(CharTermAttribute.class);
         int p = 0;
-public boolean incrementToken() {
+        
         @Override
-        public boolean incrementToken() throws IOException {
+public boolean incrementToken() {
           if( p >= tokens.length ) return false;
           clearAttributes();
           tokens[p++].copyTo(reusableToken);

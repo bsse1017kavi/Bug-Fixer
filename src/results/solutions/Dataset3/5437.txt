@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class TestSingletonMap<K, V> extends AbstractTestOrderedMap<K, V> {
     //-----------------------------------------------------------------------
     @Override
     public OrderedMap<K, V> makeObject() {
-return UnmodifiableOrderedMap.unmodifiableOrderedMap(ListOrderedMap.listOrderedMap(new HashMap<K, V>()));
+        // need an empty singleton map, but thats not possible
         // use a ridiculous fake instead to make the tests pass
-        return UnmodifiableOrderedMap.decorate(ListOrderedMap.decorate(new HashMap<K, V>()));
+return UnmodifiableOrderedMap.unmodifiableOrderedMap(ListOrderedMap.listOrderedMap(new HashMap<K, V>()));
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2008 the original author or authors.
  *
@@ -49,9 +48,9 @@ public class StandardTypeLocatorTests {
 		try {
 			locator.findType("URL");
 			Assert.fail("Should have failed");
-Assert.assertEquals(SpelMessage.TYPE_NOT_FOUND,sEx.getMessageCode());
+		} catch (EvaluationException ee) {
 			SpelEvaluationException sEx = (SpelEvaluationException)ee;
-			Assert.assertEquals(SpelMessages.TYPE_NOT_FOUND,sEx.getMessageUnformatted());
+Assert.assertEquals(SpelMessage.TYPE_NOT_FOUND,sEx.getMessageCode());
 		}
 		locator.registerImport("java.net");
 		Assert.assertEquals(java.net.URL.class,locator.findType("URL"));

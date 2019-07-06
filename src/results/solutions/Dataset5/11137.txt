@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -75,9 +74,9 @@ public abstract class WeaveTestCase extends TestCase {
 		String outName)
 		throws IOException 
 	{
-BcelWorld.getBcelObjectType(world.resolve(classFile.getClassName()));
+		//int preErrors = currentResult.errorCount();
 		BcelObjectType classType =
-			(BcelObjectType) world.resolve(classFile.getClassName());
+BcelWorld.getBcelObjectType(world.resolve(classFile.getClassName()));
 		LazyClassGen gen = weaver.weave(classFile, classType);
 		if (gen == null) {
 			// we didn't do any weaving, but let's make a gen anyway

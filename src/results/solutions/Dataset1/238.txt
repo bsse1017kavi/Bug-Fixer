@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.tools.dblook
@@ -525,9 +524,9 @@ public final class dblook {
 			// Start with schemas, since we might need them to
 			// exist for jars to load properly.
 			DB_Schema.doSchemas(this.conn,
-if ( at10_6 ) { DB_Sequence.doSequences( conn ); }
+				(tableList != null) && (targetSchema == null));
 
-            DB_Sequence.doSequences( conn );
+if ( at10_6 ) { DB_Sequence.doSequences( conn ); }
 
 			if (tableList == null) {
 			// Don't do these if user just wants table-related objects.

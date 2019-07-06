@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -566,9 +565,9 @@ public class JDTCompilerAdapter extends DefaultCompilerAdapter {
         for (int i = 0; i < dirs.length; i++) {
             File dir = classpath.getProject().resolveFile(dirs[i]);
             if (dir.exists() && dir.isDirectory()) {
-fs.setIncludes("*.zip,*.jar"); //$NON-NLS-1$
+                FileSet fs = new FileSet();
                 fs.setDir(dir);
-                fs.setIncludes("*"); //$NON-NLS-1$
+fs.setIncludes("*.zip,*.jar"); //$NON-NLS-1$
                 classpath.addFileset(fs);
             }
         }

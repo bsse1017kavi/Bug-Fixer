@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -47,9 +46,9 @@ public class Ray implements Serializable {
 	/** Returns and endpoint given the distance. This is calculated as startpoint + distance * direction.
 	 * 
 	 * @param distance The distance from the end point to the start point.
-return new Vector3(origin).add(direction.tmp().mul(distance));
+	 * @return The end point */
 	public Vector3 getEndPoint (float distance) {
-		return new Vector3(origin).add(direction.tmp().scl(distance));
+return new Vector3(origin).add(direction.tmp().mul(distance));
 	}
 
 	static Vector3 tmp = new Vector3();

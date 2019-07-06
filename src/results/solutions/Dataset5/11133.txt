@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -1190,9 +1189,9 @@ public class BcelShadow extends Shadow {
 		 
 		// !!! THIS BLOCK OF CODE SHOULD BE IN A METHOD CALLED weaveAround(...);
         Member mungerSig = munger.getSignature();
-BcelObjectType ot = BcelWorld.getBcelObjectType(declaringType);
+        ResolvedTypeX declaringType = world.resolve(mungerSig.getDeclaringType());
         //??? might want some checks here to give better errors
-        BcelObjectType ot = (BcelObjectType)declaringType;
+BcelObjectType ot = BcelWorld.getBcelObjectType(declaringType);
         
 		LazyMethodGen adviceMethod = ot.getLazyClassGen().getLazyMethodGen(mungerSig);
 		if (!adviceMethod.getCanInline()) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -186,9 +185,9 @@ public class EJBClientXidTransactionTestCase {
         // now add a failing step2
         final String appExceptionStep2 = "App exception Step 2";
         txManager.begin();
-Assert.fail("Expected an application exception");
+        try {
             batchBean.appExceptionFailingStep2(batchName, appExceptionStep2);
-            Assert.fail("Expected a application exception");
+Assert.fail("Expected an application exception");
         } catch (SimpleAppException sae) {
             // expected
             txManager.rollback();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -2042,9 +2041,9 @@ public class TestIndexWriter extends LuceneTestCase {
     for (AtomicReaderContext atomicReaderContext : leaves) {
       AtomicReader ar = atomicReaderContext.reader();
       Bits liveDocs = ar.getLiveDocs();
-if (liveDocs == null || liveDocs.get(i)) {
+      int maxDoc = ar.maxDoc();
       for (int i = 0; i < maxDoc; i++) {
-        if (liveDocs.get(i)) {
+if (liveDocs == null || liveDocs.get(i)) {
           assertTrue(liveIds.remove(ar.document(i).get("id")));
         }
       }

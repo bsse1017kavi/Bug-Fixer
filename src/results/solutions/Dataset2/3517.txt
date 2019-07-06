@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -26,9 +25,9 @@ abstract class AddFileToIndex extends IndexRequest {
 		super(indexPath, manager);
 		this.resource = resource;
 	}
-if (this.isCancelled || progressMonitor != null && progressMonitor.isCanceled()) return true;
+	public boolean execute(IProgressMonitor progressMonitor) {
 
-		if (progressMonitor != null && progressMonitor.isCanceled()) return true;
+if (this.isCancelled || progressMonitor != null && progressMonitor.isCanceled()) return true;
 
 		/* ensure no concurrent write access to index */
 		IIndex index = manager.getIndex(this.indexPath, true, /*reuse index file*/ true /*create if none*/);

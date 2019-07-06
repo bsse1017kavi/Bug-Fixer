@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -68,9 +67,9 @@ public class PublishClusterStateAction extends AbstractComponent {
 
         // serialize the cluster state here, so we won't do it several times per node
         CachedStreamOutput.Entry cachedEntry = CachedStreamOutput.popEntry();
-StreamOutput stream = cachedEntry.handles(CompressorFactory.defaultCompressor());
+        byte[] clusterStateInBytes;
         try {
-            StreamOutput stream = cachedEntry.cachedHandles(CompressorFactory.defaultCompressor());
+StreamOutput stream = cachedEntry.handles(CompressorFactory.defaultCompressor());
             ClusterState.Builder.writeTo(clusterState, stream);
             stream.close();
             clusterStateInBytes = cachedEntry.bytes().copiedByteArray();

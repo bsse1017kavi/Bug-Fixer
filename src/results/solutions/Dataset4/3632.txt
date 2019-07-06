@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.view.View.GONE;
@@ -324,9 +323,9 @@ public class GistFragment extends RoboSherlockFragment implements OnItemClickLis
                     comments = Collections.emptyList();
                 return new FullGist(gist, gistService.isStarred(gistId), comments);
             }
-ErrorHelper.show(getContext().getApplicationContext(), e, string.error_gist_load);
+
             protected void onException(Exception e) throws RuntimeException {
-                ErrorHelper.show(getActivity().getApplicationContext(), e, string.error_gist_load);
+ErrorHelper.show(getContext().getApplicationContext(), e, string.error_gist_load);
             }
 
             protected void onSuccess(FullGist fullGist) throws Exception {

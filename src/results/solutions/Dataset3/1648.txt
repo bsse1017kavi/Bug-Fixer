@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -687,9 +686,9 @@ public class CommandLineMain {
             if (useHistory && disableHistory) {
                 console.setUseHistory(false);
             }
-return console.readLine(prompt, (char) 0x00);
+            try {
                 if (password) {
-                    return console.readLine(prompt, '*');
+return console.readLine(prompt, (char) 0x00);
                 } else {
                     return console.readLine(prompt);
                 }

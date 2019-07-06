@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /************************************************************************
@@ -67,9 +66,9 @@ public class DialogUtil {
 	 * Also removes the () accelerators which are used in Asian
 	 * languages.
 	 */
-int startBracket = label.indexOf("(&"); //$NON-NLS-1$
+	public static String removeAccel(String label) {
 
-		int startBracket = label.indexOf("(&");
+int startBracket = label.indexOf("(&"); //$NON-NLS-1$
 		//Non latin accelerator?
 		if (startBracket >= 0) {
 			int endBracket = label.indexOf(')');

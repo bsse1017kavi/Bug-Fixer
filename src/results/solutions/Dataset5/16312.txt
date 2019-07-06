@@ -1,4 +1,3 @@
-
 package wicket.examples.ajax.builtin;
 
 import java.util.Arrays;
@@ -33,9 +32,9 @@ public class PageablesPage extends BasePage
 	public PageablesPage()
 	{
 		WebMarkupContainer datacontainer = new WebMarkupContainer(this, "data");
-PageableListView<String> listview = new PageableListView<String>(datacontainer, "rows", Arrays
+		datacontainer.setOutputMarkupId(true);
 
-		PageableListView listview = new PageableListView(datacontainer, "rows", Arrays
+PageableListView<String> listview = new PageableListView<String>(datacontainer, "rows", Arrays
 				.asList(names), 10)
 		{
 			@Override

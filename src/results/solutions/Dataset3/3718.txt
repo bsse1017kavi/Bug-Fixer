@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -88,9 +87,9 @@ public class NativeManagementAddHandler extends AbstractAddStepHandler {
         final ServiceName endpointName = ManagementRemotingServices.MANAGEMENT_ENDPOINT;
         final String hostName = SecurityActions.getSystemProperty(ServerEnvironment.NODE_NAME);
         ManagementRemotingServices.installRemotingEndpoint(serviceTarget, ManagementRemotingServices.MANAGEMENT_ENDPOINT, hostName, EndpointService.EndpointType.MANAGEMENT, verificationHandler, newControllers);
-ManagementChannelRegistryService.addService(serviceTarget, endpointName);
+        installNativeManagementConnector(context, model, endpointName, serviceTarget, verificationHandler, newControllers);
 
-        ManagementChannelRegistryService.addService(serviceTarget);
+ManagementChannelRegistryService.addService(serviceTarget, endpointName);
         ManagementRemotingServices.installManagementChannelServices(serviceTarget,
                 endpointName,
                 new ModelControllerClientOperationHandlerFactoryService(),

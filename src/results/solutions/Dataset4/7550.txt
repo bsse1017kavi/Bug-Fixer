@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -72,9 +71,9 @@ public class ConcurrentDocumentOperationTests extends ElasticsearchIntegrationTe
 
         client().admin().indices().prepareRefresh().execute().actionGet();
 
-for (int i = 0; i < (immutableCluster().size() * 5); i++) {
+        logger.info("done indexing, check all have the same field value");
         Map masterSource = client().prepareGet("test", "type1", "1").execute().actionGet().getSourceAsMap();
-        for (int i = 0; i < (cluster().size() * 5); i++) {
+for (int i = 0; i < (immutableCluster().size() * 5); i++) {
             assertThat(client().prepareGet("test", "type1", "1").execute().actionGet().getSourceAsMap(), equalTo(masterSource));
         }
     }

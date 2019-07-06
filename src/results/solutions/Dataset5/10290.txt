@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2008 Jan S. Rellermeyer, and others
  * All rights reserved. This program and the accompanying materials
@@ -537,9 +536,9 @@ final class R_OSGiRemoteServiceContainer implements IRemoteServiceContainerAdapt
 	}
 
 	public IFuture asyncGetRemoteServiceReferences(final ID[] idFilter, final String clazz, final String filter) {
-public Object run(IProgressMonitor monitor) throws Exception {
+		IExecutor executor = new ThreadsExecutor();
 		return executor.execute(new IProgressRunnable() {
-			public Object run(IProgressMonitor monitor) throws Throwable {
+public Object run(IProgressMonitor monitor) throws Exception {
 				return getRemoteServiceReferences(idFilter, clazz, filter);
 			}
 		}, null);

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.codecs.simpletext;
 
 /**
@@ -59,9 +58,9 @@ class SimpleTextFieldsReader extends FieldsProducer {
   final static BytesRef FREQ    = SimpleTextFieldsWriter.FREQ;
   final static BytesRef POS     = SimpleTextFieldsWriter.POS;
   final static BytesRef PAYLOAD = SimpleTextFieldsWriter.PAYLOAD;
-in = state.dir.openInput(SimpleTextPostingsFormat.getPostingsFileName(state.segmentInfo.name, state.segmentSuffix), state.context);
+
   public SimpleTextFieldsReader(SegmentReadState state) throws IOException {
-    in = state.dir.openInput(SimpleTextPostingsFormat.getPostingsFileName(state.segmentInfo.name, state.formatId), state.context);
+in = state.dir.openInput(SimpleTextPostingsFormat.getPostingsFileName(state.segmentInfo.name, state.segmentSuffix), state.context);
    
     fieldInfos = state.fieldInfos;
   }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -239,9 +238,9 @@ public void resolve(MethodScope initializationScope) {
 					if (this.initialization instanceof CastExpression 
 							&& (this.initialization.bits & ASTNode.UnnecessaryCast) == 0) {
 						CastExpression.checkNeedForAssignedCast(initializationScope, fieldType, (CastExpression) this.initialization);
-initializationScope.problemReporter().typeMismatchError(initializationType, fieldType, this.initialization);
+					}							
 				} else {
-					initializationScope.problemReporter().typeMismatchError(initializationType, fieldType, this);
+initializationScope.problemReporter().typeMismatchError(initializationType, fieldType, this.initialization);
 				}
 				if (this.binding.isFinal()){ // cast from constant actual type to variable type
 					this.binding.setConstant(this.initialization.constant.castTo((this.binding.type.id << 4) + this.initialization.constant.typeID()));

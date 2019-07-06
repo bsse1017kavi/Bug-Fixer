@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -74,9 +73,9 @@ public class BindingGroupAddHandler extends AbstractSocketBindingGroupAddHandler
 
         SocketBindingManagerService service = new SocketBindingManagerService(portOffset);
         final ServiceTarget serviceTarget = context.getServiceTarget();
-.addDependency(NetworkInterfaceService.JBOSS_NETWORK_INTERFACE.append(defaultInterface), NetworkInterfaceBinding.class, service.getDefaultInterfaceBindingInjector())
+        newControllers.add(serviceTarget.addService(SocketBindingManager.SOCKET_BINDING_MANAGER, service)
                 .setInitialMode(ServiceController.Mode.ON_DEMAND)
-                .addDependency(NetworkInterfaceService.JBOSS_NETWORK_INTERFACE.append(defaultInterface), NetworkInterfaceBinding.class, service.getDefaultInterfaceBinding())
+.addDependency(NetworkInterfaceService.JBOSS_NETWORK_INTERFACE.append(defaultInterface), NetworkInterfaceBinding.class, service.getDefaultInterfaceBindingInjector())
                 .addListener(verificationHandler)
                 .install());
 

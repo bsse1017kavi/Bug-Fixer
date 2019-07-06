@@ -1,4 +1,3 @@
-
 package org.tigris.scarab.screens;
 
 /* ================================================================
@@ -142,9 +141,9 @@ public class RSSDataExport extends TemplateScreen {
                 if(userId==0){
                     throw new IllegalArgumentException("User ID is missing.  Should be appended like: /userId/xxx");
                 }            	
-feedSource = new QueryFeed(query,user1,scarabToolManager,scarabLink);
+            	Query query = QueryManager.getInstance(new Long(queryId));
                 ScarabUser user1 = ScarabUserManager.getInstance(new NumberKey(userId), false);
-            	feedSource = new QueryFeed(query,user1,scarabRequestTool,scarabLink);
+feedSource = new QueryFeed(query,user1,scarabToolManager,scarabLink);
             }
             else if (feedType.equals("IssueFeed")){
                 String issueId = parser.getString(ISSUE_ID_KEY);                

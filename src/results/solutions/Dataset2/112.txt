@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -354,9 +353,9 @@ final class CommandPersistence extends CommonCommandPersistence {
 
 			if (checkClassFromRegistry(stateElement, warningsToLog,
 					"State must have an associated class", id)) { //$NON-NLS-1$
-final IState state = new CommandStateProxy(stateElement,
+				final String preferenceKey = PREFERENCE_KEY_PREFIX + '/'
 						+ command.getId() + '/' + id;
-				final IState state = new HandlerStateProxy(stateElement,
+final IState state = new CommandStateProxy(stateElement,
 						ELEMENT_STATE, PrefUtil.getInternalPreferenceStore(),
 						preferenceKey);
 				command.addState(id, state);

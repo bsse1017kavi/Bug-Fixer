@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2012 the original author or authors.
  *
@@ -58,9 +57,9 @@ public class FlashAttributeResultMatchers {
 	 */
 	public <T> ResultMatcher attribute(final String name, final Object value) {
 		return new ResultMatcher() {
-assertEquals("Flash attribute", value, result.getFlashMap().get(name));
+			@SuppressWarnings("unchecked")
 			public void match(MvcResult result) throws Exception {
-				assertEquals("Flash attribute", value, (T) result.getFlashMap().get(name));
+assertEquals("Flash attribute", value, result.getFlashMap().get(name));
 			}
 		};
 	}

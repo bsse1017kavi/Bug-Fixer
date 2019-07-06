@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -104,9 +103,9 @@ public abstract class AbstractTextComponent extends FormComponent
 		if (getType() == null)
 		{
 			// Set the type, but only if it's not a String (see WICKET-606).
-if (!String.class.equals(type))
+			// Otherwise, getConvertEmptyInputStringToNull() won't work.
 			Class type = getModelType(getModel());
-			if (String.class.equals(type))
+if (!String.class.equals(type))
 			{
 				setType(type);
 			}

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -72,9 +71,9 @@ public class TransportNodesListShardStoreMetaData extends TransportNodesOperatio
         this.indicesService = indicesService;
         this.nodeEnv = nodeEnv;
     }
-return execute(new Request(shardId, onlyUnallocated, nodesIds).setTimeout(timeout));
+
     public ActionFuture<NodesStoreFilesMetaData> list(ShardId shardId, boolean onlyUnallocated, Set<String> nodesIds, @Nullable TimeValue timeout) {
-        return execute(new Request(shardId, onlyUnallocated, nodesIds).timeout(timeout));
+return execute(new Request(shardId, onlyUnallocated, nodesIds).setTimeout(timeout));
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -144,9 +143,9 @@ public class SharedLibraryLoader {
 			loaded = true;
 		}
 		if (loaded) {
-throw new RuntimeException("Couldn't load shared library '" + sharedLibName + "' for target: "
+			loadedLibraries.add(sharedLibName);
 		} else {
-			throw new RuntimeException("Couldn't load shared library: '" + sharedLibName + "' for target "
+throw new RuntimeException("Couldn't load shared library '" + sharedLibName + "' for target: "
 				+ System.getProperty("os.name") + ", " + (is64Bit ? "64-bit" : "32-bit"));
 		}
 	}

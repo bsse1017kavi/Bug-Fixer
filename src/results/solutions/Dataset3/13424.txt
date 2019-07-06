@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -52,9 +51,9 @@ public class AccessAuthorizationUseRealmRolesWriteAttributeHandler extends Abstr
         if (newValue.getType() == ModelType.EXPRESSION || newValue.asBoolean(false) == false) {
             /*
              * Using roles from the realm has been disabled so now need to check if there that RBAC has been disabled or an
-RbacSanityCheckOperation.addOperation(context);
+             * alternative mapping strategy is in place.
              */
-            RbacSanityCheckOperation.registerOperation(context);
+RbacSanityCheckOperation.addOperation(context);
         }
     }
 

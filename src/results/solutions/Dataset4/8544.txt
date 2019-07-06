@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -113,9 +112,9 @@ public class BasicBulletTest extends BulletTest {
 		final Model sphereModel = modelBuilder.createSphere(1f, 1f, 1f, 10, 10,
 			new Material(ColorAttribute.createDiffuse(Color.RED), ColorAttribute.createSpecular(Color.WHITE), FloatAttribute.createShininess(64f)), 
 			Usage.Position | Usage.Normal);
-BaseBulletTest.init(); // Normally use: Bullet.init();
+		models.add(sphereModel);
 		// Load the bullet library
-		Bullet.init();
+BaseBulletTest.init(); // Normally use: Bullet.init();
 		// Create the bullet world
 		collisionConfiguration = new btDefaultCollisionConfiguration();
 		dispatcher = new btCollisionDispatcher(collisionConfiguration);

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -298,9 +297,9 @@ public abstract class GwtApplication implements EntryPoint, Application {
 			System.out.println(tag + ": " + message);
 		}
 	}
-public void log (String tag, String message, Exception exception) {
+
 	@Override
-	public void log (String tag, String message, Throwable exception) {
+public void log (String tag, String message, Exception exception) {
 		if (logLevel >= LOG_INFO) {
 			checkLogLabel();
 			log.setText(log.getText() + "\n" + tag + ": " + message + "\n" + exception.getMessage() + "\n");

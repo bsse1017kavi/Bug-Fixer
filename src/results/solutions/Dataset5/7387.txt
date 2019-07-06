@@ -1,4 +1,3 @@
-
 /* Copyright (c) 2006-2008 Jan S. Rellermeyer
  * Systems Group,
  * Department of Computer Science, ETH Zurich.
@@ -904,9 +903,9 @@ final class RemoteOSGiServiceImpl implements RemoteOSGiService, Remoting {
 	 */
 	private ChannelEndpointMultiplexer getMultiplexer(final String uri) {
 		final String channel = getChannelURI(URI.create(uri));
-if (multiplexer == null || !multiplexer.isConnected()) {
+		ChannelEndpointMultiplexer multiplexer = (ChannelEndpointMultiplexer) multiplexers
 				.get(channel);
-		if (multiplexer == null || multiplexer.isConnected()) {
+if (multiplexer == null || !multiplexer.isConnected()) {
 			multiplexer = new ChannelEndpointMultiplexer(
 					(ChannelEndpointImpl) channels.get(channel));
 			multiplexers.put(channel, multiplexer);

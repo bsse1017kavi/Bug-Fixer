@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class SpanTermJsonQueryBuilder extends BaseJsonQueryBuilder implements Js
     public SpanTermJsonQueryBuilder boost(float boost) {
         this.boost = boost;
         return this;
-@Override public void doJson(JsonBuilder builder, Params params) throws IOException {
+    }
 
-    @Override public void doJson(JsonBuilder builder) throws IOException {
+@Override public void doJson(JsonBuilder builder, Params params) throws IOException {
         builder.startObject(SpanTermJsonQueryParser.NAME);
         if (boost == -1) {
             builder.field(name, value);

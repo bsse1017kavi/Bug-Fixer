@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2005, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -469,9 +468,9 @@ public class ContentTypesPreferencePage extends PreferencePage implements
 										+ extension) : ""), //$NON-NLS-1$
 										IContentType.FILE_NAME_SPEC);
 							}
-WorkbenchPlugin.log(ex);
+						} catch (CoreException ex) {
 							ErrorDialog.openError(shell, null, null, ex.getStatus());
-							WorkbenchPlugin.log(ex.getStatus());
+WorkbenchPlugin.log(ex);
 						}
 						finally {
 							fileAssociationViewer.setInput(selectedContentType);

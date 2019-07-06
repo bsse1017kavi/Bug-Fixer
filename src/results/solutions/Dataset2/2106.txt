@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -100,9 +99,9 @@ public class SearchableEnvironment
 				if (entry != null) { // reverse map always contains resolved CP entry
 					AccessRuleSet accessRuleSet = entry.getAccessRuleSet();
 					if (accessRuleSet != null) {
-char[] classFileChars = type.getElementName().toCharArray();
+						// TODO (philippe) improve char[] <-> String conversions to avoid performing them on the fly
 						char[][] packageChars = CharOperation.splitOn('.', packageName.toCharArray());
-						char[] classFileChars = type.getParent().getElementName().toCharArray();
+char[] classFileChars = type.getElementName().toCharArray();
 						accessRestriction = accessRuleSet.getViolatedRestriction(CharOperation.concatWith(packageChars, classFileChars, '/'));
 					}
 				}

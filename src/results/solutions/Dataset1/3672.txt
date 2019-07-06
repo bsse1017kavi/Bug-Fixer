@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.bloom;
 
 /**
@@ -162,9 +161,9 @@ public final class BloomFilteringPostingsFormat extends PostingsFormat {
       String bloomFileName = IndexFileNames.segmentFileName(
           state.segmentInfo.name, state.segmentSuffix, BLOOM_EXTENSION);
       IndexInput bloomIn = null;
-bloomIn = state.directory.openInput(bloomFileName, state.context);
+      boolean success = false;
       try {
-        bloomIn = state.dir.openInput(bloomFileName, state.context);
+bloomIn = state.directory.openInput(bloomFileName, state.context);
         CodecUtil.checkHeader(bloomIn, BLOOM_CODEC_NAME, BLOOM_CODEC_VERSION,
             BLOOM_CODEC_VERSION);
         // // Load the hash function used in the BloomFilter

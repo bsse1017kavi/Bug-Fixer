@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -27,9 +26,9 @@ import org.testng.ITestResult;
 /**
  * @author kimchy (Shay Banon)
  */
-private final ITestListener[] listeners = new ITestListener[]{new LoggingListener()};
+public class Listeners implements ITestListener {
 
-    private final ITestListener[] listeners = new ITestListener[]{new DotTestListener(), new LoggingListener()};
+private final ITestListener[] listeners = new ITestListener[]{new LoggingListener()};
 
     @Override public void onTestStart(ITestResult result) {
         for (ITestListener listener : listeners) {

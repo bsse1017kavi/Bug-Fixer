@@ -1,4 +1,3 @@
-
 /************************************************************************
 Copyright (c) 2000, 2003 IBM Corporation and others.
 All rights reserved.   This program and the accompanying materials
@@ -864,9 +863,9 @@ public class WorkbenchActionBuilder {
 		AboutInfo[] infos =
 			((Workbench) workbench).getConfigurationInfo().getFeaturesInfo();
 		// See if a welcome page is specified
-quickStartAction = new QuickStartAction(window);
+		for (int i = 0; i < infos.length; i++) {
 			if (infos[i].getWelcomePageURL() != null) {
-				quickStartAction = new QuickStartAction(workbench);
+quickStartAction = new QuickStartAction(window);
 				break;
 			}
 		}

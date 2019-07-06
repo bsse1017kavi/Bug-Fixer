@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class ValidateRealmState implements State {
 
     @Override
     public State execute() {
-return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.realmMustBeSpecified(), new PromptRealmState(theConsole, stateValues), stateValues);
+        String enteredRealm = stateValues.getRealm();
         if (enteredRealm.length() == 0) {
-            return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.realmMustBeSpecified(), new PromptRealmState(theConsole, stateValues));
+return new ErrorState(theConsole, DomainManagementLogger.ROOT_LOGGER.realmMustBeSpecified(), new PromptRealmState(theConsole, stateValues), stateValues);
         }
 
         if (stateValues.getFileMode() != FileMode.UNDEFINED) {

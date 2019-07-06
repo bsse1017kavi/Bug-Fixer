@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ public class CreateJmsResourceHandler extends BatchModeCommandHandler {
 
     @Override
     public ModelNode buildRequest(CommandContext ctx) throws OperationFormatException {
-if(!ctx.getParsedArguments().hasProperties()) {
+
         try {
-            if(!ctx.getParsedArguments().hasArguments()) {
+if(!ctx.getParsedArguments().hasProperties()) {
                 throw new OperationFormatException("Arguments are missing");
             }
         } catch (CommandFormatException e) {

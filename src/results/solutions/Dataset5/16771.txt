@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -81,9 +80,9 @@ public class ServletWebResponse extends WebResponse
 	}
 
 	@Override
-httpServletResponse.addHeader("Content-Length", Long.toString(length));
+	public void setContentLength(long length)
 	{
-		httpServletResponse.setContentLength((int)length);
+httpServletResponse.addHeader("Content-Length", Long.toString(length));
 	}
 
 	@Override

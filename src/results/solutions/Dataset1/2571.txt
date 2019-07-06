@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.am.Lob
@@ -63,9 +62,9 @@ public abstract class Lob implements UnitOfWorkListener {
 
 
     //-----------------------event callback methods-------------------------------
-agent_.connection_.CommitAndRollbackListeners_.add(this);
+
     public void listenToUnitOfWork() {
-        agent_.connection_.CommitAndRollbackListeners_.put(this,null);
+agent_.connection_.CommitAndRollbackListeners_.add(this);
     }
 
     public void completeLocalCommit(java.util.Iterator listenerIterator) {

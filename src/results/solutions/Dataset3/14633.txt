@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -219,9 +218,9 @@ public class EmbeddedStandAloneServerFactory {
 
             @Override
             public void start() throws ServerStartException {
-ServerEnvironment serverEnviromment = Main.determineEnvironment(new String[0], systemProps, systemEnv, ServerEnvironment.LaunchType.EMBEDDED);
+                try {
                     // Determine the ServerEnvironment
-                    ServerEnvironment serverEnviromment = Main.determineEnvironment(new String[0], systemProps, systemEnv);
+ServerEnvironment serverEnviromment = Main.determineEnvironment(new String[0], systemProps, systemEnv, ServerEnvironment.LaunchType.EMBEDDED);
 
                     Bootstrap bootstrap = Bootstrap.Factory.newInstance();
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -195,9 +194,9 @@ public class IpFieldMapper extends NumberFieldMapper<Long> {
     }
 
     @Override
-NumericUtils.longToPrefixCoded(parseValue(value), 0, bytesRef); // 0 because of exact match
+    public BytesRef indexedValueForSearch(Object value) {
         BytesRef bytesRef = new BytesRef();
-        NumericUtils.longToPrefixCoded(parseValue(value), precisionStep(), bytesRef);
+NumericUtils.longToPrefixCoded(parseValue(value), 0, bytesRef); // 0 because of exact match
         return bytesRef;
     }
 

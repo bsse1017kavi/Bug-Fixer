@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -199,9 +198,9 @@ public class NetCommand
      */
     protected void prepareExecutor()
         throws TaskException
-File dir = _owner.getBaseDirectory();
+    {
         // default directory to the project's base directory
-        File dir = _owner.getProject().getBaseDir();
+File dir = _owner.getBaseDirectory();
         ExecuteStreamHandler handler = new LogStreamHandler( _owner,
                                                              Project.MSG_INFO, Project.MSG_WARN );
         _exe = new Execute( handler, null );

@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -110,9 +109,9 @@ public class DefaultHeaderBinding extends TupleBinding {
 			if (b[i] == null) {
 				b[i] = Boolean.FALSE;
 			}
-out.writeInt(new Integer(BooleanCompressor.compress(b)).intValue());
+		}
 
-		out.writeInt(new Integer(BooleanCompressor.compress(b)));
+out.writeInt(new Integer(BooleanCompressor.compress(b)).intValue());
 
 		// save other internal headerfields, of non-boolean type
 		String[] columnNames = CachedHeaderfields.INTERNAL_HEADERFIELDS;

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.codeassist;
 
 /*
@@ -366,9 +365,9 @@ public void selectType(ISourceType sourceType, char[] typeName) {
 
 		// compute parse tree for this most outer type
 		CompilationResult result = new CompilationResult(outerType.getFileName(), 1, 1);
-new ISourceType[]{outerType},
+		CompilationUnitDeclaration parsedUnit = 
 			SourceTypeConverter.buildCompilationUnit(  
-				outerType, 
+new ISourceType[]{outerType},
 				false, // don't need field and methods
 				true, // by default get member types
 				this.parser.problemReporter(),

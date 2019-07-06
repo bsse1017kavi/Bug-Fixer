@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -140,9 +139,9 @@ public abstract class TransportMasterNodeOperationAction<Request extends MasterN
             } else {
                 threadPool.executor(executor).execute(new Runnable() {
                     @Override
-masterOperation(request, clusterService.state(), listener);
+                    public void run() {
                         try {
-                            masterOperation(request, clusterState, listener);
+masterOperation(request, clusterService.state(), listener);
                         } catch (Throwable e) {
                             listener.onFailure(e);
                         }

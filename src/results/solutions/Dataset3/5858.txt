@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -104,9 +103,9 @@ public class JMXPropertyEditorsTestCase {
 
     private MBeanServerConnection getMBeanServerConnection() throws IOException {
         final String address = managementClient.getMgmtAddress()+":"+managementClient.getMgmtPort();
-return JMXConnectorFactory.connect(new JMXServiceURL("service:jmx:http-remoting-jmx://"+address))
+//        return JMXConnectorFactory.connect(new JMXServiceURL("service:jmx:remoting-jmx://localhost:9999"))
 //                .getMBeanServerConnection();
-        return JMXConnectorFactory.connect(new JMXServiceURL("service:jmx:remoting-jmx://"+address))
+return JMXConnectorFactory.connect(new JMXServiceURL("service:jmx:http-remoting-jmx://"+address))
                 .getMBeanServerConnection();
 
     }

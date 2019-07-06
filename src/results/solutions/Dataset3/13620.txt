@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2010 the original author or authors.
  *
@@ -56,9 +55,9 @@ public class ApplicationContextExpressionTests {
 	public void genericApplicationContext() throws Exception {
 		GenericApplicationContext ac = new GenericApplicationContext();
 		AnnotationConfigUtils.registerAnnotationConfigProcessors(ac);
-public Object get(String name, ObjectFactory<?> objectFactory) {
+
 		ac.getBeanFactory().registerScope("myScope", new Scope() {
-			public Object get(String name, ObjectFactory objectFactory) {
+public Object get(String name, ObjectFactory<?> objectFactory) {
 				return objectFactory.getObject();
 			}
 			public Object remove(String name) {

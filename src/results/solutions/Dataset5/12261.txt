@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2006 The Apache Software Foundation
  *
@@ -340,9 +339,9 @@ public class Touch extends Task {
             String[] mapped = fileNameMapper.mapFileName(r.getName());
             if (mapped != null && mapped.length > 0) {
                 long modTime = (r.isExists()) ? r.getLastModified()
-touch(FILE_UTILS.resolveFile(getProject().getBaseDir(),mapped[i]), modTime);
+                    : defaultTimestamp;
                 for (int i = 0; i < mapped.length; i++) {
-                    touch(getProject().resolveFile(mapped[i]), modTime);
+touch(FILE_UTILS.resolveFile(getProject().getBaseDir(),mapped[i]), modTime);
                 }
             }
         }

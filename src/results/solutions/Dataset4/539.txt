@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -60,9 +59,9 @@ public class TransportMultiPercolateAction extends TransportAction<MultiPercolat
 
     @Inject
     public TransportMultiPercolateAction(Settings settings, ThreadPool threadPool, TransportShardMultiPercolateAction shardMultiPercolateAction,
-super(settings, MultiPercolateAction.NAME, threadPool);
+                                         ClusterService clusterService, TransportService transportService, PercolatorService percolatorService,
                                          TransportMultiGetAction multiGetAction) {
-        super(settings, threadPool);
+super(settings, MultiPercolateAction.NAME, threadPool);
         this.shardMultiPercolateAction = shardMultiPercolateAction;
         this.clusterService = clusterService;
         this.percolatorService = percolatorService;

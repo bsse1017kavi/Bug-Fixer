@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -47,9 +46,9 @@ public abstract class ShardReplicationOperationRequest<T extends ShardReplicatio
     protected String index;
 
     private boolean threadedOperation = true;
-private volatile boolean canHaveDuplicates = false;
+    private ReplicationType replicationType = ReplicationType.DEFAULT;
     private WriteConsistencyLevel consistencyLevel = WriteConsistencyLevel.DEFAULT;
-    private boolean canHaveDuplicates = false;
+private volatile boolean canHaveDuplicates = false;
 
     protected ShardReplicationOperationRequest() {
 

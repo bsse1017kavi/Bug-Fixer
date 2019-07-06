@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -65,9 +64,9 @@ public class MySqlDsDriverInEarReauthTestCase {
         JavaArchive jt = ShrinkWrap.create(JavaArchive.class, "test.jar").addClasses(MySqlDsDriverInEarReauthTestCase.class,
                 DsUtil.class);
         final EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class, "test.ear")
-.addAsManifestResource(MySqlDsDriverInEarReauthTestCase.class.getPackage(), "mysql-ds.xml", "mysql-ds.xml")
+                .addAsLibrary(ja)
                 .addAsLibrary(jt)
-                .addAsManifestResource("jca/mysql-ds.xml", "mysql-ds.xml")
+.addAsManifestResource(MySqlDsDriverInEarReauthTestCase.class.getPackage(), "mysql-ds.xml", "mysql-ds.xml")
                 .addAsManifestResource(
                         new StringAsset(
                                 "Dependencies: org.jboss.ironjacamar.jdbcadapters\n"),

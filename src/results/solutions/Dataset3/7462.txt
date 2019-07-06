@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class CmpSubsystemAdd extends AbstractBoottimeAddStepHandler implements D
 
     private static final Logger logger = Logger.getLogger(CmpSubsystemAdd.class);
     static CmpSubsystemAdd INSTANCE = new CmpSubsystemAdd();
-logger.debug("Activating EJB CMP Subsystem");
+
     protected void performBoottime(final OperationContext context, final ModelNode operation, final ModelNode model, final ServiceVerificationHandler verificationHandler, final List<ServiceController<?>> newControllers) throws OperationFailedException {
-        logger.info("Activating EJB CMP Subsystem");
+logger.debug("Activating EJB CMP Subsystem");
         final boolean appclient = context.getProcessType() == ProcessType.APPLICATION_CLIENT;
 
         final KeyGeneratorFactoryRegistry keyGeneratorFactoryRegistry = new KeyGeneratorFactoryRegistry();

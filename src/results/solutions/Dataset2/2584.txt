@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -578,9 +577,9 @@ public ICompilationUnit getCompilationUnit() {
  * @see org.eclipse.jdt.internal.compiler.env.ICompilationUnit#getContents()
  */
 public char[] getContents() {
-return buffer == null ? CharOperation.NO_CHAR : buffer.getCharacters();
+	try {
 		IBuffer buffer = this.getBuffer();
-		return buffer == null ? null : buffer.getCharacters();
+return buffer == null ? CharOperation.NO_CHAR : buffer.getCharacters();
 	} catch (JavaModelException e) {
 		return CharOperation.NO_CHAR;
 	}

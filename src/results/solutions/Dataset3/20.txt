@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -84,9 +83,9 @@ public class OperationSlaveStepHandler {
             addBasicStep(context, domainOp);
         }
 
-resolver, hostControllerExecutionSupport, originalAddress, originalRegistration, response);
+        ServerOperationResolver resolver = new ServerOperationResolver(localHostControllerInfo.getLocalHostName(), serverProxies);
         ServerOperationsResolverHandler sorh = new ServerOperationsResolverHandler(
-                resolver, hostControllerExecutionSupport, originalAddress, originalRegistration, response, recordResponse);
+resolver, hostControllerExecutionSupport, originalAddress, originalRegistration, response);
         context.addStep(sorh, OperationContext.Stage.DOMAIN);
     }
 

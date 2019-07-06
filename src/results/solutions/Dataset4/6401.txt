@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public abstract class AbstractServersTests {
 
     public Server buildServer(String id, Settings settings) {
         String settingsSource = getClass().getName().replace('.', '/') + ".yml";
-.put(settings)
+        Settings finalSettings = settingsBuilder()
                 .loadFromClasspath(settingsSource)
-                .putAll(settings)
+.put(settings)
                 .put("name", id)
                 .build();
         Server server = serverBuilder()

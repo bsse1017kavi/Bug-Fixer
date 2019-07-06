@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -38,9 +37,9 @@ public class CloudImmutableBlobContainer extends AbstractCloudBlobContainer impl
     public CloudImmutableBlobContainer(BlobPath path, CloudBlobStore cloudBlobStore) {
         super(path, cloudBlobStore);
     }
-Blob blob = cloudBlobStore.sync().newBlob(buildBlobPath(blobName));
+
     @Override public void writeBlob(String blobName, InputStream is, long sizeInBytes, final WriterListener listener) {
-        Blob blob = cloudBlobStore.sync().newBlob(blobName);
+Blob blob = cloudBlobStore.sync().newBlob(buildBlobPath(blobName));
         blob.setPayload(is);
         blob.setContentLength(sizeInBytes);
         final ListenableFuture<String> future = cloudBlobStore.async().putBlob(cloudBlobStore.container(), blob);

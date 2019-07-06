@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -238,9 +237,9 @@ public class BrentSolver extends UnivariateRealSolverImpl {
                 // the iteration has converged (the problem may
                 // still be ill conditioned)
                 setResult(x1, i);
-double dx = x2 - x1;
+                return result;
             }
-            double dx = (x2 - x1);
+double dx = x2 - x1;
             double tolerance =
                 Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy);
             if (Math.abs(dx) <= tolerance) {

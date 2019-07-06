@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -56,9 +55,9 @@ public class PutMappingRequest extends MasterNodeOperationRequest {
 
     private String mappingSource;
 
-private boolean ignoreConflicts = false;
+    private TimeValue timeout = new TimeValue(10, TimeUnit.SECONDS);
 
-    private boolean ignoreConflicts = true;
+private boolean ignoreConflicts = false;
 
     PutMappingRequest() {
     }

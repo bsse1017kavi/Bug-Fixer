@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class OSGiDeploymentInstallProcessor implements DeploymentUnitProcessor {
         // Check if we already have an OSGi deployment
         final DeploymentUnit deploymentUnit = phaseContext.getDeploymentUnit();
         Deployment deployment = OSGiDeploymentAttachment.getDeployment(deploymentUnit);
-String location = DeploymentHolderService.getLocation(serviceRegistry, deploymentUnit.getName());
+
         ServiceRegistry serviceRegistry = phaseContext.getServiceRegistry();
-        String location = InstallBundleInitiatorService.getLocation(serviceRegistry, deploymentUnit.getName());
+String location = DeploymentHolderService.getLocation(serviceRegistry, deploymentUnit.getName());
         VirtualFile virtualFile = deploymentUnit.getAttachment(Attachments.DEPLOYMENT_ROOT).getRoot();
 
         // Check for attached BundleInfo

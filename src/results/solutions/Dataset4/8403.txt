@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -190,9 +189,9 @@ public class SearchSourceBuilder {
                 }
                 builder.endObject();
             }
-builder.startObject("indicesBoost");
+
             if (indexBoost != null) {
-                builder.startObject("queryBoost");
+builder.startObject("indicesBoost");
                 for (TObjectFloatIterator<String> it = indexBoost.iterator(); it.hasNext();) {
                     it.advance();
                     builder.field(it.key(), it.value());

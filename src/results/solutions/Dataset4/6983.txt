@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -28,8 +27,8 @@ import org.elasticsearch.common.logging.ESLoggerFactory;
  */
 public class JdkESLoggerFactory extends ESLoggerFactory {
 
-return new JdkESLogger(prefix, name, logger);
+    @Override public ESLogger newInstance(String prefix, String name) {
         final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(name);
-        return new JdkESLogger(prefix, logger);
+return new JdkESLogger(prefix, name, logger);
     }
 }

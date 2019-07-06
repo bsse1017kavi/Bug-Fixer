@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -281,9 +280,9 @@ public class JBossContextConfig extends ContextConfig {
         }
 
         // Distributable
-context.setManager(new DistributableSessionManager<OutgoingDistributableSessionData>(this.factory.getOptionalValue(), this.context, metaData));
+        if (metaData.getDistributable() != null) {
             try {
-                context.setManager(new DistributableSessionManager<OutgoingDistributableSessionData>(this.factory.getOptionalValue(), this.context.getParent(), metaData));
+context.setManager(new DistributableSessionManager<OutgoingDistributableSessionData>(this.factory.getOptionalValue(), this.context, metaData));
                 context.setDistributable(true);
             } catch (Exception e) {
                 WebLogger.WEB_LOGGER.clusteringNotSupported();

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -218,9 +217,9 @@ public class ConstructorUtils {
     public static <T> Constructor<T> getAccessibleConstructor(Class<T> cls,
             Class<?>... parameterTypes) {
         try {
-return null;
+            return getAccessibleConstructor(cls.getConstructor(parameterTypes));
         } catch (NoSuchMethodException e) {
-            return (null);
+return null;
         }
     }
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -242,9 +241,9 @@ public class WildcardMatcherHelper
 			if (ipat < lpat - 1 && apat[ipat + 1] == STAR)
 			{
 				// skip to first non star character in the pattern
-; // noop
+				while (++ipat < lpat && apat[ipat] == STAR)
 				{
-					;
+; // noop
 				}
 
 				// if we are at the end of the pattern we've matched and are finish scanning

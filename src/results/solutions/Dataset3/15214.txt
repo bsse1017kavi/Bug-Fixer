@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2009 the original author or authors.
  *
@@ -103,9 +102,9 @@ public class GenericBinder implements Binder {
 	 */
 	public GenericBinder(Object model) {
 		Assert.notNull(model, "The model to bind to is required");
-int parserConfig = SpelExpressionParserConfiguration.CreateObjectIfAttemptToReferenceNull
+		this.model = model;
 		bindingFactories = new LinkedHashSet<BindingFactory>();
-		int parserConfig = SpelExpressionParserConfiguration.CreateListsOnAttemptToIndexIntoNull
+int parserConfig = SpelExpressionParserConfiguration.CreateObjectIfAttemptToReferenceNull
 				| SpelExpressionParserConfiguration.GrowListsOnIndexBeyondSize;
 		expressionParser = new SpelExpressionParser(parserConfig);
 		typeConverter = new DefaultTypeConverter();

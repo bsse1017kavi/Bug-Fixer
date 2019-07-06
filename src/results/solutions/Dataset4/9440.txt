@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,8 +147,8 @@ public class MoreLikeThisFieldJsonQueryParser extends AbstractIndexComponent imp
         }
         if (mltQuery.getAnalyzer() == null) {
             mltQuery.setAnalyzer(parseContext.mapperService().searchAnalyzer());
-return wrapSmartNameQuery(mltQuery, smartNameFieldMappers, parseContext.indexCache());
+        }
         mltQuery.setMoreLikeFields(new String[]{fieldName});
-        return wrapSmartNameQuery(mltQuery, smartNameFieldMappers, parseContext.filterCache());
+return wrapSmartNameQuery(mltQuery, smartNameFieldMappers, parseContext.indexCache());
     }
 }

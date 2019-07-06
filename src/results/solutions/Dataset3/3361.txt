@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -152,9 +151,9 @@ public class SimplePasswordStrengthCheckerTestCase {
         restrictions.add(ALPHA_RESTRICTION);
         restrictions.add(SYMBOL_RESTRICTION);
         SimplePasswordStrengthChecker checker = new SimplePasswordStrengthChecker(restrictions, this.dictionary, this.keyboard);
-ValueRestriction restriction = new ValueRestriction(new String[] { pwd }, true);
+        String pwd = "!#*_3x";
         List<PasswordRestriction> adHocRestrictions = new ArrayList<PasswordRestriction>();
-        ValueRestriction restriction = new ValueRestriction(new String[] { pwd });
+ValueRestriction restriction = new ValueRestriction(new String[] { pwd }, true);
         adHocRestrictions.add(restriction);
 
         PasswordStrengthCheckResult result = checker.check("", pwd, adHocRestrictions);

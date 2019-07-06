@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -103,9 +102,9 @@ public class NettyHttpChannel implements HttpChannel {
                 // if its a builder based response, and it was created with a CachedStreamOutput, we can release it
                 // after we write the response, and no need to do an extra copy because its not thread safe
                 XContentBuilder builder = ((XContentRestResponse) response).builder();
-buf = ChannelBuffers.wrappedBuffer(builder.underlyingBytes(), 0, builder.underlyingBytesLength());
+                if (builder.payload() instanceof CachedStreamOutput.Entry) {
                     releaseContentListener = new NettyTransport.CacheFutureListener((CachedStreamOutput.Entry) builder.payload());
-                    buf = ChannelBuffers.wrappedBuffer(builder.unsafeBytes(), 0, builder.unsafeBytesLength());
+buf = ChannelBuffers.wrappedBuffer(builder.underlyingBytes(), 0, builder.underlyingBytesLength());
                 } else if (response.contentThreadSafe()) {
                     buf = ChannelBuffers.wrappedBuffer(response.content(), 0, response.contentLength());
                 } else {

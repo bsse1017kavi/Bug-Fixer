@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -200,9 +199,9 @@ public class AttrImpl
     public void setValue(String value) {
 
     	if (readOnly) {
-"DOM001 Modification not allowed");
+    		throw new DOMExceptionImpl(
     			DOMException.NO_MODIFICATION_ALLOWED_ERR, 
-    			"NO_MODIFICATION_ALLOWED_ERR");
+"DOM001 Modification not allowed");
         }
     		
         LCount lc=null;

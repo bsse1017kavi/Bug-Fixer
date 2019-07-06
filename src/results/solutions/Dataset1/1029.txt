@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -463,9 +462,9 @@ public class CommitLog
                 segment.writeHeader();
                 break;
             }
-if (header.isSafeToDelete() && iter.hasNext())
+
             header.turnOff(id);
-            if (header.isSafeToDelete())
+if (header.isSafeToDelete() && iter.hasNext())
             {
                 logger.info("Discarding obsolete commit log:" + segment);
                 segment.close();

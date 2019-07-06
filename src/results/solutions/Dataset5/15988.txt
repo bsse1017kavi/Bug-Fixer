@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -49,9 +48,9 @@ public class UUIDStringSeq
 
     public void setType(int type) {
     }
-_last = UUIDGenerator.nextString(UUIDGenerator.TYPE1);
+
     public synchronized Object next(StoreContext ctx, ClassMetaData meta) {
-        _last = UUIDGenerator.nextString();
+_last = UUIDGenerator.nextString(UUIDGenerator.TYPE1);
         return _last;
     }
 

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -139,9 +138,9 @@ public abstract class ContentStreamBase implements ContentStream
       size = new Long( str.length() );
       sourceInfo = "string";
     }
-return new ByteArrayInputStream( str.getBytes(DEFAULT_CHARSET) );
+
     public InputStream getStream() throws IOException {
-      return new ByteArrayInputStream( str.getBytes() );
+return new ByteArrayInputStream( str.getBytes(DEFAULT_CHARSET) );
     }
 
     /**

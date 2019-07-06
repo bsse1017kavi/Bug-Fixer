@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -173,9 +172,9 @@ class TypeConverterDelegate {
 						new BeanTypeDescriptor(methodParam, descriptor) : new TypeDescriptor(methodParam));
 			}
 			else {
-if (conversionService.matches(convertedValue.getClass(), typeDesc)) {
+				typeDesc = TypeDescriptor.valueOf(requiredType);
 			}
-			if (conversionService.canConvert(convertedValue.getClass(), typeDesc)) {
+if (conversionService.matches(convertedValue.getClass(), typeDesc)) {
 				return (T) conversionService.convert(convertedValue, typeDesc);
 			}
 		}

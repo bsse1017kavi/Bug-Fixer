@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -140,9 +139,9 @@ public class HighlighterParseElement implements SearchParseElement {
                                         field.numberOfFragments(parser.intValue());
                                     } else if ("fragment_offset".equals(fieldName) || "fragmentOffset".equals(fieldName)) {
                                         field.fragmentOffset(parser.intValue());
-} else if ("order".equals(fieldName)) {
+                                    } else if ("highlight_filter".equals(fieldName) || "highlightFilter".equals(fieldName)) {
                                         field.highlightFilter(parser.booleanValue());
-                                    } else if ("score".equals(fieldName)) {
+} else if ("order".equals(fieldName)) {
                                         field.scoreOrdered("score".equals(parser.text()));
                                     }
                                 }

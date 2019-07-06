@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -216,9 +215,9 @@ public class ConfigParser {
     }
 
     private File makeFile(File dir, String name) {
-if (!ret.exists() && (dir != null) && !ret.isAbsolute()) {
+        name = name.replace('/', File.separatorChar);
         File ret = new File(name);
-        if (dir != null && !ret.isAbsolute()) { 
+if (!ret.exists() && (dir != null) && !ret.isAbsolute()) {
           ret = new File(dir, name);
         }
         try {

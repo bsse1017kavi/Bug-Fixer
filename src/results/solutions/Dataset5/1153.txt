@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1983,9 +1982,9 @@ public class Javadoc extends Task {
          */
         exe.setWorkingDirectory(null);
         try {
-if (Execute.isFailure(ret) && failOnError) {
+            exe.setCommandline(toExecute.getCommandline());
             int ret = exe.execute();
-            if (ret != 0 && failOnError) {
+if (Execute.isFailure(ret) && failOnError) {
                 throw new BuildException("Javadoc returned " + ret, getLocation());
             }
         } catch (IOException e) {

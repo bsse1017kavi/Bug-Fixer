@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -59,9 +58,9 @@ public class SqlConfigGui extends AbstractConfigGui
         return JMeterUtils.getResString("database_sql_query_title");
     }
 
-sqlField.setText(element.getPropertyAsString(JDBCSampler.QUERY));
+    public void configure(TestElement element)
     {
-        sqlField.setText(element.getProperty(JDBCSampler.QUERY).toString());
+sqlField.setText(element.getPropertyAsString(JDBCSampler.QUERY));
         super.configure(element);
     }
 

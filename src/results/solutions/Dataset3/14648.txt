@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -267,9 +266,9 @@ public class RequestMappingInfoHandlerMappingTests {
 
 		@Override
 		protected RequestMappingInfo getMappingForMethod(Method method, Class<?> handlerType) {
-new PatternsRequestCondition(annotation.value(), getUrlPathHelper(), getPathMatcher(), true),
+			RequestMapping annotation = AnnotationUtils.findAnnotation(method, RequestMapping.class);
 			return new RequestMappingInfo(
-					new PatternsRequestCondition(annotation.value(), getUrlPathHelper(), getPathMatcher()),
+new PatternsRequestCondition(annotation.value(), getUrlPathHelper(), getPathMatcher(), true),
 					new RequestMethodsRequestCondition(annotation.method()),
 					new ParamsRequestCondition(annotation.params()),
 					new HeadersRequestCondition(annotation.headers()),

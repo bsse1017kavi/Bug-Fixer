@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -86,9 +85,9 @@ public class ReplyToAllCommand extends ReplyCommand {
 
         while (it.hasNext()) {
             Address act = (Address) it.next();
-if (last.equals(act) || (accountAddress != null && accountAddress.equals(act)) ) {
+
             // Remove duplicates or the mail address from the receiver account
-            if (last.equals(act) || accountAddress.equals(act) ) {
+if (last.equals(act) || (accountAddress != null && accountAddress.equals(act)) ) {
                 it.remove();
             } else {
                 last = act;

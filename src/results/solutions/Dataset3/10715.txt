@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -114,9 +113,9 @@ public class ServerOperationsResolverHandler implements OperationStepHandler {
 
     private Map<Set<ServerIdentity>, ModelNode> getServerOperations(ModelNode domainOp, PathAddress domainOpAddress, ModelNode domainModel, ModelNode hostModel) {
         Map<Set<ServerIdentity>, ModelNode> result = null;
-if (flags.contains(OperationEntry.Flag.READ_ONLY) && !flags.contains(OperationEntry.Flag.DOMAIN_PUSH_TO_SERVERS)) {
+        final PathAddress relativeAddress = domainOpAddress.subAddress(originalAddress.size());
         Set<OperationEntry.Flag> flags = originalRegistration.getOperationFlags(relativeAddress, domainOp.require(OP).asString());
-        if (flags.contains(OperationEntry.Flag.READ_ONLY)) {
+if (flags.contains(OperationEntry.Flag.READ_ONLY) && !flags.contains(OperationEntry.Flag.DOMAIN_PUSH_TO_SERVERS)) {
             result = Collections.emptyMap();
         }
         if (result == null) {

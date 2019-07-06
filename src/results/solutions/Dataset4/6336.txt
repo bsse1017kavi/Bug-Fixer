@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -59,9 +58,9 @@ public class UserRepositoryListAdapter extends RepositoryListAdapter<Repository,
     @Override
     protected void update(final int position, final RepositoryItemView view, final Repository repository) {
         StyledText name = new StyledText();
-name.foreground(repository.getOwner().getLogin(), prefixColor).foreground('/', prefixColor);
+        if (!login.equals(repository.getOwner().getLogin())) {
             int prefixColor = view.repoName.getResources().getColor(color.repo_description);
-            name.foreground(repository.getOwner().getLogin(), prefixColor).append('/', prefixColor);
+name.foreground(repository.getOwner().getLogin(), prefixColor).foreground('/', prefixColor);
         }
         name.bold(repository.getName());
         view.repoName.setText(name);

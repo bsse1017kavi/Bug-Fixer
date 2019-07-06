@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ public class TransactionInvocationTestCase {
     }
 
 
-public void testSynchronizationSuceeded() throws IOException, NamingException, NotSupportedException, SystemException, RollbackException, HeuristicMixedException, HeuristicRollbackException {
+    @Test
     @OperateOnDeployment("client")
-    public void testSynchronizationSucceeded() throws IOException, NamingException, NotSupportedException, SystemException, RollbackException, HeuristicMixedException, HeuristicRollbackException {
+public void testSynchronizationSuceeded() throws IOException, NamingException, NotSupportedException, SystemException, RollbackException, HeuristicMixedException, HeuristicRollbackException {
         final ClientEjb ejb = getClient();
         ejb.testSynchronization(true);
     }

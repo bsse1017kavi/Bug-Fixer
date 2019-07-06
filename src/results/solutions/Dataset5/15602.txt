@@ -1,4 +1,3 @@
-
 /*
  * $Id: EqualInputValidator.java 5703 2006-05-09 06:22:08 +0000 (Tue, 09 May
  * 2006) ivaynberg $ $Revision$ $Date: 2006-05-09 06:22:08 +0000 (Tue, 09
@@ -90,9 +89,9 @@ public class EqualInputValidator extends AbstractFormValidator
 		final FormComponent<?> formComponent2 = components[1];
 
 		if (!Objects.equal(formComponent1.getInput(), formComponent2.getInput()))
-formComponent2.error(new ValidationError().addMessageKey(key).setVars(messageModel()));
+		{
 			final String key = resourceKey();
-			formComponent2.error(new ValidationError(key, messageModel()));
+formComponent2.error(new ValidationError().addMessageKey(key).setVars(messageModel()));
 		}
 	}
 }

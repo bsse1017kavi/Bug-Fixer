@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -124,9 +123,9 @@ public abstract class TypePattern extends PatternNode {
 	public abstract FuzzyBoolean matchesInstanceof(ResolvedType type);	
 	
 	public final FuzzyBoolean matches(ResolvedType type, MatchKind kind) {
-if (type.isMissing()) return FuzzyBoolean.NO;
+		FuzzyBoolean typeMatch = null;
 		//??? This is part of gracefully handling missing references
-		if (type == ResolvedType.MISSING) return FuzzyBoolean.NO;
+if (type.isMissing()) return FuzzyBoolean.NO;
 		
 		if (kind == STATIC) {
 //			typeMatch = FuzzyBoolean.fromBoolean(matchesStatically(type));

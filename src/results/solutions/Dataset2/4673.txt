@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -239,9 +238,9 @@ public class JavaProject
 		return true;
 	}
 	protected void closing(Object info) throws JavaModelException {
-Object[] children = ((JavaElementInfo)info).children;
+		
 		// forget source attachment recommendations
-		Object[] children = ((JavaElementInfo)info).fChildren;
+Object[] children = ((JavaElementInfo)info).children;
 		for (int i = 0, length = children.length; i < length; i++) {
 			Object child = children[i];
 			if (child instanceof JarPackageFragmentRoot){

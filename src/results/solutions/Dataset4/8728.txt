@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.backends.gwt;
 
 import java.util.HashSet;
@@ -370,9 +369,9 @@ public class GwtInput implements Input {
 			int code = keyForCode(e.getKeyCode());
 			this.pressedKeys.remove(code);
 			if(processor != null) processor.keyUp(code);
-//		if(hasFocus) e.preventDefault();
+		}
 		
-		if(hasFocus) e.stopPropagation();
+//		if(hasFocus) e.preventDefault();
 	}
 	
 	/** borrowed from PlayN, thanks guys **/

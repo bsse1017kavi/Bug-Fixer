@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -832,9 +831,9 @@ public class Filters {
         catch (Exception e) {
             Throwable t = e;
             if (e instanceof InvocationTargetException)
-target.getClass(), hintKey)).setCause(t);
+                t = ((InvocationTargetException) e).getTargetException();
             throw new UserException(_loc.get("bad-getter-hint",
-                target.getClass(), hintKey)).setCause(e);
+target.getClass(), hintKey)).setCause(t);
         }
     }
 

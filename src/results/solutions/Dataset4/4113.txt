@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -200,9 +199,9 @@ public class GeoDistanceFacetBuilder extends AbstractFacetBuilder {
     @Override public void toXContent(XContentBuilder builder, Params params) throws IOException {
         if (fieldName == null) {
             throw new SearchSourceBuilderException("field must be set on geo_distance facet for facet [" + name + "]");
-throw new SearchSourceBuilderException("at least one range must be defined for geo_distance facet [" + name + "]");
+        }
         if (entries.isEmpty()) {
-            throw new SearchSourceBuilderException("at least one range must be defined for geo_distance face [" + name + "]");
+throw new SearchSourceBuilderException("at least one range must be defined for geo_distance facet [" + name + "]");
         }
 
         builder.startObject(name);

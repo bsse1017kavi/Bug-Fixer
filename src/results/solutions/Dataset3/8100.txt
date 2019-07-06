@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -57,9 +56,9 @@ class CSVLexer extends Lexer {
          * - they are equivalent here.
          */
         boolean eol = isEndOfLine(c);
-if (ignoreEmptyLines) {
+
         // empty line detection: eol AND (last char was EOL or beginning)
-        if (emptyLinesIgnored) {
+if (ignoreEmptyLines) {
             while (eol && isStartOfLine(lastChar)) {
                 // go on char ahead ...
                 lastChar = c;

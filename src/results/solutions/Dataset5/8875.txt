@@ -1,4 +1,3 @@
-
 /*
  * $Id: CustomLayoutAjaxAutocompleteTextField.java,v 1.4 2006/01/08 12:14:24
  * jdonnerstag Exp $ $Revision$ $Date$
@@ -42,9 +41,9 @@ public class CustomLayoutAjaxAutocompleteTextField extends AutocompleteTextField
 	{
 		super.renderHead(container);
 
-String url = this.urlFor(null, page, parameters);
+		PageParameters parameters = new PageParameters();
 		parameters.put("fieldName", this.getId());
-		String url = this.getPage().urlFor(null, page, parameters);
+String url = this.urlFor(null, page, parameters);
 
 		write(container, "<script type='text/javascript'>\n");
 		write(container, "var myrules = { \n");

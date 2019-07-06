@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.71 $ $Date$
@@ -233,9 +232,9 @@ public class Applet extends WebComponent implements IResourceListener
 	 * @see wicket.Component#onComponentTagBody(wicket.markup.MarkupStream,
 	 *      wicket.markup.ComponentTag)
 	 */
-replaceComponentTagBody(markupStream, openTag, "\n<param name=\"modelUrl\" value=\""
+	protected void onComponentTagBody(final MarkupStream markupStream, final ComponentTag openTag)
 	{
-		replaceComponentTagBody(markupStream, openTag, "\n<param name=\"component\" value=\""
+replaceComponentTagBody(markupStream, openTag, "\n<param name=\"modelUrl\" value=\""
 				+ urlFor(IResourceListener.class) + "\"/>"
 				+ "\n<param name=\"appletInitializerClassName\" value=\""
 				+ appletInitializerClass.getName() + "\"/>\n");

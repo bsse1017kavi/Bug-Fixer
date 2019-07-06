@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -2300,9 +2299,9 @@ public class DOMParser
             if (fGrammarAccess) {
                 StringBuffer str = new StringBuffer();
                 str.append("<!ENTITY % ");
-str.append(fStringPool.toString(entityValueIndex));
+                str.append(fStringPool.toString(entityNameIndex));
                 str.append(" \"");
-                str.append(fStringPool.orphanString(entityValueIndex));
+str.append(fStringPool.toString(entityValueIndex));
                 str.append("\">");
                 Node internalPEEntity = fDocumentImpl.createComment(str.toString());
                 Node schema = XUtil.getFirstChildElement(fDocumentType, "schema");

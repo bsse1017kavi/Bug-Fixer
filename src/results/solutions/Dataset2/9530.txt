@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -528,9 +527,9 @@ protected NameReference getUnspecifiedReference() {
 			reference = new SelectionOnSuperReference((int)(identifierPositionStack[identifierPtr+1] >>> 32), (int) identifierPositionStack[identifierPtr+1]);
 		}
 		pushOnAstStack(reference);
-if (!diet || dietInt != 0){
+		this.assistNode = reference;	
 		this.lastCheckPoint = reference.sourceEnd + 1;
-		if (!diet){
+if (!diet || dietInt != 0){
 			this.restartRecovery	= true;	// force to restart in recovery mode
 			this.lastIgnoredToken = -1;		
 		}

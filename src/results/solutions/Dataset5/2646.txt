@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -69,9 +68,9 @@ final class Behaviors implements IDetachable
 	}
 
 	private void internalAdd(final Behavior behavior)
-if (behavior.getStatelessHint(component))
+	{
 		component.data_add(behavior);
-		if (behavior.isStateless(component))
+if (behavior.getStatelessHint(component))
 		{
 			getBehaviorId(behavior);
 		}

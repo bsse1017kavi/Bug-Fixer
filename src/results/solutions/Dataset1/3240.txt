@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -82,9 +81,9 @@ public class ColumnIndexer
         for (IColumn column : columns)
         {
             columnCount += column.getObjectCount();
-BloomFilter bf = BloomFilter.getFilter(columnCount, 4);
+        }
 
-        BloomFilter bf = new BloomFilter(columnCount, 4);
+BloomFilter bf = BloomFilter.getFilter(columnCount, 4);
         for (IColumn column : columns)
         {
             bf.add(column.name());

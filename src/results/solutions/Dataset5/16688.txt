@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class DebugPostProcessor extends AbstractTestElement implements PostProce
             sb.append(prop.getStringValue());
             sb.append("\n");
          }
-sr.setDataType(SampleResult.TEXT);
+         SampleResult sr = new SampleResult();
          sr.setResponseData(sb.toString().getBytes());
-         sr.setDataType("text");
+sr.setDataType(SampleResult.TEXT);
          sr.setSampleLabel(getName());
          sr.setSuccessful(true);
          sr.setSamplerData("SamplerPropertyValues");

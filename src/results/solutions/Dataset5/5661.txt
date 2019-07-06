@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -306,9 +305,9 @@ public class Project {
     // match basedir attribute in xml
     public void setBasedir(String baseD) throws BuildException {
         try {
-String msg = "Can't set basedir " + baseD + " due to " +
+            setBaseDir(new File(new File(baseD).getCanonicalPath()));
         } catch (IOException ioe) {
-            String msg = "Can't set basedir " + baseDir + " due to " +
+String msg = "Can't set basedir " + baseD + " due to " +
                 ioe.getMessage();
             throw new BuildException(msg);
         }

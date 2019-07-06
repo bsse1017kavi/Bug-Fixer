@@ -1,4 +1,3 @@
-
 /* Copyright (c) 2005-2008 Jan S. Rellermeyer
  * Systems Group,
  * Department of Computer Science, ETH Zurich.
@@ -671,9 +670,9 @@ public abstract class SLPCore {
 			Socket socket = new Socket(msg.address, msg.port);
 			socket.setSoTimeout(CONFIG.getTCPTimeout());
 			DataOutputStream out = new DataOutputStream(socket
-out.write(msg.getBytes());
+					.getOutputStream());
 			DataInputStream in = new DataInputStream(socket.getInputStream());
-			msg.writeTo(out);
+out.write(msg.getBytes());
 			final ReplyMessage reply = (ReplyMessage) SLPMessage.parse(
 					msg.address, msg.port, in, true);
 			socket.close();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2008 the original author or authors.
  *
@@ -85,9 +84,9 @@ public class StandardEvaluationContext implements EvaluationContext {
 		StringTokenizer st = new StringTokenizer(classpath, File.pathSeparator);
 		List<URL> urls = new ArrayList<URL>();
 		while (st.hasMoreTokens()) {
-urls.add(new File(element).toURI().toURL());
+			String element = st.nextToken();
 			try {
-				urls.add(new File(element).toURL());
+urls.add(new File(element).toURI().toURL());
 			} catch (MalformedURLException e) {
 				throw new RuntimeException("Invalid element in classpath " + element);
 			}

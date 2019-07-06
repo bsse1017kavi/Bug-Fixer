@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.hierarchy;
 
 /*
@@ -77,9 +76,9 @@ protected boolean isAffectedByOpenable(IJavaElementDelta delta, IJavaElement ele
 	if (element instanceof CompilationUnit && ((CompilationUnit)element).isWorkingCopy()) {
 		return false;
 	}
-if (this.type == null) {
+
 	// if no focus, hierarchy is affected if the element is part of the region
-	if (fType == null) {
+if (this.type == null) {
 		return fRegion.contains(element);
 	} else {
 		return super.isAffectedByOpenable(delta, element);

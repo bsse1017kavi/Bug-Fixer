@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class BasicDeployment16TestCase extends ContainerResourceMgmtTestBase {
     static class BasicDeploymentTestCaseSetup extends AbstractMgmtServerSetupTask {
 
         @Override
-List<ModelNode> operations = xmlToModelOperations(xml, Namespace.RESOURCEADAPTERS_1_0.getUriString(), new ResourceAdapterSubsystemParser());
+        public void doSetup(final ManagementClient managementClient) throws Exception {
             String xml = FileUtils.readFile(BasicDeployment16TestCase.class, "basic16.xml");
-            List<ModelNode> operations = xmlToModelOperations(xml, Namespace.CURRENT.getUriString(), new ResourceAdapterSubsystemParser());
+List<ModelNode> operations = xmlToModelOperations(xml, Namespace.RESOURCEADAPTERS_1_0.getUriString(), new ResourceAdapterSubsystemParser());
             executeOperation(operationListToCompositeOperation(operations));
         }
 

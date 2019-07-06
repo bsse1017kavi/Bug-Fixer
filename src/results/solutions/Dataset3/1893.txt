@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class AuthenticationProvider {
             public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
                 if (contains(SubjectCallback.class, callbackHandler.getSupportedCallbacks())) {
                     Callback[] newCallbacks = new Callback[callbacks.length + 1];
-newCallbacks[newCallbacks.length - 1] = subjectCallBack;
+                    System.arraycopy(callbacks, 0, newCallbacks, 0, callbacks.length);
                     SubjectCallback subjectCallBack = new SubjectCallback();
-                    newCallbacks[newCallbacks.length] = subjectCallBack;
+newCallbacks[newCallbacks.length - 1] = subjectCallBack;
                     callbackHandler.handle(newCallbacks);
                     subject = subjectCallBack.getSubject();
                 } else {

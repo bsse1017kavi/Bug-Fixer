@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2008, Red Hat Middleware LLC, and individual contributors
@@ -36,9 +35,9 @@ import org.jboss.metadata.web.spec.SessionConfigMetaData;
 /**
  * @author Paul Ferraro
  */
-protected volatile int maxActiveAllowed = -1;
+public abstract class AbstractSessionManager implements SessionManager {
     /** Maximum of active sessions allowed. -1 is unlimited. */
-    protected int maxActiveAllowed = -1;
+protected volatile int maxActiveAllowed = -1;
     /** Has this component been started yet? */
     protected volatile boolean started = false;
     /** Are we allowing backgroundProcess() to execute? We use an object so stop() can lock on it to wait for */

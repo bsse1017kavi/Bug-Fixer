@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -200,9 +199,9 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
                 } else {
                     if (!line.startsWith("<?xml ")){// No, must be CSV //$NON-NLS-1$
                         while (line != null) { // Already read 1st line
-SampleResult result = OldSaveService.makeResultFromDelimitedString(line,getSaveConfig());
+                            // TODO parse the header line if there is one
                             try {
-                                SampleResult result = OldSaveService.makeResultFromDelimitedString(line);
+SampleResult result = OldSaveService.makeResultFromDelimitedString(line,getSaveConfig());
                                 if (result != null) sendToVisualizer(result);
                             } catch (NumberFormatException ignored){//TODO - why ignore these?
                                 errorDetected = true;

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -124,9 +123,9 @@ public class RowIteratorFactory
                 return COMPARE_BY_KEY.compare(o1, o2) == 0;
             }
 
-Comparator<IColumn> colComparator = filter.filter.getColumnComparator(comparator);
+            protected Row getReduced()
             {
-                Comparator<IColumn> colComparator = QueryFilter.getColumnComparator(comparator);
+Comparator<IColumn> colComparator = filter.filter.getColumnComparator(comparator);
                 Iterator<IColumn> colCollated = IteratorUtils.collatedIterator(colComparator, colIters);
 
                 ColumnFamily returnCF = null;

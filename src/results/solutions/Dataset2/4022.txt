@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -158,9 +157,9 @@ send(Message query) {
 			tsig.apply(query, null);
 
 
-if (useTCP || out.length > udpLength)
+		out = query.toWire();
 
-		if (useTCP)
+if (useTCP || out.length > udpLength)
 			return sendTCP(query, out);
 
 		s.send(new DatagramPacket(out, out.length, addr, port));

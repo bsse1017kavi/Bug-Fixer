@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -176,9 +175,9 @@ public class TestAtomicUpdate extends LuceneTestCase {
     directory.close();
 
     // Second in an FSDirectory:
-directory = FSDirectory.getDirectory(dirPath, null, false);
+    String tempDir = System.getProperty("java.io.tmpdir");
     File dirPath = new File(tempDir, "lucene.test.atomic");
-    directory = FSDirectory.getDirectory(dirPath);
+directory = FSDirectory.getDirectory(dirPath, null, false);
     runTest(directory);
     directory.close();
     _TestUtil.rmDir(dirPath);

@@ -1,4 +1,3 @@
-
 /**
  *  Derby - Class org.apache.derbyTesting.functionTests.tests.lang.SecurityPolicyReloadingTest
  *  
@@ -241,9 +240,9 @@ public class SecurityPolicyReloadingTest extends BaseJDBCTestCase {
      * Verify that the non-DBA does not have the power to reload the security policy file.
      */
     private void nonDbaTest()
-String          reservedToDBO = "42504";
+        throws Exception
     {
-        String          reservedToDBO = "2850A";
+String          reservedToDBO = "42504";
         Connection  conn = openUserConnection( NON_DBO_USER );
 
         assertTrue( "Initially, should be able to read property.", canReadProperty() );

@@ -1,4 +1,3 @@
-
 /*
  *  This file is part of Libgdx by Mario Zechner (badlogicgames@gmail.com)
  *
@@ -53,9 +52,9 @@ final class JoglPixmap implements Pixmap
 		pixmap = image;
 	}
 
-if( format == Pixmap.Format.RGBA4444 || format == Pixmap.Format.RGBA8888 || format == Pixmap.Format.RGB565 )
+	private int getInternalFormat( Pixmap.Format format )
 	{
-		if( format == Pixmap.Format.RGBA4444 || format == Pixmap.Format.RGBA8888 )
+if( format == Pixmap.Format.RGBA4444 || format == Pixmap.Format.RGBA8888 || format == Pixmap.Format.RGB565 )
 			return BufferedImage.TYPE_4BYTE_ABGR;
 		else
 			return BufferedImage.TYPE_BYTE_GRAY;

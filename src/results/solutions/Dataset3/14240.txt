@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -295,9 +294,9 @@ public class SizeAppenderRestartTestCase {
         log.info(response.asString());
         if (!SUCCESS.equals(response.get(OUTCOME).asString())) {
             Assert.fail(response.get(FAILURE_DESCRIPTION).toString());
-Assert.assertTrue("result exists", response.hasDefined(RESULT));
+        }
         if (validateResult) {
-            Assert.assertTrue("result exists", response.has(RESULT));
+Assert.assertTrue("result exists", response.hasDefined(RESULT));
         }
         if (response == null) {
             Assert.fail("response was null");

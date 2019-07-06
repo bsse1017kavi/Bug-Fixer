@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ abstract class AbstractResourceRegistration implements ManagementResourceRegistr
     @Override
     public abstract ManagementResourceRegistration registerSubModel(final ResourceDefinition resourceDefinition);
 
-return !isRemote() && parent != null && PathElement.WILDCARD_VALUE.equals(valueString);
+    @Override
     public boolean isAllowsOverride() {
-        return !isRemote() && parent != null && !PathElement.WILDCARD_VALUE.equals(valueString);
+return !isRemote() && parent != null && PathElement.WILDCARD_VALUE.equals(valueString);
     }
 
     @Override

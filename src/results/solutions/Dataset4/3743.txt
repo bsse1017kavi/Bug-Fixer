@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -100,9 +99,9 @@ public class TransportClusterHealthAction extends TransportMasterNodeOperationAc
                 if (request.waitForNodes().startsWith(">=")) {
                     int expected = Integer.parseInt(request.waitForNodes().substring(2));
                     if (response.numberOfNodes() >= expected) {
-} else if (request.waitForNodes().startsWith("<=")) {
+                        waitForCounter++;
                     }
-                } else if (request.waitForNodes().startsWith("M=")) {
+} else if (request.waitForNodes().startsWith("<=")) {
                     int expected = Integer.parseInt(request.waitForNodes().substring(2));
                     if (response.numberOfNodes() <= expected) {
                         waitForCounter++;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,8 +44,8 @@ public interface Transformer<I, O> {
      * @return a transformed object
      * @throws ClassCastException (runtime) if the input is the wrong class
      * @throws IllegalArgumentException (runtime) if the input is invalid
-O transform(I input);
+     * @throws FunctorException (runtime) if the transform cannot be completed
      */
-    public O transform(I input);
+O transform(I input);
 
 }

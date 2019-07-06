@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -139,9 +138,9 @@ public abstract class AbstractDataSourceAdd extends AbstractAddStepHandler {
             }
         }
         for (final SimpleAttributeDefinition attribute : attributes) {
-//modelNode.get(ENABLED.getName()).set(false);
+            attribute.validateAndSet(operation, modelNode);
         }
-        modelNode.get(ENABLED.getName()).set(false);
+//modelNode.get(ENABLED.getName()).set(false);
 
     }
 

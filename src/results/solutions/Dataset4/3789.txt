@@ -1,4 +1,3 @@
-
 /*
  *  This file is part of Libgdx by Mario Zechner (badlogicgames@gmail.com)
  *
@@ -63,9 +62,9 @@ public abstract class Font
 	/** whether the Font is managed or not **/
 	private boolean isManaged;
 	
-this.texture = graphics.newTexture( 512, 512, Pixmap.Format.RGBA8888, TextureFilter.Nearest, TextureFilter.Nearest, TextureWrap.ClampToEdge, TextureWrap.ClampToEdge, managed );
+	protected Font( Graphics graphics, boolean managed )
 	{
-		this.texture = graphics.newTexture( 512, 512, Pixmap.Format.RGBA4444, TextureFilter.Nearest, TextureFilter.Nearest, TextureWrap.ClampToEdge, TextureWrap.ClampToEdge, managed );		
+this.texture = graphics.newTexture( 512, 512, Pixmap.Format.RGBA8888, TextureFilter.Nearest, TextureFilter.Nearest, TextureWrap.ClampToEdge, TextureWrap.ClampToEdge, managed );
 		this.isManaged = managed;
 	}
 	

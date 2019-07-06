@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.db.migration;
 
 import org.apache.cassandra.config.CFMetaData;
@@ -76,9 +75,9 @@ public class AddColumnFamily extends Migration
     public void applyModels()
     {
         // reinitialize the table.
-Table.open(ksm.name).initCf(cfm.cfId, cfm.cfName);
+        KSMetaData ksm = DatabaseDescriptor.getTableDefinition(cfm.tableName);
         ksm = makeNewKeyspaceDefinition(ksm);
-        Table.open(ksm.name).addCf(cfm.cfName);
+Table.open(ksm.name).initCf(cfm.cfId, cfm.cfName);
         DatabaseDescriptor.setTableDefinition(ksm, newVersion);
         
         // force creation of a new commit log segment.

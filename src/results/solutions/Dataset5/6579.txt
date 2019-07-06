@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.10 $ $Date$
@@ -39,9 +38,9 @@ public final class DoubleConverter extends AbstractDecimalConverter
 	 * @see wicket.util.convert.ITypeConverter#convert(java.lang.Object,java.util.Locale)
 	 */
 	public Object convert(final Object value, Locale locale)
--Double.MAX_VALUE, Double.MAX_VALUE,locale);
+	{
         final Number number = value instanceof Number ? (Number)value : parse(value,
-                Double.MAX_VALUE*-1, Double.MAX_VALUE,locale);
+-Double.MAX_VALUE, Double.MAX_VALUE,locale);
         //Double.MIN is the smallest nonzero positive number, not the largest negative number
 
         if (number == null)

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ class NewDeploymentScannerDisable implements ModelUpdateOperationHandler, Runtim
 
         final ModelNode address = operation.require(ADDRESS);
         final String name = address.get(address.asInt() - 1).asString();
-compensatingOperation.get(OP).set("enable");
+
         final ModelNode compensatingOperation = new ModelNode();
-        compensatingOperation.get(OP).set("enable-scanner");
+compensatingOperation.get(OP).set("enable");
         compensatingOperation.get(OP_ADDR).set(operation.require(OP_ADDR));
 
         if(context instanceof NewRuntimeOperationContext) {

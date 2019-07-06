@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -81,9 +80,9 @@ public class ServerModelDeploymentAddUpdate extends AbstractServerModelUpdate<Se
 
     @Override
     public <P> void applyUpdate(UpdateContext updateContext,
-startStopHandler.deploy(deploymentUniqueName, deploymentRuntimeName, deploymentHash, updateContext.getBatchBuilder(), updateContext.getServiceContainer(), resultHandler, param);
+            UpdateResultHandler<? super ServerDeploymentActionResult, P> resultHandler, P param) {
         if (startStopHandler != null) {
-            startStopHandler.deploy(deploymentUniqueName, deploymentRuntimeName, deploymentHash, updateContext, resultHandler, param);
+startStopHandler.deploy(deploymentUniqueName, deploymentRuntimeName, deploymentHash, updateContext.getBatchBuilder(), updateContext.getServiceContainer(), resultHandler, param);
         }
     }
 }

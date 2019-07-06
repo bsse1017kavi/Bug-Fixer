@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -149,9 +148,9 @@ public class GistFragment extends DialogFragment implements OnItemClickListener 
         super.onViewCreated(view, savedInstanceState);
 
         Activity activity = getActivity();
-imageGetter));
+        adapter = new HeaderFooterListAdapter<CommentListAdapter>(list,
                 new CommentListAdapter(activity.getLayoutInflater(), avatars,
-                        new HttpImageGetter(activity)));
+imageGetter));
         list.setAdapter(adapter);
     }
 

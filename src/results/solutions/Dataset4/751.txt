@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -146,9 +145,9 @@ public class TransportSearchDfsQueryAndFetchAction extends TransportSearchTypeAc
                 @Override
                 public void onFailure(Throwable t) {
                     if (logger.isDebugEnabled()) {
-AsyncAction.this.addShardFailure(shardIndex, dfsResult.shardTarget(), t);
+                        logger.debug("[{}] Failed to execute query phase", t, querySearchRequest.id());
                     }
-                    AsyncAction.this.addShardFailure(shardIndex, t);
+AsyncAction.this.addShardFailure(shardIndex, dfsResult.shardTarget(), t);
                     successulOps.decrementAndGet();
                     if (counter.decrementAndGet() == 0) {
                         finishHim();

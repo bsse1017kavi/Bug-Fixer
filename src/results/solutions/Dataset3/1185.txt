@@ -1,4 +1,3 @@
-
 package org.jboss.as.mail.extension;
 
 import org.jboss.as.controller.AbstractAddStepHandler;
@@ -24,9 +23,9 @@ class MailSubsystemAdd extends AbstractAddStepHandler {
     /**
      * {@inheritDoc}
      */
-//log.info("Populating the model");
+    @Override
     protected void populateModel(ModelNode operation, ModelNode model) throws OperationFailedException {
-        log.info("Populating the model");
+//log.info("Populating the model");
         model.setEmptyObject();
         model.get(ModelKeys.MAIL_SESSION);
     }

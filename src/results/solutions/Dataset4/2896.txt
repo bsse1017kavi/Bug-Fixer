@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.gist;
 
 import static android.content.Intent.EXTRA_TEXT;
@@ -127,9 +126,9 @@ public class ShareGistActivity extends RoboSherlockFragmentActivity {
                 return gistServiceProvider.get(ShareGistActivity.this).createGist(gist);
             }
 
-startActivity(ViewGistsActivity.createIntent(gist));
+            protected void onSuccess(Gist gist) throws Exception {
                 progress.cancel();
-                startActivity(ViewGistActivity.createIntent(gist));
+startActivity(ViewGistsActivity.createIntent(gist));
                 setResult(RESULT_CREATED);
                 finish();
             }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -248,9 +247,9 @@ public abstract class AbstractMetamataTask
         // do some validation first
         if( m_metamataHome == null || !m_metamataHome.exists() )
         {
-m_metamataHome = getContext().resolveFile( m_metamataHome.getPath() );
+            throw new TaskException( "'metamatahome' must point to Metamata home directory." );
         }
-        m_metamataHome = resolveFile( m_metamataHome.getPath() );
+m_metamataHome = getContext().resolveFile( m_metamataHome.getPath() );
         File jar = getMetamataJar( m_metamataHome );
         if( !jar.exists() )
         {

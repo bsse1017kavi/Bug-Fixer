@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -539,9 +538,9 @@ public class CriteriaBuilder implements QueryBuilder, ExpressionParser {
         return new Expressions.Quotient<Number>(x,y);
     }
 
-return new SelectionImpl(result).setSelections(selections);
+    public <Y> Selection<Y> select(Class<Y> result, 
         Selection<?>... selections) {
-        throw new AbstractMethodError();
+return new SelectionImpl(result).setSelections(selections);
     }
 
     public <R> Case<R> selectCase() {

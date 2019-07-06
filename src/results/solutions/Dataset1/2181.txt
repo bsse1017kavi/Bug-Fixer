@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.UnionNode
@@ -245,9 +244,9 @@ public class UnionNode extends SetOperatorNode
 		// able to revert back to the "truly the best" plans that we had
 		// saved before we got here.  So with this next call we save the
 		// current plans using "this" node as the key.  If needed, we'll
-updateBestPlanMap(ADD_PLAN, this);
+		// then make the call to revert the plans in OptimizerImpl's
 		// getNextDecoratedPermutation() method.
-		addOrLoadBestPlanMapping(true, this);
+updateBestPlanMap(ADD_PLAN, this);
 
 		leftResultSet = optimizeSource(
 							optimizer,

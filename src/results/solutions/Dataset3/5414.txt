@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -45,9 +44,9 @@ public class SynchronizedList<E> extends SynchronizedCollection<E> implements Li
      * Factory method to create a synchronized list.
      * 
      * @param list  the list to decorate, must not be null
-public static <T> List<T> synchronizedList(List<T> list) {
+     * @throws IllegalArgumentException if list is null
      */
-    public static <T> List<T> decorate(List<T> list) {
+public static <T> List<T> synchronizedList(List<T> list) {
         return new SynchronizedList<T>(list);
     }
     

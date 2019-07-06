@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -153,9 +152,9 @@ public class RequestCycle extends RequestHandlerStack implements IRequestCycle, 
 	 * @return a new url renderer
 	 */
 	protected UrlRenderer newUrlRenderer()
-return new UrlRenderer(getRequest().getClientUrl());
+	{
 		// All URLs will be rendered relative to current request (can be overriden afterwards)
-		return new UrlRenderer(getRequest().getBaseUrl());
+return new UrlRenderer(getRequest().getClientUrl());
 	}
 
 	/**

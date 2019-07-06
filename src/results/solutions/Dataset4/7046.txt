@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -167,9 +166,9 @@ public final class InternalServer implements Server {
     @Override public Server stop() {
         if (!lifecycle.moveToStopped()) {
             return this;
-logger.info("{{}}: Stopping ...", Version.full());
+        }
         Logger logger = Loggers.getLogger(Server.class, settings.get("name"));
-        logger.info("{ElasticSearch/{}}: Stopping ...", Version.full());
+logger.info("{{}}: Stopping ...", Version.full());
 
         if (settings.getAsBoolean("http.enabled", true)) {
             injector.getInstance(HttpServer.class).stop();

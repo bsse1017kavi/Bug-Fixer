@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public class TransactionInvocationTestCase {
     @TargetsContainer("multinode-client")
     public static Archive<?> clientDeployment() {
         final JavaArchive jar = ShrinkWrap.create(JavaArchive.class, CLIENT_DEPLOYMENT + ".jar");
-jar.addAsManifestResource("META-INF/jboss-ejb-client.xml", "jboss-ejb-client.xml");
+        jar.addClasses(ClientEjb.class, TransactionalRemote.class, TransactionInvocationTestCase.class,
                 TransactionalStatefulRemote.class);
-        jar.addAsManifestResource("META-INF/jboss-ejb-client-receivers.xml", "jboss-ejb-client.xml");
+jar.addAsManifestResource("META-INF/jboss-ejb-client.xml", "jboss-ejb-client.xml");
         return jar;
     }
 

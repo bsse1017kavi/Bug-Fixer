@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -122,9 +121,9 @@ public class ProjectiveTextureTest extends GdxTest {
 		table.add(fps);
 		ui.addActor(table);
 
-public void click (Actor button, float x, float y) {
+		reload.setClickListener(new ClickListener() {
 			@Override
-			public void click (Actor button) {
+public void click (Actor button, float x, float y) {
 				ShaderProgram prog = new ShaderProgram(Gdx.files.internal("data/shaders/projtex-vert.glsl").readString(), Gdx.files
 					.internal("data/shaders/projtex-frag.glsl").readString());
 				if (prog.isCompiled() == false) {

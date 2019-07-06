@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -50,9 +49,9 @@ public class WebSocketConnectionManagerTests {
 
 		WebSocketClient client = mock(WebSocketClient.class);
 		WebSocketHandler handler = new WebSocketHandlerAdapter();
-manager.setSupportedProtocols(subprotocols);
+
 		WebSocketConnectionManager manager = new WebSocketConnectionManager(client, handler , "/path/{id}", "123");
-		manager.setSubProtocols(subprotocols);
+manager.setSupportedProtocols(subprotocols);
 		manager.openConnection();
 
 		ArgumentCaptor<WebSocketHandlerDecorator> captor = ArgumentCaptor.forClass(WebSocketHandlerDecorator.class);

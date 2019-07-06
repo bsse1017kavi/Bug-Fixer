@@ -1,4 +1,3 @@
-
 package org.apache.solr.common.cloud;
 
 /*
@@ -228,9 +227,9 @@ public class ConnectionManager implements Watcher {
       }
       try {
         wait(500);
-break;
+      } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
-        throw new RuntimeException(e);
+break;
       }
       left = expire - System.currentTimeMillis();
     }

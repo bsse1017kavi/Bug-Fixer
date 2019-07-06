@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2009 Shane Clarke.
  * All rights reserved. This program and the accompanying materials
@@ -75,9 +74,9 @@ public class WebServiceSEIPresentNoWebMethodRule extends AbstractAnnotationProce
             Collection<AnnotationMirror> annotationMirrors = declaration.getAnnotationMirrors();
             for (AnnotationMirror mirror : annotationMirrors) {
                 if (mirror.getAnnotationType().toString().equals(webMethodDeclaration
-.WEBSERVICE_ENPOINTINTERFACE_NO_WEBMETHOS_ERROR_MESSAGE);
+                        .getQualifiedName())) {
                     messager.printError(mirror.getPosition(), JAXWSCoreMessages
-                     .WEBSERVICE_ANNOTATION_PROCESSOR_WEBSERVICE_ENPOINTINTERFACE_NO_WEBMETHOS_ERROR_MESSAGE); 
+.WEBSERVICE_ENPOINTINTERFACE_NO_WEBMETHOS_ERROR_MESSAGE);
                 }
             }
         }

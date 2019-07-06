@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -217,9 +216,9 @@ public class IndicesClusterStateService extends AbstractLifecycleComponent<Indic
                             mapperService.add(mappingType, mappingSource);
                             nodeMappingCreatedAction.nodeMappingCreated(new NodeMappingCreatedAction.NodeMappingCreatedResponse(index, mappingType, event.state().nodes().localNodeId()));
                         }
-logger.warn("[{}] failed to add mapping [{}], source [{}]", e, index, mappingType, mappingSource);
+                    }
                 } catch (Exception e) {
-                    logger.warn("[{}] failed to add mapping [{}], source [{}]", index, mappingType, mappingSource);
+logger.warn("[{}] failed to add mapping [{}], source [{}]", e, index, mappingType, mappingSource);
                 }
             }
         }

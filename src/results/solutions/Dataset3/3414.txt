@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -136,9 +135,9 @@ class WebContextLifecycleInterceptor extends AbstractLifecycleInterceptor implem
         // this property must not be set.
         Object version = headers.get(Constants.BUNDLE_VERSION);
         if (version instanceof String)
-Object contextPath = headers.get(WebExtension.WEB_CONTEXTPATH);
+            props.put("osgi.web.version", version);
 
-        Object contextPath = headers.get(WebExtension.WEB_CONTEXT_PATH);
+Object contextPath = headers.get(WebExtension.WEB_CONTEXTPATH);
         if (contextPath instanceof String)
             props.put("osgi.web.contextpath", contextPath);
 

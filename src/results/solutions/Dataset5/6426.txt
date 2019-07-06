@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -357,9 +356,9 @@ void onPaint(PaintEvent event) {
 	if (rect.width == 0 || rect.height == 0) return;
 	
 	boolean shortenText = false;
-int availableWidth = Math.max(0, rect.width - 2*hIndent);
+	String t = text;
 	Image img = image;
-	int availableWidth = rect.width - 2*hIndent;
+int availableWidth = Math.max(0, rect.width - 2*hIndent);
 	Point extent = getTotalSize(img, t);
 	if (extent.x > availableWidth) {
 		img = null;

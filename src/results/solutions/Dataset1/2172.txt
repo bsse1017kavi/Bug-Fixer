@@ -1,4 +1,3 @@
-
 /**
  *  Derby - Class org.apache.derbyTesting.functionTests.tests.lang.CollationTest
  *  
@@ -1054,9 +1053,9 @@ private void commonTestingForTerritoryBasedDB(Statement s) throws SQLException{
     //    DERBY_2961 ORDER BY 1
     s.executeUpdate("set schema APP");
     if (XML.classpathMeetsXMLReqs()) {
-new String[][] {{"1",null}});
+        checkLangBasedQuery(s, "SELECT ID, XMLSERIALIZE(V AS CLOB) " +
         		" FROM DERBY_2961 ORDER BY 1",
-        		null);
+new String[][] {{"1",null}});
     }
     s.close();
  

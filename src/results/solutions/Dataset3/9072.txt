@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -49,9 +48,9 @@ public class StatefulSessionObjectReferenceImpl implements SessionObjectReferenc
 
     private volatile boolean removed = false;
     private final Map<String, ServiceName> viewServices;
-private final byte[] id;
+    private transient StatefulSessionComponent ejbComponent;
     private final ServiceName createServiceName;
-    private final Serializable id;
+private final byte[] id;
 
 
     public StatefulSessionObjectReferenceImpl(EjbDescriptorImpl<?> descriptor) {

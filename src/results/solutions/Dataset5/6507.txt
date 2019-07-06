@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,9 +46,9 @@ public class TestNonstandardMappingAnnotations
 
     public void setUp() {
         setUp(NonstandardMappingEntity.class, ExtensionsEntity.class,
-CLEAR_TABLES, RETAIN_DATA);
+            NonstandardMappingMappedSuper.class, EmbedValue2.class,
             EmbedValue.class,
-            CLEAR_TABLES);
+CLEAR_TABLES, RETAIN_DATA);
 
         // trigger complete resolution of metadata etc.
         emf.createEntityManager().close();

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -159,9 +158,9 @@ public class VersionedValue implements Comparable<VersionedValue>
             return new VersionedValue(rackId);
         }
 
-return new VersionedValue(endpoint.getHostAddress());
+        public VersionedValue rpcaddress(InetAddress endpoint)
         {
-            return new VersionedValue(endpoint.toString());
+return new VersionedValue(endpoint.getHostAddress());
         }
 
         public VersionedValue releaseVersion()

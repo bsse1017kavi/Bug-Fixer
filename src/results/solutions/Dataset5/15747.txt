@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -818,9 +817,9 @@ public class TraverseSchema implements
                          typeInfo.scopeDefined, baseTypeInfo.contentSpecHandle,
                          baseTypeInfo.scopeDefined,baseTypeInfo);
                  }
-reportGenericSchemaError("ComplexType '" + typeInfo.typeName + "': " + message);
+                 catch (ParticleRecoverableError e) {
                     String message = e.getMessage();
-                    reportGenericSchemaError("ComplexType '" + typeInfo.typeName + " " + baseTypeInfo.typeName + "': " + message);
+reportGenericSchemaError("ComplexType '" + typeInfo.typeName + "': " + message);
                  }
                }
             }

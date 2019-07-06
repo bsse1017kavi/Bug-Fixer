@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -43,9 +42,9 @@ public class RemoteFileRepository implements DeploymentFileRepository, Service<R
     final DeploymentFileRepository localRepository;
     private volatile RemoteFileRepositoryExecutor remoteFileRepositoryExecutor;
 
-// this.remoteFileRepositoryExecutor = remoteFileRepositoryExecutor;
+    private RemoteFileRepository(final File localDeploymentFolder) {
         this.localDeploymentFolder = localDeploymentFolder;
-        this.remoteFileRepositoryExecutor = remoteFileRepositoryExecutor;
+// this.remoteFileRepositoryExecutor = remoteFileRepositoryExecutor;
         localRepository = new LocalDeploymentFileRepository(localDeploymentFolder);
     }
 

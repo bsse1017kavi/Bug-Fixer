@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -670,9 +669,9 @@ public class SimpleFacetsTests extends ElasticsearchIntegrationTest {
             assertThat(facet.getEntries().get(1).getTerm().string(), anyOf(equalTo("green"), equalTo("blue")));
             assertThat(facet.getEntries().get(1).getCount(), equalTo(1));
 
-.setFilter(termFilter("tag", "blue"))
+            searchResponse = client().prepareSearch()
                     .setQuery(matchAllQuery())
-                    .setPostFilter(termFilter("tag", "blue"))
+.setFilter(termFilter("tag", "blue"))
                     .addFacet(termsFacet("facet1").field("tag").size(10))
                     .execute().actionGet();
 

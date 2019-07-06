@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.19 $ $Date$
@@ -800,9 +799,9 @@ public final class Settings
 	 */
 	public void setContextPath(String contextPath)
 	{
-if(!contextPath.startsWith("/") && !contextPath.startsWith("http:"))
+		if(contextPath != null)
 		{
-			if(!contextPath.startsWith("/"))
+if(!contextPath.startsWith("/") && !contextPath.startsWith("http:"))
 			{
 				this.contextPath = "/" + contextPath;
 			}

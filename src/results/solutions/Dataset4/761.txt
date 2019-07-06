@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -134,9 +133,9 @@ public class GistFragment extends RoboSherlockFragment implements OnItemClickLis
         gistId = getArguments().getString(EXTRA_GIST_ID);
     }
 
-View root = inflater.inflate(layout.comment_list_view, null);
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(layout.gist_view, null);
+View root = inflater.inflate(layout.comment_list_view, null);
 
         headerView = inflater.inflate(layout.gist_header, null);
         created = (TextView) headerView.findViewById(id.tv_gist_creation);

@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.thrift;
 /*
  * 
@@ -724,9 +723,9 @@ public class ThriftValidation
     public static void validateKeyspaceNotYetExisting(String newKsName) throws InvalidRequestException
     {
         // keyspace names must be unique case-insensitively because the keyspace name becomes the directory
-for (String ksName : Schema.instance.getTables())
+        // where we store CF sstables.  Names that differ only in case would thus cause problems on
         // case-insensitive filesystems (NTFS, most installations of HFS+).
-        for (String ksName : DatabaseDescriptor.getTables())
+for (String ksName : Schema.instance.getTables())
         {
             if (ksName.equalsIgnoreCase(newKsName))
                 throw new InvalidRequestException("Keyspace names must be case-insensitively unique");

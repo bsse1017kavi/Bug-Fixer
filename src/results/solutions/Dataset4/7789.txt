@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -135,9 +134,9 @@ public interface IndexShard extends IndexShardComponent {
 
     <T> T snapshot(Engine.SnapshotHandler<T> snapshotHandler) throws EngineException;
 
-Engine.Searcher acquireSearcher();
+    void recover(Engine.RecoveryHandler recoveryHandler) throws EngineException;
 
-    Engine.Searcher searcher();
+Engine.Searcher acquireSearcher();
 
     /**
      * Returns <tt>true</tt> if this shard can ignore a recovery attempt made to it (since the already doing/done it)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -95,9 +94,9 @@ public class ShardSearchFailure implements ShardOperationFailedException {
     public String reason() {
         return this.reason;
     }
-return "shard [" + (shardTarget == null ? "_na" : shardTarget) + "], reason [" + reason + "]";
+
     @Override public String toString() {
-        return "Search Failure Shard " + shardTarget + ", reason [" + reason + "]";
+return "shard [" + (shardTarget == null ? "_na" : shardTarget) + "], reason [" + reason + "]";
     }
 
     public static ShardSearchFailure readShardSearchFailure(StreamInput in) throws IOException {

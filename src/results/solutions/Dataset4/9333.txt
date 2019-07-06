@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -257,9 +256,9 @@ public class TransportSearchDfsQueryThenFetchAction extends TransportSearchTypeA
                 searchCache.releaseQueryResults(queryResults);
                 searchCache.releaseFetchResults(fetchResults);
             }
-private void innerFinishHim() throws Exception {
+        }
 
-        private void innerFinishHim() {
+private void innerFinishHim() throws Exception {
             final InternalSearchResponse internalResponse = searchPhaseController.merge(sortedShardList, queryResults, fetchResults);
             String scrollId = null;
             if (request.scroll() != null) {

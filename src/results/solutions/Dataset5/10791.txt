@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1477,9 +1476,9 @@ public abstract class HTTPSamplerBase extends AbstractSampler
         }
         in.close();
         w.flush();
-w.write(JOrphanUtils.baToHexBytes(md5Result));
+        if (asMD5 && md != null) {
             byte[] md5Result = md.digest();
-            w.write(JOrphanUtils.baToHexString(md5Result).getBytes());
+w.write(JOrphanUtils.baToHexBytes(md5Result));
             sampleResult.setBytes(totalBytes);
         }
         w.close();

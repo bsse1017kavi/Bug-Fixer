@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -91,9 +90,9 @@ public abstract class AjaxFormComponentUpdatingBehavior extends AjaxEventBehavio
 	 */
 	@Override
 	protected final CharSequence getEventHandler()
-getCallbackUrl()).append(
+	{
 		return generateCallbackScript(new AppendingStringBuffer("wicketAjaxPost('").append(
-			getCallbackUrl(false)).append(
+getCallbackUrl()).append(
 			"', wicketSerialize(Wicket.$('" + getComponent().getMarkupId() + "'))"));
 	}
 

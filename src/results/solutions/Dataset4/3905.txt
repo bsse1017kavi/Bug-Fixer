@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -123,9 +122,9 @@ public class ScriptFilterSearchTests extends ElasticsearchIntegrationTest {
         SearchResponse response = client().prepareSearch()
                 .setQuery(filteredQuery(termQuery("test", "1"), scriptFilter(script).cache(true)))
                 .execute().actionGet();
-assertThat(scriptCounter.get(), equalTo(internalCluster().hasFilterCache() ? 3 : 1));
+
         assertThat(response.getHits().totalHits(), equalTo(1l));
-        assertThat(scriptCounter.get(), equalTo(cluster().hasFilterCache() ? 3 : 1));
+assertThat(scriptCounter.get(), equalTo(internalCluster().hasFilterCache() ? 3 : 1));
 
         scriptCounter.set(0);
         logger.info("running script filter the second time");

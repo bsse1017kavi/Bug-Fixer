@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -178,9 +177,9 @@ public class ThisJoinPointVisitor extends ASTVisitor {
 		AstUtil.replaceMethodBinding(call, getEquivalentStaticBinding(call.binding));
 	}
 	
-return b.getExactMethod(template.selector, template.parameters,null);
+	private MethodBinding getEquivalentStaticBinding(MethodBinding template) {
 		ReferenceBinding b = (ReferenceBinding)thisJoinPointStaticPartDec.type;
-		return b.getExactMethod(template.selector, template.parameters);
+return b.getExactMethod(template.selector, template.parameters,null);
 	}
 
 	public int removeUnusedExtraArguments() {

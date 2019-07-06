@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2003-2004 The Apache Software Foundation
  *
@@ -247,9 +246,9 @@ public class TokenFilterTest extends BuildFileTest {
         throws IOException
     {
         Reader r = null;
-return  FileUtils.readFully(r);
+        try {
             r = new FileReader(getProject().resolveFile(filename));
-            return  FileUtils.newFileUtils().readFully(r);
+return  FileUtils.readFully(r);
         }
         finally {
             try {r.close();} catch (Throwable ignore) {}

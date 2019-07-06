@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements. See the NOTICE file
@@ -323,9 +322,9 @@ public class CustomPostingsHighlighterTests extends ElasticsearchLuceneTestCase 
             protected char getMultiValuedSeparator(String field) {
                 return HighlightUtils.PARAGRAPH_SEPARATOR;
             }
-protected PassageFormatter getFormatter(String field) {
+
             @Override
-            protected XPassageFormatter getFormatter(String field) {
+protected PassageFormatter getFormatter(String field) {
                 return new CustomPassageFormatter("<b>", "</b>", new DefaultEncoder());
             }
         };

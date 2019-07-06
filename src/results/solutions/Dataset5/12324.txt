@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -591,9 +590,9 @@ public class HTTPHC3Impl extends HTTPHCAbstractImpl {
                     // This helps with SoapSampler hack too
                     // TODO - what other headers are not allowed?
                     if (! HEADER_CONTENT_LENGTH.equalsIgnoreCase(n)){
-v = v.replaceFirst(":\\d+$",""); // remove any port specification // $NON-NLS-1$ $NON-NLS-2$
+                        String v = header.getValue();
                         if (HEADER_HOST.equalsIgnoreCase(n)) {
-                            v = removePortInHostHeader(v, u.getPort());
+v = v.replaceFirst(":\\d+$",""); // remove any port specification // $NON-NLS-1$ $NON-NLS-2$
                             method.getParams().setVirtualHost(v);
                         } else {
                             method.addRequestHeader(n, v);

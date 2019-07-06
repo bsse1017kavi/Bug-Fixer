@@ -1,4 +1,3 @@
-
 package org.springframework.mapping.support;
 
 import static org.junit.Assert.assertEquals;
@@ -197,9 +196,9 @@ public class SpelMapperTests {
 		nested.foo = "bar";
 		source.setNested(nested);
 
-Mapper<NestedDto, Nested> nestedMapper = new Mapper<NestedDto, Nested>() {
+		Person target = new Person();
 
-		Mapper nestedMapper = new Mapper<NestedDto, Nested>() {
+Mapper<NestedDto, Nested> nestedMapper = new Mapper<NestedDto, Nested>() {
 			public Object map(NestedDto source, Nested target) {
 				target.foo = source.foo + " and baz";
 				return target;

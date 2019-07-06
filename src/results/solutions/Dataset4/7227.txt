@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -109,9 +108,9 @@ public abstract class TransportSearchHelper {
             String element = elements[index++];
             int sep = element.indexOf(':');
             if (sep == -1) {
-context[i] = new Tuple<>(element.substring(sep + 1), Long.parseLong(element.substring(0, sep)));
+                throw new ElasticsearchIllegalArgumentException("Malformed scrollId [" + scrollId + "]");
             }
-            context[i] = new Tuple<String, Long>(element.substring(sep + 1), Long.parseLong(element.substring(0, sep)));
+context[i] = new Tuple<>(element.substring(sep + 1), Long.parseLong(element.substring(0, sep)));
         }
         Map<String, String> attributes;
         int attributesSize = Integer.parseInt(elements[index++]);

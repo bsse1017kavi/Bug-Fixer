@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -294,9 +293,9 @@ public class InternalIndexService extends AbstractIndexComponent implements Inde
 
         logger.debug("creating shard_id [{}]", shardId.id());
 
-modules.add(new IndexShardModule(indexSettings, shardId));
+        ModulesBuilder modules = new ModulesBuilder();
         modules.add(new ShardsPluginsModule(indexSettings, pluginsService));
-        modules.add(new IndexShardModule(shardId));
+modules.add(new IndexShardModule(indexSettings, shardId));
         modules.add(new ShardIndexingModule());
         modules.add(new ShardSearchModule());
         modules.add(new ShardGetModule());

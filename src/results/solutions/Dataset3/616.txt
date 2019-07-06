@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2011 the original author or authors.
  *
@@ -67,9 +66,9 @@ public class WebAppResourceTests {
 	// Resources served via <mvc:resources/>
 
 	@Test
-.andExpect(content().contentType("text/javascript"))
+	public void resourceRequest() throws Exception {
 		this.mockMvc.perform(get("/resources/Spring.js"))
-			.andExpect(content().mimeType("text/javascript"))
+.andExpect(content().contentType("text/javascript"))
 			.andExpect(content().string(containsString("Spring={};")));
 	}
 

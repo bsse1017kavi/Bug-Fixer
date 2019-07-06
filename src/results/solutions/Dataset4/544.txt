@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -69,9 +68,9 @@ public abstract class TransportSearchTypeAction extends TransportAction<SearchRe
 
     protected final SearchPhaseController searchPhaseController;
 
-super(settings, SearchAction.NAME, threadPool);
+    public TransportSearchTypeAction(Settings settings, ThreadPool threadPool, ClusterService clusterService,
                                      SearchServiceTransportAction searchService, SearchPhaseController searchPhaseController) {
-        super(settings, threadPool);
+super(settings, SearchAction.NAME, threadPool);
         this.clusterService = clusterService;
         this.searchService = searchService;
         this.searchPhaseController = searchPhaseController;

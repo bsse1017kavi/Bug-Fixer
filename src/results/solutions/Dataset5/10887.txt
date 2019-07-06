@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -362,9 +361,9 @@ public class UrlEncoder
 				}
 				while (i < s.length() && !dontNeedEncoding.get((c = s.charAt(i))));
 
-byte[] ba;
+				charArrayWriter.flush();
 				String str = new String(charArrayWriter.toCharArray());
-				byte[] ba = new byte[0];
+byte[] ba;
 				try
 				{
 					ba = str.getBytes(charset.name());

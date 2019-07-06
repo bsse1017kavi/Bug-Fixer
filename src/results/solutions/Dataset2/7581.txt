@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-2002 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -141,9 +140,9 @@ implements PluggableMenu {
 
     public boolean inContext(Object[] o) {
         if (o.length < 2) return false;
-(PluggableMenu.KEY_TOOLS.equals(o[1]))) {
+	// Allow ourselves on the "Tools" menu.
 	if ((o[0] instanceof JMenuItem) &&
-	        ("Tools".equals(o[1]))) {
+(PluggableMenu.KEY_TOOLS.equals(o[1]))) {
 	    return true;
 	}
         return false;

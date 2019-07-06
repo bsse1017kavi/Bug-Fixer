@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.ValueNode
@@ -256,9 +255,9 @@ public abstract class ValueNode extends QueryTreeNode
 	 * @throws StandardException
 	 */
 	protected void setCollationUsingCompilationSchema(int collationDerivation)
-getSchemaDescriptor(null, false).getCollationType());
+	throws StandardException {
 		dataTypeServices.setCollationType(
-	    	     getSchemaDescriptor(null).getCollationType());
+getSchemaDescriptor(null, false).getCollationType());
 		dataTypeServices.setCollationDerivation(collationDerivation);
 	}
 

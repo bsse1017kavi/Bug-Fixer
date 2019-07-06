@@ -1,4 +1,3 @@
-
 /*
  * $Id: AbstractAjaxTimerBehavior.java 4673 2006-02-27 20:35:43 -0800 (Mon, 27
  * Feb 2006) ivaynberg $ $Revision$ $Date: 2006-02-27 20:35:43 -0800
@@ -90,9 +89,9 @@ public abstract class AbstractAjaxTimerBehavior extends AbstractDefaultAjaxBehav
 	 * @see wicket.ajax.AbstractDefaultAjaxBehavior#respond(wicket.ajax.AjaxRequestTarget)
 	 */
 	protected final void respond(final AjaxRequestTarget target)
-target.appendJavascript(getJsTimeoutCall(updateInterval));
+	{
 		onTimer(target);
-		target.addJavascript(getJsTimeoutCall(updateInterval));
+target.appendJavascript(getJsTimeoutCall(updateInterval));
 	}
 
 	/**

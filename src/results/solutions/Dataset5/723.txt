@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -27,9 +26,9 @@ import org.eclipse.ui.actions.ActionDelegate;
  */
 public class WorkbenchAction extends ActionDelegate implements IWorkbenchWindowActionDelegate {
     
-URIClientConnectAction action = new URIClientConnectAction();
+    public void run() {
         IResource resource = ResourcesPlugin.getWorkspace().getRoot();
-        ClientConnectAction action = new ClientConnectAction();
+URIClientConnectAction action = new URIClientConnectAction();
         action.setProject(resource);
     }
 

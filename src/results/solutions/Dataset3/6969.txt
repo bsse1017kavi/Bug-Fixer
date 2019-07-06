@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -73,9 +72,9 @@ public class PoolConfigurationRWHandler {
         public static final PoolConfigurationReadHandler INSTANCE = new PoolConfigurationReadHandler();
 
         public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
-final ModelNode submodel = context.readResource(PathAddress.EMPTY_ADDRESS, false).getModel();
+            final String parameterName = operation.require(NAME).asString();
 
-            final ModelNode submodel = context.readModel(PathAddress.EMPTY_ADDRESS);
+final ModelNode submodel = context.readResource(PathAddress.EMPTY_ADDRESS, false).getModel();
             final ModelNode currentValue = submodel.hasDefined(parameterName) ? submodel.get(parameterName).clone() : new ModelNode();
 
             context.getResult().set(currentValue);

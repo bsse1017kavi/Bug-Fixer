@@ -1,4 +1,3 @@
-
 package org.columba.mail.imap.protocol;
 
 import java.io.DataOutputStream;
@@ -182,9 +181,9 @@ public class ArgumentWriter {
 		output.writeBytes(Integer.toString(data.length));
 		output.writeBytes("}\r\n");
 		output.flush();
-IMAPResponse r = protocol.getResponse(null);
+
 		for (;;) {
-			IMAPResponse r = protocol.getResponse();
+IMAPResponse r = protocol.getResponse(null);
 			if (r.isCONTINUATION())
 				break;
 		}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -101,9 +100,9 @@ public final class ServerGroupDeploymentElement extends AbstractModelElement<Ser
                         runtimeInput = value;
                         break;
                     }
-hashInput = ParseUtils.hexStringToByteArray(value);
+                    case SHA1: {
                         try {
-                            hashInput = hexStringToByteArray(value);
+hashInput = ParseUtils.hexStringToByteArray(value);
                         }
                         catch (Exception e) {
                             throw new XMLStreamException("Value " + value +

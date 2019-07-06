@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -284,9 +283,9 @@ public final class ManagedServerOperationsFactory {
 
     private void addSystemProperties(final ModelNode source, final Map<String, String> props, boolean boottimeOnly) {
         if (source.hasDefined(SYSTEM_PROPERTY)) {
-if (boottimeOnly && !propResource.get(BOOT_TIME).asBoolean(false)) {
+            for (Property prop : source.get(SYSTEM_PROPERTY).asPropertyList()) {
                 ModelNode propResource = prop.getValue();
-                if (boottimeOnly && !propResource.get(BOOT_TIME).asBoolean()) {
+if (boottimeOnly && !propResource.get(BOOT_TIME).asBoolean(false)) {
                     continue;
                 }
                 String val = propResource.hasDefined(VALUE) ? propResource.get(VALUE).asString() : null;

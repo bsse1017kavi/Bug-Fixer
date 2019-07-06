@@ -1,4 +1,3 @@
-
 package org.apache.solr.client.solrj.impl;
 
 /**
@@ -163,9 +162,9 @@ public class CloudSolrServer extends SolrServer {
     for (Slice slice : slices.values()) {
       for (ZkNodeProps nodeProps : slice.getShards().values()) {
         ZkCoreNodeProps coreNodeProps = new ZkCoreNodeProps(nodeProps);
-|| !coreNodeProps.getState().equals(
+        String node = coreNodeProps.getNodeName();
         if (!liveNodes.contains(coreNodeProps.getNodeName())
-            && coreNodeProps.getState().equals(
+|| !coreNodeProps.getState().equals(
                 ZkStateReader.ACTIVE)) continue;
         if (nodes.put(node, nodeProps) == null) {
           String url = coreNodeProps.getCoreUrl();

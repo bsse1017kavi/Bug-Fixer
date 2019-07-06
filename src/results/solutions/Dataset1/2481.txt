@@ -1,4 +1,3 @@
-
 package org.apache.solr.schema;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -214,9 +213,9 @@ public class PolyFieldTest extends SolrTestCaseJ4 {
       } else {
         qry.append(boxId);
       }
-assertQ(req("fl", "*,score", "indent", "true", "q", qry.toString()),
+    }
 
-    assertQ(req("fl", "*,score", "q", qry.toString()),
+assertQ(req("fl", "*,score", "indent", "true", "q", qry.toString()),
             "//*[@numFound='1']");
     clearIndex();
   }

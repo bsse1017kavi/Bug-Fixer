@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -923,9 +922,9 @@ public class TypeDeclaration
 		if (sourceType == null) {
 			this.ignoreFurtherInvestigation = true;
 			return;
-resolveAnnotations(this.staticInitializerScope, this.annotations, sourceType);
+		}
 		try {
-			resolveAnnotations(this.annotations,  this.staticInitializerScope);
+resolveAnnotations(this.staticInitializerScope, this.annotations, sourceType);
 			
 			if ((this.bits & UndocumentedEmptyBlockMASK) != 0) {
 				this.scope.problemReporter().undocumentedEmptyBlock(this.bodyStart-1, this.bodyEnd);

@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -1622,9 +1621,9 @@ public class DocumentImpl
      *                   type of Event interface requested
      * @since WD-DOM-Level-2-19990923
      */
-if(type.equalsIgnoreCase("Events") || "Event".equals(type))
+    public Event createEvent(String type) 
 	throws DOMException {
-	    if(type.equalsIgnoreCase("Events") || ("Event".equals(type))
+if(type.equalsIgnoreCase("Events") || "Event".equals(type))
 	        return new EventImpl();
 	    if(type.equalsIgnoreCase("MutationEvents") ||  "MutationEvent".equals(type))
 	        return new MutationEventImpl();

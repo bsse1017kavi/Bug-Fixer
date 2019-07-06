@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -60,9 +59,9 @@ public abstract class TransportShardSingleOperationAction<Request extends Single
     protected TransportShardSingleOperationAction(Settings settings, String actionName, ThreadPool threadPool, ClusterService clusterService, TransportService transportService, ActionFilters actionFilters) {
         super(settings, actionName, threadPool, actionFilters);
         this.clusterService = clusterService;
-this.transportShardAction = actionName + "[s]";
+        this.transportService = transportService;
 
-        this.transportShardAction = actionName + "/s";
+this.transportShardAction = actionName + "[s]";
         this.executor = executor();
 
         transportService.registerHandler(actionName, new TransportHandler());

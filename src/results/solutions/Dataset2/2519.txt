@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -337,9 +336,9 @@ protected IJavaElement createHandle(AbstractMethodDeclaration method, IJavaEleme
 		if (reader != null) {
 			IBinaryMethod[] methods = reader.getMethods();
 			if (methods != null) {
-if (type.isMember() && method.isConstructor() && !Flags.isStatic(type.getFlags())) { // see https://bugs.eclipse.org/bugs/show_bug.cgi?id=48261
+				boolean firstIsSynthetic = false;
 				try {
-					if (type.isMember() && method.isConstructor() && !method.isStatic()) {
+if (type.isMember() && method.isConstructor() && !Flags.isStatic(type.getFlags())) { // see https://bugs.eclipse.org/bugs/show_bug.cgi?id=48261
 						firstIsSynthetic = true;
 						argCount++;
 					}

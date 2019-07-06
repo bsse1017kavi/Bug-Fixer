@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -143,9 +142,9 @@ public class ManagementPermissionAuthorizer implements Authorizer {
         return null;
     }
 
-if (callerRoles.contains(role.getOfficialForm())) {
+    private AuthorizationResult authorize(Set<String> callerRoles, StandardRole...roles) {
         for (StandardRole role : roles) {
-            if (callerRoles.contains(role.toString())) {
+if (callerRoles.contains(role.getOfficialForm())) {
                 return AuthorizationResult.PERMITTED;
             }
         }

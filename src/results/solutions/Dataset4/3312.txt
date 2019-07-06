@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -42,9 +41,9 @@ public class ChildrenBuilder extends AggregationBuilder<ChildrenBuilder> {
 
     @Override
     protected XContentBuilder internalXContent(XContentBuilder builder, Params params) throws IOException {
-throw new SearchSourceBuilderException("child_type must be set on children aggregation [" + getName() + "]");
+        builder.startObject();
         if (childType == null) {
-            throw new SearchSourceBuilderException("child_type must be set on children aggregation [" + name + "]");
+throw new SearchSourceBuilderException("child_type must be set on children aggregation [" + getName() + "]");
         }
         builder.field("type", childType);
         return builder.endObject();

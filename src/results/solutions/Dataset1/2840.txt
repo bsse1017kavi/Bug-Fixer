@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.DMLWriteResultSet
@@ -112,9 +111,9 @@ abstract class DMLWriteResultSet extends NoRowsResultSetImpl
 		 * 2432, 3383.
 		 */
 		needToObjectifyStream = (this.constantAction.getTriggerInfo() != null);
-public final long	modifiedRowCount() { return rowCount + RowUtil.getRowCountBase(); }
+	}
 
-	public final long	modifiedRowCount() { return rowCount + RowUtil.rowCountBase; }
+public final long	modifiedRowCount() { return rowCount + RowUtil.getRowCountBase(); }
 
 
 	/**

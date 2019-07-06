@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -159,9 +158,9 @@ public class TransportPercolateAction extends TransportBroadcastOperationAction<
         } else {
             PercolatorService.ReduceResult result = percolatorService.reduce(percolatorTypeId, shardResults);
             long tookInMillis = System.currentTimeMillis() - request.startTime;
-result.matches(), result.count(), tookInMillis, result.reducedAggregations()
+            return new PercolateResponse(
                     shardsResponses.length(), successfulShards, failedShards, shardFailures,
-                    result.matches(), result.count(), tookInMillis, result.reducedFacets(), result.reducedAggregations()
+result.matches(), result.count(), tookInMillis, result.reducedAggregations()
             );
         }
     }

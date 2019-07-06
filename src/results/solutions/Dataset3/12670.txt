@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -666,9 +665,9 @@ public interface OperationContext extends ExpressionResolver {
      */
     AuthorizationResult authorize(ModelNode operation);
 
-AuthorizationResponse authorizeResource(boolean attributes, boolean isDefaultResource);
+    AuthorizationResult authorize(ModelNode operation, Set<Action.ActionEffect> effects);
 
-    AuthorizationResponse authorizeResource(boolean attributes);
+AuthorizationResponse authorizeResource(boolean attributes, boolean isDefaultResource);
 
     //TODO javadoc attributes
     AuthorizationResult authorize(ModelNode operation, String attribute, ModelNode currentValue);

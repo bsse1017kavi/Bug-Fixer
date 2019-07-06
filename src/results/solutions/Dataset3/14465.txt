@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -210,9 +209,9 @@ public class PassivatingBackingCacheImpl<K extends Serializable, V extends Cache
     public E release(K key) {
         this.trace("release(%s)", key);
 
-log.debug("SFSB instance with session ID " + key + " not available in cache");
+        E entry = store.get(key, false);
         if (entry == null) {
-            EjbLogger.ROOT_LOGGER.cacheEntryNotFound(key);
+log.debug("SFSB instance with session ID " + key + " not available in cache");
             return null;
         }
         entry.lock();

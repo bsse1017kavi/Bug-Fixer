@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.tests.g3d;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -31,9 +30,9 @@ public class Basic3DTest extends GdxTest implements ApplicationListener {
 	@Override
 	public void create () {
 		modelBatch = new ModelBatch();
-lights.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -1f, -0.8f, -0.2f));
+		lights = new Lights();
 		lights.ambientLight.set(0.4f, 0.4f, 0.4f, 1f);
-		lights.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -1f, -1f, 0f));
+lights.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -1f, -0.8f, -0.2f));
 		
 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		cam.position.set(10f, 10f, 10f);

@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.drda.DRDAXAProtocol.java
@@ -408,9 +407,9 @@ class DRDAXAProtocol {
 		XAResource xaResource = getXAResource();		
 		int xaRetVal = xaResource.XA_OK;
 
-this.xid = null;
+		try {
 			xaResource.end(xid,xaflags);
-            xid = null;
+this.xid = null;
 			if (SanityManager.DEBUG)
 			{
 				connThread.trace("ended XA transaction. xid =  " + xid +

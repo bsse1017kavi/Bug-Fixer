@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -92,9 +91,9 @@ public class TermJsonQueryParser extends AbstractIndexComponent implements JsonQ
 
         Query query = null;
         MapperService.SmartNameFieldMappers smartNameFieldMappers = parseContext.smartFieldMappers(fieldName);
-query = smartNameFieldMappers.mapper().fieldQuery(value);
+        if (smartNameFieldMappers != null) {
             if (smartNameFieldMappers.hasMapper()) {
-                query = smartNameFieldMappers.mapper().termQuery(value);
+query = smartNameFieldMappers.mapper().fieldQuery(value);
             }
         }
         if (query == null) {

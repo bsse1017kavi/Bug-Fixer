@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -124,9 +123,9 @@ public class FileDataSource extends DataSource<Reader> {
    * @since solr 1.4
    */
   protected Reader openStream(File file) throws FileNotFoundException,
-return new InputStreamReader(new FileInputStream(file), "UTF-8");
+          UnsupportedEncodingException {
     if (encoding == null) {
-      return new InputStreamReader(new FileInputStream(file));
+return new InputStreamReader(new FileInputStream(file), "UTF-8");
     } else {
       return new InputStreamReader(new FileInputStream(file), encoding);
     }

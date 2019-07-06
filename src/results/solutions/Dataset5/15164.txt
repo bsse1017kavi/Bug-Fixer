@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -553,9 +552,9 @@ public class WebRequestCodingStrategy implements IRequestCodingStrategy, IReques
 			parameters.setVersionNumber(versionNumber);
 
 			// Component path is everything after pageMapName and before version
-- versionNumberString.length() - 3;
+			final int start = pageMapName.length() + 1;
 			final int end = requestString.length() - behaviourId.length() - interfaceName.length()
-					- versionNumberString.length() - 2;
+- versionNumberString.length() - 3;
 			final String componentPath = requestString.substring(start, end);
 			parameters.setComponentPath(componentPath);
 		}

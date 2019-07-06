@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 
 /*
@@ -282,9 +281,9 @@ protected void insertAfter(IContributionManager mgr, String refId,
 protected void readContributions(String id, String tag, String extensionPoint) {
 	cache = null;
 	targetID = id;
-readRegistry(registry, PlatformUI.PLUGIN_ID, extensionPoint);
+	targetContributionTag = tag;
 	IPluginRegistry registry = Platform.getPluginRegistry();
-	readRegistry(registry, IWorkbenchConstants.PLUGIN_ID, extensionPoint);
+readRegistry(registry, PlatformUI.PLUGIN_ID, extensionPoint);
 }
 /**
  * Implements abstract method to handle the provided XML element

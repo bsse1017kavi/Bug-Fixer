@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -996,9 +995,9 @@ public class ClassScope extends Scope {
 		sourceType.tagBits |= TagBits.TypeVariablesAreConnected;
 		if (noProblems && sourceType.isHierarchyInconsistent())
 			problemReporter().hierarchyHasProblems(sourceType);
-public boolean detectHierarchyCycle(TypeBinding superType, TypeReference reference) {
+	}
 
-	public boolean detectHierarchyCycle(TypeBinding superType, TypeReference reference, TypeBinding[] argTypes) {
+public boolean detectHierarchyCycle(TypeBinding superType, TypeReference reference) {
 		if (!(superType instanceof ReferenceBinding)) return false;
 
 		if (reference == this.superTypeReference) { // see findSuperType()

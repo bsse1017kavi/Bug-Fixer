@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -96,9 +95,9 @@ public abstract class HandlerUpdateProperties implements OperationStepHandler {
         context.completeStep();
     }
 
-protected abstract void updateRuntime(final ModelNode operation, final Handler handler) throws OperationFailedException;
+    protected abstract void updateModel(final ModelNode operation, final ModelNode model);
 
-    protected abstract void updateRuntime(final ModelNode operation, final Handler handler);
+protected abstract void updateRuntime(final ModelNode operation, final Handler handler) throws OperationFailedException;
 
     protected void apply(ModelNode from, ModelNode to, String... attributePath) {
         if (from.get(attributePath).isDefined()) {

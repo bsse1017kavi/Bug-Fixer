@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ class LayersFactory {
      */
     static InstalledIdentity load(final InstalledImage image, final ProductConfig productConfig, final List<File> moduleRoots, final List<File> bundleRoots) throws IOException {
 
-final String productName = productConfig.resolveName();
+        // build the identity information
         final String productVersion = productConfig.resolveVersion();
-        final String productName = productConfig.getProductName();
+final String productName = productConfig.resolveName();
         final Identity identity = new AbstractLazyIdentity() {
             @Override
             public String getName() {

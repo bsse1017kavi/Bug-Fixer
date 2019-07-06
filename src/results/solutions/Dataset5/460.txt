@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -1427,9 +1426,9 @@ LRESULT wmKeyUp (int hwnd, int wParam, int lParam) {
 	display.lastKey = display.lastAscii = 0;
 	display.lastVirtual = display.lastNull = display.lastDead = false;
 	return result;
-LRESULT wmSysChar (int hwnd, int wParam, int lParam) {
+}
 
-LRESULT wmSysChar (int windowProc, int hwnd, int wParam, int lParam) {
+LRESULT wmSysChar (int hwnd, int wParam, int lParam) {
 	Display display = this.display;
 	display.lastAscii = wParam;
 	display.lastNull = wParam == 0;

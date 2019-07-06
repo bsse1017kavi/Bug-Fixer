@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -127,9 +126,9 @@ public class TokenizedPattern {
      * Returns a new TokenizedPath where all tokens of this pattern to
      * the right containing wildcards have been removed
      * @return the leftmost part of the pattern without wildcards
-StringBuilder sb = new StringBuilder();
+     */
     public TokenizedPath rtrimWildcardTokens() {
-        StringBuffer sb = new StringBuffer();
+StringBuilder sb = new StringBuilder();
         int newLen = 0;
         for (; newLen < tokenizedPattern.length; newLen++) {
             if (SelectorUtils.hasWildcards(tokenizedPattern[newLen])) {

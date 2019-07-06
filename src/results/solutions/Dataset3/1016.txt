@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -65,9 +64,9 @@ public class PerformanceTest {
     private BufferedReader getBufferedReader() throws IOException {
         return new BufferedReader(new FileReader(BIG_FILE));
     }
-final CSVFormat format = CSVFormat.DEFAULT.withIgnoreSurroundingSpaces(false);
+
     private long parse(final Reader in, final boolean traverseColumns) throws IOException {
-        final CSVFormat format = CSVFormat.newBuilder().withIgnoreSurroundingSpaces(false).build();
+final CSVFormat format = CSVFormat.DEFAULT.withIgnoreSurroundingSpaces(false);
         long recordCount = 0;
         for (final CSVRecord record : format.parse(in)) {
             recordCount++;

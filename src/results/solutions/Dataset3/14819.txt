@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -367,9 +366,9 @@ public class JPAAnnotationParseProcessor implements DeploymentUnitProcessor {
 
             // now for each view and each method on that view, setup the SFSB invocation interceptor factory
             // TODO: Is there a better/efficient way of doing this? Why do we need to fetch all methods of the view
-Iterable<ViewDescription> views = componentDescription.getViews();
+            // and then setup the interceptors on each of those methods? Why not just have a construct "applies to all
             // invocations on the view"?
-            List<ViewDescription> views = componentDescription.getViews();
+Iterable<ViewDescription> views = componentDescription.getViews();
             for (ViewDescription view : views) {
                 view.getConfigurators().addFirst(new ViewConfigurator() {
                     @Override

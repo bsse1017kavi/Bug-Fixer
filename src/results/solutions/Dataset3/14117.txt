@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -325,9 +324,9 @@ public class DistributedCacheManager<T extends OutgoingDistributableSessionData,
     private void removeSession(final String sessionId, final boolean local) {
         final K key = this.keyFactory.createKey(sessionId);
         Operation<Map<Object, Object>> operation = new Operation<Map<Object, Object>>() {
-return cache.getAdvancedCache().withFlags(Flag.SKIP_CACHE_LOAD, local ? Flag.CACHE_MODE_LOCAL : Flag.SKIP_REMOTE_LOOKUP).remove(key);
+            @Override
             public Map<Object, Object> invoke(Cache<K, Map<Object, Object>> cache) {
-                return cache.getAdvancedCache().withFlags(local ? Flag.CACHE_MODE_LOCAL : Flag.SKIP_REMOTE_LOOKUP).remove(key);
+return cache.getAdvancedCache().withFlags(Flag.SKIP_CACHE_LOAD, local ? Flag.CACHE_MODE_LOCAL : Flag.SKIP_REMOTE_LOOKUP).remove(key);
             }
         };
 

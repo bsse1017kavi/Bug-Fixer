@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -375,9 +374,9 @@ public class TopHitsBuilder extends AbstractAggregationBuilder {
         return this;
     }
 
-builder.startObject(name).field(type);
+    @Override
     public XContentBuilder toXContent(XContentBuilder builder, Params params) throws IOException {
-        builder.startObject(getName()).field(type);
+builder.startObject(name).field(type);
         sourceBuilder().toXContent(builder, params);
         return builder.endObject();
     }

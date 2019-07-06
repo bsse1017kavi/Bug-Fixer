@@ -1,4 +1,3 @@
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -52,9 +51,9 @@ public class RackUnawareStrategy extends AbstractReplicationStrategy
 
         // Add the token at the index by default
         Iterator<Token> iter = TokenMetadata.ringIterator(tokens, token);
-endpoints.add(metadata.getEndpoint(iter.next()));
+        while (endpoints.size() < replicas && iter.hasNext())
         {
-            endpoints.add(metadata.getEndPoint(iter.next()));
+endpoints.add(metadata.getEndpoint(iter.next()));
         }
 
         return endpoints;

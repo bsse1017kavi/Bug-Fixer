@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -36,9 +35,9 @@ public class PathFileComparatorTest extends ComparatorAbstractTestCase {
 
     /** @see junit.framework.TestCase#setUp() */
     @Override
-comparator = (AbstractFileComparator) PathFileComparator.PATH_COMPARATOR;
+    protected void setUp() throws Exception {
         super.setUp();
-        comparator = PathFileComparator.PATH_COMPARATOR;
+comparator = (AbstractFileComparator) PathFileComparator.PATH_COMPARATOR;
         reverse = PathFileComparator.PATH_REVERSE;
         equalFile1 = new File("foo/file.txt");
         equalFile2 = new File("foo/file.txt");

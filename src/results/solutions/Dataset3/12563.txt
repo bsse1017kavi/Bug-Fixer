@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -135,9 +134,9 @@ public class BeanArchiveProcessor implements DeploymentUnitProcessor {
         for(AbstractComponentDescription component : moduleDescription.getComponentDescriptions()) {
             if(component instanceof SessionBeanComponentDescription) {
                 SessionBeanComponentDescription componentDescription = (SessionBeanComponentDescription) component;
-bda.addEjbDescriptor(new EjbDescriptorImpl<Object>(componentDescription,bda,deploymentUnit));
+                //first we need to resolve the correct BDA for the bean
                 BeanDeploymentArchiveImpl bda = resolveSessionBeanBda(componentDescription.getEJBClassName(), bdaMap,rootBda,indexes);
-                bda.addEjbDescriptor(new EjbDescriptorImpl<Object>(componentDescription,bda));
+bda.addEjbDescriptor(new EjbDescriptorImpl<Object>(componentDescription,bda,deploymentUnit));
             }
         }
     }

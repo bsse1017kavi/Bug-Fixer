@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -347,9 +346,9 @@ public abstract class DefaultCompilerAdapter
              * long command lines - no, not only Windows ;-).
              *
              * POSIX seems to define a lower limit of 4k, so use a temporary
-if( StringUtil.join( args, " " ).length() > 4096 )
+             * file if the total length of the command line exceeds this limit.
              */
-            if( Commandline.toString( args ).length() > 4096 )
+if( StringUtil.join( args, " " ).length() > 4096 )
             {
                 PrintWriter out = null;
                 try

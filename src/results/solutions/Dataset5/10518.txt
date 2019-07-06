@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -100,9 +99,9 @@ public class SoftMessage implements IMessage {
 		out.startElement(elementName, false);
 		out.printAttribute("kind", message.getKind().toString());
 		String value = message.getMessage();
-out.printAttribute("text", value);
+		if (null != value) {
 			value = XMLWriter.attributeValue(value);
-			out.printAttribute("message", value);
+out.printAttribute("text", value);
 		}
 		value = message.getDetails();
 		if (null != value) {

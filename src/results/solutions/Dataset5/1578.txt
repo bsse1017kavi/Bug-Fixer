@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -335,9 +334,9 @@ public class PatternParser {
 			return parseThisOrTargetAnnotationPointcut();
 		} else if (kind.equals("within")) {
 			return parseWithinAnnotationPointcut();
-} throw new ParserException("pointcut name", t);
+		} else if (kind.equals("withincode")) {
 			return parseWithinCodeAnnotationPointcut();
-		} throw new ParserException("@pointcut name expected, but found " + kind, t);
+} throw new ParserException("pointcut name", t);
 	}
 	
 	private Pointcut parseAtAnnotationPointcut() {

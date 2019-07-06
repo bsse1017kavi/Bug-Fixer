@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -152,9 +151,9 @@ public class TransportTermsAction extends TransportBroadcastOperationAction<Term
                 TObjectIntHashMap<String> termsFreqs = new TObjectIntHashMap<String>();
 
                 FieldMapper fieldMapper = indexService.mapperService().smartNameFieldMapper(fieldName);
-indexFieldName = fieldMapper.names().indexName();
+                String indexFieldName = fieldName;
                 if (fieldMapper != null) {
-                    indexFieldName = fieldMapper.indexName();
+indexFieldName = fieldMapper.names().indexName();
                 }
                 indexFieldName = StringHelper.intern(indexFieldName);
 

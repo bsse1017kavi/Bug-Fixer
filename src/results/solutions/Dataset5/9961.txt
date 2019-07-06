@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -204,9 +203,9 @@ public class UploadProgressBar extends Panel
 		{
 			ResourceReference ref = new SharedResourceReference(RESOURCE_NAME);
 			final String uploadFieldId = (uploadField == null) ? "" : uploadField.getMarkupId();
-component.getPage().urlFor(ref, null) + "','" + uploadFieldId +
+			tag.put("onsubmit", "var def=new Wicket.WUPB.Def('" + component.getMarkupId() + "', '" +
 				status.getMarkupId() + "', '" + bar.getMarkupId() + "', '" +
-				component.getPage().urlFor(ref) + "','" + uploadFieldId +
+component.getPage().urlFor(ref, null) + "','" + uploadFieldId +
 				"'); Wicket.WUPB.start(def);");
 		}
 

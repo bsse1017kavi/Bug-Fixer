@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class CacheReadAttributeHandler implements OperationStepHandler {
      * @throws org.jboss.as.controller.OperationFailedException
      */
     @Override
-this.nameValidator.validate(operation);
+    public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
 
-        nameValidator.validate(operation);
+this.nameValidator.validate(operation);
         final String attributeName = operation.require(NAME).asString();
 
         final ModelNode submodel = context.readResource(PathAddress.EMPTY_ADDRESS).getModel();

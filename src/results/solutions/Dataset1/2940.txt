@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -63,9 +62,9 @@ public class TestBooleanScorer extends LuceneTestCase
 
       BooleanQuery query = new BooleanQuery();
       query.add(booleanQuery1, BooleanClause.Occur.MUST);
-IndexSearcher indexSearcher = new IndexSearcher(directory, true);
+      query.add(new TermQuery(new Term(FIELD, "9")), BooleanClause.Occur.MUST_NOT);
 
-      IndexSearcher indexSearcher = new IndexSearcher(directory);
+IndexSearcher indexSearcher = new IndexSearcher(directory, true);
       ScoreDoc[] hits = indexSearcher.search(query, null, 1000).scoreDocs;
       assertEquals("Number of matched documents", 2, hits.length);
 

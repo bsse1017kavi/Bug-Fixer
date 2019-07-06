@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -570,9 +569,9 @@ public class IndexModifier {
       if (!open)
         throw new IllegalStateException("Index is closed already");
       if (indexWriter != null) {
-} else if (indexReader != null) {
+        indexWriter.close();
         indexWriter = null;
-      } else {
+} else if (indexReader != null) {
         indexReader.close();
         indexReader = null;
       }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -132,9 +131,9 @@ class VersionAttachStrategy
             for (int i = 0; i < fmds.length; i++) {
                 switch (detach) {
                     case DETACH_ALL:
-case DETACH_FETCH_GROUPS:
+                        attachField(manager, toAttach, sm, fmds[i], true);
                         break;
-                    case DETACH_FGS:
+case DETACH_FETCH_GROUPS:
                         if (fetch.requiresFetch(fmds[i]) 
                             != FetchConfiguration.FETCH_NONE)
                             attachField(manager, toAttach, sm, fmds[i], true);

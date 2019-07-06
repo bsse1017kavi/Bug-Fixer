@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -70,9 +69,9 @@ import java.util.Collections;
         configuration.setHostControllerManagementAddress(masterAddress);
         configuration.setHostCommandLineProperties("-Djboss.test.host.master.address=" + masterAddress);
         configuration.setDomainConfigFile(new File(BUILD_DIR, domainXmlName).getAbsolutePath());
-configuration.setHostName("master"); // TODO this shouldn't be needed
+        configuration.setHostConfigFile(new File(BUILD_DIR, hostXmlName).getAbsolutePath());
 
-        configuration.setHostName("local"); // TODO this shouldn't be needed
+configuration.setHostName("master"); // TODO this shouldn't be needed
 
         new File(output, "configuration").mkdirs(); // TODO this should not be necessary
         configuration.setDomainDirectory(output.getAbsolutePath());

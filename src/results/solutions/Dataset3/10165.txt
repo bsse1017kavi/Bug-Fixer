@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ public class ModuleContextProcessor implements DeploymentUnitProcessor {
         serviceNames.add(moduleContextServiceName);
         serviceNames.add(ContextNames.JBOSS_CONTEXT_SERVICE_NAME);
         serviceNames.add(ContextNames.GLOBAL_CONTEXT_SERVICE_NAME);
-final JavaNamespaceSetup setupAction = new JavaNamespaceSetup(selector, deploymentUnit.getServiceName());
+
         // add the arquillian setup action, so the module namespace is available in arquillian tests
-        final JavaNamespaceSetup setupAction = new JavaNamespaceSetup(selector, serviceTarget);
+final JavaNamespaceSetup setupAction = new JavaNamespaceSetup(selector, deploymentUnit.getServiceName());
         deploymentUnit.addToAttachmentList(SETUP_ACTIONS, setupAction);
         deploymentUnit.addToAttachmentList(org.jboss.as.ee.component.Attachments.WEB_SETUP_ACTIONS, setupAction);
     }

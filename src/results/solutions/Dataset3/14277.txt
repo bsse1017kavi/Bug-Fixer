@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -107,9 +106,9 @@ public class QueueDefinition extends SimpleResourceDefinition {
                 MessagingExtension.getResourceDescriptionResolver(CommonAttributes.QUEUE),
                 addHandler,
                 removeHandler);
-if (!runtimeOnly) {
+        this.registerRuntimeOnly = registerRuntimeOnly;
         this.runtimeOnly = runtimeOnly;
-        if (runtimeOnly) {
+if (!runtimeOnly) {
             ApplicationTypeConfig atc = new ApplicationTypeConfig(MessagingExtension.SUBSYSTEM_NAME, path);
             accessConstraints = new ApplicationTypeAccessConstraintDefinition(atc).wrapAsList();
         } else {

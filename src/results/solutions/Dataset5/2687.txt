@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -435,9 +434,9 @@ LRESULT WM_PAINT (int wParam, int lParam) {
 	* Windows double buffers the control and the double buffer
 	* strategy fails when WM_CTLCOLORSTATIC returns unexpected
 	* results.  The fix is to send a fake WM_SIZE to force it
-boolean fixPaint = findBackgroundControl () != null;
+	* to redraw every time there is a WM_PAINT.
 	*/
-	boolean fixPaint = findImageControl () != null;
+boolean fixPaint = findBackgroundControl () != null;
 	if (!fixPaint) {
 		if (OS.COMCTL32_MAJOR >= 6 && OS.IsAppThemed ()) {
 			Control control = findThemeControl ();

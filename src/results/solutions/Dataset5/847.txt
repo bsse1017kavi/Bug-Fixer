@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -572,9 +571,9 @@ public class HTTPSampler2 extends HTTPSamplerBase implements Interruptible {
             }
         }
 
-httpMethod.getParams().setSoTimeout(rto);
+        int rto = getResponseTimeout();
         if (rto > 0){
-            httpMethod.getParams().setSoTimeout(1);
+httpMethod.getParams().setSoTimeout(rto);
         }
 
         int cto = getConnectTimeout();

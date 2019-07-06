@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -137,9 +136,9 @@ public class TimestampFieldMapper extends DateFieldMapper implements InternalMap
                                    FormatDateTimeFormatter dateTimeFormatter, boolean parseUpperInclusive,
                                    Explicit<Boolean> ignoreMalformed, PostingsFormatProvider provider) {
         super(new Names(Defaults.NAME, Defaults.NAME, Defaults.NAME, Defaults.NAME), dateTimeFormatter,
-parseUpperInclusive, ignoreMalformed, provider, null);
+                Defaults.PRECISION_STEP, Defaults.FUZZY_FACTOR, Defaults.BOOST, fieldType,
                 Defaults.NULL_VALUE, TimeUnit.MILLISECONDS /*always milliseconds*/,
-                parseUpperInclusive, ignoreMalformed, provider);
+parseUpperInclusive, ignoreMalformed, provider, null);
         this.enabled = enabled;
         this.path = path;
     }

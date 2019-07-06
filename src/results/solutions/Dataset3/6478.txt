@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -100,8 +99,8 @@ public class TransformerSubsystemTestCase extends AbstractSubsystemBaseTest {
         Assert.assertEquals("This is only a test", legacySubsystem.get("test-attribute").asString());
         Assert.assertTrue(legacySubsystem.hasDefined("element"));
         Assert.assertTrue(legacySubsystem.get("element").hasDefined("renamed"));
-checkSubsystemModelTransformation(mainServices, oldVersion);
+
         generateLegacySubsystemResourceRegistrationDmr(mainServices, oldVersion);
-        checkSubsystemTransformer(mainServices, oldVersion);
+checkSubsystemModelTransformation(mainServices, oldVersion);
     }
 }

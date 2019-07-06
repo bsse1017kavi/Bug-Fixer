@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -511,9 +510,9 @@ public abstract class AbstractDataSourceService implements Service<DataSource> {
                 }
             }
 
-if (validation.isValidateOnMatch() != null) {
+            final Validation validation = dataSourceConfig.getValidation();
             if (validation != null) {
-                if (validation.isValidateOnMatch()) {
+if (validation.isValidateOnMatch() != null) {
                     managedConnectionFactory.setValidateOnMatch(validation.isValidateOnMatch());
                 }
                 if (validation.getCheckValidConnectionSql() != null) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -49,9 +48,9 @@ public class RestGetAction extends BaseRestHandler {
         final GetRequest getRequest = new GetRequest(request.param("index"), request.param("type"), request.param("id"));
         // no need to have a threaded listener since we just send back a response
         getRequest.listenerThreaded(false);
-client.get(getRequest, new ActionListener<GetResponse>() {
+        // if we have a local operation, execute it on a thread since we don't spawn
         getRequest.threadedOperation(true);
-        client.execGet(getRequest, new ActionListener<GetResponse>() {
+client.get(getRequest, new ActionListener<GetResponse>() {
             @Override public void onResponse(GetResponse result) {
                 try {
                     if (!result.exists()) {

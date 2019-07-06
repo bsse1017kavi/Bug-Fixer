@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -181,9 +180,9 @@ public class JAXRSubsystemParser implements XMLStreamConstants, XMLElementReader
                     jndiName = attrValue;
                     CONNECTION_FACTORY_ATTRIBUTE.parseAndSetParameter(jndiName, addOp, reader);
                     break;
-CONNECTION_FACTORY_IMPL_ATTRIBUTE.parseAndSetParameter(attrValue, addOp, reader);
+                }
                 case CLASS: {
-                    CONNECTION_FACTORY_IMPL_ATTRIBUTE.parseAndSetParameter(jndiName, addOp, reader);
+CONNECTION_FACTORY_IMPL_ATTRIBUTE.parseAndSetParameter(attrValue, addOp, reader);
                     break;
                 }
                 default:

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -267,9 +266,9 @@ public Point computeSize (int wHint, int hHint, boolean changed) {
 			OS.memmove (buffer, ptr, size);
 			boolean wrap = (style & SWT.MULTI) != 0 && (style & SWT.WRAP) != 0;
 			if (wrap && wHint != SWT.DEFAULT) {
-buffer = Converter.wcsToMbcs (getCodePage (), wrapped, true);
+				String text = new String (buffer);
 				String wrapped = display.wrapText (text, font, wHint);
-				buffer = wrapped.getBytes ();
+buffer = Converter.wcsToMbcs (getCodePage (), wrapped, true);
 			}
 			int xmString;
 			if ((style & SWT.SINGLE) != 0) {

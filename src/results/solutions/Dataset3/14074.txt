@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -290,9 +289,9 @@ public class LineIteratorTestCase extends FileBasedTestCase {
         createLinesFile(testFile, encoding, 3);
 
         LineIterator iterator = FileUtils.lineIterator(testFile, encoding);
-assertNotNull("Line expected", iterator.next());
+        try {
             // get
-            assertTrue("Line expected", iterator.next() instanceof String);
+assertNotNull("Line expected", iterator.next());
             assertTrue("More expected", iterator.hasNext());
 
             // close

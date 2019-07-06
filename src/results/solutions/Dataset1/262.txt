@@ -1,4 +1,3 @@
-
 package org.apache.cassandra.io;
 /*
  * 
@@ -182,9 +181,9 @@ public abstract class SSTable
     /**
      * This is a simple container for the index Key and its corresponding position
      * in the data file. Binary search is performed on a list of these objects
-public static class KeyPosition implements Comparable<KeyPosition>
+     * to lookup keys within the SSTable data file.
      */
-    public class KeyPosition implements Comparable<KeyPosition>
+public static class KeyPosition implements Comparable<KeyPosition>
     {
         public final DecoratedKey key;
         public final long position;

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -52,9 +51,9 @@ public class ScheduledTasksBeanDefinitionParser extends AbstractSingleBeanDefini
 		ManagedMap<RuntimeBeanReference, String> fixedDelayTaskMap = new ManagedMap<RuntimeBeanReference, String>();
 		ManagedMap<RuntimeBeanReference, String> fixedRateTaskMap = new ManagedMap<RuntimeBeanReference, String>();
 		NodeList childNodes = element.getChildNodes();
-if (!(child instanceof Element) || !child.getLocalName().equals("scheduled")) {
+		for (int i = 0; i < childNodes.getLength(); i++) {
 			Node child = childNodes.item(i);
-			if (!(child instanceof Element) || !child.getLocalName().equals("task")) {
+if (!(child instanceof Element) || !child.getLocalName().equals("scheduled")) {
 				continue;
 			}
 			Element taskElement = (Element) child;

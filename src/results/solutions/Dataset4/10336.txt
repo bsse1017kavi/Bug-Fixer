@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -358,9 +357,9 @@ public abstract class BasePolygonBuilder<E extends BasePolygonBuilder<E>> extend
             // the edge intersects with itself at its own coordinate.  We need intersect to be set this way so the binary search 
             // will get the correct position in the edge list and therefore the correct component to add the hole
             current.intersect = current.coordinate;
-if (pos >= 0) {
+            final int intersections = intersections(current.coordinate.x, edges);
             final int pos = Arrays.binarySearch(edges, 0, intersections, current, INTERSECTION_ORDER);
-            if (pos < 0) {
+if (pos >= 0) {
                 throw new ElasticsearchParseException("Invaild shape: Hole is not within polygon");
             }
             final int index = -(pos+2);

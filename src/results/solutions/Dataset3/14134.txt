@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class SecurityContextAssociationHandler implements HttpHandler {
         SecurityContext sc = exchange.getAttachment(UndertowSecurityAttachments.SECURITY_CONTEXT_ATTACHMENT);
         String previousContextID = null;
         String identity = null;
-ServletChain servlet = exchange.getAttachment(ServletAttachments.ATTACHMENT_KEY).getCurrentServlet();
+        try {
             SecurityActions.setSecurityContextOnAssociation(sc);
-            ServletChain servlet = exchange.getAttachment(ServletAttachments.CURRENT_SERVLET);
+ServletChain servlet = exchange.getAttachment(ServletAttachments.ATTACHMENT_KEY).getCurrentServlet();
             identity = servlet.getManagedServlet().getServletInfo().getRunAs();
             RunAsIdentity runAsIdentity = null;
             if (identity != null) {

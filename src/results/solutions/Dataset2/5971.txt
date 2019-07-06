@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -53,9 +52,9 @@ public CreateCompilationUnitOperation(IPackageFragment parentElement, String nam
  * Creates a compilation unit.
  *
  * @exception JavaModelException if unable to create the compilation unit.
-beginTask(Util.bind("operation.createUnitProgress"), 2); //$NON-NLS-1$
+ */
 protected void executeOperation() throws JavaModelException {
-	beginTask(Util.bind("operation.createUnitProgress"/*nonNLS*/), 2);
+beginTask(Util.bind("operation.createUnitProgress"), 2); //$NON-NLS-1$
 	JavaElementDelta delta = newJavaElementDelta();
 	ICompilationUnit unit = getCompilationUnit();
 	IPackageFragment pkg = (IPackageFragment) getParentElement();

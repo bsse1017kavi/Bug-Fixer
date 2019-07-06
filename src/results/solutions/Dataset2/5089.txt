@@ -1,4 +1,3 @@
-
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; either version 2 of the License, or
@@ -54,9 +53,9 @@ public class SubjectController implements DocumentListener {
 
 	public boolean checkState() {
 		String subject = model.getHeaderField("Subject");
-subject = new String(MailResourceLoader.getString("dialog","composer","composer_no_subject")); //$NON-NLS-1$
+
 		if (subject.length() == 0) {
-			subject = new String(MailResourceLoader.getString("menu","mainframe","composer_no_subject")); //$NON-NLS-1$
+subject = new String(MailResourceLoader.getString("dialog","composer","composer_no_subject")); //$NON-NLS-1$
 			//SubjectDialog dialog = new SubjectDialog(composerInterface.composerFrame);
 			SubjectDialog dialog = new SubjectDialog();
 			dialog.showDialog(subject);

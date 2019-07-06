@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -148,9 +147,9 @@ public class PreferUnallocatedShardUnassignedStrategy extends AbstractComponent 
                 if (node == null) {
                     continue;
                 }
-if (!(node.canAllocate(routingNodes) && node.canAllocate(shard))) {
+
                 // check if we can allocate on that node...
-                if (!(node.canAllocate(routingNodes.metaData(), routingNodes.routingTable()) && node.canAllocate(shard))) {
+if (!(node.canAllocate(routingNodes) && node.canAllocate(shard))) {
                     continue;
                 }
                 // if it is already allocated, we can't assign to it...

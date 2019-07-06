@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -47,9 +46,9 @@ public MultiTypeDeclarationPattern(
 		for (int i = 0; i < length; i++)
 			this.qualifications[i] = CharOperation.toLowerCase(qualifications[i]);
 	}
-if (this.isCaseSensitive || this.isCamelCase) {
+	// null simple names are allowed (should return all names)
 	if (simpleNames != null) {
-		if ((isCaseSensitive() || isCamelCase()) ) {
+if (this.isCaseSensitive || this.isCamelCase) {
 			this.simpleNames = simpleNames;
 		} else {
 			int length = simpleNames.length;

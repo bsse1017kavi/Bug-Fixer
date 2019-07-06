@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -591,9 +590,9 @@ public class MessagingSubsystemParser implements XMLStreamConstants, XMLElementR
             node.get(role, DELETE_NON_DURABLE_QUEUE_NAME).set(deleteNonDurableQueue.contains(role));
             node.get(role, MANAGE_NAME).set(manageRoles.contains(role));
         }
-public static ModelNode processConnectors(XMLExtendedStreamReader reader) throws XMLStreamException {
+    }
 
-    static ModelNode processConnectors(XMLExtendedStreamReader reader) throws XMLStreamException {
+public static ModelNode processConnectors(XMLExtendedStreamReader reader) throws XMLStreamException {
         final ModelNode connectors = new ModelNode();
         while(reader.hasNext() && reader.nextTag() != END_ELEMENT) {
             String name = null;

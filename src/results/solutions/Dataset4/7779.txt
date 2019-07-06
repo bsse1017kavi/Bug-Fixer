@@ -1,4 +1,3 @@
-
 package com.badlogic.gdx.math.collision;
 
 import com.badlogic.gdx.math.Plane;
@@ -45,9 +44,9 @@ public class SlideResponse implements CollisionResponse
 			packet.getIntersectionPoint().sub( newVelocity.mul( displacementDistance ) );
 		}
 				
-slidingPlaneNormal.set( newPosition ).sub( packet.getIntersectionPoint() ).nor();
+		
 		slidingPlaneOrigin.set( packet.getIntersectionPoint() );
-		slidingPlaneNormal.set( packet.position ).sub( packet.getIntersectionPoint() ).nor();		
+slidingPlaneNormal.set( newPosition ).sub( packet.getIntersectionPoint() ).nor();
 		slidingPlane.set( slidingPlaneOrigin, slidingPlaneNormal );
 		
 		newDestination.set( destination ).sub( slidingPlane.normal.mul(slidingPlane.distance( destination )) );

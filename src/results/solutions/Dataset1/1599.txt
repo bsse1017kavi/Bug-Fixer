@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -80,9 +79,9 @@ public class WordCount extends Configured implements Tool
         public void map(byte[] key, SortedMap<byte[], IColumn> columns, Context context) throws IOException, InterruptedException
         {
             IColumn column = columns.get(columnName.getBytes());
-String value = ByteBufferUtil.string(column.value());
+            if (column == null)
                 return;
-            String value = ByteBufferUtil.string(column.value(), Charsets.UTF_8);
+String value = ByteBufferUtil.string(column.value());
             logger.debug("read " + key + ":" + value + " from " + context.getInputSplit());
 
             StringTokenizer itr = new StringTokenizer(value);

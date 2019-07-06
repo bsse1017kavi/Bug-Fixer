@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision$ $Date$
  * 
@@ -108,9 +107,9 @@ public class FormDispatchEventTest extends WicketTestCase
 
 		form.onFormSubmitted();
 		assertTrue("form should should set value ", submit);
-dropDown.urlFor(IOnChangeListener.INTERFACE).toString());
+
 		application.getServletRequest().setParameter(form.getHiddenField(),
-				dropDown.urlFor(IOnChangeListener.INTERFACE));
+dropDown.urlFor(IOnChangeListener.INTERFACE).toString());
 
 		form.onFormSubmitted();
 		assertTrue("Selection should be called", selection);

@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.builder.impl;
 
 /*
@@ -8,9 +7,9 @@ package org.eclipse.jdt.internal.core.builder.impl;
 import org.eclipse.jdt.internal.core.builder.*;
 
 public class ConstructorImpl extends AbstractMemberHandle implements IConstructor {
-fSignature = computeSignature("", paramTypes); //$NON-NLS-1$
+	ConstructorImpl (ClassOrInterfaceHandleImpl owner, IType[] paramTypes) {
 		fOwner = owner;
-		fSignature = computeSignature(""/*nonNLS*/, paramTypes);
+fSignature = computeSignature("", paramTypes); //$NON-NLS-1$
 	}
 	public ConstructorImpl(ClassOrInterfaceHandleImpl owner, String signature) {
 		fOwner = owner;

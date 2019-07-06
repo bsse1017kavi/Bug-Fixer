@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
 
 import java.io.*;
@@ -256,9 +255,9 @@ addAnswer(Message response, Name name, int type, int dclass,
 	byte rcode = Rcode.NOERROR;
 
 	if (iterations > 6)
-if (type == Type.SIG || type == Type.RRSIG) {
+		return Rcode.NOERROR;
 
-	if (type == Type.SIG) {
+if (type == Type.SIG || type == Type.RRSIG) {
 		type = Type.ANY;
 		flags |= FLAG_SIGONLY;
 	}

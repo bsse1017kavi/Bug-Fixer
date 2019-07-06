@@ -1,4 +1,3 @@
-
 /*
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -384,9 +383,9 @@ class CassandraStatement extends AbstractStatement implements Statement
         {
             if ((getResultSetType() == ResultSet.TYPE_FORWARD_ONLY) && (direction != ResultSet.FETCH_FORWARD))
                 throw new SQLSyntaxErrorException(String.format(BAD_FETCH_DIR, direction));
-else throw new SQLSyntaxErrorException(String.format(BAD_FETCH_DIR, direction));
+            fetchDirection = direction;
         }
-        throw new SQLSyntaxErrorException(String.format(BAD_FETCH_DIR, direction));
+else throw new SQLSyntaxErrorException(String.format(BAD_FETCH_DIR, direction));
     }
 
 

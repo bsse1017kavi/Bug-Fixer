@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2006, Red Hat Middleware LLC, and individual contributors
@@ -133,9 +132,9 @@ public abstract class ManagementClientChannelStrategy implements Closeable {
                 public void handleMessage(final Channel channel, final DataInput input, final ManagementProtocolHeader header) throws IOException {
                     handler.handleMessage(channel, input, header);
                 }
-protected void handleChannelReset(Channel channel) {
+
                 @Override
-                protected void handleShutdownChannel(Channel channel) {
+protected void handleChannelReset(Channel channel) {
                     resetChannel(channel);
                 }
 

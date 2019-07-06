@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -152,9 +151,9 @@ public class GestureDetector extends InputAdapter {
 
 		if (!inTapSquare) {
 			// handle pan
-return listener.pan(x, y, tracker.deltaX, tracker.deltaY);
+			inTapSquare = false;
 			panning = true;
-			return listener.pan(tracker.lastX, tracker.lastY, tracker.deltaX, tracker.deltaY);
+return listener.pan(x, y, tracker.deltaX, tracker.deltaY);
 		}
 
 		return false;

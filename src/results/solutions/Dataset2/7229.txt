@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -46,9 +45,9 @@ NameEnvironmentAnswer findClass(char[] className, char[][] packageName) {
 		if (exists(sourcePath, sourceFilename, packageName)) {
 			String fullSourceName = sourcePath + NameEnvironment.assembleName(sourceFilename, packageName, '/');
 			String[] additionalSourceFilenames = nameEnvironment.additionalSourceFilenames;
-return new NameEnvironmentAnswer(new SourceFile(fullSourceName, packageName));
+			for (int i = 0, l = additionalSourceFilenames.length; i < l; i++)
 				if (fullSourceName.equals(additionalSourceFilenames[i]))
-					return new NameEnvironmentAnswer(new SourceFile(fullSourceName));
+return new NameEnvironmentAnswer(new SourceFile(fullSourceName, packageName));
 		}
 	}
 

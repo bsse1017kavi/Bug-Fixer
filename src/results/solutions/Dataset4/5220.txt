@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class SinglePercolatorStressBenchmark {
         System.out.println("Percolating [" + COUNT + "] ...");
         int i = 1;
         for (; i <= COUNT; i++) {
-if (percolate.getMatches().size() != QUERIES) {
+            PercolateResponse percolate = client1.preparePercolate("test", "type1").setSource(source(Integer.toString(i), "value"))
                     .execute().actionGet();
-            if (percolate.matches().size() != QUERIES) {
+if (percolate.getMatches().size() != QUERIES) {
                 System.err.println("No matching number of queries");
             }
             if ((i % 10000) == 0) {

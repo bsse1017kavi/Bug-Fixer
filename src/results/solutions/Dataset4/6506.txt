@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63,9 +62,9 @@ public class CodecService extends AbstractIndexComponent {
         this.mapperService = mapperService;
         MapBuilder<String, Codec> codecs = MapBuilder.<String, Codec>newMapBuilder();
         if (mapperService == null) {
-codecs.put("default", new PerFieldMappingPostingFormatCodec(mapperService, postingsFormatService.get("default").get(), logger));
+            codecs.put("default", Codec.getDefault());
         } else {
-            codecs.put("default", new PerFieldMappingPostingFormatCodec(mapperService, postingsFormatService.get("default").get()));
+codecs.put("default", new PerFieldMappingPostingFormatCodec(mapperService, postingsFormatService.get("default").get(), logger));
         }
         for (String codec : Codec.availableCodecs()) {
             codecs.put(codec, Codec.forName(codec));

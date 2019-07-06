@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -46,9 +45,9 @@ public class XhrStreamingTransportHandler extends AbstractHttpSendingTransportHa
 	protected MediaType getContentType() {
 		return new MediaType("application", "javascript", Charset.forName("UTF-8"));
 	}
-public StreamingServerSockJsSession createSession(String sessionId, WebSocketHandler handler) {
+
 	@Override
-	public StreamingServerSockJsSession createSession(String sessionId, WebSocketHandler<?> handler) {
+public StreamingServerSockJsSession createSession(String sessionId, WebSocketHandler handler) {
 		Assert.notNull(getSockJsConfig(), "This transport requires SockJsConfiguration");
 
 		return new StreamingServerSockJsSession(sessionId, getSockJsConfig(), handler) {

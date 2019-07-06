@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -87,9 +86,9 @@ public class FrameworkBootstrapService implements Service<Void> {
     public static ServiceController<Void> addService(ServiceTarget target, OSGiRuntimeResource resource, InitialDeploymentTracker deploymentTracker, List<SubsystemExtension> extensions, ServiceVerificationHandler verificationHandler) {
         FrameworkBootstrapService service = new FrameworkBootstrapService(resource, deploymentTracker, extensions, verificationHandler);
         ServiceBuilder<Void> builder = target.addService(FrameworkBootstrapService.SERVICE_NAME, service);
-builder.addListener(verificationHandler);
+        builder.addDependency(ServerEnvironmentService.SERVICE_NAME, ServerEnvironment.class, service.injectedServerEnvironment);
         builder.addDependency(OSGiConstants.SUBSYSTEM_STATE_SERVICE_NAME, SubsystemState.class, service.injectedSubsystemState);
-        builder.addListener(Inheritance.ONCE, verificationHandler);
+builder.addListener(verificationHandler);
         return builder.install();
     }
 

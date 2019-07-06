@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -18,9 +17,9 @@ public class RunTestNotifier extends Notifier {
 	public void run(EachTestNotifier context) {
 		context.fireTestStarted();
 		try {
-context.addFailedAssumption(e);
+			fNext.evaluate();
 		} catch (AssumptionViolatedException e) {
-			context.addIgnorance(e);
+context.addFailedAssumption(e);
 		} catch (Throwable e) {
 			context.addFailure(e);
 		} finally {

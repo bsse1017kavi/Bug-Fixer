@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,9 +52,9 @@ public class InternalSettingsPerparer {
         if (loadConfigSettings) {
             boolean loadFromEnv = true;
             // if its default, then load it, but also load form env
-settingsBuilder.loadFromUrl(environment.resolveConfig(System.getProperty("es.default.config")));
+            if (System.getProperty("es.default.config") != null) {
                 loadFromEnv = true;
-                settingsBuilder.loadFromUrl(environment.resolveConfig(System.getProperty("es.config")));
+settingsBuilder.loadFromUrl(environment.resolveConfig(System.getProperty("es.default.config")));
             }
             // if explicit, just load it and don't load from env
             if (System.getProperty("es.config") != null) {

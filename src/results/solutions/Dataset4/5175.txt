@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -55,9 +54,9 @@ public class TransportGetAction extends TransportShardSingleOperationAction<GetR
         this.realtime = settings.getAsBoolean("action.get.realtime", true);
     }
 
-return ThreadPool.Names.GET;
+    @Override
     protected String executor() {
-        return ThreadPool.Names.SEARCH;
+return ThreadPool.Names.GET;
     }
 
     @Override

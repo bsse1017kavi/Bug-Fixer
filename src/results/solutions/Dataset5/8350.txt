@@ -1,4 +1,3 @@
-
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -379,9 +378,9 @@ public class Resource extends DataType implements Cloneable, Comparable, Resourc
      * @return whether this Resource is a FileProvider.
      * @since Ant 1.7
      */
-|| this.as(FileProvider.class) != null;
+    public boolean isFilesystemOnly() {
         return (isReference() && ((Resource) getCheckedRef()).isFilesystemOnly())
-                || this instanceof FileProvider;
+|| this.as(FileProvider.class) != null;
     }
 
     /**

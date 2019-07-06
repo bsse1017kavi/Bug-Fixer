@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  * The Apache Software License, Version 1.1
@@ -365,9 +364,9 @@ public class ViewResultsFullVisualizer extends AbstractVisualizer implements
 		{
 			super.getTreeCellRendererComponent(tree,value,
 					sel,expanded,leaf,row,hasFocus);
-this.setForeground(Color.red);
+			if(!((SampleResult)((DefaultMutableTreeNode)value).getUserObject()).isSuccessful())
 			{
-				this.setForeground(Color.RED);
+this.setForeground(Color.red);
 			}
 			return this;
 		}

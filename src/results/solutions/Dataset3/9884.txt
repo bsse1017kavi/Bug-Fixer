@@ -1,4 +1,3 @@
-
 package org.jboss.as.controller;
 
 import java.util.ArrayList;
@@ -211,9 +210,9 @@ public class PersistentResourceXMLDescription {
             } else {
                 writeStartElement(writer, namespaceURI, xmlElementName);
 
-def.getValue().getAttributeMarshaller().marshallAsAttribute(def.getValue(), model, true, writer);
+            }
             for (Map.Entry<String, AttributeDefinition> def : attributes.entrySet()) {
-                def.getValue().getAttributeMarshaller().marshallAsAttribute(def.getValue(), model, false, writer);
+def.getValue().getAttributeMarshaller().marshallAsAttribute(def.getValue(), model, true, writer);
             }
             persistChildren(writer, model);
 

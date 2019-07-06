@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -147,9 +146,9 @@ public class FileSystemUtilsTestCase extends FileBasedTestCase {
 
     public void testGetFreeSpaceOS_String_Unix() throws Exception {
         FileSystemUtils fsu = new FileSystemUtils() {
-return kb ? 12345L : 54321;
+            @Override
             protected long freeSpaceUnix(String path, boolean kb, boolean posix, long timeout) throws IOException {
-                return (kb ? 12345L : 54321);
+return kb ? 12345L : 54321;
             }
         };
         assertEquals(54321L, fsu.freeSpaceOS("", 2, false, -1));

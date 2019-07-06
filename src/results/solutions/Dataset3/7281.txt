@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -216,9 +215,9 @@ public class MultivariateSummaryStatisticsTest extends TestCase {
         MultivariateSummaryStatistics u = new MultivariateSummaryStatistics(2, true);
         MultivariateSummaryStatistics t = null;
         int emptyHash = u.hashCode();
-assertFalse(u.equals(Double.valueOf(0)));
+        assertTrue(u.equals(u));
         assertFalse(u.equals(t));
-        assertFalse(u.equals(new Double(0)));
+assertFalse(u.equals(Double.valueOf(0)));
         t = new MultivariateSummaryStatistics(2, true);
         assertTrue(t.equals(u));
         assertTrue(u.equals(t));

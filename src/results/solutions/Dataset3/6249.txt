@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class JMSQueueService implements Service<Void> {
     public synchronized void start(StartContext context) throws StartException {
         final JMSServerManager jmsManager = jmsServer.getValue();
         try {
-throw MESSAGES.failedToCreate(e, "queue");
+            jmsManager.createQueue(false, queueName, selectorString, durable, jndi);
         } catch (Exception e) {
-            throw new StartException(MESSAGES.failedToCreate("queue"), e);
+throw MESSAGES.failedToCreate(e, "queue");
         }
     }
 

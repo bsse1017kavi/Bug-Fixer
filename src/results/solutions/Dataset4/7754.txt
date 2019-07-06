@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -24,9 +23,9 @@ import org.elasticsearch.util.concurrent.highscalelib.NonBlockingHashSet;
 import org.jboss.netty.channel.*;
 
 /**
-@ChannelHandler.Sharable
+ * @author kimchy (Shay Banon)
  */
-@ChannelPipelineCoverage(ChannelPipelineCoverage.ALL)
+@ChannelHandler.Sharable
 public class OpenChannelsHandler implements ChannelUpstreamHandler {
 
     private NonBlockingHashSet<Channel> openChannels = new NonBlockingHashSet<Channel>();

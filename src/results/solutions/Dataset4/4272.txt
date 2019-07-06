@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.scenes.scene2d.ui;
 
 import com.badlogic.gdx.graphics.Color;
@@ -30,9 +29,9 @@ public class TextButton extends Button {
 	public TextButton (String text, TextButtonStyle style, String name) {
 		super(style, name);
 		this.style = style;
-add(label).expand().fill();
+		label = new Label(text, new LabelStyle(style.font, style.fontColor));
 		label.setAlignment(Align.CENTER);
-		add(label);
+add(label).expand().fill();
 	}
 
 	public void setStyle (ButtonStyle style) {

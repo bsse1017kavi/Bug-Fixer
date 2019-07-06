@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -53,9 +52,9 @@ public class DeploymentFailureListener extends AbstractServiceListener<Object>{
     public DeploymentFailureListener(final ServiceName deploymentServiceName) {
         this.deploymentServiceName = deploymentServiceName;
     }
-public void serviceFailed(ServiceController<?> serviceController, StartException reason) {
+
     /** {@inheritDoc} */
-    public void serviceFailed(ServiceController<? extends Object> serviceController, StartException reason) {
+public void serviceFailed(ServiceController<?> serviceController, StartException reason) {
         if(deploymentStopped.compareAndSet(false, true)) {
             log.errorf("Deployment [%s] failed to start correctly.  Completely shutting down deployment.  Please see additional errors for details.", deploymentServiceName);
             final ServiceContainer serviceContainer = serviceController.getServiceContainer();

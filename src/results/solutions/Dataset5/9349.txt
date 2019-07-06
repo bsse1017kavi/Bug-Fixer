@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -47,9 +46,9 @@ class ConstructorSignatureImpl extends CodeSignatureImpl implements ConstructorS
 	 * @see org.aspectj.runtime.reflect.MemberSignatureImpl#createAccessibleObject()
 	 */
 	public Constructor getConstructor() {
-constructor = getDeclaringType().getDeclaredConstructor(getParameterTypes());
+		if (constructor == null) {
 			try {
-				constructor = declaringType.getDeclaredConstructor(getParameterTypes());
+constructor = getDeclaringType().getDeclaredConstructor(getParameterTypes());
 			} catch (Exception ex) {
 				; // nothing we can do, caller will see null
 			}

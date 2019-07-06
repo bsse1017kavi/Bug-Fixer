@@ -1,4 +1,3 @@
-
 /*
  * $Id$ $Revision:
  * 1.5 $ $Date$
@@ -48,9 +47,9 @@ public class SimpleTestPanelTest extends WicketTestCase
 	    
 		application.setupRequestAndResponse();
 		WebRequestCycle cycle = application.createRequestCycle();
-String url = ((SimpleTestPanel)page.get("testPanel")).getTimeBehavior().getCallbackUrl().toString();
+		
 		Page page = application.getLastRenderedPage();
-	    String url = ((SimpleTestPanel)page.get("testPanel")).getTimeBehavior().getCallbackUrl();
+String url = ((SimpleTestPanel)page.get("testPanel")).getTimeBehavior().getCallbackUrl().toString();
 		application.getServletRequest().setRequestToRedirectString(url);
 
 		application.processRequestCycle(cycle);

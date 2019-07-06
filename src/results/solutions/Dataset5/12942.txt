@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -68,9 +67,9 @@ public class Index extends WicketExamplePage
 			 * Alter the javascript 'onclick' event to emit the Ajax call and
 			 * update the counter label.
 			 */
-return "new Ajax.Updater('counter', '" + urlFor(ILinkListener.INTERFACE)
+			protected String getOnClickScript(String url)
 			{
-				return "new Ajax.Updater('counter', '" + urlFor(ILinkListener.class)
+return "new Ajax.Updater('counter', '" + urlFor(ILinkListener.INTERFACE)
 						+ "', {method:'get'}); return false;";
 			}
 		});

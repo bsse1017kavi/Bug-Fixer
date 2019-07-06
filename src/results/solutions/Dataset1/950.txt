@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.execute.DDLConstantAction
@@ -163,9 +162,9 @@ abstract class DDLConstantAction implements ConstantAction
 
 		TransactionController useTc    = null;
 		TransactionController nestedTc = null;
-nestedTc = tc.startNestedUserTransaction(false, true);
+
 		try {
-			nestedTc = tc.startNestedUserTransaction(false);
+nestedTc = tc.startNestedUserTransaction(false, true);
 			useTc = nestedTc;
 		} catch (StandardException e) {
 			if (SanityManager.DEBUG) {

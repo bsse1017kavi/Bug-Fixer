@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -314,9 +313,9 @@ public class ForeachStatement extends Statement {
 				this.arrayElementTypeID = collectionElementType.id;
 				if (elementType.isBaseType()) {
 					this.elementVariableImplicitWidening = (elementType.id << 4) + this.arrayElementTypeID;
-ReferenceBinding iterableType = ((ReferenceBinding)collectionType).findSuperTypeErasingTo(T_JavaLangIterable, false /*Iterable is not a class*/);
+				}
 			} else if (collectionType instanceof ReferenceBinding) {
-			    ReferenceBinding iterableType = ((ReferenceBinding)collectionType).findSuperTypeErasingTo(scope.getJavaLangIterable());
+ReferenceBinding iterableType = ((ReferenceBinding)collectionType).findSuperTypeErasingTo(T_JavaLangIterable, false /*Iterable is not a class*/);
 			    if (iterableType != null) {
 				    if (iterableType.isParameterizedType()) { // for(E e : Iterable<E>)
 					    ParameterizedTypeBinding parameterizedType = (ParameterizedTypeBinding)iterableType;

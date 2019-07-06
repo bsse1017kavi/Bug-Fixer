@@ -1,4 +1,3 @@
-
 /*
  * $Id: Border.java 4831 2006-03-08 13:32:22 -0800 (Wed, 08 Mar 2006)
  * jdonnerstag $ $Revision$ $Date: 2006-03-08 13:32:22 -0800 (Wed, 08 Mar
@@ -262,9 +261,9 @@ public abstract class Border<T> extends WebMarkupContainerWithAssociatedMarkup<T
 		if (tag.isWicketBodyTag())
 		{
 			if (this.body == null)
-"Border body container not initialized. Did you forget to call setBorderBodyContainer() ??");
+			{
 				throw new MarkupException(markupStream,
-						"Border body container not initialized. Did you forget to call newBorderBodyContainer() ??");
+"Border body container not initialized. Did you forget to call setBorderBodyContainer() ??");
 			}
 
 			// If current tag equals the body open tag, than ...

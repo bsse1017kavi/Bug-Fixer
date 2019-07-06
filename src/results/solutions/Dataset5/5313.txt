@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -74,9 +73,9 @@ public class Signin2Test extends TestCase
 		// the screen flow depends on the cookies.
 		// this.dumpCookies(System.err);
 		// this.assertCookiePresent("signInPanel.signInForm.username");
-Collection<Cookie> cookies = tester.getLastResponse().getCookies();
+		// this.assertCookiePresent("signInPanel.signInForm.password");
 
-		Collection<Cookie> cookies = tester.getServletResponse().getCookies();
+Collection<Cookie> cookies = tester.getLastResponse().getCookies();
 		for (Cookie cookie : cookies)
 		{
 			if ("signInPanel.signInForm.username".equals(cookie.getName()))

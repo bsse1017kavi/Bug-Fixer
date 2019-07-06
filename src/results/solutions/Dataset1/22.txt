@@ -1,4 +1,3 @@
-
 package org.apache.solr.cloud;
 
 /*
@@ -793,9 +792,9 @@ public final class ZkController {
 
       UpdateLog ulog = core.getUpdateHandler().getUpdateLog();
       if (!core.isReloaded() && ulog != null) {
-if (!Slice.CONSTRUCTION.equals(slice.getState()) || !isLeader) {
+        // disable recovery in case shard is in construction state (for shard splits)
         Slice slice = getClusterState().getSlice(collection, shardId);
-        if (!Slice.CONSTRUCTION.equals(slice.getState()) && !isLeader) {
+if (!Slice.CONSTRUCTION.equals(slice.getState()) || !isLeader) {
           Future<UpdateLog.RecoveryInfo> recoveryFuture = core.getUpdateHandler()
               .getUpdateLog().recoverFromLog();
           if (recoveryFuture != null) {

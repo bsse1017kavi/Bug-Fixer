@@ -1,4 +1,3 @@
-
 package org.elasticsearch.document;
 
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
@@ -157,9 +156,9 @@ public class BulkTests extends AbstractIntegrationTest {
         assertThat(((UpdateResponse) bulkResponse.getItems()[2].getResponse()).getVersion(), equalTo(15l));
     }
 
-wipeIndices();
+    @Test
     public void testBulkUpdate_malformedScripts() throws Exception {
-        client().admin().indices().prepareDelete().execute().actionGet();
+wipeIndices();
 
         client().admin().indices().prepareCreate("test")
                 .setSettings(

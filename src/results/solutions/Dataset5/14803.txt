@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -474,9 +473,9 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
      * @return the integer representation queryTimeout
      */
     public int getIntegerQueryTimeout() {
-if(StringUtils.isNumeric(queryTimeout)) {
+        int timeout = 0;
         try {
-            if(StringUtils.isNumeric(query)) {
+if(StringUtils.isNumeric(queryTimeout)) {
                 timeout = Integer.parseInt(queryTimeout);
             }
         } catch (NumberFormatException nfe) {

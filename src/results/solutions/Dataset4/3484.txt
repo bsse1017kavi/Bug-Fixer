@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -70,9 +69,9 @@ public class TransportPutMappingAction extends TransportMasterNodeOperationActio
         return new PutMappingResponse();
     }
 
-request.indices(clusterService.state().metaData().concreteIndices(request.indicesOptions(), request.indices()));
+    @Override
     protected void doExecute(PutMappingRequest request, ActionListener<PutMappingResponse> listener) {
-        request.indices(clusterService.state().metaData().concreteIndices(request.indices(), request.indicesOptions()));
+request.indices(clusterService.state().metaData().concreteIndices(request.indicesOptions(), request.indices()));
         super.doExecute(request, listener);
     }
 

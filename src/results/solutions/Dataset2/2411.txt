@@ -1,4 +1,3 @@
-
 package org.columba.mail.folder.command;
 
 import org.columba.core.command.DefaultCommandReference;
@@ -61,9 +60,9 @@ public class MarkMessageCommand extends FolderCommand {
 		uids = r[0].getUids();
 		folder = (Folder) r[0].getFolder();
 		markVariant = r[0].getMarkVariant();
-folder.markMessage(r[0].getUids(), markVariant , worker);
+		ColumbaLogger.log.debug("src=" + folder);
 
-		folder.markMessage(MessageNode.toUidArray( (MessageNode[]) uids ), markVariant , worker);
+folder.markMessage(r[0].getUids(), markVariant , worker);
 		
 		
 	}

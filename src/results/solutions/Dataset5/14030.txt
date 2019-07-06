@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class StatelessComponentTest extends WicketTestCase
 		tester.getApplication().mountBookmarkablePage("/stateless", StatelessComponentPage.class);
 		// test is always the home page. it doesn't work then
 		executeTest(StatelessComponentPage.class, "StatelessComponentPage_mount_result.html");
-Url.parse("stateless?0-1.ILinkListener-link&testParam1=testValue1&testParam2=testValue2"));
+		tester.getRequest()
 			.setUrl(
-				Url.parse("stateless?0-1.ILinkListener-link&amp;testParam1=testValue1&amp;testParam2=testValue2"));
+Url.parse("stateless?0-1.ILinkListener-link&testParam1=testValue1&testParam2=testValue2"));
 		try
 		{
 			tester.processRequest();

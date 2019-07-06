@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  *               2005 Contributors
@@ -208,9 +207,9 @@ public abstract class World implements Dump.INode {
         	return ret; 
         } else if ( signature.equals("?") || signature.equals("*")) {
         // might be a problem here, not sure '?' should make it to here as a signature, the 
-ResolvedType something = new BoundedReferenceType("?","Ljava/lang/Object",this);
+        // proper signature for wildcard '?' is '*'
         	// fault in generic wildcard, can't be done earlier because of init issues
-        	ResolvedType something = new BoundedReferenceType("?",this);
+ResolvedType something = new BoundedReferenceType("?","Ljava/lang/Object",this);
         	typeMap.put("?",something);
         	return something;
         }

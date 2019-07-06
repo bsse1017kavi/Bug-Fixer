@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class SSLServerIdentityResourceDefinition extends SimpleResourceDefinitio
 
     public SSLServerIdentityResourceDefinition() {
         super(PathElement.pathElement(ModelDescriptionConstants.SERVER_IDENTITY, ModelDescriptionConstants.SSL),
-new SecurityRealmChildRemoveHandler(false),
+                ControllerResolver.getResolver("core.management.security-realm.server-identity.ssl"),
                 new SecurityRealmChildAddHandler(false, ATTRIBUTE_DEFINITIONS),
-                new SecurityRealmChildRemoveHandler(false, false),
+new SecurityRealmChildRemoveHandler(false),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES,
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES);
     }

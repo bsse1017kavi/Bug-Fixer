@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -56,9 +55,9 @@ public class IdMappingTests extends ElasticsearchTestCase {
         try {
             docMapper.parse("type", null, XContentFactory.jsonBuilder()
                     .startObject()
-fail();
+                    .endObject()
                     .bytes());
-            assert false;
+fail();
         } catch (MapperParsingException e) {
         }
 

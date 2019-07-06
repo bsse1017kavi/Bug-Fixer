@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -296,9 +295,9 @@ boolean checkData (TreeItem item, boolean redraw) {
 	}
 	return true;
 }
-style |= SWT.H_SCROLL | SWT.V_SCROLL;
+static int checkStyle (int style) {
 	//TEMPORARY CODE
-	//style |= SWT.H_SCROLL | SWT.V_SCROLL;
+style |= SWT.H_SCROLL | SWT.V_SCROLL;
 	style |= SWT.NO_REDRAW_RESIZE | SWT.NO_BACKGROUND | SWT.DOUBLE_BUFFERED;
 	return checkBits (style, SWT.SINGLE, SWT.MULTI, 0, 0, 0, 0);
 }

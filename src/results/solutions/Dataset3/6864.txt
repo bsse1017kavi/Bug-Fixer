@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -191,9 +190,9 @@ public class WarDeploymentProcessor implements DeploymentUnitProcessor {
             ServiceBuilder<?> builder = serviceTarget.addService(WebSubsystemServices.JBOSS_WEB_REALM.append(deploymentName),
                     realmService);
             builder.addDependency(DependencyType.REQUIRED, SecurityDomainService.SERVICE_NAME.append(securityDomain),
-WebDeploymentService webDeploymentService = new WebDeploymentService(webContext, injectionContainer);
+                    SecurityDomainContext.class, realmService.getSecurityDomainContextInjector()).setInitialMode(Mode.ACTIVE)
                     .install();
-            WebDeploymentService webDeploymentService = new WebDeploymentService(webContext);
+WebDeploymentService webDeploymentService = new WebDeploymentService(webContext, injectionContainer);
 
             if(moduleDescription != null ) {
                 webDeploymentService.getNamespaceSelector().setValue(new ImmediateValue<NamespaceContextSelector>(moduleDescription.getNamespaceContextSelector()));

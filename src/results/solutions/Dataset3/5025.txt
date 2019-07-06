@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -168,9 +167,9 @@ public class StatefulSessionSynchronizationInterceptor extends AbstractEJBInterc
         }
     }
 
-private final StatefulSessionComponentInstance statefulSessionComponentInstance;
+    private class StatefulSessionSynchronization implements Synchronization {
 
-        private StatefulSessionComponentInstance statefulSessionComponentInstance;
+private final StatefulSessionComponentInstance statefulSessionComponentInstance;
 
         StatefulSessionSynchronization(StatefulSessionComponentInstance statefulSessionComponentInstance) {
             this.statefulSessionComponentInstance = statefulSessionComponentInstance;

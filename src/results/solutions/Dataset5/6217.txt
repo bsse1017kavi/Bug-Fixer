@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2003, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -176,9 +175,9 @@ public Browser(Composite parent, int style) {
 		rc = componentManager.CreateInstance(XPCOM.NS_APPSHELL_CID, 0, nsIAppShell.NS_IAPPSHELL_IID, result);
 		if (rc != XPCOM.NS_OK) error(rc);
 		if (result[0] == 0) error(XPCOM.NS_NOINTERFACE);
-rc = AppShell.Create(0, null);
+		
 		AppShell = new nsIAppShell(result[0]);
-		rc = AppShell.Create(null, null);
+rc = AppShell.Create(0, null);
 		if (rc != XPCOM.NS_OK) error(rc);
 		rc = AppShell.Spinup();
 		if (rc != XPCOM.NS_OK) error(rc);

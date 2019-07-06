@@ -1,4 +1,3 @@
-
 package org.jboss.ejb;
 
 import javax.security.jacc.PolicyContextException;
@@ -27,9 +26,9 @@ public class SOAPMsgPolicyContextHandler implements PolicyContextHandler
     */ 
    public Object getContext(String key, Object data)
       throws PolicyContextException
-if( key.equalsIgnoreCase(SEI_ARGS_KEY) == true )
+   {
       Object context = null;
-      if( key.equalsIgnoreCase(SEI_ARGS_KEY) == false )
+if( key.equalsIgnoreCase(SEI_ARGS_KEY) == true )
          context = ejbContext.get();
       return context;
    }

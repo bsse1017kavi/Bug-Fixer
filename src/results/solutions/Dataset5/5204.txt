@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -148,9 +147,9 @@ public abstract class AbstractHeaderRenderStrategy implements IHeaderRenderStrat
 
 		if (renderHeadListeners != null)
 		{
-listener.renderHead(headerContainer, headerContainer.getHeaderResponse());
+			for (IHeaderContributor listener : renderHeadListeners)
 			{
-				listener.renderHead(headerContainer.getHeaderResponse());
+listener.renderHead(headerContainer, headerContainer.getHeaderResponse());
 			}
 		}
 	}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ import org.jboss.dmr.ModelType;
 public class WebContainerDefinition extends ModelOnlyResourceDefinition {
 
     protected static final ListAttributeDefinition WELCOME_FILES = new StringListAttributeDefinition.Builder(Constants.WELCOME_FILE)
-.setElementValidator(new StringLengthValidator(1, true, true))
+            .setXmlName(Constants.WELCOME_FILE)
             .setFlags(AttributeAccess.Flag.RESTART_RESOURCE_SERVICES)
-            .setValidator(new StringLengthValidator(1, true, true))
+.setElementValidator(new StringLengthValidator(1, true, true))
             .setAllowExpression(true)
             .setAllowNull(true)
             .build();

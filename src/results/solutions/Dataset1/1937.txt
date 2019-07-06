@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -2077,9 +2076,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
                 for (ColumnDefinition cd : cfm.getColumn_metadata().values())
                 {
                     RawColumnDefinition rcd = new RawColumnDefinition();
-rcd.name = ByteBufferUtil.string(cd.name);
+                    rcd.index_name = cd.getIndexName();
                     rcd.index_type = cd.getIndexType();
-                    rcd.name = ByteBufferUtil.string(cd.name, Charsets.UTF_8);
+rcd.name = ByteBufferUtil.string(cd.name);
                     rcd.validator_class = cd.validator.getClass().getName();
                     rcf.column_metadata[j++] = rcd;
                 }

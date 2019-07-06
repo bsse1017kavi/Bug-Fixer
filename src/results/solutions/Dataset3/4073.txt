@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -254,9 +253,9 @@ public class OperationRequestCompleter implements Completor {
     }
 
     private static String formatName(String name) {
-if(ch == ':' || ch == '/' || ch == '=') {
+        for(int i = 0; i < name.length(); ++i) {
             char ch = name.charAt(i);
-            if(ch == ':' || ch == '/') {
+if(ch == ':' || ch == '/' || ch == '=') {
                 // now escape the quotes
                 StringBuilder builder = new StringBuilder();
                 builder.append('"');

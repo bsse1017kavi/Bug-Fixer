@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -79,9 +78,9 @@ public class JettyRequestUpgradeStrategy implements RequestUpgradeStrategy {
 	 * A constructor accepting a {@link WebSocketServerFactory}. This may be useful for
 	 * modifying the factory's {@link WebSocketPolicy} via
 	 * {@link WebSocketServerFactory#getPolicy()}.
-Assert.notNull(factory, "WebSocketServerFactory must not be null");
+	 */
 	public JettyRequestUpgradeStrategy(WebSocketServerFactory factory) {
-		Assert.notNull(factory, "WebSocketServerFactory is required");
+Assert.notNull(factory, "WebSocketServerFactory must not be null");
 		this.factory = factory;
 		this.factory.setCreator(new WebSocketCreator() {
 

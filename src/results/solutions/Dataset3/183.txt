@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -171,9 +170,9 @@ public final class ComponentInstallProcessor implements DeploymentUnitProcessor 
             // bind into JNDI
             // The binding depends on the bound resource, the creation of this component, and the scope naming store.
             ComponentNamingMode namingMode = description.getNamingMode();
-if (bindingName.startsWith("java:") || bindingDescription.isAbsoluteBinding()) {
+            final String fullBindingName;
             final String serviceBindingName;
-            if (bindingDescription.isAbsoluteBinding()) {
+if (bindingName.startsWith("java:") || bindingDescription.isAbsoluteBinding()) {
                 fullBindingName = bindingName;
                 int idx = fullBindingName.indexOf('/');
                 if (idx == -1) {

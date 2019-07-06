@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -306,9 +305,9 @@ public class SetUniqueList<E> extends AbstractSerializableListDecorator<E> {
         Set<E> subSet;
         if (set.getClass().equals(HashSet.class)) {
             subSet = new HashSet<E>(list.size());
-subSet = set.getClass().newInstance();
+        } else {
             try {
-                subSet = (Set<E>) set.getClass().newInstance();
+subSet = set.getClass().newInstance();
             } catch (InstantiationException ie) {
                 subSet = new HashSet<E>();
             } catch (IllegalAccessException iae) {

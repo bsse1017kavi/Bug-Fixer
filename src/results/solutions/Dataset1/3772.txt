@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -3595,9 +3594,9 @@ public class TestIndexWriter extends LuceneTestCase
     hits = s.search(q);
     assertEquals(1, hits.length());
     TermPositions tps = s.getIndexReader().termPositions(new Term("field", "a"));
-assertEquals(-1, tps.nextPosition());
+    assertTrue(tps.next());
     assertEquals(1, tps.freq());
-    assertEquals(0, tps.nextPosition());
+assertEquals(-1, tps.nextPosition());
     w.close();
 
     assertTrue(_TestUtil.checkIndex(dir));

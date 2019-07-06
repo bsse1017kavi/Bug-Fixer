@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -77,9 +76,9 @@ public class TransportRestoreSnapshotAction extends TransportMasterNodeOperation
     @Override
     protected void masterOperation(final RestoreSnapshotRequest request, ClusterState state, final ActionListener<RestoreSnapshotResponse> listener) throws ElasticSearchException {
         RestoreService.RestoreRequest restoreRequest =
-.indicesOptions(request.indicesOptions())
+                new RestoreService.RestoreRequest("restore_snapshot[" + request.snapshot() + "]", request.repository(), request.snapshot())
                         .indices(request.indices())
-                        .ignoreIndices(request.ignoreIndices())
+.indicesOptions(request.indicesOptions())
                         .renamePattern(request.renamePattern())
                         .renameReplacement(request.renameReplacement())
                         .includeGlobalState(request.includeGlobalState())

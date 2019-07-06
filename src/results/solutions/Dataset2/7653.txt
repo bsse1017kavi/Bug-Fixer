@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.progress;
 
 import org.eclipse.core.runtime.IStatus;
@@ -115,9 +114,9 @@ public class ProgressView extends ViewPart implements IViewPart {
 			 */
 			public void run() {
 				JobProgressManager provider = JobProgressManager.getInstance();
-provider.refreshAll();
+				provider.debug = !provider.debug;
 				setChecked(provider.debug);
-				provider.refreshViewers(null);
+provider.refreshAll();
 			}
 
 		});

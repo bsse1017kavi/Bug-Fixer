@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.problem;
 
 /*
@@ -2349,9 +2348,9 @@ private boolean isKeyword(char[] tokenSource) {
 	if (tokenSource == null) {
 		return false;
 	}
-scanner.setSource(tokenSource);
+	try {
 		Scanner scanner = new Scanner();
-		scanner.setSourceBuffer(tokenSource);
+scanner.setSource(tokenSource);
 		int token = scanner.getNextToken();
 		char[] currentKeyword;
 		try {

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 1999,2004 The Apache Software Foundation.
  * 
@@ -242,9 +241,9 @@ public class FileAppender extends WriterAppender {
     @param append   If true will append to fileName. Otherwise will
         truncate fileName.  */
   public synchronized void setFile(
-getLogger().debug("setFile called: {}, {}", fileName, append?"true":"false");
+    String filename, boolean append, boolean bufferedIO, int bufferSize)
     throws IOException {
-    getLogger().debug("setFile called: {}, {}", fileName, Boolean.toString(append));
+getLogger().debug("setFile called: {}, {}", fileName, append?"true":"false");
 
     // It does not make sense to have immediate flush and bufferedIO.
     if (bufferedIO) {

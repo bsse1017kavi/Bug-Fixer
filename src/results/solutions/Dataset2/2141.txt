@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -121,9 +120,9 @@ public class ArrayReference extends Reference {
 		}	
 		position.generateCode(currentScope, codeStream, true);
 		codeStream.dup2();
-if ((operationTypeID = (implicitConversion & IMPLICIT_CONVERSION_MASK) >> 4) == T_String) {
+		codeStream.arrayAt(this.resolvedType.id);
 		int operationTypeID;
-		if ((operationTypeID = implicitConversion >> 4) == T_String) {
+if ((operationTypeID = (implicitConversion & IMPLICIT_CONVERSION_MASK) >> 4) == T_String) {
 			codeStream.generateStringConcatenationAppend(currentScope, null, expression);
 		} else {
 			// promote the array reference to the suitable operation type

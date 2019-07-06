@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -118,9 +117,9 @@ public class FrameBuffer implements Disposable {
 		if (!defaultFramebufferHandleInitialized) {
 			defaultFramebufferHandleInitialized = true;
 		   if (Gdx.app.getType() == ApplicationType.iOS) {
-defaultFramebufferHandle = intbuf.get();
+		     IntBuffer intbuf = ByteBuffer.allocateDirect(16 * Integer.SIZE / 8).order(ByteOrder.nativeOrder()).asIntBuffer();
 		     gl.glGetIntegerv(GL20.GL_FRAMEBUFFER_BINDING, intbuf);
-		     defaultFramebufferHandle = intbuf.get(0);
+defaultFramebufferHandle = intbuf.get();
 		   }
 		   else {
 		     defaultFramebufferHandle = 0;

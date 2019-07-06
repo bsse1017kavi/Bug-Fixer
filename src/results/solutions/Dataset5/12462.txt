@@ -1,4 +1,3 @@
-
 /*******************************************************************************
 * Copyright (c) 2009 EclipseSource and others. All rights reserved. This
 * program and the accompanying materials are made available under the terms of
@@ -96,9 +95,9 @@ public abstract class AbstractServicePublicationTest extends ECFAbstractTestCase
 		final Object o = ref
 				.getProperty(ServicePublication.PROP_KEY_SERVICE_INTERFACE_NAME);
 		assertTrue(o instanceof Collection);
-Thread.sleep(10000);
+		final Collection refIfaces = (Collection) o;
 		assertStringsEqual(getInterfaces(), (String []) refIfaces.toArray(new String[] {}));
-		Thread.sleep(50000);
+Thread.sleep(10000);
 	}
 	public void setInterfaces(String [] interfaces) {
 		this.ifaces = interfaces;

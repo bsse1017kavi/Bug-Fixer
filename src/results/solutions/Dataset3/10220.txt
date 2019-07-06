@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -58,9 +57,9 @@ public class DriverRegistryImpl implements DriverRegistry {
             throw new IllegalArgumentException(MESSAGES.nullVar("driver"));
 
         DEPLOYMENT_CONNECTOR_REGISTRY_LOGGER.tracef("Removing deployment: %s", driver);
-drivers.remove(driver.getDriverName());
+
         synchronized (drivers) {
-            drivers.put(driver.getDriverName(), driver);
+drivers.remove(driver.getDriverName());
         }
 
     }

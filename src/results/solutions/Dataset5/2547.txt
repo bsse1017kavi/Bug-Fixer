@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -136,9 +135,9 @@ public class DropTargetEffect extends DropTargetAdapter {
 		return item;
 	}
 	
-if (item.getExpanded() && item.getItemCount() > 0) return item.getItem(0);
+	TreeItem nextItem(Tree tree, TreeItem item) {
 		if (item == null) return null;
-		if (item.getExpanded()) return item.getItem(0);
+if (item.getExpanded() && item.getItemCount() > 0) return item.getItem(0);
 		TreeItem childItem = item;
 		TreeItem parentItem = childItem.getParentItem();
 		int index = parentItem == null ? tree.indexOf(childItem) : parentItem.indexOf(childItem);

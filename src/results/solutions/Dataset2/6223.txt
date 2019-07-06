@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.compiler.problem;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -139,9 +138,9 @@ public static String[] loadMessageTemplates(Locale loc) {
 	String[] templates = new String[500];
 	for (int i = 0, max = templates.length; i < max; i++) {
 		try {
-// available ID
+			templates[i] = bundle.getString(String.valueOf(i));
 		} catch (MissingResourceException e) {
-			System.out.println("Missing problem message : " + i); //$NON-NLS-1$
+// available ID
 		}
 	}
 	return templates;

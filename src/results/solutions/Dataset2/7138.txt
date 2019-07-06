@@ -1,4 +1,3 @@
-
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1
@@ -118,9 +117,9 @@ class ChainsawTabbedPane extends JTabbedPane {
   public void addANewTab(String name, JComponent component, Icon icon) {
     int selectedIndex = getSelectedIndex();
     super.insertTab(name, icon, component, null, 0);
-setSelectedIndex(Math.min(selectedIndex + 1, getTabCount() - 1));
+	//only select the previously existing tab if there is more than one tab
     if (getTabCount() > 1) {
-      setSelectedIndex(selectedIndex + 1);
+setSelectedIndex(Math.min(selectedIndex + 1, getTabCount() - 1));
     }
 
     super.fireStateChanged();

@@ -1,4 +1,3 @@
-
 package org.jboss.as.clustering.jgroups.subsystem;
 
 import org.jboss.as.clustering.jgroups.ChannelFactory;
@@ -54,9 +53,9 @@ public class ChannelService implements Service<Channel> {
         // Validate view
         String localName = this.channel.getName();
         Address localAddress = this.channel.getAddress();
-if ((name != null) && name.equals(localName) && !address.equals(localAddress)) {
+        for (Address address: this.channel.getView()) {
             String name = this.channel.getName(address);
-            if (name.equals(localName) && !address.equals(localAddress)) {
+if ((name != null) && name.equals(localName) && !address.equals(localAddress)) {
                 this.channel.close();
                 throw JGroupsMessages.MESSAGES.duplicateNodeName(factory.getProtocolStackConfiguration().getEnvironment().getNodeName());
             }

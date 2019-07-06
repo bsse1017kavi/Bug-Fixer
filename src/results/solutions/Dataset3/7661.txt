@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -54,9 +53,9 @@ public class SimpleWebTestCase {
 
     @Deployment(name = "deployment-single")
     public static Archive<?> deployment() {
-war.setWebXML(SimpleWebTestCase.class.getPackage(), "web.xml");
+        WebArchive war = ShrinkWrap.create(WebArchive.class, "distributable.war");
         war.addClass(SimpleServlet.class);
-        war.addAsWebInfResource(SimpleWebTestCase.class.getPackage(), "web.xml");
+war.setWebXML(SimpleWebTestCase.class.getPackage(), "web.xml");
         System.out.println(war.toString(true));
         return war;
     }

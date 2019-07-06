@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -247,9 +246,9 @@ public class Fragment extends WebMarkupContainer
 		int index = providerMarkupStream.findComponentIndex(null, markupId);
 		if (index == -1)
 		{
-+ "` does not contain a fragment with wicket:id `" + markupId + "`. Context: "
+			throw new MarkupException("Markup of component class `"
 					+ providerMarkupStream.getContainerClass().getName()
-					+ "` does not contain a fragment with id `" + markupId + "`. Context: "
++ "` does not contain a fragment with wicket:id `" + markupId + "`. Context: "
 					+ toString());
 		}
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -281,9 +280,9 @@ public class Proxy extends Thread {
                 // Remove additional headers
                 for(String hdr : headersToRemove){
                     headers.removeHeaderNamed(hdr);
-if(result != null) // deliverSampler allows sampler to be null, but result must not be null
+                }
             }
-            if(result != null) // sampler is allowed to be null
+if(result != null) // deliverSampler allows sampler to be null, but result must not be null
             {
                 target.deliverSampler(sampler, new TestElement[] { captureHttpHeaders ? headers : null }, result);
             }

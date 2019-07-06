@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -226,9 +225,9 @@ public abstract class PageMap implements IClusterable, IPageMap
 	 * just use setResponsePage or, when you are in a constructor, redirectTo.
 	 * 
 	 * @param pageClazz
-public final <T extends Page<?>> void redirectToInterceptPage(final Class<T> pageClazz)
+	 *            The page clazz to temporarily redirect to
 	 */
-	public final void redirectToInterceptPage(final Class<? extends Page<?>> pageClazz)
+public final <T extends Page<?>> void redirectToInterceptPage(final Class<T> pageClazz)
 	{
 		final RequestCycle cycle = RequestCycle.get();
 		setUpRedirect(cycle);

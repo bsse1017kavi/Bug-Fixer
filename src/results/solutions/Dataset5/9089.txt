@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -251,9 +250,9 @@ public class RemoteServiceRegistrationImpl implements
 				System.arraycopy(value, 0, clonedArray, 0, len);
 				return clonedArray;
 			}
-return (clazz.getMethod("clone", (Class []) null).invoke(value, (Object []) null));
+			// must use reflection because Object clone method is protected!!
 			try {
-				return (clazz.getMethod("clone", null).invoke(value, null));
+return (clazz.getMethod("clone", (Class []) null).invoke(value, (Object []) null));
 			} catch (Exception e) {
 				/* clone is not a public method on value's class */
 			} catch (Error e) {

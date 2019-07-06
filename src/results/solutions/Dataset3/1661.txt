@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -64,9 +63,9 @@ public class ReadMasterDomainModelHandler implements OperationStepHandler, Descr
         final Resource root = transformResource(context, untransformedRoot);
         // Get the list of all resources registered in this model
         context.getResult().set(describeAsNodeList(root));
-context.stepCompleted();
+        // The HC registration process will hijack the operationPrepared call and push
         // the model to a registering host-controller
-        context.completeStep();
+context.stepCompleted();
     }
 
     /**

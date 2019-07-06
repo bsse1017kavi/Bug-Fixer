@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -452,9 +451,9 @@ public final class LSMR {
       if (test1 <= rtol) {
         istop = 1;
         stop = StopCode.TRIVIAL;
-if (stop != StopCode.CONTINUE && stop.ordinal() != istop) {
+      }
 
-      if (stop != StopCode.CONTINUE && stop.ordinal() != istop + 1) {
+if (stop != StopCode.CONTINUE && stop.ordinal() != istop) {
         throw new IllegalStateException(String.format("bad code match %d vs %d", istop, stop.ordinal()));
       }
 

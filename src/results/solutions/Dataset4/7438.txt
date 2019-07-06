@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -125,9 +124,9 @@ public class SimpleLuceneTests extends ElasticsearchTestCase {
         indexWriter.addDocument(document);
 
         IndexReader reader = DirectoryReader.open(indexWriter, true);
-final ArrayList<String> fieldsOrder = new ArrayList<>();
+        IndexSearcher searcher = new IndexSearcher(reader);
         TopDocs topDocs = searcher.search(new TermQuery(new Term("_id", "1")), 1);
-        final ArrayList<String> fieldsOrder = new ArrayList<String>();
+final ArrayList<String> fieldsOrder = new ArrayList<>();
         searcher.doc(topDocs.scoreDocs[0].doc, new StoredFieldVisitor() {
             @Override
             public Status needsField(FieldInfo fieldInfo) throws IOException {

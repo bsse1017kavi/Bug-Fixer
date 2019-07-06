@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -124,9 +123,9 @@ public class ResidentFieldDataCache extends AbstractConcurrentMapFieldDataCache 
                 logger.info("updating index.cache.field.expire from [{}] to [{}]", ResidentFieldDataCache.this.expire, expire);
                 changed = true;
                 ResidentFieldDataCache.this.expire = expire;
-clear("update_settings");
+            }
             if (changed) {
-                clear();
+clear("update_settings");
             }
         }
     }

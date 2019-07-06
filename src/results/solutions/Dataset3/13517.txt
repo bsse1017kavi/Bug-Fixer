@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -47,9 +46,9 @@ class RemoteOutboundConnnectionResourceDefinition extends AbstractOutboundConnec
     static final RemoteOutboundConnnectionResourceDefinition INSTANCE = new RemoteOutboundConnnectionResourceDefinition();
 
 
-RemoteOutboundConnectionAdd.INSTANCE, RemoteOutboundConnectionRemoveHandler.INSTANCE);
+    private RemoteOutboundConnnectionResourceDefinition() {
         super(ADDRESS, RemotingExtension.getResourceDescriptionResolver(CommonAttributes.REMOTE_OUTBOUND_CONNECTION),
-                RemoteOutboundConnectionAdd.INSTANCE, OutboundConnectionRemoveHandler.INSTANCE);
+RemoteOutboundConnectionAdd.INSTANCE, RemoteOutboundConnectionRemoveHandler.INSTANCE);
     }
 
     @Override

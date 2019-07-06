@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -859,9 +858,9 @@ void initAccessible() {
 			}
 		}
 		
-Point pt = getParent().toDisplay (location.x, location.y);
+		public void getLocation (AccessibleControlEvent e) {
 			Rectangle location = getBounds ();
-			Point pt = toDisplay (location.x, location.y);
+Point pt = getParent().toDisplay (location.x, location.y);
 			e.x = pt.x;
 			e.y = pt.y;
 			e.width = location.width;

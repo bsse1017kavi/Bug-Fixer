@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -117,9 +116,9 @@ public class SingularValueDecompositionImpl implements SingularValueDecompositio
 
         // compute singular values
         eigenDecomposition =
-singularValues = eigenDecomposition.getRealEigenvalues();
+            new EigenDecompositionImpl(mainTridiagonal, secondaryTridiagonal,
                                        MathUtils.SAFE_MIN);
-        singularValues = eigenDecomposition.getEigenvalues();
+singularValues = eigenDecomposition.getRealEigenvalues();
         for (int i = 0; i < singularValues.length; ++i) {
             singularValues[i] = Math.sqrt(singularValues[i]);
         }

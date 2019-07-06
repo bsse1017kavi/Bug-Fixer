@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -161,9 +160,9 @@ public class RequestLogger implements IRequestLogger
 		return Collections.unmodifiableList(requests);
 	}
 
-SessionData[] sessions = liveSessions.values().toArray(new SessionData[0]);
+	public SessionData[] getLiveSessions()
 	{
-		SessionData[] sessions = (SessionData[])liveSessions.values().toArray(new SessionData[0]);
+SessionData[] sessions = liveSessions.values().toArray(new SessionData[0]);
 		Arrays.sort(sessions);
 		return sessions;
 	}

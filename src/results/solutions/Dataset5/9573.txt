@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -561,9 +560,9 @@ public class XSLTProcess extends MatchingTask implements XSLTLogger {
      * @param targetFile the file for which the directories are required.
      * @exception BuildException if the directories cannot be created.
      */
-File directory = targetFile.getParentFile();
+    private void ensureDirectoryFor(File targetFile)
          throws BuildException {
-        File directory = fileUtils.getParentFile(targetFile);
+File directory = targetFile.getParentFile();
         if (!directory.exists()) {
             if (!directory.mkdirs()) {
                 throw new BuildException("Unable to create directory: "

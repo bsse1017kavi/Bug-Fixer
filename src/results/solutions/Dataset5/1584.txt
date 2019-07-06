@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2007 ZXing authors
  *
@@ -112,9 +111,9 @@ public final class MultiFormatReader implements Reader {
         readers.addElement(new MultiFormatOneDReader(hints));
       }
       if (formats.contains(BarcodeFormat.QR_CODE)) {
-if (formats.contains(BarcodeFormat.DATA_MATRIX)) {
+        readers.addElement(new QRCodeReader());
       }
-      if (formats.contains(BarcodeFormat.DATAMATRIX)) {
+if (formats.contains(BarcodeFormat.DATA_MATRIX)) {
         readers.addElement(new DataMatrixReader());
       }
       if (formats.contains(BarcodeFormat.PDF417)) {

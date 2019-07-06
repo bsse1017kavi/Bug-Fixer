@@ -1,4 +1,3 @@
-
 package org.springframework.ui.binding;
 
 import java.lang.annotation.Annotation;
@@ -40,9 +39,9 @@ public class Binder<T> {
 
 	private TypeConverter typeConverter;
 	
-private static Formatter defaultFormatter = new Formatter() {
+	private boolean optimisticBinding = true;
 
-	private static Formatter<?> defaultFormatter = new Formatter<?>() {
+private static Formatter defaultFormatter = new Formatter() {
 		
 		public Class<?> getFormattedObjectType() {
 			return String.class;

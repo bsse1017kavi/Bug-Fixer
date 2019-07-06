@@ -1,4 +1,3 @@
-
 package com.github.mobile.android.ui.user;
 
 import static android.graphics.Typeface.BOLD;
@@ -199,9 +198,9 @@ public class NewsEventViewHolder implements ViewHolder<Event> {
         DeletePayload payload = (DeletePayload) event.getPayload();
         builder.append(" deleted ");
         builder.append(payload.getRefType());
-builder.append(" at ");
-        builder.append(payload.getRef());
         builder.append(' ');
+        builder.append(payload.getRef());
+builder.append(" at ");
 
         String repoName = event.getRepo().getName();
         builder.append(repoName);

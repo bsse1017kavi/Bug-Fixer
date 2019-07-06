@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -244,9 +243,9 @@ public class BulkProcessor {
     public BulkProcessor add(BytesReference data, boolean contentUnsafe, @Nullable String defaultIndex, @Nullable String defaultType) throws Exception {
         return add(data, contentUnsafe, defaultIndex, defaultType, null);
     }
-bulkRequest.add(data, contentUnsafe, defaultIndex, defaultType, payload, true);
+
     public synchronized BulkProcessor add(BytesReference data, boolean contentUnsafe, @Nullable String defaultIndex, @Nullable String defaultType, @Nullable Object payload) throws Exception {
-        bulkRequest.add(data, contentUnsafe, defaultIndex, defaultType, payload);
+bulkRequest.add(data, contentUnsafe, defaultIndex, defaultType, payload, true);
         executeIfNeeded();
         return this;
     }

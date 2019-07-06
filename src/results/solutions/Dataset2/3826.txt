@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -53,9 +52,9 @@ public class ReplaceDragHandler extends TabDragHandler {
         if (tabUnderPointer == null) {
             Rectangle titleArea = tabFolder.getTabArea();
 
-if (titleArea.contains(location) && tabFolder.getItemCount() > 0) {
+            // If we're dragging over the title area, treat this as a drop in the last
             // tab position.
-            if (titleArea.contains(location)) {
+if (titleArea.contains(location) && tabFolder.getItemCount() > 0) {
                 int dragOverIndex = tabFolder.getItemCount();
                 AbstractTabItem lastTab = tabFolder.getItem(dragOverIndex - 1);
 

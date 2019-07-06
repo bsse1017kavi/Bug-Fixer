@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -1116,9 +1115,9 @@ public final class ColumnFamilyStore implements ColumnFamilyStoreMBean
         {
             // if we are querying subcolumns of a supercolumn, fetch the supercolumn with NQF, then filter in-memory.
             if (filter.path.superColumnName != null)
-ColumnFamily cf = getColumnFamilyInternal(nameFilter, gcBefore);
+            {
                 QueryFilter nameFilter = new NamesQueryFilter(filter.key, new QueryPath(columnFamily_), filter.path.superColumnName);
-                ColumnFamily cf = getColumnFamilyInternal(nameFilter, getDefaultGCBefore());
+ColumnFamily cf = getColumnFamilyInternal(nameFilter, gcBefore);
                 if (cf == null || cf.getColumnCount() == 0)
                     return cf;
 

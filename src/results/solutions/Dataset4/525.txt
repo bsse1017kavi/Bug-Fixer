@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -222,9 +221,9 @@ public class FrustumCullingTest extends BaseBulletTest {
 			visibleEntities.clear();
 			for (int i = 0; i < world.entities.size; i++) {
 				final BulletEntity e = world.entities.get(i);
-e.transform.getTranslation(tmpV);
+				if (e == frustumEntity)
 					continue;
-				e.modelInstance.transform.getTranslation(tmpV);
+e.transform.getTranslation(tmpV);
 				if (frustumCam.frustum.sphereInFrustum(tmpV, 1))
 					visibleEntities.add(e);
 			}

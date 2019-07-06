@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -86,9 +85,9 @@ final class HandlerAdd extends AbstractAddStepHandler {
                     final UnifiedHandlerMetaData handler = new UnifiedHandlerMetaData();
                     handler.setHandlerName(handlerName);
                     handler.setHandlerClass(handlerClass);
-context.reloadRequired();
+                    handlerChain.addHandler(handler);
                     if (!context.isBooting()) {
-                        context.restartRequired();
+context.reloadRequired();
                     }
                     return;
                 }

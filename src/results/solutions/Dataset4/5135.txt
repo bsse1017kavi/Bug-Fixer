@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -127,9 +126,9 @@ public class NettyMemcachedServerTransport extends AbstractLifecycleComponent<Me
 
         ChannelPipelineFactory pipelineFactory = new ChannelPipelineFactory() {
             @Override public ChannelPipeline getPipeline() throws Exception {
-pipeline.addLast("decoder", new MemcachedDecoder(logger));
+                ChannelPipeline pipeline = Channels.pipeline();
                 pipeline.addLast("openChannels", serverOpenChannels);
-                pipeline.addLast("decoder", new MemcachedDecoder());
+pipeline.addLast("decoder", new MemcachedDecoder(logger));
                 pipeline.addLast("dispatcher", new MemcachedDispatcher(restController));
                 return pipeline;
             }

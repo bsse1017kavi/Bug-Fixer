@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002,2003-2004 The Apache Software Foundation.
  *
@@ -116,9 +115,9 @@ public class XSModelGroupImpl implements XSModelGroup {
     // if one of the max value of the particles is unbounded, return unbounded;
     // otherwise return the max of all max values
     private int maxEffectiveTotalRangeChoice() {
-max = fParticles[0].maxEffectiveTotalRange();
+        int max = 0, one;
         if (fParticleCount > 0) {
-            max = fParticles[0].minEffectiveTotalRange();
+max = fParticles[0].maxEffectiveTotalRange();
             if (max == SchemaSymbols.OCCURRENCE_UNBOUNDED)
                 return SchemaSymbols.OCCURRENCE_UNBOUNDED;
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -885,9 +884,9 @@ public abstract class RequestCycle
 		}
 
 		// remove any rendered feedback messages from the session
-session.cleanupRenderedFeedbackMessages();
+		try
 		{
-			session.cleanupFeedbackMessages();
+session.cleanupRenderedFeedbackMessages();
 		}
 		catch (RuntimeException re)
 		{

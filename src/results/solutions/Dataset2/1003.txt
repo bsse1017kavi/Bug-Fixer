@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2002, 2004 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -857,9 +856,9 @@ public class CodeFormatterVisitor extends ASTVisitor {
 			return null;
 		}
 
-expression.traverse(this, (BlockScope) null);
+		this.lastLocalDeclarationSourceStart = -1;
 		try {
-			expression.traverse(this, null);
+expression.traverse(this, (BlockScope) null);
 			this.scribe.printComment();
 		} catch(AbortFormatting e){
 			return failedToFormat();

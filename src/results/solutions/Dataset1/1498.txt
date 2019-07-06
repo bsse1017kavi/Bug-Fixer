@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -164,9 +163,9 @@ public class FuzzyKMeansDriver {
     // uncomment it to run locally
     // conf.set("mapred.job.tracker", "local");
 
-FileSystem fs = FileSystem.get(outPath.toUri(), conf);
+    try {
       JobClient.runJob(conf);
-      FileSystem fs = FileSystem.get(conf);
+FileSystem fs = FileSystem.get(outPath.toUri(), conf);
       return isConverged(clustersOut, conf, fs);
     } catch (IOException e) {
       log.warn(e.toString(), e);

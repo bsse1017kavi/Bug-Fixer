@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import java.util.Properties;
  *
  * @author Scott Marlow
  */
-private static volatile JtaManager jtaManager;
+public class JBossAppServerJtaPlatform extends JNDITransactionManagerLookup {
 
-    private static JtaManager jtaManager;
+private static volatile JtaManager jtaManager;
 
     public static void initJBossAppServerJtaPlatform(final JtaManager manager) {
         jtaManager = manager;

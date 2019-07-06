@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -44,9 +43,9 @@ public class TestTermQueryPrefixGridStrategy extends SpatialTestCase {
     TermQueryPrefixTreeStrategy prefixGridStrategy = new TermQueryPrefixTreeStrategy(new QuadPrefixTree(ctx));
 
     Shape point = new PointImpl(-118.243680, 34.052230);
-losAngeles.add(new StringField("name", "Los Angeles", Field.Store.YES));
+
     Document losAngeles = new Document();
-    losAngeles.add(new Field("name", "Los Angeles", StringField.TYPE_STORED));
+losAngeles.add(new StringField("name", "Los Angeles", Field.Store.YES));
     losAngeles.add(prefixGridStrategy.createField(fieldInfo, point, true, true));
 
     addDocumentsAndCommit(Arrays.asList(losAngeles));

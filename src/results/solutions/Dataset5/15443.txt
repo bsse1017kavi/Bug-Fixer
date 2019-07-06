@@ -1,4 +1,3 @@
-
 /*
  * $Id: VariableAssignmentParser.java,v 1.6 2005/01/15 19:24:03 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -35,9 +34,9 @@ public final class VariableAssignmentParser extends MetaPatternParser
 	private static final MetaPattern namespace = new OptionalMetaPattern(new MetaPattern[] {
 			MetaPattern.VARIABLE_NAME, MetaPattern.COLON });
 
-MetaPattern.XML_ATTRIBUTE_NAME }));
+	/** The key (lvalue) like "name" or "namespace:name" */
 	private static final Group key = new Group(new MetaPattern(new MetaPattern[] { namespace,
-			MetaPattern.VARIABLE_NAME }));
+MetaPattern.XML_ATTRIBUTE_NAME }));
 
 	/** The rvalue of the assignment */
 	private static final Group value = new Group(MetaPattern.STRING);

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -166,9 +165,9 @@ public class AccessAuthorizationResourceDefinition extends SimpleResourceDefinit
         }
 
         // Constraints
-resourceRegistration.registerSubModel(ApplicationClassificationParentResourceDefinition.INSTANCE);
+        if (!isHostController) {
             //  -- Application Type
-            resourceRegistration.registerSubModel(ApplicationTypeParentResourceDefinition.INSTANCE);
+resourceRegistration.registerSubModel(ApplicationClassificationParentResourceDefinition.INSTANCE);
             //  -- Sensitivity Classification
             resourceRegistration.registerSubModel(SensitivityClassificationParentResourceDefinition.INSTANCE);
             //  -- Vault Expression

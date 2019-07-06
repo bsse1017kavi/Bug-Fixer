@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -85,9 +84,9 @@ public abstract class AbstractProperty implements JMeterProperty {
         return new PropertyIteratorImpl(values);
     }
 
-public AbstractProperty clone() {
+    /** {@inheritDoc} */
     @Override
-    public Object clone() {
+public AbstractProperty clone() {
         try {
             AbstractProperty prop = (AbstractProperty) super.clone();
             prop.name = name;

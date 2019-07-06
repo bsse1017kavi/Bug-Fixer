@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -389,9 +388,9 @@ public IJavaElement getJavaElement(IJavaElement parent) throws IllegalArgumentEx
 		case IJavaElement.TYPE:
 			return ((IType)parent).getType(getName());
 		case IJavaElement.FIELD:
-return ((IMember)parent).getType(getName(), 1); // TODO (jerome) compute occurenceCount
+		case IJavaElement.INITIALIZER:
 		case IJavaElement.METHOD:
-			return ((IMember)parent).getType(getName(), 1); // TODO: (jerome) compute occurenceCount
+return ((IMember)parent).getType(getName(), 1); // TODO (jerome) compute occurenceCount
 		default:
 			throw new IllegalArgumentException(Util.bind("element.illegalParent")); //$NON-NLS-1$
 	}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -57,9 +56,9 @@ public abstract class SessionBeanComponent extends EJBComponent implements org.j
 
     private static final Logger logger = Logger.getLogger(SessionBeanComponent.class);
 
-protected Map<String, AccessTimeout> beanLevelAccessTimeout;
+    static final ServiceName ASYNC_EXECUTOR_SERVICE_NAME = ThreadsServices.EXECUTOR.append("ejb3-async");
 
-    protected AccessTimeout beanLevelAccessTimeout;
+protected Map<String, AccessTimeout> beanLevelAccessTimeout;
     private final Set<Method> asynchronousMethods;
     protected Executor asyncExecutor;
     private final Map<String, ServiceName> viewServices;

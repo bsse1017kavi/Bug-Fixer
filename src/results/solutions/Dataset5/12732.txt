@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -88,9 +87,9 @@ public class Help implements Command {
             helpWindow.getContentPane().setLayout(new GridLayout(1, 1));
             ComponentUtil.centerComponentInWindow(helpWindow, 60);
         }
-helpWindow.setVisible(true);
+        helpWindow.getContentPane().removeAll();
         helpWindow.getContentPane().add(scroller);
-        helpWindow.show();
+helpWindow.setVisible(true);
         if (e.getSource() instanceof String[]) {
             String[] source = (String[]) e.getSource();
             resetPage(source[0]);

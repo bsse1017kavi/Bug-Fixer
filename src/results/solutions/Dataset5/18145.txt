@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -86,9 +85,9 @@ public class ModelToStringTest extends WicketTestCase
 		String expected = "Model:classname=[org.apache.wicket.model.CompoundPropertyModel]:nestedModel=[]";
 		assertEquals(expected, emptyModel.toString());
 
-CompoundPropertyModel<Properties> stringProperty = new CompoundPropertyModel<Properties>(properties);
+		Properties properties = new Properties();
 		properties.put("name", "foo");
-		CompoundPropertyModel<String> stringProperty = new CompoundPropertyModel<String>(properties);
+CompoundPropertyModel<Properties> stringProperty = new CompoundPropertyModel<Properties>(properties);
 
 		expected = "Model:classname=[org.apache.wicket.model.CompoundPropertyModel]:nestedModel=[{name=foo}]";
 		assertEquals(expected, stringProperty.toString());

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -104,9 +103,9 @@ public class StatefulSessionSynchronizationInterceptor extends AbstractEJBInterc
                             // get the key to current transaction associated with this thread
                             currentTransactionKey = transactionSynchronizationRegistry.getTransactionKey();
                             final int status = transactionSynchronizationRegistry.getTransactionStatus();
-if (currentTransactionKey != null && status != Status.STATUS_COMMITTED && status != Status.STATUS_ROLLEDBACK) {
+                            // if this SFSB instance is already associated with a different transaction, then it's an error
                             // if the thread is currently associated with a tx, then register a tx synchronization
-                            if (currentTransactionKey != null && status != Status.STATUS_COMMITTED) {
+if (currentTransactionKey != null && status != Status.STATUS_COMMITTED && status != Status.STATUS_ROLLEDBACK) {
                                 // register a tx synchronization for this SFSB instance
                                 final Synchronization statefulSessionSync = new StatefulSessionSynchronization(instance, lockOwner);
                                 transactionSynchronizationRegistry.registerInterposedSynchronization(statefulSessionSync);

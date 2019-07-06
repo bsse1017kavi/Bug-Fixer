@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -379,9 +378,9 @@ public class QueryCacheStoreQuery
             cq.getCache().onTypesChanged(new TypesChangedEvent
                 (q.getContext(), classes));
 
-if (cmd[i].getDataCache() != null && cmd[i].getDataCache().getEvictOnBulkUpdate())
+            // evict from the data cache
             for (int i = 0; i < cmd.length; i++) {
-                if (cmd[i].getDataCache() != null)
+if (cmd[i].getDataCache() != null && cmd[i].getDataCache().getEvictOnBulkUpdate())
                     cmd[i].getDataCache().removeAll(
                         cmd[i].getDescribedType(), true);
             }

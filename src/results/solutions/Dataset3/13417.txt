@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -397,9 +396,9 @@ public class UriTemplateServletAnnotationControllerTests {
 
 	@Controller
 	@RequestMapping("hotels")
-@RequestMapping("{hotel}")
+	public static class ImplicitSubPathController {
 
-		@RequestMapping("{hotel:.*}")
+@RequestMapping("{hotel}")
 		public void handleHotel(@PathVariable String hotel, Writer writer) throws IOException {
 			writer.write("test-" + hotel);
 		}

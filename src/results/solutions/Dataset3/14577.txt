@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -588,9 +587,9 @@ public class JBossContextConfig extends ContextConfig {
         final TldsMetaData tldsMetaData = deploymentUnitContext.getAttachment(TldsMetaData.ATTACHMENT_KEY);
         if (tldsMetaData == null) {
             return;
-List<TldMetaData> sharedTlds = tldsMetaData.getSharedTlds(deploymentUnitContext);
+        }
         Map<String, TldMetaData> localTlds = tldsMetaData.getTlds();
-        List<TldMetaData> sharedTlds = tldsMetaData.getSharedTlds();
+List<TldMetaData> sharedTlds = tldsMetaData.getSharedTlds(deploymentUnitContext);
         ArrayList<TagLibraryInfo> tagLibraries = new ArrayList<TagLibraryInfo>();
 
         for (String location : localTlds.keySet()) {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -127,9 +126,9 @@ public class QueueDefinition extends SimpleResourceDefinition {
                     AttributeDefinition readOnlyRuntimeAttr = create(attr)
                             .setStorageRuntime()
                             .build();
-registry.registerReadOnlyAttribute(attr, null);
+                    registry.registerReadOnlyAttribute(readOnlyRuntimeAttr, QueueReadAttributeHandler.RUNTIME_INSTANCE);
                 } else {
-                    registry.registerReadWriteAttribute(attr, null, QueueConfigurationWriteHandler.INSTANCE);
+registry.registerReadOnlyAttribute(attr, null);
                 }
             }
         }

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -368,9 +367,9 @@ private ICompilationUnit[] getWorkingCopies() {
 	int length = copies.length;
 	int index = 0;
 	for (int i = 0; i < length; i++) {
-if (!copy.isPrimary()
+		CompilationUnit copy = (CompilationUnit)copies[i];
 		try {
-			if (copy.owner != DefaultWorkingCopyOwner.PRIMARY
+if (!copy.isPrimary()
 					|| copy.hasUnsavedChanges()
 					|| !copy.isBasedOn(copy.getResource())) {
 				if (result == null) {

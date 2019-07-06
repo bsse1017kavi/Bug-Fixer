@@ -1,4 +1,3 @@
-
 // Copyright (c) 1996-99 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -68,9 +67,9 @@ implements ChangeListener, MouseListener, QuadrantPanel {
     ConfigLoader.loadTabs(_tabPanels, "multi", sb, Horizontal.getInstance());
 
     setLayout(new BorderLayout());
-// _tabs.addChangeListener(this);
+    add(_tabs, BorderLayout.CENTER);
 
-    _tabs.addChangeListener(this);
+// _tabs.addChangeListener(this);
     for (int i = 0; i < _tabPanels.size(); i++) {
       String title = "tab";
       JPanel t = (JPanel) _tabPanels.elementAt(i);

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -19,9 +18,9 @@ package org.apache.openjpa.persistence.models.company.fetchlazy;
 import java.util.*;
 import javax.persistence.*;
 import org.apache.openjpa.persistence.models.company.*;
-public class Customer extends Person implements ICustomer {
+
 @Entity(name="LAZ_Customer")
-public final class Customer extends Person implements ICustomer {
+public class Customer extends Person implements ICustomer {
     @OneToMany(mappedBy="customer",fetch=FetchType.LAZY)
     private Collection<ProductOrder> orders = new ArrayList<ProductOrder>();
 

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -370,9 +369,9 @@ public class JdbcTemplate extends JdbcAccessor implements JdbcOperations {
 	 * @see #applyStatementSettings
 	 */
 	protected Connection createConnectionProxy(Connection con) {
-new Class<?>[] {ConnectionProxy.class},
+		return (Connection) Proxy.newProxyInstance(
 				ConnectionProxy.class.getClassLoader(),
-				new Class[] {ConnectionProxy.class},
+new Class<?>[] {ConnectionProxy.class},
 				new CloseSuppressingInvocationHandler(con));
 	}
 

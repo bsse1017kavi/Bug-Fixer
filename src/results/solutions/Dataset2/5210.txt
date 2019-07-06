@@ -1,4 +1,3 @@
-
 /*
  * ManagePanel.java - Manages plugins
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -413,9 +412,9 @@ public class ManagePanel extends JPanel
 			{
 				try {
 					Entry entry = pluginModel.getEntry(table.getSelectedRow());
-PluginJAR jar = jEdit.getPlugin(label).getJAR();
+					String label = entry.clazz;
 					String docs = entry.docs;
-					EditPlugin.JAR jar = jEdit.getPlugin(label).getJAR();
+PluginJAR jar = jEdit.getPlugin(label).getJAR();
 					if(jar != null && label != null && docs != null)
 					{
 						URL url = jar.getClassLoader()

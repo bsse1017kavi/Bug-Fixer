@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -128,9 +127,9 @@ public class RedirectViewTests {
 		rv.render(model, request, response);
 		assertEquals(303, response.getStatus());
 		assertEquals("http://url.somewhere.com/path?id=1", response.getHeader("Location"));
-assertEquals(model, flashMap.getTargetRequestParams().toSingleValueMap());
+		
 		assertEquals("/path", flashMap.getTargetRequestPath());
-		assertEquals(model, flashMap.getTargetRequestParams());
+assertEquals(model, flashMap.getTargetRequestParams().toSingleValueMap());
 	}
 
 	@Test

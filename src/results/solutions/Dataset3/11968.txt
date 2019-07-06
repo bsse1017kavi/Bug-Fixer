@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -30,9 +29,9 @@ import org.jboss.invocation.ImmediateInterceptorFactory;
 /**
  * @author <a href="mailto:cdewolf@redhat.com">Carlo de Wolf</a>
  */
-public StatefulSessionComponentConfiguration(final StatefulComponentDescription description) {
+public class StatefulSessionComponentConfiguration extends SessionBeanComponentConfiguration {
 
-    public StatefulSessionComponentConfiguration(final EJBComponentDescription description) {
+public StatefulSessionComponentConfiguration(final StatefulComponentDescription description) {
         super(description);
 
         addComponentSystemInterceptorFactory(new ImmediateInterceptorFactory(new ComponentInstanceInterceptor()));

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -39,9 +38,9 @@ public class KeepLastNDeletionPolicy extends AbstractIndexShardComponent impleme
     private final int numToKeep;
 
     @Inject public KeepLastNDeletionPolicy(ShardId shardId, @IndexSettings Settings indexSettings) {
-logger.debug("Using [keep_last_n] deletion policy with num_to_keep[{}]", numToKeep);
+        super(shardId, indexSettings);
         this.numToKeep = componentSettings.getAsInt("num_to_keep", 5);
-        logger.debug("Using [KeepLastN] deletion policy with num_to_keep [{}]", numToKeep);
+logger.debug("Using [keep_last_n] deletion policy with num_to_keep[{}]", numToKeep);
     }
 
     public void onInit(List<? extends IndexCommit> commits) throws IOException {

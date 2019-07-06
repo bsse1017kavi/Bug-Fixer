@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -164,9 +163,9 @@ public final class World implements Disposable {
 		this.bodies.remove(body.addr);
 		for (int i = 0; i < body.getFixtureList().size(); i++) {
 			this.fixtures.remove(body.getFixtureList().get(i).addr).setUserData(null);
-destroyJoint(body.getJointList().get(i).joint);
+		}
 		for (int i = 0; i < body.getJointList().size(); i++)
-			this.joints.remove(body.getJointList().get(i).joint.addr);
+destroyJoint(body.getJointList().get(i).joint);
 		jniDestroyBody(addr, body.addr);
 		freeBodies.free(body);
 	}

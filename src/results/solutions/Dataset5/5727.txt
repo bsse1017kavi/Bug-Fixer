@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$ $Date$
@@ -292,9 +291,9 @@ public class MockWebApplication extends WebApplication
 
 		if (httpResponse.isRedirect())
 		{
-final MockHttpServletRequest httpRequest = (MockHttpServletRequest)((WebRequest)cycle
+			generateLastRenderedPage(cycle);
 
-			final MockHttpServletRequest httpRequest = (MockHttpServletRequest)((ServletWebRequest)cycle
+final MockHttpServletRequest httpRequest = (MockHttpServletRequest)((WebRequest)cycle
 					.getWebRequest()).getHttpServletRequest();
 
 			httpRequest.setRequestToRedirectString(httpResponse.getRedirectLocation());

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2012 GitHub Inc.
  *
@@ -84,9 +83,9 @@ public class MembersFragment extends ItemListFragment<User> implements Organizat
     @Override
     public void onOrganizationSelected(User organization) {
         int previousOrgId = org != null ? org.getId() : -1;
-if (previousOrgId != org.getId())
+        org = organization;
         // Only hard refresh if view already created and org is changing
-        if (getView() != null && previousOrgId != org.getId())
+if (previousOrgId != org.getId())
             refreshWithProgress();
     }
 

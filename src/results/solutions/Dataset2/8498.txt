@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -369,9 +368,9 @@ public abstract class PageBookView extends ViewPart implements IPartListener {
      */
     protected void initPage(IPageBookViewPage page) {
         try {
-WorkbenchPlugin.log(getClass(), "initPage", e); //$NON-NLS-1$
+            page.init(new PageSite(getViewSite()));
         } catch (PartInitException e) {
-            WorkbenchPlugin.log(e.getMessage());
+WorkbenchPlugin.log(getClass(), "initPage", e); //$NON-NLS-1$
         }
     }
 

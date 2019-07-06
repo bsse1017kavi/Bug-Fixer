@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -130,9 +129,9 @@ protected boolean matchIndexEntry() {
 protected void matchReportReference(AstNode reference, IJavaElement element, int accuracy, MatchLocator locator) throws CoreException {
 	char[][] splitName = CharOperation.splitOn('.', 
 		this.pkgName == null ? 
-locator.reportAccurateReference(reference.sourceStart, reference.sourceEnd, splitName, element, accuracy);
+			new char[0] :
 			this.pkgName);
-	locator.reportQualifiedReference(reference.sourceStart, reference.sourceEnd, splitName, element, accuracy);
+locator.reportAccurateReference(reference.sourceStart, reference.sourceEnd, splitName, element, accuracy);
 }
 /**
  * @see AndPattern#resetQuery

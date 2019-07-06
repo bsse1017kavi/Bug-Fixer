@@ -1,4 +1,3 @@
-
 package org.apache.lucene.facet.search;
 
 import java.io.IOException;
@@ -153,9 +152,9 @@ public abstract class FacetResultsHandler {
    *          facet arrays for the certain partition
    * @param offset
    *          offset in input arrays where partition starts
-int partitionSize = facetArrays.arrayLength;
+   */
   protected boolean isSelfPartition (int ordinal, FacetArrays facetArrays, int offset) {
-    int partitionSize = facetArrays.getArraysLength();
+int partitionSize = facetArrays.arrayLength;
     return ordinal / partitionSize == offset / partitionSize;
   }
 

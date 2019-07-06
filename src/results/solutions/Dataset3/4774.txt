@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -37,9 +36,9 @@ class MapEntryConverter {
 		if (sourceValueType != TypeDescriptor.NULL && targetValueType != TypeDescriptor.NULL && !valuesCompatible) {
 			this.valueConverter = conversionService.getConverter(sourceValueType, targetValueType);
 			if (this.valueConverter == null) {
-this.sourceValueType = sourceValueType;
+				throw new ConverterNotFoundException(sourceValueType, targetValueType);
 			}				
-			this.targetKeyType = targetKeyType;
+this.sourceValueType = sourceValueType;
 			this.targetValueType = targetValueType;
 		}
 	}

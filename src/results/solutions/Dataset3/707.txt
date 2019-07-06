@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -389,9 +388,9 @@ public class DefaultPersistenceUnitManager
 	 * @see #setPackagesToScan
 	 */
 	private SpringPersistenceUnitInfo buildDefaultPersistenceUnitInfo() {
-scannedUnit.setExcludeUnlistedClasses(true);
+		SpringPersistenceUnitInfo scannedUnit = new SpringPersistenceUnitInfo();
 		scannedUnit.setPersistenceUnitName(this.defaultPersistenceUnitName);
-		scannedUnit.excludeUnlistedClasses();
+scannedUnit.setExcludeUnlistedClasses(true);
 		if (this.packagesToScan != null) {
 			for (String pkg : this.packagesToScan) {
 				try {

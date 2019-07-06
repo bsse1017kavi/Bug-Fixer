@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -194,9 +193,9 @@ public final class SparseRealMatrixTest extends TestCase {
         OpenMapRealMatrix mInv = createSparseMatrix(testDataInv);
         OpenMapRealMatrix identity = createSparseMatrix(id);
         OpenMapRealMatrix m2 = createSparseMatrix(testData2);
-assertClose("inverse multiply", m.multiply(new BlockRealMatrix(testDataInv)), identity,
+        assertClose("inverse multiply", m.multiply(mInv), identity,
                 entryTolerance);
-        assertClose("inverse multiply", m.multiply(new DenseRealMatrix(testDataInv)), identity,
+assertClose("inverse multiply", m.multiply(new BlockRealMatrix(testDataInv)), identity,
                     entryTolerance);
         assertClose("inverse multiply", mInv.multiply(m), identity,
                 entryTolerance);

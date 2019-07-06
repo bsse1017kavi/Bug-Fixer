@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -118,9 +117,9 @@ public class SimpleSecurityManager {
      * TODO - Need so separate out the role check for isCallerInRole and actual declarative role checks as context slightly different.
      *
      * @param roleNames
-public boolean _isCallerInRole(final String... roleNames) {
+     * @return true if the user is in any one of the roles listed
      */
-    private boolean _isCallerInRole(final String... roleNames) {
+public boolean _isCallerInRole(final String... roleNames) {
         final SecurityContext securityContext = doPrivileged(securityContext());
         if (securityContext == null)
             throw new IllegalStateException("No security context established");

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -55,9 +54,9 @@ public class ResultListIterator extends AbstractListIterator {
         return _li.hasPrevious();
     }
 
-throw new NoSuchElementException(_loc.get("closed").getMessage());
+    public Object next() {
         if (_rl.isClosed())
-            throw new NoSuchElementException(_loc.get("closed"));
+throw new NoSuchElementException(_loc.get("closed").getMessage());
         return _li.next();
     }
 

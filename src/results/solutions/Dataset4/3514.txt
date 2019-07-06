@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -145,9 +144,9 @@ public class TermsFacetParser extends AbstractComponent implements FacetParser {
                 }
             }
         }
-return new IndexNameFacetExecutor(context.shardTarget().index(), comparatorType, size);
+
         if ("_index".equals(field)) {
-            return new IndexNameFacetExecutor(context.shardTarget().index(), comparatorType, size, shardSize);
+return new IndexNameFacetExecutor(context.shardTarget().index(), comparatorType, size);
         }
 
         if (fieldsNames != null && fieldsNames.length == 1) {

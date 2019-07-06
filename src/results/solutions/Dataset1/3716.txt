@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -89,9 +88,9 @@ public class PropertyPlaceholder extends AbstractPropertyPlaceholder {
                 InputStream is = null;
                 try {
                     is = url.openStream();
-LOGGER.debug("Unable to load properties from url " + url + " while ignoreMissingLocations is set to true");
+                } catch (IOException e) {
                     if (ignoreMissingLocations) {
-                        LOGGER.info("Unable to load properties from url " + url, e);
+LOGGER.debug("Unable to load properties from url " + url + " while ignoreMissingLocations is set to true");
                     } else {
                         throw e;
                     }

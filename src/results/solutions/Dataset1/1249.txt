@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -618,9 +617,9 @@ public class StorageProxy implements StorageProxyMBean
         Iterator<Token> ringIter = TokenMetadata.ringIterator(tokenMetadata.sortedTokens(), queryRange.left, true);
         AbstractBounds remainder = queryRange;
         while (ringIter.hasNext())
-if (remainder == null || !(remainder.left.equals(token) || remainder.contains(token)))
+        {
             Token token = ringIter.next();
-            if (remainder == null || !remainder.contains(token))
+if (remainder == null || !(remainder.left.equals(token) || remainder.contains(token)))
                 // no more splits
                 break;
             Pair<AbstractBounds,AbstractBounds> splits = remainder.split(token);

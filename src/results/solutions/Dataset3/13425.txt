@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -68,9 +67,9 @@ public class PrincipalRemove implements OperationStepHandler {
         final String name = PrincipalResourceDefinition.getName(context, model);
 
         context.removeResource(PathAddress.EMPTY_ADDRESS);
-RbacSanityCheckOperation.addOperation(context);
+
         if (matchType == WritableAuthorizerConfiguration.MatchType.INCLUDE) {
-            RbacSanityCheckOperation.registerOperation(context);
+RbacSanityCheckOperation.addOperation(context);
         }
 
         registerRuntimeRemove(context, roleName, principalType, name, realm);

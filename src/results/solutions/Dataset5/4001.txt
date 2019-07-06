@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC),
  *               2003 Contributors.
@@ -244,9 +243,9 @@ public abstract class Builder {
 		String[] buildList = getAntecedantModuleNames(module, rebuild);
 		if ((null != buildList) && (0 < buildList.length)) {
 			final Modules modules = module.getModules();
-//			final boolean verbose = this.verbose;
+			final Messager handler = this.handler;
 			final boolean log = (verbose && (null != handler));
-			final boolean verbose = this.verbose;
+//			final boolean verbose = this.verbose;
 			if (log) {
 				handler.log(
 					"modules to build: " + Arrays.asList(buildList));

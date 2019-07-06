@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -71,9 +70,9 @@ public class DeploymentWithBindTestCase {
         assertNotNull(iniCtx.lookup("java:/test"));
         bean.checkBind();
     }
-return HttpRequest.get(managementClient.getWebUri() + "/test/" + urlPattern + "?op=" + op, 10, SECONDS);
+
     private String performCall(String urlPattern, String op) throws Exception {
-        return HttpRequest.get("http://" + managementClient.getMgmtAddress() + ":8080/test/" + urlPattern + "?op=" + op, 10, SECONDS);
+return HttpRequest.get(managementClient.getWebUri() + "/test/" + urlPattern + "?op=" + op, 10, SECONDS);
     }
 
     @Test

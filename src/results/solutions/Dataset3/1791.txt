@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -103,9 +102,9 @@ public class ConfigurationClassPostProcessor extends AbstractConfigurationClassP
 	 * @return a ConfigurationParser that uses the enclosing BeanFactory's
 	 * ClassLoader to load all Configuration class artifacts.
 	 */
-return new ConfigurationParser(this.getProblemReporter(), beanFactory.getBeanClassLoader());
+	@Override
 	protected ConfigurationParser createConfigurationParser() {
-		return new ConfigurationParser(beanFactory.getBeanClassLoader());
+return new ConfigurationParser(this.getProblemReporter(), beanFactory.getBeanClassLoader());
 	}
 
 	/**

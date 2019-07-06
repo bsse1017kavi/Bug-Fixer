@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -676,9 +675,9 @@ public class JavaProject
 				projectContainers.put(containerPath, JavaModelManager.ContainerInitializationInProgress); // avoid initialization cycles
 				entries = resolver.resolve(containerPath, this);
 				if (entries != null){
-if (JavaModelManager.CP_RESOLVE_VERBOSE){
+					projectContainers.put(containerPath, entries);
 				}
-				if (JavaModelManager.VARIABLE_VERBOSE){
+if (JavaModelManager.CP_RESOLVE_VERBOSE){
 					System.out.print("CPContainer INIT - after resolution: " + containerPath + " --> {"); //$NON-NLS-2$//$NON-NLS-1$
 					if (entries != null){
 						for (int i = 0; i < entries.length; i++){

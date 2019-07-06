@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.newbuilder;
 
 /*
@@ -30,9 +29,9 @@ void cleanup() {
 public boolean equals(Object o) {
 	if (this == o) return true;
 	if (!(o instanceof ClasspathMultiDirectory)) return false;
-return binaryPath.equals(md.binaryPath) && sourcePath.equals(md.sourcePath);
+
 	ClasspathMultiDirectory md = (ClasspathMultiDirectory) o;
-	return binaryPath.equalsIgnoreCase(md.binaryPath) && sourcePath.equalsIgnoreCase(md.sourcePath);
+return binaryPath.equals(md.binaryPath) && sourcePath.equals(md.sourcePath);
 }
 
 NameEnvironmentAnswer findClass(char[] className, char[][] packageName) {

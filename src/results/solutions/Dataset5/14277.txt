@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -333,9 +332,9 @@ public class IPlanetDeploymentTool extends GenericDeploymentTool {
      * @param ejbFiles Hashtable of EJB class (and other) files to be added to
      *                 the completed JAR file.
      * @param baseName String name of the EJB JAR file to be written (without
-protected void addVendorFiles(Hashtable ejbFiles, String ddPrefix) {
+     *                 a filename extension).
      */
-    protected void addVendorFiles(Hashtable ejbFiles, String baseName, String descriptorFileName) {
+protected void addVendorFiles(Hashtable ejbFiles, String ddPrefix) {
         ejbFiles.put(META_DIR + IAS_DD, new File(getConfig().descriptorDir,
                      getIasDescriptorName()));
     }

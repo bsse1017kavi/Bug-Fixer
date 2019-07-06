@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -214,9 +213,9 @@ public class GenericConversionService implements ConversionService, ConverterReg
 
 
 	// internal helpers
-Class<?>[] args = GenericTypeResolver.resolveTypeArguments(converter.getClass(), genericIfc);
+
 	private GenericConverter.ConvertiblePair getRequiredTypeInfo(Object converter, Class<?> genericIfc) {
-		Class[] args = GenericTypeResolver.resolveTypeArguments(converter.getClass(), genericIfc);
+Class<?>[] args = GenericTypeResolver.resolveTypeArguments(converter.getClass(), genericIfc);
 		return (args != null ? new GenericConverter.ConvertiblePair(args[0], args[1]) : null);
 	}
 

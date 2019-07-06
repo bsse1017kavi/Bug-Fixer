@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -885,9 +884,9 @@ public class Matrix4 implements Serializable {
 	public Matrix4 setToWorld (Vector3 position, Vector3 forward, Vector3 up) {
 		tmpForward.set(forward).nor();
 		right.set(tmpForward).crs(up).nor();
-this.set(right, tmpUp, tmpForward, position);
+		tmpUp.set(right).crs(tmpForward).nor();
 
-		this.set(right, tmpUp, tmpForward.scl(-1), position);
+this.set(right, tmpUp, tmpForward, position);
 		return this;
 	}
 

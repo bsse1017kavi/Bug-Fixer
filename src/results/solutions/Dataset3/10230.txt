@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat Middleware LLC, and individual contributors
@@ -93,9 +92,9 @@ public class DistributedCacheManagerFactory implements org.jboss.as.clustering.w
         String name = manager.getName();
         ConfigurationBuilder builder = new ConfigurationBuilder().read(config);
         builder.storeAsBinary().enable().storeKeysAsBinary(false).storeValuesAsBinary(true);
-AdvancedCache<String, Map<Object, Object>> sessionCache = container.<String, Map<Object, Object>>getCache(name).getAdvancedCache();
+        container.defineConfiguration(name, builder.build());
 
-        AdvancedCache<String, Map<Object, Object>> sessionCache = container.<String, Map<Object, Object>>getCache(name).getAdvancedCache().with(this.getClass().getClassLoader());
+AdvancedCache<String, Map<Object, Object>> sessionCache = container.<String, Map<Object, Object>>getCache(name).getAdvancedCache();
         BatchingManager batchingManager = new TransactionBatchingManager(sessionCache.getTransactionManager());
         SessionAttributeStorage<T> storage = this.storageFactory.createStorage(manager.getReplicationConfig().getReplicationGranularity(), this.marshallerFactory.createMarshaller(manager));
 

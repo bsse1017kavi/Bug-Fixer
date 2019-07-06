@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class TestCompositeSet<E> extends AbstractTestSet<E> {
 
     @Override
     public CompositeSet<E> makeObject() {
-set.setMutator( new EmptySetMutator<E>(contained) );
+        final HashSet<E> contained = new HashSet<E>();
         CompositeSet<E> set = new CompositeSet<E>(contained);
-        set.setMutator( new EmptySetMutator(contained) );
+set.setMutator( new EmptySetMutator<E>(contained) );
         return set;
     }
 

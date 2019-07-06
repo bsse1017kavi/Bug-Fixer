@@ -1,5 +1,4 @@
 
-
 package com.badlogic.gdx.graphics.g2d;
 
 import com.badlogic.gdx.jnigen.AntScriptGenerator;
@@ -42,9 +41,9 @@ public class ImageBuild {
 		
 		BuildTarget android = BuildTarget.newDefaultTarget(TargetOs.Android, false);
 		android.cExcludes = android.cppExcludes = excludes;
-new AntScriptGenerator().generate(new BuildConfig("gdx-image"), win32home, android, win32, win64, lin32, lin64, mac);
+		android.headerDirs = headers;
 		
-		new AntScriptGenerator().generate(new BuildConfig("gdx-bullet"), win32home, android, win32, win64, lin32, lin64, mac);
+new AntScriptGenerator().generate(new BuildConfig("gdx-image"), win32home, android, win32, win64, lin32, lin64, mac);
 
 		// build natives
 //		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v");

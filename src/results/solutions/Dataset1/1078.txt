@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -44,9 +43,9 @@ public class WildcardTermEnum extends FilteredTermEnum {
    * Creates a new <code>WildcardTermEnum</code>.  Passing in a
    * {@link org.apache.lucene.index.Term Term} that does not contain a
    * <code>WILDCARD_CHAR</code> will cause an exception to be thrown.
-super();
+   */
   public WildcardTermEnum(IndexReader reader, Term term) throws IOException {
-    super(reader, term);
+super();
     searchTerm = term;
     field = searchTerm.field();
     text = searchTerm.text();

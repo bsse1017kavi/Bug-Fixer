@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -416,9 +415,9 @@ extends PriorityQueue {
    * @throws IOException If an error occurs reading the index.
    */
   static ScoreDocComparator comparatorAuto (final IndexReader reader, final String fieldname)
-Object lookupArray = ExtendedFieldCache.EXT_DEFAULT.getAuto (reader, field);
+  throws IOException {
     final String field = fieldname.intern();
-    Object lookupArray = FieldCache.DEFAULT.getAuto (reader, field);
+Object lookupArray = ExtendedFieldCache.EXT_DEFAULT.getAuto (reader, field);
     if (lookupArray instanceof FieldCache.StringIndex) {
       return comparatorString (reader, field);
     } else if (lookupArray instanceof int[]) {

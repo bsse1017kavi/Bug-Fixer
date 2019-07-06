@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -354,9 +353,9 @@ public class DomainModelControllerService extends AbstractControllerService impl
             ServerToHostOperationHandlerFactoryService.install(serviceTarget, ServerInventoryService.SERVICE_NAME, proxyExecutor);
 
             NativeManagementAddHandler.installNativeManagementServices(serviceTarget, hostControllerInfo, null, null);
-HttpManagementAddHandler.installHttpManagementServices(currentRunningMode, serviceTarget, hostControllerInfo, environment, null);
+
             if (hostControllerInfo.getHttpManagementInterface() != null) {
-                HttpManagementAddHandler.installHttpManagementServices(serviceTarget, hostControllerInfo, environment, null);
+HttpManagementAddHandler.installHttpManagementServices(currentRunningMode, serviceTarget, hostControllerInfo, environment, null);
             }
 
             if (currentRunningMode == RunningMode.NORMAL) {

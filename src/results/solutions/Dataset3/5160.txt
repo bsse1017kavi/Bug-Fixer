@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -91,9 +90,9 @@ public final class IOUtils {
             if (skipped == 0) {
                 break;
             }
-return available - numToSkip;
+            numToSkip -= skipped;
         }
-        return (available - numToSkip);
+return available - numToSkip;
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -132,9 +131,9 @@ public class CopyResourceElementsOperation extends MultiOperation {
 	private void createNeededPackageFragments(IPackageFragmentRoot root, String newFragName, boolean moveFolder) throws JavaModelException {
 		IContainer parentFolder = (IContainer) root.getResource();
 		JavaElementDelta projectDelta = null;
-char[][] exclusionsPatterns = ((PackageFragmentRoot)root).fullExclusionPatternChars();
+		String[] names = org.eclipse.jdt.internal.core.Util.getTrimmedSimpleNames(newFragName);
 		StringBuffer sideEffectPackageName = new StringBuffer();
-		char[][] exclusionsPatterns = ((PackageFragmentRoot)root).getExclusionPatterns();
+char[][] exclusionsPatterns = ((PackageFragmentRoot)root).fullExclusionPatternChars();
 		for (int i = 0; i < names.length; i++) {
 			String subFolderName = names[i];
 			sideEffectPackageName.append(subFolderName);

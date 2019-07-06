@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -370,9 +369,9 @@ public class SearchRequest extends ActionRequest<SearchRequest> implements Indic
         try {
             XContentBuilder builder = XContentFactory.contentBuilder(Requests.CONTENT_TYPE);
             builder.map(extraSource);
-throw new ElasticsearchGenerationException("Failed to generate [" + extraSource + "]", e);
+            return extraSource(builder);
         } catch (IOException e) {
-            throw new ElasticsearchGenerationException("Failed to generate [" + source + "]", e);
+throw new ElasticsearchGenerationException("Failed to generate [" + extraSource + "]", e);
         }
     }
 

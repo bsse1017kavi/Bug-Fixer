@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -90,9 +89,9 @@ public class EmbeddedCacheManagerDefaultsService implements Service<EmbeddedCach
             Configuration configuration = defaultConfig.clone();
             Configuration overrides = namedConfigs.get(mode.name());
             if (overrides != null) {
-configuration.fluent().mode(mode);
+                configuration.applyOverrides(overrides);
             }
-            configuration.setCacheMode(mode);
+configuration.fluent().mode(mode);
             defaults.add(mode, configuration);
         }
         this.defaults = defaults;

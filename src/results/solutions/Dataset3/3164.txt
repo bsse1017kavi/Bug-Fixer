@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -104,9 +103,9 @@ public class WarMetaDataProcessor implements DeploymentUnitProcessor {
         Set<VirtualFile> overlays = new HashSet<VirtualFile>();
         Map<String, VirtualFile> scis = new HashMap<String, VirtualFile>();
         boolean fragmentFound = false;
-if (resourceRoot.getRoot().getName().toLowerCase().endsWith(".jar")) {
+        Map<String, WebFragmentMetaData> webFragments = warMetaData.getWebFragmentsMetaData();
         for (ResourceRoot resourceRoot : resourceRoots) {
-            if (resourceRoot.getRoot().getLowerCaseName().endsWith(".jar")) {
+if (resourceRoot.getRoot().getName().toLowerCase().endsWith(".jar")) {
                 jarsSet.add(resourceRoot.getRootName());
                 // Find overlays
                 VirtualFile overlay = resourceRoot.getRoot().getChild("META-INF/resources");

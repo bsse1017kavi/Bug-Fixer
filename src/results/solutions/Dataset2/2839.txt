@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -94,9 +93,9 @@ public class RequestUtil {
 	int contentLength=request.getContentLength();
 
 	if (contentType != null &&
-ServletInputStream is=request.getFacade().getInputStream();
+            contentType.startsWith("application/x-www-form-urlencoded")) {
 	    try {
-		ServletInputStream is=request.getInputStream();
+ServletInputStream is=request.getFacade().getInputStream();
                 Hashtable postParameters =  HttpUtils.parsePostData(contentLength, is);
 		return postParameters;
 	    }

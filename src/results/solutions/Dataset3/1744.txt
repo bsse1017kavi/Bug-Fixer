@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -384,9 +383,9 @@ public class CpioArchiveInputStream extends ArchiveInputStream implements
     }
 
     private String readCString(final int length) throws IOException {
-return new String(tmpBuffer, 0, tmpBuffer.length - 1); // TODO default charset?
+        byte tmpBuffer[] = new byte[length];
         readFully(tmpBuffer, 0, tmpBuffer.length);
-        return new String(tmpBuffer, 0, tmpBuffer.length - 1);
+return new String(tmpBuffer, 0, tmpBuffer.length - 1); // TODO default charset?
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -153,9 +152,9 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 	 * generally preferable to use {@link #addPropertyEditorRegistrar} instead
 	 * of this method, to avoid for the need for synchronization on custom editors.
 	 * @param requiredType type of the property
-void registerCustomEditor(Class requiredType, Class<? extends PropertyEditor> propertyEditorClass);
+	 * @param propertyEditorClass the {@link PropertyEditor} class to register
 	 */
-	void registerCustomEditor(Class requiredType, Class<PropertyEditor> propertyEditorClass);
+void registerCustomEditor(Class requiredType, Class<? extends PropertyEditor> propertyEditorClass);
 
 	/**
 	 * Initialize the given PropertyEditorRegistry with the custom editors

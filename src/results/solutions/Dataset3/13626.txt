@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2006 the original author or authors.
  *
@@ -157,9 +156,9 @@ public abstract class AbstractMetadataAssemblerTests extends AbstractJmxAssemble
 		exporter.setBeanFactory(getContext());
 		exporter.setAssembler(assembler);
 
-Map<String, Object> beans = new HashMap<String, Object>();
+		String objectName = "spring:bean=test,proxy=true";
 
-		Map beans = new HashMap();
+Map<String, Object> beans = new HashMap<String, Object>();
 		beans.put(objectName, proxy);
 		exporter.setBeans(beans);
 		exporter.afterPropertiesSet();

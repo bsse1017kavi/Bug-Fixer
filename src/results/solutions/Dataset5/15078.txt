@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -66,9 +65,9 @@ public class Help implements Command {
         scroller = new JScrollPane(helpDoc);
         helpDoc.setEditable(false);
         try {
-} catch (Exception err) {
+            helpDoc.setPage(HELP_PAGE);
             currentPage = HELP_PAGE;
-        } catch (IOException err) {
+} catch (Exception err) {
             String msg = "Couldn't load help file " + err.toString();
             log.error(msg);
             currentPage = "";// Avoid NPE in resetPage() // $NON-NLS-1$

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 1997-1999 The Java Apache Project.  All rights reserved.
  *
@@ -474,9 +473,9 @@ public class SimpleClassLoader extends ClassLoader {
                 }
             } else {
                 try {
-zf.close();
+                    ZipFile zf = new ZipFile(file.getAbsolutePath());
                     ZipEntry ze = zf.getEntry(name);
-		    //if( debug > 0 ) log( "Searching " + file + " " + name );
+zf.close();
 					
                     if (ze != null) {
 			r.zipEntry=ze;

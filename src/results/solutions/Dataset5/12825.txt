@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2004-2005 The Apache Software Foundation.
  * 
@@ -111,9 +110,9 @@ public class HTTPResultConverter extends SampleResultConverter
    public Object unmarshal(HierarchicalStreamReader reader,
          UnmarshallingContext context)
    {
-retrieveAttributes(reader, context, res);
+      HTTPSampleResult res = (HTTPSampleResult) createCollection(context
             .getRequiredType());
-      retrieveAttributes(reader, res);
+retrieveAttributes(reader, context, res);
       while (reader.hasMoreChildren())
       {
          reader.moveDown();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -130,9 +129,9 @@ public class TestCheckIndex extends LuceneTestCase {
       constantVersion = parts[0] + "." + parts[1];
     } else {
       // normal version
-assertTrue("Invalid version: "+version + " vs " + constantVersion,
+      constantVersion = Constants.LUCENE_MAIN_VERSION;
     }
-    assertTrue("Invalid version: "+version,
+assertTrue("Invalid version: "+version + " vs " + constantVersion,
                version.equals(constantVersion));
     assertTrue(Constants.LUCENE_VERSION + " should start with: "+version,
                Constants.LUCENE_VERSION.startsWith(version));

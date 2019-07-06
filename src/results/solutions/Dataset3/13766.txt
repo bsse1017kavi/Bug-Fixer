@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -86,9 +85,9 @@ public class MethodInvocationTests extends ExpressionTestCase {
 		evaluate("aVarargsMethod2(2,'a',3.0d)", 4, Integer.class);
 		// evaluate("aVarargsMethod2(8,new String[]{'a','b','c'})", 11, Integer.class);
 	}
-evaluateAndCheckError("null.toString()",SpelMessages.METHOD_CALL_ON_NULL_OBJECT_NOT_ALLOWED);
+	
 	public void testInvocationOnNullContextObject() {
-		evaluateAndCheckError("null.toString()",SpelMessages.ATTEMPTED_METHOD_CALL_ON_NULL_CONTEXT_OBJECT);
+evaluateAndCheckError("null.toString()",SpelMessages.METHOD_CALL_ON_NULL_OBJECT_NOT_ALLOWED);
 	}
 
 }

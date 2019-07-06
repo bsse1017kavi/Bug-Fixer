@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -149,9 +148,9 @@ public class ResourceReferenceRegistry
 	{
 		Key key = new Key(scope.getName(), name, locale, style, variation);
 		ResourceReference res = map.get(key);
-if (res == null && createIfNotFound)
+		if (strict)
 		{
-			if (res == null)
+if (res == null && createIfNotFound)
 			{
 				res = addDefaultResourceReference(scope, name, locale, style, variation);
 			}

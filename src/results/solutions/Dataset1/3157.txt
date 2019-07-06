@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -159,9 +158,9 @@ public class TestPerSegmentDeletes extends LuceneTestCase {
 
     part2(writer, fsmp);
     **/
-writer.shutdown();
+    // System.out.println("segdels2:"+writer.docWriter.segmentDeletes.toString());
     //System.out.println("close");
-    writer.close();
+writer.shutdown();
     dir.close();
   }
 

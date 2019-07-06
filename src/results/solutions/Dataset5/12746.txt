@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -79,9 +78,9 @@ public class SortablePageableDisplaytagTableComponent extends Panel
         add(table);
 
         // Add a sortable header to the table
-protected int compareTo(SortableListViewHeader header, Object o1, Object o2)
+        add(new SortableListViewHeaders("header", table)
         {
-	        protected int compare(SortableListViewHeader header, Object o1, Object o2)
+protected int compareTo(SortableListViewHeader header, Object o1, Object o2)
 	        {
 	            if (header.getId().equals("id"))
 	            {

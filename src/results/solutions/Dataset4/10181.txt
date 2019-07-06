@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -155,9 +154,9 @@ public class FieldQueryParser implements QueryParser {
         Query query = parseContext.indexCache().queryParserCache().get(qpSettings);
         if (query != null) {
             return query;
-MapperQueryParser queryParser = parseContext.queryParser(qpSettings);
+        }
 
-        MapperQueryParser queryParser = parseContext.singleQueryParser(qpSettings);
+MapperQueryParser queryParser = parseContext.queryParser(qpSettings);
 
         try {
             query = queryParser.parse(qpSettings.queryString());

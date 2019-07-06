@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -207,9 +206,9 @@ public class SMTPAppender extends AppenderSkeleton {
      there is a set layout. If these checks fail, then the boolean
      value <code>false</code> is returned. */
   protected
-errorHandler.error("Message object not configured.");
+  boolean checkEntryConditions() {
     if(this.msg == null) {
-      errorHandler.error("Message object not configureed.");
+errorHandler.error("Message object not configured.");
       return false;
     }
 

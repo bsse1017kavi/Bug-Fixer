@@ -1,4 +1,3 @@
-
 // The contents of this file are subject to the Mozilla Public License Version
 // 1.1
 //(the "License"); you may not use this file except in compliance with the
@@ -43,9 +42,9 @@ public class FilterCompoundCommand extends CompoundCommand {
 			Object[] uids) throws Exception {
 		super();
 
-.getInstance().getExtensionHandler("org.columba.mail.filteraction");
+		// get plugin handler for filter actions
 		IExtensionHandler pluginHandler =  PluginManager
-				.getInstance().getHandler("org.columba.mail.filteraction");
+.getInstance().getExtensionHandler("org.columba.mail.filteraction");
 
 		// get list of all filter actions
 		FilterActionList list = filter.getFilterActionList();

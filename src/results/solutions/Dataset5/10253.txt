@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -36,9 +35,9 @@ import org.apache.openjpa.jdbc.schema.Index;
  */
 public abstract class AbstractSQLServerDictionary
     extends DBDictionary {
-reservedWordSet.addAll(Arrays.asList(new String[]{ "FILE", "INDEX", "RULE" }));
+
     public AbstractSQLServerDictionary() {
-        reservedWordSet.addAll(Arrays.asList(new String[]{ "FILE", "INDEX" }));
+reservedWordSet.addAll(Arrays.asList(new String[]{ "FILE", "INDEX", "RULE" }));
         systemTableSet.add("DTPROPERTIES");
         validationSQL = "SELECT GETDATE()";
         rangePosition = RANGE_POST_DISTINCT;

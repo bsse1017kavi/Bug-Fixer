@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -67,9 +66,9 @@ public class TestConfig extends AbstractSolrTestCase {
 
   // sometime if the config referes to old things, it must be replaced with new stuff
   public void testAutomaticDeprecationSupport()
-ShowFileRequestHandler handler = (ShowFileRequestHandler) h.getCore().getRequestHandler( "/admin/file" );
+  {
     // make sure the "admin/file" handler is registered
-    ShowFileRequestHandler handler = (ShowFileRequestHandler) h.getCore().getRequestHandler( "admin/file" );
+ShowFileRequestHandler handler = (ShowFileRequestHandler) h.getCore().getRequestHandler( "/admin/file" );
     assertTrue( "file handler should have been automatically registered", handler!=null );
 
     //System.out.println( handler.getHiddenFiles() );

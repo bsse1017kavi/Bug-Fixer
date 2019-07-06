@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -440,9 +439,9 @@ public class DatabaseDescriptor
             }
 
             String rowWarning = xmlUtils.getNodeValue("/Storage/RowWarningThresholdInMB");
-rowWarningThreshold = Long.parseLong(rowWarning) * 1024 * 1024;
+            if (rowWarning != null)
             {
-                rowWarningThreshold = Integer.parseInt(rowWarning) * 1024 * 1024;
+rowWarningThreshold = Long.parseLong(rowWarning) * 1024 * 1024;
                 if (rowWarningThreshold <= 0)
                     throw new ConfigurationException("Row warning threshold must be a positive integer");
             }

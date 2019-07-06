@@ -1,4 +1,3 @@
-
 package org.apache.jmeter.reporters;
 
 import java.io.Serializable;
@@ -29,9 +28,9 @@ import org.apache.log.Logger;
  * @version 1.0
  */
 
-transient private static Logger log = Hierarchy.getDefaultHierarchy().getLoggerFor(
+public class MailerResultCollector extends ResultCollector implements Serializable
 {
-	private static Logger log = Hierarchy.getDefaultHierarchy().getLoggerFor(
+transient private static Logger log = Hierarchy.getDefaultHierarchy().getLoggerFor(
 			"jmeter.elements");
 	String address;
 	String from;

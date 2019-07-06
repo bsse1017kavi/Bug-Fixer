@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -241,9 +240,9 @@ public final class LoggingManager {
      * name is derived automatically from the call stack.
      *
      * @return Logger
-String className = new Exception().getStackTrace()[1].getClassName();
+     */
     public static Logger getLoggerForClass() {
-        String className = (new Exception()).getStackTrace()[1].getClassName();
+String className = new Exception().getStackTrace()[1].getClassName();
         return Hierarchy.getDefaultHierarchy().getLoggerFor(removePrefix(className));
     }
 

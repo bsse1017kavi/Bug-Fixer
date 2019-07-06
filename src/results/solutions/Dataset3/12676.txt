@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -144,9 +143,9 @@ public class ConnectionFactoryWriteAttributeHandler extends AbstractWriteAttribu
                 control.setAutoGroup(value.asBoolean());
             } else if (attributeName.equals(CommonAttributes.RETRY_INTERVAL.getName())) {
                 control.setRetryInterval(value.asLong());
-} else if (attributeName.equals(CommonAttributes.RECONNECT_ATTEMPTS.getName())) {
+            } else if (attributeName.equals(CommonAttributes.RETRY_INTERVAL_MULTIPLIER.getName())) {
                 control.setRetryIntervalMultiplier(value.asDouble());
-            } else if (attributeName.equals(Common.RECONNECT_ATTEMPTS.getName())) {
+} else if (attributeName.equals(CommonAttributes.RECONNECT_ATTEMPTS.getName())) {
                 control.setReconnectAttempts(value.asInt());
             } else if (attributeName.equals(Common.FAILOVER_ON_INITIAL_CONNECTION.getName())) {
                 control.setFailoverOnInitialConnection(value.asBoolean());

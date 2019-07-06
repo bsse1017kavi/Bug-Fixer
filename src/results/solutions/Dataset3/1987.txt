@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -1852,9 +1851,9 @@ public class MessagingSubsystemParser implements XMLStreamConstants, XMLElementR
         if (!properties.isEmpty()) {
             writer.writeStartElement(Element.DISCOVERY_GROUPS.getLocalName());
             for(final Property property : properties) {
-for (AttributeDefinition attribute : DiscoveryGroupDefinition.ATTRIBUTES) {
+                writer.writeStartElement(Element.DISCOVERY_GROUP.getLocalName());
                 writer.writeAttribute(Attribute.NAME.getLocalName(), property.getName());
-                for (AttributeDefinition attribute : CommonAttributes.DISCOVERY_GROUP_ATTRIBUTES) {
+for (AttributeDefinition attribute : DiscoveryGroupDefinition.ATTRIBUTES) {
                     attribute.marshallAsElement(property.getValue(), writer);
                 }
                 writer.writeEndElement();

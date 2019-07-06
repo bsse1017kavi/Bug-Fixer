@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -236,9 +235,9 @@ public class NamespaceHandlerRegistryImpl implements NamespaceHandlerRegistry, S
                 for (URI ns : handlers.keySet()) {
                     URL url = handlers.get(ns).getSchemaLocation(ns.toString());
                     if (url == null) {
-schemaSources.add(new StreamSource(url.openStream(), url.toExternalForm()));
+                        LOGGER.warn("No URL is defined for schema " + ns + ". This schema will not be validated");
                     } else {
-                        schemaSources.add(new StreamSource(url.openStream()));
+schemaSources.add(new StreamSource(url.openStream(), url.toExternalForm()));
                     }
                 }
                 schema = getSchemaFactory().newSchema(schemaSources.toArray(new Source[schemaSources.size()]));

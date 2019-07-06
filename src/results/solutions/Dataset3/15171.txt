@@ -1,4 +1,3 @@
-
 /**
  * 
  */
@@ -90,9 +89,9 @@ public class ServerManager {
                     Server server = serverMaker.makeServer(serverConf);
                     servers.put(serverConf.getServerName(), server);
                     server.start(serverConf);
-e.printStackTrace(environment.getStderr());
+                } catch (IOException e) {
                     // FIXME handle failure to start server
-                    e.printStackTrace();
+e.printStackTrace(environment.getStderr());
                 }
             }
         }

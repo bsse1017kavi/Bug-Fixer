@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -45,9 +44,9 @@ public class ResolvedPointcutDefinition extends ResolvedMember {
 
 	public void write(DataOutputStream s) throws IOException {
 		getDeclaringType().write(s);
-TypeX.writeArray(getParameterTypes(), s);
+		s.writeInt(getModifiers());
 		s.writeUTF(getName());
-		TypeX.write(getParameterTypes(), s);
+TypeX.writeArray(getParameterTypes(), s);
 		pointcut.write(s);
 	}
 	

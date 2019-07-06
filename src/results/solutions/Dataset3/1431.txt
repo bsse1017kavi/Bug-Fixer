@@ -1,4 +1,3 @@
-
 package org.jboss.as.jsf.deployment;
 
 import org.jboss.as.server.deployment.DeploymentPhaseContext;
@@ -23,9 +22,9 @@ public class JSFMetadataProcessor implements DeploymentUnitProcessor {
         if(metaData == null || metaData.getMergedJBossWebMetaData() == null || metaData.getMergedJBossWebMetaData().getServlets() == null) {
             return;
         }
-if(servlet.getServletClass().equals(JAVAX_FACES_WEBAPP_FACES_SERVLET)) {
+        JBossServletMetaData jsf = null;
         for(JBossServletMetaData servlet : metaData.getMergedJBossWebMetaData().getServlets()) {
-            if(JAVAX_FACES_WEBAPP_FACES_SERVLET.equals(servlet.getServletClass())) {
+if(servlet.getServletClass().equals(JAVAX_FACES_WEBAPP_FACES_SERVLET)) {
                 jsf = servlet;
             }
         }

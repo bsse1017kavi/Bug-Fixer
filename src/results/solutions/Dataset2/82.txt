@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2001, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -460,9 +459,9 @@ public class MatchLocator implements ITypeRequestor {
 				Openable openable;
 				IWorkingCopy workingCopy = (IWorkingCopy)wcPaths.get(pathString);
 				if (workingCopy != null) {
-openable = this.handleFactory.createOpenable(pathString, this.scope);
+					openable = (Openable)workingCopy;
 				} else {
-					openable = this.handleFactory.createOpenable(pathString);
+openable = this.handleFactory.createOpenable(pathString, this.scope);
 					if (openable == null)
 						continue; // match is outside classpath
 				}

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -65,9 +64,9 @@ public class SpecifiedInterfaceResolveHandler implements OperationStepHandler, D
 
         for(final AttributeDefinition definition : ATTRIBUTES) {
             validateAndSet(definition, operation, config);
-ParsedInterfaceCriteria parsed = ParsedInterfaceCriteria.parse(config, true, context);
+        }
 
-        ParsedInterfaceCriteria parsed = ParsedInterfaceCriteria.parse(config, true);
+ParsedInterfaceCriteria parsed = ParsedInterfaceCriteria.parse(config, true, context);
         if (parsed.getFailureMessage() != null) {
             throw new OperationFailedException(new ModelNode().set(parsed.getFailureMessage()));
         }

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -304,9 +303,9 @@ public class InternalIndexShard extends AbstractIndexShardComponent implements I
                 }
                 return null;
             }
-logger.trace("Get for [{}#{}] returned [{}]", type, id, doc);
+            Document doc = searcher.reader().document(docId, docMapper.sourceMapper().fieldSelector());
             if (logger.isTraceEnabled()) {
-                logger.trace("Get for [{}#{}] returned [{}]", new Object[]{type, id, doc});
+logger.trace("Get for [{}#{}] returned [{}]", type, id, doc);
             }
             return docMapper.sourceMapper().value(doc);
         } catch (IOException e) {

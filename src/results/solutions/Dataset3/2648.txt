@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2009, Red Hat Middleware LLC, and individual contributors
@@ -40,9 +39,9 @@ class BundleReferenceClassLoader extends ModuleClassLoader implements BundleRefe
     private final Bundle bundle;
 
     BundleReferenceClassLoader(Configuration configuration, Bundle bundle) {
-throw MESSAGES.illegalArgumentNull("bundle");
+        super(configuration);
         if (bundle == null)
-            throw MESSAGES.nullVar("bundle");
+throw MESSAGES.illegalArgumentNull("bundle");
         this.bundle = bundle;
     }
 

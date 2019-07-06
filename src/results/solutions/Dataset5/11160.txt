@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -153,9 +152,9 @@ public abstract class Border extends HtmlContainer
 	 */
 	protected boolean resolveComponent(final RequestCycle cycle, final MarkupStream markupStream, final ComponentTag tag)
 	{
-!(markupStream.atOpenCloseTag("region")
+		// If it's a [body] tag
 		if (!tag.getComponentName().equals("[body]") &&
-		        !(markupStream.atOpenTag("region") 
+!(markupStream.atOpenCloseTag("region")
 		                && "body".equalsIgnoreCase(((ComponentWicketTag)tag).getNameAttribute())))
 		{
 		    return false;

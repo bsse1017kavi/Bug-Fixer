@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -148,9 +147,9 @@ public class RemoteOutboundConnectionService extends AbstractOutboundConnectionS
     private synchronized URI getConnectionURI() throws IOException, URISyntaxException {
         if (this.connectionURI != null) {
             return this.connectionURI;
-final InetAddress destinationAddress = destinationOutboundSocket.getResolvedDestinationAddress();
+        }
         final OutboundSocketBinding destinationOutboundSocket = this.destinationOutboundSocketBindingInjectedValue.getValue();
-        final InetAddress destinationAddress = destinationOutboundSocket.getDestinationAddress();
+final InetAddress destinationAddress = destinationOutboundSocket.getResolvedDestinationAddress();
         final int port = destinationOutboundSocket.getDestinationPort();
 
         this.connectionURI = new URI(protocol + "://" + NetworkUtils.formatPossibleIpv6Address(destinationAddress.getHostAddress()) + ":" + port);

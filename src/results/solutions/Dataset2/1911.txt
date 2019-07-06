@@ -1,4 +1,3 @@
-
 package org.junit.runner;
 
 import java.util.ArrayList;
@@ -37,9 +36,9 @@ public class Description {
 	 * Generally, this will be a leaf <code>Description</code>.
 	 * @param clazz the class of the test
 	 * @param name the name of the test (a method name for test annotated with {@link org.junit.Test})
-public static Description createTestDescription(Class<?> clazz, String name) {
+	 * @return a <code>Description</code> named <code>name</code>
 	 */
-	public static Description createTestDescription(Class clazz, String name) {
+public static Description createTestDescription(Class<?> clazz, String name) {
 		return new Description(String.format("%s(%s)", name, clazz.getName()));
 	}
 	

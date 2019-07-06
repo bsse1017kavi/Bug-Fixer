@@ -1,4 +1,3 @@
-
 package org.junit;
 
 import org.junit.internal.ArrayComparisonFailure;
@@ -67,9 +66,9 @@ public class Assert {
 	 * Fails a test with the given message.
 	 * @param message the identifying message or <code>null</code> for the {@link AssertionError}
 	 * @see AssertionError
-throw new AssertionError(message == null ? "" : message);
+	 */
 	static public void fail(String message) {
-		throw new AssertionError(message);
+throw new AssertionError(message == null ? "" : message);
 	}
 
 	/**

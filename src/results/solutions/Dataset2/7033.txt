@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.formatter;
 
 /*
@@ -365,9 +364,9 @@ private void format() {
 				// to avoid adding new line between else and a comment
 						&& token != TokenNameDOT
 						&& ! (previousCompilableToken == TokenNameRPAREN
-currentLineIndentationLevel = indentationLevel;
+							&& token == TokenNameSEMICOLON)) {
 					newLine(1);
-					currentLineIndentationLevel += indentationLevel;
+currentLineIndentationLevel = indentationLevel;
 					pendingNewLines = 0;
 					pendingSpace = false;
 				} else {

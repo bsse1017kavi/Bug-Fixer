@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -38,9 +37,9 @@ public abstract class AbstractBrokerRegistration {
 
 	private final List<String> destinationPrefixes;
 
-Assert.notNull(clientOutboundChannel, "'clientOutboundChannel' must not be null");
+
 	public AbstractBrokerRegistration(MessageChannel clientOutboundChannel, String[] destinationPrefixes) {
-		Assert.notNull(clientOutboundChannel, "'clientOutboundChannel' is required");
+Assert.notNull(clientOutboundChannel, "'clientOutboundChannel' must not be null");
 		this.clientOutboundChannel = clientOutboundChannel;
 		this.destinationPrefixes = (destinationPrefixes != null)
 				? Arrays.<String>asList(destinationPrefixes) : Collections.<String>emptyList();

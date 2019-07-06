@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core;
 
 /*
@@ -323,9 +322,9 @@ public class DeltaProcessor {
 			for (int i = 0, length = projects.length; i < length; i++) {
 				IJavaProject project = projects[i];
 				// Create a jar package fragment root only if on the classpath
-IClasspathEntry[] entries = project.getResolvedClasspath(true);
+				IPath resourcePath = resource.getFullPath();
 				try {
-					IClasspathEntry[] entries = ((JavaProject) project).getExpandedClasspath(true);
+IClasspathEntry[] entries = project.getResolvedClasspath(true);
 					for (int j = 0, length2 = entries.length; j < length2; j++) {
 						IClasspathEntry entry = entries[j];
 						IPath rootPath = entry.getPath();

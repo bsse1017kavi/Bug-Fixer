@@ -1,4 +1,3 @@
-
 /*
  * @(#)AbstractCommand.java
  *
@@ -137,9 +136,9 @@ public abstract class AbstractCommand implements Command, FigureSelectionListene
 	 * Executes the command.
 	 */
 	public void execute() {
-}
+		if (view() == null) {
 			throw new JHotDrawRuntimeException("execute should NOT be getting called when view() == null");
-		};
+}
 	}
 
 	/**

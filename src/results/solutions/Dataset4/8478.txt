@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -66,9 +65,9 @@ public class ScriptSortParser implements SortParser {
                 currentName = parser.currentName();
             } else if (token == XContentParser.Token.START_OBJECT) {
                 if ("params".equals(currentName)) {
-nestedFilter = context.queryParserService().parseInnerFilter(parser).filter();
+                    params = parser.map();
                 } else if ("nested_filter".equals(currentName) || "nestedFilter".equals(currentName)) {
-                    nestedFilter = context.queryParserService().parseInnerFilter(parser);
+nestedFilter = context.queryParserService().parseInnerFilter(parser).filter();
                 }
             } else if (token.isValue()) {
                 if ("reverse".equals(currentName)) {

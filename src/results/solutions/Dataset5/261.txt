@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2006 The Apache Software Foundation.
  *
@@ -229,9 +228,9 @@ public class PersistenceMetaDataFactory
      */
     private void parseXML(URL xml, Class cls, int mode, ClassLoader envLoader) {
         ClassLoader loader = repos.getConfiguration().
-xmlParser.setClassLoader(envLoader);
+            getClassResolverInstance().getClassLoader(cls, envLoader);
         XMLPersistenceMetaDataParser xmlParser = getXMLParser();
-        xmlParser.setClassLoader(loader);
+xmlParser.setClassLoader(envLoader);
         xmlParser.setEnvClassLoader(envLoader);
         xmlParser.setMode(mode);
         try {

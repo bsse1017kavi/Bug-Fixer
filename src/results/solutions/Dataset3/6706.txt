@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -50,9 +49,9 @@ public class AdvancedUserSearchResourceDefintion extends BaseLdapUserSearchResou
     public static final ResourceDefinition INSTANCE = new AdvancedUserSearchResourceDefintion();
 
     private AdvancedUserSearchResourceDefintion() {
-new SecurityRealmChildAddHandler(false, false, ATTRIBUTE_DEFINITIONS), new SecurityRealmChildRemoveHandler(false));
+        super(UserSearchType.ADVANCED_FILTER,
                 ControllerResolver.getResolver("core.management.security-realm.authorization.ldap.user-search.advanced-filter"),
-                new SecurityRealmChildAddHandler(false, ATTRIBUTE_DEFINITIONS), new SecurityRealmChildRemoveHandler(false));
+new SecurityRealmChildAddHandler(false, false, ATTRIBUTE_DEFINITIONS), new SecurityRealmChildRemoveHandler(false));
     }
 
     @Override

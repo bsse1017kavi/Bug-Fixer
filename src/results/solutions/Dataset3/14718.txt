@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -247,9 +246,9 @@ public class RandomDataGenerator implements RandomData, Serializable {
                 rng.nextBytes(byteArray);
                 bits = 0;
                 for (final byte b : byteArray) {
-bits &= 0x7fffffffffffffffL;
+                    bits = (bits << 8) | (((long) b) & 0xffL);
                 }
-                bits = bits & 0x7fffffffffffffffL;
+bits &= 0x7fffffffffffffffL;
                 val  = bits % n;
             } while (bits - val + (n - 1) < 0);
             return val;

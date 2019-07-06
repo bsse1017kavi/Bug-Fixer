@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -53,9 +52,9 @@ public class LongTermsAggregator extends BucketsAggregator {
         this.valuesSource = valuesSource;
         this.order = InternalOrder.validate(order, this);
         this.requiredSize = requiredSize;
-bucketOrds = new LongHash(estimatedBucketCount, aggregationContext.bigArrays());
+        this.shardSize = shardSize;
         this.minDocCount = minDocCount;
-        bucketOrds = new LongHash(estimatedBucketCount, aggregationContext.pageCacheRecycler());
+bucketOrds = new LongHash(estimatedBucketCount, aggregationContext.bigArrays());
     }
 
     @Override

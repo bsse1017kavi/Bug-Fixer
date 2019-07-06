@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 
 /*
@@ -345,9 +344,9 @@ private int matchLevel(QualifiedTypeReference typeRef, boolean resolve) {
 					return IMPOSSIBLE_MATCH;
 			}
 		}
-if (typeBinding == null || typeBinding instanceof ProblemReferenceBinding) {
+	} else {
 		TypeBinding typeBinding = typeRef.binding;
-		if (typeBinding == null) {
+if (typeBinding == null || typeBinding instanceof ProblemReferenceBinding) {
 			return INACCURATE_MATCH;
 		} else {
 			if (typeBinding instanceof ArrayBinding) {

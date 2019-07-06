@@ -1,4 +1,3 @@
-
 /**********************************************************************
 Copyright (c)2002 IBM Corp. and others.
 All rights reserved.   This program and the accompanying materials
@@ -149,9 +148,9 @@ public class ToolFactory {
 			ZipFile zipFile = new ZipFile(zipFileName);
 			ZipEntry zipEntry = zipFile.getEntry(zipEntryName);
 			if (zipEntry == null) {
-if (!zipEntryName.toLowerCase().endsWith(".class")) {//$NON-NLS-1$
+				return null;
 			}
-			if (!zipEntryName.toLowerCase().endsWith(".class")) {
+if (!zipEntryName.toLowerCase().endsWith(".class")) {//$NON-NLS-1$
 				return null;
 			}
 			byte classFileBytes[] = Util.getZipEntryByteContent(zipEntry, zipFile);

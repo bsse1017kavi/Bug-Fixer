@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -559,9 +558,9 @@ public class XML11Configuration extends ParserConfigurationSettings
 		fProperties.put(DTD_SCANNER, fDTDScanner);
         addComponent((XMLComponent) fDTDScanner);
 
-addComponent(fDTDProcessor);
+        fDTDProcessor = new XMLDTDProcessor();
 		fProperties.put(DTD_PROCESSOR, fDTDProcessor);
-        addComponent((XMLComponent) fDTDProcessor);
+addComponent(fDTDProcessor);
 
         fDTDValidator = new XMLNSDTDValidator();
 		fProperties.put(DTD_VALIDATOR, fDTDValidator);

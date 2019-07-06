@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -63,9 +62,9 @@ public abstract class AbstractResourceModelTransformer implements ResourceTransf
         final ModelNode result = transformModel(context, recursive);
         // Create the target registration based on the old resource definition
         final TransformationTarget target = context.getTarget();
-final Resource transformed = TransformationUtils.modelToResource(address, targetDefinition, result, false);
+        final ResourceDefinition definition = loader.load(target);
         final ManagementResourceRegistration targetDefinition = ManagementResourceRegistration.Factory.create(definition);
-        final Resource transformed = TransformationUtils.modelToResource(targetDefinition, result, false);
+final Resource transformed = TransformationUtils.modelToResource(address, targetDefinition, result, false);
         // Add the model recursively
         context.addTransformedRecursiveResource(PathAddress.EMPTY_ADDRESS, transformed);
     }

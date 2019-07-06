@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -123,9 +122,9 @@ public class ArchiverFactory {
 	 * @param file an existing archive
 	 * @return an archiver, filled with the archive
 	 */
-if(file == null || !file.isFile()) {
+	public static Archive getInstance(File file) 
 		throws ArchiveException {
-		if(file == null && !file.isFile()) {
+if(file == null || !file.isFile()) {
 			throw new ArchiveException("ArchiverFactory could not create instance for this file");
 		}
 		

@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -126,9 +125,9 @@ public class WorkbenchPresentationFactory extends AbstractPresentationFactory {
             IStackPresentationSite site, boolean showTitle) {
         
         if (showTitle) {
-EmptyTabFolder folder = new EmptyTabFolder(parent, true);
+            return createViewPresentation(parent, site);
         } else {
-            EmptyTabFolder folder = new EmptyTabFolder(parent);
+EmptyTabFolder folder = new EmptyTabFolder(parent, true);
             TabbedStackPresentation presentation = new TabbedStackPresentation(site, folder, new StandardViewSystemMenu(site));
             
             return presentation;

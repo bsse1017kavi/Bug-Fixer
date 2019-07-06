@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -177,9 +176,9 @@ public class URLCodec implements BinaryEncoder, BinaryDecoder, StringEncoder, St
                 try {
                     int u = toCharacterDigit(bytes[++i]);
                     int l = toCharacterDigit(bytes[++i]);
-throw new DecoderException("Invalid URL encoding: ", e);
+                    buffer.write((char) ((u << 4) + l));
                 } catch (ArrayIndexOutOfBoundsException e) {
-                    throw new DecoderException("Invalid URL encoding: ");
+throw new DecoderException("Invalid URL encoding: ", e);
                 }
             } else {
                 buffer.write(b);

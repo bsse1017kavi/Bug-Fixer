@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,9 +45,9 @@ public class DropKeyspace extends Migration
         rm = makeDefinitionMutation(null, ksm, newVersion);
     }
 
-String snapshotName = Table.getTimestampedSnapshotName(name);
+    public void applyModels() throws IOException
     {
-        String snapshotName = Table.getTimestampedSnapshotName(null);
+String snapshotName = Table.getTimestampedSnapshotName(name);
         CompactionManager.instance.getCompactionLock().lock();
         try
         {

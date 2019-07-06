@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -300,8 +299,8 @@ class BrowserTab extends Tab {
 	 * Sets the state of the "Example" widgets.
 	 */
 	void setExampleWidgetState () {
-borderButton.setSelection (browser == null ? false : (browser.getStyle () & SWT.BORDER) != 0);
+		super.setExampleWidgetState ();
 		mozillaButton.setSelection (browser == null ? false : (browser.getStyle () & SWT.MOZILLA) != 0);
-		borderButton.setSelection ((browser.getStyle () & SWT.BORDER) != 0);
+borderButton.setSelection (browser == null ? false : (browser.getStyle () & SWT.BORDER) != 0);
 	}
 }

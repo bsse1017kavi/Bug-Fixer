@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -92,9 +91,9 @@ public class JGroupsSubsystemAdd implements ModelAddOperationHandler, Descriptio
                         .install()
                         ;
                     String stack = operation.require(ModelKeys.DEFAULT_STACK).asString();
-target.addService(ChannelFactoryService.getServiceName(null), service)
+                    InjectedValue<ChannelFactory> factory = new InjectedValue<ChannelFactory>();
                     ValueService<ChannelFactory> service = new ValueService<ChannelFactory>(factory);
-                    target.addService(ChannelFactoryService.getServiceName(), service)
+target.addService(ChannelFactoryService.getServiceName(null), service)
                         .addDependency(ChannelFactoryService.getServiceName(stack), ChannelFactory.class, factory)
                         .setInitialMode(ServiceController.Mode.ON_DEMAND)
                         .install()

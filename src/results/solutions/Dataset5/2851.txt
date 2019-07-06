@@ -1,4 +1,3 @@
-
 /****************************************************************************
 * Copyright (c) 2004 Composent, Inc. and others.
 * All rights reserved. This program and the accompanying materials
@@ -20,9 +19,9 @@ import org.eclipse.ecf.core.identity.ID;
  *
  */
 public class SharedObjectReplication implements
-private TPCommitEventProcessor eventProcessor = null;
+		ISharedObjectContainerTransaction {
 
-	TPCommitEventProcessor eventProcessor = null;
+private TPCommitEventProcessor eventProcessor = null;
 	public SharedObjectReplication(ISharedObjectInternal so, int transactionTimeout, ID [] exceptions) {
 		eventProcessor = new TPCommitEventProcessor(so,transactionTimeout,exceptions);
 		so.addEventProcessor(eventProcessor);

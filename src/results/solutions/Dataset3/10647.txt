@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -115,9 +114,9 @@ class WebSubsystemParser implements XMLStreamConstants, XMLElementReader<List<Mo
             for (final Property connector : node.get(CONNECTOR).asPropertyList()) {
                 final ModelNode config = connector.getValue();
                 writer.writeStartElement(Element.CONNECTOR.getLocalName());
-attr.marshallAsAttribute(config, true, writer);
+                writer.writeAttribute(NAME, connector.getName());
                 for (SimpleAttributeDefinition attr : WebConnectorDefinition.CONNECTOR_ATTRIBUTES) {
-                    attr.marshallAsAttribute(config, false, writer);
+attr.marshallAsAttribute(config, true, writer);
 
                 }
                 if (config.get(SSL_PATH.getKey(), SSL_PATH.getValue()).isDefined()) {

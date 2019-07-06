@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -55,9 +54,9 @@ public class RaRemove implements OperationStepHandler {
         final ModelNode opAddr = operation.require(OP_ADDR);
         final String idName = PathAddress.pathAddress(opAddr).getLastElement().getValue();
 
-final ModelNode model = context.readModel(PathAddress.EMPTY_ADDRESS);
+
         // Compensating is add
-        final ModelNode model = context.readResource(PathAddress.EMPTY_ADDRESS, false).getModel();
+final ModelNode model = context.readModel(PathAddress.EMPTY_ADDRESS);
         final String archiveName;
         final boolean isModule;
         if (model.get(ARCHIVE.getName()).isDefined()) {

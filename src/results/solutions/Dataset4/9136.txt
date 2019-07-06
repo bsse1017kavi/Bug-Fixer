@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -107,9 +106,9 @@ public class MultiOrdinalsTests extends ElasticsearchTestCase {
                 return 1;
             }
         });
-final SortedDocValues singleOrds = MultiValueMode.MIN.select(docs);
+        Ordinals ords = creationMultiOrdinals(builder);
         RandomAccessOrds docs = ords.ordinals();
-        final SortedDocValues singleOrds = MultiValueMode.MIN.select(docs, -1);
+final SortedDocValues singleOrds = MultiValueMode.MIN.select(docs);
         int docId = ordsAndIds.get(0).id;
         List<Long> docOrds = new ArrayList<>();
         for (OrdAndId ordAndId : ordsAndIds) {

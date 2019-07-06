@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.clustering;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -29,9 +28,9 @@ import static org.junit.Assert.*;
 public class AbstractClusteringTest extends SolrTestCaseJ4 {
   protected static int numberOfDocs = 0;
 
-initCore("solrconfig.xml", "schema.xml");
+  @BeforeClass
   public static void beforeClass() throws Exception {
-    initCore("solrConfig.xml", "schema.xml");
+initCore("solrconfig.xml", "schema.xml");
     numberOfDocs = 0;
     for (String[] doc : DOCUMENTS) {
       assertNull(h.validateUpdate(adoc("id", Integer.toString(numberOfDocs), "url", doc[0], "title", doc[1], "snippet", doc[2])));

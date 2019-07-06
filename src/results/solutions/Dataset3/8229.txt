@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class UnivariateRealSolverUtilsTest extends TestCase {
     }
 
     public void testSolveBadAccuracy() throws MathException {
-//             fail("Expecting IllegalArgumentException"); // TODO needs rework since convergence behaviour was changed
+        try { // bad accuracy
             UnivariateRealSolverUtils.solve(sin, 0.0, 4.0, 0.0);
-            fail("Expecting IllegalArgumentException");
+//             fail("Expecting IllegalArgumentException"); // TODO needs rework since convergence behaviour was changed
         } catch (IllegalArgumentException ex) {
             // expected
         }

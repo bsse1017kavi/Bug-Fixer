@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -267,9 +266,9 @@ public class LocalPersistenceManagerFactoryBean implements FactoryBean<Persisten
 	 * or use a custom PersistenceManagerFactory implementation.
 	 * @param props the merged properties prepared by this LocalPersistenceManagerFactoryBean
 	 * @return the PersistenceManagerFactory instance
-protected PersistenceManagerFactory newPersistenceManagerFactory(Map<?, ?> props) {
+	 * @see javax.jdo.JDOHelper#getPersistenceManagerFactory(java.util.Map)
 	 */
-	protected PersistenceManagerFactory newPersistenceManagerFactory(Map props) {
+protected PersistenceManagerFactory newPersistenceManagerFactory(Map<?, ?> props) {
 		return JDOHelper.getPersistenceManagerFactory(props, this.beanClassLoader);
 	}
 

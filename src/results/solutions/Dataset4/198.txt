@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -661,9 +660,9 @@ public class IntIntMap {
 				map.hasZeroValue = false;
 			} else if (currentIndex < 0) {
 				throw new IllegalStateException("next must be called before remove.");
-nextIndex = currentIndex;
+			} else if (currentIndex >= map.capacity) {
 				map.removeStashIndex(currentIndex);
-				nextIndex = currentIndex - 1;
+nextIndex = currentIndex;
 				findNextIndex();
 			} else {
 				map.keyTable[currentIndex] = EMPTY;

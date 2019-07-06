@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2006 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -312,9 +311,9 @@ public FieldBinding generateReadSequence(BlockScope currentScope, CodeStream cod
 				} else {
 					if (!lastFieldBinding.isStatic()) {
 						if ((this.bits & DepthMASK) != 0) {
-currentScope.problemReporter().needImplementation(this);
+							// internal error, per construction we should have found it
 							// not yet supported
-							currentScope.problemReporter().needImplementation();
+currentScope.problemReporter().needImplementation(this);
 						} else {
 							generateReceiver(codeStream);
 						}

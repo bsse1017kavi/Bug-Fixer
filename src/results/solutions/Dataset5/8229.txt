@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 1999-2001 Xerox Corporation, 
  *               2002 Palo Alto Research Center, Incorporated (PARC).
@@ -112,9 +111,9 @@ public class AJInstaller extends MatchingTask {
         fileset.setIncludes("*");
         fileset.setExcludes("contents.txt,properties.txt");
         cd.addFileset(fileset);
-project.getGlobalFilterSet().addFilter("installer.main.class", this.mainclass);
+        cd.setTodir(new File(tmp+"/$installer$/org/aspectj/resources"));
         cd.execute();
-        project.addFilter("installer.main.class", this.mainclass);
+project.getGlobalFilterSet().addFilter("installer.main.class", this.mainclass);
         Copy cf = getCopyTask();
         fileset = new FileSet();
         fileset.setDir(new File(resourcesSrc));

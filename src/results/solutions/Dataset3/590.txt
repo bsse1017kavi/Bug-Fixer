@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -80,9 +79,9 @@ public class ParsedServiceDeploymentProcessor implements DeploymentUnitProcessor
         if(serviceXmlDescriptor == null)
             return;
 
-throw new DeploymentUnitProcessingException("Failed to get module attachment for deployment: " + context.getName());
+        final Module module = context.getAttachment(ModuleDeploymentProcessor.MODULE_ATTACHMENT_KEY);
         if(module == null)
-            throw new DeploymentUnitProcessingException("Failed to get module attachment for deployment: " + context.getName(), null);
+throw new DeploymentUnitProcessingException("Failed to get module attachment for deployment: " + context.getName());
 
         final ClassLoader classLoader = module.getClassLoader();
         final Value<ClassLoader> classLoaderValue = Values.immediateValue(classLoader);

@@ -1,4 +1,3 @@
-
 /*
 Copyright (c) 2000, 2001, 2002 IBM Corp.
 All rights reserved.  This program and the accompanying materials
@@ -81,9 +80,9 @@ final class RegistryReader extends org.eclipse.ui.internal.registry.RegistryRead
 			logMissingAttribute(element, ATTRIBUTE_NAME);
 			return true;
 		}
-Action action = Action.create(Label.create(description, icon, id, name), plugin);
+		
 		String plugin = getPlugin(element);
-		Action action = Action.create(id, name, description, icon, plugin);			
+Action action = Action.create(Label.create(description, icon, id, name), plugin);
 		registry.addAction(action);
 		return true;
 	}

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -48,9 +47,9 @@ public class ReadResponseResolver implements IResponseResolver<Row>
     private final String table;
     private final int responseCount;
 
-assert 1 <= responseCount && responseCount <= DatabaseDescriptor.getReplicationFactor(table)
+    public ReadResponseResolver(String table, int responseCount)
     {
-        assert 1 <= responseCount && responseCount <= DatabaseDescriptor.getReplicationFactor()
+assert 1 <= responseCount && responseCount <= DatabaseDescriptor.getReplicationFactor(table)
             : "invalid response count " + responseCount;
 
         this.responseCount = responseCount;

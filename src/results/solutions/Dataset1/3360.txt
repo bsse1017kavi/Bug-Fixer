@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.grouping;
 
 /**
@@ -504,9 +503,9 @@ public class BlockGroupingCollector extends Collector {
       processGroup();
     }
     subDocUpto = 0;
-lastDocPerGroupBits = lastDocPerGroup.getDocIdSet(readerContext, readerContext.reader.getLiveDocs()).iterator();
+    docBase = readerContext.docBase;
     //System.out.println("setNextReader base=" + docBase + " r=" + readerContext.reader);
-    lastDocPerGroupBits = lastDocPerGroup.getDocIdSet(readerContext).iterator();
+lastDocPerGroupBits = lastDocPerGroup.getDocIdSet(readerContext, readerContext.reader.getLiveDocs()).iterator();
     groupEndDocID = -1;
 
     currentReaderContext = readerContext;

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ final class ArjunaTransactionManagerService implements Service<com.arjuna.ats.jb
             Map<String, String> objStoreBrowserTypes = new HashMap<String, String> ();
                objStoreBrowser = new ObjStoreBrowser();
             objStoreBrowserTypes.put("StateManager/BasicAction/TwoPhaseCoordinator/AtomicAction",
-final ORB orb = orbInjector.getOptionalValue();
+                "com.arjuna.ats.internal.jta.tools.osb.mbean.jta.JTAActionBean");
 
-            final ORB orb = orbInjector.getValue();
+final ORB orb = orbInjector.getOptionalValue();
 
             if (orb == null) {
                 // No IIOP, stick with JTA mode.

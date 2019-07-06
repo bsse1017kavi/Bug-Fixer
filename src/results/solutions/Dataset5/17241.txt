@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -165,9 +164,9 @@ public class TableVisualizer extends AbstractVisualizer implements Clearable {
                 }
                 return;
             }
-calc.addSample(res);
+        }
         synchronized (calc) {
-            calc.addValue(res.getTime());
+calc.addSample(res);
             int count = calc.getCount();
             Sample newS = new Sample(res.getSampleLabel(), res.getTime(), 0, 0, 0, 0, 0, 0,
                     res.isSuccessful(), count, res.getEndTime(),res.getBytes(),

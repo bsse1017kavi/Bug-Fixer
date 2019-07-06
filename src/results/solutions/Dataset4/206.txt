@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -57,9 +56,9 @@ public class CompressedStringTests extends ElasticsearchTestCase {
     
     public void testRandom() throws IOException {
         String compressor = "lzf";
-for (int i = 0; i < 1000; i++) {
+        CompressorFactory.configure(ImmutableSettings.settingsBuilder().put("compress.default.type", compressor).build());
         Random r = getRandom();
-        for (int i = 0; i < 2000; i++) {
+for (int i = 0; i < 1000; i++) {
             String string = TestUtil.randomUnicodeString(r, 10000);
             CompressedString compressedString = new CompressedString(string);
             assertThat(compressedString.string(), equalTo(string));

@@ -1,4 +1,3 @@
-
 /*
  * EnhancedMenuItem.java - Menu item with user-specified accelerator string
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -45,9 +44,9 @@ public class EnhancedMenuItem extends JMenuItem
 	 */
 	public EnhancedMenuItem(String label, EditAction action)
 	{
-if(OperatingSystem.hasScreenMenuBar() && shortcut != null)
+		this.action = action;
 		this.shortcut = getShortcut();
-		if(OperatingSystem.isMacOSLF() && shortcut != null)
+if(OperatingSystem.hasScreenMenuBar() && shortcut != null)
 		{
 			setText(label + " (" + shortcut + ")");
 			shortcut = null;

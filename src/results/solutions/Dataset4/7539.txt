@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -127,9 +126,9 @@ public class MoreLikeThisQueryParser implements QueryParser {
                         mltQuery.setBoostTermsFactor(boostFactor);
                     }
                 } else if (Fields.MINIMUM_SHOULD_MATCH.match(currentFieldName, parseContext.parseFlags())) {
-mltQuery.setMinimumShouldMatch(Math.round(parser.floatValue() * 100) + "%");
+                    mltQuery.setMinimumShouldMatch(parser.text());
                 } else if (Fields.PERCENT_TERMS_TO_MATCH.match(currentFieldName, parseContext.parseFlags())) {
-                    mltQuery.setMinimumShouldMatch((int) (parser.floatValue() * 100) + "%");
+mltQuery.setMinimumShouldMatch(Math.round(parser.floatValue() * 100) + "%");
                 } else if ("analyzer".equals(currentFieldName)) {
                     analyzer = parseContext.analysisService().analyzer(parser.text());
                 } else if ("boost".equals(currentFieldName)) {

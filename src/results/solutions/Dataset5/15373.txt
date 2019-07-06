@@ -1,4 +1,3 @@
-
 /*
  * $Id$
  * $Revision$
@@ -78,9 +77,9 @@ public class ApplicationStringResourceLoaderTest extends StringResourceLoaderTes
             private ApplicationPages pages = new ApplicationPages();
 			private ApplicationSettings settings = new ApplicationSettings(this);
 		};
-Assert.assertNull("Unknown resource should return null", loader.loadStringResource(component,
+
 		IStringResourceLoader loader = new ApplicationStringResourceLoader(app);
-		Assert.assertNull("Unknown resource should return null", loader.get(component,
+Assert.assertNull("Unknown resource should return null", loader.loadStringResource(component,
 				"test.string", Locale.getDefault(), null));
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -51,9 +50,9 @@ public class StrFieldSource extends FieldCacheSource {
         return termsIndex.getOrd(doc);
       }
 
-return termsIndex.getValueCount();
+      @Override
       public int numOrd() {
-        return termsIndex.numOrd();
+return termsIndex.getValueCount();
       }
 
       @Override

@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -134,9 +133,9 @@ public class JMeterTreeModel extends DefaultTreeModel
         JMeterGUIComponent guicomp = GuiPackage.getInstance().getGui(component);
         guicomp.configure(component);
         guicomp.modifyTestElement(component);
-new JMeterTreeNode(component, this);
+        GuiPackage.getInstance().getCurrentGui(); //put the gui object back to the way it was.
         JMeterTreeNode newNode =
-            new JMeterTreeNode((TestElement) component, this);
+new JMeterTreeNode(component, this);
 
         // This check the state of the TestElement and if returns false it
         // disable the loaded node

@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -194,9 +193,9 @@ public class BlueprintExtender implements BundleActivator, BundleTrackerCustomiz
 
     public void modifiedBundle(Bundle bundle, BundleEvent event, Object object) {
         // If the bundle being stopped is the system bundle,
-if (context.getBundle(0).equals(bundle) && bundle.getState() == Bundle.STOPPING) {
+        // do an orderly shutdown of all blueprint contexts now
         // so that service usage can actually be useful
-        if (bundle.getBundleId() == 0 && bundle.getState() == Bundle.STOPPING) {
+if (context.getBundle(0).equals(bundle) && bundle.getState() == Bundle.STOPPING) {
             String val = context.getProperty("org.apache.aries.blueprint.preemptiveShutdown");
             if (val == null || Boolean.parseBoolean(val)) {
                 stop(context);

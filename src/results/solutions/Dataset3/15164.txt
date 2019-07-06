@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -35,9 +34,9 @@ import org.jboss.as.controller.registry.Resource;
  */
 public interface ManagementAdaptor {
 
-Resource createPersistenceUnitResource(final String persistenceUnitName, final String providerLabel);
+    void register(final ManagementResourceRegistration jpaSubsystemDeployments, final PersistenceUnitServiceRegistry persistenceUnitRegistry);
 
-    Resource createPersistenceUnitResource(final String persistenceUnitName);
+Resource createPersistenceUnitResource(final String persistenceUnitName, final String providerLabel);
 
     /**
      * Get the short identification string that represents the management adaptor (e.g Hibernate)

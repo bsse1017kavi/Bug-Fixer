@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -529,9 +528,9 @@ toString() {
 	for (int i = offset; i < labels + offset; i++) {
 		if (name[i] instanceof BitString)
 			sb.append(name[i]);
-if (qualified || i < labels)
+		else
 			sb.append(byteString((byte [])name[i]));
-		if (qualified || i < labels - 1)
+if (qualified || i < labels)
 			sb.append(".");
 	}
 	return sb.toString();

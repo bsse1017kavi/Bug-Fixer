@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -52,9 +51,9 @@ public class InsideSubRoutineFlowContext extends FlowContext {
 
 		if (!flowInfo.isReachable()) return; 
 		if (initsOnReturn == FlowInfo.DEAD_END) {
-initsOnReturn = initsOnReturn.mergedWith(flowInfo.copy().unconditionalInits());
+			initsOnReturn = flowInfo.copy().unconditionalInits();
 		} else {
-			initsOnReturn = initsOnReturn.mergedWith(flowInfo.unconditionalInits());
+initsOnReturn = initsOnReturn.mergedWith(flowInfo.copy().unconditionalInits());
 		}
 	}
 }

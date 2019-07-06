@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -63,9 +62,9 @@ public final class JVMEnvironmentVariableRemoveHandler implements OperationStepH
                     model.get(JvmAttributes.JVM_ENV_VARIABLES).add(value.getName(), value.getValue());
                 }
             }
-context.stepCompleted();
+        }
 
-        context.completeStep(OperationContext.RollbackHandler.NOOP_ROLLBACK_HANDLER);
+context.stepCompleted();
     }
 
     /**

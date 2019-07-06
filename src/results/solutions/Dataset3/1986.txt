@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2013 the original author or authors.
  *
@@ -156,9 +155,9 @@ public class DefaultSockJsService extends AbstractSockJsService {
 		try {
 			result.add(new WebSocketTransportHandler(new DefaultHandshakeHandler()));
 		}
-logger.warn("Failed to create default WebSocketTransportHandler", ex);
+		catch (Exception ex) {
 			if (logger.isWarnEnabled()) {
-				logger.warn("Failed to add default WebSocketTransportHandler: " + ex.getMessage());
+logger.warn("Failed to create default WebSocketTransportHandler", ex);
 			}
 		}
 		return result;

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.analysis.cjk;
 
 /*
@@ -214,9 +213,9 @@ public class TestCJKAnalyzer extends BaseTokenStreamTestCase {
         Tokenizer tokenizer = new StandardTokenizer(TEST_VERSION_CURRENT, reader);
         return new TokenStreamComponents(tokenizer, new CJKBigramFilter(tokenizer));
       }
-protected Reader initReader(String fieldName, Reader reader) {
+
       @Override
-      protected Reader initReader(Reader reader) {
+protected Reader initReader(String fieldName, Reader reader) {
         return new MappingCharFilter(norm, CharReader.get(reader));
       }
     };

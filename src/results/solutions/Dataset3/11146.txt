@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -91,9 +90,9 @@ public final class ResourceAdapterXmlDeploymentService extends AbstractResourceA
 
             cmd = (new Merger()).mergeConnectorWithCommonIronJacamar(raxml, cmd);
 
-raName, root, module.getClassLoader(), cmd, raxml, null);
+            final ServiceContainer container = context.getController().getServiceContainer();
             final AS7RaXmlDeployer raDeployer = new AS7RaXmlDeployer(context.getChildTarget(), connectorXmlDescriptor.getUrl(),
-                raName, root, module.getClassLoader(), cmd, raxml, ijmd);
+raName, root, module.getClassLoader(), cmd, raxml, null);
 
             raDeployer.setConfiguration(config.getValue());
 

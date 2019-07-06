@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2009 the original author or authors.
  *
@@ -71,9 +70,9 @@ public class ReflectivePropertyResolver implements PropertyAccessor {
 			return true;
 		}
 		Method method = findGetterForProperty(name, type, target instanceof Class);
-this.typeDescriptorCache.put(cacheKey, new TypeDescriptor(new MethodParameter(method,-1)));
+		if (method != null) {
 			this.readerCache.put(cacheKey, method);
-			this.typeDescriptorCache.put(cacheKey, new TypeDescriptor(new MethodParameter(method,0)));
+this.typeDescriptorCache.put(cacheKey, new TypeDescriptor(new MethodParameter(method,-1)));
 			return true;
 		}
 		else {

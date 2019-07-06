@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -106,9 +105,9 @@ public abstract class AbstractWriteAttributeHandler<T> implements OperationStepH
 
         if (requiresRuntime(context)) {
             context.addStep(new OperationStepHandler() {
-ModelNode resolvedValue = attributeDefinition != null ? attributeDefinition.resolveModelAttribute(context, submodel) : newValue.resolve();
+                @Override
                 public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {
-                    ModelNode resolvedValue = attributeDefinition != null ? attributeDefinition.validateResolvedOperation(submodel) : newValue.resolve();
+ModelNode resolvedValue = attributeDefinition != null ? attributeDefinition.resolveModelAttribute(context, submodel) : newValue.resolve();
                     validateResolvedValue(attributeName, newValue);
                     HandbackHolder<T> handback = new HandbackHolder<T>();
                     boolean restartRequired = applyUpdateToRuntime(context, operation, attributeName, resolvedValue, currentValue, handback);

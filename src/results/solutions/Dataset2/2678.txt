@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -45,9 +44,9 @@ public class ShowPartPaneMenuAction extends PartEventAction implements
         }
         this.workbenchWindow = window;
         // @issue missing action id
-WorkbenchHelp.setHelp(this, IWorkbenchHelpContextIds.SHOW_PART_PANE_MENU_ACTION);
+        initText();
         workbenchWindow.getPartService().addPartListener(this);
-        WorkbenchHelp.setHelp(this, IHelpContextIds.SHOW_PART_PANE_MENU_ACTION);
+WorkbenchHelp.setHelp(this, IWorkbenchHelpContextIds.SHOW_PART_PANE_MENU_ACTION);
         setActionDefinitionId("org.eclipse.ui.window.showSystemMenu"); //$NON-NLS-1$
     }
 

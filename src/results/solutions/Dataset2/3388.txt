@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -83,9 +82,9 @@ apply(Message m, TSIGRecord old) throws IOException {
 		return;
 	}
 	Record r = new TSIGRecord(name, DClass.ANY, 0, alg, timeSigned, fudge,
-m.addRecord(r, Section.ADDITIONAL);
+				  h.sign(), m.getHeader().getID(),
 				  Rcode.NOERROR, null);
-	m.addRecord(Section.ADDITIONAL, r);
+m.addRecord(r, Section.ADDITIONAL);
 }
 
 /**

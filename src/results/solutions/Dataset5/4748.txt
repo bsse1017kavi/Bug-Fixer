@@ -1,4 +1,3 @@
-
 /* *******************************************************************
  * Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
  * All rights reserved. 
@@ -53,9 +52,9 @@ public class LstBuildConfigManagerTest extends AjdeTestCase {
 		assertEquals(message.getContainedMessage().getSourceLocation().getSourceFile().getAbsolutePath(), openFile("dir-entry.lst").getAbsolutePath());
 
 		doSynchronousBuild("bad-injar.lst");
-assertTrue(message.getContainedMessage().getMessage().indexOf("skipping missing, empty or corrupt inpath entry") != -1);
+		messages = NullIdeManager.getIdeManager().getCompilationSourceLineTasks();
 		message = (NullIdeTaskListManager.SourceLineTask)messages.get(0);
-		assertTrue(message.getContainedMessage().getMessage().indexOf("bad inpath") != -1);
+assertTrue(message.getContainedMessage().getMessage().indexOf("skipping missing, empty or corrupt inpath entry") != -1);
 	}
 
 	public void testErrorMessages() throws IOException {

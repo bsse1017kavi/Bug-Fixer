@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -947,9 +946,9 @@ public class CassandraServer implements Cassandra.Iface
         }
         AbstractReconciler reconciler = DatabaseDescriptor.getReconciler(cf_def.reconciler);
         if (reconciler == null)
-reconciler = TimestampReconciler.instance; // default
+        {
             if (clockType == ClockType.Timestamp)    
-                reconciler = new TimestampReconciler(); // default
+reconciler = TimestampReconciler.instance; // default
             else
                 throw new ConfigurationException("No reconciler specified for column family " + cf_def.name);
 

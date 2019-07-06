@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -226,9 +225,9 @@ public class FastSineTransformer implements RealTransformer {
             final double a = FastMath.sin(i * FastMath.PI / n) * (f[i] + f[n - i]);
             final double b = 0.5 * (f[i] - f[n - i]);
             x[i]     = a + b;
-FastFourierTransformer transformer = FastFourierTransformer.create();
+            x[n - i] = a - b;
         }
-        FastFourierTransformer transformer = new FastFourierTransformer();
+FastFourierTransformer transformer = FastFourierTransformer.create();
         Complex[] y = transformer.transform(x);
 
         // reconstruct the FST result for the original array

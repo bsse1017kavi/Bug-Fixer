@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -2650,9 +2649,9 @@ public final class JavaCore extends Plugin implements IExecutableExtension {
 				Map previousContainerValues = (Map)JavaModelManager.PreviousSessionContainers.get(affectedProject);
 				if (previousContainerValues != null){
 					IClasspathContainer previousContainer = (IClasspathContainer)previousContainerValues.get(containerPath);
-System.out.println("CPContainer INIT - reentering access to project container: ["+affectedProject.getElementName()+"] " + containerPath + " during its initialization, will see previous value: "+ previousContainer); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					if (previousContainer != null) {
 						if (JavaModelManager.CP_RESOLVE_VERBOSE){
-							System.out.println("CPContainer INIT - reentering access to project container: ["+affectedProject.getElementName()+"] " + containerPath + " during its initialization, will see previous value: "+ previousContainer); //$NON-NLS-1$ //$NON-NLS-2$
+System.out.println("CPContainer INIT - reentering access to project container: ["+affectedProject.getElementName()+"] " + containerPath + " during its initialization, will see previous value: "+ previousContainer); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						}
 						JavaModelManager.containerPut(affectedProject, containerPath, previousContainer); 
 					}

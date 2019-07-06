@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -75,9 +74,9 @@ public class EJBRemoteTransactionsRepository implements Service<EJBRemoteTransac
     private final Map<UserTransactionID, Uid> userTransactions = Collections.synchronizedMap(new HashMap<UserTransactionID, Uid>());
 
     @Override
-logger.debug("Registered EJB XA resource deserializer " + EJBXAResourceDeserializer.INSTANCE);
+    public void start(StartContext context) throws StartException {
         recoveryManagerService.getValue().addSerializableXAResourceDeserializer(EJBXAResourceDeserializer.INSTANCE);
-        logger.debugf("Registered EJB XA resource deserializer %s", EJBXAResourceDeserializer.INSTANCE);
+logger.debug("Registered EJB XA resource deserializer " + EJBXAResourceDeserializer.INSTANCE);
     }
 
     @Override

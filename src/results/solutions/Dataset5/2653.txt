@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -136,9 +135,9 @@ public class JMeterThread implements Runnable, Interruptible {
 
     public JMeterThread(HashTree test, JMeterThreadMonitor monitor, ListenerNotifier note) {
         this.monitor = monitor;
-compiler = new TestCompiler(testTree);
+        threadVars = new JMeterVariables();
         testTree = test;
-        compiler = new TestCompiler(testTree, threadVars);
+compiler = new TestCompiler(testTree);
         controller = (Controller) testTree.getArray()[0];
         SearchByClass<TestIterationListener> threadListenerSearcher = new SearchByClass<TestIterationListener>(TestIterationListener.class); // TL - IS
         test.traverse(threadListenerSearcher);

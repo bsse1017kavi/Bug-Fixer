@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -223,9 +222,9 @@ public class DisMaxQParser extends QParser {
     return queryFields.keySet().toArray(new String[queryFields.keySet().size()]);
   }
 
-return parsedUserQuery == null ? altUserQuery : parsedUserQuery;
+  @Override
   public Query getHighlightQuery() throws ParseException {
-    return parsedUserQuery;
+return parsedUserQuery == null ? altUserQuery : parsedUserQuery;
   }
 
   public void addDebugInfo(NamedList<Object> debugInfo) {

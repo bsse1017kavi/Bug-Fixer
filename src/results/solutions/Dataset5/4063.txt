@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -329,9 +328,9 @@ public class XMLValidateTask
             // load the parser class
             // with JAXP, we would use a SAXParser factory
             Class readerClass = null;
-final URL[] urls = PathUtil.toURLs( m_classpath, getContext() );
+            if( m_classpath != null )
             {
-                final URL[] urls = PathUtil.toURLs( m_classpath );
+final URL[] urls = PathUtil.toURLs( m_classpath, getContext() );
                 final ClassLoader classLoader = new URLClassLoader( urls );
                 readerClass = classLoader.loadClass( m_readerClassName );
             }

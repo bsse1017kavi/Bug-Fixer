@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
@@ -338,9 +337,9 @@ public class HeaderManager extends ConfigTestElement implements Serializable
         }
         Vector returns = new Vector();
         tokens = new StringTokenizer(splittee, splitChar);
-temp = tokens.nextToken();
+        while (tokens.hasMoreTokens())
         {
-            temp = (String) tokens.nextToken();
+temp = tokens.nextToken();
             returns.addElement(temp);
         }
         String[] values = new String[returns.size()];

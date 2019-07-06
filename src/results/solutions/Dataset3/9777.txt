@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -105,9 +104,9 @@ public final class ResourceAdapterActivatorService extends AbstractResourceAdapt
         managementRepository.getValue().getConnectors().add(value.getDeployment().getConnector());
         DEPLOYMENT_CONNECTOR_LOGGER.debugf("Starting service %s",
                 ConnectorServices.RESOURCE_ADAPTER_SERVICE_PREFIX.append(this.value.getDeployment().getDeploymentName()));
-.addService(ConnectorServices.RESOURCE_ADAPTER_SERVICE_PREFIX.append(value.getDeployment().getDeploymentName()),
+
         context.getChildTarget()
-                .addService(ServiceName.of(value.getDeployment().getDeploymentName()),
+.addService(ConnectorServices.RESOURCE_ADAPTER_SERVICE_PREFIX.append(value.getDeployment().getDeploymentName()),
                         new ResourceAdapterService(value.getDeployment().getResourceAdapter())).setInitialMode(Mode.ACTIVE)
                 .install();
         DEPLOYMENT_CONNECTOR_LOGGER.debugf("Starting service %s", ConnectorServices.RESOURCE_ADAPTER_ACTIVATOR_SERVICE);

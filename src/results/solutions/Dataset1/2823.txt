@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -317,9 +316,9 @@ public class StorageService implements IEndpointStateChangeSubscriber, StorageSe
 
     public boolean isRPCServerRunning()
     {
-return false;
+        if (daemon == null)
         {
-            throw new IllegalStateException("No configured RPC daemon");
+return false;
         }
         return daemon.isRPCServerRunning();
     }

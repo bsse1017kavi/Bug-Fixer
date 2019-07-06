@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal;
 /*
  * (c) Copyright IBM Corp. 2000, 2001.
@@ -259,9 +258,9 @@ public class WWinKeyBindingService {
    		String[] newScopeIds = new String[0];
    		
    		if (activeService != null)
-if (force || Util.compare(oldScopeIds, newScopeIds) != 0) {
+   			newScopeIds = activeService.getScopeIds();
 
-    	if (force || Util.compare(oldScopeIds, newScopeIds) == 0) {
+if (force || Util.compare(oldScopeIds, newScopeIds) != 0) {
 	    	Scope[] scopes = new Scope[newScopeIds.length];
 	    	
 	    	for (int i = 0; i < newScopeIds.length; i++)

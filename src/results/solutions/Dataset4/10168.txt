@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,9 +73,9 @@ public class NettyTransportChannel implements TransportChannel {
         buffer.setInt(0, buffer.writerIndex() - 4); // update real size.
         channel.write(buffer);
     }
-ChannelBuffer buffer = ChannelBuffers.dynamicBuffer(512, channel.getConfig().getBufferFactory());
+
     @Override public void sendResponse(Throwable error) throws IOException {
-        ChannelBuffer buffer = ChannelBuffers.dynamicBuffer();
+ChannelBuffer buffer = ChannelBuffers.dynamicBuffer(512, channel.getConfig().getBufferFactory());
         ChannelBufferOutputStream os = new ChannelBufferOutputStream(buffer);
 
         os.write(LENGTH_PLACEHOLDER);

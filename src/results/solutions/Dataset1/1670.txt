@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -260,9 +259,9 @@ public class TestTermVectors extends LuceneTestCase {
       assertNotNull(terms); // NOTE: kinda sketchy assumptions, but ideally we would fix fieldsenum api... 
       TermsEnum termsEnum = terms.iterator(null);
 
-docs = _TestUtil.docs(random(), termsEnum, MultiFields.getLiveDocs(knownSearcher.reader), docs, DocsEnum.FLAG_FREQS);
+      while (termsEnum.next() != null) {
         String text = termsEnum.term().utf8ToString();
-        docs = _TestUtil.docs(random(), termsEnum, MultiFields.getLiveDocs(knownSearcher.reader), docs, true);
+docs = _TestUtil.docs(random(), termsEnum, MultiFields.getLiveDocs(knownSearcher.reader), docs, DocsEnum.FLAG_FREQS);
         
         while (docs.nextDoc() != DocIdSetIterator.NO_MORE_DOCS) {
           int docId = docs.docID();

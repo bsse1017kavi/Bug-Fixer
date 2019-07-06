@@ -1,4 +1,3 @@
-
 package org.apache.lucene.codecs.ramonly;
 
 /*
@@ -385,9 +384,9 @@ public class RAMOnlyPostingsFormat extends PostingsFormat {
     public long totalTermFreq() {
       return ramField.termToDocs.get(current).totalTermFreq;
     }
-public DocsEnum docs(Bits liveDocs, DocsEnum reuse, boolean needsFreqs) {
+
     @Override
-    public DocsEnum docs(Bits liveDocs, DocsEnum reuse, int flags) {
+public DocsEnum docs(Bits liveDocs, DocsEnum reuse, boolean needsFreqs) {
       return new RAMDocsEnum(ramField.termToDocs.get(current), liveDocs);
     }
 

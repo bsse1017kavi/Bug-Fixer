@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -138,9 +137,9 @@ public class SimpleAttributeDefinition extends AttributeDefinition {
                     case LONG:
                         node.set(node.asLong());
                         break;
-} else if (getDefaultValue()!= null && getDefaultValue().isDefined()) {
+                }
             }
-        } else if (getDefaultValue().isDefined()) {
+} else if (getDefaultValue()!= null && getDefaultValue().isDefined()) {
             node = new ModelNode().set(getDefaultValue());
         } else {
             node = new ModelNode();

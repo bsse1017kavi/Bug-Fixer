@@ -1,4 +1,3 @@
-
 package org.apache.tomcat.context;
 
 import org.apache.tomcat.core.*;
@@ -48,9 +47,9 @@ public class WebXmlReader extends BaseInterceptor {
 		ctx.log( "File not found, using defaults " + file );
 		return;
 	    }
-//	    if( ctx.getDebug() > 5 ) xh.setDebug( 3 );
+	    if( ctx.getDebug() > 0 ) ctx.log("Reading " + file );
 	    XmlMapper xh=new XmlMapper();
-	    if( ctx.getDebug() > 5 ) xh.setDebug( 2 );
+//	    if( ctx.getDebug() > 5 ) xh.setDebug( 3 );
 
 	    xh.addRule("web-app/context-param", xh.methodSetter("addInitParameter", 2) );
 	    xh.addRule("web-app/context-param/param-name", xh.methodParam(0) ); 

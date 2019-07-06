@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -556,9 +555,9 @@ public class Frequency implements Serializable {
          * @throws ClassCastException when <i>o1</i> is not a {@link Comparable Comparable},
          *         or when <code>((Comparable)o1).compareTo(o2)</code> does
          */
-return o1.compareTo((T) o2);
+        @SuppressWarnings("unchecked")
         public int compare(Comparable<T> o1, Comparable<T> o2) {
-            return (o1.compareTo((T) o2));
+return o1.compareTo((T) o2);
         }
     }
 

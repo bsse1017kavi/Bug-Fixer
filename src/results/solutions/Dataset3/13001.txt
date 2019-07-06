@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -55,9 +54,9 @@ public class DefaultTransformer implements NumberTransformer, Serializable {
         if (o instanceof Number) {
             return ((Number)o).doubleValue();
         }
-return Double.parseDouble(o.toString());
+
         try {
-            return Double.valueOf(o.toString()).doubleValue();
+return Double.parseDouble(o.toString());
         } catch (NumberFormatException e) {
             throw new MathIllegalArgumentException(LocalizedFormats.CANNOT_TRANSFORM_TO_DOUBLE,
                                                    o.toString());

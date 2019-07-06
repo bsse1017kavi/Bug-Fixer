@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2004 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -143,9 +142,9 @@ public class ArrayInitializer extends Expression {
 		if (leafComponentType.isBoundParameterizedType() || leafComponentType.isGenericType() || leafComponentType.isTypeVariable()) {
 		    scope.problemReporter().illegalGenericArray(leafComponentType, this);
 		}
-this.resolvedType = this.binding = (ArrayBinding) expectedTb;
+			
 		if (expectedTb.isArrayType()) {
-			binding = (ArrayBinding) expectedTb;
+this.resolvedType = this.binding = (ArrayBinding) expectedTb;
 			if (expressions == null)
 				return binding;
 			TypeBinding expectedElementsTb = binding.elementsType();

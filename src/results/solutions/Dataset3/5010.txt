@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -65,9 +64,9 @@ class HostDefinition extends PersistentResourceDefinition {
                 }
             })
             .build();
-private static final List<? extends PersistentResourceDefinition> CHILDREN = Collections.unmodifiableList(Arrays.asList(LocationDefinition.INSTANCE, AccessLogDefinition.INSTANCE));
+    static final HostDefinition INSTANCE = new HostDefinition();
     private static final Collection ATTRIBUTES = Collections.unmodifiableCollection(Arrays.asList(ALIAS));
-    private static final List<? extends PersistentResourceDefinition> CHILDREN = Collections.unmodifiableList(Arrays.asList(LocationDefinition.INSTANCE));
+private static final List<? extends PersistentResourceDefinition> CHILDREN = Collections.unmodifiableList(Arrays.asList(LocationDefinition.INSTANCE, AccessLogDefinition.INSTANCE));
 
     private HostDefinition() {
         super(UndertowExtension.HOST_PATH, UndertowExtension.getResolver(Constants.HOST),

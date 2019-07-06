@@ -1,4 +1,3 @@
-
 /*
  *  Copyright 2004 The Apache Software Foundation
  *
@@ -113,9 +112,9 @@ public final class MapBackedSet implements Set, Serializable {
     }
 
     public boolean addAll(Collection coll) {
-Object obj = it.next();
+        int size = map.size();
         for (Iterator it = coll.iterator(); it.hasNext();) {
-            Object obj = (Object) it.next();
+Object obj = it.next();
             map.put(obj, dummyValue);
         }
         return (map.size() != size);

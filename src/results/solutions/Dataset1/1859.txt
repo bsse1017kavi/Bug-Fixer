@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.net.NetCursor
@@ -697,9 +696,9 @@ public class NetCursor extends org.apache.derby.client.am.Cursor {
             return null;
         }
         int sqlcode = readFdocaInt();
-NetSqlca netSqlca = new NetSqlca(netAgent_.netConnection_, sqlcode, sqlstate, sqlerrproc);
+        byte[] sqlstate = readFdocaBytes(5);
         byte[] sqlerrproc = readFdocaBytes(8);
-        NetSqlca netSqlca = new NetSqlca(netAgent_.netConnection_, sqlcode, sqlstate, sqlerrproc, typdef.getCcsidSbc());
+NetSqlca netSqlca = new NetSqlca(netAgent_.netConnection_, sqlcode, sqlstate, sqlerrproc);
 
         parseSQLCAXGRP(typdef, netSqlca);
 

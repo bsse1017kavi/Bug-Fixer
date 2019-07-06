@@ -1,4 +1,3 @@
-
 /*
  * Copyright  2000-2004 The Apache Software Foundation
  *
@@ -57,9 +56,9 @@ public class Script extends Task {
         runner.addBeans(getProject().getReferences());
 
         runner.addBean("project", getProject());
-runner.executeScript("ANT");
+        runner.addBean("self", this);
 
-        runner.executeScript("<ANT>");
+runner.executeScript("ANT");
     }
 
     /**

@@ -1,4 +1,3 @@
-
 /*
  * ==============================================================================
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -198,9 +197,9 @@ public abstract class PortletApplication extends Application implements ISession
 	 * Create new WicketPortletSession object
 	 * 
 	 * @return session object
-public Session newSession(Request request)
+	 * @see wicket.ISessionFactory#newSession()
 	 */
-	public Session newSession()
+public Session newSession(Request request)
 	{
 		return new WicketPortletSession(this);
 	}

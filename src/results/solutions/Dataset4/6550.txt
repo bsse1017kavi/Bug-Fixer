@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,9 +73,9 @@ public abstract class TransportIndicesReplicationOperationAction<Request extends
         ClusterBlockException blockException = checkGlobalBlock(clusterState, request);
         if (blockException != null) {
             throw blockException;
-String[] concreteIndices = clusterState.metaData().concreteIndices(request.indices(), request.indicesOptions());
+        }
         // get actual indices
-        String[] concreteIndices = clusterState.metaData().concreteIndices(request.indices(), request.ignoreIndices(), false);
+String[] concreteIndices = clusterState.metaData().concreteIndices(request.indices(), request.indicesOptions());
         blockException = checkRequestBlock(clusterState, request, concreteIndices);
         if (blockException != null) {
             throw blockException;

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -941,9 +940,9 @@ public class BZip2CompressorInputStream extends CompressorInputStream implements
          * 
          * This method is called when the required length of the array is known.
          * I don't initialize it at construction time to avoid unneccessary
-int[] initTT(int length) {
+         * memory allocation when compressing small files.
          */
-        final int[] initTT(int length) {
+int[] initTT(int length) {
             int[] ttShadow = this.tt;
 
             // tt.length should always be >= length, but theoretically

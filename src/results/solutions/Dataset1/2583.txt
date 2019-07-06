@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -334,9 +333,9 @@ public class FuzzyLikeThisQuery extends Query
         }
       }
       
-super(size);
+      private static class ScoreTermQueue extends PriorityQueue<ScoreTerm> {        
         public ScoreTermQueue(int size){
-          initialize(size);
+super(size);
         }
         
         /* (non-Javadoc)

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -110,9 +109,9 @@ public class JsonFloatFieldMapper extends JsonNumberFieldMapper<Float> {
     }
 
     @Override public Float value(Fieldable field) {
-return null;
+        byte[] value = field.getBinaryValue();
         if (value == null) {
-            return Float.NaN;
+return null;
         }
         return Numbers.bytesToFloat(value);
     }

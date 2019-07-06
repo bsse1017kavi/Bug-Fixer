@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -112,9 +111,9 @@ public class Gossiper implements IFailureDetectionEventListener
 
                 if ( gDigests.size() > 0 )
                 {
-public Message getMessage(Integer version) throws IOException
+                    MessageProducer prod = new MessageProducer()
                     {
-                        public Message getMessage(int version) throws IOException
+public Message getMessage(Integer version) throws IOException
                         {
                             return makeGossipDigestSynMessage(gDigests, version);
                         }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2002-2011 the original author or authors.
  *
@@ -151,9 +150,9 @@ public abstract class AbstractFileResolvingResource extends AbstractResource {
 	@Override
 	public long contentLength() throws IOException {
 		URL url = getURL();
-return getFile().length();
+		if (ResourceUtils.isFileURL(url)) {
 			// Proceed with file system resolution...
-			return super.contentLength();
+return getFile().length();
 		}
 		else {
 			// Try a URL connection content-length header...

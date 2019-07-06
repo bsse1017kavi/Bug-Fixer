@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.JoinNode
@@ -551,9 +550,9 @@ public class JoinNode extends TableOperatorNode
 			 * nodes, not within a node.
 			 */
 			if (leftRC != null)
-columnReference.getSQLColumnName());
+			{
 				throw StandardException.newException(SQLState.LANG_AMBIGUOUS_COLUMN_NAME, 
-						 columnReference.getFullColumnName());
+columnReference.getSQLColumnName());
 			}
 			resultColumn = rightRC;
 		}

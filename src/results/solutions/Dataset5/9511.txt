@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -43,9 +42,9 @@ public class HomePage2 extends WebPage
 	public HomePage2(final PageParameters parameters)
 	{
 
-add(new AjaxLink<Void>("link")
+		setOutputMarkupId(true);
 		add(new Label("msg", new PropertyModel<String>(this, "_message")));
-		add(new AjaxLink("link")
+add(new AjaxLink<Void>("link")
 		{
 			private static final long serialVersionUID = 1L;
 

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -440,9 +439,9 @@ public class HTTPSampler extends HTTPSamplerBase {
 					// Attempt the connection:
 					conn.connect();
 					break;
-log.error("Can't connect after "+retry+" retries, "+e);
+				} catch (BindException e) {
 					if (retry >= MAX_CONN_RETRIES) {
-						log.error("Can't connect", e);
+log.error("Can't connect after "+retry+" retries, "+e);
 						throw e;
 					}
 					log.debug("Bind exception, try again");

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -72,9 +71,9 @@ public class ServerAddHandler extends AbstractAddStepHandler {
             @Override
             public void execute(final OperationContext context, final ModelNode operation) throws OperationFailedException {
                 context.createResource(PathAddress.EMPTY_ADDRESS);
-}, OperationContext.Stage.MODEL, true);
+                context.stepCompleted();
             }
-        }, OperationContext.Stage.IMMEDIATE);
+}, OperationContext.Stage.MODEL, true);
 
     }
 

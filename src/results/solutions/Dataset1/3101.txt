@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -175,9 +174,9 @@ public class BaseTestRangeFilter extends LuceneTestCase {
         // our subclasses rely on only 1 doc having the min or
         // max, so, we loop until we satisfy that.  it should be
         // exceedingly rare (Yonik calculates 1 in ~429,000)
-writer.shutdown();
+        // times) that this loop requires more than one try:
         IndexReader ir = writer.getReader();
-        writer.close();
+writer.shutdown();
         return ir;
       }
 

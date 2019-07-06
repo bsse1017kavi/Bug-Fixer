@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -49,9 +48,9 @@ public class SimpleQQParser implements QualityQueryParser {
    * @see org.apache.lucene.benchmark.quality.QualityQueryParser#parse(org.apache.lucene.benchmark.quality.QualityQuery)
    */
   public Query parse(QualityQuery qq) throws ParseException {
-qp = new QueryParser(Version.LUCENE_CURRENT, indexField, new StandardAnalyzer(Version.LUCENE_CURRENT));
+    QueryParser qp = queryParser.get();
     if (qp==null) {
-      qp = new QueryParser(indexField, new StandardAnalyzer(Version.LUCENE_CURRENT));
+qp = new QueryParser(Version.LUCENE_CURRENT, indexField, new StandardAnalyzer(Version.LUCENE_CURRENT));
       queryParser.set(qp);
     }
     return qp.parse(qq.getValue(qqName));

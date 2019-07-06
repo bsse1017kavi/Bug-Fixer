@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -36,9 +35,9 @@ public class TestTotalHitCountCollector extends LuceneTestCase {
       doc.add(new StringField("string", "a"+i, Field.Store.NO));
       doc.add(new StringField("string", "b"+i, Field.Store.NO));
       writer.addDocument(doc);
-writer.shutdown();
+    }
     IndexReader reader = writer.getReader();
-    writer.close();
+writer.shutdown();
 
     IndexSearcher searcher = newSearcher(reader);
     TotalHitCountCollector c = new TotalHitCountCollector();

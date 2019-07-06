@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -103,9 +102,9 @@ public class PureTestCase extends ContainerResourceMgmtTestBase {
         assertNotNull(repository);
         Set<String> ids = repository.getResourceAdapters();
 
-assertEquals(1, ids.size());
+        assertNotNull(ids);
         //On a running server it's 3 beacause HornetQResourceAdapter is always present  + ra itself and 1 actrivation from DMR
-        assertEquals(2, ids.size());
+assertEquals(1, ids.size());
 
         for (String piId : ids) {
             assertNotNull(piId);

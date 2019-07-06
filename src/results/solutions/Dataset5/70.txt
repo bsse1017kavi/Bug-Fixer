@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -341,9 +340,9 @@ public class XSLTProcess extends MatchingTask {
             }
             if (force ||
                 inFile.lastModified() > outFile.lastModified() ||
-log("Processing "+inFile+" to "+outFile);
+                styleSheetLastModified > outFile.lastModified()) {
                 ensureDirectoryFor( outFile );
-                log("Transforming into "+destDir);
+log("Processing "+inFile+" to "+outFile);
 
                 configureLiaison(stylesheet);
                 liaison.transform(inFile, outFile);

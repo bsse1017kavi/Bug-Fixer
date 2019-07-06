@@ -1,4 +1,3 @@
-
 package junit.tests;
 
 import junit.framework.*;
@@ -29,9 +28,9 @@ public class TextRunnerTest extends TestCase {
 		Process p= Runtime.getRuntime().exec(cmd);
 		InputStream i= p.getInputStream();
 		int b;
-assertTrue((p.waitFor() == 0) == success);
+		while((b= i.read()) != -1) 
 			; //System.out.write(b); 
-		assert((p.waitFor() == 0) == success);
+assertTrue((p.waitFor() == 0) == success);
 	}
 		
 

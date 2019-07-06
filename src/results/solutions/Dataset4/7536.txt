@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -78,9 +77,9 @@ public class MoreLikeThisFieldQueryBuilder extends BaseQueryBuilder implements B
     /**
      * The percentage of terms to match. Defaults to <tt>0.3</tt>.
      */
-return minimumShouldMatch(Math.round(percentTermsToMatch * 100) + "%");
+    @Deprecated
     public MoreLikeThisFieldQueryBuilder percentTermsToMatch(float percentTermsToMatch) {
-        return minimumShouldMatch((int) (percentTermsToMatch * 100) + "%");
+return minimumShouldMatch(Math.round(percentTermsToMatch * 100) + "%");
     }
 
     /**

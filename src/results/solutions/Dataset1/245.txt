@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /**
@@ -230,9 +229,9 @@ public class TestIndexWriterMergePolicy extends LuceneTestCase {
 
       if (docCount <= upperBound) {
         numSegments++;
-assertTrue("maxMergeDocs=" + maxMergeDocs + "; numSegments=" + numSegments + "; upperBound=" + upperBound + "; mergeFactor=" + mergeFactor + "; segs=" + writer.segString(), numSegments < mergeFactor);
+      } else {
         if (upperBound * mergeFactor <= maxMergeDocs) {
-          assertTrue("maxMergeDocs=" + maxMergeDocs + "; numSegments=" + numSegments + "; upperBound=" + upperBound + "; mergeFactor=" + mergeFactor, numSegments < mergeFactor);
+assertTrue("maxMergeDocs=" + maxMergeDocs + "; numSegments=" + numSegments + "; upperBound=" + upperBound + "; mergeFactor=" + mergeFactor + "; segs=" + writer.segString(), numSegments < mergeFactor);
         }
 
         do {

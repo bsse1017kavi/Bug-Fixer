@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -47,9 +46,9 @@ public class DirectionalShadowLight extends DirectionalLight implements ShadowMa
 		cam.near = shadowNear;
 		cam.far = shadowFar;
 		halfHeight = shadowViewportHeight * 0.5f;
-textureDesc.minFilter = textureDesc.minFilter = Texture.TextureFilter.Nearest;
+		halfDepth = shadowNear + 0.5f * (shadowFar - shadowNear);
 		textureDesc = new TextureDescriptor();
-		textureDesc.minFilter = textureDesc.magFilter = Texture.TextureFilter.Nearest;
+textureDesc.minFilter = textureDesc.minFilter = Texture.TextureFilter.Nearest;
 		textureDesc.uWrap = textureDesc.vWrap = Texture.TextureWrap.ClampToEdge;
 	}
 

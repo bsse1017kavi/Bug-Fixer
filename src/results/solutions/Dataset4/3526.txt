@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
@@ -46,9 +45,9 @@ public class ObjTest extends GdxTest implements InputProcessor {
 	public void create () {
 		ObjLoader objLoader = new ObjLoader();
 		model =  objLoader.loadModel(Gdx.files.internal("data/cube.obj"));
-model.getBoundingBox(bbox);
+		
 		BoundingBox bbox = new BoundingBox();
-		model.calculateBoundingBox(bbox);
+model.getBoundingBox(bbox);
 		
 		Gdx.app.log("ObjTest", "obj bounds: " + bbox);
 		texture = new Texture(Gdx.files.internal("data/badlogic.jpg"), true);

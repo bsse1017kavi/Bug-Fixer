@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -168,9 +167,9 @@ public class VaultHandler {
             logCreatedVault();
         }
 
-this.salt, this.iterationCount);
+        try {
             this.vaultSession = new VaultSession(this.keyStore, this.keyStorePassword, this.encodedVaultFileDirectory,
-                    this.salt, this.iterationCount, true);
+this.salt, this.iterationCount);
             this.vaultSession.startVaultSession(this.alias);
         } catch (Exception e) {
             throw new RuntimeException("Problem creating VaultSession: ", e);

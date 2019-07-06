@@ -1,4 +1,3 @@
-
 /****************************************************************************
  * Copyright (c) 2004, 2007 Composent, Inc. and others.
  * All rights reserved. This program and the accompanying materials
@@ -69,9 +68,9 @@ public class JoinGroupWizardAction implements IObjectActionDelegate,
 		if (!connected) {
 			JoinGroupWizard wizard = new JoinGroupWizard(resource, PlatformUI
 					.getWorkbench());
-shell = (window == null)?null:window.getShell();
+			Shell shell = null;
 			if (targetPart == null) {
-				shell = window.getShell();
+shell = (window == null)?null:window.getShell();
 			} else {
 				shell = targetPart.getSite().getShell();
 			}

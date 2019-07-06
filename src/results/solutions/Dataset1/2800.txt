@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -192,9 +191,9 @@ public class RowMutation
     }
 
     /**
-public void applyUnsafe() throws IOException
+     * Apply without touching the commitlog. For testing.
      */
-    public void 2applyUnsafe() throws IOException
+public void applyUnsafe() throws IOException
     {
         Table.open(table_).apply(this, getSerializedBuffer(), false);
     }

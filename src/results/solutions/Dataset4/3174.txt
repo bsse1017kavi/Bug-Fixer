@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -37,9 +36,9 @@ public class BasqueAnalyzerProvider extends AbstractIndexAnalyzerProvider<Basque
     private final BasqueAnalyzer analyzer;
 
     @Inject public BasqueAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
-Analysis.parseStopWords(env, settings, BasqueAnalyzer.getDefaultStopSet(), version),
+        super(index, indexSettings, name, settings);
         analyzer = new BasqueAnalyzer(version,
-                Analysis.parseStopWords(env, settings, BasqueAnalyzer.getDefaultStopSet()),
+Analysis.parseStopWords(env, settings, BasqueAnalyzer.getDefaultStopSet(), version),
                 Analysis.parseStemExclusion(settings, CharArraySet.EMPTY_SET));
     }
 

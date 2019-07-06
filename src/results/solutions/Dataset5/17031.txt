@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -164,9 +163,9 @@ public class PersistenceExceptions
                 || cause instanceof LockException) {
             LockException lockEx = (LockException)
                 (ke instanceof LockException ? ke : cause);
-if (!lockEx.isFatal()) {
+            if (lockEx != null && lockEx.getLockLevel() >= 
                 JPA2LockLevels.LOCK_PESSIMISTIC_READ) {
-                if (lockEx.isRecoverable()) {
+if (!lockEx.isFatal()) {
                     e = new org.apache.openjpa.persistence
                         .LockTimeoutException(
                         ke.getMessage(), getNestedThrowables(ke),

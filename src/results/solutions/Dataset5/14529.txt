@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -109,9 +108,9 @@ public class PublisherSampler extends BaseJMSSampler implements TestListener {
      * initialize the Publisher client.
      *
      */
-.getProviderUrl(), this.getConnectionFactory(), this.getTopic(), this.isUseAuth(), this.getUsername(),
+    public synchronized void initClient() {
         this.PUB = new Publisher(this.getUseJNDIPropertiesAsBoolean(), this.getJNDIInitialContextFactory(), this
-                .getProviderUrl(), this.getConnectionFactory(), this.getTopic(), this.getUseAuth(), this.getUsername(),
+.getProviderUrl(), this.getConnectionFactory(), this.getTopic(), this.isUseAuth(), this.getUsername(),
                 this.getPassword());
         ClientPool.addClient(this.PUB);
         log.info("PublisherSampler.initClient called");

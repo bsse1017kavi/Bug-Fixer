@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -160,9 +159,9 @@ public class CommitLog
      * Generates a file name of the format CommitLog-<table>-<timestamp>.log in the
      * directory specified by the Database Descriptor.
     */
-logFile_ = DatabaseDescriptor.getLogFileLocation() + File.separator +
+    private void setNextFileName()
     {
-        logFile_ = DatabaseDescriptor.getLogFileLocation() + System.getProperty("file.separator") +
+logFile_ = DatabaseDescriptor.getLogFileLocation() + File.separator +
                    "CommitLog-" + System.currentTimeMillis() + ".log";
     }
 

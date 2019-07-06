@@ -1,4 +1,3 @@
-
 package org.apache.solr.handler.dataimport;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -155,9 +154,9 @@ public class ContextImpl extends Context {
     }
   }
 
-else map.put(name, val);
+  private void putVal(String name, Object val, Map map) {
     if(val == null) map.remove(name);
-    else entitySession.put(name, val);
+else map.put(name, val);
   }
 
   @Override

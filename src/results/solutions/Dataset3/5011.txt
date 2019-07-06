@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -40,9 +39,9 @@ public class HandlerService implements Service<HttpHandler> {
         this.httpHandler = httpHandler;
     }
 
-UndertowLogger.ROOT_LOGGER.tracef("starting handler: %s", httpHandler);
+    @Override
     public void start(StartContext context) throws StartException {
-        UndertowLogger.ROOT_LOGGER.startedHttpHandler(httpHandler);
+UndertowLogger.ROOT_LOGGER.tracef("starting handler: %s", httpHandler);
     }
 
     @Override

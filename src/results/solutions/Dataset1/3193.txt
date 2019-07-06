@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index.sorter;
 
 /*
@@ -85,9 +84,9 @@ public class TestBlockJoinSorter extends LuceneTestCase {
       documents.add(parentDoc);
       writer.addDocuments(documents);
     }
-writer.shutdown();
+    writer.forceMerge(1);
     final DirectoryReader indexReader = writer.getReader();
-    writer.close();
+writer.shutdown();
 
     final AtomicReader reader = getOnlySegmentReader(indexReader);
     final Filter parentsFilter = new FixedBitSetCachingWrapperFilter(new QueryWrapperFilter(new TermQuery(new Term("parent", "true"))));

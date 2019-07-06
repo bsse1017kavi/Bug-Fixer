@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class RarDeploymentTestCase {
         logger.info(rar.toString(true));
 
         final EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class, "rar-in-ear-test.ear");
-ear.addAsManifestResource(RarDeploymentTestCase.class.getPackage(), "application.xml", "application.xml");
+        ear.addAsModule(rar);
         ear.addAsModule(ejbJar);
-        ear.addAsManifestResource("rar/AS7-2111/application.xml", "application.xml");
+ear.addAsManifestResource(RarDeploymentTestCase.class.getPackage(), "application.xml", "application.xml");
 
         logger.info(ear.toString(true));
         return ear;

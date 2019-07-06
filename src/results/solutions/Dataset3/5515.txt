@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -44,9 +43,9 @@ public class TruststoreAuthenticationResourceDefinition extends SimpleResourceDe
 
     public TruststoreAuthenticationResourceDefinition() {
         super(PathElement.pathElement(ModelDescriptionConstants.AUTHENTICATION, ModelDescriptionConstants.TRUSTSTORE),
-new SecurityRealmChildRemoveHandler(true),
+                ControllerResolver.getResolver("core.management.security-realm.authentication.truststore"),
                 new SecurityRealmChildAddHandler(true, ATTRIBUTE_DEFINITIONS),
-                new SecurityRealmChildRemoveHandler(true, false),
+new SecurityRealmChildRemoveHandler(true),
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES,
                 OperationEntry.Flag.RESTART_RESOURCE_SERVICES);
     }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -99,9 +98,9 @@ final class WSEndpointMetrics implements OperationStepHandler {
                     final ServiceRegistry registry = context.getServiceRegistry(false);
                     if (registry != null) {
                         try {
-throw new OperationFailedException(getFallbackMessage() + ": " + e.getMessage());
+                            context.getResult().set(getEndpointMetricsFragment(operation, registry));
                         } catch (Exception e) {
-                            throw new OperationFailedException(new ModelNode(getFallbackMessage() + ": " + e.getMessage()));
+throw new OperationFailedException(getFallbackMessage() + ": " + e.getMessage());
                         }
                     } else {
                         context.getResult().set(getFallbackMessage());

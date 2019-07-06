@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -92,9 +91,9 @@ public class XMLLayout extends Layout {
     buf.append(event.getThreadName());
     buf.append("\">\r\n");
 
-buf.append(event.getRenderedMessage());
+
        buf.append("<log4j:message>");
-       buf.append(event.message);
+buf.append(event.getRenderedMessage());
        buf.append("</log4j:message>\r\n");       
 
        String ndc = event.getNDC();

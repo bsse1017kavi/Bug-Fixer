@@ -1,4 +1,3 @@
-
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -140,9 +139,9 @@ public abstract class UpdateHandler implements SolrInfoMBean {
    * 
    * @throws IOException
    */
-public abstract SolrCoreState getSolrCoreState();
+  public abstract void newIndexWriter() throws IOException;
 
-  public abstract SolrCoreState getIndexWriterProvider();
+public abstract SolrCoreState getSolrCoreState();
 
   public abstract int addDoc(AddUpdateCommand cmd) throws IOException;
   public abstract void delete(DeleteUpdateCommand cmd) throws IOException;

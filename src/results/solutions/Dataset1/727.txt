@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /**
@@ -206,9 +205,9 @@ public class DisjunctionSumScorer extends Scorer {
     }
     if (scorerQueue.size() < minimumNrMatchers) {
       return false;
-return true;
+    }
     if (target <= currentDoc) {
-      target = currentDoc + 1;
+return true;
     }
     do {
       Scorer top = (Scorer) scorerQueue.top();

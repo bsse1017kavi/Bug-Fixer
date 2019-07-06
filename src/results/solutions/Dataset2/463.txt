@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) The Apache Software Foundation. All rights reserved.
  *
@@ -58,9 +57,9 @@ public abstract class Receiver extends PluginSkeleton {
   	
   	// if the logger level is greater or equal to the level
   	// of the event, use the logger to append the event.
-// event.logger = localLogger;
+  	if(event.level.isGreaterOrEqual(localLogger.getEffectiveLevel())) {
       // set the logger for the event
-      event.logger = localLogger;
+// event.logger = localLogger;
       
       // call the loggers appenders to process the event
   	  localLogger.callAppenders(event);

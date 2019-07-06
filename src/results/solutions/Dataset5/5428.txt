@@ -1,4 +1,3 @@
-
 /*******************************************************************************
 * Copyright (c) 2008 EclipseSource and others. All rights reserved. This
 * program and the accompanying materials are made available under the terms of
@@ -195,9 +194,9 @@ public class SingleOperationFuture implements IFuture {
 		this.status = status;
 	}
 
-timeoutException = new TimeoutException("Timout", timeout); //$NON-NLS-1$
+	private TimeoutException createTimeoutException(long timeout) {
 		setStatus(new Status(IStatus.ERROR, ECFPlugin.PLUGIN_ID, IStatus.ERROR, NLS.bind("Operation timeout after {0}ms", new Long(timeout)), null)); //$NON-NLS-1$
-		timeoutException = new TimeoutException(getStatus(), timeout);
+timeoutException = new TimeoutException("Timout", timeout); //$NON-NLS-1$
 		return timeoutException;
 	}
 

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public class RaAdd extends AbstractRaOperation implements OperationStepHandler {
         populateModel(operation, subModel);
 
         // Compensating is remove
-operation.get(ARCHIVE.getName()).set(archive);
+        final ModelNode address = operation.require(OP_ADDR);
         final String archive = PathAddress.pathAddress(address).getLastElement().getValue();
-        operation.get(ARCHIVE).set(archive);
+operation.get(ARCHIVE.getName()).set(archive);
 
         if (context.getType() == OperationContext.Type.SERVER) {
             context.addStep(new OperationStepHandler() {

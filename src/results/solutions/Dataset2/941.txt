@@ -1,4 +1,3 @@
-
 // Copyright (c) 1999 Brian Wellington (bwelling@xbill.org)
 // Portions Copyright (c) 1999 Network Associates, Inc.
 
@@ -115,9 +114,9 @@ sendTCP(Message query, byte [] out) throws IOException {
 
 	s.close();
 	Message response = new Message(in);
-System.out.println(";; TSIG verify: " + ok);
+	if (tsig != null) {
 		boolean ok = tsig.verify(response, in, query.getTSIG());
-		System.out.println("TSIG verify: " + ok);
+System.out.println(";; TSIG verify: " + ok);
 	}
 	return response;
 }

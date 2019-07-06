@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2584,9 +2583,9 @@ int[] readImageRef(int path) {
 					OS.CGDataProviderRelease(provider);
 				}
 			} else if (ext.equalsIgnoreCase("jpeg") || ext.equals("jpg")) {
-image = new int[]{OS.CGImageCreateWithJPEGDataProvider(provider, null, true, OS.kCGRenderingIntentDefault), 0};
+				int provider = OS.CGDataProviderCreateWithURL(url);
 				if (provider != 0) {
-					image = new int[]{OS.CGImageCreateWithJPEGDataProvider(provider, null, true, OS.kCGRenderingIntentDefault)};
+image = new int[]{OS.CGImageCreateWithJPEGDataProvider(provider, null, true, OS.kCGRenderingIntentDefault), 0};
 					OS.CGDataProviderRelease(provider);
 				}
 			} else if (ext.equalsIgnoreCase("icns")) {

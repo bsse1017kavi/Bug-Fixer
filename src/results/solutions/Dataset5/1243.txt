@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -365,9 +364,9 @@ public class SQLExec extends Task {
             Class dc;
             if (classpath != null) {
                 log( "Loading " + driver + " using AntClassLoader with classpath " + classpath, 
-loader = new AntClassLoader(project, classpath);
+                     Project.MSG_VERBOSE );
 
-                loader = new AntClassLoader(project, classpath, false);
+loader = new AntClassLoader(project, classpath);
                 dc = loader.loadClass(driver);
             }
             else {

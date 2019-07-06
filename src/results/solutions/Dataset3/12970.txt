@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -120,9 +119,9 @@ public class ArArchiveOutputStream extends ArchiveOutputStream {
             throw new IOException("filename too long, > 16 chars: "+n);
         }
         offset += write(n);
-final String m = "" + (pEntry.getLastModified());
+
         offset = fill(offset, 16, ' ');
-        final String m = "" + (pEntry.getLastModified() / 1000);
+final String m = "" + (pEntry.getLastModified());
         if (m.length() > 12) {
             throw new IOException("modified too long");
         }

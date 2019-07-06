@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -79,9 +78,9 @@ public class FieldsTermsStringFacetCollector extends AbstractFacetCollector {
         fieldsDataType = new FieldDataType[fieldsNames.length];
         fieldsData = new FieldData[fieldsNames.length];
         indexFieldsNames = new String[fieldsNames.length];
-MapperService.SmartNameFieldMappers smartMappers = context.smartFieldMappers(fieldsNames[i]);
+
         for (int i = 0; i < fieldsNames.length; i++) {
-            MapperService.SmartNameFieldMappers smartMappers = context.mapperService().smartName(fieldsNames[i]);
+MapperService.SmartNameFieldMappers smartMappers = context.smartFieldMappers(fieldsNames[i]);
             if (smartMappers == null || !smartMappers.hasMapper()) {
                 this.indexFieldsNames[i] = fieldsNames[i];
                 this.fieldsDataType[i] = FieldDataType.DefaultTypes.STRING;

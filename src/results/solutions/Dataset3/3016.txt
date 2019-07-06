@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -929,9 +928,9 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      *
      * @param f Function to be applied on this array.
      * @return the result.
-public synchronized double compute(MathArrays.Function f) {
+     * @since 3.1
      */
-    public double compute(MathArrays.Function f) {
+public synchronized double compute(MathArrays.Function f) {
         return f.evaluate(internalArray, startIndex, numElements);
     }
 

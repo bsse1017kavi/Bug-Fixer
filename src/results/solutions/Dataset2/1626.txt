@@ -1,4 +1,3 @@
-
 package org.eclipse.jdt.internal.core.search.matching;
 /*
  * (c) Copyright IBM Corp. 2002.
@@ -28,9 +27,9 @@ public FileNameEnvironment(String[] classpathNames, String encoding) {
 public ClasspathJar getClasspathJar(File file) throws IOException {
 	try {
 		ZipFile zipFile = JavaModelManager.getJavaModelManager().getZipFile(new Path(file.getPath()));
-return super.getClasspathJar(file);
+		return new ClasspathJar(zipFile, false);
 	} catch (CoreException e) {
-		return super.getClasspathJar(file, true);
+return super.getClasspathJar(file);
 	}
 }
 }

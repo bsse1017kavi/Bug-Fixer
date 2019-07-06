@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search;
 
 /*
@@ -59,9 +58,9 @@ public class TestPrefixQuery extends LuceneTestCase {
     query = new PrefixQuery(new Term("category", ""));
     Terms terms = MultiFields.getTerms(searcher.getIndexReader(), "category");
     assertFalse(query.getTermsEnum(terms) instanceof PrefixTermsEnum);
-writer.shutdown();
+    hits = searcher.search(query, null, 1000).scoreDocs;
     assertEquals("everything", 3, hits.length);
-    writer.close();
+writer.shutdown();
     reader.close();
     directory.close();
   }

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public class WSEndpointDeploymentUnit extends SimpleAttachable implements Deploy
             urlPattern = urlPattern.trim();
             if (!urlPattern.startsWith("/")) {
                 urlPattern = "/" + urlPattern;
-jaxwsDeployment.addEndpoint(new POJOEndpoint(className, null, urlPattern));
+            }
         }
-        jaxwsDeployment.addEndpoint(new POJOEndpoint(className, urlPattern));
+jaxwsDeployment.addEndpoint(new POJOEndpoint(className, null, urlPattern));
     }
 
     @Override

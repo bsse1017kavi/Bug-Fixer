@@ -1,4 +1,3 @@
-
 /*
 * JBoss, Home of Professional Open Source.
 * Copyright 2011, Red Hat Middleware LLC, and individual contributors
@@ -271,9 +270,9 @@ public class ModelControllerMBeanTestCase {
     }
 
     private static MBeanServerConnection setupAndGetConnection() throws Exception {
-.getProperty("jmx.service.url", "service:jmx:remoting-jmx://" + HOST + ":" + PORT);
+        // Make sure that we can connect to the MBean server
         String urlString = System
-                .getProperty("jmx.service.url", "service:jmx:remote://" + HOST + ":" + PORT);
+.getProperty("jmx.service.url", "service:jmx:remoting-jmx://" + HOST + ":" + PORT);
         JMXServiceURL serviceURL = new JMXServiceURL(urlString);
         connector = JMXConnectorFactory.connect(serviceURL, null);
         return connector.getMBeanServerConnection();

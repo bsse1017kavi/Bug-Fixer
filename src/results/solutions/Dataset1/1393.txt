@@ -1,4 +1,3 @@
-
 package org.apache.lucene.index;
 
 /*
@@ -105,9 +104,9 @@ public class TestNorms extends LuceneTestCase {
     NumericDocValues normValues = open.simpleNormValues(byteTestField);
     assertNotNull(normValues);
     for (int i = 0; i < open.maxDoc(); i++) {
-assertEquals((byte)expected, (byte)normValues.get(i));
+      StoredDocument document = open.document(i);
       int expected = Integer.parseInt(document.get(byteTestField));
-      assertEquals((byte)expected, normValues.get(i));
+assertEquals((byte)expected, (byte)normValues.get(i));
     }
     open.close();
     dir.close();

@@ -1,4 +1,3 @@
-
 package org.apache.lucene.search.spell;
 
 /**
@@ -435,9 +434,9 @@ public class DirectSpellChecker {
       
       if (score < accuracy)
         continue;
-st.term = BytesRef.deepCopyOf(candidateTerm);
+      
       // add new entry in PQ
-      st.term = new BytesRef(candidateTerm);
+st.term = BytesRef.deepCopyOf(candidateTerm);
       st.boost = boost;
       st.docfreq = df;
       st.termAsString = termAsString;

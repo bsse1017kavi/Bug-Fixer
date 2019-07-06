@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.client.net.NetXAResource
@@ -412,9 +411,9 @@ public class NetXAResource implements XAResource {
             exceptionsOnXA = org.apache.derby.client.am.Utils.accumulateSQLException
                     (sqle, exceptionsOnXA);
         } finally {
-if ((rc != XAResource.XA_OK ) && (rc != XAResource.XA_RDONLY)) {
+            conn_.pendingEndXACallinfoOffset_ = -1; // indicate no pending callinfo
         }
-        if (rc != XAResource.XA_OK) {
+if ((rc != XAResource.XA_OK ) && (rc != XAResource.XA_RDONLY)) {
             throwXAException(rc, false);
         }
         if (conn_.agent_.loggingEnabled()) {

@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -108,9 +107,9 @@ public class HighlightSearchTests extends AbstractServersTests {
         client.index(Requests.indexRequest("test").type("type1").id(id).source(source(id, nameValue, age))).actionGet();
     }
 
-.startObject("_all").field("store", "yes").field("termVector", "with_positions_offsets").endObject()
+    public JsonBuilder mapping() throws IOException {
         return binaryJsonBuilder().startObject().startObject("type1")
-                .startObject("allField").field("store", "yes").field("termVector", "with_positions_offsets").endObject()
+.startObject("_all").field("store", "yes").field("termVector", "with_positions_offsets").endObject()
                 .endObject().endObject();
     }
 

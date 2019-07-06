@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -59,9 +58,9 @@ public class BenchmarkNettyClient {
                 .build();
 
         final ThreadPool threadPool = new CachedThreadPool(settings);
-final TransportService transportService = new TransportService(new NettyTransport(settings, threadPool), threadPool).start();
+//        final ThreadPool threadPool = new ScalingThreadPool(settings);
         final TimerService timerService = new TimerService(settings, threadPool);
-        final TransportService transportService = new TransportService(new NettyTransport(settings, threadPool), threadPool, timerService).start();
+final TransportService transportService = new TransportService(new NettyTransport(settings, threadPool), threadPool).start();
 
         final DiscoveryNode node = new DiscoveryNode("server", new InetSocketTransportAddress("localhost", 9999));
 

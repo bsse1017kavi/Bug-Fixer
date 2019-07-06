@@ -1,4 +1,3 @@
-
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -75,9 +74,9 @@ public abstract class AbstractCompendiumHandler extends ServiceTracker implement
         Logger logger = agentContext.getLogger();
         Object trackedService = null;
         Long serviceId = (Long) reference.getProperty(Constants.SERVICE_ID);
-if (trackedId != null) {
+        //API stipulates versions for compendium services with static ObjectName
         //This shouldn't happen but added as a consistency check
-        if (getTrackingCount() > 0) {
+if (trackedId != null) {
             String serviceDescription = (String) ((reference.getProperty(Constants.SERVICE_DESCRIPTION) != null) ? 
                     reference.getProperty(Constants.SERVICE_DESCRIPTION) : reference.getProperty(Constants.OBJECTCLASS));
             logger.log(LogService.LOG_WARNING, "Detected secondary ServiceReference for [" + serviceDescription

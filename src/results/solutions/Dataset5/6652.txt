@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2004 IBM 
  * All rights reserved. This program and the accompanying materials
@@ -54,9 +53,9 @@ public class Annotations extends TestUtils {
    * a simple program then checks the annotations were copied across.
    */
   public void testBugWithAnnotationsLostOnWovenMethods() throws ClassNotFoundException {
-//System.err.println(cR.getStandardError());
+  	CompilationResult cR = ajc(new File(baseDir+File.separator+"attarget"),
   			new String[]{"Program.java","AtTargetAspect.java","-1.5"});
-  	System.err.println(cR.getStandardError());
+//System.err.println(cR.getStandardError());
   	List expectedInfoMessages = new ArrayList();
   	MessageSpec ms = new MessageSpec(null,null);
   	assertMessages(cR,ms);

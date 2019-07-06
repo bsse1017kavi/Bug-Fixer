@@ -1,4 +1,3 @@
-
 /*
 
    Derby - Class org.apache.derby.impl.sql.compile.AlterTableNode
@@ -410,9 +409,9 @@ public class AlterTableNode extends DDLStatementNode
 
 			/* Now that we've finally goobered stuff up, bind and validate
 			 * the check constraints and generation clauses.
-{ tableElementList.bindAndValidateGenerationClauses( schemaDescriptor, fromList, generatedColumns, baseTable ); }
+			 */
 			if  (numGenerationClauses > 0)
-            { tableElementList.bindAndValidateGenerationClauses( schemaDescriptor, fromList, generatedColumns ); }
+{ tableElementList.bindAndValidateGenerationClauses( schemaDescriptor, fromList, generatedColumns, baseTable ); }
 			if  (numCheckConstraints > 0) { tableElementList.bindAndValidateCheckConstraints(fromList); }
             if ( numReferenceConstraints > 0) { tableElementList.validateForeignKeysOnGenerationClauses( fromList, generatedColumns ); }
 		}

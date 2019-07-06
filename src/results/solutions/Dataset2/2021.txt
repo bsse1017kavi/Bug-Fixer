@@ -1,4 +1,3 @@
-
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1
@@ -220,9 +219,9 @@ public class EventDetailLayout extends Layout {
     String ndc = event.getNDC();
     Hashtable mdc = formatMDC(event);
     String[] throwableStringRep = event.getThrowableStrRep();
-li = formatLocationInfo(event);
+    LocationInfo li = null;
     if (event.locationInformationExists()) {
-        formatLocationInfo(event);
+li = formatLocationInfo(event);
     }
     Hashtable properties = formatProperties(event);
     LoggingEvent copy =

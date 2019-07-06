@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -59,9 +58,9 @@ public final class ConnectorSubsystemAdd extends AbstractSubsystemAdd<ConnectorS
 
         final ConnectorConfigService connectorConfigService = new ConnectorConfigService(config);
 
-serviceBuilder.setInitialMode(Mode.ACTIVE);
+        final BatchServiceBuilder<ConnectorSubsystemConfiguration> serviceBuilder = builder.addService(
                 ConnectorServices.CONNECTOR_CONFIG_SERVICE, connectorConfigService);
-        serviceBuilder.setInitialMode(Mode.IMMEDIATE);
+serviceBuilder.setInitialMode(Mode.ACTIVE);
 
     }
 

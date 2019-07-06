@@ -1,4 +1,3 @@
-
 /*
  * ActionBar.java - For invoking actions directly
  * :tabSize=8:indentSize=8:noTabs=false:
@@ -472,9 +471,9 @@ public class ActionBar extends JPanel
 
 			pack();
 			Point p = new Point(0,-getHeight());
-setVisible(true);
+			SwingUtilities.convertPointToScreen(p,action);
 			setLocation(p);
-			show();
+setVisible(true);
 
 			KeyHandler keyHandler = new KeyHandler();
 			addKeyListener(keyHandler);

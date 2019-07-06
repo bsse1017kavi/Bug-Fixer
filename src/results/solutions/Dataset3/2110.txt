@@ -1,4 +1,3 @@
-
 package backtype.storm.tuple;
 
 import backtype.storm.generated.GlobalStreamId;
@@ -19,9 +18,9 @@ import java.util.Map;
  * Storm needs to know how to serialize all the values in a tuple. By default, Storm 
  * knows how to serialize the primitive types, strings, and byte arrays. If you want to 
  * use another type, you'll need to implement and register a serializer for that type.
-public class Tuple implements ILookup {
+ * See {@link http://github.com/nathanmarz/storm/wiki/Serialization} for more info.
  */
-public class Tuple implements ILookup, IAnchorable {
+public class Tuple implements ILookup {
     private List<Object> values;
     private int taskId;
     private String streamId;

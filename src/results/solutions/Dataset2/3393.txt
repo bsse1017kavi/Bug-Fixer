@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2007 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -2817,9 +2816,9 @@ public final class JavaCore extends Plugin {
 			}
 			if (state == null) continue;
 			if (element.getElementType() == IJavaElement.JAVA_PROJECT) {
-roots = javaProject.getPackageFragmentRoots();
+				IPackageFragmentRoot[] roots = null;
 				try {
-					roots = javaProject.getAllPackageFragmentRoots();
+roots = javaProject.getPackageFragmentRoots();
 				} catch (JavaModelException e) {
 					// ignore
 				}

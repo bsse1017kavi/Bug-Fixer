@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -171,9 +170,9 @@ public abstract class AbstractPageableView extends RefreshingView implements IPa
 	 */
 	protected final void internalSetRowsPerPage(int items)
 	{
-throw new IllegalArgumentException("Argument [itemsPerPage] cannot be less than 1");
+		if (items < 1)
 		{
-			throw new IllegalArgumentException("Argument [itemsPerPage] cannot be less then 1");
+throw new IllegalArgumentException("Argument [itemsPerPage] cannot be less than 1");
 		}
 
 		if (itemsPerPage != items)

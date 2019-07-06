@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com), Nathan Sweet (admin@esotericsoftware.com)
  * 
@@ -57,9 +56,9 @@ public class PixmapBlendingTest extends GdxTest {
 		pixD.drawPixmap(pixS1, 0, 0, 0, 0, 76, 76);
 		pixD.drawPixmap(pixS2, 0, 0, 0, 0, 76, 76);
 
-logoSprite.getRegion().flip(false, true);
+		logoSprite = new Sprite(Gdx.graphics.newUnmanagedTexture(pixD, TextureFilter.Nearest, TextureFilter.Linear,
 			TextureWrap.ClampToEdge, TextureWrap.ClampToEdge));
-		logoSprite.getTextureRegion().flip(false, true);
+logoSprite.getRegion().flip(false, true);
 	}
 
 	@Override public void render () {

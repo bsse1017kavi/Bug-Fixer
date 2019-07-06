@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2011 Red Hat Inc. and/or its affiliates and other contributors
@@ -63,9 +62,9 @@ public class ServerStartHandler implements OperationStepHandler {
 
     public static final OperationDefinition DEFINITION = getOperationDefinition(OPERATION_NAME);
 
-static OperationDefinition getOperationDefinition(String name) {
+    private final ServerInventory serverInventory;
 
-    static final OperationDefinition getOperationDefinition(String name) {
+static OperationDefinition getOperationDefinition(String name) {
         return new SimpleOperationDefinitionBuilder(name, HostResolver.getResolver("host.server"))
             .setParameters(SERVER, BLOCKING)
             .setReplyType(ModelType.STRING)

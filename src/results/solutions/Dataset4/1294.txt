@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2011, Nathan Sweet <nathan.sweet@gmail.com>
  * All rights reserved.
@@ -33,9 +32,9 @@ import com.esotericsoftware.tablelayout.BaseTableLayout.Debug;
 /** Base class for UI toolkit.
  * @author Nathan Sweet */
 public abstract class Toolkit<C, T extends C, L extends BaseTableLayout> {
-abstract public Cell obtainCell (L layout);
+	static public Toolkit instance;
 
-	abstract public Cell<C> obtainCell (L layout);
+abstract public Cell obtainCell (L layout);
 
 	abstract public void freeCell (Cell cell);
 

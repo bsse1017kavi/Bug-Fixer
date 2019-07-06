@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -72,9 +71,9 @@ public final class OSGiSubsystemAdd extends AbstractSubsystemAdd<OSGiSubsystemEl
         System.setProperty("jboss.protocol.handler.modules", value);
 
         BatchBuilder batchBuilder = updateContext.getBatchBuilder();
-FrameworkService.addService(batchBuilder, config);
+        Configuration config = Configuration.addService(batchBuilder, subsystemState);
         BundleManagerService.addService(batchBuilder, config);
-        FrameworkService.addService(batchBuilder);
+FrameworkService.addService(batchBuilder, config);
         PackageAdminService.addService(batchBuilder);
         new OSGiDeploymentActivator().activate(batchBuilder);
     }

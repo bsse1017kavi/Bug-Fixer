@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -407,9 +406,9 @@ public char[] getCurrentIdentifierSource() {
 	return result;
 }
 public int getCurrentTokenEndPosition(){
-public char[] getCurrentTokenSource() {
+	return this.currentPosition - 1;
 }
-public final char[] getCurrentTokenSource() {
+public char[] getCurrentTokenSource() {
 	// Return the token REAL source (aka unicodes are precomputed)
 
 	char[] result;

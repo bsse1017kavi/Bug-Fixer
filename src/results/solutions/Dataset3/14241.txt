@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -389,9 +388,9 @@ public interface JmxMessages {
     JMRuntimeException unauthorized();
 
     @Message(id = 11361, value = "Not authorized to write attribute: '%s'")
-@Message(id = 11362, value = "Not authorized to read attribute: '%s'")
+    JMRuntimeException notAuthorizedToWriteAttribute(String attributeName);
 
-    @Message(id = 11362, value = "Not authorized to write attribute: '%s'")
+@Message(id = 11362, value = "Not authorized to read attribute: '%s'")
     JMRuntimeException notAuthorizedToReadAttribute(String attributeName);
 
     @Message(id = 11363, value = "Not authorized to invoke operation: '%s'")

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -109,9 +108,9 @@ public class NetworkInterfaceService implements Service<NetworkInterfaceBinding>
     static NetworkInterfaceBinding createBinding(final String name, final boolean anyLocalV4, final boolean anyLocalV6,
             final boolean anyLocal, final InterfaceCriteria criteria) throws SocketException, UnknownHostException {
 
-log.debugf("The argument binding for logical interface %s is %s\n", name, argBinding);
+        // Begin check for -b information (AS7-1668)
         String argBinding = ServerEnvironment.getNetworkBinding(name);
-        log.infof("The argument binding for logical interface %s is %s\n", name, argBinding);
+log.debugf("The argument binding for logical interface %s is %s\n", name, argBinding);
         if (argBinding != null && !argBinding.trim().isEmpty()) {
             InetAddress address = InetAddress.getByName(argBinding);
             if (address.isAnyLocalAddress()) {

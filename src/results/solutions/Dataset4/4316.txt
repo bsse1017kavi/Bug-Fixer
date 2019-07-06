@@ -1,4 +1,3 @@
-
 /*
  * Licensed to ElasticSearch and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -90,9 +89,9 @@ public class XContentBuilderTests {
         bos.write(", source : { test : \"value\" }".getBytes("UTF8"));
         gen.writeStringField("name2", "something2");
         gen.writeEndObject();
-byte[] data = bos.bytes().toBytes();
+        gen.close();
 
-        byte[] data = bos.copiedByteArray();
+byte[] data = bos.bytes().toBytes();
         String sData = new String(data, "UTF8");
         System.out.println("DATA: " + sData);
     }

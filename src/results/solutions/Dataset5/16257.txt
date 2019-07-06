@@ -1,4 +1,3 @@
-
 /*
  * The Apache Software License, Version 1.1
  *
@@ -71,9 +70,9 @@ public class Deltree extends Task {
     public void setDir(String dirName) {
 	dir = project.resolveFile(dirName);
     }
-log("Deleting: " + dir.getAbsolutePath());
+    
     public void execute() throws BuildException {
-	project.log("Deleting: " + dir.getAbsolutePath());
+log("Deleting: " + dir.getAbsolutePath());
 
 	if (dir.exists()) {
 	    if (!dir.isDirectory()) {

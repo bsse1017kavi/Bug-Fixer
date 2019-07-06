@@ -1,4 +1,3 @@
-
 /*
  * ====================================================================
  *
@@ -373,9 +372,9 @@ public class ServletWrapper extends Handler {
     // The problem is that we are just clearing up invoker, not
     // the class loaded by invoker.
     void handleReload(Request req) throws TomcatException {
-if( isReloadable ) {// && ! "invoker".equals( getServletName())) {
+	// That will be reolved after we reset the context - and many
 	// other conflicts.
-	if( isReloadable && ! "invoker".equals( getServletName())) {
+if( isReloadable ) {// && ! "invoker".equals( getServletName())) {
 	    ServletLoader loader=context.getServletLoader();
 	    if( loader!=null) {
 		// XXX no need to check after we remove the old loader

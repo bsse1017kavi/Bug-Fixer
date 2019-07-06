@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2010, Red Hat, Inc., and individual contributors
@@ -56,9 +55,9 @@ public class Test implements TestMBean {
 
     public void start() throws Exception {
 
-QueueConnectionFactory qcf = (QueueConnectionFactory)ctx.lookup("java:/ConnectionFactory");
+        InitialContext ctx = new InitialContext();
 
-        QueueConnectionFactory qcf = (QueueConnectionFactory)ctx.lookup("ConnectionFactory");
+QueueConnectionFactory qcf = (QueueConnectionFactory)ctx.lookup("java:/ConnectionFactory");
         conn = qcf.createQueueConnection();
         conn.start();
         queue = (Queue)ctx.lookup("queue/test");

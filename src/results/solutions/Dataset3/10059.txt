@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1544,9 +1543,9 @@ public class FileUtilsTestCase extends FileBasedTestCase {
         assertEqualContent(text, file);
     }
 
-FileUtils.writeStringToFile(file, "Hello /u1234", (String)null);
+    public void testWriteStringToFile2() throws Exception {
         File file = new File(getTestDirectory(), "write.txt");
-        FileUtils.writeStringToFile(file, "Hello /u1234", null);
+FileUtils.writeStringToFile(file, "Hello /u1234", (String)null);
         byte[] text = "Hello /u1234".getBytes();
         assertEqualContent(text, file);
     }

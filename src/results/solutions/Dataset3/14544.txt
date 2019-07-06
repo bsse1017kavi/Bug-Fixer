@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2010, Red Hat Inc., and individual contributors as indicated
@@ -98,9 +97,9 @@ public class RunAsMergingProcessor extends AbstractMergingProcessor<EJBComponent
         }
         if (componentConfiguration.getRunAs() != null) {
             String principal = null;
-if (jbossMetaData != null && jbossMetaData.getAssemblyDescriptor() != null) {
+            String globalRunAsPrincipal = null;
             EjbJarMetaData jbossMetaData = deploymentUnit.getAttachment(EjbDeploymentAttachmentKeys.EJB_JAR_METADATA);
-            if (jbossMetaData != null) {
+if (jbossMetaData != null && jbossMetaData.getAssemblyDescriptor() != null) {
                 List<EJBBoundSecurityMetaData> securityMetaDatas = jbossMetaData.getAssemblyDescriptor().getAny(EJBBoundSecurityMetaData.class);
                 if (securityMetaDatas != null) {
                     for (EJBBoundSecurityMetaData securityMetaData : securityMetaDatas) {

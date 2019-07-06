@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright 2010 Mario Zechner (contact@badlogicgames.com)
  * 
@@ -144,9 +143,9 @@ public class Group extends Actor {
 				if (child.originX == 0 && child.originY == 0) {
 					out.x = (x - child.x) / child.scaleX;
 					out.y = (y - child.y) / child.scaleY;
+				} else {
+					out.x = x / child.scaleX - (child.x - child.originX);
 out.y = x / child.scaleY - (child.y - child.originY);
-					out.x = x / child.scaleX - (child.x - child.originX);
-					out.x = x / child.scaleX - (child.x - child.originX);
 				}
 			}
 		} else {

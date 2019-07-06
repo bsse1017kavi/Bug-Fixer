@@ -1,4 +1,3 @@
-
 package org.apache.lucene.misc;
 
 /*
@@ -226,9 +225,9 @@ public class TestHighFreqTerms extends LuceneTestCase {
     for (int i = 0; i < targetTF; i++) {
       content += "TF150 ";
     }
-writer.shutdown();
+    doc.add(newTextField(rnd, "different_field", content, Field.Store.YES));
     writer.addDocument(doc);
-    writer.close();
+writer.shutdown();
     
   }
   

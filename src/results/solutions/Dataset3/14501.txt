@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -127,9 +126,9 @@ public class JmsCFAddHandler extends BatchModeCommandHandler {
                 throw new OperationFormatException("--profile argument value is missing.");
             }
             builder.addNode("profile",profile);
-builder.addNode("subsystem", "messaging");
+        }
 
-        builder.addNode("subsystem", "jms");
+builder.addNode("subsystem", "messaging");
         builder.setOperationName("add");
 
         final String name = this.name.getValue(args, true);

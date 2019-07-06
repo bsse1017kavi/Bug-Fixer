@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2013, Red Hat, Inc., and individual contributors
@@ -354,9 +353,9 @@ public class InfinispanBeanManager<G, I, T> implements BeanManager<G, I, T>, Bat
         // Iterate over sessions in memory
         for (Object key: cache.getAdvancedCache().withFlags(Flag.CACHE_MODE_LOCAL, Flag.SKIP_CACHE_LOAD, Flag.SKIP_LOCKING).keySet()) {
             // Cache may contain non-string keys, so ignore any others
-I id = (I) key;
+            if (this.accept(key)) {
                 @SuppressWarnings("unchecked")
-                I id = ((BeanKey<I>) key).getId();
+I id = (I) key;
                 // If we are the new primary owner of this session
                 // then schedule expiration of this session locally
                 if (!oldLocality.isLocal(id) && newLocality.isLocal(id)) {

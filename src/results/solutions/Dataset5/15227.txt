@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -80,9 +79,9 @@ public class RegexExtractorGui extends AbstractPostProcessorGui {
     @Override
     public void configure(TestElement el) {
         super.configure(el);
-showScopeSettings(re, true);
+        if (el instanceof RegexExtractor){
             RegexExtractor re = (RegexExtractor) el;
-            showScopeSettings(re);
+showScopeSettings(re, true);
             useHeaders.setSelected(re.useHeaders());
             useBody.setSelected(re.useBody());
             useUnescapedBody.setSelected(re.useUnescapedBody());

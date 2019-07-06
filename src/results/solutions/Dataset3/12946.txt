@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -290,9 +289,9 @@ public class AdamsMoultonIntegrator extends AdamsIntegrator {
             System.arraycopy(yTmp, 0, y, 0, n);
             interpolator.reinitialize(stepEnd, stepSize, correctedScaled, nordsieckTmp);
             interpolator.storeTime(stepStart);
-stepStart = acceptStep(interpolator, y, yDot, t);
+            interpolator.shift();
             interpolator.storeTime(stepEnd);
-            stepStart = acceptStep(interpolator, stepHandlers, y, yDot, t);
+stepStart = acceptStep(interpolator, y, yDot, t);
             scaled    = correctedScaled;
             nordsieck = nordsieckTmp;
 

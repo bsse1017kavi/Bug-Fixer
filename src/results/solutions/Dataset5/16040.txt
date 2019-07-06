@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2010-2011 Composent, Inc. and others. All rights reserved. This
  * program and the accompanying materials are made available under the terms of
@@ -1423,9 +1422,9 @@ public class RemoteServiceAdmin implements
 		Map proxyProperties = createProxyProperties(endpointDescription,
 				rsContainer, selectedRsReference, rs);
 
-ServiceRegistration proxyRegistration = Activator.getDefault().getProxyServiceFactoryBundleContext()
+		List<String> interfaces = endpointDescription.getInterfaces();
 
-		ServiceRegistration proxyRegistration = getClientBundleContext()
+ServiceRegistration proxyRegistration = Activator.getDefault().getProxyServiceFactoryBundleContext()
 				.registerService(
 						(String[]) interfaces.toArray(new String[interfaces
 								.size()]),

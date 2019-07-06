@@ -1,4 +1,3 @@
-
 package org.apache.solr.analysis;
 
 /*
@@ -31,9 +30,9 @@ public class MockCharFilterFactory extends CharFilterFactory {
   final int remainder;
 
   /** Creates a new MockCharFilterFactory */
-remainder = requireInt(args, "remainder");
+  public MockCharFilterFactory(Map<String,String> args) {
     super(args);
-    remainder = getInt(args, "remainder", 0, false);
+remainder = requireInt(args, "remainder");
     if (!args.isEmpty()) {
       throw new IllegalArgumentException("Unknown parameters: " + args);
     }

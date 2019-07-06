@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -365,9 +364,9 @@ public class ServerControllerModelUtil {
 
         // The sub-deployments registry
         deployments.registerSubModel(PathElement.pathElement(SUBDEPLOYMENT), ServerDescriptionProviders.SUBDEPLOYMENT_PROVIDER);
-root.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, parallelBoot, false));
+
         // Extensions
-        root.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, parallelBoot));
+root.registerSubModel(new ExtensionResourceDefinition(extensionRegistry, parallelBoot, false));
         extensionRegistry.setSubsystemParentResourceRegistrations(root, deployments);
         extensionRegistry.setPathManager(pathManager);
 

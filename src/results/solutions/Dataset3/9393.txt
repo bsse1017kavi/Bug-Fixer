@@ -1,4 +1,3 @@
-
 // $Id$
 /*
  * Copyright (c) 2011, Red Hat Middleware LLC or third-party contributors as
@@ -100,9 +99,9 @@ public class PersistenceUnitMetadataImpl implements PersistenceUnitMetadata {
     private volatile String version;
 
     // transformers will be written to when the JPA persistence provider adds their transformer.
-private final List<ClassTransformer> transformers = new CopyOnWriteArrayList<ClassTransformer>();
+    // there should be very few calls to add transformers but potentially many calls to get the
     // transformer list (once per application class loaded).
-    private volatile List<ClassTransformer> transformers = new CopyOnWriteArrayList<ClassTransformer>();
+private final List<ClassTransformer> transformers = new CopyOnWriteArrayList<ClassTransformer>();
 
     private volatile SharedCacheMode sharedCacheMode;
 

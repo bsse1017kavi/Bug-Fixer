@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -115,9 +114,9 @@ public class FileServer {
      * 
      * @param basedir the path to set, or {@code null} if the GUI is being cleared
      * @throws IllegalStateException if files are still open
-checkForOpenFiles(); // TODO should this be called if basedir == null?
+     */
     public synchronized void setBasedir(String basedir) {
-        checkForOpenFiles();
+checkForOpenFiles(); // TODO should this be called if basedir == null?
         if (basedir != null) {
             base = new File(basedir);
             if (!base.isDirectory()) {

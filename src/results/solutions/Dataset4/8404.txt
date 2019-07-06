@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -45,9 +44,9 @@ public class QueryPhase implements SearchPhase {
 
     @Override public Map<String, ? extends SearchParseElement> parseElements() {
         ImmutableMap.Builder<String, SearchParseElement> parseElements = ImmutableMap.builder();
-.put("indicesBoost", new IndicesBoostParseElement())
+        parseElements.put("from", new FromParseElement()).put("size", new SizeParseElement())
                 .put("queryParserName", new QueryParserNameParseElement())
-                .put("queryBoost", new QueryBoostParseElement())
+.put("indicesBoost", new IndicesBoostParseElement())
                 .put("query", new QueryParseElement())
                 .put("sort", new SortParseElement())
                 .putAll(facetsPhase.parseElements());

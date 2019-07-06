@@ -1,4 +1,3 @@
-
 /*
  * $Id: WicketTagComponentResolver.java,v 1.4 2005/01/18 08:04:29 jonathanlocke
  * Exp $ $Revision$ $Date$
@@ -51,9 +50,9 @@ public class ParentResolver implements IComponentResolver
 			if (parent != null)
 			{
 				Component component = parent.get(tag.getId());
-component.render(markupStream);
+				if (component != null)
 				{
-					component.render();
+component.render(markupStream);
 					return true;
 				}
 			}

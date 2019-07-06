@@ -1,4 +1,3 @@
-
 package org.eclipse.ui.internal.dialogs;
 
 /*
@@ -41,9 +40,9 @@ public IAdaptable createElement(IMemento memento) {
 	if (featureId == null) 
 		return null;
 
-((Workbench)(WorkbenchPlugin.getDefault().getWorkbench())).getConfigurationInfo().getFeaturesInfo();
+	AboutInfo info = null;
 	AboutInfo [] infos = 
-		((Workbench)(WorkbenchPlugin.getDefault().getWorkbench())).getFeaturesInfo();
+((Workbench)(WorkbenchPlugin.getDefault().getWorkbench())).getConfigurationInfo().getFeaturesInfo();
 	for (int i = 0; i < infos.length; i++) {
 		if (featureId.equals(infos[i].getFeatureId())) {
 			info = infos[i];

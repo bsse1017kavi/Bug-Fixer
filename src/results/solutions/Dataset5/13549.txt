@@ -1,4 +1,3 @@
-
 // $Header$
 /*
  * Copyright 2000-2004 The Apache Software Foundation.
@@ -404,9 +403,9 @@ public class StandardJMeterEngine implements JMeterEngine, JMeterThreadMonitor,
          Thread t = (Thread) allThreads.get(iter.next());
          if (t != null && t.isAlive())
          {
-Thread.sleep(milis);
+            try
             {
-               t.sleep(milis);
+Thread.sleep(milis);
             }
             catch (InterruptedException e)
             {

@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright 2011, Red Hat, Inc., and individual contributors
@@ -143,9 +142,9 @@ public class ServerRootDescription {
         final ModelNode root = new ModelNode();
         root.get(OPERATION_NAME).set(ReadConfigAsXmlHandler.READ_CONFIG_AS_XML);
         root.get(DESCRIPTION).set(bundle.getString(ReadConfigAsXmlHandler.READ_CONFIG_AS_XML));
-root.get(REPLY_PROPERTIES, DESCRIPTION).set(bundle.getString(ReadConfigAsXmlHandler.READ_CONFIG_AS_XML + ".response"));
+        root.get(REQUEST_PROPERTIES).setEmptyObject();
         root.get(REPLY_PROPERTIES, TYPE).set(ModelType.STRING);
-        root.get(REPLY_PROPERTIES, DESCRIPTION).set(bundle.getString(ReadConfigAsXmlHandler.READ_CONFIG_AS_XML + ".result"));
+root.get(REPLY_PROPERTIES, DESCRIPTION).set(bundle.getString(ReadConfigAsXmlHandler.READ_CONFIG_AS_XML + ".response"));
         return root;
     }
 

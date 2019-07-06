@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2007 Versant Corp.
  * All rights reserved. This program and the accompanying materials
@@ -32,9 +31,9 @@ public class JSLPDiscoveryContainer extends AbstractDiscoveryContainerAdapter im
 	public static final String NAME = "ecf.discovery.jslp"; //$NON-NLS-1$
 
 	// TODO-mkuppe make this configurable via cm
-private volatile JSLPDiscoveryJob discoveryJob;
+	public static long REDISCOVER = Long.parseLong(System.getProperty("net.slp.rediscover", new Long(60L * 1000L).toString())); //$NON-NLS-1$
 
-	private JSLPDiscoveryJob discoveryJob;
+private volatile JSLPDiscoveryJob discoveryJob;
 
 	private ID targetID;
 

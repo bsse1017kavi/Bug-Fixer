@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2005 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -325,9 +324,9 @@ public void pack () {
 }
 
 int calculateWidth (int[] ids, int index, GC gc, int width) {
-TreeItem item = parent._getItem (ids [i], false);
+	if (ids == null) return width;
 	for (int i=0; i<ids.length; i++) {
-		TreeItem item = parent._getItem (ids [i], false);;
+TreeItem item = parent._getItem (ids [i], false);
 		if (item != null) {
 			width = Math.max (width, item.calculateWidth (index, gc));
 			if (item.getExpanded ()) {

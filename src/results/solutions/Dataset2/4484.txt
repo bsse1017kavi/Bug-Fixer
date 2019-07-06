@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2002 International Business Machines Corp. and others.
  * All rights reserved. This program and the accompanying materials 
@@ -642,9 +641,9 @@ public class Scribe {
 			this.currentAlignment = this.currentAlignment.enclosing; // pop currentLocation
 			throw e; // rethrow
 		} 
-this.scanner.resetTo(this.currentAlignment.location.inputOffset, this.scanner.eofPosition);
+		// reset scribe/scanner to restart at this given location
 		this.resetAt(this.currentAlignment.location);
-		this.scanner.resetTo(this.currentAlignment.location.inputOffset, ((PublicScanner)this.scanner).eofPosition);
+this.scanner.resetTo(this.currentAlignment.location.inputOffset, this.scanner.eofPosition);
 		// clean alignment chunkKind so it will think it is a new chunk again
 		this.currentAlignment.chunkKind = 0;
 		this.formatter.lastLocalDeclarationSourceStart = 0;

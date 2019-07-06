@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1488,9 +1487,9 @@ public class NumberUtils {
     public static boolean isParsable(final String str) {
         if( StringUtils.endsWith( str, "." ) ) {
             return false;
-return isDigits( StringUtils.replaceOnce( str.substring(1), ".", StringUtils.EMPTY ) );
+        }
         if( StringUtils.startsWith( str, "-" ) ) {
-            return isDigits( StringUtils.replaceOnce( StringUtils.substring( str, 1 ), ".", StringUtils.EMPTY ) );
+return isDigits( StringUtils.replaceOnce( str.substring(1), ".", StringUtils.EMPTY ) );
         } else {
             return isDigits( StringUtils.replaceOnce( str, ".", StringUtils.EMPTY ) );
         }

@@ -1,4 +1,3 @@
-
 package org.eclipse.ecf.example.collab;
 
 import java.io.InputStream;
@@ -82,9 +81,9 @@ public class ServerStartup {
 					TCPServerSOContainer cont = makeServerContainer(group
 							.getIDForGroup(), serverGroups[j], group.getName(),
 							connect.getTimeout());
-ClientPlugin.log("ECF group server created: "+cont.getConfig().getID().getName());
+					DiscoveryStartup.registerServer(cont.getConfig().getID());
 					servers.add(cont);
-					ClientPlugin.log("ECF group created: "+cont.getConfig().getID().getName());
+ClientPlugin.log("ECF group server created: "+cont.getConfig().getID().getName());
 				}
 				serverGroups[j].putOnTheAir();
 				j++;

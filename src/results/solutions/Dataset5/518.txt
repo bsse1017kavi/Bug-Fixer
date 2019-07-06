@@ -1,4 +1,3 @@
-
 /*******************************************************************************
 * Copyright (c) 2010 Composent, Inc. and others. All rights reserved. This
 * program and the accompanying materials are made available under the terms of
@@ -75,9 +74,9 @@ public abstract class AbstractRemoteService implements IRemoteService, Invocatio
 			classes.add(IRemoteServiceProxy.class);
 			return createProxy((Class[]) classes.toArray(new Class[] {}));
 		} catch (final Exception e) {
-throw new ECFException("Failed to load proxy interface class", e); //$NON-NLS-1$
+			throw new ECFException("Failed to create proxy", e); //$NON-NLS-1$
 		} catch (final NoClassDefFoundError e) {
-			throw new ECFException("Failed to load proxy interface", e); //$NON-NLS-1$
+throw new ECFException("Failed to load proxy interface class", e); //$NON-NLS-1$
 		}
 	}
 

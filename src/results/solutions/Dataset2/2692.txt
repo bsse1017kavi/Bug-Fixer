@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Copyright (c) 2000, 2003 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials 
@@ -403,9 +402,9 @@ public class CastExpression extends Expression {
 
 			this.resolvedType = type.resolveType(scope);
 			TypeBinding expressionType = expression.resolveType(scope);
-if (!necessary && this.expression.resolvedType != null) { // cannot do better if expression is not bound
+			if (this.resolvedType != null && expressionType != null) {
 				boolean necessary = checkCastTypesCompatibility(scope, this.resolvedType, expressionType);
-				if (!necessary) {
+if (!necessary && this.expression.resolvedType != null) { // cannot do better if expression is not bound
 					this.bits |= UnnecessaryCastMask;
 					if ((this.bits & IgnoreNeedForCastCheckMASK) == 0) {
 						scope.problemReporter().unnecessaryCast(this);

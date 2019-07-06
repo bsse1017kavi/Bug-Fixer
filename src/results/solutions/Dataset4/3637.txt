@@ -1,4 +1,3 @@
-
 /*
  * Licensed to Elastic Search and Shay Banon under one
  * or more contributor license agreements.  See the NOTICE file
@@ -237,9 +236,9 @@ public abstract class TransportShardReplicationOperationAction<Request extends S
 
         private final AtomicBoolean primaryOperationStarted = new AtomicBoolean();
 
-AsyncShardOperationAction(Request request, ActionListener<Response> listener) {
+        private final ReplicationType replicationType;
 
-        private AsyncShardOperationAction(Request request, ActionListener<Response> listener) {
+AsyncShardOperationAction(Request request, ActionListener<Response> listener) {
             this.request = request;
             this.listener = listener;
 

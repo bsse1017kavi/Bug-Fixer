@@ -1,4 +1,3 @@
-
 /*
  * JBoss, Home of Professional Open Source.
  * Copyright (c) 2011, Red Hat, Inc., and individual contributors
@@ -112,9 +111,9 @@ public class LifecycleCMTTxInterceptor extends CMTTxInterceptor implements Inter
                 txAttr = TransactionAttributeType.REQUIRES_NEW;
             }
             if(!treatRequiredAsRequiresNew ) {
-EjbLogger.ROOT_LOGGER.invalidTransactionTypeForSfsbLifecycleMethod(txAttr, methodIdentifier, ejb.getComponentClass());
+                if(txAttr != TransactionAttributeType.NOT_SUPPORTED &&
                         txAttr != TransactionAttributeType.REQUIRES_NEW) {
-                    EjbLogger.ROOT_LOGGER.invalidTransactionTypeForSfsbLifecycleMethod(txAttr, methodIdentifier);
+EjbLogger.ROOT_LOGGER.invalidTransactionTypeForSfsbLifecycleMethod(txAttr, methodIdentifier, ejb.getComponentClass());
                     txAttr = TransactionAttributeType.NOT_SUPPORTED;
                 }
             }
